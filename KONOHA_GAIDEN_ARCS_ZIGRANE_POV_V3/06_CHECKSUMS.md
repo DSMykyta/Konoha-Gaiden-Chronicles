@@ -2,7 +2,7 @@
 
 | Файл | Символів | SHA-256 |
 |---|---:|---|
-| `GAMES/INIICHI_TEAM/ARCS/arc 01 [Жетон і зникла скриня].txt` | 13015 | `1dab730ce4598aed` |
+| `GAMES/INIICHI_TEAM/ARCS/arc 01 [Жетон і зникла скриня].txt` | 9456 | `e585d2d5e6eec65f` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 01 [Юміко — перші зустрічі та справа архіву].txt` | 118269 | `14035b1dd5466a0a` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 02 [Полонений Іви та дорога до кордону].txt` | 80133 | `06bfa187a5970e76` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 03 [Повернення Юміко].txt` | 36629 | `8f90092f7ff78b47` |
@@ -45,3 +45,5 @@
 | `GAMES/TEAM_9/ARCS/arc 18 [Ліквідація Бази 2].txt` | 9446 | `82c3a957065c145f` |
 | `GAMES/TEAM_9/ARCS/arc 19 [Кубики і нова школа].txt` | 10334 | `82aaf82e47fa2c62` |
 | `GAMES/TEAM_9/ARCS/arc 20 [Бланки токубецу і конверт].txt` | 11902 | `bd1e715a31737341` |
+
+**Разом:** 43 арок, 1279977 символів.
