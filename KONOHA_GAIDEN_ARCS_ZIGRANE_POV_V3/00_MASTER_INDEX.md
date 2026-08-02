@@ -78,7 +78,7 @@
 | KUSA-01 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 01 [Кабан і випускники].txt` | Кусаґакуре — Ейзан |
 | KUSA-02 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 02 [Брама сорок сьома].txt` | Кусаґакуре — Ейзан |
 | KUSA-03 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 03 [Сім днів до арени].txt` | Кусаґакуре — Ейзан |
-| KUSA-04 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 04 [День арени].txt` | Кусаґакуре — Ейзан |
+| KUSA-04 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 04 [Шпиталь і лист Шігуре].txt` | Кусаґакуре — Ейзан |
 | T9G-16 | `GAMES/TEAM_9/ARCS/arc 16 [Повернення].txt` | Команда 9 |
 | T9G-17 | `GAMES/TEAM_9/ARCS/arc 17 [Кордон Країни Рису].txt` | Команда 9 |
 | T9G-18 | `GAMES/TEAM_9/ARCS/arc 18 [Ліквідація Бази 2].txt` | Команда 9 |
