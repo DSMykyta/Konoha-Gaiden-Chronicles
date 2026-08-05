@@ -13,8 +13,14 @@ jobs:
   combine:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Kakashi Gaiden arcs only
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            KONOHA_GAIDEN_ARCS_FULL_LOG_FIXED/GAMES/KAKASHI_GAIDEN/ARCS
+          sparse-checkout-cone-mode: false
 
       - name: Combine all 12 arcs
         shell: python
