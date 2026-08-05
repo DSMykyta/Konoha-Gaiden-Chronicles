@@ -1,0 +1,54 @@
+name: Combine Kakashi Gaiden 12 arcs
+
+on:
+  push:
+    paths:
+      - '.github/workflows/combine_kakashi_12_arcs.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  combine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Combine all 12 arcs
+        shell: python
+        run: |
+          from pathlib import Path
+
+          base = Path('KONOHA_GAIDEN_ARCS_FULL_LOG_FIXED/GAMES/KAKASHI_GAIDEN/ARCS')
+          sources = [
+              'arc 01 [Юміко — перші зустрічі та справа архіву].txt',
+              'arc 02 [Полонений Іви та дорога до кордону].txt',
+              'arc 03 [Повернення Юміко].txt',
+              'arc 04 [Шукуба та бордельне прикриття].txt',
+              'arc 05 [Шахти Іви та обвал].txt',
+              'arc 06 [Команда 9 — ескорт].txt',
+              'arc 07 [Саске — погоня і Долина Завершення].txt',
+              'arc 08 [Рін у наметі].txt',
+              'arc 09 [Лялька дружини Даймьо].txt',
+              'arc 10 [Ренджі і замовник із столиці].txt',
+              'arc 11 [Банк, лілії і ніч Юміко].txt',
+              'arc 12 [Ренджі на повідку].txt',
+          ]
+
+          missing = [name for name in sources if not (base / name).is_file()]
+          if missing:
+              raise FileNotFoundError(f'Missing source files: {missing}')
+
+          parts = [(base / name).read_text(encoding='utf-8').rstrip() for name in sources]
+          output = base.parent / 'KAKASHI_GAIDEN_ALL_12_ARCS.txt'
+          output.write_text('\n\n'.join(parts) + '\n', encoding='utf-8')
+          print(f'Created {output} from {len(parts)} files')
+
+      - name: Commit combined file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "KONOHA_GAIDEN_ARCS_FULL_LOG_FIXED/GAMES/KAKASHI_GAIDEN/KAKASHI_GAIDEN_ALL_12_ARCS.txt"
+          git diff --cached --quiet || git commit -m "Combine all 12 Kakashi Gaiden arcs"
+          git push
