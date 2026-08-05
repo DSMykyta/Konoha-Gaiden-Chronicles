@@ -1,12 +1,13 @@
 name: Combine Kakashi Gaiden 12 arcs
 
 on:
-  push:
+  pull_request:
     paths:
-      - '.github/workflows/combine_kakashi_12_arcs.yml'
+      - '.github/combine_kakashi_trigger'
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   combine:
@@ -41,14 +42,14 @@ jobs:
               raise FileNotFoundError(f'Missing source files: {missing}')
 
           parts = [(base / name).read_text(encoding='utf-8').rstrip() for name in sources]
-          output = base.parent / 'KAKASHI_GAIDEN_ALL_12_ARCS.txt'
+          output = Path('KAKASHI_GAIDEN_ALL_12_ARCS.txt')
           output.write_text('\n\n'.join(parts) + '\n', encoding='utf-8')
           print(f'Created {output} from {len(parts)} files')
 
-      - name: Commit combined file
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "KONOHA_GAIDEN_ARCS_FULL_LOG_FIXED/GAMES/KAKASHI_GAIDEN/KAKASHI_GAIDEN_ALL_12_ARCS.txt"
-          git diff --cached --quiet || git commit -m "Combine all 12 Kakashi Gaiden arcs"
-          git push
+      - name: Upload combined TXT
+        uses: actions/upload-artifact@v4
+        with:
+          name: KAKASHI_GAIDEN_ALL_12_ARCS
+          path: KAKASHI_GAIDEN_ALL_12_ARCS.txt
+          if-no-files-found: error
+          retention-days: 1
