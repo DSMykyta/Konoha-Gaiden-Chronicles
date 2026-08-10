@@ -1,8 +1,27 @@
-# Контрольні суми арок
+# Контрольні суми
 
 | Файл | Символів | SHA-256 |
 |---|---:|---|
+| `00_MASTER_INDEX.md` | 9230 | `2916ab2c21df07b0` |
+| `00_PRAVYLA_REDAKTSII.md` | 3605 | `9441364c98b5e006` |
+| `00_ZVIRKA_Z_LOGAMY.md` | 5144 | `cd586c7ed0726266` |
+| `01_MASTER_READING_ORDER.md` | 5232 | `df0b759b3cf77772` |
+| `02_MASTER_CHRONOLOGY.md` | 7304 | `bf338a2c5d2c72ed` |
+| `03_MASTER_CANON_DECISIONS.md` | 14048 | `b90d673562fee753` |
+| `04_MASTER_REVIEW.md` | 2976 | `e7dab9cbfce390f1` |
+| `05_MASTER_ZVIT.md` | 11919 | `8b118fb31ff14c57` |
+| `AUDYTY/01_GOLOSY_PERSONAZHIV.md` | 48844 | `c5dafe392f262c13` |
+| `AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md` | 23216 | `ff9b94618a6debd8` |
+| `AUDYTY/03_KARTA_HRONOLOHII.md` | 23977 | `b6d29a8e546fa6cd` |
+| `GAMES/INIICHI_TEAM/00_INDEX.md` | 1236 | `f20d36e8147ffd70` |
+| `GAMES/INIICHI_TEAM/01_CHRONOLOGY.md` | 794 | `87259a203beebdcc` |
 | `GAMES/INIICHI_TEAM/ARCS/arc 01 [Жетон і зникла скриня].txt` | 9456 | `e585d2d5e6eec65f` |
+| `GAMES/INIICHI_TEAM/CHANGES/01_SOURCES.md` | 559 | `84c509ce1793ed69` |
+| `GAMES/INIICHI_TEAM/CHANGES/02_DECISIONS.md` | 794 | `6cab046f2dafa581` |
+| `GAMES/INIICHI_TEAM/CHANGES/03_VALIDATION.md` | 320 | `679748a5ae101a8b` |
+| `GAMES/KAKASHI_GAIDEN/00_INDEX.md` | 4812 | `ce49b5b7d720ca34` |
+| `GAMES/KAKASHI_GAIDEN/01_CHRONOLOGY.md` | 11456 | `a58ca2d28c28b8ca` |
+| `GAMES/KAKASHI_GAIDEN/02_PROFIL_YUGIRI_MIKATA.md` | 15029 | `9397cd8da323bd8b` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 01 [Юміко — перші зустрічі та справа архіву].txt` | 118269 | `14035b1dd5466a0a` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 02 [Полонений Іви та дорога до кордону].txt` | 80133 | `06bfa187a5970e76` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 03 [Повернення Юміко].txt` | 36629 | `8f90092f7ff78b47` |
@@ -16,25 +35,54 @@
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 11 [Ренджі і замовник із столиці].txt` | 8324 | `b5964a07a2b9e6f8` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 12 [Банк, лілії і ніч Юміко].txt` | 112645 | `dcbeebd018fe5777` |
 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 13 [Ренджі на повідку].txt` | 35735 | `09e22312daa50655` |
+| `GAMES/KAKASHI_GAIDEN/CHANGES/01_SOURCES.md` | 1552 | `5dbd0830921a3d2f` |
+| `GAMES/KAKASHI_GAIDEN/CHANGES/02_DECISIONS.md` | 7576 | `8bbcaeb5f11ca2b7` |
+| `GAMES/KAKASHI_GAIDEN/CHANGES/03_VALIDATION.md` | 3128 | `035c9df8f620f51b` |
+| `GAMES/KAKASHI_GAIDEN/OPTIONAL/arc 02A [Наруто і тіньовий клон — інтимний додаток].txt` | 32957 | `f9487dbde18fb281` |
+| `GAMES/KALENDAR_KONOHA/00_INDEX.md` | 2020 | `523016dfd05c4884` |
+| `GAMES/KALENDAR_KONOHA/01_CHRONOLOGY.md` | 1241 | `a28f9e93aaab3c68` |
 | `GAMES/KALENDAR_KONOHA/ARCS/arc 01 [Фотосесія — Райдо, Іваші і Ґенма].txt` | 14447 | `0dac75306a6a999a` |
 | `GAMES/KALENDAR_KONOHA/ARCS/arc 02 [Десять місяців і фестиваль].txt` | 22868 | `faac487d5c390eb0` |
-| `GAMES/KITSUNE_KON/ARCS/arc 01 [Нічна зміна і білі маски].txt` | 15476 | `f6b92f36b5a2eb8e` |
-| `GAMES/KITSUNE_KON/ARCS/arc 02 [Каґарі — міст без вартового].txt` | 11031 | `e34d01ca2ceb2b57` |
+| `GAMES/KALENDAR_KONOHA/CHANGES/01_SOURCES.md` | 604 | `37c53311a284a2c5` |
+| `GAMES/KALENDAR_KONOHA/CHANGES/02_DECISIONS.md` | 1353 | `5f839a41854d9fe4` |
+| `GAMES/KALENDAR_KONOHA/CHANGES/03_VALIDATION.md` | 379 | `8638dbc7dd081c25` |
+| `GAMES/KITSUNE_KON/00_INDEX.md` | 2942 | `15f9361d43b202a0` |
+| `GAMES/KITSUNE_KON/01_CHRONOLOGY.md` | 2573 | `b6375f91aba19c9b` |
+| `GAMES/KITSUNE_KON/03_KON_I_PRYZOVY.md` | 14120 | `03794266f60fec6f` |
+| `GAMES/KITSUNE_KON/04_PRYZOVY_NA_MOMENT_ISPYTU.md` | 23577 | `620339b923428bc9` |
+| `GAMES/KITSUNE_KON/05_MEHANIKA_KUCHIYOSE.md` | 37033 | `b31d0aae27534365` |
+| `GAMES/KITSUNE_KON/ARCS/arc 01 [Нічна зміна і білі маски].txt` | 23240 | `66a0014cc610304c` |
+| `GAMES/KITSUNE_KON/ARCS/arc 02 [Каґарі — міст без вартового].txt` | 9283 | `a4711ca9f183f7ea` |
 | `GAMES/KITSUNE_KON/ARCS/arc 03 [Грім над Конохою].txt` | 11505 | `6821ce73c8dc3603` |
+| `GAMES/KITSUNE_KON/CHANGES/01_SOURCES.md` | 860 | `a0b1f75908225460` |
+| `GAMES/KITSUNE_KON/CHANGES/02_DECISIONS.md` | 4476 | `8022005d1c07a183` |
+| `GAMES/KITSUNE_KON/CHANGES/03_VALIDATION.md` | 823 | `3e2cad24219e4e90` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/00_INDEX.md` | 3249 | `818a55445efd8d2e` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/01_CHRONOLOGY.md` | 2475 | `b55733f3ae46a84c` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/03_DOVIDNYK.md` | 2907 | `ecb9ae19ceac772c` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/04_HILKA_SEIGO.md` | 7551 | `2fbca4558f736f7a` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/05_POLITYCHNYI_DOVIDNYK.md` | 79185 | `7bf538852857d015` |
 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 01 [Кабан і випускники].txt` | 26815 | `6aed57be51b372c9` |
 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 02 [Брама сорок сьома].txt` | 31082 | `449c5dbf7404a046` |
 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 03 [Сім днів до арени].txt` | 36043 | `573fe55d230c26be` |
 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 04 [Шпиталь і лист Шігуре].txt` | 6314 | `806e234bbda1be9b` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/CHANGES/01_SOURCES.md` | 1134 | `6f7b15482c76bb93` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/CHANGES/02_DECISIONS.md` | 2164 | `c7a32ca249ee4dfb` |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/CHANGES/03_VALIDATION.md` | 1121 | `1c9411aafcc6d2c4` |
+| `GAMES/TEAM_9/00_INDEX.md` | 5178 | `d6aa4bb1993b81e3` |
+| `GAMES/TEAM_9/01_CHRONOLOGY.md` | 13324 | `952100c20677a10b` |
+| `GAMES/TEAM_9/02_NARRATYV.md` | 13878 | `aaa5c8e6848aba52` |
+| `GAMES/TEAM_9/02_PROFIL_HAYASHI_NOBARI.md` | 5747 | `be32f670a5c85398` |
 | `GAMES/TEAM_9/ARCS/arc 01 [Розподіл і крамниця данго].txt` | 43454 | `3ae2e2c549b43e88` |
-| `GAMES/TEAM_9/ARCS/arc 02 [Конспект Нобарі і склади].txt` | 10697 | `e617e9380359cd17` |
+| `GAMES/TEAM_9/ARCS/arc 02 [Конспект Нобарі і склади].txt` | 7265 | `61f68399220f1a35` |
 | `GAMES/TEAM_9/ARCS/arc 03 [Архів, сектор 3-Б].txt` | 29376 | `fac808d6d686f6be` |
-| `GAMES/TEAM_9/ARCS/arc 04 [Чакронитка і перший блінк].txt` | 8790 | `624376a3bdacd606` |
+| `GAMES/TEAM_9/ARCS/arc 04 [Чакронитка і перший блінк].txt` | 12396 | `b30dabe089350579` |
 | `GAMES/TEAM_9/ARCS/arc 05 [Передіспитові тижні].txt` | 9547 | `bf67007b01be7945` |
 | `GAMES/TEAM_9/ARCS/arc 06 [Чунінський іспит].txt` | 5962 | `504b76fbb108035e` |
 | `GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt` | 15390 | `e24d53777983ff69` |
 | `GAMES/TEAM_9/ARCS/arc 08 [Огорожа Лісу Смерті].txt` | 5677 | `f4dba31da7879b8c` |
-| `GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt` | 14581 | `260e7e60fb269e40` |
-| `GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt` | 18689 | `5aa6f27069a81d47` |
+| `GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt` | 30832 | `aa135d35160206d1` |
+| `GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt` | 23469 | `bc77b15d129136d7` |
 | `GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt` | 13279 | `33a67c8d1423f0f8` |
 | `GAMES/TEAM_9/ARCS/arc 12 [Довга місія — База 2].txt` | 9848 | `9272148712a2b82c` |
 | `GAMES/TEAM_9/ARCS/arc 13 [Довга місія — База 10].txt` | 21765 | `27fa548b430b429c` |
@@ -45,5 +93,8 @@
 | `GAMES/TEAM_9/ARCS/arc 18 [Ліквідація Бази 2].txt` | 9446 | `82c3a957065c145f` |
 | `GAMES/TEAM_9/ARCS/arc 19 [Кубики і нова школа].txt` | 10334 | `82aaf82e47fa2c62` |
 | `GAMES/TEAM_9/ARCS/arc 20 [Бланки токубецу і конверт].txt` | 11902 | `bd1e715a31737341` |
+| `GAMES/TEAM_9/CHANGES/01_SOURCES.md` | 3123 | `87e6bb3d5214494f` |
+| `GAMES/TEAM_9/CHANGES/02_DECISIONS.md` | 7169 | `c351b25871c0856c` |
+| `GAMES/TEAM_9/CHANGES/03_VALIDATION.md` | 3813 | `e9c7f871f5358672` |
 
-**Разом:** 43 арок, 1279977 символів.
+**Разом: 94 файлів, 1786925 символів.**
