@@ -67,11 +67,12 @@
 | T9G-14 | `GAMES/TEAM_9/ARCS/arc 14 [Довга місія — База 15].txt` | Команда 9 |
 | KAL-01 | `GAMES/KALENDAR_KONOHA/ARCS/arc 01 [Фотосесія — Райдо, Іваші і Ґенма].txt` | Календар Конохи |
 | KAL-02 | `GAMES/KALENDAR_KONOHA/ARCS/arc 02 [Десять місяців і фестиваль].txt` | Календар Конохи |
-| KAKG-08 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 08 [Рін у наметі].txt` | Kakashi Gaiden (том II) |
-| KAKG-09 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 09 [Лялька дружини Даймьо].txt` | Kakashi Gaiden (том II) |
-| KAKG-10 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 10 [Ренджі і замовник із столиці].txt` | Kakashi Gaiden (том II) |
-| KAKG-11 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 11 [Банк, лілії і ніч Юміко].txt` | Kakashi Gaiden (том II) |
-| KAKG-12 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 12 [Ренджі на повідку].txt` | Kakashi Gaiden (том II) |
+| KAKG-08 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 08 [Провулок і календар].txt` | Kakashi Gaiden (том II) |
+| KAKG-09 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 09 [Намет].txt` | Kakashi Gaiden (том II) |
+| KAKG-10 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 10 [Лялька дружини Даймьо].txt` | Kakashi Gaiden (том II) |
+| KAKG-11 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 11 [Ренджі і замовник із столиці].txt` | Kakashi Gaiden (том II) |
+| KAKG-12 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 12 [Банк, лілії і ніч Юміко].txt` | Kakashi Gaiden (том II) |
+| KAKG-13 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 13 [Ренджі на повідку].txt` | Kakashi Gaiden (том II) |
 | KKON-01 | `GAMES/KITSUNE_KON/ARCS/arc 01 [Нічна зміна і білі маски].txt` | Кіцуне Кон |
 | KKON-02 | `GAMES/KITSUNE_KON/ARCS/arc 02 [Каґарі — міст без вартового].txt` | Кіцуне Кон |
 | T9G-15 | `GAMES/TEAM_9/ARCS/arc 15 [Сон перед днем народження].txt` | Команда 9 |
