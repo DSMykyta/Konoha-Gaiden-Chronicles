@@ -6,9 +6,11 @@
 - `02_MASTER_CHRONOLOGY.md` — зведена хронологія всіх ігор;
 - `03_MASTER_CANON_DECISIONS.md` — редакторські та канонічні рішення збірки (робочий звіт);
 - `04_MASTER_REVIEW.md` — справді відкриті питання;
-- `05_MASTER_ZVIT.md` — довідка по даних (люди, відліки, події) і звіт про помилки зведення.
+- `05_MASTER_ZVIT.md` — довідка по даних (люди, відліки, події) і звіт про помилки зведення;
+- `00_ZVIRKA_Z_LOGAMY.md` — скільки в кожній арці дослівного тексту з логів;
+- `07_LOHIKA.md` — знайдені логічні помилки і що з ними зроблено.
 
-Усього: шість ігор, 42 арки, один необов'язковий додаток і чотири читабельні довідки.
+Усього: шість ігор, 43 арки, один необов'язковий додаток і читабельні довідки.
 
 ## Ігри
 
@@ -67,18 +69,19 @@
 | T9G-14 | `GAMES/TEAM_9/ARCS/arc 14 [Довга місія — База 15].txt` | Команда 9 |
 | KAL-01 | `GAMES/KALENDAR_KONOHA/ARCS/arc 01 [Фотосесія — Райдо, Іваші і Ґенма].txt` | Календар Конохи |
 | KAL-02 | `GAMES/KALENDAR_KONOHA/ARCS/arc 02 [Десять місяців і фестиваль].txt` | Календар Конохи |
-| KAKG-08 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 08 [Рін у наметі].txt` | Kakashi Gaiden (том II) |
-| KAKG-09 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 09 [Лялька дружини Даймьо].txt` | Kakashi Gaiden (том II) |
-| KAKG-10 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 10 [Ренджі і замовник із столиці].txt` | Kakashi Gaiden (том II) |
-| KAKG-11 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 11 [Банк, лілії і ніч Юміко].txt` | Kakashi Gaiden (том II) |
-| KAKG-12 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 12 [Ренджі на повідку].txt` | Kakashi Gaiden (том II) |
+| KAKG-08 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 08 [Провулок і календар].txt` | Kakashi Gaiden (том II) |
+| KAKG-09 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 09 [Намет].txt` | Kakashi Gaiden (том II) |
+| KAKG-10 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 10 [Лялька дружини Даймьо].txt` | Kakashi Gaiden (том II) |
+| KAKG-11 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 11 [Ренджі і замовник із столиці].txt` | Kakashi Gaiden (том II) |
+| KAKG-12 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 12 [Банк, лілії і ніч Юміко].txt` | Kakashi Gaiden (том II) |
+| KAKG-13 | `GAMES/KAKASHI_GAIDEN/ARCS/arc 13 [Ренджі на повідку].txt` | Kakashi Gaiden (том II) |
 | KKON-01 | `GAMES/KITSUNE_KON/ARCS/arc 01 [Нічна зміна і білі маски].txt` | Кіцуне Кон |
 | KKON-02 | `GAMES/KITSUNE_KON/ARCS/arc 02 [Каґарі — міст без вартового].txt` | Кіцуне Кон |
 | T9G-15 | `GAMES/TEAM_9/ARCS/arc 15 [Сон перед днем народження].txt` | Команда 9 |
 | KUSA-01 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 01 [Кабан і випускники].txt` | Кусаґакуре — Ейзан |
 | KUSA-02 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 02 [Брама сорок сьома].txt` | Кусаґакуре — Ейзан |
 | KUSA-03 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 03 [Сім днів до арени].txt` | Кусаґакуре — Ейзан |
-| KUSA-04 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 04 [День арени].txt` | Кусаґакуре — Ейзан |
+| KUSA-04 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 04 [Шпиталь і лист Шігуре].txt` | Кусаґакуре — Ейзан |
 | T9G-16 | `GAMES/TEAM_9/ARCS/arc 16 [Повернення].txt` | Команда 9 |
 | T9G-17 | `GAMES/TEAM_9/ARCS/arc 17 [Кордон Країни Рису].txt` | Команда 9 |
 | T9G-18 | `GAMES/TEAM_9/ARCS/arc 18 [Ліквідація Бази 2].txt` | Команда 9 |
@@ -96,3 +99,19 @@
 ## Що свідомо не перетворено на арки
 
 Незіграні плани (`GM plans/*.docx`, незіграні гілки `GM_PLAN_SHIPPUDEN.md`), скасовані самими іграми епізоди, метарозмови з моделями та профілі, що дублюють арки. Деталі — у `03_MASTER_CANON_DECISIONS.md` і в `CHANGES/` кожної гри.
+
+## Довідкові матеріали
+
+Перенесені з репозиторію без правок. Це не зіграні сцени — це встановлені дані, на які спирається наратив.
+
+| Файл | Про що | Символів |
+|---|---|---:|
+| `GAMES/KITSUNE_KON/04_PRYZOVY_NA_MOMENT_ISPYTU.md` | 18 призовів Кона: контракти, вигляд, характер, функції | 42 065 |
+| `GAMES/KITSUNE_KON/05_MEHANIKA_KUCHIYOSE.md` | канонні правила кучійосе, зворотного призову, зв'язку через Кацуї | 70 046 |
+| `GAMES/KAKASHI_GAIDEN/02_PROFIL_YUGIRI_MIKATA.md` | досьє Мікати | 27 340 |
+| `GAMES/TEAM_9/02_PROFIL_HAYASHI_NOBARI.md` | досьє Нобарі | 10 498 |
+| `GAMES/KUSAGAKURE_EXAM_EIZAN/05_POLITYCHNYI_DOVIDNYK.md` | політика Куси, фракції, Сейґо, склад іспиту | 143 819 |
+| `AUDYTY/01_GOLOSY_PERSONAZHIV.md` | зовнішній аудит голосів і характерів | 86 908 |
+| `AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md` | зовнішній аудит логічних суперечностей | 38 729 |
+| `AUDYTY/03_KARTA_HRONOLOHII.md` | зведена карта хронології | 38 605 |
+
