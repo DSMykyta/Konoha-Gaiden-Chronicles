@@ -4,13 +4,13 @@
 |---|---:|---|
 | `00_MASTER_INDEX.md` | 9460 | `274eabb5cca3e6a9` |
 | `00_PRAVYLA_REDAKTSII.md` | 2906 | `1934839dbe63ed5c` |
-| `00_ZVIRKA_Z_LOGAMY.md` | 5144 | `7d99b1906a398613` |
+| `00_ZVIRKA_Z_LOGAMY.md` | 5144 | `457f24f93d4e9e03` |
 | `01_MASTER_READING_ORDER.md` | 5232 | `df0b759b3cf77772` |
 | `02_MASTER_CHRONOLOGY.md` | 7399 | `26e9b065e8c26c99` |
 | `03_MASTER_CANON_DECISIONS.md` | 14048 | `b90d673562fee753` |
 | `04_MASTER_REVIEW.md` | 2976 | `e7dab9cbfce390f1` |
 | `05_MASTER_ZVIT.md` | 11919 | `8b118fb31ff14c57` |
-| `07_LOHIKA.md` | 7667 | `0f8944d4e7fd683a` |
+| `07_LOHIKA.md` | 8217 | `01a96e88baf6c738` |
 | `AUDYTY/01_GOLOSY_PERSONAZHIV.md` | 48844 | `c5dafe392f262c13` |
 | `AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md` | 23216 | `ff9b94618a6debd8` |
 | `AUDYTY/03_KARTA_HRONOLOHII.md` | 23977 | `b6d29a8e546fa6cd` |
@@ -84,12 +84,12 @@
 | `GAMES/TEAM_9/ARCS/arc 08 [Огорожа Лісу Смерті].txt` | 5677 | `f4dba31da7879b8c` |
 | `GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt` | 30184 | `dbd1b296c89e4563` |
 | `GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt` | 23343 | `fb762f597a158e1b` |
-| `GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt` | 13279 | `5968903c7b4975b2` |
+| `GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt` | 13264 | `7944e77d310b50bb` |
 | `GAMES/TEAM_9/ARCS/arc 12 [Довга місія — База 2].txt` | 9848 | `9272148712a2b82c` |
 | `GAMES/TEAM_9/ARCS/arc 13 [Довга місія — База 10].txt` | 21765 | `27fa548b430b429c` |
 | `GAMES/TEAM_9/ARCS/arc 14 [Довга місія — База 15].txt` | 23405 | `ea921ac376114458` |
 | `GAMES/TEAM_9/ARCS/arc 15 [Сон перед днем народження].txt` | 6524 | `693d3a7f8fb4821a` |
-| `GAMES/TEAM_9/ARCS/arc 16 [Повернення].txt` | 14099 | `d6fd57ae8066d5dd` |
+| `GAMES/TEAM_9/ARCS/arc 16 [Повернення].txt` | 14126 | `7cd164695bea128a` |
 | `GAMES/TEAM_9/ARCS/arc 17 [Кордон Країни Рису].txt` | 7854 | `e4bbb30875c01ab3` |
 | `GAMES/TEAM_9/ARCS/arc 18 [Ліквідація Бази 2].txt` | 9443 | `b4b14cff2729d9e9` |
 | `GAMES/TEAM_9/ARCS/arc 19 [Кубики і нова школа].txt` | 10333 | `312ae44227725f3a` |
