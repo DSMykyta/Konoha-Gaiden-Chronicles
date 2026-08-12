@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Хайґакуре — контрольована урбаністична схема</title>
+<style>
+  * { box-sizing:border-box; }
+  body { margin:0; background:#24231f; color:#ece6d7; font-family:Arial, sans-serif; }
+  .app { display:grid; grid-template-columns:300px 1fr; min-height:100vh; }
+  aside { padding:20px; background:#302e28; border-right:1px solid #4d493f; overflow:auto; }
+  h1 { font-size:24px; margin:0 0 8px; }
+  p { line-height:1.45; color:#cfc8b8; }
+  .facts { font-size:14px; border-left:3px solid #88bed2; padding-left:12px; margin:18px 0; }
+  .controls { display:grid; gap:8px; margin:18px 0; }
+  label { display:flex; gap:9px; align-items:center; font-size:14px; }
+  button { width:100%; padding:10px 12px; border:0; border-radius:8px; background:#d4b77f; color:#29261f; font-weight:700; cursor:pointer; margin-top:8px; }
+  main { overflow:auto; background:#181713; display:flex; align-items:flex-start; justify-content:center; padding:18px; }
+  .map-wrap { background:white; width:min(100%,1800px); box-shadow:0 12px 40px rgba(0,0,0,.35); }
+  svg { width:100%; height:auto; display:block; }
+  .note { font-size:12px; color:#aaa393; margin-top:16px; }
+  @media (max-width:900px) { .app { grid-template-columns:1fr; } aside { border-right:0; border-bottom:1px solid #4d493f; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <h1>Хайґакуре</h1>
+    <p>SVG-схема з повним контролем геометрії. Кожен район, дорога й підпис є окремим векторним шаром.</p>
+    <div class="facts">
+      <strong>Зафіксовано:</strong><br>
+      річка вертикально зліва і є межею міста;<br>
+      тракт вертикально справа, поза містом;<br>
+      від тракту через головні ворота пряма дорога до Резиденції;<br>
+      парк-меморіал у самому верху міста, навпроти Резиденції;<br>
+      місто розростається вниз по карті.
+    </div>
+    <div class="controls">
+      <label><input type="checkbox" checked data-layer="layer-geography"> Географія</label>
+      <label><input type="checkbox" checked data-layer="layer-boundary"> Межі</label>
+      <label><input type="checkbox" checked data-layer="layer-external-road"> Зовнішній тракт</label>
+      <label><input type="checkbox" checked data-layer="layer-roadside"> Придорожній вузол</label>
+      <label><input type="checkbox" checked data-layer="layer-park"> Парк-меморіал</label>
+      <label><input type="checkbox" checked data-layer="layer-civic-core"> Резиденція і центр</label>
+      <label><input type="checkbox" checked data-layer="layer-roads"> Вулиці</label>
+      <label><input type="checkbox" checked data-layer="layer-gates"> Ворота</label>
+      <label><input type="checkbox" checked data-layer="layer-zones"> Райони</label>
+      <label><input type="checkbox" checked data-layer="layer-institutions"> Установи</label>
+      <label><input type="checkbox" checked data-layer="layer-water"> Вода і дренаж</label>
+    </div>
+    <button id="downloadSvg">Завантажити SVG</button>
+    <p class="note">Це перша контрольована версія. Положення об’єктів редагуються числами в SVG, без генерації зображень.</p>
+  </aside>
+  <main><div class="map-wrap"><svg id="cityMap" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Хайґакуре, контрольована урбаністична схема згори</title>
+  <desc id="desc">Велика вертикальна річка є західною межею міста. Вертикальний тракт проходить поза містом зі сходу. Від тракту через головні ворота пряма дорога веде до Резиденції. Парк-меморіал зі згорілими деревами розташований у північній частині міста, безпосередньо навпроти Резиденції.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7f3e8"/>
+      <stop offset="1" stop-color="#eee7d5"/>
+    </linearGradient>
+    <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#70b7d7"/>
+      <stop offset="0.55" stop-color="#8ac7df"/>
+      <stop offset="1" stop-color="#aedcea"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#766f61" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+    <pattern id="burntGround" width="42" height="42" patternUnits="userSpaceOnUse">
+      <rect width="42" height="42" fill="#7d7466"/>
+      <path d="M5 8l14 5M29 5l7 10M2 31l13-8M24 28l12 5" stroke="#4d4640" stroke-width="2" opacity=".45"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#3d392f" flood-opacity=".22"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#4f4a3f"/>
+    </marker>
+    <style>
+      :root { color-scheme: light; }
+      text { font-family: "DejaVu Sans", Arial, sans-serif; fill:#2f2b25; }
+      .label { font-size:20px; font-weight:700; letter-spacing:.02em; }
+      .small { font-size:15px; font-weight:600; }
+      .tiny { font-size:12px; }
+      .water-label { fill:#f7fcff; font-size:24px; font-weight:800; letter-spacing:.08em; }
+      .road { fill:none; stroke:#c7aa79; stroke-linecap:round; stroke-linejoin:round; }
+      .road-edge { fill:none; stroke:#796847; stroke-linecap:round; stroke-linejoin:round; }
+      .major-road { stroke-width:36; }
+      .major-edge { stroke-width:42; opacity:.72; }
+      .collector { stroke-width:18; }
+      .collector-edge { stroke-width:24; opacity:.5; }
+      .local-road { stroke-width:9; }
+      .local-edge { stroke-width:13; opacity:.35; }
+      .zone { stroke:#5f584b; stroke-width:2.2; fill-opacity:.72; }
+      .building { stroke:#514a3f; stroke-width:2; filter:url(#shadow); }
+      .perimeter { fill:none; stroke:#59664d; stroke-width:7; stroke-dasharray:18 10; }
+      .drain { fill:none; stroke:#5c9fc0; stroke-width:4; stroke-dasharray:9 8; opacity:.8; }
+      .tree-new { fill:#6f9d61; stroke:#486b40; stroke-width:1.5; }
+      .tree-burnt { stroke:#332d29; stroke-width:5; stroke-linecap:round; fill:none; }
+      .gate { fill:#6d6150; stroke:#302b25; stroke-width:3; }
+      .legend-chip { stroke:#6b6459; stroke-width:1.5; }
+      .phase-empty { fill:#f3ecd9; stroke:#9a8d75; stroke-width:2; stroke-dasharray:8 6; }
+      .planned { fill:none; stroke:#9e8f73; stroke-width:2; stroke-dasharray:10 7; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1200" fill="url(#paper)"/>
+  <rect width="1800" height="1200" fill="url(#grid)"/>
+
+  <!-- GEOGRAPHY -->
+  <g id="layer-geography">
+    <path d="M0 0H235C270 80 250 160 285 245C318 325 256 410 292 505C329 601 267 694 300 800C329 890 275 990 315 1200H0Z" fill="url(#riverGrad)" stroke="#4f92af" stroke-width="3"/>
+    <path d="M55 20C90 95 72 180 105 250C136 320 92 410 123 500C154 590 108 690 140 785C169 870 124 995 159 1180" fill="none" stroke="#d7f2f8" stroke-opacity=".55" stroke-width="8"/>
+    <path d="M160 0C194 92 172 181 208 260C239 330 195 420 226 510C255 596 214 694 244 790C276 890 233 1000 271 1200" fill="none" stroke="#e8f8fb" stroke-opacity=".4" stroke-width="6"/>
+    <text x="205" y="760" class="water-label" transform="rotate(-90 205 760)">ВЕЛИКА РІЧКА · ЗАХІДНА МЕЖА МІСТА</text>
+    <path d="M288 50C318 230 300 420 324 600C345 780 320 940 344 1125L425 1125C410 950 428 760 405 590C384 430 402 225 373 50Z" fill="#a9c98a" fill-opacity=".55"/>
+    <text x="338" y="915" class="small" transform="rotate(-90 338 915)">ПРИБЕРЕЖНИЙ ЗАХИСНИЙ ПОЯС / ЗАПЛАВА</text>
+  </g>
+
+  <!-- CITY GROUND AND OPEN WEST EDGE -->
+  <g id="layer-boundary">
+    <path d="M300 50H1330V1125H315" fill="#e9dfc8" fill-opacity=".55" stroke="none"/>
+    <path class="perimeter" d="M300 50H1330V328M1330 432V1020M1330 1090V1125H315"/>
+    <text x="1060" y="84" class="small">КОНТРОЛЬОВАНИЙ ПІВНІЧНИЙ ПЕРИМЕТР</text>
+    <text x="1307" y="780" class="tiny" transform="rotate(-90 1307 780)">СХІДНИЙ ПЕРИМЕТР · БЕЗ СТІНИ ВЗДОВЖ РІЧКИ</text>
+  </g>
+
+  <!-- MAIN ROAD OUTSIDE CITY -->
+  <g id="layer-external-road">
+    <path class="road-edge major-edge" d="M1540 -40V1240"/>
+    <path class="road major-road" d="M1540 -40V1240"/>
+    <path d="M1540 120L1540 35" stroke="#4f4a3f" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="1580" y="115" class="label">ДО КОНОХИ</text>
+    <path d="M1540 1075L1540 1160" stroke="#4f4a3f" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="1580" y="1085" class="label">ДО СТОЛИЦІ</text>
+    <text x="1580" y="1115" class="small">і далі до порту</text>
+    <text x="1510" y="760" class="label" transform="rotate(-90 1510 760)">ГОЛОВНИЙ СУХОПУТНИЙ ТРАКТ · ПОЗА МІСТОМ</text>
+  </g>
+
+  <!-- ROADSIDE NODE OUTSIDE CITY -->
+  <g id="layer-roadside">
+    <rect x="1370" y="105" width="120" height="82" rx="10" class="zone" fill="#c7d4b0"/>
+    <text x="1430" y="137" text-anchor="middle" class="small">ПОШТОВО-
+      <tspan x="1430" dy="18">КУР’ЄРСЬКА ПОСТА</tspan></text>
+    <rect x="1370" y="220" width="120" height="118" rx="10" class="zone" fill="#e5c9a8"/>
+    <text x="1430" y="260" text-anchor="middle" class="small">ГОТЕЛІ</text>
+    <text x="1430" y="284" text-anchor="middle" class="tiny">чайні · лазні</text>
+    <rect x="1370" y="455" width="120" height="132" rx="10" class="zone" fill="#dfd3bb"/>
+    <text x="1430" y="500" text-anchor="middle" class="small">НЕВЕЛИКЕ</text>
+    <text x="1430" y="522" text-anchor="middle" class="small">ЖИТЛО</text>
+    <rect x="1370" y="620" width="120" height="142" rx="10" class="zone" fill="#e9c77e"/>
+    <text x="1430" y="674" text-anchor="middle" class="small">ПРИДОРОЖНІЙ</text>
+    <text x="1430" y="698" text-anchor="middle" class="small">РИНОК</text>
+    <rect x="1370" y="795" width="120" height="145" rx="10" class="zone" fill="#cbb78f"/>
+    <text x="1430" y="850" text-anchor="middle" class="small">КАРАВАННИЙ</text>
+    <text x="1430" y="874" text-anchor="middle" class="small">ДВІР</text>
+  </g>
+
+  <!-- MEMORIAL PARK AT VERY TOP OF SETTLEMENT -->
+  <g id="layer-park">
+    <path d="M405 78H1240Q1260 78 1260 98V235Q1260 255 1240 255H405Q385 255 385 235V98Q385 78 405 78Z" fill="url(#burntGround)" stroke="#4c453e" stroke-width="4"/>
+    <text x="822" y="112" text-anchor="middle" class="label" fill="#f6f0e1">ПАРК-МЕМОРІАЛ ЗГОРІЛОГО ЛІСУ</text>
+    <text x="822" y="137" text-anchor="middle" class="small" fill="#f3ead5">збережені обвуглені дерева · нові посадки · меморіальні стели</text>
+    <!-- burnt trunks -->
+    <g>
+      <path class="tree-burnt" d="M465 218V156M465 172L445 150M465 185L486 164"/>
+      <path class="tree-burnt" d="M555 220V148M555 170L535 155M555 183L575 160"/>
+      <path class="tree-burnt" d="M655 219V155M655 177L636 160M655 190L677 169"/>
+      <path class="tree-burnt" d="M760 220V147M760 169L739 151M760 184L782 160"/>
+      <path class="tree-burnt" d="M875 220V154M875 178L854 157M875 190L896 169"/>
+      <path class="tree-burnt" d="M990 220V150M990 170L970 154M990 185L1012 162"/>
+      <path class="tree-burnt" d="M1100 220V152M1100 176L1079 157M1100 188L1121 166"/>
+      <path class="tree-burnt" d="M1190 218V158M1190 177L1172 160M1190 189L1208 170"/>
+    </g>
+    <!-- new trees -->
+    <g>
+      <circle cx="505" cy="180" r="13" class="tree-new"/><circle cx="610" cy="190" r="13" class="tree-new"/>
+      <circle cx="710" cy="180" r="13" class="tree-new"/><circle cx="820" cy="190" r="13" class="tree-new"/>
+      <circle cx="930" cy="180" r="13" class="tree-new"/><circle cx="1045" cy="190" r="13" class="tree-new"/>
+      <circle cx="1145" cy="180" r="13" class="tree-new"/>
+    </g>
+    <rect x="735" y="205" width="175" height="28" rx="5" fill="#d8d0c2" stroke="#4f4940" stroke-width="2"/>
+    <text x="822" y="225" text-anchor="middle" class="tiny">ЦЕНТРАЛЬНА МЕМОРІАЛЬНА СТЕЛА</text>
+  </g>
+
+  <!-- CIVIC CORE: PARK FACES RESIDENCE -->
+  <g id="layer-civic-core">
+    <rect x="660" y="258" width="330" height="44" rx="8" fill="#d7cbb2" stroke="#756b59" stroke-width="2"/>
+    <text x="825" y="286" text-anchor="middle" class="small">МЕМОРІАЛЬНА ПЛОЩА</text>
+
+    <rect x="705" y="305" width="240" height="150" rx="12" class="building" fill="#9f7866"/>
+    <rect x="735" y="328" width="180" height="85" rx="6" fill="#b98f79" stroke="#57443a" stroke-width="2"/>
+    <rect x="775" y="420" width="100" height="35" fill="#6f5548" stroke="#44352f" stroke-width="2"/>
+    <text x="825" y="360" text-anchor="middle" class="label" fill="#fff9ef">РЕЗИДЕНЦІЯ</text>
+    <text x="825" y="386" text-anchor="middle" class="tiny" fill="#fff9ef">Чакаґе · рада · адміністрація · реєстри</text>
+    <text x="825" y="439" text-anchor="middle" class="tiny" fill="#fff9ef">СХІДНИЙ ГОЛОВНИЙ ВХІД →</text>
+
+    <rect x="620" y="315" width="70" height="130" rx="8" class="building" fill="#cbb49a"/>
+    <text x="655" y="370" text-anchor="middle" class="tiny">АРХІВИ</text>
+    <text x="655" y="388" text-anchor="middle" class="tiny">РЕЄСТРИ</text>
+    <rect x="960" y="315" width="86" height="130" rx="8" class="building" fill="#cbb49a"/>
+    <text x="1003" y="370" text-anchor="middle" class="tiny">ЗАЛИ</text>
+    <text x="1003" y="388" text-anchor="middle" class="tiny">ЗАСІДАНЬ</text>
+  </g>
+
+  <!-- ROAD NETWORK -->
+  <g id="layer-roads">
+    <!-- direct gate avenue to residence -->
+    <path class="road-edge major-edge" d="M1540 380H945"/>
+    <path class="road major-road" d="M1540 380H945"/>
+    <text x="1110" y="355" text-anchor="middle" class="small">ПРЯМА ДОРОГА ДО РЕЗИДЕНЦІЇ</text>
+
+    <!-- Gate distributor north-south -->
+    <path class="road-edge collector-edge" d="M1195 265V1065"/>
+    <path class="road collector" d="M1195 265V1065"/>
+
+    <!-- Main east-west collectors -->
+    <path class="road-edge collector-edge" d="M360 535H1295"/>
+    <path class="road collector" d="M360 535H1295"/>
+    <path class="road-edge collector-edge" d="M360 755H1295"/>
+    <path class="road collector" d="M360 755H1295"/>
+    <path class="road-edge collector-edge" d="M360 980H1295"/>
+    <path class="road collector" d="M360 980H1295"/>
+
+    <!-- Main north-south city streets -->
+    <path class="road-edge collector-edge" d="M575 285V1080"/>
+    <path class="road collector" d="M575 285V1080"/>
+    <path class="road-edge collector-edge" d="M825 455V1080"/>
+    <path class="road collector" d="M825 455V1080"/>
+    <path class="road-edge collector-edge" d="M1045 455V1080"/>
+    <path class="road collector" d="M1045 455V1080"/>
+
+    <!-- riverfront route -->
+    <path class="road-edge local-edge" d="M390 290V1080"/>
+    <path class="road local-road" d="M390 290V1080"/>
+
+    <!-- planned future streets -->
+    <path class="planned" d="M460 1080H1180M680 980V1110M940 980V1110"/>
+  </g>
+
+  <!-- GATES -->
+  <g id="layer-gates">
+    <rect x="1312" y="337" width="36" height="86" rx="4" class="gate"/>
+    <rect x="1326" y="346" width="13" height="68" fill="#d8c39e" stroke="#302b25" stroke-width="2"/>
+    <text x="1298" y="292" text-anchor="end" class="label">ГОЛОВНІ ВОРОТА</text>
+    <text x="1298" y="312" text-anchor="end" class="tiny">парадний вхід із тракту</text>
+
+    <rect x="1315" y="1022" width="30" height="62" rx="4" class="gate" opacity=".8"/>
+    <text x="1298" y="1050" text-anchor="end" class="tiny">СЛУЖБОВИЙ ВИЇЗД</text>
+    <path class="road-edge local-edge" d="M1540 1052H1345"/>
+    <path class="road local-road" d="M1540 1052H1345"/>
+  </g>
+
+  <!-- ZONING AND DISTRICTS -->
+  <g id="layer-zones">
+    <!-- Clan quarters, six equal planned neighborhoods flanking the central institutions -->
+    <rect x="415" y="315" width="140" height="185" rx="14" class="zone" fill="#d7c4e6"/>
+    <text x="485" y="385" text-anchor="middle" class="label">КЛАН 1</text><text x="485" y="410" text-anchor="middle" class="tiny">садиба · двір · житло</text>
+
+    <rect x="415" y="560" width="140" height="165" rx="14" class="zone" fill="#c7d8eb"/>
+    <text x="485" y="630" text-anchor="middle" class="label">КЛАН 2</text><text x="485" y="655" text-anchor="middle" class="tiny">садиба · двір · житло</text>
+
+    <rect x="415" y="790" width="140" height="165" rx="14" class="zone" fill="#cbe7ce"/>
+    <text x="485" y="860" text-anchor="middle" class="label">КЛАН 3</text><text x="485" y="885" text-anchor="middle" class="tiny">садиба · двір · житло</text>
+
+    <rect x="1065" y="445" width="110" height="165" rx="14" class="zone" fill="#ecd7bd"/>
+    <text x="1120" y="512" text-anchor="middle" class="label">КЛАН 4</text><text x="1120" y="537" text-anchor="middle" class="tiny">квартал</text>
+
+    <rect x="1065" y="650" width="110" height="165" rx="14" class="zone" fill="#e6c6d8"/>
+    <text x="1120" y="717" text-anchor="middle" class="label">КЛАН 5</text><text x="1120" y="742" text-anchor="middle" class="tiny">квартал</text>
+
+    <rect x="1065" y="845" width="110" height="120" rx="14" class="zone" fill="#d6e7b7"/>
+    <text x="1120" y="895" text-anchor="middle" class="label">КЛАН 6</text><text x="1120" y="920" text-anchor="middle" class="tiny">квартал</text>
+
+    <!-- Civil districts -->
+    <path d="M302 300H405V955H302Z" class="zone" fill="#e8dcc4"/>
+    <text x="352" y="715" text-anchor="middle" class="small" transform="rotate(-90 352 715)">РАЙОН ПЕРШИХ БУДІВНИЧИХ</text>
+
+    <rect x="590" y="470" width="210" height="58" rx="8" class="zone" fill="#e9dfcc"/>
+    <text x="695" y="505" text-anchor="middle" class="small">ЦЕНТРАЛЬНИЙ ЗМІШАНИЙ РАЙОН</text>
+
+    <rect x="590" y="770" width="150" height="190" rx="12" class="zone" fill="#e7dcc6"/>
+    <text x="665" y="835" text-anchor="middle" class="small">НОВІ</text>
+    <text x="665" y="857" text-anchor="middle" class="small">ГРОМАДЯНИ</text>
+    <text x="665" y="884" text-anchor="middle" class="tiny">вільні шинобі · біженці</text>
+    <text x="665" y="902" text-anchor="middle" class="tiny">колишні найманці</text>
+
+    <rect x="405" y="995" width="330" height="105" rx="12" class="phase-empty"/>
+    <text x="570" y="1036" text-anchor="middle" class="small">ЗАПЛАНОВАНЕ ПІВДЕННЕ РОЗШИРЕННЯ</text>
+    <text x="570" y="1060" text-anchor="middle" class="tiny">частково прокладені вулиці</text>
+    <text x="570" y="1079" text-anchor="middle" class="tiny">будівельні майданчики · вільні ділянки</text>
+    <path d="M570 1090V1110" stroke="#4f4a3f" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- PUBLIC INSTITUTIONS -->
+  <g id="layer-institutions">
+    <!-- Institute -->
+    <rect x="600" y="555" width="220" height="180" rx="14" class="zone" fill="#bfcdbb"/>
+    <text x="710" y="585" text-anchor="middle" class="label">ІНСТИТУТ</text>
+    <rect x="620" y="605" width="72" height="45" class="building" fill="#d7dfd3"/>
+    <rect x="705" y="605" width="92" height="45" class="building" fill="#d7dfd3"/>
+    <rect x="620" y="665" width="78" height="48" class="building" fill="#cad7c7"/>
+    <rect x="710" y="665" width="87" height="48" class="building" fill="#cad7c7"/>
+    <text x="710" y="728" text-anchor="middle" class="tiny">наука · розвідка · розробки · навчання</text>
+
+    <!-- Hospital -->
+    <rect x="845" y="555" width="190" height="160" rx="14" class="zone" fill="#e6c9ca"/>
+    <text x="940" y="585" text-anchor="middle" class="label">ГОСПІТАЛЬ</text>
+    <rect x="870" y="610" width="140" height="72" rx="7" class="building" fill="#f0d9d9"/>
+    <path d="M940 620V672M914 646H966" stroke="#a94448" stroke-width="9" stroke-linecap="round"/>
+    <text x="940" y="704" text-anchor="middle" class="tiny">цивільне + шинобійське крила всередині</text>
+
+    <!-- Academy -->
+    <rect x="760" y="790" width="280" height="172" rx="14" class="zone" fill="#cbd7e8"/>
+    <text x="900" y="820" text-anchor="middle" class="label">АКАДЕМІЯ ШИНОБІ</text>
+    <rect x="790" y="842" width="110" height="80" rx="6" class="building" fill="#dde5f0"/>
+    <rect x="914" y="842" width="94" height="80" rx="6" class="building" fill="#dde5f0"/>
+    <text x="900" y="947" text-anchor="middle" class="tiny">навчальні корпуси · гуртожиток · внутрішній двір</text>
+
+    <!-- Training fields -->
+    <rect x="755" y="995" width="275" height="105" rx="12" class="zone" fill="#b9d39c"/>
+    <text x="892" y="1035" text-anchor="middle" class="small">НАВЧАЛЬНІ ПОЛЯ</text>
+    <path d="M790 1050H995M825 1015V1085M930 1015V1085" stroke="#6c8d58" stroke-width="3" stroke-dasharray="8 6"/>
+
+    <!-- City market inside gate -->
+    <rect x="1210" y="470" width="100" height="205" rx="12" class="zone" fill="#e7c777"/>
+    <text x="1260" y="535" text-anchor="middle" class="small">МІСЬКИЙ</text>
+    <text x="1260" y="557" text-anchor="middle" class="small">РИНОК</text>
+    <text x="1260" y="592" text-anchor="middle" class="tiny">пошта</text>
+    <text x="1260" y="610" text-anchor="middle" class="tiny">реєстрація</text>
+    <text x="1260" y="628" text-anchor="middle" class="tiny">чайні</text>
+
+    <!-- Industrial/service area -->
+    <rect x="1050" y="1000" width="255" height="100" rx="12" class="zone" fill="#c6b392"/>
+    <text x="1178" y="1040" text-anchor="middle" class="small">ВИРОБНИЧО-ГОСПОДАРСЬКИЙ РАЙОН</text>
+    <text x="1178" y="1065" text-anchor="middle" class="tiny">склади · кузні · ремонт · міські служби</text>
+  </g>
+
+  <!-- WATER / DRAINAGE -->
+  <g id="layer-water">
+    <rect x="315" y="120" width="78" height="64" rx="10" fill="#a9d5e6" stroke="#4f92af" stroke-width="2"/>
+    <text x="354" y="145" text-anchor="middle" class="tiny">ВОДОЗАБІР</text>
+    <text x="354" y="162" text-anchor="middle" class="tiny">І ФІЛЬТРАЦІЯ</text>
+    <rect x="315" y="1025" width="78" height="70" rx="10" fill="#b8c8c8" stroke="#5f7777" stroke-width="2"/>
+    <text x="354" y="1050" text-anchor="middle" class="tiny">ОЧИСНІ</text>
+    <text x="354" y="1067" text-anchor="middle" class="tiny">СПОРУДИ</text>
+    <path class="drain" d="M1290 535H395M1290 755H395M1290 980H395" marker-end="url(#arrow)"/>
+    <circle cx="1010" cy="735" r="21" fill="#a7d5df" stroke="#4f92af" stroke-width="2"/>
+    <text x="1010" y="740" text-anchor="middle" class="tiny">ВОДА</text>
+    <circle cx="590" cy="745" r="21" fill="#a7d5df" stroke="#4f92af" stroke-width="2"/>
+    <text x="590" y="750" text-anchor="middle" class="tiny">ВОДА</text>
+  </g>
+
+  <!-- SCALE, NORTH, LEGEND -->
+  <g id="layer-map-ui">
+    <path d="M1680 165V75" stroke="#2f2b25" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="1680" y="55" text-anchor="middle" class="label">ПІВНІЧ</text>
+    <rect x="1485" y="1135" width="200" height="12" fill="#2f2b25"/>
+    <rect x="1485" y="1135" width="100" height="12" fill="#f4efe4" stroke="#2f2b25" stroke-width="2"/>
+    <text x="1485" y="1172" class="tiny">0</text><text x="1580" y="1172" class="tiny">500 м</text><text x="1670" y="1172" class="tiny">1 км</text>
+
+    <rect x="40" y="28" width="250" height="145" rx="14" fill="#f7f0df" stroke="#5f584b" stroke-width="2" filter="url(#shadow)"/>
+    <text x="60" y="68" class="label">ХАЙҐАКУРЕ</text>
+    <text x="60" y="95" class="small">Контрольована схема згори</text>
+    <text x="60" y="120" class="tiny">10-й рік після заснування</text>
+    <text x="60" y="143" class="tiny">Робочий масштаб: 3–3,5 × 2,5–3 км</text>
+
+    <rect x="40" y="930" width="245" height="230" rx="14" fill="#f7f0df" stroke="#5f584b" stroke-width="2" filter="url(#shadow)"/>
+    <text x="60" y="962" class="small">КЛЮЧОВА ГЕОМЕТРІЯ</text>
+    <circle cx="68" cy="995" r="8" fill="#83c5df"/><text x="86" y="1000" class="tiny">річка = західна межа</text>
+    <line x1="60" y1="1024" x2="76" y2="1024" stroke="#c7aa79" stroke-width="9"/><text x="86" y="1029" class="tiny">головний тракт зовні</text>
+    <line x1="60" y1="1054" x2="76" y2="1054" stroke="#59664d" stroke-width="5" stroke-dasharray="7 5"/><text x="86" y="1059" class="tiny">контрольований периметр</text>
+    <rect x="60" y="1081" width="16" height="14" fill="#7d7466"/><text x="86" y="1094" class="tiny">парк згорілого лісу в місті</text>
+    <rect x="60" y="1110" width="16" height="14" fill="#d7c4e6"/><text x="86" y="1123" class="tiny">кланові квартали</text>
+    <rect x="60" y="1139" width="16" height="14" fill="#e8dcc4"/><text x="86" y="1152" class="tiny">цивільна забудова</text>
+  </g>
+</svg></div></main>
+</div>
+<script>
+  document.querySelectorAll('[data-layer]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const el = document.getElementById(cb.dataset.layer);
+      if (el) el.style.display = cb.checked ? '' : 'none';
+    });
+  });
+  document.getElementById('downloadSvg').addEventListener('click', () => {
+    const source = new XMLSerializer().serializeToString(document.getElementById('cityMap'));
+    const blob = new Blob([source], {type:'image/svg+xml;charset=utf-8'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'haygakure_urban_plan.svg';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+</script>
+</body>
+</html>

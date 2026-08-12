@@ -1,0 +1,242 @@
+<div id="haigakure-plan">
+  <style>
+    #haigakure-plan {
+      width: 100%;
+      color: var(--foreground);
+    }
+    #haigakure-plan .plan-heading {
+      margin: 0 0 0.25rem;
+    }
+    #haigakure-plan .plan-note {
+      margin: 0 0 0.75rem;
+      color: var(--muted-foreground);
+    }
+    #haigakure-plan .plan-map {
+      display: block;
+      width: 100%;
+      min-width: 640px;
+      height: auto;
+      color: var(--foreground);
+    }
+    #haigakure-plan .map-scroll {
+      width: 100%;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+    }
+    #haigakure-plan .boundary {
+      fill: color-mix(in srgb, var(--muted) 24%, transparent);
+      stroke: var(--border);
+      stroke-width: 4;
+    }
+    #haigakure-plan .forest-buffer {
+      fill: color-mix(in srgb, var(--viz-series-6) 8%, transparent);
+      stroke: color-mix(in srgb, var(--viz-series-6) 55%, var(--border));
+      stroke-width: 2;
+      stroke-dasharray: 8 7;
+    }
+    #haigakure-plan .clan-zone {
+      fill: color-mix(in srgb, var(--viz-series-2) 18%, transparent);
+      stroke: color-mix(in srgb, var(--viz-series-2) 72%, var(--border));
+      stroke-width: 2;
+    }
+    #haigakure-plan .civilian-belt {
+      fill: color-mix(in srgb, var(--viz-series-6) 11%, transparent);
+      stroke: color-mix(in srgb, var(--viz-series-6) 45%, var(--border));
+      stroke-width: 2;
+      stroke-dasharray: 6 7;
+      fill-rule: evenodd;
+    }
+    #haigakure-plan .civic-zone {
+      fill: color-mix(in srgb, var(--viz-series-1) 17%, transparent);
+      stroke: color-mix(in srgb, var(--viz-series-1) 72%, var(--border));
+      stroke-width: 2;
+    }
+    #haigakure-plan .research-zone {
+      fill: color-mix(in srgb, var(--viz-series-3) 18%, transparent);
+      stroke: color-mix(in srgb, var(--viz-series-3) 72%, var(--border));
+      stroke-width: 2;
+    }
+    #haigakure-plan .trade-zone {
+      fill: color-mix(in srgb, var(--viz-series-4) 18%, transparent);
+      stroke: color-mix(in srgb, var(--viz-series-4) 72%, var(--border));
+      stroke-width: 2;
+    }
+    #haigakure-plan .security-zone {
+      fill: color-mix(in srgb, var(--viz-series-5) 17%, transparent);
+      stroke: color-mix(in srgb, var(--viz-series-5) 72%, var(--border));
+      stroke-width: 2;
+    }
+    #haigakure-plan .reserve-zone {
+      fill: color-mix(in srgb, var(--muted) 28%, transparent);
+      stroke: var(--muted-foreground);
+      stroke-width: 2;
+      stroke-dasharray: 7 6;
+    }
+    #haigakure-plan .main-road {
+      fill: none;
+      stroke: color-mix(in srgb, var(--viz-series-4) 75%, var(--foreground));
+      stroke-width: 18;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #haigakure-plan .secondary-road {
+      fill: none;
+      stroke: var(--muted-foreground);
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #haigakure-plan .ring-road {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 4;
+      stroke-dasharray: 10 7;
+    }
+    #haigakure-plan .checkpoint {
+      fill: var(--card);
+      stroke: var(--foreground);
+      stroke-width: 3;
+    }
+    #haigakure-plan .map-label {
+      fill: var(--foreground);
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: 500;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+    }
+    #haigakure-plan .map-label-small {
+      fill: var(--muted-foreground);
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 400;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+    }
+    #haigakure-plan .direction-label {
+      fill: var(--foreground);
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 500;
+      text-anchor: middle;
+    }
+    #haigakure-plan .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      align-items: center;
+      margin-top: 0.75rem;
+    }
+    #haigakure-plan .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    #haigakure-plan .swatch {
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
+    }
+    #haigakure-plan .swatch-clan { background: color-mix(in srgb, var(--viz-series-2) 38%, transparent); }
+    #haigakure-plan .swatch-civilian { background: color-mix(in srgb, var(--viz-series-6) 32%, transparent); }
+    #haigakure-plan .swatch-civic { background: color-mix(in srgb, var(--viz-series-1) 38%, transparent); }
+    #haigakure-plan .swatch-research { background: color-mix(in srgb, var(--viz-series-3) 38%, transparent); }
+    #haigakure-plan .swatch-trade { background: color-mix(in srgb, var(--viz-series-4) 38%, transparent); }
+    #haigakure-plan .swatch-security { background: color-mix(in srgb, var(--viz-series-5) 38%, transparent); }
+    #haigakure-plan .swatch-reserve { background: color-mix(in srgb, var(--muted) 55%, transparent); }
+    @media (max-width: 480px) {
+      #haigakure-plan .minor-label { display: none; }
+    }
+  </style>
+
+  <h2 class="text-xl plan-heading">Схематичне планування Хайґакуре</h2>
+  <p class="text-small plan-note">Планове селище на транзитному шляху між Країною Вогню, Деґараші та столицею.</p>
+
+  <div class="map-scroll">
+  <svg class="plan-map" viewBox="0 0 800 800" role="img" aria-labelledby="haigakure-plan-title haigakure-plan-desc">
+    <title id="haigakure-plan-title">Схематичне планування Хайґакуре</title>
+    <desc id="haigakure-plan-desc">Планове селище в лісистій долині. Транзитний шлях проходить уздовж східного боку, громадський центр лежить посередині, шість кланових районів займають зовнішні тераси, а інститут і тренувальні поля відокремлені від торгового потоку.</desc>
+
+    <path class="boundary" d="M92 112 C162 48 286 38 390 68 C488 38 626 64 688 142 C744 212 740 332 716 410 C752 510 720 642 636 706 C548 772 432 744 350 720 C256 760 138 722 86 632 C38 550 66 458 82 394 C48 296 46 184 92 112 Z" />
+    <path class="forest-buffer" d="M112 126 C182 70 282 68 386 92 C498 66 610 88 666 154 C708 208 700 304 684 386 C714 490 678 612 612 674 C528 720 440 696 350 680 C266 716 170 682 118 610 C82 546 104 454 110 388 C78 294 78 192 112 126 Z" />
+    <path class="civilian-belt" d="M156 390 C156 236 260 154 396 154 C534 154 610 250 610 390 C610 534 520 630 392 630 C252 630 156 534 156 390 Z M286 390 C286 310 330 270 402 270 C476 270 522 316 522 390 C522 470 474 520 398 520 C326 520 286 472 286 390 Z" />
+
+    <path class="main-road" d="M618 54 C620 134 626 210 628 292 C631 360 642 418 648 486 C654 566 650 650 626 746" />
+    <path class="main-road" d="M637 383 C688 382 732 380 786 358" />
+    <path class="secondary-road" d="M618 175 C548 194 490 212 440 248" />
+    <path class="secondary-road" d="M630 310 C570 322 525 334 470 350" />
+    <path class="secondary-road" d="M637 454 C574 450 524 446 470 438" />
+    <path class="secondary-road" d="M622 566 C546 548 484 534 430 516" />
+    <path class="ring-road" d="M167 390 C168 236 276 150 410 156 C532 160 605 250 605 390 C604 532 520 620 390 626 C252 630 168 540 167 390 Z" />
+
+    <rect class="clan-zone" x="142" y="132" width="150" height="92" rx="22" />
+    <rect class="clan-zone" x="318" y="101" width="144" height="96" rx="22" />
+    <rect class="clan-zone" x="486" y="139" width="122" height="92" rx="22" />
+    <rect class="clan-zone" x="126" y="508" width="157" height="100" rx="22" />
+    <rect class="clan-zone" x="307" y="579" width="148" height="93" rx="22" />
+    <rect class="clan-zone" x="488" y="525" width="120" height="100" rx="22" />
+
+    <rect class="research-zone" x="136" y="282" width="164" height="122" rx="20" />
+    <rect class="security-zone" x="76" y="304" width="58" height="184" rx="20" />
+    <rect class="civic-zone" x="334" y="214" width="137" height="73" rx="18" />
+    <rect class="security-zone" x="477" y="223" width="96" height="62" rx="18" />
+    <rect class="civic-zone" x="326" y="308" width="156" height="108" rx="20" />
+    <rect class="research-zone" x="498" y="302" width="104" height="105" rx="20" />
+    <rect class="civic-zone" x="318" y="440" width="168" height="104" rx="20" />
+
+    <rect class="trade-zone" x="651" y="168" width="74" height="132" rx="18" />
+    <rect class="trade-zone" x="642" y="323" width="104" height="118" rx="18" />
+    <rect class="trade-zone" x="656" y="471" width="76" height="132" rx="18" />
+    <rect class="reserve-zone" x="520" y="644" width="104" height="62" rx="17" />
+    <rect class="reserve-zone" x="184" y="646" width="105" height="58" rx="17" />
+
+    <circle class="checkpoint" cx="619" cy="91" r="11" />
+    <circle class="checkpoint" cx="638" cy="383" r="11" />
+    <circle class="checkpoint" cx="631" cy="704" r="11" />
+    <circle class="checkpoint" cx="574" cy="320" r="8" />
+    <circle class="checkpoint" cx="576" cy="449" r="8" />
+
+    <text class="direction-label" x="617" y="34">до Країни Вогню</text>
+    <text class="direction-label" x="714" y="321">до Деґараші</text>
+    <text class="direction-label" x="624" y="780">до столиці</text>
+
+    <text class="map-label" x="217" y="176"><tspan x="217" dy="-12">Рід</tspan><tspan x="217" dy="28">Ренджу</tspan></text>
+    <text class="map-label" x="390" y="149">Рід II</text>
+    <text class="map-label" x="547" y="184">Рід III</text>
+    <text class="map-label" x="204" y="559">Рід IV</text>
+    <text class="map-label" x="381" y="626">Рід V</text>
+    <text class="map-label" x="548" y="576">Рід VI</text>
+
+    <text class="map-label" x="218" y="342"><tspan x="218" dy="-14">Державний</tspan><tspan x="218" dy="28">інститут</tspan><tspan class="map-label-small" x="218" dy="27">розвідка · допити</tspan></text>
+    <text class="map-label minor-label" x="105" y="395" transform="rotate(-90 105 395)">тренувальні поля</text>
+    <text class="map-label" x="402" y="250"><tspan x="402" dy="-10">Резиденція</tspan><tspan x="402" dy="27">Чакаґе</tspan></text>
+    <text class="map-label-small" x="525" y="254"><tspan x="525" dy="-9">спеціальна</tspan><tspan x="525" dy="23">служба</tspan></text>
+    <text class="map-label" x="404" y="356"><tspan x="404" dy="-12">Меморіальний</tspan><tspan x="404" dy="28">парк</tspan></text>
+    <text class="map-label" x="550" y="354">Госпіталь</text>
+    <text class="map-label" x="402" y="490">Академія</text>
+
+    <text class="map-label-small" x="687" y="227"><tspan x="687" dy="-8">постоялі</tspan><tspan x="687" dy="20">двори</tspan></text>
+    <text class="map-label" x="694" y="376"><tspan x="694" dy="-11">Ринок</tspan><tspan class="map-label-small" x="694" dy="27">заїжджі двори</tspan></text>
+    <text class="map-label-small" x="694" y="530"><tspan x="694" dy="-9">цивільні</tspan><tspan x="694" dy="23">квартали</tspan></text>
+    <text class="map-label-small minor-label" x="572" y="667"><tspan x="572" dy="-7">резерв</tspan><tspan x="572" dy="19">забудови</tspan></text>
+    <text class="map-label-small minor-label" x="236" y="667"><tspan x="236" dy="-7">склади</tspan><tspan x="236" dy="19">і служби</tspan></text>
+
+    <path d="M92 78 L92 42 L80 60 M92 42 L104 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+    <text class="map-label-small" x="92" y="98">північ</text>
+  </svg>
+  </div>
+
+  <div class="legend text-small" aria-label="Умовні позначення">
+    <span class="legend-item"><span class="swatch swatch-clan" aria-hidden="true"></span>кланові райони</span>
+    <span class="legend-item"><span class="swatch swatch-civilian" aria-hidden="true"></span>цивільна забудова</span>
+    <span class="legend-item"><span class="swatch swatch-civic" aria-hidden="true"></span>громадські установи</span>
+    <span class="legend-item"><span class="swatch swatch-research" aria-hidden="true"></span>медицина й дослідження</span>
+    <span class="legend-item"><span class="swatch swatch-trade" aria-hidden="true"></span>транзит і торгівля</span>
+    <span class="legend-item"><span class="swatch swatch-security" aria-hidden="true"></span>служби й підготовка</span>
+    <span class="legend-item"><span class="swatch swatch-reserve" aria-hidden="true"></span>резерв розвитку</span>
+  </div>
+</div>
