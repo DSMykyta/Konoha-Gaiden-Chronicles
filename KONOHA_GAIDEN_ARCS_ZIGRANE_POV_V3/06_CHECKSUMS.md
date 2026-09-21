@@ -6,7 +6,7 @@
 | `00_PRAVYLA_REDAKTSII.md` | 2906 | `1934839dbe63ed5c` |
 | `00_ZVIRKA_Z_LOGAMY.md` | 5144 | `457f24f93d4e9e03` |
 | `01_MASTER_READING_ORDER.md` | 5232 | `df0b759b3cf77772` |
-| `02_MASTER_CHRONOLOGY.md` | 7399 | `26e9b065e8c26c99` |
+| `02_MASTER_CHRONOLOGY.md` | 7459 | `edd8d553c17b959f` |
 | `03_MASTER_CANON_DECISIONS.md` | 14048 | `b90d673562fee753` |
 | `04_MASTER_REVIEW.md` | 2976 | `e7dab9cbfce390f1` |
 | `05_MASTER_ZVIT.md` | 11919 | `8b118fb31ff14c57` |
@@ -70,11 +70,11 @@
 | `GAMES/KUSAGAKURE_EXAM_EIZAN/CHANGES/01_SOURCES.md` | 1134 | `6f7b15482c76bb93` |
 | `GAMES/KUSAGAKURE_EXAM_EIZAN/CHANGES/02_DECISIONS.md` | 2164 | `c7a32ca249ee4dfb` |
 | `GAMES/KUSAGAKURE_EXAM_EIZAN/CHANGES/03_VALIDATION.md` | 1121 | `1c9411aafcc6d2c4` |
-| `GAMES/TEAM_9/00_INDEX.md` | 5178 | `d6aa4bb1993b81e3` |
+| `GAMES/TEAM_9/00_INDEX.md` | 5326 | `6ab56971540d95df` |
 | `GAMES/TEAM_9/01_CHRONOLOGY.md` | 13324 | `952100c20677a10b` |
 | `GAMES/TEAM_9/02_NARRATYV.md` | 13878 | `aaa5c8e6848aba52` |
 | `GAMES/TEAM_9/02_PROFIL_HAYASHI_NOBARI.md` | 5747 | `be32f670a5c85398` |
-| `GAMES/TEAM_9/ARCS/arc 01 [Розподіл і крамниця данго].txt` | 43454 | `3ae2e2c549b43e88` |
+| `GAMES/TEAM_9/ARCS/arc 01 [Розподіл і крамниця данго].txt` | 43314 | `1a5c98ecb3b73170` |
 | `GAMES/TEAM_9/ARCS/arc 02 [Конспект Нобарі і склади].txt` | 7265 | `61f68399220f1a35` |
 | `GAMES/TEAM_9/ARCS/arc 03 [Архів, сектор 3-Б].txt` | 29376 | `fac808d6d686f6be` |
 | `GAMES/TEAM_9/ARCS/arc 04 [Чакронитка і перший блінк].txt` | 12396 | `b30dabe089350579` |
@@ -82,7 +82,7 @@
 | `GAMES/TEAM_9/ARCS/arc 06 [Чунінський іспит].txt` | 5962 | `504b76fbb108035e` |
 | `GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt` | 15390 | `e24d53777983ff69` |
 | `GAMES/TEAM_9/ARCS/arc 08 [Огорожа Лісу Смерті].txt` | 5677 | `f4dba31da7879b8c` |
-| `GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt` | 30184 | `dbd1b296c89e4563` |
+| `GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt` | 30304 | `5094872f41003dfc` |
 | `GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt` | 23343 | `fb762f597a158e1b` |
 | `GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt` | 13264 | `7944e77d310b50bb` |
 | `GAMES/TEAM_9/ARCS/arc 12 [Довга місія — База 2].txt` | 9848 | `9272148712a2b82c` |
