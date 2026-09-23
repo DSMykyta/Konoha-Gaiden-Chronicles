@@ -1,14 +1,14 @@
 # Контрольний інвентар Git
 
-Цей файл замінює застарілу таблицю SHA-256, яка описувала попередню структуру збірки й містила вже видалені/перейменовані файли.
+Актуальний інвентар поточного дерева `main` після консолідації та повторного аудиту.
 
-Поточний контроль виконується за Git-об'єктами: для кожного файла наведено точний шлях, розмір у байтах і повний **Git blob SHA**. Це дозволяє перевірити, чи конкретний файл змінився між комітами.
+Для кожного файла наведено точний шлях, розмір у байтах і повний **Git blob SHA**. `06_CHECKSUMS.md` свідомо не включений у власну таблицю, бо його blob змінюється самим оновленням таблиці.
 
-- Файлів у `KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3`: **105** разом із цим файлом.
-- Файлів у таблиці: **104**; `06_CHECKSUMS.md` свідомо виключено із самоперевірки.
+- Файлів у `KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3`: **104** разом із цим файлом.
+- Файлів у таблиці: **103**.
 - Фізичних `.txt` у папках `ARCS/`: **48**.
-- Необов'язкових `.txt` у `OPTIONAL/`: **2**.
-- Основний сюжетний рахунок: **43 логічні арки**; фізичних файлів більше через поділ T9G-02 на 02.1–02.5 і паралельну прозову редакцію T9G-12.
+- Необов'язкових `.txt` у `OPTIONAL/`: **1**.
+- Основний сюжетний рахунок: **43 логічні арки**. Фізичних файлів більше через поділ T9G-02 на 02.1–02.5 і паралельну прозову редакцію T9G-12.
 
 | Файл | Байти | Git blob SHA |
 |---|---:|---|
@@ -49,7 +49,6 @@
 | `GAMES/KAKASHI_GAIDEN/CHANGES/01_SOURCES.md` | 2557 | `d061bd7105fe6b8a4160a8939407afc11d3cdea3` |
 | `GAMES/KAKASHI_GAIDEN/CHANGES/02_DECISIONS.md` | 13468 | `7951d8261b6151d056858501769c342df994c675` |
 | `GAMES/KAKASHI_GAIDEN/CHANGES/03_VALIDATION.md` | 2612 | `29fdd8232f47c2d7c9c0b0e168a3125354bdd3dc` |
-| `GAMES/KAKASHI_GAIDEN/OPTIONAL/arc 02A [Наруто і тіньовий клон — інтимний додаток]_FIXED.txt` | 30891 | `15748c5683d24b6b8e2fcd20b855671dd6da4d28` |
 | `GAMES/KAKASHI_GAIDEN/OPTIONAL/arc 02A [Наруто і тіньовий клон — інтимний додаток].txt` | 59597 | `4c99a890c0ab2c63b6b8d1bc6d1a8af75b033967` |
 | `GAMES/KALENDAR_KONOHA/00_INDEX.md` | 3495 | `19bbf597b7074d9cae10fd0c816847169d44a417` |
 | `GAMES/KALENDAR_KONOHA/01_CHRONOLOGY.md` | 2149 | `4c4f044127eb2566127024a424bc6b6e14ef92cb` |
@@ -85,7 +84,7 @@
 | `GAMES/TEAM_9/01_CHRONOLOGY.md` | 27680 | `6f6c1239b366feabea265c68355deb45aa0e1ce8` |
 | `GAMES/TEAM_9/02_NARRATYV.md` | 37177 | `b318208dff61f2e72da380976fb9ed59fa47ea5d` |
 | `GAMES/TEAM_9/02_PROFIL_HAYASHI_NOBARI.md` | 10496 | `85cd509a785b2b80a8782f551c238bcfae278177` |
-| `GAMES/TEAM_9/ARCS/arc 01 [Розподіл і крамниця данго].txt` | 81850 | `b82c855d7b4c8ad7b9215138bea3d0b7866e9c1d` |
+| `GAMES/TEAM_9/ARCS/arc 01 [Розподіл і крамниця данго].txt` | 82152 | `dc945ccbcb75ea1774621fc52c516e1c1c325da8` |
 | `GAMES/TEAM_9/ARCS/arc 02.1 [Кіба і конспект Нобарі].txt` | 4035 | `0df30545ef1489ef55b451e96ab5b5d8001fc91a` |
 | `GAMES/TEAM_9/ARCS/arc 02.2 [Перші тренування і зброя Іщіна].txt` | 7568 | `6cefdd083b76646d10a4639b6ce9cc9569aa3726` |
 | `GAMES/TEAM_9/ARCS/arc 02.3 [Командні ролі і тактика Сори].txt` | 7245 | `c5bb372f284d7e5309da88fec08c4f34ba027bf2` |
@@ -98,7 +97,7 @@
 | `GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt` | 27757 | `e1970b2d8be08748eb8df150018576f59c44db47` |
 | `GAMES/TEAM_9/ARCS/arc 08 [Огорожа Лісу Смерті].txt` | 10314 | `8705e3163fbb3cfa1698c74ab8ce55a7cccffb81` |
 | `GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt` | 53402 | `5557457b4e106ffcf7fc8ff7cef176891617d360` |
-| `GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt` | 42740 | `16c21f0f927e79cb2825ffad6c730c861f178cc6` |
+| `GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt` | 42680 | `61c49c5d8c623bb61b3193c093633cb79e4eee3f` |
 | `GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt` | 23485 | `f42b879fb57c79139892ec28b2426a2f157c2463` |
 | `GAMES/TEAM_9/ARCS/arc 12 [Довга місія — База 2].txt` | 12834 | `936690a806abf2f2c16e24df2d84d6ad27e96c8c` |
 | `GAMES/TEAM_9/ARCS/arc 12.1 prose [Довга місія — База 2].txt` | 18126 | `b76d442ffc55b17ae9e6725ee08f8d445b2395ec` |
@@ -111,7 +110,7 @@
 | `GAMES/TEAM_9/ARCS/arc 19 [Кубики і нова школа].txt` | 18236 | `7de834c95704471e329d1216ae97ba55a400a441` |
 | `GAMES/TEAM_9/ARCS/arc 20 [Бланки токубецу і конверт].txt` | 21170 | `cf0d11188fb44ec86f3e138986a3741cbf6a7893` |
 | `GAMES/TEAM_9/CHANGES/01_SOURCES.md` | 5422 | `a28e4fd76f3fccd8ca78d35512ea85ff63065203` |
-| `GAMES/TEAM_9/CHANGES/02_DECISIONS.md` | 31601 | `deb96259584138ca9262f5023bdcedd40593d8e0` |
+| `GAMES/TEAM_9/CHANGES/02_DECISIONS.md` | 32446 | `0befa6864c5f16d5f05b2232aefc3798cf14db91` |
 | `GAMES/TEAM_9/CHANGES/03_VALIDATION.md` | 2855 | `e94cc19eeb9b0408a98fec10267d12185ba5a239` |
 | `GAMES/TEAM_9/EDITING_RULES.md` | 3662 | `bc26495460b08385327876e919309151273440b6` |
 | `Naruto_Timeline_Year_0_v8.tsv` | 88856 | `82dcefe8ecfafda5276ec5d2911351f3b213cebd` |
