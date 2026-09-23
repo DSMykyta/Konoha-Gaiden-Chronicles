@@ -78,7 +78,7 @@
 | KKON-01 | `GAMES/KITSUNE_KON/ARCS/arc 01 [Нічна зміна і білі маски].txt` | Кіцуне Кон |
 | KKON-02 | `GAMES/KITSUNE_KON/ARCS/arc 02 [Каґарі — міст без вартового].txt` | Кіцуне Кон |
 | T9G-15 | `GAMES/TEAM_9/ARCS/arc 15 [Сон перед днем народження].txt` | Команда 9 |
-| KUSA-01 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 01 [Кабан і випускники].txt` | Кусаґакуре — Ейзан |
+| KUSA-01 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 01 [Кабан і Академія].txt` | Кусаґакуре — Ейзан |
 | KUSA-02 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 02 [Брама сорок сьома].txt` | Кусаґакуре — Ейзан |
 | KUSA-03 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 03 [Сім днів до арени].txt` | Кусаґакуре — Ейзан |
 | KUSA-04 | `GAMES/KUSAGAKURE_EXAM_EIZAN/ARCS/arc 04 [Шпиталь і лист Шігуре].txt` | Кусаґакуре — Ейзан |
