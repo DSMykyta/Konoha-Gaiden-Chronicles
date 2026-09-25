@@ -538,3 +538,43 @@ anchors:
     evidence_ids: ["evd-v10-000109"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0917"
+    date: {year: 0, month: 9, day: 17}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000110"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0918"
+    date: {year: 0, month: 9, day: 18}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000111"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0919"
+    date: {year: 0, month: 9, day: 19}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000113"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0920"
+    date: {year: 0, month: 9, day: 20}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000114"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0921"
+    date: {year: 0, month: 9, day: 21}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000115"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
