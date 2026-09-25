@@ -299,6 +299,41 @@ entities:
     aliases:
       - "Ічіраку"
     parent_id: "loc-konohagakure"
+  - id: "c-nekoba"
+    kind: "person"
+    name: "Nekobaa / Nekoba"
+    aliases:
+      - "Некоба"
+  - id: "c-nekomata"
+    kind: "animal"
+    name: "Nekomata"
+    aliases:
+      - "Некомата"
+  - id: "c-kisuke"
+    kind: "person"
+    name: "Kisuke"
+    aliases:
+      - "Кісуке"
+  - id: "c-kosuke"
+    kind: "person"
+    name: "Kosuke Maruboshi"
+    aliases:
+      - "Косуке"
+  - id: "c-tofu"
+    kind: "person"
+    name: "Tofu"
+    aliases:
+      - "Тофу"
+  - id: "loc-akagahara"
+    kind: "location"
+    name: "Akagahara"
+    aliases:
+      - "Акаґахара"
+  - id: "loc-nekomata-domain"
+    kind: "location"
+    name: "Nekomata's domain"
+    aliases:
+      - "володіння Некомати"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
