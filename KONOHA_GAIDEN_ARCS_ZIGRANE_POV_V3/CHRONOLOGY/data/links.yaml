@@ -1,0 +1,67 @@
+schema_version: 1
+links:
+  - id: "lnk-0122-kiss-before-announcements"
+    kind: "before"
+    a: "ev-y0-0122-naruto-sasuke-kiss"
+    b: "sc-y0-0122-academy-announcements"
+    basis: "imported"
+    review: "pending"
+    evidence_ids: ["evd-manga-team7-formation"]
+  - id: "lnk-0122-announcements-before-impersonation"
+    kind: "before"
+    a: "sc-y0-0122-academy-announcements"
+    b: "sc-y0-0122-naruto-impersonates-sasuke"
+    basis: "imported"
+    review: "pending"
+    evidence_ids: ["evd-manga-team7-formation"]
+  - id: "lnk-0122-announcements-before-wait"
+    kind: "before"
+    a: "sc-y0-0122-academy-announcements"
+    b: "sc-y0-0122-academy-waiting"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-team9-classroom-wait"]
+  - id: "lnk-0122-impersonation-before-kakashi"
+    kind: "before"
+    a: "sc-y0-0122-naruto-impersonates-sasuke"
+    b: "ev-y0-0122-kakashi-arrives"
+    basis: "imported"
+    review: "pending"
+    evidence_ids: ["evd-manga-team7-formation"]
+  - id: "lnk-0122-class-observes-exterior"
+    kind: "observes"
+    a: "ev-y0-0122-kita-sees-jonin"
+    b: "sc-y0-0122-academy-exterior-jonin"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-team9-announcement", "evd-project-jonin-identities"]
+  - id: "lnk-0122-team9-to-dango"
+    kind: "before"
+    a: "ev-y0-0122-team9-departs"
+    b: "sc-y0-0122-dango-shop"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-team9-departure", "evd-dango-scene"]
+  - id: "lnk-0122-team7-to-rooftop"
+    kind: "before"
+    a: "ev-y0-0122-team7-departs"
+    b: "sc-y0-0122-team7-rooftop"
+    basis: "source"
+    review: "pending"
+    evidence_ids: ["evd-manga-team7-formation"]
+  - id: "lnk-0122-dango-before-home"
+    kind: "before"
+    a: "sc-y0-0122-dango-shop"
+    b: "sc-y0-0122-kita-home-night"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-kita-home-night"]
+  - id: "lnk-0924-pursuit-before-valley"
+    kind: "before"
+    a: "ev-y0-0924-naruto-continues-pursuit"
+    b: "ev-y0-0924-naruto-catches-sasuke"
+    basis: "source"
+    review: "pending"
+    evidence_ids: ["evd-manga-sasuke-recovery"]
+notes:
+  - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
