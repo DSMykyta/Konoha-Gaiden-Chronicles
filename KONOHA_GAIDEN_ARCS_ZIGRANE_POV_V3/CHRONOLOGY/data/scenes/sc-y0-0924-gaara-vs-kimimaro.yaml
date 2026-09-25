@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0924-gaara-vs-kimimaro"
+continuity_id: "main"
+title: "Ґаара змінює Лі в бою з Кімімаро"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-gaara-arrives-kimimaro-battle"
+    legacy_ids: ["V10-000122-I"]
+    title: "Ґаара приходить на допомогу Лі"
+    text: "Ґаара прибуває до місця бою Лі з Кімімаро."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+      - {entity_id: "c-kimimaro", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-I"]
+  - id: "ev-y0-0924-gaara-takes-over-kimimaro-fight"
+    legacy_ids: ["V10-000122-I"]
+    title: "Ґаара бере бій із Кімімаро на себе"
+    text: "Ґаара змінює Лі й сам вступає в бій із Кімімаро."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+      - {entity_id: "c-kimimaro", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-I"]
+relations:
+  - {id: "rel-0924-gaara-1", kind: "before", a: "ev-y0-0924-gaara-arrives-kimimaro-battle", b: "ev-y0-0924-gaara-takes-over-kimimaro-fight", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-I"]}
+presence: []
