@@ -1,0 +1,59 @@
+schema_version: 1
+id: "sc-y0-1008-bikochu-scent-failure"
+continuity_id: "main"
+title: "Бікоочу запам'ятовує запах Наруто замість Саске"
+location_id: "loc-bikocho-habitat"
+placement: {anchor_id: "ta-y0-1008", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1008-bikocho-begins-hatching"
+    legacy_ids: ["V10-000138"]
+    title: "Бікоочу починає вилуплюватися"
+    text: "Після бою команда повертається до схованої кладки; бікоочу починає вилуплюватися, і Наруто готується дати йому запах речі Саске."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+  - id: "ev-y0-1008-naruto-scent-overwrites-bikocho"
+    legacy_ids: ["V10-000138"]
+    title: "Випадковий запах Наруто стає першим запахом бікоочу"
+    text: "Поспішаючи піднести річ Саске, Наруто випадково псує момент вилуплення: бікоочу першим запам'ятовує запах самого Наруто."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "cause", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "missed_target", mode: "remote"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+  - id: "ev-y0-1008-bikocho-mission-fails"
+    legacy_ids: ["V10-000138"]
+    title: "Місія більше не може привести до Саске"
+    text: "Оскільки бікоочу запам'ятовує лише перший запах після вилуплення, використати його для пошуку Саске вже неможливо; місія завершується невдачею."
+    origin: "F"
+    extent: "instant"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "unreached_target", mode: "remote"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+relations:
+  - {id: "rel-1008-bikocho-fail-1", kind: "before", a: "ev-y0-1008-bikocho-begins-hatching", b: "ev-y0-1008-naruto-scent-overwrites-bikocho", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+  - {id: "rel-1008-bikocho-fail-2", kind: "before", a: "ev-y0-1008-naruto-scent-overwrites-bikocho", b: "ev-y0-1008-bikocho-mission-fails", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
