@@ -1638,5 +1638,40 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-anime-169-173"]
+  - id: "lnk-1030-kunihisa-day-before-kidnap"
+    kind: "before"
+    a: "sc-y0-1030-kunihisa-ninja-day"
+    b: "sc-y0-1030-kunihisa-kidnapping-rescue"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-174"]
+  - id: "lnk-1031-gold-assign-before-team-collapse"
+    kind: "before"
+    a: "sc-y0-1031-buried-gold-assignment"
+    b: "sc-y0-1031-buried-gold-team-collapse"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-175-176"]
+  - id: "lnk-1031-team-collapse-before-kedoin-capture"
+    kind: "before"
+    a: "sc-y0-1031-buried-gold-team-collapse"
+    b: "sc-y0-1031-kedoin-capture-copies"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-175-176"]
+  - id: "lnk-1031-kedoin-before-1101-pursuit"
+    kind: "before"
+    a: "sc-y0-1031-kedoin-capture-copies"
+    b: "sc-y0-1101-kedoin-pursuit-konoha"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-175-176"]
+  - id: "lnk-1101-pursuit-before-test-reveal"
+    kind: "before"
+    a: "sc-y0-1101-kedoin-pursuit-konoha"
+    b: "sc-y0-1101-tsunade-kedoin-test-reveal"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-175-176"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
