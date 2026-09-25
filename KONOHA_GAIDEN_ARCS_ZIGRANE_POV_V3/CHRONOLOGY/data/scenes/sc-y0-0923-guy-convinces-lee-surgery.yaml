@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0923-guy-convinces-lee-surgery"
+continuity_id: "main"
+title: "Ґай переконує Лі погодитися на операцію"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-guy-urges-lee-operation"
+    legacy_ids: ["V10-000120"]
+    title: "Ґай переконує Лі прийняти ризик операції"
+    text: "Ґай переконує Рока Лі погодитися на операцію, попри приблизно п’ятдесятивідсотковий шанс успіху."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000120"]
+  - id: "ev-y0-0923-guy-promises-die-with-lee"
+    legacy_ids: ["V10-000120"]
+    title: "Ґай обіцяє не залишити Лі самого"
+    text: "Ґай обіцяє Лі, що якщо операція закінчиться смертю учня, він теж не продовжить жити."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000120"]
+relations:
+  - {id: "rel-0923-lee-talk-1", kind: "before", a: "ev-y0-0923-guy-urges-lee-operation", b: "ev-y0-0923-guy-promises-die-with-lee", basis: "source", review: "pending", evidence_ids: ["evd-v10-000120"]}
+presence:
+  - {id: "pr-0923-lee-talk-guy", entity_id: "c-might-guy", from: "sc-y0-0923-guy-convinces-lee-surgery.start", to: "sc-y0-0923-guy-convinces-lee-surgery.end", basis: "source", evidence_ids: ["evd-v10-000120"], review: "accepted"}
+  - {id: "pr-0923-lee-talk-lee", entity_id: "c-lee", from: "sc-y0-0923-guy-convinces-lee-surgery.start", to: "sc-y0-0923-guy-convinces-lee-surgery.end", basis: "source", evidence_ids: ["evd-v10-000120"], review: "accepted"}
