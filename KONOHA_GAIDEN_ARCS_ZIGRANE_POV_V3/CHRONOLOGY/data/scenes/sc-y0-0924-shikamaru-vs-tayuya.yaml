@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-0924-shikamaru-vs-tayuya"
+continuity_id: "main"
+title: "Шикамару залишається битися з Таюєю"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-shikamaru-engages-tayuya"
+    legacy_ids: ["V10-000122-B"]
+    title: "Шикамару вступає в окремий бій із Таюєю"
+    text: "Шикамару залишається проти Таюї, щоб решта переслідувачів могла продовжити погоню."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-B"]
+  - id: "ev-y0-0924-shikamaru-restrains-tayuya-shadow"
+    legacy_ids: ["V10-000122-B"]
+    title: "Шикамару затримує Таюю тіньовою технікою"
+    text: "Шикамару на певний час стримує Таюю своєю тіньовою технікою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-B"]
+  - id: "ev-y0-0924-tayuya-genjutsu-and-curse-seal-turn-fight"
+    legacy_ids: ["V10-000122-B"]
+    title: "Гендзюцу й друга стадія печатки Таюї змінюють хід бою"
+    text: "Флейтове гендзюцу Таюї та друга стадія її Проклятої Печатки дозволяють їй переломити ситуацію."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-tayuya", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-B"]
+relations:
+  - {id: "rel-0924-shikamaru-1", kind: "before", a: "ev-y0-0924-shikamaru-engages-tayuya", b: "ev-y0-0924-shikamaru-restrains-tayuya-shadow", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-B"]}
+  - {id: "rel-0924-shikamaru-2", kind: "before", a: "ev-y0-0924-shikamaru-restrains-tayuya-shadow", b: "ev-y0-0924-tayuya-genjutsu-and-curse-seal-turn-fight", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-B"]}
+presence:
+  - {id: "pr-0924-shikamaru-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0924-shikamaru-vs-tayuya.start", to: "sc-y0-0924-shikamaru-vs-tayuya.end", basis: "imported", evidence_ids: ["evd-v10-000122-B"], review: "accepted"}
+  - {id: "pr-0924-shikamaru-tayuya", entity_id: "c-tayuya", from: "sc-y0-0924-shikamaru-vs-tayuya.start", to: "sc-y0-0924-shikamaru-vs-tayuya.end", basis: "imported", evidence_ids: ["evd-v10-000122-B"], review: "accepted"}
