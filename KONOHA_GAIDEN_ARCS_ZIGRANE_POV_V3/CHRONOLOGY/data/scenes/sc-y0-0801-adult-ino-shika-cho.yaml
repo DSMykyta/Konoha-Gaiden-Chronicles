@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0801-adult-ino-shika-cho"
+continuity_id: "main"
+title: "Доросла трійця Іно–Шіка–Чо рятує Косуке"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-adult-ino-shika-cho-fights"
+    legacy_ids: ["V10-000067"]
+    title: "Іноїчі, Шікаку й Чодза діють як Іно–Шіка–Чо"
+    text: "Під час нападу Іноїчі, Шікаку й Чодза разом вступають у бій як доросла трійця Іно–Шіка–Чо."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-inoichi", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikaku", role: "focus", mode: "physical"}
+      - {entity_id: "c-choza", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000067", "evd-shippuden-239-konoha-crush"]
+  - id: "ev-y0-0801-adult-ino-shika-cho-rescues-kosuke"
+    legacy_ids: ["V10-000067"]
+    title: "Доросла трійця рятує Косуке"
+    text: "Іноїчі, Шікаку й Чодза рятують Косуке під час вторгнення."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-inoichi", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikaku", role: "participant", mode: "physical"}
+      - {entity_id: "c-choza", role: "participant", mode: "physical"}
+      - {entity_id: "c-kosuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000067", "evd-shippuden-239-konoha-crush"]
+relations:
+  - {id: "rel-0801-adult-isc-1", kind: "before", a: "ev-y0-0801-adult-ino-shika-cho-fights", b: "ev-y0-0801-adult-ino-shika-cho-rescues-kosuke", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-239-konoha-crush"]}
+presence: []
