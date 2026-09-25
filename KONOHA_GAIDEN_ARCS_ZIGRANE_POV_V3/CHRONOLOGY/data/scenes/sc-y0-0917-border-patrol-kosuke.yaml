@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0917-border-patrol-kosuke"
+continuity_id: "main"
+title: "Наруто патрулює кордон разом із Косуке"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-0917", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0917-naruto-joins-border-patrol"
+    legacy_ids: ["V10-000110"]
+    title: "Наруто вирушає на кількаденне патрулювання кордону"
+    text: "Після вторгнення Наруто разом із двома джонінами та Косуке вирушає патрулювати ослаблений кордон Країни Вогню."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kosuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000110", "evd-shippuden-190"]
+  - id: "ev-y0-0917-kosuke-detects-enemy-infiltration"
+    legacy_ids: ["V10-000110"]
+    title: "Досвід Косуке допомагає виявити проникнення ворога"
+    text: "Досвід Косуке, накопичений за роки служби, допомагає загону виявити проникнення ворога через кордон."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kosuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000110", "evd-shippuden-190"]
+relations:
+  - {id: "rel-0917-kosuke-1", kind: "before", a: "ev-y0-0917-naruto-joins-border-patrol", b: "ev-y0-0917-kosuke-detects-enemy-infiltration", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-190"]}
+presence:
+  - {id: "pr-0917-kosuke-naruto", entity_id: "c-naruto", from: "sc-y0-0917-border-patrol-kosuke.start", to: "sc-y0-0917-border-patrol-kosuke.end", basis: "source", evidence_ids: ["evd-shippuden-190"], review: "accepted"}
+  - {id: "pr-0917-kosuke-kosuke", entity_id: "c-kosuke", from: "sc-y0-0917-border-patrol-kosuke.start", to: "sc-y0-0917-border-patrol-kosuke.end", basis: "source", evidence_ids: ["evd-shippuden-190"], review: "accepted"}
