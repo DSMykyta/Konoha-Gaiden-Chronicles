@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0825-naruto-completes-rasengan-stage2"
+continuity_id: "main"
+title: "Наруто завершує другий етап Расенґана"
+location_id: null
+placement: {anchor_id: "ta-y0-0825", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0825-naruto-bursts-rubber-ball"
+    legacy_ids: ["V10-000079-B"]
+    title: "Наруто розриває гумову кульку"
+    text: "Наруто завершує другий етап тренування Расенґана, навчившись розривати гумову кульку силою обертання чакри."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000079-B", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0825-stage2-naruto", entity_id: "c-naruto", from: "sc-y0-0825-naruto-completes-rasengan-stage2.start", to: "sc-y0-0825-naruto-completes-rasengan-stage2.end", basis: "imported", evidence_ids: ["evd-v10-000079-B"], review: "accepted"}
+  - {id: "pr-0825-stage2-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0825-naruto-completes-rasengan-stage2.start", to: "sc-y0-0825-naruto-completes-rasengan-stage2.end", basis: "imported", evidence_ids: ["evd-v10-000079-B"], review: "accepted"}
