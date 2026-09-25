@@ -17,3 +17,9 @@ Current benchmark migration:
 - 24.09: Kiba/Sakon/Ukon branch, Shikamaru/Tayuya branch, Kimimaro branch, Orochimaru body-transfer scene, Valley of the End.
 
 Unknown cross-branch order is intentionally not invented. `display_rank` controls presentation only.
+
+Migration discipline:
+- `imported-v10.yaml` preserves every legacy record verbatim inside `data/`.
+- Migrated scene files replace only rows listed in `redirects.yaml`.
+- Rows with `pending` status remain available but are not yet treated as fully reviewed scene data.
+- Missing cross-scene `before` links are intentional unknowns, not implicit simultaneity.
