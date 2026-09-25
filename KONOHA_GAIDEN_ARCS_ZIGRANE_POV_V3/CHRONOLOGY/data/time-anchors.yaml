@@ -826,3 +826,51 @@ anchors:
     evidence_ids: ["evd-v10-000156"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Cursed Warrior mission escalation."
+  - id: "ta-y0-1023"
+    date: {year: 0, month: 10, day: 23}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000158"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Cursed Warrior finale."
+  - id: "ta-y0-1024"
+    date: {year: 0, month: 10, day: 24}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000159"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the cooking-nin incident."
+  - id: "ta-y0-1026"
+    date: {year: 0, month: 10, day: 26}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000160"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Kaima Capture Mission opening."
+  - id: "ta-y0-1027"
+    date: {year: 0, month: 10, day: 27}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000161"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Kaima Capture Mission investigation."
+  - id: "ta-y0-1028"
+    date: {year: 0, month: 10, day: 28}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000162"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Demon Island infiltration and fleet attack."
+  - id: "ta-y0-1029"
+    date: {year: 0, month: 10, day: 29}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000163"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Kaima Capture Mission finale."
