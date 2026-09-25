@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-y0-0919-clear-eye-herb-mission"
+continuity_id: "main"
+title: "Наруто, Сакура й Неджі шукають траву «Ясне око»"
+location_id: "loc-valley-of-end"
+placement: {anchor_id: "ta-y0-0919", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0919-naruto-sakura-neji-seek-clear-eye"
+    legacy_ids: ["V10-000113"]
+    title: "Трійця вирушає до Долини Суду"
+    text: "Наруто, Сакура й Неджі вирушають до Долини Суду шукати траву «Ясне око» для Хінати."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "beneficiary", mode: "remote"}
+    evidence_ids: ["evd-v10-000113", "evd-shippuden-306"]
+  - id: "ev-y0-0919-team-trapped-by-faceless-creatures"
+    legacy_ids: ["V10-000113"]
+    title: "Група потрапляє в пастку безликих істот"
+    text: "Під час пошуку Наруто, Сакура й Неджі потрапляють у пастку безликих істот."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000113", "evd-shippuden-306"]
+  - id: "ev-y0-0919-kakashi-guy-rescue-team"
+    legacy_ids: ["V10-000113"]
+    title: "Какаші й Ґай рятують групу"
+    text: "Какаші й Ґай приходять на допомогу та рятують Наруто, Сакуру й Неджі."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000113", "evd-shippuden-306"]
+relations:
+  - {id: "rel-0919-clear-eye-1", kind: "before", a: "ev-y0-0919-naruto-sakura-neji-seek-clear-eye", b: "ev-y0-0919-team-trapped-by-faceless-creatures", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-306"]}
+  - {id: "rel-0919-clear-eye-2", kind: "before", a: "ev-y0-0919-team-trapped-by-faceless-creatures", b: "ev-y0-0919-kakashi-guy-rescue-team", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-306"]}
+presence:
+  - {id: "pr-0919-clear-eye-naruto", entity_id: "c-naruto", from: "sc-y0-0919-clear-eye-herb-mission.start", to: "sc-y0-0919-clear-eye-herb-mission.end", basis: "source", evidence_ids: ["evd-shippuden-306"], review: "accepted"}
+  - {id: "pr-0919-clear-eye-sakura", entity_id: "c-sakura", from: "sc-y0-0919-clear-eye-herb-mission.start", to: "sc-y0-0919-clear-eye-herb-mission.end", basis: "source", evidence_ids: ["evd-shippuden-306"], review: "accepted"}
+  - {id: "pr-0919-clear-eye-neji", entity_id: "c-neji", from: "sc-y0-0919-clear-eye-herb-mission.start", to: "sc-y0-0919-clear-eye-herb-mission.end", basis: "source", evidence_ids: ["evd-shippuden-306"], review: "accepted"}
