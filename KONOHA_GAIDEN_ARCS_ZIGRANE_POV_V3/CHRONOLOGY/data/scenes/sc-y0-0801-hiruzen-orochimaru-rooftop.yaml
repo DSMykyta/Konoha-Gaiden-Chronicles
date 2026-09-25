@@ -1,0 +1,78 @@
+schema_version: 1
+id: "sc-y0-0801-hiruzen-orochimaru-rooftop"
+continuity_id: "main"
+title: "Бій Хірузена з Орочімару"
+location_id: "loc-hokage-rooftop"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-sound-four-barrier"
+    legacy_ids: ["V10-000065-B"]
+    title: "Орочімару ізолює Хірузена бар’єром"
+    text: "Орочімару заманює Хірузена на дах, а Четвірка Звуку ізолює простір бар’єром."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000065-B", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-orochimaru-edo-hokage"
+    legacy_ids: ["V10-000065-B"]
+    title: "Орочімару викликає Першого й Другого Хокаґе"
+    text: "Орочімару застосовує Нечисте Воскресіння й викликає Хашіраму та Тобіраму проти Хірузена."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-hashirama", role: "participant", mode: "reanimated"}
+      - {entity_id: "c-tobirama", role: "participant", mode: "reanimated"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000065-B", "evd-v10-000070", "evd-manga-finals-konoha-crush"]
+  - id: "ev-y0-0801-hiruzen-seals-first-second"
+    legacy_ids: ["V10-000065-C"]
+    title: "Хірузен запечатує Першого й Другого"
+    text: "Хірузен застосовує Печатку Бога Смерті, щоб запечатати душі відроджених Хашірами й Тобірами."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-hashirama", role: "affected", mode: "reanimated"}
+      - {entity_id: "c-tobirama", role: "affected", mode: "reanimated"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000065-C", "evd-manga-finals-konoha-crush"]
+  - id: "ev-y0-0801-hiruzen-seals-orochimaru-arms"
+    legacy_ids: ["V10-000065-C"]
+    title: "Хірузен запечатує руки Орочімару"
+    text: "Не маючи сили вирвати всю душу Орочімару, Хірузен запечатує частину, пов’язану з його руками, позбавляючи його можливості нормально використовувати ніндзюцу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000065-C", "evd-manga-finals-konoha-crush"]
+  - id: "ev-y0-0801-hiruzen-dies"
+    legacy_ids: ["V10-000065-C"]
+    title: "Хірузен гине"
+    text: "Завершивши техніку, Хірузен помирає на даху під час захисту Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000065-C", "evd-manga-finals-konoha-crush"]
+relations:
+  - {id: "rel-0801-roof-1", kind: "before", a: "ev-y0-0801-sound-four-barrier", b: "ev-y0-0801-orochimaru-edo-hokage", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+  - {id: "rel-0801-roof-2", kind: "before", a: "ev-y0-0801-orochimaru-edo-hokage", b: "ev-y0-0801-hiruzen-seals-first-second", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+  - {id: "rel-0801-roof-3", kind: "before", a: "ev-y0-0801-hiruzen-seals-first-second", b: "ev-y0-0801-hiruzen-seals-orochimaru-arms", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+  - {id: "rel-0801-roof-4", kind: "before", a: "ev-y0-0801-hiruzen-seals-orochimaru-arms", b: "ev-y0-0801-hiruzen-dies", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+presence:
+  - {id: "pr-0801-roof-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0801-hiruzen-orochimaru-rooftop.start", to: "sc-y0-0801-hiruzen-orochimaru-rooftop.end", basis: "source", evidence_ids: ["evd-v10-000065-B"], review: "accepted"}
+  - {id: "pr-0801-roof-orochimaru", entity_id: "c-orochimaru", from: "sc-y0-0801-hiruzen-orochimaru-rooftop.start", to: "sc-y0-0801-hiruzen-orochimaru-rooftop.end", basis: "source", evidence_ids: ["evd-v10-000065-B"], review: "accepted"}
