@@ -794,3 +794,35 @@ anchors:
     evidence_ids: ["evd-v10-000151"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Mondai and Potcha infiltration."
+  - id: "ta-y0-1020-birds"
+    date: {year: 0, month: 10, day: 20}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000152"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Cursed Warrior mission opening."
+  - id: "ta-alt-y0-1020-path-ninja-2"
+    date: {year: 0, month: 10, day: 20}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000153"]
+    review: "accepted"
+    reason: "Alternative game placement only; Path of the Ninja 2 is not part of main continuity."
+  - id: "ta-y0-1021-birds"
+    date: {year: 0, month: 10, day: 21}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000154"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Cursed Warrior investigation."
+  - id: "ta-y0-1022-birds"
+    date: {year: 0, month: 10, day: 22}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000156"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Cursed Warrior mission escalation."
