@@ -1,0 +1,61 @@
+schema_version: 1
+id: "sc-y0-0706-kabuto-hospital-infiltration"
+continuity_id: "main"
+title: "Кабуто проникає до палати Саске"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-kabuto-kills-anbu-guards"
+    legacy_ids: ["V10-000047"]
+    title: "Кабуто вбиває охоронців АНБУ"
+    text: "За наказом Орочімару Кабуто проникає до шпиталю й убиває охоронців АНБУ біля Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "affected", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000047", "evd-manga-ch88-97"]
+  - id: "ev-y0-0706-kabuto-approaches-sasuke"
+    legacy_ids: ["V10-000047"]
+    title: "Кабуто підходить до Саске зі скальпелем"
+    text: "Кабуто наближається до Саске з медичним скальпелем."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000047", "evd-manga-ch88-97"]
+  - id: "ev-y0-0706-kakashi-intercepts-kabuto"
+    legacy_ids: ["V10-000047"]
+    title: "Какаші перехоплює Кабуто"
+    text: "Какаші зупиняє Кабуто біля палати Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000047", "evd-manga-ch88-97"]
+  - id: "ev-y0-0706-kabuto-escapes-kakashi"
+    legacy_ids: ["V10-000047"]
+    title: "Кабуто вислизає від Какаші"
+    text: "Кабуто уникає затримання й залишає шпиталь."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000047", "evd-manga-ch88-97"]
+relations:
+  - {id: "rel-0706-hospital-1", kind: "before", a: "ev-y0-0706-kabuto-kills-anbu-guards", b: "ev-y0-0706-kabuto-approaches-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0706-hospital-2", kind: "before", a: "ev-y0-0706-kabuto-approaches-sasuke", b: "ev-y0-0706-kakashi-intercepts-kabuto", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0706-hospital-3", kind: "before", a: "ev-y0-0706-kakashi-intercepts-kabuto", b: "ev-y0-0706-kabuto-escapes-kakashi", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+presence: []
