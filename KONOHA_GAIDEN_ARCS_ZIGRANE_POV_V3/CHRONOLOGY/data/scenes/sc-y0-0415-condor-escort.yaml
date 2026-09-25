@@ -1,0 +1,67 @@
+schema_version: 1
+id: "sc-y0-0415-condor-escort"
+continuity_id: "main"
+title: "Команда 7 супроводжує страуса Кондора"
+location_id: null
+placement: {anchor_id: "ta-y0-0415", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0415-team7-escorts-condor"
+    legacy_ids: ["V10-000037"]
+    title: "Команда 7 супроводжує Кондора додому"
+    text: "У ретроспективній історії Команда 7 супроводжує додому страуса Кондора."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-condor", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000037", "evd-source-000037"]
+  - id: "ev-y0-0415-naruto-enters-tsukado-feud"
+    legacy_ids: ["V10-000037"]
+    title: "Наруто втручається у помсту Цукадо"
+    text: "Дорогою Наруто втягується у давню помсту Цукадо проти Катадзу й Каґекі."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsukado", role: "focus", mode: "physical"}
+      - {entity_id: "c-katazu", role: "participant", mode: "physical"}
+      - {entity_id: "c-kageki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000037", "evd-source-000037"]
+  - id: "ev-y0-0415-feud-ends"
+    legacy_ids: ["V10-000037"]
+    title: "Ворожнеча Цукадо припиняється"
+    text: "Втручання Наруто допомагає припинити давню ворожнечу."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsukado", role: "participant", mode: "physical"}
+      - {entity_id: "c-katazu", role: "participant", mode: "physical"}
+      - {entity_id: "c-kageki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000037", "evd-source-000037"]
+  - id: "ev-y0-0415-kanabun-gang-attacks"
+    legacy_ids: ["V10-000037"]
+    title: "Банда Канабуна атакує групу"
+    text: "Після припинення ворожнечі групу атакує банда Канабуна."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-kanabun", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000037", "evd-source-000037"]
+relations:
+  - {id: "rel-0415-condor-1", kind: "before", a: "ev-y0-0415-team7-escorts-condor", b: "ev-y0-0415-naruto-enters-tsukado-feud", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000037"]}
+  - {id: "rel-0415-condor-2", kind: "before", a: "ev-y0-0415-naruto-enters-tsukado-feud", b: "ev-y0-0415-feud-ends", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000037"]}
+  - {id: "rel-0415-condor-3", kind: "before", a: "ev-y0-0415-feud-ends", b: "ev-y0-0415-kanabun-gang-attacks", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000037"]}
+presence: []
