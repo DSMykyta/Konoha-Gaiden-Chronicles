@@ -1,0 +1,34 @@
+schema_version: 1
+id: "sc-y0-1006-hinata-waterfall-training"
+continuity_id: "main"
+title: "Хіната тренує власну захисну техніку біля водоспаду"
+location_id: "loc-bikocho-waterfall"
+placement: {anchor_id: "ta-y0-1006", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1006-hinata-trains-protecting-eight-trigrams"
+    legacy_ids: ["V10-000137"]
+    title: "Хіната потай відточує Захисні Вісім Триграм"
+    text: "Уночі Хіната окремо тренує власну кругову захисну техніку, поєднуючи точний контроль чакри з рухами М'якого Кулака."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000137", "evd-anime-148-151"]
+  - id: "ev-y0-1006-naruto-sees-unidentified-waterfall-girl"
+    legacy_ids: ["V10-000137"]
+    title: "Наруто випадково бачить тренування, не впізнавши Хінату"
+    text: "Наруто випадково помічає біля водоспаду дівчину, але не розпізнає в ній Хінату; для нього її особа лишається невідомою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "observed_unidentified", mode: "physical"}
+    evidence_ids: ["evd-anime-148-151"]
+relations:
+  - {id: "rel-1006-hinata-waterfall-1", kind: "intersects", a: "ev-y0-1006-hinata-trains-protecting-eight-trigrams", b: "ev-y0-1006-naruto-sees-unidentified-waterfall-girl", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
