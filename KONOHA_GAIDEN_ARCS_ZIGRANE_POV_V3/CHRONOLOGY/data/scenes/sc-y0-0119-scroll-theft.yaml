@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-y0-0119-scroll-theft"
+continuity_id: "main"
+title: "Мідзукі підштовхує Наруто викрасти Сувій Печатей"
+location_id: null
+placement: {anchor_id: "ta-y0-0119", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0119-mizuki-manipulates-naruto"
+    legacy_ids: ["V10-000002"]
+    title: "Мідзукі маніпулює Наруто"
+    text: "Після провалу іспиту Мідзукі переконує Наруто, що викрадення Сувою Печатей допоможе йому пройти випуск."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
+  - id: "ev-y0-0119-naruto-steals-scroll"
+    legacy_ids: ["V10-000002"]
+    title: "Наруто викрадає Сувій Печатей"
+    text: "Наруто викрадає Сувій Печатей і починає вивчати техніку з нього."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
+relations:
+  - {id: "rel-0119-mizuki-before-theft", kind: "before", a: "ev-y0-0119-mizuki-manipulates-naruto", b: "ev-y0-0119-naruto-steals-scroll", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch1-prologue"]}
+presence:
+  - {id: "pr-0119-manip-naruto", entity_id: "c-naruto", from: "sc-y0-0119-scroll-theft.start", to: "sc-y0-0119-scroll-theft.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
