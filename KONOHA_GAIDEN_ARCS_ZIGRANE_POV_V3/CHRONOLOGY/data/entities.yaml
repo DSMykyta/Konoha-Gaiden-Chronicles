@@ -339,6 +339,100 @@ entities:
     name: "Yoshino Kaede"
     aliases:
       - "Йошіно Каеде"
+  - id: "c-tazuna"
+    kind: "person"
+    name: "Tazuna"
+    aliases:
+      - "Тадзуна"
+  - id: "c-zabuza"
+    kind: "person"
+    name: "Zabuza Momochi"
+    aliases:
+      - "Забуза"
+  - id: "c-haku"
+    kind: "person"
+    name: "Haku"
+    aliases:
+      - "Хаку"
+  - id: "c-gato"
+    kind: "person"
+    name: "Gatō"
+    aliases:
+      - "Ґато"
+      - "Гато"
+  - id: "c-inari"
+    kind: "person"
+    name: "Inari"
+    aliases:
+      - "Інарі"
+  - id: "c-tsunami"
+    kind: "person"
+    name: "Tsunami"
+    aliases:
+      - "Цунамі"
+  - id: "c-kaiza"
+    kind: "person"
+    name: "Kaiza"
+    aliases:
+      - "Кайза"
+  - id: "c-gozu"
+    kind: "person"
+    name: "Gōzu"
+    aliases:
+      - "Ґозу"
+      - "Гозу"
+  - id: "c-meizu"
+    kind: "person"
+    name: "Meizu"
+    aliases:
+      - "Мейзу"
+  - id: "loc-land-waves"
+    kind: "location"
+    name: "Land of Waves"
+    aliases:
+      - "Країна Хвиль"
+  - id: "loc-road-fire-waves"
+    kind: "location"
+    name: "Road from Land of Fire toward Land of Waves"
+    aliases:
+      - "шлях до Країни Хвиль"
+  - id: "loc-wave-coast"
+    kind: "location"
+    name: "Land of Waves coast and crossing"
+    aliases:
+      - "узбережжя Країни Хвиль"
+    parent_id: "loc-land-waves"
+  - id: "loc-tazuna-home"
+    kind: "location"
+    name: "Tazuna's house"
+    aliases:
+      - "дім Тадзуни"
+    parent_id: "loc-land-waves"
+  - id: "loc-wave-forest"
+    kind: "location"
+    name: "Forest near Tazuna's route"
+    aliases:
+      - "ліс у Країні Хвиль"
+    parent_id: "loc-land-waves"
+  - id: "loc-wave-tree-training"
+    kind: "location"
+    name: "Tree-climbing training area"
+    aliases:
+      - "місце тренування ходіння по деревах"
+    parent_id: "loc-land-waves"
+  - id: "loc-great-naruto-bridge"
+    kind: "location"
+    name: "Great Naruto Bridge"
+    aliases:
+      - "Великий Міст Наруто"
+      - "міст Тадзуни"
+    parent_id: "loc-land-waves"
+  - id: "loc-wave-burial-hill"
+    kind: "location"
+    name: "Hill above the Land of Waves"
+    aliases:
+      - "височина над Країною Хвиль"
+    parent_id: "loc-land-waves"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
