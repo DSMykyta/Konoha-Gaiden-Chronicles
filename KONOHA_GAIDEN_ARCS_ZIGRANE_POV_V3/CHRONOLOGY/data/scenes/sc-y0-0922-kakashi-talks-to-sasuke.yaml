@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-0922-kakashi-talks-to-sasuke"
+continuity_id: "main"
+title: "Какаші говорить із Саске про помсту"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0922", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0922-kakashi-restrains-sasuke-tree"
+    legacy_ids: ["V10-000119"]
+    title: "Какаші прив’язує Саске до дерева"
+    text: "Після сутички на даху Какаші прив’язує Саске до дерева, щоб поговорити з ним без нової бійки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000119"]
+  - id: "ev-y0-0922-kakashi-warns-sasuke-revenge"
+    legacy_ids: ["V10-000119"]
+    title: "Какаші говорить про марність помсти"
+    text: "Какаші говорить Саске про марність помсти та про власні втрати."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000119"]
+  - id: "ev-y0-0922-sasuke-left-alone-after-kakashi-talk"
+    legacy_ids: ["V10-000119"]
+    title: "Саске лишається сам після розмови"
+    text: "Після відходу Какаші Саске лишається наодинці з почутим."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "departed_participant", mode: "remote"}
+    evidence_ids: ["evd-v10-000119"]
+relations:
+  - {id: "rel-0922-kakashi-talk-1", kind: "before", a: "ev-y0-0922-kakashi-restrains-sasuke-tree", b: "ev-y0-0922-kakashi-warns-sasuke-revenge", basis: "source", review: "pending", evidence_ids: ["evd-v10-000119"]}
+  - {id: "rel-0922-kakashi-talk-2", kind: "before", a: "ev-y0-0922-kakashi-warns-sasuke-revenge", b: "ev-y0-0922-sasuke-left-alone-after-kakashi-talk", basis: "source", review: "pending", evidence_ids: ["evd-v10-000119"]}
+presence:
+  - {id: "pr-0922-tree-sasuke", entity_id: "c-sasuke", from: "sc-y0-0922-kakashi-talks-to-sasuke.start", to: "sc-y0-0922-kakashi-talks-to-sasuke.end", basis: "source", evidence_ids: ["evd-v10-000119"], review: "accepted"}
+  - {id: "pr-0922-tree-kakashi", entity_id: "c-kakashi", from: "sc-y0-0922-kakashi-talks-to-sasuke.start", to: "ev-y0-0922-kakashi-warns-sasuke-revenge.end", basis: "source", evidence_ids: ["evd-v10-000119"], review: "accepted"}
