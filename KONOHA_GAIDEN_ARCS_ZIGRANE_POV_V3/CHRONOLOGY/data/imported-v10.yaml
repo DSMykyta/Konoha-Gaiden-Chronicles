@@ -4202,7 +4202,7 @@ records:
       SupportingSources: "A [еп. 98–100] — повернення до Конохи, лікування Какаші й Саске, діагноз Лі та вступ Цунаде на посаду."
       Review: ""
   - legacy_id: "V10-000086"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4227,7 +4227,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000087"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4252,7 +4252,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000088"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
