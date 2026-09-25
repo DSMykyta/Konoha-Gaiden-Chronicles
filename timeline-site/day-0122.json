@@ -1,0 +1,1203 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "CHRONOLOGY/data",
+  "date": {
+    "year": 0,
+    "month": 1,
+    "day": 22
+  },
+  "entities": [
+    {
+      "id": "c-naruto",
+      "kind": "person",
+      "name": "Naruto Uzumaki",
+      "label": "Наруто"
+    },
+    {
+      "id": "c-sasuke",
+      "kind": "person",
+      "name": "Sasuke Uchiha",
+      "label": "Саске"
+    },
+    {
+      "id": "c-sakura",
+      "kind": "person",
+      "name": "Sakura Haruno",
+      "label": "Сакура"
+    },
+    {
+      "id": "c-hinata",
+      "kind": "person",
+      "name": "Hinata Hyuga",
+      "label": "Хіната"
+    },
+    {
+      "id": "c-kiba",
+      "kind": "person",
+      "name": "Kiba Inuzuka",
+      "label": "Кіба"
+    },
+    {
+      "id": "c-shino",
+      "kind": "person",
+      "name": "Shino Aburame",
+      "label": "Шіно"
+    },
+    {
+      "id": "c-ino",
+      "kind": "person",
+      "name": "Ino Yamanaka",
+      "label": "Іно"
+    },
+    {
+      "id": "c-shikamaru",
+      "kind": "person",
+      "name": "Shikamaru Nara",
+      "label": "Шикамару"
+    },
+    {
+      "id": "c-choji",
+      "kind": "person",
+      "name": "Choji Akimichi",
+      "label": "Чоджі"
+    },
+    {
+      "id": "c-kita",
+      "kind": "person",
+      "name": "Kita Hayashi",
+      "label": "Кіта"
+    },
+    {
+      "id": "c-ren",
+      "kind": "person",
+      "name": "Ren Tetsu",
+      "label": "Рен"
+    },
+    {
+      "id": "c-sora",
+      "kind": "person",
+      "name": "Sora Yamano",
+      "label": "Сора"
+    },
+    {
+      "id": "c-iruka",
+      "kind": "person",
+      "name": "Iruka Umino",
+      "label": "Ірука"
+    },
+    {
+      "id": "c-asuma",
+      "kind": "person",
+      "name": "Asuma Sarutobi",
+      "label": "Асума"
+    },
+    {
+      "id": "c-kurenai",
+      "kind": "person",
+      "name": "Kurenai Yuhi",
+      "label": "Куренай"
+    },
+    {
+      "id": "c-raido",
+      "kind": "person",
+      "name": "Raido Namiashi",
+      "label": "Райдо"
+    },
+    {
+      "id": "c-kakashi",
+      "kind": "person",
+      "name": "Kakashi Hatake",
+      "label": "Какаші"
+    },
+    {
+      "id": "c-nobari",
+      "kind": "person",
+      "name": "Nobari Hayashi",
+      "label": "Нобарі"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "sc-y0-0122-accidental-kiss",
+      "title": "Випадковий поцілунок Наруто й Саске",
+      "locationId": "loc-academy-classroom",
+      "source": {
+        "file": "sc-y0-0122-accidental-kiss.yaml",
+        "sha": "20db9b391516ea04c2b0abe14a1881b1b3bb51d9"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-naruto-sasuke-kiss",
+          "title": "Наруто випадково цілує Саске",
+          "text": "Перед розподілом команд однокласник штовхає Наруто, і той випадково цілує Саске; клас реагує.",
+          "origin": "M",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-naruto",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-naruto",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-kiss-naruto",
+          "entityId": "c-naruto",
+          "from": "sc-y0-0122-accidental-kiss.start",
+          "to": "sc-y0-0122-accidental-kiss.end"
+        },
+        {
+          "id": "pr-0122-kiss-sasuke",
+          "entityId": "c-sasuke",
+          "from": "sc-y0-0122-accidental-kiss.start",
+          "to": "sc-y0-0122-accidental-kiss.end"
+        }
+      ]
+    },
+    {
+      "id": "sc-y0-0122-academy-announcements",
+      "title": "Оголошення команд у класі Академії",
+      "locationId": "loc-academy-classroom",
+      "source": {
+        "file": "sc-y0-0122-academy-announcements.yaml",
+        "sha": "d262cf992fd661b38eb38f9f4e44690f9be3a686"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-kita-sees-jonin",
+          "title": "Кіта бачить трьох джонінів перед Академією",
+          "text": "Кіта дивиться з вікна класу на трьох джонінів перед Академією; двоє говорять між собою, третій стоїть осторонь.",
+          "origin": "P",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-team7-announced",
+          "title": "Оголошено Команду 7",
+          "text": "Ірука оголошує склад Команди 7.",
+          "origin": "M",
+          "displayRank": 200,
+          "involvement": [
+            {
+              "entityId": "c-iruka",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-naruto",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-team8-announced",
+          "title": "Оголошено Команду 8",
+          "text": "Ірука оголошує склад Команди 8.",
+          "origin": "M",
+          "displayRank": 300,
+          "involvement": [
+            {
+              "entityId": "c-iruka",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-hinata",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kiba",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-shino",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-team9-announced",
+          "title": "Оголошено Команду 9",
+          "text": "Ірука називає Хаяші Кіту, Тецу Рена і Ямано Сору Командою 9.",
+          "origin": "P",
+          "displayRank": 400,
+          "involvement": [
+            {
+              "entityId": "c-iruka",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kita",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-ren",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sora",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-ren-asks-kita",
+          "title": "Рен з’ясовує, хто такий Кіта",
+          "text": "Рен голосно питає, хто Хаяші; Кіта піднімає руку й відповідає.",
+          "origin": "P",
+          "displayRank": 500,
+          "involvement": [
+            {
+              "entityId": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-team10-announced",
+          "title": "Оголошено Команду 10",
+          "text": "Ірука оголошує склад Команди 10.",
+          "origin": "M",
+          "displayRank": 600,
+          "involvement": [
+            {
+              "entityId": "c-iruka",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-ino",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-shikamaru",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-choji",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-ann-naruto",
+          "entityId": "c-naruto",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-sasuke",
+          "entityId": "c-sasuke",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-sakura",
+          "entityId": "c-sakura",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-hinata",
+          "entityId": "c-hinata",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-kiba",
+          "entityId": "c-kiba",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-shino",
+          "entityId": "c-shino",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-ino",
+          "entityId": "c-ino",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-shikamaru",
+          "entityId": "c-shikamaru",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-choji",
+          "entityId": "c-choji",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-kita",
+          "entityId": "c-kita",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-ren",
+          "entityId": "c-ren",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-sora",
+          "entityId": "c-sora",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        },
+        {
+          "id": "pr-0122-ann-iruka",
+          "entityId": "c-iruka",
+          "from": "sc-y0-0122-academy-announcements.start",
+          "to": "sc-y0-0122-academy-announcements.end"
+        }
+      ]
+    },
+    {
+      "id": "sc-y0-0122-academy-exterior-jonin",
+      "title": "Троє джонінів перед Академією",
+      "locationId": "loc-academy-front",
+      "source": {
+        "file": "sc-y0-0122-academy-exterior-jonin.yaml",
+        "sha": "239a2a4d23444dbd99623fb6835f7d7226f4a227"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-three-jonin-wait-outside",
+          "title": "Асума, Куренай і Райдо чекають перед Академією",
+          "text": "Перед Академією перебувають Асума, Куренай і Райдо; Кіта бачить їх із вікна класу.",
+          "origin": "P",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-asuma",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kurenai",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-raido",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "pr-0122-ext-asuma",
+          "title": "pr-0122-ext-asuma",
+          "text": "",
+          "origin": "?",
+          "displayRank": 0,
+          "involvement": [
+            {
+              "entityId": "c-asuma",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "pr-0122-ext-kurenai",
+          "title": "pr-0122-ext-kurenai",
+          "text": "",
+          "origin": "?",
+          "displayRank": 0,
+          "involvement": [
+            {
+              "entityId": "c-kurenai",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "pr-0122-ext-raido",
+          "title": "pr-0122-ext-raido",
+          "text": "",
+          "origin": "?",
+          "displayRank": 0,
+          "involvement": [
+            {
+              "entityId": "c-raido",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-ext-asuma",
+          "entityId": "c-asuma",
+          "from": "sc-y0-0122-academy-exterior-jonin.start",
+          "to": "sc-y0-0122-academy-exterior-jonin.end"
+        },
+        {
+          "id": "pr-0122-ext-kurenai",
+          "entityId": "c-kurenai",
+          "from": "sc-y0-0122-academy-exterior-jonin.start",
+          "to": "sc-y0-0122-academy-exterior-jonin.end"
+        },
+        {
+          "id": "pr-0122-ext-raido",
+          "entityId": "c-raido",
+          "from": "sc-y0-0122-academy-exterior-jonin.start",
+          "to": "sc-y0-0122-academy-exterior-jonin.end"
+        }
+      ]
+    },
+    {
+      "id": "sc-y0-0122-academy-waiting",
+      "title": "Очікування наставників у класі",
+      "locationId": "loc-academy-classroom",
+      "source": {
+        "file": "sc-y0-0122-academy-waiting.yaml",
+        "sha": "69b32e95e428ddb6834110f3860e535ac2063491"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-team10-departs",
+          "title": "Асума забирає Команду 10",
+          "text": "Асума забирає Іно, Шикамару й Чоджі з класу.",
+          "origin": "A",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-asuma",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-ino",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-shikamaru",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-choji",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-team8-departs",
+          "title": "Куренай забирає Команду 8",
+          "text": "Куренай забирає Хінату, Кібу й Шіно з класу.",
+          "origin": "A",
+          "displayRank": 200,
+          "involvement": [
+            {
+              "entityId": "c-kurenai",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-hinata",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kiba",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-shino",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-naruto-prepares-trap",
+          "title": "Наруто готує пастку для Какаші",
+          "text": "Поки Команда 7 чекає наставника, Наруто готує пастку над дверима для запізнілого Какаші.",
+          "origin": "M",
+          "displayRank": 300,
+          "involvement": [
+            {
+              "entityId": "c-naruto",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-raido-question",
+          "title": "Райдо звертається до Сакури",
+          "text": "Райдо входить до класу, питає «Дев’ята?», а Сакура відповідає: «Сьома».",
+          "origin": "P",
+          "displayRank": 400,
+          "involvement": [
+            {
+              "entityId": "c-raido",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-team9-departs",
+          "title": "Райдо забирає Команду 9",
+          "text": "Райдо знаходить Кіту, Рена й Сору та веде Команду 9 з аудиторії.",
+          "origin": "P",
+          "displayRank": 500,
+          "involvement": [
+            {
+              "entityId": "c-raido",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sora",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-kakashi-arrives",
+          "title": "Какаші приходить до Команди 7",
+          "text": "Після виходу Команди 9 Какаші приходить до Наруто, Саске й Сакури, які залишилися чекати в класі.",
+          "origin": "M",
+          "displayRank": 600,
+          "involvement": [
+            {
+              "entityId": "c-kakashi",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-naruto",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-team7-departs",
+          "title": "Команда 7 виходить із Какаші",
+          "text": "Какаші забирає Наруто, Саске й Сакуру з класу.",
+          "origin": "M",
+          "displayRank": 700,
+          "involvement": [
+            {
+              "entityId": "c-kakashi",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-naruto",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-wait-naruto",
+          "entityId": "c-naruto",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team7-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-sasuke",
+          "entityId": "c-sasuke",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team7-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-sakura",
+          "entityId": "c-sakura",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team7-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-kita",
+          "entityId": "c-kita",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team9-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-ren",
+          "entityId": "c-ren",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team9-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-sora",
+          "entityId": "c-sora",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team9-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-ino",
+          "entityId": "c-ino",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team10-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-shikamaru",
+          "entityId": "c-shikamaru",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team10-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-choji",
+          "entityId": "c-choji",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team10-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-hinata",
+          "entityId": "c-hinata",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team8-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-kiba",
+          "entityId": "c-kiba",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team8-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-shino",
+          "entityId": "c-shino",
+          "from": "sc-y0-0122-academy-waiting.start",
+          "to": "ev-y0-0122-team8-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-asuma",
+          "entityId": "c-asuma",
+          "from": "ev-y0-0122-team10-departs.start",
+          "to": "ev-y0-0122-team10-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-kurenai",
+          "entityId": "c-kurenai",
+          "from": "ev-y0-0122-team8-departs.start",
+          "to": "ev-y0-0122-team8-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-raido",
+          "entityId": "c-raido",
+          "from": "ev-y0-0122-raido-question.start",
+          "to": "ev-y0-0122-team9-departs.end"
+        },
+        {
+          "id": "pr-0122-wait-kakashi",
+          "entityId": "c-kakashi",
+          "from": "ev-y0-0122-kakashi-arrives.start",
+          "to": "ev-y0-0122-team7-departs.end"
+        }
+      ]
+    },
+    {
+      "id": "sc-y0-0122-naruto-impersonates-sasuke",
+      "title": "Наруто підміняє Саске перед Сакурою",
+      "locationId": null,
+      "source": {
+        "file": "sc-y0-0122-naruto-impersonates-sasuke.yaml",
+        "sha": "2163b1b52570d223068671200a4e8234d4c8580d"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-naruto-restrains-sasuke",
+          "title": "Наруто зв’язує Саске",
+          "text": "Після розподілу команд Наруто тимчасово нейтралізує Саске, щоб видати себе за нього.",
+          "origin": "M",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-naruto",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-naruto-impersonates-sasuke",
+          "title": "Наруто під виглядом Саске говорить із Сакурою",
+          "text": "Наруто використовує Перетворення, щоб видати себе за Саске й наблизитися до Сакури.",
+          "origin": "M",
+          "displayRank": 200,
+          "involvement": [
+            {
+              "entityId": "c-naruto",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "portrayed",
+              "mode": "remote"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-sakura-insults-naruto",
+          "title": "Сакура говорить про Наруто, думаючи, що перед нею Саске",
+          "text": "Сакура висловлюється про Наруто перед замаскованим Наруто, вважаючи його Саске.",
+          "origin": "M",
+          "displayRank": 300,
+          "involvement": [
+            {
+              "entityId": "c-sakura",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-naruto",
+              "role": "portrayed",
+              "mode": "remote"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-imp-naruto",
+          "entityId": "c-naruto",
+          "from": "sc-y0-0122-naruto-impersonates-sasuke.start",
+          "to": "sc-y0-0122-naruto-impersonates-sasuke.end"
+        },
+        {
+          "id": "pr-0122-imp-sakura",
+          "entityId": "c-sakura",
+          "from": "ev-y0-0122-naruto-impersonates-sasuke.start",
+          "to": "sc-y0-0122-naruto-impersonates-sasuke.end"
+        },
+        {
+          "id": "pr-0122-imp-sasuke",
+          "entityId": "c-sasuke",
+          "from": "sc-y0-0122-naruto-impersonates-sasuke.start",
+          "to": "ev-y0-0122-naruto-restrains-sasuke.end"
+        }
+      ]
+    },
+    {
+      "id": "sc-y0-0122-team7-rooftop",
+      "title": "Знайомство Команди 7 з Какаші",
+      "locationId": "loc-team7-rooftop",
+      "source": {
+        "file": "sc-y0-0122-team7-rooftop.yaml",
+        "sha": "b3b0f68d7830059ab808d3a871759b98fbe041d1"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-team7-introductions",
+          "title": "Команда 7 представляється Какаші",
+          "text": "Какаші слухає представлення Наруто, Саске й Сакури.",
+          "origin": "M",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-kakashi",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-naruto",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-kakashi-schedules-bell-test",
+          "title": "Какаші призначає випробування",
+          "text": "Какаші призначає Команді 7 випробування на виживання на наступний день.",
+          "origin": "M",
+          "displayRank": 200,
+          "involvement": [
+            {
+              "entityId": "c-kakashi",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-naruto",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sasuke",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sakura",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-roof-kakashi",
+          "entityId": "c-kakashi",
+          "from": "sc-y0-0122-team7-rooftop.start",
+          "to": "sc-y0-0122-team7-rooftop.end"
+        },
+        {
+          "id": "pr-0122-roof-naruto",
+          "entityId": "c-naruto",
+          "from": "sc-y0-0122-team7-rooftop.start",
+          "to": "sc-y0-0122-team7-rooftop.end"
+        },
+        {
+          "id": "pr-0122-roof-sasuke",
+          "entityId": "c-sasuke",
+          "from": "sc-y0-0122-team7-rooftop.start",
+          "to": "sc-y0-0122-team7-rooftop.end"
+        },
+        {
+          "id": "pr-0122-roof-sakura",
+          "entityId": "c-sakura",
+          "from": "sc-y0-0122-team7-rooftop.start",
+          "to": "sc-y0-0122-team7-rooftop.end"
+        }
+      ]
+    },
+    {
+      "id": "sc-y0-0122-dango-shop",
+      "title": "Знайомство Команди 9 в крамниці данґо",
+      "locationId": "loc-dango-shop",
+      "source": {
+        "file": "sc-y0-0122-dango-shop.yaml",
+        "sha": "4ca1757104ad978e99f77a4fac4f4269aa16d140"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-dango-sharing",
+          "title": "Райдо спостерігає за поведінкою команди",
+          "text": "Рен одразу бере данґо й тягнеться по другу шпажку; Райдо зупиняє його, поки Кіта й Сора ще не взяли свою порцію.",
+          "origin": "P",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-raido",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kita",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sora",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-dango-introductions",
+          "title": "Райдо розпитує Кіту, Рена й Сору",
+          "text": "Райдо окремо розпитує учнів про їхні родини, мотивацію й навички.",
+          "origin": "P",
+          "displayRank": 200,
+          "involvement": [
+            {
+              "entityId": "c-raido",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sora",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-raido-assigns-field8",
+          "title": "Райдо призначає збір на Полі 8",
+          "text": "Райдо наказує Команді 9 наступного дня о 07:00 прийти з повною стандартною екіпіровкою на Тренувальне поле 8.",
+          "origin": "P",
+          "displayRank": 300,
+          "involvement": [
+            {
+              "entityId": "c-raido",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kita",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-ren",
+              "role": "participant",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-sora",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-dango-raido",
+          "entityId": "c-raido",
+          "from": "sc-y0-0122-dango-shop.start",
+          "to": "sc-y0-0122-dango-shop.end"
+        },
+        {
+          "id": "pr-0122-dango-kita",
+          "entityId": "c-kita",
+          "from": "sc-y0-0122-dango-shop.start",
+          "to": "sc-y0-0122-dango-shop.end"
+        },
+        {
+          "id": "pr-0122-dango-ren",
+          "entityId": "c-ren",
+          "from": "sc-y0-0122-dango-shop.start",
+          "to": "sc-y0-0122-dango-shop.end"
+        },
+        {
+          "id": "pr-0122-dango-sora",
+          "entityId": "c-sora",
+          "from": "sc-y0-0122-dango-shop.start",
+          "to": "sc-y0-0122-dango-shop.end"
+        }
+      ]
+    },
+    {
+      "id": "sc-y0-0122-kita-home-night",
+      "title": "Кіта вдома після першого дня Команди 9",
+      "locationId": "loc-kita-home",
+      "source": {
+        "file": "sc-y0-0122-kita-home-night.yaml",
+        "sha": "5431a9c0d6fd4ab467ce7c4810698178d0b3e06b"
+      },
+      "events": [
+        {
+          "id": "ev-y0-0122-nobari-returns",
+          "title": "Нобарі повертається пізно ввечері",
+          "text": "Мати Кіти повертається додому з паперами після роботи в адміністрації Хокаґе.",
+          "origin": "P",
+          "displayRank": 100,
+          "involvement": [
+            {
+              "entityId": "c-nobari",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-kita",
+              "role": "participant",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-kita-talks-with-mother",
+          "title": "Кіта говорить із матір’ю про нову команду",
+          "text": "Кіта називає Райдо своїм сенсеєм; Нобарі згадує Райдо, Асума й Куренай та їхнє спільне минуле.",
+          "origin": "P",
+          "displayRank": 200,
+          "involvement": [
+            {
+              "entityId": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entityId": "c-nobari",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        },
+        {
+          "id": "ev-y0-0122-kita-cries",
+          "title": "Кіта плаче перед сном",
+          "text": "Кіта лягає спати, тихо плаче в подушку й засинає, поки з кухні чути шурхіт сторінок.",
+          "origin": "P",
+          "displayRank": 300,
+          "involvement": [
+            {
+              "entityId": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ]
+        }
+      ],
+      "presence": [
+        {
+          "id": "pr-0122-home-kita",
+          "entityId": "c-kita",
+          "from": "sc-y0-0122-kita-home-night.start",
+          "to": "sc-y0-0122-kita-home-night.end"
+        },
+        {
+          "id": "pr-0122-home-nobari",
+          "entityId": "c-nobari",
+          "from": "ev-y0-0122-nobari-returns.start",
+          "to": "sc-y0-0122-kita-home-night.end"
+        }
+      ]
+    }
+  ]
+}
