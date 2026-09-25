@@ -833,5 +833,19 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-novel-waterfall"]
+  - id: "lnk-alt-0909-un2-before-0910-un2"
+    kind: "before"
+    a: "sc-alt-y0-0909-ultimate-ninja2-threat"
+    b: "sc-alt-y0-0910-ultimate-ninja2-seal-battles"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-ultimate-ninja-2"]
+  - id: "lnk-alt-0910-un2-before-0911-un2"
+    kind: "before"
+    a: "sc-alt-y0-0910-ultimate-ninja2-seal-battles"
+    b: "sc-alt-y0-0911-ultimate-ninja2-ending"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-ultimate-ninja-2"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
