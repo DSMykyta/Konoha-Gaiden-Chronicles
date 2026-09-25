@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-1003-iruka-mizuki-test-building"
+continuity_id: "main"
+title: "Мідзукі заманює Іруку до старої випробувальної будівлі"
+location_id: "loc-academy-instructor-test-building"
+placement: {anchor_id: "ta-y0-1003", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1003-mizuki-lures-iruka-test-building"
+    legacy_ids: ["V10-000131", "V10-000132"]
+    title: "Мідзукі заводить Іруку до старої будівлі"
+    text: "Мідзукі заманює Іруку до старої будівлі, пов'язаної з випробуваннями викладачів Академії, і продовжує сутичку вже всередині."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-anime-142-147"]
+  - id: "ev-y0-1003-mizuki-rejects-iruka-past-bond"
+    legacy_ids: ["V10-000132"]
+    title: "Мідзукі відкидає спогади Іруки про їхню дружбу"
+    text: "У розмові з Ірукою Мідзукі заявляє, що його давня приязнь була корисливою й не зупиняє його від помсти."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-iruka", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-anime-142-147"]
+  - id: "ev-y0-1003-mizuki-destroys-test-building"
+    legacy_ids: ["V10-000132"]
+    title: "Сутичка руйнує будівлю"
+    text: "Мідзукі демонструє набуті у в'язниці сили й техніки; сутичка завершується руйнуванням будівлі, з-під уламків якої Ірука вибирається живим."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-mizuki", role: "cause", mode: "physical"}
+      - {entity_id: "c-iruka", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-anime-142-147"]
+relations:
+  - {id: "rel-1003-iruka-mizuki-1", kind: "before", a: "ev-y0-1003-mizuki-lures-iruka-test-building", b: "ev-y0-1003-mizuki-rejects-iruka-past-bond", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+  - {id: "rel-1003-iruka-mizuki-2", kind: "before", a: "ev-y0-1003-mizuki-rejects-iruka-past-bond", b: "ev-y0-1003-mizuki-destroys-test-building", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+presence: []
