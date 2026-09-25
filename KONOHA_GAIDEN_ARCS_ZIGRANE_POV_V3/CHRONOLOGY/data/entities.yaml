@@ -1075,6 +1075,45 @@ entities:
     aliases:
       - "дім Шіно"
     parent_id: "loc-konohagakure"
+  - id: "c-fujin"
+    kind: "person"
+    name: "Fūjin"
+    aliases:
+      - "Фуджін"
+  - id: "c-raijin"
+    kind: "person"
+    name: "Raijin"
+    aliases:
+      - "Райджін"
+  - id: "c-tsubaki"
+    kind: "person"
+    name: "Tsubaki"
+    aliases:
+      - "Цубакі"
+  - id: "c-tonton"
+    kind: "animal"
+    name: "Tonton"
+    aliases:
+      - "Тонтон"
+  - id: "loc-konoha-correctional-facility"
+    kind: "location"
+    name: "Konoha Maximum Security Correctional Facility"
+    aliases:
+      - "в’язниця суворого режиму Конохи"
+      - "Konoha Correctional Facility"
+    parent_id: "loc-land-of-fire"
+  - id: "loc-mizuki-hideout"
+    kind: "location"
+    name: "Mizuki's hideout"
+    aliases:
+      - "схованка Мідзукі"
+    parent_id: "loc-land-of-fire"
+  - id: "loc-academy-instructor-test-building"
+    kind: "location"
+    name: "Academy instructor test building"
+    aliases:
+      - "стара будівля для випробування викладачів Академії"
+    parent_id: "loc-land-of-fire"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
