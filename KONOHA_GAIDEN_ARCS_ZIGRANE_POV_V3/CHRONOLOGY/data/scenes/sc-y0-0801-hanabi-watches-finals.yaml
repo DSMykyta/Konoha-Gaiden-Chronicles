@@ -1,0 +1,30 @@
+schema_version: 1
+id: "sc-y0-0801-hanabi-watches-finals"
+continuity_id: "main"
+title: "Ханабі дивиться фінал разом із Хіаші"
+location_id: "loc-chunin-finals-arena"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-hanabi-hiashi-watch-naruto-neji"
+    legacy_ids: ["V10-000068"]
+    title: "Ханабі й Хіаші бачать перемогу Наруто над Неджі"
+    text: "Ханабі разом із Хіаші спостерігає за фінальним поєдинком і бачить, як Наруто перемагає Неджі."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hanabi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observed", mode: "physical"}
+      - {entity_id: "c-neji", role: "observed", mode: "physical"}
+    evidence_ids: ["evd-v10-000068", "evd-shippuden-390"]
+relations: []
+presence:
+  - {id: "pr-0801-hanabi-final-hanabi", entity_id: "c-hanabi", from: "sc-y0-0801-hanabi-watches-finals.start", to: "sc-y0-0801-hanabi-watches-finals.end", basis: "source", evidence_ids: ["evd-v10-000068"], review: "accepted"}
+  - {id: "pr-0801-hanabi-final-hiashi", entity_id: "c-hiashi", from: "sc-y0-0801-hanabi-watches-finals.start", to: "sc-y0-0801-hanabi-watches-finals.end", basis: "source", evidence_ids: ["evd-v10-000068"], review: "accepted"}
+  - {id: "pr-0801-hanabi-final-naruto", entity_id: "c-naruto", from: "sc-y0-0801-hanabi-watches-finals.start", to: "sc-y0-0801-hanabi-watches-finals.end", basis: "source", evidence_ids: ["evd-v10-000068"], review: "accepted"}
+  - {id: "pr-0801-hanabi-final-neji", entity_id: "c-neji", from: "sc-y0-0801-hanabi-watches-finals.start", to: "sc-y0-0801-hanabi-watches-finals.end", basis: "source", evidence_ids: ["evd-v10-000068"], review: "accepted"}
