@@ -800,6 +800,45 @@ entities:
     name: "Sunagakure invasion forces"
     aliases:
       - "сили Суни"
+  - id: "c-tsunade"
+    kind: "person"
+    name: "Tsunade"
+    aliases:
+      - "Цунаде"
+  - id: "c-kisame"
+    kind: "person"
+    name: "Kisame Hoshigaki"
+    aliases:
+      - "Кісаме"
+      - "Кісаме Хошіґакі"
+  - id: "group-akatsuki"
+    kind: "organization"
+    name: "Akatsuki"
+    aliases:
+      - "Акацукі"
+  - id: "loc-sunagakure"
+    kind: "location"
+    name: "Sunagakure"
+    aliases:
+      - "Сунаґакуре"
+      - "Суна"
+  - id: "loc-land-of-fire"
+    kind: "location"
+    name: "Land of Fire"
+    aliases:
+      - "Країна Вогню"
+  - id: "loc-konoha-cemetery"
+    kind: "location"
+    name: "Konoha cemetery"
+    aliases:
+      - "цвинтар Конохи"
+    parent_id: "loc-konohagakure"
+  - id: "loc-inn"
+    kind: "location"
+    name: "Unspecified inn"
+    aliases:
+      - "заїжджий двір"
+      - "готель"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
