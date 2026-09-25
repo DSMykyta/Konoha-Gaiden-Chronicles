@@ -491,6 +491,22 @@ entities:
     aliases:
       - "Чен"
       - "майстер Чен"
+  - id: "c-might-guy"
+    kind: "person"
+    name: "Might Guy"
+    aliases:
+      - "Майто Ґай"
+      - "Ґай"
+  - id: "c-moegi"
+    kind: "person"
+    name: "Moegi Kazamatsuri"
+    aliases:
+      - "Моегі"
+  - id: "c-udon"
+    kind: "person"
+    name: "Udon Ise"
+    aliases:
+      - "Удон"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
