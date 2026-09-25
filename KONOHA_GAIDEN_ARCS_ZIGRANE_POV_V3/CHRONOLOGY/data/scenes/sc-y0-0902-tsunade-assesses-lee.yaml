@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0902-tsunade-assesses-lee"
+continuity_id: "main"
+title: "Цунаде оцінює стан Рока Лі"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0902", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0902-tsunade-examines-lee"
+    legacy_ids: ["V10-000083-E"]
+    title: "Цунаде оглядає Рока Лі"
+    text: "Цунаде оцінює пошкодження Рока Лі після бою з Ґаарою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+      - {entity_id: "c-gaara", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000083-E", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0902-tsunade-gives-lee-fifty-percent"
+    legacy_ids: ["V10-000083-E"]
+    title: "Цунаде оцінює шанс операції приблизно у 50%"
+    text: "Цунаде попереджає Лі, що складна операція дає лише приблизно п’ятдесят відсотків шансів на успіх."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000083-E", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0902-lee-1", kind: "before", a: "ev-y0-0902-tsunade-examines-lee", b: "ev-y0-0902-tsunade-gives-lee-fifty-percent", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000083-E"]}
+presence:
+  - {id: "pr-0902-lee-tsunade", entity_id: "c-tsunade", from: "sc-y0-0902-tsunade-assesses-lee.start", to: "sc-y0-0902-tsunade-assesses-lee.end", basis: "imported", evidence_ids: ["evd-v10-000083-E"], review: "accepted"}
+  - {id: "pr-0902-lee-lee", entity_id: "c-lee", from: "sc-y0-0902-tsunade-assesses-lee.start", to: "sc-y0-0902-tsunade-assesses-lee.end", basis: "imported", evidence_ids: ["evd-v10-000083-E"], review: "accepted"}
