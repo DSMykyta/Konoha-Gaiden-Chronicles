@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-y0-1103-hoshigakure-meets-sumaru"
+continuity_id: "main"
+title: "Загін проходить отруйну долину й зустрічає Сумару"
+location_id: "loc-death-valley-hoshi"
+placement: {anchor_id: "ta-y0-1103-hoshi", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1103-team-crosses-poison-gas-ravine"
+    legacy_ids: ["V10-000170"]
+    title: "Команда перетинає отруйну прикордонну долину"
+    text: "На підході до Хошіґакуре Наруто, Неджи, Лі й Тентен проходять небезпечну долину з отруйним газом, що ізолює селище."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "leader", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000170", "evd-anime-178"]
+  - id: "ev-y0-1103-team-meets-sumaru"
+    legacy_ids: ["V10-000170"]
+    title: "Сумару зустрічає загін Конохи"
+    text: "На кордоні їх зустрічає молодий шинобі Сумару, який мріє стати «Хошікаґе»; Наруто одразу бачить у цій мрії паралель зі своєю."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sumaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000170", "evd-anime-178"]
+  - id: "ev-y0-1103-team-arrives-hoshigakure"
+    legacy_ids: ["V10-000170"]
+    title: "Загін прибуває до Хошіґакуре для охорони Зірки"
+    text: "Сумару проводить шинобі Конохи до селища, де вони переходять до безпосередньої охорони метеорита."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sumaru", role: "guide", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "leader", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-akahoshi", role: "local_authority", mode: "physical"}
+    evidence_ids: ["evd-v10-000170", "evd-anime-178"]
+relations:
+  - {id: "rel-1103-hoshi-sumaru-1", kind: "before", a: "ev-y0-1103-team-crosses-poison-gas-ravine", b: "ev-y0-1103-team-meets-sumaru", basis: "source", review: "accepted", evidence_ids: ["evd-anime-178"]}
+  - {id: "rel-1103-hoshi-sumaru-2", kind: "before", a: "ev-y0-1103-team-meets-sumaru", b: "ev-y0-1103-team-arrives-hoshigakure", basis: "source", review: "accepted", evidence_ids: ["evd-anime-178"]}
+presence: []
