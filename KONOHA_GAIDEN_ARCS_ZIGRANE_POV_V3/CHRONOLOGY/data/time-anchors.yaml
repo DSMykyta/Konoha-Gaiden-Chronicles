@@ -506,3 +506,35 @@ anchors:
     evidence_ids: ["evd-v10-000104"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for main/ALT material."
+  - id: "ta-y0-0913"
+    date: {year: 0, month: 9, day: 13}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000106"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0914"
+    date: {year: 0, month: 9, day: 14}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000107"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0915"
+    date: {year: 0, month: 9, day: 15}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000108"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
+  - id: "ta-y0-0916"
+    date: {year: 0, month: 9, day: 16}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000109"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for retrospective placement."
