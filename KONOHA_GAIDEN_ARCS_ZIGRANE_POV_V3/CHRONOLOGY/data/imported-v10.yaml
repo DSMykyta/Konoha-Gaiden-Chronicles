@@ -1727,7 +1727,7 @@ records:
       SupportingSources: "A [еп. 31–36] — Сакура захищає непритомних товаришів; Лі та Команда 10 вступають у бій; Саске пробуджується з Проклятою Печаткою."
       Review: ""
   - legacy_id: "V10-000043"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1752,7 +1752,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000044"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1777,7 +1777,7 @@ records:
       SupportingSources: "A [еп. 37] — Команда 7 здобуває потрібний сувій і наближається до вежі. || A [Shippūden еп. 117; ретроспектива] — аніме показує спогад Карін про цю зустріч і порятунок Саске під час другого етапу іспиту."
       Review: ""
   - legacy_id: "V10-000045"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1802,7 +1802,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000045-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1827,7 +1827,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000045-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1852,7 +1852,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000045-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1877,7 +1877,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000045-E"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1902,7 +1902,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1927,7 +1927,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1952,7 +1952,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-C"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1977,7 +1977,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2002,7 +2002,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-E"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2027,7 +2027,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-F"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2052,7 +2052,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-G"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2077,7 +2077,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-H"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2102,7 +2102,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-I"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2127,7 +2127,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-J"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2152,7 +2152,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-K"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2177,7 +2177,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-L"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2202,7 +2202,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000046-M"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
