@@ -1,0 +1,36 @@
+schema_version: 1
+id: "sc-y0-0329-tree-training-complete"
+continuity_id: "main"
+title: "Наруто й Саске завершують вправу з ходіння по деревах"
+location_id: "loc-wave-tree-training"
+placement: {anchor_id: "ta-y0-0329", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0329-naruto-sasuke-complete-tree-training"
+    legacy_ids: ["V10-000030"]
+    title: "Наруто й Саске опановують ходіння по деревах"
+    text: "Наруто й Саске завершують вправу з контролю чакри та можуть підніматися по деревах без рук."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000030", "evd-manga-land-waves"]
+  - id: "ev-y0-0329-naruto-collapses-overtraining"
+    legacy_ids: ["V10-000030"]
+    title: "Наруто непритомніє від перевтоми"
+    text: "Після надмірного тренування Наруто непритомніє від виснаження."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000030", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0329-tree-complete-before-collapse", kind: "before", a: "ev-y0-0329-naruto-sasuke-complete-tree-training", b: "ev-y0-0329-naruto-collapses-overtraining", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000030"]}
+presence:
+  - {id: "pr-0329-tree-naruto", entity_id: "c-naruto", from: "sc-y0-0329-tree-training-complete.start", to: "sc-y0-0329-tree-training-complete.end", basis: "imported", evidence_ids: ["evd-v10-000030"], review: "accepted"}
+  - {id: "pr-0329-tree-sasuke", entity_id: "c-sasuke", from: "sc-y0-0329-tree-training-complete.start", to: "ev-y0-0329-naruto-collapses-overtraining.start", basis: "imported", evidence_ids: ["evd-v10-000030"], review: "pending"}
