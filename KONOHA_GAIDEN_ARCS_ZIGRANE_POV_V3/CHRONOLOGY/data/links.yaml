@@ -1120,5 +1120,26 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-anime-136-140"]
+  - id: "lnk-0930-team8-fail-before-shino-home"
+    kind: "before"
+    a: "sc-y0-0930-team8-suika-failed-capture"
+    b: "sc-y0-0930-shino-withdraws"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-shippuden-236"]
+  - id: "lnk-0930-shino-home-before-hot-springs"
+    kind: "before"
+    a: "sc-y0-0930-shino-withdraws"
+    b: "sc-y0-0930-team8-hot-springs-training"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-shippuden-236"]
+  - id: "lnk-0930-hot-springs-before-suika-rematch"
+    kind: "before"
+    a: "sc-y0-0930-team8-hot-springs-training"
+    b: "sc-y0-0930-team8-suika-rematch"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-shippuden-236"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
