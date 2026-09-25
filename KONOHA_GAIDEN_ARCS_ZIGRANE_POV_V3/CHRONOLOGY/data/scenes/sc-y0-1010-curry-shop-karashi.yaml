@@ -1,0 +1,43 @@
+schema_version: 1
+id: "sc-y0-1010-curry-shop-karashi"
+continuity_id: "main"
+title: "Саншо й Караші розповідають про Райґу та Катабамі"
+location_id: "loc-curry-of-life-shop"
+placement: {anchor_id: "ta-y0-1010-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1010-team-arrives-curry-shop"
+    legacy_ids: ["V10-000139"]
+    title: "Група зупиняється в крамниці Карі Життя"
+    text: "На шляху до копальні Наруто, Лі, Неджи й Тентен приходять до закладу Саншо, пов'язаного з минулим Лі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-sansho", role: "host", mode: "physical"}
+      - {entity_id: "c-karashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-anime-152-157"]
+  - id: "ev-y0-1010-karashi-explains-raiga-terror"
+    legacy_ids: ["V10-000139"]
+    title: "Караші описує живі похорони Райґи"
+    text: "Караші пояснює, що родину Куросукі очолює Райґа, який тероризує мешканців Катабамі й влаштовує живим людям показові похорони."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-karashi", role: "source", mode: "physical"}
+      - {entity_id: "c-raiga", role: "subject", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-lee", role: "recipient", mode: "physical"}
+      - {entity_id: "c-neji", role: "recipient", mode: "physical"}
+      - {entity_id: "c-tenten", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000139", "evd-anime-152-157"]
+relations:
+  - {id: "rel-1010-curry-1", kind: "before", a: "ev-y0-1010-team-arrives-curry-shop", b: "ev-y0-1010-karashi-explains-raiga-terror", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+presence: []
