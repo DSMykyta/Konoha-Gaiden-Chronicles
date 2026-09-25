@@ -1673,5 +1673,40 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-anime-175-176"]
+  - id: "lnk-alt-1101-uc2-attack-before-briefing"
+    kind: "before"
+    a: "sc-alt-y0-1101-uc2-shirogane-attack"
+    b: "sc-alt-y0-1101-uc2-hokage-briefing"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-uzumaki-chronicles-2"]
+  - id: "lnk-alt-1101-uc2-briefing-before-1102-orbs"
+    kind: "before"
+    a: "sc-alt-y0-1101-uc2-hokage-briefing"
+    b: "sc-alt-y0-1102-uc2-spirit-orb-war"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-uzumaki-chronicles-2"]
+  - id: "lnk-alt-1102-uc2-orbs-before-1103-finale"
+    kind: "before"
+    a: "sc-alt-y0-1102-uc2-spirit-orb-war"
+    b: "sc-alt-y0-1103-uc2-master-puppet-finale"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-uzumaki-chronicles-2"]
+  - id: "lnk-1102-postman-mixup-before-chase"
+    kind: "before"
+    a: "sc-y0-1102-postman-manuscript-mixup"
+    b: "sc-y0-1102-postman-chase-peace"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-177"]
+  - id: "lnk-1103-hoshi-depart-before-sumaru"
+    kind: "before"
+    a: "sc-y0-1103-hoshigakure-mission-departure"
+    b: "sc-y0-1103-hoshigakure-meets-sumaru"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-178"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
