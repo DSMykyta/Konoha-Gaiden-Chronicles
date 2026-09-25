@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1007-hinata-kidnapped-kamizuru"
+continuity_id: "main"
+title: "Камізуру викрадають Хінату"
+location_id: "loc-bikocho-habitat"
+placement: {anchor_id: "ta-y0-1007", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1007-kamizuru-abduct-hinata"
+    legacy_ids: ["V10-000137"]
+    title: "Судзумебачі та її брати захоплюють Хінату"
+    text: "Після того як команда здобуває бікоочу, Камізуру відокремлюють Хінату від товаришів і беруть її в полон."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-suzumebachi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurobachi", role: "participant", mode: "physical"}
+      - {entity_id: "c-jibachi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000137", "evd-anime-148-151"]
+  - id: "ev-y0-1007-kamizuru-demand-bikocho-egg"
+    legacy_ids: ["V10-000137"]
+    title: "Камізуру вимагають кладку в обмін на Хінату"
+    text: "Викрадачі висувають умову: команда має віддати бікоочу та його кладку, якщо хоче повернути Хінату."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-suzumebachi", role: "issuer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "hostage", mode: "physical"}
+      - {entity_id: "c-shino", role: "recipient", mode: "remote"}
+      - {entity_id: "c-kiba", role: "recipient", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "remote"}
+    evidence_ids: ["evd-v10-000137", "evd-anime-148-151"]
+relations:
+  - {id: "rel-1007-hinata-kidnap-1", kind: "before", a: "ev-y0-1007-kamizuru-abduct-hinata", b: "ev-y0-1007-kamizuru-demand-bikocho-egg", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
