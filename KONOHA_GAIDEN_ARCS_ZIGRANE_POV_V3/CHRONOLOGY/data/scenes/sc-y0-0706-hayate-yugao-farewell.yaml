@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0706-hayate-yugao-farewell"
+continuity_id: "main"
+title: "Остання розмова Хаяте й Юґао"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-hayate-yugao-promise"
+    legacy_ids: ["V10-000051"]
+    title: "Хаяте й Юґао обіцяють захищати одне одного"
+    text: "Перед виходом на стеження Хаяте прощається з Юґао; вони обіцяють захищати одне одного."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hayate", role: "focus", mode: "physical"}
+      - {entity_id: "c-yugao", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000051", "evd-shippuden-307-308"]
+relations: []
+presence:
+  - {id: "pr-0706-farewell-hayate", entity_id: "c-hayate", from: "sc-y0-0706-hayate-yugao-farewell.start", to: "sc-y0-0706-hayate-yugao-farewell.end", basis: "source", evidence_ids: ["evd-v10-000051"], review: "accepted"}
+  - {id: "pr-0706-farewell-yugao", entity_id: "c-yugao", from: "sc-y0-0706-hayate-yugao-farewell.start", to: "sc-y0-0706-hayate-yugao-farewell.end", basis: "source", evidence_ids: ["evd-v10-000051"], review: "accepted"}
