@@ -162,3 +162,75 @@ anchors:
     evidence_ids: ["evd-v10-000022"]
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: inherited."
+  - id: "ta-y0-0315"
+    date: {year: 0, month: 3, day: 15}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000023"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0316"
+    date: {year: 0, month: 3, day: 16}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000025"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0317"
+    date: {year: 0, month: 3, day: 17}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000026"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0318"
+    date: {year: 0, month: 3, day: 18}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000027"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0322"
+    date: {year: 0, month: 3, day: 22}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000028"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0328"
+    date: {year: 0, month: 3, day: 28}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000029"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0329"
+    date: {year: 0, month: 3, day: 29}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000030"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0330"
+    date: {year: 0, month: 3, day: 30}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000031"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0413"
+    date: {year: 0, month: 4, day: 13}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000033"]
+    review: "accepted"
+    reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
