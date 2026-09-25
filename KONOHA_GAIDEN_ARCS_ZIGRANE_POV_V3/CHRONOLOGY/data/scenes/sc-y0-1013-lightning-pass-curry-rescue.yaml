@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1013-lightning-pass-curry-rescue"
+continuity_id: "main"
+title: "Карі Життя повертає бійців до бою на Блискавичному перевалі"
+location_id: "loc-lightning-pass"
+placement: {anchor_id: "ta-y0-1013-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1013-raiga-overwhelms-naruto-lee-neji"
+    legacy_ids: ["V10-000144"]
+    title: "Відроджений Райґа виснажує Наруто, Лі й Неджи"
+    text: "На Блискавичному перевалі Райґа знову б'ється з Наруто, Лі й Неджи; буря та блискавичні атаки виснажують загін."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-raiga", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-lee", role: "opponent", mode: "physical"}
+      - {entity_id: "c-neji", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000144", "evd-anime-152-157"]
+  - id: "ev-y0-1013-karashi-brings-curry-life"
+    legacy_ids: ["V10-000144"]
+    title: "Караші приносить Карі Життя виснаженим шинобі"
+    text: "Караші разом із людьми Саншо приносить Карі Життя до поля бою; страва повертає Лі й Наруто сили для продовження сутички."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-karashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-sansho", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000144", "evd-anime-152-157"]
+relations:
+  - {id: "rel-1013-lightning-curry-1", kind: "before", a: "ev-y0-1013-raiga-overwhelms-naruto-lee-neji", b: "ev-y0-1013-karashi-brings-curry-life", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+presence: []
