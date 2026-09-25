@@ -1338,6 +1338,52 @@ entities:
     aliases:
       - "скелі біля Катабамі"
     parent_id: "loc-river-country"
+  - id: "c-sazanami"
+    kind: "person"
+    name: "Sazanami"
+    aliases:
+      - "Садзанамі"
+      - "Токічі"
+  - id: "c-gosunkugi"
+    kind: "person"
+    name: "Gosunkugi"
+    aliases:
+      - "Ґосункуґі"
+  - id: "c-gatsu"
+    kind: "person"
+    name: "Gatsu"
+    aliases:
+      - "Ґацу"
+  - id: "c-mondai"
+    kind: "person"
+    name: "Mondai"
+    aliases:
+      - "Мондай"
+      - "Мондай Ґай"
+  - id: "c-potcha"
+    kind: "person"
+    name: "Potcha"
+    aliases:
+      - "Потча"
+      - "Потча Лі"
+  - id: "loc-academy-survival-mountain"
+    kind: "location"
+    name: "Academy survival exercise mountain"
+    aliases:
+      - "гора польового випробування Академії"
+    parent_id: "loc-land-of-fire"
+  - id: "loc-sazanami-cabin"
+    kind: "location"
+    name: "Sazanami's temporary cabin"
+    aliases:
+      - "тимчасова хатина Садзанамі"
+    parent_id: "loc-land-of-fire"
+  - id: "loc-ok-temple"
+    kind: "location"
+    name: "O.K. Temple"
+    aliases:
+      - "храм О.К."
+    parent_id: "loc-land-of-fire"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
