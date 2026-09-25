@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-y0-0904-aoi-attacks-idate-naruto"
+continuity_id: "main"
+title: "Аої виводить Ідате з ладу й скидає Наруто в море"
+location_id: "loc-land-of-tea"
+placement: {anchor_id: "ta-y0-0904", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0904-aoi-disables-idate"
+    legacy_ids: ["V10-000089"]
+    title: "Аої виводить Ідате з ладу"
+    text: "Під час місії Аої застосовує отруту проти Ідате."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-aoi", role: "focus", mode: "physical"}
+      - {entity_id: "c-idate", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000089", "evd-anime-102-106"]
+  - id: "ev-y0-0904-aoi-throws-naruto-sea"
+    legacy_ids: ["V10-000089"]
+    title: "Аої скидає Наруто в море"
+    text: "У тій самій сутичці Аої скидає Наруто в море."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-aoi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000089", "evd-anime-102-106"]
+relations:
+  - {id: "rel-0904-aoi-1", kind: "before", a: "ev-y0-0904-aoi-disables-idate", b: "ev-y0-0904-aoi-throws-naruto-sea", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000089"]}
+presence: []
