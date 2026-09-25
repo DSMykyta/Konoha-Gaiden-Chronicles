@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0801-edo-sacrifices"
+continuity_id: "main"
+title: "Кін і Заку стають жертвами Нечистого Воскресіння"
+location_id: null
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-kin-zaku-used-as-edo-sacrifices"
+    legacy_ids: ["V10-000070"]
+    title: "Орочімару використовує Кін і Заку як людські жертви"
+    text: "Кін Цучі й Заку Абумі стають людськими жертвами для Нечистого Воскресіння Першого й Другого Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kin", role: "affected", mode: "physical"}
+      - {entity_id: "c-zaku", role: "affected", mode: "physical"}
+      - {entity_id: "c-hashirama", role: "affected", mode: "remote"}
+      - {entity_id: "c-tobirama", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000070", "evd-manga-finals-konoha-crush"]
+relations: []
+presence: []
