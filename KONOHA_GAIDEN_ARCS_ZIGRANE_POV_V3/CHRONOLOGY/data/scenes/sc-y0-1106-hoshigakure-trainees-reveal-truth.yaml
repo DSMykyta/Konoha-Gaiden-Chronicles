@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-1106-hoshigakure-trainees-reveal-truth"
+continuity_id: "main"
+title: "Учні Хошіґакуре відкрито показують, що Зірка руйнує їхні тіла"
+location_id: "loc-hoshigakure"
+placement: {anchor_id: "ta-y0-1106", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1106-sumaru-feels-natsuhi-death"
+    legacy_ids: ["V10-000174"]
+    title: "Сумару розуміє, що Нацухі загинула"
+    text: "Після загибелі Нацухі Сумару відчуває втрату матері й повертається до селища вже без ілюзії, що конфлікт можна завершити приховано."
+    origin: "F"
+    extent: "instant"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sumaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-natsuhi", role: "deceased_subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-hokuto-mizura-show-star-damage"
+    legacy_ids: ["V10-000174"]
+    title: "Хокуто й Мізура показують мешканцям наслідки тренувань"
+    text: "Хокуто й тяжко хворий Мізура відкрито виступають перед мешканцями Хошіґакуре й демонструють, що вплив метеорита не просто виснажує учнів, а калічить їх."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hokuto", role: "source", mode: "physical"}
+      - {entity_id: "c-mizura", role: "affected", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "cause", mode: "remote"}
+      - {entity_id: "c-akahoshi", role: "opposed_authority", mode: "physical"}
+      - {entity_id: "c-sumaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-hoshigakure-turns-against-akahoshi"
+    legacy_ids: ["V10-000174"]
+    title: "Мешканці відмовляються підтримувати Акагоші"
+    text: "Після свідчень дітей прихована ціна тренувань стає публічною, і підтримка Акагоші в селищі руйнується."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-akahoshi", role: "affected", mode: "physical"}
+      - {entity_id: "c-sumaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-hokuto", role: "participant", mode: "physical"}
+      - {entity_id: "c-mizura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1106-hoshi-truth-1", kind: "before", a: "ev-y0-1106-sumaru-feels-natsuhi-death", b: "ev-y0-1106-hokuto-mizura-show-star-damage", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+  - {id: "rel-1106-hoshi-truth-2", kind: "before", a: "ev-y0-1106-hokuto-mizura-show-star-damage", b: "ev-y0-1106-hoshigakure-turns-against-akahoshi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
