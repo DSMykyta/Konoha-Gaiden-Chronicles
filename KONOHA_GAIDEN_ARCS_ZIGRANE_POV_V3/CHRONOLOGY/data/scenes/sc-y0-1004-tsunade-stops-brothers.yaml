@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-y0-1004-tsunade-stops-brothers"
+continuity_id: "main"
+title: "Цунаде зупиняє Фуджіна й Райджіна"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1004", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1004-tsunade-subdues-fujin-raijin"
+    legacy_ids: ["V10-000132", "V10-000133"]
+    title: "Цунаде легко підкорює Фуджіна й Райджіна"
+    text: "Коли стримування Команди 10 вже не витримує, Цунаде прибуває до братів, демонструє силу й переконує їх, що Мідзукі ними скористався; вони погоджуються повернутися під варту."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-fujin", role: "affected", mode: "physical"}
+      - {entity_id: "c-raijin", role: "affected", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000132", "evd-v10-000133", "evd-anime-142-147"]
+relations: []
+presence: []
