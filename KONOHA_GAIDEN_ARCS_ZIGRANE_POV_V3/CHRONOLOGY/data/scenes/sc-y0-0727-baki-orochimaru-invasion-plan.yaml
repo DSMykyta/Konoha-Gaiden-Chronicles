@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0727-baki-orochimaru-invasion-plan"
+continuity_id: "main"
+title: "Бакі й Орочімару узгоджують вторгнення"
+location_id: null
+placement: {anchor_id: "ta-y0-0727", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0727-orochimaru-poses-as-kazekage"
+    legacy_ids: ["V10-000055", "V10-000057"]
+    title: "Орочімару використовує особу Четвертого Казекаґе"
+    text: "Після смерті Раси Орочімару діє під виглядом Четвертого Казекаґе для координації вторгнення."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-rasa", role: "portrayed", mode: "remote"}
+    evidence_ids: ["evd-v10-000055", "evd-v10-000057", "evd-manga-konoha-crush-prelude"]
+  - id: "ev-y0-0727-baki-confirms-invasion-plan"
+    legacy_ids: ["V10-000057"]
+    title: "Бакі підтверджує фінальні домовленості"
+    text: "Бакі зустрічається з Орочімару, який видає себе за Казекаґе, й уточнює остаточні домовленості щодо вторгнення."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-baki", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000057", "evd-manga-konoha-crush-prelude", "evd-anime-67-68"]
+relations:
+  - {id: "rel-0727-invasion-1", kind: "before", a: "ev-y0-0727-orochimaru-poses-as-kazekage", b: "ev-y0-0727-baki-confirms-invasion-plan", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000057"]}
+presence:
+  - {id: "pr-0727-plan-orochimaru", entity_id: "c-orochimaru", from: "sc-y0-0727-baki-orochimaru-invasion-plan.start", to: "sc-y0-0727-baki-orochimaru-invasion-plan.end", basis: "source", evidence_ids: ["evd-v10-000057"], review: "accepted"}
+  - {id: "pr-0727-plan-baki", entity_id: "c-baki", from: "ev-y0-0727-baki-confirms-invasion-plan.start", to: "sc-y0-0727-baki-orochimaru-invasion-plan.end", basis: "source", evidence_ids: ["evd-v10-000057"], review: "accepted"}
