@@ -1092,5 +1092,33 @@ links:
     basis: "imported"
     review: "pending"
     evidence_ids: ["evd-v10-000123-D", "evd-v10-000123-F"]
+  - id: "lnk-0926-rice-before-0927-sasame"
+    kind: "before"
+    a: "sc-y0-0926-rice-fields-mission-begins"
+    b: "sc-y0-0927-sasame-and-fuma"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-136-140"]
+  - id: "lnk-0927-sasame-before-fuma-ambush"
+    kind: "before"
+    a: "sc-y0-0927-sasame-and-fuma"
+    b: "sc-y0-0927-fuma-ambush"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-136-140"]
+  - id: "lnk-0927-fuma-before-0928-residence"
+    kind: "before"
+    a: "sc-y0-0927-fuma-ambush"
+    b: "sc-y0-0928-orochimaru-residence-infiltration"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-136-140"]
+  - id: "lnk-0928-residence-before-arashi"
+    kind: "before"
+    a: "sc-y0-0928-orochimaru-residence-infiltration"
+    b: "sc-y0-0928-arashi-chimera"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-136-140"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
