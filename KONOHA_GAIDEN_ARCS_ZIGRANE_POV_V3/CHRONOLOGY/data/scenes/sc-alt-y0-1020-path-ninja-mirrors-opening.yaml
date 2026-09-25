@@ -1,0 +1,36 @@
+schema_version: 1
+id: "sc-alt-y0-1020-path-ninja-mirrors-opening"
+continuity_id: "alt-game-path-ninja-2"
+title: "Починається пошук П'яти Дзеркал Надії"
+placement: {anchor_id: "ta-alt-y0-1020-path-ninja-2", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1020-nazuna-explains-five-mirrors"
+    legacy_ids: ["V10-000153"]
+    title: "Назуна пояснює загрозу Духовного Звіра й П'ять Дзеркал"
+    text: "В альтернативній ігровій гілці Назуна повідомляє, що Ґеншо Рюдоін намагається відродити Духовного Звіра, а зупинити це можна лише зібравши П'ять Дзеркал Надії."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-nazuna", role: "source", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "target", mode: "remote"}
+      - {entity_id: "c-spirit-beast", role: "threat", mode: "remote"}
+    evidence_ids: ["evd-v10-000153", "evd-game-path-ninja-2"]
+  - id: "ev-alt-y0-1020-mirror-search-begins"
+    legacy_ids: ["V10-000153"]
+    title: "Наруто та союзники починають збирати Дзеркала"
+    text: "Наруто та союзники вирушають шукати п'ять артефактів, кожен із яких пов'язаний із випробуванням і повторним переживанням подій минулого."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000153", "evd-game-path-ninja-2"]
+relations:
+  - {id: "rel-alt-1020-potn2-1", kind: "before", a: "ev-alt-y0-1020-nazuna-explains-five-mirrors", b: "ev-alt-y0-1020-mirror-search-begins", basis: "source", review: "accepted", evidence_ids: ["evd-game-path-ninja-2"]}
+presence: []
