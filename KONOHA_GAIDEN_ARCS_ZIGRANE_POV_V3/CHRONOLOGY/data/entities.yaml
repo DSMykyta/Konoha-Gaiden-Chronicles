@@ -1470,6 +1470,74 @@ entities:
     name: "Valley of Evil"
     aliases:
       - "Долина Зла"
+  - id: "c-ayame"
+    kind: "person"
+    name: "Ayame"
+    aliases:
+      - "Аяме"
+  - id: "c-hakkaku"
+    kind: "person"
+    name: "Hakkaku"
+    aliases:
+      - "Хаккаку"
+  - id: "group-cooking-nin"
+    kind: "organization"
+    name: "Cooking-nin"
+    aliases:
+      - "ніндзя-кухарі"
+      - "рьонін"
+  - id: "loc-cooking-nin-kitchen"
+    kind: "location"
+    name: "Cooking-nin kitchen"
+    aliases:
+      - "кухня ніндзя-кухарів"
+    parent_id: "loc-land-of-fire"
+  - id: "c-amachi"
+    kind: "person"
+    name: "Amachi"
+    aliases:
+      - "Амачі"
+  - id: "c-isaribi"
+    kind: "person"
+    name: "Isaribi"
+    aliases:
+      - "Ісарібі"
+  - id: "c-umibozu"
+    kind: "creature"
+    name: "Umibōzu"
+    aliases:
+      - "Умібодзу"
+      - "морське чудовисько"
+  - id: "loc-land-of-sea"
+    kind: "location"
+    name: "Land of the Sea"
+    aliases:
+      - "Країна Моря"
+  - id: "loc-demon-island"
+    kind: "location"
+    name: "Demon Island"
+    aliases:
+      - "Острів Демона"
+      - "Кікайджіма"
+    parent_id: "loc-land-of-sea"
+  - id: "loc-orochimaru-lab-sea"
+    kind: "location"
+    name: "Orochimaru's sea laboratory"
+    aliases:
+      - "морська лабораторія Орочімару"
+    parent_id: "loc-demon-island"
+  - id: "loc-land-sea-government-ship"
+    kind: "location"
+    name: "Land of the Sea government ship"
+    aliases:
+      - "урядове судно Країни Моря"
+    parent_id: "loc-land-of-sea"
+  - id: "loc-land-sea-coast"
+    kind: "location"
+    name: "Land of the Sea coast"
+    aliases:
+      - "узбережжя Країни Моря"
+    parent_id: "loc-land-of-sea"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
