@@ -1,0 +1,21 @@
+schema_version: 1
+id: "sc-y0-1010-naruto-thirteenth-birthday"
+continuity_id: "main"
+title: "Наруто виповнюється 13 років"
+placement: {anchor_id: "ta-y0-1010-naruto-birthday", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1010-naruto-turns-thirteen"
+    legacy_ids: ["V10-000140"]
+    title: "Тринадцятий день народження Наруто"
+    text: "10 жовтня Наруто Узумакі виповнюється 13 років у прийнятій шкалі Year 0. Подія фіксує зміну віку, а не окремо засвідчене святкування чи місце перебування."
+    origin: "D"
+    extent: "instant"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000140", "evd-official-naruto-birthday"]
+relations: []
+presence: []
