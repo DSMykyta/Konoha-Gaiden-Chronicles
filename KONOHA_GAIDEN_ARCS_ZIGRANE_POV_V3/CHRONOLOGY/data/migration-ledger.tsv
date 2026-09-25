@@ -170,15 +170,15 @@ V10-000083-F	0	02.09	M	migrated	ev-y0-0902-shikamaru-promoted-chunin	Shikamaru p
 V10-000086	0	03.09	F	superseded	ev-y0-0903-team7-decides-unmask-kakashi;ev-y0-0903-team7-follows-and-traps-kakashi;ev-y0-0903-team7-disrupts-moya-encounter;ev-y0-0903-kakashi-reveals-second-mask	Episode 101 decomposed into scene-level events.
 V10-000087	0	03.09	R	superseded	ev-alt-y0-0903-sukea-joins-mask-hunt;ev-alt-y0-0903-teams-infiltrate-secret-archive;ev-alt-y0-0903-teams-stage-rescue;ev-alt-y0-0903-sukea-revealed-kakashi	Shippuden 469 preserved as separate ALT continuity and decomposed by scene.
 V10-000088	0	03.09	V	superseded	ev-alt-y0-0903-team7-escorts-yukie;ev-alt-y0-0903-yukie-revealed-koyuki;ev-alt-y0-0903-koyuki-exile-doto-coup;ev-alt-y0-0903-team7-fights-doto-shinobi;ev-alt-y0-0903-naruto-defeats-doto;ev-alt-y0-0903-koyuki-restores-land-snow	Land of Snow movie preserved as ALT movie continuity and decomposed into scene nodes.
-V10-000089	0	04.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000090	0	04.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000091	0	05.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000092	0	05.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000093	0	05.09	N	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000094	0	06.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000095	0	06.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000096	0	06.09	N	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000097	0	07.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000089	0	04.09	F	superseded	ev-y0-0904-ibiki-assigns-team7-idate;ev-y0-0904-aoi-disables-idate;ev-y0-0904-aoi-throws-naruto-sea	Tea mission opening split into assignment and Aoi attack.
+V10-000090	0	04.09	O	superseded	ev-y0-0904-team7-escorts-shibuki;ev-y0-0904-waterfall-suien-plan-revealed	Waterfall OVA opening split into escort and threat revelation.
+V10-000091	0	05.09	F	superseded	ev-y0-0905-team7-rescues-idate;ev-y0-0905-team-reaches-nagi;ev-y0-0905-aoi-betrayal-thunder-sword-revealed	Idate rescue, Nagi arrival and Aoi betrayal revelation separated.
+V10-000092	0	05.09	O	superseded	ev-y0-0905-waterfall-attackers-capture-villagers;ev-y0-0905-shibuki-frozen-by-fear;ev-y0-0905-suien-seeks-hero-water	Waterfall siege decomposed.
+V10-000093	0	05.09	N	migrated	ev-alt-y0-0905-waterfall-novel-siege	Novel siege retained in ALT continuity.
+V10-000094	0	06.09	F	superseded	ev-y0-0906-sasuke-delays-aoi;ev-y0-0906-naruto-damages-thunder-sword	Aoi combat split.
+V10-000095	0	06.09	O	superseded	ev-y0-0906-naruto-sasuke-resist-suien;ev-y0-0906-naruto-inspires-shibuki;ev-y0-0906-shibuki-leads-defense;ev-y0-0906-waterfall-attack-repelled	Waterfall defense decomposed.
+V10-000096	0	06.09	N	migrated	ev-alt-y0-0906-waterfall-novel-ending	Novel ending retained in ALT continuity.
+V10-000097	0	07.09	F	superseded	ev-y0-0907-naruto-breaks-thunder-sword;ev-y0-0907-naruto-defeats-aoi;ev-y0-0907-idate-reaches-modoroki-first;ev-y0-0907-idate-secures-wasabi-victory;ev-y0-0907-jirocho-ends-feud;ev-y0-0907-idate-restores-faith-shinobi;ev-y0-0907-idate-reconciles-ibiki	Tea mission finale decomposed into combat, race finish and reconciliation.
 V10-000098	0	08.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000099	0	09.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000100	0	09.09	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
