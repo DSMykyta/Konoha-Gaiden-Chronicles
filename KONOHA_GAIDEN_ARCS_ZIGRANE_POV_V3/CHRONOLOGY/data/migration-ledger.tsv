@@ -159,14 +159,14 @@ V10-000082-E	0	01.09	M	superseded	ev-y0-0901-tsunade-overcomes-blood-fear;ev-y0-
 V10-000082-F	0	01.09	M	migrated	ev-y0-0901-sannin-summon	Three Sannin summon confrontation migrated.
 V10-000082-G	0	01.09	M	superseded	ev-y0-0901-tsunade-defeats-orochimaru;ev-y0-0901-orochimaru-kabuto-retreat	Tsunade victory and Orochimaru/Kabuto retreat separated.
 V10-000082-H	0	01.09	M	superseded	ev-y0-0901-tsunade-gives-necklace-naruto;ev-y0-0901-tsunade-recognizes-naruto-future-hokage;ev-y0-0901-tsunade-accepts-fifth-hokage	Post-battle recognition, necklace transfer and acceptance of office separated.
-V10-000084	0	02.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000083	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000083-B	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000083-C	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000085	0	02.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000083-D	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000083-E	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000083-F	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000084	0	02.09	F	superseded	ev-y0-0902-group-stops-hot-springs;ev-y0-0902-creditors-kidnap-naruto;ev-y0-0902-kidnap-plan-fails	Episode 97 filler decomposed; unsupported Konoha location dropped.
+V10-000083	0	02.09	M	superseded	ev-y0-0902-tsunade-stabilizes-naruto;ev-y0-0902-naruto-regains-consciousness	Treatment and recovery separated; Kabuto is remote cause.
+V10-000083-B	0	02.09	M	migrated	ev-y0-0902-tsunade-group-returns-konoha	Tsunade group return migrated.
+V10-000083-C	0	02.09	M	migrated	ev-y0-0902-tsunade-becomes-fifth-hokage	Tsunade inauguration migrated.
+V10-000085	0	02.09	F	superseded	ev-y0-0902-konohamaru-barricades-hokage-office;ev-y0-0902-naruto-helps-konohamaru-accept-change	Episode 99 filler split into obstruction and resolution.
+V10-000083-D	0	02.09	M	superseded	ev-y0-0902-tsunade-heals-kakashi;ev-y0-0902-tsunade-heals-sasuke	Kakashi and Sasuke treatments separated; Itachi is remote cause.
+V10-000083-E	0	02.09	M	superseded	ev-y0-0902-tsunade-examines-lee;ev-y0-0902-tsunade-gives-lee-fifty-percent	Lee examination and prognosis separated.
+V10-000083-F	0	02.09	M	migrated	ev-y0-0902-shikamaru-promoted-chunin	Shikamaru promotion migrated.
 V10-000086	0	03.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000087	0	03.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000088	0	03.09	V	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
