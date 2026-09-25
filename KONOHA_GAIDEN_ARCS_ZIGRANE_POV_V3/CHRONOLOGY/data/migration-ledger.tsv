@@ -45,9 +45,9 @@ V10-000032	0	30.03	M	superseded	ev-y0-0330-gato-men-attack-tazuna-home;ev-y0-033
 V10-000033	0	13.04	M	superseded	ev-y0-0413-bridge-completed;ev-y0-0413-bridge-named-after-naruto;ev-y0-0413-team7-says-farewell;ev-y0-0413-team7-returns-konoha	Bridge completion, naming, farewell and return separated.
 V10-000034	0	13.04	R	superseded	ev-y0-0413-naruto-returns-for-coupon;ev-y0-0413-inari-faces-gato-remnants;ev-y0-0413-naruto-sasuke-help-capture-remnants	Shippuden 180 retrospective decomposed into its new historical events.
 V10-000035	0	13.04	R	superseded	ev-y0-0413-naruto-confronts-sasuke;ev-y0-0413-sasuke-challenges-naruto-to-improve	Post-Waves rivalry retrospective split into exchange and response.
-V10-000036	0	14.04	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000037	0	15.04	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000038	0	16.04	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000036	0	14.04	O	superseded	ev-y0-0414-crossroads-team7-mission;ev-y0-0414-crossroads-rivalry-disrupts;ev-y0-0414-crossroads-team7-recovers	Cross Roads OVA split into mission, disruption and recovery; unsupported Land of Waves location dropped.
+V10-000037	0	15.04	R	superseded	ev-y0-0415-team7-escorts-condor;ev-y0-0415-naruto-enters-tsukado-feud;ev-y0-0415-feud-ends;ev-y0-0415-kanabun-gang-attacks	Condor retrospective split into escort, feud and later attack.
+V10-000038	0	16.04	R	superseded	ev-y0-0416-naruto-tenten-accompany-lee;ev-y0-0416-chen-reveals-alive;ev-y0-0416-chen-tests-lee;ev-y0-0416-lee-develops-answer-to-dragon	Chen retrospective split into arrival, reveal, test and Lee's response.
 V10-000039	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000039-B	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000039-C	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
