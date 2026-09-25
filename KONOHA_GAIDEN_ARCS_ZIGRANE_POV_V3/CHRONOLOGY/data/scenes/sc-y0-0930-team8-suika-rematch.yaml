@@ -1,0 +1,70 @@
+schema_version: 1
+id: "sc-y0-0930-team8-suika-rematch"
+continuity_id: "main"
+title: "Шіно повертається й допомагає затримати Суїку"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-0930", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0930-kiba-hinata-pursue-suika"
+    legacy_ids: ["V10-000129"]
+    title: "Кіба й Хіната вирушають за Суїкою"
+    text: "Отримавши повідомлення, Кіба, Хіната й Акамару починають переслідування Суїки, тоді як Шіно спершу лишається позаду."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-suika", role: "target", mode: "remote"}
+      - {entity_id: "c-shino", role: "nonparticipant", mode: "remote"}
+    evidence_ids: ["evd-shippuden-236"]
+  - id: "ev-y0-0930-suika-captures-kiba-hinata"
+    legacy_ids: ["V10-000129"]
+    title: "Суїка захоплює Кібу й Хінату"
+    text: "Під час повторної сутички Суїка бере гору й ув'язнює Кібу та Хінату."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-suika", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000129", "evd-shippuden-236"]
+  - id: "ev-y0-0930-shino-returns-against-suika"
+    legacy_ids: ["V10-000129"]
+    title: "Шіно повертається й вступає в ближній бій"
+    text: "Шіно приходить на допомогу товаришам і приймає бій із Суїкою на близькій дистанції, використовуючи навички, які щойно відпрацьовував."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-suika", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000129", "evd-shippuden-236"]
+  - id: "ev-y0-0930-team8-defeats-suika"
+    legacy_ids: ["V10-000129"]
+    title: "Команда 8 завершує затримання Суїки"
+    text: "Шіно витримує двобій, Кіба й Хіната звільняються, і команда спільно доводить затримання Суїки до кінця."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-suika", role: "affected", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-shippuden-236"]
+relations:
+  - {id: "rel-0930-suika-rematch-1", kind: "before", a: "ev-y0-0930-kiba-hinata-pursue-suika", b: "ev-y0-0930-suika-captures-kiba-hinata", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-236"]}
+  - {id: "rel-0930-suika-rematch-2", kind: "before", a: "ev-y0-0930-suika-captures-kiba-hinata", b: "ev-y0-0930-shino-returns-against-suika", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-236"]}
+  - {id: "rel-0930-suika-rematch-3", kind: "before", a: "ev-y0-0930-shino-returns-against-suika", b: "ev-y0-0930-team8-defeats-suika", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-236"]}
+presence: []
