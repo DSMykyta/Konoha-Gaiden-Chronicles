@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0722-naruto-summoning-practice"
+continuity_id: "main"
+title: "Наруто продовжує практику призову"
+location_id: null
+placement: {anchor_id: "ta-y0-0722", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0722-naruto-still-summons-small-toads"
+    legacy_ids: ["V10-000054"]
+    title: "Наруто все ще не може викликати бойову жабу"
+    text: "Паралельно Наруто продовжує тренування з Джираєю, але його призови все ще обмежуються пуголовками й малими жабами."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000054", "evd-anime-54-60"]
+relations: []
+presence:
+  - {id: "pr-0722-naruto-naruto", entity_id: "c-naruto", from: "sc-y0-0722-naruto-summoning-practice.start", to: "sc-y0-0722-naruto-summoning-practice.end", basis: "source", evidence_ids: ["evd-v10-000054"], review: "accepted"}
+  - {id: "pr-0722-naruto-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0722-naruto-summoning-practice.start", to: "sc-y0-0722-naruto-summoning-practice.end", basis: "source", evidence_ids: ["evd-v10-000054"], review: "accepted"}
