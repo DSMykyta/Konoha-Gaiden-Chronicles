@@ -1538,6 +1538,39 @@ entities:
     aliases:
       - "узбережжя Країни Моря"
     parent_id: "loc-land-of-sea"
+  - id: "c-kunihisa"
+    kind: "person"
+    name: "Kunihisa"
+    aliases:
+      - "Куніхіса"
+  - id: "c-kunijiro"
+    kind: "person"
+    name: "Kunijirō"
+    aliases:
+      - "Куніджіро"
+  - id: "c-agari-kaisen"
+    kind: "person"
+    name: "Agari Kaisen"
+    aliases:
+      - "Аґарі Кайсен"
+  - id: "group-kedoin"
+    kind: "organization"
+    name: "Kedōin Clan"
+    aliases:
+      - "клан Кедоїн"
+      - "трійця Кедоїн"
+  - id: "loc-kunijiro-estate"
+    kind: "location"
+    name: "Kunijirō's estate"
+    aliases:
+      - "маєток Куніджіро"
+    parent_id: "loc-land-of-fire"
+  - id: "loc-treasure-cave"
+    kind: "location"
+    name: "Buried treasure cave"
+    aliases:
+      - "печера зі скарбом"
+    parent_id: "loc-land-of-fire"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
