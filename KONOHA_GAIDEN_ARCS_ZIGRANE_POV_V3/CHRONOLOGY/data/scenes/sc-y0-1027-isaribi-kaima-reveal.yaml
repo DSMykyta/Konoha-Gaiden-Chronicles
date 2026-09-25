@@ -1,0 +1,67 @@
+schema_version: 1
+id: "sc-y0-1027-isaribi-kaima-reveal"
+continuity_id: "main"
+title: "Команда з'ясовує, що кайма — це Ісарібі"
+location_id: "loc-land-sea-coast"
+placement: {anchor_id: "ta-y0-1027", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1027-naruto-recovers-with-isaribi"
+    legacy_ids: ["V10-000161"]
+    title: "Наруто приходить до тями поруч з Ісарібі"
+    text: "Після порятунку з моря Наруто відновлюється поруч з Ісарібі й дізнається, що місцеві ставляться до неї як до чудовиська."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000161", "evd-anime-169-173"]
+  - id: "ev-y0-1027-anko-ino-shino-find-kaima"
+    legacy_ids: ["V10-000161"]
+    title: "Анко, Іно й Шіно знаходять кайму"
+    text: "Поки Наруто окремо шукає шлях назад, Анко, Іно й Шіно продовжують розслідування та перехоплюють істоту, яку вважають морським демоном."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-anko", role: "leader", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000161", "evd-anime-169-173"]
+  - id: "ev-y0-1027-kaima-revealed-isaribi"
+    legacy_ids: ["V10-000161"]
+    title: "Кайма виявляється трансформованою Ісарібі"
+    text: "Після сутички стає зрозуміло, що істота — це Ісарібі, чиє тіло було змінене експериментами."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-isaribi", role: "focus", mode: "physical"}
+      - {entity_id: "c-anko", role: "observer", mode: "physical"}
+      - {entity_id: "c-ino", role: "observer", mode: "physical"}
+      - {entity_id: "c-shino", role: "observer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000161", "evd-anime-169-173"]
+  - id: "ev-y0-1027-yoroi-abducts-isaribi-anko-collapses"
+    legacy_ids: ["V10-000161"]
+    title: "Йорої забирає Ісарібі, а Анко непритомніє"
+    text: "До того як команда може розібратися з Ісарібі, Йорої втручається й забирає її; майже одночасно Анко втрачає свідомість через спалах пам'яті та біль від Проклятої Печатки."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-yoroi", role: "captor", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "affected", mode: "physical"}
+      - {entity_id: "c-anko", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000161", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1027-isaribi-1", kind: "before", a: "ev-y0-1027-anko-ino-shino-find-kaima", b: "ev-y0-1027-kaima-revealed-isaribi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+  - {id: "rel-1027-isaribi-2", kind: "before", a: "ev-y0-1027-kaima-revealed-isaribi", b: "ev-y0-1027-yoroi-abducts-isaribi-anko-collapses", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
