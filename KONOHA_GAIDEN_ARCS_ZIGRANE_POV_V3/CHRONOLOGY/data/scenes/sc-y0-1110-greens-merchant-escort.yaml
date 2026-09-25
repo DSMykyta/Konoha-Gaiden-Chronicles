@@ -1,0 +1,55 @@
+schema_version: 1
+id: "sc-y0-1110-greens-merchant-escort"
+continuity_id: "main"
+title: "Наруто, Хіната й Чоджі беруть під охорону караван із Країни Овочів"
+location_id: "loc-land-of-greens"
+placement: {anchor_id: "ta-y0-1110-greens", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1110-tsunade-assigns-greens-merchants"
+    legacy_ids: ["V10-000178"]
+    title: "Цунаде доручає трійці охороняти торговців"
+    text: "Наруто, Хіната й Чоджі отримують місію супроводити групу торговців, що залишає Країну Овочів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000178", "evd-anime-187-191"]
+  - id: "ev-y0-1110-team-sees-smoke-greens"
+    legacy_ids: ["V10-000178"]
+    title: "Загін бачить чорний дим над Країною Овочів"
+    text: "Під час руху від кордону команда помічає дим із боку країни, що суперечить образу звичайної торгової евакуації."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "observer", mode: "physical"}
+      - {entity_id: "c-choji", role: "observer", mode: "physical"}
+      - {entity_id: "c-haruna", role: "disguised_as_shun", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "disguised_guard", mode: "physical"}
+    evidence_ids: ["evd-v10-000178", "evd-anime-187-191"]
+  - id: "ev-y0-1110-unidentified-ninja-attack-caravan"
+    legacy_ids: ["V10-000178"]
+    title: "Невідомі шинобі атакують караван"
+    text: "Невдовзі після появи диму загін потрапляє під атаку, що показує: серед «торговців» є конкретна політична ціль."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "defender", mode: "physical"}
+      - {entity_id: "c-hinata", role: "defender", mode: "physical"}
+      - {entity_id: "c-choji", role: "defender", mode: "physical"}
+      - {entity_id: "c-haruna", role: "hidden_target", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "defender", mode: "physical"}
+    evidence_ids: ["evd-v10-000178", "evd-anime-187-191"]
+relations:
+  - {id: "rel-1110-greens-escort-1", kind: "before", a: "ev-y0-1110-tsunade-assigns-greens-merchants", b: "ev-y0-1110-team-sees-smoke-greens", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1110-greens-escort-2", kind: "before", a: "ev-y0-1110-team-sees-smoke-greens", b: "ev-y0-1110-unidentified-ninja-attack-caravan", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+presence: []
