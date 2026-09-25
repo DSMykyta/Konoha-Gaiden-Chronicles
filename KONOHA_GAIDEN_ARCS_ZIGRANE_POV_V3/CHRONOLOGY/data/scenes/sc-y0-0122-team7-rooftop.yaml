@@ -1,0 +1,105 @@
+schema_version: 1
+id: "sc-y0-0122-team7-rooftop"
+continuity_id: "main"
+title: "Знайомство Команди 7 з Какаші"
+location_id: "loc-team7-rooftop"
+placement:
+  anchor_id: "ta-team-formation"
+  day_offset: 0
+state: "active"
+presence_coverage: "complete"
+review:
+  time: "partial"
+  cast: "accepted"
+  location: "pending"
+  origin: "accepted"
+  text: "accepted"
+events:
+  - id: "ev-y0-0122-team7-introductions"
+      title: "Команда 7 представляється Какаші"
+      text: "Какаші слухає представлення Наруто, Саске й Сакури."
+      origin: "M"
+      extent: "interval"
+      display_rank: 100
+      involvement:
+        - entity_id: "c-kakashi"
+            role: "focus"
+            mode: "physical"
+        - entity_id: "c-naruto"
+            role: "focus"
+            mode: "physical"
+        - entity_id: "c-sasuke"
+            role: "focus"
+            mode: "physical"
+        - entity_id: "c-sakura"
+            role: "focus"
+            mode: "physical"
+      focus_teams:
+        - "team-7"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+  - id: "ev-y0-0122-kakashi-schedules-bell-test"
+      title: "Какаші призначає випробування"
+      text: "Какаші призначає Команді 7 випробування на виживання на наступний день."
+      origin: "M"
+      extent: "interval"
+      display_rank: 200
+      involvement:
+        - entity_id: "c-kakashi"
+            role: "focus"
+            mode: "physical"
+        - entity_id: "c-naruto"
+            role: "participant"
+            mode: "physical"
+        - entity_id: "c-sasuke"
+            role: "participant"
+            mode: "physical"
+        - entity_id: "c-sakura"
+            role: "participant"
+            mode: "physical"
+      focus_teams:
+        - "team-7"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+relations:
+  - id: "rel-0122-intro-before-test-schedule"
+      kind: "before"
+      a: "ev-y0-0122-team7-introductions"
+      b: "ev-y0-0122-kakashi-schedules-bell-test"
+      basis: "source"
+      review: "pending"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+presence:
+  - id: "pr-0122-roof-kakashi"
+      entity_id: "c-kakashi"
+      from: "sc-y0-0122-team7-rooftop.start"
+      to: "sc-y0-0122-team7-rooftop.end"
+      basis: "source"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+      review: "pending"
+  - id: "pr-0122-roof-naruto"
+      entity_id: "c-naruto"
+      from: "sc-y0-0122-team7-rooftop.start"
+      to: "sc-y0-0122-team7-rooftop.end"
+      basis: "source"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+      review: "pending"
+  - id: "pr-0122-roof-sasuke"
+      entity_id: "c-sasuke"
+      from: "sc-y0-0122-team7-rooftop.start"
+      to: "sc-y0-0122-team7-rooftop.end"
+      basis: "source"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+      review: "pending"
+  - id: "pr-0122-roof-sakura"
+      entity_id: "c-sakura"
+      from: "sc-y0-0122-team7-rooftop.start"
+      to: "sc-y0-0122-team7-rooftop.end"
+      basis: "source"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+      review: "pending"
