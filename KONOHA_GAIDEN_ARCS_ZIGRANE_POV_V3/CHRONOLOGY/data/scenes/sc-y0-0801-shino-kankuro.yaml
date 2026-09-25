@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0801-shino-kankuro"
+continuity_id: "main"
+title: "Шіно затримує Канкуро"
+location_id: "loc-konoha-outskirts"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-shino-fights-kankuro"
+    legacy_ids: ["V10-000069-C"]
+    title: "Шіно вступає в бій із Канкуро"
+    text: "Шіно наздоганяє Канкуро й вступає з ним у бій, поки Саске продовжує переслідувати Ґаару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "remote"}
+      - {entity_id: "c-gaara", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000069-C", "evd-manga-finals-konoha-crush"]
+relations: []
+presence:
+  - {id: "pr-0801-shino-kankuro-shino", entity_id: "c-shino", from: "sc-y0-0801-shino-kankuro.start", to: "sc-y0-0801-shino-kankuro.end", basis: "source", evidence_ids: ["evd-v10-000069-C"], review: "accepted"}
+  - {id: "pr-0801-shino-kankuro-kankuro", entity_id: "c-kankuro", from: "sc-y0-0801-shino-kankuro.start", to: "sc-y0-0801-shino-kankuro.end", basis: "source", evidence_ids: ["evd-v10-000069-C"], review: "accepted"}
