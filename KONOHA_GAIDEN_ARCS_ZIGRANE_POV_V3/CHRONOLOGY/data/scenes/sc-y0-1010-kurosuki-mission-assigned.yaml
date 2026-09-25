@@ -1,0 +1,42 @@
+schema_version: 1
+id: "sc-y0-1010-kurosuki-mission-assigned"
+continuity_id: "main"
+title: "Наруто приєднується до місії проти родини Куросукі"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1010-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1010-naruto-rescues-katabami-miners"
+    legacy_ids: ["V10-000139"]
+    title: "Наруто знаходить трьох утікачів із Катабамі"
+    text: "Під час тренування Наруто знаходить виснажених Рокусуке, Санґоро й Хачідая, які втекли із золотої копальні Катабамі, та приводить їх до Конохи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-rokusuke", role: "affected", mode: "physical"}
+      - {entity_id: "c-sangoro", role: "affected", mode: "physical"}
+      - {entity_id: "c-hachidai", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000139", "evd-anime-152-157"]
+  - id: "ev-y0-1010-tsunade-assigns-kurosuki-mission"
+    legacy_ids: ["V10-000139"]
+    title: "Цунаде відправляє Наруто з Лі, Неджи й Тентен до Катабамі"
+    text: "Після свідчень утікачів Цунаде формує місію з усунення родини Куросукі; Наруто приєднується до Лі, Неджи й Тентен."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-guy", role: "source", mode: "physical"}
+      - {entity_id: "c-raiga", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000139", "evd-anime-152-157"]
+relations:
+  - {id: "rel-1010-kurosuki-assign-1", kind: "before", a: "ev-y0-1010-naruto-rescues-katabami-miners", b: "ev-y0-1010-tsunade-assigns-kurosuki-mission", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+presence: []
