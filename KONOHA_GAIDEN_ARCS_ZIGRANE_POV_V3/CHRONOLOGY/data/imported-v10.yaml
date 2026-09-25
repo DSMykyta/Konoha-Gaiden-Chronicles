@@ -1377,7 +1377,7 @@ records:
       SupportingSources: "A [еп. 20–23] — повернення Команди 7, висунення на іспит, знайомство з командами Суни, Звуку та іншими учасниками."
       Review: ""
   - legacy_id: "V10-000040"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1402,7 +1402,7 @@ records:
       SupportingSources: "A [еп. 24–30] — письмове випробування, початок етапу в Лісі Смерті та напад Орочімару."
       Review: ""
   - legacy_id: "V10-000040-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1427,7 +1427,7 @@ records:
       SupportingSources: "A [еп. 24–30] — письмове випробування, початок етапу в Лісі Смерті та напад Орочімару."
       Review: ""
   - legacy_id: "V10-000040-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1452,7 +1452,7 @@ records:
       SupportingSources: "A [еп. 24–30] — письмове випробування, початок етапу в Лісі Смерті та напад Орочімару."
       Review: ""
   - legacy_id: "V10-000040-D"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1477,7 +1477,7 @@ records:
       SupportingSources: "A [еп. 24–30] — письмове випробування, початок етапу в Лісі Смерті та напад Орочімару."
       Review: ""
   - legacy_id: "V10-000040-E"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1502,7 +1502,7 @@ records:
       SupportingSources: "A [еп. 24–30] — письмове випробування, початок етапу в Лісі Смерті та напад Орочімару."
       Review: ""
   - legacy_id: "V10-000040-F"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1527,7 +1527,7 @@ records:
       SupportingSources: "A [еп. 24–30] — письмове випробування, початок етапу в Лісі Смерті та напад Орочімару."
       Review: ""
   - legacy_id: "V10-000040-G"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1552,7 +1552,7 @@ records:
       SupportingSources: "A [еп. 24–30] — письмове випробування, початок етапу в Лісі Смерті та напад Орочімару."
       Review: ""
   - legacy_id: "V10-000041"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1577,7 +1577,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000042"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1602,7 +1602,7 @@ records:
       SupportingSources: "A [еп. 31–36] — Сакура захищає непритомних товаришів; Лі та Команда 10 вступають у бій; Саске пробуджується з Проклятою Печаткою."
       Review: ""
   - legacy_id: "V10-000042-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1627,7 +1627,7 @@ records:
       SupportingSources: "A [еп. 31–36] — Сакура захищає непритомних товаришів; Лі та Команда 10 вступають у бій; Саске пробуджується з Проклятою Печаткою."
       Review: ""
   - legacy_id: "V10-000042-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1652,7 +1652,7 @@ records:
       SupportingSources: "A [еп. 31–36] — Сакура захищає непритомних товаришів; Лі та Команда 10 вступають у бій; Саске пробуджується з Проклятою Печаткою."
       Review: ""
   - legacy_id: "V10-000042-D"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1677,7 +1677,7 @@ records:
       SupportingSources: "A [еп. 31–36] — Сакура захищає непритомних товаришів; Лі та Команда 10 вступають у бій; Саске пробуджується з Проклятою Печаткою."
       Review: ""
   - legacy_id: "V10-000042-E"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1702,7 +1702,7 @@ records:
       SupportingSources: "A [еп. 31–36] — Сакура захищає непритомних товаришів; Лі та Команда 10 вступають у бій; Саске пробуджується з Проклятою Печаткою."
       Review: ""
   - legacy_id: "V10-000042-F"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
