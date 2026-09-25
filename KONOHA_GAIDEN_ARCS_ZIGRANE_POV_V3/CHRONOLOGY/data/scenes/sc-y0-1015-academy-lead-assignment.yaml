@@ -1,0 +1,36 @@
+schema_version: 1
+id: "sc-y0-1015-academy-lead-assignment"
+continuity_id: "main"
+title: "Наруто отримує трьох учнів Академії для польового випробування"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1015", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1015-genin-assigned-academy-squads"
+    legacy_ids: ["V10-000148"]
+    title: "Генінам доручають очолити групи учнів Академії"
+    text: "Через відсутність звичайних місій генінам Конохи доручають по три учні Академії для польового випробування на виживання."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000148", "evd-anime-158"]
+  - id: "ev-y0-1015-naruto-leads-konohamaru-moegi-udon"
+    legacy_ids: ["V10-000148"]
+    title: "Наруто стає керівником Конохамару, Моегі й Удона"
+    text: "Наруто отримує Конохамару, Моегі й Удона та сприймає випробування як шанс показати себе командиром."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "leader", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "student", mode: "physical"}
+      - {entity_id: "c-moegi", role: "student", mode: "physical"}
+      - {entity_id: "c-udon", role: "student", mode: "physical"}
+    evidence_ids: ["evd-v10-000148", "evd-anime-158"]
+relations:
+  - {id: "rel-1015-academy-assign-1", kind: "before", a: "ev-y0-1015-genin-assigned-academy-squads", b: "ev-y0-1015-naruto-leads-konohamaru-moegi-udon", basis: "source", review: "accepted", evidence_ids: ["evd-anime-158"]}
+presence: []
