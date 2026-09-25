@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0118-iruka-naruto"
+continuity_id: "main"
+title: "Розмова Іруки й Наруто після витівки"
+location_id: null
+placement: {anchor_id: "ta-y0-0118", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0118-naruto-declares-hokage-goal"
+    legacy_ids: ["V10-000001"]
+    title: "Наруто заявляє, що перевершить усіх Хокаґе"
+    text: "Наруто говорить Іруці, що стане Хокаґе й перевершить попередників."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
+  - id: "ev-y0-0118-naruto-transformation"
+    legacy_ids: ["V10-000001"]
+    title: "Наруто демонструє Техніку Перетворення"
+    text: "Наруто виконує Техніку Перетворення перед Ірукою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
+relations:
+  - {id: "rel-0118-goal-before-transform", kind: "before", a: "ev-y0-0118-naruto-declares-hokage-goal", b: "ev-y0-0118-naruto-transformation", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000001"]}
+presence:
+  - {id: "pr-0118-talk-naruto", entity_id: "c-naruto", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "imported", evidence_ids: ["evd-v10-000001"], review: "accepted"}
+  - {id: "pr-0118-talk-iruka", entity_id: "c-iruka", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "imported", evidence_ids: ["evd-v10-000001"], review: "accepted"}
