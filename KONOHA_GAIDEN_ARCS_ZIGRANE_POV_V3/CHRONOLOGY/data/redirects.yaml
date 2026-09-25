@@ -1231,3 +1231,25 @@ redirects:
     replacement_ids:
       - "ev-alt-y0-0910-genin-compete-for-genie-bottle"
     reason: "Genie OVA kept as separate gag ALT continuity."
+  - legacy_id: "V10-000102"
+    status: "migrated"
+    replacement_ids:
+      - "ev-alt-y0-0910-orochimaru-kabuto-use-game-seal"
+    reason: "Ultimate Ninja 2 seal-battle phase migrated."
+  - legacy_id: "V10-000103"
+    status: "migrated"
+    replacement_ids:
+      - "ev-alt-y0-0911-naruto-stops-ultimate-ninja2-plan"
+    reason: "Ultimate Ninja 2 ending migrated."
+  - legacy_id: "V10-000104"
+    status: "superseded"
+    replacement_ids:
+      - "ev-alt-y0-0912-tsunade-crystal-tournament"
+      - "ev-alt-y0-0912-naruto-targets-sasuke-kakashi"
+    reason: "Jōnin vs Genin OVA tournament decomposed."
+  - legacy_id: "V10-000105"
+    status: "merged"
+    replacement_ids:
+      - "ev-alt-y0-0912-tsunade-crystal-tournament"
+      - "ev-alt-y0-0912-naruto-targets-sasuke-kakashi"
+    reason: "Ultimate Ninja 3 expands the same ALT tournament and is not a second historical event."
