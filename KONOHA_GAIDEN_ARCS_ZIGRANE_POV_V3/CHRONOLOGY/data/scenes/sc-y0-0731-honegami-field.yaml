@@ -1,0 +1,85 @@
+schema_version: 1
+id: "sc-y0-0731-honegami-field"
+continuity_id: "main"
+title: "Пошук «спадщини Четвертого Хокаґе» на полі Хонегамі"
+location_id: "loc-honegami-field"
+placement: {anchor_id: "ta-y0-0731", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0731-honegami-team-enters-traps"
+    legacy_ids: ["V10-000061"]
+    title: "Наруто, Сакура й Команда 10 проходять смугу пасток"
+    text: "Наруто, Сакура, Іно, Шикамару й Чоджі шукають «спадщину Четвертого Хокаґе» на полі Хонегамі й проходять смугу пасток."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000061", "evd-shippuden-170-171"]
+  - id: "ev-y0-0731-disguised-guy-tests-group"
+    legacy_ids: ["V10-000061"]
+    title: "Замаскований Ґай перевіряє групу"
+    text: "Майто Ґай під маскуванням виступає частиною випробування на полі Хонегамі."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical_hidden"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000061", "evd-shippuden-170-171"]
+  - id: "ev-y0-0731-rain-ninja-attack-honegami"
+    legacy_ids: ["V10-000061"]
+    title: "Ніндзя Дощу атакують групу"
+    text: "Під час випробування на групу нападають ніндзя Дощу."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-rain-attackers"]
+    evidence_ids: ["evd-v10-000061", "evd-shippuden-170-171"]
+  - id: "ev-y0-0731-sasuke-secretly-helps-honegami"
+    legacy_ids: ["V10-000061"]
+    title: "Саске таємно допомагає групі"
+    text: "Саске, не приєднуючись відкрито до групи, таємно допомагає під час нападу."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical_hidden"}
+    evidence_ids: ["evd-v10-000061", "evd-shippuden-170-171"]
+  - id: "ev-y0-0731-honegami-scroll-lesson"
+    legacy_ids: ["V10-000061"]
+    title: "Сувій нагадує, що в шляху ніндзя немає коротких доріг"
+    text: "Наприкінці випробування знайдений сувій формулює висновок: у шляху ніндзя немає коротких доріг."
+    origin: "R"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000061", "evd-shippuden-170-171"]
+relations:
+  - {id: "rel-0731-honegami-1", kind: "before", a: "ev-y0-0731-honegami-team-enters-traps", b: "ev-y0-0731-disguised-guy-tests-group", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000061"]}
+  - {id: "rel-0731-honegami-2", kind: "before", a: "ev-y0-0731-disguised-guy-tests-group", b: "ev-y0-0731-rain-ninja-attack-honegami", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000061"]}
+  - {id: "rel-0731-honegami-3", kind: "before", a: "ev-y0-0731-rain-ninja-attack-honegami", b: "ev-y0-0731-sasuke-secretly-helps-honegami", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000061"]}
+  - {id: "rel-0731-honegami-4", kind: "before", a: "ev-y0-0731-sasuke-secretly-helps-honegami", b: "ev-y0-0731-honegami-scroll-lesson", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000061"]}
+presence: []
