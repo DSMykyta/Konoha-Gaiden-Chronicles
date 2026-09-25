@@ -507,6 +507,79 @@ entities:
     name: "Udon Ise"
     aliases:
       - "Удон"
+  - id: "c-kabuto"
+    kind: "person"
+    name: "Kabuto Yakushi"
+    aliases:
+      - "Кабуто"
+  - id: "c-ibiki"
+    kind: "person"
+    name: "Ibiki Morino"
+    aliases:
+      - "Ібікі"
+  - id: "c-anko"
+    kind: "person"
+    name: "Anko Mitarashi"
+    aliases:
+      - "Анко"
+  - id: "c-dosu"
+    kind: "person"
+    name: "Dosu Kinuta"
+    aliases:
+      - "Досу"
+  - id: "c-zaku"
+    kind: "person"
+    name: "Zaku Abumi"
+    aliases:
+      - "Заку"
+  - id: "c-kin"
+    kind: "person"
+    name: "Kin Tsuchi"
+    aliases:
+      - "Кін"
+  - id: "c-neji"
+    kind: "person"
+    name: "Neji Hyuga"
+    aliases:
+      - "Неджі"
+  - id: "c-shigure"
+    kind: "person"
+    name: "Shigure"
+    aliases:
+      - "Шіґуре"
+  - id: "team-guy"
+    kind: "team"
+    name: "Team Guy"
+    aliases:
+      - "Команда Ґая"
+  - id: "team-sound-genin"
+    kind: "team"
+    name: "Sound Genin Team"
+    aliases:
+      - "Команда Досу"
+      - "Команда Звуку"
+  - id: "team-shigure"
+    kind: "team"
+    name: "Team Shigure"
+    aliases:
+      - "Команда Шіґуре"
+  - id: "loc-chunin-written-exam"
+    kind: "location"
+    name: "Chūnin Exam written-test room"
+    aliases:
+      - "аудиторія письмового етапу"
+    parent_id: "loc-konohagakure"
+  - id: "loc-forest-death"
+    kind: "location"
+    name: "Forest of Death"
+    aliases:
+      - "Ліс Смерті"
+  - id: "loc-forest-death-tower"
+    kind: "location"
+    name: "Forest of Death central tower"
+    aliases:
+      - "вежа Лісу Смерті"
+    parent_id: "loc-forest-death"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
