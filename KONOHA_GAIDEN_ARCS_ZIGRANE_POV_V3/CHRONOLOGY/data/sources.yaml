@@ -106,3 +106,8 @@ evidence:
       locator: "episodes 118–134; exact timestamps pending"
       basis: "source"
       review: "pending"
+  - id: "evd-v10-22jan-retro"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000008; Shippūden episodes 179, 360–361 retrospective"
+    basis: "imported"
+    review: "pending"
