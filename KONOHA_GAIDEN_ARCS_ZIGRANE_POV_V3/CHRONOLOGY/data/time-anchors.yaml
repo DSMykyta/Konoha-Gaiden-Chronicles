@@ -306,3 +306,35 @@ anchors:
     evidence_ids: ["evd-v10-000051-B", "evd-v10-000052"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10."
+  - id: "ta-y0-0722"
+    date: {year: 0, month: 7, day: 22}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000054"]
+    review: "accepted"
+    reason: "Working project date for the fifteenth training day."
+  - id: "ta-y0-0727"
+    date: {year: 0, month: 7, day: 27}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000057"]
+    review: "accepted"
+    reason: "Working project date for invasion-planning checkpoint; Rasa's death itself is only constrained to before this point."
+  - id: "ta-y0-0728"
+    date: {year: 0, month: 7, day: 28}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000058"]
+    review: "accepted"
+    reason: "Working project date for Naruto's ravine/Gamabunta training."
+  - id: "ta-y0-0731"
+    date: {year: 0, month: 7, day: 31}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000060"]
+    review: "accepted"
+    reason: "Working project date immediately before finals; some retrospective material remains approximate within this window."
