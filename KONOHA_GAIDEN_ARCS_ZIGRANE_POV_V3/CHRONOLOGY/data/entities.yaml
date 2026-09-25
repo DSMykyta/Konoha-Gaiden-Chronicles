@@ -877,6 +877,22 @@ entities:
     aliases:
       - "Танзаку"
       - "Танзаку-Квартал"
+  - id: "c-katsuyu"
+    kind: "summon"
+    name: "Katsuyu"
+    aliases:
+      - "Кацую"
+  - id: "c-manda"
+    kind: "summon"
+    name: "Manda"
+    aliases:
+      - "Манда"
+  - id: "group-sannin"
+    kind: "group"
+    name: "Legendary Sannin"
+    aliases:
+      - "санніни"
+      - "Троє саннінів"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
