@@ -1,0 +1,69 @@
+schema_version: 1
+id: "sc-y0-1015-academy-survival-mountain"
+continuity_id: "main"
+title: "Група Наруто губиться під час гірського випробування"
+location_id: "loc-academy-survival-mountain"
+placement: {anchor_id: "ta-y0-1015", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1015-naruto-poor-navigation-foraging"
+    legacy_ids: ["V10-000148"]
+    title: "Наруто погано веде групу й збивається з маршруту"
+    text: "Самовпевнені рішення Наруто щодо навігації та їжі заводять його групу дедалі далі від правильного маршруту."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-moegi", role: "participant", mode: "physical"}
+      - {entity_id: "c-udon", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000148", "evd-anime-158"]
+  - id: "ev-y0-1015-storm-rock-traps-naruto"
+    legacy_ids: ["V10-000148"]
+    title: "Під час грози Наруто утримує камінь, що загрожує дітям"
+    text: "У горах починається гроза; великий камінь зривається, і Наруто використовує клонів, щоб утримати його та не дати поранити учнів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-moegi", role: "affected", mode: "physical"}
+      - {entity_id: "c-udon", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000148", "evd-anime-158"]
+  - id: "ev-y0-1015-students-help-naruto"
+    legacy_ids: ["V10-000148"]
+    title: "Конохамару, Моегі й Удон допомагають Наруто"
+    text: "Коли самих клонів недостатньо, Конохамару, Моегі й Удон перестають бути пасивними учнями й разом допомагають Наруто втримати небезпеку."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-moegi", role: "participant", mode: "physical"}
+      - {entity_id: "c-udon", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000148", "evd-anime-158"]
+  - id: "ev-y0-1015-iruka-shikamaru-find-group"
+    legacy_ids: ["V10-000148"]
+    title: "Ірука й Шікамару знаходять загублену групу"
+    text: "Ірука й Шікамару наздоганяють групу після затримки та допомагають завершити небезпечну частину випробування."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-iruka", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-moegi", role: "participant", mode: "physical"}
+      - {entity_id: "c-udon", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-anime-158"]
+relations:
+  - {id: "rel-1015-survival-1", kind: "before", a: "ev-y0-1015-naruto-poor-navigation-foraging", b: "ev-y0-1015-storm-rock-traps-naruto", basis: "source", review: "accepted", evidence_ids: ["evd-anime-158"]}
+  - {id: "rel-1015-survival-2", kind: "before", a: "ev-y0-1015-storm-rock-traps-naruto", b: "ev-y0-1015-students-help-naruto", basis: "source", review: "accepted", evidence_ids: ["evd-anime-158"]}
+  - {id: "rel-1015-survival-3", kind: "before", a: "ev-y0-1015-students-help-naruto", b: "ev-y0-1015-iruka-shikamaru-find-group", basis: "source", review: "accepted", evidence_ids: ["evd-anime-158"]}
+presence: []
