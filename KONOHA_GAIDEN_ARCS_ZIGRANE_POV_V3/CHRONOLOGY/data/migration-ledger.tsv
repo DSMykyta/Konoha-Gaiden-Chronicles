@@ -235,11 +235,11 @@ V10-000123-D	0	25.09	M	superseded	ev-y0-0925-naruto-admits-failed-promise;ev-y0-
 V10-000123-E	0	25.09	M	superseded	ev-y0-0925-jiraiya-explains-orochimaru-body-window;ev-y0-0925-jiraiya-offers-long-training;ev-y0-0925-naruto-refuses-give-up-sasuke;ev-y0-0925-jiraiya-accepts-naruto-decision	Jiraiya/Naruto conversation decomposed.
 V10-000123-F	0	25.09	M	migrated	ev-y0-0925-sakura-asks-tsunade-apprenticeship	Sakura asking Tsunade for training migrated.
 V10-000124	0	25.09	M	superseded	ev-y0-0925-sasuke-arrives-orochimaru-hideout;ev-y0-0925-sasuke-says-came-for-power;ev-y0-0925-kabuto-explains-genyumaru-body	Sasuke reaching Orochimaru decomposed into three scene beats.
-V10-000125	0	26.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000126	0	27.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000126-B	0	27.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000126-C	0	27.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000127	0	28.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000125	0	26.09	F	superseded	ev-y0-0926-naruto-refuses-wait-three-years;ev-y0-0926-jiraiya-gets-rice-fields-recon;ev-y0-0926-sakura-joins-search;ev-y0-0926-group-departs-rice-fields	Rice Fields opening decomposed into four scene events.
+V10-000126	0	27.09	F	migrated	ev-y0-0927-group-meets-sasame	Meeting Sasame migrated.
+V10-000126-B	0	27.09	F	migrated	ev-y0-0927-fuma-serves-orochimaru	Fuma/Orochimaru relationship migrated.
+V10-000126-C	0	27.09	F	superseded	ev-y0-0927-kamikiri-jigumo-kagero-ambush;ev-y0-0927-sasame-helps-lure-travelers;ev-y0-0927-sasame-rejects-fuma-deal	Fuma ambush decomposed.
+V10-000127	0	28.09	F	superseded	ev-y0-0928-group-enters-orochimaru-residence;ev-y0-0928-kabuto-traps-group;ev-y0-0928-arashi-revealed-fused;ev-y0-0928-sakura-caught-chakra-trap;ev-y0-0928-naruto-reaches-arashi-consciousness	Residence infiltration decomposed into five events.
 V10-000128	0	29.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000129	0	30.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000130	0	01.10	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
