@@ -30,21 +30,21 @@ V10-000019	0	01.02	G	migrated	ev-y0-0201-team7-game-missions	Game branch start m
 V10-000020	0	02.02	G	superseded	ev-y0-0202-mizuki-escapes-game;ev-y0-0202-team7-pursues-mizuki-game	Game escape and pursuit split.
 V10-000021	0	03.02	G	migrated	ev-y0-0203-team7-game-missions	Game mission block migrated without adding unsupported detail.
 V10-000022	0	04.02	G	migrated	ev-y0-0204-team7-returns-to-d-ranks	Game branch ending migrated.
-V10-000023	0	15.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000024	0	15.03	A	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000025	0	16.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000025-B	0	16.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000025-C	0	16.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000026	0	17.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000027	0	18.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000028	0	22.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000029	0	28.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000030	0	29.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000031	0	30.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000032	0	30.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000033	0	13.04	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000034	0	13.04	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000035	0	13.04	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000023	0	15.03	M	superseded	ev-prewaves-team7-d-ranks;ev-y0-0315-naruto-demands-harder-mission;ev-y0-0315-hiruzen-assigns-tazuna;ev-y0-0315-team7-departs-with-tazuna	Separated undated preceding D-ranks from the dated Tazuna assignment and departure.
+V10-000024	0	15.03	A	merged	ev-prewaves-team7-d-ranks;ev-y0-0315-naruto-demands-harder-mission;ev-y0-0315-hiruzen-assigns-tazuna	Anime material adapts/extends the same historical D-rank and assignment events; retained as supporting evidence, not duplicate events.
+V10-000025	0	16.03	M	superseded	ev-y0-0316-demon-brothers-attack;ev-y0-0316-kakashi-sasuke-stop-demons	Ambush and neutralization split.
+V10-000025-B	0	16.03	M	migrated	ev-y0-0316-naruto-blood-oath	Naruto blood oath migrated.
+V10-000025-C	0	16.03	M	migrated	ev-y0-0316-tazuna-reveals-risk	Tazuna risk disclosure migrated.
+V10-000026	0	17.03	M	superseded	ev-y0-0317-team7-boards-boat;ev-y0-0317-boat-crosses-in-mist;ev-y0-0317-tazuna-explains-gato-control;ev-y0-0317-team7-lands-waves	Crossing and landing separated into distinct scene-level events.
+V10-000027	0	18.03	M	superseded	ev-y0-0318-zabuza-attacks;ev-y0-0318-kakashi-reveals-sharingan;ev-y0-0318-kakashi-water-prison;ev-y0-0318-naruto-sasuke-free-kakashi;ev-y0-0318-kakashi-defeats-zabuza;ev-y0-0318-haku-takes-zabuza;ev-y0-0318-kakashi-collapses	First Zabuza battle decomposed into causal events.
+V10-000028	0	22.03	M	superseded	ev-y0-0322-kakashi-deduces-haku-ruse;ev-y0-0322-tazuna-tells-kaiza-story;ev-y0-0322-kakashi-introduces-tree-climbing;ev-y0-0322-sakura-controls-chakra-first	Home briefing and tree-climbing training separated.
+V10-000029	0	28.03	M	superseded	ev-y0-0328-naruto-meets-haku-herbs;ev-y0-0328-haku-strength-for-precious-person	Encounter and Haku's lesson split.
+V10-000030	0	29.03	M	superseded	ev-y0-0329-naruto-sasuke-complete-tree-training;ev-y0-0329-naruto-collapses-overtraining	Training completion and Naruto collapse split.
+V10-000031	0	30.03	M	superseded	ev-y0-0330-zabuza-haku-attack-bridge;ev-y0-0330-sasuke-awakens-sharingan;ev-y0-0330-sasuke-protects-naruto;ev-y0-0330-naruto-nine-tails-chakra;ev-y0-0330-haku-sacrifices-self;ev-y0-0330-gato-arrives;ev-y0-0330-zabuza-kills-gato;ev-y0-0330-zabuza-dies-by-haku;ev-y0-0330-villagers-drive-off-mercenaries	Final bridge battle decomposed into individual events.
+V10-000032	0	30.03	M	superseded	ev-y0-0330-gato-men-attack-tazuna-home;ev-y0-0330-inari-defends-tsunami;ev-y0-0330-naruto-rescues-inari-tsunami;ev-y0-0330-villagers-drive-off-mercenaries;ev-y0-0330-zabuza-haku-buried	Parallel home attack, villagers' arrival and burial separated.
+V10-000033	0	13.04	M	superseded	ev-y0-0413-bridge-completed;ev-y0-0413-bridge-named-after-naruto;ev-y0-0413-team7-says-farewell;ev-y0-0413-team7-returns-konoha	Bridge completion, naming, farewell and return separated.
+V10-000034	0	13.04	R	superseded	ev-y0-0413-naruto-returns-for-coupon;ev-y0-0413-inari-faces-gato-remnants;ev-y0-0413-naruto-sasuke-help-capture-remnants	Shippuden 180 retrospective decomposed into its new historical events.
+V10-000035	0	13.04	R	superseded	ev-y0-0413-naruto-confronts-sasuke;ev-y0-0413-sasuke-challenges-naruto-to-improve	Post-Waves rivalry retrospective split into exchange and response.
 V10-000036	0	14.04	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000037	0	15.04	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000038	0	16.04	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
