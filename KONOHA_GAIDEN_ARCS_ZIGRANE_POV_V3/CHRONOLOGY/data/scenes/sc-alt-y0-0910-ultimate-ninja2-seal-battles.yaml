@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-alt-y0-0910-ultimate-ninja2-seal-battles"
+continuity_id: "alt-ultimate-ninja-2"
+title: "Орочімару й Кабуто використовують ігрову печать"
+location_id: null
+placement: {anchor_id: "ta-y0-0910", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0910-orochimaru-kabuto-use-game-seal"
+    legacy_ids: ["V10-000102"]
+    title: "Печать провокує серію боїв"
+    text: "Орочімару й Кабуто використовують створену для гри печать, провокуючи серію боїв із союзниками та колишніми ворогами."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000102", "evd-game-ultimate-ninja-2"]
+relations: []
+presence: []
