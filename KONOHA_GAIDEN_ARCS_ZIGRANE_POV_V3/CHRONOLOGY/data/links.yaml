@@ -1456,5 +1456,40 @@ links:
     basis: "imported"
     review: "pending"
     evidence_ids: ["evd-game-uzumaki-chronicles"]
+  - id: "lnk-1015-academy-assign-before-survival"
+    kind: "before"
+    a: "sc-y0-1015-academy-lead-assignment"
+    b: "sc-y0-1015-academy-survival-mountain"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-158"]
+  - id: "lnk-1015-survival-before-debrief"
+    kind: "before"
+    a: "sc-y0-1015-academy-survival-mountain"
+    b: "sc-y0-1015-academy-lead-debrief"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-158"]
+  - id: "lnk-1017-gosunkugi-open-before-sazanami-cabin"
+    kind: "before"
+    a: "sc-y0-1017-gosunkugi-mission-opening"
+    b: "sc-y0-1017-sazanami-wounded-identity"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-159-160"]
+  - id: "lnk-1017-sazanami-before-1018-ok-temple"
+    kind: "before"
+    a: "sc-y0-1017-sazanami-wounded-identity"
+    b: "sc-y0-1018-ok-temple-showdown"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-159-160"]
+  - id: "lnk-1019-impostors-before-real-return"
+    kind: "before"
+    a: "sc-y0-1019-mondai-potcha-infiltration"
+    b: "sc-y0-1019-real-guy-lee-return"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-161"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
