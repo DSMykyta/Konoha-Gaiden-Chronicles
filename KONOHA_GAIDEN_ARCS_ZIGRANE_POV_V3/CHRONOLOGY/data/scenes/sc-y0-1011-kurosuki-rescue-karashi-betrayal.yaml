@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-1011-kurosuki-rescue-karashi-betrayal"
+continuity_id: "main"
+title: "Команда входить до Катабамі й стикається зі зрадою Караші"
+location_id: "loc-katabami-gold-mine"
+placement: {anchor_id: "ta-y0-1011-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1011-team-rescues-rokusuke-funeral"
+    legacy_ids: ["V10-000141"]
+    title: "Команда зриває живий похорон Рокусуке"
+    text: "Наруто, Лі, Неджи й Тентен пробираються до Катабамі та втручаються, коли люди Куросукі готують живий похорон Рокусуке."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-rokusuke", role: "affected", mode: "physical"}
+      - {entity_id: "group-kurosuki-family", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000141", "evd-anime-152-157"]
+  - id: "ev-y0-1011-lee-recognizes-karashi"
+    legacy_ids: ["V10-000141"]
+    title: "Лі впізнає Караші серед людей Куросукі"
+    text: "Під час операції Лі впізнає Караші, якого знав раніше, і намагається переконати його залишити родину Куросукі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-karashi", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000141", "evd-anime-152-157"]
+  - id: "ev-y0-1011-karashi-refuses-lee"
+    legacy_ids: ["V10-000141"]
+    title: "Караші відмовляється й лишається з людьми Райґи"
+    text: "Караші через страх і залежність від Райґи відкидає прохання Лі та фактично допомагає родині Куросукі проти загону."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-karashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "recipient", mode: "physical"}
+      - {entity_id: "c-raiga", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000141", "evd-anime-152-157"]
+relations:
+  - {id: "rel-1011-kurosuki-rescue-1", kind: "before", a: "ev-y0-1011-team-rescues-rokusuke-funeral", b: "ev-y0-1011-lee-recognizes-karashi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+  - {id: "rel-1011-kurosuki-rescue-2", kind: "before", a: "ev-y0-1011-lee-recognizes-karashi", b: "ev-y0-1011-karashi-refuses-lee", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+presence: []
