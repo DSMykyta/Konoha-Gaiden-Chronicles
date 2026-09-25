@@ -1,0 +1,43 @@
+schema_version: 1
+id: "sc-y0-1006-tsunade-approves-bikochu"
+continuity_id: "main"
+title: "Цунаде санкціонує пошук бікоочу"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-1006", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1006-tsunade-approves-bikocho-mission"
+    legacy_ids: ["V10-000136"]
+    title: "Цунаде дозволяє Команді 8 шукати бікоочу"
+    text: "Цунаде схвалює план знайти бікоочу як останню спробу отримати слід Саске."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000136", "evd-anime-148-151"]
+  - id: "ev-y0-1006-naruto-joins-shino-led-search-team"
+    legacy_ids: ["V10-000136"]
+    title: "Наруто приєднується до польового загону під проводом Шіно"
+    text: "Через госпіталізацію Куренай пошукову групу веде Шіно; Наруто входить до неї разом із Хінатою, Кібою та Акамару."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shino", role: "leader", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "absent_mentor", mode: "remote"}
+    focus_teams: ["team-8"]
+    evidence_ids: ["evd-v10-000136", "evd-anime-148-151"]
+relations:
+  - {id: "rel-1006-bikocho-approval-1", kind: "before", a: "ev-y0-1006-tsunade-approves-bikocho-mission", b: "ev-y0-1006-naruto-joins-shino-led-search-team", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
