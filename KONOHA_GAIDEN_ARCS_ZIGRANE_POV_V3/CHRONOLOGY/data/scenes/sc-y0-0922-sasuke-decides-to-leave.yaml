@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0922-sasuke-decides-to-leave"
+continuity_id: "main"
+title: "Саске вирішує залишити Коноху"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0922", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0922-sasuke-decides-leave-konoha"
+    legacy_ids: ["V10-000118-C"]
+    title: "Саске приймає рішення піти до Орочімару"
+    text: "Уночі Саске вирішує залишити Коноху й вирушити до Орочімару за силою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000118-C"]
+relations: []
+presence:
+  - {id: "pr-0922-leave-sasuke", entity_id: "c-sasuke", from: "sc-y0-0922-sasuke-decides-to-leave.start", to: "sc-y0-0922-sasuke-decides-to-leave.end", basis: "source", evidence_ids: ["evd-v10-000118-C"], review: "accepted"}
