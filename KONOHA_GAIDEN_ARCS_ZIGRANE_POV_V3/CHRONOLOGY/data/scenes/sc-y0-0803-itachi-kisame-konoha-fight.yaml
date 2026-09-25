@@ -1,0 +1,69 @@
+schema_version: 1
+id: "sc-y0-0803-itachi-kisame-konoha-fight"
+continuity_id: "main"
+title: "Ітачі й Кісаме б’ються з джонінами Конохи"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0803", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0803-asuma-kurenai-face-akatsuki"
+    legacy_ids: ["V10-000073-D"]
+    title: "Асума й Куренай перехоплюють Ітачі та Кісаме"
+    text: "Ітачі й Кісаме, які проникли до Конохи в пошуках Наруто, вступають у бій з Асумою та Куренай."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-asuma", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "focus", mode: "physical"}
+      - {entity_id: "c-itachi", role: "focus", mode: "physical"}
+      - {entity_id: "c-kisame", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000073-D", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0803-kakashi-enters-akatsuki-fight"
+    legacy_ids: ["V10-000073-D"]
+    title: "Какаші втручається"
+    text: "Какаші приєднується до бою проти Ітачі й Кісаме."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-itachi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kisame", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000073-D", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0803-itachi-tsukuyomi-kakashi"
+    legacy_ids: ["V10-000073-D"]
+    title: "Ітачі ловить Какаші в Цукуйомі"
+    text: "Ітачі застосовує Цукуйомі до Какаші й тяжко виводить його з ладу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-itachi", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000073-D", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0803-guy-forces-akatsuki-retreat"
+    legacy_ids: ["V10-000073-D"]
+    title: "Ґай змушує Акацукі відступити"
+    text: "Майто Ґай прибуває на місце й змушує Ітачі та Кісаме перервати бій і відступити."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-itachi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kisame", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "affected", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000073-D", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0803-akatsuki-1", kind: "before", a: "ev-y0-0803-asuma-kurenai-face-akatsuki", b: "ev-y0-0803-kakashi-enters-akatsuki-fight", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+  - {id: "rel-0803-akatsuki-2", kind: "before", a: "ev-y0-0803-kakashi-enters-akatsuki-fight", b: "ev-y0-0803-itachi-tsukuyomi-kakashi", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+  - {id: "rel-0803-akatsuki-3", kind: "before", a: "ev-y0-0803-itachi-tsukuyomi-kakashi", b: "ev-y0-0803-guy-forces-akatsuki-retreat", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+presence: []
