@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0706-hiruzen-orders-hayate"
+continuity_id: "main"
+title: "Хірузен наказує Хаяте простежити за Кабуто"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-hiruzen-orders-hayate"
+    legacy_ids: ["V10-000051"]
+    title: "Хірузен доручає Хаяте стеження за Кабуто"
+    text: "Хірузен наказує Хаяте простежити за Кабуто."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000051", "evd-shippuden-307-308"]
+relations: []
+presence:
+  - {id: "pr-0706-order-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0706-hiruzen-orders-hayate.start", to: "sc-y0-0706-hiruzen-orders-hayate.end", basis: "source", evidence_ids: ["evd-v10-000051"], review: "accepted"}
+  - {id: "pr-0706-order-hayate", entity_id: "c-hayate", from: "sc-y0-0706-hiruzen-orders-hayate.start", to: "sc-y0-0706-hiruzen-orders-hayate.end", basis: "source", evidence_ids: ["evd-v10-000051"], review: "accepted"}
