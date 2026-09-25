@@ -1,0 +1,58 @@
+schema_version: 1
+id: "sc-y0-1005-animal-district-four-warriors"
+continuity_id: "main"
+title: "Чотири ніндзя-тварини атакують загін"
+location_id: "loc-zeroth-training-ground"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1005-four-animal-warriors-attack"
+    legacy_ids: ["V10-000134"]
+    title: "Кондор приводить Чотирьох ніндзя-тварин"
+    text: "Кондор повертається з двома боксерськими кенгуру та гігантським мурахоїдом; разом вони називають себе Чотирма ніндзя-тваринами й атакують загін."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-condor", role: "leader", mode: "physical"}
+      - {entity_id: "c-boxing-kangaroo-adult", role: "participant", mode: "physical"}
+      - {entity_id: "c-boxing-kangaroo-joey", role: "participant", mode: "physical"}
+      - {entity_id: "c-giant-anteater", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-shino", role: "opponent", mode: "physical"}
+      - {entity_id: "c-lee", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kotetsu", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+  - id: "ev-y0-1005-izumo-arrives-saves-kotetsu"
+    legacy_ids: ["V10-000134"]
+    title: "Ідзумо прибуває пізніше й рятує Котецу"
+    text: "Коли Котецу опиняється під загрозою, Ідзумо прибуває окремо й втручається в бій; він не був початковим членом загону."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-izumo", role: "focus", mode: "physical"}
+      - {entity_id: "c-kotetsu", role: "affected", mode: "physical"}
+      - {entity_id: "c-condor", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+  - id: "ev-y0-1005-izumo-kotetsu-capture-condor"
+    legacy_ids: ["V10-000134"]
+    title: "Ідзумо й Котецу допомагають остаточно схопити Кондора"
+    text: "Ідзумо й Котецу комбінують свої техніки, після чого загін долає тварин і завершує повторне захоплення Кондора."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-izumo", role: "participant", mode: "physical"}
+      - {entity_id: "c-kotetsu", role: "participant", mode: "physical"}
+      - {entity_id: "c-condor", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+relations:
+  - {id: "rel-1005-animal-warriors-1", kind: "before", a: "ev-y0-1005-four-animal-warriors-attack", b: "ev-y0-1005-izumo-arrives-saves-kotetsu", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-185"]}
+  - {id: "rel-1005-animal-warriors-2", kind: "before", a: "ev-y0-1005-izumo-arrives-saves-kotetsu", b: "ev-y0-1005-izumo-kotetsu-capture-condor", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-185"]}
+presence: []
