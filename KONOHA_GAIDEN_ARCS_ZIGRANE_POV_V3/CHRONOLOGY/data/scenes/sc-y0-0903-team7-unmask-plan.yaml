@@ -1,0 +1,45 @@
+schema_version: 1
+id: "sc-y0-0903-team7-unmask-plan"
+continuity_id: "main"
+title: "Команда 7 намагається побачити обличчя Какаші"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0903-team7-decides-unmask-kakashi"
+    legacy_ids: ["V10-000086"]
+    title: "Наруто, Саске й Сакура беруться за маску Какаші"
+    text: "Наруто, Саске й Сакура вирішують дізнатися, що Какаші приховує під маскою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "target", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000086", "evd-anime-101"]
+  - id: "ev-y0-0903-team7-follows-and-traps-kakashi"
+    legacy_ids: ["V10-000086"]
+    title: "Команда стежить за Какаші й ставить пастки"
+    text: "Протягом дня трійця стежить за Какаші та пробує різні пастки, але він щоразу їх переграє."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000086", "evd-anime-101"]
+relations:
+  - {id: "rel-0903-mask-plan-1", kind: "before", a: "ev-y0-0903-team7-decides-unmask-kakashi", b: "ev-y0-0903-team7-follows-and-traps-kakashi", basis: "source", review: "pending", evidence_ids: ["evd-anime-101"]}
+presence:
+  - {id: "pr-0903-mask-naruto", entity_id: "c-naruto", from: "sc-y0-0903-team7-unmask-plan.start", to: "sc-y0-0903-team7-unmask-plan.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
+  - {id: "pr-0903-mask-sasuke", entity_id: "c-sasuke", from: "sc-y0-0903-team7-unmask-plan.start", to: "sc-y0-0903-team7-unmask-plan.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
+  - {id: "pr-0903-mask-sakura", entity_id: "c-sakura", from: "sc-y0-0903-team7-unmask-plan.start", to: "sc-y0-0903-team7-unmask-plan.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
+  - {id: "pr-0903-mask-kakashi", entity_id: "c-kakashi", from: "sc-y0-0903-team7-unmask-plan.start", to: "sc-y0-0903-team7-unmask-plan.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
