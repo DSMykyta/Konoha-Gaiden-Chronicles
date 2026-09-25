@@ -1,0 +1,66 @@
+schema_version: 1
+id: "sc-y0-1111-ruiga-battle"
+continuity_id: "main"
+title: "Наруто, Чоджі й Юріношін зупиняють Руйґу"
+location_id: "loc-land-of-greens"
+placement: {anchor_id: "ta-y0-1111-greens", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1111-ruiga-attacks-with-groundwater"
+    legacy_ids: ["V10-000180"]
+    title: "Руйґа використовує підземну воду проти переслідувачів"
+    text: "Руйґа відділяє частину охорони Харуни й тисне на Наруто, Чоджі та Юріношінa техніками, що витягують воду з ґрунту."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-ruiga", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-choji", role: "opponent", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+  - id: "ev-y0-1111-naruto-destroys-ruiga-dowsing-tonfas"
+    legacy_ids: ["V10-000180"]
+    title: "Наруто знаходить залежність технік Руйґи від його тонфа"
+    text: "Наруто помічає, що зброя Руйґи допомагає знаходити великі запаси підземної води, й руйнує її, після чого заманює ворога на суху ділянку."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-ruiga", role: "affected", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+  - id: "ev-y0-1111-choji-defeats-ruiga"
+    legacy_ids: ["V10-000180"]
+    title: "Чоджі добиває перевагу Руйґи Людською Кулею"
+    text: "Позбавленого доступу до підземної води Руйґу Чоджі перемагає своєю обертальною атакою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-choji", role: "focus", mode: "physical"}
+      - {entity_id: "c-ruiga", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+  - id: "ev-y0-1111-jiga-kills-ruiga"
+    legacy_ids: ["V10-000180"]
+    title: "Джіґа вбиває пораненого Руйґу"
+    text: "Після відходу групи Джіґа знаходить переможеного брата й убиває його, щоб збільшити власну частку майбутньої винагороди."
+    origin: "F"
+    extent: "instant"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-jiga", role: "killer", mode: "physical"}
+      - {entity_id: "c-ruiga", role: "victim", mode: "physical"}
+      - {entity_id: "c-renga", role: "shared_motive", mode: "remote"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+relations:
+  - {id: "rel-1111-ruiga-1", kind: "before", a: "ev-y0-1111-ruiga-attacks-with-groundwater", b: "ev-y0-1111-naruto-destroys-ruiga-dowsing-tonfas", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1111-ruiga-2", kind: "before", a: "ev-y0-1111-naruto-destroys-ruiga-dowsing-tonfas", b: "ev-y0-1111-choji-defeats-ruiga", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1111-ruiga-3", kind: "before", a: "ev-y0-1111-choji-defeats-ruiga", b: "ev-y0-1111-jiga-kills-ruiga", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+presence: []
