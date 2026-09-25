@@ -1,0 +1,54 @@
+schema_version: 1
+id: "sc-y0-1012-kurosuki-ambush-karashi-spared"
+continuity_id: "main"
+title: "Люди Куросукі влаштовують пастку, а Лі заступається за Караші"
+location_id: "loc-katabami-gold-mine"
+placement: {anchor_id: "ta-y0-1012-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1012-karashi-lures-team-kurosuki-ambush"
+    legacy_ids: ["V10-000142"]
+    title: "Караші заводить загін у засідку Куросукі"
+    text: "Після першої поразки Райґи Караші знову підкоряється страху й заводить групу в засідку залишків родини Куросукі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-karashi", role: "cause", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+      - {entity_id: "c-tenten", role: "affected", mode: "physical"}
+      - {entity_id: "group-kurosuki-family", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000142", "evd-anime-152-157"]
+  - id: "ev-y0-1012-team-defeats-kurosuki-remnants"
+    legacy_ids: ["V10-000142"]
+    title: "Команда розбиває засідку"
+    text: "Наруто використовує клонів, щоб зірвати пастку, після чого загін розбиває нападників родини Куросукі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "group-kurosuki-family", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-anime-152-157"]
+  - id: "ev-y0-1012-lee-asks-villagers-spare-karashi"
+    legacy_ids: ["V10-000142"]
+    title: "Лі просить мешканців дати Караші ще один шанс"
+    text: "Коли мешканці Катабамі хочуть покарати Караші за повторну зраду, Лі заступається за нього й бере на себе відповідальність за те, щоб Караші змінився."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-karashi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000142", "evd-anime-152-157"]
+relations:
+  - {id: "rel-1012-kurosuki-ambush-1", kind: "before", a: "ev-y0-1012-karashi-lures-team-kurosuki-ambush", b: "ev-y0-1012-team-defeats-kurosuki-remnants", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+  - {id: "rel-1012-kurosuki-ambush-2", kind: "before", a: "ev-y0-1012-team-defeats-kurosuki-remnants", b: "ev-y0-1012-lee-asks-villagers-spare-karashi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+presence: []
