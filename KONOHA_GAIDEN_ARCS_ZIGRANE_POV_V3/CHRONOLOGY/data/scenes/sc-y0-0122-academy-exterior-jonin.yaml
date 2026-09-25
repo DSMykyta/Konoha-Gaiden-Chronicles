@@ -1,0 +1,62 @@
+schema_version: 1
+id: "sc-y0-0122-academy-exterior-jonin"
+continuity_id: "main"
+title: "Троє джонінів перед Академією"
+location_id: "loc-academy-front"
+placement:
+  anchor_id: "ta-team-formation"
+  day_offset: 0
+state: "active"
+presence_coverage: "complete"
+review:
+  time: "partial"
+  cast: "accepted"
+  location: "accepted"
+  origin: "accepted"
+  text: "accepted"
+events:
+  - id: "ev-y0-0122-three-jonin-wait-outside"
+      title: "Асума, Куренай і Райдо чекають перед Академією"
+      text: "Перед Академією перебувають Асума, Куренай і Райдо; Кіта бачить їх із вікна класу."
+      origin: "P"
+      extent: "interval"
+      display_rank: 100
+      involvement:
+        - entity_id: "c-asuma"
+            role: "participant"
+            mode: "physical"
+        - entity_id: "c-kurenai"
+            role: "participant"
+            mode: "physical"
+        - entity_id: "c-raido"
+            role: "participant"
+            mode: "physical"
+      evidence_ids:
+        - "evd-team9-announcement"
+        - "evd-project-jonin-identities"
+relations: []
+presence:
+  - id: "pr-0122-ext-asuma"
+      entity_id: "c-asuma"
+      from: "sc-y0-0122-academy-exterior-jonin.start"
+      to: "sc-y0-0122-academy-exterior-jonin.end"
+      basis: "project_decision"
+      evidence_ids:
+        - "evd-project-jonin-identities"
+      review: "accepted"
+  - id: "pr-0122-ext-kurenai"
+      entity_id: "c-kurenai"
+      from: "sc-y0-0122-academy-exterior-jonin.start"
+      to: "sc-y0-0122-academy-exterior-jonin.end"
+      basis: "project_decision"
+      evidence_ids:
+        - "evd-project-jonin-identities"
+      review: "accepted"
+  - id: "pr-0122-ext-raido"
+      entity_id: "c-raido"
+      from: "sc-y0-0122-academy-exterior-jonin.start"
+      to: "sc-y0-0122-academy-exterior-jonin.end"
+      basis: "project_decision"
+      evidence_ids:
+        - "evd-project-jonin-identities"
+      review: "accepted"
