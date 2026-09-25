@@ -1734,6 +1734,77 @@ entities:
     aliases:
       - "місце похорону Каґецу"
     parent_id: "loc-motoyoshi-village"
+  - id: "c-haruna"
+    kind: "person"
+    name: "Haruna"
+    aliases:
+      - "Харуна"
+      - "Шун"
+  - id: "c-yurinojo"
+    kind: "person"
+    name: "Yurinojō"
+    aliases:
+      - "Юріношін"
+      - "Юріноджо"
+  - id: "c-kikusuke"
+    kind: "person"
+    name: "Kikusuke"
+    aliases:
+      - "Кікуске"
+  - id: "c-ruiga"
+    kind: "person"
+    name: "Ruiga"
+    aliases:
+      - "Руйґа"
+  - id: "c-jiga"
+    kind: "person"
+    name: "Jiga"
+    aliases:
+      - "Джіґа"
+  - id: "c-renga"
+    kind: "person"
+    name: "Renga"
+    aliases:
+      - "Ренґа"
+  - id: "loc-land-of-greens"
+    kind: "location"
+    name: "Land of Greens"
+    aliases:
+      - "Країна Овочів"
+      - "Країна Зелені"
+  - id: "loc-greens-capital"
+    kind: "location"
+    name: "Land of Greens capital"
+    aliases:
+      - "столиця Країни Овочів"
+    parent_id: "loc-land-of-greens"
+  - id: "c-fuku"
+    kind: "person"
+    name: "Fuku"
+    aliases:
+      - "Фуку"
+  - id: "c-chikara"
+    kind: "person"
+    name: "Chikara"
+    aliases:
+      - "Чікара"
+  - id: "loc-fuku-castle"
+    kind: "location"
+    name: "Princess Fuku's castle"
+    aliases:
+      - "замок принцеси Фуку"
+  - id: "loc-mugen-castle"
+    kind: "location"
+    name: "Mugen Castle"
+    aliases:
+      - "Муґенджо"
+      - "Castle Dusk"
+      - "Примарний замок"
+  - id: "c-princess-kasumi"
+    kind: "person"
+    name: "Princess Kasumi"
+    aliases:
+      - "принцеса Касумі"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
