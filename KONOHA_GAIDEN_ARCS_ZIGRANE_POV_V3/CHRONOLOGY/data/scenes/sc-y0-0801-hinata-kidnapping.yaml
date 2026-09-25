@@ -1,0 +1,66 @@
+schema_version: 1
+id: "sc-y0-0801-hinata-kidnapping"
+continuity_id: "main"
+title: "Хінату викрадають під час вторгнення"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-hinata-kidnapped"
+    legacy_ids: ["V10-000066"]
+    title: "Ворожі ніндзя викрадають Хінату"
+    text: "Під час вторгнення ворожі ніндзя викрадають Хінату."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000066", "evd-shippuden-192"]
+  - id: "ev-y0-0801-neji-team-pursues-kidnappers"
+    legacy_ids: ["V10-000066"]
+    title: "Неджі, Тентен, Кіба й Акамару переслідують викрадачів"
+    text: "Неджі, Тентен, Кіба й Акамару вирушають у погоню за викрадачами Хінати."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000066", "evd-shippuden-192"]
+  - id: "ev-y0-0801-hiashi-rescues-hinata"
+    legacy_ids: ["V10-000066"]
+    title: "Хіаші допомагає визволити Хінату"
+    text: "Хіаші приєднується до переслідування й допомагає звільнити Хінату."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-hiashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000066", "evd-shippuden-192"]
+  - id: "ev-y0-0801-hiashi-tells-neji-hizashi-love"
+    legacy_ids: ["V10-000066"]
+    title: "Хіаші відкриває Неджі правду про любов Хізаші"
+    text: "Після порятунку Хіаші пояснює Неджі, що вчинок Хізаші був продиктований любов’ю до брата й власним вибором."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-hiashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-hizashi", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000066", "evd-shippuden-192"]
+relations:
+  - {id: "rel-0801-hinata-kidnap-1", kind: "before", a: "ev-y0-0801-hinata-kidnapped", b: "ev-y0-0801-neji-team-pursues-kidnappers", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-192"]}
+  - {id: "rel-0801-hinata-kidnap-2", kind: "before", a: "ev-y0-0801-neji-team-pursues-kidnappers", b: "ev-y0-0801-hiashi-rescues-hinata", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-192"]}
+  - {id: "rel-0801-hinata-kidnap-3", kind: "before", a: "ev-y0-0801-hiashi-rescues-hinata", b: "ev-y0-0801-hiashi-tells-neji-hizashi-love", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-192"]}
+presence: []
