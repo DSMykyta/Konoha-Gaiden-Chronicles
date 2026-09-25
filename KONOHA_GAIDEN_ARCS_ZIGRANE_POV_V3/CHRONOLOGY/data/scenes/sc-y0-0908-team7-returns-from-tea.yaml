@@ -1,0 +1,42 @@
+schema_version: 1
+id: "sc-y0-0908-team7-returns-from-tea"
+continuity_id: "main"
+title: "Команда 7 повертається з Країни Чаю"
+location_id: "loc-konoha-gate"
+placement: {anchor_id: "ta-y0-0908", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0908-team7-returns-tea"
+    legacy_ids: ["V10-000098"]
+    title: "Місія в Країні Чаю завершується"
+    text: "Команда 7 завершує місію в Країні Чаю й повертається до Конохи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000098", "evd-anime-102-106"]
+  - id: "ev-y0-0908-naruto-sasuke-rivalry-intensifies"
+    legacy_ids: ["V10-000098"]
+    title: "Напруга між Саске й Наруто посилюється"
+    text: "Після пережитого на місії суперництво Саске з Наруто загострюється перед подіями на даху лікарні."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000098", "evd-anime-102-106"]
+relations:
+  - {id: "rel-0908-return-1", kind: "before", a: "ev-y0-0908-team7-returns-tea", b: "ev-y0-0908-naruto-sasuke-rivalry-intensifies", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000098"]}
+presence:
+  - {id: "pr-0908-return-kakashi", entity_id: "c-kakashi", from: "sc-y0-0908-team7-returns-from-tea.start", to: "sc-y0-0908-team7-returns-from-tea.end", basis: "imported", evidence_ids: ["evd-v10-000098"], review: "accepted"}
+  - {id: "pr-0908-return-naruto", entity_id: "c-naruto", from: "sc-y0-0908-team7-returns-from-tea.start", to: "sc-y0-0908-team7-returns-from-tea.end", basis: "imported", evidence_ids: ["evd-v10-000098"], review: "accepted"}
+  - {id: "pr-0908-return-sasuke", entity_id: "c-sasuke", from: "sc-y0-0908-team7-returns-from-tea.start", to: "sc-y0-0908-team7-returns-from-tea.end", basis: "imported", evidence_ids: ["evd-v10-000098"], review: "accepted"}
+  - {id: "pr-0908-return-sakura", entity_id: "c-sakura", from: "sc-y0-0908-team7-returns-from-tea.start", to: "sc-y0-0908-team7-returns-from-tea.end", basis: "imported", evidence_ids: ["evd-v10-000098"], review: "accepted"}
