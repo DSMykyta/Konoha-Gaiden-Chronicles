@@ -1,0 +1,61 @@
+schema_version: 1
+id: "sc-y0-1023-birds-final-battle"
+continuity_id: "main"
+title: "Наруто й союзники розбивають Хокі та Ватарі"
+location_id: "loc-moso-house"
+placement: {anchor_id: "ta-y0-1023", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1023-watari-battle-konoha-team"
+    legacy_ids: ["V10-000158"]
+    title: "Какаші, Неджи й Тентен стримують шинобі Ватарі"
+    text: "Під час фінального бою Какаші, Неджи й Тентен беруть на себе основну групу мандрівних шинобі, відділяючи їх від Хокі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "group-watari", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000158", "evd-anime-166-167"]
+  - id: "ev-y0-1023-hoki-genjutsu-traps-naruto"
+    legacy_ids: ["V10-000158"]
+    title: "Хокі ловить Наруто в гендзюцу"
+    text: "Хокі використовує скопійовані техніки й гендзюцу, тимчасово виводячи Наруто з бою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hoki-watari", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000158", "evd-anime-166-167"]
+  - id: "ev-y0-1023-chishima-frees-naruto"
+    legacy_ids: ["V10-000158"]
+    title: "Чішіма допомагає Наруто вийти з гендзюцу"
+    text: "Чішіма, якого Хокі вважав смертельно пораненим, повертається й допомагає Наруто зірвати гендзюцу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-chishima", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-hoki-watari", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-anime-166-167"]
+  - id: "ev-y0-1023-naruto-defeats-hoki"
+    legacy_ids: ["V10-000158"]
+    title: "Наруто перемагає Хокі"
+    text: "Після звільнення Наруто наздоганяє Хокі й перемагає його, завершуючи змову Ватарі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-hoki-watari", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000158", "evd-anime-166-167"]
+relations:
+  - {id: "rel-1023-birds-battle-1", kind: "before", a: "ev-y0-1023-hoki-genjutsu-traps-naruto", b: "ev-y0-1023-chishima-frees-naruto", basis: "source", review: "accepted", evidence_ids: ["evd-anime-166-167"]}
+  - {id: "rel-1023-birds-battle-2", kind: "before", a: "ev-y0-1023-chishima-frees-naruto", b: "ev-y0-1023-naruto-defeats-hoki", basis: "source", review: "accepted", evidence_ids: ["evd-anime-166-167"]}
+presence: []
