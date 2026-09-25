@@ -3102,7 +3102,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000069-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3127,7 +3127,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000069-C"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3302,7 +3302,7 @@ records:
       SupportingSources: "A [еп. 80–83] — похорон Третього, поява Ітачі й Кісаме та початок подорожі Джираї з Наруто."
       Review: ""
   - legacy_id: "V10-000073-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3327,7 +3327,7 @@ records:
       SupportingSources: "A [еп. 80–83] — похорон Третього, поява Ітачі й Кісаме та початок подорожі Джираї з Наруто."
       Review: ""
   - legacy_id: "V10-000073-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3352,7 +3352,7 @@ records:
       SupportingSources: "A [еп. 80–83] — похорон Третього, поява Ітачі й Кісаме та початок подорожі Джираї з Наруто."
       Review: ""
   - legacy_id: "V10-000073-D"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3377,7 +3377,7 @@ records:
       SupportingSources: "A [еп. 80–83] — похорон Третього, поява Ітачі й Кісаме та початок подорожі Джираї з Наруто."
       Review: ""
   - legacy_id: "V10-000073-E"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3477,7 +3477,7 @@ records:
       SupportingSources: "A [еп. 84–85] — аніме показує зіткнення Саске з Ітачі в заїжджому дворі: Чідорі Саске зупинене, Ітачі ламає йому руку й застосовує Цукуйомі; Джирая захоплює Ітачі й Кісаме технікою шлунка жаби, але вони прориваються назовні Аматерасу."
       Review: ""
   - legacy_id: "V10-000076-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3502,7 +3502,7 @@ records:
       SupportingSources: "A [еп. 84–85] — аніме показує зіткнення Саске з Ітачі в заїжджому дворі: Чідорі Саске зупинене, Ітачі ламає йому руку й застосовує Цукуйомі; Джирая захоплює Ітачі й Кісаме технікою шлунка жаби, але вони прориваються назовні Аматерасу."
       Review: ""
   - legacy_id: "V10-000076-C"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3527,7 +3527,7 @@ records:
       SupportingSources: "A [еп. 84–85] — аніме показує зіткнення Саске з Ітачі в заїжджому дворі: Чідорі Саске зупинене, Ітачі ламає йому руку й застосовує Цукуйомі; Джирая захоплює Ітачі й Кісаме технікою шлунка жаби, але вони прориваються назовні Аматерасу."
       Review: ""
   - legacy_id: "V10-000076-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3552,7 +3552,7 @@ records:
       SupportingSources: "A [еп. 84–85] — аніме показує зіткнення Саске з Ітачі в заїжджому дворі: Чідорі Саске зупинене, Ітачі ламає йому руку й застосовує Цукуйомі; Джирая захоплює Ітачі й Кісаме технікою шлунка жаби, але вони прориваються назовні Аматерасу."
       Review: ""
   - legacy_id: "V10-000076-E"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
