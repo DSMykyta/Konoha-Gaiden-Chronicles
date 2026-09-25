@@ -1491,5 +1491,47 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-anime-161"]
+  - id: "lnk-1020-birds-arrival-before-first-warrior"
+    kind: "before"
+    a: "sc-y0-1020-birds-mission-arrival"
+    b: "sc-y0-1020-first-cursed-warrior"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-162-167"]
+  - id: "lnk-1020-first-warrior-before-1021-komei"
+    kind: "before"
+    a: "sc-y0-1020-first-cursed-warrior"
+    b: "sc-y0-1021-komei-cursed-warrior-investigation"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-162-167"]
+  - id: "lnk-1021-komei-before-prison"
+    kind: "before"
+    a: "sc-y0-1021-komei-cursed-warrior-investigation"
+    b: "sc-y0-1021-naruto-prison-cursed-warrior"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-162-167"]
+  - id: "lnk-1021-prison-before-1022-rescue"
+    kind: "before"
+    a: "sc-y0-1021-naruto-prison-cursed-warrior"
+    b: "sc-y0-1022-komei-rescue-moso-confrontation"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-162-167"]
+  - id: "lnk-alt-1020-potn2-before-1021-trials"
+    kind: "before"
+    a: "sc-alt-y0-1020-path-ninja-mirrors-opening"
+    b: "sc-alt-y0-1021-path-ninja-mirrors-trials"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-path-ninja-2"]
+  - id: "lnk-alt-1021-potn2-before-1022-finale"
+    kind: "before"
+    a: "sc-alt-y0-1021-path-ninja-mirrors-trials"
+    b: "sc-alt-y0-1022-path-ninja-spirit-beast-finale"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-path-ninja-2"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
