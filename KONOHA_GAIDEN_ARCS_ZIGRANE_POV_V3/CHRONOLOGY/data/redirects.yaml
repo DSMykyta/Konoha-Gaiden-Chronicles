@@ -1513,3 +1513,11 @@ redirects:
       - "ev-y0-0928-sakura-caught-chakra-trap"
       - "ev-y0-0928-naruto-reaches-arashi-consciousness"
     reason: "Residence infiltration decomposed into entry, traps, Arashi reveal, Sakura trap and Naruto's attempt to reach Arashi."
+  - legacy_id: "V10-000128"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0928-sasame-restores-arashi-control"
+      - "ev-y0-0928-arashi-protects-sasame-collapse"
+      - "ev-y0-0928-arashi-reveals-sasuke-alive"
+      - "ev-y0-0925-sakura-asks-tsunade-apprenticeship"
+    reason: "Legacy row mixed the uninterrupted episode-141 Arashi finale with a repeated anime portrayal of Sakura asking Tsunade for apprenticeship; the fight remains in the existing Sept 28 scene and the repeated request maps to the already migrated manga event."
