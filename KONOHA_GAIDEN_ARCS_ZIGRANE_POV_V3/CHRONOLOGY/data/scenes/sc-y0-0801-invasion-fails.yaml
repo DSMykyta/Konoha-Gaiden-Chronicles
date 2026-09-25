@@ -1,0 +1,21 @@
+schema_version: 1
+id: "sc-y0-0801-invasion-fails"
+continuity_id: "main"
+title: "Вторгнення в Коноху провалюється"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-invasion-fails"
+    legacy_ids: ["V10-000065-F"]
+    title: "Сили вторгнення відступають"
+    text: "Після загибелі Хірузена, поразки ключових нападників і зриву плану атака Суни та Звуку на Коноху завершується невдачею."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    evidence_ids: ["evd-v10-000065-F", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+relations: []
+presence: []
