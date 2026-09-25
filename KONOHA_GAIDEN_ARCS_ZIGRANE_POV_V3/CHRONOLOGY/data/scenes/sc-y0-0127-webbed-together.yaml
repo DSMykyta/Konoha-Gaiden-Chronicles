@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0127-webbed-together"
+continuity_id: "main"
+title: "Наруто й Саске рятують Сакуру, зв’язані павутиною"
+location_id: null
+placement: {anchor_id: "ta-y0-0127", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0127-naruto-sasuke-webbed"
+    legacy_ids: ["V10-000016"]
+    title: "Наруто й Саске опиняються зв’язаними павутиною"
+    text: "Під час повернення викраденого скарбу Наруто й Саске опиняються зв’язаними павутиною."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000016", "evd-source-000016"]
+  - id: "ev-y0-0127-naruto-sasuke-rescue-sakura"
+    legacy_ids: ["V10-000016"]
+    title: "Наруто й Саске діють разом, щоб урятувати Сакуру"
+    text: "Змушені рухатися як у перегонах на трьох ногах, Наруто й Саске координуються та рятують полонену Сакуру."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000016", "evd-source-000016"]
+relations:
+  - {id: "rel-0127-web-before-rescue", kind: "before", a: "ev-y0-0127-naruto-sasuke-webbed", b: "ev-y0-0127-naruto-sasuke-rescue-sakura", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000016"]}
+presence: []
