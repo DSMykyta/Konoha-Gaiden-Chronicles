@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-0126-kisuke-ghost"
+continuity_id: "main"
+title: "Наруто допомагає привиду Кісуке"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0126", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0126-naruto-finds-kisuke-note"
+    legacy_ids: ["V10-000015"]
+    title: "Наруто знаходить записку з ім’ям Кісуке"
+    text: "Молодий генін Наруто знаходить записку з ім’ям Кісуке."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kisuke", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000015", "evd-source-000015"]
+  - id: "ev-y0-0126-naruto-meets-kisuke-ghost"
+    legacy_ids: ["V10-000015"]
+    title: "Наруто зустрічає привида Кісуке"
+    text: "Наруто зустрічає привида Кісуке й дізнається про його смерть та зниклі відомості."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kisuke", role: "focus", mode: "manifested"}
+    evidence_ids: ["evd-v10-000015", "evd-source-000015"]
+  - id: "ev-y0-0126-naruto-exposes-spy"
+    legacy_ids: ["V10-000015"]
+    title: "Наруто допомагає викрити шпигуна"
+    text: "За підказками Кісуке Наруто допомагає викрити шпигуна, причетного до смерті Кісуке та зникнення інформації з Конохи."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kisuke", role: "participant", mode: "manifested"}
+    evidence_ids: ["evd-v10-000015", "evd-source-000015"]
+relations:
+  - {id: "rel-0126-1", kind: "before", a: "ev-y0-0126-naruto-finds-kisuke-note", b: "ev-y0-0126-naruto-meets-kisuke-ghost", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000015"]}
+  - {id: "rel-0126-2", kind: "before", a: "ev-y0-0126-naruto-meets-kisuke-ghost", b: "ev-y0-0126-naruto-exposes-spy", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000015"]}
+presence: []
