@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0707-yugao-finds-hayate"
+continuity_id: "main"
+title: "Юґао знаходить тіло Хаяте"
+location_id: null
+placement: {anchor_id: "ta-y0-0707", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0707-yugao-finds-hayate"
+    legacy_ids: ["V10-000051-B"]
+    title: "Юґао та її загін знаходять Хаяте мертвим"
+    text: "Наступного ранку Юґао та її загін знаходять тіло Хаяте після його загибелі від руки Бакі."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-yugao", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "affected", mode: "physical"}
+      - {entity_id: "c-baki", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000051-B", "evd-shippuden-307-308"]
+relations: []
+presence: []
