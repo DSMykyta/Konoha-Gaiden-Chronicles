@@ -5352,7 +5352,7 @@ records:
       SupportingSources: "A [еп. 110–117] — формування загону, переслідування та перші два бої."
       Review: ""
   - legacy_id: "V10-000122"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-kiba-separates"]
     original:
       Year: "0"
@@ -5377,7 +5377,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-B"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-shikamaru-fights-tayuya"]
     original:
       Year: "0"
@@ -5402,7 +5402,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-C"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-kimimaro-takes-sasuke"]
     original:
       Year: "0"
@@ -5427,7 +5427,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-D"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-orochimaru-transfers-body"]
     original:
       Year: "0"
@@ -5452,7 +5452,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-E"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-lee-replaces-naruto"]
     original:
       Year: "0"
@@ -5477,7 +5477,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-F"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-naruto-continues-pursuit"]
     original:
       Year: "0"
@@ -5502,7 +5502,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-G"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-kankuro-rescues-kiba"]
     original:
       Year: "0"
@@ -5527,7 +5527,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-H"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-temari-rescues-shikamaru"]
     original:
       Year: "0"
@@ -5552,7 +5552,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-I"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-gaara-joins-kimimaro-fight"]
     original:
       Year: "0"
@@ -5577,7 +5577,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-J"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-kimimaro-dies"]
     original:
       Year: "0"
@@ -5602,7 +5602,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-K"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-naruto-catches-sasuke"]
     original:
       Year: "0"
@@ -5627,7 +5627,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-L"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-sasuke-explains-choice"]
     original:
       Year: "0"
@@ -5652,7 +5652,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-M"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-valley-power-escalation"]
     original:
       Year: "0"
@@ -5677,7 +5677,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-N"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-chidori-rasengan-clash"]
     original:
       Year: "0"
@@ -5702,7 +5702,7 @@ records:
       SupportingSources: "A [еп. 118–134] — бої Кіби, Шікамару й Лі, прибуття шинобі Суни та вирішальна сутичка Наруто із Саске в Долині Завершення."
       Review: ""
   - legacy_id: "V10-000122-O"
-    migration_status: "migrated"
+    migration_status: "superseded"
     replacement_ids: ["ev-y0-0924-sasuke-wins-spares-naruto"]
     original:
       Year: "0"
