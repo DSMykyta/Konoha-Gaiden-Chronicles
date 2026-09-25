@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-0924-kankuro-rescues-kiba"
+continuity_id: "main"
+title: "Канкуро приходить на допомогу Кібі"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-kankuro-arrives-kiba-battle"
+    legacy_ids: ["V10-000122-G"]
+    title: "Канкуро втручається в бій Кіби"
+    text: "Підкріплення Суни прибуває на допомогу, і Канкуро вступає в бій проти Сакона та Укона."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kankuro", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakon", role: "opponent", mode: "physical"}
+      - {entity_id: "c-ukon", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-G"]
+  - id: "ev-y0-0924-kankuro-kills-sakon-ukon"
+    legacy_ids: ["V10-000122-G"]
+    title: "Канкуро перемагає Сакона та Укона"
+    text: "Канкуро вбиває Сакона та Укона."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kankuro", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakon", role: "affected", mode: "physical"}
+      - {entity_id: "c-ukon", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-G"]
+  - id: "ev-y0-0924-kiba-akamaru-saved"
+    legacy_ids: ["V10-000122-G"]
+    title: "Кіба й Акамару врятовані"
+    text: "Після перемоги Канкуро Кіба й Акамару залишаються живими."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "rescuer", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-G"]
+relations:
+  - {id: "rel-0924-kankuro-1", kind: "before", a: "ev-y0-0924-kankuro-arrives-kiba-battle", b: "ev-y0-0924-kankuro-kills-sakon-ukon", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-G"]}
+  - {id: "rel-0924-kankuro-2", kind: "before", a: "ev-y0-0924-kankuro-kills-sakon-ukon", b: "ev-y0-0924-kiba-akamaru-saved", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000122-G"]}
+presence: []
