@@ -1,0 +1,63 @@
+schema_version: 1
+id: "sc-y0-0922-hospital-rooftop-duel"
+continuity_id: "main"
+title: "Саске викликає Наруто на бій на даху"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0922", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0922-sasuke-challenges-naruto"
+    legacy_ids: ["V10-000117-B"]
+    title: "Саске викликає Наруто на бій"
+    text: "Саске викликає Наруто на бій на даху лікарні."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000117-B"]
+  - id: "ev-y0-0922-sasuke-uses-chidori-rooftop"
+    legacy_ids: ["V10-000118"]
+    title: "Саске спрямовує Чідорі на Наруто"
+    text: "Під час сутички Саске готує Чідорі проти Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000118"]
+  - id: "ev-y0-0922-naruto-uses-rasengan-rooftop"
+    legacy_ids: ["V10-000118"]
+    title: "Наруто відповідає Расенґаном"
+    text: "Наруто відповідає на атаку Саске Расенґаном."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000118"]
+  - id: "ev-y0-0922-kakashi-deflects-attacks"
+    legacy_ids: ["V10-000118"]
+    title: "Какаші відхиляє Чідорі й Расенґан"
+    text: "Какаші встигає відхилити атаки в різні боки й не дає Чідорі та Расенґану зіткнутися."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000118"]
+relations:
+  - {id: "rel-0922-roof-1", kind: "before", a: "ev-y0-0922-sasuke-challenges-naruto", b: "ev-y0-0922-sasuke-uses-chidori-rooftop", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000117-B", "evd-v10-000118"]}
+  - {id: "rel-0922-roof-2", kind: "intersects", a: "ev-y0-0922-sasuke-uses-chidori-rooftop", b: "ev-y0-0922-naruto-uses-rasengan-rooftop", basis: "source", review: "accepted", evidence_ids: ["evd-v10-000118"]}
+  - {id: "rel-0922-roof-3", kind: "before", a: "ev-y0-0922-naruto-uses-rasengan-rooftop", b: "ev-y0-0922-kakashi-deflects-attacks", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000118"]}
+presence:
+  - {id: "pr-0922-roof-sasuke", entity_id: "c-sasuke", from: "sc-y0-0922-hospital-rooftop-duel.start", to: "sc-y0-0922-hospital-rooftop-duel.end", basis: "imported", evidence_ids: ["evd-v10-000117-B"], review: "accepted"}
+  - {id: "pr-0922-roof-naruto", entity_id: "c-naruto", from: "sc-y0-0922-hospital-rooftop-duel.start", to: "sc-y0-0922-hospital-rooftop-duel.end", basis: "imported", evidence_ids: ["evd-v10-000117-B"], review: "accepted"}
+  - {id: "pr-0922-roof-kakashi", entity_id: "c-kakashi", from: "ev-y0-0922-kakashi-deflects-attacks.start", to: "sc-y0-0922-hospital-rooftop-duel.end", basis: "imported", evidence_ids: ["evd-v10-000118"], review: "accepted"}
