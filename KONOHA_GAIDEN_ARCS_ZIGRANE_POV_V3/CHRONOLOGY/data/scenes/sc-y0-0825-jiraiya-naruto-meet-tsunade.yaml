@@ -1,0 +1,79 @@
+schema_version: 1
+id: "sc-y0-0825-jiraiya-naruto-meet-tsunade"
+continuity_id: "main"
+title: "Джирая й Наруто знаходять Цунаде"
+location_id: "loc-tanzaku"
+placement: {anchor_id: "ta-y0-0825", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0825-jiraiya-offers-hokage-to-tsunade"
+    legacy_ids: ["V10-000079-C"]
+    title: "Джирая пропонує Цунаде стати П’ятою Хокаґе"
+    text: "Джирая й Наруто знаходять Цунаде; Джирая пропонує їй посаду П’ятої Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000079-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0825-tsunade-refuses-hokage"
+    legacy_ids: ["V10-000079-C"]
+    title: "Цунаде відмовляється"
+    text: "Цунаде відмовляється від посади й зневажливо говорить про титул Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000079-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0825-naruto-attacks-tsunade-rasengan"
+    legacy_ids: ["V10-000079-D"]
+    title: "Наруто атакує Цунаде незавершеним Расенґаном"
+    text: "Обурений її словами, Наруто атакує Цунаде незавершеним Расенґаном."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000079-D", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0825-tsunade-stops-naruto-one-finger"
+    legacy_ids: ["V10-000079-D"]
+    title: "Цунаде зупиняє Наруто одним пальцем"
+    text: "Цунаде легко зупиняє атаку Наруто одним пальцем."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000079-D", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0825-tsunade-naruto-wager"
+    legacy_ids: ["V10-000079-E"]
+    title: "Цунаде й Наруто укладають парі"
+    text: "Цунаде ставить на кін намисто Першого Хокаґе й заявляє, що Наруто не опанує Расенґан за один тиждень."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000079-E", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0825-meet-1", kind: "before", a: "ev-y0-0825-jiraiya-offers-hokage-to-tsunade", b: "ev-y0-0825-tsunade-refuses-hokage", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000079-C"]}
+  - {id: "rel-0825-meet-2", kind: "before", a: "ev-y0-0825-tsunade-refuses-hokage", b: "ev-y0-0825-naruto-attacks-tsunade-rasengan", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000079-D"]}
+  - {id: "rel-0825-meet-3", kind: "before", a: "ev-y0-0825-naruto-attacks-tsunade-rasengan", b: "ev-y0-0825-tsunade-stops-naruto-one-finger", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000079-D"]}
+  - {id: "rel-0825-meet-4", kind: "before", a: "ev-y0-0825-tsunade-stops-naruto-one-finger", b: "ev-y0-0825-tsunade-naruto-wager", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000079-E"]}
+presence:
+  - {id: "pr-0825-meet-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0825-jiraiya-naruto-meet-tsunade.start", to: "sc-y0-0825-jiraiya-naruto-meet-tsunade.end", basis: "imported", evidence_ids: ["evd-v10-000079-C"], review: "accepted"}
+  - {id: "pr-0825-meet-naruto", entity_id: "c-naruto", from: "sc-y0-0825-jiraiya-naruto-meet-tsunade.start", to: "sc-y0-0825-jiraiya-naruto-meet-tsunade.end", basis: "imported", evidence_ids: ["evd-v10-000079-C"], review: "accepted"}
+  - {id: "pr-0825-meet-tsunade", entity_id: "c-tsunade", from: "sc-y0-0825-jiraiya-naruto-meet-tsunade.start", to: "sc-y0-0825-jiraiya-naruto-meet-tsunade.end", basis: "imported", evidence_ids: ["evd-v10-000079-C"], review: "accepted"}
