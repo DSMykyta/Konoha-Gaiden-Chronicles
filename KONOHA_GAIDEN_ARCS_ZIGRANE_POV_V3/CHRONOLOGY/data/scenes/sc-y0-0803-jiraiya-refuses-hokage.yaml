@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-y0-0803-jiraiya-refuses-hokage"
+continuity_id: "main"
+title: "Джирая відмовляється від посади П’ятого Хокаґе"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0803", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0803-council-offers-hokage-to-jiraiya"
+    legacy_ids: ["V10-000073-C"]
+    title: "Кохару й Хомура пропонують Джираї посаду"
+    text: "Кохару Утатане й Хомура Мітокадо пропонують Джираї стати П’ятим Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-koharu", role: "focus", mode: "physical"}
+      - {entity_id: "c-homura", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000073-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0803-jiraiya-refuses-and-nominates-tsunade"
+    legacy_ids: ["V10-000073-C"]
+    title: "Джирая відмовляється й називає Цунаде"
+    text: "Джирая відмовляється від посади, називає Цунаде кращою кандидаткою й погоджується особисто її знайти."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-koharu", role: "participant", mode: "physical"}
+      - {entity_id: "c-homura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000073-C", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0803-jiraiya-hokage-1", kind: "before", a: "ev-y0-0803-council-offers-hokage-to-jiraiya", b: "ev-y0-0803-jiraiya-refuses-and-nominates-tsunade", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+presence:
+  - {id: "pr-0803-jiraiya-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0803-jiraiya-refuses-hokage.start", to: "sc-y0-0803-jiraiya-refuses-hokage.end", basis: "source", evidence_ids: ["evd-v10-000073-C"], review: "accepted"}
+  - {id: "pr-0803-jiraiya-koharu", entity_id: "c-koharu", from: "sc-y0-0803-jiraiya-refuses-hokage.start", to: "sc-y0-0803-jiraiya-refuses-hokage.end", basis: "source", evidence_ids: ["evd-v10-000073-C"], review: "accepted"}
+  - {id: "pr-0803-jiraiya-homura", entity_id: "c-homura", from: "sc-y0-0803-jiraiya-refuses-hokage.start", to: "sc-y0-0803-jiraiya-refuses-hokage.end", basis: "source", evidence_ids: ["evd-v10-000073-C"], review: "accepted"}
