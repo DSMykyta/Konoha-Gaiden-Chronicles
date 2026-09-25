@@ -127,17 +127,17 @@ V10-000069-B	0	01.08	M	pending		Awaiting scene-level migration; original row pre
 V10-000069-C	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000070	0	01.08	M	migrated	ev-y0-0801-kin-zaku-used-as-edo-sacrifices	Kin and Zaku as Edo Tensei sacrifices migrated.
 V10-000071	0	01.08	R	superseded	ev-y0-0801-yugao-visits-hayate-memorial;ev-y0-0801-yugao-vows-revenge;ev-y0-0801-yugao-departs-with-anbu	Yugao memorial retrospective decomposed; Hayate marked remembered/remote.
-V10-000072	0	02.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000072-B	0	02.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000072-C	0	02.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000073	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000072	0	02.08	M	superseded	ev-y0-0802-konoha-treats-wounded;ev-y0-0802-konoha-counts-dead;ev-y0-0802-konoha-begins-rebuilding	Global aftermath split into treatment, casualty accounting and rebuilding; unrelated named characters removed from cast.
+V10-000072-B	0	02.08	M	superseded	ev-y0-0802-council-discusses-hokage-successor;ev-y0-0802-jiraiya-proposed-hokage	Succession council and Jiraiya candidacy separated; Jiraiya is affected/remote rather than assumed present.
+V10-000072-C	0	02.08	M	superseded	ev-y0-0802-suna-finds-rasa-body;ev-y0-0802-suna-confirms-orochimaru-deception;ev-y0-0802-suna-prepares-capitulation	Suna aftermath decomposed into discovery, confirmation and diplomatic consequence.
+V10-000073	0	03.08	M	migrated	ev-y0-0803-hiruzen-funeral	Hiruzen funeral migrated.
 V10-000073-B	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000073-C	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000073-D	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000073-E	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000074	0	04.08	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000075	0	04.08	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000076	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000074	0	04.08	R	superseded	ev-y0-0804-tenten-doubts-herself;ev-y0-0804-guy-encourages-tenten	Tenten retrospective split; Tsunade marked mentioned rather than physically present.
+V10-000075	0	04.08	R	superseded	ev-y0-0804-hanabi-watches-hinata-neji-train;ev-y0-0804-hanabi-notices-hinata-confidence	Hanabi restored as physical observer; training and realization separated.
+V10-000076	0	04.08	M	migrated	ev-y0-0804-itachi-kisame-find-naruto	Itachi and Kisame locating Naruto migrated as its own scene.
 V10-000076-B	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000076-C	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000076-D	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
