@@ -54,7 +54,8 @@ One row = one historical event. A date may have 1 row or 20+ rows. v9 remains un
 3. ExactTime is populated only from explicit clock time.
 4. Order uses 100, 200, 300... by default.
 5. Order can be edited without changing EventID.
-6. DateCertainty records whether the v10 date is exact, derived, approximate, or simply inherited from v9.
+6. When one migrated event is split, the first node keeps the original EventID and additional nodes receive stable suffixes such as `-B`, `-C`, etc.
+7. DateCertainty records whether the v10 date is exact, derived, approximate, or simply inherited from v9.
 
 ## Site rules enabled by this schema
 - Character/team/group lanes are generated from metadata; events are not duplicated into physical character columns.
