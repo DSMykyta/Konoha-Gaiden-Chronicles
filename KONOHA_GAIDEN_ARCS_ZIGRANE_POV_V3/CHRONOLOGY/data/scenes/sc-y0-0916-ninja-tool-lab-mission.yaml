@@ -1,0 +1,72 @@
+schema_version: 1
+id: "sc-y0-0916-ninja-tool-lab-mission"
+continuity_id: "main"
+title: "Наруто тимчасово приєднується до Команди Ґая"
+location_id: null
+placement: {anchor_id: "ta-y0-0916", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0916-guy-adds-naruto-to-team"
+    legacy_ids: ["V10-000109"]
+    title: "Ґай бере Наруто в команду на час відсутності Лі"
+    text: "Поки Рок Лі госпіталізований, Ґай тимчасово приєднує Наруто до Команди Ґая."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "absent_member", mode: "remote"}
+    focus_teams: ["team-guy"]
+    evidence_ids: ["evd-v10-000109", "evd-shippuden-184"]
+  - id: "ev-y0-0916-guy-names-tenten-captain"
+    legacy_ids: ["V10-000109"]
+    title: "Ґай призначає Тентен капітанкою місії"
+    text: "Ґай доручає Тентен очолити місію до лабораторії ніндзя-знарядь."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-tenten", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    focus_teams: ["team-guy"]
+    evidence_ids: ["evd-v10-000109", "evd-shippuden-184"]
+  - id: "ev-y0-0916-team-reaches-tool-lab"
+    legacy_ids: ["V10-000109"]
+    title: "Група прибуває до лабораторії ніндзя-знарядь"
+    text: "Тентен, Неджі й Наруто вирушають до лабораторії ніндзя-знарядь у межах дорученої місії."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-tenten", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    focus_teams: ["team-guy"]
+    evidence_ids: ["evd-v10-000109", "evd-shippuden-184"]
+  - id: "ev-y0-0916-team-recovers-stolen-prototypes"
+    legacy_ids: ["V10-000109"]
+    title: "Команда повертає викрадені прототипи"
+    text: "Під час місії група повертає викрадені прототипи, пов’язані з Ґамеру й Кусуне."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-tenten", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-gameru", role: "affected", mode: "physical"}
+      - {entity_id: "c-kusune", role: "affected", mode: "physical"}
+    focus_teams: ["team-guy"]
+    evidence_ids: ["evd-v10-000109", "evd-shippuden-184"]
+relations:
+  - {id: "rel-0916-tool-1", kind: "before", a: "ev-y0-0916-guy-adds-naruto-to-team", b: "ev-y0-0916-guy-names-tenten-captain", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-184"]}
+  - {id: "rel-0916-tool-2", kind: "before", a: "ev-y0-0916-guy-names-tenten-captain", b: "ev-y0-0916-team-reaches-tool-lab", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-184"]}
+  - {id: "rel-0916-tool-3", kind: "before", a: "ev-y0-0916-team-reaches-tool-lab", b: "ev-y0-0916-team-recovers-stolen-prototypes", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-184"]}
+presence: []
