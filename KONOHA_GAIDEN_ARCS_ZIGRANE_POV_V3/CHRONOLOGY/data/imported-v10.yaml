@@ -6927,7 +6927,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000164"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6952,7 +6952,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000165"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6977,7 +6977,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000166"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
