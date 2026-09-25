@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-y0-1008-kamizuru-exchange-trap"
+continuity_id: "main"
+title: "Спроба обміну перетворюється на пастку Камізуру"
+location_id: "loc-bikocho-habitat"
+placement: {anchor_id: "ta-y0-1008", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1008-team-hides-real-bikocho"
+    legacy_ids: ["V10-000138"]
+    title: "Шіно ховає справжнього бікоочу"
+    text: "Перед спробою врятувати Хінату Шіно приховує справжнього бікоочу так, щоб бджоли Камізуру не могли його знайти."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-anime-148-151"]
+  - id: "ev-y0-1008-kamizuru-capture-naruto-kiba-shino"
+    legacy_ids: ["V10-000138"]
+    title: "Наруто, Кіба й Шіно потрапляють у бджолину пастку"
+    text: "Під час рятувальної спроби Камізуру заманюють Наруто, Кібу й Шіно до пастки королеви-бджоли та позбавляють їх руху."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-shino", role: "affected", mode: "physical"}
+      - {entity_id: "c-suzumebachi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kurobachi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-jibachi", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+relations:
+  - {id: "rel-1008-kamizuru-trap-1", kind: "before", a: "ev-y0-1008-team-hides-real-bikocho", b: "ev-y0-1008-kamizuru-capture-naruto-kiba-shino", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
