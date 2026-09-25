@@ -1,0 +1,79 @@
+schema_version: 1
+id: "sc-alt-y0-1103-uc2-master-puppet-finale"
+continuity_id: "alt-game-uzumaki-chronicles-2"
+title: "Майстер Маріонеток відроджується й гине"
+placement: {anchor_id: "ta-alt-y0-1103-uc2", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1103-shirogane-complete-orb-ritual"
+    legacy_ids: ["V10-000171"]
+    title: "Шіроґане завершують підготовку Сфер до відродження"
+    text: "Після повернення потрібних Сфер клан переходить до фінальної фази ритуалу, не розуміючи, що самі Сфери є матеріалізованою волею Майстра Маріонеток."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "group-shirogane", role: "actor", mode: "physical"}
+      - {entity_id: "artifact-spirit-orbs", role: "focus", mode: "physical"}
+      - {entity_id: "c-master-puppet", role: "revival_target", mode: "remote"}
+    evidence_ids: ["evd-v10-000171", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1103-master-puppet-revives-nine-tails-chakra"
+    legacy_ids: ["V10-000171"]
+    title: "Майстер Маріонеток відроджується на чакрі Наруто"
+    text: "Коли Наруто намагається врятувати захоплену Сакуру, чакра Дев'ятихвостого підживлює Сферу й дає Майстру Маріонеток змогу повністю відродитися."
+    origin: "G"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-master-puppet", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "chakra_source", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "artifact-spirit-orbs", role: "mechanism", mode: "physical"}
+    evidence_ids: ["evd-v10-000171", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1103-master-puppet-controls-naruto"
+    legacy_ids: ["V10-000171"]
+    title: "Майстер Маріонеток захоплює контроль над Наруто"
+    text: "Після пробудження Майстер Маріонеток тимчасово підкорює Наруто й змушує його битися проти союзників, доки Сакура не звільняє його гендзюцу."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-master-puppet", role: "controller", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "rescuer", mode: "physical"}
+    evidence_ids: ["evd-v10-000171", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1103-kakashi-injured-master-puppet"
+    legacy_ids: ["V10-000171"]
+    title: "Какаші приймає удар, захищаючи Сакуру"
+    text: "Під час бою Какаші закриває Сакуру від атаки Майстра Маріонеток і вибуває з активного бою через поранення."
+    origin: "G"
+    extent: "instant"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-kakashi", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "protected", mode: "physical"}
+      - {entity_id: "c-master-puppet", role: "attacker", mode: "physical"}
+    evidence_ids: ["evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1103-naruto-neji-shikamaru-destroy-master-puppet"
+    legacy_ids: ["V10-000171"]
+    title: "Наруто, Неджи й Шікамару руйнують Майстра Маріонеток"
+    text: "Наруто знаходить у Сферах Духу вразливі вузли конструкції, після чого разом із Неджи та Шікамару знищує Майстра Маріонеток; ходячі маріонетки Шіроґане вимикаються."
+    origin: "G"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-master-puppet", role: "affected", mode: "physical"}
+      - {entity_id: "artifact-spirit-orbs", role: "weak_point", mode: "physical"}
+      - {entity_id: "group-shirogane", role: "defeated_system", mode: "remote"}
+    evidence_ids: ["evd-v10-000171", "evd-game-uzumaki-chronicles-2"]
+relations:
+  - {id: "rel-alt-1103-uc2-final-1", kind: "before", a: "ev-alt-y0-1103-shirogane-complete-orb-ritual", b: "ev-alt-y0-1103-master-puppet-revives-nine-tails-chakra", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+  - {id: "rel-alt-1103-uc2-final-2", kind: "before", a: "ev-alt-y0-1103-master-puppet-revives-nine-tails-chakra", b: "ev-alt-y0-1103-master-puppet-controls-naruto", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+  - {id: "rel-alt-1103-uc2-final-3", kind: "before", a: "ev-alt-y0-1103-master-puppet-controls-naruto", b: "ev-alt-y0-1103-kakashi-injured-master-puppet", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+  - {id: "rel-alt-1103-uc2-final-4", kind: "before", a: "ev-alt-y0-1103-kakashi-injured-master-puppet", b: "ev-alt-y0-1103-naruto-neji-shikamaru-destroy-master-puppet", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+presence: []
