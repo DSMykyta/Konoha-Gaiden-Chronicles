@@ -1,0 +1,31 @@
+schema_version: 1
+id: "sc-y0-0802-hokage-succession-council"
+continuity_id: "main"
+title: "Керівництво шукає наступного Хокаґе"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0802", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0802-council-discusses-hokage-successor"
+    legacy_ids: ["V10-000072-B"]
+    title: "Проводиться екстрена нарада щодо наступного Хокаґе"
+    text: "Після смерті Хірузена керівництво Конохи та Даймьо Країни Вогню обговорюють вакантну посаду Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    evidence_ids: ["evd-v10-000072-B", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0802-jiraiya-proposed-hokage"
+    legacy_ids: ["V10-000072-B"]
+    title: "Джираю розглядають як бажаного кандидата"
+    text: "На нараді Джираю визначають як бажаного кандидата на посаду П’ятого Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000072-B", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0802-council-1", kind: "before", a: "ev-y0-0802-council-discusses-hokage-successor", b: "ev-y0-0802-jiraiya-proposed-hokage", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000072-B"]}
+presence: []
