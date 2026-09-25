@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-y0-0905-team7-rescues-idate"
+continuity_id: "main"
+title: "Команда 7 рятує Ідате"
+location_id: "loc-land-of-tea"
+placement: {anchor_id: "ta-y0-0905", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0905-team7-rescues-idate"
+    legacy_ids: ["V10-000091"]
+    title: "Команда витягує Ідате з небезпеки"
+    text: "Після нападу Аої Команда 7 рятує Ідате й повертає його до перегонів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-idate", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000091", "evd-anime-102-106"]
+relations: []
+presence: []
