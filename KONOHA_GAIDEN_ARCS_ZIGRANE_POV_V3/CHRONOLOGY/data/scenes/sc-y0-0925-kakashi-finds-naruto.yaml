@@ -1,0 +1,54 @@
+schema_version: 1
+id: "sc-y0-0925-kakashi-finds-naruto"
+continuity_id: "main"
+title: "Какаші знаходить Наруто в Долині Завершення"
+location_id: "loc-valley-of-end"
+placement: {anchor_id: "ta-y0-0925", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0925-kakashi-pakkun-reach-valley"
+    legacy_ids: ["V10-000123"]
+    title: "Какаші й Паккун запізно дістаються Долини Завершення"
+    text: "Какаші й Паккун доходять до Долини Завершення вже після завершення бою Наруто із Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-pakkun", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000123", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-kakashi-finds-unconscious-naruto"
+    legacy_ids: ["V10-000123"]
+    title: "Какаші знаходить непритомного Наруто"
+    text: "Какаші знаходить Наруто непритомним після бою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-pakkun", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000123", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-kakashi-carries-naruto-back"
+    legacy_ids: ["V10-000123"]
+    title: "Какаші несе Наруто назад до Конохи"
+    text: "Після знахідки Какаші забирає Наруто й несе його назад."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-pakkun", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000123", "evd-manga-sasuke-recovery"]
+relations:
+  - {id: "rel-0925-kakashi-1", kind: "before", a: "ev-y0-0925-kakashi-pakkun-reach-valley", b: "ev-y0-0925-kakashi-finds-unconscious-naruto", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+  - {id: "rel-0925-kakashi-2", kind: "before", a: "ev-y0-0925-kakashi-finds-unconscious-naruto", b: "ev-y0-0925-kakashi-carries-naruto-back", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000123"]}
+presence:
+  - {id: "pr-0925-kakashi-kakashi", entity_id: "c-kakashi", from: "sc-y0-0925-kakashi-finds-naruto.start", to: "sc-y0-0925-kakashi-finds-naruto.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
+  - {id: "pr-0925-kakashi-pakkun", entity_id: "c-pakkun", from: "sc-y0-0925-kakashi-finds-naruto.start", to: "sc-y0-0925-kakashi-finds-naruto.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
+  - {id: "pr-0925-kakashi-naruto", entity_id: "c-naruto", from: "ev-y0-0925-kakashi-finds-unconscious-naruto.start", to: "sc-y0-0925-kakashi-finds-naruto.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
