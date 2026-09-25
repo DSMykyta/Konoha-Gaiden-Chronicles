@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0930-shino-withdraws"
+continuity_id: "main"
+title: "Шіно сумнівається у своєму місці в Команді 8"
+location_id: "loc-shino-home"
+placement: {anchor_id: "ta-y0-0930", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0930-shino-doubts-close-combat"
+    legacy_ids: ["V10-000129"]
+    title: "Шіно зациклюється на слабкості в ближньому бою"
+    text: "Після поразки Шіно відсторонюється від команди й тренується сам, вважаючи нездатність захистити себе зблизька доказом того, що він підводить товаришів."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-suika", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000129", "evd-shippuden-236"]
+  - id: "ev-y0-0930-kiba-hinata-take-shino-training"
+    legacy_ids: ["V10-000129"]
+    title: "Кіба й Хіната витягують Шіно на тренування"
+    text: "Кіба, Хіната й Акамару приходять до Шіно й ведуть його до гарячих джерел, виконуючи доручення Куренай і пропонуючи допомогти йому з тайдзюцу."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-shippuden-236"]
+relations:
+  - {id: "rel-0930-shino-withdraws-1", kind: "before", a: "ev-y0-0930-shino-doubts-close-combat", b: "ev-y0-0930-kiba-hinata-take-shino-training", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-236"]}
+presence: []
