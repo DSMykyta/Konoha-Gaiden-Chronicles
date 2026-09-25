@@ -1064,5 +1064,33 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-v10-000122-N", "evd-v10-000122-O"]
+  - id: "lnk-0925-kakashi-before-naruto-wakes"
+    kind: "before"
+    a: "sc-y0-0925-kakashi-finds-naruto"
+    b: "ev-y0-0925-naruto-wakes-hospital"
+    basis: "logical"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000123", "evd-v10-000123-C"]
+  - id: "lnk-0925-wakes-before-promise"
+    kind: "before"
+    a: "ev-y0-0925-naruto-wakes-hospital"
+    b: "ev-y0-0925-naruto-admits-failed-promise"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-sasuke-recovery"]
+  - id: "lnk-0925-promise-before-jiraiya"
+    kind: "before"
+    a: "sc-y0-0925-naruto-sakura-promise"
+    b: "sc-y0-0925-jiraiya-training-offer"
+    basis: "imported"
+    review: "pending"
+    evidence_ids: ["evd-v10-000123-D", "evd-v10-000123-E"]
+  - id: "lnk-0925-promise-before-sakura-tsunade"
+    kind: "before"
+    a: "sc-y0-0925-naruto-sakura-promise"
+    b: "sc-y0-0925-sakura-asks-tsunade"
+    basis: "imported"
+    review: "pending"
+    evidence_ids: ["evd-v10-000123-D", "evd-v10-000123-F"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
