@@ -50,7 +50,54 @@ events:
       - {entity_id: "c-sakura", role: "affected", mode: "physical"}
       - {entity_id: "c-sasame", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000127", "evd-anime-136-140"]
+  - id: "ev-y0-0928-sasame-restores-arashi-control"
+    legacy_ids: ["V10-000128"]
+    title: "Сасаме на мить повертає Араші контроль"
+    text: "Сасаме втручається в бій і на мить пробивається до свідомості Араші, повертаючи йому контроль над собою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sasame", role: "focus", mode: "physical"}
+      - {entity_id: "c-arashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000128", "evd-anime-141"]
+  - id: "ev-y0-0928-arashi-protects-sasame-collapse"
+    legacy_ids: ["V10-000128"]
+    title: "Араші захищає Сасаме й лишається в обваленому лігві"
+    text: "Після того як Араші знову приходить до тями, він захищає Сасаме; коли лігво починає руйнуватися, допомагає їй вибратися, але сам відмовляється залишати створене Орочімару тіло."
+    origin: "F"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-arashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasame", role: "affected", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000128", "evd-anime-141"]
+  - id: "ev-y0-0928-arashi-reveals-sasuke-alive"
+    legacy_ids: ["V10-000128"]
+    title: "Араші повідомляє, що Саске живий"
+    text: "Перед розставанням Араші повідомляє Наруто, що Саске живий і вже перебуває під захистом Орочімару як майбутня посудина для наступного перевтілення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-arashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasame", role: "participant", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "subject", mode: "remote"}
+      - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000128", "evd-anime-141"]
 relations:
   - {id: "rel-0928-arashi-1", kind: "before", a: "ev-y0-0928-arashi-revealed-fused", b: "ev-y0-0928-sakura-caught-chakra-trap", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
   - {id: "rel-0928-arashi-2", kind: "before", a: "ev-y0-0928-sakura-caught-chakra-trap", b: "ev-y0-0928-naruto-reaches-arashi-consciousness", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+  - {id: "rel-0928-arashi-3", kind: "before", a: "ev-y0-0928-naruto-reaches-arashi-consciousness", b: "ev-y0-0928-sasame-restores-arashi-control", basis: "source", review: "pending", evidence_ids: ["evd-anime-141"]}
+  - {id: "rel-0928-arashi-4", kind: "before", a: "ev-y0-0928-sasame-restores-arashi-control", b: "ev-y0-0928-arashi-protects-sasame-collapse", basis: "source", review: "pending", evidence_ids: ["evd-anime-141"]}
+  - {id: "rel-0928-arashi-5", kind: "before", a: "ev-y0-0928-arashi-protects-sasame-collapse", b: "ev-y0-0928-arashi-reveals-sasuke-alive", basis: "source", review: "pending", evidence_ids: ["evd-anime-141"]}
 presence: []
