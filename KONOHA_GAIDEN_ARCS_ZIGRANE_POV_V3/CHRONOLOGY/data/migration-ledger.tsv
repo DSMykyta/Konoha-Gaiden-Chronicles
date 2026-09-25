@@ -205,14 +205,14 @@ V10-000119	0	22.09	M	superseded	ev-y0-0922-kakashi-restrains-sasuke-tree;ev-y0-0
 V10-000118-B	0	22.09	M	superseded	ev-y0-0922-sound-four-confront-sasuke;ev-y0-0922-sound-four-defeat-sasuke;ev-y0-0922-sound-four-offer-orochimaru	Sound Four recruitment decomposed.
 V10-000118-C	0	22.09	M	migrated	ev-y0-0922-sasuke-decides-leave-konoha	Sasuke decision to leave migrated.
 V10-000118-D	0	22.09	M	superseded	ev-y0-0922-sakura-intercepts-sasuke;ev-y0-0922-sakura-confesses-and-begs;ev-y0-0922-sasuke-thanks-sakura;ev-y0-0922-sasuke-knocks-sakura-out;ev-y0-0922-sasuke-leaves-konoha	Night departure scene decomposed.
-V10-000120	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000121	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000121-B	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000121-C	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000121-D	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000121-E	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000121-F	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000121-G	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000120	0	23.09	M	superseded	ev-y0-0923-guy-urges-lee-operation;ev-y0-0923-guy-promises-die-with-lee	Guy and Lee pre-operation conversation decomposed.
+V10-000121	0	23.09	M	migrated	ev-y0-0923-sakura-reports-sasuke-missing	Sakura reporting Sasuke departure migrated.
+V10-000121-B	0	23.09	M	superseded	ev-y0-0923-tsunade-orders-shikamaru-retrieval;ev-y0-0923-shikamaru-recruits-naruto;ev-y0-0923-shikamaru-recruits-choji;ev-y0-0923-shikamaru-recruits-neji;ev-y0-0923-shikamaru-recruits-kiba	Tsunade order and Shikamaru recruitment actions separated.
+V10-000121-C	0	23.09	M	migrated	ev-y0-0923-naruto-promises-return-sasuke	Naruto promise to Sakura migrated.
+V10-000121-D	0	23.09	M	migrated	ev-y0-0923-tsunade-operates-lee	Rock Lee operation migrated as parallel scene.
+V10-000121-E	0	23.09	M	migrated	ev-y0-0923-retrieval-team-leaves-konoha	Retrieval team departure migrated.
+V10-000121-F	0	23.09	M	superseded	ev-y0-0923-choji-stays-behind-jirobo;ev-y0-0923-choji-uses-three-pills;ev-y0-0923-choji-defeats-jirobo;ev-y0-0923-choji-collapses-exhausted	Choji/Jirobo battle decomposed.
+V10-000121-G	0	23.09	M	superseded	ev-y0-0923-neji-stays-behind-kidomaru;ev-y0-0923-neji-adapts-to-kidomaru-range;ev-y0-0923-neji-defeats-kidomaru;ev-y0-0923-neji-left-severely-wounded	Neji/Kidomaru battle decomposed.
 V10-000122	0	24.09	M	migrated	ev-y0-0924-kiba-separates	Kiba branch.
 V10-000122-B	0	24.09	M	migrated	ev-y0-0924-shikamaru-fights-tayuya	Shikamaru branch.
 V10-000122-C	0	24.09	M	migrated	ev-y0-0924-kimimaro-takes-sasuke	Kimimaro branch.
