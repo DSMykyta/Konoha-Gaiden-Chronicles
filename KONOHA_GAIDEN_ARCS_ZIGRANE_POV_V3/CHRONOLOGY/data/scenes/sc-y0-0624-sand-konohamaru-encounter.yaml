@@ -1,0 +1,67 @@
+schema_version: 1
+id: "sc-y0-0624-sand-konohamaru-encounter"
+continuity_id: "main"
+title: "Зустріч Команди 7 з генінами Суни"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0624", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0624-kankuro-confronts-konohamaru"
+    legacy_ids: ["V10-000039-B"]
+    title: "Канкуро стикається з Конохамару"
+    text: "Канкуро вступає в конфлікт із Конохамару та його друзями."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kankuro", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-moegi", role: "participant", mode: "physical"}
+      - {entity_id: "c-udon", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000039-B", "evd-manga-chunin-intro", "evd-anime-20-23"]
+  - id: "ev-y0-0624-team7-intervenes"
+    legacy_ids: ["V10-000039-B"]
+    title: "Команда 7 втручається"
+    text: "Наруто, Саске й Сакура втручаються в конфлікт."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000039-B", "evd-manga-chunin-intro", "evd-anime-20-23"]
+  - id: "ev-y0-0624-team7-meets-sand-siblings"
+    legacy_ids: ["V10-000039-B"]
+    title: "Команда 7 вперше зустрічає Темарі й Ґаару"
+    text: "Втручання приводить Наруто, Саске й Сакуру до першої зустрічі з Темарі та Ґаарою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000039-B", "evd-manga-chunin-intro", "evd-anime-20-23"]
+relations:
+  - {id: "rel-0624-sand-1", kind: "before", a: "ev-y0-0624-kankuro-confronts-konohamaru", b: "ev-y0-0624-team7-intervenes", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-intro"]}
+  - {id: "rel-0624-sand-2", kind: "before", a: "ev-y0-0624-team7-intervenes", b: "ev-y0-0624-team7-meets-sand-siblings", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000039-B"]}
+presence:
+  - {id: "pr-0624-sand-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0624-sand-konohamaru-encounter.start", to: "ev-y0-0624-team7-intervenes.end", basis: "imported", evidence_ids: ["evd-v10-000039-B"], review: "accepted"}
+  - {id: "pr-0624-sand-moegi", entity_id: "c-moegi", from: "sc-y0-0624-sand-konohamaru-encounter.start", to: "ev-y0-0624-team7-intervenes.end", basis: "source", evidence_ids: ["evd-anime-20-23"], review: "pending"}
+  - {id: "pr-0624-sand-udon", entity_id: "c-udon", from: "sc-y0-0624-sand-konohamaru-encounter.start", to: "ev-y0-0624-team7-intervenes.end", basis: "source", evidence_ids: ["evd-anime-20-23"], review: "pending"}
+  - {id: "pr-0624-sand-kankuro", entity_id: "c-kankuro", from: "sc-y0-0624-sand-konohamaru-encounter.start", to: "sc-y0-0624-sand-konohamaru-encounter.end", basis: "source", evidence_ids: ["evd-v10-000039-B"], review: "accepted"}
+  - {id: "pr-0624-sand-temari", entity_id: "c-temari", from: "ev-y0-0624-team7-meets-sand-siblings.start", to: "sc-y0-0624-sand-konohamaru-encounter.end", basis: "imported", evidence_ids: ["evd-v10-000039-B"], review: "accepted"}
+  - {id: "pr-0624-sand-gaara", entity_id: "c-gaara", from: "ev-y0-0624-team7-meets-sand-siblings.start", to: "sc-y0-0624-sand-konohamaru-encounter.end", basis: "imported", evidence_ids: ["evd-v10-000039-B"], review: "accepted"}
+  - {id: "pr-0624-sand-naruto", entity_id: "c-naruto", from: "ev-y0-0624-team7-intervenes.start", to: "sc-y0-0624-sand-konohamaru-encounter.end", basis: "source", evidence_ids: ["evd-v10-000039-B"], review: "accepted"}
+  - {id: "pr-0624-sand-sasuke", entity_id: "c-sasuke", from: "ev-y0-0624-team7-intervenes.start", to: "sc-y0-0624-sand-konohamaru-encounter.end", basis: "source", evidence_ids: ["evd-v10-000039-B"], review: "accepted"}
+  - {id: "pr-0624-sand-sakura", entity_id: "c-sakura", from: "ev-y0-0624-team7-intervenes.start", to: "sc-y0-0624-sand-konohamaru-encounter.end", basis: "source", evidence_ids: ["evd-v10-000039-B"], review: "accepted"}
