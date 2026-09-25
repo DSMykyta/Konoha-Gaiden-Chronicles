@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-0701-anko-orochimaru"
+continuity_id: "main"
+title: "Анко виявляє проникнення Орочімару"
+location_id: "loc-forest-death"
+placement: {anchor_id: "ta-y0-0701", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0701-anko-finds-grass-team"
+    legacy_ids: ["V10-000040-F"]
+    title: "Анко знаходить убиту команду Трави"
+    text: "Анко знаходить сліди вбитої команди генінів Трави й розуміє, що під їхньою особою на іспит проник Орочімару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000040-F", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-anko-confronts-orochimaru"
+    legacy_ids: ["V10-000040-F"]
+    title: "Анко вступає в сутичку з Орочімару"
+    text: "Анко знаходить Орочімару в Лісі Смерті й намагається його зупинити."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-F", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-orochimaru-escapes-anko"
+    legacy_ids: ["V10-000040-F"]
+    title: "Анко не вдається затримати Орочімару"
+    text: "Сутичка завершується без затримання Орочімару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-F", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0701-anko-1", kind: "before", a: "ev-y0-0701-anko-finds-grass-team", b: "ev-y0-0701-anko-confronts-orochimaru", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-anko-2", kind: "before", a: "ev-y0-0701-anko-confronts-orochimaru", b: "ev-y0-0701-orochimaru-escapes-anko", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+presence: []
