@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-0128-team7-team10-hostage"
+continuity_id: "main"
+title: "Команди 7 і 10 визволяють заручника"
+location_id: null
+placement: {anchor_id: "ta-y0-0128", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0128-team7-team10-hostage-mission"
+    legacy_ids: ["V10-000017"]
+    title: "Команди 7 і 10 спільно беруться за визволення заручника"
+    text: "Команди 7 і 10 діють разом у місії з визволення заручника."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+    focus_teams: ["team-7", "team-10"]
+    evidence_ids: ["evd-v10-000017", "evd-source-000017"]
+  - id: "ev-y0-0128-tofu-betrays-teams"
+    legacy_ids: ["V10-000017"]
+    title: "Тофу зраджує дві команди"
+    text: "Колишній розбійник Тофу зраджує Команди 7 і 10 під час операції."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tofu", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000017", "evd-source-000017"]
+  - id: "ev-y0-0128-shikamaru-trades-himself"
+    legacy_ids: ["V10-000017"]
+    title: "Шикамару міняє себе на заручника"
+    text: "Шикамару добровільно міняє себе на полоненого, щоб змінити ситуацію на користь команд."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000017", "evd-source-000017"]
+  - id: "ev-y0-0128-teams-defeat-bandits"
+    legacy_ids: ["V10-000017"]
+    title: "Команди 7 і 10 перемагають банду"
+    text: "Дві команди використовують взаємодію, щоб звільнити заручника й перемогти банду."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+    focus_teams: ["team-7", "team-10"]
+    evidence_ids: ["evd-v10-000017", "evd-source-000017"]
+relations:
+  - {id: "rel-0128-1", kind: "before", a: "ev-y0-0128-team7-team10-hostage-mission", b: "ev-y0-0128-tofu-betrays-teams", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000017"]}
+  - {id: "rel-0128-2", kind: "before", a: "ev-y0-0128-tofu-betrays-teams", b: "ev-y0-0128-shikamaru-trades-himself", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000017"]}
+  - {id: "rel-0128-3", kind: "before", a: "ev-y0-0128-shikamaru-trades-himself", b: "ev-y0-0128-teams-defeat-bandits", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000017"]}
+presence: []
