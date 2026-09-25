@@ -1,0 +1,32 @@
+schema_version: 1
+id: "sc-y0-0706-preliminaries-announced"
+continuity_id: "main"
+title: "Організатори призначають попередні поєдинки"
+location_id: "loc-chunin-prelim-arena"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-seven-teams-reach-tower"
+    legacy_ids: ["V10-000045-E"]
+    title: "До вежі доходять сім команд"
+    text: "Після завершення другого етапу до центральної вежі дістаються сім команд."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    evidence_ids: ["evd-v10-000045-E", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-hayate-announces-preliminaries"
+    legacy_ids: ["V10-000045-E"]
+    title: "Хаяте оголошує негайний попередній раунд"
+    text: "Через надлишок кандидатів перед фіналом призначають серію індивідуальних попередніх поєдинків."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hayate", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000045-E", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+relations:
+  - {id: "rel-0706-prelim-announce-1", kind: "before", a: "ev-y0-0706-seven-teams-reach-tower", b: "ev-y0-0706-hayate-announces-preliminaries", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000045-E"]}
+presence:
+  - {id: "pr-0706-prelim-announce-hayate", entity_id: "c-hayate", from: "ev-y0-0706-hayate-announces-preliminaries.start", to: "sc-y0-0706-preliminaries-announced.end", basis: "source", evidence_ids: ["evd-manga-chunin-prelims"], review: "pending"}
