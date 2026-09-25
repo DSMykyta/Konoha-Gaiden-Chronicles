@@ -1018,6 +1018,11 @@ entities:
     name: "Naho"
     aliases:
       - "Нахо"
+  - id: "loc-valley-of-end"
+    kind: "location"
+    name: "Valley of the End"
+    aliases:
+      - "Долина Суду"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
