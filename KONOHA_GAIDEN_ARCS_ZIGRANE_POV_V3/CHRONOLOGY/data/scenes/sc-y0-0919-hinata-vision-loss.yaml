@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-0919-hinata-vision-loss"
+continuity_id: "main"
+title: "Хіната тимчасово втрачає зір"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0919", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0919-hinata-overstrains-byakugan"
+    legacy_ids: ["V10-000113"]
+    title: "Хіната перенапружує Б’якуґан"
+    text: "Через перенапруження Б’якуґана Хіната тимчасово втрачає зір."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000113", "evd-shippuden-306"]
+relations: []
+presence:
+  - {id: "pr-0919-hinata-loss", entity_id: "c-hinata", from: "sc-y0-0919-hinata-vision-loss.start", to: "sc-y0-0919-hinata-vision-loss.end", basis: "source", evidence_ids: ["evd-shippuden-306"], review: "accepted"}
