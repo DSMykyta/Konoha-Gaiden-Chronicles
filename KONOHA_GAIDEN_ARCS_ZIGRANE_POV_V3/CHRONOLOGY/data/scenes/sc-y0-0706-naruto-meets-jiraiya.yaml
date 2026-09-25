@@ -1,0 +1,66 @@
+schema_version: 1
+id: "sc-y0-0706-naruto-meets-jiraiya"
+continuity_id: "main"
+title: "Джирая перебирає тренування Наруто"
+location_id: "loc-konoha-hot-springs"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-naruto-trains-with-ebisu"
+    legacy_ids: ["V10-000048"]
+    title: "Наруто починає тренування з Ебісу"
+    text: "Не отримавши тренування від Какаші, Наруто починає заняття з Ебісу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-ebisu", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000048", "evd-manga-ch88-97"]
+  - id: "ev-y0-0706-jiraiya-appears"
+    legacy_ids: ["V10-000048"]
+    title: "Наруто зустрічає Джираю біля гарячих джерел"
+    text: "Під час тренування біля гарячих джерел Наруто знайомиться з Джираєю."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-ebisu", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000048", "evd-manga-ch88-97", "evd-anime-52-54"]
+  - id: "ev-y0-0706-jiraiya-removes-five-elements-seal"
+    legacy_ids: ["V10-000048"]
+    title: "Джирая знімає Печатку П’яти Стихій"
+    text: "Джирая помічає порушення печатки Наруто й прибирає Печатку П’яти Стихій, накладену Орочімару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000048", "evd-manga-ch88-97", "evd-anime-52-54"]
+  - id: "ev-y0-0706-jiraiya-takes-over-training"
+    legacy_ids: ["V10-000048"]
+    title: "Джирая перебирає підготовку Наруто"
+    text: "Після виправлення печатки Джирая погоджується тренувати Наруто замість Ебісу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-ebisu", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000048", "evd-manga-ch88-97", "evd-anime-52-54"]
+relations:
+  - {id: "rel-0706-jiraiya-1", kind: "before", a: "ev-y0-0706-naruto-trains-with-ebisu", b: "ev-y0-0706-jiraiya-appears", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0706-jiraiya-2", kind: "before", a: "ev-y0-0706-jiraiya-appears", b: "ev-y0-0706-jiraiya-removes-five-elements-seal", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0706-jiraiya-3", kind: "before", a: "ev-y0-0706-jiraiya-removes-five-elements-seal", b: "ev-y0-0706-jiraiya-takes-over-training", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+presence:
+  - {id: "pr-0706-jiraiya-naruto", entity_id: "c-naruto", from: "sc-y0-0706-naruto-meets-jiraiya.start", to: "sc-y0-0706-naruto-meets-jiraiya.end", basis: "source", evidence_ids: ["evd-v10-000048"], review: "accepted"}
+  - {id: "pr-0706-jiraiya-ebisu", entity_id: "c-ebisu", from: "sc-y0-0706-naruto-meets-jiraiya.start", to: "ev-y0-0706-jiraiya-takes-over-training.end", basis: "source", evidence_ids: ["evd-v10-000048"], review: "accepted"}
+  - {id: "pr-0706-jiraiya-jiraiya", entity_id: "c-jiraiya", from: "ev-y0-0706-jiraiya-appears.start", to: "sc-y0-0706-naruto-meets-jiraiya.end", basis: "source", evidence_ids: ["evd-v10-000048"], review: "accepted"}
