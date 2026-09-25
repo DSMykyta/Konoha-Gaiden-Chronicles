@@ -1,0 +1,42 @@
+schema_version: 1
+id: "sc-y0-1104-star-stolen-investigation"
+continuity_id: "main"
+title: "Зірку викрадає шинобі Хошіґакуре, і команда шукає внутрішнього винуватця"
+location_id: "loc-hoshigakure"
+placement: {anchor_id: "ta-y0-1104", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1104-star-stolen-by-kujaku-user"
+    legacy_ids: ["V10-000172"]
+    title: "Невідомий користувач Павичевої Техніки викрадає Зірку"
+    text: "Метеорит зникає з Хошіґакуре; сліди техніки показують, що викрадач володіє секретною Павичевою Технікою самого селища."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "artifact-hoshi-star", role: "stolen_object", mode: "physical"}
+      - {entity_id: "c-natsuhi", role: "hidden_actor", mode: "physical"}
+      - {entity_id: "c-naruto", role: "investigator", mode: "physical"}
+      - {entity_id: "c-neji", role: "investigator", mode: "physical"}
+      - {entity_id: "c-lee", role: "investigator", mode: "physical"}
+      - {entity_id: "c-tenten", role: "investigator", mode: "physical"}
+    evidence_ids: ["evd-v10-000172", "evd-anime-179-183"]
+  - id: "ev-y0-1104-team-suspects-insider"
+    legacy_ids: ["V10-000172"]
+    title: "Команда доходить висновку, що викрадач пов'язаний із Хошіґакуре"
+    text: "Оскільки Павичева Техніка є місцевою таємницею, Наруто й група Неджи перестають шукати зовнішнього нападника й перевіряють саме селище."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "leader", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-akahoshi", role: "suspected_context", mode: "physical"}
+    evidence_ids: ["evd-v10-000172", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1104-star-theft-1", kind: "before", a: "ev-y0-1104-star-stolen-by-kujaku-user", b: "ev-y0-1104-team-suspects-insider", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
