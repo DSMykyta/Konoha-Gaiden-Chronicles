@@ -1384,6 +1384,92 @@ entities:
     aliases:
       - "храм О.К."
     parent_id: "loc-land-of-fire"
+  - id: "c-chishima"
+    kind: "person"
+    name: "Chishima"
+    aliases:
+      - "Чішіма"
+  - id: "c-komei"
+    kind: "person"
+    name: "Kōmei"
+    aliases:
+      - "Комей"
+  - id: "c-toki"
+    kind: "person"
+    name: "Toki"
+    aliases:
+      - "Токі"
+  - id: "c-sagi"
+    kind: "person"
+    name: "Sagi"
+    aliases:
+      - "Саґі"
+  - id: "c-hoki-watari"
+    kind: "person"
+    name: "Hōki"
+    aliases:
+      - "Хокі"
+      - "Мосо"
+  - id: "group-watari"
+    kind: "organization"
+    name: "Watari Ninja"
+    aliases:
+      - "шинобі Ватарі"
+      - "мандрівні шинобі Ватарі"
+  - id: "loc-land-of-birds"
+    kind: "location"
+    name: "Land of Birds"
+    aliases:
+      - "Країна Птахів"
+  - id: "loc-moso-house"
+    kind: "location"
+    name: "Mōsō's residence"
+    aliases:
+      - "дім Мосо"
+    parent_id: "loc-land-of-birds"
+  - id: "loc-birds-daimyo-palace"
+    kind: "location"
+    name: "Land of Birds daimyō palace"
+    aliases:
+      - "палац даймьо Країни Птахів"
+    parent_id: "loc-land-of-birds"
+  - id: "loc-birds-lake"
+    kind: "location"
+    name: "Land of Birds memorial lake"
+    aliases:
+      - "озеро Саґі й Токі"
+    parent_id: "loc-land-of-birds"
+  - id: "loc-cursed-warrior-tunnels"
+    kind: "location"
+    name: "Cursed Warrior underground tunnels"
+    aliases:
+      - "підземні ходи Проклятого Воїна"
+    parent_id: "loc-birds-daimyo-palace"
+  - id: "c-gensho-ryudoin"
+    kind: "person"
+    name: "Genshō Ryūdōin"
+    aliases:
+      - "Ґеншо Рюдоін"
+  - id: "c-nazuna"
+    kind: "person"
+    name: "Nazuna"
+    aliases:
+      - "Назуна"
+  - id: "c-spirit-beast"
+    kind: "creature"
+    name: "Spirit Beast"
+    aliases:
+      - "Духовний Звір"
+  - id: "group-ryudoin-brothers"
+    kind: "organization"
+    name: "Ryūdōin Brothers"
+    aliases:
+      - "брати Рюдоін"
+  - id: "loc-valley-of-evil"
+    kind: "location"
+    name: "Valley of Evil"
+    aliases:
+      - "Долина Зла"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
