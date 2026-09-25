@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-1002-iruka-pursues-mizuki"
+continuity_id: "main"
+title: "Ірука переслідує Мідзукі окремою гілкою"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1002", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1002-iruka-chases-mizuki"
+    legacy_ids: ["V10-000131"]
+    title: "Ірука йде за Мідзукі"
+    text: "Поки Наруто затримують Фуджін і Райджін, Ірука продовжує переслідувати Мідзукі, який веде його через підготовлений маршрут із пастками."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000131", "evd-anime-142-147"]
+relations: []
+presence: []
