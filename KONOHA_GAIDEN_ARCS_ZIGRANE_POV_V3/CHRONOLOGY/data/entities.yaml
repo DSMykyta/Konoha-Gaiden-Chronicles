@@ -962,6 +962,16 @@ entities:
     name: "Modoroki Shrine"
     aliases:
       - "святиня Модорокі"
+  - id: "c-gameru"
+    kind: "person"
+    name: "Gameru"
+    aliases:
+      - "Ґамеру"
+  - id: "c-kusune"
+    kind: "person"
+    name: "Kusune"
+    aliases:
+      - "Кусуне"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
