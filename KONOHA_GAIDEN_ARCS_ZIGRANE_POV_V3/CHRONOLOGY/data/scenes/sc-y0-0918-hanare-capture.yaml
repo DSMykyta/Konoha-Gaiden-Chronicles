@@ -1,0 +1,63 @@
+schema_version: 1
+id: "sc-y0-0918-hanare-capture"
+continuity_id: "main"
+title: "Команда 7 затримує Ханаре"
+location_id: null
+placement: {anchor_id: "ta-y0-0918", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0918-team7-detains-hanare"
+    legacy_ids: ["V10-000112"]
+    title: "Команда 7 бере участь у затриманні Ханаре"
+    text: "Команда 7 бере участь у затриманні Ханаре з Прихованого Замка."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-hanare", role: "affected", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000112", "evd-shippuden-191"]
+  - id: "ev-y0-0918-hanare-interrogated"
+    legacy_ids: ["V10-000112"]
+    title: "Ханаре допитують"
+    text: "Після затримання Ханаре проходить допит."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hanare", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000112", "evd-shippuden-191"]
+  - id: "ev-y0-0918-hanare-prisoner-exchange"
+    legacy_ids: ["V10-000112"]
+    title: "Відбувається обмін полоненими"
+    text: "Після допиту Ханаре опиняється в обміні полоненими."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-hanare", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000112", "evd-shippuden-191"]
+  - id: "ev-y0-0918-kakashi-lets-hanare-go"
+    legacy_ids: ["V10-000112"]
+    title: "Какаші наздоганяє Ханаре й дозволяє їй піти"
+    text: "Після обміну Какаші наздоганяє Ханаре, але зрештою дозволяє їй піти."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hanare", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000112", "evd-shippuden-191"]
+relations:
+  - {id: "rel-0918-hanare-1", kind: "before", a: "ev-y0-0918-team7-detains-hanare", b: "ev-y0-0918-hanare-interrogated", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-191"]}
+  - {id: "rel-0918-hanare-2", kind: "before", a: "ev-y0-0918-hanare-interrogated", b: "ev-y0-0918-hanare-prisoner-exchange", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-191"]}
+  - {id: "rel-0918-hanare-3", kind: "before", a: "ev-y0-0918-hanare-prisoner-exchange", b: "ev-y0-0918-kakashi-lets-hanare-go", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-191"]}
+presence: []
