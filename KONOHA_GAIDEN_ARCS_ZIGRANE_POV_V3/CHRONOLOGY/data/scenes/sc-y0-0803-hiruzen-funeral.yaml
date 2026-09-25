@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-0803-hiruzen-funeral"
+continuity_id: "main"
+title: "Похорон Хірузена"
+location_id: "loc-konoha-cemetery"
+placement: {anchor_id: "ta-y0-0803", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0803-hiruzen-funeral"
+    legacy_ids: ["V10-000073"]
+    title: "Коноха проводить похорон Третього Хокаґе"
+    text: "Через два дні після вторгнення Коноха проводить похорон Хірузена Сарутобі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiruzen", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000073", "evd-manga-post-crush-search"]
+relations: []
+presence: []
