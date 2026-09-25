@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0907-naruto-defeats-aoi"
+continuity_id: "main"
+title: "Наруто остаточно перемагає Аої"
+location_id: "loc-land-of-tea"
+placement: {anchor_id: "ta-y0-0907", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0907-naruto-breaks-thunder-sword"
+    legacy_ids: ["V10-000097"]
+    title: "Наруто остаточно ламає Меч Бога Грому"
+    text: "Наруто завершує пошкодження Меча Бога Грому й остаточно ламає його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-aoi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+  - id: "ev-y0-0907-naruto-defeats-aoi"
+    legacy_ids: ["V10-000097"]
+    title: "Наруто перемагає Аої"
+    text: "Після знищення меча Наруто перемагає Аої."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-aoi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+relations:
+  - {id: "rel-0907-aoi-1", kind: "before", a: "ev-y0-0907-naruto-breaks-thunder-sword", b: "ev-y0-0907-naruto-defeats-aoi", basis: "source", review: "pending", evidence_ids: ["evd-anime-102-106"]}
+presence:
+  - {id: "pr-0907-aoi-naruto", entity_id: "c-naruto", from: "sc-y0-0907-naruto-defeats-aoi.start", to: "sc-y0-0907-naruto-defeats-aoi.end", basis: "source", evidence_ids: ["evd-anime-102-106"], review: "accepted"}
+  - {id: "pr-0907-aoi-aoi", entity_id: "c-aoi", from: "sc-y0-0907-naruto-defeats-aoi.start", to: "sc-y0-0907-naruto-defeats-aoi.end", basis: "source", evidence_ids: ["evd-anime-102-106"], review: "accepted"}
