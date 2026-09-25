@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-1102-postman-manuscript-mixup"
+continuity_id: "main"
+title: "Наруто плутає рукопис Джираї з мирною угодою"
+location_id: "loc-hot-springs-town"
+placement: {anchor_id: "ta-y0-1102-courier", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1102-naruto-meets-jiraiya-hot-springs"
+    legacy_ids: ["V10-000168"]
+    title: "Наруто зустрічає Джираю в містечку гарячих джерел"
+    text: "Дорогою до Конохи Наруто натрапляє на Джираю, який очікує інформацію про Акацукі й паралельно затягує роботу над новим рукописом."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000168", "evd-anime-177"]
+  - id: "ev-y0-1102-naruto-ghostwrites-jiraiya-manuscript"
+    legacy_ids: ["V10-000168"]
+    title: "Наруто сам дописує рукопис замість Джираї"
+    text: "Коли Джирая засинає, Наруто нетерпляче пише власне продовження його книги й віддає конверт кур'єру."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000168", "evd-anime-177"]
+  - id: "ev-y0-1102-manuscript-swapped-with-peace-treaty"
+    legacy_ids: ["V10-000168"]
+    title: "Конверт із рукописом міняється місцями з мирною угодою"
+    text: "Через випадкову плутанину Наруто й Джирая отримують документ про мир між Країнами Кігтів та Іклів, а написаний Наруто рукопис прямує до даймьо Іклів замість угоди."
+    origin: "F"
+    extent: "instant"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "cause", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-fang-daimyo", role: "recipient", mode: "remote"}
+      - {entity_id: "c-claw-daimyo", role: "sender", mode: "remote"}
+    evidence_ids: ["evd-v10-000168", "evd-anime-177"]
+relations:
+  - {id: "rel-1102-postman-1", kind: "before", a: "ev-y0-1102-naruto-meets-jiraiya-hot-springs", b: "ev-y0-1102-naruto-ghostwrites-jiraiya-manuscript", basis: "source", review: "accepted", evidence_ids: ["evd-anime-177"]}
+  - {id: "rel-1102-postman-2", kind: "before", a: "ev-y0-1102-naruto-ghostwrites-jiraiya-manuscript", b: "ev-y0-1102-manuscript-swapped-with-peace-treaty", basis: "source", review: "accepted", evidence_ids: ["evd-anime-177"]}
+presence: []
