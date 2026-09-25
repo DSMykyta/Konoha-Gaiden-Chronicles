@@ -1209,3 +1209,25 @@ redirects:
       - "ev-y0-0907-idate-restores-faith-shinobi"
       - "ev-y0-0907-idate-reconciles-ibiki"
     reason: "Tea mission finale decomposed into Aoi defeat, race finish and reconciliation aftermath."
+  - legacy_id: "V10-000098"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0908-team7-returns-tea"
+      - "ev-y0-0908-naruto-sasuke-rivalry-intensifies"
+    reason: "Tea mission return and rivalry aftermath separated."
+  - legacy_id: "V10-000099"
+    status: "superseded"
+    replacement_ids:
+      - "ev-alt-y0-0909-konoha-teams-sports-festival"
+      - "ev-alt-y0-0909-naruto-toilet-running-gag"
+    reason: "Sports Festival OVA kept in gag ALT continuity and decomposed."
+  - legacy_id: "V10-000100"
+    status: "migrated"
+    replacement_ids:
+      - "ev-alt-y0-0909-ultimate-ninja2-special-seal-threat"
+    reason: "Ultimate Ninja 2 ALT threat opening migrated."
+  - legacy_id: "V10-000101"
+    status: "migrated"
+    replacement_ids:
+      - "ev-alt-y0-0910-genin-compete-for-genie-bottle"
+    reason: "Genie OVA kept as separate gag ALT continuity."
