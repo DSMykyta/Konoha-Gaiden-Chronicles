@@ -697,6 +697,77 @@ entities:
     aliases:
       - "сили Звуку"
       - "люди Звуку"
+  - id: "c-hiashi"
+    kind: "person"
+    name: "Hiashi Hyuga"
+    aliases:
+      - "Хіаші"
+  - id: "c-hizashi"
+    kind: "person"
+    name: "Hizashi Hyuga"
+    aliases:
+      - "Хізаші"
+  - id: "c-inoichi"
+    kind: "person"
+    name: "Inoichi Yamanaka"
+    aliases:
+      - "Іноїчі"
+  - id: "c-shikaku"
+    kind: "person"
+    name: "Shikaku Nara"
+    aliases:
+      - "Шікаку"
+  - id: "c-choza"
+    kind: "person"
+    name: "Chōza Akimichi"
+    aliases:
+      - "Чодза"
+  - id: "c-pakkun"
+    kind: "summon"
+    name: "Pakkun"
+    aliases:
+      - "Паккун"
+  - id: "c-hashirama"
+    kind: "person"
+    name: "Hashirama Senju"
+    aliases:
+      - "Хашірама"
+      - "Перший Хокаґе"
+  - id: "c-tobirama"
+    kind: "person"
+    name: "Tobirama Senju"
+    aliases:
+      - "Тобірама"
+      - "Другий Хокаґе"
+  - id: "c-shukaku"
+    kind: "tailed_beast"
+    name: "Shukaku"
+    aliases:
+      - "Шукаку"
+      - "Однохвостий"
+  - id: "loc-chunin-finals-arena"
+    kind: "location"
+    name: "Chūnin Exams finals arena"
+    aliases:
+      - "арена фіналів"
+    parent_id: "loc-konohagakure"
+  - id: "loc-hokage-rooftop"
+    kind: "location"
+    name: "Hokage rooftop"
+    aliases:
+      - "дах резиденції Хокаґе"
+    parent_id: "loc-konohagakure"
+  - id: "loc-konoha-memorial-stone"
+    kind: "location"
+    name: "Konoha Memorial Stone"
+    aliases:
+      - "Меморіальний камінь"
+    parent_id: "loc-konohagakure"
+  - id: "loc-konoha-outskirts"
+    kind: "location"
+    name: "Konoha outskirts"
+    aliases:
+      - "околиці Конохи"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
