@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-alt-y0-1005-gelel-caravan-recovery"
+continuity_id: "alt-movie-gelel"
+title: "Наруто й Темуджин приходять до тями в каравані Кахіко"
+location_id: "loc-gelel-caravan"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1005-caravan-rescues-naruto-temujin"
+    legacy_ids: ["V10-000135"]
+    title: "Караван підбирає поранених Наруто й Темуджина"
+    text: "Після падіння Наруто й Темуджин приходять до тями в каравані мандрівників, де їм надали допомогу."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-temujin", role: "affected", mode: "physical"}
+      - {entity_id: "c-kahiko", role: "participant", mode: "physical"}
+      - {entity_id: "c-nerugui", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-kahiko-reveals-nerugui-mission-client"
+    legacy_ids: ["V10-000135"]
+    title: "Кахіко виявляється замовником повернення Неруґуї"
+    text: "У каравані Наруто дізнається, що Кахіко та його люди й були тими, кому він мав повернути Неруґуї."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kahiko", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-nerugui", role: "focus", mode: "physical"}
+      - {entity_id: "c-temujin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-movie-gelel"]
+relations:
+  - {id: "rel-alt-1005-gelel-caravan-1", kind: "before", a: "ev-alt-y0-1005-caravan-rescues-naruto-temujin", b: "ev-alt-y0-1005-kahiko-reveals-nerugui-mission-client", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+presence: []
