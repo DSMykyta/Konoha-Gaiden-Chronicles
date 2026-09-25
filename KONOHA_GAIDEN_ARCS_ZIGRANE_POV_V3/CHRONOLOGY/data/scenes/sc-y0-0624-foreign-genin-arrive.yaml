@@ -1,0 +1,24 @@
+schema_version: 1
+id: "sc-y0-0624-foreign-genin-arrive"
+continuity_id: "main"
+title: "Іноземні геніни прибувають до Конохи"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0624", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0624-foreign-genin-arrive"
+    legacy_ids: ["V10-000039"]
+    title: "Учасники з інших селищ прибувають на іспит"
+    text: "Геніни Суни та інших селищ прибувають до Конохи для участі в іспиті на чуніна."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000039", "evd-manga-chunin-intro", "evd-anime-20-23"]
+relations: []
+presence: []
