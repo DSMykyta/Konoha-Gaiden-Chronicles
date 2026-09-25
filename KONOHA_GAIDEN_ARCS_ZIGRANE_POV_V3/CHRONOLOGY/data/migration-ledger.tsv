@@ -68,26 +68,26 @@ V10-000042-C	0	02.07	M	superseded	ev-y0-0702-sakura-cuts-hair;ev-y0-0702-team10-
 V10-000042-D	0	02.07	M	superseded	ev-y0-0702-sasuke-awakens-curse-mark;ev-y0-0702-sasuke-breaks-zaku-arms;ev-y0-0702-sakura-calms-sasuke	Sasuke's awakening, attack and Sakura calming him separated; Kakashi removed from physical cast.
 V10-000042-E	0	02.07	M	migrated	ev-y0-0702-sound-team-retreats	Sound Team retreat migrated.
 V10-000042-F	0	02.07	M	superseded	ev-y0-0702-anko-reports-orochimaru;ev-y0-0702-hiruzen-continues-exam	Anko's report and Hiruzen's decision separated; Orochimaru marked as remote/mentioned, not present.
-V10-000043	0	05.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000044	0	05.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000045	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000045-B	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000045-C	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000045-D	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000045-E	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-B	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-C	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-D	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-E	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-F	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-G	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-H	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-I	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-J	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-K	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-L	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000046-M	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000043	0	05.07	M	migrated	ev-y0-0705-team7-resumes-scroll-search	Team 7 resumes the scroll search; Kakashi removed from physical presence.
+V10-000044	0	05.07	M	superseded	ev-y0-0705-sasuke-meets-karin;ev-y0-0705-sasuke-saves-karin-bear	Chapter 482 flashback split into meeting and rescue.
+V10-000045	0	06.07	M	migrated	ev-y0-0706-kabuto-joins-team7	Kabuto joins Team 7; Kakashi removed from physical presence in the forest.
+V10-000045-B	0	06.07	M	superseded	ev-y0-0706-team-oboro-traps-group;ev-y0-0706-naruto-exhausts-oboro-team	Team Oboro encounter split into trap and Naruto's counter.
+V10-000045-C	0	06.07	M	superseded	ev-y0-0706-team7-gets-second-scroll;ev-y0-0706-team7-reaches-tower	Scroll acquisition and tower arrival separated.
+V10-000045-D	0	06.07	M	migrated	ev-y0-0706-kabuto-returns-to-sound	Kabuto's secret return migrated as a separate scene.
+V10-000045-E	0	06.07	M	superseded	ev-y0-0706-seven-teams-reach-tower;ev-y0-0706-hayate-announces-preliminaries	Stage result and announcement of preliminaries separated.
+V10-000046	0	06.07	M	migrated	ev-y0-0706-sasuke-defeats-yoroi	First preliminary match migrated.
+V10-000046-B	0	06.07	M	superseded	ev-y0-0706-kakashi-seals-curse-mark;ev-y0-0706-orochimaru-confronts-kakashi	Curse-mark sealing and Orochimaru confrontation separated in a side-room scene.
+V10-000046-C	0	06.07	M	migrated	ev-y0-0706-shino-defeats-zaku	Preliminary match migrated.
+V10-000046-D	0	06.07	M	migrated	ev-y0-0706-kankuro-defeats-misumi	Preliminary match migrated.
+V10-000046-E	0	06.07	M	migrated	ev-y0-0706-sakura-ino-double-ko	Preliminary match migrated.
+V10-000046-F	0	06.07	M	migrated	ev-y0-0706-temari-defeats-tenten	Preliminary match migrated.
+V10-000046-G	0	06.07	M	migrated	ev-y0-0706-shikamaru-defeats-kin	Preliminary match migrated.
+V10-000046-H	0	06.07	M	migrated	ev-y0-0706-naruto-defeats-kiba	Preliminary match migrated.
+V10-000046-I	0	06.07	M	migrated	ev-y0-0706-neji-defeats-hinata	Preliminary match migrated.
+V10-000046-J	0	06.07	M	migrated	ev-y0-0706-gaara-defeats-lee	Preliminary match migrated.
+V10-000046-K	0	06.07	M	migrated	ev-y0-0706-dosu-defeats-choji	Final preliminary match migrated.
+V10-000046-L	0	06.07	M	migrated	ev-y0-0706-finalists-draw-pairs	Final pair draw migrated.
+V10-000046-M	0	06.07	M	migrated	ev-y0-0706-kakashi-assigns-ebisu	Kakashi assigning Ebisu to Naruto migrated as a separate scene.
 V10-000047	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000048	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000049	0	06.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
