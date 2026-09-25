@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-y0-1017-gosunkugi-mission-opening"
+continuity_id: "main"
+title: "Наруто, Кіба й Хіната вирушають ловити Ґосункуґі"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1017", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1017-tsunade-assigns-gosunkugi-capture"
+    legacy_ids: ["V10-000149"]
+    title: "Цунаде доручає трійці схопити Ґосункуґі"
+    text: "Наруто, Кіба й Хіната отримують завдання затримати відомого злодія Ґосункуґі, який рухається в бік Країни Вогню."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-gosunkugi", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000149", "evd-anime-159-160"]
+  - id: "ev-y0-1017-team-meets-sazanami"
+    legacy_ids: ["V10-000149"]
+    title: "Група зустрічає мисливця за головами Садзанамі"
+    text: "Під час пошуку Наруто, Кіба й Хіната знайомляться із Садзанамі, досвідченим мисливцем за головами, який теж переслідує Ґосункуґі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sazanami", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-gosunkugi", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000149", "evd-anime-159-160"]
+relations:
+  - {id: "rel-1017-gosunkugi-open-1", kind: "before", a: "ev-y0-1017-tsunade-assigns-gosunkugi-capture", b: "ev-y0-1017-team-meets-sazanami", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+presence: []
