@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-0919-hinata-fireworks"
+continuity_id: "main"
+title: "Хіната дивиться феєрверк із дому"
+location_id: "loc-hyuga-compound"
+placement: {anchor_id: "ta-y0-0919", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0919-hinata-watches-fireworks-home"
+    legacy_ids: ["V10-000113"]
+    title: "Хіната не йде на запланований феєрверк"
+    text: "Через стан зору Хіната дивиться запланований феєрверк із дому."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000113", "evd-shippuden-306"]
+relations: []
+presence:
+  - {id: "pr-0919-fireworks-hinata", entity_id: "c-hinata", from: "sc-y0-0919-hinata-fireworks.start", to: "sc-y0-0919-hinata-fireworks.end", basis: "source", evidence_ids: ["evd-shippuden-306"], review: "accepted"}
