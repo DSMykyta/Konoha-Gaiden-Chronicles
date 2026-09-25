@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-0122-naruto-impersonates-sasuke"
+continuity_id: "main"
+title: "Наруто підміняє Саске перед Сакурою"
+location_id: null
+placement: {anchor_id: "ta-team-formation", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "pending", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0122-naruto-restrains-sasuke"
+    title: "Наруто зв’язує Саске"
+    text: "Після розподілу команд Наруто тимчасово нейтралізує Саске, щоб видати себе за нього."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-manga-team7-formation"]
+  - id: "ev-y0-0122-naruto-impersonates-sasuke"
+    title: "Наруто під виглядом Саске говорить із Сакурою"
+    text: "Наруто використовує Перетворення, щоб видати себе за Саске й наблизитися до Сакури."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "portrayed", mode: "remote"}
+    evidence_ids: ["evd-manga-team7-formation"]
+  - id: "ev-y0-0122-sakura-insults-naruto"
+    title: "Сакура говорить про Наруто, думаючи, що перед нею Саске"
+    text: "Сакура висловлюється про Наруто перед замаскованим Наруто, вважаючи його Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "portrayed", mode: "remote"}
+    evidence_ids: ["evd-manga-team7-formation"]
+relations:
+  - {id: "rel-0122-restrain-before-impersonation", kind: "before", a: "ev-y0-0122-naruto-restrains-sasuke", b: "ev-y0-0122-naruto-impersonates-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-manga-team7-formation"]}
+  - {id: "rel-0122-impersonation-before-sakura-comment", kind: "before", a: "ev-y0-0122-naruto-impersonates-sasuke", b: "ev-y0-0122-sakura-insults-naruto", basis: "source", review: "pending", evidence_ids: ["evd-manga-team7-formation"]}
+presence:
+  - {id: "pr-0122-imp-naruto", entity_id: "c-naruto", from: "sc-y0-0122-naruto-impersonates-sasuke.start", to: "sc-y0-0122-naruto-impersonates-sasuke.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
+  - {id: "pr-0122-imp-sakura", entity_id: "c-sakura", from: "ev-y0-0122-naruto-impersonates-sasuke.start", to: "sc-y0-0122-naruto-impersonates-sasuke.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
+  - {id: "pr-0122-imp-sasuke", entity_id: "c-sasuke", from: "sc-y0-0122-naruto-impersonates-sasuke.start", to: "ev-y0-0122-naruto-restrains-sasuke.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
