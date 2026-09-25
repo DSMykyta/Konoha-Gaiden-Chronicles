@@ -35,6 +35,20 @@ events:
       - {entity_id: "c-fujin", role: "opponent", mode: "physical"}
       - {entity_id: "c-raijin", role: "opponent", mode: "physical"}
     evidence_ids: ["evd-v10-000131", "evd-v10-000132", "evd-anime-142-147"]
+  - id: "ev-y0-1002-naruto-pakkun-leave-for-mizuki"
+    legacy_ids: ["V10-000131"]
+    title: "Наруто й Паккун залишають бій братів Команді 10"
+    text: "Коли Іно–Шіка–Чо беруть Фуджіна й Райджіна на себе, Наруто разом із Паккуном продовжує шлях за Ірукою та Мідзукі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-pakkun", role: "participant", mode: "physical"}
+      - {entity_id: "c-iruka", role: "target", mode: "remote"}
+      - {entity_id: "c-mizuki", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000131", "evd-anime-142-147"]
 relations:
   - {id: "rel-1002-brothers-1", kind: "before", a: "ev-y0-1002-brothers-overpower-naruto", b: "ev-y0-1002-team10-takes-over-brothers", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+  - {id: "rel-1002-brothers-2", kind: "before", a: "ev-y0-1002-team10-takes-over-brothers", b: "ev-y0-1002-naruto-pakkun-leave-for-mizuki", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
 presence: []
