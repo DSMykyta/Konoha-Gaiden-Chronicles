@@ -1,0 +1,60 @@
+schema_version: 1
+id: "sc-y0-0414-cross-roads"
+continuity_id: "alt-ova-cross-roads"
+title: "Окрема місія Команди 7 у The Cross Roads"
+location_id: null
+placement: {anchor_id: "ta-y0-0414", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0414-crossroads-team7-mission"
+    legacy_ids: ["V10-000036"]
+    title: "Команда 7 виконує окрему місію"
+    text: "В альтернативній OVA-гілці після Країни Хвиль Команда 7 виконує окреме завдання під керівництвом Какаші."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000036", "evd-source-000036"]
+  - id: "ev-y0-0414-crossroads-rivalry-disrupts"
+    legacy_ids: ["V10-000036"]
+    title: "Суперництво Наруто й Саске шкодить взаємодії"
+    text: "Суперництво Наруто й Саске порушує злагодженість Команди 7 під час місії."
+    origin: "O"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "observer", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000036", "evd-source-000036"]
+  - id: "ev-y0-0414-crossroads-team7-recovers"
+    legacy_ids: ["V10-000036"]
+    title: "Команда 7 відновлює взаємодію"
+    text: "Під керівництвом Какаші команда відновлює координацію й доводить завдання до кінця."
+    origin: "O"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000036", "evd-source-000036"]
+relations:
+  - {id: "rel-0414-crossroads-1", kind: "before", a: "ev-y0-0414-crossroads-team7-mission", b: "ev-y0-0414-crossroads-rivalry-disrupts", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000036"]}
+  - {id: "rel-0414-crossroads-2", kind: "before", a: "ev-y0-0414-crossroads-rivalry-disrupts", b: "ev-y0-0414-crossroads-team7-recovers", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000036"]}
+presence:
+  - {id: "pr-0414-crossroads-kakashi", entity_id: "c-kakashi", from: "sc-y0-0414-cross-roads.start", to: "sc-y0-0414-cross-roads.end", basis: "source", evidence_ids: ["evd-v10-000036"], review: "accepted"}
+  - {id: "pr-0414-crossroads-naruto", entity_id: "c-naruto", from: "sc-y0-0414-cross-roads.start", to: "sc-y0-0414-cross-roads.end", basis: "source", evidence_ids: ["evd-v10-000036"], review: "accepted"}
+  - {id: "pr-0414-crossroads-sasuke", entity_id: "c-sasuke", from: "sc-y0-0414-cross-roads.start", to: "sc-y0-0414-cross-roads.end", basis: "source", evidence_ids: ["evd-v10-000036"], review: "accepted"}
+  - {id: "pr-0414-crossroads-sakura", entity_id: "c-sakura", from: "sc-y0-0414-cross-roads.start", to: "sc-y0-0414-cross-roads.end", basis: "source", evidence_ids: ["evd-v10-000036"], review: "accepted"}
