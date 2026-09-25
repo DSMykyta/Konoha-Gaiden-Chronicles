@@ -7202,7 +7202,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000175"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -7227,7 +7227,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000176"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -7252,7 +7252,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000177"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
