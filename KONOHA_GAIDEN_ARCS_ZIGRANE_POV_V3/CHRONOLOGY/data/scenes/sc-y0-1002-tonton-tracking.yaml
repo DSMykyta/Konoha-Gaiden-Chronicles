@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-1002-tonton-tracking"
+continuity_id: "main"
+title: "Тонтон веде Наруто й Іруку по сліду Мідзукі"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1002", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1002-tonton-tracks-mizuki"
+    legacy_ids: ["V10-000131"]
+    title: "Тонтон бере слід утікачів"
+    text: "Тонтон допомагає Наруто й Іруці відновити слід Мідзукі та вести переслідування за межами Конохи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tonton", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000131", "evd-anime-142-147"]
+relations: []
+presence: []
