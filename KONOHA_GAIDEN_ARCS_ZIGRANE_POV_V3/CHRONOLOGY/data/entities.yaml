@@ -1626,6 +1626,26 @@ entities:
     name: "Natsuhi"
     aliases:
       - "Нацухі"
+  - id: "loc-land-of-fangs"
+    kind: "location"
+    name: "Land of Fangs"
+    aliases:
+      - "Країна Іклів"
+  - id: "loc-land-of-claws"
+    kind: "location"
+    name: "Land of Claws"
+    aliases:
+      - "Країна Кігтів"
+  - id: "c-fang-daimyo"
+    kind: "person"
+    name: "Fang Daimyō"
+    aliases:
+      - "даймьо Країни Іклів"
+  - id: "c-claw-daimyo"
+    kind: "person"
+    name: "Claw Daimyō"
+    aliases:
+      - "даймьо Країни Кігтів"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
