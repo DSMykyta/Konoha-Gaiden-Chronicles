@@ -1,0 +1,44 @@
+schema_version: 1
+id: "sc-y0-0831-shizune-reveals-deal"
+continuity_id: "main"
+title: "Шізуне розкриває угоду Цунаде з Орочімару"
+location_id: "loc-tanzaku"
+placement: {anchor_id: "ta-y0-0831", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0831-shizune-reveals-orochimaru-deal"
+    legacy_ids: ["V10-000081"]
+    title: "Шізуне розповідає про угоду"
+    text: "Шізуне повідомляє Джираї та Наруто про пропозицію Орочімару й можливий намір Цунаде прийняти її."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shizune", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000081", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0831-group-pursues-tsunade"
+    legacy_ids: ["V10-000081"]
+    title: "Джирая, Наруто й Шізуне вирушають слідом"
+    text: "Після пояснення Шізуне Джирая, Наруто й Шізуне вирушають наздоганяти Цунаде."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000081", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0831-shizune-1", kind: "before", a: "ev-y0-0831-shizune-reveals-orochimaru-deal", b: "ev-y0-0831-group-pursues-tsunade", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000081"]}
+presence:
+  - {id: "pr-0831-shizune-shizune", entity_id: "c-shizune", from: "sc-y0-0831-shizune-reveals-deal.start", to: "sc-y0-0831-shizune-reveals-deal.end", basis: "imported", evidence_ids: ["evd-v10-000081"], review: "accepted"}
+  - {id: "pr-0831-shizune-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0831-shizune-reveals-deal.start", to: "sc-y0-0831-shizune-reveals-deal.end", basis: "imported", evidence_ids: ["evd-v10-000081"], review: "accepted"}
+  - {id: "pr-0831-shizune-naruto", entity_id: "c-naruto", from: "sc-y0-0831-shizune-reveals-deal.start", to: "sc-y0-0831-shizune-reveals-deal.end", basis: "imported", evidence_ids: ["evd-v10-000081"], review: "accepted"}
