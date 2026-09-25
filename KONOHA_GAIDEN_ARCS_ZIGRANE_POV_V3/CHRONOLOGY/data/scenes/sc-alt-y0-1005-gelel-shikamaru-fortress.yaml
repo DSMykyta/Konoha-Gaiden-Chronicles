@@ -1,0 +1,36 @@
+schema_version: 1
+id: "sc-alt-y0-1005-gelel-shikamaru-fortress"
+continuity_id: "alt-movie-gelel"
+title: "Шікамару досліджує рухому фортецю Хайдо"
+location_id: "loc-haido-moving-fortress"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1005-shikamaru-infiltrates-fortress"
+    legacy_ids: ["V10-000135"]
+    title: "Шікамару проникає до рухомої фортеці"
+    text: "Поки команда розділена, Шікамару самостійно проникає до величезної рухомої фортеці, пов'язаної з нападниками."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-shikamaru-discovers-armored-soldier-system"
+    legacy_ids: ["V10-000135"]
+    title: "Шікамару знаходить дітей, яких використовують для броньованих воїнів"
+    text: "Усередині фортеці Шікамару знаходить приміщення з дітьми в капсулах і бачить, як люди Хайдо використовують систему для створення броньованих солдатів."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "observer", mode: "physical"}
+      - {entity_id: "c-kamira", role: "participant", mode: "physical"}
+      - {entity_id: "c-ranke", role: "participant", mode: "physical"}
+      - {entity_id: "group-haido-armored-soldiers", role: "subject", mode: "physical"}
+    evidence_ids: ["evd-movie-gelel"]
+relations:
+  - {id: "rel-alt-1005-gelel-shikamaru-1", kind: "before", a: "ev-alt-y0-1005-shikamaru-infiltrates-fortress", b: "ev-alt-y0-1005-shikamaru-discovers-armored-soldier-system", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+presence: []
