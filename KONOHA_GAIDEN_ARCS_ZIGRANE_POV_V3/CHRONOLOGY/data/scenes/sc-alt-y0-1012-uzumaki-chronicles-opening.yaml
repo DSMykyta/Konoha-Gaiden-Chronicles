@@ -1,0 +1,33 @@
+schema_version: 1
+id: "sc-alt-y0-1012-uzumaki-chronicles-opening"
+continuity_id: "alt-game-uzumaki-chronicles"
+title: "Наруто бере на себе надскладні місії у гілці Uzumaki Chronicles"
+placement: {anchor_id: "ta-alt-y0-1012-uzumaki-chronicles", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1012-konoha-shinobi-shortage"
+    legacy_ids: ["V10-000143"]
+    title: "Коноха відчуває нестачу шинобі для місій"
+    text: "В альтернативній ігровій гілці після смерті Третього Хокаґе нестача старших шинобі змушує генінів, зокрема Наруто, брати місії рівня B і вище."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000143", "evd-game-uzumaki-chronicles"]
+  - id: "ev-alt-y0-1012-naruto-discovers-orochimaru-mist-plot"
+    legacy_ids: ["V10-000143"]
+    title: "Наруто виходить на план Орочімару з отруйним туманом"
+    text: "Ланцюг місій приводить Наруто до схеми Орочімару: смертельний зелений туман має вбивати шинобі, щоб потім використати їх як армію."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000143", "evd-game-uzumaki-chronicles"]
+relations:
+  - {id: "rel-alt-1012-uc-1", kind: "before", a: "ev-alt-y0-1012-konoha-shinobi-shortage", b: "ev-alt-y0-1012-naruto-discovers-orochimaru-mist-plot", basis: "source", review: "pending", evidence_ids: ["evd-game-uzumaki-chronicles"]}
+presence: []
