@@ -5902,7 +5902,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000125"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -5927,7 +5927,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000126"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -5952,7 +5952,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000126-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -5977,7 +5977,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000126-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6002,7 +6002,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000127"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
