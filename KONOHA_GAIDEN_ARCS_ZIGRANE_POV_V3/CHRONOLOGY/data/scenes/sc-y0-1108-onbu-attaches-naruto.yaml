@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-1108-onbu-attaches-naruto"
+continuity_id: "main"
+title: "Дитинча онба чіпляється до Наруто"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1108", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1108-hawk-drops-onbu-on-naruto"
+    legacy_ids: ["V10-000176"]
+    title: "Яструб губить дитинча онба над Наруто"
+    text: "Під час тренування в лісі яструб випускає маленьку істоту, яка падає Наруто на спину й одразу міцно чіпляється до нього."
+    origin: "F"
+    extent: "instant"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-onbu", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+  - id: "ev-y0-1108-tsunade-identifies-onbaa-child"
+    legacy_ids: ["V10-000176"]
+    title: "Цунаде впізнає в істоті дитинча легендарної онба"
+    text: "Після безуспішних спроб зняти істоту Цунаде припускає, що це дитинча онба: воно вважає першого побаченого матір'ю й не залишає спину до дорослішання."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "source", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-onbu", role: "subject", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "past_source", mode: "memory"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+relations:
+  - {id: "rel-1108-onbu-attach-1", kind: "before", a: "ev-y0-1108-hawk-drops-onbu-on-naruto", b: "ev-y0-1108-tsunade-identifies-onbaa-child", basis: "source", review: "accepted", evidence_ids: ["evd-anime-185"]}
+presence: []
