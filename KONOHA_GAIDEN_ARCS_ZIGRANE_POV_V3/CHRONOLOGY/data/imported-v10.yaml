@@ -777,7 +777,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000023"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -802,7 +802,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000024"
-    migration_status: "pending"
+    migration_status: "merged"
     replacement_ids: []
     original:
       Year: "0"
@@ -827,7 +827,7 @@ records:
       SupportingSources: "N [Innocent Heart, Demonic Blood] — новелізація починає паралельний переказ місії Тадзуни; окремої другої місії не створює."
       Review: ""
   - legacy_id: "V10-000025"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -852,7 +852,7 @@ records:
       SupportingSources: "N [Innocent Heart, Demonic Blood] — новельна версія цієї частини місії."
       Review: ""
   - legacy_id: "V10-000025-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -877,7 +877,7 @@ records:
       SupportingSources: "N [Innocent Heart, Demonic Blood] — новельна версія цієї частини місії."
       Review: ""
   - legacy_id: "V10-000025-C"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -902,7 +902,7 @@ records:
       SupportingSources: "N [Innocent Heart, Demonic Blood] — новельна версія цієї частини місії."
       Review: ""
   - legacy_id: "V10-000026"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -927,7 +927,7 @@ records:
       SupportingSources: "N [Innocent Heart, Demonic Blood] — новельна версія прибуття до Країни Хвиль."
       Review: ""
   - legacy_id: "V10-000027"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -952,7 +952,7 @@ records:
       SupportingSources: "A [еп. 7–9] — перший бій із Забузою. || N [Innocent Heart, Demonic Blood] — новельна версія бою."
       Review: ""
   - legacy_id: "V10-000028"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -977,7 +977,7 @@ records:
       SupportingSources: "A [еп. 10–11] — відновлення Какаші, історія Кайзи й тренування ходіння по деревах. || N [Innocent Heart, Demonic Blood] — новельний переказ відновлення Какаші, історії Кайзи та початку тренування."
       Review: ""
   - legacy_id: "V10-000029"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1002,7 +1002,7 @@ records:
       SupportingSources: "A [еп. 11–12] — зустріч Наруто з Хаку. || N [Innocent Heart, Demonic Blood] — новельна версія розмови."
       Review: ""
   - legacy_id: "V10-000030"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1027,7 +1027,7 @@ records:
       SupportingSources: "A [еп. 12] — завершення тренування. || N [Innocent Heart, Demonic Blood] — новельна версія підготовки до мосту."
       Review: ""
   - legacy_id: "V10-000031"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1052,7 +1052,7 @@ records:
       SupportingSources: "A [еп. 12–19] — розширена екранна версія битви. || N [Innocent Heart, Demonic Blood] — новельний переказ фінального бою та смерті Хаку й Забузи."
       Review: ""
   - legacy_id: "V10-000032"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1077,7 +1077,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000033"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1102,7 +1102,7 @@ records:
       SupportingSources: "A [еп. 19] — відкриття мосту й повернення. || N [Innocent Heart, Demonic Blood] — завершення новелізації місії; окремої паралельної події після цього не виникає."
       Review: ""
   - legacy_id: "V10-000034"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1127,7 +1127,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000035"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
