@@ -5152,7 +5152,7 @@ records:
       SupportingSources: "A [еп. 107–109] — бій на даху, пропозиція Четвірки Звуку та втеча Саске."
       Review: ""
   - legacy_id: "V10-000120"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -5177,7 +5177,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000121"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -5202,7 +5202,7 @@ records:
       SupportingSources: "A [еп. 110–117] — формування загону, переслідування та перші два бої."
       Review: ""
   - legacy_id: "V10-000121-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -5227,7 +5227,7 @@ records:
       SupportingSources: "A [еп. 110–117] — формування загону, переслідування та перші два бої."
       Review: ""
   - legacy_id: "V10-000121-C"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -5252,7 +5252,7 @@ records:
       SupportingSources: "A [еп. 110–117] — формування загону, переслідування та перші два бої."
       Review: ""
   - legacy_id: "V10-000121-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -5277,7 +5277,7 @@ records:
       SupportingSources: "A [еп. 110–117] — формування загону, переслідування та перші два бої."
       Review: ""
   - legacy_id: "V10-000121-E"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -5302,7 +5302,7 @@ records:
       SupportingSources: "A [еп. 110–117] — формування загону, переслідування та перші два бої."
       Review: ""
   - legacy_id: "V10-000121-F"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -5327,7 +5327,7 @@ records:
       SupportingSources: "A [еп. 110–117] — формування загону, переслідування та перші два бої."
       Review: ""
   - legacy_id: "V10-000121-G"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
