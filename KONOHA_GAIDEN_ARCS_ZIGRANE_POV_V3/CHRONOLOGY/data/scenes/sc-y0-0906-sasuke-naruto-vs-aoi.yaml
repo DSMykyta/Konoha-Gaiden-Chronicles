@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0906-sasuke-naruto-vs-aoi"
+continuity_id: "main"
+title: "Саске й Наруто стримують Аої"
+location_id: "loc-land-of-tea"
+placement: {anchor_id: "ta-y0-0906", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0906-sasuke-delays-aoi"
+    legacy_ids: ["V10-000094"]
+    title: "Саске затримує Аої"
+    text: "Саске вступає в бій з Аої й затримує його, виграючи час для Ідате та Наруто."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-aoi", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000094", "evd-anime-102-106"]
+  - id: "ev-y0-0906-naruto-damages-thunder-sword"
+    legacy_ids: ["V10-000094"]
+    title: "Наруто пошкоджує Меч Бога Грому Расенґаном"
+    text: "Наруто застосовує Расенґан і пошкоджує Меч Бога Грому Аої."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-aoi", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000094", "evd-anime-102-106"]
+relations:
+  - {id: "rel-0906-aoi-1", kind: "before", a: "ev-y0-0906-sasuke-delays-aoi", b: "ev-y0-0906-naruto-damages-thunder-sword", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000094"]}
+presence:
+  - {id: "pr-0906-aoi-sasuke", entity_id: "c-sasuke", from: "sc-y0-0906-sasuke-naruto-vs-aoi.start", to: "sc-y0-0906-sasuke-naruto-vs-aoi.end", basis: "imported", evidence_ids: ["evd-v10-000094"], review: "accepted"}
+  - {id: "pr-0906-aoi-naruto", entity_id: "c-naruto", from: "sc-y0-0906-sasuke-naruto-vs-aoi.start", to: "sc-y0-0906-sasuke-naruto-vs-aoi.end", basis: "imported", evidence_ids: ["evd-v10-000094"], review: "accepted"}
+  - {id: "pr-0906-aoi-aoi", entity_id: "c-aoi", from: "sc-y0-0906-sasuke-naruto-vs-aoi.start", to: "sc-y0-0906-sasuke-naruto-vs-aoi.end", basis: "imported", evidence_ids: ["evd-v10-000094"], review: "accepted"}
