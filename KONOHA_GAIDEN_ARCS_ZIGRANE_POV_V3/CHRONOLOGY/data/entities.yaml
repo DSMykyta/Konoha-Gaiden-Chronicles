@@ -334,6 +334,11 @@ entities:
     name: "Nekomata's domain"
     aliases:
       - "володіння Некомати"
+  - id: "c-yoshino-kaede"
+    kind: "person"
+    name: "Yoshino Kaede"
+    aliases:
+      - "Йошіно Каеде"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
