@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0202-konoha-ninpocho-mizuki"
+continuity_id: "alt-game-konoha-ninpocho"
+title: "Втеча Мідзукі в Konoha Ninpōchō"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0202", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0202-mizuki-escapes-game"
+    legacy_ids: ["V10-000020"]
+    title: "Мідзукі тікає з-під варти"
+    text: "В ігровій гілці Мідзукі тікає з-під варти під час додаткових місій."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000020", "evd-source-000020"]
+  - id: "ev-y0-0202-team7-pursues-mizuki-game"
+    legacy_ids: ["V10-000020"]
+    title: "Наруто, Саске й Сакура переслідують Мідзукі"
+    text: "Наруто, Саске й Сакура беруть участь у переслідуванні та зривають новий задум Мідзукі."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000020", "evd-source-000020"]
+relations:
+  - {id: "rel-0202-escape-before-pursuit", kind: "before", a: "ev-y0-0202-mizuki-escapes-game", b: "ev-y0-0202-team7-pursues-mizuki-game", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000020"]}
+presence: []
