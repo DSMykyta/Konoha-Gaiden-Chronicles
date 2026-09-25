@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-alt-y0-0903-koyuki-identity"
+continuity_id: "alt-movie-land-of-snow"
+title: "Юкіе виявляється принцесою Коюкі"
+location_id: "loc-land-of-snow"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0903-yukie-revealed-koyuki"
+    legacy_ids: ["V10-000088"]
+    title: "Справжня особа Юкіе розкривається"
+    text: "Команда дізнається, що Юкіе Фуджіказе насправді є Коюкі Казаханою, принцесою Країни Снігу."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-koyuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000088", "evd-movie-land-of-snow"]
+  - id: "ev-alt-y0-0903-koyuki-exile-doto-coup"
+    legacy_ids: ["V10-000088"]
+    title: "Розкривається переворот Дото"
+    text: "З’ясовується, що Коюкі була вигнана після перевороту Дото Казахани."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-koyuki", role: "affected", mode: "physical"}
+      - {entity_id: "c-doto", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000088", "evd-movie-land-of-snow"]
+relations:
+  - {id: "rel-alt-0903-koyuki-1", kind: "before", a: "ev-alt-y0-0903-yukie-revealed-koyuki", b: "ev-alt-y0-0903-koyuki-exile-doto-coup", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000088"]}
+presence: []
