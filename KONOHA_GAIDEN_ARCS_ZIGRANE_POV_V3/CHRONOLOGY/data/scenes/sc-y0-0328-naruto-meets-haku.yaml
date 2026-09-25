@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0328-naruto-meets-haku"
+continuity_id: "main"
+title: "Наруто зустрічає Хаку під час тренувань"
+location_id: "loc-wave-forest"
+placement: {anchor_id: "ta-y0-0328", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0328-naruto-meets-haku-herbs"
+    legacy_ids: ["V10-000029"]
+    title: "Наруто зустрічає Хаку, який збирає трави"
+    text: "На шостий ранок тренування Наруто зустрічає Хаку, який збирає лікарські рослини; Наруто не впізнає в ньому супротивника."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-haku", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000029", "evd-manga-land-waves"]
+  - id: "ev-y0-0328-haku-strength-for-precious-person"
+    legacy_ids: ["V10-000029"]
+    title: "Хаку говорить про силу заради дорогої людини"
+    text: "Хаку пояснює Наруто, що людина стає по-справжньому сильною, коли захищає когось дорогого."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-haku", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000029", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0328-meet-before-lesson", kind: "before", a: "ev-y0-0328-naruto-meets-haku-herbs", b: "ev-y0-0328-haku-strength-for-precious-person", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000029"]}
+presence:
+  - {id: "pr-0328-naruto", entity_id: "c-naruto", from: "sc-y0-0328-naruto-meets-haku.start", to: "sc-y0-0328-naruto-meets-haku.end", basis: "imported", evidence_ids: ["evd-v10-000029"], review: "accepted"}
+  - {id: "pr-0328-haku", entity_id: "c-haku", from: "sc-y0-0328-naruto-meets-haku.start", to: "sc-y0-0328-naruto-meets-haku.end", basis: "imported", evidence_ids: ["evd-v10-000029"], review: "accepted"}
