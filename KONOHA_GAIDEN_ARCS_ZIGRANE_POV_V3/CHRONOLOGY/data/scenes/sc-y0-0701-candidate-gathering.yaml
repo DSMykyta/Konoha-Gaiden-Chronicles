@@ -1,0 +1,61 @@
+schema_version: 1
+id: "sc-y0-0701-candidate-gathering"
+continuity_id: "main"
+title: "Кандидати збираються перед першим етапом"
+location_id: "loc-chunin-written-exam"
+placement: {anchor_id: "ta-y0-0701", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0701-rookie-teams-meet"
+    legacy_ids: ["V10-000040"]
+    title: "Команди 7, 8 і 10 зустрічаються перед іспитом"
+    text: "Перед першим етапом Команди 7, 8 і 10 опиняються серед інших кандидатів у приміщенні іспиту."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-7", "team-8", "team-10"]
+    evidence_ids: ["evd-v10-000040", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-kabuto-shows-ninja-info-cards"
+    legacy_ids: ["V10-000040"]
+    title: "Кабуто показує картки з інформацією про суперників"
+    text: "Кабуто Якуші демонструє кандидатам картки з відомостями про інших учасників іспиту."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-sound-team-attacks-kabuto"
+    legacy_ids: ["V10-000040"]
+    title: "Команда Звуку атакує Кабуто"
+    text: "Досу, Заку й Кін випробовують Кабуто атакою перед початком письмового етапу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-dosu", role: "focus", mode: "physical"}
+      - {entity_id: "c-zaku", role: "participant", mode: "physical"}
+      - {entity_id: "c-kin", role: "participant", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "affected", mode: "physical"}
+    focus_teams: ["team-sound-genin"]
+    evidence_ids: ["evd-v10-000040", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0701-gathering-1", kind: "before", a: "ev-y0-0701-rookie-teams-meet", b: "ev-y0-0701-kabuto-shows-ninja-info-cards", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000040"]}
+  - {id: "rel-0701-gathering-2", kind: "before", a: "ev-y0-0701-kabuto-shows-ninja-info-cards", b: "ev-y0-0701-sound-team-attacks-kabuto", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000040"]}
+presence: []
