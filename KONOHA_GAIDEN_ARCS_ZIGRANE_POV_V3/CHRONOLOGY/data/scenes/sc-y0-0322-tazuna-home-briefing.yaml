@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-0322-tazuna-home-briefing"
+continuity_id: "main"
+title: "Какаші готує Команду 7 до повторної зустрічі із Забузою"
+location_id: "loc-tazuna-home"
+placement: {anchor_id: "ta-y0-0322", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0322-kakashi-deduces-haku-ruse"
+    legacy_ids: ["V10-000028"]
+    title: "Какаші розуміє, що Хаку інсценував смерть Забузи"
+    text: "Оговтавшись після першого бою, Какаші доходить висновку, що мисливець-нін не знищив тіло Забузи й, імовірно, врятував його."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-zabuza", role: "affected", mode: "remote"}
+      - {entity_id: "c-haku", role: "affected", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000028", "evd-manga-land-waves"]
+  - id: "ev-y0-0322-tazuna-tells-kaiza-story"
+    legacy_ids: ["V10-000028"]
+    title: "Тадзуна розповідає про Кайзу та Інарі"
+    text: "Тадзуна пояснює владу Ґато над країною й розповідає, як публічна страта Кайзи зламала віру Інарі в героїв."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+      - {entity_id: "c-kaiza", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-inari", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-gato", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000028", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0322-deduce-before-kaiza-story", kind: "before", a: "ev-y0-0322-kakashi-deduces-haku-ruse", b: "ev-y0-0322-tazuna-tells-kaiza-story", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000028"]}
+presence:
+  - {id: "pr-0322-home-kakashi", entity_id: "c-kakashi", from: "sc-y0-0322-tazuna-home-briefing.start", to: "sc-y0-0322-tazuna-home-briefing.end", basis: "imported", evidence_ids: ["evd-v10-000028"], review: "accepted"}
+  - {id: "pr-0322-home-naruto", entity_id: "c-naruto", from: "sc-y0-0322-tazuna-home-briefing.start", to: "sc-y0-0322-tazuna-home-briefing.end", basis: "imported", evidence_ids: ["evd-v10-000028"], review: "accepted"}
+  - {id: "pr-0322-home-sasuke", entity_id: "c-sasuke", from: "sc-y0-0322-tazuna-home-briefing.start", to: "sc-y0-0322-tazuna-home-briefing.end", basis: "imported", evidence_ids: ["evd-v10-000028"], review: "accepted"}
+  - {id: "pr-0322-home-sakura", entity_id: "c-sakura", from: "sc-y0-0322-tazuna-home-briefing.start", to: "sc-y0-0322-tazuna-home-briefing.end", basis: "imported", evidence_ids: ["evd-v10-000028"], review: "accepted"}
+  - {id: "pr-0322-home-tazuna", entity_id: "c-tazuna", from: "sc-y0-0322-tazuna-home-briefing.start", to: "sc-y0-0322-tazuna-home-briefing.end", basis: "imported", evidence_ids: ["evd-v10-000028"], review: "accepted"}
