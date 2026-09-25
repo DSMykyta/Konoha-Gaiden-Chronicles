@@ -82,3 +82,83 @@ anchors:
     evidence_ids: ["evd-v10-bell-test", "evd-team9-field8-arrival"]
     review: "accepted"
     reason: "Working date immediately after team formation in the project chronology."
+  - id: "ta-y0-0124"
+    date: {year: 0, month: 1, day: 24}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000013"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: inherited."
+  - id: "ta-y0-0125"
+    date: {year: 0, month: 1, day: 25}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000014"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: derived."
+  - id: "ta-y0-0126"
+    date: {year: 0, month: 1, day: 26}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000015"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: derived."
+  - id: "ta-y0-0127"
+    date: {year: 0, month: 1, day: 27}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000016"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: derived."
+  - id: "ta-y0-0128"
+    date: {year: 0, month: 1, day: 28}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000017"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: derived."
+  - id: "ta-y0-0129"
+    date: {year: 0, month: 1, day: 29}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000018"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: derived."
+  - id: "ta-y0-0201"
+    date: {year: 0, month: 2, day: 1}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000019"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: derived."
+  - id: "ta-y0-0202"
+    date: {year: 0, month: 2, day: 2}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000020"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: inherited."
+  - id: "ta-y0-0203"
+    date: {year: 0, month: 2, day: 3}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000021"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: inherited."
+  - id: "ta-y0-0204"
+    date: {year: 0, month: 2, day: 4}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000022"]
+    review: "accepted"
+    reason: "Working date inherited from flat v10; legacy certainty: inherited."
