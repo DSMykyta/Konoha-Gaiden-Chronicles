@@ -1,0 +1,48 @@
+schema_version: 1
+id: "sc-y0-1111-haruna-abandons-hinata"
+continuity_id: "main"
+title: "Страх Харуни змушує її покинути Хінату й тікати самій"
+location_id: "loc-land-of-greens"
+placement: {anchor_id: "ta-y0-1111-greens", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1111-haruna-explains-child-hostage-trauma"
+    legacy_ids: ["V10-000180", "V10-000182"]
+    title: "Харуна пояснює, чому не довіряє навіть захисникам"
+    text: "Харуна розповідає, що в дитинстві її власний батько дозволив ворогам утримувати її заручницею заради політичної стабільності, через що вона звикла ставити власне виживання вище за інших."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-haruna", role: "source", mode: "physical"}
+      - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-v10-000182", "evd-anime-187-191"]
+  - id: "ev-y0-1111-haruna-knocks-out-hinata"
+    legacy_ids: ["V10-000180"]
+    title: "Харуна оглушує Хінату й залишає її"
+    text: "Не бажаючи чекати на повернення решти команди, Харуна несподівано виводить Хінату з ладу й тікає сама до безпечнішого місця."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-haruna", role: "focus", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+  - id: "ev-y0-1111-naruto-pursues-haruna-meets-jiga"
+    legacy_ids: ["V10-000180"]
+    title: "Наруто йде за Харуною й натрапляє на Джіґу"
+    text: "Дізнавшись, що Харуна втекла, Наруто кидається слідом, але шлях йому перекриває другий із братів — магнітний шинобі Джіґа."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-haruna", role: "target", mode: "remote"}
+      - {entity_id: "c-jiga", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+relations:
+  - {id: "rel-1111-haruna-abandon-1", kind: "before", a: "ev-y0-1111-haruna-explains-child-hostage-trauma", b: "ev-y0-1111-haruna-knocks-out-hinata", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1111-haruna-abandon-2", kind: "before", a: "ev-y0-1111-haruna-knocks-out-hinata", b: "ev-y0-1111-naruto-pursues-haruna-meets-jiga", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+presence: []
