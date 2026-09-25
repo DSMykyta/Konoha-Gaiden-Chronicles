@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0924-shikamaru-tayuya"
+continuity_id: "main"
+title: "Шикамару проти Таюї"
+location_id: null
+placement: {anchor_id: "ta-sasuke-recovery-24", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-shikamaru-fights-tayuya"
+    legacy_ids: ["V10-000122-B"]
+    title: "Шикамару вступає в бій із Таюєю"
+    text: "Шикамару затримує Таюю тіньовою технікою, але її флейтове гендзюцу та друга стадія Проклятої Печатки змінюють хід бою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0924-temari-rescues-shikamaru"
+    legacy_ids: ["V10-000122-H"]
+    title: "Темарі рятує Шикамару"
+    text: "Темарі прибуває до Шикамару й перемагає Таюю."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-temari", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+relations:
+  - {id: "rel-0924-shika-before-temari", kind: "before", a: "ev-y0-0924-shikamaru-fights-tayuya", b: "ev-y0-0924-temari-rescues-shikamaru", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+presence:
+  - {id: "pr-0924-shika-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0924-shikamaru-tayuya.start", to: "ev-y0-0924-temari-rescues-shikamaru.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
+  - {id: "pr-0924-shika-tayuya", entity_id: "c-tayuya", from: "sc-y0-0924-shikamaru-tayuya.start", to: "ev-y0-0924-temari-rescues-shikamaru.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
+  - {id: "pr-0924-shika-temari", entity_id: "c-temari", from: "ev-y0-0924-temari-rescues-shikamaru.start", to: "ev-y0-0924-temari-rescues-shikamaru.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
