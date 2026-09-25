@@ -5,7 +5,7 @@ title: "Фінальна битва на мосту"
 location_id: "loc-great-naruto-bridge"
 placement: {anchor_id: "ta-y0-0330", day_offset: 0}
 state: "active"
-presence_coverage: "complete"
+presence_coverage: "partial"
 review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
 events:
   - id: "ev-y0-0330-zabuza-haku-attack-bridge"
