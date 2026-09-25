@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-1104-akahoshi-sumaru-bait"
+continuity_id: "main"
+title: "Акагоші викрадає Сумару, щоб виманити злодія Зірки"
+location_id: "loc-death-valley-hoshi"
+placement: {anchor_id: "ta-y0-1104", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1104-akahoshi-abducts-sumaru"
+    legacy_ids: ["V10-000172"]
+    title: "Акагоші та його люди захоплюють Сумару"
+    text: "Акагоші сам організовує викрадення Сумару й вивозить його до Долини Смерті."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-akahoshi", role: "captor", mode: "physical"}
+      - {entity_id: "c-sumaru", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000172", "evd-anime-179-183"]
+  - id: "ev-y0-1104-sumaru-used-bait-for-star-thief"
+    legacy_ids: ["V10-000172"]
+    title: "Сумару стає приманкою для справжнього викрадача Зірки"
+    text: "Мета Акагоші — змусити того, хто забрав метеорит, вийти з укриття заради Сумару."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-akahoshi", role: "planner", mode: "physical"}
+      - {entity_id: "c-sumaru", role: "bait", mode: "physical"}
+      - {entity_id: "c-natsuhi", role: "target", mode: "remote"}
+      - {entity_id: "artifact-hoshi-star", role: "target_object", mode: "remote"}
+    evidence_ids: ["evd-v10-000172", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1104-sumaru-bait-1", kind: "before", a: "ev-y0-1104-akahoshi-abducts-sumaru", b: "ev-y0-1104-sumaru-used-bait-for-star-thief", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
