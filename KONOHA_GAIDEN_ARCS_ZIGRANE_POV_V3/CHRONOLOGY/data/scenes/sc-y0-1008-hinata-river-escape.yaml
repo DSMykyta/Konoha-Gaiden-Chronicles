@@ -1,0 +1,33 @@
+schema_version: 1
+id: "sc-y0-1008-hinata-river-escape"
+continuity_id: "main"
+title: "Хіната вибирається з полону після падіння в річку"
+location_id: "loc-kamizuru-riverbank"
+placement: {anchor_id: "ta-y0-1008", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1008-hinata-attempts-cocoon-escape"
+    legacy_ids: ["V10-000138"]
+    title: "Хіната намагається звільнитися з кокона"
+    text: "Перебуваючи в полоні, Хіната працює над тим, щоб перерізати й послабити бджолиний кокон."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+  - id: "ev-y0-1008-hinata-swept-river-and-escapes"
+    legacy_ids: ["V10-000138"]
+    title: "Хінату зносить річкою, але вона звільняється"
+    text: "Кокон із Хінатою падає у воду й її зносить течією; вона виживає, остаточно звільняється та повертається до бою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+relations:
+  - {id: "rel-1008-hinata-river-1", kind: "before", a: "ev-y0-1008-hinata-attempts-cocoon-escape", b: "ev-y0-1008-hinata-swept-river-and-escapes", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
