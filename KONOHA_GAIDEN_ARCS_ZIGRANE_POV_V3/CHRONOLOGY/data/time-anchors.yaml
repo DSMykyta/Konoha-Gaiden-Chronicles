@@ -762,3 +762,35 @@ anchors:
     evidence_ids: ["evd-v10-000146"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for Kurosuki arc finale."
+  - id: "ta-y0-1015"
+    date: {year: 0, month: 10, day: 15}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000148"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Academy Student Lead Mission."
+  - id: "ta-y0-1017"
+    date: {year: 0, month: 10, day: 17}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000149"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Gosunkugi Capture Mission opening."
+  - id: "ta-y0-1018"
+    date: {year: 0, month: 10, day: 18}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000150"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Gosunkugi Capture Mission finale."
+  - id: "ta-y0-1019"
+    date: {year: 0, month: 10, day: 19}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000151"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Mondai and Potcha infiltration."
