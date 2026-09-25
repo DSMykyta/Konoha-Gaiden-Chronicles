@@ -1,0 +1,62 @@
+schema_version: 1
+id: "sc-y0-1108-onbaa-mother-reclaims-onbu"
+continuity_id: "main"
+title: "Доросла онба повертає Онбу"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1108", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1108-hunters-attack-onbu"
+    legacy_ids: ["V10-000176"]
+    title: "Мисливці намагаються вбити Онбу"
+    text: "Коли Онбу вже виріс, мисливці вистежують істоту; Наруто стає на її захист і не дозволяє вбити звіра, якого весь день носив на собі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "protector", mode: "physical"}
+      - {entity_id: "c-onbu", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+  - id: "ev-y0-1108-adult-onbaa-arrives"
+    legacy_ids: ["V10-000176"]
+    title: "Справжня мати Онбу знаходить дитинча"
+    text: "Після сутички з'являється доросла онба; стає зрозуміло, що саме вона є біологічною матір'ю Онбу."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-adult-onbaa", role: "focus", mode: "physical"}
+      - {entity_id: "c-onbu", role: "offspring", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+  - id: "ev-y0-1108-onbu-leaves-with-mother"
+    legacy_ids: ["V10-000176"]
+    title: "Онбу залишає Наруто й іде з дорослою онба"
+    text: "Онбу зрештою від'єднується від Наруто й повертається з дорослою онба до природного середовища."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-onbu", role: "focus", mode: "physical"}
+      - {entity_id: "c-adult-onbaa", role: "parent", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+  - id: "ev-y0-1108-tsunade-accepts-jiraiya-onbaa-story"
+    legacy_ids: ["V10-000176"]
+    title: "Існування онба підтверджує давню історію Джираї"
+    text: "Після реальної появи дорослої онба давній звіт Джираї про цю істоту перестає бути для Цунаде вигадкою."
+    origin: "F"
+    extent: "instant"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-tsunade", role: "affected", mode: "remote"}
+      - {entity_id: "c-jiraiya", role: "past_source", mode: "memory"}
+      - {entity_id: "c-adult-onbaa", role: "evidence_subject", mode: "physical"}
+      - {entity_id: "c-onbu", role: "evidence_subject", mode: "physical"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+relations:
+  - {id: "rel-1108-onbaa-end-1", kind: "before", a: "ev-y0-1108-hunters-attack-onbu", b: "ev-y0-1108-adult-onbaa-arrives", basis: "source", review: "accepted", evidence_ids: ["evd-anime-185"]}
+  - {id: "rel-1108-onbaa-end-2", kind: "before", a: "ev-y0-1108-adult-onbaa-arrives", b: "ev-y0-1108-onbu-leaves-with-mother", basis: "source", review: "accepted", evidence_ids: ["evd-anime-185"]}
+presence: []
