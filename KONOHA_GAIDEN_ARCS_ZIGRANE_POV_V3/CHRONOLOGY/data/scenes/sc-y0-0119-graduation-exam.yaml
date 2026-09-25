@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0119-graduation-exam"
+continuity_id: "main"
+title: "Випускний іспит Наруто"
+location_id: "loc-academy-classroom"
+placement: {anchor_id: "ta-y0-0119", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0119-naruto-fails-clone"
+    legacy_ids: ["V10-000002"]
+    title: "Наруто провалює випускний іспит"
+    text: "Наруто не може створити стабільного клона й не проходить випускний іспит Академії."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
+relations: []
+presence:
+  - {id: "pr-0119-exam-naruto", entity_id: "c-naruto", from: "sc-y0-0119-graduation-exam.start", to: "sc-y0-0119-graduation-exam.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
+  - {id: "pr-0119-exam-iruka", entity_id: "c-iruka", from: "sc-y0-0119-graduation-exam.start", to: "sc-y0-0119-graduation-exam.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
