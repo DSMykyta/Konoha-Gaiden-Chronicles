@@ -1,0 +1,33 @@
+schema_version: 1
+id: "sc-alt-y0-1014-uzumaki-chronicles-finale"
+continuity_id: "alt-game-uzumaki-chronicles"
+title: "Наруто зриває фінальний план Орочімару в гілці Uzumaki Chronicles"
+placement: {anchor_id: "ta-alt-y0-1012-uzumaki-chronicles", day_offset: 2}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1014-naruto-foils-orochimaru-final-plan"
+    legacy_ids: ["V10-000147"]
+    title: "Наруто зупиняє фінальний етап схеми Орочімару"
+    text: "У завершенні альтернативної ігрової гілки Наруто зриває план Орочімару й не дає використати створену для гри загрозу проти Конохи."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000147", "evd-game-uzumaki-chronicles"]
+  - id: "ev-alt-y0-1014-uzumaki-chronicles-branch-closes"
+    legacy_ids: ["V10-000147"]
+    title: "Ігрова гілка завершується окремо від main"
+    text: "Після фіналу події Uzumaki Chronicles лишаються в окремому continuity_id; суперечливі регіональні версії не використовуються для зміни основної хронології."
+    origin: "G"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "remote"}
+    evidence_ids: ["evd-v10-000147", "evd-game-uzumaki-chronicles"]
+relations:
+  - {id: "rel-alt-1014-uc-1", kind: "before", a: "ev-alt-y0-1014-naruto-foils-orochimaru-final-plan", b: "ev-alt-y0-1014-uzumaki-chronicles-branch-closes", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000147"]}
+presence: []
