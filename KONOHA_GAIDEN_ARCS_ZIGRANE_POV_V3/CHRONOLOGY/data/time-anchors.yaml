@@ -874,3 +874,27 @@ anchors:
     evidence_ids: ["evd-v10-000163"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Kaima Capture Mission finale."
+  - id: "ta-y0-1030"
+    date: {year: 0, month: 10, day: 30}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000164"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Kunihisa escort incident."
+  - id: "ta-y0-1031"
+    date: {year: 0, month: 10, day: 31}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000165"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Buried Gold mission opening."
+  - id: "ta-y0-1101"
+    date: {year: 0, month: 11, day: 1}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000166"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Buried Gold mission finale."
