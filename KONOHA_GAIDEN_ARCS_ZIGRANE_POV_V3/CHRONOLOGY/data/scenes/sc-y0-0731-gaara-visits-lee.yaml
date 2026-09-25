@@ -1,0 +1,71 @@
+schema_version: 1
+id: "sc-y0-0731-gaara-visits-lee"
+continuity_id: "main"
+title: "Ґаара приходить убити Лі в шпиталі"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0731", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0731-gaara-attempts-kill-lee"
+    legacy_ids: ["V10-000059"]
+    title: "Ґаара приходить до палати Лі"
+    text: "Уночі Ґаара приходить до палати Рока Лі з наміром убити його."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000059", "evd-manga-ch88-97"]
+  - id: "ev-y0-0731-naruto-shikamaru-block-gaara"
+    legacy_ids: ["V10-000059"]
+    title: "Наруто й Шикамару стають на заваді Ґаарі"
+    text: "Наруто й Шикамару перешкоджають Ґаарі напасти на Лі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000059", "evd-manga-ch88-97"]
+  - id: "ev-y0-0731-gaara-tells-childhood"
+    legacy_ids: ["V10-000059"]
+    title: "Ґаара розповідає про Яшамару й знак «любов»"
+    text: "У конфлікті з Наруто й Шикамару Ґаара розповідає про власне дитинство, Яшамару та походження знака «любов» на лобі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000059", "evd-manga-ch88-97"]
+  - id: "ev-y0-0731-guy-stops-hospital-conflict"
+    legacy_ids: ["V10-000059"]
+    title: "Майто Ґай зупиняє сутичку"
+    text: "Майто Ґай приходить і припиняє конфлікт біля палати Лі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000059", "evd-manga-ch88-97"]
+relations:
+  - {id: "rel-0731-gaara-1", kind: "before", a: "ev-y0-0731-gaara-attempts-kill-lee", b: "ev-y0-0731-naruto-shikamaru-block-gaara", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0731-gaara-2", kind: "before", a: "ev-y0-0731-naruto-shikamaru-block-gaara", b: "ev-y0-0731-gaara-tells-childhood", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0731-gaara-3", kind: "before", a: "ev-y0-0731-gaara-tells-childhood", b: "ev-y0-0731-guy-stops-hospital-conflict", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+presence:
+  - {id: "pr-0731-gaara-gaara", entity_id: "c-gaara", from: "sc-y0-0731-gaara-visits-lee.start", to: "sc-y0-0731-gaara-visits-lee.end", basis: "source", evidence_ids: ["evd-v10-000059"], review: "accepted"}
+  - {id: "pr-0731-gaara-lee", entity_id: "c-lee", from: "sc-y0-0731-gaara-visits-lee.start", to: "sc-y0-0731-gaara-visits-lee.end", basis: "source", evidence_ids: ["evd-v10-000059"], review: "accepted"}
+  - {id: "pr-0731-gaara-naruto", entity_id: "c-naruto", from: "ev-y0-0731-naruto-shikamaru-block-gaara.start", to: "sc-y0-0731-gaara-visits-lee.end", basis: "source", evidence_ids: ["evd-v10-000059"], review: "accepted"}
+  - {id: "pr-0731-gaara-shikamaru", entity_id: "c-shikamaru", from: "ev-y0-0731-naruto-shikamaru-block-gaara.start", to: "sc-y0-0731-gaara-visits-lee.end", basis: "source", evidence_ids: ["evd-v10-000059"], review: "accepted"}
+  - {id: "pr-0731-gaara-guy", entity_id: "c-might-guy", from: "ev-y0-0731-guy-stops-hospital-conflict.start", to: "sc-y0-0731-gaara-visits-lee.end", basis: "source", evidence_ids: ["evd-v10-000059"], review: "accepted"}
