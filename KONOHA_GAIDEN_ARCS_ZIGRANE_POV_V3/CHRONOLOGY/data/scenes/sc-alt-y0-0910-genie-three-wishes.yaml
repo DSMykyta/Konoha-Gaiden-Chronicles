@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-alt-y0-0910-genie-three-wishes"
+continuity_id: "alt-genie-three-wishes"
+title: "Наруто й геніни змагаються за три бажання"
+location_id: null
+placement: {anchor_id: "ta-y0-0910", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0910-genin-compete-for-genie-bottle"
+    legacy_ids: ["V10-000101"]
+    title: "Геніни змагаються за пляшку з джином"
+    text: "У геговій ALT-OVA Наруто, Саске та інші геніни змагаються за пляшку з джином і можливість отримати три бажання."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000101", "evd-ova-genie-three-wishes"]
+relations: []
+presence: []
