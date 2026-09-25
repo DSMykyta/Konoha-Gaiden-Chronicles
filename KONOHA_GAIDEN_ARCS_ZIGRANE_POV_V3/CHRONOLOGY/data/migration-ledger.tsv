@@ -123,25 +123,25 @@ V10-000066	0	01.08	R	superseded	ev-y0-0801-hinata-kidnapped;ev-y0-0801-neji-team
 V10-000067	0	01.08	R	superseded	ev-y0-0801-adult-ino-shika-cho-fights;ev-y0-0801-adult-ino-shika-cho-rescues-kosuke	Corrected physical cast from Ino to Inoichi, Shikaku and Choza; rescue split from battle.
 V10-000068	0	01.08	R	migrated	ev-y0-0801-hanabi-hiashi-watch-naruto-neji	Hanabi and Hiashi watching Naruto vs Neji migrated with actual observer presence.
 V10-000069	0	01.08	M	migrated	ev-y0-0801-kakashi-dispatches-pursuit-team	Kakashi dispatching Naruto/Sakura/Shikamaru/Pakkun migrated; Sasuke marked remote.
-V10-000069-B	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000069-C	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000069-B	0	01.08	M	migrated	ev-y0-0801-shikamaru-delays-sound	Shikamaru pursuit delay migrated as its own scene.
+V10-000069-C	0	01.08	M	migrated	ev-y0-0801-shino-fights-kankuro	Shino versus Kankuro migrated; Sasuke and Gaara are remote from this scene.
 V10-000070	0	01.08	M	migrated	ev-y0-0801-kin-zaku-used-as-edo-sacrifices	Kin and Zaku as Edo Tensei sacrifices migrated.
 V10-000071	0	01.08	R	superseded	ev-y0-0801-yugao-visits-hayate-memorial;ev-y0-0801-yugao-vows-revenge;ev-y0-0801-yugao-departs-with-anbu	Yugao memorial retrospective decomposed; Hayate marked remembered/remote.
 V10-000072	0	02.08	M	superseded	ev-y0-0802-konoha-treats-wounded;ev-y0-0802-konoha-counts-dead;ev-y0-0802-konoha-begins-rebuilding	Global aftermath split into treatment, casualty accounting and rebuilding; unrelated named characters removed from cast.
 V10-000072-B	0	02.08	M	superseded	ev-y0-0802-council-discusses-hokage-successor;ev-y0-0802-jiraiya-proposed-hokage	Succession council and Jiraiya candidacy separated; Jiraiya is affected/remote rather than assumed present.
 V10-000072-C	0	02.08	M	superseded	ev-y0-0802-suna-finds-rasa-body;ev-y0-0802-suna-confirms-orochimaru-deception;ev-y0-0802-suna-prepares-capitulation	Suna aftermath decomposed into discovery, confirmation and diplomatic consequence.
 V10-000073	0	03.08	M	migrated	ev-y0-0803-hiruzen-funeral	Hiruzen funeral migrated.
-V10-000073-B	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000073-C	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000073-D	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000073-E	0	03.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000073-B	0	03.08	M	migrated	ev-y0-0803-iruka-explains-will-fire	Iruka and Konohamaru post-funeral scene migrated.
+V10-000073-C	0	03.08	M	superseded	ev-y0-0803-council-offers-hokage-to-jiraiya;ev-y0-0803-jiraiya-refuses-and-nominates-tsunade	Council offer and Jiraiya refusal/Tsunade nomination separated.
+V10-000073-D	0	03.08	M	superseded	ev-y0-0803-asuma-kurenai-face-akatsuki;ev-y0-0803-kakashi-enters-akatsuki-fight;ev-y0-0803-itachi-tsukuyomi-kakashi;ev-y0-0803-guy-forces-akatsuki-retreat	Akatsuki fight decomposed; Naruto is remote target.
+V10-000073-E	0	03.08	M	migrated	ev-y0-0803-naruto-jiraiya-leave-konoha	Naruto and Jiraiya departure migrated; Tsunade is remote target.
 V10-000074	0	04.08	R	superseded	ev-y0-0804-tenten-doubts-herself;ev-y0-0804-guy-encourages-tenten	Tenten retrospective split; Tsunade marked mentioned rather than physically present.
 V10-000075	0	04.08	R	superseded	ev-y0-0804-hanabi-watches-hinata-neji-train;ev-y0-0804-hanabi-notices-hinata-confidence	Hanabi restored as physical observer; training and realization separated.
 V10-000076	0	04.08	M	migrated	ev-y0-0804-itachi-kisame-find-naruto	Itachi and Kisame locating Naruto migrated as its own scene.
-V10-000076-B	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000076-C	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000076-D	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000076-E	0	04.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000076-B	0	04.08	M	superseded	ev-y0-0804-sasuke-attacks-itachi;ev-y0-0804-itachi-breaks-sasuke-arm-tsukuyomi	Sasuke attack and Itachi counter/Tsukuyomi separated.
+V10-000076-C	0	04.08	M	migrated	ev-y0-0804-jiraiya-traps-akatsuki	Jiraiya trapping Akatsuki merged into continuous inn scene.
+V10-000076-D	0	04.08	M	migrated	ev-y0-0804-itachi-amaterasu-escape	Amaterasu escape merged into continuous inn scene.
+V10-000076-E	0	04.08	M	superseded	ev-y0-0804-sasuke-left-unconscious;ev-y0-0804-naruto-jiraiya-continue-tsunade-search	Sasuke condition and continuation of Tsunade search separated.
 V10-000077	0	22.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000078	0	24.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000079	0	25.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
