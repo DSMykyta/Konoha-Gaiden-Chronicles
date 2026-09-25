@@ -1,0 +1,63 @@
+schema_version: 1
+id: "sc-y0-0317-wave-crossing"
+continuity_id: "main"
+title: "Переправа до Країни Хвиль"
+location_id: "loc-wave-coast"
+placement: {anchor_id: "ta-y0-0317", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0317-team7-boards-boat"
+    legacy_ids: ["V10-000026"]
+    title: "Група пересідає до човна"
+    text: "Команда 7 і Тадзуна дістаються узбережжя та пересідають у човен для прихованої переправи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000026", "evd-manga-land-waves"]
+  - id: "ev-y0-0317-boat-crosses-in-mist"
+    legacy_ids: ["V10-000026"]
+    title: "Човен без мотора проходить крізь туман"
+    text: "Група під покровом туману й без мотора перетинає воду, щоб не привертати уваги."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000026", "evd-manga-land-waves"]
+  - id: "ev-y0-0317-tazuna-explains-gato-control"
+    legacy_ids: ["V10-000026"]
+    title: "Тадзуна пояснює владу Ґато над країною"
+    text: "Під час переправи Тадзуна пояснює, як Ґато контролює транспорт і економіку Країни Хвиль."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+      - {entity_id: "c-gato", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000026", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0317-boat-board-before-cross", kind: "before", a: "ev-y0-0317-team7-boards-boat", b: "ev-y0-0317-boat-crosses-in-mist", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000026"]}
+presence:
+  - {id: "pr-0317-boat-kakashi", entity_id: "c-kakashi", from: "sc-y0-0317-wave-crossing.start", to: "sc-y0-0317-wave-crossing.end", basis: "imported", evidence_ids: ["evd-v10-000026"], review: "accepted"}
+  - {id: "pr-0317-boat-naruto", entity_id: "c-naruto", from: "sc-y0-0317-wave-crossing.start", to: "sc-y0-0317-wave-crossing.end", basis: "imported", evidence_ids: ["evd-v10-000026"], review: "accepted"}
+  - {id: "pr-0317-boat-sasuke", entity_id: "c-sasuke", from: "sc-y0-0317-wave-crossing.start", to: "sc-y0-0317-wave-crossing.end", basis: "imported", evidence_ids: ["evd-v10-000026"], review: "accepted"}
+  - {id: "pr-0317-boat-sakura", entity_id: "c-sakura", from: "sc-y0-0317-wave-crossing.start", to: "sc-y0-0317-wave-crossing.end", basis: "imported", evidence_ids: ["evd-v10-000026"], review: "accepted"}
+  - {id: "pr-0317-boat-tazuna", entity_id: "c-tazuna", from: "sc-y0-0317-wave-crossing.start", to: "sc-y0-0317-wave-crossing.end", basis: "imported", evidence_ids: ["evd-v10-000026"], review: "accepted"}
