@@ -1,0 +1,60 @@
+schema_version: 1
+id: "sc-y0-0624-lee-challenges-sasuke"
+continuity_id: "main"
+title: "Рок Лі викликає Саске на бій"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0624", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0624-lee-challenges-sasuke"
+    legacy_ids: ["V10-000039-C"]
+    title: "Лі викликає Саске"
+    text: "Рок Лі викликає Саске на поєдинок перед іспитом."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000039-C", "evd-manga-chunin-intro", "evd-anime-20-23"]
+  - id: "ev-y0-0624-lee-outclasses-sasuke"
+    legacy_ids: ["V10-000039-C"]
+    title: "Лі демонструє перевагу тайдзюцу"
+    text: "Лі завдяки тайдзюцу отримує перевагу над Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-sakura", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000039-C", "evd-manga-chunin-intro", "evd-anime-20-23"]
+  - id: "ev-y0-0624-guy-stops-lee"
+    legacy_ids: ["V10-000039-C"]
+    title: "Майто Ґай зупиняє поєдинок"
+    text: "Майто Ґай втручається й припиняє бій Лі із Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-sakura", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000039-C", "evd-manga-chunin-intro", "evd-anime-20-23"]
+relations:
+  - {id: "rel-0624-lee-1", kind: "before", a: "ev-y0-0624-lee-challenges-sasuke", b: "ev-y0-0624-lee-outclasses-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-intro"]}
+  - {id: "rel-0624-lee-2", kind: "before", a: "ev-y0-0624-lee-outclasses-sasuke", b: "ev-y0-0624-guy-stops-lee", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-intro"]}
+presence:
+  - {id: "pr-0624-lee-sasuke", entity_id: "c-sasuke", from: "sc-y0-0624-lee-challenges-sasuke.start", to: "sc-y0-0624-lee-challenges-sasuke.end", basis: "source", evidence_ids: ["evd-v10-000039-C"], review: "accepted"}
+  - {id: "pr-0624-lee-naruto", entity_id: "c-naruto", from: "sc-y0-0624-lee-challenges-sasuke.start", to: "sc-y0-0624-lee-challenges-sasuke.end", basis: "source", evidence_ids: ["evd-manga-chunin-intro"], review: "pending"}
+  - {id: "pr-0624-lee-sakura", entity_id: "c-sakura", from: "sc-y0-0624-lee-challenges-sasuke.start", to: "sc-y0-0624-lee-challenges-sasuke.end", basis: "source", evidence_ids: ["evd-manga-chunin-intro"], review: "pending"}
+  - {id: "pr-0624-lee-lee", entity_id: "c-lee", from: "sc-y0-0624-lee-challenges-sasuke.start", to: "sc-y0-0624-lee-challenges-sasuke.end", basis: "source", evidence_ids: ["evd-v10-000039-C"], review: "accepted"}
+  - {id: "pr-0624-lee-guy", entity_id: "c-might-guy", from: "ev-y0-0624-guy-stops-lee.start", to: "sc-y0-0624-lee-challenges-sasuke.end", basis: "source", evidence_ids: ["evd-v10-000039-C"], review: "accepted"}
