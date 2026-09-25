@@ -142,15 +142,15 @@ V10-000076-B	0	04.08	M	superseded	ev-y0-0804-sasuke-attacks-itachi;ev-y0-0804-it
 V10-000076-C	0	04.08	M	migrated	ev-y0-0804-jiraiya-traps-akatsuki	Jiraiya trapping Akatsuki merged into continuous inn scene.
 V10-000076-D	0	04.08	M	migrated	ev-y0-0804-itachi-amaterasu-escape	Amaterasu escape merged into continuous inn scene.
 V10-000076-E	0	04.08	M	superseded	ev-y0-0804-sasuke-left-unconscious;ev-y0-0804-naruto-jiraiya-continue-tsunade-search	Sasuke condition and continuation of Tsunade search separated.
-V10-000077	0	22.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000078	0	24.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000079	0	25.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000079-B	0	25.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000079-C	0	25.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000079-D	0	25.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000079-E	0	25.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000080	0	26.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000081	0	31.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000077	0	22.08	M	superseded	ev-y0-0822-naruto-bursts-water-balloon;ev-y0-0822-jiraiya-gives-rubber-ball	First Rasengan stage and transition to rubber-ball training separated.
+V10-000078	0	24.08	M	superseded	ev-y0-0824-jiraiya-notes-three-weeks;ev-y0-0824-naruto-focuses-through-palm-mark	Temporal note and Naruto power-stage training separated.
+V10-000079	0	25.08	M	superseded	ev-y0-0825-orochimaru-kabuto-find-tsunade;ev-y0-0825-orochimaru-offers-resurrection;ev-y0-0825-orochimaru-gives-week	Orochimaru/Tsunade meeting decomposed.
+V10-000079-B	0	25.08	M	migrated	ev-y0-0825-naruto-bursts-rubber-ball	Naruto completes the second Rasengan stage.
+V10-000079-C	0	25.08	M	superseded	ev-y0-0825-jiraiya-offers-hokage-to-tsunade;ev-y0-0825-tsunade-refuses-hokage	Hokage offer and refusal separated.
+V10-000079-D	0	25.08	M	superseded	ev-y0-0825-naruto-attacks-tsunade-rasengan;ev-y0-0825-tsunade-stops-naruto-one-finger	Attack and counter separated.
+V10-000079-E	0	25.08	M	migrated	ev-y0-0825-tsunade-naruto-wager	Naruto/Tsunade wager migrated.
+V10-000080	0	26.08	M	superseded	ev-y0-0826-naruto-combines-rasengan-components;ev-y0-0826-tsunade-weighs-orochimaru-offer;ev-y0-0826-shizune-tells-naruto-nawaki-dan;ev-y0-0826-shizune-explains-blood-fear	Mixed row split into Naruto training, Tsunade deliberation and Shizune explanation.
+V10-000081	0	31.08	M	superseded	ev-y0-0831-naruto-seems-unable-to-complete-rasengan;ev-y0-0831-tsunade-drugs-jiraiya;ev-y0-0831-tsunade-leaves-to-meet-orochimaru;ev-y0-0831-shizune-reveals-orochimaru-deal;ev-y0-0831-group-pursues-tsunade	Final wager night decomposed into deadline, Tsunade departure and pursuit.
 V10-000082	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000082-B	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000082-C	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
