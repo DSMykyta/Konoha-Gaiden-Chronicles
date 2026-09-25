@@ -1,0 +1,42 @@
+schema_version: 1
+id: "sc-y0-0129-team10-kosuke"
+continuity_id: "main"
+title: "Команда 10 рятує Косуке"
+location_id: null
+placement: {anchor_id: "ta-y0-0129", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0129-team10-rescues-kosuke"
+    legacy_ids: ["V10-000018"]
+    title: "Команда 10 рятує Косуке"
+    text: "Іно, Шикамару, Чоджі та Асума рятують ветерана Косуке."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-kosuke", role: "focus", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000018", "evd-source-000018"]
+  - id: "ev-y0-0129-kosuke-recognizes-ino-shika-cho"
+    legacy_ids: ["V10-000018"]
+    title: "Косуке впізнає нове покоління Іно–Шіка–Чо"
+    text: "Косуке бачить у Іно, Шикамару й Чоджі наступне покоління зв’язки Іно–Шіка–Чо та згадує бойову злагодженість їхніх батьків."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kosuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000018", "evd-source-000018"]
+relations:
+  - {id: "rel-0129-rescue-before-recognition", kind: "before", a: "ev-y0-0129-team10-rescues-kosuke", b: "ev-y0-0129-kosuke-recognizes-ino-shika-cho", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000018"]}
+presence: []
