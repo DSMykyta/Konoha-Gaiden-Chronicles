@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0902-naruto-recovers"
+continuity_id: "main"
+title: "Наруто відновлюється після бою з Кабуто"
+location_id: null
+placement: {anchor_id: "ta-y0-0902", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0902-tsunade-stabilizes-naruto"
+    legacy_ids: ["V10-000083"]
+    title: "Цунаде усуває критичні наслідки удару Кабуто"
+    text: "Після бою Цунаде стабілізує Наруто та усуває критичні наслідки удару Кабуто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000083", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0902-naruto-regains-consciousness"
+    legacy_ids: ["V10-000083"]
+    title: "Наруто приходить до тями"
+    text: "Наруто приходить до тями після лікування Цунаде."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000083", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0902-recover-1", kind: "before", a: "ev-y0-0902-tsunade-stabilizes-naruto", b: "ev-y0-0902-naruto-regains-consciousness", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000083"]}
+presence:
+  - {id: "pr-0902-recover-tsunade", entity_id: "c-tsunade", from: "sc-y0-0902-naruto-recovers.start", to: "sc-y0-0902-naruto-recovers.end", basis: "imported", evidence_ids: ["evd-v10-000083"], review: "accepted"}
+  - {id: "pr-0902-recover-naruto", entity_id: "c-naruto", from: "sc-y0-0902-naruto-recovers.start", to: "sc-y0-0902-naruto-recovers.end", basis: "imported", evidence_ids: ["evd-v10-000083"], review: "accepted"}
