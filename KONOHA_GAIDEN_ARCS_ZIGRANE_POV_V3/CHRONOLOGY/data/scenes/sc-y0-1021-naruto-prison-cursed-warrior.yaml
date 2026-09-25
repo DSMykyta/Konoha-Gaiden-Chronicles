@@ -1,0 +1,61 @@
+schema_version: 1
+id: "sc-y0-1021-naruto-prison-cursed-warrior"
+continuity_id: "main"
+title: "Наруто знаходить підземні ходи й викриває Проклятого Воїна як Саґі"
+location_id: "loc-cursed-warrior-tunnels"
+placement: {anchor_id: "ta-y0-1021-birds", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1021-naruto-finds-cursed-warrior-tunnels"
+    legacy_ids: ["V10-000154"]
+    title: "Наруто знаходить приховані підземні ходи"
+    text: "Не повіривши, що справа завершена арештом Комея, Наруто повертається до місця появи Воїна й знаходить мережу підземних проходів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-komei", role: "context", mode: "remote"}
+    evidence_ids: ["evd-v10-000154", "evd-anime-162-167"]
+  - id: "ev-y0-1021-naruto-arrested-in-palace"
+    legacy_ids: ["V10-000154"]
+    title: "Один із ходів приводить Наруто до палацу, де його арештовують"
+    text: "Підземний маршрут виводить Наруто всередину палацу даймьо; за незаконне проникнення його беруть під варту."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-anime-162-167"]
+  - id: "ev-y0-1021-cursed-warrior-revealed-as-sagi"
+    legacy_ids: ["V10-000154"]
+    title: "У камері Проклятий Воїн виявляється Саґі"
+    text: "Проклятий Воїн приходить до Наруто в камеру; після сутички Наруто знімає маску й бачить правителя, якого поки що знає як Саґі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-toki", role: "appears_as_sagi", mode: "physical"}
+      - {entity_id: "c-sagi", role: "impersonated", mode: "remote"}
+    evidence_ids: ["evd-v10-000154", "evd-anime-162-167"]
+  - id: "ev-y0-1021-chishima-accuses-moso"
+    legacy_ids: ["V10-000154"]
+    title: "Поранений Чішіма називає Мосо справжнім організатором"
+    text: "Чішіма добирається до Наруто й «Саґі» та повідомляє, що бачив Мосо разом із мандрівними шинобі й що саме Мосо стоїть за смертями в родині даймьо."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-chishima", role: "source", mode: "physical"}
+      - {entity_id: "c-hoki-watari", role: "accused_as_moso", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-toki", role: "recipient_as_sagi", mode: "physical"}
+    evidence_ids: ["evd-v10-000154", "evd-anime-162-167"]
+relations:
+  - {id: "rel-1021-prison-1", kind: "before", a: "ev-y0-1021-naruto-finds-cursed-warrior-tunnels", b: "ev-y0-1021-naruto-arrested-in-palace", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+  - {id: "rel-1021-prison-2", kind: "before", a: "ev-y0-1021-naruto-arrested-in-palace", b: "ev-y0-1021-cursed-warrior-revealed-as-sagi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+  - {id: "rel-1021-prison-3", kind: "before", a: "ev-y0-1021-cursed-warrior-revealed-as-sagi", b: "ev-y0-1021-chishima-accuses-moso", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+presence: []
