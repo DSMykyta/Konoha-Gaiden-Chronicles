@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-1015-academy-lead-debrief"
+continuity_id: "main"
+title: "Цунаде розбирає небезпечне рішення Наруто після повернення"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-1015", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1015-tsunade-scolds-naruto-risk"
+    legacy_ids: ["V10-000148"]
+    title: "Цунаде сварить Наруто за зайвий ризик"
+    text: "Після повернення Цунаде дорікає Наруто за те, що його командування довело учнів до небезпечної ситуації, навіть попри те що він зрештою захистив їх."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000148", "evd-anime-158"]
+relations: []
+presence: []
