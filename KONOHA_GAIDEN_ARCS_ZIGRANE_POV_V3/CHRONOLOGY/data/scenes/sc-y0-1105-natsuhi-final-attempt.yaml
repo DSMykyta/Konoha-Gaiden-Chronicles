@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-1105-natsuhi-final-attempt"
+continuity_id: "main"
+title: "Нацухі востаннє намагається забрати Зірку й гине"
+location_id: "loc-star-temple"
+placement: {anchor_id: "ta-y0-1105", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1105-natsuhi-condition-star-poisoning"
+    legacy_ids: ["V10-000173"]
+    title: "Стан Нацухі вже погіршений наслідками старих тренувань"
+    text: "Неджи встановлює, що тіло Нацухі також руйнується від давнього впливу Зірки й нове застосування Павичевої Техніки може стати смертельним."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-natsuhi", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "observer", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000173", "evd-anime-179-183"]
+  - id: "ev-y0-1105-natsuhi-returns-star-temple"
+    legacy_ids: ["V10-000173"]
+    title: "Нацухі сама повертається до храму по Зірку"
+    text: "Уночі Нацухі все одно йде до храму, щоб востаннє забрати метеорит і зупинити відновлені тренування."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-natsuhi", role: "focus", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "target", mode: "physical"}
+      - {entity_id: "c-akahoshi", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000173", "evd-anime-179-183"]
+  - id: "ev-y0-1105-akahoshi-kills-natsuhi"
+    legacy_ids: ["V10-000173", "V10-000174"]
+    title: "Акагоші вбиває Нацухі"
+    text: "Спроба забрати Зірку завершується смертю Нацухі від рук Акагоші та його людей."
+    origin: "F"
+    extent: "instant"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-natsuhi", role: "victim", mode: "physical"}
+      - {entity_id: "c-akahoshi", role: "killer", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "contested_object", mode: "physical"}
+    evidence_ids: ["evd-v10-000173", "evd-v10-000174", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1105-natsuhi-final-1", kind: "before", a: "ev-y0-1105-natsuhi-condition-star-poisoning", b: "ev-y0-1105-natsuhi-returns-star-temple", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+  - {id: "rel-1105-natsuhi-final-2", kind: "before", a: "ev-y0-1105-natsuhi-returns-star-temple", b: "ev-y0-1105-akahoshi-kills-natsuhi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
