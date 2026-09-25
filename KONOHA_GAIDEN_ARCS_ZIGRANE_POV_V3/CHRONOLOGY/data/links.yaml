@@ -392,5 +392,47 @@ links:
     basis: "imported"
     review: "pending"
     evidence_ids: ["evd-v10-000046-L", "evd-v10-000046-M"]
+  - id: "lnk-0706-hospital-before-hayate-check"
+    kind: "before"
+    a: "sc-y0-0706-kabuto-hospital-infiltration"
+    b: "sc-y0-0706-hayate-checks-yugao"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000047", "evd-v10-000051"]
+  - id: "lnk-0706-hayate-check-before-order"
+    kind: "before"
+    a: "sc-y0-0706-hayate-checks-yugao"
+    b: "sc-y0-0706-hiruzen-orders-hayate"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000051"]
+  - id: "lnk-0706-order-before-farewell"
+    kind: "before"
+    a: "sc-y0-0706-hiruzen-orders-hayate"
+    b: "sc-y0-0706-hayate-yugao-farewell"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000051"]
+  - id: "lnk-0706-farewell-before-eavesdrop"
+    kind: "before"
+    a: "sc-y0-0706-hayate-yugao-farewell"
+    b: "ev-y0-0706-hayate-eavesdrops"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000051", "evd-shippuden-307-308"]
+  - id: "lnk-0706-hayate-death-before-body-found"
+    kind: "before"
+    a: "ev-y0-0706-baki-kills-hayate"
+    b: "sc-y0-0707-yugao-finds-hayate"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000049-C", "evd-v10-000051-B"]
+  - id: "lnk-0706-jiraiya-before-0707-summoning"
+    kind: "before"
+    a: "ev-y0-0706-jiraiya-takes-over-training"
+    b: "sc-y0-0707-naruto-summoning-training"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000048", "evd-v10-000052"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
