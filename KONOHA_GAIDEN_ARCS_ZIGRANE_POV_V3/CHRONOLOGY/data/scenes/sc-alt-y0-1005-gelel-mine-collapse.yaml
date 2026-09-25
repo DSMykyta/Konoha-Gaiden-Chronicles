@@ -1,0 +1,48 @@
+schema_version: 1
+id: "sc-alt-y0-1005-gelel-mine-collapse"
+continuity_id: "alt-movie-gelel"
+title: "Копальня Ґелеля руйнується"
+location_id: "loc-gelel-mine"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1005-gelel-vein-destabilizes"
+    legacy_ids: ["V10-000135"]
+    title: "Жила Ґелеля виходить з-під контролю"
+    text: "Після загибелі Хайдо та пошкодження механізму запечатування жила Ґелеля стає нестабільною й починає руйнувати руїни."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-temujin", role: "participant", mode: "physical"}
+      - {entity_id: "c-kahiko", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-temujin-opens-space-time-hole"
+    legacy_ids: ["V10-000135"]
+    title: "Темуджин відкриває просторово-часову діру, щоб знищити джерело"
+    text: "Темуджин активує родовий механізм, який відкриває просторово-часову діру й поглинає небезпечну жилу Ґелеля разом із руїнами."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-temujin", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-naruto-saves-temujin-from-void"
+    legacy_ids: ["V10-000135"]
+    title: "Наруто не дає Темуджину загинути разом із копальнею"
+    text: "Наруто використовує клонів, щоб утримати Темуджина й витягнути його з просторового провалу; джерело Ґелеля лишається знищеним."
+    origin: "V"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-temujin", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+relations:
+  - {id: "rel-alt-1005-gelel-collapse-1", kind: "before", a: "ev-alt-y0-1005-gelel-vein-destabilizes", b: "ev-alt-y0-1005-temujin-opens-space-time-hole", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+  - {id: "rel-alt-1005-gelel-collapse-2", kind: "before", a: "ev-alt-y0-1005-temujin-opens-space-time-hole", b: "ev-alt-y0-1005-naruto-saves-temujin-from-void", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+presence: []
