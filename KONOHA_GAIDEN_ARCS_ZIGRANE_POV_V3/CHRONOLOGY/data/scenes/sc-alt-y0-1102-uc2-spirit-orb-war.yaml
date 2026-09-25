@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-alt-y0-1102-uc2-spirit-orb-war"
+continuity_id: "alt-game-uzumaki-chronicles-2"
+title: "Шинобі Конохи й Суни борються за Сфери Духу з Шіроґане"
+placement: {anchor_id: "ta-alt-y0-1102-uc2", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1102-allies-secure-damaged-fire-orb"
+    legacy_ids: ["V10-000169"]
+    title: "Наруто й союзники тимчасово повертають пошкоджену Сферу Країни Вогню"
+    text: "У серії боїв Наруто, Шікамару, Канкуро та інші союзники відбивають одну зі Сфер Духу; спроба Наруто знищити її Расенґаном лише пошкоджує артефакт."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+      - {entity_id: "artifact-spirit-orbs", role: "focus", mode: "physical"}
+      - {entity_id: "group-shirogane", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000169", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1102-shirogane-attack-leaf-sand-for-orbs"
+    legacy_ids: ["V10-000169"]
+    title: "Шіроґане посилюють атаки на Коноху й Суну"
+    text: "Клан відповідає новими хвилями ходячих маріонеток і операціями проти обох селищ, намагаючись повернути всі Сфери, потрібні їхньому ритуалу."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "group-shirogane", role: "attacker", mode: "physical"}
+      - {entity_id: "artifact-spirit-orbs", role: "target", mode: "remote"}
+      - {entity_id: "c-naruto", role: "defender", mode: "physical"}
+      - {entity_id: "c-sakura", role: "defender", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "defender", mode: "physical"}
+    evidence_ids: ["evd-v10-000169", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1102-shirogane-eventually-recover-orbs"
+    legacy_ids: ["V10-000169"]
+    title: "Шіроґане зрештою знову збирають Сфери"
+    text: "Попри кілька тимчасових перемог Конохи й Суни, Шіроґане повертають потрібні Сфери та переходять до фінальної фази відродження Майстра Маріонеток."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "group-shirogane", role: "focus", mode: "physical"}
+      - {entity_id: "artifact-spirit-orbs", role: "acquired_object", mode: "physical"}
+      - {entity_id: "c-master-puppet", role: "revival_target", mode: "remote"}
+    evidence_ids: ["evd-v10-000169", "evd-game-uzumaki-chronicles-2"]
+relations:
+  - {id: "rel-alt-1102-uc2-orbs-1", kind: "before", a: "ev-alt-y0-1102-allies-secure-damaged-fire-orb", b: "ev-alt-y0-1102-shirogane-attack-leaf-sand-for-orbs", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+  - {id: "rel-alt-1102-uc2-orbs-2", kind: "before", a: "ev-alt-y0-1102-shirogane-attack-leaf-sand-for-orbs", b: "ev-alt-y0-1102-shirogane-eventually-recover-orbs", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+presence: []
