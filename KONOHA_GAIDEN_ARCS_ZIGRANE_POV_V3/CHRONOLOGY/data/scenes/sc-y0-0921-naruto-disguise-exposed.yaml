@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0921-naruto-disguise-exposed"
+continuity_id: "main"
+title: "Маскування Наруто під Шю викривають"
+location_id: null
+placement: {anchor_id: "ta-y0-0921", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0921-tatewaki-chiyo-expose-naruto"
+    legacy_ids: ["V10-000115"]
+    title: "Татевакі й Чійо викривають Наруто"
+    text: "Татевакі й Чійо викривають, що Наруто видає себе за Шю."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tatewaki", role: "focus", mode: "physical"}
+      - {entity_id: "c-chiyo", role: "focus", mode: "physical"}
+      - {entity_id: "c-shu", role: "identity_basis", mode: "remote"}
+    evidence_ids: ["evd-v10-000115", "evd-shippuden-309-310"]
+relations: []
+presence: []
