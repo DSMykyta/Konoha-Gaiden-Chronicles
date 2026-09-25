@@ -1,0 +1,43 @@
+schema_version: 1
+id: "sc-y0-0802-suna-discovers-rasa-body"
+continuity_id: "main"
+title: "Суна викриває підміну Казекаґе"
+location_id: "loc-sunagakure"
+placement: {anchor_id: "ta-y0-0802", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0802-suna-finds-rasa-body"
+    legacy_ids: ["V10-000072-C"]
+    title: "Сунаґакуре знаходить тіло Раси"
+    text: "Після провалу вторгнення Сунаґакуре знаходить тіло Четвертого Казекаґе Раси."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-rasa", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000072-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0802-suna-confirms-orochimaru-deception"
+    legacy_ids: ["V10-000072-C"]
+    title: "Підміну Казекаґе підтверджено"
+    text: "Знахідка підтверджує, що Орочімару видавав себе за Четвертого Казекаґе під час підготовки вторгнення."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-orochimaru", role: "identified", mode: "remote"}
+      - {entity_id: "c-rasa", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000072-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0802-suna-prepares-capitulation"
+    legacy_ids: ["V10-000072-C"]
+    title: "Суна готується припинити конфлікт із Конохою"
+    text: "Після викриття обману Суна готується до капітуляції та відновлення союзу з Конохою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    evidence_ids: ["evd-v10-000072-C", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0802-suna-1", kind: "before", a: "ev-y0-0802-suna-finds-rasa-body", b: "ev-y0-0802-suna-confirms-orochimaru-deception", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000072-C"]}
+  - {id: "rel-0802-suna-2", kind: "before", a: "ev-y0-0802-suna-confirms-orochimaru-deception", b: "ev-y0-0802-suna-prepares-capitulation", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000072-C"]}
+presence: []
