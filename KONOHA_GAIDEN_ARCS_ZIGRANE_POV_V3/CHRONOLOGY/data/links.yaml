@@ -658,5 +658,40 @@ links:
     basis: "imported"
     review: "accepted"
     evidence_ids: ["evd-v10-000082-G", "evd-v10-000082-H"]
+  - id: "lnk-0901-accepts-before-0902-recovery"
+    kind: "before"
+    a: "sc-y0-0901-tsunade-accepts-hokage"
+    b: "sc-y0-0902-naruto-recovers"
+    basis: "logical"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000082-H", "evd-v10-000083"]
+  - id: "lnk-0902-recovery-before-hot-springs"
+    kind: "before"
+    a: "sc-y0-0902-naruto-recovers"
+    b: "sc-y0-0902-hot-springs-debt-filler"
+    basis: "logical"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000083", "evd-v10-000084"]
+  - id: "lnk-0902-hot-springs-before-return"
+    kind: "before"
+    a: "sc-y0-0902-hot-springs-debt-filler"
+    b: "sc-y0-0902-tsunade-returns-konoha"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-97", "evd-v10-000083-B"]
+  - id: "lnk-0902-return-before-inauguration"
+    kind: "before"
+    a: "sc-y0-0902-tsunade-returns-konoha"
+    b: "sc-y0-0902-tsunade-inauguration"
+    basis: "logical"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000083-B", "evd-v10-000083-C"]
+  - id: "lnk-0902-konohamaru-intersects-inauguration"
+    kind: "intersects"
+    a: "sc-y0-0902-konohamaru-inauguration-filler"
+    b: "sc-y0-0902-tsunade-inauguration"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-99", "evd-v10-000083-C"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
