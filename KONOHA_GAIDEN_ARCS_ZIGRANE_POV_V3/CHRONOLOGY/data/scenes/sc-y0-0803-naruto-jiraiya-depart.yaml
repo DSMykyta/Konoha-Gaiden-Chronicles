@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0803-naruto-jiraiya-depart"
+continuity_id: "main"
+title: "Наруто й Джирая вирушають шукати Цунаде"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0803", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0803-naruto-jiraiya-leave-konoha"
+    legacy_ids: ["V10-000073-E"]
+    title: "Джирая бере Наруто із собою"
+    text: "Джирая бере Наруто в подорож і залишає Коноху на пошуки Цунаде."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000073-E", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0803-depart-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0803-naruto-jiraiya-depart.start", to: "sc-y0-0803-naruto-jiraiya-depart.end", basis: "source", evidence_ids: ["evd-v10-000073-E"], review: "accepted"}
+  - {id: "pr-0803-depart-naruto", entity_id: "c-naruto", from: "sc-y0-0803-naruto-jiraiya-depart.start", to: "sc-y0-0803-naruto-jiraiya-depart.end", basis: "source", evidence_ids: ["evd-v10-000073-E"], review: "accepted"}
