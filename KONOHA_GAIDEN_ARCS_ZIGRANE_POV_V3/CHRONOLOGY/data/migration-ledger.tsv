@@ -213,21 +213,21 @@ V10-000121-D	0	23.09	M	migrated	ev-y0-0923-tsunade-operates-lee	Rock Lee operati
 V10-000121-E	0	23.09	M	migrated	ev-y0-0923-retrieval-team-leaves-konoha	Retrieval team departure migrated.
 V10-000121-F	0	23.09	M	superseded	ev-y0-0923-choji-stays-behind-jirobo;ev-y0-0923-choji-uses-three-pills;ev-y0-0923-choji-defeats-jirobo;ev-y0-0923-choji-collapses-exhausted	Choji/Jirobo battle decomposed.
 V10-000121-G	0	23.09	M	superseded	ev-y0-0923-neji-stays-behind-kidomaru;ev-y0-0923-neji-adapts-to-kidomaru-range;ev-y0-0923-neji-defeats-kidomaru;ev-y0-0923-neji-left-severely-wounded	Neji/Kidomaru battle decomposed.
-V10-000122	0	24.09	M	migrated	ev-y0-0924-kiba-separates	Kiba branch.
-V10-000122-B	0	24.09	M	migrated	ev-y0-0924-shikamaru-fights-tayuya	Shikamaru branch.
-V10-000122-C	0	24.09	M	migrated	ev-y0-0924-kimimaro-takes-sasuke	Kimimaro branch.
-V10-000122-D	0	24.09	M	migrated	ev-y0-0924-orochimaru-transfers-body	Separate Orochimaru scene.
-V10-000122-E	0	24.09	M	migrated	ev-y0-0924-lee-replaces-naruto	Kimimaro branch.
-V10-000122-F	0	24.09	M	migrated	ev-y0-0924-naruto-continues-pursuit	Transition from Kimimaro branch toward Valley of the End.
-V10-000122-G	0	24.09	M	migrated	ev-y0-0924-kankuro-rescues-kiba	Kiba branch.
-V10-000122-H	0	24.09	M	migrated	ev-y0-0924-temari-rescues-shikamaru	Shikamaru branch.
-V10-000122-I	0	24.09	M	migrated	ev-y0-0924-gaara-joins-kimimaro-fight	Kimimaro branch.
-V10-000122-J	0	24.09	M	migrated	ev-y0-0924-kimimaro-dies	Kimimaro branch.
-V10-000122-K	0	24.09	M	migrated	ev-y0-0924-naruto-catches-sasuke	Valley of the End.
-V10-000122-L	0	24.09	M	migrated	ev-y0-0924-sasuke-explains-choice	Valley of the End.
-V10-000122-M	0	24.09	M	migrated	ev-y0-0924-valley-power-escalation	Valley of the End.
-V10-000122-N	0	24.09	M	migrated	ev-y0-0924-chidori-rasengan-clash	Valley of the End.
-V10-000122-O	0	24.09	M	migrated	ev-y0-0924-sasuke-wins-spares-naruto	Valley of the End.
+V10-000122	0	24.09	M	superseded	ev-y0-0924-kiba-akamaru-fall-with-sakon-ukon;ev-y0-0924-kiba-akamaru-battle-sakon-ukon	Kiba/Akamaru branch decomposed.
+V10-000122-B	0	24.09	M	superseded	ev-y0-0924-shikamaru-engages-tayuya;ev-y0-0924-shikamaru-restrains-tayuya-shadow;ev-y0-0924-tayuya-genjutsu-and-curse-seal-turn-fight	Shikamaru/Tayuya branch decomposed.
+V10-000122-C	0	24.09	M	superseded	ev-y0-0924-kimimaro-takes-sasuke-container;ev-y0-0924-kimimaro-releases-sasuke;ev-y0-0924-kimimaro-stays-to-fight-naruto	Kimimaro handoff branch decomposed.
+V10-000122-D	0	24.09	M	superseded	ev-y0-0924-orochimaru-cannot-wait-sasuke;ev-y0-0924-orochimaru-transfers-into-genyumaru	Orochimaru body-transfer branch decomposed.
+V10-000122-E	0	24.09	M	superseded	ev-y0-0924-lee-leaves-hospital;ev-y0-0924-lee-relieves-naruto-kimimaro;ev-y0-0924-lee-drunken-fist	Lee/Kimimaro branch decomposed.
+V10-000122-F	0	24.09	M	superseded	ev-y0-0924-sasuke-continues-alone;ev-y0-0924-naruto-leaves-lee-and-pursues-sasuke	Sasuke movement and Naruto pursuit separated.
+V10-000122-G	0	24.09	M	superseded	ev-y0-0924-kankuro-arrives-kiba-battle;ev-y0-0924-kankuro-kills-sakon-ukon;ev-y0-0924-kiba-akamaru-saved	Kankuro rescue decomposed.
+V10-000122-H	0	24.09	M	superseded	ev-y0-0924-temari-arrives-shikamaru-battle;ev-y0-0924-temari-defeats-tayuya	Temari rescue decomposed.
+V10-000122-I	0	24.09	M	superseded	ev-y0-0924-gaara-arrives-kimimaro-battle;ev-y0-0924-gaara-takes-over-kimimaro-fight	Gaara intervention decomposed.
+V10-000122-J	0	24.09	M	superseded	ev-y0-0924-kimimaro-survives-gaara-attacks;ev-y0-0924-kimimaro-dies-before-strike	Kimimaro final exchange and death separated.
+V10-000122-K	0	24.09	M	superseded	ev-y0-0924-naruto-catches-sasuke-valley;ev-y0-0924-naruto-asks-sasuke-return	Valley reunion decomposed.
+V10-000122-L	0	24.09	M	superseded	ev-y0-0924-sasuke-rejects-return;ev-y0-0924-sasuke-explains-mangekyo-condition;ev-y0-0924-naruto-refuses-break-bond	Valley dialogue decomposed.
+V10-000122-M	0	24.09	M	superseded	ev-y0-0924-sasuke-sharingan-develops;ev-y0-0924-sasuke-curse-seal-stage-two;ev-y0-0924-naruto-one-tail-cloak	Valley power escalation decomposed.
+V10-000122-N	0	24.09	M	superseded	ev-y0-0924-naruto-sasuke-final-techniques;ev-y0-0924-rasengan-chidori-collide	Final clash decomposed.
+V10-000122-O	0	24.09	M	superseded	ev-y0-0924-sasuke-defeats-naruto;ev-y0-0924-sasuke-refuses-itachi-method;ev-y0-0924-sasuke-leaves-naruto-alive	Valley outcome decomposed.
 V10-000123	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000123-B	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000123-C	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
