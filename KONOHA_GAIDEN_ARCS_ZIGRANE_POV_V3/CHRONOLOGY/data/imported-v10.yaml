@@ -3202,7 +3202,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000072"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3227,7 +3227,7 @@ records:
       SupportingSources: "A [еп. 79–80] — порятунок поранених, відступ нападників і початок відбудови."
       Review: ""
   - legacy_id: "V10-000072-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3252,7 +3252,7 @@ records:
       SupportingSources: "A [еп. 79–80] — порятунок поранених, відступ нападників і початок відбудови."
       Review: ""
   - legacy_id: "V10-000072-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3277,7 +3277,7 @@ records:
       SupportingSources: "A [еп. 79–80] — порятунок поранених, відступ нападників і початок відбудови."
       Review: ""
   - legacy_id: "V10-000073"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3402,7 +3402,7 @@ records:
       SupportingSources: "A [еп. 80–83] — похорон Третього, поява Ітачі й Кісаме та початок подорожі Джираї з Наруто."
       Review: ""
   - legacy_id: "V10-000074"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3427,7 +3427,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000075"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3452,7 +3452,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000076"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
