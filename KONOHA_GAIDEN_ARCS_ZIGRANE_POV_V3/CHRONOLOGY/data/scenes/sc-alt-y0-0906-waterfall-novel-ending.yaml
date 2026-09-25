@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-alt-y0-0906-waterfall-novel-ending"
+continuity_id: "alt-waterfall-novel"
+title: "Новельна версія місії в Такіґакуре завершується"
+location_id: "loc-takigakure"
+placement: {anchor_id: "ta-y0-0906", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0906-waterfall-novel-ending"
+    legacy_ids: ["V10-000096"]
+    title: "Окрема новельна розв’язка завершує ALT-гілку"
+    text: "Новельна версія місії завершується власною послідовністю подій; це альтернативна версія тієї самої місії, а не друга окрема канонічна місія."
+    origin: "N"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000096", "evd-novel-waterfall"]
+relations: []
+presence: []
