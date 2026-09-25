@@ -1029,6 +1029,11 @@ entities:
     aliases:
       - "загін повернення Саске"
       - "загін Шикамару"
+  - id: "c-genyumaru"
+    kind: "person"
+    name: "Gen'yūmaru"
+    aliases:
+      - "Ґеньюмару"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
