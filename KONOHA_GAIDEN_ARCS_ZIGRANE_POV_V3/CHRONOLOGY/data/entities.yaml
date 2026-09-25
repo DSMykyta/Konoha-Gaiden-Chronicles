@@ -780,6 +780,26 @@ entities:
     aliases:
       - "маєток Х’юґа"
     parent_id: "loc-konohagakure"
+  - id: "c-jirobo"
+    kind: "person"
+    name: "Jirōbō"
+    aliases:
+      - "Джіробо"
+  - id: "c-kidomaru"
+    kind: "person"
+    name: "Kidōmaru"
+    aliases:
+      - "Кідомару"
+  - id: "group-sound-four"
+    kind: "organization"
+    name: "Sound Four"
+    aliases:
+      - "Четвірка Звуку"
+  - id: "group-sunagakure-forces"
+    kind: "organization"
+    name: "Sunagakure invasion forces"
+    aliases:
+      - "сили Суни"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
