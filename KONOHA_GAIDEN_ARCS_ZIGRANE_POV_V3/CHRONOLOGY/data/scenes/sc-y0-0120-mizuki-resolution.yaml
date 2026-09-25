@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-y0-0120-mizuki-resolution"
+continuity_id: "main"
+title: "Наруто перемагає Мідзукі й стає геніном"
+location_id: null
+placement: {anchor_id: "ta-y0-0120", day_offset: 0}
+day_part: "dawn"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0120-iruka-acknowledges-naruto"
+    legacy_ids: ["V10-000003"]
+    title: "Ірука визнає Наруто"
+    text: "Перед світанком Ірука захищає Наруто й визнає його як самого Наруто, а не Дев’ятихвостого."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000003", "evd-manga-ch1-prologue"]
+  - id: "ev-y0-0120-naruto-defeats-mizuki"
+    legacy_ids: ["V10-000003"]
+    title: "Наруто перемагає Мідзукі Тіньовими Клонами"
+    text: "Наруто застосовує вивчену із Сувою Печатей Техніку Множинних Тіньових Клонів і перемагає Мідзукі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "participant", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000003", "evd-manga-ch1-prologue"]
+  - id: "ev-y0-0120-iruka-gives-protector"
+    legacy_ids: ["V10-000003"]
+    title: "Ірука віддає Наруто свій протектор"
+    text: "Ірука віддає Наруто власний налобний протектор і зараховує йому випуск."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000003", "evd-manga-ch1-prologue"]
+relations:
+  - {id: "rel-0120-ack-before-clones", kind: "before", a: "ev-y0-0120-iruka-acknowledges-naruto", b: "ev-y0-0120-naruto-defeats-mizuki", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch1-prologue"]}
+  - {id: "rel-0120-clones-before-protector", kind: "before", a: "ev-y0-0120-naruto-defeats-mizuki", b: "ev-y0-0120-iruka-gives-protector", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch1-prologue"]}
+presence:
+  - {id: "pr-0120-res-naruto", entity_id: "c-naruto", from: "sc-y0-0120-mizuki-resolution.start", to: "sc-y0-0120-mizuki-resolution.end", basis: "source", evidence_ids: ["evd-v10-000003"], review: "accepted"}
+  - {id: "pr-0120-res-iruka", entity_id: "c-iruka", from: "sc-y0-0120-mizuki-resolution.start", to: "sc-y0-0120-mizuki-resolution.end", basis: "source", evidence_ids: ["evd-v10-000003"], review: "accepted"}
+  - {id: "pr-0120-res-mizuki", entity_id: "c-mizuki", from: "sc-y0-0120-mizuki-resolution.start", to: "ev-y0-0120-naruto-defeats-mizuki.end", basis: "source", evidence_ids: ["evd-v10-000003"], review: "accepted"}
