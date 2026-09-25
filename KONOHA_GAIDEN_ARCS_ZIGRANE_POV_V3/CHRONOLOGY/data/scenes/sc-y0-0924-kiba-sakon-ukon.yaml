@@ -1,0 +1,58 @@
+schema_version: 1
+id: "sc-y0-0924-kiba-sakon-ukon"
+continuity_id: "main"
+title: "Кіба й Акамару проти Сакона та Укона"
+location_id: null
+placement:
+  anchor_id: "ta-sasuke-recovery-24"
+  day_offset: 0
+state: "active"
+presence_coverage: "complete"
+review:
+  time: "partial"
+  cast: "accepted"
+  location: "unknown"
+  origin: "accepted"
+  text: "accepted"
+events:
+  - id: "ev-y0-0924-kiba-separates"
+    legacy_ids: ["V10-000122"]
+    title: "Кіба й Акамару відокремлюються від загону"
+    text: "Кіба й Акамару падають у яр разом із Саконом та Уконом і починають окремий бій."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakon", role: "focus", mode: "physical"}
+      - {entity_id: "c-ukon", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0924-kankuro-rescues-kiba"
+    legacy_ids: ["V10-000122-G"]
+    title: "Канкуро рятує Кібу й Акамару"
+    text: "Канкуро прибуває як підкріплення Суни, перемагає Сакона та Укона й рятує Кібу та Акамару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kankuro", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakon", role: "participant", mode: "physical"}
+      - {entity_id: "c-ukon", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+relations:
+  - id: "rel-0924-kiba-before-kankuro"
+    kind: "before"
+    a: "ev-y0-0924-kiba-separates"
+    b: "ev-y0-0924-kankuro-rescues-kiba"
+    basis: "source"
+    review: "pending"
+    evidence_ids: ["evd-manga-sasuke-recovery"]
+presence:
+  - {id: "pr-0924-kiba-kiba", entity_id: "c-kiba", from: "sc-y0-0924-kiba-sakon-ukon.start", to: "ev-y0-0924-kankuro-rescues-kiba.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
+  - {id: "pr-0924-kiba-akamaru", entity_id: "c-akamaru", from: "sc-y0-0924-kiba-sakon-ukon.start", to: "ev-y0-0924-kankuro-rescues-kiba.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
+  - {id: "pr-0924-kiba-sakon", entity_id: "c-sakon", from: "sc-y0-0924-kiba-sakon-ukon.start", to: "ev-y0-0924-kankuro-rescues-kiba.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
+  - {id: "pr-0924-kiba-ukon", entity_id: "c-ukon", from: "sc-y0-0924-kiba-sakon-ukon.start", to: "ev-y0-0924-kankuro-rescues-kiba.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
+  - {id: "pr-0924-kiba-kankuro", entity_id: "c-kankuro", from: "ev-y0-0924-kankuro-rescues-kiba.start", to: "ev-y0-0924-kankuro-rescues-kiba.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
