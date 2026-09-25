@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0802-konoha-aftermath"
+continuity_id: "main"
+title: "Коноха оговтується після вторгнення"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0802", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0802-konoha-treats-wounded"
+    legacy_ids: ["V10-000072"]
+    title: "Коноха лікує поранених"
+    text: "Після провалу вторгнення Коноха переходить до масового лікування поранених."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    evidence_ids: ["evd-v10-000072", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0802-konoha-counts-dead"
+    legacy_ids: ["V10-000072"]
+    title: "Коноха підраховує загиблих"
+    text: "Селище підраховує втрати після боїв."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    evidence_ids: ["evd-v10-000072", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0802-konoha-begins-rebuilding"
+    legacy_ids: ["V10-000072"]
+    title: "Починається відбудова"
+    text: "У Конохі починаються відновлювальні роботи після нападу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    evidence_ids: ["evd-v10-000072", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0802-aftermath-1", kind: "intersects", a: "ev-y0-0802-konoha-treats-wounded", b: "ev-y0-0802-konoha-counts-dead", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000072"]}
+  - {id: "rel-0802-aftermath-2", kind: "intersects", a: "ev-y0-0802-konoha-counts-dead", b: "ev-y0-0802-konoha-begins-rebuilding", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000072"]}
+presence: []
