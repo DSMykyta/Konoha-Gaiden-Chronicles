@@ -1,0 +1,63 @@
+schema_version: 1
+id: "sc-y0-0923-neji-vs-kidomaru"
+continuity_id: "main"
+title: "Неджі залишається битися з Кідомару"
+location_id: null
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-neji-stays-behind-kidomaru"
+    legacy_ids: ["V10-000121-G"]
+    title: "Неджі відділяється від загону"
+    text: "Неджі залишається проти Кідомару, щоб решта загону могла продовжити переслідування."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-kidomaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "departing_ally", mode: "remote"}
+      - {entity_id: "c-naruto", role: "departing_ally", mode: "remote"}
+      - {entity_id: "c-kiba", role: "departing_ally", mode: "remote"}
+    evidence_ids: ["evd-v10-000121-G"]
+  - id: "ev-y0-0923-neji-adapts-to-kidomaru-range"
+    legacy_ids: ["V10-000121-G"]
+    title: "Неджі знаходить відповідь на дальні атаки Кідомару"
+    text: "У ході бою Неджі знаходить спосіб протидіяти дальнім атакам Кідомару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-kidomaru", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000121-G"]
+  - id: "ev-y0-0923-neji-defeats-kidomaru"
+    legacy_ids: ["V10-000121-G"]
+    title: "Неджі перемагає Кідомару"
+    text: "Неджі перемагає Кідомару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-kidomaru", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000121-G"]
+  - id: "ev-y0-0923-neji-left-severely-wounded"
+    legacy_ids: ["V10-000121-G"]
+    title: "Неджі лишається тяжко пораненим"
+    text: "Після перемоги над Кідомару Неджі залишається з тяжкими пораненнями."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000121-G"]
+relations:
+  - {id: "rel-0923-neji-1", kind: "before", a: "ev-y0-0923-neji-stays-behind-kidomaru", b: "ev-y0-0923-neji-adapts-to-kidomaru-range", basis: "source", review: "pending", evidence_ids: ["evd-v10-000121-G"]}
+  - {id: "rel-0923-neji-2", kind: "before", a: "ev-y0-0923-neji-adapts-to-kidomaru-range", b: "ev-y0-0923-neji-defeats-kidomaru", basis: "source", review: "pending", evidence_ids: ["evd-v10-000121-G"]}
+  - {id: "rel-0923-neji-3", kind: "before", a: "ev-y0-0923-neji-defeats-kidomaru", b: "ev-y0-0923-neji-left-severely-wounded", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000121-G"]}
+presence:
+  - {id: "pr-0923-neji-neji", entity_id: "c-neji", from: "sc-y0-0923-neji-vs-kidomaru.start", to: "sc-y0-0923-neji-vs-kidomaru.end", basis: "source", evidence_ids: ["evd-v10-000121-G"], review: "accepted"}
+  - {id: "pr-0923-neji-kidomaru", entity_id: "c-kidomaru", from: "sc-y0-0923-neji-vs-kidomaru.start", to: "ev-y0-0923-neji-defeats-kidomaru.end", basis: "source", evidence_ids: ["evd-v10-000121-G"], review: "accepted"}
