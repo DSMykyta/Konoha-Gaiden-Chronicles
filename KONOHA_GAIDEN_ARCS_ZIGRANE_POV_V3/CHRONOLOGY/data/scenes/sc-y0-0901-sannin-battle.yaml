@@ -1,0 +1,118 @@
+schema_version: 1
+id: "sc-y0-0901-sannin-battle"
+continuity_id: "main"
+title: "Битва трьох саннінів"
+location_id: null
+placement: {anchor_id: "ta-y0-0901", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0901-jiraiya-naruto-shizune-arrive"
+    legacy_ids: ["V10-000082-C"]
+    title: "Джирая, Наруто й Шізуне прибувають"
+    text: "Шізуне, Джирая та Наруто наздоганяють Цунаде й Орочімару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-kabuto-defeats-shizune"
+    legacy_ids: ["V10-000082-C"]
+    title: "Кабуто перемагає Шізуне"
+    text: "Кабуто виводить Шізуне з бою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-shizune", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-naruto-first-successful-rasengan"
+    legacy_ids: ["V10-000082-D"]
+    title: "Наруто вперше успішно влучає Расенґаном"
+    text: "Захищаючи Цунаде, Наруто фіксує руку Кабуто тіньовим клоном і стабілізує Расенґан другим клоном, завдаючи прямого удару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "affected", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-D", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-tsunade-overcomes-blood-fear"
+    legacy_ids: ["V10-000082-E"]
+    title: "Цунаде долає страх крові"
+    text: "Захищаючи Наруто, Цунаде долає страх крові й повертається до бою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-E", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-tsunade-creation-rebirth"
+    legacy_ids: ["V10-000082-E"]
+    title: "Цунаде активує Створення Відродження"
+    text: "Цунаде активує Техніку Створення Відродження."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-E", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-sannin-summon"
+    legacy_ids: ["V10-000082-F"]
+    title: "Троє саннінів викликають своїх призовів"
+    text: "Джирая, Цунаде й Орочімару викликають Ґамабунту, Кацую та Манду."
+    origin: "M"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-gamabunta", role: "participant", mode: "physical"}
+      - {entity_id: "c-katsuyu", role: "participant", mode: "physical"}
+      - {entity_id: "c-manda", role: "participant", mode: "physical"}
+    focus_teams: ["group-sannin"]
+    evidence_ids: ["evd-v10-000082-F", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-tsunade-defeats-orochimaru"
+    legacy_ids: ["V10-000082-G"]
+    title: "Цунаде перемагає Орочімару"
+    text: "Цунаде бере гору над Орочімару в ближньому бою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-G", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-orochimaru-kabuto-retreat"
+    legacy_ids: ["V10-000082-G"]
+    title: "Орочімару й Кабуто відступають"
+    text: "Після поразки Орочімару відступає разом із Кабуто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 800
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-G", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0901-battle-1", kind: "before", a: "ev-y0-0901-jiraiya-naruto-shizune-arrive", b: "ev-y0-0901-kabuto-defeats-shizune", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000082-C"]}
+  - {id: "rel-0901-battle-2", kind: "before", a: "ev-y0-0901-kabuto-defeats-shizune", b: "ev-y0-0901-naruto-first-successful-rasengan", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000082-D"]}
+  - {id: "rel-0901-battle-3", kind: "before", a: "ev-y0-0901-naruto-first-successful-rasengan", b: "ev-y0-0901-tsunade-overcomes-blood-fear", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000082-E"]}
+  - {id: "rel-0901-battle-4", kind: "before", a: "ev-y0-0901-tsunade-overcomes-blood-fear", b: "ev-y0-0901-tsunade-creation-rebirth", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000082-E"]}
+  - {id: "rel-0901-battle-5", kind: "before", a: "ev-y0-0901-tsunade-creation-rebirth", b: "ev-y0-0901-sannin-summon", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000082-F"]}
+  - {id: "rel-0901-battle-6", kind: "before", a: "ev-y0-0901-sannin-summon", b: "ev-y0-0901-tsunade-defeats-orochimaru", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000082-G"]}
+  - {id: "rel-0901-battle-7", kind: "before", a: "ev-y0-0901-tsunade-defeats-orochimaru", b: "ev-y0-0901-orochimaru-kabuto-retreat", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000082-G"]}
+presence: []
