@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-y0-0706-kakashi-assigns-ebisu"
+continuity_id: "main"
+title: "Какаші передає тренування Наруто Ебісу"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-kakashi-assigns-ebisu"
+    legacy_ids: ["V10-000046-M"]
+    title: "Какаші призначає Ебісу тренером Наруто"
+    text: "Какаші доручає Ебісу готувати Наруто до фінального етапу іспиту."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-ebisu", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-M", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+relations: []
+presence:
+  - {id: "pr-0706-ebisu-kakashi", entity_id: "c-kakashi", from: "sc-y0-0706-kakashi-assigns-ebisu.start", to: "sc-y0-0706-kakashi-assigns-ebisu.end", basis: "source", evidence_ids: ["evd-v10-000046-M"], review: "accepted"}
+  - {id: "pr-0706-ebisu-ebisu", entity_id: "c-ebisu", from: "sc-y0-0706-kakashi-assigns-ebisu.start", to: "sc-y0-0706-kakashi-assigns-ebisu.end", basis: "source", evidence_ids: ["evd-v10-000046-M"], review: "accepted"}
+  - {id: "pr-0706-ebisu-naruto", entity_id: "c-naruto", from: "sc-y0-0706-kakashi-assigns-ebisu.start", to: "sc-y0-0706-kakashi-assigns-ebisu.end", basis: "source", evidence_ids: ["evd-v10-000046-M"], review: "accepted"}
