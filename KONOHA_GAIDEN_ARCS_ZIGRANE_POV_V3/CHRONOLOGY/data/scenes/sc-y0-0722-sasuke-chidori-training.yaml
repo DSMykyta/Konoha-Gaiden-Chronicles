@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0722-sasuke-chidori-training"
+continuity_id: "main"
+title: "Какаші інтенсивно тренує Саске"
+location_id: null
+placement: {anchor_id: "ta-y0-0722", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0722-kakashi-trains-sasuke-speed"
+    legacy_ids: ["V10-000054"]
+    title: "Какаші розвиває швидкість Саске"
+    text: "На п’ятнадцятий день підготовки Какаші проводить із Саске інтенсивне приватне тренування швидкості."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000054", "evd-manga-ch88-97", "evd-anime-54-60"]
+  - id: "ev-y0-0722-kakashi-teaches-chidori"
+    legacy_ids: ["V10-000054"]
+    title: "Какаші навчає Саске Чідорі"
+    text: "Какаші переходить до практичного навчання Саске техніки Чідорі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000054", "evd-manga-ch88-97", "evd-anime-54-60"]
+relations:
+  - {id: "rel-0722-sasuke-1", kind: "before", a: "ev-y0-0722-kakashi-trains-sasuke-speed", b: "ev-y0-0722-kakashi-teaches-chidori", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000054"]}
+presence:
+  - {id: "pr-0722-sasuke-kakashi", entity_id: "c-kakashi", from: "sc-y0-0722-sasuke-chidori-training.start", to: "sc-y0-0722-sasuke-chidori-training.end", basis: "source", evidence_ids: ["evd-v10-000054"], review: "accepted"}
+  - {id: "pr-0722-sasuke-sasuke", entity_id: "c-sasuke", from: "sc-y0-0722-sasuke-chidori-training.start", to: "sc-y0-0722-sasuke-chidori-training.end", basis: "source", evidence_ids: ["evd-v10-000054"], review: "accepted"}
