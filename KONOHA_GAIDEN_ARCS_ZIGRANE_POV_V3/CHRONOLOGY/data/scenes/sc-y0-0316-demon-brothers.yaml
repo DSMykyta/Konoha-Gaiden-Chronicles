@@ -1,0 +1,83 @@
+schema_version: 1
+id: "sc-y0-0316-demon-brothers"
+continuity_id: "main"
+title: "Напад Братів-Демонів"
+location_id: "loc-road-fire-waves"
+placement: {anchor_id: "ta-y0-0316", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0316-demon-brothers-attack"
+    legacy_ids: ["V10-000025"]
+    title: "Брати-Демони атакують Тадзуну"
+    text: "Ґозу й Мейзу влаштовують засідку на групу супроводу й атакують Тадзуну."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-gozu", role: "focus", mode: "physical"}
+      - {entity_id: "c-meizu", role: "focus", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "affected", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000025", "evd-manga-land-waves", "evd-anime-land-waves", "evd-novel-land-waves"]
+  - id: "ev-y0-0316-kakashi-sasuke-stop-demons"
+    legacy_ids: ["V10-000025"]
+    title: "Какаші й Саске нейтралізують нападників"
+    text: "Какаші й Саске зупиняють Братів-Демонів і захищають Тадзуну."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-gozu", role: "participant", mode: "physical"}
+      - {entity_id: "c-meizu", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000025", "evd-manga-land-waves"]
+  - id: "ev-y0-0316-naruto-blood-oath"
+    legacy_ids: ["V10-000025-B"]
+    title: "Наруто дає клятву крові"
+    text: "Принижений власним заціпенінням під час засідки, Наруто проколює отруєну руку й клянеться більше не тікати від небезпеки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000025-B", "evd-manga-land-waves"]
+  - id: "ev-y0-0316-tazuna-reveals-risk"
+    legacy_ids: ["V10-000025-C"]
+    title: "Тадзуна визнає справжню небезпеку місії"
+    text: "Тадзуна розповідає, що через Ґато завдання небезпечніше за заявлений C-ранг; Команда 7 вирішує не припиняти супровід."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+      - {entity_id: "c-gato", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000025-C", "evd-manga-land-waves", "evd-anime-land-waves"]
+relations:
+  - {id: "rel-0316-attack-before-stop", kind: "before", a: "ev-y0-0316-demon-brothers-attack", b: "ev-y0-0316-kakashi-sasuke-stop-demons", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0316-stop-before-oath", kind: "before", a: "ev-y0-0316-kakashi-sasuke-stop-demons", b: "ev-y0-0316-naruto-blood-oath", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000025-B"]}
+  - {id: "rel-0316-oath-before-truth", kind: "before", a: "ev-y0-0316-naruto-blood-oath", b: "ev-y0-0316-tazuna-reveals-risk", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000025-C"]}
+presence:
+  - {id: "pr-0316-demons-kakashi", entity_id: "c-kakashi", from: "sc-y0-0316-demon-brothers.start", to: "sc-y0-0316-demon-brothers.end", basis: "source", evidence_ids: ["evd-v10-000025"], review: "accepted"}
+  - {id: "pr-0316-demons-naruto", entity_id: "c-naruto", from: "sc-y0-0316-demon-brothers.start", to: "sc-y0-0316-demon-brothers.end", basis: "source", evidence_ids: ["evd-v10-000025"], review: "accepted"}
+  - {id: "pr-0316-demons-sasuke", entity_id: "c-sasuke", from: "sc-y0-0316-demon-brothers.start", to: "sc-y0-0316-demon-brothers.end", basis: "source", evidence_ids: ["evd-v10-000025"], review: "accepted"}
+  - {id: "pr-0316-demons-sakura", entity_id: "c-sakura", from: "sc-y0-0316-demon-brothers.start", to: "sc-y0-0316-demon-brothers.end", basis: "source", evidence_ids: ["evd-v10-000025"], review: "accepted"}
+  - {id: "pr-0316-demons-tazuna", entity_id: "c-tazuna", from: "sc-y0-0316-demon-brothers.start", to: "sc-y0-0316-demon-brothers.end", basis: "source", evidence_ids: ["evd-v10-000025"], review: "accepted"}
