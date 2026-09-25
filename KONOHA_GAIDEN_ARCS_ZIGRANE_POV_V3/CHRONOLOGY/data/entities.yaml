@@ -1571,6 +1571,61 @@ entities:
     aliases:
       - "печера зі скарбом"
     parent_id: "loc-land-of-fire"
+  - id: "group-shirogane"
+    kind: "organization"
+    name: "Shirogane Clan"
+    aliases:
+      - "клан Шіроґане"
+  - id: "c-master-puppet"
+    kind: "construct"
+    name: "Master Puppet"
+    aliases:
+      - "Майстер Маріонеток"
+      - "Головна Маріонетка"
+  - id: "artifact-spirit-orbs"
+    kind: "artifact"
+    name: "Five Spirit Orbs"
+    aliases:
+      - "П’ять Сфер Духу"
+      - "Сфери Духу"
+  - id: "loc-hot-springs-town"
+    kind: "location"
+    name: "Hot springs town"
+    aliases:
+      - "містечко гарячих джерел"
+  - id: "loc-bear-country"
+    kind: "location"
+    name: "Land of Bears"
+    aliases:
+      - "Країна Ведмедів"
+  - id: "loc-hoshigakure"
+    kind: "location"
+    name: "Hoshigakure"
+    aliases:
+      - "Хошіґакуре"
+      - "Селище Прихованої Зірки"
+    parent_id: "loc-bear-country"
+  - id: "loc-death-valley-hoshi"
+    kind: "location"
+    name: "Death Valley near Hoshigakure"
+    aliases:
+      - "Долина Смерті біля Хошіґакуре"
+    parent_id: "loc-bear-country"
+  - id: "c-sumaru"
+    kind: "person"
+    name: "Sumaru"
+    aliases:
+      - "Сумару"
+  - id: "c-akahoshi"
+    kind: "person"
+    name: "Akahoshi"
+    aliases:
+      - "Акагоші"
+  - id: "c-natsuhi"
+    kind: "person"
+    name: "Natsuhi"
+    aliases:
+      - "Нацухі"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
