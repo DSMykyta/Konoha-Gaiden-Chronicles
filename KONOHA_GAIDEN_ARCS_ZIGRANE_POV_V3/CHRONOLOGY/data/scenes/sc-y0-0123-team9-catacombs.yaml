@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-y0-0123-team9-catacombs"
+continuity_id: "main"
+title: "Команда 9 проходить катакомби"
+location_id: "loc-team9-catacombs"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-team9-enters-catacombs"
+    title: "Команда 9 заходить у темні тунелі"
+    text: "Кіта, Рен і Сора входять у катакомби з ліхтарями, мотузками та крейдою."
+    origin: "P"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-catacombs"]
+  - id: "ev-y0-0123-team9-splits-catacomb-roles"
+    title: "Сора тримає страховку, Кіта й Рен перевіряють тунелі"
+    text: "На розвилках Сора лишається точкою страховки з кінцями мотузок, а Кіта й Рен по черзі перевіряють ходи й позначають маршрути крейдою."
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-catacombs"]
+  - id: "ev-y0-0123-team9-exits-catacombs"
+    title: "Команда 9 знаходить вихід за двадцять дві хвилини"
+    text: "Уся трійця виходить з іншого боку пагорба; Райдо фіксує час у двадцять дві хвилини й зараховує тест на логіку та командну роботу."
+    origin: "P"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "participant", mode: "physical"}
+      - {entity_id: "c-ren", role: "participant", mode: "physical"}
+      - {entity_id: "c-sora", role: "participant", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-catacombs"]
+relations:
+  - {id: "rel-0123-cat-enter-before-roles", kind: "before", a: "ev-y0-0123-team9-enters-catacombs", b: "ev-y0-0123-team9-splits-catacomb-roles", basis: "source", review: "accepted", evidence_ids: ["evd-team9-catacombs"]}
+  - {id: "rel-0123-cat-roles-before-exit", kind: "before", a: "ev-y0-0123-team9-splits-catacomb-roles", b: "ev-y0-0123-team9-exits-catacombs", basis: "source", review: "accepted", evidence_ids: ["evd-team9-catacombs"]}
+presence:
+  - {id: "pr-0123-cat-kita", entity_id: "c-kita", from: "sc-y0-0123-team9-catacombs.start", to: "sc-y0-0123-team9-catacombs.end", basis: "source", evidence_ids: ["evd-team9-catacombs"], review: "accepted"}
+  - {id: "pr-0123-cat-ren", entity_id: "c-ren", from: "sc-y0-0123-team9-catacombs.start", to: "sc-y0-0123-team9-catacombs.end", basis: "source", evidence_ids: ["evd-team9-catacombs"], review: "accepted"}
+  - {id: "pr-0123-cat-sora", entity_id: "c-sora", from: "sc-y0-0123-team9-catacombs.start", to: "sc-y0-0123-team9-catacombs.end", basis: "source", evidence_ids: ["evd-team9-catacombs"], review: "accepted"}
+  - {id: "pr-0123-cat-raido", entity_id: "c-raido", from: "ev-y0-0123-team9-exits-catacombs.start", to: "sc-y0-0123-team9-catacombs.end", basis: "source", evidence_ids: ["evd-team9-catacombs"], review: "accepted"}
