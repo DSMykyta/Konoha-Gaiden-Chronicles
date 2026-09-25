@@ -706,3 +706,59 @@ anchors:
     evidence_ids: ["evd-v10-000138"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Bikōchū mission finale."
+  - id: "ta-y0-1010-kurosuki"
+    date: {year: 0, month: 10, day: 10}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000139"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Kurosuki mission; not made exact by Naruto birthday evidence."
+  - id: "ta-y0-1010-naruto-birthday"
+    date: {year: 0, month: 10, day: 10}
+    precision: "day"
+    placement_status: "established"
+    basis: "source"
+    evidence_ids: ["evd-v10-000140", "evd-official-naruto-birthday"]
+    review: "accepted"
+    reason: "Naruto Uzumaki birthday is explicitly October 10; this anchor is intentionally separate from same-day working scene placements."
+  - id: "ta-y0-1011-kurosuki"
+    date: {year: 0, month: 10, day: 11}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000141"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for Kurosuki arc continuation."
+  - id: "ta-y0-1012-kurosuki"
+    date: {year: 0, month: 10, day: 12}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000142"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for Kurosuki arc continuation."
+  - id: "ta-alt-y0-1012-uzumaki-chronicles"
+    date: {year: 0, month: 10, day: 12}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000143", "evd-game-uzumaki-chronicles"]
+    review: "accepted"
+    reason: "Alternative game placement only; Uzumaki Chronicles has incompatible regional versions and no canonical calendar placement."
+  - id: "ta-y0-1013-kurosuki"
+    date: {year: 0, month: 10, day: 13}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000144"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for Kurosuki arc continuation."
+  - id: "ta-y0-1014-kurosuki"
+    date: {year: 0, month: 10, day: 14}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000146"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for Kurosuki arc finale."
