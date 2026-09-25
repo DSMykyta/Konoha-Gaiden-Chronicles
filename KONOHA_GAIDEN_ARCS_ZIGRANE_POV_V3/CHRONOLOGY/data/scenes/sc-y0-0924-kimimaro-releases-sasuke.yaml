@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-0924-kimimaro-releases-sasuke"
+continuity_id: "main"
+title: "Кімімаро забирає контейнер із Саске"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-kimimaro-takes-sasuke-container"
+    legacy_ids: ["V10-000122-C"]
+    title: "Кімімаро забирає контейнер із Саске"
+    text: "Кімімаро перехоплює контейнер, у якому перевозять Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kimimaro", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "pursuer", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-C"]
+  - id: "ev-y0-0924-kimimaro-releases-sasuke"
+    legacy_ids: ["V10-000122-C"]
+    title: "Кімімаро звільняє Саске з контейнера"
+    text: "Кімімаро звільняє Саске, дозволяючи йому продовжити шлях самостійно."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kimimaro", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "pursuer", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-C"]
+  - id: "ev-y0-0924-kimimaro-stays-to-fight-naruto"
+    legacy_ids: ["V10-000122-C"]
+    title: "Кімімаро лишається стримувати Наруто"
+    text: "Після звільнення Саске Кімімаро лишається позаду, щоб стримати Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kimimaro", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "departing", mode: "remote"}
+    evidence_ids: ["evd-v10-000122-C"]
+relations:
+  - {id: "rel-0924-kimimaro-1", kind: "before", a: "ev-y0-0924-kimimaro-takes-sasuke-container", b: "ev-y0-0924-kimimaro-releases-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-C"]}
+  - {id: "rel-0924-kimimaro-2", kind: "before", a: "ev-y0-0924-kimimaro-releases-sasuke", b: "ev-y0-0924-kimimaro-stays-to-fight-naruto", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-C"]}
+presence: []
