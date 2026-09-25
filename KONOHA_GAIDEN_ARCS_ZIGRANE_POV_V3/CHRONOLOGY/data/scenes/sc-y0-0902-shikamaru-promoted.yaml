@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-0902-shikamaru-promoted"
+continuity_id: "main"
+title: "Шикамару стає чуніном"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0902", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0902-shikamaru-promoted-chunin"
+    legacy_ids: ["V10-000083-F"]
+    title: "Шикамару отримує ранг чуніна"
+    text: "За результатами іспиту Шикамару підвищують до рангу чуніна."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000083-F", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0902-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0902-shikamaru-promoted.start", to: "sc-y0-0902-shikamaru-promoted.end", basis: "imported", evidence_ids: ["evd-v10-000083-F"], review: "accepted"}
