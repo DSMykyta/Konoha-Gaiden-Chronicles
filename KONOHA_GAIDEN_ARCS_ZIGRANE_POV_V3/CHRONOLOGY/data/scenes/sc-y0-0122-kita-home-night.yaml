@@ -1,0 +1,94 @@
+schema_version: 1
+id: "sc-y0-0122-kita-home-night"
+continuity_id: "main"
+title: "Кіта вдома після першого дня Команди 9"
+location_id: "loc-kita-home"
+placement:
+  anchor_id: "ta-team-formation"
+  day_offset: 0
+day_part: "evening"
+state: "active"
+presence_coverage: "complete"
+review:
+  time: "accepted"
+  cast: "accepted"
+  location: "accepted"
+  origin: "accepted"
+  text: "accepted"
+events:
+  - id: "ev-y0-0122-nobari-returns"
+      title: "Нобарі повертається пізно ввечері"
+      text: "Мати Кіти повертається додому з паперами після роботи в адміністрації Хокаґе."
+      origin: "P"
+      extent: "interval"
+      display_rank: 100
+      involvement:
+        - entity_id: "c-nobari"
+            role: "focus"
+            mode: "physical"
+        - entity_id: "c-kita"
+            role: "participant"
+            mode: "physical"
+      evidence_ids:
+        - "evd-kita-home-night"
+  - id: "ev-y0-0122-kita-talks-with-mother"
+      title: "Кіта говорить із матір’ю про нову команду"
+      text: "Кіта називає Райдо своїм сенсеєм; Нобарі згадує Райдо, Асума й Куренай та їхнє спільне минуле."
+      origin: "P"
+      extent: "interval"
+      display_rank: 200
+      involvement:
+        - entity_id: "c-kita"
+            role: "focus"
+            mode: "physical"
+        - entity_id: "c-nobari"
+            role: "focus"
+            mode: "physical"
+      evidence_ids:
+        - "evd-kita-home-night"
+  - id: "ev-y0-0122-kita-cries"
+      title: "Кіта плаче перед сном"
+      text: "Кіта лягає спати, тихо плаче в подушку й засинає, поки з кухні чути шурхіт сторінок."
+      origin: "P"
+      extent: "interval"
+      display_rank: 300
+      involvement:
+        - entity_id: "c-kita"
+            role: "focus"
+            mode: "physical"
+      evidence_ids:
+        - "evd-kita-home-night"
+relations:
+  - id: "rel-0122-home-return-before-talk"
+      kind: "before"
+      a: "ev-y0-0122-nobari-returns"
+      b: "ev-y0-0122-kita-talks-with-mother"
+      basis: "source"
+      review: "accepted"
+      evidence_ids:
+        - "evd-kita-home-night"
+  - id: "rel-0122-home-talk-before-cry"
+      kind: "before"
+      a: "ev-y0-0122-kita-talks-with-mother"
+      b: "ev-y0-0122-kita-cries"
+      basis: "source"
+      review: "accepted"
+      evidence_ids:
+        - "evd-kita-home-night"
+presence:
+  - id: "pr-0122-home-kita"
+      entity_id: "c-kita"
+      from: "sc-y0-0122-kita-home-night.start"
+      to: "sc-y0-0122-kita-home-night.end"
+      basis: "source"
+      evidence_ids:
+        - "evd-kita-home-night"
+      review: "accepted"
+  - id: "pr-0122-home-nobari"
+      entity_id: "c-nobari"
+      from: "ev-y0-0122-nobari-returns.start"
+      to: "sc-y0-0122-kita-home-night.end"
+      basis: "source"
+      evidence_ids:
+        - "evd-kita-home-night"
+      review: "accepted"
