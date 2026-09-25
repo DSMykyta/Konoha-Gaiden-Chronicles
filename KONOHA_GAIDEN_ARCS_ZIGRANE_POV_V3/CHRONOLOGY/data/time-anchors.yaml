@@ -346,3 +346,27 @@ anchors:
     evidence_ids: ["evd-v10-000063", "evd-v10-000065"]
     review: "accepted"
     reason: "Working project date for Chūnin Finals and Konoha Crush."
+  - id: "ta-y0-0802"
+    date: {year: 0, month: 8, day: 2}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000072"]
+    review: "accepted"
+    reason: "Working project date for the day after the invasion."
+  - id: "ta-y0-0803"
+    date: {year: 0, month: 8, day: 3}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000073"]
+    review: "accepted"
+    reason: "Working project date for Hiruzen's funeral."
+  - id: "ta-y0-0804"
+    date: {year: 0, month: 8, day: 4}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000076"]
+    review: "accepted"
+    reason: "Working project date for early Search for Tsunade events and nearby retrospectives."
