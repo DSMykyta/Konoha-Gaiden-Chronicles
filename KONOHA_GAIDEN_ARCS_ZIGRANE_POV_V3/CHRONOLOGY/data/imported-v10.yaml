@@ -527,7 +527,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000013"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -552,7 +552,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000014"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -577,7 +577,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000015"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -602,7 +602,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000016"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -627,7 +627,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000017"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -652,7 +652,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000018"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -677,7 +677,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000019"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -702,7 +702,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000020"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -727,7 +727,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000021"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -752,7 +752,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000022"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
