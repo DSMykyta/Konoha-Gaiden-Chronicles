@@ -2,7 +2,7 @@ schema_version: 1
 source: "Naruto_Timeline_Year_0_v10.tsv"
 records:
   - legacy_id: "V10-000001"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -27,7 +27,7 @@ records:
       SupportingSources: "A [еп. 1] — аніме розширює погоню за Наруто, його самотній побут і реакцію мешканців Конохи на витівку з монументом."
       Review: ""
   - legacy_id: "V10-000002"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -52,7 +52,7 @@ records:
       SupportingSources: "A [еп. 1] — випускний іспит, крадіжка Сувою Печатей і зрада Мідзукі екранізовані в межах першої серії."
       Review: ""
   - legacy_id: "V10-000003"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -77,7 +77,7 @@ records:
       SupportingSources: "A [еп. 1] — Ірука визнає Наруто, а той уперше масово застосовує Тіньових Клонів."
       Review: ""
   - legacy_id: "V10-000004"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -277,7 +277,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000010"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -302,7 +302,7 @@ records:
       SupportingSources: "A [еп. 4–5] — повна аніме-версія тесту з дзвіночками та першого уроку командної роботи."
       Review: ""
   - legacy_id: "V10-000010-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -327,7 +327,7 @@ records:
       SupportingSources: "A [еп. 4–5] — повна аніме-версія тесту з дзвіночками та першого уроку командної роботи."
       Review: ""
   - legacy_id: "V10-000010-C"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -352,7 +352,7 @@ records:
       SupportingSources: "A [еп. 4–5] — повна аніме-версія тесту з дзвіночками та першого уроку командної роботи."
       Review: ""
   - legacy_id: "V10-000010-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -377,7 +377,7 @@ records:
       SupportingSources: "A [еп. 4–5] — повна аніме-версія тесту з дзвіночками та першого уроку командної роботи."
       Review: ""
   - legacy_id: "V10-000010-E"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -402,7 +402,7 @@ records:
       SupportingSources: "A [еп. 4–5] — повна аніме-версія тесту з дзвіночками та першого уроку командної роботи."
       Review: ""
   - legacy_id: "V10-000010-F"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -427,7 +427,7 @@ records:
       SupportingSources: "A [еп. 4–5] — повна аніме-версія тесту з дзвіночками та першого уроку командної роботи."
       Review: ""
   - legacy_id: "V10-000011"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -452,7 +452,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000012"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -477,7 +477,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000012-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -502,7 +502,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000012-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
