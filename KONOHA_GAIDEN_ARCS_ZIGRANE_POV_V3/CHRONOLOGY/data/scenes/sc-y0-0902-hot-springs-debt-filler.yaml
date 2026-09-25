@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-0902-hot-springs-debt-filler"
+continuity_id: "main"
+title: "Кредитори викрадають Наруто дорогою до Конохи"
+location_id: null
+placement: {anchor_id: "ta-y0-0902", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0902-group-stops-hot-springs"
+    legacy_ids: ["V10-000084"]
+    title: "Група зупиняється біля гарячих джерел"
+    text: "Дорогою до Конохи група робить зупинку біля гарячих джерел."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000084", "evd-anime-97"]
+  - id: "ev-y0-0902-creditors-kidnap-naruto"
+    legacy_ids: ["V10-000084"]
+    title: "Кредитори викрадають Наруто через борги Цунаде"
+    text: "Кредитори, пов’язані з боргами Цунаде, викрадають Наруто."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000084", "evd-anime-97"]
+  - id: "ev-y0-0902-kidnap-plan-fails"
+    legacy_ids: ["V10-000084"]
+    title: "План кредиторів провалюється"
+    text: "Спроба використати Наруто через борги Цунаде завершується невдачею."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000084", "evd-anime-97"]
+relations:
+  - {id: "rel-0902-hot-1", kind: "before", a: "ev-y0-0902-group-stops-hot-springs", b: "ev-y0-0902-creditors-kidnap-naruto", basis: "source", review: "pending", evidence_ids: ["evd-anime-97"]}
+  - {id: "rel-0902-hot-2", kind: "before", a: "ev-y0-0902-creditors-kidnap-naruto", b: "ev-y0-0902-kidnap-plan-fails", basis: "source", review: "pending", evidence_ids: ["evd-anime-97"]}
+presence: []
