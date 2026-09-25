@@ -839,6 +839,21 @@ entities:
     aliases:
       - "заїжджий двір"
       - "готель"
+  - id: "c-koharu"
+    kind: "person"
+    name: "Koharu Utatane"
+    aliases:
+      - "Кохару"
+  - id: "c-homura"
+    kind: "person"
+    name: "Homura Mitokado"
+    aliases:
+      - "Хомура"
+  - id: "group-konoha-council"
+    kind: "organization"
+    name: "Konoha Council"
+    aliases:
+      - "Рада Конохи"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
