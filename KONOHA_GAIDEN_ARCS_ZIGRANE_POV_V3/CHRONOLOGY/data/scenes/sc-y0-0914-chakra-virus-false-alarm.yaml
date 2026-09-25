@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-0914-chakra-virus-false-alarm"
+continuity_id: "main"
+title: "Підозра на «вірус чакри» виявляється хибною"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0914", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0914-naruto-returns-suspected-virus"
+    legacy_ids: ["V10-000107"]
+    title: "Наруто повертається з підозрою на заразний стан"
+    text: "У перші тижні правління Цунаде Наруто повертається з місії з підозрою на заразний «вірус чакри»."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000107", "evd-shippuden-183"]
+  - id: "ev-y0-0914-naruto-escapes-to-sasuke-ward"
+    legacy_ids: ["V10-000107"]
+    title: "Наруто тікає до палати Саске"
+    text: "Під час спроби ізолювати його Наруто тікає й опиняється біля палати Саске."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000107", "evd-shippuden-183"]
+  - id: "ev-y0-0914-friends-catch-naruto"
+    legacy_ids: ["V10-000107"]
+    title: "Шізуне та друзі ловлять Наруто"
+    text: "Шізуне та друзі наздоганяють Наруто й повертають його під контроль."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-shizune", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000107", "evd-shippuden-183"]
+  - id: "ev-y0-0914-virus-scare-explained"
+    legacy_ids: ["V10-000107"]
+    title: "Тривога виявляється хибною"
+    text: "З’ясовується, що тривога була пов’язана з реакцією на перець і алергією Сакури, а не зі справжнім заразним «вірусом чакри»."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000107", "evd-shippuden-183"]
+relations:
+  - {id: "rel-0914-virus-1", kind: "before", a: "ev-y0-0914-naruto-returns-suspected-virus", b: "ev-y0-0914-naruto-escapes-to-sasuke-ward", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-183"]}
+  - {id: "rel-0914-virus-2", kind: "before", a: "ev-y0-0914-naruto-escapes-to-sasuke-ward", b: "ev-y0-0914-friends-catch-naruto", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-183"]}
+  - {id: "rel-0914-virus-3", kind: "before", a: "ev-y0-0914-friends-catch-naruto", b: "ev-y0-0914-virus-scare-explained", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-183"]}
+presence: []
