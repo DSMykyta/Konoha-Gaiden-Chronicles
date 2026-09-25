@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-alt-y0-0905-waterfall-novel-siege"
+continuity_id: "alt-waterfall-novel"
+title: "Новельна версія облоги Такіґакуре"
+location_id: "loc-takigakure"
+placement: {anchor_id: "ta-y0-0905", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0905-waterfall-novel-siege"
+    legacy_ids: ["V10-000093"]
+    title: "Облога розгортається за окремою новельною послідовністю"
+    text: "Новела подає паралельну версію облоги Такіґакуре з іншим набором і порядком сцен; її події не змішуються з OVA-версією."
+    origin: "N"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000093", "evd-novel-waterfall"]
+relations: []
+presence: []
