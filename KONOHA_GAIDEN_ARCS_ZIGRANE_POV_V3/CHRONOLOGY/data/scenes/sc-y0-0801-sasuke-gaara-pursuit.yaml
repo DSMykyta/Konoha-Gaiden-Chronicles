@@ -1,0 +1,42 @@
+schema_version: 1
+id: "sc-y0-0801-sasuke-gaara-pursuit"
+continuity_id: "main"
+title: "Погоня за Ґаарою"
+location_id: "loc-konoha-outskirts"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-sasuke-pursues-gaara"
+    legacy_ids: ["V10-000065-D"]
+    title: "Саске залишає арену й переслідує Ґаару"
+    text: "Після зриву фінального поєдинку Саске вирушає навздогін Ґаарі, Темарі та Канкуро."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000065-D", "evd-manga-finals-konoha-crush"]
+  - id: "ev-y0-0801-kakashi-dispatches-pursuit-team"
+    legacy_ids: ["V10-000069"]
+    title: "Какаші відправляє Наруто, Сакуру, Шикамару й Паккуна"
+    text: "Какаші розвіює сон Сакури й відправляє її разом із Наруто, Шикамару та Паккуном наздогнати Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-pakkun", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000069", "evd-manga-finals-konoha-crush"]
+relations:
+  - {id: "rel-0801-pursuit-1", kind: "before", a: "ev-y0-0801-sasuke-pursues-gaara", b: "ev-y0-0801-kakashi-dispatches-pursuit-team", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+presence: []
