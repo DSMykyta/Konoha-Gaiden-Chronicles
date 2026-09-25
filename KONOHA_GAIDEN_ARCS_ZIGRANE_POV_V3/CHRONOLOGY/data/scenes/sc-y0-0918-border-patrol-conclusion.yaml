@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0918-border-patrol-conclusion"
+continuity_id: "main"
+title: "Загін відбиває напад на кордоні"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-0918", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0918-border-patrol-repels-attack"
+    legacy_ids: ["V10-000111"]
+    title: "Патрульний загін відбиває напад"
+    text: "Під час завершення патрулювання загін Наруто й Косуке відбиває напад."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kosuke", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000111", "evd-shippuden-190"]
+  - id: "ev-y0-0918-kosuke-recognizes-naruto-resolve"
+    legacy_ids: ["V10-000111"]
+    title: "Косуке визнає рішучість Наруто"
+    text: "Після бою Косуке бачить у Наруто риси Мінато й визнає його рішучість."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kosuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-minato", role: "remembered", mode: "remote"}
+    evidence_ids: ["evd-v10-000111", "evd-shippuden-190"]
+relations:
+  - {id: "rel-0918-kosuke-1", kind: "before", a: "ev-y0-0918-border-patrol-repels-attack", b: "ev-y0-0918-kosuke-recognizes-naruto-resolve", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-190"]}
+presence:
+  - {id: "pr-0918-kosuke-naruto", entity_id: "c-naruto", from: "sc-y0-0918-border-patrol-conclusion.start", to: "sc-y0-0918-border-patrol-conclusion.end", basis: "source", evidence_ids: ["evd-shippuden-190"], review: "accepted"}
+  - {id: "pr-0918-kosuke-kosuke", entity_id: "c-kosuke", from: "sc-y0-0918-border-patrol-conclusion.start", to: "sc-y0-0918-border-patrol-conclusion.end", basis: "source", evidence_ids: ["evd-shippuden-190"], review: "accepted"}
