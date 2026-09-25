@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0706-kakashi-seals-sasuke"
+continuity_id: "main"
+title: "Какаші стримує Прокляту Печатку Саске"
+location_id: "loc-chunin-tower-side-room"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-kakashi-seals-curse-mark"
+    legacy_ids: ["V10-000046-B"]
+    title: "Какаші накладає стримувальну печать"
+    text: "Після бою Саске Какаші накладає на Прокляту Печатку стримувальну печать."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-B", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-orochimaru-confronts-kakashi"
+    legacy_ids: ["V10-000046-B"]
+    title: "Орочімару з’являється перед Какаші"
+    text: "Після запечатування мітки Орочімару з’являється й стикається з Какаші."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-B", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+relations:
+  - {id: "rel-0706-seal-1", kind: "before", a: "ev-y0-0706-kakashi-seals-curse-mark", b: "ev-y0-0706-orochimaru-confronts-kakashi", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-prelims"]}
+presence:
+  - {id: "pr-0706-seal-sasuke", entity_id: "c-sasuke", from: "sc-y0-0706-kakashi-seals-sasuke.start", to: "sc-y0-0706-kakashi-seals-sasuke.end", basis: "source", evidence_ids: ["evd-v10-000046-B"], review: "accepted"}
+  - {id: "pr-0706-seal-kakashi", entity_id: "c-kakashi", from: "sc-y0-0706-kakashi-seals-sasuke.start", to: "sc-y0-0706-kakashi-seals-sasuke.end", basis: "source", evidence_ids: ["evd-v10-000046-B"], review: "accepted"}
+  - {id: "pr-0706-seal-orochimaru", entity_id: "c-orochimaru", from: "ev-y0-0706-orochimaru-confronts-kakashi.start", to: "sc-y0-0706-kakashi-seals-sasuke.end", basis: "source", evidence_ids: ["evd-v10-000046-B"], review: "accepted"}
