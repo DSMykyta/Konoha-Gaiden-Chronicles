@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-y0-1027-anko-memory-lab"
+continuity_id: "main"
+title: "Анко пригадує лабораторію Орочімару й своє залишення"
+location_id: "loc-orochimaru-lab-sea"
+placement: {anchor_id: "ta-y0-1027", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1027-anko-remembers-orochimaru-sea-experiments"
+    legacy_ids: ["V10-000160", "V10-000161"]
+    title: "Анко відновлює спогади про експерименти Орочімару"
+    text: "Після пробудження Анко згадує, що Орочімару використовував острови Країни Моря як базу для дослідів над людьми."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "memory_subject", mode: "memory"}
+    evidence_ids: ["evd-v10-000160", "evd-v10-000161", "evd-anime-169-173"]
+  - id: "ev-y0-1027-anko-remembers-orochimaru-left-her"
+    legacy_ids: ["V10-000161"]
+    title: "Анко згадує, що Орочімару сам покинув її"
+    text: "Анко відновлює ключовий фрагмент пам'яті: після експерименту з Проклятою Печаткою Орочімару не взяв її із собою, а залишив; це не було її добровільним розривом із ним."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "memory_subject", mode: "memory"}
+    evidence_ids: ["evd-v10-000161", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1027-anko-memory-1", kind: "before", a: "ev-y0-1027-anko-remembers-orochimaru-sea-experiments", b: "ev-y0-1027-anko-remembers-orochimaru-left-her", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
