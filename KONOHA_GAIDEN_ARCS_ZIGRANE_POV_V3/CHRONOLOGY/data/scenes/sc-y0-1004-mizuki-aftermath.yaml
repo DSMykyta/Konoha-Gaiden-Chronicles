@@ -44,6 +44,17 @@ events:
       - {entity_id: "c-tsubaki", role: "focus", mode: "physical"}
       - {entity_id: "c-mizuki", role: "subject", mode: "remote"}
     evidence_ids: ["evd-v10-000133", "evd-anime-142-147"]
+  - id: "ev-y0-1004-iruka-reflects-reciprocal-rescue"
+    legacy_ids: ["V10-000133"]
+    title: "Ірука згадує, як Наруто тепер урятував його"
+    text: "Після завершення справи Ірука пригощає всіх раменом і думає про те, що цього разу Наруто врятував його так само, як колись він урятував Наруто."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "subject", mode: "physical"}
+    evidence_ids: ["evd-v10-000133", "evd-anime-142-147"]
 relations:
   - {id: "rel-1004-mizuki-aftermath-1", kind: "before", a: "ev-y0-1004-tsunade-explains-formula-damage", b: "ev-y0-1004-mizuki-knows-no-orochimaru-location", basis: "source", review: "pending", evidence_ids: ["evd-anime-142-147"]}
 presence: []
