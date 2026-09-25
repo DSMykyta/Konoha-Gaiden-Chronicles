@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-1004-mizuki-aftermath"
+continuity_id: "main"
+title: "Наслідки поразки Мідзукі"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1004", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1004-tsunade-explains-formula-damage"
+    legacy_ids: ["V10-000133"]
+    title: "Цунаде пояснює наслідки препарату"
+    text: "Після бою Цунаде встановлює, що формула Орочімару була згубною: тіло й чакрова система Мідзукі пошкоджені настільки, що він більше не зможе діяти як шинобі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "affected", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000133", "evd-anime-142-147"]
+  - id: "ev-y0-1004-mizuki-knows-no-orochimaru-location"
+    legacy_ids: ["V10-000133"]
+    title: "Допит Мідзукі не дає місцезнаходження Орочімару"
+    text: "Після затримання з'ясовується, що Мідзукі не знає, де перебуває Орочімару, тому втеча не дає Наруто нового сліду до Саске."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-mizuki", role: "source", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "subject", mode: "remote"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-anime-142-147"]
+  - id: "ev-y0-1004-tsubaki-decides-start-over"
+    legacy_ids: ["V10-000133"]
+    title: "Цубакі вирішує почати життя заново"
+    text: "Після поразки Мідзукі Цубакі більше не обіцяє чекати на його виправлення; вона говорить про намір почати заново після того, як відповість за власну частку відповідальності в цій історії."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-tsubaki", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000133", "evd-anime-142-147"]
+relations:
+  - {id: "rel-1004-mizuki-aftermath-1", kind: "before", a: "ev-y0-1004-tsunade-explains-formula-damage", b: "ev-y0-1004-mizuki-knows-no-orochimaru-location", basis: "source", review: "pending", evidence_ids: ["evd-anime-142-147"]}
+presence: []
