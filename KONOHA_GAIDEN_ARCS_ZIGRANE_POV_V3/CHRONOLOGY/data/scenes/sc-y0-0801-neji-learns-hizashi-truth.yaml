@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0801-neji-learns-hizashi-truth"
+continuity_id: "main"
+title: "Неджі дізнається правду про смерть Хізаші"
+location_id: "loc-hyuga-compound"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-hiashi-tells-neji-hizashi-truth"
+    legacy_ids: ["V10-000064-B"]
+    title: "Хіаші пояснює Неджі вибір Хізаші"
+    text: "Після поразки Неджі дізнається, що Хізаші добровільно вирішив пожертвувати собою, а не був примусово відданий головною гілкою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-hizashi", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000064-B", "evd-manga-finals-konoha-crush"]
+relations: []
+presence:
+  - {id: "pr-0801-neji-truth-hiashi", entity_id: "c-hiashi", from: "sc-y0-0801-neji-learns-hizashi-truth.start", to: "sc-y0-0801-neji-learns-hizashi-truth.end", basis: "source", evidence_ids: ["evd-v10-000064-B"], review: "accepted"}
+  - {id: "pr-0801-neji-truth-neji", entity_id: "c-neji", from: "sc-y0-0801-neji-learns-hizashi-truth.start", to: "sc-y0-0801-neji-learns-hizashi-truth.end", basis: "source", evidence_ids: ["evd-v10-000064-B"], review: "accepted"}
