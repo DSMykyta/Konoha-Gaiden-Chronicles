@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-y0-0927-sasame-and-fuma"
+continuity_id: "main"
+title: "Група зустрічає Сасаме й дізнається про клан Фума"
+location_id: "loc-land-of-rice-fields"
+placement: {anchor_id: "ta-y0-0927", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0927-group-meets-sasame"
+    legacy_ids: ["V10-000126"]
+    title: "Група зустрічає Сасаме"
+    text: "Джирая, Наруто й Сакура прибувають до міста беззаконня й зустрічають Сасаме з клану Фума, яка шукає свого двоюрідного брата Араші."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasame", role: "focus", mode: "physical"}
+      - {entity_id: "c-arashi", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000126", "evd-anime-136-140"]
+  - id: "ev-y0-0927-fuma-serves-orochimaru"
+    legacy_ids: ["V10-000126-B"]
+    title: "З’ясовується, що залишки клану Фума служать Орочімару"
+    text: "Група дізнається, що частина клану Фума служить Орочімару, сподіваючись відновити колишню силу клану."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasame", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000126-B", "evd-anime-136-140"]
+relations:
+  - {id: "rel-0927-sasame-1", kind: "before", a: "ev-y0-0927-group-meets-sasame", b: "ev-y0-0927-fuma-serves-orochimaru", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+presence: []
