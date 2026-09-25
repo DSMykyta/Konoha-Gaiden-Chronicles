@@ -1,0 +1,46 @@
+schema_version: 1
+id: "sc-y0-0907-idate-reconciles"
+continuity_id: "main"
+title: "Ідате примиряється з Ібікі"
+location_id: "loc-land-of-tea"
+placement: {anchor_id: "ta-y0-0907", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0907-jirocho-ends-feud"
+    legacy_ids: ["V10-000097"]
+    title: "Джірочо припиняє ворожнечу"
+    text: "Після завершення перегонів Джірочо припиняє ворожнечу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jirocho", role: "focus", mode: "physical"}
+      - {entity_id: "c-idate", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+  - id: "ev-y0-0907-idate-restores-faith-shinobi"
+    legacy_ids: ["V10-000097"]
+    title: "Ідате відновлює віру в шинобі"
+    text: "Пережиті події змінюють ставлення Ідате до шинобі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-idate", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+  - id: "ev-y0-0907-idate-reconciles-ibiki"
+    legacy_ids: ["V10-000097"]
+    title: "Ідате примиряється з Ібікі"
+    text: "Наприкінці місії Ідате примиряється з Ібікі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-idate", role: "focus", mode: "physical"}
+      - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+relations:
+  - {id: "rel-0907-reconcile-1", kind: "before", a: "ev-y0-0907-jirocho-ends-feud", b: "ev-y0-0907-idate-restores-faith-shinobi", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000097"]}
+  - {id: "rel-0907-reconcile-2", kind: "before", a: "ev-y0-0907-idate-restores-faith-shinobi", b: "ev-y0-0907-idate-reconciles-ibiki", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000097"]}
+presence: []
