@@ -1,68 +1,27 @@
-# Naruto Timeline v10 schema
+# Naruto Timeline v10 — structured model
 
-## Core model
-One row = one historical event. A date may have 1 row or 20+ rows. v9 remains unchanged.
+The authoritative v10 chronology is now the structured dataset under `CHRONOLOGY/data/`, governed by `Naruto_Timeline_Architecture_UA.md`.
 
-## Columns
-- Year — project year.
-- Date — DD.MM.
-- DayPart — dawn / morning / noon / afternoon / evening / night / late_night / unknown.
-- ExactTime — only when explicitly stated by a source.
-- Order — order inside one date. Base step = 100. Insertions may use any integer between existing values.
-- EventID — permanent event identifier. Once v10 migration is finalized, never renumber it because date/order/text changes.
-- Track — lineage of the migrated v9 column: World / NARUTO / T9LM. It is not the event origin.
-- Origin — exactly one origin code for the event itself.
-- Title — short site label.
-- Event — event description.
-- Characters — normalized semicolon-separated characters participating in / directly described by the event.
-- Teams — normalized semicolon-separated formal teams/squads.
-- Groups — organizations or non-team formations such as Akatsuki, ANBU, Sound Four, Sannin.
-- Scope — semicolon-separated display scopes: global / character / team / group / location / meta. One event may have several scopes.
-- Location — normalized location when safely inferable.
-- Arc — explicit arc/story block when recoverable.
-- Continuity — main / alt.
-- DateCertainty — exact / derived / approximate / inherited_v9.
-- Reference — primary source reference(s) carried by the event.
-- SupportingSources — adaptations, repetitions, or parallel tellings that do not create a second historical event.
-- Review — migration fields requiring manual audit.
+The old flat TSV is preserved as an import/export artifact, not as the editable source of truth:
+- frozen snapshot: `archive/Naruto_Timeline_Year_0_v10_import.tsv`
+- verbatim staging copy of every legacy row: `data/imported-v10.yaml`
+- one migration status per legacy ID: `data/migration-ledger.tsv`
+- legacy redirects/splits: `data/redirects.yaml`
 
-## Origin codes
-- M — manga-origin event.
-- A — genuinely new anime-original material accepted into the main historical line.
-- F — filler.
-- R — genuinely new historical material first revealed in a later retrospective/flashback.
-- G — game.
-- O — OVA / special.
-- V — movie/film.
-- N — genuinely new novel-origin event.
-- P — project roleplay event.
-- D — databook / official guide fact.
+Core rules:
+1. One historical event is stored once.
+2. Scenes have locations and contain events, presence intervals and local temporal constraints.
+3. Physical presence is separate from focus, mention, remote effect and portrayal.
+4. `display_rank` is only presentation order. It never proves chronology.
+5. Unknown relative order is represented by absence of a `before` relation; it is not encoded as simultaneity or an `unordered` fact.
+6. Date anchors can move related scenes without changing event IDs.
+7. Each event has one `Origin`: M / A / F / R / G / O / V / N / P / D.
+8. Adaptations and repeated tellings attach as evidence/supporting sources instead of duplicating the historical event.
+9. Legacy content is never silently deleted: each old ID is pending, migrated, merged, superseded or partial.
+10. Generated site indexes and TSV exports must be rebuilt from `data/`; they are not independently editable.
 
-## Provenance rules
-1. One event has one Origin.
-2. A manga event adapted in anime remains M.
-3. A manga event repeated in a Shippūden flashback remains M.
-4. A later flashback that reveals a genuinely new historical scene is a separate R event.
-5. A novelization that merely retells a manga event is stored in SupportingSources, not as a second N event.
-6. Anime/novel adaptation notes that merely retell an existing event are stored in SupportingSources.
-7. Different events on the same date (for example M and P) remain separate rows.
-8. ALT belongs in Continuity, not in Origin.
+Current benchmark migrations:
+- 22.01 — classroom formation/waiting, Team 7 and Team 9 branches, background presence.
+- 24.09 — parallel Sasuke Recovery branches and Valley of the End without invented cross-branch order.
 
-## Time rules
-1. Never invent a part of day.
-2. Unknown stays unknown.
-3. ExactTime is populated only from explicit clock time.
-4. Order uses 100, 200, 300... by default.
-5. Order can be edited without changing EventID.
-6. When one migrated event is split, the first node keeps the original EventID and additional nodes receive stable suffixes such as `-B`, `-C`, etc.
-7. DateCertainty records whether the v10 date is exact, derived, approximate, or simply inherited from v9.
-
-## Site rules enabled by this schema
-- Character/team/group lanes are generated from metadata; events are not duplicated into physical character columns.
-- One event can belong to many characters and teams.
-- Source colors/animated gradients key from Origin.
-- SupportingSources can be shown in hover/detail cards without producing duplicate timeline nodes.
-- Zoom can cluster multiple rows from one day while preserving their individual EventIDs.
-
-## Current migration status
-This is an automated structural migration from v9 followed by provenance cleanup. Review markers intentionally remain where day-part, entities, or other metadata still need manual verification.
+Run `python CHRONOLOGY/validate_timeline.py` before treating a structured-data revision as valid.
