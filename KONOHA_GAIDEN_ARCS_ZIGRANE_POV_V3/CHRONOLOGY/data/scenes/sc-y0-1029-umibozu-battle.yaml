@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-1029-umibozu-battle"
+continuity_id: "main"
+title: "Ґамабунта знищує Умібодзу"
+location_id: "loc-land-sea-government-ship"
+placement: {anchor_id: "ta-y0-1029", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1029-umibozu-appears-after-amachi"
+    legacy_ids: ["V10-000163"]
+    title: "Після поразки Амачі з'являється Умібодзу"
+    text: "Навіть після захоплення Амачі бій не завершується: на флот нападає його майже невразлива водна призвана істота Умібодзу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-umibozu", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-amachi", role: "summoner", mode: "physical"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+  - id: "ev-y0-1029-naruto-summons-gamabunta"
+    legacy_ids: ["V10-000163"]
+    title: "Наруто викликає Ґамабунту"
+    text: "Не маючи способу знищити водну істоту звичайними атаками, Наруто викликає Ґамабунту."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "summoner", mode: "physical"}
+      - {entity_id: "c-gamabunta", role: "participant", mode: "physical"}
+      - {entity_id: "c-umibozu", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+  - id: "ev-y0-1029-gamabunta-destroys-umibozu"
+    legacy_ids: ["V10-000163"]
+    title: "Ґамабунта випаровує ядро Умібодзу"
+    text: "Ґамабунта використовує вогневу атаку разом із Наруто, щоб випарувати ядро водної істоти й остаточно припинити напад."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-gamabunta", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-umibozu", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1029-umibozu-1", kind: "before", a: "ev-y0-1029-umibozu-appears-after-amachi", b: "ev-y0-1029-naruto-summons-gamabunta", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+  - {id: "rel-1029-umibozu-2", kind: "before", a: "ev-y0-1029-naruto-summons-gamabunta", b: "ev-y0-1029-gamabunta-destroys-umibozu", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
