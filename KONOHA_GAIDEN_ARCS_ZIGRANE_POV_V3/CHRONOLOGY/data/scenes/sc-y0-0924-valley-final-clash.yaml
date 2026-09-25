@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0924-valley-final-clash"
+continuity_id: "main"
+title: "Расенґан і Чідорі стикаються"
+location_id: "loc-valley-of-end"
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-naruto-sasuke-final-techniques"
+    legacy_ids: ["V10-000122-N"]
+    title: "Наруто й Саске готують фінальні техніки"
+    text: "Наруто формує Расенґан, а Саске — Чідорі для вирішального обміну."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-N"]
+  - id: "ev-y0-0924-rasengan-chidori-collide"
+    legacy_ids: ["V10-000122-N"]
+    title: "Чідорі й Расенґан стикаються"
+    text: "Фінальні атаки Наруто й Саске стикаються безпосередньо."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-N"]
+relations:
+  - {id: "rel-0924-valley-clash-1", kind: "before", a: "ev-y0-0924-naruto-sasuke-final-techniques", b: "ev-y0-0924-rasengan-chidori-collide", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000122-N"]}
+presence:
+  - {id: "pr-0924-valley-clash-naruto", entity_id: "c-naruto", from: "sc-y0-0924-valley-final-clash.start", to: "sc-y0-0924-valley-final-clash.end", basis: "source", evidence_ids: ["evd-v10-000122-N"], review: "accepted"}
+  - {id: "pr-0924-valley-clash-sasuke", entity_id: "c-sasuke", from: "sc-y0-0924-valley-final-clash.start", to: "sc-y0-0924-valley-final-clash.end", basis: "source", evidence_ids: ["evd-v10-000122-N"], review: "accepted"}
