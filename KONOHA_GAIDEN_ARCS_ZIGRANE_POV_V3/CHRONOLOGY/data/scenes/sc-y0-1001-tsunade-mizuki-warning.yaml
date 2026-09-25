@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-1001-tsunade-mizuki-warning"
+continuity_id: "main"
+title: "Цунаде реагує на зв'язок Мідзукі з Орочімару"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1001", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1001-tsunade-learns-mizuki-orochimaru-link"
+    legacy_ids: ["V10-000130"]
+    title: "Цунаде отримує відомості про зв'язок Мідзукі з Орочімару"
+    text: "Цунаде дізнається, що ув'язнений Мідзукі може бути пов'язаний з Орочімару, і наказує перевірити цю інформацію."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "subject", mode: "remote"}
+      - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000130", "evd-anime-142-147"]
+  - id: "ev-y0-1001-tsunade-sends-asuma-kurenai"
+    legacy_ids: ["V10-000130"]
+    title: "Асума й Куренай отримують наказ допитати Мідзукі"
+    text: "Цунаде направляє Асуму й Куренай до в'язниці суворого режиму, щоб допитати Мідзукі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "physical"}
+      - {entity_id: "c-asuma", role: "recipient", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "recipient", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "target", mode: "remote"}
+    evidence_ids: ["evd-anime-142-147"]
+relations:
+  - {id: "rel-1001-tsunade-mizuki-1", kind: "before", a: "ev-y0-1001-tsunade-learns-mizuki-orochimaru-link", b: "ev-y0-1001-tsunade-sends-asuma-kurenai", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+presence: []
