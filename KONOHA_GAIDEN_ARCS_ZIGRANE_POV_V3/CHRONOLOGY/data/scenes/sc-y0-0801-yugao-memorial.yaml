@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-0801-yugao-memorial"
+continuity_id: "main"
+title: "Юґао присягається помститися за Хаяте"
+location_id: "loc-konoha-memorial-stone"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-yugao-visits-hayate-memorial"
+    legacy_ids: ["V10-000071"]
+    title: "Юґао приходить до Меморіального каменя"
+    text: "Під час вторгнення Юґао приходить до Меморіального каменя, де вже викарбуване ім’я Хаяте."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-yugao", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "remembered", mode: "remote"}
+    evidence_ids: ["evd-v10-000071", "evd-shippuden-307-308"]
+  - id: "ev-y0-0801-yugao-vows-revenge"
+    legacy_ids: ["V10-000071"]
+    title: "Юґао присягається помститися"
+    text: "Юґао присягається помститися за смерть Хаяте."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-yugao", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "remembered", mode: "remote"}
+    evidence_ids: ["evd-v10-000071", "evd-shippuden-307-308"]
+  - id: "ev-y0-0801-yugao-departs-with-anbu"
+    legacy_ids: ["V10-000071"]
+    title: "Юґао вирушає із загоном АНБУ"
+    text: "Після цього Юґао разом зі своїм загоном АНБУ повертається до дій під час нападу."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-yugao", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000071", "evd-shippuden-307-308"]
+relations:
+  - {id: "rel-0801-yugao-1", kind: "before", a: "ev-y0-0801-yugao-visits-hayate-memorial", b: "ev-y0-0801-yugao-vows-revenge", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-307-308"]}
+  - {id: "rel-0801-yugao-2", kind: "before", a: "ev-y0-0801-yugao-vows-revenge", b: "ev-y0-0801-yugao-departs-with-anbu", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-307-308"]}
+presence:
+  - {id: "pr-0801-yugao-yugao", entity_id: "c-yugao", from: "sc-y0-0801-yugao-memorial.start", to: "sc-y0-0801-yugao-memorial.end", basis: "source", evidence_ids: ["evd-v10-000071"], review: "accepted"}
