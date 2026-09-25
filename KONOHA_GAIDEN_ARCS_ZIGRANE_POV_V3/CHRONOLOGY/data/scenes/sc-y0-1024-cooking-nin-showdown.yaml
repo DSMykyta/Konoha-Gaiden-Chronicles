@@ -1,0 +1,59 @@
+schema_version: 1
+id: "sc-y0-1024-cooking-nin-showdown"
+continuity_id: "main"
+title: "Теучі й команда перемагають ніндзя-кухарів у кулінарному поєдинку"
+location_id: "loc-cooking-nin-kitchen"
+placement: {anchor_id: "ta-y0-1024", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1024-team-brings-new-ramen-to-cooking-nin"
+    legacy_ids: ["V10-000159"]
+    title: "Команда приносить нову локшину викрадачам"
+    text: "Теучі, Наруто, Сакура й Чоджі приходять до ніндзя-кухарів із новою стравою, щоб виконати їхню умову й повернути Аяме."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-teuchi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-ayame", role: "hostage", mode: "physical"}
+      - {entity_id: "c-hakkaku", role: "opponent", mode: "physical"}
+      - {entity_id: "group-cooking-nin", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000159", "evd-anime-168"]
+  - id: "ev-y0-1024-cooking-nin-admit-defeat"
+    legacy_ids: ["V10-000159"]
+    title: "Ніндзя-кухарі визнають перевагу Ічіраку"
+    text: "Нова локшина переконує Хаккаку та його людей, що їхній підхід не перевершив Ічіраку; вони припиняють протистояння."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hakkaku", role: "affected", mode: "physical"}
+      - {entity_id: "group-cooking-nin", role: "affected", mode: "physical"}
+      - {entity_id: "c-teuchi", role: "winner", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000159", "evd-anime-168"]
+  - id: "ev-y0-1024-ayame-freed"
+    legacy_ids: ["V10-000159"]
+    title: "Аяме звільняють"
+    text: "Після поразки ніндзя-кухарі відпускають Аяме, і інцидент завершується без подальшого силового конфлікту."
+    origin: "F"
+    extent: "instant"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-ayame", role: "focus", mode: "physical"}
+      - {entity_id: "c-teuchi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000159", "evd-anime-168"]
+relations:
+  - {id: "rel-1024-cooking-showdown-1", kind: "before", a: "ev-y0-1024-team-brings-new-ramen-to-cooking-nin", b: "ev-y0-1024-cooking-nin-admit-defeat", basis: "source", review: "accepted", evidence_ids: ["evd-anime-168"]}
+  - {id: "rel-1024-cooking-showdown-2", kind: "before", a: "ev-y0-1024-cooking-nin-admit-defeat", b: "ev-y0-1024-ayame-freed", basis: "source", review: "accepted", evidence_ids: ["evd-anime-168"]}
+presence: []
