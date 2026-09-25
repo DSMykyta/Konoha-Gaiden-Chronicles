@@ -1,0 +1,24 @@
+schema_version: 1
+id: "sc-y0-0924-orochimaru-transfer"
+continuity_id: "main"
+title: "Орочімару проводить перенесення тіла"
+location_id: null
+placement: {anchor_id: "ta-sasuke-recovery-24", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-orochimaru-transfers-body"
+    legacy_ids: ["V10-000122-D"]
+    title: "Орочімару змінює тіло без Саске"
+    text: "Орочімару більше не може чекати на Саске й проводить Перенесення Живого Тіла, використавши Ґеньюмару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+relations: []
+presence:
+  - {id: "pr-0924-oro-orochimaru", entity_id: "c-orochimaru", from: "sc-y0-0924-orochimaru-transfer.start", to: "sc-y0-0924-orochimaru-transfer.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
