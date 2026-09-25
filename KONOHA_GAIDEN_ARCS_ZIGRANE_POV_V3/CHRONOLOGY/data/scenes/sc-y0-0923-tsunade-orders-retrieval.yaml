@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0923-tsunade-orders-retrieval"
+continuity_id: "main"
+title: "Цунаде наказує Шикамару повернути Саске"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-tsunade-orders-shikamaru-retrieval"
+    legacy_ids: ["V10-000121-B"]
+    title: "Шикамару отримує наказ сформувати загін"
+    text: "Цунаде наказує Шикамару зібрати групу для повернення Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+    focus_teams: ["group-sasuke-retrieval"]
+    evidence_ids: ["evd-v10-000121-B"]
+relations: []
+presence:
+  - {id: "pr-0923-order-tsunade", entity_id: "c-tsunade", from: "sc-y0-0923-tsunade-orders-retrieval.start", to: "sc-y0-0923-tsunade-orders-retrieval.end", basis: "source", evidence_ids: ["evd-v10-000121-B"], review: "accepted"}
+  - {id: "pr-0923-order-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0923-tsunade-orders-retrieval.start", to: "sc-y0-0923-tsunade-orders-retrieval.end", basis: "source", evidence_ids: ["evd-v10-000121-B"], review: "accepted"}
