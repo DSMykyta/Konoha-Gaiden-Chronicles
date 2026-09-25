@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-y0-0701-konohamaru-report"
+continuity_id: "main"
+title: "Конохамару, Моегі й Удон готують репортаж про іспит"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0701", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0701-konohamaru-team-prepares-report"
+    legacy_ids: ["V10-000041"]
+    title: "Трійця Конохамару готує спеціальний репортаж"
+    text: "Конохамару, Моегі й Удон готують репортаж про перебіг іспиту; решта спеціальної серії переважно переказує вже відомі події."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-moegi", role: "participant", mode: "physical"}
+      - {entity_id: "c-udon", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000041", "evd-anime-26-report"]
+relations: []
+presence:
+  - {id: "pr-0701-report-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0701-konohamaru-report.start", to: "sc-y0-0701-konohamaru-report.end", basis: "source", evidence_ids: ["evd-v10-000041"], review: "accepted"}
+  - {id: "pr-0701-report-moegi", entity_id: "c-moegi", from: "sc-y0-0701-konohamaru-report.start", to: "sc-y0-0701-konohamaru-report.end", basis: "source", evidence_ids: ["evd-v10-000041"], review: "accepted"}
+  - {id: "pr-0701-report-udon", entity_id: "c-udon", from: "sc-y0-0701-konohamaru-report.start", to: "sc-y0-0701-konohamaru-report.end", basis: "source", evidence_ids: ["evd-v10-000041"], review: "accepted"}
