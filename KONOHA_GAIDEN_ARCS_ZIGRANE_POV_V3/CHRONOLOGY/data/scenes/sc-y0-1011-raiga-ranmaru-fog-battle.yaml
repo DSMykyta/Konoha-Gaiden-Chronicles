@@ -1,0 +1,68 @@
+schema_version: 1
+id: "sc-y0-1011-raiga-ranmaru-fog-battle"
+continuity_id: "main"
+title: "Ранмару нівелює перевагу Б'якуґана в бою з Райґою"
+location_id: "loc-katabami-cliff"
+placement: {anchor_id: "ta-y0-1011-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1011-raiga-fights-team-in-mist"
+    legacy_ids: ["V10-000141"]
+    title: "Райґа затягує загін у бій у густому тумані"
+    text: "Райґа вступає в бій із загоном і використовує туман разом із блискавичними атаками, щоб позбавити переслідувачів переваги."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-raiga", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-lee", role: "opponent", mode: "physical"}
+      - {entity_id: "c-neji", role: "opponent", mode: "physical"}
+      - {entity_id: "c-tenten", role: "opponent", mode: "physical"}
+      - {entity_id: "c-ranmaru", role: "support", mode: "physical"}
+    evidence_ids: ["evd-v10-000141", "evd-anime-152-157"]
+  - id: "ev-y0-1011-ranmaru-confounds-neji-byakugan"
+    legacy_ids: ["V10-000141"]
+    title: "Ранмару обманює Б'якуґан Неджи"
+    text: "Схований у футлярі на спині Райґи Ранмару використовує власне бачення чакри, створює хибні цілі й спрямовує Райґу, через що Неджи не може надійно читати поле бою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-ranmaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+      - {entity_id: "c-raiga", role: "beneficiary", mode: "physical"}
+    evidence_ids: ["evd-v10-000141", "evd-anime-152-157"]
+  - id: "ev-y0-1011-naruto-defeats-raiga-first-time"
+    legacy_ids: ["V10-000141", "V10-000142"]
+    title: "Наруто скидає ослабленого Райґу зі скелі"
+    text: "Коли футляр із Ранмару відділяється від Райґи й той слабшає, Наруто перемагає його та скидає зі скелі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-raiga", role: "affected", mode: "physical"}
+      - {entity_id: "c-ranmaru", role: "separated", mode: "physical"}
+    evidence_ids: ["evd-v10-000141", "evd-v10-000142", "evd-anime-152-157"]
+  - id: "ev-y0-1011-team-finds-ranmaru"
+    legacy_ids: ["V10-000141", "V10-000142"]
+    title: "Загін відкриває футляр і знаходить Ранмару"
+    text: "Після першої поразки Райґи команда відкриває футляр і знаходить усередині Ранмару, який пояснює, що був «очима» Райґи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-ranmaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000142", "evd-anime-152-157"]
+relations:
+  - {id: "rel-1011-raiga-1", kind: "before", a: "ev-y0-1011-raiga-fights-team-in-mist", b: "ev-y0-1011-ranmaru-confounds-neji-byakugan", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+  - {id: "rel-1011-raiga-2", kind: "before", a: "ev-y0-1011-ranmaru-confounds-neji-byakugan", b: "ev-y0-1011-naruto-defeats-raiga-first-time", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+  - {id: "rel-1011-raiga-3", kind: "before", a: "ev-y0-1011-naruto-defeats-raiga-first-time", b: "ev-y0-1011-team-finds-ranmaru", basis: "source", review: "accepted", evidence_ids: ["evd-anime-152-157"]}
+presence: []
