@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-0924-valley-sasuke-choice"
+continuity_id: "main"
+title: "Саске відкидає повернення"
+location_id: "loc-valley-of-end"
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-sasuke-rejects-return"
+    legacy_ids: ["V10-000122-L"]
+    title: "Саске відмовляється повертатися"
+    text: "Саске відкидає прохання Наруто й наполягає на своєму виборі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-L"]
+  - id: "ev-y0-0924-sasuke-explains-mangekyo-condition"
+    legacy_ids: ["V10-000122-L"]
+    title: "Саске говорить про умову пробудження Манґекьо"
+    text: "Саске пояснює, що вбивство найближчого друга може пробудити Манґекьо Шарінґан."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "target", mode: "physical"}
+      - {entity_id: "c-itachi", role: "source_of_condition", mode: "remote"}
+    evidence_ids: ["evd-v10-000122-L"]
+  - id: "ev-y0-0924-naruto-refuses-break-bond"
+    legacy_ids: ["V10-000122-L"]
+    title: "Наруто відмовляється дозволити Саске розірвати їхній зв’язок"
+    text: "Наруто відкидає логіку Саске й заявляє, що не дозволить йому просто розірвати їхній зв’язок."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-L"]
+relations:
+  - {id: "rel-0924-valley-choice-1", kind: "before", a: "ev-y0-0924-sasuke-rejects-return", b: "ev-y0-0924-sasuke-explains-mangekyo-condition", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-L"]}
+  - {id: "rel-0924-valley-choice-2", kind: "before", a: "ev-y0-0924-sasuke-explains-mangekyo-condition", b: "ev-y0-0924-naruto-refuses-break-bond", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-L"]}
+presence:
+  - {id: "pr-0924-valley-choice-naruto", entity_id: "c-naruto", from: "sc-y0-0924-valley-sasuke-choice.start", to: "sc-y0-0924-valley-sasuke-choice.end", basis: "source", evidence_ids: ["evd-v10-000122-L"], review: "accepted"}
+  - {id: "pr-0924-valley-choice-sasuke", entity_id: "c-sasuke", from: "sc-y0-0924-valley-sasuke-choice.start", to: "sc-y0-0924-valley-sasuke-choice.end", basis: "source", evidence_ids: ["evd-v10-000122-L"], review: "accepted"}
