@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0924-kimimaro-dies"
+continuity_id: "main"
+title: "Кімімаро помирає від хвороби"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-kimimaro-survives-gaara-attacks"
+    legacy_ids: ["V10-000122-J"]
+    title: "Кімімаро витримує найсильніші атаки Ґаари"
+    text: "Кімімаро переживає найсильніші атаки Ґаари й продовжує бій."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kimimaro", role: "focus", mode: "physical"}
+      - {entity_id: "c-gaara", role: "opponent", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-J"]
+  - id: "ev-y0-0924-kimimaro-dies-before-strike"
+    legacy_ids: ["V10-000122-J"]
+    title: "Хвороба зупиняє Кімімаро перед останнім ударом"
+    text: "Кімімаро помирає від хвороби за мить до того, як міг завдати смертельного удару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kimimaro", role: "affected", mode: "physical"}
+      - {entity_id: "c-gaara", role: "target", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-J"]
+relations:
+  - {id: "rel-0924-kimimaro-death-1", kind: "before", a: "ev-y0-0924-kimimaro-survives-gaara-attacks", b: "ev-y0-0924-kimimaro-dies-before-strike", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-J"]}
+presence: []
