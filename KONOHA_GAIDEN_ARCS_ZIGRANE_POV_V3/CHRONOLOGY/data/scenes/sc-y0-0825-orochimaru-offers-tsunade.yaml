@@ -1,0 +1,55 @@
+schema_version: 1
+id: "sc-y0-0825-orochimaru-offers-tsunade"
+continuity_id: "main"
+title: "Орочімару пропонує Цунаде угоду"
+location_id: "loc-tanzaku"
+placement: {anchor_id: "ta-y0-0825", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0825-orochimaru-kabuto-find-tsunade"
+    legacy_ids: ["V10-000079"]
+    title: "Орочімару й Кабуто знаходять Цунаде"
+    text: "Орочімару й Кабуто знаходять Цунаде в Танзаку."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000079", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0825-orochimaru-offers-resurrection"
+    legacy_ids: ["V10-000079"]
+    title: "Орочімару пропонує воскресити Нава́кі та Дана"
+    text: "Орочімару обіцяє воскресити Нава́кі та Дана, якщо Цунаде вилікує його запечатані руки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "participant", mode: "physical"}
+      - {entity_id: "c-nawaki", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-dan", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000079", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0825-orochimaru-gives-week"
+    legacy_ids: ["V10-000079"]
+    title: "Цунаде отримує тиждень на рішення"
+    text: "Орочімару дає Цунаде один тиждень, щоб вирішити, чи погоджується вона на угоду."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "affected", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000079", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0825-orochimaru-1", kind: "before", a: "ev-y0-0825-orochimaru-kabuto-find-tsunade", b: "ev-y0-0825-orochimaru-offers-resurrection", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000079"]}
+  - {id: "rel-0825-orochimaru-2", kind: "before", a: "ev-y0-0825-orochimaru-offers-resurrection", b: "ev-y0-0825-orochimaru-gives-week", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000079"]}
+presence:
+  - {id: "pr-0825-offer-orochimaru", entity_id: "c-orochimaru", from: "sc-y0-0825-orochimaru-offers-tsunade.start", to: "sc-y0-0825-orochimaru-offers-tsunade.end", basis: "imported", evidence_ids: ["evd-v10-000079"], review: "accepted"}
+  - {id: "pr-0825-offer-kabuto", entity_id: "c-kabuto", from: "sc-y0-0825-orochimaru-offers-tsunade.start", to: "sc-y0-0825-orochimaru-offers-tsunade.end", basis: "imported", evidence_ids: ["evd-v10-000079"], review: "accepted"}
+  - {id: "pr-0825-offer-tsunade", entity_id: "c-tsunade", from: "sc-y0-0825-orochimaru-offers-tsunade.start", to: "sc-y0-0825-orochimaru-offers-tsunade.end", basis: "imported", evidence_ids: ["evd-v10-000079"], review: "accepted"}
