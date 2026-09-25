@@ -107,26 +107,26 @@ V10-000060	0	31.07	M	superseded	ev-y0-0731-naruto-wakes-after-gamabunta;ev-y0-07
 V10-000061	0	31.07	R	superseded	ev-y0-0731-honegami-team-enters-traps;ev-y0-0731-disguised-guy-tests-group;ev-y0-0731-rain-ninja-attack-honegami;ev-y0-0731-sasuke-secretly-helps-honegami;ev-y0-0731-honegami-scroll-lesson	Honegami retrospective decomposed; Asuma removed from physical cast.
 V10-000062	0	31.07	R	superseded	ev-y0-0731-sasuke-practices-chidori-boulder;ev-y0-0731-sasuke-remembers-gaara	Chidori practice and remembered Gaara fight separated; Gaara is not physically present.
 V10-000059	0	31.07	M	superseded	ev-y0-0731-gaara-attempts-kill-lee;ev-y0-0731-naruto-shikamaru-block-gaara;ev-y0-0731-gaara-tells-childhood;ev-y0-0731-guy-stops-hospital-conflict	Hospital confrontation split; Shikamaru restored to physical cast.
-V10-000063	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000064	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000064-B	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000064-C	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000064-D	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000064-E	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000065	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000065-B	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000065-C	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000065-D	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000065-E	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000065-F	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000066	0	01.08	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000067	0	01.08	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000068	0	01.08	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000069	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000063	0	01.08	M	superseded	ev-y0-0801-naruto-admits-fear-of-neji;ev-y0-0801-hinata-calls-naruto-proud-failure	Pre-final Naruto/Hinata conversation split; Hinata restored to physical cast, Neji marked as mentioned.
+V10-000064	0	01.08	M	migrated	ev-y0-0801-naruto-defeats-neji	Naruto vs Neji final migrated.
+V10-000064-B	0	01.08	M	migrated	ev-y0-0801-hiashi-tells-neji-hizashi-truth	Neji learns the truth from Hiashi; Hizashi is historical/mentioned, not physically present.
+V10-000064-C	0	01.08	M	superseded	ev-y0-0801-shikamaru-traps-temari;ev-y0-0801-shikamaru-surrenders	Shikamaru/Temari final split into tactical win and voluntary surrender.
+V10-000064-D	0	01.08	M	migrated	ev-y0-0801-kakashi-sasuke-arrive-late	Sasuke and Kakashi late arrival migrated.
+V10-000064-E	0	01.08	M	superseded	ev-y0-0801-sasuke-fights-gaara;ev-y0-0801-sasuke-pierces-gaara-chidori	Sasuke/Gaara final split into fight and Chidori penetration.
+V10-000065	0	01.08	M	superseded	ev-y0-0801-kabuto-casts-arena-genjutsu;ev-y0-0801-sand-sound-invasion-starts	Arena genjutsu and coordinated invasion start separated.
+V10-000065-B	0	01.08	M	superseded	ev-y0-0801-sound-four-barrier;ev-y0-0801-orochimaru-edo-hokage	Rooftop isolation and Edo Tensei summons separated.
+V10-000065-C	0	01.08	M	superseded	ev-y0-0801-hiruzen-seals-first-second;ev-y0-0801-hiruzen-seals-orochimaru-arms;ev-y0-0801-hiruzen-dies	Hiruzen's final technique decomposed into sealing the Hokage, sealing Orochimaru's arms, and death.
+V10-000065-D	0	01.08	M	migrated	ev-y0-0801-sasuke-pursues-gaara	Sasuke pursuit migrated.
+V10-000065-E	0	01.08	M	superseded	ev-y0-0801-naruto-catches-gaara;ev-y0-0801-naruto-summons-gamabunta-vs-gaara;ev-y0-0801-naruto-defeats-gaara;ev-y0-0801-naruto-changes-gaara-view	Naruto/Gaara climax decomposed into pursuit arrival, summoning, defeat and aftermath.
+V10-000065-F	0	01.08	M	migrated	ev-y0-0801-invasion-fails	Invasion failure migrated as a global outcome event.
+V10-000066	0	01.08	R	superseded	ev-y0-0801-hinata-kidnapped;ev-y0-0801-neji-team-pursues-kidnappers;ev-y0-0801-hiashi-rescues-hinata;ev-y0-0801-hiashi-tells-neji-hizashi-love	Hinata kidnapping retrospective decomposed and missing Hinata/Hiashi presence restored.
+V10-000067	0	01.08	R	superseded	ev-y0-0801-adult-ino-shika-cho-fights;ev-y0-0801-adult-ino-shika-cho-rescues-kosuke	Corrected physical cast from Ino to Inoichi, Shikaku and Choza; rescue split from battle.
+V10-000068	0	01.08	R	migrated	ev-y0-0801-hanabi-hiashi-watch-naruto-neji	Hanabi and Hiashi watching Naruto vs Neji migrated with actual observer presence.
+V10-000069	0	01.08	M	migrated	ev-y0-0801-kakashi-dispatches-pursuit-team	Kakashi dispatching Naruto/Sakura/Shikamaru/Pakkun migrated; Sasuke marked remote.
 V10-000069-B	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000069-C	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000070	0	01.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000071	0	01.08	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000070	0	01.08	M	migrated	ev-y0-0801-kin-zaku-used-as-edo-sacrifices	Kin and Zaku as Edo Tensei sacrifices migrated.
+V10-000071	0	01.08	R	superseded	ev-y0-0801-yugao-visits-hayate-memorial;ev-y0-0801-yugao-vows-revenge;ev-y0-0801-yugao-departs-with-anbu	Yugao memorial retrospective decomposed; Hayate marked remembered/remote.
 V10-000072	0	02.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000072-B	0	02.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000072-C	0	02.08	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
