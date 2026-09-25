@@ -1771,5 +1771,47 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-anime-179-183"]
+  - id: "lnk-1107-akamaru-detect-before-kiba-flees"
+    kind: "before"
+    a: "sc-y0-1107-akamaru-infection-detected"
+    b: "sc-y0-1107-kiba-flees-with-akamaru"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-184"]
+  - id: "lnk-1107-kiba-flees-before-antidote"
+    kind: "before"
+    a: "sc-y0-1107-kiba-flees-with-akamaru"
+    b: "sc-y0-1107-akamaru-antidote"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-184"]
+  - id: "lnk-1108-onbu-attach-before-grow"
+    kind: "before"
+    a: "sc-y0-1108-onbu-attaches-naruto"
+    b: "sc-y0-1108-onbu-grows-with-naruto"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-185"]
+  - id: "lnk-1108-onbu-grow-before-mother"
+    kind: "before"
+    a: "sc-y0-1108-onbu-grows-with-naruto"
+    b: "sc-y0-1108-onbaa-mother-reclaims-onbu"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-185"]
+  - id: "lnk-1109-kagetsu-brief-before-shino-drug"
+    kind: "before"
+    a: "sc-y0-1109-kagetsu-funeral-mission-briefing"
+    b: "sc-y0-1109-shino-laughing-drug"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-186"]
+  - id: "lnk-1109-shino-drug-before-funeral-reveal"
+    kind: "before"
+    a: "sc-y0-1109-shino-laughing-drug"
+    b: "sc-y0-1109-kagetsu-fake-funeral-reveal"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-186"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
