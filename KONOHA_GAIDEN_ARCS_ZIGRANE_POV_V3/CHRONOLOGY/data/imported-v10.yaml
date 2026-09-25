@@ -4277,7 +4277,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000089"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4302,7 +4302,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000090"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4327,7 +4327,7 @@ records:
       SupportingSources: "N/ALT [новела «Mission: Protect the Waterfall Village!»] — починається окрема прозова версія тієї самої місії; її відмінні сцени не змішуються з OVA."
       Review: ""
   - legacy_id: "V10-000091"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4352,7 +4352,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000092"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4377,7 +4377,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000093"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -4402,7 +4402,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000094"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4427,7 +4427,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000095"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4452,7 +4452,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000096"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -4477,7 +4477,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000097"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
