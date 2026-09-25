@@ -1,0 +1,64 @@
+schema_version: 1
+id: "sc-y0-0925-jiraiya-training-offer"
+continuity_id: "main"
+title: "Джирая пропонує Наруто довгострокове тренування"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0925", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0925-jiraiya-explains-orochimaru-body-window"
+    legacy_ids: ["V10-000123-E"]
+    title: "Джирая пояснює часовий запас до наступної зміни тіла Орочімару"
+    text: "Джирая пояснює Наруто, що після зміни тіла Орочімару приблизно три роки не зможе повторити техніку."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000123-E", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-jiraiya-offers-long-training"
+    legacy_ids: ["V10-000123-E"]
+    title: "Джирая пропонує використати час для тренування"
+    text: "Джирая пропонує Наруто вирушити з ним на довгострокове тренування."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000123-E", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-naruto-refuses-give-up-sasuke"
+    legacy_ids: ["V10-000123-E"]
+    title: "Наруто відмовляється відмовлятися від Саске"
+    text: "Наруто заявляє, що не відмовиться від спроб повернути Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000123-E", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-jiraiya-accepts-naruto-decision"
+    legacy_ids: ["V10-000123-E"]
+    title: "Джирая приймає рішення Наруто"
+    text: "Джирая приймає рішучість Наруто й не відмовляється від плану тренувати його."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000123-E", "evd-manga-sasuke-recovery"]
+relations:
+  - {id: "rel-0925-jiraiya-1", kind: "before", a: "ev-y0-0925-jiraiya-explains-orochimaru-body-window", b: "ev-y0-0925-jiraiya-offers-long-training", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+  - {id: "rel-0925-jiraiya-2", kind: "before", a: "ev-y0-0925-jiraiya-offers-long-training", b: "ev-y0-0925-naruto-refuses-give-up-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+  - {id: "rel-0925-jiraiya-3", kind: "before", a: "ev-y0-0925-naruto-refuses-give-up-sasuke", b: "ev-y0-0925-jiraiya-accepts-naruto-decision", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+presence:
+  - {id: "pr-0925-jiraiya-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0925-jiraiya-training-offer.start", to: "sc-y0-0925-jiraiya-training-offer.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
+  - {id: "pr-0925-jiraiya-naruto", entity_id: "c-naruto", from: "sc-y0-0925-jiraiya-training-offer.start", to: "sc-y0-0925-jiraiya-training-offer.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
