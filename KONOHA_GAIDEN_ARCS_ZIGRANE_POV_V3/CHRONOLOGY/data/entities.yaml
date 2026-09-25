@@ -675,6 +675,22 @@ entities:
     aliases:
       - "гарячі джерела"
     parent_id: "loc-konohagakure"
+  - id: "c-rasa"
+    kind: "person"
+    name: "Rasa"
+    aliases:
+      - "Раса"
+      - "Четвертий Казекаґе"
+  - id: "loc-honegami-field"
+    kind: "location"
+    name: "Honegami Field"
+    aliases:
+      - "поле Хонегамі"
+  - id: "team-rain-attackers"
+    kind: "team"
+    name: "Rain ninja attackers"
+    aliases:
+      - "ніндзя Дощу"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
