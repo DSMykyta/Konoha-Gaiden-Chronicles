@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0924-valley-reunion"
+continuity_id: "main"
+title: "Наруто наздоганяє Саске в Долині Завершення"
+location_id: "loc-valley-of-end"
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-naruto-catches-sasuke-valley"
+    legacy_ids: ["V10-000122-K"]
+    title: "Наруто наздоганяє Саске"
+    text: "Наруто наздоганяє Саске в Долині Завершення."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-K"]
+  - id: "ev-y0-0924-naruto-asks-sasuke-return"
+    legacy_ids: ["V10-000122-K"]
+    title: "Наруто намагається переконати Саске повернутися"
+    text: "Після зустрічі Наруто просить Саске відмовитися від втечі й повернутися до Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-K"]
+relations:
+  - {id: "rel-0924-valley-reunion-1", kind: "before", a: "ev-y0-0924-naruto-catches-sasuke-valley", b: "ev-y0-0924-naruto-asks-sasuke-return", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000122-K"]}
+presence:
+  - {id: "pr-0924-valley-reunion-naruto", entity_id: "c-naruto", from: "sc-y0-0924-valley-reunion.start", to: "sc-y0-0924-valley-reunion.end", basis: "source", evidence_ids: ["evd-v10-000122-K"], review: "accepted"}
+  - {id: "pr-0924-valley-reunion-sasuke", entity_id: "c-sasuke", from: "sc-y0-0924-valley-reunion.start", to: "sc-y0-0924-valley-reunion.end", basis: "source", evidence_ids: ["evd-v10-000122-K"], review: "accepted"}
