@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-1003-mizuki-hideout-formula"
+continuity_id: "main"
+title: "Мідзукі завершує формулу Орочімару"
+location_id: "loc-mizuki-hideout"
+placement: {anchor_id: "ta-y0-1003", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1003-mizuki-assembles-orochimaru-formula"
+    legacy_ids: ["V10-000131", "V10-000132"]
+    title: "Мідзукі збирає компоненти формули"
+    text: "Мідзукі використовує інструкції, отримані від Орочімару, і збирає потрібні компоненти для препарату, який має різко посилити його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "source", mode: "remote"}
+    evidence_ids: ["evd-v10-000131", "evd-v10-000132", "evd-anime-142-147"]
+  - id: "ev-y0-1003-mizuki-drinks-formula-transforms"
+    legacy_ids: ["V10-000132"]
+    title: "Мідзукі випиває препарат і трансформується"
+    text: "До приходу переслідувачів Мідзукі завершує препарат, випиває його й набуває масивної тигроподібної форми з різко посиленими силою та чакрою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "cause", mode: "remote"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-iruka", role: "observer", mode: "physical"}
+      - {entity_id: "c-tsubaki", role: "observer", mode: "physical"}
+      - {entity_id: "c-pakkun", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000132", "evd-anime-142-147"]
+relations:
+  - {id: "rel-1003-mizuki-formula-1", kind: "before", a: "ev-y0-1003-mizuki-assembles-orochimaru-formula", b: "ev-y0-1003-mizuki-drinks-formula-transforms", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+presence: []
