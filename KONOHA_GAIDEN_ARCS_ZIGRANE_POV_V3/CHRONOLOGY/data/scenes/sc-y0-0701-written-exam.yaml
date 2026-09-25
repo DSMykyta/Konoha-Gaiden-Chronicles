@@ -1,0 +1,60 @@
+schema_version: 1
+id: "sc-y0-0701-written-exam"
+continuity_id: "main"
+title: "Письмовий етап Ібікі"
+location_id: "loc-chunin-written-exam"
+placement: {anchor_id: "ta-y0-0701", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0701-ibiki-starts-written-exam"
+    legacy_ids: ["V10-000040-B"]
+    title: "Ібікі починає письмове випробування"
+    text: "Ібікі Моріно проводить письмовий етап, побудований навколо прихованого збору інформації та ризику дискваліфікації."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-ibiki-announces-tenth-question"
+    legacy_ids: ["V10-000040-B"]
+    title: "Ібікі ставить умову десятого питання"
+    text: "Ібікі оголошує правило десятого питання, яке має змусити кандидатів обирати між ризиком і відмовою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-naruto-refuses-to-quit"
+    legacy_ids: ["V10-000040-B"]
+    title: "Наруто відмовляється здаватися"
+    text: "Наруто заявляє, що не відступить незалежно від наслідків десятого питання; це підштовхує інших кандидатів залишитися."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-ibiki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-written-exam-passes-26-teams"
+    legacy_ids: ["V10-000040-B"]
+    title: "Письмовий етап проходять 26 команд"
+    text: "Після випробування Ібікі до наступного етапу переходять 26 команд."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0701-written-1", kind: "before", a: "ev-y0-0701-ibiki-starts-written-exam", b: "ev-y0-0701-ibiki-announces-tenth-question", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-written-2", kind: "before", a: "ev-y0-0701-ibiki-announces-tenth-question", b: "ev-y0-0701-naruto-refuses-to-quit", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-written-3", kind: "before", a: "ev-y0-0701-naruto-refuses-to-quit", b: "ev-y0-0701-written-exam-passes-26-teams", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+presence: []
