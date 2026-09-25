@@ -1064,6 +1064,11 @@ entities:
     name: "Land of Rice Fields"
     aliases:
       - "Країна Рисових Полів"
+  - id: "c-suika"
+    kind: "person"
+    name: "Suika"
+    aliases:
+      - "Суїка"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
