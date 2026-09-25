@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-1107-akamaru-infection-detected"
+continuity_id: "main"
+title: "Після місії в Акамару виявляють бактерію, що руйнує контроль"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1107", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1107-akamaru-infected-special-bacteria"
+    legacy_ids: ["V10-000175"]
+    title: "Акамару заражений особливою бактерією"
+    text: "Після бою з іноземним шинобі Акамару повертається пораненим; згодом з'ясовується, що супротивник заразив його бактерією, яка поступово позбавляє інфікованого контролю."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-akamaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-naruto-assigned-watch-akamaru"
+    legacy_ids: ["V10-000175"]
+    title: "Наруто доручають наглядати за Акамару"
+    text: "Через дивну поведінку пса Наруто тимчасово стежить за ним, поки Кіба та медики намагаються зрозуміти причину."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-akamaru-attacks-konoha"
+    legacy_ids: ["V10-000175"]
+    title: "Акамару втрачає контроль і нападає на людей"
+    text: "Інфекція різко прогресує: Акамару стає агресивним, нападає на шинобі й мешканців та перестає нормально реагувати на Кібу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-akamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+relations:
+  - {id: "rel-1107-akamaru-detect-1", kind: "before", a: "ev-y0-1107-akamaru-infected-special-bacteria", b: "ev-y0-1107-naruto-assigned-watch-akamaru", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+  - {id: "rel-1107-akamaru-detect-2", kind: "before", a: "ev-y0-1107-naruto-assigned-watch-akamaru", b: "ev-y0-1107-akamaru-attacks-konoha", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+presence: []
