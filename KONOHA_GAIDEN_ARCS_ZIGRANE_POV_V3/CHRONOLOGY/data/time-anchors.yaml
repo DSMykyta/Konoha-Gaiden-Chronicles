@@ -282,3 +282,19 @@ anchors:
     evidence_ids: ["evd-v10-000042"]
     review: "accepted"
     reason: "Exact working project date inherited from v9/v10."
+  - id: "ta-y0-0705"
+    date: {year: 0, month: 7, day: 5}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000043"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10."
+  - id: "ta-y0-0706"
+    date: {year: 0, month: 7, day: 6}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000045"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10."
