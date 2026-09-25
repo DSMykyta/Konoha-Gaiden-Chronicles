@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-0413-bridge-complete"
+continuity_id: "main"
+title: "Великий Міст Наруто завершено"
+location_id: "loc-great-naruto-bridge"
+placement: {anchor_id: "ta-y0-0413", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0413-bridge-completed"
+    legacy_ids: ["V10-000033"]
+    title: "Міст добудовано"
+    text: "Через два тижні після фінальної битви будівництво мосту завершується."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000033", "evd-manga-land-waves"]
+  - id: "ev-y0-0413-bridge-named-after-naruto"
+    legacy_ids: ["V10-000033"]
+    title: "Міст називають Великим Мостом Наруто"
+    text: "Тадзуна оголошує назву завершеного мосту — Великий Міст Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000033", "evd-manga-land-waves"]
+  - id: "ev-y0-0413-team7-says-farewell"
+    legacy_ids: ["V10-000033"]
+    title: "Команда 7 прощається з родиною Тадзуни"
+    text: "Какаші, Наруто, Саске й Сакура прощаються з Тадзуною, Інарі та Цунамі перед поверненням до Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
+      - {entity_id: "c-inari", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunami", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000033", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0413-complete-before-name", kind: "before", a: "ev-y0-0413-bridge-completed", b: "ev-y0-0413-bridge-named-after-naruto", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000033"]}
+  - {id: "rel-0413-name-before-farewell", kind: "before", a: "ev-y0-0413-bridge-named-after-naruto", b: "ev-y0-0413-team7-says-farewell", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000033"]}
+presence: []
