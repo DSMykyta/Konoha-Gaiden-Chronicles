@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0727-naruto-summoning-stalls"
+continuity_id: "main"
+title: "Наруто все ще не може викликати бойову жабу"
+location_id: null
+placement: {anchor_id: "ta-y0-0727", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0727-naruto-still-fails-combat-summon"
+    legacy_ids: ["V10-000057"]
+    title: "Тренування Наруто з призовом буксує"
+    text: "До цього моменту Наруто все ще не здатен стабільно викликати жабу, придатну до бою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000057", "evd-anime-54-60"]
+relations: []
+presence:
+  - {id: "pr-0727-summon-naruto", entity_id: "c-naruto", from: "sc-y0-0727-naruto-summoning-stalls.start", to: "sc-y0-0727-naruto-summoning-stalls.end", basis: "imported", evidence_ids: ["evd-v10-000057"], review: "accepted"}
+  - {id: "pr-0727-summon-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0727-naruto-summoning-stalls.start", to: "sc-y0-0727-naruto-summoning-stalls.end", basis: "imported", evidence_ids: ["evd-v10-000057"], review: "accepted"}
