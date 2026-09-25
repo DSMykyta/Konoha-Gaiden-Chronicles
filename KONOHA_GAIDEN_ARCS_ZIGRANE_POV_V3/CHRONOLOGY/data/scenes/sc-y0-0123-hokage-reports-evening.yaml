@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-y0-0123-hokage-reports-evening"
+continuity_id: "main"
+title: "Наставники здають звіти після першого дня"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+day_part: "evening"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-asuma-catches-nobari-folder"
+    title: "Асума допомагає Нобарі з паперами"
+    text: "У коридорі резиденції Хокаґе Асума ловить теку, яку Нобарі ледь не впускає, коли несе звіти."
+    origin: "P"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-asuma", role: "focus", mode: "physical"}
+      - {entity_id: "c-nobari", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-team9-hokage-reports-evening"]
+  - id: "ev-y0-0123-kurenai-joins-nobari-asuma"
+    title: "Куренай приєднується до Нобарі й Асуми"
+    text: "Куренай допомагає Нобарі з сувоями; вони коротко говорять про перший день із новими генінами."
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kurenai", role: "focus", mode: "physical"}
+      - {entity_id: "c-nobari", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-team9-hokage-reports-evening"]
+  - id: "ev-y0-0123-kakashi-raido-arrive-reports"
+    title: "Какаші й Райдо приходять оформити проходження команд"
+    text: "Какаші й Райдо підходять до Асуми та Куренай у коридорі; обидва прийшли офіційно оформити результати першого дня своїх генінів."
+    origin: "P"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-team9-hokage-reports-evening"]
+relations:
+  - {id: "rel-0123-report-asuma-before-kurenai", kind: "before", a: "ev-y0-0123-asuma-catches-nobari-folder", b: "ev-y0-0123-kurenai-joins-nobari-asuma", basis: "source", review: "accepted", evidence_ids: ["evd-team9-hokage-reports-evening"]}
+  - {id: "rel-0123-report-kurenai-before-kakashi-raido", kind: "before", a: "ev-y0-0123-kurenai-joins-nobari-asuma", b: "ev-y0-0123-kakashi-raido-arrive-reports", basis: "source", review: "accepted", evidence_ids: ["evd-team9-hokage-reports-evening"]}
+presence:
+  - {id: "pr-0123-report-asuma", entity_id: "c-asuma", from: "sc-y0-0123-hokage-reports-evening.start", to: "sc-y0-0123-hokage-reports-evening.end", basis: "source", evidence_ids: ["evd-team9-hokage-reports-evening"], review: "accepted"}
+  - {id: "pr-0123-report-nobari", entity_id: "c-nobari", from: "sc-y0-0123-hokage-reports-evening.start", to: "ev-y0-0123-kurenai-joins-nobari-asuma.end", basis: "source", evidence_ids: ["evd-team9-hokage-reports-evening"], review: "accepted"}
+  - {id: "pr-0123-report-kurenai", entity_id: "c-kurenai", from: "ev-y0-0123-kurenai-joins-nobari-asuma.start", to: "sc-y0-0123-hokage-reports-evening.end", basis: "source", evidence_ids: ["evd-team9-hokage-reports-evening"], review: "accepted"}
+  - {id: "pr-0123-report-kakashi", entity_id: "c-kakashi", from: "ev-y0-0123-kakashi-raido-arrive-reports.start", to: "sc-y0-0123-hokage-reports-evening.end", basis: "source", evidence_ids: ["evd-team9-hokage-reports-evening"], review: "accepted"}
+  - {id: "pr-0123-report-raido", entity_id: "c-raido", from: "ev-y0-0123-kakashi-raido-arrive-reports.start", to: "sc-y0-0123-hokage-reports-evening.end", basis: "source", evidence_ids: ["evd-team9-hokage-reports-evening"], review: "accepted"}
