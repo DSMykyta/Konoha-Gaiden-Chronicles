@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-1020-first-cursed-warrior"
+continuity_id: "main"
+title: "Перша зустріч із Проклятим Воїном показує порожню броню"
+location_id: "loc-land-of-birds"
+placement: {anchor_id: "ta-y0-1020-birds", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1020-team-chases-cursed-warrior"
+    legacy_ids: ["V10-000152"]
+    title: "Уночі команда переслідує білого Проклятого Воїна"
+    text: "Наруто, Неджи й Тентен бачать Проклятого Воїна та кидаються навздогін, намагаючись встановити, хто ховається під обладунком."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000152", "evd-anime-162-167"]
+  - id: "ev-y0-1020-neji-sees-empty-armor"
+    legacy_ids: ["V10-000152"]
+    title: "Б'якуґан Неджи не знаходить живої істоти в обладунку"
+    text: "Після переслідування Неджи перевіряє фігуру Б'якуґаном і не бачить усередині живої присутності; перша поява Воїна не дає їм звичайного людського виконавця."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000152", "evd-anime-162-167"]
+relations:
+  - {id: "rel-1020-first-warrior-1", kind: "before", a: "ev-y0-1020-team-chases-cursed-warrior", b: "ev-y0-1020-neji-sees-empty-armor", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+presence: []
