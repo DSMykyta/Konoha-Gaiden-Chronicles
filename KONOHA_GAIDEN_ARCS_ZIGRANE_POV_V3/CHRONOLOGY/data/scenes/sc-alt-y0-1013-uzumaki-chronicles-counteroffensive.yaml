@@ -1,0 +1,34 @@
+schema_version: 1
+id: "sc-alt-y0-1013-uzumaki-chronicles-counteroffensive"
+continuity_id: "alt-game-uzumaki-chronicles"
+title: "Наруто збирає союзників проти схеми Орочімару"
+placement: {anchor_id: "ta-alt-y0-1012-uzumaki-chronicles", day_offset: 1}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1013-naruto-recruits-allies"
+    legacy_ids: ["V10-000145"]
+    title: "Наруто залучає союзників до протидії плану"
+    text: "У гілці Uzumaki Chronicles Наруто залучає доступних союзників для протидії силам Орочімару; конкретний склад тут не фіксується через відмінності регіональних версій гри."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000145", "evd-game-uzumaki-chronicles"]
+  - id: "ev-alt-y0-1013-naruto-disrupts-orochimaru-forces"
+    legacy_ids: ["V10-000145"]
+    title: "Наруто проходить серію боїв проти сил Орочімару"
+    text: "Наруто й союзники зривають проміжні етапи схеми Орочімару; версійні відмінності не об'єднуються в одну нібито канонічну послідовність."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000145", "evd-game-uzumaki-chronicles"]
+relations:
+  - {id: "rel-alt-1013-uc-1", kind: "before", a: "ev-alt-y0-1013-naruto-recruits-allies", b: "ev-alt-y0-1013-naruto-disrupts-orochimaru-forces", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000145"]}
+presence: []
