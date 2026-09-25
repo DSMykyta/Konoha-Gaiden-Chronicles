@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0922-sasuke-hospital-frustration"
+continuity_id: "main"
+title: "Саске зривається в палаті"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0922", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0922-sasuke-fixates-on-weakness"
+    legacy_ids: ["V10-000117"]
+    title: "Саске дедалі гостріше переживає власне безсилля"
+    text: "Після лікування Саске дедалі гостріше реагує на свою безпорадність перед Ітачі та швидке зростання Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-itachi", role: "remembered", mode: "remote"}
+      - {entity_id: "c-naruto", role: "comparison", mode: "remote"}
+    evidence_ids: ["evd-v10-000117"]
+  - id: "ev-y0-0922-sasuke-knocks-apples-away"
+    legacy_ids: ["V10-000117"]
+    title: "Саске вибиває тарілку з яблуками з рук Сакури"
+    text: "У палаті Саске в люті вибиває з рук Сакури тарілку з яблуками."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000117"]
+relations:
+  - {id: "rel-0922-hospital-1", kind: "before", a: "ev-y0-0922-sasuke-fixates-on-weakness", b: "ev-y0-0922-sasuke-knocks-apples-away", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000117"]}
+presence:
+  - {id: "pr-0922-hospital-sasuke", entity_id: "c-sasuke", from: "sc-y0-0922-sasuke-hospital-frustration.start", to: "sc-y0-0922-sasuke-hospital-frustration.end", basis: "imported", evidence_ids: ["evd-v10-000117"], review: "accepted"}
+  - {id: "pr-0922-hospital-sakura", entity_id: "c-sakura", from: "ev-y0-0922-sasuke-knocks-apples-away.start", to: "ev-y0-0922-sasuke-knocks-apples-away.end", basis: "imported", evidence_ids: ["evd-v10-000117"], review: "accepted"}
