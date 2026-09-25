@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0330-zabuza-haku-burial"
+continuity_id: "main"
+title: "Поховання Забузи й Хаку"
+location_id: "loc-wave-burial-hill"
+placement: {anchor_id: "ta-y0-0330", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0330-zabuza-haku-buried"
+    legacy_ids: ["V10-000032"]
+    title: "Забузу й Хаку ховають поруч"
+    text: "Після завершення бою Забузу й Хаку ховають поруч на височині над Країною Хвиль."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-zabuza", role: "affected", mode: "physical"}
+      - {entity_id: "c-haku", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000032", "evd-manga-land-waves"]
+relations: []
+presence: []
