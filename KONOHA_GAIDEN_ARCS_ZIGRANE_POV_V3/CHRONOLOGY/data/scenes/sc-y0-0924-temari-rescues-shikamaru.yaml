@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0924-temari-rescues-shikamaru"
+continuity_id: "main"
+title: "Темарі приходить на допомогу Шикамару"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-temari-arrives-shikamaru-battle"
+    legacy_ids: ["V10-000122-H"]
+    title: "Темарі знаходить Шикамару"
+    text: "Темарі прибуває до місця бою Шикамару з Таюєю."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-temari", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-H"]
+  - id: "ev-y0-0924-temari-defeats-tayuya"
+    legacy_ids: ["V10-000122-H"]
+    title: "Темарі перемагає Таюю"
+    text: "Темарі бере бій на себе й перемагає Таюю."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-temari", role: "focus", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "affected", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "rescued", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-H"]
+relations:
+  - {id: "rel-0924-temari-1", kind: "before", a: "ev-y0-0924-temari-arrives-shikamaru-battle", b: "ev-y0-0924-temari-defeats-tayuya", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-H"]}
+presence: []
