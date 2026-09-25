@@ -1,0 +1,24 @@
+schema_version: 1
+id: "sc-y0-0831-wager-deadline"
+continuity_id: "main"
+title: "Спливає строк парі Наруто й Цунаде"
+location_id: "loc-tanzaku"
+placement: {anchor_id: "ta-y0-0831", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0831-naruto-seems-unable-to-complete-rasengan"
+    legacy_ids: ["V10-000081"]
+    title: "Наруто все ще не показує завершений Расенґан"
+    text: "У фінальну ніч парі здається, що Наруто так і не зміг завершити Расенґан."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000081", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0831-wager-naruto", entity_id: "c-naruto", from: "sc-y0-0831-wager-deadline.start", to: "sc-y0-0831-wager-deadline.end", basis: "imported", evidence_ids: ["evd-v10-000081"], review: "accepted"}
