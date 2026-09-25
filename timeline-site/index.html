@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<title>Konoha Timeline — 22.01</title>
+<style>
+:root{color-scheme:dark;--bg:#08090d;--panel:rgba(14,16,22,.82);--line:rgba(255,255,255,.08);--text:#f5f7fb;--muted:#7d8596}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#08090d;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{overflow:hidden;background:radial-gradient(900px 560px at 62% 14%,rgba(94,104,255,.1),transparent 68%),radial-gradient(720px 520px at 31% 83%,rgba(55,220,190,.055),transparent 70%),#08090d}
+button{font:inherit}.app{height:100vh;display:grid;grid-template-rows:78px 1fr;position:relative}.topbar{display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--line);background:rgba(8,9,13,.72);backdrop-filter:blur(18px);z-index:10}
+.brand{display:flex;align-items:center;gap:13px}.mark{width:38px;height:38px;border:1px solid rgba(255,255,255,.13);border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.015))}
+.mark:before{content:"";width:16px;height:16px;border:2px solid #eef2ff;border-radius:50%;box-shadow:0 0 18px rgba(150,180,255,.14)}.eyebrow{font-size:9px;letter-spacing:.18em;color:#687183;font-weight:800}.title{font-size:17px;font-weight:660;letter-spacing:-.02em;margin-top:3px}
+.tools{display:flex;align-items:center;gap:8px}.tool{height:36px;padding:0 11px;border-radius:10px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);color:#abb3c2;cursor:pointer}.tool:hover{color:white;background:rgba(255,255,255,.07)}
+.layout{min-height:0;display:grid;grid-template-columns:205px minmax(0,1fr) 292px}.left,.right{background:rgba(10,12,17,.68);backdrop-filter:blur(15px);overflow:auto}.left{border-right:1px solid var(--line);padding:20px 14px}.right{border-left:1px solid var(--line);padding:22px 19px}.label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#666f80;font-weight:800}
+.people{display:grid;gap:7px;margin-top:12px}.person{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:10px;color:#aeb6c4;font-size:11px;cursor:pointer;user-select:none}.person:hover{background:rgba(255,255,255,.035);color:white}.person.off{opacity:.25}.dot{width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}.person span:last-child{margin-left:auto;color:#596171;font-size:8px;letter-spacing:.12em}
+.origin{border-top:1px solid var(--line);margin-top:21px;padding-top:18px}.origin-row{display:flex;align-items:center;gap:8px;color:#8a92a2;font-size:10px;margin-top:10px}.odot{width:10px;height:10px;border-radius:50%}.m{background:linear-gradient(135deg,#ffb55f,#ff4f91)}.p{background:linear-gradient(135deg,#63e6ff,#b26cff)}
+.note{margin-top:24px;border:1px solid rgba(255,255,255,.065);background:rgba(255,255,255,.02);border-radius:13px;padding:11px;color:#687183;font-size:9px;line-height:1.55}
+.center{min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 92px}.stage{min-height:0;overflow:hidden;position:relative;cursor:grab;touch-action:none}.stage.dragging{cursor:grabbing}svg{display:block;width:100%;height:100%}.world{transform-origin:0 0}.scene{fill:rgba(255,255,255,.018);stroke:rgba(255,255,255,.055);stroke-width:1}.scene.classroom{fill:rgba(95,112,255,.025)}.scene.roof{fill:rgba(255,158,78,.022)}.scene.dango{fill:rgba(61,216,190,.024)}.scene.home{fill:rgba(180,107,255,.022)}
+.scene-title{fill:rgba(190,199,217,.30);font-size:10px;letter-spacing:.18em;font-weight:800}.grid{stroke:rgba(255,255,255,.034);stroke-width:1;stroke-dasharray:3 10}
+.shadow{fill:none;stroke:rgba(0,0,0,.78);stroke-width:10;stroke-linecap:round;stroke-linejoin:round}.route{fill:none;stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round;filter:url(#livingWave);opacity:.95;transition:opacity .2s,stroke-width .2s}.route.off,.shadow.off{opacity:.045}.route:hover{stroke-width:6}
+.start-label{font-size:10px;font-weight:800;paint-order:stroke;stroke:#08090d;stroke-width:4px}.halo{fill:rgba(255,255,255,.02);stroke:rgba(255,255,255,.09);stroke-width:1;stroke-dasharray:3 6}
+.event{cursor:pointer}.event .outer{fill:#080a0f;stroke:rgba(255,255,255,.18);stroke-width:2}.event .inner{stroke:rgba(255,255,255,.42);stroke-width:1;filter:url(#nodeGlow)}.event:hover .outer,.event.active .outer{stroke:rgba(255,255,255,.85)}.event text{pointer-events:none}.etitle{fill:#f4f6fb;font-size:11px;font-weight:700;paint-order:stroke;stroke:#08090d;stroke-width:5px}.esub{fill:#768092;font-size:9px;font-weight:550;paint-order:stroke;stroke:#08090d;stroke-width:4px}
+.minimap{border-top:1px solid var(--line);padding:8px 16px 6px;background:rgba(8,9,13,.82)}.mini-bg{fill:rgba(255,255,255,.018);stroke:rgba(255,255,255,.055)}.mini-path{fill:none;stroke-width:2;opacity:.55;stroke-linecap:round}.viewport{fill:rgba(255,255,255,.035);stroke:rgba(235,240,255,.34);stroke-width:2}
+.empty{padding-top:12px;color:#747d8d}.empty h2,.detail h2{font-size:21px;line-height:1.08;letter-spacing:-.03em;margin:9px 0 10px;color:#f4f6fb}.empty p,.detail>p{font-size:11px;line-height:1.6;color:#8790a0;margin:0}.detail{display:none}.detail.show{display:block}.empty.hide{display:none}.meta{display:flex;align-items:center;gap:8px;margin-bottom:13px}.pill{min-width:28px;height:25px;padding:0 8px;border-radius:8px;display:grid;place-items:center;font-size:10px;font-weight:900;background:linear-gradient(135deg,#63e6ff,#b26cff)}.date{font-size:9px;color:#697283;letter-spacing:.08em}.section{margin-top:20px}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.chip{display:flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);border-radius:99px;padding:5px 8px;font-size:9px;color:#b5bdca}.chip i{width:6px;height:6px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c)}.scene-meta{border-top:1px solid var(--line);padding-top:14px;color:#636c7c;font-size:9px;line-height:1.55}.hint{position:absolute;right:13px;bottom:12px;border:1px solid rgba(255,255,255,.07);background:rgba(11,13,18,.75);color:#5e6676;border-radius:9px;padding:6px 9px;font-size:9px;pointer-events:none}
+@media(max-width:1020px){.layout{grid-template-columns:180px minmax(0,1fr)}.right{position:fixed;right:10px;top:90px;bottom:12px;width:290px;border:1px solid rgba(255,255,255,.09);border-radius:17px;z-index:30;transform:translateX(312px);transition:transform .25s;box-shadow:0 24px 80px rgba(0,0,0,.48)}.right.open{transform:translateX(0)}}@media(max-width:700px){.app{grid-template-rows:68px 1fr}.left{display:none}.layout{grid-template-columns:1fr}.title{font-size:13px}.eyebrow{display:none}.tools .tool:first-child{display:none}.center{grid-template-rows:minmax(0,1fr) 78px}.hint{display:none}.minimap{padding:4px 7px}}
+@media(prefers-reduced-motion:reduce){#livingWave feTurbulence animate{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><div class="mark"></div><div><div class="eyebrow">KONOHA GAIDEN · CHRONOLOGY</div><div class="title">22 січня · день розподілу команд</div></div></div>
+  <div class="tools"><button class="tool" id="fit">Fit</button><button class="tool" id="motion">≈ Живі лінії</button><button class="tool" id="zoom">100%</button></div>
+</header>
+<div class="layout">
+<aside class="left">
+  <div class="label">Персонажі</div>
+  <div class="people" id="people"></div>
+  <div class="origin"><div class="label">Походження вузла</div><div class="origin-row"><i class="odot m"></i>M · манґа</div><div class="origin-row"><i class="odot p"></i>P · історія проєкту</div></div>
+  <div class="note">Колір лінії належить персонажу. Колір вузла показує Origin самої події. Присутність і активна участь не змішуються.</div>
+</aside>
+<section class="center">
+<div class="stage" id="stage">
+<svg id="map" viewBox="0 0 1680 840" aria-label="Карта хронології 22 січня">
+<defs>
+  <linearGradient id="gm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb55f"/><stop offset=".52" stop-color="#ff725f"/><stop offset="1" stop-color="#ff4f91"/></linearGradient>
+  <linearGradient id="gp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#63e6ff"/><stop offset=".52" stop-color="#738dff"/><stop offset="1" stop-color="#b26cff"/></linearGradient>
+  <filter id="livingWave" x="-10%" y="-25%" width="120%" height="150%">
+    <feTurbulence type="fractalNoise" baseFrequency=".006 .026" numOctaves="1" seed="5" result="noise">
+      <animate attributeName="baseFrequency" dur="8s" values=".006 .021;.008 .029;.005 .024;.006 .021" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="B"/>
+  </filter>
+  <filter id="nodeGlow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<g id="world" class="world">
+  <g opacity=".9"><line class="grid" x1="90" y1="144" x2="1590" y2="144"/><line class="grid" x1="90" y1="718" x2="1590" y2="718"/><line class="grid" x1="250" y1="125" x2="250" y2="742"/><line class="grid" x1="520" y1="125" x2="520" y2="742"/><line class="grid" x1="720" y1="125" x2="720" y2="742"/><line class="grid" x1="920" y1="125" x2="920" y2="742"/><line class="grid" x1="1210" y1="125" x2="1210" y2="742"/><line class="grid" x1="1460" y1="125" x2="1460" y2="742"/></g>
+  <rect class="scene classroom" x="112" y="185" width="650" height="360" rx="30"/><rect class="scene roof" x="790" y="186" width="470" height="274" rx="30"/><rect class="scene dango" x="792" y="500" width="440" height="218" rx="30"/><rect class="scene home" x="1284" y="500" width="260" height="218" rx="30"/>
+  <text class="scene-title" x="140" y="216">КЛАС АКАДЕМІЇ</text><text class="scene-title" x="820" y="217">ДАХ · КОМАНДА 7</text><text class="scene-title" x="820" y="532">ДАНҐО · КОМАНДА 9</text><text class="scene-title" x="1313" y="532">ДІМ КІТИ · ВЕЧІР</text>
+  <ellipse class="halo" cx="677" cy="418" rx="91" ry="70"/>
+  <g id="routes"></g><g id="events"></g><g id="labels"></g>
+</g>
+</svg>
+<div class="hint">Колесо — масштаб · перетягування — рух</div>
+</div>
+<div class="minimap">
+<svg id="mini" viewBox="0 0 1680 86"><rect class="mini-bg" x="0" y="0" width="1680" height="86" rx="16"/><g id="miniRoutes"></g><rect id="viewport" class="viewport" x="0" y="3" width="1680" height="80" rx="13"/></svg>
+</div>
+</section>
+<aside class="right" id="right">
+  <div class="empty" id="empty"><div class="label">Вузол</div><h2>Натисни на подію</h2><p>Тут буде видно, хто діє, хто фізично присутній, де це відбувається і звідки походить подія.</p></div>
+  <div class="detail" id="detail"><div class="meta"><span class="pill" id="pill">P</span><span class="date">22.01 · Рік 0</span></div><h2 id="dTitle"></h2><p id="dText"></p><div class="section"><span class="label">Активні</span><div class="chips" id="focus"></div></div><div class="section"><span class="label">Фізично присутні</span><div class="chips" id="present"></div></div><div class="section scene-meta" id="sceneMeta"></div></div>
+</aside>
+</div>
+</div>
+<script>
+(function(){
+var ns="http://www.w3.org/2000/svg";
+var chars={
+naruto:{n:"Наруто",c:"#ff8a3d"},sasuke:{n:"Саске",c:"#6f7cff"},sakura:{n:"Сакура",c:"#ff6797"},
+kita:{n:"Кіта",c:"#45d6c8"},ren:{n:"Рен",c:"#f2bc55"},sora:{n:"Сора",c:"#ae7bff"},
+raido:{n:"Райдо",c:"#5ee2aa"},kakashi:{n:"Какаші",c:"#9fc7ff"}};
+var routes={
+naruto:"M125 324 C290 324 445 326 620 337 C720 343 800 338 900 330 C1030 318 1120 304 1210 300 C1350 294 1460 292 1560 292",
+sasuke:"M125 354 C290 354 445 357 620 365 C720 370 800 365 900 360 C1030 351 1120 340 1210 335 C1350 330 1460 328 1560 328",
+sakura:"M125 384 C290 384 445 389 620 396 C720 402 800 398 900 392 C1030 383 1120 374 1210 370 C1350 366 1460 365 1560 365",
+kita:"M125 414 C300 414 470 410 620 410 C700 416 748 450 805 505 C842 542 870 566 900 576 C1010 584 1120 588 1210 596 C1320 610 1390 630 1460 640",
+ren:"M125 444 C300 444 470 438 620 431 C700 438 750 474 808 529 C846 565 873 592 900 606 C1012 614 1110 618 1210 626",
+sora:"M125 474 C300 474 470 465 620 452 C700 459 752 496 810 552 C850 590 876 622 900 636 C1015 644 1120 648 1210 656",
+raido:"M365 145 C404 205 450 290 520 370 C560 395 595 410 620 420 C700 432 760 463 815 504 C848 528 875 543 900 548 C1005 554 1110 558 1210 566",
+kakashi:"M760 145 C792 191 829 255 860 313 C875 338 888 354 900 360 C1030 351 1120 341 1210 335 C1350 330 1460 329 1560 328"};
+var starts={naruto:[125,324],sasuke:[125,354],sakura:[125,384],kita:[125,414],ren:[125,444],sora:[125,474],raido:[365,145],kakashi:[760,145]};
+var ev=[
+{id:"teams",x:250,y:399,o:"M",t:"Оголошення команд",s:"клас Академії",f:["naruto","sasuke","sakura","kita","ren","sora"],p:["naruto","sasuke","sakura","kita","ren","sora"],d:"Ірука оголошує склади команд. Шість учнів Команд 7 і 9 ще перебувають у спільній сцені.",scene:"Клас Академії · оголошення"},
+{id:"trap",x:510,y:332,o:"M",t:"Наруто готує пастку",s:"порядок щодо Райдо не встановлено",f:["naruto"],p:["naruto","sasuke","sakura","kita","ren","sora"],d:"Команда 7 чекає Какаші. Пастка відома як подія до його приходу; між нею та приходом Райдо тут не вигадується порядок.",scene:"Клас Академії · очікування"},
+{id:"raido",x:640,y:420,o:"P",t:"Райдо: «Дев’ята?»",s:"Сакура: «Сьома»",f:["raido","sakura"],p:["naruto","sasuke","sakura","kita","ren","sora","raido"],d:"Райдо входить до класу й звертається до Сакури. У цей момент фізично присутні семеро.",scene:"Клас Академії · очікування наставників"},
+{id:"split",x:720,y:443,o:"P",t:"Команда 9 виходить",s:"чотири лінії відгалужуються",f:["raido","kita","ren","sora"],p:["naruto","sasuke","sakura","kita","ren","sora","raido"],d:"Райдо знаходить Кіту, Рена й Сору та веде їх із аудиторії. Чотири лінії відходять від трьох учнів Команди 7.",scene:"Клас Академії · вихід Дев’ятої"},
+{id:"kakashi",x:900,y:360,o:"M",t:"Приходить Какаші",s:"нова гілка входить у трійку",f:["kakashi","naruto","sasuke","sakura"],p:["naruto","sasuke","sakura","kakashi"],d:"Після виходу Дев’ятої в класі залишаються Наруто, Саске й Сакура. Какаші входить у їхній пучок тільки тепер.",scene:"Клас Академії · Команда 7"},
+{id:"team7",x:1210,y:335,o:"M",t:"Знайомство Команди 7",s:"дах Академії",f:["kakashi","naruto","sasuke","sakura"],p:["kakashi","naruto","sasuke","sakura"],d:"Какаші слухає представлення Наруто, Саске й Сакури та призначає випробування.",scene:"Дах Академії · Команда 7"},
+{id:"dango",x:900,y:592,o:"P",t:"Команда 9 · данґо",s:"Райдо спостерігає за трійкою",f:["raido","kita","ren","sora"],p:["raido","kita","ren","sora"],d:"Райдо веде Кіту, Рена й Сору до данґо, розпитує їх і призначає збір на Полі 8.",scene:"Крамниця данґо · Команда 9"},
+{id:"home",x:1460,y:640,o:"P",t:"Кіта вдома",s:"вечір",f:["kita"],p:["kita"],d:"Після першого дня Кіта говорить із матір’ю про нову команду, а перед сном тихо плаче.",scene:"Дім Кіти · вечір"}];
+function E(tag,a){var e=document.createElementNS(ns,tag);Object.keys(a||{}).forEach(function(k){e.setAttribute(k,a[k])});return e}
+var routeG=document.getElementById("routes"),miniG=document.getElementById("miniRoutes"),labels=document.getElementById("labels"),eventG=document.getElementById("events"),people=document.getElementById("people"),off={};
+Object.keys(routes).forEach(function(id){
+ var sh=E("path",{d:routes[id],class:"shadow","data-char":id}),p=E("path",{d:routes[id],class:"route",stroke:chars[id].c,"data-char":id});routeG.appendChild(sh);routeG.appendChild(p);
+ var mini=E("path",{d:routes[id],class:"mini-path",stroke:chars[id].c,transform:"translate(0 -4) scale(1 .105)"});miniG.appendChild(mini);
+ var st=starts[id],tx=E("text",{x:st[0]-6,y:st[1]-10,fill:chars[id].c,class:"start-label","data-lab":id});tx.textContent=chars[id].n;labels.appendChild(tx);
+ var b=document.createElement("div");b.className="person";b.style.setProperty("--c",chars[id].c);b.innerHTML='<i class="dot"></i><b>'+chars[id].n+'</b><span>ON</span>';b.onclick=function(){off[id]=!off[id];b.classList.toggle("off",off[id]);b.querySelector("span").textContent=off[id]?"OFF":"ON";document.querySelectorAll('[data-char="'+id+'"]').forEach(function(x){x.classList.toggle("off",off[id])});var l=document.querySelector('[data-lab="'+id+'"]');if(l)l.style.opacity=off[id]?".08":"1"};people.appendChild(b);
+});
+ev.forEach(function(v){
+ var g=E("g",{class:"event",tabindex:"0","data-id":v.id}),o=E("circle",{class:"outer",cx:v.x,cy:v.y,r:"15"}),i=E("circle",{class:"inner",cx:v.x,cy:v.y,r:"9.5",fill:"url(#g"+v.o.toLowerCase()+")"});g.appendChild(o);g.appendChild(i);eventG.appendChild(g);
+ var t=E("text",{class:"etitle",x:v.x+21,y:v.y-7});t.textContent=v.t;var s=E("text",{class:"esub",x:v.x+21,y:v.y+10});s.textContent=v.s;labels.appendChild(t);labels.appendChild(s);
+ g.onclick=function(){show(v)};g.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();show(v)}}
+});
+function chip(id){var x=document.createElement("span");x.className="chip";x.style.setProperty("--c",chars[id].c);x.innerHTML="<i></i>"+chars[id].n;return x}
+function show(v){document.querySelectorAll(".event").forEach(function(x){x.classList.toggle("active",x.getAttribute("data-id")===v.id)});document.getElementById("empty").classList.add("hide");document.getElementById("detail").classList.add("show");document.getElementById("right").classList.add("open");var pill=document.getElementById("pill");pill.textContent=v.o;pill.style.background=v.o==="M"?"linear-gradient(135deg,#ffb55f,#ff4f91)":"linear-gradient(135deg,#63e6ff,#b26cff)";document.getElementById("dTitle").textContent=v.t;document.getElementById("dText").textContent=v.d;document.getElementById("focus").replaceChildren.apply(document.getElementById("focus"),v.f.map(chip));document.getElementById("present").replaceChildren.apply(document.getElementById("present"),v.p.map(chip));document.getElementById("sceneMeta").textContent=v.scene}
+var stage=document.getElementById("stage"),world=document.getElementById("world"),viewport=document.getElementById("viewport"),zoom=1,pan=0,drag=false,sx=0,sp=0;
+function apply(){var w=stage.getBoundingClientRect().width,min=Math.min(0,w-1680*zoom-16);pan=Math.max(min,Math.min(16,pan));world.setAttribute("transform","translate("+pan+" 0) scale("+zoom+" 1)");document.getElementById("zoom").textContent=Math.round(zoom*100)+"%";var vw=Math.min(1680,w/zoom),x=Math.max(0,-pan/zoom);viewport.setAttribute("x",x);viewport.setAttribute("width",vw)}
+stage.addEventListener("wheel",function(e){e.preventDefault();var r=stage.getBoundingClientRect(),mx=e.clientX-r.left,b=(mx-pan)/zoom,n=Math.max(.72,Math.min(2.7,zoom*Math.exp(-e.deltaY*.0012)));pan=mx-b*n;zoom=n;apply()},{passive:false});
+stage.addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest(".event"))return;drag=true;sx=e.clientX;sp=pan;stage.classList.add("dragging");stage.setPointerCapture(e.pointerId)});
+stage.addEventListener("pointermove",function(e){if(!drag)return;pan=sp+e.clientX-sx;apply()});stage.addEventListener("pointerup",function(){drag=false;stage.classList.remove("dragging")});
+document.getElementById("fit").onclick=function(){zoom=1;pan=0;apply()};
+var motion=true;document.getElementById("motion").onclick=function(){motion=!motion;var a=document.querySelector("#livingWave animate");if(a){if(motion)a.beginElement();else a.endElement()}this.textContent=motion?"≈ Живі лінії":"— Статичні лінії"};
+window.addEventListener("resize",apply);apply();
+})();
+</script>
+</body>
+</html>
