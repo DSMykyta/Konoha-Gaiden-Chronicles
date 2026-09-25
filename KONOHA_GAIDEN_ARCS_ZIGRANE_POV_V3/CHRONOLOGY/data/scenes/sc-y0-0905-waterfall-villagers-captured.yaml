@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0905-waterfall-villagers-captured"
+continuity_id: "main"
+title: "Нападники захоплюють мешканців Такіґакуре"
+location_id: "loc-takigakure"
+placement: {anchor_id: "ta-y0-0905", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0905-waterfall-attackers-capture-villagers"
+    legacy_ids: ["V10-000092"]
+    title: "Люди Суїєна захоплюють мешканців"
+    text: "Нападники Суїєна захоплюють мешканців Такіґакуре."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-suien", role: "cause", mode: "remote"}
+      - {entity_id: "c-shibuki", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000092", "evd-ova-waterfall"]
+relations: []
+presence: []
