@@ -691,6 +691,12 @@ entities:
     name: "Rain ninja attackers"
     aliases:
       - "ніндзя Дощу"
+  - id: "group-otogakure-forces"
+    kind: "organization"
+    name: "Otogakure forces"
+    aliases:
+      - "сили Звуку"
+      - "люди Звуку"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
