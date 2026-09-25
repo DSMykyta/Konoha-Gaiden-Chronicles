@@ -6627,7 +6627,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000152"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6652,7 +6652,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000153"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6677,7 +6677,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000154"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6702,7 +6702,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000155"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6727,7 +6727,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000156"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6752,7 +6752,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000157"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
