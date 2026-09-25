@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0903-moya-interruption"
+continuity_id: "main"
+title: "Полювання на маску перетинається з трійцею Моя"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0903-team7-disrupts-moya-encounter"
+    legacy_ids: ["V10-000086"]
+    title: "Команда 7 зриває зустріч Какаші з трійцею Моя"
+    text: "Спроба Команди 7 стежити за Какаші втручається в його зустріч із трійцею Моя."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000086", "evd-anime-101"]
+relations: []
+presence: []
