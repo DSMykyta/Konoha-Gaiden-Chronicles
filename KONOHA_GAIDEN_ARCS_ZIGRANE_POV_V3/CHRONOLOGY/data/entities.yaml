@@ -893,6 +893,23 @@ entities:
     aliases:
       - "санніни"
       - "Троє саннінів"
+  - id: "c-koyuki"
+    kind: "person"
+    name: "Koyuki Kazahana / Yukie Fujikaze"
+    aliases:
+      - "Коюкі Казахана"
+      - "Юкіе Фуджіказе"
+  - id: "c-doto"
+    kind: "person"
+    name: "Dotō Kazahana"
+    aliases:
+      - "Дото"
+      - "Дото Казахана"
+  - id: "loc-land-of-snow"
+    kind: "location"
+    name: "Land of Snow"
+    aliases:
+      - "Країна Снігу"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
