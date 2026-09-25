@@ -1,0 +1,51 @@
+schema_version: 1
+id: "sc-y0-1103-hoshigakure-mission-departure"
+continuity_id: "main"
+title: "Наруто приєднується до місії з охорони Зірки Хошіґакуре"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1103-hoshi", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1103-hoshigakure-requests-star-guard"
+    legacy_ids: ["V10-000170"]
+    title: "Хошіґакуре просить Коноху охороняти метеорит"
+    text: "Коноха отримує від Хошіґакуре в Країні Ведмедів прохання захистити «Зірку» — метеорит, що посилює чакру."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "recipient", mode: "physical"}
+      - {entity_id: "c-akahoshi", role: "requesting_authority", mode: "remote"}
+    evidence_ids: ["evd-v10-000170", "evd-anime-178"]
+  - id: "ev-y0-1103-neji-lee-tenten-assigned-star-guard"
+    legacy_ids: ["V10-000170"]
+    title: "Неджи, Лі й Тентен отримують місію"
+    text: "Цунаде відправляє до Хошіґакуре групу Неджи з Лі та Тентен для охорони метеорита."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "physical"}
+      - {entity_id: "c-neji", role: "leader", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000170", "evd-anime-178"]
+  - id: "ev-y0-1103-naruto-forces-way-into-star-mission"
+    legacy_ids: ["V10-000170"]
+    title: "Наруто наполягає, щоб його взяли з ними"
+    text: "Дізнавшись про незвичайну чакрову силу Зірки, Наруто домагається участі в експедиції разом із групою Неджи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "leader", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000170", "evd-anime-178"]
+relations:
+  - {id: "rel-1103-hoshi-depart-1", kind: "before", a: "ev-y0-1103-hoshigakure-requests-star-guard", b: "ev-y0-1103-neji-lee-tenten-assigned-star-guard", basis: "source", review: "accepted", evidence_ids: ["evd-anime-178"]}
+  - {id: "rel-1103-hoshi-depart-2", kind: "before", a: "ev-y0-1103-neji-lee-tenten-assigned-star-guard", b: "ev-y0-1103-naruto-forces-way-into-star-mission", basis: "source", review: "accepted", evidence_ids: ["evd-anime-178"]}
+presence: []
