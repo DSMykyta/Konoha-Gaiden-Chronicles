@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0925-sakura-asks-tsunade"
+continuity_id: "main"
+title: "Сакура просить Цунаде навчати її"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0925", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0925-sakura-asks-tsunade-apprenticeship"
+    legacy_ids: ["V10-000123-F"]
+    title: "Сакура просить стати ученицею Цунаде"
+    text: "Сакура просить Цунаде взяти її в учениці й навчити медичного ніндзюцу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000123-F", "evd-manga-sasuke-recovery"]
+relations: []
+presence:
+  - {id: "pr-0925-sakura-tsunade-sakura", entity_id: "c-sakura", from: "sc-y0-0925-sakura-asks-tsunade.start", to: "sc-y0-0925-sakura-asks-tsunade.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
+  - {id: "pr-0925-sakura-tsunade-tsunade", entity_id: "c-tsunade", from: "sc-y0-0925-sakura-asks-tsunade.start", to: "sc-y0-0925-sakura-asks-tsunade.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
