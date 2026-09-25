@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0705-team7-resumes-search"
+continuity_id: "main"
+title: "Команда 7 відновлює пошук другого сувою"
+location_id: "loc-forest-death"
+placement: {anchor_id: "ta-y0-0705", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0705-team7-resumes-scroll-search"
+    legacy_ids: ["V10-000043"]
+    title: "Після трьох днів відновлення Команда 7 продовжує етап"
+    text: "Наруто, Саске й Сакура після трьох днів відновлення знову вирушають шукати відсутній сувій."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000043", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+relations: []
+presence:
+  - {id: "pr-0705-search-naruto", entity_id: "c-naruto", from: "sc-y0-0705-team7-resumes-search.start", to: "sc-y0-0705-team7-resumes-search.end", basis: "source", evidence_ids: ["evd-v10-000043"], review: "accepted"}
+  - {id: "pr-0705-search-sasuke", entity_id: "c-sasuke", from: "sc-y0-0705-team7-resumes-search.start", to: "sc-y0-0705-team7-resumes-search.end", basis: "source", evidence_ids: ["evd-v10-000043"], review: "accepted"}
+  - {id: "pr-0705-search-sakura", entity_id: "c-sakura", from: "sc-y0-0705-team7-resumes-search.start", to: "sc-y0-0705-team7-resumes-search.end", basis: "source", evidence_ids: ["evd-v10-000043"], review: "accepted"}
