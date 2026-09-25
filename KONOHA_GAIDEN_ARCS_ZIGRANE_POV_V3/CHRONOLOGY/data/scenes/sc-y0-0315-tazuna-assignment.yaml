@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-0315-tazuna-assignment"
+continuity_id: "main"
+title: "Команда 7 отримує місію супроводу Тадзуни"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0315", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0315-naruto-demands-harder-mission"
+    legacy_ids: ["V10-000023", "V10-000024"]
+    title: "Наруто вимагає складнішої місії"
+    text: "Після серії D-рангів Наруто протестує проти побутових завдань і вимагає складнішої роботи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000023", "evd-v10-000024", "evd-manga-land-waves", "evd-anime-land-waves"]
+  - id: "ev-y0-0315-hiruzen-assigns-tazuna"
+    legacy_ids: ["V10-000023", "V10-000024"]
+    title: "Хірузен доручає Команді 7 супровід Тадзуни"
+    text: "Хірузен призначає Команді 7 C-рангову місію: супроводити мостобудівника Тадзуну до Країни Хвиль."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000023", "evd-v10-000024", "evd-manga-land-waves", "evd-anime-land-waves", "evd-novel-land-waves"]
+relations:
+  - {id: "rel-0315-demand-before-assignment", kind: "before", a: "ev-y0-0315-naruto-demands-harder-mission", b: "ev-y0-0315-hiruzen-assigns-tazuna", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+presence:
+  - {id: "pr-0315-assign-naruto", entity_id: "c-naruto", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-assign-sasuke", entity_id: "c-sasuke", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-assign-sakura", entity_id: "c-sakura", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-assign-kakashi", entity_id: "c-kakashi", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-assign-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-assign-tazuna", entity_id: "c-tazuna", from: "ev-y0-0315-hiruzen-assigns-tazuna.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
