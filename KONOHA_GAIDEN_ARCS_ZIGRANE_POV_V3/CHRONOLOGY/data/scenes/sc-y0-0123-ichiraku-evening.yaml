@@ -1,0 +1,43 @@
+schema_version: 1
+id: "sc-y0-0123-ichiraku-evening"
+continuity_id: "main"
+title: "Кіта, Наруто й Кіба обговорюють перший день"
+location_id: "loc-ichiraku"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+day_part: "evening"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-ichiraku-compare-tests"
+    title: "Наруто й Кіба порівнюють свої випробування з днем Кіти"
+    text: "За раменом Наруто розповідає про тест із дзвіночками, Кіба — про вистежування Команди 8, а Кіта пояснює тест Райдо на спостереження."
+    origin: "P"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-team9-ichiraku-evening"]
+  - id: "ev-y0-0123-kiba-reveals-kurenai-saw-raido"
+    title: "Кіба розповідає, що Куренай одразу помітила Райдо"
+    text: "Кіба пояснює Кіті, що Куренай побачила замаскованого Райдо від початку й наказала Команді 8 не реагувати на нього та Команду 9."
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-raido", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-team9-ichiraku-evening"]
+relations:
+  - {id: "rel-0123-ichiraku-tests-before-reveal", kind: "before", a: "ev-y0-0123-ichiraku-compare-tests", b: "ev-y0-0123-kiba-reveals-kurenai-saw-raido", basis: "source", review: "accepted", evidence_ids: ["evd-team9-ichiraku-evening"]}
+presence:
+  - {id: "pr-0123-ichiraku-kita", entity_id: "c-kita", from: "sc-y0-0123-ichiraku-evening.start", to: "sc-y0-0123-ichiraku-evening.end", basis: "source", evidence_ids: ["evd-team9-ichiraku-evening"], review: "accepted"}
+  - {id: "pr-0123-ichiraku-naruto", entity_id: "c-naruto", from: "sc-y0-0123-ichiraku-evening.start", to: "sc-y0-0123-ichiraku-evening.end", basis: "source", evidence_ids: ["evd-team9-ichiraku-evening"], review: "accepted"}
+  - {id: "pr-0123-ichiraku-kiba", entity_id: "c-kiba", from: "sc-y0-0123-ichiraku-evening.start", to: "sc-y0-0123-ichiraku-evening.end", basis: "source", evidence_ids: ["evd-team9-ichiraku-evening"], review: "accepted"}
+  - {id: "pr-0123-ichiraku-akamaru", entity_id: "c-akamaru", from: "sc-y0-0123-ichiraku-evening.start", to: "sc-y0-0123-ichiraku-evening.end", basis: "source", evidence_ids: ["evd-team9-ichiraku-evening"], review: "accepted"}
+  - {id: "pr-0123-ichiraku-teuchi", entity_id: "c-teuchi", from: "sc-y0-0123-ichiraku-evening.start", to: "sc-y0-0123-ichiraku-evening.end", basis: "source", evidence_ids: ["evd-team9-ichiraku-evening"], review: "accepted"}
