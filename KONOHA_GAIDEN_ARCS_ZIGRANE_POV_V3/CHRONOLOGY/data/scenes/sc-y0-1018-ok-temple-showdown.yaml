@@ -1,0 +1,82 @@
+schema_version: 1
+id: "sc-y0-1018-ok-temple-showdown"
+continuity_id: "main"
+title: "Садзанамі й команда наздоганяють Ґосункуґі в храмі О.К."
+location_id: "loc-ok-temple"
+placement: {anchor_id: "ta-y0-1018", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1018-gosunkugi-targets-temple-bell"
+    legacy_ids: ["V10-000150"]
+    title: "Ґосункуґі намагається викрасти храмовий дзвін"
+    text: "Садзанамі разом із Наруто, Кібою й Хінатою знаходить Ґосункуґі біля храму О.К., де той намагається заволодіти цінним дзвоном."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-gosunkugi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sazanami", role: "pursuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000150", "evd-anime-159-160"]
+  - id: "ev-y0-1018-team-defeats-gosunkugi-men"
+    legacy_ids: ["V10-000150"]
+    title: "Наруто, Кіба й Хіната розбивають людей Ґосункуґі"
+    text: "Поки Садзанамі зосереджується на самому Ґосункуґі, трійка Конохи нейтралізує його людей і не дає їм утекти з храму."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-gosunkugi", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000150", "evd-anime-159-160"]
+  - id: "ev-y0-1018-sazanami-defeats-gosunkugi"
+    legacy_ids: ["V10-000150"]
+    title: "Садзанамі перемагає Ґосункуґі"
+    text: "Садзанамі бере гору над Ґосункуґі й фактично доводить, що переслідував справжнього злочинця."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sazanami", role: "focus", mode: "physical"}
+      - {entity_id: "c-gosunkugi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000150", "evd-anime-159-160"]
+  - id: "ev-y0-1018-gatsu-captures-gosunkugi-and-sazanami"
+    legacy_ids: ["V10-000150"]
+    title: "Ґацу оформлює затримання обох розшукуваних"
+    text: "Після бою Ґацу забирає і Ґосункуґі, і Токічі-Садзанамі до влади; зізнання Ґосункуґі допомагає очистити ім'я Токічі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-gatsu", role: "captor", mode: "physical"}
+      - {entity_id: "c-gosunkugi", role: "affected", mode: "physical"}
+      - {entity_id: "c-sazanami", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-kiba", role: "observer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000150", "evd-anime-159-160"]
+  - id: "ev-y0-1018-konoha-team-technically-fails-capture"
+    legacy_ids: ["V10-000150"]
+    title: "Трійка Конохи технічно не виконує умову власного завдання"
+    text: "Оскільки офіційне затримання Ґосункуґі оформлює не команда Конохи, їхня місія формально не зараховується як успішне захоплення, хоча ім'я Садзанамі очищене."
+    origin: "F"
+    extent: "instant"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-sazanami", role: "beneficiary", mode: "physical"}
+    evidence_ids: ["evd-v10-000150", "evd-anime-159-160"]
+relations:
+  - {id: "rel-1018-ok-1", kind: "before", a: "ev-y0-1018-gosunkugi-targets-temple-bell", b: "ev-y0-1018-team-defeats-gosunkugi-men", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+  - {id: "rel-1018-ok-2", kind: "before", a: "ev-y0-1018-team-defeats-gosunkugi-men", b: "ev-y0-1018-sazanami-defeats-gosunkugi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+  - {id: "rel-1018-ok-3", kind: "before", a: "ev-y0-1018-sazanami-defeats-gosunkugi", b: "ev-y0-1018-gatsu-captures-gosunkugi-and-sazanami", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+  - {id: "rel-1018-ok-4", kind: "before", a: "ev-y0-1018-gatsu-captures-gosunkugi-and-sazanami", b: "ev-y0-1018-konoha-team-technically-fails-capture", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+presence: []
