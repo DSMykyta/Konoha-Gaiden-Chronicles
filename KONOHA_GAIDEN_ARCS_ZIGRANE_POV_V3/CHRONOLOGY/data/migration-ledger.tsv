@@ -167,9 +167,9 @@ V10-000085	0	02.09	F	superseded	ev-y0-0902-konohamaru-barricades-hokage-office;e
 V10-000083-D	0	02.09	M	superseded	ev-y0-0902-tsunade-heals-kakashi;ev-y0-0902-tsunade-heals-sasuke	Kakashi and Sasuke treatments separated; Itachi is remote cause.
 V10-000083-E	0	02.09	M	superseded	ev-y0-0902-tsunade-examines-lee;ev-y0-0902-tsunade-gives-lee-fifty-percent	Lee examination and prognosis separated.
 V10-000083-F	0	02.09	M	migrated	ev-y0-0902-shikamaru-promoted-chunin	Shikamaru promotion migrated.
-V10-000086	0	03.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000087	0	03.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000088	0	03.09	V	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000086	0	03.09	F	superseded	ev-y0-0903-team7-decides-unmask-kakashi;ev-y0-0903-team7-follows-and-traps-kakashi;ev-y0-0903-team7-disrupts-moya-encounter;ev-y0-0903-kakashi-reveals-second-mask	Episode 101 decomposed into scene-level events.
+V10-000087	0	03.09	R	superseded	ev-alt-y0-0903-sukea-joins-mask-hunt;ev-alt-y0-0903-teams-infiltrate-secret-archive;ev-alt-y0-0903-teams-stage-rescue;ev-alt-y0-0903-sukea-revealed-kakashi	Shippuden 469 preserved as separate ALT continuity and decomposed by scene.
+V10-000088	0	03.09	V	superseded	ev-alt-y0-0903-team7-escorts-yukie;ev-alt-y0-0903-yukie-revealed-koyuki;ev-alt-y0-0903-koyuki-exile-doto-coup;ev-alt-y0-0903-team7-fights-doto-shinobi;ev-alt-y0-0903-naruto-defeats-doto;ev-alt-y0-0903-koyuki-restores-land-snow	Land of Snow movie preserved as ALT movie continuity and decomposed into scene nodes.
 V10-000089	0	04.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000090	0	04.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000091	0	05.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
