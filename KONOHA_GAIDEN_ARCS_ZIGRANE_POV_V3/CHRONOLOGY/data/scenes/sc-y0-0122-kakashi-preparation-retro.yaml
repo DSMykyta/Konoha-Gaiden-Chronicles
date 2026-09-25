@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0122-kakashi-preparation-retro"
+continuity_id: "main"
+title: "Ретроспектива підготовки Какаші до Команди 7"
+location_id: null
+placement: {anchor_id: "ta-team-formation", day_offset: 0}
+state: "draft"
+presence_coverage: "partial"
+review: {time: "pending", cast: "partial", location: "pending", origin: "accepted", text: "imported"}
+events:
+  - id: "ev-y0-0122-hiruzen-assigns-team7-to-kakashi"
+    legacy_ids: ["V10-000008"]
+    title: "Хірузен доручає Команду 7 Какаші"
+    text: "Хірузен доручає нову Команду 7 Какаші."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-22jan-retro"]
+  - id: "ev-y0-0122-kakashi-background-checks-team7"
+    legacy_ids: ["V10-000008"]
+    title: "Какаші перевіряє відомості про нових учнів"
+    text: "Какаші відвідує помешкання Наруто та родин Саске й Сакури, дізнається про спорідненість Наруто з Мінато й спостерігає за новою трійцею з тіні. Цей імпортований блок ще потребує поділу на окремі локаційні сцени."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "remote"}
+      - {entity_id: "c-sakura", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-22jan-retro"]
+relations:
+  - {id: "rel-0122-kakashi-assignment-before-checks", kind: "before", a: "ev-y0-0122-hiruzen-assigns-team7-to-kakashi", b: "ev-y0-0122-kakashi-background-checks-team7", basis: "imported", review: "pending", evidence_ids: ["evd-v10-22jan-retro"]}
+presence:
+  - {id: "pr-0122-retro-kakashi", entity_id: "c-kakashi", from: "sc-y0-0122-kakashi-preparation-retro.start", to: "sc-y0-0122-kakashi-preparation-retro.end", basis: "imported", evidence_ids: ["evd-v10-22jan-retro"], review: "pending"}
