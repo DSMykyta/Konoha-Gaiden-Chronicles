@@ -642,3 +642,35 @@ anchors:
     evidence_ids: ["evd-v10-000129", "evd-shippuden-236"]
     review: "accepted"
     reason: "Episode 236 places the flashback after the failed Sasuke Retrieval mission; the exact 30.09 project date is inherited from v9/v10."
+  - id: "ta-y0-1001"
+    date: {year: 0, month: 10, day: 1}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000130"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
+  - id: "ta-y0-1002"
+    date: {year: 0, month: 10, day: 2}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000131"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
+  - id: "ta-y0-1003"
+    date: {year: 0, month: 10, day: 3}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000132"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
+  - id: "ta-y0-1004"
+    date: {year: 0, month: 10, day: 4}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000133"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
