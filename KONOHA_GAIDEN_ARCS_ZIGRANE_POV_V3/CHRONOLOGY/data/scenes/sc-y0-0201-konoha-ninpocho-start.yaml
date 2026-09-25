@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0201-konoha-ninpocho-start"
+continuity_id: "alt-game-konoha-ninpocho"
+title: "Початок ігрової гілки Konoha Ninpōchō"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0201", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0201-team7-game-missions"
+    legacy_ids: ["V10-000019"]
+    title: "Команда 7 починає додаткові ігрові місії"
+    text: "В альтернативній гілці Konoha Ninpōchō Команда 7 починає серію створених для гри завдань у Конохі."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000019", "evd-source-000019"]
+relations: []
+presence: []
