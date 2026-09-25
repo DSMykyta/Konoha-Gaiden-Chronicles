@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-0902-tsunade-inauguration"
+continuity_id: "main"
+title: "Цунаде вступає на посаду П’ятої Хокаґе"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0902", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0902-tsunade-becomes-fifth-hokage"
+    legacy_ids: ["V10-000083-C"]
+    title: "Цунаде офіційно бере на себе обов’язки П’ятої Хокаґе"
+    text: "Після повернення до Конохи Цунаде офіційно вступає на посаду П’ятої Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000083-C", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0902-inauguration-tsunade", entity_id: "c-tsunade", from: "sc-y0-0902-tsunade-inauguration.start", to: "sc-y0-0902-tsunade-inauguration.end", basis: "imported", evidence_ids: ["evd-v10-000083-C"], review: "accepted"}
