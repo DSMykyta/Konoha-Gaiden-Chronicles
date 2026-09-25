@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0822-rasengan-stage1"
+continuity_id: "main"
+title: "Наруто завершує перший етап Расенґана"
+location_id: null
+placement: {anchor_id: "ta-y0-0822", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0822-naruto-bursts-water-balloon"
+    legacy_ids: ["V10-000077"]
+    title: "Наруто розриває водяну кульку обертанням чакри"
+    text: "Поки Джирая збирає інформацію про Цунаде, Наруто завершує перший етап тренування Расенґана, розриваючи водяну кульку обертанням чакри."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000077", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0822-jiraiya-gives-rubber-ball"
+    legacy_ids: ["V10-000077"]
+    title: "Джирая дає Наруто гумову кульку"
+    text: "Після успіху першого етапу Джирая дає Наруто гумову кульку для складнішого етапу сили."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000077", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0822-rasengan-1", kind: "before", a: "ev-y0-0822-naruto-bursts-water-balloon", b: "ev-y0-0822-jiraiya-gives-rubber-ball", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000077"]}
+presence:
+  - {id: "pr-0822-rasengan-naruto", entity_id: "c-naruto", from: "sc-y0-0822-rasengan-stage1.start", to: "sc-y0-0822-rasengan-stage1.end", basis: "imported", evidence_ids: ["evd-v10-000077"], review: "accepted"}
+  - {id: "pr-0822-rasengan-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0822-rasengan-stage1.start", to: "sc-y0-0822-rasengan-stage1.end", basis: "imported", evidence_ids: ["evd-v10-000077"], review: "accepted"}
