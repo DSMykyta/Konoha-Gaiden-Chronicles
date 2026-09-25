@@ -411,3 +411,38 @@ redirects:
       - "ev-y0-0416-chen-tests-lee"
       - "ev-y0-0416-lee-develops-answer-to-dragon"
     reason: "Chen retrospective split into arrival, reveal, test and Lee's response."
+  - legacy_id: "V10-000039"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0624-foreign-genin-arrive"
+    reason: "Foreign-genin arrival kept as a background/global event."
+  - legacy_id: "V10-000039-B"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0624-kankuro-confronts-konohamaru"
+      - "ev-y0-0624-team7-intervenes"
+      - "ev-y0-0624-team7-meets-sand-siblings"
+    reason: "Konohamaru/Sand encounter split into confrontation, intervention and first meeting; Moegi and Udon added to physical presence."
+  - legacy_id: "V10-000039-C"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0624-lee-challenges-sasuke"
+      - "ev-y0-0624-lee-outclasses-sasuke"
+      - "ev-y0-0624-guy-stops-lee"
+    reason: "Lee/Sasuke bout split; Naruto and Sakura retained as physical witnesses."
+  - legacy_id: "V10-000039-D"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0624-hiruzen-announces-chunin-exam"
+    reason: "Hokage meeting event migrated."
+  - legacy_id: "V10-000039-E"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0624-jonin-nominate-teams"
+      - "ev-y0-0624-iruka-objects-to-nominations"
+    reason: "Nominations and Iruka's objection separated within the same meeting scene."
+  - legacy_id: "V10-000039-F"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0624-kakashi-offers-exam-choice"
+    reason: "Kakashi's private Team 7 choice scene migrated."
