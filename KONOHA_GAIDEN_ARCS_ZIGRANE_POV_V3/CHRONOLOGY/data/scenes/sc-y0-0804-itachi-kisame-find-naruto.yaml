@@ -20,8 +20,93 @@ events:
       - {entity_id: "c-kisame", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "affected", mode: "physical"}
     evidence_ids: ["evd-v10-000076", "evd-manga-post-crush-search"]
-relations: []
+  - id: "ev-y0-0804-sasuke-attacks-itachi"
+    legacy_ids: ["V10-000076-B"]
+    title: "Саске атакує Ітачі Чідорі"
+    text: "Саске прибуває до заїжджого двору й атакує Ітачі Чідорі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-itachi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kisame", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000076-B", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0804-itachi-breaks-sasuke-arm-tsukuyomi"
+    legacy_ids: ["V10-000076-B"]
+    title: "Ітачі зупиняє Саске й застосовує Цукуйомі"
+    text: "Ітачі зупиняє Чідорі Саске, ламає йому руку та знову занурює його в Цукуйомі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-itachi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kisame", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000076-B", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0804-jiraiya-traps-akatsuki"
+    legacy_ids: ["V10-000076-C"]
+    title: "Джирая замикає Ітачі й Кісаме в техніці жаб’ячого стравоходу"
+    text: "Джирая повертається й замикає Ітачі та Кісаме всередині техніки жаб’ячого стравоходу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-itachi", role: "affected", mode: "physical"}
+      - {entity_id: "c-kisame", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000076-C", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0804-itachi-amaterasu-escape"
+    legacy_ids: ["V10-000076-D"]
+    title: "Ітачі прориває вихід Аматерасу"
+    text: "Ітачі застосовує Аматерасу, прорізає вихід із техніки Джираї та разом із Кісаме відступає."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-itachi", role: "focus", mode: "physical"}
+      - {entity_id: "c-kisame", role: "participant", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000076-D", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0804-sasuke-left-unconscious"
+    legacy_ids: ["V10-000076-E"]
+    title: "Саске лишається непритомним після Цукуйомі"
+    text: "Після відступу Акацукі Саске лишається непритомним через Цукуйомі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-itachi", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000076-E", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0804-naruto-jiraiya-continue-tsunade-search"
+    legacy_ids: ["V10-000076-E"]
+    title: "Наруто й Джирая продовжують пошуки Цунаде"
+    text: "Після зіткнення з Акацукі Наруто й Джирая продовжують подорож у пошуках Цунаде."
+    origin: "M"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "target", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000076-E", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0804-inn-1", kind: "before", a: "ev-y0-0804-itachi-kisame-find-naruto", b: "ev-y0-0804-sasuke-attacks-itachi", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+  - {id: "rel-0804-inn-2", kind: "before", a: "ev-y0-0804-sasuke-attacks-itachi", b: "ev-y0-0804-itachi-breaks-sasuke-arm-tsukuyomi", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+  - {id: "rel-0804-inn-3", kind: "before", a: "ev-y0-0804-itachi-breaks-sasuke-arm-tsukuyomi", b: "ev-y0-0804-jiraiya-traps-akatsuki", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+  - {id: "rel-0804-inn-4", kind: "before", a: "ev-y0-0804-jiraiya-traps-akatsuki", b: "ev-y0-0804-itachi-amaterasu-escape", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+  - {id: "rel-0804-inn-5", kind: "before", a: "ev-y0-0804-itachi-amaterasu-escape", b: "ev-y0-0804-sasuke-left-unconscious", basis: "source", review: "pending", evidence_ids: ["evd-manga-post-crush-search"]}
+  - {id: "rel-0804-inn-6", kind: "before", a: "ev-y0-0804-sasuke-left-unconscious", b: "ev-y0-0804-naruto-jiraiya-continue-tsunade-search", basis: "logical", review: "pending", evidence_ids: ["evd-v10-000076-E"]}
 presence:
-  - {id: "pr-0804-akatsuki-itachi", entity_id: "c-itachi", from: "sc-y0-0804-itachi-kisame-find-naruto.start", to: "sc-y0-0804-itachi-kisame-find-naruto.end", basis: "source", evidence_ids: ["evd-v10-000076"], review: "accepted"}
-  - {id: "pr-0804-akatsuki-kisame", entity_id: "c-kisame", from: "sc-y0-0804-itachi-kisame-find-naruto.start", to: "sc-y0-0804-itachi-kisame-find-naruto.end", basis: "source", evidence_ids: ["evd-v10-000076"], review: "accepted"}
+  - {id: "pr-0804-akatsuki-itachi", entity_id: "c-itachi", from: "sc-y0-0804-itachi-kisame-find-naruto.start", to: "ev-y0-0804-itachi-amaterasu-escape.end", basis: "source", evidence_ids: ["evd-v10-000076"], review: "accepted"}
+  - {id: "pr-0804-akatsuki-kisame", entity_id: "c-kisame", from: "sc-y0-0804-itachi-kisame-find-naruto.start", to: "ev-y0-0804-itachi-amaterasu-escape.end", basis: "source", evidence_ids: ["evd-v10-000076"], review: "accepted"}
   - {id: "pr-0804-akatsuki-naruto", entity_id: "c-naruto", from: "sc-y0-0804-itachi-kisame-find-naruto.start", to: "sc-y0-0804-itachi-kisame-find-naruto.end", basis: "source", evidence_ids: ["evd-v10-000076"], review: "accepted"}
+  - {id: "pr-0804-akatsuki-sasuke", entity_id: "c-sasuke", from: "ev-y0-0804-sasuke-attacks-itachi.start", to: "ev-y0-0804-sasuke-left-unconscious.end", basis: "source", evidence_ids: ["evd-v10-000076-B"], review: "accepted"}
+  - {id: "pr-0804-akatsuki-jiraiya", entity_id: "c-jiraiya", from: "ev-y0-0804-jiraiya-traps-akatsuki.start", to: "sc-y0-0804-itachi-kisame-find-naruto.end", basis: "source", evidence_ids: ["evd-v10-000076-C"], review: "accepted"}
