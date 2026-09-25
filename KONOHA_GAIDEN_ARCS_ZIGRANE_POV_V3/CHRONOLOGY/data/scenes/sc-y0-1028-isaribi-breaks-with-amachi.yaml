@@ -1,0 +1,36 @@
+schema_version: 1
+id: "sc-y0-1028-isaribi-breaks-with-amachi"
+continuity_id: "main"
+title: "Ісарібі вагається між обіцянкою лікування та допомогою Наруто"
+location_id: "loc-demon-island"
+placement: {anchor_id: "ta-y0-1028", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1028-isaribi-believes-amachi-can-restore-body"
+    legacy_ids: ["V10-000162"]
+    title: "Ісарібі ще тримається за обіцянку Амачі повернути їй людське тіло"
+    text: "Ісарібі продовжує виконувати накази Амачі, бо вірить його обіцянці вилікувати наслідки експериментів і повернути їй повністю людське тіло."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-isaribi", role: "focus", mode: "physical"}
+      - {entity_id: "c-amachi", role: "manipulator", mode: "physical"}
+    evidence_ids: ["evd-v10-000162", "evd-anime-169-173"]
+  - id: "ev-y0-1028-naruto-tells-isaribi-amachi-uses-her"
+    legacy_ids: ["V10-000162"]
+    title: "Наруто переконує Ісарібі, що Амачі не збирається її рятувати"
+    text: "Наруто прямо порівнює її становище зі своїм досвідом відчуження й переконує Ісарібі, що Амачі використовує її страх і надію на лікування."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "recipient", mode: "physical"}
+      - {entity_id: "c-amachi", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000162", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1028-isaribi-break-1", kind: "before", a: "ev-y0-1028-isaribi-believes-amachi-can-restore-body", b: "ev-y0-1028-naruto-tells-isaribi-amachi-uses-her", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
