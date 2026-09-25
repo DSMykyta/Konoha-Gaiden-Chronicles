@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0923-retrieval-team-departs"
+continuity_id: "main"
+title: "Загін Шикамару залишає Коноху"
+location_id: "loc-konoha-gate"
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-retrieval-team-leaves-konoha"
+    legacy_ids: ["V10-000121-E"]
+    title: "Загін вирушає в погоню"
+    text: "Шикамару, Наруто, Чоджі, Неджі й Кіба залишають Коноху та починають переслідування Четвірки Звуку, яка несе Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "leader", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+      - {entity_id: "c-jirobo", role: "pursued", mode: "remote"}
+      - {entity_id: "c-kidomaru", role: "pursued", mode: "remote"}
+      - {entity_id: "c-tayuya", role: "pursued", mode: "remote"}
+      - {entity_id: "c-sakon", role: "pursued", mode: "remote"}
+      - {entity_id: "c-ukon", role: "pursued", mode: "remote"}
+    focus_teams: ["group-sasuke-retrieval"]
+    evidence_ids: ["evd-v10-000121-E"]
+relations: []
+presence:
+  - {id: "pr-0923-depart-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0923-retrieval-team-departs.start", to: "sc-y0-0923-retrieval-team-departs.end", basis: "source", evidence_ids: ["evd-v10-000121-E"], review: "accepted"}
+  - {id: "pr-0923-depart-naruto", entity_id: "c-naruto", from: "sc-y0-0923-retrieval-team-departs.start", to: "sc-y0-0923-retrieval-team-departs.end", basis: "source", evidence_ids: ["evd-v10-000121-E"], review: "accepted"}
+  - {id: "pr-0923-depart-choji", entity_id: "c-choji", from: "sc-y0-0923-retrieval-team-departs.start", to: "sc-y0-0923-retrieval-team-departs.end", basis: "source", evidence_ids: ["evd-v10-000121-E"], review: "accepted"}
+  - {id: "pr-0923-depart-neji", entity_id: "c-neji", from: "sc-y0-0923-retrieval-team-departs.start", to: "sc-y0-0923-retrieval-team-departs.end", basis: "source", evidence_ids: ["evd-v10-000121-E"], review: "accepted"}
+  - {id: "pr-0923-depart-kiba", entity_id: "c-kiba", from: "sc-y0-0923-retrieval-team-departs.start", to: "sc-y0-0923-retrieval-team-departs.end", basis: "source", evidence_ids: ["evd-v10-000121-E"], review: "accepted"}
