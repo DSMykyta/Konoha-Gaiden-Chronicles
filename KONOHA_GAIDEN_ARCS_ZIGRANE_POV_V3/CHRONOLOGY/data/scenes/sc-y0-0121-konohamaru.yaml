@@ -1,0 +1,61 @@
+schema_version: 1
+id: "sc-y0-0121-konohamaru"
+continuity_id: "main"
+title: "Наруто знайомиться з Конохамару"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0121", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0121-naruto-registers-ninja"
+    legacy_ids: ["V10-000004"]
+    title: "Наруто офіційно реєструється як шинобі"
+    text: "Після випуску Наруто проходить офіційну реєстрацію як шинобі Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
+  - id: "ev-y0-0121-naruto-meets-konohamaru"
+    legacy_ids: ["V10-000004"]
+    title: "Наруто знайомиться з Конохамару"
+    text: "Конохамару кидає Наруто виклик і намагається використати його як суперника на шляху до титулу Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
+  - id: "ev-y0-0121-naruto-defeats-ebisu"
+    legacy_ids: ["V10-000004"]
+    title: "Наруто перемагає Ебісу Гаремною Технікою"
+    text: "Коли Ебісу втручається, Наруто перемагає його Гаремною Технікою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-ebisu", role: "participant", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
+  - id: "ev-y0-0121-naruto-teaches-konohamaru"
+    legacy_ids: ["V10-000004"]
+    title: "Наруто говорить Конохамару, що короткого шляху до Хокаґе немає"
+    text: "Наруто пояснює Конохамару, що стати Хокаґе не можна коротким шляхом."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
+relations:
+  - {id: "rel-0121-meet-before-ebisu", kind: "before", a: "ev-y0-0121-naruto-meets-konohamaru", b: "ev-y0-0121-naruto-defeats-ebisu", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch2-konohamaru"]}
+  - {id: "rel-0121-ebisu-before-lesson", kind: "before", a: "ev-y0-0121-naruto-defeats-ebisu", b: "ev-y0-0121-naruto-teaches-konohamaru", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch2-konohamaru"]}
+presence:
+  - {id: "pr-0121-kon-naruto", entity_id: "c-naruto", from: "sc-y0-0121-konohamaru.start", to: "sc-y0-0121-konohamaru.end", basis: "source", evidence_ids: ["evd-v10-000004"], review: "accepted"}
+  - {id: "pr-0121-kon-konohamaru", entity_id: "c-konohamaru", from: "ev-y0-0121-naruto-meets-konohamaru.start", to: "sc-y0-0121-konohamaru.end", basis: "source", evidence_ids: ["evd-v10-000004"], review: "accepted"}
+  - {id: "pr-0121-kon-ebisu", entity_id: "c-ebisu", from: "ev-y0-0121-naruto-defeats-ebisu.start", to: "ev-y0-0121-naruto-defeats-ebisu.end", basis: "source", evidence_ids: ["evd-v10-000004"], review: "accepted"}
