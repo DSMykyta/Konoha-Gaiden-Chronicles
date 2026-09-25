@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0904-waterfall-threat-revealed"
+continuity_id: "main"
+title: "У Такіґакуре виявляють загрозу Суїєна"
+location_id: "loc-takigakure"
+placement: {anchor_id: "ta-y0-0904", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0904-waterfall-suien-plan-revealed"
+    legacy_ids: ["V10-000090"]
+    title: "З’ясовується, що Суїєн готує напад заради Води Героїв"
+    text: "Після прибуття до Такіґакуре стає відомо, що нукеніни на чолі із Суїєном готують напад заради Води Героїв."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shibuki", role: "affected", mode: "physical"}
+      - {entity_id: "c-suien", role: "identified", mode: "remote"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000090", "evd-ova-waterfall"]
+relations: []
+presence: []
