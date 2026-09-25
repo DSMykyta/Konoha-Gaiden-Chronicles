@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-alt-y0-0912-jonin-vs-genin-tournament"
+continuity_id: "alt-jonin-vs-genin"
+title: "Цунаде проводить турнір джонінів і генінів"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0912", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0912-tsunade-crystal-tournament"
+    legacy_ids: ["V10-000104", "V10-000105"]
+    title: "Турнір проходить за правилом кристалів"
+    text: "У ALT-турнірі Цунаде видає учасникам кристали; учасник вибуває, якщо його кристал забрали. Ultimate Ninja 3 розширює цю саму подію, а не створює другий окремий турнір."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000104", "evd-ova-jonin-vs-genin", "evd-v10-000105", "evd-game-ultimate-ninja-3"]
+  - id: "ev-alt-y0-0912-naruto-targets-sasuke-kakashi"
+    legacy_ids: ["V10-000104", "V10-000105"]
+    title: "Наруто прагне перемогти Саске й Какаші"
+    text: "У межах турніру Наруто особливо прагне здолати Саске й Какаші."
+    origin: "O"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000104", "evd-ova-jonin-vs-genin", "evd-v10-000105", "evd-game-ultimate-ninja-3"]
+relations:
+  - {id: "rel-alt-0912-tournament-1", kind: "intersects", a: "ev-alt-y0-0912-tsunade-crystal-tournament", b: "ev-alt-y0-0912-naruto-targets-sasuke-kakashi", basis: "source", review: "accepted", evidence_ids: ["evd-ova-jonin-vs-genin"]}
+presence: []
