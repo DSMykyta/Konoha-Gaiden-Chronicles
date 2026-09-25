@@ -434,3 +434,35 @@ anchors:
     evidence_ids: ["evd-v10-000086", "evd-v10-000087", "evd-v10-000088"]
     review: "accepted"
     reason: "Working project date for episode 101 and adjacent ALT retrospective/movie placements."
+  - id: "ta-y0-0904"
+    date: {year: 0, month: 9, day: 4}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000089"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
+  - id: "ta-y0-0905"
+    date: {year: 0, month: 9, day: 5}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000091"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
+  - id: "ta-y0-0906"
+    date: {year: 0, month: 9, day: 6}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000094"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
+  - id: "ta-y0-0907"
+    date: {year: 0, month: 9, day: 7}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000097"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
