@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-0924-valley-power-escalation"
+continuity_id: "main"
+title: "Бій Наруто й Саске переходить на найвищий рівень"
+location_id: "loc-valley-of-end"
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-sasuke-sharingan-develops"
+    legacy_ids: ["V10-000122-M"]
+    title: "Шарінґан Саске розвивається під час бою"
+    text: "У ході бою Шарінґан Саске переходить на вищий рівень."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-M"]
+  - id: "ev-y0-0924-sasuke-curse-seal-stage-two"
+    legacy_ids: ["V10-000122-M"]
+    title: "Саске переходить у другу стадію Проклятої Печатки"
+    text: "Саске переходить у другу стадію Проклятої Печатки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-M"]
+  - id: "ev-y0-0924-naruto-one-tail-cloak"
+    legacy_ids: ["V10-000122-M"]
+    title: "Наруто вивільняє однохвостий покрив чакри Дев’ятихвостого"
+    text: "Наруто вивільняє однохвостий покрив чакри Дев’ятихвостого."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-M"]
+relations:
+  - {id: "rel-0924-valley-power-1", kind: "before", a: "ev-y0-0924-sasuke-sharingan-develops", b: "ev-y0-0924-sasuke-curse-seal-stage-two", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000122-M"]}
+  - {id: "rel-0924-valley-power-2", kind: "intersects", a: "ev-y0-0924-sasuke-curse-seal-stage-two", b: "ev-y0-0924-naruto-one-tail-cloak", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-M"]}
+presence:
+  - {id: "pr-0924-valley-power-naruto", entity_id: "c-naruto", from: "sc-y0-0924-valley-power-escalation.start", to: "sc-y0-0924-valley-power-escalation.end", basis: "source", evidence_ids: ["evd-v10-000122-M"], review: "accepted"}
+  - {id: "pr-0924-valley-power-sasuke", entity_id: "c-sasuke", from: "sc-y0-0924-valley-power-escalation.start", to: "sc-y0-0924-valley-power-escalation.end", basis: "source", evidence_ids: ["evd-v10-000122-M"], review: "accepted"}
