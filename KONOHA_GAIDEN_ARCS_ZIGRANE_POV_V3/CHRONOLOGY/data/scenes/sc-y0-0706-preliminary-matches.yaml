@@ -1,0 +1,143 @@
+schema_version: 1
+id: "sc-y0-0706-preliminary-matches"
+continuity_id: "main"
+title: "Попередні поєдинки іспиту на чуніна"
+location_id: "loc-chunin-prelim-arena"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-sasuke-defeats-yoroi"
+    legacy_ids: ["V10-000046"]
+    title: "Саске перемагає Йорої"
+    text: "У першому попередньому поєдинку Саске перемагає Йорої Акадо, стримуючи Прокляту Печатку."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-yoroi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-shino-defeats-zaku"
+    legacy_ids: ["V10-000046-C"]
+    title: "Шіно перемагає Заку"
+    text: "Шіно Абураме перемагає Заку Абумі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-zaku", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-C", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-kankuro-defeats-misumi"
+    legacy_ids: ["V10-000046-D"]
+    title: "Канкуро перемагає Місумі"
+    text: "Канкуро перемагає Місумі Цуругі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kankuro", role: "focus", mode: "physical"}
+      - {entity_id: "c-misumi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-D", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-sakura-ino-double-ko"
+    legacy_ids: ["V10-000046-E"]
+    title: "Сакура й Іно вибувають разом"
+    text: "Сакура та Іно завершують поєдинок взаємним нокаутом; обидві вибувають."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-ino", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-E", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-temari-defeats-tenten"
+    legacy_ids: ["V10-000046-F"]
+    title: "Темарі перемагає Тентен"
+    text: "Темарі перемагає Тентен."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-temari", role: "focus", mode: "physical"}
+      - {entity_id: "c-tenten", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-F", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-shikamaru-defeats-kin"
+    legacy_ids: ["V10-000046-G"]
+    title: "Шикамару перемагає Кін"
+    text: "Шикамару перемагає Кін Цучі, використовуючи тіньову техніку й оточення."
+    origin: "M"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kin", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-G", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-naruto-defeats-kiba"
+    legacy_ids: ["V10-000046-H"]
+    title: "Наруто перемагає Кібу"
+    text: "Наруто перемагає Кібу та Акамару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-H", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-neji-defeats-hinata"
+    legacy_ids: ["V10-000046-I"]
+    title: "Неджі тяжко ранить Хінату"
+    text: "Неджі перемагає Хінату й завдає їй тяжких ушкоджень."
+    origin: "M"
+    extent: "interval"
+    display_rank: 800
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-I", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-gaara-defeats-lee"
+    legacy_ids: ["V10-000046-J"]
+    title: "Ґаара перемагає й тяжко травмує Лі"
+    text: "Ґаара перемагає Рока Лі; отримані травми ставлять під загрозу подальшу кар’єру Лі як шинобі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 900
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-J", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+  - id: "ev-y0-0706-dosu-defeats-choji"
+    legacy_ids: ["V10-000046-K"]
+    title: "Досу перемагає Чоджі"
+    text: "Досу перемагає Чоджі в останньому попередньому поєдинку."
+    origin: "M"
+    extent: "interval"
+    display_rank: 1000
+    involvement:
+      - {entity_id: "c-dosu", role: "focus", mode: "physical"}
+      - {entity_id: "c-choji", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000046-K", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+relations:
+  - {id: "rel-0706-match-1", kind: "before", a: "ev-y0-0706-sasuke-defeats-yoroi", b: "ev-y0-0706-shino-defeats-zaku", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046","evd-v10-000046-C"]}
+  - {id: "rel-0706-match-2", kind: "before", a: "ev-y0-0706-shino-defeats-zaku", b: "ev-y0-0706-kankuro-defeats-misumi", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-C","evd-v10-000046-D"]}
+  - {id: "rel-0706-match-3", kind: "before", a: "ev-y0-0706-kankuro-defeats-misumi", b: "ev-y0-0706-sakura-ino-double-ko", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-D","evd-v10-000046-E"]}
+  - {id: "rel-0706-match-4", kind: "before", a: "ev-y0-0706-sakura-ino-double-ko", b: "ev-y0-0706-temari-defeats-tenten", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-E","evd-v10-000046-F"]}
+  - {id: "rel-0706-match-5", kind: "before", a: "ev-y0-0706-temari-defeats-tenten", b: "ev-y0-0706-shikamaru-defeats-kin", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-F","evd-v10-000046-G"]}
+  - {id: "rel-0706-match-6", kind: "before", a: "ev-y0-0706-shikamaru-defeats-kin", b: "ev-y0-0706-naruto-defeats-kiba", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-G","evd-v10-000046-H"]}
+  - {id: "rel-0706-match-7", kind: "before", a: "ev-y0-0706-naruto-defeats-kiba", b: "ev-y0-0706-neji-defeats-hinata", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-H","evd-v10-000046-I"]}
+  - {id: "rel-0706-match-8", kind: "before", a: "ev-y0-0706-neji-defeats-hinata", b: "ev-y0-0706-gaara-defeats-lee", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-I","evd-v10-000046-J"]}
+  - {id: "rel-0706-match-9", kind: "before", a: "ev-y0-0706-gaara-defeats-lee", b: "ev-y0-0706-dosu-defeats-choji", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-J","evd-v10-000046-K"]}
+presence:
+  - {id: "pr-0706-prelims-hayate", entity_id: "c-hayate", from: "sc-y0-0706-preliminary-matches.start", to: "sc-y0-0706-preliminary-matches.end", basis: "source", evidence_ids: ["evd-manga-chunin-prelims"], review: "pending"}
