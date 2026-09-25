@@ -418,3 +418,11 @@ anchors:
     evidence_ids: ["evd-v10-000082"]
     review: "accepted"
     reason: "Working project date for the Sannin confrontation and Tsunade's decision."
+  - id: "ta-y0-0902"
+    date: {year: 0, month: 9, day: 2}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000083", "evd-v10-000084"]
+    review: "accepted"
+    reason: "Working project date for return-to-Konoha material and adjacent anime-only incidents."
