@@ -224,6 +224,12 @@ entities:
       name: "Valley of the End"
       aliases:
         - "Долина Завершення"
+  - id: "c-hiruzen"
+    kind: "person"
+    name: "Hiruzen Sarutobi"
+    aliases:
+      - "Хірузен"
+      - "Третій Хокаґе"
 memberships:
   - id: "mem-team7-naruto"
       entity_id: "c-naruto"
