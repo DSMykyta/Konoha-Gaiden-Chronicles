@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-y0-0125-nekomata-mission"
+continuity_id: "main"
+title: "Команда 7 добуває відбиток лапи Некомати"
+location_id: "loc-nekomata-domain"
+placement: {anchor_id: "ta-y0-0125", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0125-nekoba-assigns-pawprint"
+    legacy_ids: ["V10-000014"]
+    title: "Некоба доручає Команді 7 останній відбиток"
+    text: "Команда 7 отримує доручення зібрати останній відбиток для «Енциклопедії котячих лап»."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-nekoba", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000014", "evd-source-000014"]
+  - id: "ev-y0-0125-team7-enters-nekomata-domain"
+    legacy_ids: ["V10-000014"]
+    title: "Команда 7 проникає у володіння Некомати"
+    text: "Наруто, Саске й Сакура заходять у володіння велетенського кота Некомати."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-nekomata", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000014", "evd-source-000014"]
+  - id: "ev-y0-0125-team7-gets-pawprint"
+    legacy_ids: ["V10-000014"]
+    title: "Команда 7 здобуває відбиток Некомати"
+    text: "Команда 7 успішно отримує потрібний відбиток лапи Некомати."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-nekomata", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000014", "evd-source-000014"]
+relations:
+  - {id: "rel-0125-1", kind: "before", a: "ev-y0-0125-nekoba-assigns-pawprint", b: "ev-y0-0125-team7-enters-nekomata-domain", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000014"]}
+  - {id: "rel-0125-2", kind: "before", a: "ev-y0-0125-team7-enters-nekomata-domain", b: "ev-y0-0125-team7-gets-pawprint", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000014"]}
+presence: []
