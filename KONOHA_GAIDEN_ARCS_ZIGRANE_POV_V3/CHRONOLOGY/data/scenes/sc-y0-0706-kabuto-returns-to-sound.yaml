@@ -1,0 +1,24 @@
+schema_version: 1
+id: "sc-y0-0706-kabuto-returns-to-sound"
+continuity_id: "main"
+title: "Кабуто повертається до союзників Звуку"
+location_id: null
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-kabuto-returns-to-sound"
+    legacy_ids: ["V10-000045-D"]
+    title: "Кабуто припиняє роль помічника Команди 7"
+    text: "Після допомоги Команді 7 Кабуто таємно повертається до своїх союзників, пов’язаних зі Звуком."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000045-D", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+relations: []
+presence:
+  - {id: "pr-0706-kabuto-return", entity_id: "c-kabuto", from: "sc-y0-0706-kabuto-returns-to-sound.start", to: "sc-y0-0706-kabuto-returns-to-sound.end", basis: "source", evidence_ids: ["evd-v10-000045-D"], review: "accepted"}
