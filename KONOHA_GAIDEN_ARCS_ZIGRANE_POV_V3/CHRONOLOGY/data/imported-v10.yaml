@@ -4702,7 +4702,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000106"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4727,7 +4727,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000107"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4752,7 +4752,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000108"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4777,7 +4777,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000109"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
