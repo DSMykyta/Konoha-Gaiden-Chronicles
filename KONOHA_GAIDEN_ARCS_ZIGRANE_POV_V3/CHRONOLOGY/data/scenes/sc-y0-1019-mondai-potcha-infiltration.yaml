@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-1019-mondai-potcha-infiltration"
+continuity_id: "main"
+title: "Мондай і Потча входять до Конохи під виглядом Ґая та Лі"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1019", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1019-real-guy-lee-leave-village"
+    legacy_ids: ["V10-000151"]
+    title: "Справжні Ґай і Лі вирушають із Конохи"
+    text: "Рано-вранці Майто Ґай і Рок Лі залишають Коноху на окреме завдання, створюючи вікно для двох шпигунів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-guy", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-mondai", role: "observer", mode: "physical"}
+      - {entity_id: "c-potcha", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000151", "evd-anime-161"]
+  - id: "ev-y0-1019-mondai-potcha-disguise-guy-lee"
+    legacy_ids: ["V10-000151"]
+    title: "Мондай і Потча маскуються під Ґая та Лі"
+    text: "Мондай приймає подобу Ґая, а Потча — Лі, плануючи використати образи відомих шинобі для збору секретів Конохи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-mondai", role: "focus", mode: "physical"}
+      - {entity_id: "c-potcha", role: "focus", mode: "physical"}
+      - {entity_id: "c-guy", role: "impersonated", mode: "remote"}
+      - {entity_id: "c-lee", role: "impersonated", mode: "remote"}
+    evidence_ids: ["evd-v10-000151", "evd-anime-161"]
+  - id: "ev-y0-1019-naruto-believes-impostors"
+    legacy_ids: ["V10-000151"]
+    title: "Наруто приймає самозванців за справжніх Ґая й Лі"
+    text: "На відміну від більшості знайомих шинобі, Наруто не розпізнає очевидну підміну й цілий день слухається самозванців, сприймаючи все як тренування."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-mondai", role: "deceiver", mode: "physical"}
+      - {entity_id: "c-potcha", role: "deceiver", mode: "physical"}
+    evidence_ids: ["evd-v10-000151", "evd-anime-161"]
+  - id: "ev-y0-1019-villagers-load-impostors-with-chores"
+    legacy_ids: ["V10-000151"]
+    title: "Ті, хто бачить підміну, завантажують шпигунів виснажливою роботою"
+    text: "Мешканці та шинобі, які розуміють, що перед ними не Ґай і Лі, не видають це відразу: вони послідовно дають самозванцям важкі й принизливі доручення, не дозволяючи їм добути корисні секрети."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-mondai", role: "affected", mode: "physical"}
+      - {entity_id: "c-potcha", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000151", "evd-anime-161"]
+relations:
+  - {id: "rel-1019-impostors-1", kind: "before", a: "ev-y0-1019-real-guy-lee-leave-village", b: "ev-y0-1019-mondai-potcha-disguise-guy-lee", basis: "source", review: "accepted", evidence_ids: ["evd-anime-161"]}
+  - {id: "rel-1019-impostors-2", kind: "before", a: "ev-y0-1019-mondai-potcha-disguise-guy-lee", b: "ev-y0-1019-naruto-believes-impostors", basis: "source", review: "accepted", evidence_ids: ["evd-anime-161"]}
+  - {id: "rel-1019-impostors-3", kind: "before", a: "ev-y0-1019-naruto-believes-impostors", b: "ev-y0-1019-villagers-load-impostors-with-chores", basis: "source", review: "accepted", evidence_ids: ["evd-anime-161"]}
+presence: []
