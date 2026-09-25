@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-alt-y0-0911-ultimate-ninja2-ending"
+continuity_id: "alt-ultimate-ninja-2"
+title: "Наруто та союзники зривають план Орочімару"
+location_id: null
+placement: {anchor_id: "ta-y0-0911", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0911-naruto-stops-ultimate-ninja2-plan"
+    legacy_ids: ["V10-000103"]
+    title: "Ігрова арка завершується поразкою плану Орочімару"
+    text: "Наруто та союзники зривають план Орочімару; ALT-арка завершується без наслідків для манґа-канону."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000103", "evd-game-ultimate-ninja-2"]
+relations: []
+presence: []
