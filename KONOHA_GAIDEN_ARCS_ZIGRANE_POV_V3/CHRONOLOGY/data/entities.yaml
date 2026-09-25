@@ -1069,6 +1069,12 @@ entities:
     name: "Suika"
     aliases:
       - "Суїка"
+  - id: "loc-shino-home"
+    kind: "location"
+    name: "Shino's home"
+    aliases:
+      - "дім Шіно"
+    parent_id: "loc-konohagakure"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
