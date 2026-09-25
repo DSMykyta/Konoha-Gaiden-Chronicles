@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-1030-kunihisa-kidnapping-rescue"
+continuity_id: "main"
+title: "Справжнє викрадення змушує Куніхісу діяти без грошей"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1030", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1030-kunihisa-bodyguards-bribed"
+    legacy_ids: ["V10-000164"]
+    title: "Викрадачі перекуповують охорону Куніхіси"
+    text: "Люди, що полюють на Куніхісу заради викупу, платять його охоронцям більше, ніж може запропонувати хлопець у момент нападу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kunihisa", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000164", "evd-anime-174"]
+  - id: "ev-y0-1030-naruto-rescues-kunihisa"
+    legacy_ids: ["V10-000164"]
+    title: "Наруто вириває Куніхісу з рук викрадачів"
+    text: "Наруто вступає в справжній бій за хлопця й звільняє його, коли гроші вже не дають Куніхісі жодного контролю над ситуацією."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-kunihisa", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000164", "evd-anime-174"]
+  - id: "ev-y0-1030-kunihisa-saves-naruto-with-rope"
+    legacy_ids: ["V10-000164"]
+    title: "Куніхіса власноруч рятує Наруто зі скелі"
+    text: "Коли після втечі Наруто повисає над урвищем, Куніхіса сам використовує мотузку й докладає зусиль, щоб витягнути першого справжнього друга."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kunihisa", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000164", "evd-anime-174"]
+relations:
+  - {id: "rel-1030-kunihisa-rescue-1", kind: "before", a: "ev-y0-1030-kunihisa-bodyguards-bribed", b: "ev-y0-1030-naruto-rescues-kunihisa", basis: "source", review: "accepted", evidence_ids: ["evd-anime-174"]}
+  - {id: "rel-1030-kunihisa-rescue-2", kind: "before", a: "ev-y0-1030-naruto-rescues-kunihisa", b: "ev-y0-1030-kunihisa-saves-naruto-with-rope", basis: "source", review: "accepted", evidence_ids: ["evd-anime-174"]}
+presence: []
