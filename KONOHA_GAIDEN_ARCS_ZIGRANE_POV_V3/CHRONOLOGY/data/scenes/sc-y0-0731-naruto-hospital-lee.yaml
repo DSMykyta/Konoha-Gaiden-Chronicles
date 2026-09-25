@@ -1,0 +1,48 @@
+schema_version: 1
+id: "sc-y0-0731-naruto-hospital-lee"
+continuity_id: "main"
+title: "Наруто прокидається й відвідує Лі"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0731", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0731-naruto-wakes-after-gamabunta"
+    legacy_ids: ["V10-000060"]
+    title: "Наруто прокидається після трьох днів непритомності"
+    text: "Після тренування з Ґамабунтою Наруто приходить до тями в шпиталі Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000060", "evd-anime-54-60"]
+  - id: "ev-y0-0731-naruto-visits-lee"
+    legacy_ids: ["V10-000060"]
+    title: "Наруто відвідує Рока Лі"
+    text: "Наруто відвідує Лі й дізнається, що травми після бою з Ґаарою можуть завершити його кар’єру шинобі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-gaara", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000060", "evd-anime-54-60"]
+  - id: "ev-y0-0731-naruto-leaves-to-prepare-finals"
+    legacy_ids: ["V10-000060"]
+    title: "Наруто виходить готуватися до фіналу"
+    text: "Після відвідин Лі Наруто залишає шпиталь і переходить до останньої підготовки перед фінальними боями; Саске все ще тренується окремо з Какаші."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-kakashi", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000060", "evd-anime-54-60"]
+relations:
+  - {id: "rel-0731-hospital-1", kind: "before", a: "ev-y0-0731-naruto-wakes-after-gamabunta", b: "ev-y0-0731-naruto-visits-lee", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000060"]}
+  - {id: "rel-0731-hospital-2", kind: "before", a: "ev-y0-0731-naruto-visits-lee", b: "ev-y0-0731-naruto-leaves-to-prepare-finals", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000060"]}
+presence: []
