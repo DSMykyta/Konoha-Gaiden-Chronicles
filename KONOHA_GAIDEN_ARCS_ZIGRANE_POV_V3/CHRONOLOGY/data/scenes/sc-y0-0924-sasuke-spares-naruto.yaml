@@ -1,0 +1,51 @@
+schema_version: 1
+id: "sc-y0-0924-sasuke-spares-naruto"
+continuity_id: "main"
+title: "Саске перемагає Наруто, але залишає його живим"
+location_id: "loc-valley-of-end"
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-sasuke-defeats-naruto"
+    legacy_ids: ["V10-000122-O"]
+    title: "Саске перемагає Наруто"
+    text: "Після фінального зіткнення Саске залишається переможцем, а Наруто непритомніє."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-O"]
+  - id: "ev-y0-0924-sasuke-refuses-itachi-method"
+    legacy_ids: ["V10-000122-O"]
+    title: "Саске відкидає спосіб Ітачі"
+    text: "Саске вирішує не вбивати Наруто заради Манґекьо й не здобувати силу саме тим способом, який нав’язував Ітачі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-itachi", role: "reference", mode: "remote"}
+    evidence_ids: ["evd-v10-000122-O"]
+  - id: "ev-y0-0924-sasuke-leaves-naruto-alive"
+    legacy_ids: ["V10-000122-O"]
+    title: "Саске залишає Наруто живим"
+    text: "Саске залишає Наруто непритомним у Долині Завершення й продовжує шлях до Орочімару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "destination", mode: "remote"}
+    evidence_ids: ["evd-v10-000122-O"]
+relations:
+  - {id: "rel-0924-spare-1", kind: "before", a: "ev-y0-0924-sasuke-defeats-naruto", b: "ev-y0-0924-sasuke-refuses-itachi-method", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-O"]}
+  - {id: "rel-0924-spare-2", kind: "before", a: "ev-y0-0924-sasuke-refuses-itachi-method", b: "ev-y0-0924-sasuke-leaves-naruto-alive", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000122-O"]}
+presence:
+  - {id: "pr-0924-spare-sasuke", entity_id: "c-sasuke", from: "sc-y0-0924-sasuke-spares-naruto.start", to: "sc-y0-0924-sasuke-spares-naruto.end", basis: "source", evidence_ids: ["evd-v10-000122-O"], review: "accepted"}
+  - {id: "pr-0924-spare-naruto", entity_id: "c-naruto", from: "sc-y0-0924-sasuke-spares-naruto.start", to: "sc-y0-0924-sasuke-spares-naruto.end", basis: "source", evidence_ids: ["evd-v10-000122-O"], review: "accepted"}
