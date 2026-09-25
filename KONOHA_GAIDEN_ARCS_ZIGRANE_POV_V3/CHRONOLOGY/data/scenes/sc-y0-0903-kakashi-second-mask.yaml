@@ -1,0 +1,30 @@
+schema_version: 1
+id: "sc-y0-0903-kakashi-second-mask"
+continuity_id: "main"
+title: "Какаші показує під маскою ще одну маску"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0903-kakashi-reveals-second-mask"
+    legacy_ids: ["V10-000086"]
+    title: "Під першою маскою виявляється друга"
+    text: "Наприкінці дня Какаші дозволяє Команді 7 побачити, що під його звичною маскою є ще одна маска."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000086", "evd-anime-101"]
+relations: []
+presence:
+  - {id: "pr-0903-second-kakashi", entity_id: "c-kakashi", from: "sc-y0-0903-kakashi-second-mask.start", to: "sc-y0-0903-kakashi-second-mask.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
+  - {id: "pr-0903-second-naruto", entity_id: "c-naruto", from: "sc-y0-0903-kakashi-second-mask.start", to: "sc-y0-0903-kakashi-second-mask.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
+  - {id: "pr-0903-second-sasuke", entity_id: "c-sasuke", from: "sc-y0-0903-kakashi-second-mask.start", to: "sc-y0-0903-kakashi-second-mask.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
+  - {id: "pr-0903-second-sakura", entity_id: "c-sakura", from: "sc-y0-0903-kakashi-second-mask.start", to: "sc-y0-0903-kakashi-second-mask.end", basis: "source", evidence_ids: ["evd-anime-101"], review: "accepted"}
