@@ -1,0 +1,61 @@
+schema_version: 1
+id: "sc-y0-1030-kunihisa-ninja-day"
+continuity_id: "main"
+title: "Наруто проводить Куніхісу через день життя шинобі"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1030", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1030-kunijiro-asks-tsunade-help-kunihisa"
+    legacy_ids: ["V10-000164"]
+    title: "Куніджіро просить Цунаде вплинути на сина"
+    text: "Заможний ювелір Куніджіро звертається до Цунаде через Куніхісу, який звик оцінювати все грошима."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kunijiro", role: "source", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "recipient", mode: "physical"}
+      - {entity_id: "c-kunihisa", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000164", "evd-anime-174"]
+  - id: "ev-y0-1030-tsunade-assigns-naruto-kunihisa"
+    legacy_ids: ["V10-000164"]
+    title: "Цунаде доручає Наруто показати Куніхісі день шинобі"
+    text: "Цунаде призначає Наруто супроводжувати Куніхісу протягом дня й показати йому, як насправді працюють шинобі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-kunihisa", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000164", "evd-anime-174"]
+  - id: "ev-y0-1030-kunihisa-buys-shortcuts"
+    legacy_ids: ["V10-000164"]
+    title: "Куніхіса намагається купувати замість діяти"
+    text: "Під час вправ Куніхіса раз по раз використовує гроші, слуг і нагороди замість власних зусиль, називаючи це своїми «грошовими техніками»."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kunihisa", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000164", "evd-anime-174"]
+  - id: "ev-y0-1030-naruto-teaches-kunihisa-effort"
+    legacy_ids: ["V10-000164"]
+    title: "Наруто змушує Куніхісу хоча б одну навичку виконати самому"
+    text: "Наруто відмовляється визнавати куплені результати й показує Куніхісі, що базову шинобі-навичку треба здобувати власною практикою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "mentor", mode: "physical"}
+      - {entity_id: "c-kunihisa", role: "learner", mode: "physical"}
+    evidence_ids: ["evd-v10-000164", "evd-anime-174"]
+relations:
+  - {id: "rel-1030-kunihisa-day-1", kind: "before", a: "ev-y0-1030-kunijiro-asks-tsunade-help-kunihisa", b: "ev-y0-1030-tsunade-assigns-naruto-kunihisa", basis: "source", review: "accepted", evidence_ids: ["evd-anime-174"]}
+  - {id: "rel-1030-kunihisa-day-2", kind: "before", a: "ev-y0-1030-tsunade-assigns-naruto-kunihisa", b: "ev-y0-1030-kunihisa-buys-shortcuts", basis: "source", review: "accepted", evidence_ids: ["evd-anime-174"]}
+  - {id: "rel-1030-kunihisa-day-3", kind: "before", a: "ev-y0-1030-kunihisa-buys-shortcuts", b: "ev-y0-1030-naruto-teaches-kunihisa-effort", basis: "source", review: "accepted", evidence_ids: ["evd-anime-174"]}
+presence: []
