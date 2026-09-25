@@ -1,0 +1,137 @@
+schema_version: 1
+id: "sc-y0-0330-bridge-final-battle"
+continuity_id: "main"
+title: "Фінальна битва на мосту"
+location_id: "loc-great-naruto-bridge"
+placement: {anchor_id: "ta-y0-0330", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0330-zabuza-haku-attack-bridge"
+    legacy_ids: ["V10-000031"]
+    title: "Забуза й Хаку атакують на мосту"
+    text: "Забуза й Хаку перехоплюють Какаші та генінів біля мосту, де Тадзуна продовжує роботу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-zabuza", role: "focus", mode: "physical"}
+      - {entity_id: "c-haku", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-sasuke-awakens-sharingan"
+    legacy_ids: ["V10-000031"]
+    title: "Саске пробуджує Шарінґан"
+    text: "У бою проти Хаку Саске пробуджує Шарінґан і починає читати рухи супротивника."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-haku", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-sasuke-protects-naruto"
+    legacy_ids: ["V10-000031"]
+    title: "Саске прикриває Наруто"
+    text: "Саске приймає на себе атаку Хаку, прикриваючи Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-haku", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-naruto-nine-tails-chakra"
+    legacy_ids: ["V10-000031"]
+    title: "Наруто вивільняє чакру Дев’ятихвостого"
+    text: "Вважаючи Саске смертельно пораненим, Наруто вивільняє чакру Дев’ятихвостого й прориває техніку Хаку."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-haku", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-haku-sacrifices-self"
+    legacy_ids: ["V10-000031"]
+    title: "Хаку жертвує собою за Забузу"
+    text: "Хаку залишає бій із Наруто й підставляється під удар Какаші, призначений Забузі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-haku", role: "focus", mode: "physical"}
+      - {entity_id: "c-zabuza", role: "affected", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-gato-arrives"
+    legacy_ids: ["V10-000031"]
+    title: "Ґато прибуває з найманцями"
+    text: "Після загибелі Хаку Ґато з’являється на мосту зі своїми найманцями й відмовляється платити Забузі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-gato", role: "focus", mode: "physical"}
+      - {entity_id: "c-zabuza", role: "participant", mode: "physical"}
+      - {entity_id: "c-haku", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-zabuza-kills-gato"
+    legacy_ids: ["V10-000031"]
+    title: "Забуза вбиває Ґато"
+    text: "Після слів Наруто про Хаку тяжко поранений Забуза проривається крізь найманців і вбиває Ґато."
+    origin: "M"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - {entity_id: "c-zabuza", role: "focus", mode: "physical"}
+      - {entity_id: "c-gato", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-zabuza-dies-by-haku"
+    legacy_ids: ["V10-000031"]
+    title: "Забуза помирає поруч із Хаку"
+    text: "Після вбивства Ґато Забуза повертається до тіла Хаку й помирає поруч із ним."
+    origin: "M"
+    extent: "interval"
+    display_rank: 800
+    involvement:
+      - {entity_id: "c-zabuza", role: "focus", mode: "physical"}
+      - {entity_id: "c-haku", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-villagers-drive-off-mercenaries"
+    legacy_ids: ["V10-000031", "V10-000032"]
+    title: "Мешканці Країни Хвиль проганяють найманців"
+    text: "Інарі приводить мешканців Країни Хвиль на міст; натовп примушує людей Ґато відступити."
+    origin: "M"
+    extent: "interval"
+    display_rank: 900
+    involvement:
+      - {entity_id: "c-inari", role: "focus", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000031", "evd-v10-000032", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0330-bridge-100-200", kind: "before", a: "ev-y0-0330-zabuza-haku-attack-bridge", b: "ev-y0-0330-sasuke-awakens-sharingan", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-bridge-200-300", kind: "before", a: "ev-y0-0330-sasuke-awakens-sharingan", b: "ev-y0-0330-sasuke-protects-naruto", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-bridge-300-400", kind: "before", a: "ev-y0-0330-sasuke-protects-naruto", b: "ev-y0-0330-naruto-nine-tails-chakra", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-bridge-400-500", kind: "before", a: "ev-y0-0330-naruto-nine-tails-chakra", b: "ev-y0-0330-haku-sacrifices-self", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-bridge-500-600", kind: "before", a: "ev-y0-0330-haku-sacrifices-self", b: "ev-y0-0330-gato-arrives", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-bridge-600-700", kind: "before", a: "ev-y0-0330-gato-arrives", b: "ev-y0-0330-zabuza-kills-gato", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-bridge-700-800", kind: "before", a: "ev-y0-0330-zabuza-kills-gato", b: "ev-y0-0330-zabuza-dies-by-haku", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-bridge-800-900", kind: "before", a: "ev-y0-0330-zabuza-dies-by-haku", b: "ev-y0-0330-villagers-drive-off-mercenaries", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000031", "evd-v10-000032"]}
+presence:
+  - {id: "pr-0330-bridge-naruto", entity_id: "c-naruto", from: "sc-y0-0330-bridge-final-battle.start", to: "sc-y0-0330-bridge-final-battle.end", basis: "source", evidence_ids: ["evd-v10-000031"], review: "accepted"}
+  - {id: "pr-0330-bridge-sasuke", entity_id: "c-sasuke", from: "sc-y0-0330-bridge-final-battle.start", to: "sc-y0-0330-bridge-final-battle.end", basis: "source", evidence_ids: ["evd-v10-000031"], review: "accepted"}
+  - {id: "pr-0330-bridge-sakura", entity_id: "c-sakura", from: "sc-y0-0330-bridge-final-battle.start", to: "sc-y0-0330-bridge-final-battle.end", basis: "source", evidence_ids: ["evd-v10-000031"], review: "accepted"}
+  - {id: "pr-0330-bridge-kakashi", entity_id: "c-kakashi", from: "sc-y0-0330-bridge-final-battle.start", to: "sc-y0-0330-bridge-final-battle.end", basis: "source", evidence_ids: ["evd-v10-000031"], review: "accepted"}
+  - {id: "pr-0330-bridge-tazuna", entity_id: "c-tazuna", from: "sc-y0-0330-bridge-final-battle.start", to: "sc-y0-0330-bridge-final-battle.end", basis: "source", evidence_ids: ["evd-v10-000031"], review: "accepted"}
