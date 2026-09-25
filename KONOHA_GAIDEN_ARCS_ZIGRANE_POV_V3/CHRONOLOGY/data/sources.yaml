@@ -873,3 +873,8 @@ evidence:
     locator: "episodes 52–54; Jiraiya takes over Naruto's training"
     basis: "source"
     review: "pending"
+  - id: "evd-shippuden-258-sasuke-training"
+    source_id: "src-shippuden-258"
+    locator: "episode 258 retrospective after preliminaries: Sasuke asks Kakashi to train him; lightning affinity and Chidori setup"
+    basis: "source"
+    review: "pending"
