@@ -1,0 +1,54 @@
+schema_version: 1
+id: "sc-y0-0123-team9-field9"
+continuity_id: "main"
+title: "Бойова оцінка Команди 9 на Полі 9"
+location_id: "loc-training-ground-9"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-team9-attacks-raido"
+    title: "Команда 9 атакує Райдо"
+    text: "Рен іде в ближній бій, Сора перекриває відступ сюрікенами й пробує гендзюцу, а Кіта застосовує Катон; Райдо нейтралізує атаки."
+    origin: "P"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-field9-combat"]
+  - id: "ev-y0-0123-kita-freezes-in-combat"
+    title: "Кіта завмирає після втрати цілі"
+    text: "Коли Райдо опиняється за спиною Кіти, Кіта панікує, падає на коліна й закриває голову замість продовжувати бій."
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-team9-field9-combat"]
+  - id: "ev-y0-0123-raido-evaluates-team9"
+    title: "Райдо розбирає слабкі місця кожного геніна"
+    text: "Райдо окремо оцінює Кіту, Рена й Сору та пояснює, що перевіряв їхній реальний стан, рефлекси й страхи, а не очікував перемоги над джоніном."
+    origin: "P"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "participant", mode: "physical"}
+      - {entity_id: "c-ren", role: "participant", mode: "physical"}
+      - {entity_id: "c-sora", role: "participant", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-field9-combat"]
+relations:
+  - {id: "rel-0123-field9-attack-before-freeze", kind: "before", a: "ev-y0-0123-team9-attacks-raido", b: "ev-y0-0123-kita-freezes-in-combat", basis: "source", review: "accepted", evidence_ids: ["evd-team9-field9-combat"]}
+  - {id: "rel-0123-field9-freeze-before-eval", kind: "before", a: "ev-y0-0123-kita-freezes-in-combat", b: "ev-y0-0123-raido-evaluates-team9", basis: "source", review: "accepted", evidence_ids: ["evd-team9-field9-combat"]}
+presence:
+  - {id: "pr-0123-field9-kita", entity_id: "c-kita", from: "sc-y0-0123-team9-field9.start", to: "sc-y0-0123-team9-field9.end", basis: "source", evidence_ids: ["evd-team9-field9-combat"], review: "accepted"}
+  - {id: "pr-0123-field9-ren", entity_id: "c-ren", from: "sc-y0-0123-team9-field9.start", to: "sc-y0-0123-team9-field9.end", basis: "source", evidence_ids: ["evd-team9-field9-combat"], review: "accepted"}
+  - {id: "pr-0123-field9-sora", entity_id: "c-sora", from: "sc-y0-0123-team9-field9.start", to: "sc-y0-0123-team9-field9.end", basis: "source", evidence_ids: ["evd-team9-field9-combat"], review: "accepted"}
+  - {id: "pr-0123-field9-raido", entity_id: "c-raido", from: "sc-y0-0123-team9-field9.start", to: "sc-y0-0123-team9-field9.end", basis: "source", evidence_ids: ["evd-team9-field9-combat"], review: "accepted"}
