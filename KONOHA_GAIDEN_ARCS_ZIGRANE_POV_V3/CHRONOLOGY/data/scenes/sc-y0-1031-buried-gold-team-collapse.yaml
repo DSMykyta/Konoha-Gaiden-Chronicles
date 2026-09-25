@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-1031-buried-gold-team-collapse"
+continuity_id: "main"
+title: "Суперечки Наруто й Кіби розвалюють пошук скарбу"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1031", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1031-naruto-kiba-argue-route"
+    legacy_ids: ["V10-000165"]
+    title: "Наруто й Кіба сперечаються про маршрут"
+    text: "Замість спільно читати карту, Наруто й Кіба постійно сперечаються та розходяться в рішеннях, через що група втрачає темп."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+  - id: "ev-y0-1031-hinata-injures-ankle"
+    legacy_ids: ["V10-000165"]
+    title: "Хіната травмує щиколотку"
+    text: "Під час пошуку Хіната ушкоджує ногу, і команда мусить вирішити, як продовжувати рух."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+  - id: "ev-y0-1031-kiba-continues-naruto-stays-hinata"
+    legacy_ids: ["V10-000165"]
+    title: "Кіба йде далі, а Наруто лишається з Хінатою"
+    text: "Кіба з Акамару продовжують пошук правильного маршруту, тоді як Наруто залишається біля травмованої Хінати."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+relations:
+  - {id: "rel-1031-gold-team-1", kind: "before", a: "ev-y0-1031-naruto-kiba-argue-route", b: "ev-y0-1031-hinata-injures-ankle", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+  - {id: "rel-1031-gold-team-2", kind: "before", a: "ev-y0-1031-hinata-injures-ankle", b: "ev-y0-1031-kiba-continues-naruto-stays-hinata", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+presence: []
