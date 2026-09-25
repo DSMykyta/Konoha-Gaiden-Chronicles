@@ -1,0 +1,29 @@
+schema_version: 1
+id: "sc-y0-0902-tsunade-returns-konoha"
+continuity_id: "main"
+title: "Цунаде повертається до Конохи"
+location_id: "loc-konoha-gate"
+placement: {anchor_id: "ta-y0-0902", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0902-tsunade-group-returns-konoha"
+    legacy_ids: ["V10-000083-B"]
+    title: "Цунаде, Шізуне, Джирая й Наруто повертаються"
+    text: "Цунаде, Шізуне, Джирая й Наруто повертаються до Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000083-B", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0902-return-tsunade", entity_id: "c-tsunade", from: "sc-y0-0902-tsunade-returns-konoha.start", to: "sc-y0-0902-tsunade-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000083-B"], review: "accepted"}
+  - {id: "pr-0902-return-shizune", entity_id: "c-shizune", from: "sc-y0-0902-tsunade-returns-konoha.start", to: "sc-y0-0902-tsunade-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000083-B"], review: "accepted"}
+  - {id: "pr-0902-return-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0902-tsunade-returns-konoha.start", to: "sc-y0-0902-tsunade-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000083-B"], review: "accepted"}
+  - {id: "pr-0902-return-naruto", entity_id: "c-naruto", from: "sc-y0-0902-tsunade-returns-konoha.start", to: "sc-y0-0902-tsunade-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000083-B"], review: "accepted"}
