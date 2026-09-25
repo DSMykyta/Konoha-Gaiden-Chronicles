@@ -410,3 +410,11 @@ anchors:
     evidence_ids: ["evd-v10-000081"]
     review: "accepted"
     reason: "Working project date for the final night of Naruto and Tsunade's wager."
+  - id: "ta-y0-0901"
+    date: {year: 0, month: 9, day: 1}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000082"]
+    review: "accepted"
+    reason: "Working project date for the Sannin confrontation and Tsunade's decision."
