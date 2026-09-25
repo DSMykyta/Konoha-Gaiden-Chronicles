@@ -634,3 +634,11 @@ anchors:
     evidence_ids: ["evd-v10-000127"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Rice Fields investigation."
+  - id: "ta-y0-0930"
+    date: {year: 0, month: 9, day: 30}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000129", "evd-shippuden-236"]
+    review: "accepted"
+    reason: "Episode 236 places the flashback after the failed Sasuke Retrieval mission; the exact 30.09 project date is inherited from v9/v10."
