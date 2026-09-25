@@ -1,0 +1,69 @@
+schema_version: 1
+id: "sc-y0-1031-kedoin-capture-copies"
+continuity_id: "main"
+title: "Кедоїн захоплюють трійцю та копіюють їхні особи"
+location_id: "loc-treasure-cave"
+placement: {anchor_id: "ta-y0-1031", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1031-kedoin-ambush-team"
+    legacy_ids: ["V10-000165"]
+    title: "Троє Кедоїн по черзі захоплюють Наруто, Хінату й Кібу"
+    text: "Таємничі шинобі використовують розділення групи й захоплюють усіх трьох генінів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "group-kedoin", role: "opponent", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+  - id: "ev-y0-1031-kedoin-copy-identities"
+    legacy_ids: ["V10-000165"]
+    title: "Кедоїн копіюють обличчя, голоси, запах і пам'ять трійки"
+    text: "Викрадачі застосовують техніку копіювання, що відтворює не лише зовнішність, а й голос, запах та частину інформації про ціль."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "group-kedoin", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "copied", mode: "physical"}
+      - {entity_id: "c-kiba", role: "copied", mode: "physical"}
+      - {entity_id: "c-hinata", role: "copied", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+  - id: "ev-y0-1031-kedoin-plan-konoha-infiltration"
+    legacy_ids: ["V10-000165"]
+    title: "Кедоїн оголошують план проникнути до Конохи під їхніми обличчями"
+    text: "Самозванці повідомляють полоненим, що використають скопійовані особи для проникнення в Коноху."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "group-kedoin", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-kiba", role: "recipient", mode: "physical"}
+      - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+  - id: "ev-y0-1031-kedoin-collapse-cave"
+    legacy_ids: ["V10-000165", "V10-000166"]
+    title: "Кедоїн обвалюють печеру на полонених"
+    text: "Перед відходом до Конохи самозванці запускають обвал, розраховуючи залишити справжніх генінів похованими в печері."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "group-kedoin", role: "cause", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-v10-000166", "evd-anime-175-176"]
+relations:
+  - {id: "rel-1031-kedoin-1", kind: "before", a: "ev-y0-1031-kedoin-ambush-team", b: "ev-y0-1031-kedoin-copy-identities", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+  - {id: "rel-1031-kedoin-2", kind: "before", a: "ev-y0-1031-kedoin-copy-identities", b: "ev-y0-1031-kedoin-plan-konoha-infiltration", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+  - {id: "rel-1031-kedoin-3", kind: "before", a: "ev-y0-1031-kedoin-plan-konoha-infiltration", b: "ev-y0-1031-kedoin-collapse-cave", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+presence: []
