@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0824-rasengan-power-training"
+continuity_id: "main"
+title: "Наруто працює над силовим етапом Расенґана"
+location_id: null
+placement: {anchor_id: "ta-y0-0824", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0824-jiraiya-notes-three-weeks"
+    legacy_ids: ["V10-000078"]
+    title: "Джирая відзначає три тижні від зустрічі з Ітачі"
+    text: "Під час подорожі Джирая відзначає, що від зіткнення з Ітачі минуло близько трьох тижнів."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-itachi", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000078", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0824-naruto-focuses-through-palm-mark"
+    legacy_ids: ["V10-000078"]
+    title: "Наруто вчиться концентрувати чакру через мітку на долоні"
+    text: "Наруто продовжує силовий етап Расенґана й вчиться концентрувати чакру через позначену точку на долоні."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000078", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0824-rasengan-1", kind: "before", a: "ev-y0-0824-jiraiya-notes-three-weeks", b: "ev-y0-0824-naruto-focuses-through-palm-mark", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000078"]}
+presence:
+  - {id: "pr-0824-rasengan-naruto", entity_id: "c-naruto", from: "sc-y0-0824-rasengan-power-training.start", to: "sc-y0-0824-rasengan-power-training.end", basis: "imported", evidence_ids: ["evd-v10-000078"], review: "accepted"}
+  - {id: "pr-0824-rasengan-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0824-rasengan-power-training.start", to: "sc-y0-0824-rasengan-power-training.end", basis: "imported", evidence_ids: ["evd-v10-000078"], review: "accepted"}
