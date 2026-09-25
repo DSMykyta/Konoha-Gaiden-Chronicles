@@ -1,0 +1,63 @@
+schema_version: 1
+id: "sc-y0-1008-hinata-protects-team"
+continuity_id: "main"
+title: "Хіната повертається й рятує товаришів новою технікою"
+location_id: "loc-bikocho-habitat"
+placement: {anchor_id: "ta-y0-1008", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1008-hinata-returns-to-captured-team"
+    legacy_ids: ["V10-000138"]
+    title: "Хіната повертається до захоплених Наруто, Кіби й Шіно"
+    text: "Коли Камізуру приводять полонених до місця, де залишили Хінату, її вже немає; невдовзі вона повертається сама й вступає в бій."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-shino", role: "affected", mode: "physical"}
+      - {entity_id: "c-suzumebachi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kurobachi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-jibachi", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+  - id: "ev-y0-1008-hinata-uses-protecting-eight-trigrams"
+    legacy_ids: ["V10-000138"]
+    title: "Хіната застосовує Захисні Вісім Триграм Шістдесят Чотири Долоні"
+    text: "Хіната вперше повноцінно застосовує власну захисну техніку, розсіює атаки комах Камізуру й створює можливість звільнити товаришів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-suzumebachi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kurobachi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-jibachi", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+  - id: "ev-y0-1008-search-team-defeats-kamizuru"
+    legacy_ids: ["V10-000138"]
+    title: "Пошукова група відбиває Камізуру"
+    text: "Після перелому, створеного технікою Хінати, Наруто й решта групи доводять бій до перемоги над трьома Камізуру."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-suzumebachi", role: "affected", mode: "physical"}
+      - {entity_id: "c-kurobachi", role: "affected", mode: "physical"}
+      - {entity_id: "c-jibachi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000138", "evd-anime-148-151"]
+relations:
+  - {id: "rel-1008-hinata-rescue-1", kind: "before", a: "ev-y0-1008-hinata-returns-to-captured-team", b: "ev-y0-1008-hinata-uses-protecting-eight-trigrams", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+  - {id: "rel-1008-hinata-rescue-2", kind: "before", a: "ev-y0-1008-hinata-uses-protecting-eight-trigrams", b: "ev-y0-1008-search-team-defeats-kamizuru", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
