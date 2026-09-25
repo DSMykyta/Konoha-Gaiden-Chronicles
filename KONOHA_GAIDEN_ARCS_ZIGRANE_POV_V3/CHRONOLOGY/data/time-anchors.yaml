@@ -258,3 +258,11 @@ anchors:
     evidence_ids: ["evd-v10-000038"]
     review: "accepted"
     reason: "Reconstructed project placement; source does not establish this exact calendar date."
+  - id: "ta-y0-0624"
+    date: {year: 0, month: 6, day: 24}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000039"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10; internal scene order is modeled separately."
