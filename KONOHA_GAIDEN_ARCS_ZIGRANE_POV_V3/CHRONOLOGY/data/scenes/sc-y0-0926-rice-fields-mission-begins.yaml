@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-0926-rice-fields-mission-begins"
+continuity_id: "main"
+title: "Наруто, Джирая й Сакура вирушають до Країни Рисових Полів"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0926", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0926-naruto-refuses-wait-three-years"
+    legacy_ids: ["V10-000125"]
+    title: "Наруто відмовляється чекати три роки"
+    text: "Після провалу повернення Саске Наруто відмовляється просто чекати три роки й збирається сам вирушити на його пошуки."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000125", "evd-anime-136-140"]
+  - id: "ev-y0-0926-jiraiya-gets-rice-fields-recon"
+    legacy_ids: ["V10-000125"]
+    title: "Джирая отримує розвідувальне завдання"
+    text: "Джирая отримує завдання розвідати території, пов’язані з Орочімару, у Країні Рисових Полів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000125", "evd-anime-136-140"]
+  - id: "ev-y0-0926-sakura-joins-search"
+    legacy_ids: ["V10-000125"]
+    title: "Сакура домагається участі"
+    text: "Сакура наполягає, щоб її взяли в розвідку, сподіваючись знайти слід Саске."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000125", "evd-anime-136-140"]
+  - id: "ev-y0-0926-group-departs-rice-fields"
+    legacy_ids: ["V10-000125"]
+    title: "Трійця вирушає до Країни Рисових Полів"
+    text: "Джирая, Наруто й Сакура залишають Коноху та прямують до Країни Рисових Полів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000125", "evd-anime-136-140"]
+relations:
+  - {id: "rel-0926-rice-1", kind: "before", a: "ev-y0-0926-naruto-refuses-wait-three-years", b: "ev-y0-0926-jiraiya-gets-rice-fields-recon", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+  - {id: "rel-0926-rice-2", kind: "before", a: "ev-y0-0926-jiraiya-gets-rice-fields-recon", b: "ev-y0-0926-sakura-joins-search", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+  - {id: "rel-0926-rice-3", kind: "before", a: "ev-y0-0926-sakura-joins-search", b: "ev-y0-0926-group-departs-rice-fields", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000125"]}
+presence:
+  - {id: "pr-0926-rice-jiraiya", entity_id: "c-jiraiya", from: "ev-y0-0926-jiraiya-gets-rice-fields-recon.start", to: "sc-y0-0926-rice-fields-mission-begins.end", basis: "source", evidence_ids: ["evd-anime-136-140"], review: "accepted"}
+  - {id: "pr-0926-rice-naruto", entity_id: "c-naruto", from: "sc-y0-0926-rice-fields-mission-begins.start", to: "sc-y0-0926-rice-fields-mission-begins.end", basis: "source", evidence_ids: ["evd-anime-136-140"], review: "accepted"}
+  - {id: "pr-0926-rice-sakura", entity_id: "c-sakura", from: "ev-y0-0926-sakura-joins-search.start", to: "sc-y0-0926-rice-fields-mission-begins.end", basis: "source", evidence_ids: ["evd-anime-136-140"], review: "accepted"}
