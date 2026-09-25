@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-y0-0826-shizune-explains-tsunade-past"
+continuity_id: "main"
+title: "Шізуне пояснює Наруто минуле Цунаде"
+location_id: "loc-tanzaku"
+placement: {anchor_id: "ta-y0-0826", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0826-shizune-tells-naruto-nawaki-dan"
+    legacy_ids: ["V10-000080"]
+    title: "Шізуне розповідає про Нава́кі та Дана"
+    text: "Шізуне пояснює Наруто, як Цунаде втратила Нава́кі та Дана."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shizune", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-nawaki", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-dan", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000080", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0826-shizune-explains-blood-fear"
+    legacy_ids: ["V10-000080"]
+    title: "Шізуне пояснює страх Цунаде перед кров’ю"
+    text: "Шізуне пов’язує пережиті втрати з тим, що Цунаде розвинула страх перед кров’ю."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shizune", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000080", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0826-shizune-1", kind: "before", a: "ev-y0-0826-shizune-tells-naruto-nawaki-dan", b: "ev-y0-0826-shizune-explains-blood-fear", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000080"]}
+presence:
+  - {id: "pr-0826-shizune-shizune", entity_id: "c-shizune", from: "sc-y0-0826-shizune-explains-tsunade-past.start", to: "sc-y0-0826-shizune-explains-tsunade-past.end", basis: "imported", evidence_ids: ["evd-v10-000080"], review: "accepted"}
+  - {id: "pr-0826-shizune-naruto", entity_id: "c-naruto", from: "sc-y0-0826-shizune-explains-tsunade-past.start", to: "sc-y0-0826-shizune-explains-tsunade-past.end", basis: "imported", evidence_ids: ["evd-v10-000080"], review: "accepted"}
