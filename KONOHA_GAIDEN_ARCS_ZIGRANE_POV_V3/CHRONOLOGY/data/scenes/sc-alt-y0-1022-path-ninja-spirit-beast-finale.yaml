@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-alt-y0-1022-path-ninja-spirit-beast-finale"
+continuity_id: "alt-game-path-ninja-2"
+title: "Група намагається запечатати Духовного Звіра й перемагає його"
+location_id: "loc-valley-of-evil"
+placement: {anchor_id: "ta-alt-y0-1020-path-ninja-2", day_offset: 2}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1022-five-mirrors-used-on-spirit-beast"
+    legacy_ids: ["V10-000157"]
+    title: "П'ять Дзеркал спрямовують на Духовного Звіра"
+    text: "Команди Конохи й Суни використовують усі П'ять Дзеркал Надії, намагаючись знову запечатати Духовного Звіра."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-spirit-beast", role: "target", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000157", "evd-game-path-ninja-2"]
+  - id: "ev-alt-y0-1022-gensho-merges-spirit-beast"
+    legacy_ids: ["V10-000157"]
+    title: "Ґеншо зливається з Духовним Звіром"
+    text: "Коли запечатування майже завершується, Ґеншо в останній спробі зливається з Духовним Звіром і зриває просте завершення ритуалу."
+    origin: "G"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-gensho-ryudoin", role: "focus", mode: "physical"}
+      - {entity_id: "c-spirit-beast", role: "merged", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000157", "evd-game-path-ninja-2"]
+  - id: "ev-alt-y0-1022-team-defeats-spirit-beast-gensho"
+    legacy_ids: ["V10-000157"]
+    title: "Герої перемагають об'єднаного Ґеншо й Духовного Звіра"
+    text: "Наруто та союзники перемагають фінальну форму Ґеншо з Духовним Звіром; альтернативна ігрова загроза припиняється без наслідків для main continuity."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "affected", mode: "physical"}
+      - {entity_id: "c-spirit-beast", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000157", "evd-game-path-ninja-2"]
+relations:
+  - {id: "rel-alt-1022-potn2-1", kind: "before", a: "ev-alt-y0-1022-five-mirrors-used-on-spirit-beast", b: "ev-alt-y0-1022-gensho-merges-spirit-beast", basis: "source", review: "accepted", evidence_ids: ["evd-game-path-ninja-2"]}
+  - {id: "rel-alt-1022-potn2-2", kind: "before", a: "ev-alt-y0-1022-gensho-merges-spirit-beast", b: "ev-alt-y0-1022-team-defeats-spirit-beast-gensho", basis: "source", review: "accepted", evidence_ids: ["evd-game-path-ninja-2"]}
+presence: []
