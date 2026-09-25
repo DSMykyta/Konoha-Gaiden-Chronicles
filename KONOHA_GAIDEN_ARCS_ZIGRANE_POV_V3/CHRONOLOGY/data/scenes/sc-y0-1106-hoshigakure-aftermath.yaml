@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-1106-hoshigakure-aftermath"
+continuity_id: "main"
+title: "Хошіґакуре припиняє небезпечні тренування після знищення Зірки"
+location_id: "loc-hoshigakure"
+placement: {anchor_id: "ta-y0-1106", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1106-star-training-ends"
+    legacy_ids: ["V10-000174"]
+    title: "Після знищення метеорита тренування із Зіркою припиняються"
+    text: "Зірка більше не існує як джерело техніки, тому практика, що калічила учнів Хошіґакуре, фізично не може продовжуватися."
+    origin: "F"
+    extent: "instant"
+    display_rank: 100
+    involvement:
+      - {entity_id: "artifact-hoshi-star", role: "destroyed_cause", mode: "remote"}
+      - {entity_id: "c-sumaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-hokuto", role: "affected", mode: "physical"}
+      - {entity_id: "c-mizura", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-hoshigakure-sick-sent-konoha-treatment"
+    legacy_ids: ["V10-000174"]
+    title: "Постраждалих від Зірки відправляють лікувати до Конохи"
+    text: "Після місії тяжко постраждалих учнів спрямовують до Конохи, де медики під керівництвом Цунаде лікують наслідки чакрового отруєння."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-mizura", role: "patient", mode: "remote"}
+      - {entity_id: "c-hokuto", role: "patient", mode: "remote"}
+      - {entity_id: "c-tsunade", role: "medical_authority", mode: "remote"}
+      - {entity_id: "c-shizune", role: "medical_staff", mode: "remote"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-sumaru-resolves-hoshigakure-without-star"
+    legacy_ids: ["V10-000174"]
+    title: "Сумару лишається з метою розвивати Хошіґакуре без сили Зірки"
+    text: "Після смерті Нацухі й знищення метеорита Сумару не відмовляється від мрії про майбутнє селища, але ця мрія більше не спирається на небезпечну силу Зірки."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sumaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-natsuhi", role: "deceased_subject", mode: "remote"}
+      - {entity_id: "artifact-hoshi-star", role: "destroyed_subject", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1106-hoshi-after-1", kind: "before", a: "ev-y0-1106-star-training-ends", b: "ev-y0-1106-hoshigakure-sick-sent-konoha-treatment", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
