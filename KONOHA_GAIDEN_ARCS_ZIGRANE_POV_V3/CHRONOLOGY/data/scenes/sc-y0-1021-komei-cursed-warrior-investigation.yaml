@@ -1,0 +1,55 @@
+schema_version: 1
+id: "sc-y0-1021-komei-cursed-warrior-investigation"
+continuity_id: "main"
+title: "Підозра падає на Комея, але справа Проклятого Воїна ускладнюється"
+location_id: "loc-birds-lake"
+placement: {anchor_id: "ta-y0-1021-birds", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1021-moso-accuses-komei"
+    legacy_ids: ["V10-000154"]
+    title: "Мосо спрямовує підозру на Комея"
+    text: "Мосо подає головного стратега Комея як можливого організатора появ Проклятого Воїна й претендента на владу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hoki-watari", role: "source_as_moso", mode: "physical"}
+      - {entity_id: "c-komei", role: "accused", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-neji", role: "recipient", mode: "physical"}
+      - {entity_id: "c-tenten", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000154", "evd-anime-162-167"]
+  - id: "ev-y0-1021-team-protects-sagi-assassination"
+    legacy_ids: ["V10-000154"]
+    title: "Команда захищає правителя Саґі від замаху"
+    text: "Під час зустрічі з молодим даймьо Саґі команда відбиває замах; зброя нападників вказує на людей, пов'язаних із Комеєм."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-toki", role: "appears_as_sagi", mode: "physical"}
+      - {entity_id: "c-komei", role: "suspected", mode: "remote"}
+    evidence_ids: ["evd-v10-000154", "evd-anime-162-167"]
+  - id: "ev-y0-1021-second-warrior-linked-komei"
+    legacy_ids: ["V10-000154"]
+    title: "Другий Проклятий Воїн приводить розслідування до Комея"
+    text: "Під час стеження за Комеєм команда стикається з іншим Проклятим Воїном; після бою знаходить докази, через які Комея заарештовують."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-komei", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000154", "evd-anime-162-167"]
+relations:
+  - {id: "rel-1021-komei-1", kind: "before", a: "ev-y0-1021-moso-accuses-komei", b: "ev-y0-1021-team-protects-sagi-assassination", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+  - {id: "rel-1021-komei-2", kind: "before", a: "ev-y0-1021-team-protects-sagi-assassination", b: "ev-y0-1021-second-warrior-linked-komei", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+presence: []
