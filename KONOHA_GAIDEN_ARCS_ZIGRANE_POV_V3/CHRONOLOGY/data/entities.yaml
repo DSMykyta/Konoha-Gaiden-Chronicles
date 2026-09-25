@@ -230,6 +230,75 @@ entities:
     aliases:
       - "Хірузен"
       - "Третій Хокаґе"
+  - id: "c-mizuki"
+    kind: "person"
+    name: "Mizuki"
+    aliases:
+      - "Мідзукі"
+  - id: "c-konohamaru"
+    kind: "person"
+    name: "Konohamaru Sarutobi"
+    aliases:
+      - "Конохамару"
+  - id: "c-ebisu"
+    kind: "person"
+    name: "Ebisu"
+    aliases:
+      - "Ебісу"
+  - id: "c-tenzo"
+    kind: "person"
+    name: "Tenzō / Yamato"
+    aliases:
+      - "Тензо"
+      - "Ямато"
+  - id: "c-teuchi"
+    kind: "person"
+    name: "Teuchi"
+    aliases:
+      - "Теучі"
+  - id: "loc-hokage-monument"
+    kind: "location"
+    name: "Hokage Monument"
+    aliases:
+      - "Монумент Хокаґе"
+    parent_id: "loc-konohagakure"
+  - id: "loc-hokage-residence"
+    kind: "location"
+    name: "Hokage Residence"
+    aliases:
+      - "резиденція Хокаґе"
+    parent_id: "loc-konohagakure"
+  - id: "loc-training-ground-8"
+    kind: "location"
+    name: "Training Ground 8"
+    aliases:
+      - "Тренувальне поле 8"
+      - "восьмий тренувальний полігон"
+    parent_id: "loc-konohagakure"
+  - id: "loc-training-ground-9"
+    kind: "location"
+    name: "Training Ground 9"
+    aliases:
+      - "Тренувальне поле 9"
+      - "дев’ятий полігон"
+    parent_id: "loc-konohagakure"
+  - id: "loc-team9-ravine"
+    kind: "location"
+    name: "Ravine test area"
+    aliases:
+      - "яр"
+  - id: "loc-team9-catacombs"
+    kind: "location"
+    name: "Catacomb test area"
+    aliases:
+      - "катакомби"
+      - "підземні тунелі"
+  - id: "loc-ichiraku"
+    kind: "location"
+    name: "Ichiraku Ramen"
+    aliases:
+      - "Ічіраку"
+    parent_id: "loc-konohagakure"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
