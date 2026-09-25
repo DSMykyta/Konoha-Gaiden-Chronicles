@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-1005-animal-district-naruto-kotetsu-condor"
+continuity_id: "main"
+title: "Наруто й Котецу не можуть схопити Кондора"
+location_id: "loc-zeroth-training-ground"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1005-condor-fights-naruto-kotetsu"
+    legacy_ids: ["V10-000134"]
+    title: "Кондор використовує тайдзюцу проти Наруто й Котецу"
+    text: "Кондор сам переходить у наступ і демонструє натреноване тайдзюцу проти Наруто та Котецу."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-condor", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kotetsu", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+  - id: "ev-y0-1005-retrieval-squad-retreats"
+    legacy_ids: ["V10-000134"]
+    title: "Загін відступає після невдалих спроб"
+    text: "Після серії невдалих сутичок загін відходить, визнавши, що тварини Нульової ділянки діють організованіше й небезпечніше, ніж очікувалося."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-kotetsu", role: "leader", mode: "physical"}
+    evidence_ids: ["evd-shippuden-185"]
+relations:
+  - {id: "rel-1005-animal-condor-1", kind: "before", a: "ev-y0-1005-condor-fights-naruto-kotetsu", b: "ev-y0-1005-retrieval-squad-retreats", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-185"]}
+presence: []
