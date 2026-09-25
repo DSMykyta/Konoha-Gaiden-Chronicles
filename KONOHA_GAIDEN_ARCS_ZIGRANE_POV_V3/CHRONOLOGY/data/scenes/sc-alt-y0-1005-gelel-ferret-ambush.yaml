@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-alt-y0-1005-gelel-ferret-ambush"
+continuity_id: "alt-movie-gelel"
+title: "Місія з повернення Неруґуї переростає в бій із Темуджином"
+location_id: "loc-gelel-coast"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1005-team-recovers-nerugui"
+    legacy_ids: ["V10-000135"]
+    title: "Наруто, Сакура й Шікамару повертають загубленого Неруґуї"
+    text: "В альтернативній кіно-гілці Наруто, Сакура й Шікамару виконують просту місію: повернути власникам загубленого тхора Неруґуї."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-nerugui", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-temujin-armored-soldiers-attack"
+    legacy_ids: ["V10-000135"]
+    title: "Темуджин і броньовані воїни атакують команду"
+    text: "Темуджин разом із броньованими воїнами Хайдо нападає на шинобі Конохи; під час сутички Наруто й Темуджин падають зі скелі."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-temujin", role: "opponent", mode: "physical"}
+      - {entity_id: "group-haido-armored-soldiers", role: "opponent", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-nerugui", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+relations:
+  - {id: "rel-alt-1005-gelel-open-1", kind: "before", a: "ev-alt-y0-1005-team-recovers-nerugui", b: "ev-alt-y0-1005-temujin-armored-soldiers-attack", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+presence: []
