@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0920-shu-extraction"
+continuity_id: "main"
+title: "Команда Асуми вивозить справжнього Шю"
+location_id: null
+placement: {anchor_id: "ta-y0-0920", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0920-asuma-team-extracts-shu"
+    legacy_ids: ["V10-000114"]
+    title: "Справжнього Шю вивозять із замку"
+    text: "Поки Наруто підтримує маскування, Асума та його команда вивозять справжнього Шю."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-asuma", role: "focus", mode: "physical"}
+      - {entity_id: "c-shu", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "decoy", mode: "remote"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000114", "evd-shippuden-309-310"]
+relations: []
+presence: []
