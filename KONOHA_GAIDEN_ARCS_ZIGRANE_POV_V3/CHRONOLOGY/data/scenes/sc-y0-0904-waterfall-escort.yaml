@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0904-waterfall-escort"
+continuity_id: "main"
+title: "Команда 7 супроводжує Шібукі до Такіґакуре"
+location_id: "loc-takigakure"
+placement: {anchor_id: "ta-y0-0904", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0904-team7-escorts-shibuki"
+    legacy_ids: ["V10-000090"]
+    title: "Команда 7 отримує C-ранговий супровід Шібукі"
+    text: "В OVA-гілці Команда 7 супроводжує Шібукі до Такіґакуре."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-shibuki", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000090", "evd-ova-waterfall"]
+relations: []
+presence:
+  - {id: "pr-0904-waterfall-shibuki", entity_id: "c-shibuki", from: "sc-y0-0904-waterfall-escort.start", to: "sc-y0-0904-waterfall-escort.end", basis: "source", evidence_ids: ["evd-ova-waterfall"], review: "accepted"}
