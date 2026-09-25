@@ -1,0 +1,54 @@
+schema_version: 1
+id: "sc-y0-1028-government-ship-attack"
+continuity_id: "main"
+title: "Амачі атакує урядовий флот Країни Моря"
+location_id: "loc-land-sea-government-ship"
+placement: {anchor_id: "ta-y0-1028", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1028-team-escapes-demon-island"
+    legacy_ids: ["V10-000162"]
+    title: "Команда виривається з пастки на Острові Демона"
+    text: "Наруто, Анко, Іно й Шіно вибираються з лабораторної пастки та залишають Острів Демона, намагаючись наздогнати урядове судно."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000162", "evd-anime-169-173"]
+  - id: "ev-y0-1028-amachi-attacks-government-fleet"
+    legacy_ids: ["V10-000162", "V10-000163"]
+    title: "Амачі починає атаку на урядовий флот"
+    text: "Коли команда повертається до моря, флот Країни Моря вже опиняється під масштабною атакою Амачі та його людей."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-amachi", role: "attacker", mode: "physical"}
+      - {entity_id: "c-yoroi", role: "participant", mode: "physical"}
+      - {entity_id: "c-misumi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000162", "evd-v10-000163", "evd-anime-169-173"]
+  - id: "ev-y0-1028-isaribi-fights-naruto-for-human-body"
+    legacy_ids: ["V10-000162"]
+    title: "Ісарібі ще раз виступає проти Наруто заради надії повернути людське тіло"
+    text: "Навіть після слів Наруто Ісарібі ще намагається виконати умову Амачі, сподіваючись, що це поверне їй людський вигляд."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-isaribi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-amachi", role: "manipulator", mode: "remote"}
+    evidence_ids: ["evd-v10-000162", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1028-ship-1", kind: "before", a: "ev-y0-1028-team-escapes-demon-island", b: "ev-y0-1028-amachi-attacks-government-fleet", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
