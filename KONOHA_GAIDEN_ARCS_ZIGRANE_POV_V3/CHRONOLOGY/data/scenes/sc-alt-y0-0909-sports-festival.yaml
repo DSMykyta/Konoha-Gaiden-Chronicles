@@ -1,0 +1,33 @@
+schema_version: 1
+id: "sc-alt-y0-0909-sports-festival"
+continuity_id: "alt-sports-festival"
+title: "Великий спортивний фестиваль Конохи"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0909", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0909-konoha-teams-sports-festival"
+    legacy_ids: ["V10-000099"]
+    title: "Команди Конохи змагаються за тиждень без місій"
+    text: "У геговій ALT-OVA команди Конохи беруть участь у спортивному фестивалі, де призом є тиждень відпочинку від місій."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000099", "evd-ova-sports-festival"]
+  - id: "ev-alt-y0-0909-naruto-toilet-running-gag"
+    legacy_ids: ["V10-000099"]
+    title: "Наруто весь турнір намагається дістатися туалету"
+    text: "Паралельно Наруто протягом турніру безуспішно намагається дістатися туалету."
+    origin: "O"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000099", "evd-ova-sports-festival"]
+relations:
+  - {id: "rel-alt-0909-sports-1", kind: "intersects", a: "ev-alt-y0-0909-konoha-teams-sports-festival", b: "ev-alt-y0-0909-naruto-toilet-running-gag", basis: "source", review: "accepted", evidence_ids: ["evd-ova-sports-festival"]}
+presence: []
