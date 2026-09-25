@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-alt-y0-1005-gelel-haido-meeting"
+continuity_id: "alt-movie-gelel"
+title: "Темуджин приводить Наруто до Хайдо"
+location_id: "loc-haido-moving-fortress"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1005-temujin-introduces-haido"
+    legacy_ids: ["V10-000135"]
+    title: "Темуджин знайомить Наруто з Хайдо"
+    text: "Темуджин повертається до свого табору й приводить Наруто до свого наставника Хайдо."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-temujin", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-haido", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-haido-explains-gelel-utopia"
+    legacy_ids: ["V10-000135"]
+    title: "Хайдо викладає Наруто свою версію мети Ґелеля"
+    text: "Хайдо розповідає про Камінь Ґелеля й заявляє, що прагне використати його силу для створення світу без війни."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-haido", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-temujin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+relations:
+  - {id: "rel-alt-1005-gelel-haido-1", kind: "before", a: "ev-alt-y0-1005-temujin-introduces-haido", b: "ev-alt-y0-1005-haido-explains-gelel-utopia", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+presence: []
