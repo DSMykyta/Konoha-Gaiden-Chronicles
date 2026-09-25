@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-1014-ranmaru-new-life"
+continuity_id: "main"
+title: "Ранмару лишається з Саншо й Караші"
+location_id: "loc-curry-of-life-shop"
+placement: {anchor_id: "ta-y0-1014-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1014-ranmaru-begins-curry-shop-life"
+    legacy_ids: ["V10-000146"]
+    title: "Ранмару починає нове життя в крамниці Карі Життя"
+    text: "Після загибелі Райґи Ранмару залишається з Саншо й Караші та починає нове життя поруч із ними."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-ranmaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-sansho", role: "participant", mode: "physical"}
+      - {entity_id: "c-karashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000146", "evd-anime-152-157"]
+relations: []
+presence: []
