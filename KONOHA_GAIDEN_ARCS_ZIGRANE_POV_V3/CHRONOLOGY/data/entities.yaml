@@ -854,6 +854,29 @@ entities:
     name: "Konoha Council"
     aliases:
       - "Рада Конохи"
+  - id: "c-shizune"
+    kind: "person"
+    name: "Shizune"
+    aliases:
+      - "Шізуне"
+  - id: "c-nawaki"
+    kind: "person"
+    name: "Nawaki"
+    aliases:
+      - "Нава́кі"
+      - "Наваки"
+  - id: "c-dan"
+    kind: "person"
+    name: "Dan Katō"
+    aliases:
+      - "Дан"
+      - "Дан Като"
+  - id: "loc-tanzaku"
+    kind: "location"
+    name: "Tanzaku Quarters"
+    aliases:
+      - "Танзаку"
+      - "Танзаку-Квартал"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
