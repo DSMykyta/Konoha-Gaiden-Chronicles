@@ -1,0 +1,64 @@
+schema_version: 1
+id: "sc-y0-0923-shikamaru-assembles-retrieval-team"
+continuity_id: "main"
+title: "Шикамару збирає загін повернення Саске"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-shikamaru-recruits-naruto"
+    legacy_ids: ["V10-000121-B"]
+    title: "Шикамару залучає Наруто"
+    text: "Шикамару включає Наруто до загону повернення Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    focus_teams: ["group-sasuke-retrieval"]
+    evidence_ids: ["evd-v10-000121-B"]
+  - id: "ev-y0-0923-shikamaru-recruits-choji"
+    legacy_ids: ["V10-000121-B"]
+    title: "Шикамару залучає Чоджі"
+    text: "Шикамару включає Чоджі до загону."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["group-sasuke-retrieval"]
+    evidence_ids: ["evd-v10-000121-B"]
+  - id: "ev-y0-0923-shikamaru-recruits-neji"
+    legacy_ids: ["V10-000121-B"]
+    title: "Шикамару залучає Неджі"
+    text: "Шикамару включає Неджі до загону."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+    focus_teams: ["group-sasuke-retrieval"]
+    evidence_ids: ["evd-v10-000121-B"]
+  - id: "ev-y0-0923-shikamaru-recruits-kiba"
+    legacy_ids: ["V10-000121-B"]
+    title: "Шикамару залучає Кібу"
+    text: "Шикамару включає Кібу до загону повернення Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+    focus_teams: ["group-sasuke-retrieval"]
+    evidence_ids: ["evd-v10-000121-B"]
+relations:
+  - {id: "rel-0923-assemble-1", kind: "before", a: "ev-y0-0923-shikamaru-recruits-naruto", b: "ev-y0-0923-shikamaru-recruits-choji", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000121-B"]}
+  - {id: "rel-0923-assemble-2", kind: "before", a: "ev-y0-0923-shikamaru-recruits-choji", b: "ev-y0-0923-shikamaru-recruits-neji", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000121-B"]}
+  - {id: "rel-0923-assemble-3", kind: "before", a: "ev-y0-0923-shikamaru-recruits-neji", b: "ev-y0-0923-shikamaru-recruits-kiba", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000121-B"]}
+presence: []
