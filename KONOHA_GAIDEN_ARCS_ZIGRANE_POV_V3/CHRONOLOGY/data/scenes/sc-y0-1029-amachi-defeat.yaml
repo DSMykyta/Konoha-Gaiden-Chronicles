@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-1029-amachi-defeat"
+continuity_id: "main"
+title: "Наруто перемагає трансформованого Амачі"
+location_id: "loc-land-sea-government-ship"
+placement: {anchor_id: "ta-y0-1029", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1029-amachi-reveals-perfect-kaima-transformation"
+    legacy_ids: ["V10-000163"]
+    title: "Амачі сам показує завершену водну трансформацію"
+    text: "У фінальному бою Амачі демонструє, що провів на собі вдосконалену версію тих самих експериментів і може перетворюватися на потужну водну форму."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-amachi", role: "focus", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "experiment_subject", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+  - id: "ev-y0-1029-naruto-nine-tails-defeats-amachi"
+    legacy_ids: ["V10-000163"]
+    title: "Чакра Дев'ятихвостого дає Наруто змогу перемогти Амачі"
+    text: "Коли звичайного натиску недостатньо, Наруто вивільняє частину чакри Дев'ятихвостого й швидко переламує бій проти Амачі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-amachi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+  - id: "ev-y0-1029-amachi-captured"
+    legacy_ids: ["V10-000163"]
+    title: "Амачі захоплюють живим"
+    text: "Після поразки Амачі більше не контролює поле бою й потрапляє під варту."
+    origin: "F"
+    extent: "instant"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-amachi", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1029-amachi-1", kind: "before", a: "ev-y0-1029-amachi-reveals-perfect-kaima-transformation", b: "ev-y0-1029-naruto-nine-tails-defeats-amachi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+  - {id: "rel-1029-amachi-2", kind: "before", a: "ev-y0-1029-naruto-nine-tails-defeats-amachi", b: "ev-y0-1029-amachi-captured", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
