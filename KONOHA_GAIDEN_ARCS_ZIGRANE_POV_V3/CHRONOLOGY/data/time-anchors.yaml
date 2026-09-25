@@ -610,3 +610,27 @@ anchors:
     evidence_ids: ["evd-v10-000123", "evd-v10-000124"]
     review: "accepted"
     reason: "Working project date for immediate aftermath of the Sasuke Retrieval mission and Sasuke reaching Orochimaru."
+  - id: "ta-y0-0926"
+    date: {year: 0, month: 9, day: 26}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000125"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Rice Fields investigation."
+  - id: "ta-y0-0927"
+    date: {year: 0, month: 9, day: 27}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000126"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Rice Fields investigation."
+  - id: "ta-y0-0928"
+    date: {year: 0, month: 9, day: 28}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000127"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Rice Fields investigation."
