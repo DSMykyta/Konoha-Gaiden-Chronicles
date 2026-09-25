@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-y0-0204-konoha-ninpocho-end"
+continuity_id: "alt-game-konoha-ninpocho"
+title: "Завершення ранньої ігрової гілки"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0204", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0204-team7-returns-to-d-ranks"
+    legacy_ids: ["V10-000022"]
+    title: "Команда 7 повертається до звичайних D-рангів"
+    text: "Альтернативна ігрова гілка завершується поверненням Команди 7 до звичайних D-рангових завдань."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000022", "evd-source-000022"]
+relations: []
+presence: []
