@@ -1679,6 +1679,61 @@ entities:
     aliases:
       - "храм Зірки"
     parent_id: "loc-hoshigakure"
+  - id: "c-hana"
+    kind: "person"
+    name: "Hana Inuzuka"
+    aliases:
+      - "Хана Інузука"
+      - "Хана"
+  - id: "c-onbu"
+    kind: "animal"
+    name: "Onbu"
+    aliases:
+      - "Онбу"
+      - "дитинча онба"
+  - id: "c-adult-onbaa"
+    kind: "animal"
+    name: "Adult Onbaa"
+    aliases:
+      - "доросла онба"
+      - "мати Онбу"
+  - id: "c-futa-kagetsu"
+    kind: "person"
+    name: "Fūta Kagetsu"
+    aliases:
+      - "Фута Каґецу"
+  - id: "c-tobei-kagetsu"
+    kind: "person"
+    name: "Tōbei Kagetsu"
+    aliases:
+      - "Тобей Каґецу"
+  - id: "c-mai-kagetsu"
+    kind: "person"
+    name: "Mai Kagetsu"
+    aliases:
+      - "Май Каґецу"
+  - id: "c-tsukiko-kagetsu"
+    kind: "person"
+    name: "Tsukiko Kagetsu"
+    aliases:
+      - "Цукіко Каґецу"
+  - id: "loc-motoyoshi-village"
+    kind: "location"
+    name: "Motoyoshi Village"
+    aliases:
+      - "село Мотойоші"
+  - id: "loc-kagetsu-estate"
+    kind: "location"
+    name: "Kagetsu estate"
+    aliases:
+      - "маєток Каґецу"
+    parent_id: "loc-motoyoshi-village"
+  - id: "loc-kagetsu-funeral"
+    kind: "location"
+    name: "Kagetsu funeral venue"
+    aliases:
+      - "місце похорону Каґецу"
+    parent_id: "loc-motoyoshi-village"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
