@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-0119-mizuki-confrontation"
+continuity_id: "main"
+title: "Ірука знаходить Наруто; Мідзукі розкриває таємницю"
+location_id: null
+placement: {anchor_id: "ta-y0-0119", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0119-iruka-finds-naruto"
+    legacy_ids: ["V10-000002"]
+    title: "Ірука знаходить Наруто із сувоєм"
+    text: "Ірука знаходить Наруто й розуміє, що Мідзукі використав його."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
+  - id: "ev-y0-0119-mizuki-reveals-nine-tails"
+    legacy_ids: ["V10-000002"]
+    title: "Мідзукі розкриває Наруто таємницю Дев’ятихвостого"
+    text: "Мідзукі говорить Наруто, що Дев’ятихвостий запечатаний у ньому."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
+  - id: "ev-y0-0119-mizuki-attacks-iruka"
+    legacy_ids: ["V10-000002"]
+    title: "Мідзукі атакує Іруку"
+    text: "Мідзукі атакує Іруку, коли той захищає Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
+relations:
+  - {id: "rel-0119-find-before-reveal", kind: "before", a: "ev-y0-0119-iruka-finds-naruto", b: "ev-y0-0119-mizuki-reveals-nine-tails", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch1-prologue"]}
+  - {id: "rel-0119-reveal-before-attack", kind: "before", a: "ev-y0-0119-mizuki-reveals-nine-tails", b: "ev-y0-0119-mizuki-attacks-iruka", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch1-prologue"]}
+presence:
+  - {id: "pr-0119-confront-naruto", entity_id: "c-naruto", from: "sc-y0-0119-mizuki-confrontation.start", to: "sc-y0-0119-mizuki-confrontation.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
+  - {id: "pr-0119-confront-iruka", entity_id: "c-iruka", from: "sc-y0-0119-mizuki-confrontation.start", to: "sc-y0-0119-mizuki-confrontation.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
+  - {id: "pr-0119-confront-mizuki", entity_id: "c-mizuki", from: "ev-y0-0119-mizuki-reveals-nine-tails.start", to: "sc-y0-0119-mizuki-confrontation.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
