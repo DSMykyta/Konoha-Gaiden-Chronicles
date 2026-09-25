@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0804-hanabi-sees-hinata-neji-training"
+continuity_id: "main"
+title: "Ханабі бачить нову впевненість Хінати"
+location_id: "loc-hyuga-compound"
+placement: {anchor_id: "ta-y0-0804", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "approximate", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0804-hanabi-watches-hinata-neji-train"
+    legacy_ids: ["V10-000075"]
+    title: "Ханабі спостерігає за тренуванням Хінати й Неджі"
+    text: "У приблизному вікні після іспиту Ханабі бачить, як Хіната продовжує тренуватися разом із Неджі."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hanabi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hinata", role: "observed", mode: "physical"}
+      - {entity_id: "c-neji", role: "observed", mode: "physical"}
+    evidence_ids: ["evd-v10-000075", "evd-shippuden-390"]
+  - id: "ev-y0-0804-hanabi-notices-hinata-confidence"
+    legacy_ids: ["V10-000075"]
+    title: "Ханабі помічає нову впевненість Хінати"
+    text: "Спостерігаючи за сестрою, Ханабі відзначає зміну в її впевненості після іспиту."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hanabi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hinata", role: "observed", mode: "physical"}
+    evidence_ids: ["evd-v10-000075", "evd-shippuden-390"]
+relations:
+  - {id: "rel-0804-hanabi-train-1", kind: "before", a: "ev-y0-0804-hanabi-watches-hinata-neji-train", b: "ev-y0-0804-hanabi-notices-hinata-confidence", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-390"]}
+presence:
+  - {id: "pr-0804-hanabi-train-hanabi", entity_id: "c-hanabi", from: "sc-y0-0804-hanabi-sees-hinata-neji-training.start", to: "sc-y0-0804-hanabi-sees-hinata-neji-training.end", basis: "source", evidence_ids: ["evd-v10-000075"], review: "accepted"}
+  - {id: "pr-0804-hanabi-train-hinata", entity_id: "c-hinata", from: "sc-y0-0804-hanabi-sees-hinata-neji-training.start", to: "sc-y0-0804-hanabi-sees-hinata-neji-training.end", basis: "source", evidence_ids: ["evd-v10-000075"], review: "accepted"}
+  - {id: "pr-0804-hanabi-train-neji", entity_id: "c-neji", from: "sc-y0-0804-hanabi-sees-hinata-neji-training.start", to: "sc-y0-0804-hanabi-sees-hinata-neji-training.end", basis: "source", evidence_ids: ["evd-v10-000075"], review: "accepted"}
