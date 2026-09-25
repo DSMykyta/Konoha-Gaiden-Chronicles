@@ -434,5 +434,33 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-v10-000048", "evd-v10-000052"]
+  - id: "lnk-pre0727-rasa-before-invasion-plan"
+    kind: "before"
+    a: "sc-pre0727-rasa-assassination"
+    b: "sc-y0-0727-baki-orochimaru-invasion-plan"
+    basis: "logical"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000055", "evd-v10-000057"]
+  - id: "lnk-0727-summoning-before-0728-gamabunta"
+    kind: "before"
+    a: "sc-y0-0727-naruto-summoning-stalls"
+    b: "sc-y0-0728-naruto-gamabunta"
+    basis: "imported"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000057", "evd-v10-000058"]
+  - id: "lnk-0728-gamabunta-before-0731-wake"
+    kind: "before"
+    a: "sc-y0-0728-naruto-gamabunta"
+    b: "sc-y0-0731-naruto-hospital-lee"
+    basis: "imported"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000058", "evd-v10-000060"]
+  - id: "lnk-0731-hospital-before-gaara-night"
+    kind: "before"
+    a: "sc-y0-0731-naruto-hospital-lee"
+    b: "sc-y0-0731-gaara-visits-lee"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000059", "evd-v10-000060"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
