@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0826-tsunade-weighs-offer"
+continuity_id: "main"
+title: "Цунаде вагається щодо угоди Орочімару"
+location_id: "loc-tanzaku"
+placement: {anchor_id: "ta-y0-0826", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0826-tsunade-weighs-orochimaru-offer"
+    legacy_ids: ["V10-000080"]
+    title: "Цунаде обмірковує пропозицію Орочімару"
+    text: "Цунаде продовжує вагатися, чи приймати пропозицію Орочімару про воскресіння Нава́кі та Дана в обмін на лікування його рук."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-nawaki", role: "remembered", mode: "remote"}
+      - {entity_id: "c-dan", role: "remembered", mode: "remote"}
+    evidence_ids: ["evd-v10-000080", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0826-tsunade-weighs", entity_id: "c-tsunade", from: "sc-y0-0826-tsunade-weighs-offer.start", to: "sc-y0-0826-tsunade-weighs-offer.end", basis: "imported", evidence_ids: ["evd-v10-000080"], review: "accepted"}
