@@ -1,0 +1,30 @@
+schema_version: 1
+id: "sc-y0-0624-kakashi-gives-team7-choice"
+continuity_id: "main"
+title: "Какаші залишає вибір Команді 7"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0624", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0624-kakashi-offers-exam-choice"
+    legacy_ids: ["V10-000039-F"]
+    title: "Какаші підтверджує добровільність участі"
+    text: "Какаші приватно говорить Наруто, Саске й Сакурі, що участь в іспиті буде їхнім власним рішенням."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000039-F", "evd-manga-chunin-intro", "evd-anime-20-23"]
+relations: []
+presence:
+  - {id: "pr-0624-choice-kakashi", entity_id: "c-kakashi", from: "sc-y0-0624-kakashi-gives-team7-choice.start", to: "sc-y0-0624-kakashi-gives-team7-choice.end", basis: "source", evidence_ids: ["evd-v10-000039-F"], review: "accepted"}
+  - {id: "pr-0624-choice-naruto", entity_id: "c-naruto", from: "sc-y0-0624-kakashi-gives-team7-choice.start", to: "sc-y0-0624-kakashi-gives-team7-choice.end", basis: "source", evidence_ids: ["evd-v10-000039-F"], review: "accepted"}
+  - {id: "pr-0624-choice-sasuke", entity_id: "c-sasuke", from: "sc-y0-0624-kakashi-gives-team7-choice.start", to: "sc-y0-0624-kakashi-gives-team7-choice.end", basis: "source", evidence_ids: ["evd-v10-000039-F"], review: "accepted"}
+  - {id: "pr-0624-choice-sakura", entity_id: "c-sakura", from: "sc-y0-0624-kakashi-gives-team7-choice.start", to: "sc-y0-0624-kakashi-gives-team7-choice.end", basis: "source", evidence_ids: ["evd-v10-000039-F"], review: "accepted"}
