@@ -1258,6 +1258,86 @@ entities:
     aliases:
       - "берег річки в районі бікоочу"
     parent_id: "loc-bikocho-habitat"
+  - id: "c-guy"
+    kind: "person"
+    name: "Might Guy"
+    aliases:
+      - "Майто Ґай"
+      - "Ґай"
+  - id: "c-raiga"
+    kind: "person"
+    name: "Raiga Kurosuki"
+    aliases:
+      - "Райґа Куросукі"
+      - "Райґа"
+  - id: "c-ranmaru"
+    kind: "person"
+    name: "Ranmaru"
+    aliases:
+      - "Ранмару"
+  - id: "c-karashi"
+    kind: "person"
+    name: "Karashi"
+    aliases:
+      - "Караші"
+  - id: "c-sansho"
+    kind: "person"
+    name: "Sanshō"
+    aliases:
+      - "Саншо"
+      - "бабуся Саншо"
+  - id: "c-rokusuke"
+    kind: "person"
+    name: "Rokusuke"
+    aliases:
+      - "Рокусуке"
+  - id: "c-sangoro"
+    kind: "person"
+    name: "Sangorō"
+    aliases:
+      - "Санґоро"
+  - id: "c-hachidai"
+    kind: "person"
+    name: "Hachidai"
+    aliases:
+      - "Хачідай"
+  - id: "group-kurosuki-family"
+    kind: "organization"
+    name: "Kurosuki Family"
+    aliases:
+      - "родина Куросукі"
+      - "банда Куросукі"
+  - id: "loc-river-country"
+    kind: "location"
+    name: "Land of Rivers"
+    aliases:
+      - "Країна Річок"
+  - id: "loc-katabami-gold-mine"
+    kind: "location"
+    name: "Katabami Gold Mine"
+    aliases:
+      - "золота копальня Катабамі"
+      - "шахтарське селище Катабамі"
+    parent_id: "loc-river-country"
+  - id: "loc-curry-of-life-shop"
+    kind: "location"
+    name: "Sanshō's Curry of Life shop"
+    aliases:
+      - "крамниця Карі Життя"
+      - "заклад Саншо"
+    parent_id: "loc-river-country"
+  - id: "loc-lightning-pass"
+    kind: "location"
+    name: "Lightning Pass"
+    aliases:
+      - "Блискавичний перевал"
+    parent_id: "loc-river-country"
+  - id: "loc-katabami-cliff"
+    kind: "location"
+    name: "Cliffs near Katabami Gold Mine"
+    aliases:
+      - "скелі біля Катабамі"
+    parent_id: "loc-river-country"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
