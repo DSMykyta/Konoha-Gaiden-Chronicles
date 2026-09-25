@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-y0-0123-team9-ravine"
+continuity_id: "main"
+title: "Переправа Команди 9 через яр"
+location_id: "loc-team9-ravine"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-team9-assesses-ravine"
+    title: "Команда 9 оцінює яр"
+    text: "Після першого тесту Райдо приводить команду до слизького яру; геніни шукають спосіб переправитися без прямої підказки."
+    origin: "P"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+      - {entity_id: "c-raido", role: "observer", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-ravine"]
+  - id: "ev-y0-0123-team9-builds-rope-crossing"
+    title: "Команда 9 створює переправу з мотузки й кунаїв"
+    text: "Після невдалих кидків Сора й Рен використовують мотузку, кунаї та гілку над яром, щоб підготувати спільну переправу."
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "participant", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-ravine"]
+  - id: "ev-y0-0123-team9-crosses-ravine"
+    title: "Кіта, Рен і Сора разом перелітають яр"
+    text: "Рен тримає обидва кінці мотузки, Кіта й Сора фіксуються на його руках, і вся трійця одним розгоном перелітає на протилежний бік."
+    origin: "P"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-ravine"]
+relations:
+  - {id: "rel-0123-ravine-assess-before-rope", kind: "before", a: "ev-y0-0123-team9-assesses-ravine", b: "ev-y0-0123-team9-builds-rope-crossing", basis: "source", review: "accepted", evidence_ids: ["evd-team9-ravine"]}
+  - {id: "rel-0123-ravine-rope-before-cross", kind: "before", a: "ev-y0-0123-team9-builds-rope-crossing", b: "ev-y0-0123-team9-crosses-ravine", basis: "source", review: "accepted", evidence_ids: ["evd-team9-ravine"]}
+presence:
+  - {id: "pr-0123-ravine-kita", entity_id: "c-kita", from: "sc-y0-0123-team9-ravine.start", to: "sc-y0-0123-team9-ravine.end", basis: "source", evidence_ids: ["evd-team9-ravine"], review: "accepted"}
+  - {id: "pr-0123-ravine-ren", entity_id: "c-ren", from: "sc-y0-0123-team9-ravine.start", to: "sc-y0-0123-team9-ravine.end", basis: "source", evidence_ids: ["evd-team9-ravine"], review: "accepted"}
+  - {id: "pr-0123-ravine-sora", entity_id: "c-sora", from: "sc-y0-0123-team9-ravine.start", to: "sc-y0-0123-team9-ravine.end", basis: "source", evidence_ids: ["evd-team9-ravine"], review: "accepted"}
+  - {id: "pr-0123-ravine-raido", entity_id: "c-raido", from: "sc-y0-0123-team9-ravine.start", to: "sc-y0-0123-team9-ravine.end", basis: "source", evidence_ids: ["evd-team9-ravine"], review: "accepted"}
