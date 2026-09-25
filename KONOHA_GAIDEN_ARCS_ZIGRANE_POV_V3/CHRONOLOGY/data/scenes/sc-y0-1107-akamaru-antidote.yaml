@@ -1,0 +1,81 @@
+schema_version: 1
+id: "sc-y0-1107-akamaru-antidote"
+continuity_id: "main"
+title: "Кіба сам вводить Акамару ризикований антидот"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1107", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1107-akamaru-grows-giant-hostile"
+    legacy_ids: ["V10-000175"]
+    title: "Інфекція робить Акамару гігантським і некерованим"
+    text: "До моменту, коли Наруто й Хана наздоганяють Кібу, Акамару вже неприродно виріс і атакує всіх поблизу, включно з самим Кібою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-akamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-hana", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-hana-antidote-fifty-percent"
+    legacy_ids: ["V10-000175"]
+    title: "Хана приносить антидот із шансом успіху лише 50%"
+    text: "Хана пояснює, що медична команда встигла створити експериментальний антидот, але його шанс урятувати Акамару становить лише приблизно половину."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hana", role: "source", mode: "physical"}
+      - {entity_id: "c-kiba", role: "recipient", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "patient", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-naruto-hana-fail-restrain-akamaru"
+    legacy_ids: ["V10-000175"]
+    title: "Наруто й Хана не можуть безпечно зафіксувати Акамару"
+    text: "Спроба Наруто й Хани втримати пса достатньо довго для ін'єкції провалюється через його силу й агресію."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-hana", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-kiba-injects-akamaru-under-attack"
+    legacy_ids: ["V10-000175"]
+    title: "Кіба приймає атаку й вводить антидот сам"
+    text: "Кіба перестає тікати від Акамару, дає напарнику стрибнути на себе й у момент контакту вводить антидот, отримуючи тяжкі поранення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "patient", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-hana", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-akamaru-antidote-works"
+    legacy_ids: ["V10-000175"]
+    title: "Антидот спрацьовує й Акамару виживає"
+    text: "Після ін'єкції інфекція відступає; Акамару повертається до нормального стану, а Кіба виживає після поранень."
+    origin: "F"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-akamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hana", role: "medical_staff", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+relations:
+  - {id: "rel-1107-antidote-1", kind: "before", a: "ev-y0-1107-akamaru-grows-giant-hostile", b: "ev-y0-1107-hana-antidote-fifty-percent", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+  - {id: "rel-1107-antidote-2", kind: "before", a: "ev-y0-1107-hana-antidote-fifty-percent", b: "ev-y0-1107-naruto-hana-fail-restrain-akamaru", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+  - {id: "rel-1107-antidote-3", kind: "before", a: "ev-y0-1107-naruto-hana-fail-restrain-akamaru", b: "ev-y0-1107-kiba-injects-akamaru-under-attack", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+  - {id: "rel-1107-antidote-4", kind: "before", a: "ev-y0-1107-kiba-injects-akamaru-under-attack", b: "ev-y0-1107-akamaru-antidote-works", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+presence: []
