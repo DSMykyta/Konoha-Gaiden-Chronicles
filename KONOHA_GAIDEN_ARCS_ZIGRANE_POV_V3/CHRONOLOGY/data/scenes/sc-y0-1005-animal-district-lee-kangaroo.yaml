@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-y0-1005-animal-district-lee-kangaroo"
+continuity_id: "main"
+title: "Лі переслідує Кондора й зустрічає боксерського кенгуру"
+location_id: "loc-zeroth-training-ground"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1005-lee-pursues-condor"
+    legacy_ids: ["V10-000134"]
+    title: "Лі кидається навздогін Кондору"
+    text: "Після виявлення Кондора Лі переслідує його окремою гілкою пошуку."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-condor", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+  - id: "ev-y0-1005-boxing-kangaroo-defeats-lee"
+    legacy_ids: ["V10-000134"]
+    title: "Боксерський кенгуру зупиняє Лі"
+    text: "Переслідування перериває дорослий боксерський кенгуру, який вступає з Лі в бій і вибиває його з погоні."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+      - {entity_id: "c-boxing-kangaroo-adult", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+relations:
+  - {id: "rel-1005-animal-lee-1", kind: "before", a: "ev-y0-1005-lee-pursues-condor", b: "ev-y0-1005-boxing-kangaroo-defeats-lee", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-185"]}
+presence: []
