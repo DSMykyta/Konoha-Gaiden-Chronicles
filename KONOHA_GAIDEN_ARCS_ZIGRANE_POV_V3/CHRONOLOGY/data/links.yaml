@@ -903,5 +903,40 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-shippuden-309-310"]
+  - id: "lnk-0922-hospital-before-rooftop"
+    kind: "before"
+    a: "sc-y0-0922-sasuke-hospital-frustration"
+    b: "sc-y0-0922-hospital-rooftop-duel"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000117", "evd-v10-000117-B"]
+  - id: "lnk-0922-rooftop-before-kakashi-talk"
+    kind: "before"
+    a: "sc-y0-0922-hospital-rooftop-duel"
+    b: "sc-y0-0922-kakashi-talks-to-sasuke"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000118", "evd-v10-000119"]
+  - id: "lnk-0922-kakashi-talk-before-sound-four"
+    kind: "before"
+    a: "sc-y0-0922-kakashi-talks-to-sasuke"
+    b: "sc-y0-0922-sound-four-recruit-sasuke"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000119", "evd-v10-000118-B"]
+  - id: "lnk-0922-sound-four-before-decision"
+    kind: "before"
+    a: "sc-y0-0922-sound-four-recruit-sasuke"
+    b: "sc-y0-0922-sasuke-decides-to-leave"
+    basis: "logical"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000118-B", "evd-v10-000118-C"]
+  - id: "lnk-0922-decision-before-sakura"
+    kind: "before"
+    a: "sc-y0-0922-sasuke-decides-to-leave"
+    b: "sc-y0-0922-sakura-confronts-sasuke"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000118-C", "evd-v10-000118-D"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
