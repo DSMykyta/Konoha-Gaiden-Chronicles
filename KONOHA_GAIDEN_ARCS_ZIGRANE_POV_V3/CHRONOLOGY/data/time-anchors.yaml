@@ -18,27 +18,27 @@ calendar:
   note: "Project display calendar; not an in-universe claim."
 anchors:
   - id: "ta-team-formation"
-      date:
-        year: 0
-        month: 1
-        day: 22
-      precision: "day"
-      placement_status: "working"
-      basis: "imported"
-      evidence_ids:
-        - "evd-manga-team7-formation"
-        - "evd-team9-announcement"
-      review: "accepted"
-      reason: "Project chronology currently places team formation on 22.01."
+    date:
+      year: 0
+      month: 1
+      day: 22
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids:
+      - "evd-manga-team7-formation"
+      - "evd-team9-announcement"
+    review: "accepted"
+    reason: "Project chronology currently places team formation on 22.01."
   - id: "ta-sasuke-recovery-24"
-      date:
-        year: 0
-        month: 9
-        day: 24
-      precision: "day"
-      placement_status: "working"
-      basis: "imported"
-      evidence_ids:
-        - "evd-v10-24sep"
-      review: "accepted"
-      reason: "Inherited working date from v10; internal order is modeled separately."
+    date:
+      year: 0
+      month: 9
+      day: 24
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids:
+      - "evd-v10-24sep"
+    review: "accepted"
+    reason: "Inherited working date from v10; internal order is modeled separately."
