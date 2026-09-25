@@ -1,0 +1,55 @@
+schema_version: 1
+id: "sc-y0-0915-clear-eye-flower"
+continuity_id: "main"
+title: "Наруто, Сакура й Іно шукають особливу квітку"
+location_id: null
+placement: {anchor_id: "ta-y0-0915", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0915-naruto-sakura-ino-seek-flower"
+    legacy_ids: ["V10-000108"]
+    title: "Трійця вирушає по квітку для ліків"
+    text: "До операції Лі Наруто, Сакура й Іно шукають особливу квітку, потрібну для ліків."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "beneficiary", mode: "remote"}
+    evidence_ids: ["evd-v10-000108", "evd-shippuden-186"]
+  - id: "ev-y0-0915-flower-creates-gaara-double"
+    legacy_ids: ["V10-000108"]
+    title: "Рослина створює двійника Ґаари"
+    text: "Рослина породжує супротивника у вигляді двійника Ґаари."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-gaara", role: "appearance_basis", mode: "remote"}
+    evidence_ids: ["evd-v10-000108", "evd-shippuden-186"]
+  - id: "ev-y0-0915-team-defeats-gaara-double"
+    legacy_ids: ["V10-000108"]
+    title: "Наруто, Сакура й Іно долають двійника"
+    text: "Наруто, Сакура й Іно перемагають створеного рослиною двійника."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000108", "evd-shippuden-186"]
+relations:
+  - {id: "rel-0915-flower-1", kind: "before", a: "ev-y0-0915-naruto-sakura-ino-seek-flower", b: "ev-y0-0915-flower-creates-gaara-double", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-186"]}
+  - {id: "rel-0915-flower-2", kind: "before", a: "ev-y0-0915-flower-creates-gaara-double", b: "ev-y0-0915-team-defeats-gaara-double", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-186"]}
+presence:
+  - {id: "pr-0915-flower-naruto", entity_id: "c-naruto", from: "sc-y0-0915-clear-eye-flower.start", to: "sc-y0-0915-clear-eye-flower.end", basis: "source", evidence_ids: ["evd-shippuden-186"], review: "accepted"}
+  - {id: "pr-0915-flower-sakura", entity_id: "c-sakura", from: "sc-y0-0915-clear-eye-flower.start", to: "sc-y0-0915-clear-eye-flower.end", basis: "source", evidence_ids: ["evd-shippuden-186"], review: "accepted"}
+  - {id: "pr-0915-flower-ino", entity_id: "c-ino", from: "sc-y0-0915-clear-eye-flower.start", to: "sc-y0-0915-clear-eye-flower.end", basis: "source", evidence_ids: ["evd-shippuden-186"], review: "accepted"}
