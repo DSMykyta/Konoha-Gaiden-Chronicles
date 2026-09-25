@@ -234,3 +234,27 @@ anchors:
     evidence_ids: ["evd-v10-000033"]
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
+  - id: "ta-y0-0414"
+    date: {year: 0, month: 4, day: 14}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000036"]
+    review: "accepted"
+    reason: "Reconstructed project placement; source does not establish this exact calendar date."
+  - id: "ta-y0-0415"
+    date: {year: 0, month: 4, day: 15}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000037"]
+    review: "accepted"
+    reason: "Reconstructed project placement; source does not establish this exact calendar date."
+  - id: "ta-y0-0416"
+    date: {year: 0, month: 4, day: 16}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000038"]
+    review: "accepted"
+    reason: "Reconstructed project placement; source does not establish this exact calendar date."
