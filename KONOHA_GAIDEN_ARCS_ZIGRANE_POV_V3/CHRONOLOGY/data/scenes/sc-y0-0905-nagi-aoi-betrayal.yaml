@@ -1,0 +1,43 @@
+schema_version: 1
+id: "sc-y0-0905-nagi-aoi-betrayal"
+continuity_id: "main"
+title: "На острові Нагі розкривається зрада Аої"
+location_id: "loc-nagi-island"
+placement: {anchor_id: "ta-y0-0905", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0905-team-reaches-nagi"
+    legacy_ids: ["V10-000091"]
+    title: "Ідате й Команда 7 дістаються острова Нагі"
+    text: "Після порятунку Ідате група дістається острова Нагі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-idate", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000091", "evd-anime-102-106"]
+  - id: "ev-y0-0905-aoi-betrayal-thunder-sword-revealed"
+    legacy_ids: ["V10-000091"]
+    title: "З’ясовується зрада Аої та викрадення Меча Бога Грому"
+    text: "Група дізнається про зраду Аої та викрадення ним Меча Бога Грому."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-aoi", role: "identified", mode: "remote"}
+      - {entity_id: "c-idate", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000091", "evd-anime-102-106"]
+relations:
+  - {id: "rel-0905-nagi-1", kind: "before", a: "ev-y0-0905-team-reaches-nagi", b: "ev-y0-0905-aoi-betrayal-thunder-sword-revealed", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000091"]}
+presence: []
