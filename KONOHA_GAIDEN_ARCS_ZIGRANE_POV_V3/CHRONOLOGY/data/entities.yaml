@@ -768,6 +768,18 @@ entities:
     name: "Konoha outskirts"
     aliases:
       - "околиці Конохи"
+  - id: "loc-konoha-training-field"
+    kind: "location"
+    name: "Unspecified Konoha training field"
+    aliases:
+      - "тренувальне поле Конохи"
+    parent_id: "loc-konohagakure"
+  - id: "loc-hyuga-compound"
+    kind: "location"
+    name: "Hyuga compound"
+    aliases:
+      - "маєток Х’юґа"
+    parent_id: "loc-konohagakure"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
