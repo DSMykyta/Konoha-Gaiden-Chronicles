@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-y0-1101-tsunade-kedoin-test-reveal"
+continuity_id: "main"
+title: "Цунаде відкриває, що Кедоїн були частиною перевірки"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-1101", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1101-tsunade-reveals-kedoin-hired-test"
+    legacy_ids: ["V10-000166"]
+    title: "Цунаде каже, що найняла Кедоїн для перевірки командної роботи"
+    text: "Після повернення трійки Цунаде відкриває справжню конструкцію місії: Кедоїн та Аґарі Кайсен були залучені до випробування, яке мало показати, чи здатні Наруто, Кіба й Хіната навчитися працювати разом."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "source", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-kiba", role: "recipient", mode: "physical"}
+      - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
+      - {entity_id: "group-kedoin", role: "contractor", mode: "remote"}
+      - {entity_id: "c-agari-kaisen", role: "participant", mode: "remote"}
+    evidence_ids: ["evd-v10-000166", "evd-anime-175-176"]
+  - id: "ev-y0-1101-team-passes-cooperation-test"
+    legacy_ids: ["V10-000166"]
+    title: "Загроза повернення до Академії знімається"
+    text: "Те, що трійця вибралася з пастки й зупинила власних двійників завдяки співпраці, показує потрібний результат перевірки."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "evaluator", mode: "physical"}
+    evidence_ids: ["evd-v10-000166", "evd-anime-175-176"]
+relations:
+  - {id: "rel-1101-kedoin-test-1", kind: "before", a: "ev-y0-1101-tsunade-reveals-kedoin-hired-test", b: "ev-y0-1101-team-passes-cooperation-test", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+presence: []
