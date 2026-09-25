@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1104-star-training-cost"
+continuity_id: "main"
+title: "Команда бачить, що тренування із Зіркою калічить дітей"
+location_id: "loc-star-training-building"
+placement: {anchor_id: "ta-y0-1104", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1104-leaf-team-treats-star-trainees"
+    legacy_ids: ["V10-000172"]
+    title: "Шинобі Конохи знаходять хворих учнів після тренувань"
+    text: "Поки частина загону переслідує викрадача, інші допомагають юним шинобі Хошіґакуре, чиї тіла вже не витримують посилену чакру метеорита."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-neji", role: "observer", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-hokuto", role: "affected", mode: "physical"}
+      - {entity_id: "c-mizura", role: "affected", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000172", "evd-anime-179-183"]
+  - id: "ev-y0-1104-neji-recognizes-mizura-dying"
+    legacy_ids: ["V10-000172"]
+    title: "Неджи розуміє, що стан Мізури смертельно небезпечний"
+    text: "Оглянувши Мізуру, Неджи бачить, що наслідки тренувань не є тимчасовою втомою: організм хлопця руйнується через вплив Зірки."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizura", role: "affected", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000172", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1104-star-cost-1", kind: "before", a: "ev-y0-1104-leaf-team-treats-star-trainees", b: "ev-y0-1104-neji-recognizes-mizura-dying", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
