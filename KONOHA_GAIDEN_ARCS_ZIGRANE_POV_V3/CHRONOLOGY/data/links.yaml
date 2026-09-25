@@ -294,5 +294,40 @@ links:
     basis: "imported"
     review: "pending"
     evidence_ids: ["evd-v10-000039-E", "evd-v10-000039-F"]
+  - id: "lnk-0701-gathering-before-written"
+    kind: "before"
+    a: "sc-y0-0701-candidate-gathering"
+    b: "sc-y0-0701-written-exam"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000040", "evd-v10-000040-B"]
+  - id: "lnk-0701-written-before-forest"
+    kind: "before"
+    a: "sc-y0-0701-written-exam"
+    b: "sc-y0-0701-forest-start"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000040-B", "evd-v10-000040-C"]
+  - id: "lnk-0701-forest-before-orochimaru"
+    kind: "before"
+    a: "sc-y0-0701-forest-start"
+    b: "sc-y0-0701-orochimaru-attacks-team7"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000040-C", "evd-v10-000040-D"]
+  - id: "lnk-0701-orochimaru-intersects-anko"
+    kind: "intersects"
+    a: "sc-y0-0701-orochimaru-attacks-team7"
+    b: "sc-y0-0701-anko-orochimaru"
+    basis: "imported"
+    review: "pending"
+    evidence_ids: ["evd-v10-000040-D", "evd-v10-000040-F"]
+  - id: "lnk-0701-orochimaru-before-0702-clearing"
+    kind: "before"
+    a: "sc-y0-0701-orochimaru-attacks-team7"
+    b: "sc-y0-0702-team7-clearing-sound-attack"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000040-E", "evd-v10-000042"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
