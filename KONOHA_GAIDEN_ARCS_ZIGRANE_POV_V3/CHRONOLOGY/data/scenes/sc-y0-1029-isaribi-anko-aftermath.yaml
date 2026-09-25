@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-1029-isaribi-anko-aftermath"
+continuity_id: "main"
+title: "Ісарібі їде до Конохи на лікування, а Анко завершує відновлення пам'яті"
+location_id: "loc-land-of-sea"
+placement: {anchor_id: "ta-y0-1029", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1029-amachi-admits-cannot-restore-isaribi"
+    legacy_ids: ["V10-000163"]
+    title: "З'ясовується, що Амачі не може повернути Ісарібі людське тіло"
+    text: "Після затримання Амачі стає ясно, що його обіцянка повністю вилікувати Ісарібі не мала реального рішення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-amachi", role: "source", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+  - id: "ev-y0-1029-isaribi-accepts-konoha-treatment"
+    legacy_ids: ["V10-000163"]
+    title: "Ісарібі погоджується їхати до Конохи"
+    text: "Наруто пропонує Ісарібі звернутися до Цунаде; вона погоджується поїхати до Конохи в надії на медичне лікування."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-isaribi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "prospective_healer", mode: "remote"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+  - id: "ev-y0-1029-anko-recovers-final-memory-orochimaru"
+    legacy_ids: ["V10-000163"]
+    title: "Анко остаточно відновлює ключовий спогад про Орочімару"
+    text: "До кінця місії Анко складає докупи уривки пам'яті й більше не спирається на хибну версію, ніби сама добровільно залишила Орочімару."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "memory_subject", mode: "memory"}
+    evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1029-isaribi-after-1", kind: "before", a: "ev-y0-1029-amachi-admits-cannot-restore-isaribi", b: "ev-y0-1029-isaribi-accepts-konoha-treatment", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
