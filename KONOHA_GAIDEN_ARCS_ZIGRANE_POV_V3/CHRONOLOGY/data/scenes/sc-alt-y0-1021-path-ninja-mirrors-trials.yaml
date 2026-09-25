@@ -1,0 +1,48 @@
+schema_version: 1
+id: "sc-alt-y0-1021-path-ninja-mirrors-trials"
+continuity_id: "alt-game-path-ninja-2"
+title: "Збір Дзеркал змушує героїв повторно проходити минулі бої"
+placement: {anchor_id: "ta-alt-y0-1020-path-ninja-2", day_offset: 1}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1021-mirrors-trigger-memory-trials"
+    legacy_ids: ["V10-000155"]
+    title: "Кожне Дзеркало запускає випробування зі спогадів"
+    text: "Коли Наруто та союзники наближаються до Дзеркал Надії, артефакти змушують їх знову переживати й проходити бої з власного минулого."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000155", "evd-game-path-ninja-2"]
+  - id: "ev-alt-y0-1021-ryudoin-brothers-contest-mirrors"
+    legacy_ids: ["V10-000155"]
+    title: "Брати Рюдоін намагаються не дати групам зібрати всі п'ять Дзеркал"
+    text: "Ґеншо використовує братів Рюдоін, щоб затримувати команди біля схованок Дзеркал і не дати їм завершити набір артефактів."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "group-ryudoin-brothers", role: "opponent", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "leader", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000155", "evd-game-path-ninja-2"]
+  - id: "ev-alt-y0-1021-five-mirrors-assembled"
+    legacy_ids: ["V10-000155"]
+    title: "П'ять Дзеркал зрештою збирають для запечатування"
+    text: "Попри опір Рюдоінів, групи Конохи й Суни збирають усі п'ять Дзеркал Надії та несуть їх до Долини Зла для повторного запечатування Духовного Звіра."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-spirit-beast", role: "target", mode: "remote"}
+      - {entity_id: "c-gensho-ryudoin", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000155", "evd-game-path-ninja-2"]
+relations:
+  - {id: "rel-alt-1021-potn2-1", kind: "before", a: "ev-alt-y0-1021-mirrors-trigger-memory-trials", b: "ev-alt-y0-1021-ryudoin-brothers-contest-mirrors", basis: "source", review: "pending", evidence_ids: ["evd-game-path-ninja-2"]}
+  - {id: "rel-alt-1021-potn2-2", kind: "before", a: "ev-alt-y0-1021-ryudoin-brothers-contest-mirrors", b: "ev-alt-y0-1021-five-mirrors-assembled", basis: "source", review: "pending", evidence_ids: ["evd-game-path-ninja-2"]}
+presence: []
