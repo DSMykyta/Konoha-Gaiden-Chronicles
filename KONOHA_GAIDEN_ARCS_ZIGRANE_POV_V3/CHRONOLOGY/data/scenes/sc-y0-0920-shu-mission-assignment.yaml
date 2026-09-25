@@ -1,0 +1,29 @@
+schema_version: 1
+id: "sc-y0-0920-shu-mission-assignment"
+continuity_id: "main"
+title: "Цунаде доручає Наруто й Команді 10 таємну місію щодо Шю"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0920", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0920-tsunade-assigns-shu-mission"
+    legacy_ids: ["V10-000114"]
+    title: "Цунаде ставить A-рангове завдання"
+    text: "Цунаде доручає Наруто й Команді 10 таємну A-рангову місію, пов’язану з вивезенням спадкоємця Шю."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-shu", role: "target", mode: "remote"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000114", "evd-shippuden-309-310"]
+relations: []
+presence: []
