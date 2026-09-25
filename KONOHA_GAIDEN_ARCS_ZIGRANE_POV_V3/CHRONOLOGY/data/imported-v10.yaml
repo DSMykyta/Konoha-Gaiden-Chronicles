@@ -2702,7 +2702,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000063"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2727,7 +2727,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000064"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2752,7 +2752,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000064-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2777,7 +2777,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000064-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2802,7 +2802,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000064-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2827,7 +2827,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000064-E"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2852,7 +2852,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000065"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2877,7 +2877,7 @@ records:
       SupportingSources: "A [еп. 61–79] — фінальні бої іспиту, вторгнення Суни й Звуку, смерть Хірузена та перемога Наруто над Ґаарою."
       Review: ""
   - legacy_id: "V10-000065-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2902,7 +2902,7 @@ records:
       SupportingSources: "A [еп. 61–79] — фінальні бої іспиту, вторгнення Суни й Звуку, смерть Хірузена та перемога Наруто над Ґаарою."
       Review: ""
   - legacy_id: "V10-000065-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2927,7 +2927,7 @@ records:
       SupportingSources: "A [еп. 61–79] — фінальні бої іспиту, вторгнення Суни й Звуку, смерть Хірузена та перемога Наруто над Ґаарою."
       Review: ""
   - legacy_id: "V10-000065-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2952,7 +2952,7 @@ records:
       SupportingSources: "A [еп. 61–79] — фінальні бої іспиту, вторгнення Суни й Звуку, смерть Хірузена та перемога Наруто над Ґаарою."
       Review: ""
   - legacy_id: "V10-000065-E"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2977,7 +2977,7 @@ records:
       SupportingSources: "A [еп. 61–79] — фінальні бої іспиту, вторгнення Суни й Звуку, смерть Хірузена та перемога Наруто над Ґаарою."
       Review: ""
   - legacy_id: "V10-000065-F"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3002,7 +3002,7 @@ records:
       SupportingSources: "A [еп. 61–79] — фінальні бої іспиту, вторгнення Суни й Звуку, смерть Хірузена та перемога Наруто над Ґаарою."
       Review: ""
   - legacy_id: "V10-000066"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3027,7 +3027,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000067"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3052,7 +3052,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000068"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3077,7 +3077,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000069"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3152,7 +3152,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000070"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3177,7 +3177,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000071"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
