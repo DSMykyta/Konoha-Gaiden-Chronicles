@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-y0-0706-hayate-checks-yugao"
+continuity_id: "main"
+title: "Хаяте перевіряє, чи Юґао жива"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-hayate-checks-yugao"
+    legacy_ids: ["V10-000051"]
+    title: "Після нападу Кабуто Хаяте прибігає до Юґао"
+    text: "Дізнавшись про вбитих охоронців АНБУ біля Саске, Хаяте прибігає до шпиталю й переконується, що Юґао жива."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hayate", role: "focus", mode: "physical"}
+      - {entity_id: "c-yugao", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000051", "evd-shippuden-307-308"]
+relations: []
+presence:
+  - {id: "pr-0706-yugao-check-hayate", entity_id: "c-hayate", from: "sc-y0-0706-hayate-checks-yugao.start", to: "sc-y0-0706-hayate-checks-yugao.end", basis: "source", evidence_ids: ["evd-v10-000051"], review: "accepted"}
+  - {id: "pr-0706-yugao-check-yugao", entity_id: "c-yugao", from: "sc-y0-0706-hayate-checks-yugao.start", to: "sc-y0-0706-hayate-checks-yugao.end", basis: "source", evidence_ids: ["evd-v10-000051"], review: "accepted"}
