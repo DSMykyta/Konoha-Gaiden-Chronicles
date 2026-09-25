@@ -198,13 +198,13 @@ V10-000113	0	19.09	R	superseded	ev-y0-0919-hinata-overstrains-byakugan;ev-y0-091
 V10-000114	0	20.09	R	superseded	ev-y0-0920-tsunade-assigns-shu-mission;ev-y0-0920-choji-cooking-contest;ev-y0-0920-ino-controls-shu;ev-y0-0920-naruto-impersonates-shu;ev-y0-0920-asuma-team-extracts-shu	Shu mission opening decomposed.
 V10-000115	0	21.09	R	superseded	ev-y0-0921-tatewaki-chiyo-expose-naruto;ev-y0-0921-sasori-deidara-attack-castle;ev-y0-0921-tatewaki-dies-poison;ev-y0-0921-shu-delivered;ev-y0-0921-yamato-observes-success	Shu mission conclusion decomposed.
 V10-000116	0	21.09	R	superseded	ev-y0-0921-sasuke-rescues-naho;ev-y0-0921-sasuke-brutalizes-criminal-leader;ev-y0-0921-sasuke-crisis-intensifies	Sasuke/Naho retrospective decomposed.
-V10-000117	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000117-B	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000118	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000119	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000118-B	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000118-C	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000118-D	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000117	0	22.09	M	superseded	ev-y0-0922-sasuke-fixates-on-weakness;ev-y0-0922-sasuke-knocks-apples-away	Hospital frustration decomposed.
+V10-000117-B	0	22.09	M	migrated	ev-y0-0922-sasuke-challenges-naruto	Rooftop challenge migrated.
+V10-000118	0	22.09	M	superseded	ev-y0-0922-sasuke-uses-chidori-rooftop;ev-y0-0922-naruto-uses-rasengan-rooftop;ev-y0-0922-kakashi-deflects-attacks	Rooftop clash decomposed.
+V10-000119	0	22.09	M	superseded	ev-y0-0922-kakashi-restrains-sasuke-tree;ev-y0-0922-kakashi-warns-sasuke-revenge;ev-y0-0922-sasuke-left-alone-after-kakashi-talk	Kakashi/Sasuke conversation decomposed.
+V10-000118-B	0	22.09	M	superseded	ev-y0-0922-sound-four-confront-sasuke;ev-y0-0922-sound-four-defeat-sasuke;ev-y0-0922-sound-four-offer-orochimaru	Sound Four recruitment decomposed.
+V10-000118-C	0	22.09	M	migrated	ev-y0-0922-sasuke-decides-leave-konoha	Sasuke decision to leave migrated.
+V10-000118-D	0	22.09	M	superseded	ev-y0-0922-sakura-intercepts-sasuke;ev-y0-0922-sakura-confesses-and-begs;ev-y0-0922-sasuke-thanks-sakura;ev-y0-0922-sasuke-knocks-sakura-out;ev-y0-0922-sasuke-leaves-konoha	Night departure scene decomposed.
 V10-000120	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000121	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000121-B	0	23.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
