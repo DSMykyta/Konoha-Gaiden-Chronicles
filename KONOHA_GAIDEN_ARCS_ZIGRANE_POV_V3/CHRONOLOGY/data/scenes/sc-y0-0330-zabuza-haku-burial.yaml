@@ -18,11 +18,6 @@ events:
     involvement:
       - {entity_id: "c-zabuza", role: "affected", mode: "physical"}
       - {entity_id: "c-haku", role: "affected", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
     evidence_ids: ["evd-v10-000032", "evd-manga-land-waves"]
 relations: []
 presence: []
