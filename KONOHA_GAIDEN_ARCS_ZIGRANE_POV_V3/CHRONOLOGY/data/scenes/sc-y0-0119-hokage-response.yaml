@@ -1,0 +1,24 @@
+schema_version: 1
+id: "sc-y0-0119-hokage-response"
+continuity_id: "main"
+title: "Пошук викраденого Сувою Печатей"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0119", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "pending", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0119-hiruzen-orders-recovery"
+    legacy_ids: ["V10-000002"]
+    title: "Хірузен наказує повернути Сувій Печатей"
+    text: "Після викрадення Сувою Печатей Хірузен наказує шинобі Конохи знайти Наруто й повернути сувій."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
+relations: []
+presence:
+  - {id: "pr-0119-hokage-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0119-hokage-response.start", to: "sc-y0-0119-hokage-response.end", basis: "imported", evidence_ids: ["evd-v10-000002"], review: "accepted"}
