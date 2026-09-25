@@ -898,3 +898,43 @@ anchors:
     evidence_ids: ["evd-v10-000166"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Buried Gold mission finale."
+  - id: "ta-alt-y0-1101-uc2"
+    date: {year: 0, month: 11, day: 1}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000167"]
+    review: "accepted"
+    reason: "Alternative game placement only; Uzumaki Chronicles 2 remains outside main continuity."
+  - id: "ta-y0-1102-courier"
+    date: {year: 0, month: 11, day: 2}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000168"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for episode 177."
+  - id: "ta-alt-y0-1102-uc2"
+    date: {year: 0, month: 11, day: 2}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000169"]
+    review: "accepted"
+    reason: "Alternative game placement only; middle Uzumaki Chronicles 2 segment."
+  - id: "ta-y0-1103-hoshi"
+    date: {year: 0, month: 11, day: 3}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000170"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Star Guard Mission opening."
+  - id: "ta-alt-y0-1103-uc2"
+    date: {year: 0, month: 11, day: 3}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000171"]
+    review: "accepted"
+    reason: "Alternative game placement only; Uzumaki Chronicles 2 finale."
