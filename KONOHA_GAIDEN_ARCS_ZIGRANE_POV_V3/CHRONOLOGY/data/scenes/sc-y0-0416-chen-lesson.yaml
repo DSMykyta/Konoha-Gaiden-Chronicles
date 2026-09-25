@@ -1,0 +1,68 @@
+schema_version: 1
+id: "sc-y0-0416-chen-lesson"
+continuity_id: "main"
+title: "Лі зустрічає майстра Чена"
+location_id: null
+placement: {anchor_id: "ta-y0-0416", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0416-naruto-tenten-accompany-lee"
+    legacy_ids: ["V10-000038"]
+    title: "Наруто й Тентен супроводжують Лі до могили Чена"
+    text: "Наруто й Тентен ідуть із Лі до могили майстра Чена."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000038", "evd-source-000038"]
+  - id: "ev-y0-0416-chen-reveals-alive"
+    legacy_ids: ["V10-000038"]
+    title: "Чен виявляється живим"
+    text: "Біля могили майстер Чен виявляється живим."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-chen", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000038", "evd-source-000038"]
+  - id: "ev-y0-0416-chen-tests-lee"
+    legacy_ids: ["V10-000038"]
+    title: "Чен випробовує Лі"
+    text: "Чен випробовує Лі, ставлячи під сумнів його шлях тайдзюцу."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-chen", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000038", "evd-source-000038"]
+  - id: "ev-y0-0416-lee-develops-answer-to-dragon"
+    legacy_ids: ["V10-000038"]
+    title: "Наполегливість Лі приводить до відповіді на «Дракон Конохи»"
+    text: "Лі знаходить власну відповідь на техніку Чена «Дракон Конохи»."
+    origin: "R"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-chen", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000038", "evd-source-000038"]
+relations:
+  - {id: "rel-0416-chen-1", kind: "before", a: "ev-y0-0416-naruto-tenten-accompany-lee", b: "ev-y0-0416-chen-reveals-alive", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000038"]}
+  - {id: "rel-0416-chen-2", kind: "before", a: "ev-y0-0416-chen-reveals-alive", b: "ev-y0-0416-chen-tests-lee", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000038"]}
+  - {id: "rel-0416-chen-3", kind: "before", a: "ev-y0-0416-chen-tests-lee", b: "ev-y0-0416-lee-develops-answer-to-dragon", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000038"]}
+presence:
+  - {id: "pr-0416-chen-naruto", entity_id: "c-naruto", from: "sc-y0-0416-chen-lesson.start", to: "ev-y0-0416-chen-tests-lee.end", basis: "imported", evidence_ids: ["evd-v10-000038"], review: "accepted"}
+  - {id: "pr-0416-chen-tenten", entity_id: "c-tenten", from: "sc-y0-0416-chen-lesson.start", to: "ev-y0-0416-chen-tests-lee.end", basis: "imported", evidence_ids: ["evd-v10-000038"], review: "accepted"}
+  - {id: "pr-0416-chen-lee", entity_id: "c-lee", from: "sc-y0-0416-chen-lesson.start", to: "sc-y0-0416-chen-lesson.end", basis: "imported", evidence_ids: ["evd-v10-000038"], review: "accepted"}
+  - {id: "pr-0416-chen-chen", entity_id: "c-chen", from: "ev-y0-0416-chen-reveals-alive.start", to: "sc-y0-0416-chen-lesson.end", basis: "imported", evidence_ids: ["evd-v10-000038"], review: "accepted"}
