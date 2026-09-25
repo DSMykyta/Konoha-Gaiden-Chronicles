@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-alt-y0-0903-sukea-mask-hunt"
+continuity_id: "alt-shippuden-469"
+title: "Конохівські команди разом зі Скеа полюють за обличчям Какаші"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0903-sukea-joins-mask-hunt"
+    legacy_ids: ["V10-000087"]
+    title: "Команди 7, 8, 10 і Ґая об’єднуються зі Скеа"
+    text: "У суперечливій ретроспективі команди 7, 8, 10 і Ґая за допомогою фотографа Скеа знову намагаються побачити обличчя Какаші; Скеа насправді є замаскованим Какаші."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "hidden_participant", mode: "physical_hidden"}
+    focus_teams: ["team-7", "team-8", "team-10", "team-guy"]
+    evidence_ids: ["evd-v10-000087", "evd-shippuden-469"]
+relations: []
+presence: []
