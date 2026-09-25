@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-y0-1026-isaribi-saves-naruto"
+continuity_id: "main"
+title: "Наруто зустрічає Ісарібі й вона рятує його після нападу"
+location_id: "loc-land-sea-coast"
+placement: {anchor_id: "ta-y0-1026", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1026-naruto-sees-yoroi-misumi-harass-isaribi"
+    legacy_ids: ["V10-000160"]
+    title: "Наруто бачить Йорої та Місумі біля Ісарібі"
+    text: "На узбережжі Наруто помічає Йорої й Місумі поруч із забинтованою дівчиною Ісарібі та втручається, не впізнавши колишніх учасників іспиту на чуніна."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "affected", mode: "physical"}
+      - {entity_id: "c-yoroi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-misumi", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000160", "evd-anime-169-173"]
+  - id: "ev-y0-1026-yoroi-misumi-attack-team-at-sea"
+    legacy_ids: ["V10-000160"]
+    title: "Йорої та Місумі атакують загін під час переходу морем"
+    text: "Коли загін рухається між островами, Йорої та Місумі влаштовують напад; Наруто опиняється у воді й не може самостійно вибратися."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-yoroi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-misumi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000160", "evd-anime-169-173"]
+  - id: "ev-y0-1026-isaribi-rescues-naruto-from-sea"
+    legacy_ids: ["V10-000160"]
+    title: "Ісарібі витягує Наруто з води"
+    text: "Ісарібі знаходить Наруто після нападу й рятує його від утоплення, не відкриваючи йому всієї правди про власне перетворення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-isaribi", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000160", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1026-isaribi-1", kind: "before", a: "ev-y0-1026-naruto-sees-yoroi-misumi-harass-isaribi", b: "ev-y0-1026-yoroi-misumi-attack-team-at-sea", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+  - {id: "rel-1026-isaribi-2", kind: "before", a: "ev-y0-1026-yoroi-misumi-attack-team-at-sea", b: "ev-y0-1026-isaribi-rescues-naruto-from-sea", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
