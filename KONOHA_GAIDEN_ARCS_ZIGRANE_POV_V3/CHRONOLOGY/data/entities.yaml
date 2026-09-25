@@ -433,6 +433,17 @@ entities:
     aliases:
       - "височина над Країною Хвиль"
     parent_id: "loc-land-waves"
+  - id: "c-tora"
+    kind: "animal"
+    name: "Tora"
+    aliases:
+      - "Тора"
+  - id: "loc-konoha-gate"
+    kind: "location"
+    name: "Konohagakure gate"
+    aliases:
+      - "ворота Конохи"
+    parent_id: "loc-konohagakure"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
