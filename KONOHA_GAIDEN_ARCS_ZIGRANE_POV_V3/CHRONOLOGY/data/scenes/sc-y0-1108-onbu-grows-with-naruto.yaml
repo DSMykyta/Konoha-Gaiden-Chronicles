@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-y0-1108-onbu-grows-with-naruto"
+continuity_id: "main"
+title: "Онбу швидко виростає, не залишаючи Наруто"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1108", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1108-onbu-disrupts-naruto-daily-life"
+    legacy_ids: ["V10-000176"]
+    title: "Онбу заважає Наруто тренуватися й виконувати звичайні справи"
+    text: "Дитинча постійно сидить на Наруто, їсть майже безупинно й робить тренування, пересування та побут дедалі складнішими."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-onbu", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+  - id: "ev-y0-1108-onbu-grows-large"
+    legacy_ids: ["V10-000176"]
+    title: "Онбу за короткий час виростає в кілька разів"
+    text: "Онбу росте надзвичайно швидко й із маленької істоти перетворюється на великого сильного звіра, який усе ще сприймає Наруто як матір."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-onbu", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "host", mode: "physical"}
+    evidence_ids: ["evd-v10-000176", "evd-anime-185"]
+relations:
+  - {id: "rel-1108-onbu-grow-1", kind: "before", a: "ev-y0-1108-onbu-disrupts-naruto-daily-life", b: "ev-y0-1108-onbu-grows-large", basis: "source", review: "accepted", evidence_ids: ["evd-anime-185"]}
+presence: []
