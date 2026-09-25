@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0831-tsunade-drugs-jiraiya"
+continuity_id: "main"
+title: "Цунаде присипляє Джираю й вирушає до Орочімару"
+location_id: "loc-tanzaku"
+placement: {anchor_id: "ta-y0-0831", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0831-tsunade-drugs-jiraiya"
+    legacy_ids: ["V10-000081"]
+    title: "Цунаде підмішує Джираї препарат"
+    text: "Щоб Джирая не зміг втрутитися, Цунаде підмішує йому препарат і тимчасово послаблює його."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000081", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0831-tsunade-leaves-to-meet-orochimaru"
+    legacy_ids: ["V10-000081"]
+    title: "Цунаде вирушає на зустріч із Орочімару"
+    text: "Після цього Цунаде залишає групу й вирушає до Орочімару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "target", mode: "remote"}
+      - {entity_id: "c-jiraiya", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000081", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0831-drug-1", kind: "before", a: "ev-y0-0831-tsunade-drugs-jiraiya", b: "ev-y0-0831-tsunade-leaves-to-meet-orochimaru", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000081"]}
+presence:
+  - {id: "pr-0831-drug-tsunade", entity_id: "c-tsunade", from: "sc-y0-0831-tsunade-drugs-jiraiya.start", to: "sc-y0-0831-tsunade-drugs-jiraiya.end", basis: "imported", evidence_ids: ["evd-v10-000081"], review: "accepted"}
+  - {id: "pr-0831-drug-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0831-tsunade-drugs-jiraiya.start", to: "sc-y0-0831-tsunade-drugs-jiraiya.end", basis: "imported", evidence_ids: ["evd-v10-000081"], review: "accepted"}
