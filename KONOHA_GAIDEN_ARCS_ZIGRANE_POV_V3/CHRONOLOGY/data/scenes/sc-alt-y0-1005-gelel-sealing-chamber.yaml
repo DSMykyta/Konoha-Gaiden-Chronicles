@@ -1,0 +1,51 @@
+schema_version: 1
+id: "sc-alt-y0-1005-gelel-sealing-chamber"
+continuity_id: "alt-movie-gelel"
+title: "Наруто й Темуджин зупиняють Хайдо в Залі Запечатування"
+location_id: "loc-gelel-sealing-chamber"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1005-haido-reveals-temujin-parents"
+    legacy_ids: ["V10-000135"]
+    title: "Хайдо розкриває, що саме він убив батьків Темуджина"
+    text: "У Залі Запечатування Хайдо змушує Темуджина зіткнутися з правдою: його село знищили люди Хайдо, а батьків убив сам Хайдо."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-haido", role: "focus", mode: "physical"}
+      - {entity_id: "c-temujin", role: "recipient", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kahiko", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-haido-takes-temujin-stone"
+    legacy_ids: ["V10-000135"]
+    title: "Хайдо забирає камінь Темуджина й використовує силу Ґелеля"
+    text: "Хайдо вириває камінь із Темуджина, трансформується й використовує енергію копальні, щоб посилюватися та відновлюватися."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-haido", role: "focus", mode: "physical"}
+      - {entity_id: "c-temujin", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-naruto-temujin-defeat-haido"
+    legacy_ids: ["V10-000135"]
+    title: "Наруто й Темуджин разом перемагають Хайдо"
+    text: "Темуджин відмовляється від Хайдо й допомагає Наруто; їхня спільна атака руйнує камінь Хайдо й смертельно ранить його."
+    origin: "V"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-temujin", role: "participant", mode: "physical"}
+      - {entity_id: "c-haido", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+relations:
+  - {id: "rel-alt-1005-gelel-seal-1", kind: "before", a: "ev-alt-y0-1005-haido-reveals-temujin-parents", b: "ev-alt-y0-1005-haido-takes-temujin-stone", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+  - {id: "rel-alt-1005-gelel-seal-2", kind: "before", a: "ev-alt-y0-1005-haido-takes-temujin-stone", b: "ev-alt-y0-1005-naruto-temujin-defeat-haido", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+presence: []
