@@ -1,0 +1,68 @@
+schema_version: 1
+id: "sc-y0-1101-kedoin-pursuit-konoha"
+continuity_id: "main"
+title: "Справжня трійця виривається з печери й переслідує своїх двійників до Конохи"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1101", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1101-team-escapes-cave-together"
+    legacy_ids: ["V10-000166"]
+    title: "Наруто, Кіба й Хіната вибираються з обвалу спільною роботою"
+    text: "Замість нової сварки Наруто й Кіба координуються, а Хіната використовує М'який Кулак проти падаючого каміння; разом вони виходять із печери."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000166", "evd-anime-175-176"]
+  - id: "ev-y0-1101-team-chases-kedoin-to-konoha"
+    legacy_ids: ["V10-000166"]
+    title: "Трійця наздоганяє Кедоїн уже після їхнього проникнення в Коноху"
+    text: "Вибравшись із пастки, справжні геніни женуться за двійниками, але ті вже встигли потрапити до села під їхніми особами."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "pursuer", mode: "physical"}
+      - {entity_id: "c-kiba", role: "pursuer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "pursuer", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "group-kedoin", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000166", "evd-anime-175-176"]
+  - id: "ev-y0-1101-kedoin-copies-lack-physical-abilities"
+    legacy_ids: ["V10-000166"]
+    title: "Справжні геніни знаходять межу техніки копіювання"
+    text: "У прямому зіткненні стає видно, що Кедоїн відтворили особи й інформацію, але не фізичну майстерність та бойові здібності оригіналів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "group-kedoin", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-kiba", role: "opponent", mode: "physical"}
+      - {entity_id: "c-hinata", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000166", "evd-anime-175-176"]
+  - id: "ev-y0-1101-original-team-defeats-kedoin"
+    legacy_ids: ["V10-000166"]
+    title: "Наруто, Кіба й Хіната перемагають самозванців"
+    text: "Скориставшись цією слабкістю, справжня трійця швидко бере Кедоїн під контроль і припиняє проникнення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "group-kedoin", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000166", "evd-anime-175-176"]
+relations:
+  - {id: "rel-1101-kedoin-pursuit-1", kind: "before", a: "ev-y0-1101-team-escapes-cave-together", b: "ev-y0-1101-team-chases-kedoin-to-konoha", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+  - {id: "rel-1101-kedoin-pursuit-2", kind: "before", a: "ev-y0-1101-team-chases-kedoin-to-konoha", b: "ev-y0-1101-kedoin-copies-lack-physical-abilities", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+  - {id: "rel-1101-kedoin-pursuit-3", kind: "before", a: "ev-y0-1101-kedoin-copies-lack-physical-abilities", b: "ev-y0-1101-original-team-defeats-kedoin", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+presence: []
