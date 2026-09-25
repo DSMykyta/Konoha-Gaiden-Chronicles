@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-0413-post-waves-rivalry"
+continuity_id: "main"
+title: "Наруто й Саске сперечаються після повернення з Країни Хвиль"
+location_id: null
+placement: {anchor_id: "ta-y0-0413", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0413-naruto-confronts-sasuke"
+    legacy_ids: ["V10-000035"]
+    title: "Наруто дорікає Саске за зверхність"
+    text: "Після повернення Команди 7 з Країни Хвиль Наруто дорікає Саске за його ставлення."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000035", "evd-shippuden-258-post-waves"]
+  - id: "ev-y0-0413-sasuke-challenges-naruto-to-improve"
+    legacy_ids: ["V10-000035"]
+    title: "Саске пропонує Наруто стати сильнішим"
+    text: "Саске відповідає, що вважає себе кращим лише за Наруто, і пропонує тому стати сильнішим, якщо він хоче звести рахунки."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000035", "evd-shippuden-258-post-waves"]
+relations:
+  - {id: "rel-0413-rivalry-100-200", kind: "before", a: "ev-y0-0413-naruto-confronts-sasuke", b: "ev-y0-0413-sasuke-challenges-naruto-to-improve", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-258-post-waves"]}
+presence:
+  - {id: "pr-0413-rivalry-naruto", entity_id: "c-naruto", from: "sc-y0-0413-post-waves-rivalry.start", to: "sc-y0-0413-post-waves-rivalry.end", basis: "source", evidence_ids: ["evd-v10-000035"], review: "accepted"}
+  - {id: "pr-0413-rivalry-sasuke", entity_id: "c-sasuke", from: "sc-y0-0413-post-waves-rivalry.start", to: "sc-y0-0413-post-waves-rivalry.end", basis: "source", evidence_ids: ["evd-v10-000035"], review: "accepted"}
