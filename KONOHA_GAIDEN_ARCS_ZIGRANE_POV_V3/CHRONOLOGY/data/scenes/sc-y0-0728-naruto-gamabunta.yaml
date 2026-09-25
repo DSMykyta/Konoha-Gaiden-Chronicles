@@ -1,0 +1,64 @@
+schema_version: 1
+id: "sc-y0-0728-naruto-gamabunta"
+continuity_id: "main"
+title: "Наруто викликає Ґамабунту"
+location_id: null
+placement: {anchor_id: "ta-y0-0728", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0728-jiraiya-throws-naruto-ravine"
+    legacy_ids: ["V10-000058"]
+    title: "Джирая скидає Наруто в яр"
+    text: "На двадцять перший день тренувань Джирая створює смертельно небезпечну ситуацію, скидаючи Наруто в яр, щоб змусити його звернутися до прихованого резерву чакри."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000058", "evd-manga-ch88-97", "evd-anime-54-60"]
+  - id: "ev-y0-0728-naruto-meets-kurama"
+    legacy_ids: ["V10-000058"]
+    title: "Наруто свідомо зустрічає Дев’ятихвостого"
+    text: "Під час падіння Наруто вперше свідомо звертається до Дев’ятихвостого й вимагає чакру як плату за їхнє спільне виживання."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "internal"}
+      - {entity_id: "c-kurama", role: "focus", mode: "internal"}
+    evidence_ids: ["evd-v10-000058", "evd-manga-ch88-97", "evd-anime-54-60"]
+  - id: "ev-y0-0728-naruto-summons-gamabunta"
+    legacy_ids: ["V10-000058"]
+    title: "Наруто викликає Ґамабунту"
+    text: "Отримавши чакру Дев’ятихвостого, Наруто виконує призов Ґамабунти."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-gamabunta", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurama", role: "affected", mode: "internal"}
+    evidence_ids: ["evd-v10-000058", "evd-manga-ch88-97", "evd-anime-54-60"]
+  - id: "ev-y0-0728-naruto-earns-gamabunta-recognition"
+    legacy_ids: ["V10-000058"]
+    title: "Наруто тримається на Ґамабунті до визнання"
+    text: "Наруто залишається на спині Ґамабунти, доки той не визнає його наполегливість; після цього Наруто непритомніє від виснаження."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-gamabunta", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000058", "evd-manga-ch88-97", "evd-anime-54-60"]
+relations:
+  - {id: "rel-0728-gama-1", kind: "before", a: "ev-y0-0728-jiraiya-throws-naruto-ravine", b: "ev-y0-0728-naruto-meets-kurama", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0728-gama-2", kind: "before", a: "ev-y0-0728-naruto-meets-kurama", b: "ev-y0-0728-naruto-summons-gamabunta", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+  - {id: "rel-0728-gama-3", kind: "before", a: "ev-y0-0728-naruto-summons-gamabunta", b: "ev-y0-0728-naruto-earns-gamabunta-recognition", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+presence:
+  - {id: "pr-0728-gama-naruto", entity_id: "c-naruto", from: "sc-y0-0728-naruto-gamabunta.start", to: "sc-y0-0728-naruto-gamabunta.end", basis: "source", evidence_ids: ["evd-v10-000058"], review: "accepted"}
+  - {id: "pr-0728-gama-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0728-naruto-gamabunta.start", to: "sc-y0-0728-naruto-gamabunta.end", basis: "source", evidence_ids: ["evd-v10-000058"], review: "accepted"}
+  - {id: "pr-0728-gama-gamabunta", entity_id: "c-gamabunta", from: "ev-y0-0728-naruto-summons-gamabunta.start", to: "ev-y0-0728-naruto-earns-gamabunta-recognition.end", basis: "source", evidence_ids: ["evd-v10-000058"], review: "accepted"}
