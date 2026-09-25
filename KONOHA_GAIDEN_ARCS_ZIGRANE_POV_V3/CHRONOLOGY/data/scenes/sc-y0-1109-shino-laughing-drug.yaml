@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-1109-shino-laughing-drug"
+continuity_id: "main"
+title: "Шіно отруюють речовиною, що викликає неконтрольований сміх"
+location_id: "loc-kagetsu-estate"
+placement: {anchor_id: "ta-y0-1109", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1109-shino-eats-laughing-drug"
+    legacy_ids: ["V10-000177"]
+    title: "Шіно отримує сміхову отруту під час вечері"
+    text: "Перед церемонією Шіно з'їдає їжу, до якої підмішали речовину, що змушує його неконтрольовано сміятися."
+    origin: "F"
+    extent: "instant"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shino", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-futa-kagetsu", role: "observer", mode: "physical"}
+      - {entity_id: "c-mai-kagetsu", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+  - id: "ev-y0-1109-naruto-replaces-shino-as-proxy"
+    legacy_ids: ["V10-000177"]
+    title: "Наруто змушений замінити Шіно на похороні"
+    text: "Оскільки Шіно більше не може гарантувати серйозний вираз обличчя, роль підставного представника Фути переходить до Наруто."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "proxy", mode: "physical"}
+      - {entity_id: "c-shino", role: "unable_proxy", mode: "physical"}
+      - {entity_id: "c-futa-kagetsu", role: "client", mode: "physical"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+relations:
+  - {id: "rel-1109-shino-laugh-1", kind: "before", a: "ev-y0-1109-shino-eats-laughing-drug", b: "ev-y0-1109-naruto-replaces-shino-as-proxy", basis: "source", review: "accepted", evidence_ids: ["evd-anime-186"]}
+presence: []
