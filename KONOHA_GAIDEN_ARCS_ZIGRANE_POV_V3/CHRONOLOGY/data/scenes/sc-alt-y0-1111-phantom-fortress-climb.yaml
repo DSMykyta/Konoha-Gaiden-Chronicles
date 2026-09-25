@@ -1,0 +1,36 @@
+schema_version: 1
+id: "sc-alt-y0-1111-phantom-fortress-climb"
+continuity_id: "alt-game-phantom-fortress"
+title: "Наруто збирає загін і знімає печатки Муґенджо"
+location_id: "loc-mugen-castle"
+placement: {anchor_id: "ta-alt-y0-1110-phantom", day_offset: 1}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1111-naruto-builds-four-person-castle-team"
+    legacy_ids: ["V10-000181"]
+    title: "Наруто збирає чотирьох бійців для проходження замку"
+    text: "У режимі Муґенджо Наруто формує невелику групу союзників і просувається крізь поверхи, де кожна кімната запускає окреме випробування."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "leader", mode: "physical"}
+      - {entity_id: "loc-mugen-castle", role: "setting", mode: "physical"}
+    evidence_ids: ["evd-v10-000181", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1111-team-removes-mugen-seals"
+    legacy_ids: ["V10-000181"]
+    title: "Група послідовно знімає печатки, що тримають Муґенджо"
+    text: "Підйом через замок приводить до восьми печаток, які утримують його структуру й спогади; союзники знімають їх у міру проходження."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "loc-mugen-castle", role: "affected_structure", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000181", "evd-game-phantom-fortress"]
+relations:
+  - {id: "rel-alt-1111-phantom-1", kind: "before", a: "ev-alt-y0-1111-naruto-builds-four-person-castle-team", b: "ev-alt-y0-1111-team-removes-mugen-seals", basis: "source", review: "accepted", evidence_ids: ["evd-game-phantom-fortress"]}
+presence: []
