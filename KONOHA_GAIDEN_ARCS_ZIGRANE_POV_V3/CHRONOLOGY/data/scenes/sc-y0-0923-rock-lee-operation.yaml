@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0923-rock-lee-operation"
+continuity_id: "main"
+title: "Цунаде оперує Рока Лі"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-tsunade-operates-lee"
+    legacy_ids: ["V10-000121-D"]
+    title: "Починається операція Рока Лі"
+    text: "Цунаде проводить складну операцію Рока Лі, на яку він погодився після розмови з Ґаєм."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+      - {entity_id: "c-might-guy", role: "context", mode: "remote"}
+    evidence_ids: ["evd-v10-000121-D"]
+relations: []
+presence:
+  - {id: "pr-0923-operation-tsunade", entity_id: "c-tsunade", from: "sc-y0-0923-rock-lee-operation.start", to: "sc-y0-0923-rock-lee-operation.end", basis: "source", evidence_ids: ["evd-v10-000121-D"], review: "accepted"}
+  - {id: "pr-0923-operation-lee", entity_id: "c-lee", from: "sc-y0-0923-rock-lee-operation.start", to: "sc-y0-0923-rock-lee-operation.end", basis: "source", evidence_ids: ["evd-v10-000121-D"], review: "accepted"}
