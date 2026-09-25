@@ -910,6 +910,11 @@ entities:
     name: "Land of Snow"
     aliases:
       - "Країна Снігу"
+  - id: "group-moya"
+    kind: "group"
+    name: "Moya Trio"
+    aliases:
+      - "трійця Моя"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
