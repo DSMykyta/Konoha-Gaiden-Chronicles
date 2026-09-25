@@ -1,0 +1,34 @@
+schema_version: 1
+id: "sc-y0-0907-idate-wins-race"
+continuity_id: "main"
+title: "Ідате завершує перегони перемогою"
+location_id: "loc-modoroki-shrine"
+placement: {anchor_id: "ta-y0-0907", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0907-idate-reaches-modoroki-first"
+    legacy_ids: ["V10-000097"]
+    title: "Ідате першим дістається святині Модорокі"
+    text: "Ідате долає останній відрізок маршруту й першим прибуває до святині Модорокі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-idate", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+  - id: "ev-y0-0907-idate-secures-wasabi-victory"
+    legacy_ids: ["V10-000097"]
+    title: "Перемога Ідате приносить перемогу Васабі"
+    text: "Фініш Ідате забезпечує перемогу стороні Васабі в перегонах."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-idate", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+relations:
+  - {id: "rel-0907-race-1", kind: "before", a: "ev-y0-0907-idate-reaches-modoroki-first", b: "ev-y0-0907-idate-secures-wasabi-victory", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000097"]}
+presence:
+  - {id: "pr-0907-race-idate", entity_id: "c-idate", from: "sc-y0-0907-idate-wins-race.start", to: "sc-y0-0907-idate-wins-race.end", basis: "source", evidence_ids: ["evd-anime-102-106"], review: "accepted"}
