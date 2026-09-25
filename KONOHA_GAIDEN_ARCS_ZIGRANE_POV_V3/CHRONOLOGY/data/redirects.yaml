@@ -1,0 +1,123 @@
+schema_version: 1
+redirects:
+  - legacy_id: "V10-000005"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0122-naruto-sasuke-kiss"
+    reason: "Separate pre-assignment classroom scene."
+  - legacy_id: "V10-000006"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0122-team7-announced"
+      - "ev-y0-0122-naruto-restrains-sasuke"
+      - "ev-y0-0122-naruto-impersonates-sasuke"
+      - "ev-y0-0122-sakura-insults-naruto"
+      - "ev-y0-0122-kakashi-arrives"
+      - "ev-y0-0122-team7-introductions"
+      - "ev-y0-0122-kakashi-schedules-bell-test"
+    reason: "Legacy row mixed team formation, impersonation, waiting and rooftop scenes."
+  - legacy_id: "V10-000007"
+    status: "merged"
+    replacement_ids:
+      - "ev-y0-0122-team7-announced"
+    reason: "Anime adaptation note; not a duplicate historical event."
+  - legacy_id: "V10-000008"
+    status: "partial"
+    replacement_ids:
+      - "ev-y0-0122-hiruzen-assigns-team7-to-kakashi"
+      - "ev-y0-0122-kakashi-background-checks-team7"
+    reason: "Content preserved; background-check sequence remains draft pending location-level split."
+  - legacy_id: "V10-000009"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0122-team9-announced"
+      - "ev-y0-0122-ren-asks-kita"
+    reason: "Announcement and Ren/Kita exchange separated."
+  - legacy_id: "V10-000009-B"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0122-raido-question"
+      - "ev-y0-0122-team9-departs"
+    reason: "Question to Sakura and departure split; cast now comes from presence intervals."
+  - legacy_id: "V10-000009-C"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0122-nobari-returns"
+      - "ev-y0-0122-kita-talks-with-mother"
+      - "ev-y0-0122-kita-cries"
+    reason: "Evening home sequence split."
+  - legacy_id: "V10-000122"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-kiba-separates"
+    reason: "Kiba branch."
+  - legacy_id: "V10-000122-B"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-shikamaru-fights-tayuya"
+    reason: "Shikamaru branch."
+  - legacy_id: "V10-000122-C"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-kimimaro-takes-sasuke"
+    reason: "Kimimaro branch."
+  - legacy_id: "V10-000122-D"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-orochimaru-transfers-body"
+    reason: "Separate Orochimaru scene."
+  - legacy_id: "V10-000122-E"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-lee-replaces-naruto"
+    reason: "Kimimaro branch."
+  - legacy_id: "V10-000122-F"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-naruto-continues-pursuit"
+    reason: "Transition from Kimimaro branch toward Valley of the End."
+  - legacy_id: "V10-000122-G"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-kankuro-rescues-kiba"
+    reason: "Kiba branch."
+  - legacy_id: "V10-000122-H"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-temari-rescues-shikamaru"
+    reason: "Shikamaru branch."
+  - legacy_id: "V10-000122-I"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-gaara-joins-kimimaro-fight"
+    reason: "Kimimaro branch."
+  - legacy_id: "V10-000122-J"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-kimimaro-dies"
+    reason: "Kimimaro branch."
+  - legacy_id: "V10-000122-K"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-naruto-catches-sasuke"
+    reason: "Valley of the End."
+  - legacy_id: "V10-000122-L"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-sasuke-explains-choice"
+    reason: "Valley of the End."
+  - legacy_id: "V10-000122-M"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-valley-power-escalation"
+    reason: "Valley of the End."
+  - legacy_id: "V10-000122-N"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-chidori-rasengan-clash"
+    reason: "Valley of the End."
+  - legacy_id: "V10-000122-O"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0924-sasuke-wins-spares-naruto"
+    reason: "Valley of the End."
