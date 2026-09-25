@@ -1,8 +1,8 @@
 LegacyEventID	Year	Date	Origin	Status	ReplacementIDs	Notes
-V10-000001	0	18.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000002	0	19.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000003	0	20.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000004	0	21.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000001	0	18.01	M	superseded	ev-y0-0118-naruto-paints-monument;ev-y0-0118-iruka-catches-naruto;ev-y0-0118-naruto-declares-hokage-goal;ev-y0-0118-naruto-transformation;ev-y0-0118-iruka-treats-ramen	Split monument, conversation and ramen into separate scenes.
+V10-000002	0	19.01	M	superseded	ev-y0-0119-naruto-fails-clone;ev-y0-0119-mizuki-manipulates-naruto;ev-y0-0119-naruto-steals-scroll;ev-y0-0119-hiruzen-orders-recovery;ev-y0-0119-iruka-finds-naruto;ev-y0-0119-mizuki-reveals-nine-tails;ev-y0-0119-mizuki-attacks-iruka	Split graduation, theft/search and confrontation into distinct scenes.
+V10-000003	0	20.01	M	superseded	ev-y0-0120-iruka-acknowledges-naruto;ev-y0-0120-naruto-defeats-mizuki;ev-y0-0120-iruka-gives-protector	Split dawn resolution into atomic events.
+V10-000004	0	21.01	M	superseded	ev-y0-0121-naruto-registers-ninja;ev-y0-0121-naruto-meets-konohamaru;ev-y0-0121-naruto-defeats-ebisu;ev-y0-0121-naruto-teaches-konohamaru	Split registration and Konohamaru/Ebisu sequence.
 V10-000005	0	22.01	M	migrated	ev-y0-0122-naruto-sasuke-kiss	Separate pre-assignment classroom scene.
 V10-000006	0	22.01	M	superseded	ev-y0-0122-team7-announced;ev-y0-0122-naruto-restrains-sasuke;ev-y0-0122-naruto-impersonates-sasuke;ev-y0-0122-sakura-insults-naruto;ev-y0-0122-kakashi-arrives;ev-y0-0122-team7-introductions;ev-y0-0122-kakashi-schedules-bell-test	Legacy row mixed team formation, impersonation, waiting and rooftop scenes.
 V10-000007	0	22.01	A	merged	ev-y0-0122-team7-announced	Anime adaptation note; not a duplicate historical event.
@@ -10,16 +10,16 @@ V10-000008	0	22.01	R	partial	ev-y0-0122-hiruzen-assigns-team7-to-kakashi;ev-y0-0
 V10-000009	0	22.01	P	superseded	ev-y0-0122-team9-announced;ev-y0-0122-ren-asks-kita	Announcement and Ren/Kita exchange separated.
 V10-000009-B	0	22.01	P	superseded	ev-y0-0122-raido-question;ev-y0-0122-team9-departs	Question to Sakura and departure split; cast now comes from presence intervals.
 V10-000009-C	0	22.01	P	superseded	ev-y0-0122-nobari-returns;ev-y0-0122-kita-talks-with-mother;ev-y0-0122-kita-cries	Evening home sequence split.
-V10-000010	0	23.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000010-B	0	23.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000010-C	0	23.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000010-D	0	23.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000010-E	0	23.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000010-F	0	23.01	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000011	0	23.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000012	0	23.01	P	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000012-B	0	23.01	P	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000012-C	0	23.01	P	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000010	0	23.01	M	migrated	ev-y0-0123-kakashi-explains-bells	Bell-test opening migrated.
+V10-000010-B	0	23.01	M	migrated	ev-y0-0123-naruto-attacks-kakashi	Bell-test Naruto branch migrated.
+V10-000010-C	0	23.01	M	migrated	ev-y0-0123-sasuke-nearly-gets-bell	Bell-test Sasuke branch migrated.
+V10-000010-D	0	23.01	M	migrated	ev-y0-0123-sakura-genjutsu	Bell-test Sakura branch migrated.
+V10-000010-E	0	23.01	M	migrated	ev-y0-0123-kakashi-forbids-feeding-naruto	Bell-test food rule migrated.
+V10-000010-F	0	23.01	M	superseded	ev-y0-0123-team7-shares-food;ev-y0-0123-kakashi-passes-team7	Sharing food and Kakashi passing Team 7 split into separate events.
+V10-000011	0	23.01	R	superseded	ev-y0-0123-kakashi-remembers-failed-teams;ev-y0-0123-kakashi-visits-memorial;ev-y0-0123-tenzo-advises-kakashi	Retrospective preparation split into atomic events.
+V10-000012	0	23.01	P	superseded	ev-y0-0123-team9-arrives-field8;ev-y0-0123-kurenai-questions-team9	Arrival and Kurenai exchange split.
+V10-000012-B	0	23.01	P	superseded	ev-y0-0123-team9-observes-team8;ev-y0-0123-sora-reveals-raido	Observation interval and reveal split.
+V10-000012-C	0	23.01	P	superseded	ev-y0-0123-sora-reveals-raido;ev-y0-0123-raido-passes-observation-test	Reveal and Raido assessment split.
 V10-000013	0	24.01	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000014	0	25.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000015	0	26.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
