@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-1105-natsuhi-identity-motive"
+continuity_id: "main"
+title: "Наруто дізнається, що викрадачка Зірки — Нацухі, мати Сумару"
+location_id: "loc-death-valley-hoshi"
+placement: {anchor_id: "ta-y0-1105", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1105-natsuhi-saves-naruto-valley"
+    legacy_ids: ["V10-000173"]
+    title: "Замаскована Нацухі рятує Наруто після падіння в Долину Смерті"
+    text: "Під час сутички Наруто та викрадачка Зірки падають у небезпечну долину; вона рятує обох від отруйного середовища."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-natsuhi", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000173", "evd-anime-179-183"]
+  - id: "ev-y0-1105-natsuhi-reveals-sumaru-mother"
+    legacy_ids: ["V10-000172", "V10-000173"]
+    title: "Нацухі відкриває Наруто, що вона мати Сумару"
+    text: "У безпечному місці жінка знімає маску й пояснює, що є Нацухі — матір'ю Сумару, яку в селищі вважали мертвою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-natsuhi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-sumaru", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000172", "evd-v10-000173", "evd-anime-179-183"]
+  - id: "ev-y0-1105-natsuhi-explains-star-training-deaths"
+    legacy_ids: ["V10-000172", "V10-000173"]
+    title: "Нацухі пояснює, чому винесла Зірку"
+    text: "Нацухі розповідає, що тренування з метеоритом калічило й убивало учнів; вона та її чоловік переконали Третього Хошікаґе заборонити практику й погодилися жити у вигнанні, щоб стежити, аби її не відновили."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-natsuhi", role: "source", mode: "physical"}
+      - {entity_id: "c-third-hoshikage", role: "subject", mode: "remote"}
+      - {entity_id: "artifact-hoshi-star", role: "cause", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000172", "evd-v10-000173", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1105-natsuhi-1", kind: "before", a: "ev-y0-1105-natsuhi-saves-naruto-valley", b: "ev-y0-1105-natsuhi-reveals-sumaru-mother", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+  - {id: "rel-1105-natsuhi-2", kind: "before", a: "ev-y0-1105-natsuhi-reveals-sumaru-mother", b: "ev-y0-1105-natsuhi-explains-star-training-deaths", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
