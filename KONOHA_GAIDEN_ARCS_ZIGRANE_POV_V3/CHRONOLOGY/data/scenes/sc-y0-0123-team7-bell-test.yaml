@@ -1,0 +1,114 @@
+schema_version: 1
+id: "sc-y0-0123-team7-bell-test"
+continuity_id: "main"
+title: "Випробування Команди 7 з дзвіночками"
+location_id: null
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "pending", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-kakashi-explains-bells"
+    legacy_ids: ["V10-000010"]
+    title: "Какаші ставить завдання відібрати два дзвіночки"
+    text: "Какаші дає Наруто, Саске й Сакурі завдання відібрати в нього два дзвіночки до полудня."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+  - id: "ev-y0-0123-naruto-attacks-kakashi"
+    legacy_ids: ["V10-000010-B"]
+    title: "Наруто атакує Какаші напряму"
+    text: "Наруто відкрито атакує Какаші й кілька разів потрапляє в його пастки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+  - id: "ev-y0-0123-sasuke-nearly-gets-bell"
+    legacy_ids: ["V10-000010-C"]
+    title: "Саске майже дістає дзвіночок"
+    text: "Саске використовує приховану атаку й наближається до того, щоб відібрати дзвіночок у Какаші."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+  - id: "ev-y0-0123-sakura-genjutsu"
+    legacy_ids: ["V10-000010-D"]
+    title: "Какаші виводить Сакуру з тесту гендзюцу"
+    text: "Какаші застосовує гендзюцу проти Сакури й тимчасово виводить її з випробування."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+  - id: "ev-y0-0123-kakashi-forbids-feeding-naruto"
+    legacy_ids: ["V10-000010-E"]
+    title: "Какаші забороняє годувати Наруто"
+    text: "Після основної частини тесту Какаші прив’язує Наруто до стовпа й забороняє Саске та Сакурі ділитися з ним їжею."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+  - id: "ev-y0-0123-team7-shares-food"
+    legacy_ids: ["V10-000010-F"]
+    title: "Саске й Сакура діляться їжею з Наруто"
+    text: "Саске й Сакура порушують наказ і діляться їжею з Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "observer", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+  - id: "ev-y0-0123-kakashi-passes-team7"
+    legacy_ids: ["V10-000010-F"]
+    title: "Какаші зараховує Команду 7"
+    text: "Какаші визнає, що трійця поставила товариша вище за формальний наказ, і пропускає Команду 7."
+    origin: "M"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+relations:
+  - {id: "rel-0123-bells-brief-before-naruto", kind: "before", a: "ev-y0-0123-kakashi-explains-bells", b: "ev-y0-0123-naruto-attacks-kakashi", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
+  - {id: "rel-0123-bells-brief-before-sasuke", kind: "before", a: "ev-y0-0123-kakashi-explains-bells", b: "ev-y0-0123-sasuke-nearly-gets-bell", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
+  - {id: "rel-0123-bells-brief-before-sakura", kind: "before", a: "ev-y0-0123-kakashi-explains-bells", b: "ev-y0-0123-sakura-genjutsu", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
+  - {id: "rel-0123-bells-action-before-food-rule", kind: "before", a: "ev-y0-0123-sakura-genjutsu", b: "ev-y0-0123-kakashi-forbids-feeding-naruto", basis: "imported", review: "pending", evidence_ids: ["evd-v10-bell-test"]}
+  - {id: "rel-0123-rule-before-share", kind: "before", a: "ev-y0-0123-kakashi-forbids-feeding-naruto", b: "ev-y0-0123-team7-shares-food", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
+  - {id: "rel-0123-share-before-pass", kind: "before", a: "ev-y0-0123-team7-shares-food", b: "ev-y0-0123-kakashi-passes-team7", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
+presence:
+  - {id: "pr-0123-bell-naruto", entity_id: "c-naruto", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
+  - {id: "pr-0123-bell-sasuke", entity_id: "c-sasuke", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
+  - {id: "pr-0123-bell-sakura", entity_id: "c-sakura", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
+  - {id: "pr-0123-bell-kakashi", entity_id: "c-kakashi", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
