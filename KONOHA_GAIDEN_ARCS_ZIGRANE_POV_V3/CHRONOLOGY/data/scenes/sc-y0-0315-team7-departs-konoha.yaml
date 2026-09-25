@@ -1,0 +1,32 @@
+schema_version: 1
+id: "sc-y0-0315-team7-departs-konoha"
+continuity_id: "main"
+title: "Команда 7 виходить із Конохи з Тадзуною"
+location_id: "loc-konoha-gate"
+placement: {anchor_id: "ta-y0-0315", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0315-team7-departs-with-tazuna"
+    legacy_ids: ["V10-000023"]
+    title: "Команда 7 починає супровід Тадзуни"
+    text: "Какаші, Наруто, Саске й Сакура залишають Коноху разом із Тадзуною та вирушають до Країни Хвиль."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000023", "evd-manga-land-waves", "evd-anime-land-waves", "evd-novel-land-waves"]
+relations: []
+presence:
+  - {id: "pr-0315-depart-kakashi", entity_id: "c-kakashi", from: "sc-y0-0315-team7-departs-konoha.start", to: "sc-y0-0315-team7-departs-konoha.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-depart-naruto", entity_id: "c-naruto", from: "sc-y0-0315-team7-departs-konoha.start", to: "sc-y0-0315-team7-departs-konoha.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-depart-sasuke", entity_id: "c-sasuke", from: "sc-y0-0315-team7-departs-konoha.start", to: "sc-y0-0315-team7-departs-konoha.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-depart-sakura", entity_id: "c-sakura", from: "sc-y0-0315-team7-departs-konoha.start", to: "sc-y0-0315-team7-departs-konoha.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-depart-tazuna", entity_id: "c-tazuna", from: "sc-y0-0315-team7-departs-konoha.start", to: "sc-y0-0315-team7-departs-konoha.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
