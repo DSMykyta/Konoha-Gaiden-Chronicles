@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0118-ichiraku"
+continuity_id: "main"
+title: "Ірука пригощає Наруто раменом"
+location_id: "loc-ichiraku"
+placement: {anchor_id: "ta-y0-0118", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0118-iruka-treats-ramen"
+    legacy_ids: ["V10-000001"]
+    title: "Ірука пригощає Наруто раменом"
+    text: "Після розмови Ірука пригощає Наруто раменом."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
+relations: []
+presence:
+  - {id: "pr-0118-ramen-naruto", entity_id: "c-naruto", from: "sc-y0-0118-ichiraku.start", to: "sc-y0-0118-ichiraku.end", basis: "source", evidence_ids: ["evd-v10-000001"], review: "accepted"}
+  - {id: "pr-0118-ramen-iruka", entity_id: "c-iruka", from: "sc-y0-0118-ichiraku.start", to: "sc-y0-0118-ichiraku.end", basis: "source", evidence_ids: ["evd-v10-000001"], review: "accepted"}
