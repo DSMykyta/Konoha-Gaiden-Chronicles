@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-0413-shippuden180-extra"
+continuity_id: "main"
+title: "Наруто й Саске повертаються після прощання"
+location_id: "loc-land-waves"
+placement: {anchor_id: "ta-y0-0413", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0413-naruto-returns-for-coupon"
+    legacy_ids: ["V10-000034"]
+    title: "Наруто повертається по забутий купон"
+    text: "Одразу після прощання Наруто помічає, що забув купон на рамен, і повертається; Саске йде за ним."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000034", "evd-shippuden-180-wave-return"]
+  - id: "ev-y0-0413-inari-faces-gato-remnants"
+    legacy_ids: ["V10-000034"]
+    title: "Інарі й діти стикаються із залишками людей Ґато"
+    text: "Повернувшись, Наруто й Саске бачать, що Інарі та інші діти протистоять залишкам людей Ґато."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-inari", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000034", "evd-shippuden-180-wave-return"]
+  - id: "ev-y0-0413-naruto-sasuke-help-capture-remnants"
+    legacy_ids: ["V10-000034"]
+    title: "Наруто й Саске допомагають узяти нападників у полон"
+    text: "Наруто й Саске допомагають Інарі та дітям зупинити нападників і взяти їх у полон."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-inari", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000034", "evd-shippuden-180-wave-return"]
+relations:
+  - {id: "rel-0413-extra-100-200", kind: "before", a: "ev-y0-0413-naruto-returns-for-coupon", b: "ev-y0-0413-inari-faces-gato-remnants", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-180-wave-return"]}
+  - {id: "rel-0413-extra-200-300", kind: "before", a: "ev-y0-0413-inari-faces-gato-remnants", b: "ev-y0-0413-naruto-sasuke-help-capture-remnants", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-180-wave-return"]}
+presence: []
