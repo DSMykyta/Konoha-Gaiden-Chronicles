@@ -1,0 +1,67 @@
+schema_version: 1
+id: "sc-y0-1017-sazanami-wounded-identity"
+continuity_id: "main"
+title: "Поранений Садзанамі виявляється розшукуваним Токічі"
+location_id: "loc-sazanami-cabin"
+placement: {anchor_id: "ta-y0-1017", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1017-sazanami-loses-to-gosunkugi"
+    legacy_ids: ["V10-000149"]
+    title: "Садзанамі сам іде за Ґосункуґі й зазнає поразки"
+    text: "Садзанамі відокремлюється від трійки Конохи, намагається самостійно взяти Ґосункуґі, але той тяжко ранить його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sazanami", role: "focus", mode: "physical"}
+      - {entity_id: "c-gosunkugi", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000149", "evd-anime-159-160"]
+  - id: "ev-y0-1017-team-shelters-wounded-sazanami"
+    legacy_ids: ["V10-000149"]
+    title: "Наруто, Кіба й Хіната рятують пораненого Садзанамі"
+    text: "Група знаходить Садзанамі після бою та переносить його до безпечної хатини, де обробляє поранення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sazanami", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-kiba", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "rescuer", mode: "physical"}
+    evidence_ids: ["evd-v10-000149", "evd-anime-159-160"]
+  - id: "ev-y0-1017-gatsu-wanted-poster-reveals-tokichi"
+    legacy_ids: ["V10-000149"]
+    title: "Плакат розшуку викриває Садзанамі як Токічі"
+    text: "Інший мисливець за головами Ґацу намагається забрати Садзанамі й після сутички лишає плакат розшуку; Хіната та інші впізнають у Токічі самого Садзанамі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-gatsu", role: "participant", mode: "physical"}
+      - {entity_id: "c-sazanami", role: "revealed", mode: "physical"}
+      - {entity_id: "c-hinata", role: "observer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+      - {entity_id: "c-kiba", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000149", "evd-anime-159-160"]
+  - id: "ev-y0-1017-sazanami-explains-framing"
+    legacy_ids: ["V10-000149", "V10-000150"]
+    title: "Садзанамі пояснює, що Ґосункуґі підставив його за вбивство"
+    text: "Садзанамі визнає, що його справжнє ім'я Токічі, та пояснює: він був зброярем і його помилково звинуватили у вбивстві родини, тоді як головним підозрюваним є Ґосункуґі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sazanami", role: "source", mode: "physical"}
+      - {entity_id: "c-gosunkugi", role: "subject", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-kiba", role: "recipient", mode: "physical"}
+      - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000149", "evd-v10-000150", "evd-anime-159-160"]
+relations:
+  - {id: "rel-1017-sazanami-1", kind: "before", a: "ev-y0-1017-sazanami-loses-to-gosunkugi", b: "ev-y0-1017-team-shelters-wounded-sazanami", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+  - {id: "rel-1017-sazanami-2", kind: "before", a: "ev-y0-1017-team-shelters-wounded-sazanami", b: "ev-y0-1017-gatsu-wanted-poster-reveals-tokichi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+  - {id: "rel-1017-sazanami-3", kind: "before", a: "ev-y0-1017-gatsu-wanted-poster-reveals-tokichi", b: "ev-y0-1017-sazanami-explains-framing", basis: "source", review: "accepted", evidence_ids: ["evd-anime-159-160"]}
+presence: []
