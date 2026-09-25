@@ -6302,7 +6302,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000139"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6327,7 +6327,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000140"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -6352,7 +6352,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000141"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6377,7 +6377,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000142"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6402,7 +6402,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000143"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6427,7 +6427,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000144"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6452,7 +6452,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000145"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6477,7 +6477,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000146"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -6502,7 +6502,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000147"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
