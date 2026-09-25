@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0921-shu-mission-complete"
+continuity_id: "main"
+title: "Шю доставляють за призначенням"
+location_id: null
+placement: {anchor_id: "ta-y0-0921", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0921-shu-delivered"
+    legacy_ids: ["V10-000115"]
+    title: "Шю успішно доставляють"
+    text: "Попри напад, справжнього Шю доставляють за призначенням."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shu", role: "focus", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000115", "evd-shippuden-309-310"]
+  - id: "ev-y0-0921-yamato-observes-success"
+    legacy_ids: ["V10-000115"]
+    title: "Ямато спостерігає за завершенням місії"
+    text: "Ямато спостерігає за тим, як місія завершується успішно."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-yamato", role: "focus", mode: "physical"}
+      - {entity_id: "c-shu", role: "observed", mode: "physical"}
+    evidence_ids: ["evd-v10-000115", "evd-shippuden-309-310"]
+relations:
+  - {id: "rel-0921-shu-complete-1", kind: "before", a: "ev-y0-0921-shu-delivered", b: "ev-y0-0921-yamato-observes-success", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000115"]}
+presence: []
