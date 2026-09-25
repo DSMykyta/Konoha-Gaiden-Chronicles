@@ -625,6 +625,56 @@ entities:
     aliases:
       - "бічна кімната вежі"
     parent_id: "loc-forest-death-tower"
+  - id: "c-jiraiya"
+    kind: "person"
+    name: "Jiraiya"
+    aliases:
+      - "Джирая"
+  - id: "c-baki"
+    kind: "person"
+    name: "Baki"
+    aliases:
+      - "Бакі"
+  - id: "c-yugao"
+    kind: "person"
+    name: "Yūgao Uzuki"
+    aliases:
+      - "Юґао"
+      - "Юґао Узукi"
+  - id: "c-hanabi"
+    kind: "person"
+    name: "Hanabi Hyuga"
+    aliases:
+      - "Ханабі"
+  - id: "c-gamabunta"
+    kind: "summon"
+    name: "Gamabunta"
+    aliases:
+      - "Ґамабунта"
+  - id: "c-kurama"
+    kind: "tailed_beast"
+    name: "Kurama / Nine-Tails"
+    aliases:
+      - "Курама"
+      - "Дев’ятихвостий"
+  - id: "group-anbu"
+    kind: "organization"
+    name: "ANBU"
+    aliases:
+      - "АНБУ"
+  - id: "loc-konoha-hospital"
+    kind: "location"
+    name: "Konoha Hospital"
+    aliases:
+      - "шпиталь Конохи"
+      - "лікарня Конохи"
+    parent_id: "loc-konohagakure"
+  - id: "loc-konoha-hot-springs"
+    kind: "location"
+    name: "Konoha hot springs"
+    aliases:
+      - "гарячі джерела"
+    parent_id: "loc-konohagakure"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
