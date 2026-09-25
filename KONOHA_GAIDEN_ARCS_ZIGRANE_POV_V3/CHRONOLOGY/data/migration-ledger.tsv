@@ -228,13 +228,13 @@ V10-000122-L	0	24.09	M	superseded	ev-y0-0924-sasuke-rejects-return;ev-y0-0924-sa
 V10-000122-M	0	24.09	M	superseded	ev-y0-0924-sasuke-sharingan-develops;ev-y0-0924-sasuke-curse-seal-stage-two;ev-y0-0924-naruto-one-tail-cloak	Valley power escalation decomposed.
 V10-000122-N	0	24.09	M	superseded	ev-y0-0924-naruto-sasuke-final-techniques;ev-y0-0924-rasengan-chidori-collide	Final clash decomposed.
 V10-000122-O	0	24.09	M	superseded	ev-y0-0924-sasuke-defeats-naruto;ev-y0-0924-sasuke-refuses-itachi-method;ev-y0-0924-sasuke-leaves-naruto-alive	Valley outcome decomposed.
-V10-000123	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000123-B	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000123-C	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000123-D	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000123-E	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000123-F	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000124	0	25.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000123	0	25.09	M	superseded	ev-y0-0925-kakashi-pakkun-reach-valley;ev-y0-0925-kakashi-finds-unconscious-naruto;ev-y0-0925-kakashi-carries-naruto-back	Kakashi/Pakkun arrival, discovery and evacuation separated.
+V10-000123-B	0	25.09	M	superseded	ev-y0-0925-medics-recover-choji-neji;ev-y0-0925-choji-neji-stabilized;ev-y0-0925-lee-operation-confirmed-success	Medical aftermath split into recovery/stabilization and Lee operation result.
+V10-000123-C	0	25.09	M	migrated	ev-y0-0925-naruto-wakes-hospital	Naruto waking in hospital migrated.
+V10-000123-D	0	25.09	M	superseded	ev-y0-0925-naruto-admits-failed-promise;ev-y0-0925-sakura-says-next-time-together	Naruto admission and Sakura response separated.
+V10-000123-E	0	25.09	M	superseded	ev-y0-0925-jiraiya-explains-orochimaru-body-window;ev-y0-0925-jiraiya-offers-long-training;ev-y0-0925-naruto-refuses-give-up-sasuke;ev-y0-0925-jiraiya-accepts-naruto-decision	Jiraiya/Naruto conversation decomposed.
+V10-000123-F	0	25.09	M	migrated	ev-y0-0925-sakura-asks-tsunade-apprenticeship	Sakura asking Tsunade for training migrated.
+V10-000124	0	25.09	M	superseded	ev-y0-0925-sasuke-arrives-orochimaru-hideout;ev-y0-0925-sasuke-says-came-for-power;ev-y0-0925-kabuto-explains-genyumaru-body	Sasuke reaching Orochimaru decomposed into three scene beats.
 V10-000125	0	26.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000126	0	27.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000126-B	0	27.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
