@@ -4002,7 +4002,7 @@ records:
       SupportingSources: "A [еп. 95–98] — бій трьох саннінів, перший успішний Расенґан Наруто й рішення Цунаде стати П’ятою Хокаґе."
       Review: ""
   - legacy_id: "V10-000084"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4027,7 +4027,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000083"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4052,7 +4052,7 @@ records:
       SupportingSources: "A [еп. 98–100] — повернення до Конохи, лікування Какаші й Саске, діагноз Лі та вступ Цунаде на посаду."
       Review: ""
   - legacy_id: "V10-000083-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -4077,7 +4077,7 @@ records:
       SupportingSources: "A [еп. 98–100] — повернення до Конохи, лікування Какаші й Саске, діагноз Лі та вступ Цунаде на посаду."
       Review: ""
   - legacy_id: "V10-000083-C"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -4102,7 +4102,7 @@ records:
       SupportingSources: "A [еп. 98–100] — повернення до Конохи, лікування Какаші й Саске, діагноз Лі та вступ Цунаде на посаду."
       Review: ""
   - legacy_id: "V10-000085"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4127,7 +4127,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000083-D"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4152,7 +4152,7 @@ records:
       SupportingSources: "A [еп. 98–100] — повернення до Конохи, лікування Какаші й Саске, діагноз Лі та вступ Цунаде на посаду."
       Review: ""
   - legacy_id: "V10-000083-E"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -4177,7 +4177,7 @@ records:
       SupportingSources: "A [еп. 98–100] — повернення до Конохи, лікування Какаші й Саске, діагноз Лі та вступ Цунаде на посаду."
       Review: ""
   - legacy_id: "V10-000083-F"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
