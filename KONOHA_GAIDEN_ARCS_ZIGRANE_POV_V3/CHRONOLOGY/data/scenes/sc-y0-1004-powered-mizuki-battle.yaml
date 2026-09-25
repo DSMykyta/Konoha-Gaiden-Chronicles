@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-1004-powered-mizuki-battle"
+continuity_id: "main"
+title: "Наруто й Ірука б'ються з посиленим Мідзукі"
+location_id: "loc-mizuki-hideout"
+placement: {anchor_id: "ta-y0-1004", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1004-powered-mizuki-overwhelms-naruto-iruka"
+    legacy_ids: ["V10-000132", "V10-000133"]
+    title: "Посилений Мідзукі переважає Наруто й Іруку"
+    text: "Після трансформації Мідзукі використовує приріст сили й швидкості, щоб тиснути на Наруто та Іруку й довести свою перевагу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-iruka", role: "opponent", mode: "physical"}
+      - {entity_id: "c-tsubaki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000132", "evd-v10-000133", "evd-anime-142-147"]
+  - id: "ev-y0-1004-iruka-notices-mizuki-speed-loss"
+    legacy_ids: ["V10-000133"]
+    title: "Ірука помічає, що Мідзукі втрачає швидкість"
+    text: "Ірука розуміє, що Мідзукі дедалі більше переводить чакру в грубу силу й через це втрачає швидкість, і будує план на цій слабкості."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "subject", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000133", "evd-anime-142-147"]
+  - id: "ev-y0-1004-naruto-iruka-defeat-mizuki"
+    legacy_ids: ["V10-000133"]
+    title: "Ірука фіксує Мідзукі, а Наруто завершує бій Расенґаном"
+    text: "Ірука заманює Мідзукі у підготовлену пастку, після чого Наруто влучає Расенґаном; Мідзукі втрачає посилену форму й зазнає тяжких наслідків препарату."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "affected", mode: "physical"}
+      - {entity_id: "c-tsubaki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000133", "evd-anime-142-147"]
+relations:
+  - {id: "rel-1004-mizuki-battle-1", kind: "before", a: "ev-y0-1004-powered-mizuki-overwhelms-naruto-iruka", b: "ev-y0-1004-iruka-notices-mizuki-speed-loss", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+  - {id: "rel-1004-mizuki-battle-2", kind: "before", a: "ev-y0-1004-iruka-notices-mizuki-speed-loss", b: "ev-y0-1004-naruto-iruka-defeat-mizuki", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+presence: []
