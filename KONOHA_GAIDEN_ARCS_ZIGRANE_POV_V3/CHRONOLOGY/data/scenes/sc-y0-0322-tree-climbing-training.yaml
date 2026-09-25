@@ -1,0 +1,45 @@
+schema_version: 1
+id: "sc-y0-0322-tree-climbing-training"
+continuity_id: "main"
+title: "Команда 7 починає тренування контролю чакри"
+location_id: "loc-wave-tree-training"
+placement: {anchor_id: "ta-y0-0322", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0322-kakashi-introduces-tree-climbing"
+    legacy_ids: ["V10-000028"]
+    title: "Какаші ставить вправу з ходіння по деревах"
+    text: "Какаші починає тренувати контроль чакри Команди 7 через підйом по стовбурах без рук."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000028", "evd-manga-land-waves"]
+  - id: "ev-y0-0322-sakura-controls-chakra-first"
+    legacy_ids: ["V10-000028"]
+    title: "Сакура першою демонструє точний контроль чакри"
+    text: "Сакура швидко виконує вправу, тоді як Наруто й Саске ще вчаться дозувати чакру."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "observer", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000028", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0322-tree-start-before-sakura", kind: "before", a: "ev-y0-0322-kakashi-introduces-tree-climbing", b: "ev-y0-0322-sakura-controls-chakra-first", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+presence:
+  - {id: "pr-0322-tree-kakashi", entity_id: "c-kakashi", from: "sc-y0-0322-tree-climbing-training.start", to: "sc-y0-0322-tree-climbing-training.end", basis: "source", evidence_ids: ["evd-v10-000028"], review: "accepted"}
+  - {id: "pr-0322-tree-naruto", entity_id: "c-naruto", from: "sc-y0-0322-tree-climbing-training.start", to: "sc-y0-0322-tree-climbing-training.end", basis: "source", evidence_ids: ["evd-v10-000028"], review: "accepted"}
+  - {id: "pr-0322-tree-sasuke", entity_id: "c-sasuke", from: "sc-y0-0322-tree-climbing-training.start", to: "sc-y0-0322-tree-climbing-training.end", basis: "source", evidence_ids: ["evd-v10-000028"], review: "accepted"}
+  - {id: "pr-0322-tree-sakura", entity_id: "c-sakura", from: "sc-y0-0322-tree-climbing-training.start", to: "sc-y0-0322-tree-climbing-training.end", basis: "source", evidence_ids: ["evd-v10-000028"], review: "accepted"}
