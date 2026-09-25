@@ -370,3 +370,43 @@ anchors:
     evidence_ids: ["evd-v10-000076"]
     review: "accepted"
     reason: "Working project date for early Search for Tsunade events and nearby retrospectives."
+  - id: "ta-y0-0822"
+    date: {year: 0, month: 8, day: 22}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000077"]
+    review: "accepted"
+    reason: "Working project date for early Rasengan training."
+  - id: "ta-y0-0824"
+    date: {year: 0, month: 8, day: 24}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000078"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for Rasengan power-stage training."
+  - id: "ta-y0-0825"
+    date: {year: 0, month: 8, day: 25}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000079"]
+    review: "accepted"
+    reason: "Working project date for the Tanzaku meetings and wager."
+  - id: "ta-y0-0826"
+    date: {year: 0, month: 8, day: 26}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000080"]
+    review: "accepted"
+    reason: "Working project date for the final Rasengan stage and Shizune explanation."
+  - id: "ta-y0-0831"
+    date: {year: 0, month: 8, day: 31}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000081"]
+    review: "accepted"
+    reason: "Working project date for the final night of Naruto and Tsunade's wager."
