@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-1001-mizuki-prison-break"
+continuity_id: "main"
+title: "Мідзукі тікає з в'язниці разом із Фуджіном і Райджіном"
+location_id: "loc-konoha-correctional-facility"
+placement: {anchor_id: "ta-y0-1001", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1001-mizuki-recruits-fujin-raijin"
+    legacy_ids: ["V10-000130"]
+    title: "Мідзукі залучає Фуджіна й Райджіна до втечі"
+    text: "Мідзукі заручається допомогою Фуджіна й Райджіна, використовуючи їхню одержимість їжею й обіцянку нагороди після втечі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-fujin", role: "participant", mode: "physical"}
+      - {entity_id: "c-raijin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000130", "evd-anime-142-147"]
+  - id: "ev-y0-1001-mizuki-prison-riot-escape"
+    legacy_ids: ["V10-000130"]
+    title: "В'язні здіймають бунт і Мідзукі тікає"
+    text: "Мідзукі, Фуджін і Райджін використовують тюремний бунт для втечі з об'єкта суворого режиму."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-fujin", role: "participant", mode: "physical"}
+      - {entity_id: "c-raijin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000130", "evd-anime-142-147"]
+  - id: "ev-y0-1001-asuma-kurenai-defeated-by-escapees"
+    legacy_ids: ["V10-000130"]
+    title: "Асума й Куренай стикаються з утікачами"
+    text: "Прибувши до в'язниці, Асума й Куренай натрапляють на наслідки втечі й у сутичці з утікачами зазнають поранень."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-asuma", role: "affected", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "affected", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "participant", mode: "physical"}
+      - {entity_id: "c-fujin", role: "participant", mode: "physical"}
+      - {entity_id: "c-raijin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-anime-142-147"]
+relations:
+  - {id: "rel-1001-prison-1", kind: "before", a: "ev-y0-1001-mizuki-recruits-fujin-raijin", b: "ev-y0-1001-mizuki-prison-riot-escape", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+  - {id: "rel-1001-prison-2", kind: "before", a: "ev-y0-1001-mizuki-prison-riot-escape", b: "ev-y0-1001-asuma-kurenai-defeated-by-escapees", basis: "source", review: "pending", evidence_ids: ["evd-anime-142-147"]}
+presence: []
