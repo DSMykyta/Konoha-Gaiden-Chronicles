@@ -1,0 +1,48 @@
+schema_version: 1
+id: "sc-y0-0921-sasuke-naho-criminal-search"
+continuity_id: "main"
+title: "Саске рятує Нахо й загострює кризу перед втечею"
+location_id: null
+placement: {anchor_id: "ta-y0-0921", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0921-sasuke-rescues-naho"
+    legacy_ids: ["V10-000116"]
+    title: "Саске рятує Нахо й товаришів"
+    text: "Під час розшуку злочинців Саске рятує Нахо та її товаришів."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naho", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000116", "evd-shippuden-196"]
+  - id: "ev-y0-0921-sasuke-brutalizes-criminal-leader"
+    legacy_ids: ["V10-000116"]
+    title: "Саске надмірно жорстоко б’є ватажка"
+    text: "На тлі загострення суперництва з Наруто Саске надмірно жорстоко б’є ватажка злочинців."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "comparison", mode: "remote"}
+      - {entity_id: "c-naho", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000116", "evd-shippuden-196"]
+  - id: "ev-y0-0921-sasuke-crisis-intensifies"
+    legacy_ids: ["V10-000116"]
+    title: "Криза Саске перед втечею загострюється"
+    text: "Його поведінка під час місії фіксує подальше загострення внутрішньої кризи перед втечею з Конохи."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "comparison", mode: "remote"}
+    evidence_ids: ["evd-v10-000116", "evd-shippuden-196"]
+relations:
+  - {id: "rel-0921-sasuke-naho-1", kind: "before", a: "ev-y0-0921-sasuke-rescues-naho", b: "ev-y0-0921-sasuke-brutalizes-criminal-leader", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-196"]}
+  - {id: "rel-0921-sasuke-naho-2", kind: "before", a: "ev-y0-0921-sasuke-brutalizes-criminal-leader", b: "ev-y0-0921-sasuke-crisis-intensifies", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000116"]}
+presence: []
