@@ -1,0 +1,51 @@
+schema_version: 1
+id: "sc-y0-0330-tazuna-home-attack"
+continuity_id: "main"
+title: "Напад людей Ґато на дім Тадзуни"
+location_id: "loc-tazuna-home"
+placement: {anchor_id: "ta-y0-0330", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0330-gato-men-attack-tazuna-home"
+    legacy_ids: ["V10-000032"]
+    title: "Люди Ґато нападають на дім Тадзуни"
+    text: "Поки основна битва триває на мосту, люди Ґато нападають на дім Тадзуни й намагаються викрасти Цунамі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunami", role: "affected", mode: "physical"}
+      - {entity_id: "c-inari", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000032", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-inari-defends-tsunami"
+    legacy_ids: ["V10-000032"]
+    title: "Інарі стає на захист Цунамі"
+    text: "Інарі долає страх і намагається захистити матір від нападників."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-inari", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunami", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000032", "evd-manga-land-waves"]
+  - id: "ev-y0-0330-naruto-rescues-inari-tsunami"
+    legacy_ids: ["V10-000032"]
+    title: "Наруто рятує Інарі й Цунамі"
+    text: "Наруто повертається до дому Тадзуни й знешкоджує нападників."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-inari", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunami", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000032", "evd-manga-land-waves"]
+relations:
+  - {id: "rel-0330-home-100-200", kind: "before", a: "ev-y0-0330-gato-men-attack-tazuna-home", b: "ev-y0-0330-inari-defends-tsunami", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+  - {id: "rel-0330-home-200-300", kind: "before", a: "ev-y0-0330-inari-defends-tsunami", b: "ev-y0-0330-naruto-rescues-inari-tsunami", basis: "source", review: "pending", evidence_ids: ["evd-manga-land-waves"]}
+presence:
+  - {id: "pr-0330-home-inari", entity_id: "c-inari", from: "sc-y0-0330-tazuna-home-attack.start", to: "sc-y0-0330-tazuna-home-attack.end", basis: "source", evidence_ids: ["evd-v10-000032"], review: "accepted"}
+  - {id: "pr-0330-home-tsunami", entity_id: "c-tsunami", from: "sc-y0-0330-tazuna-home-attack.start", to: "sc-y0-0330-tazuna-home-attack.end", basis: "source", evidence_ids: ["evd-v10-000032"], review: "accepted"}
+  - {id: "pr-0330-home-naruto", entity_id: "c-naruto", from: "ev-y0-0330-naruto-rescues-inari-tsunami.start", to: "sc-y0-0330-tazuna-home-attack.end", basis: "source", evidence_ids: ["evd-v10-000032"], review: "accepted"}
