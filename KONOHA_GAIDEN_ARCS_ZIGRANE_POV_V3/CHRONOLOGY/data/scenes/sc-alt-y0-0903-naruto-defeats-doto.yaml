@@ -1,0 +1,36 @@
+schema_version: 1
+id: "sc-alt-y0-0903-naruto-defeats-doto"
+continuity_id: "alt-movie-land-of-snow"
+title: "Наруто перемагає Дото, а Коюкі повертає країну"
+location_id: "loc-land-of-snow"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0903-naruto-defeats-doto"
+    legacy_ids: ["V10-000088"]
+    title: "Наруто перемагає Дото"
+    text: "У вирішальному бою Наруто перемагає Дото Казахану."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-doto", role: "affected", mode: "physical"}
+      - {entity_id: "c-koyuki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000088", "evd-movie-land-of-snow"]
+  - id: "ev-alt-y0-0903-koyuki-restores-land-snow"
+    legacy_ids: ["V10-000088"]
+    title: "Коюкі повертає собі Країну Снігу"
+    text: "Після поразки Дото Коюкі повертається до влади в Країні Снігу."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-koyuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-doto", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000088", "evd-movie-land-of-snow"]
+relations:
+  - {id: "rel-alt-0903-doto-1", kind: "before", a: "ev-alt-y0-0903-naruto-defeats-doto", b: "ev-alt-y0-0903-koyuki-restores-land-snow", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000088"]}
+presence: []
