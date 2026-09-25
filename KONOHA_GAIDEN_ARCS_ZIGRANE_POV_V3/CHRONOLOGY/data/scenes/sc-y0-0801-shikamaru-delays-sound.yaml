@@ -1,0 +1,24 @@
+schema_version: 1
+id: "sc-y0-0801-shikamaru-delays-sound"
+continuity_id: "main"
+title: "Шикамару затримує переслідувачів Звуку"
+location_id: "loc-konoha-outskirts"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-shikamaru-delays-sound"
+    legacy_ids: ["V10-000069-B"]
+    title: "Шикамару лишається позаду"
+    text: "Під час погоні за Саске Шикамару добровільно лишається позаду, щоб затримати шинобі Звуку, які переслідують групу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000069-B", "evd-manga-finals-konoha-crush"]
+relations: []
+presence:
+  - {id: "pr-0801-shikamaru-delay", entity_id: "c-shikamaru", from: "sc-y0-0801-shikamaru-delays-sound.start", to: "sc-y0-0801-shikamaru-delays-sound.end", basis: "source", evidence_ids: ["evd-v10-000069-B"], review: "accepted"}
