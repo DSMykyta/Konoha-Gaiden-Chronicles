@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-pre0727-rasa-assassination"
+continuity_id: "main"
+title: "Орочімару вбиває Расу до фіналів"
+location_id: null
+placement: null
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-pre0727-orochimaru-kills-rasa"
+    legacy_ids: ["V10-000055"]
+    title: "Орочімару вбиває Четвертого Казекаґе"
+    text: "До 27.07 Раса вже вбитий Орочімару; точний день засідки джерело не встановлює."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-rasa", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000055", "evd-manga-konoha-crush-prelude"]
+  - id: "ev-pre0727-kimimaro-sound-assist-rasa-ambush"
+    legacy_ids: ["V10-000056"]
+    title: "Аніме показує участь Кімімаро й сил Звуку в засідці"
+    text: "Аніме додає до засідки на Расу участь Кімімаро та людей Звуку."
+    origin: "A"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kimimaro", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-rasa", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000056", "evd-anime-67-68"]
+relations: []
+presence: []
