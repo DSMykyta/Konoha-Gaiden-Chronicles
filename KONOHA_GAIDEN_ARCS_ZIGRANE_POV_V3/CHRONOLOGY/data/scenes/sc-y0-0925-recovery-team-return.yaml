@@ -1,0 +1,46 @@
+schema_version: 1
+id: "sc-y0-0925-recovery-team-return"
+continuity_id: "main"
+title: "Поранених учасників місії повертають до Конохи"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0925", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0925-medics-recover-choji-neji"
+    legacy_ids: ["V10-000123-B"]
+    title: "Медики знаходять Чоджі й Неджі"
+    text: "Медичні групи знаходять поранених Чоджі та Неджі й повертають їх до Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-choji", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000123-B", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-choji-neji-stabilized"
+    legacy_ids: ["V10-000123-B"]
+    title: "Чоджі й Неджі стабілізовані"
+    text: "Після повернення медики стабілізують стан Чоджі та Неджі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-choji", role: "affected", mode: "physical"}
+      - {entity_id: "c-neji", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000123-B", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-lee-operation-confirmed-success"
+    legacy_ids: ["V10-000123-B"]
+    title: "Операція Рока Лі виявляється успішною"
+    text: "Паралельно підтверджується, що операція Рока Лі пройшла успішно."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000123-B", "evd-manga-sasuke-recovery"]
+relations:
+  - {id: "rel-0925-recovery-1", kind: "before", a: "ev-y0-0925-medics-recover-choji-neji", b: "ev-y0-0925-choji-neji-stabilized", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000123-B"]}
+presence: []
