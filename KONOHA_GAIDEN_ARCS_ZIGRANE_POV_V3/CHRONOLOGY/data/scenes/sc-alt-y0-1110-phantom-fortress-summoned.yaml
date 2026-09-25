@@ -1,0 +1,48 @@
+schema_version: 1
+id: "sc-alt-y0-1110-phantom-fortress-summoned"
+continuity_id: "alt-game-phantom-fortress"
+title: "Муґенджо з'являється біля Конохи й починає висмоктувати життєву силу"
+location_id: "loc-mugen-castle"
+placement: {anchor_id: "ta-alt-y0-1110-phantom", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1110-kabuto-summons-mugen-castle"
+    legacy_ids: ["V10-000179"]
+    title: "Кабуто викликає Муґенджо вісьмома печатками"
+    text: "В альтернативній ігровій гілці Кабуто використовує техніку Орочімару й вісім печаток, щоб викликати стоповерховий Муґенджо поблизу Конохи."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "technique_source", mode: "remote"}
+      - {entity_id: "loc-mugen-castle", role: "summoned_structure", mode: "physical"}
+    evidence_ids: ["evd-v10-000179", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1110-mugen-castle-drains-konoha"
+    legacy_ids: ["V10-000179"]
+    title: "Замок починає поглинати життєву силу Конохи"
+    text: "Муґенджо використовує накопичену життєву силу людей для створення ілюзій і становить загрозу самому селу."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "loc-mugen-castle", role: "focus", mode: "physical"}
+      - {entity_id: "c-princess-kasumi", role: "illusion_channel", mode: "physical"}
+    evidence_ids: ["evd-v10-000179", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1110-naruto-enters-mugen-castle"
+    legacy_ids: ["V10-000179"]
+    title: "Наруто входить до Муґенджо"
+    text: "Наруто входить у замок і починає підніматися його поверхами, де кімнати відтворюють бої, спогади та гендзюцу."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "loc-mugen-castle", role: "setting", mode: "physical"}
+    evidence_ids: ["evd-v10-000179", "evd-game-phantom-fortress"]
+relations:
+  - {id: "rel-alt-1110-phantom-1", kind: "before", a: "ev-alt-y0-1110-kabuto-summons-mugen-castle", b: "ev-alt-y0-1110-mugen-castle-drains-konoha", basis: "source", review: "accepted", evidence_ids: ["evd-game-phantom-fortress"]}
+  - {id: "rel-alt-1110-phantom-2", kind: "before", a: "ev-alt-y0-1110-mugen-castle-drains-konoha", b: "ev-alt-y0-1110-naruto-enters-mugen-castle", basis: "source", review: "accepted", evidence_ids: ["evd-game-phantom-fortress"]}
+presence: []
