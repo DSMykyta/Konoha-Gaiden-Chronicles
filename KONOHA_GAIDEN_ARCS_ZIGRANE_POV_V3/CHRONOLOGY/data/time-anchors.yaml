@@ -938,3 +938,27 @@ anchors:
     evidence_ids: ["evd-v10-000171"]
     review: "accepted"
     reason: "Alternative game placement only; Uzumaki Chronicles 2 finale."
+  - id: "ta-y0-1104"
+    date: {year: 0, month: 11, day: 4}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000172"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Star Guard investigation and Sumaru bait operation."
+  - id: "ta-y0-1105"
+    date: {year: 0, month: 11, day: 5}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000173"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Natsuhi/Akahoshi truth and confrontation."
+  - id: "ta-y0-1106"
+    date: {year: 0, month: 11, day: 6}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000174"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Star Guard Mission finale."
