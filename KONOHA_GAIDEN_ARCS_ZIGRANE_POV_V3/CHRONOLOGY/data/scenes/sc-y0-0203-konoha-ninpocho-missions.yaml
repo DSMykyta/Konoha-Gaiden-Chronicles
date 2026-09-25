@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-0203-konoha-ninpocho-missions"
+continuity_id: "alt-game-konoha-ninpocho"
+title: "Подальші місії Konoha Ninpōchō"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0203", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0203-team7-game-missions"
+    legacy_ids: ["V10-000021"]
+    title: "Команда 7 продовжує ігрові місії"
+    text: "Команда 7 проходить наступні самостійні завдання, що розширюють альтернативний проміжок перед місією Тадзуни."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000021", "evd-source-000021"]
+relations: []
+presence: []
