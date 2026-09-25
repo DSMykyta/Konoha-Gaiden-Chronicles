@@ -1,0 +1,99 @@
+schema_version: 1
+id: "sc-y0-0123-field8-observation"
+continuity_id: "main"
+title: "Команда 9 спостерігає за Командою 8"
+location_id: "loc-training-ground-8"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-team9-arrives-field8"
+    legacy_ids: ["V10-000012"]
+    title: "Команда 9 приходить на Поле 8 о призначеній годині"
+    text: "Кіта, Рен і Сора приходять на Тренувальне поле 8 на зустріч, призначену Райдо на 07:00, і бачать там Куренай та Команду 8."
+    origin: "P"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+    focus_teams: ["team-9", "team-8"]
+    evidence_ids: ["evd-team9-field8-arrival"]
+  - id: "ev-y0-0123-kurenai-questions-team9"
+    legacy_ids: ["V10-000012"]
+    title: "Куренай з’ясовує, чому Команда 9 на її полі"
+    text: "Куренай питає, чому Команда 9 прийшла на закріплений за Командою 8 полігон; Кіта підтверджує, що Райдо чітко призначив це місце."
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kurenai", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "participant", mode: "physical"}
+      - {entity_id: "c-sora", role: "participant", mode: "physical"}
+    focus_teams: ["team-9", "team-8"]
+    evidence_ids: ["evd-team9-field8-arrival"]
+  - id: "ev-y0-0123-team9-observes-team8"
+    legacy_ids: ["V10-000012-B"]
+    title: "Команда 9 близько години аналізує Команду 8"
+    text: "Сора веде записи; Кіта й Рен приєднуються до аналізу рухів і звичок Кіби, Шіно та Хінати. Спостереження триває близько години."
+    origin: "P"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-ren", role: "focus", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-field8-observation"]
+  - id: "ev-y0-0123-sora-reveals-raido"
+    legacy_ids: ["V10-000012-B", "V10-000012-C"]
+    title: "Сора камінцем викриває замаскованого Райдо"
+    text: "Сора кидає камінець у бік старого пня; камуфляж розвіюється й відкриває Райдо, який увесь час перебував поруч."
+    origin: "P"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "participant", mode: "physical"}
+      - {entity_id: "c-ren", role: "participant", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-sora-reveals-raido"]
+  - id: "ev-y0-0123-raido-passes-observation-test"
+    legacy_ids: ["V10-000012-C"]
+    title: "Райдо зараховує тест на аналіз ситуації"
+    text: "Райдо схвалює те, що команда використала невизначену ситуацію для збору інформації, і оголошує перший тест пройденим."
+    origin: "P"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "participant", mode: "physical"}
+      - {entity_id: "c-ren", role: "participant", mode: "physical"}
+      - {entity_id: "c-sora", role: "participant", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-team9-sora-reveals-raido"]
+relations:
+  - {id: "rel-0123-field8-arrival-before-question", kind: "before", a: "ev-y0-0123-team9-arrives-field8", b: "ev-y0-0123-kurenai-questions-team9", basis: "source", review: "accepted", evidence_ids: ["evd-team9-field8-arrival"]}
+  - {id: "rel-0123-field8-question-before-observe", kind: "before", a: "ev-y0-0123-kurenai-questions-team9", b: "ev-y0-0123-team9-observes-team8", basis: "source", review: "accepted", evidence_ids: ["evd-team9-field8-observation"]}
+  - {id: "rel-0123-field8-observe-before-reveal", kind: "before", a: "ev-y0-0123-team9-observes-team8", b: "ev-y0-0123-sora-reveals-raido", basis: "source", review: "accepted", evidence_ids: ["evd-team9-sora-reveals-raido"]}
+  - {id: "rel-0123-field8-reveal-before-pass", kind: "before", a: "ev-y0-0123-sora-reveals-raido", b: "ev-y0-0123-raido-passes-observation-test", basis: "source", review: "accepted", evidence_ids: ["evd-team9-sora-reveals-raido"]}
+presence:
+  - {id: "pr-0123-field8-kita", entity_id: "c-kita", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-ren", entity_id: "c-ren", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-sora", entity_id: "c-sora", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-kurenai", entity_id: "c-kurenai", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-kiba", entity_id: "c-kiba", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-akamaru", entity_id: "c-akamaru", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-shino", entity_id: "c-shino", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-hinata", entity_id: "c-hinata", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", basis: "source", evidence_ids: ["evd-team9-field8-arrival"], review: "accepted"}
+  - {id: "pr-0123-field8-raido", entity_id: "c-raido", from: "sc-y0-0123-field8-observation.start", to: "sc-y0-0123-field8-observation.end", mode: "physical_hidden", basis: "source", evidence_ids: ["evd-team9-sora-reveals-raido"], review: "accepted"}
