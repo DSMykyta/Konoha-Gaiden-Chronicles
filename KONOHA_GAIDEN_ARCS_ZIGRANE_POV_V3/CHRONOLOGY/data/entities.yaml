@@ -580,6 +580,51 @@ entities:
     aliases:
       - "вежа Лісу Смерті"
     parent_id: "loc-forest-death"
+  - id: "c-karin"
+    kind: "person"
+    name: "Karin"
+    aliases:
+      - "Карін"
+  - id: "c-oboro"
+    kind: "person"
+    name: "Oboro"
+    aliases:
+      - "Оборо"
+  - id: "c-yoroi"
+    kind: "person"
+    name: "Yoroi Akadō"
+    aliases:
+      - "Йорої"
+      - "Йорої Акадо"
+  - id: "c-misumi"
+    kind: "person"
+    name: "Misumi Tsurugi"
+    aliases:
+      - "Місумі"
+      - "Місумі Цуругі"
+  - id: "c-hayate"
+    kind: "person"
+    name: "Hayate Gekkō"
+    aliases:
+      - "Хаяте"
+      - "Хаяте Ґекко"
+  - id: "team-oboro"
+    kind: "team"
+    name: "Team Oboro"
+    aliases:
+      - "Команда Оборо"
+  - id: "loc-chunin-prelim-arena"
+    kind: "location"
+    name: "Chūnin preliminaries arena"
+    aliases:
+      - "арена попередніх боїв"
+    parent_id: "loc-forest-death-tower"
+  - id: "loc-chunin-tower-side-room"
+    kind: "location"
+    name: "Forest of Death tower side room"
+    aliases:
+      - "бічна кімната вежі"
+    parent_id: "loc-forest-death-tower"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
