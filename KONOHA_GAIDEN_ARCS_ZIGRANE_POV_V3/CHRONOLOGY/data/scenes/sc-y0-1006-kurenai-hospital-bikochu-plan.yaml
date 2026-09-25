@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1006-kurenai-hospital-bikochu-plan"
+continuity_id: "main"
+title: "Команда 8 пропонує використати бікоочу для пошуку Саске"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-1006", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1006-team8-visits-hospitalized-kurenai"
+    legacy_ids: ["V10-000136"]
+    title: "Кіба, Шіно й Хіната відвідують Куренай у лікарні"
+    text: "Після подій із Мідзукі Кіба, Шіно й Хіната приходять до пораненої Куренай у лікарню; наставниця не може вести наступну польову місію."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000136", "evd-anime-148-151"]
+  - id: "ev-y0-1006-shino-proposes-bikocho"
+    legacy_ids: ["V10-000136"]
+    title: "Шіно пропонує бікоочу як спосіб знайти Саске"
+    text: "Побачивши, що Наруто знову шукає спосіб вийти на слід Саске, Шіно пояснює: рідкісний бікоочу може запам'ятати запах і потім відстежити його власника."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000136", "evd-anime-148-151"]
+relations:
+  - {id: "rel-1006-bikocho-hospital-1", kind: "before", a: "ev-y0-1006-team8-visits-hospitalized-kurenai", b: "ev-y0-1006-shino-proposes-bikocho", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
