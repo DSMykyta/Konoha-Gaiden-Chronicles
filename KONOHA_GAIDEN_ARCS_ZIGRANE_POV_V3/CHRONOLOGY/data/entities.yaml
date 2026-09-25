@@ -1646,6 +1646,39 @@ entities:
     name: "Claw Daimyō"
     aliases:
       - "даймьо Країни Кігтів"
+  - id: "artifact-hoshi-star"
+    kind: "artifact"
+    name: "Hoshigakure Star"
+    aliases:
+      - "Зірка Хошіґакуре"
+      - "метеорит Зірка"
+  - id: "c-mizura"
+    kind: "person"
+    name: "Mizura"
+    aliases:
+      - "Мізура"
+  - id: "c-hokuto"
+    kind: "person"
+    name: "Hokuto"
+    aliases:
+      - "Хокуто"
+  - id: "c-third-hoshikage"
+    kind: "person"
+    name: "Third Hoshikage"
+    aliases:
+      - "Третій Хошікаґе"
+  - id: "loc-star-training-building"
+    kind: "location"
+    name: "Hoshigakure Star Training Building"
+    aliases:
+      - "будівля тренувань із Зіркою"
+    parent_id: "loc-hoshigakure"
+  - id: "loc-star-temple"
+    kind: "location"
+    name: "Hoshigakure Star Temple"
+    aliases:
+      - "храм Зірки"
+    parent_id: "loc-hoshigakure"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
