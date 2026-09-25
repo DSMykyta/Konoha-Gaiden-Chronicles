@@ -1,0 +1,70 @@
+schema_version: 1
+id: "sc-y0-1007-bikochu-habitat-search"
+continuity_id: "main"
+title: "Пошукова група знаходить бікоочу"
+location_id: "loc-bikocho-habitat"
+placement: {anchor_id: "ta-y0-1007", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1007-team-searches-bikocho-habitat"
+    legacy_ids: ["V10-000137"]
+    title: "Наруто й Команда 8 прочісують середовище бікоочу"
+    text: "Шіно, Хіната, Кіба, Акамару й Наруто шукають рідкісного бікоочу у його природному середовищі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shino", role: "leader", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    focus_teams: ["team-8"]
+    evidence_ids: ["evd-v10-000137", "evd-anime-148-151"]
+  - id: "ev-y0-1007-kamizuru-spy-on-search-team"
+    legacy_ids: ["V10-000137"]
+    title: "Троє Камізуру стежать за пошуком"
+    text: "Судзумебачі, Куробачі й Джібачі потай спостерігають за командою: клан Камізуру теж прагне здобути бікоочу, щоб знайти прихований сувій свого засновника й відновити становище клану."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-suzumebachi", role: "observer", mode: "physical"}
+      - {entity_id: "c-kurobachi", role: "observer", mode: "physical"}
+      - {entity_id: "c-jibachi", role: "observer", mode: "physical"}
+      - {entity_id: "group-kamizuru", role: "affiliation", mode: "remote"}
+    evidence_ids: ["evd-v10-000137", "evd-anime-148-151"]
+  - id: "ev-y0-1007-hinata-locates-bikocho"
+    legacy_ids: ["V10-000137"]
+    title: "Хіната знаходить бікоочу Б'якуґаном"
+    text: "Коли звичайний пошук заходить у глухий кут, Хіната використовує Б'якуґан і знаходить потрібного бікоочу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-anime-148-151"]
+  - id: "ev-y0-1007-naruto-secures-bikocho"
+    legacy_ids: ["V10-000137"]
+    title: "Наруто ловить бікоочу"
+    text: "За підказкою Хінати Наруто ловить бікоочу; команда отримує його кладку й готується дочекатися вилуплення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-anime-148-151"]
+relations:
+  - {id: "rel-1007-bikocho-search-1", kind: "before", a: "ev-y0-1007-team-searches-bikocho-habitat", b: "ev-y0-1007-hinata-locates-bikocho", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+  - {id: "rel-1007-bikocho-search-2", kind: "before", a: "ev-y0-1007-hinata-locates-bikocho", b: "ev-y0-1007-naruto-secures-bikocho", basis: "source", review: "accepted", evidence_ids: ["evd-anime-148-151"]}
+presence: []
