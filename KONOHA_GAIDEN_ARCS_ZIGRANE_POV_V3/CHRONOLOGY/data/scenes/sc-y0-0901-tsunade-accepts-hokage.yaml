@@ -1,0 +1,49 @@
+schema_version: 1
+id: "sc-y0-0901-tsunade-accepts-hokage"
+continuity_id: "main"
+title: "Цунаде визнає Наруто й приймає посаду Хокаґе"
+location_id: null
+placement: {anchor_id: "ta-y0-0901", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0901-tsunade-gives-necklace-naruto"
+    legacy_ids: ["V10-000082-H"]
+    title: "Цунаде віддає Наруто намисто Першого Хокаґе"
+    text: "Після бою Цунаде віддає Наруто намисто Першого Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-H", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-tsunade-recognizes-naruto-future-hokage"
+    legacy_ids: ["V10-000082-H"]
+    title: "Цунаде визнає прагнення Наруто стати Хокаґе"
+    text: "Цунаде визнає Наруто людиною, здатною колись стати Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-H", "evd-manga-post-crush-search"]
+  - id: "ev-y0-0901-tsunade-accepts-fifth-hokage"
+    legacy_ids: ["V10-000082-H"]
+    title: "Цунаде погоджується стати П’ятою Хокаґе"
+    text: "Цунаде погоджується повернутися до Конохи й обійняти посаду П’ятої Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000082-H", "evd-manga-post-crush-search"]
+relations:
+  - {id: "rel-0901-tsunade-aftermath-1", kind: "before", a: "ev-y0-0901-tsunade-gives-necklace-naruto", b: "ev-y0-0901-tsunade-recognizes-naruto-future-hokage", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000082-H"]}
+  - {id: "rel-0901-tsunade-aftermath-2", kind: "before", a: "ev-y0-0901-tsunade-recognizes-naruto-future-hokage", b: "ev-y0-0901-tsunade-accepts-fifth-hokage", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000082-H"]}
+presence:
+  - {id: "pr-0901-tsunade-after-tsunade", entity_id: "c-tsunade", from: "sc-y0-0901-tsunade-accepts-hokage.start", to: "sc-y0-0901-tsunade-accepts-hokage.end", basis: "imported", evidence_ids: ["evd-v10-000082-H"], review: "accepted"}
+  - {id: "pr-0901-tsunade-after-naruto", entity_id: "c-naruto", from: "sc-y0-0901-tsunade-accepts-hokage.start", to: "sc-y0-0901-tsunade-accepts-hokage.end", basis: "imported", evidence_ids: ["evd-v10-000082-H"], review: "accepted"}
