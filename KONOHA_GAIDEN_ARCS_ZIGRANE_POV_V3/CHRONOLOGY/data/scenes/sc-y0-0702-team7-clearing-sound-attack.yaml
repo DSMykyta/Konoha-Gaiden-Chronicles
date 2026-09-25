@@ -1,0 +1,165 @@
+schema_version: 1
+id: "sc-y0-0702-team7-clearing-sound-attack"
+continuity_id: "main"
+title: "Сакура захищає непритомних Наруто й Саске"
+location_id: "loc-forest-death"
+placement: {anchor_id: "ta-y0-0702", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0702-sakura-guards-team7"
+    legacy_ids: ["V10-000042"]
+    title: "Сакура всю ніч охороняє Наруто й Саске"
+    text: "Після нападу Орочімару Сакура не спить і охороняє непритомних Наруто та Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000042", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-sound-team-attacks-sakura"
+    legacy_ids: ["V10-000042-B"]
+    title: "Команда Досу атакує на світанку"
+    text: "На світанку Досу, Заку й Кін атакують Сакуру та непритомних членів Команди 7."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-dosu", role: "focus", mode: "physical"}
+      - {entity_id: "c-zaku", role: "participant", mode: "physical"}
+      - {entity_id: "c-kin", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    focus_teams: ["team-sound-genin", "team-7"]
+    evidence_ids: ["evd-v10-000042-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-lee-intervenes"
+    legacy_ids: ["V10-000042-B"]
+    title: "Рок Лі приходить Сакурі на допомогу"
+    text: "Рок Лі втручається в бій, щоб захистити Сакуру."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-dosu", role: "participant", mode: "physical"}
+      - {entity_id: "c-zaku", role: "participant", mode: "physical"}
+      - {entity_id: "c-kin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000042-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-dosu-defeats-lee"
+    legacy_ids: ["V10-000042-B"]
+    title: "Звукова атака Досу перемагає Лі"
+    text: "Досу використовує звукову атаку й виводить Лі з бою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-dosu", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000042-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-sakura-cuts-hair"
+    legacy_ids: ["V10-000042-C"]
+    title: "Сакура обрізає волосся й продовжує бій"
+    text: "Кін хапає Сакуру за волосся; Сакура обрізає його, виривається й продовжує битися попри поранення."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-kin", role: "participant", mode: "physical"}
+      - {entity_id: "c-dosu", role: "participant", mode: "physical"}
+      - {entity_id: "c-zaku", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000042-C", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-team10-intervenes"
+    legacy_ids: ["V10-000042-C"]
+    title: "Команда 10 приходить Сакурі на допомогу"
+    text: "Іно, Шикамару й Чоджі втручаються в бій на боці Сакури."
+    origin: "M"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-ino", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-dosu", role: "participant", mode: "physical"}
+      - {entity_id: "c-zaku", role: "participant", mode: "physical"}
+      - {entity_id: "c-kin", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000042-C", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-sasuke-awakens-curse-mark"
+    legacy_ids: ["V10-000042-D"]
+    title: "Саске прокидається під впливом Проклятої Печатки"
+    text: "Саске приходить до тями, а Проклята Печатка різко підсилює його агресію й силу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000042-D", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-sasuke-breaks-zaku-arms"
+    legacy_ids: ["V10-000042-D"]
+    title: "Саске ламає руки Заку"
+    text: "Під дією печатки Саске жорстоко атакує Заку й ламає йому руки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 800
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-zaku", role: "affected", mode: "physical"}
+      - {entity_id: "c-dosu", role: "participant", mode: "physical"}
+      - {entity_id: "c-kin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000042-D", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-sakura-calms-sasuke"
+    legacy_ids: ["V10-000042-D"]
+    title: "Сакура обіймає Саске й допомагає придушити печатку"
+    text: "Налякана поведінкою Саске, Сакура обіймає його; це допомагає йому зупинитися й придушити вплив печатки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 900
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000042-D", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-sound-team-retreats"
+    legacy_ids: ["V10-000042-E"]
+    title: "Команда Досу віддає сувій і відступає"
+    text: "Після пробудження Саске Досу вирішує припинити бій; команда Звуку залишає свій сувій і відходить."
+    origin: "M"
+    extent: "interval"
+    display_rank: 1000
+    involvement:
+      - {entity_id: "c-dosu", role: "focus", mode: "physical"}
+      - {entity_id: "c-zaku", role: "participant", mode: "physical"}
+      - {entity_id: "c-kin", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+    focus_teams: ["team-sound-genin"]
+    evidence_ids: ["evd-v10-000042-E", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0702-clearing-1", kind: "before", a: "ev-y0-0702-sakura-guards-team7", b: "ev-y0-0702-sound-team-attacks-sakura", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-2", kind: "before", a: "ev-y0-0702-sound-team-attacks-sakura", b: "ev-y0-0702-lee-intervenes", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-3", kind: "before", a: "ev-y0-0702-lee-intervenes", b: "ev-y0-0702-dosu-defeats-lee", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-4", kind: "before", a: "ev-y0-0702-dosu-defeats-lee", b: "ev-y0-0702-sakura-cuts-hair", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-5", kind: "before", a: "ev-y0-0702-sakura-cuts-hair", b: "ev-y0-0702-team10-intervenes", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-6", kind: "before", a: "ev-y0-0702-team10-intervenes", b: "ev-y0-0702-sasuke-awakens-curse-mark", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-7", kind: "before", a: "ev-y0-0702-sasuke-awakens-curse-mark", b: "ev-y0-0702-sasuke-breaks-zaku-arms", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-8", kind: "before", a: "ev-y0-0702-sasuke-breaks-zaku-arms", b: "ev-y0-0702-sakura-calms-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0702-clearing-9", kind: "before", a: "ev-y0-0702-sakura-calms-sasuke", b: "ev-y0-0702-sound-team-retreats", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+presence:
+  - {id: "pr-0702-clear-sakura", entity_id: "c-sakura", from: "sc-y0-0702-team7-clearing-sound-attack.start", to: "sc-y0-0702-team7-clearing-sound-attack.end", basis: "source", evidence_ids: ["evd-v10-000042"], review: "accepted"}
+  - {id: "pr-0702-clear-naruto", entity_id: "c-naruto", from: "sc-y0-0702-team7-clearing-sound-attack.start", to: "sc-y0-0702-team7-clearing-sound-attack.end", basis: "source", evidence_ids: ["evd-v10-000042"], review: "accepted"}
+  - {id: "pr-0702-clear-sasuke", entity_id: "c-sasuke", from: "sc-y0-0702-team7-clearing-sound-attack.start", to: "sc-y0-0702-team7-clearing-sound-attack.end", basis: "source", evidence_ids: ["evd-v10-000042"], review: "accepted"}
+  - {id: "pr-0702-clear-dosu", entity_id: "c-dosu", from: "ev-y0-0702-sound-team-attacks-sakura.start", to: "ev-y0-0702-sound-team-retreats.end", basis: "source", evidence_ids: ["evd-v10-000042-B"], review: "accepted"}
+  - {id: "pr-0702-clear-zaku", entity_id: "c-zaku", from: "ev-y0-0702-sound-team-attacks-sakura.start", to: "ev-y0-0702-sound-team-retreats.end", basis: "source", evidence_ids: ["evd-v10-000042-B"], review: "accepted"}
+  - {id: "pr-0702-clear-kin", entity_id: "c-kin", from: "ev-y0-0702-sound-team-attacks-sakura.start", to: "ev-y0-0702-sound-team-retreats.end", basis: "source", evidence_ids: ["evd-v10-000042-B"], review: "accepted"}
+  - {id: "pr-0702-clear-lee", entity_id: "c-lee", from: "ev-y0-0702-lee-intervenes.start", to: "sc-y0-0702-team7-clearing-sound-attack.end", basis: "source", evidence_ids: ["evd-v10-000042-B"], review: "accepted"}
+  - {id: "pr-0702-clear-ino", entity_id: "c-ino", from: "ev-y0-0702-team10-intervenes.start", to: "sc-y0-0702-team7-clearing-sound-attack.end", basis: "source", evidence_ids: ["evd-v10-000042-C"], review: "accepted"}
+  - {id: "pr-0702-clear-shikamaru", entity_id: "c-shikamaru", from: "ev-y0-0702-team10-intervenes.start", to: "sc-y0-0702-team7-clearing-sound-attack.end", basis: "source", evidence_ids: ["evd-v10-000042-C"], review: "accepted"}
+  - {id: "pr-0702-clear-choji", entity_id: "c-choji", from: "ev-y0-0702-team10-intervenes.start", to: "sc-y0-0702-team7-clearing-sound-attack.end", basis: "source", evidence_ids: ["evd-v10-000042-C"], review: "accepted"}
