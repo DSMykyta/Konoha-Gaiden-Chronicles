@@ -1114,6 +1114,150 @@ entities:
     aliases:
       - "стара будівля для випробування викладачів Академії"
     parent_id: "loc-land-of-fire"
+  - id: "c-kotetsu"
+    kind: "person"
+    name: "Kotetsu Hagane"
+    aliases:
+      - "Котецу"
+  - id: "c-izumo"
+    kind: "person"
+    name: "Izumo Kamizuki"
+    aliases:
+      - "Ідзумо"
+  - id: "c-boxing-kangaroo-adult"
+    kind: "animal"
+    name: "Boxing Kangaroo"
+    aliases:
+      - "боксерський кенгуру"
+  - id: "c-boxing-kangaroo-joey"
+    kind: "animal"
+    name: "Boxing Kangaroo Joey"
+    aliases:
+      - "кенгуреня-боксер"
+  - id: "c-giant-anteater"
+    kind: "animal"
+    name: "Giant Anteater"
+    aliases:
+      - "гігантський мурахоїд"
+  - id: "loc-zeroth-training-ground"
+    kind: "location"
+    name: "Zeroth Training Ground"
+    aliases:
+      - "Нульова тренувальна ділянка"
+      - "Нульова ділянка"
+    parent_id: "loc-forest-death"
+  - id: "c-nerugui"
+    kind: "animal"
+    name: "Nerugui"
+    aliases:
+      - "Неруґуї"
+  - id: "c-temujin"
+    kind: "person"
+    name: "Temujin"
+    aliases:
+      - "Темуджин"
+  - id: "c-haido"
+    kind: "person"
+    name: "Haido"
+    aliases:
+      - "Хайдо"
+  - id: "c-kahiko"
+    kind: "person"
+    name: "Kahiko"
+    aliases:
+      - "Кахіко"
+  - id: "c-kamira"
+    kind: "person"
+    name: "Kamira"
+    aliases:
+      - "Каміра"
+  - id: "c-ranke"
+    kind: "person"
+    name: "Ranke"
+    aliases:
+      - "Ранке"
+  - id: "c-fugai"
+    kind: "person"
+    name: "Fugai"
+    aliases:
+      - "Фуґай"
+  - id: "group-haido-armored-soldiers"
+    kind: "organization"
+    name: "Haido's Armored Soldiers"
+    aliases:
+      - "броньовані воїни Хайдо"
+  - id: "loc-gelel-coast"
+    kind: "location"
+    name: "Gelel conflict coast"
+    aliases:
+      - "узбережжя конфлікту Ґелеля"
+  - id: "loc-gelel-caravan"
+    kind: "location"
+    name: "Kahiko's caravan"
+    aliases:
+      - "караван Кахіко"
+  - id: "loc-haido-moving-fortress"
+    kind: "location"
+    name: "Haido's moving fortress"
+    aliases:
+      - "рухома фортеця Хайдо"
+      - "рухомий собор Хайдо"
+  - id: "loc-gelel-ruins"
+    kind: "location"
+    name: "Gelel ruins"
+    aliases:
+      - "руїни Ґелеля"
+  - id: "loc-gelel-sealing-chamber"
+    kind: "location"
+    name: "Gelel Chamber of Sealing"
+    aliases:
+      - "Зала Запечатування Ґелеля"
+    parent_id: "loc-gelel-ruins"
+  - id: "loc-gelel-mine"
+    kind: "location"
+    name: "Gelel mine"
+    aliases:
+      - "копальня Ґелеля"
+    parent_id: "loc-gelel-ruins"
+  - id: "c-suzumebachi"
+    kind: "person"
+    name: "Suzumebachi"
+    aliases:
+      - "Судзумебачі"
+  - id: "c-kurobachi"
+    kind: "person"
+    name: "Kurobachi"
+    aliases:
+      - "Куробачі"
+  - id: "c-jibachi"
+    kind: "person"
+    name: "Jibachi"
+    aliases:
+      - "Джібачі"
+  - id: "group-kamizuru"
+    kind: "organization"
+    name: "Kamizuru clan"
+    aliases:
+      - "клан Камізуру"
+  - id: "loc-bikocho-habitat"
+    kind: "location"
+    name: "Bikōchū habitat forest"
+    aliases:
+      - "ліс — середовище бікоочу"
+      - "місце гніздування бікоочу"
+    parent_id: "loc-land-of-fire"
+  - id: "loc-bikocho-waterfall"
+    kind: "location"
+    name: "Waterfall near the bikōchū habitat"
+    aliases:
+      - "водоспад біля місця пошуку бікоочу"
+    parent_id: "loc-bikocho-habitat"
+  - id: "loc-kamizuru-riverbank"
+    kind: "location"
+    name: "Riverbank in the bikōchū habitat"
+    aliases:
+      - "берег річки в районі бікоочу"
+    parent_id: "loc-bikocho-habitat"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
