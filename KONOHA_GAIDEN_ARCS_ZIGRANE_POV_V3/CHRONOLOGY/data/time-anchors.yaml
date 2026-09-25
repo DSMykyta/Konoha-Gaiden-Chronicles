@@ -466,3 +466,43 @@ anchors:
     evidence_ids: ["evd-v10-000097"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
+  - id: "ta-y0-0908"
+    date: {year: 0, month: 9, day: 8}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000098"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for main/ALT material."
+  - id: "ta-y0-0909"
+    date: {year: 0, month: 9, day: 9}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000099"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for main/ALT material."
+  - id: "ta-y0-0910"
+    date: {year: 0, month: 9, day: 10}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000101"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for main/ALT material."
+  - id: "ta-y0-0911"
+    date: {year: 0, month: 9, day: 11}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000103"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for main/ALT material."
+  - id: "ta-y0-0912"
+    date: {year: 0, month: 9, day: 12}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000104"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for main/ALT material."
