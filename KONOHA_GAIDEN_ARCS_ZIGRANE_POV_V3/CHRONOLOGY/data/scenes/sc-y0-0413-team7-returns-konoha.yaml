@@ -1,0 +1,30 @@
+schema_version: 1
+id: "sc-y0-0413-team7-returns-konoha"
+continuity_id: "main"
+title: "Команда 7 повертається до Конохи"
+location_id: "loc-konoha-gate"
+placement: {anchor_id: "ta-y0-0413", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0413-team7-returns-konoha"
+    legacy_ids: ["V10-000033"]
+    title: "Команда 7 завершує місію поверненням до Конохи"
+    text: "Після прощання в Країні Хвиль і подій на зворотному шляху Какаші, Наруто, Саске й Сакура повертаються до Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000033", "evd-manga-land-waves"]
+relations: []
+presence:
+  - {id: "pr-0413-return-kakashi", entity_id: "c-kakashi", from: "sc-y0-0413-team7-returns-konoha.start", to: "sc-y0-0413-team7-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000033"], review: "accepted"}
+  - {id: "pr-0413-return-naruto", entity_id: "c-naruto", from: "sc-y0-0413-team7-returns-konoha.start", to: "sc-y0-0413-team7-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000033"], review: "accepted"}
+  - {id: "pr-0413-return-sasuke", entity_id: "c-sasuke", from: "sc-y0-0413-team7-returns-konoha.start", to: "sc-y0-0413-team7-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000033"], review: "accepted"}
+  - {id: "pr-0413-return-sakura", entity_id: "c-sakura", from: "sc-y0-0413-team7-returns-konoha.start", to: "sc-y0-0413-team7-returns-konoha.end", basis: "imported", evidence_ids: ["evd-v10-000033"], review: "accepted"}
