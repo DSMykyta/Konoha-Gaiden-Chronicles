@@ -535,3 +535,108 @@ redirects:
       - "ev-y0-0702-anko-reports-orochimaru"
       - "ev-y0-0702-hiruzen-continues-exam"
     reason: "Anko's report and Hiruzen's decision separated; Orochimaru marked as remote/mentioned, not present."
+  - legacy_id: "V10-000043"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0705-team7-resumes-scroll-search"
+    reason: "Team 7 resumes the scroll search; Kakashi removed from physical presence."
+  - legacy_id: "V10-000044"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0705-sasuke-meets-karin"
+      - "ev-y0-0705-sasuke-saves-karin-bear"
+    reason: "Chapter 482 flashback split into meeting and rescue."
+  - legacy_id: "V10-000045"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-kabuto-joins-team7"
+    reason: "Kabuto joins Team 7; Kakashi removed from physical presence in the forest."
+  - legacy_id: "V10-000045-B"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0706-team-oboro-traps-group"
+      - "ev-y0-0706-naruto-exhausts-oboro-team"
+    reason: "Team Oboro encounter split into trap and Naruto's counter."
+  - legacy_id: "V10-000045-C"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0706-team7-gets-second-scroll"
+      - "ev-y0-0706-team7-reaches-tower"
+    reason: "Scroll acquisition and tower arrival separated."
+  - legacy_id: "V10-000045-D"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-kabuto-returns-to-sound"
+    reason: "Kabuto's secret return migrated as a separate scene."
+  - legacy_id: "V10-000045-E"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0706-seven-teams-reach-tower"
+      - "ev-y0-0706-hayate-announces-preliminaries"
+    reason: "Stage result and announcement of preliminaries separated."
+  - legacy_id: "V10-000046"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-sasuke-defeats-yoroi"
+    reason: "First preliminary match migrated."
+  - legacy_id: "V10-000046-B"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0706-kakashi-seals-curse-mark"
+      - "ev-y0-0706-orochimaru-confronts-kakashi"
+    reason: "Curse-mark sealing and Orochimaru confrontation separated in a side-room scene."
+  - legacy_id: "V10-000046-C"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-shino-defeats-zaku"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-D"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-kankuro-defeats-misumi"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-E"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-sakura-ino-double-ko"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-F"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-temari-defeats-tenten"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-G"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-shikamaru-defeats-kin"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-H"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-naruto-defeats-kiba"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-I"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-neji-defeats-hinata"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-J"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-gaara-defeats-lee"
+    reason: "Preliminary match migrated."
+  - legacy_id: "V10-000046-K"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-dosu-defeats-choji"
+    reason: "Final preliminary match migrated."
+  - legacy_id: "V10-000046-L"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-finalists-draw-pairs"
+    reason: "Final pair draw migrated."
+  - legacy_id: "V10-000046-M"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0706-kakashi-assigns-ebisu"
+    reason: "Kakashi assigning Ebisu to Naruto migrated as a separate scene."
