@@ -444,6 +444,17 @@ entities:
     aliases:
       - "ворота Конохи"
     parent_id: "loc-konohagakure"
+  - id: "group-gato-mercenaries"
+    kind: "organization"
+    name: "Gatō's mercenaries"
+    aliases:
+      - "найманці Ґато"
+      - "люди Ґато"
+  - id: "group-wave-villagers"
+    kind: "group"
+    name: "Land of Waves villagers"
+    aliases:
+      - "жителі Країни Хвиль"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
