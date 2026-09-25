@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1020-birds-mission-arrival"
+continuity_id: "main"
+title: "Наруто, Неджи й Тентен прибувають до Країни Птахів"
+location_id: "loc-land-of-birds"
+placement: {anchor_id: "ta-y0-1020-birds", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1020-chishima-brings-birds-request"
+    legacy_ids: ["V10-000152"]
+    title: "Чішіма приводить до Конохи прохання Країни Птахів"
+    text: "Чішіма просить допомоги через появу білого Проклятого Воїна, який тероризує Країну Птахів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-chishima", role: "source", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "leader", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000152", "evd-anime-162-167"]
+  - id: "ev-y0-1020-team-arrives-land-of-birds"
+    legacy_ids: ["V10-000152"]
+    title: "Команда починає розслідування в Країні Птахів"
+    text: "Неджи як тимчасовий капітан, Наруто й Тентен прибувають до Країни Птахів і отримують від Мосо базову версію подій навколо Проклятого Воїна."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-neji", role: "leader", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-hoki-watari", role: "source_as_moso", mode: "physical"}
+      - {entity_id: "c-chishima", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000152", "evd-anime-162-167"]
+relations:
+  - {id: "rel-1020-birds-arrival-1", kind: "before", a: "ev-y0-1020-chishima-brings-birds-request", b: "ev-y0-1020-team-arrives-land-of-birds", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+presence: []
