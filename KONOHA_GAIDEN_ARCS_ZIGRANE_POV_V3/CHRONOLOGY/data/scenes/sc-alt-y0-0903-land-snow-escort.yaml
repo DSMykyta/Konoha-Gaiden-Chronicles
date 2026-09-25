@@ -1,0 +1,32 @@
+schema_version: 1
+id: "sc-alt-y0-0903-land-snow-escort"
+continuity_id: "alt-movie-land-of-snow"
+title: "Команда 7 супроводжує Юкіе до Країни Снігу"
+location_id: "loc-land-of-snow"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0903-team7-escorts-yukie"
+    legacy_ids: ["V10-000088"]
+    title: "Команда 7 отримує місію супроводу Юкіе Фуджіказе"
+    text: "В альтернативній кіно-гілці Команда 7 супроводжує акторку Юкіе Фуджіказе до Країни Снігу."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-koyuki", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000088", "evd-movie-land-of-snow"]
+relations: []
+presence:
+  - {id: "pr-alt-0903-snow-kakashi", entity_id: "c-kakashi", from: "sc-alt-y0-0903-land-snow-escort.start", to: "sc-alt-y0-0903-land-snow-escort.end", basis: "source", evidence_ids: ["evd-movie-land-of-snow"], review: "accepted"}
+  - {id: "pr-alt-0903-snow-naruto", entity_id: "c-naruto", from: "sc-alt-y0-0903-land-snow-escort.start", to: "sc-alt-y0-0903-land-snow-escort.end", basis: "source", evidence_ids: ["evd-movie-land-of-snow"], review: "accepted"}
+  - {id: "pr-alt-0903-snow-sasuke", entity_id: "c-sasuke", from: "sc-alt-y0-0903-land-snow-escort.start", to: "sc-alt-y0-0903-land-snow-escort.end", basis: "source", evidence_ids: ["evd-movie-land-of-snow"], review: "accepted"}
+  - {id: "pr-alt-0903-snow-sakura", entity_id: "c-sakura", from: "sc-alt-y0-0903-land-snow-escort.start", to: "sc-alt-y0-0903-land-snow-escort.end", basis: "source", evidence_ids: ["evd-movie-land-of-snow"], review: "accepted"}
+  - {id: "pr-alt-0903-snow-koyuki", entity_id: "c-koyuki", from: "sc-alt-y0-0903-land-snow-escort.start", to: "sc-alt-y0-0903-land-snow-escort.end", basis: "source", evidence_ids: ["evd-movie-land-of-snow"], review: "accepted"}
