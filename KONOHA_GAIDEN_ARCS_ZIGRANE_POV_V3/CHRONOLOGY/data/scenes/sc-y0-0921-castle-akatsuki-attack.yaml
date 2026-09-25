@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0921-castle-akatsuki-attack"
+continuity_id: "main"
+title: "Сасорі й Дейдара атакують замок"
+location_id: null
+placement: {anchor_id: "ta-y0-0921", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0921-sasori-deidara-attack-castle"
+    legacy_ids: ["V10-000115"]
+    title: "Сасорі й Дейдара починають напад"
+    text: "Під час завершення операції Сасорі й Дейдара атакують замок."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasori", role: "focus", mode: "physical"}
+      - {entity_id: "c-deidara", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tatewaki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000115", "evd-shippuden-309-310"]
+  - id: "ev-y0-0921-tatewaki-dies-poison"
+    legacy_ids: ["V10-000115"]
+    title: "Татевакі помирає від отрути"
+    text: "Під час нападу Татевакі зазнає отруєння й помирає."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tatewaki", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasori", role: "cause", mode: "physical"}
+      - {entity_id: "c-deidara", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000115", "evd-shippuden-309-310"]
+relations:
+  - {id: "rel-0921-castle-1", kind: "before", a: "ev-y0-0921-sasori-deidara-attack-castle", b: "ev-y0-0921-tatewaki-dies-poison", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-309-310"]}
+presence: []
