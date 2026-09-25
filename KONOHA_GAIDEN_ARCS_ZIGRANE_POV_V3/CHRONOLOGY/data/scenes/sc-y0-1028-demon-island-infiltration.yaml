@@ -1,0 +1,60 @@
+schema_version: 1
+id: "sc-y0-1028-demon-island-infiltration"
+continuity_id: "main"
+title: "Команда проникає на Острів Демона й знаходить лабораторію"
+location_id: "loc-orochimaru-lab-sea"
+placement: {anchor_id: "ta-y0-1028", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1028-team-infiltrates-demon-island"
+    legacy_ids: ["V10-000162"]
+    title: "Анко веде загін у лабораторію на Острові Демона"
+    text: "Після відновлення пам'яті Анко веде Наруто, Іно й Шіно на Острів Демона, де колись працював Орочімару."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "leader", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "former_owner", mode: "remote"}
+    evidence_ids: ["evd-v10-000162", "evd-anime-169-173"]
+  - id: "ev-y0-1028-amachi-reveals-human-transmutation-project"
+    legacy_ids: ["V10-000162"]
+    title: "Амачі розкриває план створення підводних шинобі"
+    text: "У лабораторії Амачі відкриває, що продовжив досліди фізичної трансмутації людей у водних бійців після відходу Орочімару."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-amachi", role: "focus", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "experiment_subject", mode: "physical"}
+      - {entity_id: "c-anko", role: "recipient", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-ino", role: "recipient", mode: "physical"}
+      - {entity_id: "c-shino", role: "recipient", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "former_research_lead", mode: "remote"}
+    evidence_ids: ["evd-v10-000162", "evd-anime-169-173"]
+  - id: "ev-y0-1028-amachi-misumi-yoroi-trap-team"
+    legacy_ids: ["V10-000162"]
+    title: "Амачі, Місумі й Йорої замикають команду в пастці"
+    text: "Амачі разом із Місумі та Йорої використовує лабораторні пастки й паралізуюче поле чакри, щоб ізолювати та затримати загін Конохи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-amachi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-misumi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-yoroi", role: "opponent", mode: "physical"}
+      - {entity_id: "c-anko", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-ino", role: "affected", mode: "physical"}
+      - {entity_id: "c-shino", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000162", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1028-demon-island-1", kind: "before", a: "ev-y0-1028-team-infiltrates-demon-island", b: "ev-y0-1028-amachi-reveals-human-transmutation-project", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+  - {id: "rel-1028-demon-island-2", kind: "before", a: "ev-y0-1028-amachi-reveals-human-transmutation-project", b: "ev-y0-1028-amachi-misumi-yoroi-trap-team", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
