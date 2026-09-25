@@ -426,3 +426,11 @@ anchors:
     evidence_ids: ["evd-v10-000083", "evd-v10-000084"]
     review: "accepted"
     reason: "Working project date for return-to-Konoha material and adjacent anime-only incidents."
+  - id: "ta-y0-0903"
+    date: {year: 0, month: 9, day: 3}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000086", "evd-v10-000087", "evd-v10-000088"]
+    review: "accepted"
+    reason: "Working project date for episode 101 and adjacent ALT retrospective/movie placements."
