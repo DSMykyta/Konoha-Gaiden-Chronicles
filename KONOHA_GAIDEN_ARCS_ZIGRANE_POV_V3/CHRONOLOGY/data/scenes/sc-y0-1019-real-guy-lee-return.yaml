@@ -1,0 +1,51 @@
+schema_version: 1
+id: "sc-y0-1019-real-guy-lee-return"
+continuity_id: "main"
+title: "Справжні Ґай і Лі повертаються й проганяють самозванців"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1019", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1019-impostors-give-up-infiltration"
+    legacy_ids: ["V10-000151"]
+    title: "Мондай і Потча відмовляються від спроби шпигунства"
+    text: "Після дня безперервних доручень Мондай і Потча виснажуються, не отримавши секретів Конохи, й намагаються залишити село."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-mondai", role: "focus", mode: "physical"}
+      - {entity_id: "c-potcha", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000151", "evd-anime-161"]
+  - id: "ev-y0-1019-real-guy-lee-defeat-impostors"
+    legacy_ids: ["V10-000151"]
+    title: "Ґай і Лі одним спільним входом збивають самозванців"
+    text: "Справжні Ґай і Лі повертаються в Коноху та відразу припиняють втечу Мондая й Потчі своєю спільною атакою."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-guy", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-mondai", role: "affected", mode: "physical"}
+      - {entity_id: "c-potcha", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
+    evidence_ids: ["evd-v10-000151", "evd-anime-161"]
+  - id: "ev-y0-1019-naruto-thanks-real-guy-lee-confused"
+    legacy_ids: ["V10-000151"]
+    title: "Наруто дякує справжнім Ґаю й Лі за «тренування»"
+    text: "Після викриття Наруто дякує справжнім Ґаю й Лі за день тренувань, а вони не розуміють, про що він говорить."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-guy", role: "recipient", mode: "physical"}
+      - {entity_id: "c-lee", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000151", "evd-anime-161"]
+relations:
+  - {id: "rel-1019-real-return-1", kind: "before", a: "ev-y0-1019-impostors-give-up-infiltration", b: "ev-y0-1019-real-guy-lee-defeat-impostors", basis: "source", review: "accepted", evidence_ids: ["evd-anime-161"]}
+  - {id: "rel-1019-real-return-2", kind: "before", a: "ev-y0-1019-real-guy-lee-defeat-impostors", b: "ev-y0-1019-naruto-thanks-real-guy-lee-confused", basis: "source", review: "accepted", evidence_ids: ["evd-anime-161"]}
+presence: []
