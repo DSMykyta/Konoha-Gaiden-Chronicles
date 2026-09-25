@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-0123-kakashi-pretest-retro"
+continuity_id: "main"
+title: "Какаші готується до випробування Команди 7"
+location_id: null
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-kakashi-remembers-failed-teams"
+    legacy_ids: ["V10-000011"]
+    title: "Какаші згадує попередні команди, які він не пропустив"
+    text: "Перед випробуванням Какаші згадує попередні генінські команди, яким відмовив у проходженні."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-kakashi-pretest", "evd-shippuden-361-pretest"]
+  - id: "ev-y0-0123-kakashi-visits-memorial"
+    legacy_ids: ["V10-000011"]
+    title: "Какаші відвідує Меморіальний камінь"
+    text: "Какаші відвідує Меморіальний камінь перед випробуванням нової команди."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-kakashi-pretest", "evd-shippuden-361-pretest"]
+  - id: "ev-y0-0123-tenzo-advises-kakashi"
+    legacy_ids: ["V10-000011"]
+    title: "Тензо дає Какаші пораду щодо нової команди"
+    text: "Після розмови з Тензо Какаші вирішує перевірити, чи здатні Наруто, Саске й Сакура поставити товаришів вище за наказ."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-tenzo", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "remote"}
+      - {entity_id: "c-sakura", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-kakashi-pretest", "evd-shippuden-361-pretest"]
+relations:
+  - {id: "rel-0123-kakashi-memory-before-memorial", kind: "before", a: "ev-y0-0123-kakashi-remembers-failed-teams", b: "ev-y0-0123-kakashi-visits-memorial", basis: "imported", review: "pending", evidence_ids: ["evd-v10-kakashi-pretest"]}
+  - {id: "rel-0123-memorial-before-tenzo", kind: "before", a: "ev-y0-0123-kakashi-visits-memorial", b: "ev-y0-0123-tenzo-advises-kakashi", basis: "imported", review: "pending", evidence_ids: ["evd-v10-kakashi-pretest"]}
+presence:
+  - {id: "pr-0123-retro-kakashi", entity_id: "c-kakashi", from: "sc-y0-0123-kakashi-pretest-retro.start", to: "sc-y0-0123-kakashi-pretest-retro.end", basis: "source", evidence_ids: ["evd-v10-kakashi-pretest"], review: "accepted"}
+  - {id: "pr-0123-retro-tenzo", entity_id: "c-tenzo", from: "ev-y0-0123-tenzo-advises-kakashi.start", to: "ev-y0-0123-tenzo-advises-kakashi.end", basis: "source", evidence_ids: ["evd-v10-kakashi-pretest"], review: "accepted"}
