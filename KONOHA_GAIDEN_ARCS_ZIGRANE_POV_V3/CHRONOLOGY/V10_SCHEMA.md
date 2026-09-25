@@ -15,7 +15,9 @@ One row = one historical event. A date may have 1 row or 20+ rows. v9 remains un
 - Title — short site label.
 - Event — event description.
 - Characters — normalized semicolon-separated characters participating in / directly described by the event.
-- Teams — normalized semicolon-separated teams.
+- Teams — normalized semicolon-separated formal teams/squads.
+- Groups — organizations or non-team formations such as Akatsuki, ANBU, Sound Four, Sannin.
+- Scope — semicolon-separated display scopes: global / character / team / group / location / meta. One event may have several scopes.
 - Location — normalized location when safely inferable.
 - Arc — explicit arc/story block when recoverable.
 - Continuity — main / alt.
@@ -55,7 +57,7 @@ One row = one historical event. A date may have 1 row or 20+ rows. v9 remains un
 6. DateCertainty records whether the v10 date is exact, derived, approximate, or simply inherited from v9.
 
 ## Site rules enabled by this schema
-- Character/team lanes are generated from metadata; events are not duplicated into physical character columns.
+- Character/team/group lanes are generated from metadata; events are not duplicated into physical character columns.
 - One event can belong to many characters and teams.
 - Source colors/animated gradients key from Origin.
 - SupportingSources can be shown in hover/detail cards without producing duplicate timeline nodes.
