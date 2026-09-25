@@ -602,3 +602,11 @@ anchors:
     evidence_ids: ["evd-v10-000122"]
     review: "accepted"
     reason: "Working project date for the dense middle and climax of the Sasuke Retrieval mission."
+  - id: "ta-y0-0925"
+    date: {year: 0, month: 9, day: 25}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000123", "evd-v10-000124"]
+    review: "accepted"
+    reason: "Working project date for immediate aftermath of the Sasuke Retrieval mission and Sasuke reaching Orochimaru."
