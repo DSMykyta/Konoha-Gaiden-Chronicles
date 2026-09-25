@@ -20,16 +20,16 @@ V10-000011	0	23.01	R	superseded	ev-y0-0123-kakashi-remembers-failed-teams;ev-y0-
 V10-000012	0	23.01	P	superseded	ev-y0-0123-team9-arrives-field8;ev-y0-0123-kurenai-questions-team9	Arrival and Kurenai exchange split.
 V10-000012-B	0	23.01	P	superseded	ev-y0-0123-team9-observes-team8;ev-y0-0123-sora-reveals-raido	Observation interval and reveal split.
 V10-000012-C	0	23.01	P	superseded	ev-y0-0123-sora-reveals-raido;ev-y0-0123-raido-passes-observation-test	Reveal and Raido assessment split.
-V10-000013	0	24.01	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000014	0	25.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000015	0	26.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000016	0	27.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000017	0	28.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000018	0	29.01	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000019	0	01.02	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000020	0	02.02	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000021	0	03.02	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000022	0	04.02	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000013	0	24.01	O	superseded	ev-y0-0124-konohamaru-asks-naruto;ev-y0-0124-naruto-konohamaru-enter-akagahara;ev-y0-0124-sasuke-sakura-help;ev-y0-0124-konohamaru-gives-clover	OVA row split into request, traversal, rescue and resolution.
+V10-000014	0	25.01	R	superseded	ev-y0-0125-nekoba-assigns-pawprint;ev-y0-0125-team7-enters-nekomata-domain;ev-y0-0125-team7-gets-pawprint	Retrospective mission split into assignment, infiltration and result.
+V10-000015	0	26.01	R	superseded	ev-y0-0126-naruto-finds-kisuke-note;ev-y0-0126-naruto-meets-kisuke-ghost;ev-y0-0126-naruto-exposes-spy	Kisuke retrospective split into discovery, contact and resolution.
+V10-000016	0	27.01	R	superseded	ev-y0-0127-naruto-sasuke-webbed;ev-y0-0127-naruto-sasuke-rescue-sakura	Retrospective split into capture and rescue.
+V10-000017	0	28.01	R	superseded	ev-y0-0128-team7-team10-hostage-mission;ev-y0-0128-tofu-betrays-teams;ev-y0-0128-shikamaru-trades-himself;ev-y0-0128-teams-defeat-bandits	Hostage mission split into separate causal events.
+V10-000018	0	29.01	R	superseded	ev-y0-0129-team10-rescues-kosuke;ev-y0-0129-kosuke-recognizes-ino-shika-cho	Kosuke rescue and later recognition separated.
+V10-000019	0	01.02	G	migrated	ev-y0-0201-team7-game-missions	Game branch start migrated.
+V10-000020	0	02.02	G	superseded	ev-y0-0202-mizuki-escapes-game;ev-y0-0202-team7-pursues-mizuki-game	Game escape and pursuit split.
+V10-000021	0	03.02	G	migrated	ev-y0-0203-team7-game-missions	Game mission block migrated without adding unsupported detail.
+V10-000022	0	04.02	G	migrated	ev-y0-0204-team7-returns-to-d-ranks	Game branch ending migrated.
 V10-000023	0	15.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000024	0	15.03	A	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000025	0	16.03	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
