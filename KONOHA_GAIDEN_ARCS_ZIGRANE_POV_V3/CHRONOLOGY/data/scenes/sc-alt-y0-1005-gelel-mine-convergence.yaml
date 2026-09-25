@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-alt-y0-1005-gelel-mine-convergence"
+continuity_id: "alt-movie-gelel"
+title: "Сторони сходяться біля руїн і копальні Ґелеля"
+location_id: "loc-gelel-ruins"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1005-nerugui-leads-to-gelel-ruins"
+    legacy_ids: ["V10-000135"]
+    title: "Неруґуї виводить Кахіко й Темуджина до руїн"
+    text: "Неруґуї допомагає знайти шлях до руїн, що ведуть до прихованої копальні Ґелеля."
+    origin: "V"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-nerugui", role: "focus", mode: "physical"}
+      - {entity_id: "c-kahiko", role: "participant", mode: "physical"}
+      - {entity_id: "c-temujin", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-haido-reaches-gelel-ruins"
+    legacy_ids: ["V10-000135"]
+    title: "Хайдо прибуває до руїн і відкриває шлях у копальню"
+    text: "Хайдо та його люди наздоганяють групу біля руїн; конфлікт розколюється на окремі бої, поки Хайдо прямує до Зали Запечатування."
+    origin: "V"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-haido", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-temujin", role: "participant", mode: "physical"}
+      - {entity_id: "c-kahiko", role: "participant", mode: "physical"}
+      - {entity_id: "c-kamira", role: "participant", mode: "physical"}
+      - {entity_id: "c-fugai", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000135", "evd-movie-gelel"]
+  - id: "ev-alt-y0-1005-sakura-shikamaru-allies-defeat-haido-lieutenants"
+    legacy_ids: ["V10-000135"]
+    title: "Сакура, Шікамару й союзники стримують підлеглих Хайдо"
+    text: "Поза Залою Запечатування Сакура й Шікамару ведуть окремі бої з підлеглими Хайдо; допомога Канкуро дозволяє зламати їхній опір."
+    origin: "V"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+      - {entity_id: "c-kamira", role: "opponent", mode: "physical"}
+      - {entity_id: "c-fugai", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-movie-gelel"]
+relations:
+  - {id: "rel-alt-1005-gelel-mine-1", kind: "before", a: "ev-alt-y0-1005-nerugui-leads-to-gelel-ruins", b: "ev-alt-y0-1005-haido-reaches-gelel-ruins", basis: "source", review: "accepted", evidence_ids: ["evd-movie-gelel"]}
+presence: []
