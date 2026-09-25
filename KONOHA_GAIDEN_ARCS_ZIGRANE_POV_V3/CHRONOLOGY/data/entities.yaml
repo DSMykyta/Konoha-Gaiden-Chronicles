@@ -1034,6 +1034,36 @@ entities:
     name: "Gen'yūmaru"
     aliases:
       - "Ґеньюмару"
+  - id: "c-sasame"
+    kind: "person"
+    name: "Sasame"
+    aliases:
+      - "Сасаме"
+  - id: "c-arashi"
+    kind: "person"
+    name: "Arashi"
+    aliases:
+      - "Араші"
+  - id: "c-kamikiri"
+    kind: "person"
+    name: "Kamikiri"
+    aliases:
+      - "Камікірі"
+  - id: "c-jigumo"
+    kind: "person"
+    name: "Jigumo"
+    aliases:
+      - "Джігумо"
+  - id: "c-kagero"
+    kind: "person"
+    name: "Kagerō"
+    aliases:
+      - "Кагеро"
+  - id: "loc-land-of-rice-fields"
+    kind: "location"
+    name: "Land of Rice Fields"
+    aliases:
+      - "Країна Рисових Полів"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
