@@ -2227,7 +2227,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000047"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2252,7 +2252,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000048"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2277,7 +2277,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000049"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2302,7 +2302,7 @@ records:
       SupportingSources: "A [еп. 37–51] — завершення Лісу Смерті та всі десять попередніх поєдинків."
       Review: ""
   - legacy_id: "V10-000049-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2327,7 +2327,7 @@ records:
       SupportingSources: "A [еп. 37–51] — завершення Лісу Смерті та всі десять попередніх поєдинків."
       Review: ""
   - legacy_id: "V10-000049-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2352,7 +2352,7 @@ records:
       SupportingSources: "A [еп. 37–51] — завершення Лісу Смерті та всі десять попередніх поєдинків."
       Review: ""
   - legacy_id: "V10-000050"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2377,7 +2377,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000051"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2402,7 +2402,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000051-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2427,7 +2427,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000052"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2452,7 +2452,7 @@ records:
       SupportingSources: "A [еп. 52–54] — тренування після знайомства з Джираєю та перші спроби призову."
       Review: ""
   - legacy_id: "V10-000053"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
