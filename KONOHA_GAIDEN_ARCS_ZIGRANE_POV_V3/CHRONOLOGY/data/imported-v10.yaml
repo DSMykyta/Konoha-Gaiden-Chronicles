@@ -3577,7 +3577,7 @@ records:
       SupportingSources: "A [еп. 84–85] — аніме показує зіткнення Саске з Ітачі в заїжджому дворі: Чідорі Саске зупинене, Ітачі ламає йому руку й застосовує Цукуйомі; Джирая захоплює Ітачі й Кісаме технікою шлунка жаби, але вони прориваються назовні Аматерасу."
       Review: ""
   - legacy_id: "V10-000077"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3602,7 +3602,7 @@ records:
       SupportingSources: "A [еп. 86–90] — Наруто проходить перші етапи формування Расенґана."
       Review: ""
   - legacy_id: "V10-000078"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3627,7 +3627,7 @@ records:
       SupportingSources: "A [еп. 91] — пошуки Цунаде та початок останнього етапу тренування."
       Review: ""
   - legacy_id: "V10-000079"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3652,7 +3652,7 @@ records:
       SupportingSources: "A [еп. 92–93] — Орочімару пропонує воскресити Нава́кі й Дана в обмін на зцілення рук; Цунаде вагається."
       Review: ""
   - legacy_id: "V10-000079-B"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3677,7 +3677,7 @@ records:
       SupportingSources: "A [еп. 92–93] — Орочімару пропонує воскресити Нава́кі й Дана в обмін на зцілення рук; Цунаде вагається."
       Review: ""
   - legacy_id: "V10-000079-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3702,7 +3702,7 @@ records:
       SupportingSources: "A [еп. 92–93] — Орочімару пропонує воскресити Нава́кі й Дана в обмін на зцілення рук; Цунаде вагається."
       Review: ""
   - legacy_id: "V10-000079-D"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3727,7 +3727,7 @@ records:
       SupportingSources: "A [еп. 92–93] — Орочімару пропонує воскресити Нава́кі й Дана в обмін на зцілення рук; Цунаде вагається."
       Review: ""
   - legacy_id: "V10-000079-E"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -3752,7 +3752,7 @@ records:
       SupportingSources: "A [еп. 92–93] — Орочімару пропонує воскресити Нава́кі й Дана в обмін на зцілення рук; Цунаде вагається."
       Review: ""
   - legacy_id: "V10-000080"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -3777,7 +3777,7 @@ records:
       SupportingSources: "A [еп. 94] — Наруто намагається поєднати обертання, силу й утримання чакри в завершений Расенґан."
       Review: ""
   - legacy_id: "V10-000081"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
