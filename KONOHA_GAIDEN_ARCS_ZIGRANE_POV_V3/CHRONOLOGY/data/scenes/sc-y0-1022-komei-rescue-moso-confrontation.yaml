@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-1022-komei-rescue-moso-confrontation"
+continuity_id: "main"
+title: "Наруто рятує Комея й група переходить до відкритого протистояння з Мосо"
+location_id: "loc-land-of-birds"
+placement: {anchor_id: "ta-y0-1022-birds", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1022-naruto-disguises-cursed-warrior-saves-komei"
+    legacy_ids: ["V10-000156"]
+    title: "Наруто в обладунку Проклятого Воїна рятує Комея від страти"
+    text: "Коли Комея ведуть на примусову смерть, Наруто сам надягає обладунок Проклятого Воїна, вривається на місце страти й визволяє його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-komei", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000156", "evd-anime-162-167"]
+  - id: "ev-y0-1022-kakashi-joins-birds-team"
+    legacy_ids: ["V10-000156"]
+    title: "Какаші прибуває як підкріплення"
+    text: "Після порятунку Комея Наруто знову сходиться з Неджи й Тентен; до них приєднується Какаші, якого прислали підсилити розслідування."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000156", "evd-anime-162-167"]
+  - id: "ev-y0-1022-sagi-rushes-to-moso-revenge"
+    legacy_ids: ["V10-000156"]
+    title: "«Саґі» випереджає команду й іде мститися Мосо"
+    text: "Правитель, якого команда ще сприймає як Саґі, не чекає на спільний план і сам вирушає до Мосо, прагнучи помсти за родину."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-toki", role: "appears_as_sagi", mode: "physical"}
+      - {entity_id: "c-hoki-watari", role: "target_as_moso", mode: "remote"}
+      - {entity_id: "c-naruto", role: "pursuer", mode: "remote"}
+    evidence_ids: ["evd-v10-000156", "evd-anime-162-167"]
+  - id: "ev-y0-1022-watari-trap-konoha-team"
+    legacy_ids: ["V10-000156"]
+    title: "Шинобі Ватарі розділяють і затримують переслідувачів"
+    text: "Люди Мосо відкрито вступають у бій, намагаються ізолювати Наруто від решти загону й не дати йому зупинити помсту та подальші вбивства."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "group-watari", role: "opponent", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000156", "evd-anime-162-167"]
+relations:
+  - {id: "rel-1022-birds-1", kind: "before", a: "ev-y0-1022-naruto-disguises-cursed-warrior-saves-komei", b: "ev-y0-1022-kakashi-joins-birds-team", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+  - {id: "rel-1022-birds-2", kind: "before", a: "ev-y0-1022-kakashi-joins-birds-team", b: "ev-y0-1022-sagi-rushes-to-moso-revenge", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+  - {id: "rel-1022-birds-3", kind: "before", a: "ev-y0-1022-sagi-rushes-to-moso-revenge", b: "ev-y0-1022-watari-trap-konoha-team", basis: "source", review: "accepted", evidence_ids: ["evd-anime-162-167"]}
+presence: []
