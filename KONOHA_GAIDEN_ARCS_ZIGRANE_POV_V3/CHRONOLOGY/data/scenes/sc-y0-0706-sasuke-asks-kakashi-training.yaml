@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-0706-sasuke-asks-kakashi-training"
+continuity_id: "main"
+title: "Саске просить Какаші тренувати його"
+location_id: null
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-sasuke-asks-kakashi-training"
+    legacy_ids: ["V10-000050"]
+    title: "Саске сам просить Какаші про тренування"
+    text: "Після попередніх боїв Саске просить Какаші тренувати його, прагнучи перевершити Наруто й наблизитися до власної мети."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000050", "evd-shippuden-258-sasuke-training"]
+  - id: "ev-y0-0706-sasuke-lightning-affinity"
+    legacy_ids: ["V10-000050"]
+    title: "Чакропапір показує спорідненість Саске з Райто́ном"
+    text: "Перевірка чакропапером підтверджує блискавичну природу чакри Саске."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000050", "evd-shippuden-258-sasuke-training"]
+  - id: "ev-y0-0706-kakashi-decides-chidori"
+    legacy_ids: ["V10-000050"]
+    title: "Какаші вирішує навчити Саске Чідорі"
+    text: "Після перевірки Какаші вирішує передати Саске техніку Чідорі."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000050", "evd-shippuden-258-sasuke-training"]
+relations:
+  - {id: "rel-0706-sasuke-train-1", kind: "before", a: "ev-y0-0706-sasuke-asks-kakashi-training", b: "ev-y0-0706-sasuke-lightning-affinity", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-258-sasuke-training"]}
+  - {id: "rel-0706-sasuke-train-2", kind: "before", a: "ev-y0-0706-sasuke-lightning-affinity", b: "ev-y0-0706-kakashi-decides-chidori", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-258-sasuke-training"]}
+presence:
+  - {id: "pr-0706-sasuke-train-sasuke", entity_id: "c-sasuke", from: "sc-y0-0706-sasuke-asks-kakashi-training.start", to: "sc-y0-0706-sasuke-asks-kakashi-training.end", basis: "source", evidence_ids: ["evd-v10-000050"], review: "accepted"}
+  - {id: "pr-0706-sasuke-train-kakashi", entity_id: "c-kakashi", from: "sc-y0-0706-sasuke-asks-kakashi-training.start", to: "sc-y0-0706-sasuke-asks-kakashi-training.end", basis: "source", evidence_ids: ["evd-v10-000050"], review: "accepted"}
