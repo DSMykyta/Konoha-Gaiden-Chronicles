@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-alt-y0-1111-hidden-mugen-basement"
+continuity_id: "alt-game-phantom-fortress"
+title: "Джирая веде приховану гілку через підземні поверхи Муґенджо"
+location_id: "loc-mugen-castle"
+placement: {anchor_id: "ta-alt-y0-1110-phantom", day_offset: 1}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1111-jiraiya-finds-hidden-basement-route"
+    legacy_ids: ["V10-000181"]
+    title: "Джирая знаходить прихований шлях униз"
+    text: "Паралельно основному підйому Джирая розкриває приховані під ілюзією сходи й веде окрему групу в тридцять підземних поверхів."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "leader", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "temporary_participant", mode: "physical"}
+      - {entity_id: "loc-mugen-castle", role: "setting", mode: "physical"}
+    evidence_ids: ["evd-v10-000181", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1111-jiraiya-team-targets-vitality-cauldron"
+    legacy_ids: ["V10-000181"]
+    title: "Прихована група йде до резервуара життєвої сили"
+    text: "Мета підземної гілки — дістатися джерела накопиченої життєвої сили, яка живить ілюзії й саме існування замку."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "opponent", mode: "remote"}
+      - {entity_id: "loc-mugen-castle", role: "affected_structure", mode: "physical"}
+    evidence_ids: ["evd-v10-000181", "evd-game-phantom-fortress"]
+relations:
+  - {id: "rel-alt-1111-hidden-mugen-1", kind: "before", a: "ev-alt-y0-1111-jiraiya-finds-hidden-basement-route", b: "ev-alt-y0-1111-jiraiya-team-targets-vitality-cauldron", basis: "source", review: "accepted", evidence_ids: ["evd-game-phantom-fortress"]}
+presence: []
