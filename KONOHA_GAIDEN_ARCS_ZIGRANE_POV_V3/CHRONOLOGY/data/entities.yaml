@@ -1023,6 +1023,12 @@ entities:
     name: "Valley of the End"
     aliases:
       - "Долина Суду"
+  - id: "group-sasuke-retrieval"
+    kind: "group"
+    name: "Sasuke Retrieval Team"
+    aliases:
+      - "загін повернення Саске"
+      - "загін Шикамару"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
