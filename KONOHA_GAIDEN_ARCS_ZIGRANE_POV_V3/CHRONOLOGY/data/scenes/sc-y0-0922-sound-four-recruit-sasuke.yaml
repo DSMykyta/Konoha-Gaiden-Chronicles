@@ -1,0 +1,63 @@
+schema_version: 1
+id: "sc-y0-0922-sound-four-recruit-sasuke"
+continuity_id: "main"
+title: "Четвірка Звуку вербує Саске"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0922", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0922-sound-four-confront-sasuke"
+    legacy_ids: ["V10-000118-B"]
+    title: "Четвірка Звуку знаходить Саске"
+    text: "Після розмови з Какаші Саске знаходить Четвірка Звуку."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-jirobo", role: "participant", mode: "physical"}
+      - {entity_id: "c-kidomaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakon", role: "participant", mode: "physical"}
+      - {entity_id: "c-ukon", role: "participant", mode: "physical"}
+    focus_teams: ["group-sound-four"]
+    evidence_ids: ["evd-v10-000118-B"]
+  - id: "ev-y0-0922-sound-four-defeat-sasuke"
+    legacy_ids: ["V10-000118-B"]
+    title: "Четвірка Звуку перемагає Саске"
+    text: "Четвірка Звуку демонструє перевагу Проклятих Печаток і перемагає Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+      - {entity_id: "c-jirobo", role: "participant", mode: "physical"}
+      - {entity_id: "c-kidomaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakon", role: "participant", mode: "physical"}
+      - {entity_id: "c-ukon", role: "participant", mode: "physical"}
+    focus_teams: ["group-sound-four"]
+    evidence_ids: ["evd-v10-000118-B"]
+  - id: "ev-y0-0922-sound-four-offer-orochimaru"
+    legacy_ids: ["V10-000118-B"]
+    title: "Саске пропонують перейти до Орочімару"
+    text: "Після перемоги Четвірка Звуку пропонує Саске залишити Коноху й перейти до Орочімару за силою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "target", mode: "remote"}
+      - {entity_id: "c-jirobo", role: "participant", mode: "physical"}
+      - {entity_id: "c-kidomaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-tayuya", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakon", role: "participant", mode: "physical"}
+      - {entity_id: "c-ukon", role: "participant", mode: "physical"}
+    focus_teams: ["group-sound-four"]
+    evidence_ids: ["evd-v10-000118-B"]
+relations:
+  - {id: "rel-0922-sound-1", kind: "before", a: "ev-y0-0922-sound-four-confront-sasuke", b: "ev-y0-0922-sound-four-defeat-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-v10-000118-B"]}
+  - {id: "rel-0922-sound-2", kind: "before", a: "ev-y0-0922-sound-four-defeat-sasuke", b: "ev-y0-0922-sound-four-offer-orochimaru", basis: "source", review: "pending", evidence_ids: ["evd-v10-000118-B"]}
+presence: []
