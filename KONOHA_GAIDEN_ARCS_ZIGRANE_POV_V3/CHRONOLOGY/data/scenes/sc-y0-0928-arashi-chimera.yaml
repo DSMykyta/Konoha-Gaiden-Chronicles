@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-y0-0928-arashi-chimera"
+continuity_id: "main"
+title: "Араші використаний як жива зброя"
+location_id: "loc-land-of-rice-fields"
+placement: {anchor_id: "ta-y0-0928", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0928-arashi-revealed-fused"
+    legacy_ids: ["V10-000127"]
+    title: "Араші виявляється зрощеним із тілами Камікірі та Джігумо"
+    text: "Група знаходить Араші, якого перетворено на живу зброю шляхом зрощення з тілами Камікірі та Джігумо."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-arashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-kamikiri", role: "body_component", mode: "physical"}
+      - {entity_id: "c-jigumo", role: "body_component", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "cause", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasame", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000127", "evd-anime-136-140"]
+  - id: "ev-y0-0928-sakura-caught-chakra-trap"
+    legacy_ids: ["V10-000127"]
+    title: "Сакура опиняється в чакровій пастці"
+    text: "Під час сутички Сакура опиняється всередині чакрової пастки."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-arashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasame", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000127", "evd-anime-136-140"]
+  - id: "ev-y0-0928-naruto-reaches-arashi-consciousness"
+    legacy_ids: ["V10-000127"]
+    title: "Наруто намагається достукатися до Араші"
+    text: "Наруто намагається пробитися до збереженої свідомості Араші й повернути йому контроль."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-arashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasame", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000127", "evd-anime-136-140"]
+relations:
+  - {id: "rel-0928-arashi-1", kind: "before", a: "ev-y0-0928-arashi-revealed-fused", b: "ev-y0-0928-sakura-caught-chakra-trap", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+  - {id: "rel-0928-arashi-2", kind: "before", a: "ev-y0-0928-sakura-caught-chakra-trap", b: "ev-y0-0928-naruto-reaches-arashi-consciousness", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+presence: []
