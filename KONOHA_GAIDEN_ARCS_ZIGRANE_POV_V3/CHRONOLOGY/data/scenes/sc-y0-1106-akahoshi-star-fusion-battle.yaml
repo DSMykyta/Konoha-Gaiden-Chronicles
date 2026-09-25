@@ -1,0 +1,78 @@
+schema_version: 1
+id: "sc-y0-1106-akahoshi-star-fusion-battle"
+continuity_id: "main"
+title: "Акагоші вбудовує Зірку у власне тіло й б'ється з Наруто"
+location_id: "loc-hoshigakure"
+placement: {anchor_id: "ta-y0-1106", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1106-akahoshi-attacks-opponents-star-chakra"
+    legacy_ids: ["V10-000173", "V10-000174"]
+    title: "Акагоші намагається силою придушити опір"
+    text: "Коли мешканці перестають його підтримувати, Акагоші переходить до прямої сили й використовує Павичеву Техніку проти Сумару, Наруто та інших противників."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-akahoshi", role: "focus", mode: "physical"}
+      - {entity_id: "c-sumaru", role: "opponent", mode: "physical"}
+      - {entity_id: "c-naruto", role: "opponent", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000173", "evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-akahoshi-implants-star"
+    legacy_ids: ["V10-000173", "V10-000174"]
+    title: "Акагоші вбудовує метеорит у груди"
+    text: "Щоб різко посилити Павичеву Техніку, Акагоші фізично вбудовує Зірку у власне тіло й перевантажує себе її чакрою."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-akahoshi", role: "focus", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "embedded_object", mode: "physical"}
+    evidence_ids: ["evd-v10-000173", "evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-akahoshi-overpowers-naruto"
+    legacy_ids: ["V10-000174"]
+    title: "Посилений Акагоші тимчасово переважає Наруто"
+    text: "Чакра Зірки створює навколо Акагоші величезну захисно-атакувальну форму й дає йому перевагу над Наруто."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-akahoshi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "power_source", mode: "physical"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-naruto-destroys-star-rasengan"
+    legacy_ids: ["V10-000174"]
+    title: "Наруто руйнує Зірку Расенґаном"
+    text: "Наруто прориває чакрову форму Акагоші й Расенґаном розбиває метеорит, назавжди забираючи в нього джерело посилення."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-akahoshi", role: "affected", mode: "physical"}
+      - {entity_id: "artifact-hoshi-star", role: "destroyed_object", mode: "physical"}
+      - {entity_id: "c-natsuhi", role: "spiritual_support", mode: "memory"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+  - id: "ev-y0-1106-akahoshi-defeated"
+    legacy_ids: ["V10-000174"]
+    title: "Акагоші остаточно програє"
+    text: "Без сили метеорита Акагоші більше не може утримувати свою чакрову форму й зазнає остаточної поразки."
+    origin: "F"
+    extent: "instant"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-akahoshi", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000174", "evd-anime-179-183"]
+relations:
+  - {id: "rel-1106-akahoshi-battle-1", kind: "before", a: "ev-y0-1106-akahoshi-attacks-opponents-star-chakra", b: "ev-y0-1106-akahoshi-implants-star", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+  - {id: "rel-1106-akahoshi-battle-2", kind: "before", a: "ev-y0-1106-akahoshi-implants-star", b: "ev-y0-1106-akahoshi-overpowers-naruto", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+  - {id: "rel-1106-akahoshi-battle-3", kind: "before", a: "ev-y0-1106-akahoshi-overpowers-naruto", b: "ev-y0-1106-naruto-destroys-star-rasengan", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+  - {id: "rel-1106-akahoshi-battle-4", kind: "before", a: "ev-y0-1106-naruto-destroys-star-rasengan", b: "ev-y0-1106-akahoshi-defeated", basis: "source", review: "accepted", evidence_ids: ["evd-anime-179-183"]}
+presence: []
