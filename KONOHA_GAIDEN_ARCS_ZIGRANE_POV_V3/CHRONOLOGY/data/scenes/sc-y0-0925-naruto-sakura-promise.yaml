@@ -1,0 +1,51 @@
+schema_version: 1
+id: "sc-y0-0925-naruto-sakura-promise"
+continuity_id: "main"
+title: "Наруто й Сакура вирішують повернути Саске разом"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0925", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0925-naruto-wakes-hospital"
+    legacy_ids: ["V10-000123-C"]
+    title: "Наруто приходить до тями"
+    text: "Наруто прокидається в лікарні після бою із Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000123-C", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-naruto-admits-failed-promise"
+    legacy_ids: ["V10-000123-D"]
+    title: "Наруто визнає, що не виконав обіцянку"
+    text: "Перед Сакурою Наруто визнає, що не зміг повернути Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000123-D", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0925-sakura-says-next-time-together"
+    legacy_ids: ["V10-000123-D"]
+    title: "Сакура каже, що наступного разу вони повернуть Саске разом"
+    text: "Сакура відкидає вибачення Наруто й каже, що наступного разу вони повернуть Саске разом."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000123-D", "evd-manga-sasuke-recovery"]
+relations:
+  - {id: "rel-0925-promise-1", kind: "before", a: "ev-y0-0925-naruto-wakes-hospital", b: "ev-y0-0925-naruto-admits-failed-promise", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+  - {id: "rel-0925-promise-2", kind: "before", a: "ev-y0-0925-naruto-admits-failed-promise", b: "ev-y0-0925-sakura-says-next-time-together", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+presence:
+  - {id: "pr-0925-promise-naruto", entity_id: "c-naruto", from: "sc-y0-0925-naruto-sakura-promise.start", to: "sc-y0-0925-naruto-sakura-promise.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
+  - {id: "pr-0925-promise-sakura", entity_id: "c-sakura", from: "ev-y0-0925-naruto-admits-failed-promise.start", to: "sc-y0-0925-naruto-sakura-promise.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery"], review: "accepted"}
