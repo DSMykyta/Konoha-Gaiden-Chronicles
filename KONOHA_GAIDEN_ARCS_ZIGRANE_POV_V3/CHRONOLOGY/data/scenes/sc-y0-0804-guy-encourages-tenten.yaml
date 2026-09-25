@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0804-guy-encourages-tenten"
+continuity_id: "main"
+title: "Ґай підбадьорює Тентен після іспиту"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0804", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0804-tenten-doubts-herself"
+    legacy_ids: ["V10-000074"]
+    title: "Тентен сумнівається у власних здібностях"
+    text: "Після іспиту Тентен переживає через власний результат і порівнює себе з ідеалом Цунаде."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tenten", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-might-guy", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000074", "evd-shippuden-237"]
+  - id: "ev-y0-0804-guy-encourages-tenten"
+    legacy_ids: ["V10-000074"]
+    title: "Ґай підбадьорює Тентен"
+    text: "Ґай допомагає Тентен перестати наслідувати чужий шлях і прийняти власну спеціалізацію на ніндзя-знаряддях."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-might-guy", role: "focus", mode: "physical"}
+      - {entity_id: "c-tenten", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000074", "evd-shippuden-237"]
+relations:
+  - {id: "rel-0804-tenten-1", kind: "before", a: "ev-y0-0804-tenten-doubts-herself", b: "ev-y0-0804-guy-encourages-tenten", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-237"]}
+presence:
+  - {id: "pr-0804-tenten-tenten", entity_id: "c-tenten", from: "sc-y0-0804-guy-encourages-tenten.start", to: "sc-y0-0804-guy-encourages-tenten.end", basis: "source", evidence_ids: ["evd-v10-000074"], review: "accepted"}
+  - {id: "pr-0804-tenten-guy", entity_id: "c-might-guy", from: "sc-y0-0804-guy-encourages-tenten.start", to: "sc-y0-0804-guy-encourages-tenten.end", basis: "source", evidence_ids: ["evd-v10-000074"], review: "accepted"}
