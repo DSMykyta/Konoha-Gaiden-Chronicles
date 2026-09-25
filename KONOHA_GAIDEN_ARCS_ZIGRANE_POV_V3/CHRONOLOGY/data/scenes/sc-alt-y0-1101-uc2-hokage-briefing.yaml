@@ -1,0 +1,41 @@
+schema_version: 1
+id: "sc-alt-y0-1101-uc2-hokage-briefing"
+continuity_id: "alt-game-uzumaki-chronicles-2"
+title: "Канкуро пояснює мету Шіроґане й Сфер Духу"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-alt-y0-1101-uc2", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1101-kankuro-explains-shirogane-orbs"
+    legacy_ids: ["V10-000167"]
+    title: "Канкуро пояснює історію клану Шіроґане"
+    text: "У кабінеті Хокаґе Канкуро пояснює, що Шіроґане — майже знищений клан лялькарів, який збирає п'ять Сфер Духу."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kankuro", role: "source", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "recipient", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "group-shirogane", role: "subject", mode: "remote"}
+      - {entity_id: "artifact-spirit-orbs", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000167", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1101-master-puppet-revival-goal"
+    legacy_ids: ["V10-000167"]
+    title: "Мета Шіроґане — відродити Майстра Маріонеток"
+    text: "Зібрані Сфери потрібні для відродження Майстра Маріонеток — старої зброї масового руйнування клану."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-master-puppet", role: "subject", mode: "remote"}
+      - {entity_id: "artifact-spirit-orbs", role: "required_object", mode: "remote"}
+      - {entity_id: "group-shirogane", role: "actor", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000167", "evd-game-uzumaki-chronicles-2"]
+relations:
+  - {id: "rel-alt-1101-uc2-brief-1", kind: "before", a: "ev-alt-y0-1101-kankuro-explains-shirogane-orbs", b: "ev-alt-y0-1101-master-puppet-revival-goal", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+presence: []
