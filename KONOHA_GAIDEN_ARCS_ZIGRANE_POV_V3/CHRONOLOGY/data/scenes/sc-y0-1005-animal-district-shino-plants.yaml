@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-1005-animal-district-shino-plants"
+continuity_id: "main"
+title: "Шіно натрапляє на хижі рослини Нульової ділянки"
+location_id: "loc-zeroth-training-ground"
+placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1005-team-searches-condor"
+    legacy_ids: ["V10-000134"]
+    title: "Загін шукає Кондора на Нульовій тренувальній ділянці"
+    text: "Цунаде відправляє Наруто, Шіно й Лі під командуванням Котецу повторно впіймати Кондора на Нульовій тренувальній ділянці Лісу Смерті."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-kotetsu", role: "leader", mode: "physical"}
+      - {entity_id: "c-condor", role: "target", mode: "remote"}
+      - {entity_id: "c-tsunade", role: "issuer", mode: "remote"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+  - id: "ev-y0-1005-shino-insects-eaten-by-plants"
+    legacy_ids: ["V10-000134"]
+    title: "Хижі рослини з'їдають комах Шіно"
+    text: "Під час пошуку Шіно намагається використати кікайчу, але місцеві комахоїдні рослини з'їдають випущених ним комах."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000134", "evd-shippuden-185"]
+relations:
+  - {id: "rel-1005-animal-shino-1", kind: "before", a: "ev-y0-1005-team-searches-condor", b: "ev-y0-1005-shino-insects-eaten-by-plants", basis: "source", review: "accepted", evidence_ids: ["evd-shippuden-185"]}
+presence: []
