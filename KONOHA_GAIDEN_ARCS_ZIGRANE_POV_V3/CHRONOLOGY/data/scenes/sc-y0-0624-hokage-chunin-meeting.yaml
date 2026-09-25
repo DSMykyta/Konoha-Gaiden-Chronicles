@@ -1,0 +1,55 @@
+schema_version: 1
+id: "sc-y0-0624-hokage-chunin-meeting"
+continuity_id: "main"
+title: "Нарада щодо іспиту на чуніна"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0624", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0624-hiruzen-announces-chunin-exam"
+    legacy_ids: ["V10-000039-D"]
+    title: "Хірузен оголошує майбутній іспит"
+    text: "Хірузен проводить нараду з джонінами щодо майбутнього іспиту на чуніна."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000039-D", "evd-manga-chunin-intro", "evd-anime-20-23"]
+  - id: "ev-y0-0624-jonin-nominate-teams"
+    legacy_ids: ["V10-000039-E"]
+    title: "Какаші, Куренай та Асума висувають свої команди"
+    text: "Какаші, Куренай та Асума висувають Команди 7, 8 і 10 на іспит на чуніна."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "focus", mode: "physical"}
+      - {entity_id: "c-asuma", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+    focus_teams: ["team-7", "team-8", "team-10"]
+    evidence_ids: ["evd-v10-000039-E", "evd-manga-chunin-intro", "evd-anime-20-23"]
+  - id: "ev-y0-0624-iruka-objects-to-nominations"
+    legacy_ids: ["V10-000039-E"]
+    title: "Ірука заперечує проти висунення нових генінів"
+    text: "Ірука заперечує проти участі недавніх випускників у небезпечному іспиті."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000039-E", "evd-manga-chunin-intro", "evd-anime-20-23"]
+relations:
+  - {id: "rel-0624-meeting-1", kind: "before", a: "ev-y0-0624-hiruzen-announces-chunin-exam", b: "ev-y0-0624-jonin-nominate-teams", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000039-D", "evd-v10-000039-E"]}
+  - {id: "rel-0624-meeting-2", kind: "before", a: "ev-y0-0624-jonin-nominate-teams", b: "ev-y0-0624-iruka-objects-to-nominations", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000039-E"]}
+presence: []
