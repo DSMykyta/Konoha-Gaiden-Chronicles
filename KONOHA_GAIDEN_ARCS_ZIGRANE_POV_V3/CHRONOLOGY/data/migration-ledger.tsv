@@ -191,13 +191,13 @@ V10-000106	0	13.09	R	superseded	ev-y0-0913-team7-gaara-defend-settlement;ev-y0-0
 V10-000107	0	14.09	R	superseded	ev-y0-0914-naruto-returns-suspected-virus;ev-y0-0914-naruto-escapes-to-sasuke-ward;ev-y0-0914-friends-catch-naruto;ev-y0-0914-virus-scare-explained	Episode 183 retrospective decomposed into four scene-level events.
 V10-000108	0	15.09	R	superseded	ev-y0-0915-naruto-sakura-ino-seek-flower;ev-y0-0915-flower-creates-gaara-double;ev-y0-0915-team-defeats-gaara-double	Episode 186 retrospective decomposed into flower-search scenes.
 V10-000109	0	16.09	R	superseded	ev-y0-0916-guy-adds-naruto-to-team;ev-y0-0916-guy-names-tenten-captain;ev-y0-0916-team-reaches-tool-lab;ev-y0-0916-team-recovers-stolen-prototypes	Episode 184 retrospective decomposed into team assignment and lab-mission scenes.
-V10-000110	0	17.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000111	0	18.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000112	0	18.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000113	0	19.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000114	0	20.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000115	0	21.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000116	0	21.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000110	0	17.09	R	superseded	ev-y0-0917-naruto-joins-border-patrol;ev-y0-0917-kosuke-detects-enemy-infiltration	Patrol opening decomposed.
+V10-000111	0	18.09	R	superseded	ev-y0-0918-border-patrol-repels-attack;ev-y0-0918-kosuke-recognizes-naruto-resolve	Patrol conclusion decomposed.
+V10-000112	0	18.09	R	superseded	ev-y0-0918-team7-detains-hanare;ev-y0-0918-hanare-interrogated;ev-y0-0918-hanare-prisoner-exchange;ev-y0-0918-kakashi-lets-hanare-go	Hanare retrospective decomposed.
+V10-000113	0	19.09	R	superseded	ev-y0-0919-hinata-overstrains-byakugan;ev-y0-0919-naruto-sakura-neji-seek-clear-eye;ev-y0-0919-team-trapped-by-faceless-creatures;ev-y0-0919-kakashi-guy-rescue-team;ev-y0-0919-hinata-watches-fireworks-home	Episode 306 retrospective decomposed.
+V10-000114	0	20.09	R	superseded	ev-y0-0920-tsunade-assigns-shu-mission;ev-y0-0920-choji-cooking-contest;ev-y0-0920-ino-controls-shu;ev-y0-0920-naruto-impersonates-shu;ev-y0-0920-asuma-team-extracts-shu	Shu mission opening decomposed.
+V10-000115	0	21.09	R	superseded	ev-y0-0921-tatewaki-chiyo-expose-naruto;ev-y0-0921-sasori-deidara-attack-castle;ev-y0-0921-tatewaki-dies-poison;ev-y0-0921-shu-delivered;ev-y0-0921-yamato-observes-success	Shu mission conclusion decomposed.
+V10-000116	0	21.09	R	superseded	ev-y0-0921-sasuke-rescues-naho;ev-y0-0921-sasuke-brutalizes-criminal-leader;ev-y0-0921-sasuke-crisis-intensifies	Sasuke/Naho retrospective decomposed.
 V10-000117	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000117-B	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000118	0	22.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
