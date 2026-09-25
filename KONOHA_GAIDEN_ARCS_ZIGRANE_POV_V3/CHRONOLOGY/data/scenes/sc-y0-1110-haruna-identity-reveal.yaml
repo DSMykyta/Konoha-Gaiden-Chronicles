@@ -1,0 +1,55 @@
+schema_version: 1
+id: "sc-y0-1110-haruna-identity-reveal"
+continuity_id: "main"
+title: "Шун виявляється принцесою Харуною"
+location_id: "loc-land-of-greens"
+placement: {anchor_id: "ta-y0-1110-greens", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1110-kikusuke-killed-attack"
+    legacy_ids: ["V10-000178"]
+    title: "Кікуске гине під час переслідування"
+    text: "Один із охоронців, Кікуске, гине від нападників, після чого Наруто вимагає пояснення, чому звичайний караван переслідують шинобі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kikusuke", role: "victim", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-haruna", role: "hidden_target", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000178", "evd-anime-187-191"]
+  - id: "ev-y0-1110-yurinojo-reveals-haruna-princess"
+    legacy_ids: ["V10-000178"]
+    title: "Юріношін відкриває, що Шун — принцеса Харуна"
+    text: "Юріношін пояснює, що торговці маскують евакуацію єдиної доньки даймьо: «Шун» насправді принцеса Харуна, яку вивозять через підготовлюваний переворот."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-yurinojo", role: "source", mode: "physical"}
+      - {entity_id: "c-haruna", role: "revealed", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
+      - {entity_id: "c-choji", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000178", "evd-anime-187-191"]
+  - id: "ev-y0-1110-leaf-team-accepts-haruna-protection"
+    legacy_ids: ["V10-000178"]
+    title: "Місія фактично стає евакуацією Харуни"
+    text: "Після розкриття мети нападу Наруто, Хіната й Чоджі продовжують місію вже як охорону принцеси від сил перевороту."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-haruna", role: "protected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "protector", mode: "physical"}
+      - {entity_id: "c-hinata", role: "protector", mode: "physical"}
+      - {entity_id: "c-choji", role: "protector", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "protector", mode: "physical"}
+    evidence_ids: ["evd-v10-000178", "evd-anime-187-191"]
+relations:
+  - {id: "rel-1110-haruna-1", kind: "before", a: "ev-y0-1110-kikusuke-killed-attack", b: "ev-y0-1110-yurinojo-reveals-haruna-princess", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1110-haruna-2", kind: "before", a: "ev-y0-1110-yurinojo-reveals-haruna-princess", b: "ev-y0-1110-leaf-team-accepts-haruna-protection", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+presence: []
