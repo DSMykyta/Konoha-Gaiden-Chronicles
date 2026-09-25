@@ -915,6 +915,53 @@ entities:
     name: "Moya Trio"
     aliases:
       - "трійця Моя"
+  - id: "c-idate"
+    kind: "person"
+    name: "Idate Morino"
+    aliases:
+      - "Ідате"
+      - "Ідате Моріно"
+  - id: "c-aoi"
+    kind: "person"
+    name: "Aoi"
+    aliases:
+      - "Аої"
+  - id: "c-shibuki"
+    kind: "person"
+    name: "Shibuki"
+    aliases:
+      - "Шібукі"
+  - id: "c-suien"
+    kind: "person"
+    name: "Suien"
+    aliases:
+      - "Суїєн"
+  - id: "c-jirocho"
+    kind: "person"
+    name: "Jirōchō"
+    aliases:
+      - "Джірочо"
+  - id: "loc-land-of-tea"
+    kind: "location"
+    name: "Land of Tea"
+    aliases:
+      - "Країна Чаю"
+  - id: "loc-nagi-island"
+    kind: "location"
+    name: "Nagi Island"
+    aliases:
+      - "острів Нагі"
+  - id: "loc-takigakure"
+    kind: "location"
+    name: "Takigakure"
+    aliases:
+      - "Такіґакуре"
+      - "Селище Водоспаду"
+  - id: "loc-modoroki-shrine"
+    kind: "location"
+    name: "Modoroki Shrine"
+    aliases:
+      - "святиня Модорокі"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
