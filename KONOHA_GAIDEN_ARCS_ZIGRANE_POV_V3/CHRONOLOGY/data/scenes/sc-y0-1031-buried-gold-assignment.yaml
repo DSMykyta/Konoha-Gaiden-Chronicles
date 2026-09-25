@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-y0-1031-buried-gold-assignment"
+continuity_id: "main"
+title: "Цунаде дає Наруто, Кібі й Хінаті останній шанс як команді"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-1031", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1031-tsunade-cites-poor-team-success-rate"
+    legacy_ids: ["V10-000165"]
+    title: "Цунаде вказує на низький відсоток успіху цієї трійки"
+    text: "Цунаде пояснює Наруто, Кібі й Хінаті, що їхні спільні місії мають поганий результат через слабку взаємодію."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-kiba", role: "recipient", mode: "physical"}
+      - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+  - id: "ev-y0-1031-tsunade-threatens-academy-return"
+    legacy_ids: ["V10-000165"]
+    title: "Цунаде погрожує повернути їх до Академії в разі нового провалу"
+    text: "Вона ставить умову: якщо трійця не впорається з наступним завданням, їх можуть відправити назад на додаткове навчання в Академію."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-tsunade", role: "issuer", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hinata", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+  - id: "ev-y0-1031-trio-receives-agari-treasure-map"
+    legacy_ids: ["V10-000165"]
+    title: "Трійця отримує карту скарбу від клієнта Аґарі Кайсена"
+    text: "Їм доручають знайти закопаний скарб за картою, яку передав знайомий Цунаде Аґарі Кайсен."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-agari-kaisen", role: "client", mode: "remote"}
+    evidence_ids: ["evd-v10-000165", "evd-anime-175-176"]
+relations:
+  - {id: "rel-1031-gold-assign-1", kind: "before", a: "ev-y0-1031-tsunade-cites-poor-team-success-rate", b: "ev-y0-1031-tsunade-threatens-academy-return", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+  - {id: "rel-1031-gold-assign-2", kind: "before", a: "ev-y0-1031-tsunade-threatens-academy-return", b: "ev-y0-1031-trio-receives-agari-treasure-map", basis: "source", review: "accepted", evidence_ids: ["evd-anime-175-176"]}
+presence: []
