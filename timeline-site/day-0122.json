@@ -169,7 +169,8 @@
           "from": "sc-y0-0122-accidental-kiss.start",
           "to": "sc-y0-0122-accidental-kiss.end"
         }
-      ]
+      ],
+      "relations": []
     },
     {
       "id": "sc-y0-0122-academy-announcements",
@@ -409,6 +410,20 @@
           "from": "sc-y0-0122-academy-announcements.start",
           "to": "sc-y0-0122-academy-announcements.end"
         }
+      ],
+      "relations": [
+        {
+          "id": "rel-0122-kita-look-before-team9",
+          "kind": "before",
+          "a": "ev-y0-0122-kita-sees-jonin",
+          "b": "ev-y0-0122-team9-announced"
+        },
+        {
+          "id": "rel-0122-team9-before-ren-question",
+          "kind": "before",
+          "a": "ev-y0-0122-team9-announced",
+          "b": "ev-y0-0122-ren-asks-kita"
+        }
       ]
     },
     {
@@ -506,7 +521,8 @@
           "from": "sc-y0-0122-academy-exterior-jonin.start",
           "to": "sc-y0-0122-academy-exterior-jonin.end"
         }
-      ]
+      ],
+      "relations": []
     },
     {
       "id": "sc-y0-0122-academy-waiting",
@@ -803,6 +819,44 @@
           "from": "ev-y0-0122-kakashi-arrives.start",
           "to": "ev-y0-0122-team7-departs.end"
         }
+      ],
+      "relations": [
+        {
+          "id": "rel-0122-team10-before-raido",
+          "kind": "before",
+          "a": "ev-y0-0122-team10-departs",
+          "b": "ev-y0-0122-raido-question"
+        },
+        {
+          "id": "rel-0122-team8-before-raido",
+          "kind": "before",
+          "a": "ev-y0-0122-team8-departs",
+          "b": "ev-y0-0122-raido-question"
+        },
+        {
+          "id": "rel-0122-raido-question-before-departure",
+          "kind": "before",
+          "a": "ev-y0-0122-raido-question",
+          "b": "ev-y0-0122-team9-departs"
+        },
+        {
+          "id": "rel-0122-team9-before-kakashi",
+          "kind": "before",
+          "a": "ev-y0-0122-team9-departs",
+          "b": "ev-y0-0122-kakashi-arrives"
+        },
+        {
+          "id": "rel-0122-trap-before-kakashi",
+          "kind": "before",
+          "a": "ev-y0-0122-naruto-prepares-trap",
+          "b": "ev-y0-0122-kakashi-arrives"
+        },
+        {
+          "id": "rel-0122-kakashi-before-team7-leaves",
+          "kind": "before",
+          "a": "ev-y0-0122-kakashi-arrives",
+          "b": "ev-y0-0122-team7-departs"
+        }
       ]
     },
     {
@@ -901,6 +955,20 @@
           "from": "sc-y0-0122-naruto-impersonates-sasuke.start",
           "to": "ev-y0-0122-naruto-restrains-sasuke.end"
         }
+      ],
+      "relations": [
+        {
+          "id": "rel-0122-restrain-before-impersonation",
+          "kind": "before",
+          "a": "ev-y0-0122-naruto-restrains-sasuke",
+          "b": "ev-y0-0122-naruto-impersonates-sasuke"
+        },
+        {
+          "id": "rel-0122-impersonation-before-sakura-comment",
+          "kind": "before",
+          "a": "ev-y0-0122-naruto-impersonates-sasuke",
+          "b": "ev-y0-0122-sakura-insults-naruto"
+        }
       ]
     },
     {
@@ -995,6 +1063,14 @@
           "entityId": "c-sakura",
           "from": "sc-y0-0122-team7-rooftop.start",
           "to": "sc-y0-0122-team7-rooftop.end"
+        }
+      ],
+      "relations": [
+        {
+          "id": "rel-0122-intro-before-test-schedule",
+          "kind": "before",
+          "a": "ev-y0-0122-team7-introductions",
+          "b": "ev-y0-0122-kakashi-schedules-bell-test"
         }
       ]
     },
@@ -1120,6 +1196,20 @@
           "from": "sc-y0-0122-dango-shop.start",
           "to": "sc-y0-0122-dango-shop.end"
         }
+      ],
+      "relations": [
+        {
+          "id": "rel-0122-dango-share-before-intro",
+          "kind": "before",
+          "a": "ev-y0-0122-dango-sharing",
+          "b": "ev-y0-0122-dango-introductions"
+        },
+        {
+          "id": "rel-0122-dango-intro-before-field8",
+          "kind": "before",
+          "a": "ev-y0-0122-dango-introductions",
+          "b": "ev-y0-0122-raido-assigns-field8"
+        }
       ]
     },
     {
@@ -1197,7 +1287,75 @@
           "from": "ev-y0-0122-nobari-returns.start",
           "to": "sc-y0-0122-kita-home-night.end"
         }
+      ],
+      "relations": [
+        {
+          "id": "rel-0122-home-return-before-talk",
+          "kind": "before",
+          "a": "ev-y0-0122-nobari-returns",
+          "b": "ev-y0-0122-kita-talks-with-mother"
+        },
+        {
+          "id": "rel-0122-home-talk-before-cry",
+          "kind": "before",
+          "a": "ev-y0-0122-kita-talks-with-mother",
+          "b": "ev-y0-0122-kita-cries"
+        }
       ]
     }
-  ]
+  ],
+  "links": [
+    {
+      "id": "lnk-0122-kiss-before-announcements",
+      "kind": "before",
+      "a": "ev-y0-0122-naruto-sasuke-kiss",
+      "b": "sc-y0-0122-academy-announcements"
+    },
+    {
+      "id": "lnk-0122-announcements-before-impersonation",
+      "kind": "before",
+      "a": "sc-y0-0122-academy-announcements",
+      "b": "sc-y0-0122-naruto-impersonates-sasuke"
+    },
+    {
+      "id": "lnk-0122-announcements-before-wait",
+      "kind": "before",
+      "a": "sc-y0-0122-academy-announcements",
+      "b": "sc-y0-0122-academy-waiting"
+    },
+    {
+      "id": "lnk-0122-impersonation-before-kakashi",
+      "kind": "before",
+      "a": "sc-y0-0122-naruto-impersonates-sasuke",
+      "b": "ev-y0-0122-kakashi-arrives"
+    },
+    {
+      "id": "lnk-0122-class-observes-exterior",
+      "kind": "observes",
+      "a": "ev-y0-0122-kita-sees-jonin",
+      "b": "sc-y0-0122-academy-exterior-jonin"
+    },
+    {
+      "id": "lnk-0122-team9-to-dango",
+      "kind": "before",
+      "a": "ev-y0-0122-team9-departs",
+      "b": "sc-y0-0122-dango-shop"
+    },
+    {
+      "id": "lnk-0122-team7-to-rooftop",
+      "kind": "before",
+      "a": "ev-y0-0122-team7-departs",
+      "b": "sc-y0-0122-team7-rooftop"
+    },
+    {
+      "id": "lnk-0122-dango-before-home",
+      "kind": "before",
+      "a": "sc-y0-0122-dango-shop",
+      "b": "sc-y0-0122-kita-home-night"
+    }
+  ],
+  "generatedFromSha": {
+    "entities": "fb98f00f0c2d79e2dec58366e7a92ba88c6f06b2",
+    "links": "3ea932f8a064ece0e175a264c8aa7873cc3ae9f8"
+  }
 }
