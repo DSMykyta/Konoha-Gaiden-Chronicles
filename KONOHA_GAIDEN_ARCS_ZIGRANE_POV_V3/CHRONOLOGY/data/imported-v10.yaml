@@ -2477,7 +2477,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000054"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2502,7 +2502,7 @@ records:
       SupportingSources: "A [еп. 54–57] — тренування Наруто з призовом і робота Какаші із Саске."
       Review: ""
   - legacy_id: "V10-000055"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2527,7 +2527,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000056"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -2552,7 +2552,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000057"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2577,7 +2577,7 @@ records:
       SupportingSources: "A [еп. 67–68] — змовники уточнюють план вторгнення Конохи."
       Review: ""
   - legacy_id: "V10-000058"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2602,7 +2602,7 @@ records:
       SupportingSources: "A [еп. 56–58] — Джирая змушує Наруто звернутися до чакри Дев’ятихвостого й укласти контракт із Ґамабунтою."
       Review: ""
   - legacy_id: "V10-000060"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2627,7 +2627,7 @@ records:
       SupportingSources: "A [еп. 59–60] — завершення підготовки й прибуття учасників на фінали."
       Review: ""
   - legacy_id: "V10-000061"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2652,7 +2652,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000062"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -2677,7 +2677,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000059"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
