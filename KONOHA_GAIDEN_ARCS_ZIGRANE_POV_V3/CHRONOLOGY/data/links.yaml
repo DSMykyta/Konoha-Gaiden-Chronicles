@@ -539,5 +539,47 @@ links:
     basis: "imported"
     review: "accepted"
     evidence_ids: ["evd-v10-000072", "evd-v10-000073"]
+  - id: "lnk-0801-dispatch-before-shikamaru-delay"
+    kind: "before"
+    a: "ev-y0-0801-kakashi-dispatches-pursuit-team"
+    b: "sc-y0-0801-shikamaru-delays-sound"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000069", "evd-v10-000069-B"]
+  - id: "lnk-0801-sasuke-pursuit-before-shino-kankuro"
+    kind: "before"
+    a: "ev-y0-0801-sasuke-pursues-gaara"
+    b: "sc-y0-0801-shino-kankuro"
+    basis: "source"
+    review: "pending"
+    evidence_ids: ["evd-v10-000065-D", "evd-v10-000069-C"]
+  - id: "lnk-0803-funeral-before-iruka-will"
+    kind: "before"
+    a: "sc-y0-0803-hiruzen-funeral"
+    b: "sc-y0-0803-iruka-konohamaru-will-fire"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000073", "evd-v10-000073-B"]
+  - id: "lnk-0803-jiraiya-refusal-before-departure"
+    kind: "before"
+    a: "sc-y0-0803-jiraiya-refuses-hokage"
+    b: "sc-y0-0803-naruto-jiraiya-depart"
+    basis: "logical"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000073-C", "evd-v10-000073-E"]
+  - id: "lnk-0803-konoha-akatsuki-before-0804-inn"
+    kind: "before"
+    a: "sc-y0-0803-itachi-kisame-konoha-fight"
+    b: "sc-y0-0804-itachi-kisame-find-naruto"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000073-D", "evd-v10-000076"]
+  - id: "lnk-0803-departure-before-0804-inn"
+    kind: "before"
+    a: "sc-y0-0803-naruto-jiraiya-depart"
+    b: "sc-y0-0804-itachi-kisame-find-naruto"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000073-E", "evd-v10-000076"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
