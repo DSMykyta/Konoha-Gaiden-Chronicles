@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0701-forest-start"
+continuity_id: "main"
+title: "Початок другого етапу в Лісі Смерті"
+location_id: "loc-forest-death"
+placement: {anchor_id: "ta-y0-0701", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0701-anko-briefs-candidates"
+    legacy_ids: ["V10-000040-C"]
+    title: "Анко пояснює правила Лісу Смерті"
+    text: "Анко Мітараші переводить кандидатів до Лісу Смерті й пояснює п’ятиденний етап із двома типами сувоїв."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-C", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-forest-stage-begins"
+    legacy_ids: ["V10-000040-C"]
+    title: "Другий етап починається о 14:32"
+    text: "О 14:32 команди входять до Лісу Смерті; для проходження вони мають здобути обидва сувої й дістатися центральної вежі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    exact_time: "14:32"
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-C", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0701-forest-start-1", kind: "before", a: "ev-y0-0701-anko-briefs-candidates", b: "ev-y0-0701-forest-stage-begins", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+presence: []
