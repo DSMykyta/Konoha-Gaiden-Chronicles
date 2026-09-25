@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-1002-mizuki-meets-tsubaki"
+continuity_id: "main"
+title: "Цубакі просить Мідзукі зупинитися"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1002", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1002-tsubaki-asks-mizuki-surrender"
+    legacy_ids: ["V10-000130"]
+    title: "Цубакі намагається переконати Мідзукі здатися"
+    text: "Цубакі зустрічає Мідзукі й просить його відмовитися від помсти та повернутися, але він не припиняє втечу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-tsubaki", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-anime-142-147"]
+relations: []
+presence: []
