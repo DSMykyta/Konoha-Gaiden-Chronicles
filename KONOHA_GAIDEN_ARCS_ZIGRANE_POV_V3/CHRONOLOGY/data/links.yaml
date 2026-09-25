@@ -637,5 +637,26 @@ links:
     basis: "imported"
     review: "accepted"
     evidence_ids: ["evd-v10-000081"]
+  - id: "lnk-0831-pursuit-before-0901-meet"
+    kind: "before"
+    a: "sc-y0-0831-shizune-reveals-deal"
+    b: "sc-y0-0901-tsunade-meets-orochimaru"
+    basis: "imported"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000081", "evd-v10-000082"]
+  - id: "lnk-0901-meet-before-sannin-battle"
+    kind: "before"
+    a: "sc-y0-0901-tsunade-meets-orochimaru"
+    b: "sc-y0-0901-sannin-battle"
+    basis: "imported"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000082", "evd-v10-000082-C"]
+  - id: "lnk-0901-battle-before-tsunade-accepts"
+    kind: "before"
+    a: "sc-y0-0901-sannin-battle"
+    b: "sc-y0-0901-tsunade-accepts-hokage"
+    basis: "imported"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000082-G", "evd-v10-000082-H"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
