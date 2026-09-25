@@ -1,0 +1,46 @@
+schema_version: 1
+id: "sc-alt-y0-0903-fake-rescue-sukea-reveal"
+continuity_id: "alt-shippuden-469"
+title: "Інсценований порятунок не розкриває обличчя Какаші"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-0903", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-0903-teams-stage-rescue"
+    legacy_ids: ["V10-000087"]
+    title: "Команди інсценують ситуацію для «порятунку» Какаші"
+    text: "Група пробує інсценувати порятунок, розраховуючи змусити Какаші зняти маску."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+      - {entity_id: "c-tenten", role: "participant", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "target", mode: "physical"}
+    focus_teams: ["team-7", "team-8", "team-10", "team-guy"]
+    evidence_ids: ["evd-v10-000087", "evd-shippuden-469"]
+  - id: "ev-alt-y0-0903-sukea-revealed-kakashi"
+    legacy_ids: ["V10-000087"]
+    title: "Скеа виявляється замаскованим Какаші"
+    text: "Після провалу полювання ретроспектива відкриває, що фотограф Скеа весь цей час був самим Какаші під маскуванням."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical_hidden"}
+    evidence_ids: ["evd-v10-000087", "evd-shippuden-469"]
+relations:
+  - {id: "rel-alt-0903-sukea-1", kind: "before", a: "ev-alt-y0-0903-teams-stage-rescue", b: "ev-alt-y0-0903-sukea-revealed-kakashi", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-469"]}
+presence: []
