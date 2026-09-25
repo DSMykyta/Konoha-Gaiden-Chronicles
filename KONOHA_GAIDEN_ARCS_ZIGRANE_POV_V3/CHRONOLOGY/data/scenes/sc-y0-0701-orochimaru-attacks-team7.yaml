@@ -1,0 +1,87 @@
+schema_version: 1
+id: "sc-y0-0701-orochimaru-attacks-team7"
+continuity_id: "main"
+title: "Орочімару атакує Команду 7"
+location_id: "loc-forest-death"
+placement: {anchor_id: "ta-y0-0701", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0701-orochimaru-separates-team7"
+    legacy_ids: ["V10-000040-D"]
+    title: "Орочімару під виглядом геніна Трави розділяє Команду 7"
+    text: "Орочімару, замаскований під геніна Трави Шіоре, ізолює Наруто, Саске й Сакуру та починає атаку."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-v10-000040-D", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-naruto-fights-orochimaru"
+    legacy_ids: ["V10-000040-D"]
+    title: "Наруто атакує Орочімару з чакрою Дев’ятихвостого"
+    text: "Наруто чинить опір Орочімару й використовує чакру Дев’ятихвостого."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-D", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-orochimaru-five-elements-seal"
+    legacy_ids: ["V10-000040-D"]
+    title: "Орочімару накладає на Наруто Печатку П’яти Стихій"
+    text: "Орочімару блокує доступ Наруто до чакри Дев’ятихвостого Печаткою П’яти Стихій."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-D", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-sasuke-fights-orochimaru"
+    legacy_ids: ["V10-000040-E"]
+    title: "Саске переборює страх і атакує Орочімару"
+    text: "Саске зв’язує Орочімару дротом і застосовує Вогняний стиль: Техніку Драконячого Полум’я."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-E", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-orochimaru-curse-mark-sasuke"
+    legacy_ids: ["V10-000040-E"]
+    title: "Орочімару ставить Саске Прокляту Печатку Неба"
+    text: "Після сутички Орочімару кусає Саске й залишає на ньому Прокляту Печатку Неба."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-E", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0701-oro-1", kind: "before", a: "ev-y0-0701-orochimaru-separates-team7", b: "ev-y0-0701-naruto-fights-orochimaru", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-oro-2", kind: "before", a: "ev-y0-0701-naruto-fights-orochimaru", b: "ev-y0-0701-orochimaru-five-elements-seal", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-oro-3", kind: "before", a: "ev-y0-0701-orochimaru-five-elements-seal", b: "ev-y0-0701-sasuke-fights-orochimaru", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-oro-4", kind: "before", a: "ev-y0-0701-sasuke-fights-orochimaru", b: "ev-y0-0701-orochimaru-curse-mark-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+presence:
+  - {id: "pr-0701-oro-naruto", entity_id: "c-naruto", from: "sc-y0-0701-orochimaru-attacks-team7.start", to: "sc-y0-0701-orochimaru-attacks-team7.end", basis: "source", evidence_ids: ["evd-v10-000040-D"], review: "accepted"}
+  - {id: "pr-0701-oro-sasuke", entity_id: "c-sasuke", from: "sc-y0-0701-orochimaru-attacks-team7.start", to: "sc-y0-0701-orochimaru-attacks-team7.end", basis: "source", evidence_ids: ["evd-v10-000040-D"], review: "accepted"}
+  - {id: "pr-0701-oro-sakura", entity_id: "c-sakura", from: "sc-y0-0701-orochimaru-attacks-team7.start", to: "sc-y0-0701-orochimaru-attacks-team7.end", basis: "source", evidence_ids: ["evd-v10-000040-D"], review: "accepted"}
+  - {id: "pr-0701-oro-orochimaru", entity_id: "c-orochimaru", from: "sc-y0-0701-orochimaru-attacks-team7.start", to: "sc-y0-0701-orochimaru-attacks-team7.end", basis: "source", evidence_ids: ["evd-v10-000040-D"], review: "accepted"}
