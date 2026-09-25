@@ -1,51 +1,65 @@
 # Naruto Timeline v10 schema
 
-## Principle
-One row = one historical event. v9 remains unchanged and is the migration source.
+## Core model
+One row = one historical event. A date may have 1 row or 20+ rows. v9 remains unchanged.
 
 ## Columns
 - Year — project year.
 - Date — DD.MM.
 - DayPart — dawn / morning / noon / afternoon / evening / night / late_night / unknown.
-- ExactTime — only when the source explicitly gives a clock time.
-- Order — ordering inside one date. Base step: 100. Insertions may use any integer between existing values.
-- EventID — stable identifier independent of date and Order. Never renumber because chronology changes.
-- Track — migration lineage from v9: World / NARUTO / T9LM. This is not a source type.
-- Origin — single origin of the event.
-- Title — short display title.
-- Event — full event text.
-- Characters — semicolon-separated normalized character IDs/names.
-- Teams — semicolon-separated normalized teams.
-- Location — location; blank until verified.
-- Arc — arc/story block when explicitly recoverable.
+- ExactTime — only when explicitly stated by a source.
+- Order — order inside one date. Base step = 100. Insertions may use any integer between existing values.
+- EventID — permanent event identifier. Once v10 migration is finalized, never renumber it because date/order/text changes.
+- Track — lineage of the migrated v9 column: World / NARUTO / T9LM. It is not the event origin.
+- Origin — exactly one origin code for the event itself.
+- Title — short site label.
+- Event — event description.
+- Characters — normalized semicolon-separated characters participating in / directly described by the event.
+- Teams — normalized semicolon-separated teams.
+- Location — normalized location when safely inferable.
+- Arc — explicit arc/story block when recoverable.
 - Continuity — main / alt.
 - DateCertainty — exact / derived / approximate / inherited_v9.
-- Reference — source references preserved from v9.
-- Review — fields that need manual audit after migration.
+- Reference — primary source reference(s) carried by the event.
+- SupportingSources — adaptations, repetitions, or parallel tellings that do not create a second historical event.
+- Review — migration fields requiring manual audit.
 
 ## Origin codes
-- M — manga-origin event. Anime adaptation or later repetition does not change M.
-- A — anime-original material accepted into the main historical line.
+- M — manga-origin event.
+- A — genuinely new anime-original material accepted into the main historical line.
 - F — filler.
-- R — unique historical material first revealed in a later retrospective/flashback. Repetition of an existing manga event remains M.
+- R — genuinely new historical material first revealed in a later retrospective/flashback.
 - G — game.
 - O — OVA / special.
 - V — movie/film.
-- N — novel.
+- N — genuinely new novel-origin event.
 - P — project roleplay event.
-- D — databook / official guide fact. Added because v9 already contains databook-derived facts.
+- D — databook / official guide fact.
 
-## Rules
-1. Never combine multiple origins into one value merely because the same event was adapted or repeated elsewhere.
-2. If manga and roleplay events happen on the same date, they are separate rows.
-3. Unknown part of day stays unknown; do not invent morning/evening.
-4. ExactTime is populated only from explicit source time.
-5. Order is not an EventID and may change.
-6. EventID remains stable after edits.
-7. Retrospective material gets R only when the retrospective contributes a genuinely new historical event/detail.
-8. ALT is kept separately in Continuity rather than encoded into Origin.
-9. Characters/Teams/Location are metadata for generating timeline lanes; events are not duplicated per character.
-10. v10 is the editable structured source for the future site; v9 remains preserved as migration baseline.
+## Provenance rules
+1. One event has one Origin.
+2. A manga event adapted in anime remains M.
+3. A manga event repeated in a Shippūden flashback remains M.
+4. A later flashback that reveals a genuinely new historical scene is a separate R event.
+5. A novelization that merely retells a manga event is stored in SupportingSources, not as a second N event.
+6. Anime/novel adaptation notes that merely retell an existing event are stored in SupportingSources.
+7. Different events on the same date (for example M and P) remain separate rows.
+8. ALT belongs in Continuity, not in Origin.
 
-## Migration status
-This first pass automatically split v9 cells on explicit bullet separators and preserved source-column lineage. Rows marked in Review require manual cleanup, especially day-part, entity tags, and legacy adaptation notes.
+## Time rules
+1. Never invent a part of day.
+2. Unknown stays unknown.
+3. ExactTime is populated only from explicit clock time.
+4. Order uses 100, 200, 300... by default.
+5. Order can be edited without changing EventID.
+6. DateCertainty records whether the v10 date is exact, derived, approximate, or simply inherited from v9.
+
+## Site rules enabled by this schema
+- Character/team lanes are generated from metadata; events are not duplicated into physical character columns.
+- One event can belong to many characters and teams.
+- Source colors/animated gradients key from Origin.
+- SupportingSources can be shown in hover/detail cards without producing duplicate timeline nodes.
+- Zoom can cluster multiple rows from one day while preserving their individual EventIDs.
+
+## Current migration status
+This is an automated structural migration from v9 followed by provenance cleanup. Review markers intentionally remain where day-part, entities, or other metadata still need manual verification.
