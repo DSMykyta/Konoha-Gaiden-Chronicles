@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-y0-1107-kiba-flees-with-akamaru"
+continuity_id: "main"
+title: "Кіба забирає Акамару з-під варти"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1107", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1107-akamaru-taken-custody"
+    legacy_ids: ["V10-000175"]
+    title: "Акамару беруть під варту як небезпечного"
+    text: "Після нападів Акамару ізолюють; якщо медики не знайдуть спосіб зупинити інфекцію, його готуються приспати, щоб не допустити нових жертв."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-akamaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-kiba", role: "affected", mode: "physical"}
+      - {entity_id: "c-hana", role: "medical_staff", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-kiba-breaks-akamaru-out"
+    legacy_ids: ["V10-000175"]
+    title: "Кіба не приймає можливість евтаназії й тікає з Акамару"
+    text: "Почувши, що Акамару можуть убити, Кіба самовільно забирає його й залишає село, намагаючись урятувати напарника власними силами."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+  - id: "ev-y0-1107-naruto-hana-pursue-kiba"
+    legacy_ids: ["V10-000175"]
+    title: "Наруто й Хана вирушають за Кібою"
+    text: "Наруто та Хана переслідують Кібу не для покарання, а щоб доставити експериментальний антидот і не дати інфекції вбити Акамару."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-hana", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "target", mode: "remote"}
+      - {entity_id: "c-akamaru", role: "patient", mode: "remote"}
+    evidence_ids: ["evd-v10-000175", "evd-anime-184"]
+relations:
+  - {id: "rel-1107-kiba-flees-1", kind: "before", a: "ev-y0-1107-akamaru-taken-custody", b: "ev-y0-1107-kiba-breaks-akamaru-out", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+  - {id: "rel-1107-kiba-flees-2", kind: "before", a: "ev-y0-1107-kiba-breaks-akamaru-out", b: "ev-y0-1107-naruto-hana-pursue-kiba", basis: "source", review: "accepted", evidence_ids: ["evd-anime-184"]}
+presence: []
