@@ -1,0 +1,75 @@
+schema_version: 1
+id: "sc-y0-0924-valley-end"
+continuity_id: "main"
+title: "Наруто й Саске в Долині Завершення"
+location_id: "loc-valley-end"
+placement: {anchor_id: "ta-sasuke-recovery-24", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-naruto-catches-sasuke"
+    legacy_ids: ["V10-000122-K"]
+    title: "Наруто наздоганяє Саске"
+    text: "Наруто наздоганяє Саске в Долині Завершення й намагається переконати його повернутися."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0924-sasuke-explains-choice"
+    legacy_ids: ["V10-000122-L"]
+    title: "Саске пояснює свій вибір"
+    text: "Саске відкидає повернення й пояснює свій шлях до сили; Наруто відмовляється дозволити йому розірвати їхній зв’язок."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0924-valley-power-escalation"
+    legacy_ids: ["V10-000122-M"]
+    title: "Бій Наруто й Саске досягає піку"
+    text: "Саске переходить у другу стадію Проклятої Печатки; Наруто вивільняє однохвостий покрив чакри Дев’ятихвостого."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0924-chidori-rasengan-clash"
+    legacy_ids: ["V10-000122-N"]
+    title: "Чідорі й Расенґан стикаються"
+    text: "Наруто й Саске завершують бій прямим зіткненням Расенґана та Чідорі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+  - id: "ev-y0-0924-sasuke-wins-spares-naruto"
+    legacy_ids: ["V10-000122-O"]
+    title: "Саске перемагає, але не вбиває Наруто"
+    text: "Саске перемагає Наруто, відмовляється виконати шлях Ітачі до Манґекьо через убивство найближчого друга й продовжує шлях до Орочімару."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-itachi", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-orochimaru", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-24sep", "evd-manga-sasuke-recovery"]
+relations:
+  - {id: "rel-0924-valley-1", kind: "before", a: "ev-y0-0924-naruto-catches-sasuke", b: "ev-y0-0924-sasuke-explains-choice", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+  - {id: "rel-0924-valley-2", kind: "before", a: "ev-y0-0924-sasuke-explains-choice", b: "ev-y0-0924-valley-power-escalation", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+  - {id: "rel-0924-valley-3", kind: "before", a: "ev-y0-0924-valley-power-escalation", b: "ev-y0-0924-chidori-rasengan-clash", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+  - {id: "rel-0924-valley-4", kind: "before", a: "ev-y0-0924-chidori-rasengan-clash", b: "ev-y0-0924-sasuke-wins-spares-naruto", basis: "source", review: "pending", evidence_ids: ["evd-manga-sasuke-recovery"]}
+presence:
+  - {id: "pr-0924-valley-naruto", entity_id: "c-naruto", from: "sc-y0-0924-valley-end.start", to: "sc-y0-0924-valley-end.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
+  - {id: "pr-0924-valley-sasuke", entity_id: "c-sasuke", from: "sc-y0-0924-valley-end.start", to: "sc-y0-0924-valley-end.end", basis: "source", evidence_ids: ["evd-v10-24sep"], review: "pending"}
