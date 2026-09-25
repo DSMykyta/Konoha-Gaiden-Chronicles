@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-y0-0701-gaara-first-tower"
+continuity_id: "main"
+title: "Команда Ґаари першою дістається вежі"
+location_id: "loc-forest-death"
+placement: {anchor_id: "ta-y0-0701", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0701-gaara-kills-team-shigure"
+    legacy_ids: ["V10-000040-G"]
+    title: "Ґаара вбиває Команду Шіґуре"
+    text: "Ґаара безжально знищує команду Шіґуре під час боротьби за сувій."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+      - {entity_id: "c-shigure", role: "affected", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+    focus_teams: ["team-shigure"]
+    evidence_ids: ["evd-v10-000040-G", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-sand-team-gets-scroll"
+    legacy_ids: ["V10-000040-G"]
+    title: "Команда Суни здобуває потрібний сувій"
+    text: "Після перемоги команда Ґаари отримує другий потрібний сувій."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-G", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-sand-team-reaches-tower"
+    legacy_ids: ["V10-000040-G"]
+    title: "Команда Суни встановлює рекорд проходження"
+    text: "Ґаара, Темарі й Канкуро дістаються центральної вежі Лісу Смерті за рекордний час."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000040-G", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0701-gaara-1", kind: "before", a: "ev-y0-0701-gaara-kills-team-shigure", b: "ev-y0-0701-sand-team-gets-scroll", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000040-G"]}
+  - {id: "rel-0701-gaara-2", kind: "before", a: "ev-y0-0701-sand-team-gets-scroll", b: "ev-y0-0701-sand-team-reaches-tower", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000040-G"]}
+presence: []
