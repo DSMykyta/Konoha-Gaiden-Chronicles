@@ -1,0 +1,43 @@
+schema_version: 1
+id: "sc-y0-0928-orochimaru-residence-infiltration"
+continuity_id: "main"
+title: "Група проникає до покинутої резиденції Орочімару"
+location_id: "loc-land-of-rice-fields"
+placement: {anchor_id: "ta-y0-0928", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0928-group-enters-orochimaru-residence"
+    legacy_ids: ["V10-000127"]
+    title: "Джирая, Наруто, Сакура й Сасаме входять до резиденції"
+    text: "Джирая, Наруто, Сакура й Сасаме проникають у покинуту резиденцію Орочімару в пошуках слідів Араші та Саске."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasame", role: "participant", mode: "physical"}
+      - {entity_id: "c-arashi", role: "target", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "target", mode: "remote"}
+      - {entity_id: "c-orochimaru", role: "owner", mode: "remote"}
+    evidence_ids: ["evd-v10-000127", "evd-anime-136-140"]
+  - id: "ev-y0-0928-kabuto-traps-group"
+    legacy_ids: ["V10-000127"]
+    title: "Кабуто заводить групу в пастки"
+    text: "Усередині резиденції Кабуто спрямовує групу через серію підготовлених пасток."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasame", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000127", "evd-anime-136-140"]
+relations:
+  - {id: "rel-0928-residence-1", kind: "before", a: "ev-y0-0928-group-enters-orochimaru-residence", b: "ev-y0-0928-kabuto-traps-group", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+presence: []
