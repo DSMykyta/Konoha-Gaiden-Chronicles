@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0906-waterfall-resists-suien"
+continuity_id: "main"
+title: "Наруто й Саске чинять опір Суїєну"
+location_id: "loc-takigakure"
+placement: {anchor_id: "ta-y0-0906", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0906-naruto-sasuke-resist-suien"
+    legacy_ids: ["V10-000095"]
+    title: "Наруто й Саске вступають у бій із Суїєном"
+    text: "Наруто й Саске чинять опір Суїєну під час захоплення Такіґакуре."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-suien", role: "focus", mode: "physical"}
+      - {entity_id: "c-shibuki", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000095", "evd-ova-waterfall"]
+  - id: "ev-y0-0906-naruto-inspires-shibuki"
+    legacy_ids: ["V10-000095"]
+    title: "Приклад Наруто повертає Шібукі мужність"
+    text: "Дії Наруто допомагають Шібукі перебороти страх і повернутися до захисту села."
+    origin: "O"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-shibuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-suien", role: "threat", mode: "physical"}
+    evidence_ids: ["evd-v10-000095", "evd-ova-waterfall"]
+relations:
+  - {id: "rel-0906-waterfall-1", kind: "before", a: "ev-y0-0906-naruto-sasuke-resist-suien", b: "ev-y0-0906-naruto-inspires-shibuki", basis: "source", review: "pending", evidence_ids: ["evd-ova-waterfall"]}
+presence: []
