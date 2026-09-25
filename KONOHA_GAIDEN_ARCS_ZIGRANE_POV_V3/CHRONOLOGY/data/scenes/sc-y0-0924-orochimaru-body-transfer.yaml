@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0924-orochimaru-body-transfer"
+continuity_id: "main"
+title: "Орочімару змінює тіло без Саске"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-orochimaru-cannot-wait-sasuke"
+    legacy_ids: ["V10-000122-D"]
+    title: "Орочімару більше не може чекати на Саске"
+    text: "Через стан свого тіла Орочімару більше не може чекати на прибуття Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "expected_target", mode: "remote"}
+      - {entity_id: "c-genyumaru", role: "available_vessel", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-D"]
+  - id: "ev-y0-0924-orochimaru-transfers-into-genyumaru"
+    legacy_ids: ["V10-000122-D"]
+    title: "Орочімару використовує Ґеньюмару як нове тіло"
+    text: "Орочімару проводить Перенесення Живого Тіла, використовуючи Ґеньюмару замість Саске."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-genyumaru", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "unavailable_target", mode: "remote"}
+    evidence_ids: ["evd-v10-000122-D"]
+relations:
+  - {id: "rel-0924-orochimaru-1", kind: "before", a: "ev-y0-0924-orochimaru-cannot-wait-sasuke", b: "ev-y0-0924-orochimaru-transfers-into-genyumaru", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000122-D"]}
+presence:
+  - {id: "pr-0924-orochimaru-orochimaru", entity_id: "c-orochimaru", from: "sc-y0-0924-orochimaru-body-transfer.start", to: "sc-y0-0924-orochimaru-body-transfer.end", basis: "imported", evidence_ids: ["evd-v10-000122-D"], review: "accepted"}
+  - {id: "pr-0924-orochimaru-genyumaru", entity_id: "c-genyumaru", from: "sc-y0-0924-orochimaru-body-transfer.start", to: "sc-y0-0924-orochimaru-body-transfer.end", basis: "imported", evidence_ids: ["evd-v10-000122-D"], review: "accepted"}
