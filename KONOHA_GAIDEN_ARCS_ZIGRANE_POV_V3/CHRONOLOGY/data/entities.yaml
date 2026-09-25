@@ -972,6 +972,52 @@ entities:
     name: "Kusune"
     aliases:
       - "Кусуне"
+  - id: "c-minato"
+    kind: "person"
+    name: "Minato Namikaze"
+    aliases:
+      - "Мінато"
+      - "Мінато Намікадзе"
+  - id: "c-hanare"
+    kind: "person"
+    name: "Hanare"
+    aliases:
+      - "Ханаре"
+  - id: "c-tatewaki"
+    kind: "person"
+    name: "Tatewaki"
+    aliases:
+      - "Татевакі"
+  - id: "c-chiyo"
+    kind: "person"
+    name: "Chiyo"
+    aliases:
+      - "Чійо"
+  - id: "c-shu"
+    kind: "person"
+    name: "Shū"
+    aliases:
+      - "Шю"
+  - id: "c-yamato"
+    kind: "person"
+    name: "Yamato"
+    aliases:
+      - "Ямато"
+  - id: "c-sasori"
+    kind: "person"
+    name: "Sasori"
+    aliases:
+      - "Сасорі"
+  - id: "c-deidara"
+    kind: "person"
+    name: "Deidara"
+    aliases:
+      - "Дейдара"
+  - id: "c-naho"
+    kind: "person"
+    name: "Naho"
+    aliases:
+      - "Нахо"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
