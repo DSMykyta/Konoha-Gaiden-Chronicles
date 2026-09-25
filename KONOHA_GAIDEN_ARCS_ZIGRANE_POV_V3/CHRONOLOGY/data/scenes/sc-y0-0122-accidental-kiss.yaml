@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0122-accidental-kiss"
+continuity_id: "main"
+title: "Випадковий поцілунок Наруто й Саске"
+location_id: "loc-academy-classroom"
+placement: {anchor_id: "ta-team-formation", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0122-naruto-sasuke-kiss"
+    legacy_ids: ["V10-000005"]
+    title: "Наруто випадково цілує Саске"
+    text: "Перед розподілом команд однокласник штовхає Наруто, і той випадково цілує Саске; клас реагує."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-manga-team7-formation"]
+relations: []
+presence:
+  - {id: "pr-0122-kiss-naruto", entity_id: "c-naruto", from: "sc-y0-0122-accidental-kiss.start", to: "sc-y0-0122-accidental-kiss.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
+  - {id: "pr-0122-kiss-sasuke", entity_id: "c-sasuke", from: "sc-y0-0122-accidental-kiss.start", to: "sc-y0-0122-accidental-kiss.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
