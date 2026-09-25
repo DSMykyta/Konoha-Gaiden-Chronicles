@@ -1,0 +1,32 @@
+schema_version: 1
+id: "sc-y0-0801-invasion-begins-arena"
+continuity_id: "main"
+title: "Початок нападу на Коноху"
+location_id: "loc-chunin-finals-arena"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-kabuto-casts-arena-genjutsu"
+    legacy_ids: ["V10-000065"]
+    title: "Кабуто накриває арену масовим гендзюцу"
+    text: "Під час фіналу Кабуто запускає масове гендзюцу над глядачами арени."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000065", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-sand-sound-invasion-starts"
+    legacy_ids: ["V10-000065"]
+    title: "Сили Суни й Звуку починають скоординований напад"
+    text: "Одночасно з гендзюцу сили Суни та Звуку переходять до відкритого нападу на Коноху."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    evidence_ids: ["evd-v10-000065", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+relations:
+  - {id: "rel-0801-invasion-arena-1", kind: "intersects", a: "ev-y0-0801-kabuto-casts-arena-genjutsu", b: "ev-y0-0801-sand-sound-invasion-starts", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+presence: []
