@@ -1,0 +1,58 @@
+schema_version: 1
+id: "sc-y0-0920-shu-infiltration"
+continuity_id: "main"
+title: "Команда виконує підміну Шю"
+location_id: null
+placement: {anchor_id: "ta-y0-0920", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0920-choji-cooking-contest"
+    legacy_ids: ["V10-000114"]
+    title: "Чоджі проходить кулінарне змагання"
+    text: "У межах операції Чоджі проходить кулінарне змагання."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-choji", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000114", "evd-shippuden-309-310"]
+  - id: "ev-y0-0920-ino-controls-shu"
+    legacy_ids: ["V10-000114"]
+    title: "Іно бере Шю під контроль"
+    text: "Іно використовує свою техніку контролю, щоб узяти Шю під контроль у межах плану."
+    origin: "R"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-ino", role: "focus", mode: "physical"}
+      - {entity_id: "c-shu", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000114", "evd-shippuden-309-310"]
+  - id: "ev-y0-0920-naruto-impersonates-shu"
+    legacy_ids: ["V10-000114"]
+    title: "Наруто видає себе за Шю"
+    text: "Після підміни Наруто маскується під Шю, щоб відвести увагу від справжнього спадкоємця."
+    origin: "R"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-shu", role: "identity_basis", mode: "remote"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+    evidence_ids: ["evd-v10-000114", "evd-shippuden-309-310"]
+relations:
+  - {id: "rel-0920-shu-1", kind: "before", a: "ev-y0-0920-choji-cooking-contest", b: "ev-y0-0920-ino-controls-shu", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-309-310"]}
+  - {id: "rel-0920-shu-2", kind: "before", a: "ev-y0-0920-ino-controls-shu", b: "ev-y0-0920-naruto-impersonates-shu", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-309-310"]}
+presence: []
