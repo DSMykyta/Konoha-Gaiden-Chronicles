@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-1109-kagetsu-fake-funeral-reveal"
+continuity_id: "main"
+title: "Похорон виявляється постановкою Тобея Каґецу"
+location_id: "loc-kagetsu-funeral"
+placement: {anchor_id: "ta-y0-1109", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1109-family-tries-make-proxy-laugh"
+    legacy_ids: ["V10-000177"]
+    title: "Родичі Фути намагаються розсмішити Наруто"
+    text: "Під час церемонії родичі, зацікавлені в спадщині, послідовно намагаються змусити підставного «Футу» засміятися й втратити право на гроші."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "proxy", mode: "physical"}
+      - {entity_id: "c-futa-kagetsu", role: "hidden_client", mode: "physical"}
+      - {entity_id: "c-tsukiko-kagetsu", role: "participant", mode: "physical"}
+      - {entity_id: "c-mai-kagetsu", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+  - id: "ev-y0-1109-shino-discovers-tobei-alive"
+    legacy_ids: ["V10-000177"]
+    title: "Шіно знаходить живого Тобея"
+    text: "Не беручи участі в церемонії, Шіно з'ясовує, що Тобей Каґецу насправді не помер і сам спостерігає за постановкою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-tobei-kagetsu", role: "revealed_alive", mode: "physical"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+  - id: "ev-y0-1109-tobei-reveals-family-test"
+    legacy_ids: ["V10-000177"]
+    title: "Тобей відкриває, що фальшивий похорон був перевіркою родини"
+    text: "Тобей з'являється живим і пояснює, що інсценував смерть, аби змусити дітей знову сміятися разом і перевірити, що зробило багатство з їхньою родиною."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-tobei-kagetsu", role: "focus", mode: "physical"}
+      - {entity_id: "c-futa-kagetsu", role: "participant", mode: "physical"}
+      - {entity_id: "c-mai-kagetsu", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsukiko-kagetsu", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+  - id: "ev-y0-1109-shino-warns-naruto-about-laughter"
+    legacy_ids: ["V10-000177"]
+    title: "Шіно вимагає від Наруто не розповідати про його сміх"
+    text: "Після завершення місії Шіно недвозначно дає Наруто зрозуміти, що не хоче, аби історія про його неконтрольований сміх стала відомою іншим."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+relations:
+  - {id: "rel-1109-kagetsu-reveal-1", kind: "before", a: "ev-y0-1109-family-tries-make-proxy-laugh", b: "ev-y0-1109-tobei-reveals-family-test", basis: "source", review: "accepted", evidence_ids: ["evd-anime-186"]}
+  - {id: "rel-1109-kagetsu-reveal-2", kind: "before", a: "ev-y0-1109-shino-discovers-tobei-alive", b: "ev-y0-1109-tobei-reveals-family-test", basis: "source", review: "accepted", evidence_ids: ["evd-anime-186"]}
+  - {id: "rel-1109-kagetsu-reveal-3", kind: "before", a: "ev-y0-1109-tobei-reveals-family-test", b: "ev-y0-1109-shino-warns-naruto-about-laughter", basis: "source", review: "accepted", evidence_ids: ["evd-anime-186"]}
+presence: []
