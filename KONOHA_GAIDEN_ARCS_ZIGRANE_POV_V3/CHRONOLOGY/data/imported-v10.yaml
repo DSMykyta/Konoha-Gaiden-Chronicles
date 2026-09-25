@@ -1227,7 +1227,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000039"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1252,7 +1252,7 @@ records:
       SupportingSources: "A [еп. 20–23] — повернення Команди 7, висунення на іспит, знайомство з командами Суни, Звуку та іншими учасниками."
       Review: ""
   - legacy_id: "V10-000039-B"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1277,7 +1277,7 @@ records:
       SupportingSources: "A [еп. 20–23] — повернення Команди 7, висунення на іспит, знайомство з командами Суни, Звуку та іншими учасниками."
       Review: ""
   - legacy_id: "V10-000039-C"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1302,7 +1302,7 @@ records:
       SupportingSources: "A [еп. 20–23] — повернення Команди 7, висунення на іспит, знайомство з командами Суни, Звуку та іншими учасниками."
       Review: ""
   - legacy_id: "V10-000039-D"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
@@ -1327,7 +1327,7 @@ records:
       SupportingSources: "A [еп. 20–23] — повернення Команди 7, висунення на іспит, знайомство з командами Суни, Звуку та іншими учасниками."
       Review: ""
   - legacy_id: "V10-000039-E"
-    migration_status: "pending"
+    migration_status: "superseded"
     replacement_ids: []
     original:
       Year: "0"
@@ -1352,7 +1352,7 @@ records:
       SupportingSources: "A [еп. 20–23] — повернення Команди 7, висунення на іспит, знайомство з командами Суни, Звуку та іншими учасниками."
       Review: ""
   - legacy_id: "V10-000039-F"
-    migration_status: "pending"
+    migration_status: "migrated"
     replacement_ids: []
     original:
       Year: "0"
