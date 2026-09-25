@@ -594,3 +594,11 @@ anchors:
     evidence_ids: ["evd-v10-000121"]
     review: "accepted"
     reason: "Working project date for the Sasuke Retrieval Team departure and first pursuit battles."
+  - id: "ta-y0-0924"
+    date: {year: 0, month: 9, day: 24}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000122"]
+    review: "accepted"
+    reason: "Working project date for the dense middle and climax of the Sasuke Retrieval mission."
