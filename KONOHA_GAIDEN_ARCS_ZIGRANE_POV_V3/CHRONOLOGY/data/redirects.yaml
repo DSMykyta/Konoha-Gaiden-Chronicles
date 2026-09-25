@@ -915,3 +915,59 @@ redirects:
     replacement_ids:
       - "ev-y0-0804-itachi-kisame-find-naruto"
     reason: "Itachi and Kisame locating Naruto migrated as its own scene."
+  - legacy_id: "V10-000069-B"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0801-shikamaru-delays-sound"
+    reason: "Shikamaru's delaying action migrated as a separate pursuit-branch scene."
+  - legacy_id: "V10-000069-C"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0801-shino-fights-kankuro"
+    reason: "Shino versus Kankuro migrated as a separate pursuit-branch scene; Sasuke and Gaara marked remote."
+  - legacy_id: "V10-000073-B"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0803-iruka-explains-will-fire"
+    reason: "Iruka/Konohamaru post-funeral scene migrated."
+  - legacy_id: "V10-000073-C"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0803-council-offers-hokage-to-jiraiya"
+      - "ev-y0-0803-jiraiya-refuses-and-nominates-tsunade"
+    reason: "Council offer and Jiraiya's refusal/Tsunade nomination separated; Tsunade is remote."
+  - legacy_id: "V10-000073-D"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0803-asuma-kurenai-face-akatsuki"
+      - "ev-y0-0803-kakashi-enters-akatsuki-fight"
+      - "ev-y0-0803-itachi-tsukuyomi-kakashi"
+      - "ev-y0-0803-guy-forces-akatsuki-retreat"
+    reason: "Konoha Akatsuki fight decomposed; Naruto is their target, not physically present."
+  - legacy_id: "V10-000073-E"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0803-naruto-jiraiya-leave-konoha"
+    reason: "Naruto and Jiraiya departure migrated; Tsunade is the remote target of the search."
+  - legacy_id: "V10-000076-B"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0804-sasuke-attacks-itachi"
+      - "ev-y0-0804-itachi-breaks-sasuke-arm-tsukuyomi"
+    reason: "Sasuke's attack and Itachi's counter/Tsukuyomi separated within the same inn scene."
+  - legacy_id: "V10-000076-C"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0804-jiraiya-traps-akatsuki"
+    reason: "Jiraiya trapping Akatsuki merged into the continuous inn confrontation scene."
+  - legacy_id: "V10-000076-D"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-0804-itachi-amaterasu-escape"
+    reason: "Amaterasu escape merged into the continuous inn confrontation scene."
+  - legacy_id: "V10-000076-E"
+    status: "superseded"
+    replacement_ids:
+      - "ev-y0-0804-sasuke-left-unconscious"
+      - "ev-y0-0804-naruto-jiraiya-continue-tsunade-search"
+    reason: "Sasuke's condition and Naruto/Jiraiya continuing the search separated."
