@@ -1,0 +1,51 @@
+schema_version: 1
+id: "sc-y0-1102-postman-chase-peace"
+continuity_id: "main"
+title: "Наруто й Джирая не встигають перехопити рукопис, але він несподівано приносить мир"
+location_id: "loc-land-of-fangs"
+placement: {anchor_id: "ta-y0-1102-courier", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1102-naruto-jiraiya-chase-courier"
+    legacy_ids: ["V10-000168"]
+    title: "Наруто й Джирая женуться за кур'єром"
+    text: "Розуміючи, що абсурдний рукопис можуть сприйняти як образу й привід до війни, Наруто та Джирая намагаються перехопити професійного кур'єра."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-fang-daimyo", role: "target_recipient", mode: "remote"}
+    evidence_ids: ["evd-v10-000168", "evd-anime-177"]
+  - id: "ev-y0-1102-fang-daimyo-receives-icha-icha-manuscript"
+    legacy_ids: ["V10-000168"]
+    title: "Даймьо Іклів отримує помилковий рукопис"
+    text: "Наруто й Джирая не зупиняють доставку: замість мирної угоди даймьо Іклів отримує саморобний рукопис «Іча-Іча»."
+    origin: "F"
+    extent: "instant"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-fang-daimyo", role: "recipient", mode: "physical"}
+      - {entity_id: "c-naruto", role: "cause", mode: "remote"}
+      - {entity_id: "c-jiraiya", role: "author_identity", mode: "remote"}
+    evidence_ids: ["evd-v10-000168", "evd-anime-177"]
+  - id: "ev-y0-1102-manuscript-mistaken-for-peace-gift"
+    legacy_ids: ["V10-000168"]
+    title: "Даймьо Іклів сприймає книгу як дружній подарунок і приймає мир"
+    text: "Оскільки даймьо Іклів є шанувальником серії Джираї, він тлумачить рукопис як особливий дар від Країни Кігтів і погоджується на мир замість війни."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-fang-daimyo", role: "focus", mode: "physical"}
+      - {entity_id: "c-claw-daimyo", role: "peace_counterparty", mode: "remote"}
+      - {entity_id: "c-naruto", role: "indirect_cause", mode: "remote"}
+      - {entity_id: "c-jiraiya", role: "indirect_cause", mode: "remote"}
+    evidence_ids: ["evd-v10-000168", "evd-anime-177"]
+relations:
+  - {id: "rel-1102-postman-peace-1", kind: "before", a: "ev-y0-1102-naruto-jiraiya-chase-courier", b: "ev-y0-1102-fang-daimyo-receives-icha-icha-manuscript", basis: "source", review: "accepted", evidence_ids: ["evd-anime-177"]}
+  - {id: "rel-1102-postman-peace-2", kind: "before", a: "ev-y0-1102-fang-daimyo-receives-icha-icha-manuscript", b: "ev-y0-1102-manuscript-mistaken-for-peace-gift", basis: "source", review: "accepted", evidence_ids: ["evd-anime-177"]}
+presence: []
