@@ -1,0 +1,23 @@
+schema_version: 1
+id: "sc-y0-0826-naruto-final-rasengan-stage"
+continuity_id: "main"
+title: "Наруто починає фінальний етап Расенґана"
+location_id: null
+placement: {anchor_id: "ta-y0-0826", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0826-naruto-combines-rasengan-components"
+    legacy_ids: ["V10-000080"]
+    title: "Наруто поєднує обертання, силу й утримання"
+    text: "Наруто починає фінальний етап Расенґана, намагаючись одночасно поєднати обертання, силу та утримання чакри."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000080", "evd-manga-post-crush-search"]
+relations: []
+presence:
+  - {id: "pr-0826-rasengan-naruto", entity_id: "c-naruto", from: "sc-y0-0826-naruto-final-rasengan-stage.start", to: "sc-y0-0826-naruto-final-rasengan-stage.end", basis: "imported", evidence_ids: ["evd-v10-000080"], review: "accepted"}
