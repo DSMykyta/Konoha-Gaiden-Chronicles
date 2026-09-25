@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1002-naruto-vs-fujin-raijin"
+continuity_id: "main"
+title: "Наруто стикається з Фуджіном і Райджіном"
+location_id: "loc-land-of-fire"
+placement: {anchor_id: "ta-y0-1002", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1002-brothers-overpower-naruto"
+    legacy_ids: ["V10-000131"]
+    title: "Фуджін і Райджін переважають Наруто грубою силою"
+    text: "Наруто намагається затримати Фуджіна й Райджіна, але звичайні атаки майже не діють на їхню надзвичайну фізичну силу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-fujin", role: "opponent", mode: "physical"}
+      - {entity_id: "c-raijin", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000131", "evd-anime-142-147"]
+  - id: "ev-y0-1002-team10-takes-over-brothers"
+    legacy_ids: ["V10-000131", "V10-000132"]
+    title: "Іно–Шіка–Чо перебирають стримування братів"
+    text: "Шікамару, Іно й Чоджі прибувають на допомогу та беруть на себе Фуджіна й Райджіна, звільняючи Наруто для переслідування Мідзукі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-fujin", role: "opponent", mode: "physical"}
+      - {entity_id: "c-raijin", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000131", "evd-v10-000132", "evd-anime-142-147"]
+relations:
+  - {id: "rel-1002-brothers-1", kind: "before", a: "ev-y0-1002-brothers-overpower-naruto", b: "ev-y0-1002-team10-takes-over-brothers", basis: "source", review: "accepted", evidence_ids: ["evd-anime-142-147"]}
+presence: []
