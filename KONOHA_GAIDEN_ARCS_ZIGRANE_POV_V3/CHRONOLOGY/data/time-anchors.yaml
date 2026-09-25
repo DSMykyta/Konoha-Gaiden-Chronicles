@@ -586,3 +586,11 @@ anchors:
     evidence_ids: ["evd-v10-000117"]
     review: "accepted"
     reason: "Working project date for Sasuke's hospital conflict, Sound Four approach and departure from Konoha."
+  - id: "ta-y0-0923"
+    date: {year: 0, month: 9, day: 23}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000121"]
+    review: "accepted"
+    reason: "Working project date for the Sasuke Retrieval Team departure and first pursuit battles."
