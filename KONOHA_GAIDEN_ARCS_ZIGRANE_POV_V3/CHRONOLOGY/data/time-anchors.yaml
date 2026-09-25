@@ -986,3 +986,51 @@ anchors:
     evidence_ids: ["evd-v10-000177"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Funeral Proxy Mission."
+  - id: "ta-y0-1110-greens"
+    date: {year: 0, month: 11, day: 10}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000178"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Land of Greens escort opening."
+  - id: "ta-alt-y0-1110-phantom"
+    date: {year: 0, month: 11, day: 10}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000179"]
+    review: "accepted"
+    reason: "Alternative game placement only; Phantom Fortress has no canonical calendar date."
+  - id: "ta-y0-1111-greens"
+    date: {year: 0, month: 11, day: 11}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000180"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Ruiga battle."
+  - id: "ta-y0-1112-greens"
+    date: {year: 0, month: 11, day: 12}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000182"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Jiga battle and Haruna development."
+  - id: "ta-y0-1113-greens"
+    date: {year: 0, month: 11, day: 13}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000184"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Renga finale."
+  - id: "ta-y0-1114-fuku"
+    date: {year: 0, month: 11, day: 14}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000185"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Fuku matchmaking mission."
