@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-y0-0905-waterfall-shibuki-crisis"
+continuity_id: "main"
+title: "Шібукі паралізує страх перед Суїєном"
+location_id: "loc-takigakure"
+placement: {anchor_id: "ta-y0-0905", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0905-shibuki-frozen-by-fear"
+    legacy_ids: ["V10-000092"]
+    title: "Шібукі не може очолити опір"
+    text: "Під час захоплення села Шібукі паралізує страх."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shibuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-suien", role: "threat", mode: "remote"}
+    evidence_ids: ["evd-v10-000092", "evd-ova-waterfall"]
+  - id: "ev-y0-0905-suien-seeks-hero-water"
+    legacy_ids: ["V10-000092"]
+    title: "Суїєн прагне заволодіти Водою Героїв"
+    text: "Метою Суїєна є Вода Героїв, яка різко підсилює чакру ціною життєвої сили."
+    origin: "O"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-suien", role: "focus", mode: "physical"}
+      - {entity_id: "c-shibuki", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000092", "evd-ova-waterfall"]
+relations:
+  - {id: "rel-0905-waterfall-crisis-1", kind: "intersects", a: "ev-y0-0905-shibuki-frozen-by-fear", b: "ev-y0-0905-suien-seeks-hero-water", basis: "source", review: "pending", evidence_ids: ["evd-ova-waterfall"]}
+presence: []
