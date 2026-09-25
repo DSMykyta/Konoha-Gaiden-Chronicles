@@ -179,14 +179,14 @@ V10-000094	0	06.09	F	superseded	ev-y0-0906-sasuke-delays-aoi;ev-y0-0906-naruto-d
 V10-000095	0	06.09	O	superseded	ev-y0-0906-naruto-sasuke-resist-suien;ev-y0-0906-naruto-inspires-shibuki;ev-y0-0906-shibuki-leads-defense;ev-y0-0906-waterfall-attack-repelled	Waterfall defense decomposed.
 V10-000096	0	06.09	N	migrated	ev-alt-y0-0906-waterfall-novel-ending	Novel ending retained in ALT continuity.
 V10-000097	0	07.09	F	superseded	ev-y0-0907-naruto-breaks-thunder-sword;ev-y0-0907-naruto-defeats-aoi;ev-y0-0907-idate-reaches-modoroki-first;ev-y0-0907-idate-secures-wasabi-victory;ev-y0-0907-jirocho-ends-feud;ev-y0-0907-idate-restores-faith-shinobi;ev-y0-0907-idate-reconciles-ibiki	Tea mission finale decomposed into combat, race finish and reconciliation.
-V10-000098	0	08.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000099	0	09.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000100	0	09.09	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000101	0	10.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000102	0	10.09	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000103	0	11.09	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000104	0	12.09	O	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000105	0	12.09	G	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000098	0	08.09	F	superseded	ev-y0-0908-team7-returns-tea;ev-y0-0908-naruto-sasuke-rivalry-intensifies	Tea mission return and rivalry aftermath separated.
+V10-000099	0	09.09	O	superseded	ev-alt-y0-0909-konoha-teams-sports-festival;ev-alt-y0-0909-naruto-toilet-running-gag	Sports Festival OVA kept in gag ALT continuity and decomposed.
+V10-000100	0	09.09	G	migrated	ev-alt-y0-0909-ultimate-ninja2-special-seal-threat	Ultimate Ninja 2 ALT threat opening migrated.
+V10-000101	0	10.09	O	migrated	ev-alt-y0-0910-genin-compete-for-genie-bottle	Genie OVA kept as separate gag ALT continuity.
+V10-000102	0	10.09	G	migrated	ev-alt-y0-0910-orochimaru-kabuto-use-game-seal	Ultimate Ninja 2 seal-battle phase migrated.
+V10-000103	0	11.09	G	migrated	ev-alt-y0-0911-naruto-stops-ultimate-ninja2-plan	Ultimate Ninja 2 ending migrated.
+V10-000104	0	12.09	O	superseded	ev-alt-y0-0912-tsunade-crystal-tournament;ev-alt-y0-0912-naruto-targets-sasuke-kakashi	Jōnin vs Genin OVA tournament decomposed.
+V10-000105	0	12.09	G	merged	ev-alt-y0-0912-tsunade-crystal-tournament;ev-alt-y0-0912-naruto-targets-sasuke-kakashi	Ultimate Ninja 3 expands the same ALT tournament and is not a second historical event.
 V10-000106	0	13.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000107	0	14.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000108	0	15.09	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
