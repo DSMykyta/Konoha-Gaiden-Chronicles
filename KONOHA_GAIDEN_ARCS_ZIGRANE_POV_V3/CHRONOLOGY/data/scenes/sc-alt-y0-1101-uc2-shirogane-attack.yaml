@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-alt-y0-1101-uc2-shirogane-attack"
+continuity_id: "alt-game-uzumaki-chronicles-2"
+title: "Маріонетки Шіроґане атакують Коноху за останньою Сферою Духу"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-alt-y0-1101-uc2", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1101-kankuro-warns-naruto-shirogane"
+    legacy_ids: ["V10-000167"]
+    title: "Канкуро попереджає Наруто про маріонеток Шіроґане"
+    text: "В альтернативній ігровій гілці Канкуро перехоплює Наруто дорогою до Конохи й повідомляє про ходячі маріонетки, що вже забрали чотири з п'яти Сфер Духу."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kankuro", role: "source", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "group-shirogane", role: "subject", mode: "remote"}
+      - {entity_id: "artifact-spirit-orbs", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000167", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1101-puppet-walkers-attack-konoha"
+    legacy_ids: ["V10-000167"]
+    title: "Ходячі маріонетки атакують Коноху"
+    text: "Наруто й Канкуро прибувають занадто пізно, щоб попередити напад: маріонетки Шіроґане вже шукають останню Сферу Духу в Конохі."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+      - {entity_id: "group-shirogane", role: "attacker", mode: "physical"}
+      - {entity_id: "artifact-spirit-orbs", role: "target", mode: "remote"}
+    evidence_ids: ["evd-v10-000167", "evd-game-uzumaki-chronicles-2"]
+  - id: "ev-alt-y0-1101-kakashi-helps-repel-lizard-puppet"
+    legacy_ids: ["V10-000167"]
+    title: "Какаші допомагає відбити велику маріонетку"
+    text: "Під час нападу Какаші приєднується до Наруто й Канкуро проти великої бойової маріонетки."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+      - {entity_id: "group-shirogane", role: "opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000167", "evd-game-uzumaki-chronicles-2"]
+relations:
+  - {id: "rel-alt-1101-uc2-1", kind: "before", a: "ev-alt-y0-1101-kankuro-warns-naruto-shirogane", b: "ev-alt-y0-1101-puppet-walkers-attack-konoha", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+  - {id: "rel-alt-1101-uc2-2", kind: "before", a: "ev-alt-y0-1101-puppet-walkers-attack-konoha", b: "ev-alt-y0-1101-kakashi-helps-repel-lizard-puppet", basis: "source", review: "accepted", evidence_ids: ["evd-game-uzumaki-chronicles-2"]}
+presence: []
