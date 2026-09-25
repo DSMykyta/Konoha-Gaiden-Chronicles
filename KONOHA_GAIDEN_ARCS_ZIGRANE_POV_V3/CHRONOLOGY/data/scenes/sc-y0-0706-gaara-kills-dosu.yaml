@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-0706-gaara-kills-dosu"
+continuity_id: "main"
+title: "Ґаара вбиває Досу"
+location_id: null
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+day_part: "night"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-dosu-attacks-gaara"
+    legacy_ids: ["V10-000049"]
+    title: "Досу намагається усунути Ґаару"
+    text: "Уночі Досу намагається вбити Ґаару до фінального етапу."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-dosu", role: "focus", mode: "physical"}
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000049", "evd-manga-ch88-97"]
+  - id: "ev-y0-0706-gaara-kills-dosu"
+    legacy_ids: ["V10-000049"]
+    title: "Ґаара вбиває Досу"
+    text: "Ґаара вбиває Досу під час нічної сутички."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+      - {entity_id: "c-dosu", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000049", "evd-manga-ch88-97"]
+relations:
+  - {id: "rel-0706-dosu-1", kind: "before", a: "ev-y0-0706-dosu-attacks-gaara", b: "ev-y0-0706-gaara-kills-dosu", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
+presence:
+  - {id: "pr-0706-dosu-dosu", entity_id: "c-dosu", from: "sc-y0-0706-gaara-kills-dosu.start", to: "sc-y0-0706-gaara-kills-dosu.end", basis: "source", evidence_ids: ["evd-v10-000049"], review: "accepted"}
+  - {id: "pr-0706-dosu-gaara", entity_id: "c-gaara", from: "sc-y0-0706-gaara-kills-dosu.start", to: "sc-y0-0706-gaara-kills-dosu.end", basis: "source", evidence_ids: ["evd-v10-000049"], review: "accepted"}
