@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-1026-kaima-mission-departure"
+continuity_id: "main"
+title: "Анко веде Наруто, Іно й Шіно до Країни Моря"
+location_id: "loc-land-of-sea"
+placement: {anchor_id: "ta-y0-1026", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1026-anko-leads-kaima-capture-team"
+    legacy_ids: ["V10-000160"]
+    title: "Анко очолює місію проти «морського демона»"
+    text: "Анко отримує місію до Країни Моря й веде Наруто, Іно та Шіно; завдання пов'язане з нападами на урядові судна й істотою, яку місцеві називають каймою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "leader", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000160", "evd-anime-169-173"]
+  - id: "ev-y0-1026-anko-memories-resurface-land-sea"
+    legacy_ids: ["V10-000160"]
+    title: "Повернення до островів пробуджує спогади Анко про Орочімару"
+    text: "З наближенням до Країни Моря в Анко повертаються уривки пам'яті про час із Орочімару та про його експерименти на цих островах."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "memory_subject", mode: "memory"}
+    evidence_ids: ["evd-v10-000160", "evd-anime-169-173"]
+relations:
+  - {id: "rel-1026-kaima-depart-1", kind: "before", a: "ev-y0-1026-anko-leads-kaima-capture-team", b: "ev-y0-1026-anko-memories-resurface-land-sea", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
+presence: []
