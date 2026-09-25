@@ -1,0 +1,47 @@
+schema_version: 1
+id: "sc-y0-0924-lee-vs-kimimaro"
+continuity_id: "main"
+title: "Рок Лі змінює Наруто в бою з Кімімаро"
+location_id: null
+placement: {anchor_id: "ta-y0-0924", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0924-lee-leaves-hospital"
+    legacy_ids: ["V10-000122-E"]
+    title: "Лі залишає лікарню після операції"
+    text: "Рок Лі, ще відновлюючись після операції, залишає лікарню й вирушає слідом за загоном."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-E"]
+  - id: "ev-y0-0924-lee-relieves-naruto-kimimaro"
+    legacy_ids: ["V10-000122-E"]
+    title: "Лі підміняє Наруто проти Кімімаро"
+    text: "Лі прибуває до Наруто й бере на себе бій із Кімімаро, дозволяючи Наруто продовжити погоню."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kimimaro", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-E"]
+  - id: "ev-y0-0924-lee-drunken-fist"
+    legacy_ids: ["V10-000122-E"]
+    title: "Випадково випитий алкоголь переводить Лі в П’яний Кулак"
+    text: "Під час бою Лі випадково випиває алкоголь і переходить у стиль П’яного Кулака."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-kimimaro", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000122-E"]
+relations:
+  - {id: "rel-0924-lee-1", kind: "before", a: "ev-y0-0924-lee-leaves-hospital", b: "ev-y0-0924-lee-relieves-naruto-kimimaro", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-E"]}
+  - {id: "rel-0924-lee-2", kind: "before", a: "ev-y0-0924-lee-relieves-naruto-kimimaro", b: "ev-y0-0924-lee-drunken-fist", basis: "source", review: "pending", evidence_ids: ["evd-v10-000122-E"]}
+presence: []
