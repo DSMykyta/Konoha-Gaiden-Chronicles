@@ -962,3 +962,27 @@ anchors:
     evidence_ids: ["evd-v10-000174"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Star Guard Mission finale."
+  - id: "ta-y0-1107"
+    date: {year: 0, month: 11, day: 7}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000175"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Akamaru Monitoring Mission."
+  - id: "ta-y0-1108"
+    date: {year: 0, month: 11, day: 8}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000176"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Onbaa incident."
+  - id: "ta-y0-1109"
+    date: {year: 0, month: 11, day: 9}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000177"]
+    review: "accepted"
+    reason: "Working project date inherited from v9/v10 for the Funeral Proxy Mission."
