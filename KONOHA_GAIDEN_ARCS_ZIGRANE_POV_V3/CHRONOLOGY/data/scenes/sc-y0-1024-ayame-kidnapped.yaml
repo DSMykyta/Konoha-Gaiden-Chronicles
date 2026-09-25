@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1024-ayame-kidnapped"
+continuity_id: "main"
+title: "Ніндзя-кухарі викрадають Аяме заради рецепту Ічіраку"
+location_id: "loc-ichiraku"
+placement: {anchor_id: "ta-y0-1024", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1024-naruto-choji-find-ichiraku-closed"
+    legacy_ids: ["V10-000159"]
+    title: "Наруто й Чоджі знаходять Ічіраку зачиненим"
+    text: "Наруто й Чоджі приходять по рамен, але знаходять Ічіраку зачиненим і Теучі зайнятим новою локшиною."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-teuchi", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000159", "evd-anime-168"]
+  - id: "ev-y0-1024-teuchi-reveals-ayame-kidnapping"
+    legacy_ids: ["V10-000159"]
+    title: "Теучі розповідає, що Аяме викрали ніндзя-кухарі"
+    text: "Теучі пояснює, що група ніндзя-кухарів на чолі з Хаккаку утримує Аяме й вимагає його секретні рецепти."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-teuchi", role: "source", mode: "physical"}
+      - {entity_id: "c-ayame", role: "hostage", mode: "remote"}
+      - {entity_id: "c-hakkaku", role: "captor", mode: "remote"}
+      - {entity_id: "group-cooking-nin", role: "opponent", mode: "remote"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-choji", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000159", "evd-anime-168"]
+relations:
+  - {id: "rel-1024-ayame-kidnap-1", kind: "before", a: "ev-y0-1024-naruto-choji-find-ichiraku-closed", b: "ev-y0-1024-teuchi-reveals-ayame-kidnapping", basis: "source", review: "accepted", evidence_ids: ["evd-anime-168"]}
+presence: []
