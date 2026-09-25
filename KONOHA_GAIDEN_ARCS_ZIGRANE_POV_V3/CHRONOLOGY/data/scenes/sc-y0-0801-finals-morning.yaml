@@ -1,0 +1,48 @@
+schema_version: 1
+id: "sc-y0-0801-finals-morning"
+continuity_id: "main"
+title: "Ранкові фінальні поєдинки"
+location_id: "loc-chunin-finals-arena"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "morning"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-naruto-defeats-neji"
+    legacy_ids: ["V10-000064"]
+    title: "Наруто перемагає Неджі"
+    text: "Наруто відновлює доступ до чакри Дев’ятихвостого, використовує атаку з-під землі й перемагає Неджі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000064", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-shikamaru-traps-temari"
+    legacy_ids: ["V10-000064-C"]
+    title: "Шикамару ловить Темарі тіньовою технікою"
+    text: "У наступному фінальному поєдинку Шикамару домагається позиції, з якої повністю захоплює Темарі тіньовою технікою."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-temari", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000064-C", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-shikamaru-surrenders"
+    legacy_ids: ["V10-000064-C"]
+    title: "Шикамару добровільно здається"
+    text: "Оцінивши залишок чакри й ресурси для продовження бою, Шикамару добровільно здається Темарі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000064-C", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+relations:
+  - {id: "rel-0801-finals-morning-1", kind: "before", a: "ev-y0-0801-naruto-defeats-neji", b: "ev-y0-0801-shikamaru-traps-temari", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000064","evd-v10-000064-C"]}
+  - {id: "rel-0801-finals-morning-2", kind: "before", a: "ev-y0-0801-shikamaru-traps-temari", b: "ev-y0-0801-shikamaru-surrenders", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+presence: []
