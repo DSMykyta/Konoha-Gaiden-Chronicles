@@ -48,12 +48,12 @@ V10-000035	0	13.04	R	superseded	ev-y0-0413-naruto-confronts-sasuke;ev-y0-0413-sa
 V10-000036	0	14.04	O	superseded	ev-y0-0414-crossroads-team7-mission;ev-y0-0414-crossroads-rivalry-disrupts;ev-y0-0414-crossroads-team7-recovers	Cross Roads OVA split into mission, disruption and recovery; unsupported Land of Waves location dropped.
 V10-000037	0	15.04	R	superseded	ev-y0-0415-team7-escorts-condor;ev-y0-0415-naruto-enters-tsukado-feud;ev-y0-0415-feud-ends;ev-y0-0415-kanabun-gang-attacks	Condor retrospective split into escort, feud and later attack.
 V10-000038	0	16.04	R	superseded	ev-y0-0416-naruto-tenten-accompany-lee;ev-y0-0416-chen-reveals-alive;ev-y0-0416-chen-tests-lee;ev-y0-0416-lee-develops-answer-to-dragon	Chen retrospective split into arrival, reveal, test and Lee's response.
-V10-000039	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000039-B	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000039-C	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000039-D	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000039-E	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000039-F	0	24.06	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000039	0	24.06	M	migrated	ev-y0-0624-foreign-genin-arrive	Foreign-genin arrival kept as a background/global event.
+V10-000039-B	0	24.06	M	superseded	ev-y0-0624-kankuro-confronts-konohamaru;ev-y0-0624-team7-intervenes;ev-y0-0624-team7-meets-sand-siblings	Konohamaru/Sand encounter split into confrontation, intervention and first meeting; Moegi and Udon added to physical presence.
+V10-000039-C	0	24.06	M	superseded	ev-y0-0624-lee-challenges-sasuke;ev-y0-0624-lee-outclasses-sasuke;ev-y0-0624-guy-stops-lee	Lee/Sasuke bout split; Naruto and Sakura retained as physical witnesses.
+V10-000039-D	0	24.06	M	migrated	ev-y0-0624-hiruzen-announces-chunin-exam	Hokage meeting event migrated.
+V10-000039-E	0	24.06	M	superseded	ev-y0-0624-jonin-nominate-teams;ev-y0-0624-iruka-objects-to-nominations	Nominations and Iruka's objection separated within the same meeting scene.
+V10-000039-F	0	24.06	M	migrated	ev-y0-0624-kakashi-offers-exam-choice	Kakashi's private Team 7 choice scene migrated.
 V10-000040	0	01.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000040-B	0	01.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000040-C	0	01.07	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
