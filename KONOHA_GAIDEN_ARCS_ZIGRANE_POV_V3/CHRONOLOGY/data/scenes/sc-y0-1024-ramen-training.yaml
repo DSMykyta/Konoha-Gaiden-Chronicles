@@ -1,0 +1,40 @@
+schema_version: 1
+id: "sc-y0-1024-ramen-training"
+continuity_id: "main"
+title: "Наруто, Сакура й Чоджі допомагають Теучі створити нову локшину"
+location_id: "loc-ichiraku"
+placement: {anchor_id: "ta-y0-1024", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1024-sakura-joins-ramen-rescue"
+    legacy_ids: ["V10-000159"]
+    title: "Сакура приєднується до підготовки заради порятунку Аяме"
+    text: "Сакура долучається до Наруто, Чоджі й Теучі, коли стає зрозуміло, що ніндзя-кухарям треба протиставити нову страву, а не лише силовий штурм."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-teuchi", role: "focus", mode: "physical"}
+      - {entity_id: "c-ayame", role: "hostage", mode: "remote"}
+    evidence_ids: ["evd-v10-000159", "evd-anime-168"]
+  - id: "ev-y0-1024-ninja-techniques-used-for-noodles"
+    legacy_ids: ["V10-000159"]
+    title: "Шинобі використовують техніки для замішування й нарізання локшини"
+    text: "Наруто, Сакура й Чоджі застосовують свої фізичні й чакрові навички до кухонної роботи, допомагаючи Теучі відпрацювати нову локшину."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-teuchi", role: "leader", mode: "physical"}
+    evidence_ids: ["evd-v10-000159", "evd-anime-168"]
+relations:
+  - {id: "rel-1024-ramen-training-1", kind: "before", a: "ev-y0-1024-sakura-joins-ramen-rescue", b: "ev-y0-1024-ninja-techniques-used-for-noodles", basis: "source", review: "accepted", evidence_ids: ["evd-anime-168"]}
+presence: []
