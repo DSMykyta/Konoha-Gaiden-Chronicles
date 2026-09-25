@@ -1,0 +1,57 @@
+schema_version: 1
+id: "sc-y0-0927-fuma-ambush"
+continuity_id: "main"
+title: "Сасаме відмовляється доводити пастку до кінця"
+location_id: "loc-land-of-rice-fields"
+placement: {anchor_id: "ta-y0-0927", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0927-kamikiri-jigumo-kagero-ambush"
+    legacy_ids: ["V10-000126-C"]
+    title: "Камікірі, Джігумо й Кагеро атакують мандрівників"
+    text: "Камікірі, Джігумо й Кагеро нападають на Джираю, Наруто та Сакуру."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-kamikiri", role: "focus", mode: "physical"}
+      - {entity_id: "c-jigumo", role: "focus", mode: "physical"}
+      - {entity_id: "c-kagero", role: "focus", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "affected", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-sasame", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000126-C", "evd-anime-136-140"]
+  - id: "ev-y0-0927-sasame-helps-lure-travelers"
+    legacy_ids: ["V10-000126-C"]
+    title: "Сасаме спочатку допомагає заманити групу"
+    text: "На початку сутички Сасаме діє за планом Фума й допомагає заманити мандрівників у пастку."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasame", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-sakura", role: "affected", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000126-C", "evd-anime-136-140"]
+  - id: "ev-y0-0927-sasame-rejects-fuma-deal"
+    legacy_ids: ["V10-000126-C"]
+    title: "Сасаме відмовляється від угоди"
+    text: "Побачивши справжню ціну служби Орочімару, Сасаме відмовляється доводити зраду до кінця."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasame", role: "focus", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "cause", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000126-C", "evd-anime-136-140"]
+relations:
+  - {id: "rel-0927-fuma-1", kind: "before", a: "ev-y0-0927-kamikiri-jigumo-kagero-ambush", b: "ev-y0-0927-sasame-helps-lure-travelers", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+  - {id: "rel-0927-fuma-2", kind: "before", a: "ev-y0-0927-sasame-helps-lure-travelers", b: "ev-y0-0927-sasame-rejects-fuma-deal", basis: "source", review: "pending", evidence_ids: ["evd-anime-136-140"]}
+presence: []
