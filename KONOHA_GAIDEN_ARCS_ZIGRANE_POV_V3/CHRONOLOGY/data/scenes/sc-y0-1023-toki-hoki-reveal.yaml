@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-1023-toki-hoki-reveal"
+continuity_id: "main"
+title: "Токі та Хокі відкривають свої справжні ролі"
+location_id: "loc-moso-house"
+placement: {anchor_id: "ta-y0-1023", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1023-sagi-revealed-as-toki"
+    legacy_ids: ["V10-000158"]
+    title: "Правитель «Саґі» виявляється Токі"
+    text: "Перед фінальним протистоянням відкривається, що справжній Саґі давно загинув, а його сестра Токі жила під його ім'ям, щоб утримати владу й помститися за брата."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-toki", role: "focus", mode: "physical"}
+      - {entity_id: "c-sagi", role: "deceased_identity", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000158", "evd-anime-166-167"]
+  - id: "ev-y0-1023-moso-revealed-as-hoki"
+    legacy_ids: ["V10-000158"]
+    title: "Мосо виявляється Хокі, ватажком Ватарі"
+    text: "Мосо скидає маску радника й відкривається як Хокі, очільник мандрівних шинобі Ватарі, який стояв за змовою та смертю Саґі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hoki-watari", role: "focus", mode: "physical"}
+      - {entity_id: "c-toki", role: "affected", mode: "physical"}
+      - {entity_id: "c-sagi", role: "victim", mode: "remote"}
+      - {entity_id: "group-watari", role: "affiliation", mode: "remote"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000158", "evd-anime-166-167"]
+relations:
+  - {id: "rel-1023-birds-reveal-1", kind: "before", a: "ev-y0-1023-sagi-revealed-as-toki", b: "ev-y0-1023-moso-revealed-as-hoki", basis: "source", review: "accepted", evidence_ids: ["evd-anime-166-167"]}
+presence: []
