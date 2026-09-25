@@ -1,0 +1,38 @@
+schema_version: 1
+id: "sc-y0-1109-kagetsu-funeral-mission-briefing"
+continuity_id: "main"
+title: "Наруто й Шіно отримують дивне завдання на похороні Каґецу"
+location_id: "loc-kagetsu-estate"
+placement: {anchor_id: "ta-y0-1109", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1109-naruto-shino-sent-kagetsu-funeral"
+    legacy_ids: ["V10-000177"]
+    title: "Наруто й Шіно вирушають до села Мотойоші"
+    text: "Наруто й Шіно отримують місію, пов'язану з похороном голови заможної родини Каґецу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-futa-kagetsu", role: "client", mode: "remote"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+  - id: "ev-y0-1109-futa-explains-no-laugh-inheritance"
+    legacy_ids: ["V10-000177"]
+    title: "Фута пояснює умову спадку: не засміятися на похороні"
+    text: "Фута Каґецу розповідає, що за заповітом батька втратить право на спадщину, якщо засміється під час похоронної церемонії; тому він хоче, щоб Шіно був його підставним представником."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-futa-kagetsu", role: "source", mode: "physical"}
+      - {entity_id: "c-shino", role: "assigned_proxy", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-tobei-kagetsu", role: "reported_deceased", mode: "remote"}
+    evidence_ids: ["evd-v10-000177", "evd-anime-186"]
+relations:
+  - {id: "rel-1109-kagetsu-brief-1", kind: "before", a: "ev-y0-1109-naruto-shino-sent-kagetsu-funeral", b: "ev-y0-1109-futa-explains-no-laugh-inheritance", basis: "source", review: "accepted", evidence_ids: ["evd-anime-186"]}
+presence: []
