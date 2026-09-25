@@ -338,3 +338,11 @@ anchors:
     evidence_ids: ["evd-v10-000060"]
     review: "accepted"
     reason: "Working project date immediately before finals; some retrospective material remains approximate within this window."
+  - id: "ta-y0-0801"
+    date: {year: 0, month: 8, day: 1}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000063", "evd-v10-000065"]
+    review: "accepted"
+    reason: "Working project date for Chūnin Finals and Konoha Crush."
