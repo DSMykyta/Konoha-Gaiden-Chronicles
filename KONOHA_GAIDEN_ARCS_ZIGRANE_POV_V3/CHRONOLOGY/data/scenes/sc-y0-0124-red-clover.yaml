@@ -1,0 +1,64 @@
+schema_version: 1
+id: "sc-y0-0124-red-clover"
+continuity_id: "main"
+title: "Пошук багряного чотирилисника"
+location_id: "loc-akagahara"
+placement: {anchor_id: "ta-y0-0124", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0124-konohamaru-asks-naruto"
+    legacy_ids: ["V10-000013"]
+    title: "Конохамару просить Наруто знайти чотирилисник"
+    text: "Конохамару просить Наруто знайти в забороненій Акаґахарі багряний чотирилисний клевер, щоб загадати бажання не розлучатися з Йошіно Каеде."
+    origin: "O"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-yoshino-kaede", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000013", "evd-source-000013"]
+  - id: "ev-y0-0124-naruto-konohamaru-enter-akagahara"
+    legacy_ids: ["V10-000013"]
+    title: "Наруто й Конохамару проходять пастки Акаґахари"
+    text: "Наруто й Конохамару пробираються за чотирилисником через пастки старого полігону Акаґахара."
+    origin: "O"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000013", "evd-source-000013"]
+  - id: "ev-y0-0124-sasuke-sakura-help"
+    legacy_ids: ["V10-000013"]
+    title: "Саске й Сакура допомагають відбитися від маріонет"
+    text: "Саске й Сакура приєднуються та допомагають Наруто й Конохамару відбитися від маріонет."
+    origin: "O"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000013", "evd-source-000013"]
+  - id: "ev-y0-0124-konohamaru-gives-clover"
+    legacy_ids: ["V10-000013"]
+    title: "Конохамару віддає чотирилисник Каеде"
+    text: "Після повернення Конохамару віддає знайдений клевер Йошіно Каеде."
+    origin: "O"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-yoshino-kaede", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000013", "evd-source-000013"]
+relations:
+  - {id: "rel-0124-1", kind: "before", a: "ev-y0-0124-konohamaru-asks-naruto", b: "ev-y0-0124-naruto-konohamaru-enter-akagahara", basis: "source", review: "pending", evidence_ids: ["evd-source-000013"]}
+  - {id: "rel-0124-2", kind: "before", a: "ev-y0-0124-naruto-konohamaru-enter-akagahara", b: "ev-y0-0124-sasuke-sakura-help", basis: "source", review: "pending", evidence_ids: ["evd-source-000013"]}
+  - {id: "rel-0124-3", kind: "before", a: "ev-y0-0124-sasuke-sakura-help", b: "ev-y0-0124-konohamaru-gives-clover", basis: "source", review: "pending", evidence_ids: ["evd-source-000013"]}
+presence:
+  - {id: "pr-0124-naruto", entity_id: "c-naruto", from: "sc-y0-0124-red-clover.start", to: "ev-y0-0124-sasuke-sakura-help.end", basis: "imported", evidence_ids: ["evd-v10-000013"], review: "pending"}
+  - {id: "pr-0124-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0124-red-clover.start", to: "sc-y0-0124-red-clover.end", basis: "imported", evidence_ids: ["evd-v10-000013"], review: "pending"}
