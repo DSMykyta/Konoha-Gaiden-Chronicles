@@ -1,0 +1,64 @@
+schema_version: 1
+id: "sc-y0-0923-choji-vs-jirobo"
+continuity_id: "main"
+title: "Чоджі залишається битися з Джіро́бо"
+location_id: null
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-choji-stays-behind-jirobo"
+    legacy_ids: ["V10-000121-F"]
+    title: "Чоджі лишається проти Джіро́бо"
+    text: "Чоджі відділяється від загону й залишається битися з Джіро́бо, щоб інші могли продовжити переслідування."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-choji", role: "focus", mode: "physical"}
+      - {entity_id: "c-jirobo", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "departing_ally", mode: "remote"}
+      - {entity_id: "c-naruto", role: "departing_ally", mode: "remote"}
+      - {entity_id: "c-neji", role: "departing_ally", mode: "remote"}
+      - {entity_id: "c-kiba", role: "departing_ally", mode: "remote"}
+    evidence_ids: ["evd-v10-000121-F"]
+  - id: "ev-y0-0923-choji-uses-three-pills"
+    legacy_ids: ["V10-000121-F"]
+    title: "Чоджі використовує три пігулки Акімічі"
+    text: "У ході бою Чоджі послідовно використовує три пігулки Акімічі, різко підвищуючи силу ціною тяжкого виснаження."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-choji", role: "focus", mode: "physical"}
+      - {entity_id: "c-jirobo", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000121-F"]
+  - id: "ev-y0-0923-choji-defeats-jirobo"
+    legacy_ids: ["V10-000121-F"]
+    title: "Чоджі перемагає Джіро́бо"
+    text: "Посилившись пігулками, Чоджі перемагає Джіро́бо."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-choji", role: "focus", mode: "physical"}
+      - {entity_id: "c-jirobo", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000121-F"]
+  - id: "ev-y0-0923-choji-collapses-exhausted"
+    legacy_ids: ["V10-000121-F"]
+    title: "Чоджі лишається критично виснаженим"
+    text: "Після перемоги наслідки трьох пігулок залишають Чоджі у критично виснаженому стані."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-choji", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000121-F"]
+relations:
+  - {id: "rel-0923-choji-1", kind: "before", a: "ev-y0-0923-choji-stays-behind-jirobo", b: "ev-y0-0923-choji-uses-three-pills", basis: "source", review: "pending", evidence_ids: ["evd-v10-000121-F"]}
+  - {id: "rel-0923-choji-2", kind: "before", a: "ev-y0-0923-choji-uses-three-pills", b: "ev-y0-0923-choji-defeats-jirobo", basis: "source", review: "pending", evidence_ids: ["evd-v10-000121-F"]}
+  - {id: "rel-0923-choji-3", kind: "before", a: "ev-y0-0923-choji-defeats-jirobo", b: "ev-y0-0923-choji-collapses-exhausted", basis: "logical", review: "accepted", evidence_ids: ["evd-v10-000121-F"]}
+presence:
+  - {id: "pr-0923-choji-choji", entity_id: "c-choji", from: "sc-y0-0923-choji-vs-jirobo.start", to: "sc-y0-0923-choji-vs-jirobo.end", basis: "source", evidence_ids: ["evd-v10-000121-F"], review: "accepted"}
+  - {id: "pr-0923-choji-jirobo", entity_id: "c-jirobo", from: "sc-y0-0923-choji-vs-jirobo.start", to: "ev-y0-0923-choji-defeats-jirobo.end", basis: "source", evidence_ids: ["evd-v10-000121-F"], review: "accepted"}
