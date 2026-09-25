@@ -151,14 +151,14 @@ V10-000079-D	0	25.08	M	superseded	ev-y0-0825-naruto-attacks-tsunade-rasengan;ev-
 V10-000079-E	0	25.08	M	migrated	ev-y0-0825-tsunade-naruto-wager	Naruto/Tsunade wager migrated.
 V10-000080	0	26.08	M	superseded	ev-y0-0826-naruto-combines-rasengan-components;ev-y0-0826-tsunade-weighs-orochimaru-offer;ev-y0-0826-shizune-tells-naruto-nawaki-dan;ev-y0-0826-shizune-explains-blood-fear	Mixed row split into Naruto training, Tsunade deliberation and Shizune explanation.
 V10-000081	0	31.08	M	superseded	ev-y0-0831-naruto-seems-unable-to-complete-rasengan;ev-y0-0831-tsunade-drugs-jiraiya;ev-y0-0831-tsunade-leaves-to-meet-orochimaru;ev-y0-0831-shizune-reveals-orochimaru-deal;ev-y0-0831-group-pursues-tsunade	Final wager night decomposed into deadline, Tsunade departure and pursuit.
-V10-000082	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000082-B	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000082-C	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000082-D	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000082-E	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000082-F	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000082-G	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000082-H	0	01.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000082	0	01.09	M	superseded	ev-y0-0901-tsunade-feigns-agreement;ev-y0-0901-tsunade-attempts-kill-orochimaru	Tsunade deception and assassination attempt separated.
+V10-000082-B	0	01.09	M	migrated	ev-y0-0901-kabuto-exploits-blood-fear	Kabuto exploiting Tsunade blood fear migrated.
+V10-000082-C	0	01.09	M	superseded	ev-y0-0901-jiraiya-naruto-shizune-arrive;ev-y0-0901-kabuto-defeats-shizune	Arrival and Kabuto defeating Shizune separated.
+V10-000082-D	0	01.09	M	migrated	ev-y0-0901-naruto-first-successful-rasengan	Naruto first successful direct Rasengan hit migrated.
+V10-000082-E	0	01.09	M	superseded	ev-y0-0901-tsunade-overcomes-blood-fear;ev-y0-0901-tsunade-creation-rebirth	Tsunade overcoming hemophobia and activating Creation Rebirth separated.
+V10-000082-F	0	01.09	M	migrated	ev-y0-0901-sannin-summon	Three Sannin summon confrontation migrated.
+V10-000082-G	0	01.09	M	superseded	ev-y0-0901-tsunade-defeats-orochimaru;ev-y0-0901-orochimaru-kabuto-retreat	Tsunade victory and Orochimaru/Kabuto retreat separated.
+V10-000082-H	0	01.09	M	superseded	ev-y0-0901-tsunade-gives-necklace-naruto;ev-y0-0901-tsunade-recognizes-naruto-future-hokage;ev-y0-0901-tsunade-accepts-fifth-hokage	Post-battle recognition, necklace transfer and acceptance of office separated.
 V10-000084	0	02.09	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000083	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000083-B	0	02.09	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
