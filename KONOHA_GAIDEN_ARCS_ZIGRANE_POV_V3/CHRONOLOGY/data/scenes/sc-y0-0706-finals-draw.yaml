@@ -1,0 +1,20 @@
+schema_version: 1
+id: "sc-y0-0706-finals-draw"
+continuity_id: "main"
+title: "Фіналісти отримують пари"
+location_id: "loc-chunin-prelim-arena"
+placement: {anchor_id: "ta-y0-0706", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0706-finalists-draw-pairs"
+    legacy_ids: ["V10-000046-L"]
+    title: "Фіналісти жеребкують пари фіналу"
+    text: "Після завершення попередніх боїв фіналісти отримують пари для фінального етапу, призначеного на 1 серпня."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    evidence_ids: ["evd-v10-000046-L", "evd-manga-chunin-prelims", "evd-anime-31-50"]
+relations: []
+presence: []
