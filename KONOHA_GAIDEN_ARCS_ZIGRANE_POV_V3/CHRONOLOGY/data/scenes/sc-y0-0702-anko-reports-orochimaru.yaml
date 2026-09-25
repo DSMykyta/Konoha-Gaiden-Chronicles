@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0702-anko-reports-orochimaru"
+continuity_id: "main"
+title: "Анко доповідає Хірузену про Орочімару"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0702", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0702-anko-reports-orochimaru"
+    legacy_ids: ["V10-000042-F"]
+    title: "Анко повідомляє про проникнення Орочімару"
+    text: "Анко доповідає Хірузену, що Орочімару проник на іспит."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000042-F", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0702-hiruzen-continues-exam"
+    legacy_ids: ["V10-000042-F"]
+    title: "Хірузен вирішує не зупиняти іспит"
+    text: "Попри загрозу Орочімару Хірузен не припиняє поточне випробування."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-v10-000042-F", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+relations:
+  - {id: "rel-0702-report-1", kind: "before", a: "ev-y0-0702-anko-reports-orochimaru", b: "ev-y0-0702-hiruzen-continues-exam", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000042-F"]}
+presence:
+  - {id: "pr-0702-report-anko", entity_id: "c-anko", from: "sc-y0-0702-anko-reports-orochimaru.start", to: "sc-y0-0702-anko-reports-orochimaru.end", basis: "source", evidence_ids: ["evd-v10-000042-F"], review: "accepted"}
+  - {id: "pr-0702-report-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0702-anko-reports-orochimaru.start", to: "sc-y0-0702-anko-reports-orochimaru.end", basis: "source", evidence_ids: ["evd-v10-000042-F"], review: "accepted"}
