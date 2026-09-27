@@ -1813,5 +1813,47 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-anime-186"]
+  - id: "lnk-1110-greens-before-1111-haruna"
+    kind: "before"
+    a: "sc-y0-1110-greens-merchant-escort"
+    b: "sc-y0-1111-greens-haruna-ruiga"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-187-191"]
+  - id: "lnk-1111-haruna-before-1112-jiga"
+    kind: "before"
+    a: "sc-y0-1111-greens-haruna-ruiga"
+    b: "sc-y0-1112-greens-jiga-battle"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-187-191"]
+  - id: "lnk-1112-jiga-before-1113-renga"
+    kind: "before"
+    a: "sc-y0-1112-greens-jiga-battle"
+    b: "sc-y0-1113-greens-renga-finale"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-187-191"]
+  - id: "lnk-alt-1110-mugen-appear-before-ascent"
+    kind: "before"
+    a: "sc-alt-y0-1110-mugen-castle-appears"
+    b: "sc-alt-y0-1110-mugen-castle-ascent"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-phantom-fortress"]
+  - id: "lnk-alt-1110-mugen-ascent-before-1111-trials"
+    kind: "before"
+    a: "sc-alt-y0-1110-mugen-castle-ascent"
+    b: "sc-alt-y0-1111-mugen-castle-trials"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-phantom-fortress"]
+  - id: "lnk-alt-1111-mugen-trials-before-1112-finale"
+    kind: "before"
+    a: "sc-alt-y0-1111-mugen-castle-trials"
+    b: "sc-alt-y0-1112-mugen-castle-finale"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-phantom-fortress"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."

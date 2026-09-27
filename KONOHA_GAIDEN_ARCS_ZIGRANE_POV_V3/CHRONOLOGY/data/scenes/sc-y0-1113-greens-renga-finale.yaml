@@ -1,0 +1,87 @@
+schema_version: 1
+id: "sc-y0-1113-greens-renga-finale"
+continuity_id: "main"
+title: "Харуна змінює рішення, Наруто перемагає Ренґу, а полонених звільняють"
+location_id: "loc-greens-capital"
+placement: {anchor_id: "ta-y0-1113-greens", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1113-renga-demands-haruna"
+    legacy_ids: ["V10-000184"]
+    title: "Ренґа вимагає обміняти Харуну на полонених"
+    text: "Наруто дізнається, що люди Ренґи захопили його союзників; Ренґа погоджується відпустити їх лише в обмін на Харуну."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-renga", role: "demander", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-haruna", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000184", "evd-anime-187-191"]
+  - id: "ev-y0-1113-haruna-learns-fathers-regret"
+    legacy_ids: ["V10-000184"]
+    title: "Харуна дізнається про передсмертне каяття батька"
+    text: "Харуні відкривають, що перед смертю її батько шкодував, що колись віддав доньку заручницею заради країни, і хотів ставити добробут людей вище за себе."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-haruna", role: "recipient", mode: "physical"}
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+    evidence_ids: ["evd-v10-000184", "evd-anime-187-191"]
+  - id: "ev-y0-1113-haruna-offers-herself"
+    legacy_ids: ["V10-000184"]
+    title: "Харуна сама пропонує віддати себе заради Наруто"
+    text: "Під впливом Наруто й слів про батька Харуна відмовляється від попередньої логіки самозбереження та готова пожертвувати собою, щоб урятувати Наруто."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-haruna", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "protected", mode: "physical"}
+    evidence_ids: ["evd-v10-000184", "evd-anime-187-191"]
+  - id: "ev-y0-1113-naruto-defeats-renga"
+    legacy_ids: ["V10-000184"]
+    title: "Наруто перемагає Ренґу відбитим сонячним світлом"
+    text: "Наруто використовує металеву пластину свого протектора, щоб відбити сонячне світло й зламати перевагу Ренґи, після чого перемагає його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "victor", mode: "physical"}
+      - {entity_id: "c-renga", role: "defeated", mode: "physical"}
+    evidence_ids: ["evd-v10-000184", "evd-anime-187-191"]
+  - id: "ev-y0-1113-konoha-rescues-captives"
+    legacy_ids: ["V10-000184"]
+    title: "Шізуне, Шикамару й шинобі Конохи звільняють полонених"
+    text: "Паралельно Шізуне, Шикамару та інші шинобі Конохи звільняють Хінату, Чоджі й Юріноджо з полону людей Ренґи."
+    origin: "F"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-shizune", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "rescued", mode: "physical"}
+      - {entity_id: "c-choji", role: "rescued", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "rescued", mode: "physical"}
+    evidence_ids: ["evd-v10-000184", "evd-anime-187-191"]
+  - id: "ev-y0-1113-haruna-restores-rule"
+    legacy_ids: ["V10-000184"]
+    title: "Харуна успадковує владу в Країні Овочів"
+    text: "Після поразки Ренґи Харуна стає наступницею свого батька й повертається до керування Країною Овочів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-haruna", role: "ruler", mode: "physical"}
+      - {entity_id: "c-naruto", role: "ally", mode: "physical"}
+    evidence_ids: ["evd-v10-000184", "evd-anime-187-191"]
+relations:
+  - {id: "rel-1113-greens-1", kind: "before", a: "ev-y0-1113-renga-demands-haruna", b: "ev-y0-1113-haruna-learns-fathers-regret", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1113-greens-2", kind: "before", a: "ev-y0-1113-haruna-learns-fathers-regret", b: "ev-y0-1113-haruna-offers-herself", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1113-greens-3", kind: "before", a: "ev-y0-1113-haruna-offers-herself", b: "ev-y0-1113-naruto-defeats-renga", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1113-greens-4", kind: "before", a: "ev-y0-1113-naruto-defeats-renga", b: "ev-y0-1113-haruna-restores-rule", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1113-greens-5", kind: "before", a: "ev-y0-1113-konoha-rescues-captives", b: "ev-y0-1113-haruna-restores-rule", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+presence: []

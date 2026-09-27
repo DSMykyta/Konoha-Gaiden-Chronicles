@@ -1,0 +1,75 @@
+schema_version: 1
+id: "sc-y0-1114-fuku-matchmaking"
+continuity_id: "main"
+title: "Іно підміняє Фуку на зустрічі з Чікарою, але справжня принцеса все одно відкривається"
+location_id: "loc-fuku-castle"
+placement: {anchor_id: "ta-y0-1114-fuku", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1114-fuku-asks-ino-impersonation"
+    legacy_ids: ["V10-000185"]
+    title: "Фуку просить Іно піти на зустріч замість неї"
+    text: "Принцеса Фуку, яка сильно набрала вагу через нервове переїдання, просить Іно видати себе за неї під час першої зустрічі з Чікарою."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-fuku", role: "client", mode: "physical"}
+      - {entity_id: "c-ino", role: "proxy", mode: "physical"}
+      - {entity_id: "c-naruto", role: "escort", mode: "physical"}
+    evidence_ids: ["evd-v10-000185", "evd-anime-192"]
+  - id: "ev-y0-1114-ino-meets-chikara-as-fuku"
+    legacy_ids: ["V10-000185"]
+    title: "Іно зустрічається з Чікарою під виглядом Фуку"
+    text: "Іно намагається зіграти роль принцеси перед Чікарою, хоча його перебільшені знаки уваги дедалі більше її дратують."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-ino", role: "impersonator", mode: "physical"}
+      - {entity_id: "c-chikara", role: "suitor", mode: "physical"}
+    evidence_ids: ["evd-v10-000185", "evd-anime-192"]
+  - id: "ev-y0-1114-naruto-transforms-fuku"
+    legacy_ids: ["V10-000185"]
+    title: "Наруто втручається, перетворившись на Фуку"
+    text: "Наруто втрачає терпіння й сам використовує перетворення на Фуку, чим руйнує контрольований план Іно."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "interferer", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-fuku", role: "subject", mode: "physical"}
+    evidence_ids: ["evd-v10-000185", "evd-anime-192"]
+  - id: "ev-y0-1114-real-fuku-revealed"
+    legacy_ids: ["V10-000185"]
+    title: "Справжня Фуку випадково відкривається Чікарі"
+    text: "Через плутанину Чікара бачить справжню Фуку, і підміна перестає мати сенс."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-fuku", role: "revealed", mode: "physical"}
+      - {entity_id: "c-chikara", role: "witness", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000185", "evd-anime-192"]
+  - id: "ev-y0-1114-chikara-accepts-fuku"
+    legacy_ids: ["V10-000185"]
+    title: "Чікара обирає справжню Фуку"
+    text: "Чікара виявляється задоволеним справжньою зовнішністю Фуку й приймає її без потреби в подальшій підміні."
+    origin: "F"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-chikara", role: "suitor", mode: "physical"}
+      - {entity_id: "c-fuku", role: "princess", mode: "physical"}
+    evidence_ids: ["evd-v10-000185", "evd-anime-192"]
+relations:
+  - {id: "rel-1114-fuku-1", kind: "before", a: "ev-y0-1114-fuku-asks-ino-impersonation", b: "ev-y0-1114-ino-meets-chikara-as-fuku", basis: "source", review: "accepted", evidence_ids: ["evd-anime-192"]}
+  - {id: "rel-1114-fuku-2", kind: "before", a: "ev-y0-1114-ino-meets-chikara-as-fuku", b: "ev-y0-1114-naruto-transforms-fuku", basis: "source", review: "accepted", evidence_ids: ["evd-anime-192"]}
+  - {id: "rel-1114-fuku-3", kind: "before", a: "ev-y0-1114-naruto-transforms-fuku", b: "ev-y0-1114-real-fuku-revealed", basis: "source", review: "accepted", evidence_ids: ["evd-anime-192"]}
+  - {id: "rel-1114-fuku-4", kind: "before", a: "ev-y0-1114-real-fuku-revealed", b: "ev-y0-1114-chikara-accepts-fuku", basis: "source", review: "accepted", evidence_ids: ["evd-anime-192"]}
+presence: []

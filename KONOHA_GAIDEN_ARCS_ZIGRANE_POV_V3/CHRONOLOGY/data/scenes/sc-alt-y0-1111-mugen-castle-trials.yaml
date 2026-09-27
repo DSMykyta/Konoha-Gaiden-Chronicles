@@ -1,0 +1,46 @@
+schema_version: 1
+id: "sc-alt-y0-1111-mugen-castle-trials"
+continuity_id: "alt-game-phantom-fortress"
+title: "Муґенджо випробовує групу ілюзіями, а Джирая відкриває приховані підземні поверхи"
+location_id: "loc-mugen-castle"
+placement: {anchor_id: "ta-alt-y0-1110-phantom", day_offset: 1}
+state: "active"
+presence_coverage: "partial"
+review: {time: "approximate", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1111-team-ascends-mugen-floors"
+    legacy_ids: ["V10-000181"]
+    title: "Група проходить випробування поверхів Муґенджо"
+    text: "Наруто веде обрану групу через поверхи замку, де кімнати змінюються між боями, випробуваннями й ілюзіями."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-v10-000181", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1111-seal-tags-release-memories"
+    legacy_ids: ["V10-000181"]
+    title: "Зняті печатки відкривають минуле замку"
+    text: "У міру зняття печаток група бачить фрагменти пам'яті Муґенджо та історії принцеси Касумі."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+      - {entity_id: "c-princess-kasumi", role: "memory_subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000181", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1111-jiraiya-hidden-basement-route"
+    legacy_ids: ["V10-000181"]
+    title: "Джирая відкриває прихований шлях на тридцять підземних поверхів"
+    text: "У прихованій гілці Джирая разом із Цунаде та Шізуне спускається в підземну частину Муґенджо до джерела накопиченої життєвої сили."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000181", "evd-game-phantom-fortress"]
+relations:
+  - {id: "rel-alt-1111-mugen-1", kind: "before", a: "ev-alt-y0-1111-team-ascends-mugen-floors", b: "ev-alt-y0-1111-seal-tags-release-memories", basis: "source", review: "accepted", evidence_ids: ["evd-game-phantom-fortress"]}
+presence: []

@@ -1,0 +1,50 @@
+schema_version: 1
+id: "sc-alt-y0-1112-mugen-castle-finale"
+continuity_id: "alt-game-phantom-fortress"
+title: "Джерело Муґенджо знищене, і Примарний замок руйнується"
+location_id: "loc-mugen-castle"
+placement: {anchor_id: "ta-alt-y0-1110-phantom", day_offset: 2}
+state: "active"
+presence_coverage: "partial"
+review: {time: "approximate", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-alt-y0-1112-jiraiya-team-destroys-cauldron"
+    legacy_ids: ["V10-000183"]
+    title: "Джирая, Цунаде й Шізуне знищують резервуар життєвої сили"
+    text: "У нижніх поверхах Джирая, Цунаде й Шізуне дістаються до котла, в якому Муґенджо накопичує викрадену життєву силу, і знищують його."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000183", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1112-orochimaru-defeated-mugen"
+    legacy_ids: ["V10-000183"]
+    title: "Орочімару зазнає поразки в прихованій гілці Муґенджо"
+    text: "Підземний маршрут завершується сутичкою з Орочімару; після бою його план використати Муґенджо зривається."
+    origin: "G"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-orochimaru", role: "opponent", mode: "physical"}
+      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000183", "evd-game-phantom-fortress"]
+  - id: "ev-alt-y0-1112-mugen-castle-destroyed"
+    legacy_ids: ["V10-000183"]
+    title: "Муґенджо руйнується"
+    text: "Після зняття печаток і знищення джерела життєвої сили Примарний замок перестає діяти й руйнується, завершуючи альтернативну ігрову історію."
+    origin: "G"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-princess-kasumi", role: "castle_princess", mode: "physical"}
+    evidence_ids: ["evd-v10-000183", "evd-game-phantom-fortress"]
+relations:
+  - {id: "rel-alt-1112-mugen-1", kind: "before", a: "ev-alt-y0-1112-jiraiya-team-destroys-cauldron", b: "ev-alt-y0-1112-orochimaru-defeated-mugen", basis: "source", review: "accepted", evidence_ids: ["evd-game-phantom-fortress"]}
+  - {id: "rel-alt-1112-mugen-2", kind: "before", a: "ev-alt-y0-1112-orochimaru-defeated-mugen", b: "ev-alt-y0-1112-mugen-castle-destroyed", basis: "source", review: "accepted", evidence_ids: ["evd-game-phantom-fortress"]}
+presence: []

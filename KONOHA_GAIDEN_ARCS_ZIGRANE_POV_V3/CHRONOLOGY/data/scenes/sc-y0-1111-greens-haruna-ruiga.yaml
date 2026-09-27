@@ -1,0 +1,64 @@
+schema_version: 1
+id: "sc-y0-1111-greens-haruna-ruiga"
+continuity_id: "main"
+title: "Переслідування торговців викриває Харуну, а Руйґа гине після поразки"
+location_id: "loc-land-of-greens"
+placement: {anchor_id: "ta-y0-1111-greens", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1111-kikusuke-killed-ruiga"
+    legacy_ids: ["V10-000180"]
+    title: "Руйґа вбиває Кікуске під час переслідування"
+    text: "Переслідуючи торговців, Руйґа атакує їхню групу; Кікуске гине, прикриваючи втечу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-ruiga", role: "attacker", mode: "physical"}
+      - {entity_id: "c-kikusuke", role: "victim", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+  - id: "ev-y0-1111-haruna-identity-revealed"
+    legacy_ids: ["V10-000180"]
+    title: "«Шун» виявляється принцесою Харуною"
+    text: "Наруто, Хіната й Чоджі дізнаються, що торговці були прикриттям, а «Шун» — Харуна, донька правителя Країни Овочів, яку переслідують після перевороту."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-haruna", role: "revealed_princess", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "protector", mode: "physical"}
+      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
+      - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
+      - {entity_id: "c-choji", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+  - id: "ev-y0-1111-ruiga-defeated-dry-ground"
+    legacy_ids: ["V10-000180"]
+    title: "Наруто, Юріноджо й Чоджі позбавляють Руйґу переваги води"
+    text: "Наруто й Юріноджо разом із Чоджі виманюють Руйґу на суху ділянку, де його водні техніки слабшають, і перемагають його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-yurinojo", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-ruiga", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+  - id: "ev-y0-1111-jiga-kills-ruiga"
+    legacy_ids: ["V10-000180"]
+    title: "Джіґа вбиває переможеного Руйґу"
+    text: "Після поразки Руйґи його брат Джіґа вбиває його, прагнучи збільшити власну частку в багатстві країни."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-jiga", role: "killer", mode: "physical"}
+      - {entity_id: "c-ruiga", role: "victim", mode: "physical"}
+    evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
+relations:
+  - {id: "rel-1111-greens-1", kind: "before", a: "ev-y0-1111-kikusuke-killed-ruiga", b: "ev-y0-1111-haruna-identity-revealed", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1111-greens-2", kind: "before", a: "ev-y0-1111-haruna-identity-revealed", b: "ev-y0-1111-ruiga-defeated-dry-ground", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+  - {id: "rel-1111-greens-3", kind: "before", a: "ev-y0-1111-ruiga-defeated-dry-ground", b: "ev-y0-1111-jiga-kills-ruiga", basis: "source", review: "accepted", evidence_ids: ["evd-anime-187-191"]}
+presence: []
