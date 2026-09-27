@@ -20,7 +20,7 @@ events:
       - {entity_id: "c-hinata", role: "recipient", mode: "physical"}
     evidence_ids: ["evd-v10-000180", "evd-v10-000182", "evd-anime-187-191"]
   - id: "ev-y0-1111-haruna-knocks-out-hinata"
-    legacy_ids: ["V10-000180"]
+    legacy_ids: ["V10-000182"]
     title: "Харуна оглушує Хінату й залишає її"
     text: "Не бажаючи чекати на повернення решти команди, Харуна несподівано виводить Хінату з ладу й тікає сама до безпечнішого місця."
     origin: "F"
@@ -31,7 +31,7 @@ events:
       - {entity_id: "c-hinata", role: "affected", mode: "physical"}
     evidence_ids: ["evd-v10-000180", "evd-anime-187-191"]
   - id: "ev-y0-1111-naruto-pursues-haruna-meets-jiga"
-    legacy_ids: ["V10-000180"]
+    legacy_ids: ["V10-000182"]
     title: "Наруто йде за Харуною й натрапляє на Джіґу"
     text: "Дізнавшись, що Харуна втекла, Наруто кидається слідом, але шлях йому перекриває другий із братів — магнітний шинобі Джіґа."
     origin: "F"
