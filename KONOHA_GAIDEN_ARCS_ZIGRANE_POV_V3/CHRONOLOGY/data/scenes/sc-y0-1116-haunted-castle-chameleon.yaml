@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-1116-haunted-castle-chameleon"
+continuity_id: "main"
+title: "Наруто, Кіба й Хіната розкривають природу «проклятого замку»"
+location_id: "loc-haunted-castle"
+placement: {anchor_id: "ta-y0-1116-haunted-castle", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "working", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1116-honey-entourage-missing"
+    legacy_ids: ["V10-000187"]
+    title: "Зникає почет першої леді Країни Меду"
+    text: "Почет першої леді Країни Меду безслідно зникає на перевалі Кубісакі, після чого Наруто, Кіба й Хіната отримують пошукову місію."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "investigator", mode: "physical"}
+      - {entity_id: "c-kiba", role: "investigator", mode: "physical"}
+      - {entity_id: "c-hinata", role: "investigator", mode: "physical"}
+    evidence_ids: ["evd-v10-000187", "evd-anime-194"]
+  - id: "ev-y0-1116-team-enters-haunted-castle"
+    legacy_ids: ["V10-000187"]
+    title: "На шляху команди з'являється великий замок"
+    text: "Команда входить у раптово з'явлений замок, шукаючи зниклих людей; усередині його простір і мешканці поводяться неприродно."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000187", "evd-anime-194"]
+  - id: "ev-y0-1116-castle-revealed-chameleon"
+    legacy_ids: ["V10-000187"]
+    title: "Замок виявляється маскуванням гігантського хамелеона"
+    text: "Команда встановлює, що «будівля» є частиною гігантського хамелеона, який маскується під замок і ковтає подорожніх."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-giant-castle-chameleon", role: "creature", mode: "physical"}
+      - {entity_id: "c-naruto", role: "discoverer", mode: "physical"}
+      - {entity_id: "c-kiba", role: "discoverer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "discoverer", mode: "physical"}
+    evidence_ids: ["evd-v10-000187", "evd-anime-194"]
+  - id: "ev-y0-1116-prisoners-freed"
+    legacy_ids: ["V10-000187"]
+    title: "Команда вибирається з істоти й звільняє проковтнутих людей"
+    text: "Наруто, Кіба й Хіната знаходять шлях назовні та виводять із небезпеки людей, які зникли всередині істоти."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-naruto", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-kiba", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-hinata", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-giant-castle-chameleon", role: "defeated_threat", mode: "physical"}
+    evidence_ids: ["evd-v10-000187", "evd-anime-194"]
+relations:
+  - {id: "rel-1116-castle-1", kind: "before", a: "ev-y0-1116-honey-entourage-missing", b: "ev-y0-1116-team-enters-haunted-castle", basis: "source", review: "accepted", evidence_ids: ["evd-anime-194"]}
+  - {id: "rel-1116-castle-2", kind: "before", a: "ev-y0-1116-team-enters-haunted-castle", b: "ev-y0-1116-castle-revealed-chameleon", basis: "source", review: "accepted", evidence_ids: ["evd-anime-194"]}
+  - {id: "rel-1116-castle-3", kind: "before", a: "ev-y0-1116-castle-revealed-chameleon", b: "ev-y0-1116-prisoners-freed", basis: "source", review: "accepted", evidence_ids: ["evd-anime-194"]}
+presence: []

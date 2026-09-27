@@ -1,0 +1,82 @@
+schema_version: 1
+id: "sc-y0-1118-ryudoin-finale"
+continuity_id: "main"
+title: "Команда Ґая руйнує помсту братів Рюдоін"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1118-ryudoin", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "working", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1118-guy-trapped-puppet-pagoda"
+    legacy_ids: ["V10-000189"]
+    title: "Брати Рюдоін ув'язнюють Ґая в споруді з дерев'яних ляльок"
+    text: "Ґеншо, Джако й Роккаку замикають Ґая в конструкції з керованих чакрою дерев'яних манекенів, намагаючись виснажити й убити його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-might-guy", role: "captive", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "attacker", mode: "physical"}
+      - {entity_id: "c-jako-ryudoin", role: "attacker", mode: "physical"}
+      - {entity_id: "c-rokkaku-ryudoin", role: "attacker", mode: "physical"}
+    evidence_ids: ["evd-v10-000189", "evd-anime-195-196"]
+  - id: "ev-y0-1118-naruto-team-guy-arrive"
+    legacy_ids: ["V10-000189"]
+    title: "Наруто, Неджи, Тентен і Лі приходять на допомогу Ґаю"
+    text: "Наруто, Неджи й Тентен добираються до місця пастки, а Лі приєднується до них попри наказ відпочивати; група проривається крізь дерев'яних бійців."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-neji", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-tenten", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-lee", role: "rescuer", mode: "physical"}
+    evidence_ids: ["evd-v10-000189", "evd-anime-195-196"]
+  - id: "ev-y0-1118-gensho-forces-guy-lee-duel"
+    legacy_ids: ["V10-000189"]
+    title: "Ґеншо намагається змусити Ґая й Лі битися між собою"
+    text: "Техніка Ґеншо змушує Ґая та Лі атакувати одне одного, але наставник розпізнає учня й план помсти ламається."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-gensho-ryudoin", role: "controller", mode: "physical"}
+      - {entity_id: "c-might-guy", role: "affected", mode: "physical"}
+      - {entity_id: "c-lee", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-v10-000189", "evd-anime-195-196"]
+  - id: "ev-y0-1118-truth-agira-revealed"
+    legacy_ids: ["V10-000189"]
+    title: "Брати дізнаються, що Аґіра не був убитий Ґаєм"
+    text: "З'ясовується, що Аґіра програв Ґаю чесний бій і поважав його; смертельний стан батька був наслідком його подальшого виснаження, а не навмисного вбивства Ґаєм."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-agira-ryudoin", role: "past_subject", mode: "remote"}
+      - {entity_id: "c-might-guy", role: "past_opponent", mode: "physical"}
+      - {entity_id: "c-gensho-ryudoin", role: "recipient", mode: "physical"}
+      - {entity_id: "c-jako-ryudoin", role: "recipient", mode: "physical"}
+      - {entity_id: "c-rokkaku-ryudoin", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-v10-000189", "evd-anime-195-196"]
+  - id: "ev-y0-1118-ryudoin-revenge-ends"
+    legacy_ids: ["V10-000189"]
+    title: "Помста братів Рюдоін припиняється"
+    text: "Після провалу пастки й уточнення історії Аґіри брати відмовляються від помсти Ґаю."
+    origin: "F"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-gensho-ryudoin", role: "defeated", mode: "physical"}
+      - {entity_id: "c-jako-ryudoin", role: "defeated", mode: "physical"}
+      - {entity_id: "c-rokkaku-ryudoin", role: "defeated", mode: "physical"}
+      - {entity_id: "c-might-guy", role: "survivor", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000189", "evd-anime-195-196"]
+relations:
+  - {id: "rel-1118-ryudoin-1", kind: "before", a: "ev-y0-1118-guy-trapped-puppet-pagoda", b: "ev-y0-1118-naruto-team-guy-arrive", basis: "source", review: "accepted", evidence_ids: ["evd-anime-195-196"]}
+  - {id: "rel-1118-ryudoin-2", kind: "before", a: "ev-y0-1118-naruto-team-guy-arrive", b: "ev-y0-1118-gensho-forces-guy-lee-duel", basis: "source", review: "accepted", evidence_ids: ["evd-anime-195-196"]}
+  - {id: "rel-1118-ryudoin-3", kind: "before", a: "ev-y0-1118-gensho-forces-guy-lee-duel", b: "ev-y0-1118-truth-agira-revealed", basis: "source", review: "accepted", evidence_ids: ["evd-anime-195-196"]}
+  - {id: "rel-1118-ryudoin-4", kind: "before", a: "ev-y0-1118-truth-agira-revealed", b: "ev-y0-1118-ryudoin-revenge-ends", basis: "source", review: "accepted", evidence_ids: ["evd-anime-195-196"]}
+presence: []

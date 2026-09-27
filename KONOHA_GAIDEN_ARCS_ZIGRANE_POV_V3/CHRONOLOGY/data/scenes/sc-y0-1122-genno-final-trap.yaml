@@ -1,0 +1,68 @@
+schema_version: 1
+id: "sc-y0-1122-genno-final-trap"
+continuity_id: "main"
+title: "Наруто й одинадцятеро шинобі зупиняють останню пастку Ґенно"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1122-genno", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "working", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1122-naruto-confronts-genno-alive"
+    legacy_ids: ["V10-000196"]
+    title: "Наруто знаходить живого Ґенно"
+    text: "Наруто наздоганяє Ґенно й підтверджує, що попередня «самогубна» детонація була обманом."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "pursuer", mode: "physical"}
+      - {entity_id: "c-genno", role: "fugitive", mode: "physical"}
+    evidence_ids: ["evd-v10-000196", "evd-anime-197-201"]
+  - id: "ev-y0-1122-shikamaru-identifies-rockslide-plan"
+    legacy_ids: ["V10-000196"]
+    title: "Шикамару розуміє справжній задум Ґенно"
+    text: "Шикамару доходить висновку, що знайдені печатки були відволіканням: кінцева пастка має обвалити скелю з монументом Хокаґе й поховати Коноху."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "analyst", mode: "physical"}
+      - {entity_id: "c-genno", role: "planner", mode: "remote"}
+    evidence_ids: ["evd-v10-000196", "evd-anime-197-201"]
+  - id: "ev-y0-1122-eleven-stop-rockslide"
+    legacy_ids: ["V10-000196"]
+    title: "Одинадцятеро шинобі зупиняють руйнування Конохи"
+    text: "Команда реагує на справжню пастку й не дозволяє обвалу монумента Хокаґе знищити село."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "defender", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "coordinator", mode: "physical"}
+      - {entity_id: "c-sakura", role: "defender", mode: "physical"}
+      - {entity_id: "c-choji", role: "defender", mode: "physical"}
+      - {entity_id: "c-ino", role: "defender", mode: "physical"}
+      - {entity_id: "c-kiba", role: "defender", mode: "physical"}
+      - {entity_id: "c-hinata", role: "defender", mode: "physical"}
+      - {entity_id: "c-shino", role: "defender", mode: "physical"}
+      - {entity_id: "c-neji", role: "defender", mode: "physical"}
+      - {entity_id: "c-lee", role: "defender", mode: "physical"}
+      - {entity_id: "c-tenten", role: "defender", mode: "physical"}
+    evidence_ids: ["evd-v10-000196", "evd-anime-197-201"]
+  - id: "ev-y0-1122-genno-dies-after-revenge"
+    legacy_ids: ["V10-000196"]
+    title: "Ґенно помирає після провалу останньої помсти"
+    text: "Після зупиненого плану Ґенно відпускає багаторічну помсту й помирає, не знищивши Коноху."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-genno", role: "deceased", mode: "physical"}
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+    evidence_ids: ["evd-v10-000196", "evd-anime-197-201"]
+relations:
+  - {id: "rel-1122-genno-1", kind: "before", a: "ev-y0-1122-naruto-confronts-genno-alive", b: "ev-y0-1122-shikamaru-identifies-rockslide-plan", basis: "source", review: "accepted", evidence_ids: ["evd-anime-197-201"]}
+  - {id: "rel-1122-genno-2", kind: "before", a: "ev-y0-1122-shikamaru-identifies-rockslide-plan", b: "ev-y0-1122-eleven-stop-rockslide", basis: "source", review: "accepted", evidence_ids: ["evd-anime-197-201"]}
+  - {id: "rel-1122-genno-3", kind: "before", a: "ev-y0-1122-eleven-stop-rockslide", b: "ev-y0-1122-genno-dies-after-revenge", basis: "source", review: "accepted", evidence_ids: ["evd-anime-197-201"]}
+presence: []

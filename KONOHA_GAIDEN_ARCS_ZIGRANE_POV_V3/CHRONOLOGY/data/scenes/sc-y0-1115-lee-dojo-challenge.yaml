@@ -1,0 +1,63 @@
+schema_version: 1
+id: "sc-y0-1115-lee-dojo-challenge"
+continuity_id: "main"
+title: "Лі відкриває доджьо, а шпигун Нанафуші випадково стає його першим суперником"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1115-dojo", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "working", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1115-lee-opens-dojo"
+    legacy_ids: ["V10-000186"]
+    title: "Лі відкриває власне доджьо для тренувальних викликів"
+    text: "Через нестачу часу на тренування між місіями Лі відкриває доджьо, сподіваючись, що сильні бійці самі приходитимуть викликати його."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-lee", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "visitor", mode: "physical"}
+    evidence_ids: ["evd-v10-000186", "evd-anime-193"]
+  - id: "ev-y0-1115-guy-plans-disguised-challenge"
+    legacy_ids: ["V10-000186"]
+    title: "Ґай вирішує підтримати Лі, вдавши чужого претендента"
+    text: "Почувши від Наруто про доджьо, Ґай маскується, щоб стати першим суперником Лі, але до поєдинку його відправляють на термінову місію."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-might-guy", role: "mentor", mode: "physical"}
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+      - {entity_id: "c-lee", role: "intended_opponent", mode: "remote"}
+    evidence_ids: ["evd-v10-000186", "evd-anime-193"]
+  - id: "ev-y0-1115-nanafushi-impersonates-guy"
+    legacy_ids: ["V10-000186"]
+    title: "Нанафуші копіює вигляд Ґая й потрапляє в доджьо"
+    text: "Шпигун Нанафуші використовує образ замаскованого Ґая для проникнення в Коноху; Наруто приймає його за наставника й приводить до Лі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-nanafushi", role: "infiltrator", mode: "physical"}
+      - {entity_id: "c-naruto", role: "misled", mode: "physical"}
+      - {entity_id: "c-lee", role: "opponent", mode: "physical"}
+    evidence_ids: ["evd-v10-000186", "evd-anime-193"]
+  - id: "ev-y0-1115-dojo-exposes-nanafushi"
+    legacy_ids: ["V10-000186"]
+    title: "Серія помилкових ідентичностей викриває Нанафуші"
+    text: "Нанафуші переживає тренувальні поєдинки з Лі та нові маскування, але поява справжнього Ґая зрештою руйнує його прикриття; шпигуна викривають."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-nanafushi", role: "exposed_spy", mode: "physical"}
+      - {entity_id: "c-lee", role: "participant", mode: "physical"}
+      - {entity_id: "c-might-guy", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000186", "evd-anime-193"]
+relations:
+  - {id: "rel-1115-dojo-1", kind: "before", a: "ev-y0-1115-lee-opens-dojo", b: "ev-y0-1115-guy-plans-disguised-challenge", basis: "source", review: "accepted", evidence_ids: ["evd-anime-193"]}
+  - {id: "rel-1115-dojo-2", kind: "before", a: "ev-y0-1115-guy-plans-disguised-challenge", b: "ev-y0-1115-nanafushi-impersonates-guy", basis: "source", review: "accepted", evidence_ids: ["evd-anime-193"]}
+  - {id: "rel-1115-dojo-3", kind: "before", a: "ev-y0-1115-nanafushi-impersonates-guy", b: "ev-y0-1115-dojo-exposes-nanafushi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-193"]}
+presence: []

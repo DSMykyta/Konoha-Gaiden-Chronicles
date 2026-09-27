@@ -1,0 +1,37 @@
+schema_version: 1
+id: "sc-y0-1121-genno-paper-bombs"
+continuity_id: "main"
+title: "Коноха таємно знімає мережу вибухових печаток Ґенно"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1121-genno", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "working", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1121-konoha-covered-paper-bombs"
+    legacy_ids: ["V10-000194"]
+    title: "Шинобі усвідомлюють масштаб мережі вибухових печаток"
+    text: "Розслідування показує, що вибухові печатки Ґенно розміщені по всій Конохі, зокрема біля критичних об'єктів."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-shikamaru", role: "coordinator", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-genno", role: "trap_maker", mode: "remote"}
+    evidence_ids: ["evd-v10-000194", "evd-anime-197-201"]
+  - id: "ev-y0-1121-eleven-remove-seals"
+    legacy_ids: ["V10-000194"]
+    title: "Команда починає непомітно знімати печатки"
+    text: "Щоб не спровокувати Ґенно й не викликати паніку, шинобі Конохи таємно знешкоджують мережу печаток замість евакуації села."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "coordinator", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000194", "evd-anime-197-201"]
+relations:
+  - {id: "rel-1121-genno-1", kind: "before", a: "ev-y0-1121-konoha-covered-paper-bombs", b: "ev-y0-1121-eleven-remove-seals", basis: "source", review: "accepted", evidence_ids: ["evd-anime-197-201"]}
+presence: []

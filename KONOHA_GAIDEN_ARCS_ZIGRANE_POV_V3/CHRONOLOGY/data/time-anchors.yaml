@@ -1034,3 +1034,107 @@ anchors:
     evidence_ids: ["evd-v10-000185"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Fuku matchmaking mission."
+  - id: "ta-y0-1115-dojo"
+    date: {year: 0, month: 11, day: 15}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000186"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 193."
+  - id: "ta-y0-1116-haunted-castle"
+    date: {year: 0, month: 11, day: 16}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000187"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 194."
+  - id: "ta-y0-1117-ryudoin"
+    date: {year: 0, month: 11, day: 17}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000188"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 195."
+  - id: "ta-y0-1118-ryudoin"
+    date: {year: 0, month: 11, day: 18}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000189"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 196."
+  - id: "ta-alt-y0-1118-crescent-moon"
+    date: {year: 0, month: 11, day: 18}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000190"]
+    review: "accepted"
+    reason: "Alternative movie placement only; the film has no canonical calendar date."
+  - id: "ta-y0-1119-genno"
+    date: {year: 0, month: 11, day: 19}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000191"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 197."
+  - id: "ta-y0-1120-genno"
+    date: {year: 0, month: 11, day: 20}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000192"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episodes 198–199."
+  - id: "ta-alt-y0-1120-clash2"
+    date: {year: 0, month: 11, day: 20}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000193"]
+    review: "accepted"
+    reason: "Alternative game placement only; Clash of Ninja Revolution 2 has no canonical calendar date."
+  - id: "ta-y0-1121-genno"
+    date: {year: 0, month: 11, day: 21}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000194"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 200."
+  - id: "ta-alt-y0-1121-clash2"
+    date: {year: 0, month: 11, day: 21}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000195"]
+    review: "accepted"
+    reason: "Alternative game placement only; middle Clash of Ninja Revolution 2 segment."
+  - id: "ta-y0-1122-genno"
+    date: {year: 0, month: 11, day: 22}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000196"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 201."
+  - id: "ta-alt-y0-1122-clash2"
+    date: {year: 0, month: 11, day: 22}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000197"]
+    review: "accepted"
+    reason: "Alternative game placement only; Clash of Ninja Revolution 2 finale."
+  - id: "ta-y0-1123-recap"
+    date: {year: 0, month: 11, day: 23}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000198"]
+    review: "accepted"
+    reason: "Legacy date for episode 202 recap; retained only as a source/meta anchor, not an in-world event."

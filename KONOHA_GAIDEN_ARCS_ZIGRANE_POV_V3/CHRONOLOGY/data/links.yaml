@@ -1876,5 +1876,47 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-game-phantom-fortress"]
+  - id: "lnk-1117-ryudoin-before-1118-finale"
+    kind: "before"
+    a: "sc-y0-1117-ryudoin-yagura-trap"
+    b: "sc-y0-1118-ryudoin-finale"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-195-196"]
+  - id: "lnk-1119-genno-before-1120-investigation"
+    kind: "before"
+    a: "sc-y0-1119-genno-blueprints"
+    b: "sc-y0-1120-genno-investigation"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-197-201"]
+  - id: "lnk-1120-genno-before-1121-bombs"
+    kind: "before"
+    a: "sc-y0-1120-genno-investigation"
+    b: "sc-y0-1121-genno-paper-bombs"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-197-201"]
+  - id: "lnk-1121-genno-before-1122-final"
+    kind: "before"
+    a: "sc-y0-1121-genno-paper-bombs"
+    b: "sc-y0-1122-genno-final-trap"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-197-201"]
+  - id: "lnk-alt-1120-clash2-before-1121"
+    kind: "before"
+    a: "sc-alt-y0-1120-clash2-investigation"
+    b: "sc-alt-y0-1121-clash2-conspiracy"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-clash-revolution-2"]
+  - id: "lnk-alt-1121-clash2-before-1122"
+    kind: "before"
+    a: "sc-alt-y0-1121-clash2-conspiracy"
+    b: "sc-alt-y0-1122-clash2-finale"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-game-clash-revolution-2"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."

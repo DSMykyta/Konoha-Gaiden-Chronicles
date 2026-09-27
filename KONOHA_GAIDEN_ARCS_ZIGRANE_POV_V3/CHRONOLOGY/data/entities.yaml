@@ -1805,6 +1805,81 @@ entities:
     name: "Princess Kasumi"
     aliases:
       - "принцеса Касумі"
+  - id: "c-nanafushi"
+    kind: "person"
+    name: "Nanafushi"
+    aliases: ["Нанафуші"]
+  - id: "c-jako-ryudoin"
+    kind: "person"
+    name: "Jakō Ryūdōin"
+    aliases: ["Джако Рюдоін"]
+  - id: "c-rokkaku-ryudoin"
+    kind: "person"
+    name: "Rokkaku Ryūdōin"
+    aliases: ["Роккаку Рюдоін"]
+  - id: "c-agira-ryudoin"
+    kind: "person"
+    name: "Agira Ryūdōin"
+    aliases: ["Аґіра Рюдоін"]
+  - id: "c-giant-castle-chameleon"
+    kind: "creature"
+    name: "Giant castle-disguised chameleon"
+    aliases: ["гігантський хамелеон-замок"]
+  - id: "loc-land-of-honey"
+    kind: "location"
+    name: "Land of Honey"
+    aliases: ["Країна Меду"]
+  - id: "loc-haunted-castle"
+    kind: "location"
+    name: "Haunted Castle at Kubisaki Pass"
+    aliases: ["«проклятий» замок на перевалі Кубісакі"]
+    parent_id: "loc-land-of-honey"
+  - id: "c-michiru-tsuki"
+    kind: "person"
+    name: "Michiru Tsuki"
+    aliases: ["Мічіру Цукі"]
+  - id: "c-hikaru-tsuki"
+    kind: "person"
+    name: "Hikaru Tsuki"
+    aliases: ["Хікару Цукі"]
+  - id: "c-shabadaba"
+    kind: "person"
+    name: "Shabadaba"
+    aliases: ["Шабадаба"]
+  - id: "c-ishidate"
+    kind: "person"
+    name: "Ishidate"
+    aliases: ["Ішідате"]
+  - id: "loc-land-of-moon"
+    kind: "location"
+    name: "Land of the Moon"
+    aliases: ["Країна Місяця"]
+  - id: "loc-moon-royal-palace"
+    kind: "location"
+    name: "Land of the Moon royal palace"
+    aliases: ["королівський палац Країни Місяця"]
+    parent_id: "loc-land-of-moon"
+  - id: "c-genno"
+    kind: "person"
+    name: "Genno"
+    aliases: ["Ґенно", "Ґенноу"]
+  - id: "c-towa"
+    kind: "person"
+    name: "Towa"
+    aliases: ["Това"]
+  - id: "c-komachi"
+    kind: "person"
+    name: "Komachi"
+    aliases: ["Комачі"]
+  - id: "c-kagura-game"
+    kind: "person"
+    name: "Kagura (Clash of Ninja Revolution 2)"
+    aliases: ["Каґура", "Каґура (гра)"]
+  - id: "c-bando-game"
+    kind: "person"
+    name: "Bando (Clash of Ninja Revolution 2)"
+    aliases: ["Бандо", "Бандо (гра)"]
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

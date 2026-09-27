@@ -1,0 +1,56 @@
+schema_version: 1
+id: "sc-y0-1120-genno-investigation"
+continuity_id: "main"
+title: "Розслідування Ґенно повертає загрозу всередину Конохи"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1120-genno", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "working", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1120-naruto-retro-hypnosis"
+    legacy_ids: ["V10-000192"]
+    title: "АНБУ застосовує до Наруто ретрогіпноз"
+    text: "АНБУ намагається відновити спогади Наруто про знайомство з Ґенно за допомогою ретрогіпнозу, але корисної інформації майже не отримує."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+      - {entity_id: "c-genno", role: "memory_subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000192", "evd-anime-197-201"]
+  - id: "ev-y0-1120-waterfall-maneuvers-decoy"
+    legacy_ids: ["V10-000192"]
+    title: "Маневри Такіґакуре виявляються стороннім фактором"
+    text: "Повідомлення про маневри Такіґакуре біля кордону спершу виглядає можливим поясненням крадіжки, але розслідування відокремлює цю подію від дій Ґенно."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "analyst", mode: "physical"}
+      - {entity_id: "c-naruto", role: "investigator", mode: "physical"}
+    evidence_ids: ["evd-v10-000192", "evd-anime-197-201"]
+  - id: "ev-y0-1120-eleven-find-bomb-network"
+    legacy_ids: ["V10-000192"]
+    title: "Пошук у Конохі відкриває мережу вибухових печаток"
+    text: "Одинадцять шинобі повертають увагу до села й знаходять ознаки масштабної мережі вибухових печаток, закладених у Конохі."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "investigator", mode: "physical"}
+      - {entity_id: "c-sakura", role: "investigator", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "leader", mode: "physical"}
+      - {entity_id: "c-choji", role: "investigator", mode: "physical"}
+      - {entity_id: "c-ino", role: "investigator", mode: "physical"}
+      - {entity_id: "c-kiba", role: "investigator", mode: "physical"}
+      - {entity_id: "c-hinata", role: "investigator", mode: "physical"}
+      - {entity_id: "c-shino", role: "investigator", mode: "physical"}
+      - {entity_id: "c-neji", role: "investigator", mode: "physical"}
+      - {entity_id: "c-lee", role: "investigator", mode: "physical"}
+      - {entity_id: "c-tenten", role: "investigator", mode: "physical"}
+    evidence_ids: ["evd-v10-000192", "evd-anime-197-201"]
+relations:
+  - {id: "rel-1120-genno-1", kind: "before", a: "ev-y0-1120-naruto-retro-hypnosis", b: "ev-y0-1120-waterfall-maneuvers-decoy", basis: "source", review: "accepted", evidence_ids: ["evd-anime-197-201"]}
+  - {id: "rel-1120-genno-2", kind: "before", a: "ev-y0-1120-waterfall-maneuvers-decoy", b: "ev-y0-1120-eleven-find-bomb-network", basis: "source", review: "accepted", evidence_ids: ["evd-anime-197-201"]}
+presence: []
