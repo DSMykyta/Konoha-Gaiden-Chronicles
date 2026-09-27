@@ -1,0 +1,22 @@
+schema_version: 1
+id: "sc-alt-y0-1203-ninja-destiny2eu-finale"
+continuity_id: "alt-game-ninja-destiny-2-eu"
+title: "Європейська ігрова лінія завершує пост-сасківський тренувальний сюжет"
+placement: {anchor_id: "ta-alt-y0-1203-nd2eu", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "approximate", cast: "partial", location: "partial", origin: "accepted", text: "partial"}
+events:
+  - id: "ev-alt-y0-1203-nd2eu-sasuke-linked-finale"
+    legacy_ids: ["V10-000211"]
+    title: "Ігрова історія завершується фінальним зіткненням, пов'язаним із Саске"
+    text: "Старий v10 фіксує завершення європейської версії як фінальне сюжетне зіткнення, пов'язане із Саске; через відсутність надійної внутрішньої календарної прив'язки воно лишається тільки в альтернативній гілці."
+    origin: "G"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "story_subject", mode: "remote"}
+    evidence_ids: ["evd-v10-000211", "evd-game-ninja-destiny-2-eu"]
+relations: []
+presence: []

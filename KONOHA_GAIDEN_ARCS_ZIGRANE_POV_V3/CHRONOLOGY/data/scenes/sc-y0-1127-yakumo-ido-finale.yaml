@@ -1,0 +1,65 @@
+schema_version: 1
+id: "sc-y0-1127-yakumo-ido-finale"
+continuity_id: "main"
+title: "Якумо дізнається правду про Ідо й звільняється від неконтрольованої сили"
+location_id: "loc-yakumo-villa"
+placement: {anchor_id: "ta-y0-1127-yakumo", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1127-naruto-finds-kurenai-in-yakumo-studio"
+    legacy_ids: ["V10-000202"]
+    title: "Наруто знаходить Куренай під владою Якумо"
+    text: "Наруто приходить до студії Якумо й бачить, що та загнала Куренай у смертельно небезпечне ґенджюцу, вимагаючи відповіді про минуле."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "intervener", mode: "physical"}
+      - {entity_id: "c-yakumo-kurama", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "target", mode: "physical"}
+    evidence_ids: ["evd-v10-000202", "evd-anime-203-207"]
+  - id: "ev-y0-1127-ido-revealed"
+    legacy_ids: ["V10-000202"]
+    title: "Відкривається існування Ідо"
+    text: "Правда про пожежу відкриває Ідо — породження пригніченої сили й свідомості Якумо, яке спричинило загибель її батьків, а не Куренай."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-ido", role: "revealed_manifestation", mode: "physical"}
+      - {entity_id: "c-yakumo-kurama", role: "host", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "exonerated", mode: "physical"}
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+    evidence_ids: ["evd-v10-000202", "evd-anime-203-207"]
+  - id: "ev-y0-1127-yakumo-destroys-ido"
+    legacy_ids: ["V10-000202"]
+    title: "Якумо власноруч знищує Ідо"
+    text: "Прийнявши правду, Якумо відмовляється підкорятися Ідо й знищує його, припиняючи неконтрольовану загрозу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-yakumo-kurama", role: "actor", mode: "physical"}
+      - {entity_id: "c-ido", role: "destroyed", mode: "physical"}
+    evidence_ids: ["evd-v10-000202", "evd-anime-203-207"]
+  - id: "ev-y0-1127-kurenai-returns-team8"
+    legacy_ids: ["V10-000202"]
+    title: "Куренай повертається до Команди 8"
+    text: "Після завершення справи Якумо Куренай поновлює роль наставниці Команди 8; Якумо більше не змушує себе доводити цінність клану через бойову кар'єру."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-kurenai", role: "leader", mode: "physical"}
+      - {entity_id: "c-kiba", role: "team_member", mode: "physical"}
+      - {entity_id: "c-hinata", role: "team_member", mode: "physical"}
+      - {entity_id: "c-shino", role: "team_member", mode: "physical"}
+      - {entity_id: "c-yakumo-kurama", role: "resolved_student", mode: "physical"}
+    evidence_ids: ["evd-v10-000202", "evd-anime-203-207"]
+relations:
+  - {id: "rel-1127-yakumo-1", kind: "before", a: "ev-y0-1127-naruto-finds-kurenai-in-yakumo-studio", b: "ev-y0-1127-ido-revealed", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
+  - {id: "rel-1127-yakumo-2", kind: "before", a: "ev-y0-1127-ido-revealed", b: "ev-y0-1127-yakumo-destroys-ido", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
+  - {id: "rel-1127-yakumo-3", kind: "before", a: "ev-y0-1127-yakumo-destroys-ido", b: "ev-y0-1127-kurenai-returns-team8", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
+presence: []

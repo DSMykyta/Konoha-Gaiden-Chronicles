@@ -1880,6 +1880,55 @@ entities:
     name: "Bando (Clash of Ninja Revolution 2)"
     aliases: ["Бандо", "Бандо (гра)"]
 
+  - id: "c-yakumo-kurama"
+    kind: "person"
+    name: "Yakumo Kurama"
+    aliases: ["Якумо Курама"]
+  - id: "c-unkai-kurama"
+    kind: "person"
+    name: "Unkai Kurama"
+    aliases: ["Ункай Курама"]
+  - id: "c-ido"
+    kind: "person"
+    name: "Ido"
+    aliases: ["Ідо"]
+  - id: "group-kurama-clan"
+    kind: "organization"
+    name: "Kurama Clan"
+    aliases: ["клан Курама"]
+  - id: "loc-yakumo-villa"
+    kind: "location"
+    name: "Yakumo's mountain villa"
+    aliases: ["гірська вілла Якумо"]
+  - id: "c-shinemon"
+    kind: "person"
+    name: "Shinemon"
+    aliases: ["Шінемон"]
+  - id: "c-gantetsu"
+    kind: "person"
+    name: "Gantetsu"
+    aliases: ["Ґантецу"]
+  - id: "c-todoroki"
+    kind: "person"
+    name: "Todoroki"
+    aliases: ["Тодорокі"]
+  - id: "c-akio"
+    kind: "person"
+    name: "Akio"
+    aliases: ["Акіо"]
+  - id: "c-shura"
+    kind: "person"
+    name: "Shura"
+    aliases: ["Шура"]
+  - id: "group-shinobazu"
+    kind: "organization"
+    name: "Shinobazu"
+    aliases: ["Шінобадзу", "Ninja Dropouts"]
+  - id: "c-menma-amnesiac"
+    kind: "person"
+    name: "Menma (amnesiac youth)"
+    aliases: ["Менма", "юнак без пам'яті"]
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

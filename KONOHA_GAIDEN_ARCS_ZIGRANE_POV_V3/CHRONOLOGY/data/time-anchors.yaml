@@ -1138,3 +1138,123 @@ anchors:
     evidence_ids: ["evd-v10-000198"]
     review: "accepted"
     reason: "Legacy date for episode 202 recap; retained only as a source/meta anchor, not an in-world event."
+  - id: "ta-y0-1124-yakumo"
+    date: {year: 0, month: 11, day: 24}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000199"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 203."
+  - id: "ta-y0-1125-yakumo"
+    date: {year: 0, month: 11, day: 25}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000200"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episodes 204–205."
+  - id: "ta-y0-1126-yakumo"
+    date: {year: 0, month: 11, day: 26}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000201"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 206."
+  - id: "ta-y0-1127-yakumo"
+    date: {year: 0, month: 11, day: 27}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000202"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 207."
+  - id: "ta-y0-1128-shinemon"
+    date: {year: 0, month: 11, day: 28}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000203"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 208."
+  - id: "ta-y0-1129-gantetsu"
+    date: {year: 0, month: 11, day: 29}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000204"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 209."
+  - id: "ta-y0-1130-gantetsu"
+    date: {year: 0, month: 11, day: 30}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000205"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 210."
+  - id: "ta-y0-1201-gantetsu"
+    date: {year: 0, month: 12, day: 1}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000206"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 211."
+  - id: "ta-alt-y0-1201-nd2eu"
+    date: {year: 0, month: 12, day: 1}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000207"]
+    review: "accepted"
+    reason: "Alternative game placement only; exact in-world date is not official."
+  - id: "ta-y0-1202-gantetsu"
+    date: {year: 0, month: 12, day: 2}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000208"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 212."
+  - id: "ta-alt-y0-1202-nd2eu"
+    date: {year: 0, month: 12, day: 2}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000209"]
+    review: "accepted"
+    reason: "Alternative game placement only; middle story segment."
+  - id: "ta-y0-1203-menma"
+    date: {year: 0, month: 12, day: 3}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000210"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 213."
+  - id: "ta-alt-y0-1203-nd2eu"
+    date: {year: 0, month: 12, day: 3}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000211"]
+    review: "accepted"
+    reason: "Alternative game placement only; finale placement is not official."
+  - id: "ta-y0-1204-menma"
+    date: {year: 0, month: 12, day: 4}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000212"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 214."
+  - id: "ta-y0-1205-menma"
+    date: {year: 0, month: 12, day: 5}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000213"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for episode 215."

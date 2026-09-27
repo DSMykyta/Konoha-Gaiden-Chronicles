@@ -1,0 +1,61 @@
+schema_version: 1
+id: "sc-y0-1202-gantetsu-finale"
+continuity_id: "main"
+title: "Шура зазнає поразки, Акіо врятовано, а Тодорокі відмовляється від помсти"
+placement: {anchor_id: "ta-y0-1202-gantetsu", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1202-akio-endangered-shinobazu"
+    legacy_ids: ["V10-000208"]
+    title: "Шінобадзу використовують Акіо під час фінального зіткнення"
+    text: "Фінальна сутичка з бандою ставить Акіо під безпосередню загрозу й змушує Тодорокі та Ґантецу діяти на одному боці."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-akio", role: "endangered", mode: "physical"}
+      - {entity_id: "c-gantetsu", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-todoroki", role: "rescuer", mode: "physical"}
+      - {entity_id: "group-shinobazu", role: "attacker", mode: "physical"}
+    evidence_ids: ["evd-v10-000208", "evd-anime-209-212"]
+  - id: "ev-y0-1202-naruto-defeats-shura"
+    legacy_ids: ["V10-000208"]
+    title: "Наруто перемагає Шуру"
+    text: "Наруто перемагає Шуру, ламаючи опір Шінобадзу й дозволяючи завершити порятунок дітей."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "victor", mode: "physical"}
+      - {entity_id: "c-shura", role: "defeated", mode: "physical"}
+    evidence_ids: ["evd-v10-000208", "evd-anime-209-212"]
+  - id: "ev-y0-1202-gantetsu-rescues-akio"
+    legacy_ids: ["V10-000208"]
+    title: "Ґантецу рятує Акіо"
+    text: "Ґантецу захищає Акіо, остаточно підтверджуючи Тодорокі, що роками допомагав дітям, які стали жертвами банди."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-gantetsu", role: "rescuer", mode: "physical"}
+      - {entity_id: "c-akio", role: "rescued", mode: "physical"}
+      - {entity_id: "c-todoroki", role: "witness", mode: "physical"}
+    evidence_ids: ["evd-v10-000208", "evd-anime-209-212"]
+  - id: "ev-y0-1202-todoroki-allows-gantetsu-stay"
+    legacy_ids: ["V10-000208"]
+    title: "Тодорокі дозволяє Ґантецу залишитися з дітьми"
+    text: "Тодорокі все ще не виправдовує минуле Ґантецу, але відмовляється від особистої страти й дозволяє йому залишитися захищати дітей."
+    origin: "F"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-todoroki", role: "decision_maker", mode: "physical"}
+      - {entity_id: "c-gantetsu", role: "protector", mode: "physical"}
+      - {entity_id: "c-akio", role: "child", mode: "physical"}
+    evidence_ids: ["evd-v10-000208", "evd-anime-209-212"]
+relations:
+  - {id: "rel-1202-gantetsu-1", kind: "before", a: "ev-y0-1202-akio-endangered-shinobazu", b: "ev-y0-1202-naruto-defeats-shura", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
+  - {id: "rel-1202-gantetsu-2", kind: "before", a: "ev-y0-1202-naruto-defeats-shura", b: "ev-y0-1202-todoroki-allows-gantetsu-stay", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
+presence: []

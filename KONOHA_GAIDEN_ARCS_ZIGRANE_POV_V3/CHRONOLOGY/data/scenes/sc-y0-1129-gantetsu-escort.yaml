@@ -1,0 +1,53 @@
+schema_version: 1
+id: "sc-y0-1129-gantetsu-escort"
+continuity_id: "main"
+title: "Наруто, Сакура й Лі охороняють Ґантецу під час перевезення"
+placement: {anchor_id: "ta-y0-1129-gantetsu", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1129-gantetsu-requests-leaf-escort"
+    legacy_ids: ["V10-000204"]
+    title: "Колишній Шінобадзу Ґантецу просить охоронний супровід Конохи"
+    text: "Ґантецу, колишній член банди Шінобадзу, має бути доставлений під охороною; Наруто, Сакура й Лі входять до загону супроводу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-gantetsu", role: "prisoner", mode: "physical"}
+      - {entity_id: "c-naruto", role: "guard", mode: "physical"}
+      - {entity_id: "c-sakura", role: "guard", mode: "physical"}
+      - {entity_id: "c-lee", role: "guard", mode: "physical"}
+    evidence_ids: ["evd-v10-000204", "evd-anime-209-212"]
+  - id: "ev-y0-1129-todoroki-opposes-gantetsu"
+    legacy_ids: ["V10-000204"]
+    title: "Капітан Тодорокі відкрито вороже ставиться до Ґантецу"
+    text: "Тодорокі заперечує проти присутності шинобі Конохи й демонструє особисту ненависть до Ґантецу через напад Шінобадзу на його родину."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-todoroki", role: "escort_captain", mode: "physical"}
+      - {entity_id: "c-gantetsu", role: "target_of_anger", mode: "physical"}
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+    evidence_ids: ["evd-v10-000204", "evd-anime-209-212"]
+  - id: "ev-y0-1129-shinobazu-attack-escort"
+    legacy_ids: ["V10-000204"]
+    title: "Шінобадзу атакують загін супроводу"
+    text: "Колишні спільники Ґантецу нападають на конвой, перетворюючи перевезення в активну операцію проти банди."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "group-shinobazu", role: "attacker", mode: "physical"}
+      - {entity_id: "c-gantetsu", role: "target", mode: "physical"}
+      - {entity_id: "c-naruto", role: "defender", mode: "physical"}
+      - {entity_id: "c-sakura", role: "defender", mode: "physical"}
+      - {entity_id: "c-lee", role: "defender", mode: "physical"}
+      - {entity_id: "c-todoroki", role: "defender", mode: "physical"}
+    evidence_ids: ["evd-v10-000204", "evd-anime-209-212"]
+relations:
+  - {id: "rel-1129-gantetsu-1", kind: "before", a: "ev-y0-1129-gantetsu-requests-leaf-escort", b: "ev-y0-1129-todoroki-opposes-gantetsu", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
+  - {id: "rel-1129-gantetsu-2", kind: "before", a: "ev-y0-1129-todoroki-opposes-gantetsu", b: "ev-y0-1129-shinobazu-attack-escort", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
+presence: []

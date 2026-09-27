@@ -1,0 +1,54 @@
+schema_version: 1
+id: "sc-y0-1124-yakumo-kurenai-resigns"
+continuity_id: "main"
+title: "Куренай залишає Команду 8 через справу Якумо Курами"
+location_id: "loc-konohagakure"
+placement: {anchor_id: "ta-y0-1124-yakumo", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1124-naruto-meets-yakumo-villa"
+    legacy_ids: ["V10-000199"]
+    title: "Наруто зустрічає Якумо біля гірської вілли"
+    text: "Наруто зустрічає Якумо Кураму, яка малює біля віддаленої вілли; невдовзі АНБУ й медики забирають дівчину."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
+      - {entity_id: "c-yakumo-kurama", role: "focus", mode: "physical"}
+      - {entity_id: "group-anbu", role: "escort", mode: "physical"}
+    evidence_ids: ["evd-v10-000199", "evd-anime-203-207"]
+  - id: "ev-y0-1124-kurenai-leaves-team8"
+    legacy_ids: ["V10-000199"]
+    title: "Куренай оголошує, що більше не очолює Команду 8"
+    text: "Повернувшись до Конохи, Наруто дізнається, що Куренай відмовилася від ролі наставниці Кіби, Хінати й Шіно; причина пов'язана з її колишньою ученицею Якумо."
+    origin: "F"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kurenai", role: "former_leader", mode: "physical"}
+      - {entity_id: "c-kiba", role: "team_member", mode: "physical"}
+      - {entity_id: "c-hinata", role: "team_member", mode: "physical"}
+      - {entity_id: "c-shino", role: "team_member", mode: "physical"}
+      - {entity_id: "team-8", role: "affected_team", mode: "remote"}
+    evidence_ids: ["evd-v10-000199", "evd-anime-203-207"]
+  - id: "ev-y0-1124-team8-naruto-follow-kurenai"
+    legacy_ids: ["V10-000199"]
+    title: "Наруто й Команда 8 намагаються з'ясувати причину рішення Куренай"
+    text: "Кіба, Хіната, Шіно й Наруто не задовольняються коротким поясненням і йдуть слідом за Куренай у справі Якумо."
+    origin: "F"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "followed", mode: "physical"}
+    evidence_ids: ["evd-v10-000199", "evd-anime-203-207"]
+relations:
+  - {id: "rel-1124-yakumo-1", kind: "before", a: "ev-y0-1124-naruto-meets-yakumo-villa", b: "ev-y0-1124-kurenai-leaves-team8", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
+  - {id: "rel-1124-yakumo-2", kind: "before", a: "ev-y0-1124-kurenai-leaves-team8", b: "ev-y0-1124-team8-naruto-follow-kurenai", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
+presence: []
