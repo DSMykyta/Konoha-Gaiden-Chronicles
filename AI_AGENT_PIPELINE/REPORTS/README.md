@@ -2,99 +2,92 @@
 
 Тут зберігаються результати агентних кампаній.
 
-## Імена
+## Імена звітів
 
-Усі **створювані run-папки** та **історичні report-файли** мають timestamp у кінці назви.
-
-Часова зона: `Europe/Kyiv`.
-
-Suffix:
+Report-файли називаються тільки за ID задачі:
 
 ```text
-__YYYY-MM-DD_HH-mm-ss_KYIV
+01.md
+02.md
+A1.md
+O1.md
 ```
 
-Приклади:
+Час створення не записується в назву або metadata звіту.
+
+Повторний запуск:
 
 ```text
-EDITING-a1b2c3d4-01__2026-09-28_22-47-31_KYIV/
-04__2026-09-28_22-53-08_KYIV.md
-A1__2026-09-28_23-41-22_KYIV.md
+04__retry-01.md
+04__retry-02.md
 ```
 
-Стабільні pointer/lock-файли без timestamp:
-- `CURRENT_EDITING.md`;
-- `CURRENT_WRITING.md`;
-- `RUN.md`;
-- `CLAIMS/<PIPELINE>/<task-id>.md`.
+Основний report не перезаписується автоматично.
 
-## Стандарт
+## Структура
 
 ```text
 REPORTS/
 └── <target-key>/
     ├── CURRENT_EDITING.md
     ├── CURRENT_WRITING.md
-    └── <run-base-id>__<created-timestamp>_KYIV/
+    └── <run-folder>/
         ├── RUN.md
         ├── CLAIMS/
         │   └── <PIPELINE>/
         │       └── <task-id>.md
         ├── EDITING/
-        │   └── <task-id>__<created-timestamp>_KYIV.md
+        │   ├── 01.md
+        │   ├── 02.md
+        │   └── O1.md
         └── WRITING/
-            └── <task-id>__<created-timestamp>_KYIV.md
+            ├── K0.md
+            ├── 01.md
+            └── O1.md
 ```
 
-## Вибір найсвіжішого
+Run-папка може містити timestamp для розрізнення кампаній. Звіти — ні.
 
-Для потрібного target і pipeline:
+## Вибір поточного run
+
 1. `CURRENT_<PIPELINE>.md` має пріоритет, якщо веде на OPEN run.
-2. Якщо pointer відсутній/зламаний — серед папок цього target бери найновішу OPEN run-папку потрібного pipeline за timestamp у назві.
-3. Для конкретного task шукай `<task-id>__*.md`.
-4. Якщо є кілька COMPLETE report-файлів, бери найновіший за timestamp у filename.
-5. Retry належить тому самому task ID:
-   `04__retry-01__<timestamp>.md` → task `04`.
+2. Якщо pointer відсутній або зламаний — серед run-папок цього target бери найсвіжішу OPEN кампанію.
+3. Не бери run іншої арки.
+
+## Як визначити виконану задачу
+
+- `04.md` = основний результат task 04.
+- `04__retry-01.md`, `04__retry-02.md` = повтори task 04.
+- Якщо є кілька COMPLETE retry — використовуй retry з найбільшим номером.
+- Якщо retry немає — використовуй основний report.
 
 ## Автоматичний dispatcher
 
 Коли task ID не задано:
 1. знайти target;
-2. знайти найсвіжіший OPEN run;
+2. знайти поточний OPEN run;
 3. прочитати INDEX;
-4. зіставити task ID з report filename;
+4. перевірити наявні report-файли;
 5. перевірити CLAIMS;
 6. перевірити dependencies/gates;
 7. взяти перший runnable task за AUTO DISPATCH ORDER;
 8. створити атомарний claim;
 9. виконати;
-10. записати timestamped report;
+10. записати report `<task-id>.md`;
 11. видалити claim.
 
 Наявний claim без report означає: task уже взяв інший worker.
 
-## Залежності
-
-Task-файл визначає:
-- `required_reports`;
-- `optional_reports`;
-- `forbidden_reports`;
-- `stage_gate`.
-
-Required report вважається готовим лише якщо існує принаймні один відповідний timestamped report зі `Status: COMPLETE`.
-
-Не симулювати відсутній звіт.
-
 ## Готовність required report
 
-Файл не вважається готовим лише тому, що його ім'я існує.
-
 Required report = READY тільки коли:
-- filename відповідає потрібному task ID;
-- розмір > 0;
-- є змістовний результат після metadata/header;
-- `Status: COMPLETE`;
+- файл потрібного ID існує;
+- він не порожній;
+- містить змістовний результат після metadata/header;
+- має `Status: COMPLETE`;
 - target/run збігаються з поточною кампанією.
+
+Якщо є retry, для READY використовуй COMPLETE retry з найбільшим номером.
 
 Інакше статус входу = `NOT_READY`.
 
@@ -109,16 +102,14 @@ Required report = READY тільки коли:
 
 ## Завершений pipeline / final handoff
 
-Наявність COMPLETE `O1__*.md` означає, що основний pipeline цього run завершено.
+Наявність COMPLETE `O1.md` означає, що основний pipeline цього run завершено.
 
-Коли новий worker отримує загальну команду для target, він спочатку перевіряє останній run:
+Коли новий worker отримує загальну команду:
 - якщо O1 відсутній або не COMPLETE → працює за dispatcher;
-- якщо O1 COMPLETE → повертає готовий результат користувачу і **не створює нового run**.
+- якщо O1 COMPLETE → повертає готовий результат користувачу й не створює нового run.
 
 Пріоритет готового файла:
-1. файл із поля `Final artifact:` у найновішому COMPLETE O1;
-2. якщо такого поля/файла немає — сам найновіший COMPLETE `O1__*.md`.
-
-Якщо інтерфейс не може прикріпити репозиторний файл напряму, поверни пряме GitHub-посилання на нього.
+1. файл із поля `Final artifact:` у COMPLETE O1;
+2. якщо такого поля/файла немає — сам `O1.md`.
 
 Новий run після COMPLETE O1 створюється тільки за явною командою користувача на новий запуск/retry.
