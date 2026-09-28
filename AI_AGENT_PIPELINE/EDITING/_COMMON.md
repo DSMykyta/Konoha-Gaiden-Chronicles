@@ -45,3 +45,19 @@ Run-папка також має suffix:
 `__YYYY-MM-DD_HH-mm-ss_KYIV`.
 
 Для required report за ID `04` шукай найновіший COMPLETE файл `04__*.md` у поточному run.
+
+## Waiting protocol
+
+Перед запуском будь-якого `DEPENDENT*` task перевір кожен `required_report`.
+
+READY = файл існує, не порожній, має `Status: COMPLETE` і належить поточному run/target.
+
+Якщо required input не READY:
+- не починай аналіз;
+- не симулюй відсутній звіт;
+- не створюй COMPLETE report;
+- поверни `WAITING_FOR_REPORTS` зі списком missing / claimed / incomplete IDs.
+
+Для auto-dispatch допускається перейти до іншого runnable task цього pipeline. Якщо жодного runnable task немає — поверни `NO_RUNNABLE_TASKS`.
+
+Звичайний GPT-чат не виконує фоновий polling сам по собі. Повторна перевірка відбувається при новому повідомленні/запуску або через окрему явно налаштовану automation.
