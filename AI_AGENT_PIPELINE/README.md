@@ -9,7 +9,7 @@
 До проходження `EDIT GATE`:
 - **ЗАБОРОНЕНО** змінювати target-файл;
 - **ЗАБОРОНЕНО** обіцяти «внести правки в арку», «відредагувати текст» або формулювати план так, ніби target зараз буде змінено;
-- worker може створювати/видаляти тільки службові файли поточного run у `REPORTS/` (`RUN.md`, `CURRENT_*`, `CLAIMS`, timestamped reports);
+- worker може створювати/видаляти тільки службові файли поточного run у `REPORTS/` (`RUN.md`, `CURRENT_*`, `CLAIMS`, reports);
 - worker **не змінює** `AI_AGENT_PIPELINE/README.md`, `INDEX.md`, `_COMMON.md` або task-файли під час звичайного runtime-запуску;
 - task 01–28 — аналіз/арбітраж і результати пишуться тільки в REPORTS.
 
@@ -44,7 +44,7 @@ AI_AGENT_PIPELINE/README. Написання. Арка 12.
 6. знаходить наступну runnable-задачу;
 7. резервує її;
 8. виконує;
-9. записує timestamped report у GitHub.
+9. записує report у GitHub.
 
 Явна команда теж підтримується:
 
@@ -102,37 +102,27 @@ AI_AGENT_PIPELINE/
    - похідні копії, якщо є актуальний основний файл.
 5. Якщо кандидатів кілька і REPORTS не розв'язує неоднозначність — не вгадуй; поверни короткий список кандидатів.
 
-## Timestamp — обов'язковий у назвах створюваних report-файлів і run-папок
+## Іменування звітів
 
-Використовуй локальний час **Europe/Kyiv**.
-
-Формат suffix:
+Назва report-файла = ID задачі:
 
 ```text
-__YYYY-MM-DD_HH-mm-ss_KYIV
+01.md
+02.md
+A1.md
+O1.md
 ```
 
-Приклад run-папки:
+Час створення **не записується** ані в назву report-файла, ані в metadata report.
+
+Повторний запуск тієї самої задачі не перезаписує основний report:
 
 ```text
-EDITING-a1b2c3d4-01__2026-09-28_22-47-31_KYIV/
+04__retry-01.md
+04__retry-02.md
 ```
 
-Приклад report-файла:
-
-```text
-04__2026-09-28_22-53-08_KYIV.md
-```
-
-Timestamp означає **момент створення конкретного файла/папки**, не час початку всієї розмови.
-
-Стабільні службові файли, які мають бути унікальними ключами, timestamp не отримують:
-- `CURRENT_EDITING.md`;
-- `CURRENT_WRITING.md`;
-- `RUN.md`;
-- `CLAIMS/<PIPELINE>/<task-id>.md`.
-
-Причина: `CURRENT`, `RUN` і `CLAIM` — адресні/lock-файли, а не історичні звіти.
+Run-папка може зберігати свій timestamp для розрізнення окремих кампаній. Це властивість run, а не звітів.
 
 ## Run: одна кампанія
 
@@ -149,9 +139,9 @@ AI_AGENT_PIPELINE/REPORTS/
         │   └── EDITING/
         │       └── 04.md
         └── EDITING/
-            ├── 01__2026-09-28_22-48-01_KYIV.md
-            ├── 02__2026-09-28_22-48-19_KYIV.md
-            └── 04__2026-09-28_22-53-08_KYIV.md
+            ├── 01.md
+            ├── 02.md
+            └── 04.md
 ```
 
 ### Як знайти актуальний run
@@ -180,16 +170,15 @@ AI_AGENT_PIPELINE/REPORTS/
 
 1. Прочитай `INDEX.md` відповідного pipeline.
 2. Прочитай імена report-файлів у поточному run.
-3. Для визначення виконаного task ID бери частину імені **до першого `__YYYY-MM-DD_`**.
-   Наприклад `04__2026-09-28_22-53-08_KYIV.md` = task `04`.
-4. Якщо для task є кілька timestamped reports/retry — найновішим вважається report з найбільшим timestamp у назві.
+3. Для визначення виконаного task ID дивись на базове ім'я файла: `04.md` = task `04`; `04__retry-02.md` теж належить task `04`.
+4. Якщо існують retry-файли, найновішим результатом task вважай retry з найбільшим номером.
 5. Прочитай активні `CLAIMS`.
 6. Перевір `required_reports`, `forbidden_reports` і `stage_gate`.
 7. Візьми перший runnable task за `AUTO DISPATCH ORDER` в INDEX.
 8. Перед виконанням зарезервуй його через CLAIM.
 9. Після успішного claim ще раз перевір, чи інший worker не встиг створити готовий report.
 10. Виконай task.
-11. Запиши timestamped report.
+11. Запиши report.
 12. Видали свій CLAIM.
 
 Тому однакова команда в кількох чатах:
@@ -238,8 +227,7 @@ CLAIM **навмисно без timestamp**.
 5. Читає тільки дозволені required/optional reports.
 6. Якщо required report немає — task не runnable; в auto-mode переходить до іншого runnable task. У явно заданому task повертає `BLOCKED`.
 7. Виконує PROMPT.
-8. Створює report:
-   `<ID>__<creation-timestamp>_KYIV.md`.
+8. Створює report: `<ID>.md`.
 9. У чат повертає коротко: ID, статус, шлях до report.
 
 ## Як залежний task знаходить required report
@@ -249,15 +237,12 @@ CLAIM **навмисно без timestamp**.
 Шукай у поточному run:
 
 ```text
-EDITING/04__*.md
+EDITING/04.md
 ```
 
-або відповідно `WRITING/04__*.md`.
+або відповідно `WRITING/04.md`.
 
-Якщо знайдено кілька:
-1. відкинь report зі статусом не `COMPLETE`;
-2. серед COMPLETE бери найновіший за timestamp у filename;
-3. якщо це retry, він може бути новішим за первинний report і має пріоритет.
+Якщо є retry-файли, використовуй COMPLETE retry з найбільшим номером; якщо retry немає — основний `<ID>.md`.
 
 ## Формат RUN.md
 
@@ -279,7 +264,6 @@ EDITING/04__*.md
 
 - Target: `<repo-relative-path>`
 - Run: `<run-folder>`
-- Created at: `YYYY-MM-DD HH:mm:ss Europe/Kyiv`
 - Initial blob SHA: `<sha>`
 - Target blob SHA at execution: `<sha>`
 - Task file: `AI_AGENT_PIPELINE/<PIPELINE>/<ID>.md`
@@ -291,11 +275,11 @@ EDITING/04__*.md
 
 Не перезаписуй готовий report.
 
-При повторі створюй новий timestamped report:
+При повторі створюй новий report:
 
 ```text
-04__retry-01__2026-09-28_23-10-42_KYIV.md
-04__retry-02__2026-09-28_23-18-03_KYIV.md
+04__retry-01.md
+04__retry-02.md
 ```
 
 Для визначення task ID retry-файл усе одно належить task `04`.
@@ -406,7 +390,7 @@ NO_RUNNABLE_TASKS
 Перед створенням нового run або вибором наступної задачі **обов'язково перевір**, чи для цього target + pipeline уже існує найсвіжіший завершений run.
 
 Run вважається завершеним, якщо:
-- його фінальний оркестратор `O1` має непорожній timestamped report;
+- його фінальний оркестратор `O1` має непорожній report;
 - у report O1 є `Status: COMPLETE`;
 - report належить саме цьому target/run;
 - якщо `RUN.md` уже має `Status: COMPLETE`, це додаткове підтвердження.
@@ -416,10 +400,10 @@ Run вважається завершеним, якщо:
 **Не створюй новий run. Не запускай 01 повторно. Не роби retry автоматично.**
 
 Замість цього:
-1. знайди найновіший COMPLETE `O1__*.md` цього target/pipeline;
+1. знайди COMPLETE `O1.md` цього target/pipeline;
 2. прочитай його metadata;
 3. якщо O1 містить поле `Final artifact:` і цей файл існує — поверни користувачу саме цей готовий файл;
-4. якщо окремого final artifact немає — поверни сам `O1__*.md` як готовий результат;
+4. якщо окремого final artifact немає — поверни сам `O1.md` як готовий результат;
 5. у чаті дай:
    - сам готовий файл/його вміст, якщо інтерфейс дозволяє прикріпити або показати його;
    - і/або пряме посилання на відповідний файл у GitHub;
@@ -430,7 +414,7 @@ Run вважається завершеним, якщо:
 ```text
 PIPELINE_ALREADY_COMPLETE
 Target: arc 03 [Грім над Конохою].txt
-Final: O1__2026-09-28_23-41-22_KYIV.md
+Final: O1.md
 ```
 
 Після цього поверни файл або посилання на нього.
