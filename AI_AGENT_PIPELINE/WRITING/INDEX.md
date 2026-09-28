@@ -89,9 +89,9 @@ K0
 ### Правило вибору
 
 «Наступний» = перший ID у AUTO DISPATCH ORDER, який:
-- не має COMPLETE timestamped report;
+- не має COMPLETE report;
 - не має активного CLAIM;
 - має всі required reports;
 - пройшов stage gate.
 
-Для task `07` шукай `07__*.md` і retry-файли цього task.
+Для task `07` шукай `07.md`; повтори — `07__retry-NN.md`.
