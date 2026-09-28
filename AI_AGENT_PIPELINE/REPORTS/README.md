@@ -84,3 +84,25 @@ Task-файл визначає:
 Required report вважається готовим лише якщо існує принаймні один відповідний timestamped report зі `Status: COMPLETE`.
 
 Не симулювати відсутній звіт.
+
+## Готовність required report
+
+Файл не вважається готовим лише тому, що його ім'я існує.
+
+Required report = READY тільки коли:
+- filename відповідає потрібному task ID;
+- розмір > 0;
+- є змістовний результат після metadata/header;
+- `Status: COMPLETE`;
+- target/run збігаються з поточною кампанією.
+
+Інакше статус входу = `NOT_READY`.
+
+Для dependent task:
+- хоча б один required = NOT_READY → `WAITING_FOR_REPORTS`;
+- не створювати фінальний report dependent task;
+- не заповнювати відсутній input власними припущеннями.
+
+Для auto-dispatch:
+- якщо є інший runnable task — виконати його;
+- якщо runnable tasks немає — `NO_RUNNABLE_TASKS` і список відсутніх/claimed inputs.
