@@ -28,7 +28,20 @@
 
 Кожний файл задачі в цій папці містить власний routing front matter. Поля `required_reports`, `optional_reports` і `forbidden_reports` мають вищий операційний пріоритет для вибору вхідних REPORTS, але не змінюють зміст самого брифу.
 
-Шлях до звітів:
-`AI_AGENT_PIPELINE/REPORTS/<target-key>/<run-id>/EDITING/<task-id>.md`.
+Фізичний шлях до report-файла:
+`AI_AGENT_PIPELINE/REPORTS/<target-key>/<run-folder>/EDITING/<task-id>__<YYYY-MM-DD_HH-mm-ss>_KYIV.md`.
+
+Timestamp береться в момент створення файла в часовій зоні `Europe/Kyiv`. Якщо task-файл містить старе поле `report_path` без timestamp, трактуй його лише як логічний base path; це правило фізичного іменування має пріоритет.
 
 `run-id` створюється для всієї редакторської кампанії і не змінюється після редагування цільового файла. Кожний звіт окремо фіксує blob SHA тієї версії тексту, яку реально аналізував.
+
+
+## Timestamp naming
+
+Усі створювані report-файли цього pipeline мають закінчуватися:
+`__YYYY-MM-DD_HH-mm-ss_KYIV.md`.
+
+Run-папка також має suffix:
+`__YYYY-MM-DD_HH-mm-ss_KYIV`.
+
+Для required report за ID `04` шукай найновіший COMPLETE файл `04__*.md` у поточному run.
