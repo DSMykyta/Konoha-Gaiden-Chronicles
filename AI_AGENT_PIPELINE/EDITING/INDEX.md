@@ -85,7 +85,6 @@
 - має всі required reports;
 - має виконаний stage gate.
 
-Report-файли timestamped. Для перевірки виконаності `04` шукай `04__*.md` і `04__retry-*__*.md`.
 
 ### EDIT GATE
 
