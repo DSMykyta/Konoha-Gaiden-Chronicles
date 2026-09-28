@@ -2,93 +2,69 @@
 
 Кожний бриф лежить в окремому файлі `<ID>.md`.
 
-У WRITING використовуються **тільки числові ID 01–41**.
+## Суфікс `-e`
 
-Команда:
-```text
-Файл: <repo-relative-path>
-Виконай WRITING/07
-```
+Якщо task має хоча б один `required_report`, його ID і filename мають суфікс `-e`.
 
-означає: прочитати `AI_AGENT_PIPELINE/WRITING/07.md`, виконати routing цього файла й записати результат у REPORTS поточного run.
+Тому в WRITING:
+- `01.md` — незалежний Source Pack;
+- `02-e.md … 41-e.md` — задачі, які потребують уже створених report-файлів.
 
 | ID | Тип запуску | Required REPORTS |
 |---|---|---|
 | 01 | SOLO_CONTEXT | — |
-| 02 | ISOLATED_AFTER_01 | 01 |
-| 03 | ISOLATED_AFTER_01 | 01 |
-| 04 | ISOLATED_AFTER_01 | 01 |
-| 05 | ISOLATED_AFTER_01 | 01 |
-| 06 | ISOLATED_AFTER_01 | 01 |
-| 07 | ISOLATED_AFTER_01 | 01 |
-| 08 | ISOLATED_AFTER_01 | 01 |
-| 09 | ISOLATED_AFTER_01 | 01 |
-| 10 | ISOLATED_AFTER_01 | 01 |
-| 11 | ISOLATED_AFTER_01 | 01 |
-| 12 | ISOLATED_AFTER_01 | 01 |
-| 13 | ISOLATED_AFTER_01 | 01 |
-| 14 | ISOLATED_AFTER_01 | 01 |
-| 15 | ISOLATED_AFTER_01 | 01 |
-| 16 | ISOLATED_AFTER_01 | 01 |
-| 17 | ISOLATED_AFTER_01 | 01 |
-| 18 | ISOLATED_AFTER_01 | 01 |
-| 19 | ISOLATED_AFTER_01 | 01 |
-| 20 | ISOLATED_AFTER_01 | 01 |
-| 21 | ISOLATED_AFTER_01 | 01 |
-| 22 | ISOLATED_AFTER_01 | 01 |
-| 23 | ISOLATED_AFTER_01 | 01 |
-| 24 | ISOLATED_AFTER_01 | 01 |
-| 25 | ISOLATED_AFTER_01 | 01 |
-| 26 | DEPENDENT_CONTEXT_CHECK | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 |
-| 27 | DEPENDENT_CONTEXT_CHECK | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 |
-| 28 | DEPENDENT_CONTEXT_CHECK | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 |
-| 29 | DEPENDENT_RED_TEAM | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
-| 30 | DEPENDENT_RED_TEAM | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
-| 31 | DEPENDENT_RED_TEAM | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
-| 32 | DEPENDENT_ARBITER | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
-| 33 | DEPENDENT_ARBITER | 01, 29, 30, 31, 32 |
-| 34 | DEPENDENT_ARCHITECT | 01, 29, 30, 31, 32, 33 |
-| 35 | DEPENDENT_AUDIT | 34 |
-| 36 | DEPENDENT_WRITER | 01, 25, 34, 35 |
-| 37 | DEPENDENT_EDITOR | 01, 36 |
-| 38 | DEPENDENT_EDITOR | 34, 37 |
-| 39 | DEPENDENT_EDITOR | 38 |
-| 40 | DEPENDENT_EDITOR | 01, 34, 39 |
-| 41 | DEPENDENT_ORCHESTRATOR | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 |
-
-## Значення етапів
-
-- **01** — нейтральний Source Pack / контекстний компілятор.
-- **02–25** — 24 незалежні творчі агенти; читають 01, але не бачать один одного.
-- **26–28** — контекстні перевірки серійного континуїтету, зовнішнього канону/реального світу та Git/source provenance.
-- **29–31** — red-team проходи.
-- **32–33** — арбітраж.
-- **34** — архітектор.
-- **35** — аудит архітектури.
-- **36** — перший повний літературний драфт.
-- **37–40** — послідовні повнотекстові редакторські проходи.
-- **41** — фінальний оркестратор написання.
+| 02-e | ISOLATED_AFTER_01 | 01 |
+| 03-e | ISOLATED_AFTER_01 | 01 |
+| 04-e | ISOLATED_AFTER_01 | 01 |
+| 05-e | ISOLATED_AFTER_01 | 01 |
+| 06-e | ISOLATED_AFTER_01 | 01 |
+| 07-e | ISOLATED_AFTER_01 | 01 |
+| 08-e | ISOLATED_AFTER_01 | 01 |
+| 09-e | ISOLATED_AFTER_01 | 01 |
+| 10-e | ISOLATED_AFTER_01 | 01 |
+| 11-e | ISOLATED_AFTER_01 | 01 |
+| 12-e | ISOLATED_AFTER_01 | 01 |
+| 13-e | ISOLATED_AFTER_01 | 01 |
+| 14-e | ISOLATED_AFTER_01 | 01 |
+| 15-e | ISOLATED_AFTER_01 | 01 |
+| 16-e | ISOLATED_AFTER_01 | 01 |
+| 17-e | ISOLATED_AFTER_01 | 01 |
+| 18-e | ISOLATED_AFTER_01 | 01 |
+| 19-e | ISOLATED_AFTER_01 | 01 |
+| 20-e | ISOLATED_AFTER_01 | 01 |
+| 21-e | ISOLATED_AFTER_01 | 01 |
+| 22-e | ISOLATED_AFTER_01 | 01 |
+| 23-e | ISOLATED_AFTER_01 | 01 |
+| 24-e | ISOLATED_AFTER_01 | 01 |
+| 25-e | ISOLATED_AFTER_01 | 01 |
+| 26-e | DEPENDENT_CONTEXT_CHECK | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e |
+| 27-e | DEPENDENT_CONTEXT_CHECK | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e |
+| 28-e | DEPENDENT_CONTEXT_CHECK | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e |
+| 29-e | DEPENDENT_RED_TEAM | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e, 26-e, 27-e, 28-e |
+| 30-e | DEPENDENT_RED_TEAM | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e, 26-e, 27-e, 28-e |
+| 31-e | DEPENDENT_RED_TEAM | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e, 26-e, 27-e, 28-e |
+| 32-e | DEPENDENT_ARBITER | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e, 26-e, 27-e, 28-e |
+| 33-e | DEPENDENT_ARBITER | 01, 29-e, 30-e, 31-e, 32-e |
+| 34-e | DEPENDENT_ARCHITECT | 01, 29-e, 30-e, 31-e, 32-e, 33-e |
+| 35-e | DEPENDENT_AUDIT | 34-e |
+| 36-e | DEPENDENT_WRITER | 01, 25-e, 34-e, 35-e |
+| 37-e | DEPENDENT_EDITOR | 01, 36-e |
+| 38-e | DEPENDENT_EDITOR | 34-e, 37-e |
+| 39-e | DEPENDENT_EDITOR | 38-e |
+| 40-e | DEPENDENT_EDITOR | 01, 34-e, 39-e |
+| 41-e | DEPENDENT_ORCHESTRATOR | 01, 02-e, 03-e, 04-e, 05-e, 06-e, 07-e, 08-e, 09-e, 10-e, 11-e, 12-e, 13-e, 14-e, 15-e, 16-e, 17-e, 18-e, 19-e, 20-e, 21-e, 22-e, 23-e, 24-e, 25-e, 26-e, 27-e, 28-e, 29-e, 30-e, 31-e, 32-e, 33-e, 34-e, 35-e, 36-e, 37-e, 38-e, 39-e, 40-e |
 
 ## AUTO DISPATCH ORDER
 
-Для команди без ID dispatcher іде тільки за числами:
-
 ```text
-01 → 02 → 03 → ... → 25
-→ 26 → 27 → 28
-→ 29 → 30 → 31 → 32 → 33
-→ 34 → 35 → 36 → 37 → 38 → 39 → 40
-→ 41
+01
+→ 02-e → 03-e → ... → 25-e
+→ 26-e → 27-e → 28-e
+→ 29-e → 30-e → 31-e → 32-e → 33-e
+→ 34-e → 35-e → 36-e → 37-e → 38-e → 39-e → 40-e
+→ 41-e
 ```
 
-### Правило вибору
+Кілька чатів можуть паралельно брати runnable задачі через CLAIMS. Суфікс `-e` не означає «послідовно чекати попередній номер»; він означає лише: перед стартом перевір `required_reports`.
 
-«Наступний» = перший ID у цьому порядку, який:
-- не має COMPLETE report;
-- не має активного CLAIM;
-- має всі required reports;
-- пройшов stage gate.
-
-Кілька чатів можуть паралельно брати незалежні runnable задачі через CLAIMS. Числова нумерація визначає порядок пріоритету, а не забороняє паралельність там, де routing її дозволяє.
-
-Для task `07` шукай `07.md`; додаткові повні виконання — `07__02.md`, `07__03.md`.
+Фінальний основний report WRITING = `41-e.md`.
