@@ -6,3 +6,7 @@
 - Created at: `2026-09-28 23:21:12 Europe/Kyiv`
 - Initial blob SHA: `d75ff4cb492a0e60881d14d98a4c462bc2f8b764`
 - Status: OPEN
+- Edit gate: PASSED
+- Edit gate after: `EDITING/34-e.md`
+- Post-gate target SHA: `bbfc85f3cb8c1e9086e120f71e313624721832b0`
+- Post-gate edits: applied
