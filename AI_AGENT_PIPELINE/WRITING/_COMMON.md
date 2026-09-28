@@ -73,20 +73,17 @@
 Фізичний шлях до report-файла:
 `AI_AGENT_PIPELINE/REPORTS/<target-key>/<run-folder>/WRITING/<task-id>__<YYYY-MM-DD_HH-mm-ss>_KYIV.md`.
 
-Timestamp береться в момент створення файла в часовій зоні `Europe/Kyiv`. Якщо task-файл містить старе поле `report_path` без timestamp, трактуй його лише як логічний base path; це правило фізичного іменування має пріоритет.
 
 Один `run-id` використовується для всієї кампанії написання. Кожний результат окремо фіксує blob SHA джерела/версію прози, з якою реально працював.
 
 
-## Timestamp naming
+## Report naming
 
-Усі створювані report-файли цього pipeline мають закінчуватися:
-`__YYYY-MM-DD_HH-mm-ss_KYIV.md`.
+Звіт зберігай як `<task-id>.md`. Час створення в report filename/metadata не фіксуй.
 
-Run-папка також має suffix:
-`__YYYY-MM-DD_HH-mm-ss_KYIV`.
+Повторний запуск: `<task-id>__retry-01.md`, `__retry-02.md` тощо.
 
-Для required report за ID `04` шукай найновіший COMPLETE файл `04__*.md` у поточному run.
+Для required report за ID `04` використовуй `04.md`; якщо є COMPLETE retry — retry з найбільшим номером.
 
 ## Waiting protocol
 
