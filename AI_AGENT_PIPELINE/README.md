@@ -2,6 +2,41 @@
 
 Це ручний багаточатовий пайплайн для роботи з прозою без копіювання великих промптів.
 
+## Найкоротша команда
+
+Користувач не зобов'язаний називати повний шлях до арки або task ID.
+
+Достатньо:
+
+```text
+Репозиторій. AI_AGENT_PIPELINE/README. Редагування. Арка 12.
+```
+
+або:
+
+```text
+AI_AGENT_PIPELINE/README. Написання. Арка 12.
+```
+
+Тоді worker **сам**:
+1. читає цей README;
+2. визначає pipeline;
+3. знаходить потрібну арку;
+4. знаходить у `REPORTS` найсвіжішу кампанію саме цієї арки;
+5. дивиться, які задачі вже виконані або зарезервовані;
+6. знаходить наступну runnable-задачу;
+7. резервує її;
+8. виконує;
+9. записує timestamped report у GitHub.
+
+Явна команда теж підтримується:
+
+```text
+Арка 12. Виконай EDITING/04.
+```
+
+Якщо ID задано прямо, не шукай інший «наступний» ID.
+
 ## Структура
 
 ```text
@@ -28,97 +63,184 @@ AI_AGENT_PIPELINE/
     └── README.md
 ```
 
-Кожне завдання — окремий файл. Великі master-файли не використовуються як runtime-промпти.
+Кожне завдання — окремий task-файл.
 
-## Мінімальна команда
+## Розпізнавання pipeline
+
+- `редагування`, `редактура`, `перевірка`, `editing` → `EDITING`;
+- `написання`, `розширення`, `writing` → `WRITING`.
+
+## Як знайти цільовий текст
+
+Якщо користувач пише лише `Арка 12`:
+
+1. Спочатку знайди у `AI_AGENT_PIPELINE/REPORTS/` target-папку, чий `RUN.md` / `CURRENT_<PIPELINE>.md` вказує на цю арку.
+2. Поле `Target` у manifest є авторитетним repo-relative path.
+3. Якщо report-історії ще немає — знайди актуальний файл арки в самому репозиторії за номером/назвою.
+4. Під час пошуку ігноруй:
+   - `AI_AGENT_PIPELINE/`;
+   - `REPORTS/`;
+   - старі аудити;
+   - summary/recap/index;
+   - похідні копії, якщо є актуальний основний файл.
+5. Якщо кандидатів кілька і REPORTS не розв'язує неоднозначність — не вгадуй; поверни короткий список кандидатів.
+
+## Timestamp — обов'язковий у назвах створюваних report-файлів і run-папок
+
+Використовуй локальний час **Europe/Kyiv**.
+
+Формат suffix:
 
 ```text
-Файл: <repo-relative-path>
-Виконай EDITING/04
+__YYYY-MM-DD_HH-mm-ss_KYIV
 ```
 
-або:
+Приклад run-папки:
 
 ```text
-Файл: <repo-relative-path>
-Виконай WRITING/07
+EDITING-a1b2c3d4-01__2026-09-28_22-47-31_KYIV/
 ```
 
-Цього достатньо.
+Приклад report-файла:
 
-## Що робить worker-чат
+```text
+04__2026-09-28_22-53-08_KYIV.md
+```
 
-1. Відкриває цільовий файл і фіксує його поточний Git blob SHA.
-2. Відкриває рівно один task-файл:
-   - `EDITING/04` → `AI_AGENT_PIPELINE/EDITING/04.md`;
-   - `WRITING/W3` → `AI_AGENT_PIPELINE/WRITING/W3.md`.
-3. Читає `_COMMON.md` відповідного pipeline.
-4. Виконує routing front matter:
-   - `execution`;
-   - `required_reports`;
-   - `optional_reports`;
-   - `forbidden_reports`;
-   - `stage_gate`.
-5. Якщо required report відсутній — не вигадує його зміст, а повертає `BLOCKED`.
-6. Виконує PROMPT.
-7. Записує результат у REPORTS поточного run.
-8. У чат повертає короткий статус і шлях записаного файла.
+Timestamp означає **момент створення конкретного файла/папки**, не час початку всієї розмови.
 
-## SOLO проти DEPENDENT
+Стабільні службові файли, які мають бути унікальними ключами, timestamp не отримують:
+- `CURRENT_EDITING.md`;
+- `CURRENT_WRITING.md`;
+- `RUN.md`;
+- `CLAIMS/<PIPELINE>/<task-id>.md`.
 
-### SOLO
-Не відкривати REPORTS взагалі. Це критично для незалежності.
+Причина: `CURRENT`, `RUN` і `CLAIM` — адресні/lock-файли, а не історичні звіти.
 
-### SOLO_CONTEXT
-REPORTS заборонені, але бриф дозволяє первинні файли/Git/контекст.
+## Run: одна кампанія
 
-### ISOLATED_AFTER_K0
-Використовує тільки `K0` / SOURCE PACK. Звіти інших незалежних творчих агентів заборонені.
-
-### DEPENDENT*
-Читає тільки `required_reports` і, за потреби, `optional_reports` з task-файла.
-
-Routing не дозволяє самовільно розширювати контекст.
-
-## Run: одна кампанія, навіть якщо текст змінюється
-
-Звіти зберігаються не просто за поточним SHA, а за **run-id**:
+Стандарт:
 
 ```text
 AI_AGENT_PIPELINE/REPORTS/
 └── <target-key>/
     ├── CURRENT_EDITING.md
     ├── CURRENT_WRITING.md
-    └── <run-id>/
+    └── EDITING-a1b2c3d4-01__2026-09-28_22-47-31_KYIV/
         ├── RUN.md
-        ├── EDITING/
-        │   ├── 01.md
-        │   ├── A1.md
-        │   └── O1.md
-        └── WRITING/
-            ├── K0.md
-            ├── 07.md
-            ├── W3.md
-            └── O1.md
+        ├── CLAIMS/
+        │   └── EDITING/
+        │       └── 04.md
+        └── EDITING/
+            ├── 01__2026-09-28_22-48-01_KYIV.md
+            ├── 02__2026-09-28_22-48-19_KYIV.md
+            └── 04__2026-09-28_22-53-08_KYIV.md
 ```
 
-### Створення run
+### Як знайти актуальний run
 
-Якщо для pipeline немає активного `CURRENT_<PIPELINE>.md`, перший worker:
+1. Відкрий `CURRENT_<PIPELINE>.md` для знайденого target.
+2. Якщо він веде на run з `Status: OPEN` — використовуй його.
+3. Якщо CURRENT відсутній/зламаний — переглянь run-папки **цього target** і вибери найсвіжішу папку потрібного pipeline за timestamp у назві, у якої `RUN.md` має `Status: OPEN`.
+4. Якщо відкритого run немає — створи новий.
+5. Не бери run іншої арки лише тому, що він новіший.
 
-1. бере SHA початкової версії цільового файла;
-2. створює `run-id = <PIPELINE>-<sha8>-01`;
-3. якщо такий run уже існує — збільшує суфікс `-02`, `-03` тощо;
-4. створює `RUN.md`;
-5. створює/оновлює `CURRENT_EDITING.md` або `CURRENT_WRITING.md`.
+### Створення нового run
 
-Якщо два workers одночасно спробували ініціалізувати run і один отримав конфлікт — другий перечитує CURRENT і приєднується до вже створеного run.
+1. Зафіксуй SHA початкової версії target.
+2. Створи base ID: `<PIPELINE>-<sha8>-01`.
+3. Якщо base ID уже використовувався — збільш `-02`, `-03`...
+4. Додай timestamp створення папки:
+   `<base-id>__YYYY-MM-DD_HH-mm-ss_KYIV`.
+5. Створи `RUN.md`.
+6. Онови `CURRENT_<PIPELINE>.md`.
 
-### Чому run не змінюється після правок
+Один run залишається тією самою кампанією, навіть якщо сам текст у процесі був відредагований і його blob SHA змінився.
 
-Початкова аналітика може бути зроблена на SHA-A, потім текст відредаговано до SHA-B, після чого №29/30 працюють уже з SHA-B. Це все одна редакторська кампанія.
+## Автоматичний dispatcher: «виконай наступне»
 
-Тому **кожний report записує власний `target_blob_sha_at_execution`**, але лишається в одному run.
+Коли користувач не називає task ID:
+
+1. Прочитай `INDEX.md` відповідного pipeline.
+2. Прочитай імена report-файлів у поточному run.
+3. Для визначення виконаного task ID бери частину імені **до першого `__YYYY-MM-DD_`**.
+   Наприклад `04__2026-09-28_22-53-08_KYIV.md` = task `04`.
+4. Якщо для task є кілька timestamped reports/retry — найновішим вважається report з найбільшим timestamp у назві.
+5. Прочитай активні `CLAIMS`.
+6. Перевір `required_reports`, `forbidden_reports` і `stage_gate`.
+7. Візьми перший runnable task за `AUTO DISPATCH ORDER` в INDEX.
+8. Перед виконанням зарезервуй його через CLAIM.
+9. Після успішного claim ще раз перевір, чи інший worker не встиг створити готовий report.
+10. Виконай task.
+11. Запиши timestamped report.
+12. Видали свій CLAIM.
+
+Тому однакова команда в кількох чатах:
+
+```text
+AI_AGENT_PIPELINE/README. Редагування. Арка 12.
+```
+
+має роздати їм різні наступні доступні задачі.
+
+## CLAIMS — захист від дублювання
+
+Перед виконанням автоматично вибраного task створи:
+
+```text
+AI_AGENT_PIPELINE/REPORTS/<target-key>/<run-folder>/CLAIMS/<PIPELINE>/<task-id>.md
+```
+
+CLAIM **навмисно без timestamp**.
+
+```markdown
+# CLAIM
+
+- Target: `<repo-relative-path>`
+- Run: `<run-folder>`
+- Pipeline: `EDITING|WRITING`
+- Task ID: `<id>`
+- Target blob SHA at claim: `<sha>`
+- Claimed at: `YYYY-MM-DD HH:mm:ss Europe/Kyiv`
+- Status: CLAIMED
+```
+
+Створення claim — атомарна спроба створити новий файл.
+
+- створення успішне → task зарезервований цим worker;
+- файл уже існує / conflict → не перезаписувати; перечитати стан і взяти наступний runnable task;
+- після запису готового report видалити claim;
+- claim без report означає «зайнято» до явної команди `retry` / `звільни claim`.
+
+## Як worker виконує task
+
+1. Відкриває актуальний target і фіксує його поточний blob SHA.
+2. Відкриває task-файл `AI_AGENT_PIPELINE/<PIPELINE>/<ID>.md`.
+3. Читає `_COMMON.md`.
+4. Виконує routing front matter.
+5. Читає тільки дозволені required/optional reports.
+6. Якщо required report немає — task не runnable; в auto-mode переходить до іншого runnable task. У явно заданому task повертає `BLOCKED`.
+7. Виконує PROMPT.
+8. Створює report:
+   `<ID>__<creation-timestamp>_KYIV.md`.
+9. У чат повертає коротко: ID, статус, шлях до report.
+
+## Як залежний task знаходить required report
+
+Наприклад `required_reports: ["04"]`.
+
+Шукай у поточному run:
+
+```text
+EDITING/04__*.md
+```
+
+або відповідно `WRITING/04__*.md`.
+
+Якщо знайдено кілька:
+1. відкинь report зі статусом не `COMPLETE`;
+2. серед COMPLETE бери найновіший за timestamp у filename;
+3. якщо це retry, він може бути новішим за первинний report і має пріоритет.
 
 ## Формат RUN.md
 
@@ -127,12 +249,11 @@ AI_AGENT_PIPELINE/REPORTS/
 
 - Pipeline: EDITING
 - Target: `<repo-relative-path>`
-- Run ID: `EDITING-a1b2c3d4-01`
+- Run folder: `EDITING-a1b2c3d4-01__2026-09-28_22-47-31_KYIV`
+- Created at: `2026-09-28 22:47:31 Europe/Kyiv`
 - Initial blob SHA: `<full-sha>`
 - Status: OPEN
 ```
-
-O1 після завершення ставить `Status: COMPLETE`. Наступний leaf/solo запуск на цьому target створює новий run. Для EDITING/31 дозволено використати щойно завершений current run після O1.
 
 ## Заголовок кожного report
 
@@ -140,7 +261,8 @@ O1 після завершення ставить `Status: COMPLETE`. Насту
 # <PIPELINE>/<ID> — <назва>
 
 - Target: `<repo-relative-path>`
-- Run ID: `<run-id>`
+- Run: `<run-folder>`
+- Created at: `YYYY-MM-DD HH:mm:ss Europe/Kyiv`
 - Initial blob SHA: `<sha>`
 - Target blob SHA at execution: `<sha>`
 - Task file: `AI_AGENT_PIPELINE/<PIPELINE>/<ID>.md`
@@ -148,35 +270,43 @@ O1 після завершення ставить `Status: COMPLETE`. Насту
 - Status: COMPLETE
 ```
 
-Далі — тільки результат брифу.
+## Retry
 
-## Якщо report уже існує
+Не перезаписуй готовий report.
 
-- `Status: COMPLETE` → не перезаписувати без команди `retry` / `повтори`.
-- Повтор → `<ID>__retry-01.md`, потім `retry-02` тощо.
-- `BLOCKED` не вважається виконаною задачею.
+При повторі створюй новий timestamped report:
+
+```text
+04__retry-01__2026-09-28_23-10-42_KYIV.md
+04__retry-02__2026-09-28_23-18-03_KYIV.md
+```
+
+Для визначення task ID retry-файл усе одно належить task `04`.
 
 ## EDITING
 
 Дивись `AI_AGENT_PIPELINE/EDITING/INDEX.md`.
 
-Ключова незалежність:
-- №01–27 + D1 — SOLO;
-- K0 — SOLO_CONTEXT;
-- №29–30 — SOLO_POST_EDIT;
-- арбітри/O1 читають лише явно визначені результати.
+Важливо:
+- 01–27 + D1 — незалежні;
+- K0 — контекстний незалежний;
+- A/28/O — залежні;
+- після 28 існує EDIT GATE;
+- 29–30 запускаються свіжими після реальних правок;
+- O1 — останній основний оркестратор;
+- 31 — тільки явною командою, не auto-dispatch.
 
 ## WRITING
 
 Дивись `AI_AGENT_PIPELINE/WRITING/INDEX.md`.
 
-Ключова незалежність:
-- K0 створює SOURCE PACK;
-- №01–24 незалежні між собою і бачать лише K0;
-- D1–D3 перевіряють конкретні контекстні питання;
-- A/W/O етапи збирають результати за routing.
-- Повнотекстові редактори йдуть послідовно: `W3 → W4 → W5 → W6 → W7 → O1`.
+Важливо:
+- K0 перший;
+- 01–24 незалежні між собою, але читають K0;
+- D1–D3 не є обов'язковими auto-задачами;
+- A/W/O працюють за залежностями;
+- повнотекстова гілка: `W3 → W4 → W5 → W6 → W7 → O1`.
 
-## Не редагувати цільовий файл без прямого дозволу
+## Не редагувати target без дозволеного етапу
 
-Аналізатор або арбітр пише report. Він не змінює літературний файл, якщо користувач прямо не наказав внести правки або сам task-файл явно не є письменницьким/редакторським етапом, який має повернути нову прозу.
+Аналізатор/арбітр пише report і не змінює літературний файл, якщо користувач прямо не наказав внести правки або task сам є письменницьким/редакторським етапом, який повертає нову прозу.
