@@ -2,96 +2,93 @@
 
 Кожний бриф лежить в окремому файлі `<ID>.md`.
 
+У WRITING використовуються **тільки числові ID 01–41**.
+
 Команда:
 ```text
 Файл: <repo-relative-path>
 Виконай WRITING/07
 ```
 
-означає: прочитати `AI_AGENT_PIPELINE/WRITING/07.md`, виконати його routing і записати результат у REPORTS поточного run.
+означає: прочитати `AI_AGENT_PIPELINE/WRITING/07.md`, виконати routing цього файла й записати результат у REPORTS поточного run.
 
 | ID | Тип запуску | Required REPORTS |
 |---|---|---|
-| K0 | SOLO_CONTEXT | — |
-| 01 | ISOLATED_AFTER_K0 | K0 |
-| 02 | ISOLATED_AFTER_K0 | K0 |
-| 03 | ISOLATED_AFTER_K0 | K0 |
-| 04 | ISOLATED_AFTER_K0 | K0 |
-| 05 | ISOLATED_AFTER_K0 | K0 |
-| 06 | ISOLATED_AFTER_K0 | K0 |
-| 07 | ISOLATED_AFTER_K0 | K0 |
-| 08 | ISOLATED_AFTER_K0 | K0 |
-| 09 | ISOLATED_AFTER_K0 | K0 |
-| 10 | ISOLATED_AFTER_K0 | K0 |
-| 11 | ISOLATED_AFTER_K0 | K0 |
-| 12 | ISOLATED_AFTER_K0 | K0 |
-| 13 | ISOLATED_AFTER_K0 | K0 |
-| 14 | ISOLATED_AFTER_K0 | K0 |
-| 15 | ISOLATED_AFTER_K0 | K0 |
-| 16 | ISOLATED_AFTER_K0 | K0 |
-| 17 | ISOLATED_AFTER_K0 | K0 |
-| 18 | ISOLATED_AFTER_K0 | K0 |
-| 19 | ISOLATED_AFTER_K0 | K0 |
-| 20 | ISOLATED_AFTER_K0 | K0 |
-| 21 | ISOLATED_AFTER_K0 | K0 |
-| 22 | ISOLATED_AFTER_K0 | K0 |
-| 23 | ISOLATED_AFTER_K0 | K0 |
-| 24 | ISOLATED_AFTER_K0 | K0 |
-| D1 | DEPENDENT_CONTEXT_CHECK | K0 |
-| D2 | DEPENDENT_CONTEXT_CHECK | K0 |
-| D3 | DEPENDENT_CONTEXT_CHECK | K0 |
-| A1 | DEPENDENT_RED_TEAM | K0, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 |
-| A2 | DEPENDENT_RED_TEAM | K0, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 |
-| A3 | DEPENDENT_RED_TEAM | K0, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 |
-| A4 | DEPENDENT_ARBITER | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 |
-| A5 | DEPENDENT_ARBITER | K0, A1, A2, A3, A4 |
-| W1 | DEPENDENT_ARCHITECT | K0, A1, A2, A3, A4, A5 |
-| W2 | DEPENDENT_AUDIT | W1 |
-| W3 | DEPENDENT_WRITER | K0, W1, W2, 24 |
-| W4 | DEPENDENT_EDITOR | W3, K0 |
-| W5 | DEPENDENT_EDITOR | W4, W1 |
-| W6 | DEPENDENT_EDITOR | W5 |
-| W7 | DEPENDENT_EDITOR | W6, K0, W1 |
-| O1 | DEPENDENT_ORCHESTRATOR | K0, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, A1, A2, A3, A4, A5, W1, W2, W3, W4, W5, W6, W7 |
+| 01 | SOLO_CONTEXT | — |
+| 02 | ISOLATED_AFTER_01 | 01 |
+| 03 | ISOLATED_AFTER_01 | 01 |
+| 04 | ISOLATED_AFTER_01 | 01 |
+| 05 | ISOLATED_AFTER_01 | 01 |
+| 06 | ISOLATED_AFTER_01 | 01 |
+| 07 | ISOLATED_AFTER_01 | 01 |
+| 08 | ISOLATED_AFTER_01 | 01 |
+| 09 | ISOLATED_AFTER_01 | 01 |
+| 10 | ISOLATED_AFTER_01 | 01 |
+| 11 | ISOLATED_AFTER_01 | 01 |
+| 12 | ISOLATED_AFTER_01 | 01 |
+| 13 | ISOLATED_AFTER_01 | 01 |
+| 14 | ISOLATED_AFTER_01 | 01 |
+| 15 | ISOLATED_AFTER_01 | 01 |
+| 16 | ISOLATED_AFTER_01 | 01 |
+| 17 | ISOLATED_AFTER_01 | 01 |
+| 18 | ISOLATED_AFTER_01 | 01 |
+| 19 | ISOLATED_AFTER_01 | 01 |
+| 20 | ISOLATED_AFTER_01 | 01 |
+| 21 | ISOLATED_AFTER_01 | 01 |
+| 22 | ISOLATED_AFTER_01 | 01 |
+| 23 | ISOLATED_AFTER_01 | 01 |
+| 24 | ISOLATED_AFTER_01 | 01 |
+| 25 | ISOLATED_AFTER_01 | 01 |
+| 26 | DEPENDENT_CONTEXT_CHECK | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 |
+| 27 | DEPENDENT_CONTEXT_CHECK | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 |
+| 28 | DEPENDENT_CONTEXT_CHECK | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 |
+| 29 | DEPENDENT_RED_TEAM | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
+| 30 | DEPENDENT_RED_TEAM | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
+| 31 | DEPENDENT_RED_TEAM | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
+| 32 | DEPENDENT_ARBITER | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28 |
+| 33 | DEPENDENT_ARBITER | 01, 29, 30, 31, 32 |
+| 34 | DEPENDENT_ARCHITECT | 01, 29, 30, 31, 32, 33 |
+| 35 | DEPENDENT_AUDIT | 34 |
+| 36 | DEPENDENT_WRITER | 01, 25, 34, 35 |
+| 37 | DEPENDENT_EDITOR | 01, 36 |
+| 38 | DEPENDENT_EDITOR | 34, 37 |
+| 39 | DEPENDENT_EDITOR | 38 |
+| 40 | DEPENDENT_EDITOR | 01, 34, 39 |
+| 41 | DEPENDENT_ORCHESTRATOR | 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 |
 
-## Значення
+## Значення етапів
 
-- **SOLO_CONTEXT** — K0 працює з джерелом/Git/доступним авторським контекстом, без REPORTS.
-- **ISOLATED_AFTER_K0** — №01–24 бачать K0/SOURCE PACK, але не бачать один одного.
-- **DEPENDENT_CONTEXT_CHECK** — D1–D3 отримують K0 і лише релевантні пропозиції 01–24 як питання для перевірки.
-- **DEPENDENT*** — читає лише зазначені required/optional результати.
-- Якщо required REPORT відсутній — `BLOCKED`.
-
-## Редакторський ланцюг
-
-Після W3 повнотекстові проходи виконуються послідовно:
-`W3 → W4 → W5 → W6 → W7 → O1`.
-
-Це routing-рішення потрібне, щоб не створювати чотири паралельні несумісні версії повного тексту.
-
+- **01** — нейтральний Source Pack / контекстний компілятор.
+- **02–25** — 24 незалежні творчі агенти; читають 01, але не бачать один одного.
+- **26–28** — контекстні перевірки серійного континуїтету, зовнішнього канону/реального світу та Git/source provenance.
+- **29–31** — red-team проходи.
+- **32–33** — арбітраж.
+- **34** — архітектор.
+- **35** — аудит архітектури.
+- **36** — перший повний літературний драфт.
+- **37–40** — послідовні повнотекстові редакторські проходи.
+- **41** — фінальний оркестратор написання.
 
 ## AUTO DISPATCH ORDER
 
-Для команди без ID:
+Для команди без ID dispatcher іде тільки за числами:
 
 ```text
-K0
-→ 01 → 02 → 03 → ... → 24
-→ A1 → A2 → A3 → A4 → A5
-→ W1 → W2 → W3 → W4 → W5 → W6 → W7
-→ O1
+01 → 02 → 03 → ... → 25
+→ 26 → 27 → 28
+→ 29 → 30 → 31 → 32 → 33
+→ 34 → 35 → 36 → 37 → 38 → 39 → 40
+→ 41
 ```
-
-`D1–D3` не запускаються автоматично за замовчуванням, бо вони контекстні «за потреби». Їх запускають:
-- явно;
-- або коли інший task/оркестратор прямо позначив конкретну потребу в такій перевірці.
 
 ### Правило вибору
 
-«Наступний» = перший ID у AUTO DISPATCH ORDER, який:
+«Наступний» = перший ID у цьому порядку, який:
 - не має COMPLETE report;
 - не має активного CLAIM;
 - має всі required reports;
 - пройшов stage gate.
 
-Для task `07` шукай `07.md`; повтори — `07__retry-NN.md`.
+Кілька чатів можуть паралельно брати незалежні runnable задачі через CLAIMS. Числова нумерація визначає порядок пріоритету, а не забороняє паралельність там, де routing її дозволяє.
+
+Для task `07` шукай `07.md`; додаткові повні виконання — `07__02.md`, `07__03.md`.
