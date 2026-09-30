@@ -2145,3 +2145,24 @@ notes:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "lnk-0803-akatsuki-fight-before-aoba-reveal"
+    kind: "before"
+    a: "sc-y0-0803-itachi-kisame-konoha-fight"
+    b: "sc-y0-0803-aoba-reveals-itachi-to-sasuke"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
+  - id: "lnk-0803-departure-before-aoba-reveal"
+    kind: "before"
+    a: "sc-y0-0803-naruto-jiraiya-depart"
+    b: "sc-y0-0803-aoba-reveals-itachi-to-sasuke"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
+  - id: "lnk-0803-aoba-reveal-before-0804-inn"
+    kind: "before"
+    a: "sc-y0-0803-aoba-reveals-itachi-to-sasuke"
+    b: "sc-y0-0804-itachi-kisame-find-naruto"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
