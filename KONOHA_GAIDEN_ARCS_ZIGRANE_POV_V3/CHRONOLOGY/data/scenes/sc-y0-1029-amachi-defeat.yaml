@@ -33,15 +33,17 @@ events:
     evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
   - id: "ev-y0-1029-amachi-captured"
     legacy_ids: ["V10-000163"]
-    title: "Амачі захоплюють живим"
-    text: "Після поразки Амачі більше не контролює поле бою й потрапляє під варту."
+    title: "Анко бере Амачі під варту й допитує його"
+    text: "Після поразки Анко особисто бере Амачі під варту. Коли він зізнається, що не знає способу повернути Ісарібі нормальне тіло й збирався позбутися її після завершення дослідів, Наруто кидається на нього; Анко стримує Наруто, сама б’є Амачі й вимагає відомостей про місцеперебування Орочімару."
     origin: "F"
     extent: "instant"
     display_rank: 300
     involvement:
       - {entity_id: "c-amachi", role: "affected", mode: "physical"}
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-isaribi", role: "subject", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
     evidence_ids: ["evd-v10-000163", "evd-anime-169-173"]
 relations:
   - {id: "rel-1029-amachi-1", kind: "before", a: "ev-y0-1029-amachi-reveals-perfect-kaima-transformation", b: "ev-y0-1029-naruto-nine-tails-defeats-amachi", basis: "source", review: "accepted", evidence_ids: ["evd-anime-169-173"]}
