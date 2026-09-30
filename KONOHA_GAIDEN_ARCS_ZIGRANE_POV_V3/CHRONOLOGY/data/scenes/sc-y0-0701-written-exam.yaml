@@ -21,13 +21,140 @@ events:
       - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000040-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-sakura-solves-written-test"
+    title: "Сакура розв’язує завдання без списування"
+    text: "Сакура швидко розуміє, що завдання значно складніші за звичайний рівень геніна, але завдяки знанням і точному контролю сама знаходить відповіді на перші дев’ять питань."
+    origin: "M"
+    extent: "interval"
+    display_rank: 110
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-sasuke-copies-writing-sharingan"
+    title: "Саске копіює рухи руки Шарінґаном"
+    text: "Саске розуміє справжню мету випробування й активує Шарінґан. Він стежить за рухами руки кандидата, який знає відповіді, і відтворює його письмо на власному аркуші."
+    origin: "M"
+    extent: "interval"
+    display_rank: 120
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-neji-reads-answers-byakugan"
+    title: "Неджі зчитує відповіді Б’якуґаном"
+    text: "Неджі активує Б’якуґан і використовує його проникний зір, щоб побачити аркуш іншого кандидата та переписати правильні відповіді."
+    origin: "M"
+    extent: "interval"
+    display_rank: 130
+    involvement:
+      - {entity_id: "c-neji", role: "focus", mode: "physical"}
+    focus_teams: ["team-guy"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-tenten-mirrors-answers-to-lee"
+    title: "Тентен передає відповіді Лі через дзеркала"
+    text: "Тентен за допомогою тонких дротів змінює положення відбивних поверхонь на стелі, ловить у них чужі аркуші й передає прочитані відповіді Року Лі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 140
+    involvement:
+      - {entity_id: "c-tenten", role: "focus", mode: "physical"}
+      - {entity_id: "c-lee", role: "recipient", mode: "physical"}
+    focus_teams: ["team-guy"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-ino-copies-sakura-for-team10"
+    title: "Іно бере відповіді Сакури й передає їх Команді 10"
+    text: "Іно використовує Техніку Перенесення Свідомості на Сакурі, читає її вже заповнений аркуш, повертається у власне тіло, а потім по черзі входить у Шикамару й Чоджі та вписує їм ті самі відповіді."
+    origin: "M"
+    extent: "interval"
+    display_rank: 150
+    involvement:
+      - {entity_id: "c-ino", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "source", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "recipient", mode: "physical"}
+      - {entity_id: "c-choji", role: "recipient", mode: "physical"}
+    focus_teams: ["team-10", "team-7"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-kiba-uses-akamaru"
+    title: "Кіба використовує Акамару як спостерігача"
+    text: "Акамару сидить у Кіби на голові й підглядає відповіді інших кандидатів, після чого передає їх Кібі умовними сигналами."
+    origin: "M"
+    extent: "interval"
+    display_rank: 160
+    involvement:
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "focus", mode: "physical"}
+    focus_teams: ["team-8"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-shino-uses-insect"
+    title: "Шіно добуває відповіді комахою"
+    text: "Шіно непомітно використовує одну зі своїх комах, щоб підглянути відповіді іншого кандидата й передати йому інформацію."
+    origin: "M"
+    extent: "interval"
+    display_rank: 170
+    involvement:
+      - {entity_id: "c-shino", role: "focus", mode: "physical"}
+    focus_teams: ["team-8"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-gaara-third-eye"
+    title: "Ґаара створює Третє Око"
+    text: "Ґаара засліплює іншого кандидата піском і формує з піску Третє Око, яким непомітно читає чужі відповіді."
+    origin: "M"
+    extent: "interval"
+    display_rank: 180
+    involvement:
+      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-kankuro-karasu-feeds-temari"
+    title: "Канкуро використовує Карасу й передає відповіді Темарі"
+    text: "Канкуро маскує ляльку Карасу під одного з наглядачів, використовує її для спостереження за чужими аркушами, а під приводом виходу до туалету зчитує здобуту інформацію. Потім він записує відповіді на маленький сувій і непомітно передає його Темарі."
+    origin: "M"
+    extent: "interval"
+    display_rank: 190
+    involvement:
+      - {entity_id: "c-kankuro", role: "focus", mode: "physical"}
+      - {entity_id: "c-temari", role: "recipient", mode: "physical"}
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-dosu-decodes-pencil-sounds"
+    title: "Досу зчитує письмо за звуком олівця"
+    text: "Досу слухає ритм і характер рухів чужого олівця та за звуковими коливаннями визначає, що саме кандидат записує на аркуші."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-dosu", role: "focus", mode: "physical"}
+    focus_teams: ["team-sound-genin"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-team9-pencil-signal-system"
+    title: "Сора передає Кіті й Рену відповіді рухами олівця"
+    text: "Сора знаходить відповіді й кодує їх ритмом та рухами олівця. Кіта й Рен стежать за її умовними жестами, зчитують узгоджений шифр і переносять відповіді на власні аркуші."
+    origin: "P"
+    extent: "interval"
+    display_rank: 210
+    involvement:
+      - {entity_id: "c-sora", role: "focus", mode: "physical"}
+      - {entity_id: "c-kita", role: "recipient", mode: "physical"}
+      - {entity_id: "c-ren", role: "recipient", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-project-team9-written-signal"]
+  - id: "ev-y0-0701-hinata-offers-naruto-answers"
+    title: "Хіната пропонує Наруто списати; Наруто відмовляється"
+    text: "Наруто не знаходить відповіді на перші дев’ять питань і не використовує жодного способу списування. Хіната, яка вже має заповнений аркуш, тихо пропонує йому подивитися на її відповіді, але Наруто відмовляється, боячись, що через нього дискваліфікують і її."
+    origin: "M"
+    extent: "interval"
+    display_rank: 220
+    involvement:
+      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    focus_teams: ["team-8", "team-7"]
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
   - id: "ev-y0-0701-ibiki-announces-tenth-question"
     legacy_ids: ["V10-000040-B"]
     title: "Ібікі ставить умову десятого питання"
     text: "Ібікі оголошує правило десятого питання, яке має змусити кандидатів обирати між ризиком і відмовою."
     origin: "M"
     extent: "interval"
-    display_rank: 200
+    display_rank: 300
     involvement:
       - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "participant", mode: "physical"}
@@ -38,7 +165,7 @@ events:
     text: "Наруто заявляє, що не відступить незалежно від наслідків десятого питання; це підштовхує інших кандидатів залишитися."
     origin: "M"
     extent: "interval"
-    display_rank: 300
+    display_rank: 400
     involvement:
       - {entity_id: "c-naruto", role: "focus", mode: "physical"}
       - {entity_id: "c-ibiki", role: "participant", mode: "physical"}
@@ -48,7 +175,7 @@ events:
     text: "Після того як Наруто відмовляється відступати й решта кандидатів лишається, Ібікі оголошує, що десятого письмового питання не існувало. Він знімає пов’язку й показує шрами від тортур на голові, пояснюючи, чому інформація на місії може коштувати життя. Перші дев’ять завдань перевіряли здатність добувати її непомітно, а десяте — сам вибір під тиском: чунін мусить ухвалювати рішення, навіть коли ставка — життя команди й невідомі наслідки."
     origin: "M"
     extent: "interval"
-    display_rank: 350
+    display_rank: 450
     involvement:
       - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "participant", mode: "physical"}
@@ -61,7 +188,7 @@ events:
     text: "Після випробування Ібікі до наступного етапу переходять 26 команд."
     origin: "M"
     extent: "interval"
-    display_rank: 400
+    display_rank: 500
     involvement:
       - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
     evidence_ids: ["evd-v10-000040-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
@@ -70,7 +197,7 @@ events:
     text: "Щойно Ібікі оголошує, що решта кандидатів пройшла перший етап, Анко Мітараші вривається до зали й представляється екзаменаторкою другого етапу. Побачивши, скільки команд пропустив Ібікі, вона дорікає йому за надто м’який відбір і наказує кандидатам іти за нею до наступного місця випробування."
     origin: "M"
     extent: "interval"
-    display_rank: 500
+    display_rank: 600
     involvement:
       - {entity_id: "c-anko", role: "focus", mode: "physical"}
       - {entity_id: "c-ibiki", role: "participant", mode: "physical"}
@@ -79,11 +206,26 @@ events:
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
     evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
 relations:
-  - {id: "rel-0701-written-1", kind: "before", a: "ev-y0-0701-ibiki-starts-written-exam", b: "ev-y0-0701-ibiki-announces-tenth-question", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-written-method-1", kind: "after", a: "ev-y0-0701-sakura-solves-written-test", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-2", kind: "after", a: "ev-y0-0701-sasuke-copies-writing-sharingan", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-3", kind: "after", a: "ev-y0-0701-neji-reads-answers-byakugan", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-4", kind: "after", a: "ev-y0-0701-tenten-mirrors-answers-to-lee", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-5", kind: "after", a: "ev-y0-0701-ino-copies-sakura-for-team10", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-6", kind: "after", a: "ev-y0-0701-kiba-uses-akamaru", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-7", kind: "after", a: "ev-y0-0701-shino-uses-insect", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-8", kind: "after", a: "ev-y0-0701-gaara-third-eye", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-9", kind: "after", a: "ev-y0-0701-kankuro-karasu-feeds-temari", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-10", kind: "after", a: "ev-y0-0701-dosu-decodes-pencil-sounds", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-method-11", kind: "after", a: "ev-y0-0701-team9-pencil-signal-system", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "project_decision", review: "accepted", evidence_ids: ["evd-project-team9-written-signal"]}
+  - {id: "rel-0701-written-method-12", kind: "after", a: "ev-y0-0701-hinata-offers-naruto-answers", b: "ev-y0-0701-ibiki-starts-written-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+  - {id: "rel-0701-written-methods-before-tenth", kind: "before", a: "ev-y0-0701-hinata-offers-naruto-answers", b: "ev-y0-0701-ibiki-announces-tenth-question", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
   - {id: "rel-0701-written-2", kind: "before", a: "ev-y0-0701-ibiki-announces-tenth-question", b: "ev-y0-0701-naruto-refuses-to-quit", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
   - {id: "rel-0701-written-3", kind: "before", a: "ev-y0-0701-naruto-refuses-to-quit", b: "ev-y0-0701-ibiki-explains-real-purpose", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
   - {id: "rel-0701-written-3b", kind: "before", a: "ev-y0-0701-ibiki-explains-real-purpose", b: "ev-y0-0701-written-exam-passes-26-teams", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
   - {id: "rel-0701-written-4", kind: "before", a: "ev-y0-0701-written-exam-passes-26-teams", b: "ev-y0-0701-anko-takes-over-second-stage", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
 presence:
+  - {id: "pr-0701-written-team9-sora", entity_id: "c-sora", from: "sc-y0-0701-written-exam.start", to: "sc-y0-0701-written-exam.end", basis: "project_decision", evidence_ids: ["evd-project-team9-written-signal"], review: "accepted"}
+  - {id: "pr-0701-written-team9-kita", entity_id: "c-kita", from: "sc-y0-0701-written-exam.start", to: "sc-y0-0701-written-exam.end", basis: "project_decision", evidence_ids: ["evd-project-team9-written-signal"], review: "accepted"}
+  - {id: "pr-0701-written-team9-ren", entity_id: "c-ren", from: "sc-y0-0701-written-exam.start", to: "sc-y0-0701-written-exam.end", basis: "project_decision", evidence_ids: ["evd-project-team9-written-signal"], review: "accepted"}
   - {id: "pr-0701-written-ibiki", entity_id: "c-ibiki", from: "sc-y0-0701-written-exam.start", to: "sc-y0-0701-written-exam.end", basis: "source", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"], review: "accepted"}
   - {id: "pr-0701-written-anko", entity_id: "c-anko", from: "ev-y0-0701-anko-takes-over-second-stage.start", to: "sc-y0-0701-written-exam.end", basis: "source", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"], review: "accepted"}
