@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0122-dango-shop"
 continuity_id: "main"
+episode_id: "ep-y0-team-introductions"
 title: "Знайомство Команди 9 в крамниці данґо"
 location_id: "loc-dango-shop"
 placement:
