@@ -31,6 +31,59 @@ const TimelineCore = {
     return result.sort((a,b)=>(a.position??Infinity)-(b.position??Infinity));
   },
   seed(id) { let value=2166136261;for(const c of id){value=Math.imul(value^c.charCodeAt(0),16777619);}return (value>>>0)/4294967296; },
+  sceneLayout(nodes,relations=[],owner={},middle=0,amplitude=100) {
+    if(!nodes.length)return new Map();
+    const byId=new Map(nodes.map(n=>[n.id,n])),edges=new Map(nodes.map(n=>[n.id,new Map()])),baseRef=ref=>typeof ref==='string'?(ref.endsWith('.start')?ref.slice(0,-6):ref.endsWith('.end')?ref.slice(0,-4):ref):ref;
+    const sceneOf=ref=>{const id=baseRef(ref);return owner[id]||id;};
+    const connect=(a,b,w)=>{if(a===b||!byId.has(a)||!byId.has(b))return;edges.get(a).set(b,(edges.get(a).get(b)||0)+w);edges.get(b).set(a,(edges.get(b).get(a)||0)+w);};
+    // Character continuity is the primary "story gravity": consecutive scenes sharing a
+    // physical character want to stay on the same visual stream.
+    const byCharacter=new Map();
+    for(const n of nodes)for(const id of n.layoutCast||[]){if(!byCharacter.has(id))byCharacter.set(id,[]);byCharacter.get(id).push(n);}
+    for(const list of byCharacter.values()){
+      list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+      for(let i=1;i<list.length;i++){const a=list[i-1],b=list[i],distance=Math.max(.05,b.day-a.day),w=2.8/Math.sqrt(1+distance*.18);connect(a.id,b.id,w);}
+    }
+    // Explicit chronology and cross-scene observations add extra gravity without
+    // changing X/time. Accepted observations/intersections are strongest.
+    for(const r of relations){
+      const a=sceneOf(r.a),b=sceneOf(r.b);if(a===b)continue;
+      let w=0;
+      if(r.review==='accepted')w=r.kind==='observes'||r.kind==='intersects'?5:r.kind==='before'?2.4:0;
+      else if(r.kind==='before')w=.8;
+      if(w)connect(a,b,w);
+    }
+    const sorted=[...nodes].sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id)),y=new Map();
+    for(const n of sorted){
+      const prior=[...edges.get(n.id)].map(([id,w])=>[byId.get(id),w]).filter(([m])=>m&&m.day<=n.day&&y.has(m.id));
+      if(prior.length){const total=prior.reduce((s,[,w])=>s+w,0);y.set(n.id,prior.reduce((s,[m,w])=>s+y.get(m.id)*w,0)/total+(this.seed(n.id+'lane')-.5)*.035);}
+      else y.set(n.id,(this.seed(n.id+'lane')-.5)*1.35);
+    }
+    // One-dimensional force relaxation. Connected story streams attract; unrelated
+    // scenes that occupy the same time window repel, so branches split and can later
+    // converge again when their casts meet.
+    for(let pass=0;pass<72;pass++){
+      const delta=new Map(nodes.map(n=>[n.id,0]));
+      for(const n of nodes){
+        for(const [otherId,w] of edges.get(n.id)){if(n.id>otherId)continue;const d=(y.get(otherId)-y.get(n.id))*.018*Math.min(6,w);delta.set(n.id,delta.get(n.id)+d);delta.set(otherId,delta.get(otherId)-d);}
+      }
+      for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
+        const a=nodes[i],b=nodes[j],time=Math.abs(a.day-b.day);if(time>1.15)continue;
+        const shared=(a.layoutCast||[]).some(id=>(b.layoutCast||[]).includes(id)),linked=edges.get(a.id).has(b.id);
+        const wanted=shared||linked?.12:.34,dy=y.get(b.id)-y.get(a.id),distance=Math.abs(dy);
+        if(distance>=wanted)continue;
+        const direction=distance>.008?Math.sign(dy):(this.seed(a.id+'|'+b.id)<.5?-1:1),strength=(wanted-distance)*(shared||linked?.018:.045)*(1-time/1.2);
+        delta.set(a.id,delta.get(a.id)-direction*strength);delta.set(b.id,delta.get(b.id)+direction*strength);
+      }
+      for(const n of nodes)y.set(n.id,Math.max(-1,Math.min(1,y.get(n.id)+delta.get(n.id))));
+    }
+    // Normalize only enough to use the available vertical field; preserve relative
+    // proximity so a connected branch still reads as one stream.
+    const values=[...y.values()],lo=Math.min(...values),hi=Math.max(...values),span=Math.max(.55,hi-lo);
+    const out=new Map();
+    for(const n of nodes){const normalized=(y.get(n.id)-(lo+hi)/2)/span*1.7;out.set(n.id,middle+Math.max(-.92,Math.min(.92,normalized))*amplitude);}
+    return out;
+  },
   strand(anchors,id,middle,amplitude,lead=1) {
     if(!anchors.length)return [];
     // Fade into the first recorded scene, then connect scenes directly.
