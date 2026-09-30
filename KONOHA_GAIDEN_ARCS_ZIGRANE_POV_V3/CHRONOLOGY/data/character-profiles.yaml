@@ -22,6 +22,7 @@ profiles:
           - {key: weight, label: "Вага", value: "40,1 кг"}
           - {key: blood_type, label: "Група крові", value: "B"}
           - {key: classification, label: "Класифікація", value: "джинчурікі Дев’ятихвостого"}
+          - {key: parents, label: "Батьки", value: "сирота"}
         appearance:
           hair: "світле, коротке й скуйовджене"
           eyes: "блакитні"
