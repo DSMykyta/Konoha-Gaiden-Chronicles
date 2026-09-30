@@ -27,6 +27,20 @@ events:
     extent: "interval"
     display_rank: 200
     evidence_ids: ["evd-v10-000065", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-raido-wounded-by-sound-four"
+    title: "Четвірка Звуку тяжко ранить Райдо"
+    text: "Коли Орочімару атакує Хірузена, Райдо намагається втрутитися. Четвірка Звуку, замаскована під охоронців Казекаґе, атакує Райдо; він дістає тяжкі поранення і втрачає свідомість, через що не може допомогти Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "group-sound-four", role: "opponent", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "protected", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
 relations:
+  - {id: "rel-0801-invasion-raido-1", kind: "before", a: "ev-y0-0801-sand-sound-invasion-starts", b: "ev-y0-0801-raido-wounded-by-sound-four", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
   - {id: "rel-0801-invasion-arena-1", kind: "intersects", a: "ev-y0-0801-kabuto-casts-arena-genjutsu", b: "ev-y0-0801-sand-sound-invasion-starts", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush"]}
-presence: []
+presence:
+  - {id: "pr-0801-invasion-raido", entity_id: "c-raido", from: "sc-y0-0801-invasion-begins-arena.start", to: "ev-y0-0801-raido-wounded-by-sound-four.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
