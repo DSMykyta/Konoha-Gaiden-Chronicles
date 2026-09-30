@@ -19,6 +19,10 @@ events:
     involvement:
       - {entity_id: "c-genma", role: "participant", mode: "physical"}
       - {entity_id: "c-baki", role: "participant", mode: "physical"}
+      - {entity_id: "c-aoba", role: "defender", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "defender", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "defender", mode: "physical"}
+      - {entity_id: "c-might-guy", role: "defender", mode: "physical"}
     evidence_ids: ["evd-v10-000065-F", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
 relations: []
 presence: []
