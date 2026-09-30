@@ -11,18 +11,20 @@ review: {time: "accepted", cast: "partial", location: "partial", origin: "accept
 events:
   - id: "ev-y0-0801-iruka-evacuates-academy-students"
     title: "Ірука веде учнів у сховище за Монументом"
-    text: "Під час нападу на Коноху Ірука разом з іншими викладачами виводить учнів Академії в захищені проходи й сховища за Монументом Хокаґе. Він запевняє дітей, що викладачі захищатимуть їх навіть ціною власного життя. Коли на зображенні Третього Хокаґе з’являється тріщина, Конохамару тривожно реагує, а Ірука розуміє, що бій Хірузена триває."
+    text: "Під час нападу на Коноху Ірука разом з іншими шинобі, серед яких Анко, евакуює учнів Академії та цивільних у захищені проходи й сховища за Монументом Хокаґе. Ірука запевняє дітей, що викладачі захищатимуть їх навіть ціною власного життя. Коли на зображенні Третього Хокаґе з’являється тріщина, Конохамару тривожно реагує, а Ірука розуміє, що бій Хірузена триває."
     origin: "A"
     extent: "interval"
     display_rank: 100
     involvement:
       - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
       - {entity_id: "c-konohamaru", role: "student", mode: "physical"}
       - {entity_id: "c-moegi", role: "student", mode: "physical"}
       - {entity_id: "c-udon", role: "student", mode: "physical"}
       - {entity_id: "c-hiruzen", role: "subject", mode: "remote"}
-    evidence_ids: ["evd-anime-iruka-evacuation"]
+    evidence_ids: ["evd-anime-iruka-evacuation", "evd-anime-anko-konoha-evacuation"]
 relations: []
 presence:
+  - {id: "pr-0801-iruka-evac-anko", entity_id: "c-anko", from: "sc-y0-0801-iruka-evacuates-academy.start", to: "sc-y0-0801-iruka-evacuates-academy.end", basis: "source", evidence_ids: ["evd-anime-anko-konoha-evacuation"], review: "accepted"}
   - {id: "pr-0801-iruka-evac-iruka", entity_id: "c-iruka", from: "sc-y0-0801-iruka-evacuates-academy.start", to: "sc-y0-0801-iruka-evacuates-academy.end", basis: "source", evidence_ids: ["evd-anime-iruka-evacuation"], review: "accepted"}
   - {id: "pr-0801-iruka-evac-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0801-iruka-evacuates-academy.start", to: "sc-y0-0801-iruka-evacuates-academy.end", basis: "source", evidence_ids: ["evd-anime-iruka-evacuation"], review: "accepted"}
