@@ -6,6 +6,7 @@ import csv, sys, yaml
 ROOT=Path(__file__).resolve().parent
 DATA=ROOT/"data"
 VALID_ORIGINS={"M","A","F","R","G","O","V","N","P","D"}
+VALID_DAY_PARTS={"dawn","morning","noon","midday","afternoon","evening","night","unknown"}
 errors=[]
 
 def load(path):
@@ -37,6 +38,8 @@ scenes=[]
 for path in sorted((DATA/"scenes").glob("*.yaml")):
     s=load(path); scenes.append((path,s))
     sid=s["id"]
+    day_part=s.get("day_part")
+    if day_part is not None and day_part not in VALID_DAY_PARTS: errors.append(f"{sid}: invalid day_part {day_part}")
     if sid in scene_ids: errors.append(f"duplicate scene {sid}")
     scene_ids.add(sid); global_ids.add(sid)
     loc=s.get("location_id")
