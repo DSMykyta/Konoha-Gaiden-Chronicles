@@ -65,10 +65,10 @@ events:
         - "evd-project-team8-10-before-raido"
   - id: "ev-y0-0122-naruto-prepares-trap"
       title: "Наруто готує пастку для Какаші"
-      text: "Поки Команда 7 чекає наставника, Наруто готує пастку над дверима для запізнілого Какаші."
+      text: "Після виходу Команди 9 Наруто, Саске й Сакура залишаються чекати Какаші. Наруто готує пастку над дверима для запізнілого наставника."
       origin: "M"
       extent: "interval"
-      display_rank: 300
+      display_rank: 550
       involvement:
         - entity_id: "c-naruto"
             role: "focus"
@@ -192,10 +192,10 @@ relations:
       review: "accepted"
       evidence_ids:
         - "evd-team9-departure"
-  - id: "rel-0122-team9-before-kakashi"
+  - id: "rel-0122-team9-before-trap"
       kind: "before"
       a: "ev-y0-0122-team9-departs"
-      b: "ev-y0-0122-kakashi-arrives"
+      b: "ev-y0-0122-naruto-prepares-trap"
       basis: "project_decision"
       review: "accepted"
       evidence_ids:
