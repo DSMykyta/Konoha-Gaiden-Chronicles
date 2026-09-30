@@ -659,6 +659,11 @@ entities:
     name: "Baki"
     aliases:
       - "Бакі"
+  - id: "c-matsuri"
+    kind: "person"
+    name: "Matsuri"
+    aliases:
+      - "Мацурі"
   - id: "c-yugao"
     kind: "person"
     name: "Yūgao Uzuki"
@@ -883,6 +888,12 @@ entities:
     name: "Konoha Council"
     aliases:
       - "Рада Конохи"
+  - id: "group-suna-council"
+    kind: "organization"
+    name: "Suna Council"
+    aliases:
+      - "Рада Суни"
+      - "Рада Сунаґакуре"
   - id: "c-shizune"
     kind: "person"
     name: "Shizune"
