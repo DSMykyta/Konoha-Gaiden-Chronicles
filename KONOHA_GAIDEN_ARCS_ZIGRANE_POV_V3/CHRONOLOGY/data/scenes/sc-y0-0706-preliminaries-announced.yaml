@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0706-preliminaries-announced"
 continuity_id: "main"
+episode_id: "ep-y0-chunin-preliminaries"
 title: "Організатори призначають попередні поєдинки"
 location_id: "loc-chunin-prelim-arena"
 placement: {anchor_id: "ta-y0-0706", day_offset: 0}
