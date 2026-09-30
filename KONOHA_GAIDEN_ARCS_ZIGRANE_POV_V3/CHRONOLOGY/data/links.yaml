@@ -1990,3 +1990,25 @@ links:
     evidence_ids: ["evd-anime-213-215"]
 notes:
   - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
+
+  - id: "lnk-0707-yugao-before-hayate-briefing"
+    kind: "before"
+    a: "sc-y0-0707-yugao-finds-hayate"
+    b: "sc-y0-0707-hokage-hayate-briefing"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-55-hayate-meeting"]
+  - id: "lnk-0801-raido-wounded-before-barrier"
+    kind: "before"
+    a: "ev-y0-0801-raido-wounded-by-sound-four"
+    b: "ev-y0-0801-sound-four-barrier"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "lnk-0923-raido-genma-before-choji"
+    kind: "before"
+    a: "sc-y0-0923-raido-genma-sound-four"
+    b: "sc-y0-0923-choji-vs-jirobo"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]
