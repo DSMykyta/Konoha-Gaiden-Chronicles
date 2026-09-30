@@ -164,14 +164,14 @@ function render(){
   }else{
    const radius=p.kind==='moment'?5:p.kind==='scene'?9:11;
    svg('circle',{class:'target',cx:p.x,cy:p.y,r:Math.max(16,radius+7)},g);
-   svg('circle',{class:'mark',cx:p.x,cy:p.y,radius,r:radius},g);
+   svg('circle',{class:'mark',cx:p.x,cy:p.y,r:radius},g);
    if(p.kind==='scene'||p.kind==='episode'){const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);count.textContent=p.childCount>99?'99+':p.childCount;}
   }
   g.addEventListener('click',()=>openNode(p,true));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openNode(p,true);}});
   g.addEventListener('pointerenter',e=>{if(canHover(e))openNode(p);});g.addEventListener('pointerover',e=>{if(canHover(e)&&!g.contains(e.relatedTarget))openNode(p);});g.addEventListener('pointerleave',deferHoverClose);g.addEventListener('focus',()=>{if(!pinnedNodeId)openNode(p);});
  });
  if(!selected.size){const t=svg('text',{x:w/2,y:mid,'text-anchor':'middle'});t.textContent='Обери персонажів у меню «Лінії»';}
- if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else $('eventCard').hidden=true;}
+ if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else{pinnedNodeId=null;hoverCard=false;focusId=null;$('eventCard').hidden=true;}}
  paintNodes();updateFocusBar();
 }
 function positionCard(point){
@@ -241,10 +241,10 @@ function bindCard(){
 }
 function navigateEpisodeLevel(id){
  const episode=episodeMap.get(id);if(!episode)return;const scenes=(episode.scene_ids||[]).map(id=>sceneMap.get(id)).filter(Boolean),days=scenes.map(s=>s.day).filter(d=>d!==null);
- if(days.length)center=clamp((Math.min(...days)+Math.max(...days))/2+.5,.5,364.5);zoom=zoomModes.month;closeCard();render();const node=graphNodes.find(p=>p.kind==='episode'&&p.rawId===id);if(node)openNode(node,true);
+ if(days.length)center=clamp((Math.min(...days)+Math.max(...days))/2+.5,.5,364.5);zoom=zoomModes.month;closeCard();render();const node=graphNodes.find(p=>(p.kind==='episode'&&p.rawId===id)||(p.sourceEpisodeIds||[]).includes(id));if(node)openNode(node,true);
 }
 function navigateSceneLevel(id){
- const scene=sceneMap.get(id);if(!scene||scene.day===null)return;center=clamp(scene.day+.5,.5,364.5);zoom=zoomModes.week;closeCard();render();const node=graphNodes.find(p=>p.kind==='scene'&&p.id===id);if(node)openNode(node,true);
+ const scene=sceneMap.get(id);if(!scene||scene.day===null)return;center=clamp(scene.day+.5,.5,364.5);zoom=zoomModes.week;closeCard();render();const node=graphNodes.find(p=>(p.kind==='scene'&&p.id===id)||(p.sourceSceneIds||[]).includes(id));if(node)openNode(node,true);
 }
 function cardKindLabel(kind){return ({moment:'МОМЕНТ',scene:'СЦЕНА',episode:'ЕПІЗОД',arc:'АРКА'})[kind]||String(kind||'').toUpperCase();}
 function cardMetaLine(kind,dateOrRange,hasYear=true){return `<span class="card-meta-line"><strong class="card-kind">${esc(cardKindLabel(kind))}</strong><span aria-hidden="true"> · </span><span>${esc(dateOrRange)}</span>${hasYear?'<span aria-hidden="true"> · </span><span>Рік 0</span>':''}</span>`;}
