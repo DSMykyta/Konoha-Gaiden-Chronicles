@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0924-valley-final-clash"
 continuity_id: "main"
+episode_id: "ep-y0-valley-of-end"
 title: "Расенґан і Чідорі стикаються"
 location_id: "loc-valley-of-end"
 placement: {anchor_id: "ta-y0-0924", day_offset: 0}
