@@ -614,6 +614,36 @@ a:hover {
   fill:var(--day-alternate);
   pointer-events:none
 }
+#timeline .time-break {
+  pointer-events:none
+}
+#timeline .time-break-mask {
+  fill:var(--background)
+}
+#timeline .time-break-hatch {
+  fill:url(#time-break-hatch);
+  opacity:.72
+}
+#timeline .time-break-hatch-line {
+  fill:none;
+  stroke:#c5ceda;
+  stroke-width:1
+}
+#timeline .time-break-edge {
+  stroke:#b8c3d1;
+  stroke-width:1;
+  stroke-dasharray:2 5;
+  vector-effect:non-scaling-stroke
+}
+.time-axis .time-break-axis-mask {
+  fill:var(--background)
+}
+.time-axis .time-break-axis-slash {
+  fill:none;
+  stroke:#718097;
+  stroke-width:1.6;
+  stroke-linecap:round
+}
 #timeline .thread-hit {
   fill:none;
   cursor:pointer;
