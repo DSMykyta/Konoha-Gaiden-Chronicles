@@ -4,7 +4,8 @@ continuity_id: "main"
 title: "Наруто й Саске в Долині Завершення"
 location_id: "loc-valley-end"
 placement: {anchor_id: "ta-sasuke-recovery-24", day_offset: 0}
-state: "active"
+state: "inactive"
+superseded_by_episode_id: "ep-y0-valley-of-end"
 presence_coverage: "complete"
 review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
 events:
