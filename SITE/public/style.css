@@ -329,7 +329,7 @@ a:hover {
 .event-card {
   position:fixed;
   z-index:8;
-  width:360px;
+  width:480px;
   max-width:calc(100vw - 24px);
   background:white;
   border:1px solid #dce4ee;
@@ -969,6 +969,54 @@ button:disabled:hover {
   display:flex;
   gap:2px
 }
+.card-top-actions {
+  display:flex;
+  align-items:center;
+  gap:2px;
+  flex:none
+}
+.card-open-scene {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:36px;
+  min-height:36px;
+  color:#426b9f
+}
+.card-open-scene svg {
+  width:18px;
+  height:18px
+}
+.card-open-scene:hover,
+.card-open-scene:focus-visible {
+  background:#edf2f9
+}
+.card-open-scene::after {
+  content:attr(data-tooltip);
+  position:absolute;
+  right:0;
+  top:calc(100% + 7px);
+  z-index:20;
+  width:max-content;
+  max-width:220px;
+  padding:6px 8px;
+  border-radius:6px;
+  background:#243851;
+  color:white;
+  font-size:11px;
+  line-height:1.4;
+  white-space:nowrap;
+  pointer-events:none;
+  opacity:0;
+  transform:translateY(-3px);
+  transition:opacity .14s ease,transform .14s ease
+}
+.card-open-scene:hover::after,
+.card-open-scene:focus-visible::after {
+  opacity:1;
+  transform:translateY(0)
+}
 .card-arrow {
   display:flex;
   align-items:center;
@@ -1012,15 +1060,6 @@ button:disabled:hover {
   line-height:1.7;
   color:var(--muted);
   margin:-6px 0 14px
-}
-.scene-open {
-  display:block;
-  width:100%;
-  text-align:left;
-  font-size:12px;
-  color:#426b9f;
-  padding:10px 0;
-  margin:0 0 6px
 }
 .scene-actions {
   list-style:none;
@@ -1210,9 +1249,6 @@ button:disabled:hover {
 
 
 /* Scene action preview: keep the scene card open and reveal the selected action beside it. */
-.scene-open {
-  padding:6px
-}
 .scene-actions li {
   position:relative;
   align-items:flex-start;
