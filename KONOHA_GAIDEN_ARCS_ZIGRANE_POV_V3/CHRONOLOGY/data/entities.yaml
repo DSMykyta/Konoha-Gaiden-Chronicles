@@ -87,6 +87,18 @@ entities:
     aliases:
       - "Райдо"
       - "Наміаші Райдо"
+  - id: "c-genma"
+    kind: "person"
+    name: "Genma Shiranui"
+    aliases:
+      - "Ґенма"
+      - "Ґенма Шірануї"
+  - id: "c-iwashi"
+    kind: "person"
+    name: "Iwashi Tatami"
+    aliases:
+      - "Іваші"
+      - "Іваші Татамі"
   - id: "c-kakashi"
     kind: "person"
     name: "Kakashi Hatake"
@@ -2012,7 +2024,9 @@ memberships:
     group_id: "team-9"
     role: "mentor"
     from: "ev-y0-0122-raido-question.start"
-    basis: "source"
+    to: "ev-y0-0707-raido-returns-hokage-guard.start"
+    basis: "project_decision"
+    evidence_ids: ["evd-project-raido-return-guard"]
     review: "accepted"
   - id: "mem-team10-ino"
     entity_id: "c-ino"
