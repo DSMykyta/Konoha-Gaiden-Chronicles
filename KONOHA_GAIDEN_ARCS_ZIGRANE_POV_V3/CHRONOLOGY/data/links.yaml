@@ -56,6 +56,13 @@ links:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-kita-home-night"]
+  - id: "lnk-0122-team7-rooftop-before-kita-home"
+    kind: "before"
+    a: "sc-y0-0122-team7-rooftop"
+    b: "sc-y0-0122-kita-home-night"
+    basis: "project_decision"
+    review: "accepted"
+    evidence_ids: ["evd-project-0122-rooftop-before-kita-home"]
   - id: "lnk-0924-pursuit-before-valley"
     kind: "before"
     a: "ev-y0-0924-naruto-continues-pursuit"
