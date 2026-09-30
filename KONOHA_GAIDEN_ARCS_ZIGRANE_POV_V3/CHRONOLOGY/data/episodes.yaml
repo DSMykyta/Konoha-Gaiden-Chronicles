@@ -1,10 +1,58 @@
 schema_version: 1
 episodes:
+  - id: "ep-y0-naruto-monument"
+    continuity_id: "main"
+    arc_id: "arc-y0-scroll-of-seals"
+    title: "Витівка Наруто й Ірука"
+    description: "Витівка на Монументі Хокаґе, покарання Іруки, повернення до класу та рамен після прибирання."
+
+  - id: "ep-y0-graduation-failure"
+    continuity_id: "main"
+    arc_id: "arc-y0-scroll-of-seals"
+    title: "Провал випускного іспиту"
+    description: "Наруто провалює випускний іспит, після чого Мідзукі використовує його розчарування."
+
+  - id: "ep-y0-scroll-theft"
+    continuity_id: "main"
+    arc_id: "arc-y0-scroll-of-seals"
+    title: "Викрадення Сувою Печатей"
+    description: "Мідзукі підштовхує Наруто викрасти Сувій Печатей, а Коноха починає пошук."
+
+  - id: "ep-y0-mizuki-confrontation"
+    continuity_id: "main"
+    arc_id: "arc-y0-scroll-of-seals"
+    title: "Ірука, Мідзукі й Наруто"
+    description: "Ірука знаходить Наруто, Мідзукі розкриває таємницю Дев’ятихвостого, а Наруто перемагає його й стає геніном."
+
   - id: "ep-y0-team-formation"
     continuity_id: "main"
     arc_id: "arc-y0-genin-formation"
-    title: "Формування команд"
-    description: "Оголошення складів нових команд і паралельне очікування наставників після випуску з Академії."
+    title: "Розподіл команд в Академії"
+    description: "Події в класі до й під час оголошення команд, паралельна сцена з джонінами перед Академією та очікування наставників."
+
+  - id: "ep-y0-sasuke-impersonation"
+    continuity_id: "main"
+    arc_id: "arc-y0-genin-formation"
+    title: "Наруто підміняє Саске"
+    description: "Після розподілу Наруто нейтралізує Саске й видає себе за нього перед Сакурою."
+
+  - id: "ep-y0-team-introductions"
+    continuity_id: "main"
+    arc_id: "arc-y0-genin-formation"
+    title: "Перші розмови нових команд"
+    description: "Перші знайомства нових команд зі своїми наставниками та розмови після розподілу."
+
+  - id: "ep-y0-team-examinations"
+    continuity_id: "main"
+    arc_id: "arc-y0-genin-formation"
+    title: "Випробування нових команд"
+    description: "Команди проходять випробування наставників: дзвіночки Команди 7, етапи Команди 9 та паралельні перевірки й спостереження."
+
+  - id: "ep-y0-team-reports"
+    continuity_id: "main"
+    arc_id: "arc-y0-genin-formation"
+    title: "Після випробувань"
+    description: "Підсумки першого дня: звіти наставників, підтвердження складів і розмови учнів після випробувань."
 
   - id: "ep-y0-chunin-preliminaries"
     continuity_id: "main"
