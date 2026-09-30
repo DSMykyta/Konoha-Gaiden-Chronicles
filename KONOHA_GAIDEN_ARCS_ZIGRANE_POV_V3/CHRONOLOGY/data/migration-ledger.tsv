@@ -340,7 +340,7 @@ V10-000222-C	0	16.12	M	pending		Awaiting scene-level migration; original row pre
 V10-000222-D	0	16.12	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000222-E	0	16.12	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000222-F	0	16.12	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
-V10-000222-G	0	16.12	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000222-G	0	16.12	M	migrated	ev-y0-1216-iruka-naruto-last-ramen	Iruka and Naruto last ramen before departure migrated to a structured Ichiraku scene.
 V10-000222-H	0	16.12	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000222-I	0	16.12	M	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000223	0	17.12	R	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
