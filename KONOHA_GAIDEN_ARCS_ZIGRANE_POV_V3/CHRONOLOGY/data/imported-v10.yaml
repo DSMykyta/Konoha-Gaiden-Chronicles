@@ -3,7 +3,13 @@ source: "Naruto_Timeline_Year_0_v10.tsv"
 records:
   - legacy_id: "V10-000001"
     migration_status: "superseded"
-    replacement_ids: []
+    replacement_ids:
+      - "ev-y0-0118-naruto-paints-monument"
+      - "ev-y0-0118-iruka-catches-naruto"
+      - "ev-y0-0118-naruto-transformation"
+      - "ev-y0-0118-iruka-orders-monument-cleanup"
+      - "ev-y0-0118-iruka-treats-ramen"
+      - "ev-y0-0118-naruto-declares-hokage-goal" []
     original:
       Year: "0"
       Date: "18.01"
