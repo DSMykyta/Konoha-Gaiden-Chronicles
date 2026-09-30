@@ -2315,3 +2315,8 @@ redirects:
     replacement_ids:
       - "ev-y0-1216-iruka-naruto-last-ramen"
     reason: "Iruka and Naruto last ramen before Naruto's departure migrated to structured chronology."
+  - legacy_id: "V10-000214"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-1207-suna-council-responds-matsuri-kidnapping"
+    reason: "Episode 216 opening migrated to the Suna Council response scene with Baki."
