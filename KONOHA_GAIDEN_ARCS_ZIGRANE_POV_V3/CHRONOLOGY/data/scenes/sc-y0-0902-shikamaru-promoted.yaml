@@ -17,7 +17,15 @@ events:
     display_rank: 100
     involvement:
       - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000083-F", "evd-manga-post-crush-search"]
+      - {entity_id: "c-anko", role: "observer", mode: "physical"}
+      - {entity_id: "c-ibiki", role: "observer", mode: "physical"}
+      - {entity_id: "c-genma", role: "observer", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "issuer", mode: "physical"}
+    evidence_ids: ["evd-v10-000083-F", "evd-manga-post-crush-search", "evd-anime-anko-shikamaru-promotion"]
 relations: []
 presence:
+  - {id: "pr-0902-shikamaru-anko", entity_id: "c-anko", from: "sc-y0-0902-shikamaru-promoted.start", to: "sc-y0-0902-shikamaru-promoted.end", basis: "source", evidence_ids: ["evd-anime-anko-shikamaru-promotion"], review: "accepted"}
+  - {id: "pr-0902-shikamaru-ibiki", entity_id: "c-ibiki", from: "sc-y0-0902-shikamaru-promoted.start", to: "sc-y0-0902-shikamaru-promoted.end", basis: "source", evidence_ids: ["evd-anime-anko-shikamaru-promotion"], review: "accepted"}
+  - {id: "pr-0902-shikamaru-genma", entity_id: "c-genma", from: "sc-y0-0902-shikamaru-promoted.start", to: "sc-y0-0902-shikamaru-promoted.end", basis: "source", evidence_ids: ["evd-anime-anko-shikamaru-promotion"], review: "accepted"}
+  - {id: "pr-0902-shikamaru-tsunade", entity_id: "c-tsunade", from: "sc-y0-0902-shikamaru-promoted.start", to: "sc-y0-0902-shikamaru-promoted.end", basis: "source", evidence_ids: ["evd-anime-anko-shikamaru-promotion"], review: "accepted"}
   - {id: "pr-0902-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0902-shikamaru-promoted.start", to: "sc-y0-0902-shikamaru-promoted.end", basis: "imported", evidence_ids: ["evd-v10-000083-F"], review: "accepted"}
