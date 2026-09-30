@@ -2166,3 +2166,17 @@ notes:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
+  - id: "lnk-0801-baki-extraction-before-sasuke-pursuit"
+    kind: "before"
+    a: "ev-y0-0801-baki-orders-gaara-extraction"
+    b: "ev-y0-0801-sasuke-pursues-gaara"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "lnk-1207-baki-council-before-1216-departure"
+    kind: "before"
+    a: "sc-y0-1207-baki-suna-council-matsuri"
+    b: "sc-y0-1216-iruka-naruto-last-ramen"
+    basis: "imported"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000214", "evd-anime-216-baki-suna-council"]
