@@ -29,10 +29,21 @@ events:
     involvement:
       - {entity_id: "c-idate", role: "focus", mode: "physical"}
     evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
+  - id: "ev-y0-0907-ibiki-arrives-for-sasuke"
+    title: "Ібікі прибуває з підкріпленням по пораненого Саске"
+    text: "Після завершення бою до Країни Чаю прибувають шинобі Конохи, щоб забрати тяжко пораненого Саске. Серед них Ібікі; тут він уперше за роки знову зустрічає молодшого брата Ідате."
+    origin: "F"
+    extent: "interval"
+    display_rank: 250
+    involvement:
+      - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
+      - {entity_id: "c-idate", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-anime-102-106"]
   - id: "ev-y0-0907-idate-reconciles-ibiki"
     legacy_ids: ["V10-000097"]
     title: "Ідате примиряється з Ібікі"
-    text: "Наприкінці місії Ідате примиряється з Ібікі."
+    text: "Ідате очікує осуду, але Ібікі бачить, як брат змінився, і каже, що в його очах більше немає боягузтва. Для Ідате цього визнання достатньо: брати примиряються, хоча Ідате лишається в Країні Чаю з родиною Васабі."
     origin: "F"
     extent: "interval"
     display_rank: 300
@@ -42,5 +53,8 @@ events:
     evidence_ids: ["evd-v10-000097", "evd-anime-102-106"]
 relations:
   - {id: "rel-0907-reconcile-1", kind: "before", a: "ev-y0-0907-jirocho-ends-feud", b: "ev-y0-0907-idate-restores-faith-shinobi", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000097"]}
-  - {id: "rel-0907-reconcile-2", kind: "before", a: "ev-y0-0907-idate-restores-faith-shinobi", b: "ev-y0-0907-idate-reconciles-ibiki", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000097"]}
-presence: []
+  - {id: "rel-0907-reconcile-2", kind: "before", a: "ev-y0-0907-idate-restores-faith-shinobi", b: "ev-y0-0907-ibiki-arrives-for-sasuke", basis: "source", review: "accepted", evidence_ids: ["evd-anime-102-106"]}
+  - {id: "rel-0907-reconcile-3", kind: "before", a: "ev-y0-0907-ibiki-arrives-for-sasuke", b: "ev-y0-0907-idate-reconciles-ibiki", basis: "source", review: "accepted", evidence_ids: ["evd-anime-102-106"]}
+presence:
+  - {id: "pr-0907-reconcile-ibiki", entity_id: "c-ibiki", from: "ev-y0-0907-ibiki-arrives-for-sasuke.start", to: "sc-y0-0907-idate-reconciles.end", basis: "source", evidence_ids: ["evd-anime-102-106"], review: "accepted"}
+  - {id: "pr-0907-reconcile-idate", entity_id: "c-idate", from: "sc-y0-0907-idate-reconciles.start", to: "sc-y0-0907-idate-reconciles.end", basis: "source", evidence_ids: ["evd-anime-102-106"], review: "accepted"}
