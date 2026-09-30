@@ -2012,3 +2012,10 @@ notes:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]
+  - id: "lnk-0801-genma-dispatch-before-sasuke-pursuit"
+    kind: "before"
+    a: "ev-y0-0801-genma-confronts-baki-dispatches-sasuke"
+    b: "ev-y0-0801-sasuke-pursues-gaara"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
