@@ -1,0 +1,26 @@
+schema_version: 1
+id: "sc-y0-1010-anko-returns-swamps"
+continuity_id: "main"
+title: "Анко повертається з місії в Країні Боліт"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-1010-kurosuki", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1010-anko-reports-swamps-escort"
+    title: "Анко доповідає Цунаде після місії супроводу"
+    text: "Анко повертається до Конохи після завершення місії супроводу даймьо Країни Боліт і звітує Цунаде. Під час розмови вона неуважно з’їдає останній данґо Цунаде, чим миттєво лякає Шизуне й викликає роздратування П’ятої."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-anime-152-157"]
+relations: []
+presence:
+  - {id: "pr-1010-anko-swamps-anko", entity_id: "c-anko", from: "sc-y0-1010-anko-returns-swamps.start", to: "sc-y0-1010-anko-returns-swamps.end", basis: "source", evidence_ids: ["evd-anime-152-157"], review: "accepted"}
+  - {id: "pr-1010-anko-swamps-tsunade", entity_id: "c-tsunade", from: "sc-y0-1010-anko-returns-swamps.start", to: "sc-y0-1010-anko-returns-swamps.end", basis: "source", evidence_ids: ["evd-anime-152-157"], review: "accepted"}
+  - {id: "pr-1010-anko-swamps-shizune", entity_id: "c-shizune", from: "sc-y0-1010-anko-returns-swamps.start", to: "sc-y0-1010-anko-returns-swamps.end", basis: "source", evidence_ids: ["evd-anime-152-157"], review: "accepted"}
