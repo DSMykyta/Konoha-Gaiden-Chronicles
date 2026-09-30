@@ -78,13 +78,12 @@ function semanticOwner(nodes){
  }
  return owner;
 }
-function nav(){const list=orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(e=>e.id===anchorEvent),next=list.findIndex(e=>e.day>=Math.floor(center));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
+function nav(){const list=orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(e=>e.id===anchorEvent),currentDay=axisToDay(center),next=list.findIndex(e=>e.day>=Math.floor(currentDay));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
 function stepEvent(direction){const target=nav()[direction<0?'previous':'next'];if(target)navigateEvent(target.id);}
 function setFocus(id){focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();$('canvas').scrollTop=0;renderCharacters();render();}
 function updateFocusBar(){const bar=$('focusBar');bar.hidden=!focusedCharacter;if(!focusedCharacter)return;const n=nav();$('focusName').textContent=fullName(focusedCharacter);$('focusPosition').textContent=n.index>=0?`${n.index+1} / ${n.total}`:`${n.total} подій`;$('focusPrevious').disabled=!n.previous;$('focusNext').disabled=!n.next;}
 function selectionChanged(){if(focusedCharacter&&!selected.has(focusedCharacter))focusedCharacter=null;closeCard();renderCharacters();render();}
-function range(){return [Math.max(0,center-182.5/zoom),Math.min(365,center+182.5/zoom)];}
-const TIME_GAP_THRESHOLD=14,TIME_GAP_EDGE=7;
+const TIME_GAP_THRESHOLD=14,TIME_GAP_EDGE=7,TIME_BREAK_PX=14;
 function chronologyBreaks(dated=events().filter(e=>e.day!==null)){
  const days=[...new Set(dated.map(e=>Math.floor(e.day)))].sort((a,b)=>a-b),breaks=[];
  for(let i=1;i<days.length;i++){
@@ -95,30 +94,68 @@ function chronologyBreaks(dated=events().filter(e=>e.day!==null)){
  }
  return breaks;
 }
+function axisBreaks(dated=events().filter(e=>e.day!==null)){
+ let removed=0;
+ return chronologyBreaks(dated).map(b=>{
+  const axis=b.from-removed;
+  removed+=b.omitted;
+  return {...b,axis};
+ });
+}
+function dayToAxis(day,dated=events().filter(e=>e.day!==null)){
+ let value=day;
+ for(const b of chronologyBreaks(dated)){
+  if(day>=b.to)value-=b.omitted;
+  else if(day>b.from){value-=day-b.from;break;}
+  else break;
+ }
+ return value;
+}
+function axisToDay(value,side='after',dated=events().filter(e=>e.day!==null)){
+ let removed=0;
+ for(const b of chronologyBreaks(dated)){
+  const axis=b.from-removed;
+  if(value<axis)return value+removed;
+  if(Math.abs(value-axis)<1e-7)return side==='before'?b.from:b.to;
+  removed+=b.omitted;
+ }
+ return value+removed;
+}
+function axisLength(){return data?dayToAxis(365):365;}
+function clampAxisCenter(value,z=zoom){
+ const total=axisLength(),half=182.5/z;
+ return total<=half*2?total/2:clamp(value,half,total-half);
+}
+function range(){
+ const total=axisLength(),half=182.5/zoom;
+ if(total<=half*2)return [0,total];
+ const c=clampAxisCenter(center);
+ return [c-half,c+half];
+}
 function makeTimeScale(lo,hi,pad,plot,dated){
- // Compress a long empty span only when the viewport actually contains
- // both sides of that whole span. If the user is looking inside the gap
- // (day / week / month), keep the calendar continuous and simply show
- // the empty period instead of stretching a break marker across the view.
- const breaks=chronologyBreaks(dated)
-  .filter(b=>lo<=b.from&&hi>=b.to)
-  .map(b=>({...b,viewFrom:b.from,viewTo:b.to})),
-  count=breaks.length;
- const removed=breaks.reduce((sum,b)=>sum+(b.viewTo-b.viewFrom),0),visibleSpan=Math.max(0,(hi-lo)-removed);
- const breakPx=count?(visibleSpan<1e-6?plot/count:Math.min(18,Math.max(4,plot*.32/count))):0;
- const dayPx=visibleSpan>1e-6?Math.max(.001,(plot-breakPx*count)/visibleSpan):0;
- const offset=day=>{
-  let calendar=day-lo,pixels=0;
-  for(const b of breaks){
-   const omitted=b.viewTo-b.viewFrom;
-   if(day<=b.viewFrom)break;
-   if(day>=b.viewTo){calendar-=omitted;pixels+=breakPx;continue;}
-   const inside=day-b.viewFrom,t=inside/omitted;
-   calendar-=inside;pixels+=breakPx*clamp(t,0,1);break;
-  }
-  return calendar*dayPx+pixels;
+ const breaks=axisBreaks(dated).filter(b=>b.axis>=lo&&b.axis<=hi),count=breaks.length;
+ const span=Math.max(.001,hi-lo),breakPx=count?Math.min(TIME_BREAK_PX,plot/Math.max(3,count*3)):0;
+ const dayPx=Math.max(.001,(plot-breakPx*count)/span);
+ const axisPx=value=>{
+  let extra=0;
+  for(const b of breaks){if(b.axis<value)extra+=breakPx;else break;}
+  return pad+(value-lo)*dayPx+extra;
  };
- return {breaks,breakPx,dayPx,px:day=>pad+offset(day),hidden:day=>breaks.some(b=>day>b.viewFrom&&day<b.viewTo)};
+ const px=day=>{
+  const value=dayToAxis(day,dated);
+  let extra=0;
+  for(const b of breaks){
+   if(day>=b.to){extra+=breakPx;continue;}
+   if(day>b.from){extra+=breakPx*clamp((day-b.from)/Math.max(.001,b.omitted),0,1);}
+   break;
+  }
+  return pad+(value-lo)*dayPx+extra;
+ };
+ return {
+  breaks:breaks.map(b=>({...b,viewFrom:b.from,viewTo:b.to})),
+  breakPx,dayPx,px,axisPx,
+  hidden:day=>chronologyBreaks(dated).some(b=>day>b.from&&day<b.to)
+ };
 }
 function svg(tag,attrs,parent=$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
 function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);}
@@ -138,7 +175,7 @@ function openNode(p,pin=false){
  positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();
 }
 function closeCard(){cancelHoverClose();closeEventPreview(true);hoverCard=false;pinnedNodeId=null;focusId=null;anchorDay=null;anchorEvent=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;schedule();}
-function setZoom(value,pivot=center){const old=zoom;zoom=clamp(value,1,730);center=pivot+(center-pivot)*old/zoom;center=clamp(center,182.5/zoom,365-182.5/zoom);$('hoverTip').hidden=true;schedule();}
+function setZoom(value,pivot=center){const old=zoom;zoom=clamp(value,1,730);center=pivot+(center-pivot)*old/zoom;center=clampAxisCenter(center);$('hoverTip').hidden=true;schedule();}
 function closePanels(except){for(const id of ['linesPanel','searchPanel','periodPanel'])if(id!==except){$(id).hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');}}
 function togglePanel(id){const opening=$(id).hidden;closePanels(id);$(id).hidden=!opening;$(id.replace('Panel','Button')).setAttribute('aria-expanded',String(opening));if(opening){closeEventPreview(true);pinnedNodeId=null;hoverCard=false;focusId=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;paintNodes();const input=$(id).querySelector('input');if(input)input.focus();}}
 function renderCharacters(){
@@ -289,10 +326,10 @@ function bindCard(){
 }
 function navigateEpisodeLevel(id){
  const episode=episodeMap.get(id);if(!episode)return;const scenes=(episode.scene_ids||[]).map(id=>sceneMap.get(id)).filter(Boolean),days=scenes.map(s=>s.day).filter(d=>d!==null);
- if(days.length)center=clamp((Math.min(...days)+Math.max(...days))/2+.5,.5,364.5);zoom=zoomModes.month;closeCard();render();const node=graphNodes.find(p=>(p.kind==='episode'&&p.rawId===id)||(p.sourceEpisodeIds||[]).includes(id));if(node)openNode(node,true);
+ zoom=zoomModes.month;if(days.length)center=clampAxisCenter(dayToAxis((Math.min(...days)+Math.max(...days))/2+.5));closeCard();render();const node=graphNodes.find(p=>(p.kind==='episode'&&p.rawId===id)||(p.sourceEpisodeIds||[]).includes(id));if(node)openNode(node,true);
 }
 function navigateSceneLevel(id){
- const scene=sceneMap.get(id);if(!scene||scene.day===null)return;center=clamp(scene.day+.5,.5,364.5);zoom=zoomModes.week;closeCard();render();const node=graphNodes.find(p=>(p.kind==='scene'&&p.id===id)||(p.sourceSceneIds||[]).includes(id));if(node)openNode(node,true);
+ const scene=sceneMap.get(id);if(!scene||scene.day===null)return;zoom=zoomModes.week;center=clampAxisCenter(dayToAxis(scene.day+.5));closeCard();render();const node=graphNodes.find(p=>(p.kind==='scene'&&p.id===id)||(p.sourceSceneIds||[]).includes(id));if(node)openNode(node,true);
 }
 function cardKindLabel(kind){return ({moment:'МОМЕНТ',scene:'СЦЕНА',episode:'ЕПІЗОД',arc:'АРКА'})[kind]||String(kind||'').toUpperCase();}
 function cardMetaLine(kind,dateOrRange,hasYear=true){return `<span class="card-meta-line"><strong class="card-kind">${esc(cardKindLabel(kind))}</strong><span aria-hidden="true"> · </span><span>${esc(dateOrRange)}</span>${hasYear?'<span aria-hidden="true"> · </span><span>Рік 0</span>':''}</span>`;}
@@ -358,7 +395,7 @@ function showEventPreview(id,pin=false){
  positionEventPreview();bindEventPreview();
  preview.classList.remove('is-visible');requestAnimationFrame(()=>preview.classList.add('is-visible'));
 }
-function navigateEvent(id){cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;pinnedNodeId=e.id;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clamp(e.day+.5,.5,364.5);}focusId=e.id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();}
+function navigateEvent(id){cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;pinnedNodeId=e.id;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clampAxisCenter(dayToAxis(e.day+.5));}focusId=e.id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();}
 function search(){const q=$('eventSearch').value.trim().toLowerCase();const found=events().filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));$('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}">${esc(e.title)}<small>${dateText(e.day)}</small></button>`).join('')||'<p class="empty">Подій не знайдено.</p>';$('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));$('moreResults').hidden=found.length<=searchLimit;}
 function openProfile(id,trigger){if(!entityMap.has(id))return;profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}$('closeProfile').focus();}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;profileReturnFocus?.focus();}
@@ -458,14 +495,14 @@ async function init(){
   track.scrollTo({left:track.scrollLeft+Math.sign(dominant)*step,behavior:'smooth'});
   setTimeout(()=>{characterWheelLocked=false;},180);
  },{passive:false,capture:true});
- $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дату у форматі 22.01.';$('dateError').hidden=false;return;}$('dateError').hidden=true;zoom=365;center=starts[+m[2]-1]+(+m[1]-1)+.5;closePanels();closeCard();});
+ $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дату у форматі 22.01.';$('dateError').hidden=false;return;}$('dateError').hidden=true;zoom=365;center=clampAxisCenter(dayToAxis(starts[+m[2]-1]+(+m[1]-1)+.5));closePanels();closeCard();});
  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setZoom(zoomModes[b.dataset.mode])));$('zoomIn').addEventListener('click',()=>setZoom(zoom*2));$('zoomOut').addEventListener('click',()=>setZoom(zoom/2));$('fit').addEventListener('click',()=>setZoom(zoomModes.year));
- for(const [id,s] of [['previous',-1],['next',1]])$(id).addEventListener('click',()=>{closeCard();const mode=currentZoomMode(),preset=zoomModes[mode],isPreset=Math.abs(Math.log(zoom/preset))<.03,step=isPreset?365/preset:365/zoom*.7;center=clamp(center+s*step,182.5/zoom,365-182.5/zoom);schedule();});
+ for(const [id,s] of [['previous',-1],['next',1]])$(id).addEventListener('click',()=>{closeCard();const mode=currentZoomMode(),preset=zoomModes[mode],isPreset=Math.abs(Math.log(zoom/preset))<.03,step=isPreset?365/preset:365/zoom*.7;center=clampAxisCenter(center+s*step);schedule();});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('characterEventsDialog').hidden){e.preventDefault();closeCharacterEvents();return;}if(!$('sceneDialog').hidden){e.preventDefault();closeScene();return;}if(!$('profileDialog').hidden){e.preventDefault();closeProfile();return;}closePanels();closeCard();if(focusedCharacter){focusedCharacter=null;render();}}});document.addEventListener('pointerdown',e=>{if(!e.target.closest('.panel,.tools,.period,.scene-dialog'))closePanels();if(!e.target.closest('.event-card,.event-preview,.node,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.scene-dialog,.time-controls,.panel,.tools,.period'))closeCard();});
  const canvas=$('timeline'),touches=new Map();let drag=null,pinch=null;
  canvas.addEventListener('wheel',e=>{e.preventDefault();const box=canvas.getBoundingClientRect(),pad=box.width<600?22:48,t=clamp((e.clientX-box.left-pad)/(box.width-pad*2),0,1),[lo,hi]=range();setZoom(zoom*Math.exp(-clamp(e.deltaY,-100,100)*.007),lo+t*(hi-lo));},{passive:false});
  canvas.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.thread-hit,.line-label'))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);if(touches.size===1){drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};canvas.classList.add('dragging');}else if(touches.size===2){const a=[...touches.values()];pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom};drag=null;}});
- canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);center=clamp(drag.center-(e.clientX-drag.x)/(canvas.clientWidth-96)*365/zoom,182.5/zoom,365-182.5/zoom);schedule();}});
+ canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);center=clampAxisCenter(drag.center-(e.clientX-drag.x)/(canvas.clientWidth-96)*365/zoom);schedule();}});
  const end=e=>{touches.delete(e.pointerId);drag=null;pinch=null;canvas.classList.remove('dragging');};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);new ResizeObserver(schedule).observe($('canvas'));
  $('canvas').addEventListener('scroll',()=>{$('hoverTip').hidden=true;const p=graphNodes.find(p=>p.id===focusId);if(p&&!$('eventCard').hidden)positionCard(p);},{passive:true});
  $('focusPrevious').addEventListener('click',()=>stepEvent(-1));$('focusNext').addEventListener('click',()=>stepEvent(1));$('focusName').addEventListener('click',()=>openProfile(focusedCharacter,$('focusName')));$('clearFocus').addEventListener('click',()=>{focusedCharacter=null;closeCard();renderCharacters();render();});
