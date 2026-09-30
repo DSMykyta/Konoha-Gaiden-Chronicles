@@ -106,7 +106,7 @@ profiles:
     display_name: "Сора Ямано"
     versions:
       - id: sora-12
-        label: "12 років"
+        label: "Part I"
         age: 12
         from_year: 0
         to_year: 0
