@@ -1,0 +1,35 @@
+schema_version: 1
+id: "sc-y0-0122-sakura-searches-sasuke"
+continuity_id: "main"
+episode_id: "ep-y0-team-formation"
+display_rank: 300
+title: "Сакура шукає Саске під час перерви"
+location_id: null
+placement: {anchor_id: "ta-team-formation", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "pending", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0122-sakura-searches-sasuke"
+    title: "Сакура шукає Саске на обідню перерву"
+    text: "Після оголошення команд Сакура шукає Саске, сподіваючись пообідати з ним, але не знаходить."
+    origin: "A"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "mentioned", mode: "remote"}
+  - id: "ev-y0-0122-sakura-rejects-naruto-lunch"
+    title: "Сакура відмовляється обідати з Наруто"
+    text: "Наруто пропонує Сакурі пообідати разом як членам однієї команди; вона різко відмовляє й далі шукає Саске."
+    origin: "A"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+relations:
+  - {id: "rel-0122-search-before-rejection", kind: "before", a: "ev-y0-0122-sakura-searches-sasuke", b: "ev-y0-0122-sakura-rejects-naruto-lunch", basis: "source", review: "accepted"}
+presence:
+  - {id: "pr-0122-search-sakura", entity_id: "c-sakura", from: "sc-y0-0122-sakura-searches-sasuke.start", to: "sc-y0-0122-sakura-searches-sasuke.end", basis: "source", review: "accepted"}
+  - {id: "pr-0122-search-naruto", entity_id: "c-naruto", from: "ev-y0-0122-sakura-rejects-naruto-lunch.start", to: "ev-y0-0122-sakura-rejects-naruto-lunch.end", basis: "source", review: "accepted"}

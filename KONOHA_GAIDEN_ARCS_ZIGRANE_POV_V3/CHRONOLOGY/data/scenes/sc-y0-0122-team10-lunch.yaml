@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0122-team10-lunch"
+continuity_id: "main"
+episode_id: "ep-y0-team-formation"
+display_rank: 400
+title: "Команда 10 під час обідньої перерви"
+location_id: null
+placement: {anchor_id: "ta-team-formation", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "pending", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0122-team10-lunch-banter"
+    title: "Іно намагається керувати новою Командою 10"
+    text: "На перерві Іно заявляє Шикамару й Чоджі, що як члени однієї команди вони мають слухати її. Чоджі пропонує якось сходити разом на барбекю, а Шикамару реагує без ентузіазму."
+    origin: "A"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-ino", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+    focus_teams: ["team-10"]
+  - id: "ev-y0-0122-shikamaru-spots-naruto"
+    title: "Шикамару помічає Наруто біля Саске"
+    text: "Шикамару помічає Наруто, який підкрадається до Саске, і впізнає його; Наруто намагається змусити Шикамару мовчати."
+    origin: "A"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "observed", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "observed", mode: "remote"}
+relations:
+  - {id: "rel-0122-team10-banter-before-spot", kind: "before", a: "ev-y0-0122-team10-lunch-banter", b: "ev-y0-0122-shikamaru-spots-naruto", basis: "source", review: "accepted"}
+presence:
+  - {id: "pr-0122-lunch10-ino", entity_id: "c-ino", from: "sc-y0-0122-team10-lunch.start", to: "sc-y0-0122-team10-lunch.end", basis: "source", review: "accepted"}
+  - {id: "pr-0122-lunch10-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0122-team10-lunch.start", to: "sc-y0-0122-team10-lunch.end", basis: "source", review: "accepted"}
+  - {id: "pr-0122-lunch10-choji", entity_id: "c-choji", from: "sc-y0-0122-team10-lunch.start", to: "sc-y0-0122-team10-lunch.end", basis: "source", review: "accepted"}

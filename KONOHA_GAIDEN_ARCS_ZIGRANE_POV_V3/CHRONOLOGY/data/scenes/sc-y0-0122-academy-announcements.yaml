@@ -16,6 +16,15 @@ review:
   origin: "partial"
   text: "accepted"
 events:
+  - id: "ev-y0-0122-iruka-explains-squads"
+    title: "Ірука пояснює подальший розподіл генінів"
+    text: "Ірука пояснює випускникам, що вони працюватимуть трійками під керівництвом джонінів і що склади підібрані для балансу сил та здібностей."
+    origin: "A"
+    extent: "interval"
+    display_rank: 50
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+
   - id: "ev-y0-0122-kita-sees-jonin"
       title: "Кіта бачить трьох джонінів перед Академією"
       text: "Кіта дивиться з вікна класу на трьох джонінів перед Академією; двоє говорять між собою, третій стоїть осторонь."
@@ -31,7 +40,7 @@ events:
         - "evd-project-jonin-identities"
   - id: "ev-y0-0122-team7-announced"
       title: "Оголошено Команду 7"
-      text: "Ірука оголошує склад Команди 7."
+      text: "Ірука називає Наруто, Сакуру й Саске Командою 7; Наруто радіє, почувши ім’я Сакури, Сакура засмучується через Наруто, а після імені Саске її настрій різко змінюється."
       origin: "M"
       extent: "interval"
       display_rank: 200
@@ -54,7 +63,7 @@ events:
         - "evd-manga-team7-formation"
   - id: "ev-y0-0122-team8-announced"
       title: "Оголошено Команду 8"
-      text: "Ірука оголошує склад Команди 8."
+      text: "Ірука називає Хінату, Кібу й Шіно Командою 8; Хіната розуміє, що не потрапила в команду Наруто."
       origin: "M"
       extent: "interval"
       display_rank: 300
@@ -77,7 +86,7 @@ events:
         - "evd-manga-team7-formation"
   - id: "ev-y0-0122-team9-announced"
       title: "Оголошено Команду 9"
-      text: "Ірука називає Хаяші Кіту, Тецу Рена і Ямано Сору Командою 9."
+      text: "У канонічному місці оголошення Команди 9 Ірука називає Хаяші Кіту, Тецу Рена і Ямано Сору. Сора одразу щось занотовує в блокнот."
       origin: "P"
       extent: "interval"
       display_rank: 400
@@ -113,9 +122,19 @@ events:
             mode: "physical"
       evidence_ids:
         - "evd-team9-announcement"
+  - id: "ev-y0-0122-ino-shikamaru-banter"
+    title: "Іно й Шикамару сперечаються через Саске"
+    text: "Після оголошення попередніх команд Іно сердиться через те, що Сакура потрапила до Саске. Шикамару не розуміє захоплення Саске; Іно відповідає, що не хотіла б опинитися з ним в одній команді."
+    origin: "A"
+    extent: "interval"
+    display_rank: 550
+    involvement:
+      - {entity_id: "c-ino", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
+
   - id: "ev-y0-0122-team10-announced"
       title: "Оголошено Команду 10"
-      text: "Ірука оголошує склад Команди 10."
+      text: "Ірука називає Іно, Шикамару й Чоджі Командою 10. Шикамару відразу нагадує Іно її щойно сказане небажання бути з ним в одній команді; Іно невдоволена складом."
       origin: "M"
       extent: "interval"
       display_rank: 600
@@ -136,6 +155,19 @@ events:
         - "team-10"
       evidence_ids:
         - "evd-manga-team7-formation"
+  - id: "ev-y0-0122-naruto-questions-team7"
+    title: "Наруто питає, чому його поставили із Саске"
+    text: "Після завершення розподілу Наруто протестує проти команди із Саске. Ірука пояснює, що Саске має найкращий результат серед випускників, Наруто — найгірший, і їх поставили разом для балансу. Саске й Наруто знову починають сваритися, Ірука їх зупиняє та оголошує перерву до знайомства з джонінами."
+    origin: "A"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+
 relations:
   - id: "rel-0122-kita-look-before-team9"
       kind: "before"
@@ -153,6 +185,14 @@ relations:
       review: "accepted"
       evidence_ids:
         - "evd-team9-announcement"
+  - id: "rel-0122-team10-before-naruto-question"
+      kind: "before"
+      a: "ev-y0-0122-team10-announced"
+      b: "ev-y0-0122-naruto-questions-team7"
+      basis: "source"
+      review: "accepted"
+      evidence_ids:
+        - "evd-manga-team7-formation"
 presence:
   - id: "pr-0122-ann-naruto"
       entity_id: "c-naruto"

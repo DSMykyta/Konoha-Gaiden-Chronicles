@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0122-naruto-impersonates-sasuke"
 continuity_id: "main"
-episode_id: "ep-y0-sasuke-impersonation"
+episode_id: "ep-y0-team-formation"
+display_rank: 500
 title: "Наруто підміняє Саске перед Сакурою"
 location_id: null
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
@@ -11,7 +12,7 @@ review: {time: "partial", cast: "partial", location: "pending", origin: "accepte
 events:
   - id: "ev-y0-0122-naruto-restrains-sasuke"
     title: "Наруто зв’язує Саске"
-    text: "Після розподілу команд Наруто тимчасово нейтралізує Саске, щоб видати себе за нього."
+    text: "Наруто нападає на Саске під час перерви. Після короткої оманливої розв’язки з підміною він використовує тіньових клонів, перемагає Саске, зв’язує йому руки та ноги й затикає рот, щоб видати себе за нього."
     origin: "M"
     extent: "interval"
     display_rank: 100
@@ -21,7 +22,7 @@ events:
     evidence_ids: ["evd-manga-team7-formation"]
   - id: "ev-y0-0122-naruto-impersonates-sasuke"
     title: "Наруто під виглядом Саске говорить із Сакурою"
-    text: "Наруто використовує Перетворення, щоб видати себе за Саске й наблизитися до Сакури."
+    text: "Наруто використовує Перетворення, набуває вигляду Саске й знаходить Сакуру, яка все ще шукає справжнього Саске."
     origin: "M"
     extent: "interval"
     display_rank: 200
@@ -32,7 +33,7 @@ events:
     evidence_ids: ["evd-manga-team7-formation"]
   - id: "ev-y0-0122-sakura-insults-naruto"
     title: "Сакура говорить про Наруто, думаючи, що перед нею Саске"
-    text: "Сакура висловлюється про Наруто перед замаскованим Наруто, вважаючи його Саске."
+    text: "Замаскований Наруто питає Сакуру, що вона думає про Наруто. Сакура називає його надокучливим і говорить, що хоче визнання Саске; вони майже цілуються, але біль у животі змушує Наруто раптово втекти до туалету."
     origin: "M"
     extent: "interval"
     display_rank: 300
@@ -41,10 +42,46 @@ events:
       - {entity_id: "c-naruto", role: "focus", mode: "physical"}
       - {entity_id: "c-sasuke", role: "portrayed", mode: "remote"}
     evidence_ids: ["evd-manga-team7-formation"]
+  - id: "ev-y0-0122-sasuke-confronts-sakura"
+    title: "Саске звільняється й говорить із Сакурою"
+    text: "Справжній Саске звільняється, зустрічає Сакуру й питає, де Наруто. Сакура, думаючи про попередню розмову, зневажливо пояснює поведінку Наруто тим, що він росте без батьків. Саске різко каже, що вона не розуміє самотності, і називає її надокучливою; після цього Сакура починає інакше дивитися на власне ставлення до Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-manga-team7-formation"]
+
+  - id: "ev-y0-0122-naruto-confronts-sasuke"
+    title: "Наруто знову кидається на Саске"
+    text: "Після туалету Наруто натрапляє на Саске й знову створює тіньових клонів, але новий напад болю в животі зриває сутичку."
+    origin: "A"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+
+  - id: "ev-y0-0122-sakura-kind-to-naruto"
+    title: "Сакура намагається бути добрішою до Наруто"
+    text: "Сакура знаходить Наруто й доброзичливіше кличе його повертатися до класу. Наруто підозрює, що це Саске перетворився на Сакуру, але черговий напад болю в животі знову перериває його реакцію."
+    origin: "A"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+
 relations:
   - {id: "rel-0122-restrain-before-impersonation", kind: "before", a: "ev-y0-0122-naruto-restrains-sasuke", b: "ev-y0-0122-naruto-impersonates-sasuke", basis: "source", review: "pending", evidence_ids: ["evd-manga-team7-formation"]}
-  - {id: "rel-0122-impersonation-before-sakura-comment", kind: "before", a: "ev-y0-0122-naruto-impersonates-sasuke", b: "ev-y0-0122-sakura-insults-naruto", basis: "source", review: "pending", evidence_ids: ["evd-manga-team7-formation"]}
+  - {id: "rel-0122-impersonation-before-sakura-comment", kind: "before", a: "ev-y0-0122-naruto-impersonates-sasuke", b: "ev-y0-0122-sakura-insults-naruto", basis: "source", review: "accepted", evidence_ids: ["evd-manga-team7-formation"]}
+  - {id: "rel-0122-sakura-comment-before-real-sasuke", kind: "before", a: "ev-y0-0122-sakura-insults-naruto", b: "ev-y0-0122-sasuke-confronts-sakura", basis: "source", review: "accepted", evidence_ids: ["evd-manga-team7-formation"]}
+  - {id: "rel-0122-real-sasuke-before-rematch", kind: "before", a: "ev-y0-0122-sasuke-confronts-sakura", b: "ev-y0-0122-naruto-confronts-sasuke", basis: "source", review: "accepted", evidence_ids: ["evd-manga-team7-formation"]}
+  - {id: "rel-0122-rematch-before-sakura-kind", kind: "before", a: "ev-y0-0122-naruto-confronts-sasuke", b: "ev-y0-0122-sakura-kind-to-naruto", basis: "source", review: "accepted"}
 presence:
   - {id: "pr-0122-imp-naruto", entity_id: "c-naruto", from: "sc-y0-0122-naruto-impersonates-sasuke.start", to: "sc-y0-0122-naruto-impersonates-sasuke.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
   - {id: "pr-0122-imp-sakura", entity_id: "c-sakura", from: "ev-y0-0122-naruto-impersonates-sasuke.start", to: "sc-y0-0122-naruto-impersonates-sasuke.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
   - {id: "pr-0122-imp-sasuke", entity_id: "c-sasuke", from: "sc-y0-0122-naruto-impersonates-sasuke.start", to: "ev-y0-0122-naruto-restrains-sasuke.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
+  - {id: "pr-0122-imp-sasuke-return", entity_id: "c-sasuke", from: "ev-y0-0122-sasuke-confronts-sakura.start", to: "ev-y0-0122-naruto-confronts-sasuke.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "accepted"}

@@ -30,35 +30,17 @@ episodes:
     title: "Наруто й Конохамару"
     description: "Перший день Наруто як геніна до формування Команди 7: зустріч із Конохамару."
 
-  - id: "ep-y0-before-team-assignment"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Перед розподілом команд"
-    description: "Окремий епізод у класі безпосередньо перед оголошенням складів команд."
-
   - id: "ep-y0-team-formation"
     continuity_id: "main"
     arc_id: "arc-y0-genin-formation"
-    title: "Розподіл команд у класі"
-    description: "Ірука оголошує склади Команд 7, 8, 9 і 10. Тут лишається тільки лінія класу."
+    title: "Призначення команд"
+    description: "Від подій у класі перед розподілом через оголошення команд та обідню перерву до повернення в клас, очікування наставників і виходу команд з Академії."
 
   - id: "ep-y0-jonin-outside-academy"
     continuity_id: "main"
     arc_id: "arc-y0-genin-formation"
     title: "Джоніни перед Академією"
     description: "Окрема паралельна лінія Асуми, Куренай і Райдо перед Академією; вона не є частиною епізоду розподілу в класі."
-
-  - id: "ep-y0-sasuke-impersonation"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Наруто підміняє Саске"
-    description: "Після розподілу Наруто нейтралізує Саске й видає себе за нього перед Сакурою."
-
-  - id: "ep-y0-waiting-for-sensei"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Очікування наставників"
-    description: "Команди чекають наставників у класі; Асума й Куренай забирають свої команди, Райдо — Команду 9, а Команда 7 лишається чекати Какаші й готує пастку."
 
   - id: "ep-y0-kakashi-background-check"
     continuity_id: "main"
