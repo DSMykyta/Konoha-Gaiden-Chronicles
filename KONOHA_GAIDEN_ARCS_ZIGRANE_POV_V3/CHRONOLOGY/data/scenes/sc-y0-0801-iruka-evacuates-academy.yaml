@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0801-iruka-evacuates-academy"
+continuity_id: "main"
+title: "Ірука евакуює учнів Академії"
+location_id: "loc-hokage-monument"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-iruka-evacuates-academy-students"
+    title: "Ірука веде учнів у сховище за Монументом"
+    text: "Під час нападу на Коноху Ірука разом з іншими викладачами виводить учнів Академії в захищені проходи й сховища за Монументом Хокаґе. Він запевняє дітей, що викладачі захищатимуть їх навіть ціною власного життя. Коли на зображенні Третього Хокаґе з’являється тріщина, Конохамару тривожно реагує, а Ірука розуміє, що бій Хірузена триває."
+    origin: "A"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "student", mode: "physical"}
+      - {entity_id: "c-moegi", role: "student", mode: "physical"}
+      - {entity_id: "c-udon", role: "student", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-anime-iruka-evacuation"]
+relations: []
+presence:
+  - {id: "pr-0801-iruka-evac-iruka", entity_id: "c-iruka", from: "sc-y0-0801-iruka-evacuates-academy.start", to: "sc-y0-0801-iruka-evacuates-academy.end", basis: "source", evidence_ids: ["evd-anime-iruka-evacuation"], review: "accepted"}
+  - {id: "pr-0801-iruka-evac-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0801-iruka-evacuates-academy.start", to: "sc-y0-0801-iruka-evacuates-academy.end", basis: "source", evidence_ids: ["evd-anime-iruka-evacuation"], review: "accepted"}
