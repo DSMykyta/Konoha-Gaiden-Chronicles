@@ -1,0 +1,52 @@
+schema_version: 1
+id: "sc-y0-0707-hokage-hayate-briefing"
+continuity_id: "main"
+title: "Нарада після загибелі Хаяте"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0707", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0707-hiruzen-reports-hayate-death"
+    title: "Хірузен повідомляє про загибель Хаяте"
+    text: "Хірузен збирає джонінів Конохи й повідомляє, що Хаяте Ґекко знайдено мертвим; нараду пов’язують із загрозою Орочімару та його людьми."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-hayate", role: "mentioned", mode: "remote"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"]
+  - id: "ev-y0-0707-raido-proposes-cancel-exam"
+    title: "Райдо пропонує скасувати іспит"
+    text: "Після звістки про смерть Хаяте Райдо пропонує скасувати іспит на чуніна й зосередитися на Орочімару. Після обговорення Хірузен вирішує продовжити іспит."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-anko", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"]
+  - id: "ev-y0-0707-raido-returns-hokage-guard"
+    title: "Райдо повертають до охорони Хокаґе"
+    text: "Після наради Райдо знімають з наставництва Команди 9 і повертають до служби в охороні Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "authority", mode: "physical"}
+    focus_teams: ["team-9"]
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-project-raido-return-guard"]
+relations:
+  - {id: "rel-0707-hayate-briefing-1", kind: "before", a: "ev-y0-0707-hiruzen-reports-hayate-death", b: "ev-y0-0707-raido-proposes-cancel-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"]}
+  - {id: "rel-0707-hayate-briefing-2", kind: "before", a: "ev-y0-0707-raido-proposes-cancel-exam", b: "ev-y0-0707-raido-returns-hokage-guard", basis: "project_decision", review: "accepted", evidence_ids: ["evd-project-raido-return-guard"]}
+presence:
+  - {id: "pr-0707-hayate-briefing-raido", entity_id: "c-raido", from: "sc-y0-0707-hokage-hayate-briefing.start", to: "sc-y0-0707-hokage-hayate-briefing.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"], review: "accepted"}
