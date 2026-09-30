@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0123-field8-observation"
 continuity_id: "main"
+episode_id: "ep-y0-team-examinations"
 title: "Команда 9 спостерігає за Командою 8"
 location_id: "loc-training-ground-8"
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}
