@@ -509,6 +509,11 @@ sources:
     title: "Naruto anime — episode 107"
     locator_status: "episode_known_timestamp_pending"
 
+  - id: "src-anime-100"
+    type: "anime"
+    title: "Naruto anime — episode 100"
+    locator_status: "episode_known_timestamp_pending"
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -2841,9 +2846,9 @@ evidence:
     locator: "post-Konoha Crush anime material: Anko attends Hiruzen Sarutobi's funeral; exact episode/timestamp pending"
     basis: "source"
     review: "pending"
-  - id: "evd-anime-98-anko-inauguration"
-    source_id: "src-anime-98"
-    locator: "episode 98: Anko is present for Tsunade's installation as Fifth Hokage; exact timestamp pending"
+  - id: "evd-anime-100-anko-inauguration"
+    source_id: "src-anime-100"
+    locator: "episode 100: Anko is present for Tsunade's Fifth Hokage inauguration; exact timestamp pending"
     basis: "source"
     review: "pending"
   - id: "evd-anime-anko-shikamaru-promotion"
