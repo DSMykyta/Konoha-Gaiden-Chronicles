@@ -1,0 +1,16 @@
+schema_version: 1
+arcs:
+  - id: "arc-y0-genin-formation"
+    continuity_id: "main"
+    title: "Формування команд ґенінів"
+    description: "Перехід випускників Академії до нових команд і наставників."
+
+  - id: "arc-y0-chunin-exams"
+    continuity_id: "main"
+    title: "Іспит на чуніна"
+    description: "Іспит на чуніна та пов'язані з ним паралельні лінії, що ведуть до загрози вторгнення."
+
+  - id: "arc-y0-sasuke-retrieval"
+    continuity_id: "main"
+    title: "Місія з повернення Саске"
+    description: "Переслідування Саске після його втечі з Конохи та фінальна сутичка в Долині Завершення."
