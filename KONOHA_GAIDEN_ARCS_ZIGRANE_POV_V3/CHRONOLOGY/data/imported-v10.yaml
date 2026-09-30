@@ -8183,8 +8183,9 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000214"
-    migration_status: "pending"
-    replacement_ids: []
+    migration_status: "migrated"
+    replacement_ids:
+      - "ev-y0-1207-suna-council-responds-matsuri-kidnapping"
     original:
       Year: "0"
       Date: "07.12"
