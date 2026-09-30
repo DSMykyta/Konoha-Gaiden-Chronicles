@@ -5,6 +5,8 @@ const lengths=[31,28,31,30,31,30,31,31,30,31,30,31],starts=lengths.map((_,i)=>le
 const palette=['#3f80cf','#cb833e','#7462bc','#ba6487','#358b96','#7d9953','#b89442','#6687b5','#ab7cba','#67877d','#b97a73','#8b91a1'];
 const defaults=['c-naruto','c-sasuke','c-sakura','c-kita','c-ren','c-sora'],teams={'team-7':['c-naruto','c-sasuke','c-sakura','c-kakashi'],'team-8':['c-hinata','c-kiba','c-shino','c-kurenai'],'team-9':['c-kita','c-ren','c-sora','c-raido']};
 const origins={M:'Манґа',A:'Аніме',F:'Філер',P:'Історія проєкту',R:'Ретроспектива',V:'Фільм',N:'Новела',G:'Гра',O:'Інше'},modes={internal:'внутрішній простір',memory:'спогад',manifested:'проявлення',reanimated:'Едо Тенсей'};
+const zoomModes={year:1,month:12,week:365/7,day:365};
+function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 let data,entityMap,eventMap,sceneMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorDay=null,anchorEvent=null,graphNodes=[],raf=null,searchLimit=30;
 function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,364);const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m};}
@@ -68,8 +70,8 @@ function render(){
  timeline.replaceChildren();axis.replaceChildren();$('linesCount').textContent=`Лінії · ${selected.size}`;
  // Alternating calendar days, including empty days; boundaries use actual day values.
  if(plot/(hi-lo)>=2)for(let day=Math.floor(lo);day<Math.ceil(hi);day++){if(day%2===1)svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
- const label=overview?'Рік 0':zoom<50?`${dateText(lo)} — ${dateText(hi-.01)} · Рік 0`:`${dateText(center,true)} · Рік 0`;$('periodButton').textContent=label;
- document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===(overview?'year':zoom<50?'month':'day'))));
+ const activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(center,true)} · Рік 0`:`${dateText(lo)} — ${dateText(hi-.01)} · Рік 0`;$('periodButton').textContent=label;
+ document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
  const ticks=zoom<8?starts.map((d,i)=>({day:d,text:months[i].slice(0,3)})):Array.from({length:Math.ceil(hi)-Math.floor(lo)+1},(_,i)=>({day:Math.floor(lo)+i,text:dateText(Math.floor(lo)+i)})),step=zoom<8?1:Math.max(1,Math.ceil(ticks.length/(plot/75)));
  ticks.forEach((t,i)=>{if(t.day<lo||t.day>=hi||i%step)return;svg('line',{x1:px(t.day),x2:px(t.day),y1:5,y2:10,stroke:'#bfcbdc'},axis);const txt=svg('text',{x:px(t.day),y:28,'text-anchor':'middle'},axis);txt.textContent=t.text;});
  const labelPositions=[],defs=svg('defs',{}),lead=clamp((hi-lo)*.18,.08,4);
@@ -249,8 +251,8 @@ async function init(){
  $('eventSearch').addEventListener('input',()=>{searchLimit=30;search();});$('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
  $('continuity').addEventListener('change',()=>{continuity=$('continuity').value;focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();});
  $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дату у форматі 22.01.';$('dateError').hidden=false;return;}$('dateError').hidden=true;zoom=365;center=starts[+m[2]-1]+(+m[1]-1)+.5;closePanels();closeCard();});
- document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setZoom({year:1,month:12,day:365}[b.dataset.mode])));$('zoomIn').addEventListener('click',()=>setZoom(zoom*2));$('zoomOut').addEventListener('click',()=>setZoom(zoom/2));$('fit').addEventListener('click',()=>setZoom(1));
- for(const [id,s] of [['previous',-1],['next',1]])$(id).addEventListener('click',()=>{closeCard();center=clamp(center+s*365/zoom*.7,182.5/zoom,365-182.5/zoom);schedule();});
+ document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setZoom(zoomModes[b.dataset.mode])));$('zoomIn').addEventListener('click',()=>setZoom(zoom*2));$('zoomOut').addEventListener('click',()=>setZoom(zoom/2));$('fit').addEventListener('click',()=>setZoom(zoomModes.year));
+ for(const [id,s] of [['previous',-1],['next',1]])$(id).addEventListener('click',()=>{closeCard();const mode=currentZoomMode(),preset=zoomModes[mode],isPreset=Math.abs(Math.log(zoom/preset))<.03,step=isPreset?365/preset:365/zoom*.7;center=clamp(center+s*step,182.5/zoom,365-182.5/zoom);schedule();});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('sceneDialog').hidden){e.preventDefault();closeScene();return;}if(!$('profileDialog').hidden){e.preventDefault();closeProfile();return;}closePanels();closeCard();if(focusedCharacter){focusedCharacter=null;render();}}});document.addEventListener('pointerdown',e=>{if(!e.target.closest('.panel,.tools,.period,.scene-dialog'))closePanels();if(!e.target.closest('.event-card,.node,.thread-hit,.line-label,.focus-bar,.profile-dialog,.scene-dialog,.time-controls,.panel,.tools,.period'))closeCard();});
  const canvas=$('timeline'),touches=new Map();let drag=null,pinch=null;
  canvas.addEventListener('wheel',e=>{e.preventDefault();const box=canvas.getBoundingClientRect(),pad=box.width<600?22:48,t=clamp((e.clientX-box.left-pad)/(box.width-pad*2),0,1),[lo,hi]=range();setZoom(zoom*Math.exp(-clamp(e.deltaY,-100,100)*.007),lo+t*(hi-lo));},{passive:false});
