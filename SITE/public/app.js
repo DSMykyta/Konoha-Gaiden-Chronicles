@@ -385,9 +385,33 @@ function closeCharacterEvents(){
  if(dialog.close)dialog.close();else dialog.removeAttribute('open');
  dialog.hidden=true;characterEventsEntity=null;const target=characterEventsReturnFocus;characterEventsReturnFocus=null;target?.focus();
 }
+function mergedProfileVersion(versions,index){
+ const mergeKeyed=(base,delta,key)=>{
+  if(delta===undefined)return base||[];
+  const out=[...(base||[])],positions=new Map(out.map((item,i)=>[key(item),i]));
+  for(const item of delta||[]){const k=key(item);if(positions.has(k)&&item&&typeof item==='object'&&!Array.isArray(item)){const i=positions.get(k);out[i]={...out[i],...item};}else if(!positions.has(k)){positions.set(k,out.length);out.push(item);}}
+  return out;
+ };
+ let merged={};
+ for(let i=0;i<=index;i++){
+  const v=versions[i]||{};
+  merged={
+   ...merged,...v,
+   appearance:v.appearance===undefined?merged.appearance:{...(merged.appearance||{}),...(v.appearance||{})},
+   facts:mergeKeyed(merged.facts,v.facts,item=>item?.key||item?.label||''),
+   abilities:mergeKeyed(merged.abilities,v.abilities,item=>item?.name||item?.label||''),
+   relationships:mergeKeyed(merged.relationships,v.relationships,item=>item?.entity_id||item?.name||item?.label||''),
+   sections:mergeKeyed(merged.sections,v.sections,item=>item?.title||''),
+   traits:v.traits===undefined?merged.traits:v.traits,
+   goals:v.goals===undefined?merged.goals:v.goals,
+   equipment:v.equipment===undefined?merged.equipment:v.equipment
+  };
+ }
+ return merged;
+}
 function renderProfile(){
  const entity=entityMap.get(profileEntity);if(!entity)return;const profile=profileMap.get(profileEntity),versions=profile?.versions?.length?profile.versions:[{id:'general',label:'Профіль'}];if(!versions.some(v=>v.id===profileVersion))profileVersion=versions[0].id;
- const version=versions.find(v=>v.id===profileVersion),associated=TimelineCore.ordered(events().filter(e=>e.tracks.includes(profileEntity))),dated=associated.filter(e=>e.day!==null),memberships=(data.memberships||[]).filter(m=>m.entity_id===profileEntity||m.person_id===profileEntity||m.member_id===profileEntity);
+ const versionIndex=versions.findIndex(v=>v.id===profileVersion),version=mergedProfileVersion(versions,versionIndex),associated=TimelineCore.ordered(events().filter(e=>e.tracks.includes(profileEntity))),dated=associated.filter(e=>e.day!==null),memberships=(data.memberships||[]).filter(m=>m.entity_id===profileEntity||m.person_id===profileEntity||m.member_id===profileEntity);
  $('profileTitle').textContent=fullName(profileEntity);$('profileTabs').innerHTML=versions.map(v=>`<button id="tab-${esc(v.id)}" role="tab" aria-selected="${v.id===profileVersion}" aria-controls="profileContent" tabindex="${v.id===profileVersion?0:-1}" data-profile-version="${esc(v.id)}">${esc(v.label)}</button>`).join('');$('profileContent').setAttribute('aria-labelledby','tab-'+version.id);
  const paragraphs=text=>String(text||'').split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');
  const listSection=(title,items)=>items?.length?`<section class="profile-section"><h3>${esc(title)}</h3><ul class="profile-list">${items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul></section>`:'';
