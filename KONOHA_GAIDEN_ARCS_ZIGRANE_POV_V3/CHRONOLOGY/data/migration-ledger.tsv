@@ -1,5 +1,5 @@
 LegacyEventID	Year	Date	Origin	Status	ReplacementIDs	Notes
-V10-000001	0	18.01	M	superseded	ev-y0-0118-naruto-paints-monument;ev-y0-0118-iruka-catches-naruto;ev-y0-0118-naruto-declares-hokage-goal;ev-y0-0118-naruto-transformation;ev-y0-0118-iruka-treats-ramen	Split monument, conversation and ramen into separate scenes.
+V10-000001	0	18.01	M	superseded	ev-y0-0118-naruto-paints-monument;ev-y0-0118-iruka-catches-naruto;ev-y0-0118-naruto-transformation;ev-y0-0118-iruka-orders-monument-cleanup;ev-y0-0118-iruka-treats-ramen;ev-y0-0118-naruto-declares-hokage-goal	Split monument, conversation and ramen into separate scenes.
 V10-000002	0	19.01	M	superseded	ev-y0-0119-naruto-fails-clone;ev-y0-0119-mizuki-manipulates-naruto;ev-y0-0119-naruto-steals-scroll;ev-y0-0119-hiruzen-orders-recovery;ev-y0-0119-iruka-finds-naruto;ev-y0-0119-mizuki-reveals-nine-tails;ev-y0-0119-mizuki-attacks-iruka	Split graduation, theft/search and confrontation into distinct scenes.
 V10-000003	0	20.01	M	superseded	ev-y0-0120-iruka-acknowledges-naruto;ev-y0-0120-naruto-defeats-mizuki;ev-y0-0120-iruka-gives-protector	Split dawn resolution into atomic events.
 V10-000004	0	21.01	M	superseded	ev-y0-0121-naruto-registers-ninja;ev-y0-0121-naruto-meets-konohamaru;ev-y0-0121-naruto-defeats-ebisu;ev-y0-0121-naruto-teaches-konohamaru	Split registration and Konohamaru/Ebisu sequence.
