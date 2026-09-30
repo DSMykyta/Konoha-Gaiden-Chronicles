@@ -2309,3 +2309,8 @@ redirects:
       - "ev-y0-1205-menma-sacrifices-himself"
       - "ev-y0-1205-naruto-keeps-menma-ocarina"
     reason: "Episode 215 decomposed into Menma's bandit past reveal, his choice to defend the village, his sacrifice and Naruto retaining the ocarina."
+  - legacy_id: "V10-000222-G"
+    status: "migrated"
+    replacement_ids:
+      - "ev-y0-1216-iruka-naruto-last-ramen"
+    reason: "Iruka and Naruto last ramen before Naruto's departure migrated to structured chronology."
