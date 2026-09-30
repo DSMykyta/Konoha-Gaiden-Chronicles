@@ -61,4 +61,4 @@
 - `10_DISCUSSION_TEAM_SHIBI_PROFILE_RULES.md` — прийняті правила для профілів і заборона вигаданої командної драматургії.
 - `11_DISCUSSION_TEAM_SHIBI_TEAM9_ARCHIVE.md` — архів відкинутої паралелі з Team 9; не використовувати як пояснення формування Team 9.
 
-Профілі винесені в корінь репозиторію: `profile_inuzuka_gaku`, `profile_yamashiro_aoba`, `profile_aburame_shibi`; `profile_hayashi_nobari` доповнений фактом старої команди.
+Профілі зберігаються в каталозі `PROFILES/`: `profile_yugiri_mikata`, `profile_inuzuka_gaku`, `profile_yamashiro_aoba`, `profile_aburame_shibi`, `profile_hayashi_nobari`.
