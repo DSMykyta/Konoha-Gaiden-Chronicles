@@ -8527,8 +8527,9 @@ records:
       SupportingSources: "A [еп. 220] — аніме також завершує Part I відбуттям Наруто з Джираєю, але безпосередньо перед цим трійця Суни перебуває в Суні після місії Такумі; тому сцена їхнього від’їзду з Конохи лишається манґа-специфічним елементом у спільній лінії."
       Review: ""
   - legacy_id: "V10-000222-G"
-    migration_status: "pending"
-    replacement_ids: []
+    migration_status: "migrated"
+    replacement_ids:
+      - "ev-y0-1216-iruka-naruto-last-ramen"
     original:
       Year: "0"
       Date: "16.12"
