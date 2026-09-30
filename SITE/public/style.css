@@ -1358,30 +1358,9 @@ button:disabled:hover {
 }
 
 .profile-timeline-button {
+  display:block;
   width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:13px 14px;
-  margin:4px 0 12px;
-  text-align:left;
-  background:#f5f8fc;
-  border:1px solid #e1e8f1;
-  border-radius:10px
-}
-.profile-timeline-button strong {
-  font-size:13px;
-  color:#385d8d
-}
-.profile-timeline-button span {
-  font-size:11px;
-  color:var(--muted);
-  white-space:nowrap
-}
-.profile-timeline-button:hover,
-.profile-timeline-button:focus-visible {
-  background:#edf3fc
+  margin:4px 0 12px
 }
 .character-events-dialog {
   position:fixed;
@@ -1480,11 +1459,6 @@ button:disabled:hover {
   color:#4f6076
 }
 @media(max-width:600px) {
-  .profile-timeline-button {
-    align-items:flex-start;
-    flex-direction:column;
-    gap:3px
-  }
   .character-events-heading {
     height:82px;
     padding:12px 16px
