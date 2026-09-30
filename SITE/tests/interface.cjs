@@ -48,8 +48,10 @@ async function check(width,height){
  assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Назад');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Далі');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
  click('[data-open-scene]');click('#closeScene');assert(doc.getElementById('sceneDialog').hidden);
 
- // Month zoom collapses the two formation scenes into one episode; year zoom exposes its arc.
- run('closeCard();zoom=zoomModes.month;center=21.5;render()');assert.equal(run('semanticLevel()'),'episode');const formationEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-team-formation")');assert(formationEpisode);assert.equal(formationEpisode.childCount,2);
+ // Month zoom keeps parallel narrative episodes separate; Raidō's evaluation groups its own four scenes.
+ run('closeCard();zoom=zoomModes.month;center=21.5;render()');assert.equal(run('semanticLevel()'),'episode');
+ const formationEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-team-formation")');const joninEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-jonin-outside-academy")');assert(formationEpisode);assert(joninEpisode);assert.equal(formationEpisode.childCount,1);assert.equal(joninEpisode.childCount,1);
+ run('center=22.5;render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.childCount,4);
  run('zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');assert(run('graphNodes.some(p=>p.rawId==="arc-y0-genin-formation")'));
  // Desktop hover opens complete scene data without a click, including the number hit target.
  run('closeCard();zoom=zoomModes.week;center=21.5;render()');await sleep();const sceneNode=doc.querySelector('[data-scene="sc-y0-0122-academy-announcements"]');
