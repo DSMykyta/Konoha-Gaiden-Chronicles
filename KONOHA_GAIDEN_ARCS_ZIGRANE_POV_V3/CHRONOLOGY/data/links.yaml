@@ -413,6 +413,13 @@ links:
     basis: "imported"
     review: "accepted"
     evidence_ids: ["evd-v10-000046-K", "evd-v10-000046-L"]
+  - id: "lnk-0706-draw-before-hospital"
+    kind: "before"
+    a: "sc-y0-0706-finals-draw"
+    b: "sc-y0-0706-kabuto-hospital-infiltration"
+    basis: "project_decision"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000046-L", "evd-v10-000047"]
   - id: "lnk-0706-draw-before-ebisu"
     kind: "before"
     a: "sc-y0-0706-finals-draw"
