@@ -2180,3 +2180,24 @@ notes:
     basis: "imported"
     review: "accepted"
     evidence_ids: ["evd-v10-000214", "evd-anime-216-baki-suna-council"]
+  - id: "lnk-0727-baki-plan-before-siblings-briefing"
+    kind: "before"
+    a: "sc-y0-0727-baki-orochimaru-invasion-plan"
+    b: "sc-y0-0727-baki-briefs-sand-siblings"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-konoha-crush-prelude", "evd-anime-67-68"]
+  - id: "lnk-0727-baki-briefing-before-finals"
+    kind: "before"
+    a: "sc-y0-0727-baki-briefs-sand-siblings"
+    b: "sc-y0-0801-sasuke-gaara-final"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-konoha-crush-prelude"]
+  - id: "lnk-0801-invasion-before-rasa-discovery"
+    kind: "before"
+    a: "sc-y0-0801-invasion-fails"
+    b: "sc-y0-0802-suna-discovers-rasa-body"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-post-crush-search"]
