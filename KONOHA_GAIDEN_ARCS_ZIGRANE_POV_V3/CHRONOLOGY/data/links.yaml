@@ -70,13 +70,20 @@ links:
     basis: "imported"
     review: "pending"
     evidence_ids: ["evd-v10-000001"]
-  - id: "lnk-0118-talk-before-ramen"
+  - id: "lnk-0118-class-before-cleanup"
     kind: "before"
     a: "sc-y0-0118-iruka-naruto"
+    b: "sc-y0-0118-hokage-monument-cleanup"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-ch1-prologue"]
+  - id: "lnk-0118-cleanup-before-ramen"
+    kind: "before"
+    a: "sc-y0-0118-hokage-monument-cleanup"
     b: "sc-y0-0118-ichiraku"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000001"]
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-ch1-prologue"]
   - id: "lnk-0119-exam-before-manipulation"
     kind: "before"
     a: "sc-y0-0119-graduation-exam"
