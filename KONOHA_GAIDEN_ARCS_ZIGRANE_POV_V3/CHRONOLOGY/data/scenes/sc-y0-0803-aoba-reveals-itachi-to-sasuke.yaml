@@ -1,0 +1,44 @@
+schema_version: 1
+id: "sc-y0-0803-aoba-reveals-itachi-to-sasuke"
+continuity_id: "main"
+title: "Аоба ненавмисно повідомляє Саске про повернення Ітачі"
+location_id: "loc-konoha-hospital"
+placement: {anchor_id: "ta-y0-0803", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0803-aoba-blurts-itachi-return"
+    title: "Аоба проговорюється про Ітачі при Саске"
+    text: "Після бою з Акацукі Саске приходить провідати непритомного Какаші. Ґай, Асума й Куренай свідомо не хочуть говорити йому, що Ітачі повернувся до Конохи. У цей момент Аоба заходить до кімнати й уголос питає, чи правда, що Ітачі Учіха повернувся й полює на Наруто. Він одразу розуміє, що сказав це при Саске, але вже запізно."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-aoba", role: "focus", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "affected", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "affected", mode: "physical"}
+      - {entity_id: "c-might-guy", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-itachi", role: "subject", mode: "remote"}
+      - {entity_id: "c-naruto", role: "target", mode: "remote"}
+    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
+  - id: "ev-y0-0803-sasuke-leaves-to-pursue-itachi"
+    title: "Саске негайно вирушає шукати Ітачі й Наруто"
+    text: "Почувши, що Ітачі шукає Наруто, Саске негайно вибігає. Він намагається випередити брата й знайти Наруто першим, що безпосередньо приводить його до заїжджого двору, де Ітачі й Кісаме вже наздогнали Наруто."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
+      - {entity_id: "c-aoba", role: "cause", mode: "physical"}
+      - {entity_id: "c-itachi", role: "target", mode: "remote"}
+      - {entity_id: "c-naruto", role: "target", mode: "remote"}
+    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
+relations:
+  - {id: "rel-0803-aoba-sasuke-1", kind: "before", a: "ev-y0-0803-aoba-blurts-itachi-return", b: "ev-y0-0803-sasuke-leaves-to-pursue-itachi", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]}
+presence:
+  - {id: "pr-0803-aoba-reveal-aoba", entity_id: "c-aoba", from: "sc-y0-0803-aoba-reveals-itachi-to-sasuke.start", to: "sc-y0-0803-aoba-reveals-itachi-to-sasuke.end", basis: "source", evidence_ids: ["evd-manga-ch144-aoba-sasuke"], review: "accepted"}
+  - {id: "pr-0803-aoba-reveal-sasuke", entity_id: "c-sasuke", from: "sc-y0-0803-aoba-reveals-itachi-to-sasuke.start", to: "sc-y0-0803-aoba-reveals-itachi-to-sasuke.end", basis: "source", evidence_ids: ["evd-manga-ch144-aoba-sasuke"], review: "accepted"}
+  - {id: "pr-0803-aoba-reveal-kakashi", entity_id: "c-kakashi", from: "sc-y0-0803-aoba-reveals-itachi-to-sasuke.start", to: "sc-y0-0803-aoba-reveals-itachi-to-sasuke.end", basis: "source", evidence_ids: ["evd-manga-ch144-aoba-sasuke"], review: "accepted"}
