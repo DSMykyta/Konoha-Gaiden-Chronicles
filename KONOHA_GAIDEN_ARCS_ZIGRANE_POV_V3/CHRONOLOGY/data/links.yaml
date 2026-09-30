@@ -765,7 +765,7 @@ links:
     evidence_ids: ["evd-movie-land-of-snow"]
   - id: "lnk-0904-tea-assignment-before-aoi"
     kind: "before"
-    a: "sc-y0-0904-ibiki-assigns-idate-escort"
+    a: "sc-y0-0904-tsunade-assigns-tea-mission"
     b: "sc-y0-0904-aoi-attacks-idate-naruto"
     basis: "source"
     review: "accepted"
@@ -2124,3 +2124,17 @@ notes:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-31-50"]
+  - id: "lnk-0801-invasion-intersects-ibiki-border"
+    kind: "intersects"
+    a: "sc-y0-0801-invasion-begins-arena"
+    b: "sc-y0-0801-ibiki-defends-konoha-border"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-finals-konoha-crush"]
+  - id: "lnk-0801-ibiki-border-before-invasion-fails"
+    kind: "before"
+    a: "sc-y0-0801-ibiki-defends-konoha-border"
+    b: "sc-y0-0801-invasion-fails"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
