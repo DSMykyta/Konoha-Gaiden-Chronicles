@@ -22,7 +22,7 @@ function sceneCast(scene,group){return [...new Set([...(scene?.presence||[]).fil
 function actionCount(n){return `${n} ${n%100>=11&&n%100<=14?'дій':n%10===1?'дія':n%10>=2&&n%10<=4?'дії':'дій'}`;}
 function navigationEvents(){return events().filter(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));}
 function chronologyRelations(){return [...data.links,...data.scenes.flatMap(s=>s.relations||[])];}
-function orderedScenes(){return TimelineCore.scenes(events(),chronologyRelations());}
+function orderedScenes(){return TimelineCore.scenes(events(),chronologyRelations(),data.scenes);}
 function nav(){const list=orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(e=>e.id===anchorEvent),next=list.findIndex(e=>e.day>=Math.floor(center));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
 function stepEvent(direction){const target=nav()[direction<0?'previous':'next'];if(target)navigateEvent(target.id);}
 function setFocus(id){focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();$('canvas').scrollTop=0;renderCharacters();render();}
