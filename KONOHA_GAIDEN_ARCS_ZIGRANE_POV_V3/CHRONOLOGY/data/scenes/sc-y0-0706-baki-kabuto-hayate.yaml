@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0706-baki-kabuto-hayate"
 continuity_id: "main"
+episode_id: "ep-y0-hayate-investigation"
 title: "Хаяте підслуховує план вторгнення"
 location_id: null
 placement: {anchor_id: "ta-y0-0706", day_offset: 0}
