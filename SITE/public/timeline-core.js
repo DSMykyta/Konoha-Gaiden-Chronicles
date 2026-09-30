@@ -77,6 +77,20 @@ const TimelineCore = {
       }
       for(const n of nodes)y.set(n.id,Math.max(-1,Math.min(1,y.get(n.id)+delta.get(n.id))));
     }
+    // Strong lane continuity: same calendar day + same physical location + a large
+    // cast overlap is one continuing story stream even if another scene branches
+    // between them. Keep those scenes on practically the same horizontal lane.
+    for(let pass=0;pass<4;pass++){
+      for(let i=0;i<sorted.length;i++)for(let j=i+1;j<sorted.length;j++){
+        const a=sorted[i],b=sorted[j];
+        if(a.calendarDay!==b.calendarDay||!a.locationId||a.locationId!==b.locationId)continue;
+        const ac=a.layoutCast||[],bc=b.layoutCast||[];if(!ac.length||!bc.length)continue;
+        const shared=ac.filter(id=>bc.includes(id)).length,overlap=shared/Math.min(ac.length,bc.length);
+        if(shared<3||overlap<.55)continue;
+        const mean=(y.get(a.id)+y.get(b.id))/2;
+        y.set(a.id,mean);y.set(b.id,mean);
+      }
+    }
     // Normalize only enough to use the available vertical field; preserve relative
     // proximity so a connected branch still reads as one stream.
     const values=[...y.values()],lo=Math.min(...values),hi=Math.max(...values),span=Math.max(.55,hi-lo);
