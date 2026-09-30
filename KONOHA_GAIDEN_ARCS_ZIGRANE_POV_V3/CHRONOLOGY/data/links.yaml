@@ -2068,3 +2068,10 @@ notes:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-manga-ch174-iruka-naruto"]
+  - id: "lnk-0624-kakashi-iruka-report-before-meeting"
+    kind: "before"
+    a: "sc-y0-0624-kakashi-iruka-report"
+    b: "sc-y0-0624-hokage-chunin-meeting"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]
