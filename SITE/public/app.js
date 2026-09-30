@@ -96,13 +96,14 @@ function chronologyBreaks(dated=events().filter(e=>e.day!==null)){
  return breaks;
 }
 function makeTimeScale(lo,hi,pad,plot,dated){
- const viewSpan=hi-lo;
- // A time break is an overview-only visual compression. On day/week views
- // keep the real calendar continuous so direct date navigation and dragging
- // behave exactly like the uncompressed timeline.
- const breaks=viewSpan>TIME_GAP_THRESHOLD
-  ?chronologyBreaks(dated).filter(b=>b.to>lo&&b.from<hi).map(b=>({...b,viewFrom:Math.max(lo,b.from),viewTo:Math.min(hi,b.to)})).filter(b=>b.viewTo>b.viewFrom)
-  :[],count=breaks.length;
+ // Compress a long empty span only when the viewport actually contains
+ // both sides of that whole span. If the user is looking inside the gap
+ // (day / week / month), keep the calendar continuous and simply show
+ // the empty period instead of stretching a break marker across the view.
+ const breaks=chronologyBreaks(dated)
+  .filter(b=>lo<=b.from&&hi>=b.to)
+  .map(b=>({...b,viewFrom:b.from,viewTo:b.to})),
+  count=breaks.length;
  const removed=breaks.reduce((sum,b)=>sum+(b.viewTo-b.viewFrom),0),visibleSpan=Math.max(0,(hi-lo)-removed);
  const breakPx=count?(visibleSpan<1e-6?plot/count:Math.min(18,Math.max(4,plot*.32/count))):0;
  const dayPx=visibleSpan>1e-6?Math.max(.001,(plot-breakPx*count)/visibleSpan):0;
