@@ -105,7 +105,7 @@ function render(){
  paintNodes();updateFocusBar();
 }
 function positionCard(point){
- const card=$('eventCard'),canvas=$('canvas'),w=canvas.clientWidth||1000,y=point.y-canvas.scrollTop,width=Math.min(360,w-24),left=clamp(point.x,width/2+12,w-width/2-12);
+ const card=$('eventCard'),canvas=$('canvas'),w=canvas.clientWidth||1000,y=point.y-canvas.scrollTop,width=Math.min(480,w-24),left=clamp(point.x,width/2+12,w-width/2-12);
  card.hidden=false;card.style.left=left+'px';card.style.top=(y-16)+'px';card.style.setProperty('--tail-x',(point.x-left+width/2)+'px');card.style.setProperty('--card-height',Math.max(70,Math.min(520,y-32))+'px');
  positionEventPreview();
 }
@@ -167,9 +167,10 @@ function bindCard(){
  $('cardContent').querySelectorAll('[data-open-scene]').forEach(b=>b.addEventListener('click',()=>openScene(b.dataset.openScene,b)));
  $('cardContent').querySelectorAll('[data-step-scene]').forEach(b=>b.addEventListener('click',()=>stepScene(+b.dataset.stepScene)));
 }
-function cardTop(day,navigation,kind='event'){
+function cardTop(day,navigation,kind='event',openSceneId=null){
  const arrow=(direction,label)=>`<button class="card-arrow" data-step-${kind}="${direction}" aria-label="${label}" title="${label}" ${navigation[direction<0?'previous':'next']?'':'disabled'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${direction<0?'m14 6-6 6 6 6':'m10 6 6 6-6 6'}"/></svg></button>`;
- return `<div class="card-top"><span class="card-date">${esc(dateText(day,true))}${day!==null?' · Рік 0':''}</span><nav class="card-arrows" aria-label="Перехід між ${kind==='scene'?'сценами':'подіями'}">${arrow(-1,'Назад')}${arrow(1,'Далі')}</nav><button class="close" data-close-card aria-label="Закрити подію" title="Закрити">×</button></div>`;
+ const openScene=openSceneId?`<button class="card-open-scene" data-open-scene="${esc(openSceneId)}" aria-label="Читати сцену цілком" data-tooltip="Читати сцену цілком"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M10 7h7v7"/></svg></button>`:'';
+ return `<div class="card-top"><span class="card-date">${esc(dateText(day,true))}${day!==null?' · Рік 0':''}</span><div class="card-top-actions">${openScene}<nav class="card-arrows" aria-label="Перехід між ${kind==='scene'?'сценами':'подіями'}">${arrow(-1,'Назад')}${arrow(1,'Далі')}</nav><button class="close" data-close-card aria-label="Закрити подію" title="Закрити">×</button></div></div>`;
 }
 function sceneNavigation(id){const list=orderedScenes().filter(s=>s.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(s=>s.id===id);return {previous:list[i-1]||null,next:list[i+1]||null};}
 function stepScene(direction){const target=sceneNavigation(focusId)[direction<0?'previous':'next'];if(target)navigateScene(target.id);}
@@ -177,7 +178,7 @@ function navigateScene(id){const group=sceneEvents(id);if(!group.length)return;c
 function showSceneCard(scene,group){
  closeEventPreview(true);
  const cast=sceneCast(scene,group);
- $('cardContent').innerHTML=`${cardTop(group[0].day,sceneNavigation(scene.id),'scene')}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${actionCount(group.length)}</p>${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(id)}"></span>${esc(name(id))}</button>`).join('')}</div>`:''}<button class="scene-open" data-open-scene="${esc(scene.id)}">Читати сцену цілком <span aria-hidden="true">↗</span></button><ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}"><div>${eventGallery(e)}<div class="scene-action-title">${esc(e.title)}</div><p>${esc(e.text)}</p></div></li>`).join('')}</ol>`;
+ $('cardContent').innerHTML=`${cardTop(group[0].day,sceneNavigation(scene.id),'scene',scene.id)}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${actionCount(group.length)}</p>${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(id)}"></span>${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}"><div>${eventGallery(e)}<div class="scene-action-title">${esc(e.title)}</div><p>${esc(e.text)}</p></div></li>`).join('')}</ol>`;
  bindCard();bindSceneActionPreviews();
 }
 function eventGallery(e){
