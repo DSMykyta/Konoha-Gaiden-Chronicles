@@ -27,6 +27,19 @@ events:
     extent: "interval"
     display_rank: 200
     evidence_ids: ["evd-v10-000065", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-genma-confronts-baki-dispatches-sasuke"
+    title: "Ґенма переходить від іспиту до оборони Конохи"
+    text: "Коли напад стає очевидним, Ґенма з’ясовує, чи за ним стоїть Орочімару, і сходиться з Бакі. Після відступу пораненого Ґаари він говорить Саске, що іспит для нього закінчено, оцінює його як уже достатньо підготовленого для рівня чуніна й наказує діяти як шинобі Конохи — переслідувати Ґаару. Ґенма не дає Бакі зупинити Саске й продовжує бій із ним."
+    origin: "M"
+    extent: "interval"
+    display_rank: 250
+    involvement:
+      - {entity_id: "c-genma", role: "focus", mode: "physical"}
+      - {entity_id: "c-baki", role: "opponent", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-gaara", role: "affected", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
   - id: "ev-y0-0801-raido-wounded-by-sound-four"
     title: "Четвірка Звуку тяжко ранить Райдо"
     text: "Коли Орочімару атакує Хірузена, Райдо намагається втрутитися. Четвірка Звуку, замаскована під охоронців Казекаґе, атакує Райдо; він дістає тяжкі поранення і втрачає свідомість, через що не може допомогти Хокаґе."
@@ -40,7 +53,9 @@ events:
       - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
     evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
 relations:
+  - {id: "rel-0801-invasion-genma-1", kind: "before", a: "ev-y0-0801-sand-sound-invasion-starts", b: "ev-y0-0801-genma-confronts-baki-dispatches-sasuke", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
   - {id: "rel-0801-invasion-raido-1", kind: "before", a: "ev-y0-0801-sand-sound-invasion-starts", b: "ev-y0-0801-raido-wounded-by-sound-four", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
   - {id: "rel-0801-invasion-arena-1", kind: "intersects", a: "ev-y0-0801-kabuto-casts-arena-genjutsu", b: "ev-y0-0801-sand-sound-invasion-starts", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush"]}
 presence:
+  - {id: "pr-0801-invasion-genma", entity_id: "c-genma", from: "sc-y0-0801-invasion-begins-arena.start", to: "sc-y0-0801-invasion-begins-arena.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
   - {id: "pr-0801-invasion-raido", entity_id: "c-raido", from: "sc-y0-0801-invasion-begins-arena.start", to: "ev-y0-0801-raido-wounded-by-sound-four.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
