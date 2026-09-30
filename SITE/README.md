@@ -1,8 +1,8 @@
 # Konoha Timeline
 
-Read-only, minimal timeline. Hover a node for its title, click for an anchored card above it. No persistent header, sidebar, event list, editing interface, or write API.
+Read-only, minimal timeline. Hover any part of a node, including its action count, for the complete scene card above it. The card stays open while the pointer moves into it. Touch screens open it by tapping; clicking pins a card. No persistent header, sidebar, event list, editing interface, or write API.
 
-Smooth cubic Bézier paths converge at shared scene nodes. A scene is grouped only by its authoritative YAML ID, never by a shared date or location. The number inside a node counts its actions; clicking shows those actions, and “Читати сцену цілком” opens all descriptions together. Line convergence means presence at different moments of the scene, without asserting that everyone met simultaneously. Decorative crossings never assert co-presence. Selected lines remain visible through dates with no events. Main and alternate continuities are selected independently.
+Smooth cubic Bézier paths converge at shared scene nodes. Each character's strand fades in shortly before its first recorded scene, follows its own scene anchors without a fixed row, and fades out after its last record; these ends do not imply birth or death. Unrelated paths bend away from scene markers. Hovering highlights the scene's physical cast and dims other strands. A scene is grouped only by its authoritative YAML ID, never by a shared date or location. The number inside a node counts its actions; the card shows their complete text and available images, and “Читати сцену цілком” opens them in a modal. Accepted `before` links determine same-day scene order; unspecified order remains a display convention. Line convergence means presence at different moments of the scene, without asserting that everyone met simultaneously. Decorative crossings never assert co-presence. Main and alternate continuities are selected independently.
 
 ## Vercel
 

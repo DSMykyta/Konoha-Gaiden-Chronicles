@@ -17,8 +17,11 @@ function events(){return data.events.filter(e=>e.continuity===continuity&&e.scen
 function relevant(e){return e.tracks.some(id=>selected.has(id));}
 function sceneEvents(id){return TimelineCore.ordered(events().filter(e=>e.scene_id===id));}
 function sceneCast(scene,group){return [...new Set([...(scene?.presence||[]).filter(p=>!p.mode||['physical','physical_hidden'].includes(p.mode)).map(p=>p.entity_id),...group.flatMap(e=>e.physical)])];}
+function actionCount(n){return `${n} ${n%100>=11&&n%100<=14?'дій':n%10===1?'дія':n%10>=2&&n%10<=4?'дії':'дій'}`;}
 function navigationEvents(){return events().filter(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));}
-function nav(){return TimelineCore.navigation(navigationEvents(),anchorEvent,Math.floor(center));}
+function chronologyRelations(){return [...data.links,...data.scenes.flatMap(s=>s.relations||[])];}
+function orderedScenes(){return TimelineCore.scenes(events(),chronologyRelations());}
+function nav(){const list=orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(e=>e.id===anchorEvent),next=list.findIndex(e=>e.day>=Math.floor(center));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
 function stepEvent(direction){const target=nav()[direction<0?'previous':'next'];if(target)navigateEvent(target.id);}
 function setFocus(id){focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();$('canvas').scrollTop=0;renderCharacters();render();}
 function updateFocusBar(){const bar=$('focusBar');bar.hidden=!focusedCharacter;if(!focusedCharacter)return;const n=nav();$('focusName').textContent=fullName(focusedCharacter);$('focusPosition').textContent=n.index>=0?`${n.index+1} / ${n.total}`:`${n.total} подій`;$('focusPrevious').disabled=!n.previous;$('focusNext').disabled=!n.next;}
@@ -26,7 +29,13 @@ function selectionChanged(){if(focusedCharacter&&!selected.has(focusedCharacter)
 function range(){return [Math.max(0,center-182.5/zoom),Math.min(365,center+182.5/zoom)];}
 function svg(tag,attrs,parent=$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
 function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);}
-function closeCard(){focusId=null;anchorDay=null;anchorEvent=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;schedule();}
+let hoverCloseTimer=null,hoverCard=false;
+function cancelHoverClose(){clearTimeout(hoverCloseTimer);hoverCloseTimer=null;}
+function deferHoverClose(){cancelHoverClose();if(hoverCard)hoverCloseTimer=setTimeout(()=>{if(hoverCard)closeCard();},320);}
+function canHover(e){return e.pointerType!=='touch'&&(!window.matchMedia||window.matchMedia('(any-hover: hover)').matches);}
+function paintNodes(){const p=graphNodes.find(p=>p.id===focusId);document.querySelectorAll('.node').forEach(g=>{const active=g.dataset.event===focusId;g.classList.toggle('is-open',active);g.querySelector('.mark')?.setAttribute('fill',active?'#365d92':'#fbfcfe');});document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!p&&!member);});}
+function openNode(p,pin=false){cancelHoverClose();if(focusId===p.id&&!$('eventCard').hidden){if(pin)hoverCard=false;return;}closePanels();hoverCard=!pin;focusId=p.id;anchorDay=p.day;anchorEvent=null;p.scene?showSceneCard(p.scene,p.group):showGroup(p.group);positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();}
+function closeCard(){cancelHoverClose();hoverCard=false;focusId=null;anchorDay=null;anchorEvent=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;schedule();}
 function setZoom(value,pivot=center){const old=zoom;zoom=clamp(value,1,730);center=pivot+(center-pivot)*old/zoom;center=clamp(center,182.5/zoom,365-182.5/zoom);$('hoverTip').hidden=true;schedule();}
 function closePanels(except){for(const id of ['linesPanel','searchPanel','periodPanel'])if(id!==except){$(id).hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');}}
 function togglePanel(id){const opening=$(id).hidden;closePanels(id);$(id).hidden=!opening;$(id.replace('Panel','Button')).setAttribute('aria-expanded',String(opening));if(opening){$('eventCard').hidden=true;$('hoverTip').hidden=true;const input=$(id).querySelector('input');if(input)input.focus();}}
@@ -40,7 +49,7 @@ function renderCharacters(){
 }
 // Cubic Hermite interpolation produces C1-continuous Bézier paths; event anchors are exact.
 function smoothPath(points){
- if(points.length<2)return '';const slopes=points.map((p,i)=>{if(p.node)return 0;const a=points[Math.max(0,i-1)],b=points[Math.min(points.length-1,i+1)];return b.x===a.x?0:(b.y-a.y)/(b.x-a.x);});
+ if(points.length<2)return '';const slopes=points.map((p,i)=>{if(p.node||p.flat)return 0;const a=points[Math.max(0,i-1)],b=points[Math.min(points.length-1,i+1)];return b.x===a.x?0:(b.y-a.y)/(b.x-a.x);});
  let d=`M${points[0].x.toFixed(2)},${points[0].y.toFixed(2)}`;
  for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],h=(b.x-a.x)/3;d+=` C${(a.x+h).toFixed(2)},${(a.y+slopes[i-1]*h).toFixed(2)} ${(b.x-h).toFixed(2)},${(b.y-slopes[i]*h).toFixed(2)} ${b.x.toFixed(2)},${b.y.toFixed(2)}`;}
  return d;
@@ -48,16 +57,13 @@ function smoothPath(points){
 function render(){
  if(!data)return;
  const canvas=$('canvas'),timeline=$('timeline'),axis=$('timeAxis'),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
- const list=TimelineCore.ordered(events().filter(e=>e.day!==null&&relevant(e))),visible=list.filter(e=>e.day+1>lo&&e.day<hi);
- const ids=[...selected].sort((a,b)=>(a===focusedCharacter?-1:b===focusedCharacter?1:0)||(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
- const n=ids.length,overview=zoom<3,h=overview||focusedCharacter?viewport:Math.max(viewport,220+Math.max(0,n-1)*40),mid=focusedCharacter?viewport*.58:overview?viewport*.57:110+(h-220)/2;
+ const allEvents=events().filter(e=>e.day!==null),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
+ const n=ids.length,overview=zoom<3,h=viewport,mid=viewport*.59,amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),detailed=zoom>=8;
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);axis.setAttribute('viewBox',`0 0 ${w} 40`);
- const px=day=>pad+(day-lo)/(hi-lo)*plot,spread=clamp(Math.log2(zoom)*14,0,60),gap=overview?0:focusedCharacter?Math.min(26,(viewport-220)/Math.max(1,n-1)):Math.min(40,(h-220)/Math.max(1,n-1));
- const row=id=>focusedCharacter?(id===focusedCharacter?mid:mid+(ids.indexOf(id)-n/2)*gap):mid+(ids.indexOf(id)-(n-1)/2)*gap;
- const base=(id,day)=>row(id)+Math.sin((day-center)/(zoom>50?1.5:9)+ids.indexOf(id)*Math.PI*2/Math.max(1,n))*(overview?10:7);
- const byDay=new Map();list.forEach(e=>{if(!byDay.has(e.day))byDay.set(e.day,[]);byDay.get(e.day).push(e);});
- const detailed=zoom>=8;
- graphNodes=detailed?TimelineCore.scenes(events().filter(e=>e.day!==null)).filter(s=>s.day+1>lo&&s.day<hi&&s.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))).map(s=>{const scene=sceneMap.get(s.id),day=s.position,cast=sceneCast(scene,s.group).filter(id=>ids.includes(id));return {id:s.id,scene,group:s.group,day,x:px(day),cast,y:focusedCharacter?base(focusedCharacter,day):cast.length?cast.reduce((sum,id)=>sum+base(id,day),0)/cast.length:mid};}).filter(p=>p.x>=pad-10&&p.x<=w-pad+10):[...byDay].filter(([d,a])=>d+1>lo&&d<hi&&(!focusedCharacter||a.some(e=>e.tracks.includes(focusedCharacter)))).map(([day,a])=>({id:'day-'+day,day:day+.5,x:px(day+.5),y:mid,cast:[...new Set(a.flatMap(e=>e.physical))].filter(id=>ids.includes(id)),group:focusedCharacter?a.filter(e=>e.tracks.includes(focusedCharacter)):a}));
+ const px=day=>pad+(day-lo)/(hi-lo)*plot,allScenes=orderedScenes().filter(s=>s.day!==null),byDay=new Map();allEvents.forEach(e=>{if(!byDay.has(e.day))byDay.set(e.day,[]);byDay.get(e.day).push(e);});
+ const globalNodes=detailed?allScenes.map(s=>{const scene=sceneMap.get(s.id),day=s.position,cast=sceneCast(scene,s.group).filter(id=>selected.has(id));return {id:s.id,scene,group:s.group,day,x:px(day),cast,y:mid+Math.sin(TimelineCore.seed(s.id)*Math.PI*2)*amplitude};}):[...byDay].map(([day,group])=>({id:'day-'+day,day:day+.5,x:px(day+.5),y:mid+Math.sin(day*.07)*amplitude,cast:[...new Set(group.flatMap(e=>e.physical))].filter(id=>selected.has(id)),group}));
+ const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
+ graphNodes=globalNodes.filter(p=>p.day>=lo&&p.day<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e)));
  timeline.replaceChildren();axis.replaceChildren();$('linesCount').textContent=`Лінії · ${selected.size}`;
  // Alternating calendar days, including empty days; boundaries use actual day values.
  if(plot/(hi-lo)>=2)for(let day=Math.floor(lo);day<Math.ceil(hi);day++){if(day%2===1)svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
@@ -65,28 +71,35 @@ function render(){
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===(overview?'year':zoom<50?'month':'day'))));
  const ticks=zoom<8?starts.map((d,i)=>({day:d,text:months[i].slice(0,3)})):Array.from({length:Math.ceil(hi)-Math.floor(lo)+1},(_,i)=>({day:Math.floor(lo)+i,text:dateText(Math.floor(lo)+i)})),step=zoom<8?1:Math.max(1,Math.ceil(ticks.length/(plot/75)));
  ticks.forEach((t,i)=>{if(t.day<lo||t.day>=hi||i%step)return;svg('line',{x1:px(t.day),x2:px(t.day),y1:5,y2:10,stroke:'#bfcbdc'},axis);const txt=svg('text',{x:px(t.day),y:28,'text-anchor':'middle'},axis);txt.textContent=t.text;});
+ const labelPositions=[],defs=svg('defs',{}),lead=clamp((hi-lo)*.18,.08,4);
  ids.forEach(id=>{
-  const anchors=graphNodes.filter(p=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id))));
-  const xs=[pad,w-pad,...Array.from({length:Math.ceil(plot/18)},(_,i)=>pad+i*18),...anchors.map(a=>a.x)].sort((a,b)=>a-b).filter((v,i,a)=>v<=w-pad&&(i===0||v-a[i-1]>.01));
-  const coordinates=xs.map(x=>{const day=lo+(x-pad)/plot*(hi-lo);let y=base(id,day),nearest=null;for(const a of anchors)if(!nearest||Math.abs(a.x-x)<Math.abs(nearest.x-x))nearest=a;let isNode=false;
-   if(nearest){const neighbours=anchors.filter(a=>a!==nearest),spacing=neighbours.length?Math.min(...neighbours.map(a=>Math.abs(a.x-nearest.x))):plot;const r=Math.min(plot*.2,Math.max(30,spacing*.46)),distance=Math.abs(nearest.x-x);if(distance<r){const weight=(1+Math.cos(distance/r*Math.PI))/2;y=y*(1-weight)+nearest.y*weight;}isNode=distance<.01;}
-   return {x,y,node:isNode};});
-  const d=smoothPath(coordinates),dim=focusedCharacter&&focusedCharacter!==id,thread=svg('path',{d,class:'thread',stroke:color(id),'stroke-width':id===focusedCharacter?3:overview?2:2.1,opacity:dim?'.12':'.85','data-character':id});
+  const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>({day:p.day,y:p.y,id:p.id}));
+  if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
+  const route=TimelineCore.avoid(TimelineCore.strand(anchors,id,mid,amplitude,lead),graphNodes.filter(p=>!linked(p,id)),id,30);
+  const coordinates=route.map(p=>({x:px(p.day),y:p.y,node:p.node,flat:p.flat}));
+  const d=smoothPath(coordinates),dim=focusedCharacter&&focusedCharacter!==id;
+  const gradient=svg('linearGradient',{id:'strand-'+id,gradientUnits:'userSpaceOnUse',x1:px(route[0].day),x2:px(route.at(-1).day),y1:0,y2:0},defs),fade=Math.min(.45,lead*.65/Math.max(.001,route.at(-1).day-route[0].day));
+  for(const [offset,opacity] of [[0,0],[fade,1],[1-fade,1],[1,0]])svg('stop',{offset,'stop-color':color(id),'stop-opacity':opacity},gradient);
+  svg('path',{d,class:'thread',stroke:`url(#strand-${id})`,'stroke-width':id===focusedCharacter?3:overview?1.5:n>24?1.2:2.1,opacity:dim?'.12':n>24?'.35':'.85','data-character':id});
   const hit=svg('path',{d,class:'thread-hit',stroke:'transparent','stroke-width':14,role:'button',tabindex:overview&&n>20?-1:0,'aria-label':`Зосередитися: ${fullName(id)}`,'aria-pressed':id===focusedCharacter,'data-character':id});
   hit.addEventListener('click',()=>setFocus(id));hit.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setFocus(id);}});
-  if(!overview&&(!focusedCharacter||id===focusedCharacter)){const text=svg('text',{x:pad+3,y:base(id,lo)-12,class:'line-label',role:'button',tabindex:0,'aria-label':`Зосередитися: ${fullName(id)}`,style:`fill:${color(id)};font-size:12px`});text.textContent=name(id);text.addEventListener('click',()=>setFocus(id));text.addEventListener('keydown',e=>{if(e.key==='Enter'){setFocus(id);}});}
+  if(!overview&&(focusedCharacter?id===focusedCharacter:n<=18)){
+   const labelDay=Math.max(lo,route[0].day),labelX=px(labelDay),actualY=TimelineCore.curveY(route,labelDay);let labelY=actualY-12;while(labelPositions.some(y=>Math.abs(y-labelY)<16))labelY-=16;labelPositions.push(labelY);
+   if(Math.abs(labelY-(actualY-12))>1)svg('line',{x1:labelX+2,x2:labelX+2,y1:actualY-3,y2:labelY+3,stroke:color(id),'stroke-width':.6,opacity:.5});
+   const text=svg('text',{x:labelX+6,y:labelY,class:'line-label',role:'button',tabindex:0,'aria-label':`Зосередитися: ${fullName(id)}`,style:`fill:${color(id)};font-size:12px`});text.textContent=name(id);text.addEventListener('click',()=>setFocus(id));text.addEventListener('keydown',e=>{if(e.key==='Enter')setFocus(id);});
+  }
  });
  graphNodes.forEach(p=>{
-  const label=p.scene?`${p.scene.title} · ${p.group.length} дій`:`${dateText(p.day,true)} · ${p.group.length} подій`,g=svg('g',{class:'node'+(p.scene?' scene-node':''),tabindex:0,role:'button','aria-label':label,'aria-haspopup':'dialog','data-event':p.id,'data-scene':p.scene?.id||''});
+  const label=p.scene?`${p.scene.title} · ${actionCount(p.group.length)}`:`${dateText(p.day,true)} · ${p.group.length} подій`,g=svg('g',{class:'node'+(p.scene?' scene-node':'')+(focusId===p.id?' is-open':''),tabindex:0,role:'button','aria-label':label,'aria-haspopup':'dialog','data-event':p.id,'data-scene':p.scene?.id||''});
   svg('circle',{class:'target',cx:p.x,cy:p.y,r:16},g);svg('circle',{class:'mark',cx:p.x,cy:p.y,r:p.scene?(p.group.length>1?8:5):5,fill:focusId===p.id?'#365d92':'#fbfcfe',stroke:p.cast.length===1?color(p.cast[0]):'#889eb9','stroke-width':1.5},g);
   if(p.scene&&p.group.length>1){const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle',fill:focusId===p.id?'white':'#526981'},g);count.textContent=p.group.length;}
-  const open=()=>{closePanels();focusId=p.id;anchorDay=p.day;anchorEvent=null;p.scene?showSceneCard(p.scene,p.group):showGroup(p.group);positionCard(p);$('hoverTip').hidden=true;schedule();};
-  g.addEventListener('click',open);g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
-  g.addEventListener('pointerenter',()=>{if(focusId===p.id&&!$('eventCard').hidden)return;const tip=$('hoverTip');tip.textContent=label;tip.style.left=clamp(p.x,Math.min(165,w/2),Math.max(w-165,w/2))+'px';tip.style.top=(p.y-canvas.scrollTop-16)+'px';tip.hidden=false;});g.addEventListener('pointerleave',()=>{$('hoverTip').hidden=true;});
+  g.addEventListener('click',()=>openNode(p,true));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openNode(p,true);}});
+  g.addEventListener('pointerenter',e=>{if(canHover(e))openNode(p);});g.addEventListener('pointerover',e=>{if(canHover(e)&&!g.contains(e.relatedTarget))openNode(p);});g.addEventListener('pointerleave',deferHoverClose);g.addEventListener('focus',()=>openNode(p));
+
  });
  if(!selected.size){const t=svg('text',{x:w/2,y:mid,'text-anchor':'middle'});t.textContent='Обери персонажів у меню «Лінії»';}
  if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else $('eventCard').hidden=true;}
- updateFocusBar();
+ paintNodes();updateFocusBar();
 }
 function positionCard(point){const card=$('eventCard'),canvas=$('canvas'),w=canvas.clientWidth||1000,y=point.y-canvas.scrollTop,width=Math.min(360,w-24),left=clamp(point.x,width/2+12,w-width/2-12);card.hidden=false;card.style.left=left+'px';card.style.top=(y-16)+'px';card.style.setProperty('--tail-x',(point.x-left+width/2)+'px');card.style.setProperty('--card-height',Math.max(70,Math.min(520,y-32))+'px');}
 function bindCard(){
@@ -101,21 +114,21 @@ function cardTop(day,navigation,kind='event'){
  const arrow=(direction,label)=>`<button class="card-arrow" data-step-${kind}="${direction}" aria-label="${label}" title="${label}" ${navigation[direction<0?'previous':'next']?'':'disabled'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${direction<0?'m14 6-6 6 6 6':'m10 6 6 6-6 6'}"/></svg></button>`;
  return `<div class="card-top"><span class="card-date">${esc(dateText(day,true))}${day!==null?' · Рік 0':''}</span><nav class="card-arrows" aria-label="Перехід між ${kind==='scene'?'сценами':'подіями'}">${arrow(-1,'Назад')}${arrow(1,'Далі')}</nav><button class="close" data-close-card aria-label="Закрити подію" title="Закрити">×</button></div>`;
 }
-function sceneNavigation(id){const list=TimelineCore.scenes(navigationEvents()),i=list.findIndex(s=>s.id===id);return {previous:list[i-1]||null,next:list[i+1]||null};}
+function sceneNavigation(id){const list=orderedScenes().filter(s=>s.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(s=>s.id===id);return {previous:list[i-1]||null,next:list[i+1]||null};}
 function stepScene(direction){const target=sceneNavigation(focusId)[direction<0?'previous':'next'];if(target)navigateScene(target.id);}
 function navigateScene(id){const group=sceneEvents(id);if(!group.length)return;const e=group.find(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))||group[0];navigateEvent(e.id);anchorEvent=null;focusId=id;showSceneCard(sceneMap.get(id),group);render();}
 function showSceneCard(scene,group){
- $('cardContent').innerHTML=`${cardTop(group[0].day,sceneNavigation(scene.id),'scene')}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${group.length} дій</p><button class="scene-open" data-open-scene="${esc(scene.id)}">Читати сцену цілком <span aria-hidden="true">↗</span></button><ol class="scene-actions">${group.map(e=>`<li><button data-card-event="${esc(e.id)}">${esc(e.title)}</button></li>`).join('')}</ol>`;bindCard();
+ $('cardContent').innerHTML=`${cardTop(group[0].day,sceneNavigation(scene.id),'scene')}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${actionCount(group.length)}</p><button class="scene-open" data-open-scene="${esc(scene.id)}">Читати сцену цілком <span aria-hidden="true">↗</span></button><ol class="scene-actions">${group.map(e=>`<li><div>${eventGallery(e)}<button data-card-event="${esc(e.id)}">${esc(e.title)}</button><p>${esc(e.text)}</p></div></li>`).join('')}</ol>`;bindCard();
 }
 function eventGallery(e){
  const photos=(data.media||[]).filter(m=>m.event_id===e.id&&m.status==='published').sort((a,b)=>(a.order||0)-(b.order||0));
  return photos.length?`<div class="event-gallery">${photos.map(m=>`<figure><img src="${esc(m.src)}" alt="${esc(m.alt)}" loading="lazy" decoding="async" width="${Number(m.width)||640}" height="${Number(m.height)||360}"><figcaption>${esc(m.caption||m.alt)}<small>${esc(m.locator)}${m.coverage==='canonical_part'?' · Канонічна частина події':''}</small></figcaption></figure>`).join('')}</div>`:'';
 }
-function openScene(id,trigger){if(!sceneMap.has(id))return;sceneId=id;sceneReturnFocus=trigger;renderScene();const dialog=$('sceneDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}$('closeScene').focus();}
+function openScene(id,trigger){cancelHoverClose();hoverCard=false;if(!sceneMap.has(id))return;sceneId=id;sceneReturnFocus=trigger;renderScene();const dialog=$('sceneDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}$('closeScene').focus();}
 function closeScene(){const dialog=$('sceneDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;sceneId=null;sceneReturnFocus?.focus();}
 function renderScene(){
  const scene=sceneMap.get(sceneId);if(!scene){closeScene();return;}const group=sceneEvents(sceneId),cast=sceneCast(scene,group);
- $('sceneTitle').textContent=scene.title;$('sceneMeta').textContent=`${dateText(scene.day,true)} · ${name(scene.location_id)} · ${group.length} дій`;
+ $('sceneTitle').textContent=scene.title;$('sceneMeta').textContent=`${dateText(scene.day,true)} · ${name(scene.location_id)} · ${actionCount(group.length)}`;
  $('sceneContent').innerHTML=`<p class="scene-cast">${cast.map(id=>esc(fullName(id))).join(' · ')}</p><ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(e.text)}</p></li>`).join('')}</ol>`;
  $('sceneContent').querySelectorAll('[data-scene-event]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneEvent;closeScene();navigateEvent(id);}));
 }
@@ -131,7 +144,7 @@ function showEvent(e){
  $('cardContent').innerHTML=`${cardTop(e.day,navigation)}${gallery}<h2>${esc(e.title)}</h2><button class="scene-context" data-open-scene="${esc(scene.id)}" title="Читати сцену цілком"><span>Сцена · ${sceneEvents(scene.id).length} дій</span>${esc(scene.title)} <span aria-hidden="true">↗</span></button><p class="event-text">${esc(e.text)}</p><div class="people">${physical.map(i=>`<button class="person" data-profile="${esc(i.entity_id)}"><span class="swatch" style="background:${color(i.entity_id)}"></span>${esc(name(i.entity_id))}</button>`).join('')}</div><p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${relations?`<details class="disclosure"><summary>Часові зв’язки</summary>${relations}</details>`:''}<details class="disclosure"><summary>Сцена та присутність</summary><p>${esc(e.scene_title)} · ${esc(name(e.location_id))}</p>${sceneCast.length?`<p>Присутні в різні моменти сцени: ${sceneCast.map(id=>esc(name(id))).join(', ')}.</p>`:''}<p>Точна година не встановлена. Положення вузлів у межах дня показує порядок відображення, а не доведену одночасність.</p></details><details class="disclosure"><summary>Джерела</summary>${evidence||'<p>Джерела не позначено.</p>'}<a href="${repo}${data.revision}/${data.base}/scenes/${encodeURIComponent(e.file)}" target="_blank" rel="noopener">Запис сцени</a></details>`;
  bindCard();
 }
-function navigateEvent(id){const e=eventMap.get(id);if(!e)return;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clamp(e.day+.5,.5,364.5);}focusId=e.scene_id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.scene_id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();}
+function navigateEvent(id){cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clamp(e.day+.5,.5,364.5);}focusId=e.scene_id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.scene_id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();}
 function search(){const q=$('eventSearch').value.trim().toLowerCase();const found=events().filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));$('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}">${esc(e.title)}<small>${dateText(e.day)}</small></button>`).join('')||'<p class="empty">Подій не знайдено.</p>';$('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));$('moreResults').hidden=found.length<=searchLimit;}
 function openProfile(id,trigger){if(!entityMap.has(id))return;profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}$('closeProfile').focus();}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;profileReturnFocus?.focus();}
@@ -173,6 +186,7 @@ async function init(){
  const end=e=>{touches.delete(e.pointerId);drag=null;pinch=null;canvas.classList.remove('dragging');};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);new ResizeObserver(schedule).observe($('canvas'));
  $('canvas').addEventListener('scroll',()=>{$('hoverTip').hidden=true;const p=graphNodes.find(p=>p.id===focusId);if(p&&!$('eventCard').hidden)positionCard(p);},{passive:true});
  $('focusPrevious').addEventListener('click',()=>stepEvent(-1));$('focusNext').addEventListener('click',()=>stepEvent(1));$('focusName').addEventListener('click',()=>openProfile(focusedCharacter,$('focusName')));$('clearFocus').addEventListener('click',()=>{focusedCharacter=null;closeCard();renderCharacters();render();});
+ $('eventCard').addEventListener('pointerenter',cancelHoverClose);$('eventCard').addEventListener('pointerleave',deferHoverClose);
  $('closeScene').addEventListener('click',closeScene);$('sceneDialog').addEventListener('cancel',e=>{e.preventDefault();closeScene();});
  $('closeProfile').addEventListener('click',closeProfile);$('profileDialog').addEventListener('cancel',e=>{e.preventDefault();closeProfile();});$('profileDialog').addEventListener('click',e=>{if(e.target===$('profileDialog')){const b=$('profileDialog').getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeProfile();}});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState!=='hidden')refreshData();});window.addEventListener('focus',refreshData);setInterval(refreshData,60000);
