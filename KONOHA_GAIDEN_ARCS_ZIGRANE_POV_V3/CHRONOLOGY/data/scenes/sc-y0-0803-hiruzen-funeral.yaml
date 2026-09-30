@@ -35,6 +35,7 @@ events:
 relations:
   - {id: "rel-0803-funeral-before-will-fire", kind: "before", a: "ev-y0-0803-hiruzen-funeral", b: "ev-y0-0803-iruka-explains-will-fire", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch139-iruka-funeral"]}
 presence:
+  - {id: "pr-0803-funeral-anko", entity_id: "c-anko", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-anime-anko-hiruzen-funeral"], review: "accepted"}
   - {id: "pr-0803-funeral-iruka", entity_id: "c-iruka", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
   - {id: "pr-0803-funeral-naruto", entity_id: "c-naruto", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
   - {id: "pr-0803-funeral-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
