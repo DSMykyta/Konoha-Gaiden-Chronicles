@@ -18,6 +18,7 @@ events:
     display_rank: 100
     involvement:
       - {entity_id: "c-hiruzen", role: "affected", mode: "physical"}
+      - {entity_id: "c-anko", role: "mourner", mode: "physical"}
     evidence_ids: ["evd-v10-000073", "evd-manga-ch139-iruka-funeral"]
   - id: "ev-y0-0803-iruka-explains-will-fire"
     legacy_ids: ["V10-000073-B"]
