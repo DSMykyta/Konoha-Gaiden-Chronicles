@@ -19,5 +19,22 @@ events:
     involvement:
       - {entity_id: "c-hiruzen", role: "affected", mode: "physical"}
     evidence_ids: ["evd-v10-000073", "evd-manga-post-crush-search"]
-relations: []
-presence: []
+  - id: "ev-y0-0803-iruka-explains-will-fire"
+    legacy_ids: ["V10-000073-B"]
+    title: "Ірука передає Наруто й Конохамару Волю Вогню"
+    text: "Під час похорону Ірука стримує власний смуток і підтримує Конохамару. Наруто питає, чому люди ризикують собою заради інших; Ірука пояснює йому силу зв’язків із дорогими людьми та передає вчення Хірузена про Волю Вогню й спадкоємність поколінь."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "subject", mode: "physical"}
+    evidence_ids: ["evd-v10-000073-B", "evd-manga-ch139-iruka-funeral"]
+relations:
+  - {id: "rel-0803-funeral-before-will-fire", kind: "before", a: "ev-y0-0803-hiruzen-funeral", b: "ev-y0-0803-iruka-explains-will-fire", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch139-iruka-funeral"]}
+presence:
+  - {id: "pr-0803-funeral-iruka", entity_id: "c-iruka", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
+  - {id: "pr-0803-funeral-naruto", entity_id: "c-naruto", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
+  - {id: "pr-0803-funeral-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
