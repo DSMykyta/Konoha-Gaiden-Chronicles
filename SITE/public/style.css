@@ -78,9 +78,41 @@ button svg {
   fill:transparent;
   stroke:none
 }
-#timeline .node:hover .mark,#timeline .node:focus-visible .mark {
-  stroke:#223e62;
-  stroke-width:2.5
+#timeline .node .mark {
+  vector-effect:non-scaling-stroke
+}
+#timeline .moment-node .mark {
+  fill:#fff;
+  stroke:#9aa4b1;
+  stroke-width:1.4
+}
+#timeline .scene-node .mark {
+  fill:#9ca4ae;
+  stroke:#7d8794;
+  stroke-width:1.4
+}
+#timeline .episode-node .mark {
+  fill:#555c66;
+  stroke:#444b55;
+  stroke-width:1.5
+}
+#timeline .arc-node .mark {
+  fill:#111318;
+  stroke:#111318;
+  stroke-width:1.5
+}
+#timeline .node:hover .mark,
+#timeline .node:focus-visible .mark {
+  stroke:#26313e;
+  stroke-width:2.6
+}
+#timeline .node.is-pinned .mark {
+  stroke:#111318;
+  stroke-width:3.2
+}
+#timeline .node.is-pinned .target {
+  stroke:#11131822;
+  stroke-width:1
 }
 .tools,.period,.time-controls {
   position:fixed;
@@ -955,8 +987,15 @@ button:disabled:hover {
 }
 /* A shared scene is the meeting point; individual actions live inside it. */
 #timeline .scene-count {
-  font:600 9px Manrope,system-ui,sans-serif;
+  font:700 9px Manrope,system-ui,sans-serif;
+  fill:#fff;
   pointer-events:none
+}
+#timeline .scene-node .scene-count {
+  fill:#fff
+}
+#timeline .episode-node .scene-count {
+  fill:#fff
 }
 #timeline .node:focus-visible .mark {
   stroke-width:3
@@ -973,6 +1012,22 @@ button:disabled:hover {
   flex:1;
   white-space:nowrap;
   font-size:11px
+}
+.card-meta-line {
+  flex:1;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  min-width:0;
+  white-space:nowrap;
+  font-size:11px;
+  color:#748194
+}
+.card-kind {
+  color:#303a47;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.07em
 }
 .card-arrows {
   display:flex;
