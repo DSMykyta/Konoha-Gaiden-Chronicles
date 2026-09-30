@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0122-kakashi-preparation-retro"
 continuity_id: "main"
+episode_id: "ep-y0-team-formation"
 title: "Ретроспектива підготовки Какаші до Команди 7"
 location_id: null
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
