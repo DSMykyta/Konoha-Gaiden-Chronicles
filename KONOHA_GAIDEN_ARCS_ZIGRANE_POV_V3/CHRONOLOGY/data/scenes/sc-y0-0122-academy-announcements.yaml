@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0122-academy-announcements"
 continuity_id: "main"
+episode_id: "ep-y0-team-formation"
 title: "Оголошення команд у класі Академії"
 location_id: "loc-academy-classroom"
 placement:
