@@ -8,7 +8,7 @@ const origins={M:'Манґа',A:'Аніме',F:'Філер',P:'Історія п
 const zoomModes={year:1,month:12,week:365/7,day:365};
 function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-let data,entityMap,eventMap,sceneMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorDay=null,anchorEvent=null,graphNodes=[],raf=null,searchLimit=30;
+let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorDay=null,anchorEvent=null,graphNodes=[],raf=null,searchLimit=30;
 function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,364);const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m};}
 function dateText(day,long=false){const a=date(day);return a?(long?`${a.d} ${gen[a.m]}`:`${String(a.d).padStart(2,'0')}.${String(a.m+1).padStart(2,'0')}`):'Без установленої дати';}
 function name(id){const e=entityMap.get(id);return e?.aliases?.find(a=>/[А-Яа-яІіЇїЄєҐґ]/.test(a))||e?.name||id||'Місце не встановлено';}
@@ -23,6 +23,57 @@ function actionCount(n){return `${n} ${n%100>=11&&n%100<=14?'дій':n%10===1?'�
 function navigationEvents(){return events().filter(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));}
 function chronologyRelations(){return [...data.links,...data.scenes.flatMap(s=>s.relations||[])];}
 function orderedScenes(){return TimelineCore.scenes(events(),chronologyRelations(),data.scenes);}
+function semanticLevel(){
+ if(zoom>=Math.sqrt(zoomModes.day*zoomModes.week))return 'moment';
+ if(zoom>=Math.sqrt(zoomModes.week*zoomModes.month))return 'scene';
+ if(zoom>=Math.sqrt(zoomModes.month*zoomModes.year))return 'episode';
+ return 'arc';
+}
+function storyNodeCast(group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
+function semanticNodes(level,allScenes){
+ if(level==='moment'){
+  const result=[];
+  for(const s of allScenes){
+   const scene=sceneMap.get(s.id),count=s.group.length,spread=Math.min(.055,.36/Math.max(2,count));
+   s.group.forEach((e,i)=>{
+    const day=clamp(s.position+(i-(count-1)/2)*spread,s.day+.02,s.day+.98),layoutCast=[...new Set(e.physical||[])];
+    result.push({id:e.id,kind:'moment',title:e.title,scene,group:[e],day,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,locationId:e.location_id||scene?.location_id||null,childCount:1,sourceSceneIds:[s.id],sourceEpisodeIds:scene?.episode_id?[scene.episode_id]:[]});
+   });
+  }
+  return result;
+ }
+ if(level==='scene')return allScenes.map(s=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:scene?.episode_id?[scene.episode_id]:[]};});
+ const episodeBuckets=new Map();
+ for(const s of allScenes){
+  const scene=sceneMap.get(s.id),episodeId=scene?.episode_id||'scene:'+s.id;
+  if(!episodeBuckets.has(episodeId))episodeBuckets.set(episodeId,[]);
+  episodeBuckets.get(episodeId).push(s);
+ }
+ const episodeNodes=[...episodeBuckets].map(([id,scenes])=>{
+  const meta=episodeMap.get(id)||null,group=scenes.flatMap(s=>s.group),layoutCast=storyNodeCast(group),days=scenes.map(s=>s.position),sourceSceneIds=scenes.map(s=>s.id);
+  return {id:'episode:'+id,rawId:id,kind:'episode',title:meta?.title||sceneMap.get(scenes[0].id)?.title||id,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,calendarDay:scenes[0].day,cast:layoutCast.filter(x=>selected.has(x)),layoutCast,locationId:null,childCount:scenes.length,sourceSceneIds,sourceEpisodeIds:meta?[id]:[]};
+ });
+ if(level==='episode')return episodeNodes;
+ const arcBuckets=new Map();
+ for(const ep of episodeNodes){
+  const arcId=ep.story?.arc_id||'episode:'+ep.rawId;
+  if(!arcBuckets.has(arcId))arcBuckets.set(arcId,[]);
+  arcBuckets.get(arcId).push(ep);
+ }
+ return [...arcBuckets].map(([id,episodes])=>{
+  const meta=arcMap.get(id)||null,group=episodes.flatMap(e=>e.group),layoutCast=storyNodeCast(group),days=episodes.map(e=>e.day);
+  return {id:'arc:'+id,rawId:id,kind:'arc',title:meta?.title||episodes[0].title,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,calendarDay:Math.floor(Math.min(...days)),cast:layoutCast.filter(x=>selected.has(x)),layoutCast,locationId:null,childCount:episodes.length,sourceSceneIds:[...new Set(episodes.flatMap(e=>e.sourceSceneIds))],sourceEpisodeIds:[...new Set(episodes.flatMap(e=>e.sourceEpisodeIds))]};
+ });
+}
+function semanticOwner(nodes){
+ const owner={};
+ for(const node of nodes){
+  for(const e of node.group)owner[e.id]=node.id;
+  for(const id of node.sourceSceneIds||[])owner[id]=node.id;
+  for(const id of node.sourceEpisodeIds||[])owner[id]=node.id;
+ }
+ return owner;
+}
 function nav(){const list=orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(e=>e.id===anchorEvent),next=list.findIndex(e=>e.day>=Math.floor(center));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
 function stepEvent(direction){const target=nav()[direction<0?'previous':'next'];if(target)navigateEvent(target.id);}
 function setFocus(id){focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();$('canvas').scrollTop=0;renderCharacters();render();}
@@ -37,7 +88,7 @@ function cancelHoverClose(){clearTimeout(hoverCloseTimer);hoverCloseTimer=null;}
 function deferHoverClose(){cancelHoverClose();if(hoverCard)hoverCloseTimer=setTimeout(()=>{if(hoverCard)closeCard();},320);}
 function canHover(e){return e.pointerType!=='touch'&&(!window.matchMedia||window.matchMedia('(any-hover: hover)').matches);}
 function paintNodes(){const p=graphNodes.find(p=>p.id===focusId);document.querySelectorAll('.node').forEach(g=>{const active=g.dataset.event===focusId;g.classList.toggle('is-open',active);g.querySelector('.mark')?.setAttribute('fill',active?'#365d92':'#fbfcfe');});document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!p&&!member);});}
-function openNode(p,pin=false){cancelHoverClose();if(focusId===p.id&&!$('eventCard').hidden){if(pin)hoverCard=false;return;}closePanels();hoverCard=!pin;focusId=p.id;anchorDay=p.day;anchorEvent=null;p.scene?showSceneCard(p.scene,p.group):showGroup(p.group);positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();}
+function openNode(p,pin=false){cancelHoverClose();if(focusId===p.id&&!$('eventCard').hidden){if(pin)hoverCard=false;return;}closePanels();hoverCard=!pin;focusId=p.id;anchorDay=p.day;anchorEvent=p.kind==='moment'?p.group[0]?.id:null;if(p.kind==='moment')showEvent(p.group[0]);else if(p.kind==='scene')showSceneCard(p.scene,p.group);else showStoryGroup(p);positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();}
 function closeCard(){cancelHoverClose();closeEventPreview(true);hoverCard=false;focusId=null;anchorDay=null;anchorEvent=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;schedule();}
 function setZoom(value,pivot=center){const old=zoom;zoom=clamp(value,1,730);center=pivot+(center-pivot)*old/zoom;center=clamp(center,182.5/zoom,365-182.5/zoom);$('hoverTip').hidden=true;schedule();}
 function closePanels(except){for(const id of ['linesPanel','searchPanel','periodPanel'])if(id!==except){$(id).hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');}}
@@ -61,12 +112,11 @@ function render(){
  if(!data)return;
  const canvas=$('canvas'),timeline=$('timeline'),axis=$('timeAxis'),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
  const allEvents=events().filter(e=>e.day!==null),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
- const n=ids.length,overview=zoom<3,h=viewport,mid=viewport*.59,amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),detailed=zoom>=8;
+ const n=ids.length,overview=zoom<3,h=viewport,mid=viewport*.59,amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),level=semanticLevel();
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);axis.setAttribute('viewBox',`0 0 ${w} 40`);
- const px=day=>pad+(day-lo)/(hi-lo)*plot,allScenes=orderedScenes().filter(s=>s.day!==null),byDay=new Map();allEvents.forEach(e=>{if(!byDay.has(e.day))byDay.set(e.day,[]);byDay.get(e.day).push(e);});
- const detailedNodes=detailed?allScenes.map(s=>{const scene=sceneMap.get(s.id),day=s.position,layoutCast=sceneCast(scene,s.group),cast=sceneCast(scene,s.group).filter(id=>selected.has(id));return {id:s.id,scene,group:s.group,day,x:px(day),cast,layoutCast,locationId:scene?.location_id||null,calendarDay:s.day};}):[];
- const sceneOwner=Object.fromEntries(allEvents.map(e=>[e.id,e.scene_id])),sceneY=detailed?TimelineCore.sceneLayout(detailedNodes,chronologyRelations(),sceneOwner,mid,amplitude):null;
- const globalNodes=detailed?detailedNodes.map(p=>({...p,y:sceneY.get(p.id)??mid})):[...byDay].map(([day,group])=>({id:'day-'+day,day:day+.5,x:px(day+.5),y:mid+Math.sin(day*.07)*amplitude,cast:[...new Set(group.flatMap(e=>e.physical))].filter(id=>selected.has(id)),group}));
+ const px=day=>pad+(day-lo)/(hi-lo)*plot,allScenes=orderedScenes().filter(s=>s.day!==null);
+ const baseNodes=semanticNodes(level,allScenes).filter(p=>p.day!==null).map(p=>({...p,x:px(p.day)})),owner=semanticOwner(baseNodes),nodeY=TimelineCore.sceneLayout(baseNodes,chronologyRelations(),owner,mid,amplitude);
+ const globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
  const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
  graphNodes=globalNodes.filter(p=>p.day>=lo&&p.day<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e)));
  timeline.replaceChildren();axis.replaceChildren();$('linesCount').textContent=`Лінії · ${selected.size}`;
@@ -95,9 +145,9 @@ function render(){
   }
  });
  graphNodes.forEach(p=>{
-  const label=p.scene?`${p.scene.title} · ${actionCount(p.group.length)}`:`${dateText(p.day,true)} · ${p.group.length} подій`,g=svg('g',{class:'node'+(p.scene?' scene-node':'')+(focusId===p.id?' is-open':''),tabindex:0,role:'button','aria-label':label,'aria-haspopup':'dialog','data-event':p.id,'data-scene':p.scene?.id||''});
-  svg('circle',{class:'target',cx:p.x,cy:p.y,r:16},g);svg('circle',{class:'mark',cx:p.x,cy:p.y,r:p.scene?(p.group.length>1?8:5):5,fill:focusId===p.id?'#365d92':'#fbfcfe',stroke:p.cast.length===1?color(p.cast[0]):'#889eb9','stroke-width':1.5},g);
-  if(p.scene&&p.group.length>1){const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle',fill:focusId===p.id?'white':'#526981'},g);count.textContent=p.group.length;}
+  const kindLabel={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'}[p.kind]||'Вузол',label=`${kindLabel}: ${p.title}${p.kind==='moment'?'':` · ${p.childCount}`}`,g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':''),tabindex:0,role:'button','aria-label':label,'aria-haspopup':'dialog','data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):''});
+  svg('circle',{class:'target',cx:p.x,cy:p.y,r:16},g);svg('circle',{class:'mark',cx:p.x,cy:p.y,r:p.kind==='moment'?5:(p.childCount>1?8:5),fill:focusId===p.id?'#365d92':'#fbfcfe',stroke:p.cast.length===1?color(p.cast[0]):'#889eb9','stroke-width':1.5},g);
+  if(p.kind!=='moment'&&p.childCount>1){const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle',fill:focusId===p.id?'white':'#526981'},g);count.textContent=p.childCount>99?'99+':p.childCount;}
   g.addEventListener('click',()=>openNode(p,true));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openNode(p,true);}});
   g.addEventListener('pointerenter',e=>{if(canHover(e))openNode(p);});g.addEventListener('pointerover',e=>{if(canHover(e)&&!g.contains(e.relatedTarget))openNode(p);});g.addEventListener('pointerleave',deferHoverClose);g.addEventListener('focus',()=>openNode(p));
 
@@ -196,7 +246,13 @@ function renderScene(){
  $('sceneContent').querySelectorAll('[data-scene-event]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneEvent;closeScene();navigateEvent(id);}));
  $('sceneContent').querySelectorAll('[data-scene-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneFocusCharacter;closeScene();if(focusedCharacter!==id)setFocus(id);}));
 }
-function showGroup(group){$('cardContent').innerHTML=`<div class="card-top"><span class="card-date">${dateText(group[0].day,true)} · ${group.length} подій</span><button class="close" data-close-card aria-label="Закрити">×</button></div>${group.map(e=>`<button class="result" data-card-event="${esc(e.id)}">${esc(e.title)}</button>`).join('')}`;bindCard();}
+function showGroup(group){$('cardContent').innerHTML=`<div class="card-top"><span class="card-date">${dateText(group[0].day,true)} · ${group.length} моментів</span><button class="close" data-close-card aria-label="Закрити">×</button></div>${group.map(e=>`<button class="result" data-card-event="${esc(e.id)}">${esc(e.title)}</button>`).join('')}`;bindCard();}
+function showStoryGroup(point){
+ const kind=point.kind==='arc'?'Арка':'Епізод',days=point.group.map(e=>e.day).filter(d=>d!==null),start=days.length?Math.min(...days):null,end=days.length?Math.max(...days):null,range=start===null?'Без установленої дати':start===end?dateText(start,true):`${dateText(start,true)} — ${dateText(end,true)}`;
+ const scenes=(point.sourceSceneIds||[]).map(id=>({scene:sceneMap.get(id),group:sceneEvents(id)})).filter(x=>x.scene&&x.group.length);
+ $('cardContent').innerHTML=`<div class="card-top"><span class="card-date">${esc(range)} · Рік 0</span><button class="close" data-close-card aria-label="Закрити">×</button></div><p class="card-meta">${kind}</p><h2>${esc(point.title)}</h2>${point.story?.description?`<p class="event-text">${esc(point.story.description)}</p>`:''}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${scenes.map(({scene,group})=>`<button class="result" data-card-event="${esc(group[0].id)}"><strong>${esc(scene.title)}</strong><small>${actionCount(group.length)}</small></button>`).join('')}</div>`;
+ bindCard();
+}
 function eventDetailsHtml(e,relationAttribute='data-card-event',showSceneContext=true){
  const scene=sceneMap.get(e.scene_id),physical=e.involvement.filter(i=>e.physical.includes(i.entity_id)),special=e.involvement.filter(i=>modes[i.mode]),mentioned=e.involvement.filter(i=>i.role==='mentioned'||i.mode==='remote');
  const repo='https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/blob/';
@@ -222,7 +278,7 @@ function showEventPreview(id,pin=false){
  positionEventPreview();bindEventPreview();
  preview.classList.remove('is-visible');requestAnimationFrame(()=>preview.classList.add('is-visible'));
 }
-function navigateEvent(id){cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clamp(e.day+.5,.5,364.5);}focusId=e.scene_id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.scene_id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();}
+function navigateEvent(id){cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clamp(e.day+.5,.5,364.5);}focusId=e.id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();}
 function search(){const q=$('eventSearch').value.trim().toLowerCase();const found=events().filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));$('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}">${esc(e.title)}<small>${dateText(e.day)}</small></button>`).join('')||'<p class="empty">Подій не знайдено.</p>';$('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));$('moreResults').hidden=found.length<=searchLimit;}
 function openProfile(id,trigger){if(!entityMap.has(id))return;profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}$('closeProfile').focus();}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;profileReturnFocus?.focus();}
@@ -259,7 +315,7 @@ function renderProfile(){
 }
 function ingest(next,initial=false){
  const wasAll=data&&selectable().every(e=>selected.has(e.id));
- data=next;entityMap=new Map(data.entities.map(e=>[e.id,e]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
+ data=next;entityMap=new Map(data.entities.map(e=>[e.id,e]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
  if(initial||wasAll)selected=new Set(selectable().map(e=>e.id));else selected=new Set([...selected].filter(id=>entityMap.has(id)));if(focusedCharacter&&!entityMap.has(focusedCharacter))focusedCharacter=null;if(anchorEvent&&!eventMap.has(anchorEvent))closeCard();
  $('revision').textContent=`Дані: ${data.revision.slice(0,8)}`;$('sourceLink').href=`https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/tree/${data.revision}/${data.base}`;
 }
