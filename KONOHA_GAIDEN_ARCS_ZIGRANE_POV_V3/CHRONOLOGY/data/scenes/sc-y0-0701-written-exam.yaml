@@ -53,8 +53,23 @@ events:
     involvement:
       - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
     evidence_ids: ["evd-v10-000040-B", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-anko-takes-over-second-stage"
+    title: "Анко ефектно перебирає кандидатів у Ібікі"
+    text: "Щойно Ібікі оголошує, що решта кандидатів пройшла перший етап, Анко Мітараші вривається до зали й представляється екзаменаторкою другого етапу. Побачивши, скільки команд пропустив Ібікі, вона дорікає йому за надто м’який відбір і наказує кандидатам іти за нею до наступного місця випробування."
+    origin: "M"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-ibiki", role: "participant", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
 relations:
   - {id: "rel-0701-written-1", kind: "before", a: "ev-y0-0701-ibiki-starts-written-exam", b: "ev-y0-0701-ibiki-announces-tenth-question", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
   - {id: "rel-0701-written-2", kind: "before", a: "ev-y0-0701-ibiki-announces-tenth-question", b: "ev-y0-0701-naruto-refuses-to-quit", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
   - {id: "rel-0701-written-3", kind: "before", a: "ev-y0-0701-naruto-refuses-to-quit", b: "ev-y0-0701-written-exam-passes-26-teams", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
-presence: []
+  - {id: "rel-0701-written-4", kind: "before", a: "ev-y0-0701-written-exam-passes-26-teams", b: "ev-y0-0701-anko-takes-over-second-stage", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]}
+presence:
+  - {id: "pr-0701-written-anko", entity_id: "c-anko", from: "ev-y0-0701-anko-takes-over-second-stage.start", to: "sc-y0-0701-written-exam.end", basis: "source", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"], review: "accepted"}
