@@ -1,0 +1,39 @@
+schema_version: 1
+id: "sc-y0-0801-ibiki-defends-konoha-border"
+continuity_id: "main"
+title: "Ібікі обороняє кордон Конохи під час вторгнення"
+location_id: "loc-konoha-outskirts"
+placement: {anchor_id: "ta-y0-0801", day_offset: 0}
+day_part: "afternoon"
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0801-ibiki-border-unit-faces-snakes"
+    title: "Загін Ібікі стримує прорив на околицях"
+    text: "Під час вторгнення Ібікі разом із шинобі, що охороняють підступи до Конохи, намагається зупинити гігантських змій Орочімару. Шінобу Мібу питає його про Орочімару, і Ібікі згадує, що ще дитиною сприймав його не як звичайну людину, а як щось, що лише мало людську подобу."
+    origin: "A"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-ibiki", role: "focus", mode: "physical"}
+      - {entity_id: "c-shinobu-mibu", role: "participant", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-jiraiya-gamahiro-crushes-snake"
+    title: "Джирая й Ґамахіро зупиняють гігантську змію"
+    text: "Коли оборона не може швидко зупинити призваних змій, Джирая прибуває на допомогу й викликає Ґамахіро. Велетенська жаба падає на одну зі змій і зупиняє її прорив; Ібікі та решта захисників отримують можливість втримати цей напрямок оборони."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
+      - {entity_id: "c-gamahiro", role: "focus", mode: "physical"}
+      - {entity_id: "c-ibiki", role: "participant", mode: "physical"}
+      - {entity_id: "c-shinobu-mibu", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+relations:
+  - {id: "rel-0801-ibiki-border-1", kind: "before", a: "ev-y0-0801-ibiki-border-unit-faces-snakes", b: "ev-y0-0801-jiraiya-gamahiro-crushes-snake", basis: "source", review: "accepted", evidence_ids: ["evd-anime-finals-konoha-crush"]}
+presence:
+  - {id: "pr-0801-ibiki-border-ibiki", entity_id: "c-ibiki", from: "sc-y0-0801-ibiki-defends-konoha-border.start", to: "sc-y0-0801-ibiki-defends-konoha-border.end", basis: "source", evidence_ids: ["evd-anime-finals-konoha-crush"], review: "accepted"}
+  - {id: "pr-0801-ibiki-border-shinobu", entity_id: "c-shinobu-mibu", from: "sc-y0-0801-ibiki-defends-konoha-border.start", to: "sc-y0-0801-ibiki-defends-konoha-border.end", basis: "source", evidence_ids: ["evd-anime-finals-konoha-crush"], review: "accepted"}
