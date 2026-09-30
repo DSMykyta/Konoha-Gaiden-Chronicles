@@ -343,13 +343,20 @@ links:
     basis: "imported"
     review: "accepted"
     evidence_ids: ["evd-v10-000043", "evd-v10-000045"]
-  - id: "lnk-0706-forest-before-prelim-announcement"
+  - id: "lnk-0706-forest-before-iruka-message"
     kind: "before"
     a: "sc-y0-0706-team7-forest-completion"
+    b: "sc-y0-0706-iruka-team7-tower-message"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-chunin-prelims", "evd-anime-37-iruka-tower"]
+  - id: "lnk-0706-iruka-message-before-prelim-announcement"
+    kind: "before"
+    a: "sc-y0-0706-iruka-team7-tower-message"
     b: "sc-y0-0706-preliminaries-announced"
     basis: "source"
     review: "accepted"
-    evidence_ids: ["evd-v10-000045-C", "evd-v10-000045-E"]
+    evidence_ids: ["evd-manga-chunin-prelims", "evd-anime-37-iruka-tower"]
   - id: "lnk-0706-team7-tower-before-kabuto-return"
     kind: "before"
     a: "ev-y0-0706-team7-reaches-tower"
@@ -553,13 +560,6 @@ links:
     basis: "source"
     review: "pending"
     evidence_ids: ["evd-v10-000065-D", "evd-v10-000069-C"]
-  - id: "lnk-0803-funeral-before-iruka-will"
-    kind: "before"
-    a: "sc-y0-0803-hiruzen-funeral"
-    b: "sc-y0-0803-iruka-konohamaru-will-fire"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000073", "evd-v10-000073-B"]
   - id: "lnk-0803-jiraiya-refusal-before-departure"
     kind: "before"
     a: "sc-y0-0803-jiraiya-refuses-hokage"
@@ -2019,3 +2019,45 @@ notes:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "lnk-0123-bell-test-intersects-iruka-record-check"
+    kind: "intersects"
+    a: "sc-y0-0123-team7-bell-test"
+    b: "sc-y0-0123-iruka-checks-kakashi-record"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-bell-test"]
+  - id: "lnk-0624-team7-choice-before-iruka-test"
+    kind: "before"
+    a: "sc-y0-0624-kakashi-gives-team7-choice"
+    b: "sc-y0-0624-iruka-tests-team7"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-iruka-chunin-test"]
+  - id: "lnk-0722-summoning-intersects-iruka-lesson"
+    kind: "intersects"
+    a: "sc-y0-0722-naruto-summoning-practice"
+    b: "sc-y0-0722-iruka-hokage-rock-lesson"
+    basis: "source"
+    review: "pending"
+    evidence_ids: ["evd-anime-56-iruka-hokage-rock"]
+  - id: "lnk-0801-invasion-intersects-iruka-evacuation"
+    kind: "intersects"
+    a: "sc-y0-0801-invasion-begins-arena"
+    b: "sc-y0-0801-iruka-evacuates-academy"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-iruka-evacuation"]
+  - id: "lnk-0801-iruka-evacuation-before-invasion-fails"
+    kind: "before"
+    a: "sc-y0-0801-iruka-evacuates-academy"
+    b: "sc-y0-0801-invasion-fails"
+    basis: "source"
+    review: "pending"
+    evidence_ids: ["evd-anime-iruka-evacuation"]
+  - id: "lnk-0922-iruka-ramen-before-sasuke-hospital"
+    kind: "before"
+    a: "sc-y0-0922-iruka-naruto-ichiraku"
+    b: "sc-y0-0922-sasuke-hospital-frustration"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-ch174-iruka-naruto"]
