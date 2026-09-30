@@ -25,6 +25,7 @@ events:
     display_rank: 200
     involvement:
       - {entity_id: "c-hayate", role: "focus", mode: "physical"}
+      - {entity_id: "c-anko", role: "observer", mode: "physical"}
     evidence_ids: ["evd-v10-000045-E", "evd-manga-chunin-prelims", "evd-anime-31-50"]
 relations:
   - {id: "rel-0706-prelim-announce-1", kind: "before", a: "ev-y0-0706-seven-teams-reach-tower", b: "ev-y0-0706-hayate-announces-preliminaries", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000045-E"]}
