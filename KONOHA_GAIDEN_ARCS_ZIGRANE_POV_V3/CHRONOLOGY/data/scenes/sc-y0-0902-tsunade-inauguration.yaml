@@ -33,6 +33,7 @@ events:
 relations:
   - {id: "rel-0902-inauguration-genma-aoba", kind: "before", a: "ev-y0-0902-tsunade-becomes-fifth-hokage", b: "ev-y0-0902-koharu-orders-genma-aoba-notice", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"]}
 presence:
+  - {id: "pr-0902-inauguration-anko", entity_id: "c-anko", from: "sc-y0-0902-tsunade-inauguration.start", to: "sc-y0-0902-tsunade-inauguration.end", basis: "source", evidence_ids: ["evd-anime-98-anko-inauguration"], review: "accepted"}
   - {id: "pr-0902-inauguration-koharu", entity_id: "c-koharu", from: "sc-y0-0902-tsunade-inauguration.start", to: "sc-y0-0902-tsunade-inauguration.end", basis: "source", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"], review: "accepted"}
   - {id: "pr-0902-inauguration-genma", entity_id: "c-genma", from: "ev-y0-0902-koharu-orders-genma-aoba-notice.start", to: "ev-y0-0902-koharu-orders-genma-aoba-notice.end", basis: "source", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"], review: "accepted"}
   - {id: "pr-0902-inauguration-aoba", entity_id: "c-aoba", from: "ev-y0-0902-koharu-orders-genma-aoba-notice.start", to: "ev-y0-0902-koharu-orders-genma-aoba-notice.end", basis: "source", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"], review: "accepted"}
