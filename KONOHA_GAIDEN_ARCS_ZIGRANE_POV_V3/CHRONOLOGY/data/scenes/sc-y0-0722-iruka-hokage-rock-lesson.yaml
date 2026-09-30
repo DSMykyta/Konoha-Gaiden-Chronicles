@@ -11,16 +11,16 @@ events:
   - id: "ev-y0-0722-iruka-hiruzen-academy-lesson"
     title: "Хірузен приєднується до уроку Іруки"
     text: "Поки Наруто тренується з Джираєю, Ірука проводить для учнів Академії урок про Хокаґе біля Монумента. Хірузен приєднується до класу й пояснює дітям, що сила Хокаґе потрібна для захисту дорогих людей; серед тих, кого він називає дорогими, — Конохамару й усі мешканці Конохи."
-    origin: "A"
+    origin: "M"
     extent: "interval"
     display_rank: 100
     involvement:
       - {entity_id: "c-iruka", role: "focus", mode: "physical"}
       - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
       - {entity_id: "c-konohamaru", role: "student", mode: "physical"}
-    evidence_ids: ["evd-anime-56-iruka-hokage-rock"]
+    evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"]
 relations: []
 presence:
-  - {id: "pr-0722-iruka-lesson-iruka", entity_id: "c-iruka", from: "sc-y0-0722-iruka-hokage-rock-lesson.start", to: "sc-y0-0722-iruka-hokage-rock-lesson.end", basis: "source", evidence_ids: ["evd-anime-56-iruka-hokage-rock"], review: "accepted"}
-  - {id: "pr-0722-iruka-lesson-hiruzen", entity_id: "c-hiruzen", from: "ev-y0-0722-iruka-hiruzen-academy-lesson.start", to: "ev-y0-0722-iruka-hiruzen-academy-lesson.end", basis: "source", evidence_ids: ["evd-anime-56-iruka-hokage-rock"], review: "accepted"}
-  - {id: "pr-0722-iruka-lesson-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0722-iruka-hokage-rock-lesson.start", to: "sc-y0-0722-iruka-hokage-rock-lesson.end", basis: "source", evidence_ids: ["evd-anime-56-iruka-hokage-rock"], review: "accepted"}
+  - {id: "pr-0722-iruka-lesson-iruka", entity_id: "c-iruka", from: "sc-y0-0722-iruka-hokage-rock-lesson.start", to: "sc-y0-0722-iruka-hokage-rock-lesson.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"], review: "accepted"}
+  - {id: "pr-0722-iruka-lesson-hiruzen", entity_id: "c-hiruzen", from: "ev-y0-0722-iruka-hiruzen-academy-lesson.start", to: "ev-y0-0722-iruka-hiruzen-academy-lesson.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"], review: "accepted"}
+  - {id: "pr-0722-iruka-lesson-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0722-iruka-hokage-rock-lesson.start", to: "sc-y0-0722-iruka-hokage-rock-lesson.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"], review: "accepted"}
