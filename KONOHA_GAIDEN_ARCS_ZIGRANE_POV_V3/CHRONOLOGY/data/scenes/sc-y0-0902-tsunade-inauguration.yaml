@@ -17,6 +17,7 @@ events:
     display_rank: 100
     involvement:
       - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
+      - {entity_id: "c-anko", role: "observer", mode: "physical"}
     evidence_ids: ["evd-v10-000083-C", "evd-manga-post-crush-search"]
   - id: "ev-y0-0902-koharu-orders-genma-aoba-notice"
     title: "Кохару доручає Ґенмі й Аобі повідомити село"
