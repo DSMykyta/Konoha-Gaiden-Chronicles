@@ -1,0 +1,31 @@
+schema_version: 1
+id: "sc-y0-1207-baki-suna-council-matsuri"
+continuity_id: "main"
+title: "Бакі бере участь у нараді Суни після викрадення Мацурі"
+location_id: "loc-sunagakure"
+placement: {anchor_id: "ta-y0-1207-suna-support", day_offset: 0}
+state: "active"
+presence_coverage: "partial"
+review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-1207-suna-council-responds-matsuri-kidnapping"
+    legacy_ids: ["V10-000214"]
+    title: "Рада Суни вирішує переслідувати викрадачів Мацурі"
+    text: "Після вторгнення Четвірки Небесних Символів і викрадення Мацурі Бакі бере участь у нараді старших шинобі Суни. Рада вирішує відправити Ґаару, Темарі й Канкуро переслідувати викрадачів та звернутися до Конохи по допомогу."
+    origin: "F"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-baki", role: "focus", mode: "physical"}
+      - {entity_id: "group-suna-council", role: "participant", mode: "physical"}
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+      - {entity_id: "c-matsuri", role: "affected", mode: "remote"}
+    evidence_ids: ["evd-v10-000214", "evd-anime-216-baki-suna-council"]
+relations: []
+presence:
+  - {id: "pr-1207-baki-council-baki", entity_id: "c-baki", from: "sc-y0-1207-baki-suna-council-matsuri.start", to: "sc-y0-1207-baki-suna-council-matsuri.end", basis: "source", evidence_ids: ["evd-anime-216-baki-suna-council"], review: "accepted"}
+  - {id: "pr-1207-baki-council-gaara", entity_id: "c-gaara", from: "ev-y0-1207-suna-council-responds-matsuri-kidnapping.start", to: "ev-y0-1207-suna-council-responds-matsuri-kidnapping.end", basis: "source", evidence_ids: ["evd-anime-216-baki-suna-council"], review: "accepted"}
+  - {id: "pr-1207-baki-council-temari", entity_id: "c-temari", from: "ev-y0-1207-suna-council-responds-matsuri-kidnapping.start", to: "ev-y0-1207-suna-council-responds-matsuri-kidnapping.end", basis: "source", evidence_ids: ["evd-anime-216-baki-suna-council"], review: "accepted"}
+  - {id: "pr-1207-baki-council-kankuro", entity_id: "c-kankuro", from: "ev-y0-1207-suna-council-responds-matsuri-kidnapping.start", to: "ev-y0-1207-suna-council-responds-matsuri-kidnapping.end", basis: "source", evidence_ids: ["evd-anime-216-baki-suna-council"], review: "accepted"}
