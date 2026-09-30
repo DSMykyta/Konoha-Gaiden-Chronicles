@@ -1151,10 +1151,10 @@ redirects:
   - legacy_id: "V10-000089"
     status: "superseded"
     replacement_ids:
-      - "ev-y0-0904-ibiki-assigns-team7-idate"
+      - "ev-y0-0904-tsunade-assigns-team7-idate"
       - "ev-y0-0904-aoi-disables-idate"
       - "ev-y0-0904-aoi-throws-naruto-sea"
-    reason: "Tea mission opening split into assignment and Aoi attack scenes."
+    reason: "Tea mission opening split into assignment and Aoi attack scenes; assignment corrected from Ibiki to Tsunade."
   - legacy_id: "V10-000090"
     status: "superseded"
     replacement_ids:
