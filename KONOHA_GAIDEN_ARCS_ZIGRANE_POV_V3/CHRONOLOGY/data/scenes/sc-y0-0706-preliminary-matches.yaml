@@ -11,7 +11,7 @@ events:
   - id: "ev-y0-0706-sasuke-defeats-yoroi"
     legacy_ids: ["V10-000046"]
     title: "Саске перемагає Йорої"
-    text: "У першому попередньому поєдинку Саске перемагає Йорої Акадо, стримуючи Прокляту Печатку."
+    text: "У першому попередньому поєдинку Саске перемагає Йорої Акадо, свідомо стримуючи Прокляту Печатку. Анко спостерігає поруч із Хірузеном і вражена тим, що Саске здатен сам придушити печатку, подібну до її власної."
     origin: "M"
     extent: "interval"
     display_rank: 100
@@ -19,6 +19,7 @@ events:
       - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
       - {entity_id: "c-yoroi", role: "focus", mode: "physical"}
       - {entity_id: "c-hayate", role: "observer", mode: "physical"}
+      - {entity_id: "c-anko", role: "observer", mode: "physical"}
     evidence_ids: ["evd-v10-000046", "evd-manga-chunin-prelims", "evd-anime-31-50"]
   - id: "ev-y0-0706-shino-defeats-zaku"
     legacy_ids: ["V10-000046-C"]
@@ -140,4 +141,5 @@ relations:
   - {id: "rel-0706-match-8", kind: "before", a: "ev-y0-0706-neji-defeats-hinata", b: "ev-y0-0706-gaara-defeats-lee", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-I","evd-v10-000046-J"]}
   - {id: "rel-0706-match-9", kind: "before", a: "ev-y0-0706-gaara-defeats-lee", b: "ev-y0-0706-dosu-defeats-choji", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000046-J","evd-v10-000046-K"]}
 presence:
+  - {id: "pr-0706-prelims-anko", entity_id: "c-anko", from: "sc-y0-0706-preliminary-matches.start", to: "sc-y0-0706-preliminary-matches.end", basis: "source", evidence_ids: ["evd-manga-chunin-prelims", "evd-anime-31-50"], review: "accepted"}
   - {id: "pr-0706-prelims-hayate", entity_id: "c-hayate", from: "sc-y0-0706-preliminary-matches.start", to: "sc-y0-0706-preliminary-matches.end", basis: "source", evidence_ids: ["evd-manga-chunin-prelims"], review: "pending"}
