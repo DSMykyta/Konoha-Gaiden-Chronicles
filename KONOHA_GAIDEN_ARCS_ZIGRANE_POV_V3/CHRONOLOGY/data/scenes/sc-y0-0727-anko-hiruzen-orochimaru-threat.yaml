@@ -11,7 +11,7 @@ events:
   - id: "ev-y0-0727-anko-hiruzen-orochimaru-threat"
     title: "Анко згадує Четвертого, говорячи про Орочімару"
     text: "Напередодні фіналів Анко знову говорить із Хірузеном про Орочімару й звинувачує себе в тому, що не змогла зупинити колишнього вчителя. Хірузен визнає, що в Конохі майже немає нікого, хто міг би протистояти Орочімару напряму. Анко згадує Четвертого Хокаґе як того, хто міг би його зупинити; Хірузен відповідає, що Четвертий мертвий і селу доведеться покладатися на власні сили."
-    origin: "A"
+    origin: "M"
     extent: "interval"
     display_rank: 100
     involvement:
@@ -19,8 +19,8 @@ events:
       - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
       - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
       - {entity_id: "c-minato", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-anime-54-60"]
+    evidence_ids: ["evd-manga-ch88-97", "evd-anime-54-60"]
 relations: []
 presence:
-  - {id: "pr-0727-anko-hiruzen-anko", entity_id: "c-anko", from: "sc-y0-0727-anko-hiruzen-orochimaru-threat.start", to: "sc-y0-0727-anko-hiruzen-orochimaru-threat.end", basis: "source", evidence_ids: ["evd-anime-54-60"], review: "accepted"}
-  - {id: "pr-0727-anko-hiruzen-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0727-anko-hiruzen-orochimaru-threat.start", to: "sc-y0-0727-anko-hiruzen-orochimaru-threat.end", basis: "source", evidence_ids: ["evd-anime-54-60"], review: "accepted"}
+  - {id: "pr-0727-anko-hiruzen-anko", entity_id: "c-anko", from: "sc-y0-0727-anko-hiruzen-orochimaru-threat.start", to: "sc-y0-0727-anko-hiruzen-orochimaru-threat.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-54-60"], review: "accepted"}
+  - {id: "pr-0727-anko-hiruzen-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0727-anko-hiruzen-orochimaru-threat.start", to: "sc-y0-0727-anko-hiruzen-orochimaru-threat.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-54-60"], review: "accepted"}
