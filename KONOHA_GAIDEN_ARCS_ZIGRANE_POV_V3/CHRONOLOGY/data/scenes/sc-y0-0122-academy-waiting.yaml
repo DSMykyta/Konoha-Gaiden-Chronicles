@@ -123,7 +123,7 @@ events:
         - "evd-team9-departure"
   - id: "ev-y0-0122-kakashi-arrives"
       title: "Какаші приходить до Команди 7"
-      text: "Після виходу Команди 9 Какаші приходить до Наруто, Саске й Сакури, які залишилися чекати в класі."
+      text: "Після виходу Команди 9 Какаші нарешті приходить до класу й відчиняє двері, за якими його чекають Наруто, Саске й Сакура."
       origin: "M"
       extent: "interval"
       display_rank: 600
@@ -144,6 +144,30 @@ events:
         - "team-7"
       evidence_ids:
         - "evd-manga-team7-formation"
+  - id: "ev-y0-0122-trap-hits-kakashi"
+      title: "Пастка Наруто спрацьовує на Какаші"
+      text: "Коли Какаші відчиняє двері класу, підготовлена Наруто пастка спрацьовує: стиранка для дошки падає Какаші на голову."
+      origin: "M"
+      extent: "interval"
+      display_rank: 650
+      involvement:
+        - entity_id: "c-kakashi"
+            role: "affected"
+            mode: "physical"
+        - entity_id: "c-naruto"
+            role: "focus"
+            mode: "physical"
+        - entity_id: "c-sasuke"
+            role: "participant"
+            mode: "physical"
+        - entity_id: "c-sakura"
+            role: "participant"
+            mode: "physical"
+      focus_teams:
+        - "team-7"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+        - "evd-anime-team8-10-departures"
   - id: "ev-y0-0122-team7-departs"
       title: "Команда 7 виходить із Какаші"
       text: "Какаші забирає Наруто, Саске й Сакуру з класу."
@@ -208,12 +232,20 @@ relations:
       review: "pending"
       evidence_ids:
         - "evd-manga-team7-formation"
-  - id: "rel-0122-kakashi-before-team7-leaves"
+  - id: "rel-0122-kakashi-before-trap-hits"
       kind: "before"
       a: "ev-y0-0122-kakashi-arrives"
+      b: "ev-y0-0122-trap-hits-kakashi"
+      basis: "source"
+      review: "accepted"
+      evidence_ids:
+        - "evd-manga-team7-formation"
+  - id: "rel-0122-trap-hits-before-team7-leaves"
+      kind: "before"
+      a: "ev-y0-0122-trap-hits-kakashi"
       b: "ev-y0-0122-team7-departs"
       basis: "source"
-      review: "pending"
+      review: "accepted"
       evidence_ids:
         - "evd-manga-team7-formation"
 presence:
