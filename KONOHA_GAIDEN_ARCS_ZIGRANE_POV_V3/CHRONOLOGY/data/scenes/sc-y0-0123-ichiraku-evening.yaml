@@ -1,7 +1,7 @@
 schema_version: 1
 id: "sc-y0-0123-ichiraku-evening"
 continuity_id: "main"
-episode_id: "ep-y0-team-reports"
+episode_id: "ep-y0-students-after-tests"
 title: "Кіта, Наруто й Кіба обговорюють перший день"
 location_id: "loc-ichiraku"
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}
