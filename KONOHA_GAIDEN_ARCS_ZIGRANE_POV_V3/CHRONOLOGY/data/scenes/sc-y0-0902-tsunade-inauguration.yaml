@@ -18,6 +18,22 @@ events:
     involvement:
       - {entity_id: "c-tsunade", role: "focus", mode: "physical"}
     evidence_ids: ["evd-v10-000083-C", "evd-manga-post-crush-search"]
-relations: []
+  - id: "ev-y0-0902-koharu-orders-genma-aoba-notice"
+    title: "Кохару доручає Ґенмі й Аобі повідомити село"
+    text: "Кохару наказує Ґенмі Шірануї та Аобі Ямашіро видати офіційне повідомлення й донести до мешканців Конохи звістку про обрання П’ятої Хокаґе."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-koharu", role: "focus", mode: "physical"}
+      - {entity_id: "c-genma", role: "participant", mode: "physical"}
+      - {entity_id: "c-aoba", role: "participant", mode: "physical"}
+      - {entity_id: "c-tsunade", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"]
+relations:
+  - {id: "rel-0902-inauguration-genma-aoba", kind: "before", a: "ev-y0-0902-tsunade-becomes-fifth-hokage", b: "ev-y0-0902-koharu-orders-genma-aoba-notice", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"]}
 presence:
+  - {id: "pr-0902-inauguration-koharu", entity_id: "c-koharu", from: "sc-y0-0902-tsunade-inauguration.start", to: "sc-y0-0902-tsunade-inauguration.end", basis: "source", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"], review: "accepted"}
+  - {id: "pr-0902-inauguration-genma", entity_id: "c-genma", from: "ev-y0-0902-koharu-orders-genma-aoba-notice.start", to: "ev-y0-0902-koharu-orders-genma-aoba-notice.end", basis: "source", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"], review: "accepted"}
+  - {id: "pr-0902-inauguration-aoba", entity_id: "c-aoba", from: "ev-y0-0902-koharu-orders-genma-aoba-notice.start", to: "ev-y0-0902-koharu-orders-genma-aoba-notice.end", basis: "source", evidence_ids: ["evd-manga-ch172-genma-aoba", "evd-anime-98-genma-aoba"], review: "accepted"}
   - {id: "pr-0902-inauguration-tsunade", entity_id: "c-tsunade", from: "sc-y0-0902-tsunade-inauguration.start", to: "sc-y0-0902-tsunade-inauguration.end", basis: "imported", evidence_ids: ["evd-v10-000083-C"], review: "accepted"}
