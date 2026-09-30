@@ -19,6 +19,7 @@ events:
       - {entity_id: "c-raido", role: "participant", mode: "physical"}
       - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
       - {entity_id: "c-anko", role: "participant", mode: "physical"}
+      - {entity_id: "c-aoba", role: "participant", mode: "physical"}
       - {entity_id: "c-hayate", role: "mentioned", mode: "remote"}
       - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
     evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"]
@@ -49,4 +50,5 @@ relations:
   - {id: "rel-0707-hayate-briefing-1", kind: "before", a: "ev-y0-0707-hiruzen-reports-hayate-death", b: "ev-y0-0707-raido-proposes-cancel-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"]}
   - {id: "rel-0707-hayate-briefing-2", kind: "before", a: "ev-y0-0707-raido-proposes-cancel-exam", b: "ev-y0-0707-raido-returns-hokage-guard", basis: "project_decision", review: "accepted", evidence_ids: ["evd-project-raido-return-guard"]}
 presence:
+  - {id: "pr-0707-hayate-briefing-aoba", entity_id: "c-aoba", from: "sc-y0-0707-hokage-hayate-briefing.start", to: "sc-y0-0707-hokage-hayate-briefing.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"], review: "accepted"}
   - {id: "pr-0707-hayate-briefing-raido", entity_id: "c-raido", from: "sc-y0-0707-hokage-hayate-briefing.start", to: "sc-y0-0707-hokage-hayate-briefing.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-55-hayate-meeting"], review: "accepted"}
