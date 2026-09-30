@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0123-iruka-checks-kakashi-record"
+continuity_id: "main"
+title: "Ірука перевіряє історію випробувань Какаші"
+location_id: "loc-hokage-residence"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-iruka-asks-about-kakashi-test"
+    title: "Ірука питає Хірузена про Какаші"
+    text: "Поки Команда 7 проходить випробування з дзвіночками, стурбований Ірука питає Хірузена, чи не надто суворий Какаші до нових генінів. Хірузен показує йому записи про попередні команди Какаші, і Ірука дізнається, що той до цього не пропустив жодної трійки."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-manga-bell-test"]
+relations: []
+presence:
+  - {id: "pr-0123-iruka-kakashi-record-iruka", entity_id: "c-iruka", from: "sc-y0-0123-iruka-checks-kakashi-record.start", to: "sc-y0-0123-iruka-checks-kakashi-record.end", basis: "source", evidence_ids: ["evd-manga-bell-test"], review: "accepted"}
+  - {id: "pr-0123-iruka-kakashi-record-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0123-iruka-checks-kakashi-record.start", to: "sc-y0-0123-iruka-checks-kakashi-record.end", basis: "source", evidence_ids: ["evd-manga-bell-test"], review: "accepted"}
