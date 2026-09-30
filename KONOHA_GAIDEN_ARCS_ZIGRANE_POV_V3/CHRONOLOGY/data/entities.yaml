@@ -93,6 +93,12 @@ entities:
     aliases:
       - "Ґенма"
       - "Ґенма Шірануї"
+  - id: "c-aoba"
+    kind: "person"
+    name: "Aoba Yamashiro"
+    aliases:
+      - "Аоба"
+      - "Аоба Ямашіро"
   - id: "c-iwashi"
     kind: "person"
     name: "Iwashi Tatami"
