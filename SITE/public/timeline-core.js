@@ -7,7 +7,7 @@ const TimelineCore = {
     const grouped=new Map(),meta=new Map(sceneMeta.map(s=>[s.id,s]));
     for(const e of this.ordered(events)){if(!grouped.has(e.scene_id))grouped.set(e.scene_id,[]);grouped.get(e.scene_id).push(e);}
     const days=new Map();
-    for(const [id,group] of grouped){const day=group[0].day;if(!days.has(day))days.set(day,[]);days.get(day).push({id,group,day,dayPart:meta.get(id)?.day_part||null});}
+    for(const [id,group] of grouped){const day=group[0].day;if(!days.has(day))days.set(day,[]);days.get(day).push({id,group,day,dayPart:meta.get(id)?.day_part||null,displayRank:meta.get(id)?.display_rank??null});}
     const owner=new Map(events.map(e=>[e.id,e.scene_id])),result=[],dayPartRank={dawn:10,morning:20,noon:30,midday:30,afternoon:40,evening:50};
     for(const [day,list] of days){
       const ids=new Set(list.map(s=>s.id)),edges=new Map(list.map(s=>[s.id,new Set()])),incoming=new Map(list.map(s=>[s.id,0])),soft=[];
@@ -19,7 +19,7 @@ const TimelineCore = {
         let pool=candidates;
         const softTargets=new Set(soft.filter(([a,b])=>candidates.some(s=>s.id===a)&&candidates.some(s=>s.id===b)).map(([,b])=>b));
         const preferred=candidates.filter(s=>!softTargets.has(s.id));if(preferred.length)pool=preferred;
-        pool.sort((a,b)=>{const ar=dayPartRank[a.dayPart],br=dayPartRank[b.dayPart];return ar!==undefined&&br!==undefined&&ar!==br?ar-br:remaining.indexOf(a)-remaining.indexOf(b);});
+        pool.sort((a,b)=>{const ar=dayPartRank[a.dayPart],br=dayPartRank[b.dayPart];if(ar!==undefined&&br!==undefined&&ar!==br)return ar-br;if(a.displayRank!==null&&b.displayRank!==null&&a.displayRank!==b.displayRank)return a.displayRank-b.displayRank;return remaining.indexOf(a)-remaining.indexOf(b);});
         const s=pool[0],i=remaining.findIndex(x=>x.id===s.id);remaining.splice(i,1);sorted.push(s);for(const b of edges.get(s.id))incoming.set(b,incoming.get(b)-1);
       }
       sorted.forEach((s,i)=>result.push({...s,position:day===null?null:day+.08+.84*(i+.5)/sorted.length}));

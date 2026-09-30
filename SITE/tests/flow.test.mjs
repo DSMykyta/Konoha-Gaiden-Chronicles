@@ -10,6 +10,12 @@ test('accepted chronology orders scene hubs and observations align separate scen
  assert.equal(core.navigation(events,'w',21,relations).next.id,'d');
 });
 
+test('scene display_rank is a stable fallback and accepted before still wins',()=>{
+ const events=[{id:'a1',scene_id:'alpha',day:21,display_rank:100},{id:'b1',scene_id:'beta',day:21,display_rank:100},{id:'g1',scene_id:'gamma',day:21,display_rank:100}],relations=[{kind:'before',review:'accepted',a:'alpha',b:'beta'}],meta=[{id:'alpha',display_rank:200},{id:'beta',display_rank:100},{id:'gamma',display_rank:150}];
+ const scenes=core.scenes(events,relations,meta);
+ assert.deepEqual(Array.from(scenes,s=>s.id),['gamma','alpha','beta']);
+});
+
 test('a strand starts near its first scene, curves between scenes and ends near its last record',()=>{
  const anchors=[{id:'scene-one',day:20,y:110},{id:'scene-two',day:35,y:220},{id:'scene-three',day:40,y:110}],route=core.strand(anchors,'character',180,80,.25);
  assert.equal(route[0].day,19.75);assert.equal(route.at(-1).day,40.25);
