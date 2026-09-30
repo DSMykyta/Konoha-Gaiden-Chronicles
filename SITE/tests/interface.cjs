@@ -36,6 +36,7 @@ async function check(width,height){
  assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,1);
  assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,1);
  const hub=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-announcements")');assert.equal(hub.group.length,6);assert(hub.cast.includes('c-iruka'));assert(hub.cast.includes('c-naruto'));
+ const exterior=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-exterior-jonin")');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
  // Every line physically present in a scene meets its common hub exactly.
  for(const id of hub.cast){const path=canvas.querySelector('.thread[data-character="'+id+'"]').getAttribute('d');assert(path.includes(hub.x.toFixed(2)+','+hub.y.toFixed(2)),id+' does not reach scene hub');}
  click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(doc.querySelectorAll('.scene-actions li').length,6);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));

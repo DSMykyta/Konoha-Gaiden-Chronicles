@@ -4,9 +4,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 const core=vm.runInNewContext(fs.readFileSync(new URL('../public/timeline-core.js',import.meta.url),'utf8')+';TimelineCore');
 
-test('accepted chronology orders scene hubs without treating observation as precedence',()=>{
- const events=[{id:'d',scene_id:'dango',day:21,display_rank:1},{id:'c',scene_id:'class',day:21,display_rank:2},{id:'w',scene_id:'waiting',day:21,display_rank:3},{id:'x',scene_id:'exterior',day:21,display_rank:4}],relations=[{kind:'before',review:'accepted',a:'class',b:'waiting'},{kind:'before',review:'accepted',a:'w',b:'dango'},{kind:'observes',review:'accepted',a:'x',b:'class'},{kind:'before',review:'pending',a:'dango',b:'class'}],scenes=core.scenes(events,relations);
- assert.deepEqual(Array.from(scenes,s=>s.id),['class','waiting','dango','exterior']);assert(scenes.every((s,i)=>!i||s.position>scenes[i-1].position));
+test('accepted chronology orders scene hubs and observations align separate scenes',()=>{
+ const events=[{id:'d',scene_id:'dango',day:21,display_rank:1},{id:'c',scene_id:'class',day:21,display_rank:2},{id:'w',scene_id:'waiting',day:21,display_rank:3},{id:'x',scene_id:'exterior',day:21,display_rank:4}],relations=[{kind:'before',review:'accepted',a:'class',b:'waiting'},{kind:'before',review:'accepted',a:'w',b:'dango'},{kind:'observes',review:'accepted',a:'c',b:'exterior'},{kind:'before',review:'pending',a:'dango',b:'class'}],scenes=core.scenes(events,relations);
+ assert.deepEqual(Array.from(scenes,s=>s.id),['class','exterior','waiting','dango']);assert.equal(scenes[0].position,scenes[1].position);assert(scenes[2].position>scenes[1].position);assert(scenes[3].position>scenes[2].position);assert.equal(scenes[1].group.length,1);
  assert.equal(core.navigation(events,'w',21,relations).next.id,'d');
 });
 

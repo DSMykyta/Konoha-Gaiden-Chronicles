@@ -16,7 +16,11 @@ const TimelineCore = {
       while(remaining.length){const i=remaining.findIndex(s=>incoming.get(s.id)===0);if(i<0){sorted.push(...remaining);break;}const [s]=remaining.splice(i,1);sorted.push(s);for(const b of edges.get(s.id))incoming.set(b,incoming.get(b)-1);}
       sorted.forEach((s,i)=>result.push({...s,position:day===null?null:day+.08+.84*(i+.5)/sorted.length}));
     }
-    return result;
+    // An accepted observation places two distinct scenes in the same display window.
+    // It does not merge their casts or assert an exact hour.
+    const sceneById=new Map(result.map(s=>[s.id,s]));
+    for(const r of relations){if(r.kind!=='observes'||r.review!=='accepted'||!owner.has(r.a))continue;const a=sceneById.get(owner.get(r.a)),b=sceneById.get(r.b);if(a&&b&&a.id!==b.id&&a.day!==null&&a.day===b.day)b.position=a.position;}
+    return result.sort((a,b)=>(a.position??Infinity)-(b.position??Infinity));
   },
   seed(id) { let value=2166136261;for(const c of id){value=Math.imul(value^c.charCodeAt(0),16777619);}return (value>>>0)/4294967296; },
   strand(anchors,id,middle,amplitude,lead=1) {
