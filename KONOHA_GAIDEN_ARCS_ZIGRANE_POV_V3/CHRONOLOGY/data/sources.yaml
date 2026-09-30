@@ -504,6 +504,11 @@ sources:
     title: "Naruto Shippūden — episode 170"
     locator_status: "episode_known_timestamp_pending"
 
+  - id: "src-anime-107"
+    type: "anime"
+    title: "Naruto anime — episode 107"
+    locator_status: "episode_known_timestamp_pending"
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -2842,8 +2847,8 @@ evidence:
     basis: "source"
     review: "pending"
   - id: "evd-anime-anko-shikamaru-promotion"
-    source_id: "src-anime-98"
-    locator: "anime post-Tsunade-return material: Anko and other Chūnin Exam proctors are present when Shikamaru is recognised as chūnin; exact episode/timestamp pending"
+    source_id: "src-anime-107"
+    locator: "episode 107: Anko is present with Tsunade, Ibiki and Genma when Shikamaru is promoted to chūnin; exact timestamp pending"
     basis: "source"
     review: "pending"
   - id: "evd-shippuden-170-anko-dango"
