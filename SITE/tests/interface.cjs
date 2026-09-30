@@ -32,32 +32,41 @@ async function check(width,height){
  // Chosen lines persist when there are no events in the displayed date range.
  click('[data-team="team-7"]');run('zoom=16;center=160;render()');assert.equal(canvas.querySelectorAll('.thread').length,4);assert.equal(canvas.querySelectorAll('.node').length,0);run('zoom=32;render()');assert.equal(canvas.querySelectorAll('.thread').length,4);
  // Semantic zoom: day -> moments, week -> scenes, month -> episodes, year -> arcs.
+ // Singleton containers collapse visually without changing the underlying hierarchy.
  run('selected=new Set(selectable().map(e=>e.id));zoom=365;center=21.5;render()');
- assert.equal(run('semanticLevel()'),'moment');assert(canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]'));assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
+ assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
+ click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('.card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('.card-meta-line').textContent.includes('Рік 0'));run('closeCard()');
+
  run('zoom=zoomModes.week;center=21.5;render()');assert.equal(run('semanticLevel()'),'scene');
- // The classroom and academy exterior are separate scene hubs, including all actions.
+ // The classroom remains a scene because it groups six moments. The one-moment exterior scene collapses to its moment.
  assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,1);
- assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,1);
- const hub=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-announcements")');assert.equal(hub.group.length,6);assert(hub.cast.includes('c-iruka'));assert(hub.cast.includes('c-naruto'));
- const exterior=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-exterior-jonin")');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
+ assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,0);
+ assert(canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]').classList.contains('moment-node'));
+ const hub=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-announcements")');assert.equal(hub.kind,'scene');assert.equal(hub.childCount,6);assert(hub.cast.includes('c-iruka'));assert(hub.cast.includes('c-naruto'));
+ const exterior=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert.equal(exterior.kind,'moment');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
  // Every line physically present in a scene meets its common hub exactly.
  for(const id of hub.cast){const path=canvas.querySelector('.thread[data-character="'+id+'"]').getAttribute('d');assert(path.includes(hub.x.toFixed(2)+','+hub.y.toFixed(2)),id+' does not reach scene hub');}
- click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(doc.querySelectorAll('.scene-actions li').length,6);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
+ click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');assert.equal(doc.querySelector('.card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,6);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
+ // Hovering another node cannot replace a clicked/pinned card.
+ if(width>=600){const other=canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
  click('[data-open-scene="sc-y0-0122-academy-announcements"]');assert(!doc.getElementById('sceneDialog').hidden);assert.equal(doc.querySelectorAll('[data-scene-action]').length,6);assert(!doc.getElementById('sceneContent').textContent.includes('Асума, Куренай і Райдо чекають'));
- click('[data-scene-event="ev-y0-0122-team7-announced"]');await sleep();assert(doc.getElementById('sceneDialog').hidden);assert.equal(run('focusId'),'ev-y0-0122-team7-announced');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
+ click('[data-scene-event="ev-y0-0122-team7-announced"]');await sleep();assert(doc.getElementById('sceneDialog').hidden);assert.equal(run('focusId'),'ev-y0-0122-team7-announced');assert.equal(run('pinnedNodeId'),'ev-y0-0122-team7-announced');assert.equal(doc.querySelector('.card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
  assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Назад');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Далі');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
  click('[data-open-scene]');click('#closeScene');assert(doc.getElementById('sceneDialog').hidden);
 
- // Month zoom keeps parallel narrative episodes separate; Raidō's evaluation groups its own four scenes.
+ // At month scale a one-scene episode collapses to its scene; a one-scene/one-moment episode collapses to its moment.
  run('closeCard();zoom=zoomModes.month;center=21.5;render()');assert.equal(run('semanticLevel()'),'episode');
- const formationEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-team-formation")');const joninEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-jonin-outside-academy")');assert(formationEpisode);assert(joninEpisode);assert.equal(formationEpisode.childCount,1);assert.equal(joninEpisode.childCount,1);
- run('center=22.5;render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.childCount,4);
- run('zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');assert(run('graphNodes.some(p=>p.rawId==="arc-y0-genin-formation")'));
- // Desktop hover opens complete scene data without a click, including the number hit target.
- run('closeCard();zoom=zoomModes.week;center=21.5;render()');await sleep();const sceneNode=doc.querySelector('[data-scene="sc-y0-0122-academy-announcements"]');
+ const formationCollapsed=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-announcements")');const joninCollapsed=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert(formationCollapsed);assert(joninCollapsed);assert.equal(formationCollapsed.kind,'scene');assert.equal(joninCollapsed.kind,'moment');
+ run('center=22.5;render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('.card-kind').textContent,'ЕПІЗОД');
+
+ run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');assert(arcNode);assert(arcNode.classList.contains('arc-node'));assert(arcNode.querySelector('ellipse.mark'));click('[data-event="arc:arc-y0-genin-formation"]');assert.equal(doc.querySelector('.card-kind').textContent,'АРКА');
+ run('closeCard()');
+
+ // Desktop hover opens complete scene data without a click.
+ run('zoom=zoomModes.week;center=21.5;render()');await sleep();const sceneNode=doc.querySelector('[data-scene="sc-y0-0122-academy-announcements"]');
  const hover=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hover,'pointerType',{value:width>=600?'mouse':'touch'});sceneNode.querySelector('.scene-count').dispatchEvent(hover);
  assert.equal(doc.getElementById('eventCard').hidden,width<600);
- if(width>=600){assert(doc.querySelector('.scene-actions p').textContent.includes('вікна класу'));assert(sceneNode.classList.contains('is-open'));assert(doc.querySelector('.thread[data-character="c-naruto"]').classList.contains('is-scene-member'));assert(doc.querySelector('.thread[data-character="c-raido"]').classList.contains('is-scene-muted'));sceneNode.dispatchEvent(new window.Event('pointerleave'));doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerenter'));await new Promise(r=>setTimeout(r,350));assert(!doc.getElementById('eventCard').hidden);doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerleave'));await new Promise(r=>setTimeout(r,350));assert(doc.getElementById('eventCard').hidden);}
+ if(width>=600){assert(doc.querySelector('.scene-actions p').textContent.includes('вікна класу'));assert(sceneNode.classList.contains('is-open'));assert.equal(run('pinnedNodeId'),null);assert(doc.querySelector('.thread[data-character="c-naruto"]').classList.contains('is-scene-member'));assert(doc.querySelector('.thread[data-character="c-raido"]').classList.contains('is-scene-muted'));sceneNode.dispatchEvent(new window.Event('pointerleave'));doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerenter'));await new Promise(r=>setTimeout(r,350));assert(!doc.getElementById('eventCard').hidden);doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerleave'));await new Promise(r=>setTimeout(r,350));assert(doc.getElementById('eventCard').hidden);}
  else{sceneNode.dispatchEvent(new window.Event('click'));assert(!doc.getElementById('eventCard').hidden);}
  // Characters not yet introduced do not draw unrelated lanes through early scenes.
  assert(!canvas.querySelector('.thread[data-character="c-genma"]'));assert(canvas.querySelector('.thread[data-character="c-naruto"]'));assert.equal(canvas.style.height,height+'px');
