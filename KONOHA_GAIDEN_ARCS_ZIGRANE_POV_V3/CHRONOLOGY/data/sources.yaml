@@ -523,6 +523,11 @@ sources:
     title: "Naruto anime — episode 83"
     locator_status: "episode_known_timestamp_pending"
 
+  - id: "src-anime-216"
+    type: "anime"
+    title: "Naruto anime — episode 216"
+    locator_status: "episode_known_timestamp_pending"
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -2883,5 +2888,10 @@ evidence:
   - id: "evd-anime-83-aoba-sasuke"
     source_id: "src-anime-83"
     locator: "episode 83: Aoba enters Kakashi's room and inadvertently tells Sasuke about Itachi's return and pursuit of Naruto"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-anime-216-baki-suna-council"
+    source_id: "src-anime-216"
+    locator: "episode 216: Baki participates in the Suna jōnin/council meeting after Matsuri is kidnapped; the council sends Gaara, Temari and Kankuro and requests Konoha assistance"
     basis: "source"
     review: "accepted"
