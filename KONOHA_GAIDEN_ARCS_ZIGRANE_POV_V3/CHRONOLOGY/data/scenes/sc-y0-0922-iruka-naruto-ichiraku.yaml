@@ -1,0 +1,24 @@
+schema_version: 1
+id: "sc-y0-0922-iruka-naruto-ichiraku"
+continuity_id: "main"
+title: "Ірука підтримує Наруто в Ічіраку"
+location_id: "loc-ichiraku"
+placement: {anchor_id: "ta-y0-0922", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0922-iruka-encourages-naruto"
+    title: "Ірука вже не стримує Наруто, а підбадьорює його"
+    text: "За раменом Ірука говорить Наруто, що після нападу Коноха втратила багато сил і не може відмовлятися від місій, не показавши слабкість іншим селам. Він визнає, наскільки Наруто виріс, і замість колишньої надмірної опіки просто бажає йому добре працювати й повертатися цілим."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-manga-ch174-iruka-naruto"]
+relations: []
+presence:
+  - {id: "pr-0922-iruka-ichiraku-iruka", entity_id: "c-iruka", from: "sc-y0-0922-iruka-naruto-ichiraku.start", to: "sc-y0-0922-iruka-naruto-ichiraku.end", basis: "source", evidence_ids: ["evd-manga-ch174-iruka-naruto"], review: "accepted"}
+  - {id: "pr-0922-iruka-ichiraku-naruto", entity_id: "c-naruto", from: "sc-y0-0922-iruka-naruto-ichiraku.start", to: "sc-y0-0922-iruka-naruto-ichiraku.end", basis: "source", evidence_ids: ["evd-manga-ch174-iruka-naruto"], review: "accepted"}
