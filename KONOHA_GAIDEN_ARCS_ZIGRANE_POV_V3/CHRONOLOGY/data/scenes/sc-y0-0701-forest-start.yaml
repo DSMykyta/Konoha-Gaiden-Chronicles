@@ -12,7 +12,7 @@ events:
   - id: "ev-y0-0701-anko-briefs-candidates"
     legacy_ids: ["V10-000040-C"]
     title: "Анко пояснює правила Лісу Смерті"
-    text: "Анко Мітараші переводить кандидатів до Лісу Смерті й пояснює п’ятиденний етап із двома типами сувоїв."
+    text: "Анко приводить кандидатів до 44-го тренувального полігону — Лісу Смерті — й пояснює, що команди матимуть п’ять днів, аби повним складом дістатися центральної вежі з двома різними сувоями: Неба і Землі."
     origin: "M"
     extent: "interval"
     display_rank: 100
@@ -22,6 +22,29 @@ events:
       - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000040-C", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-anko-cuts-naruto-shiore-returns-kunai"
+    title: "Анко ранить Наруто; «Шіоре» повертає їй кунай"
+    text: "Коли Наруто демонстративно заявляє, що Ліс Смерті його не лякає, Анко миттєво проводить кунаєм по його щоці й попереджає, що самовпевнені кандидати гинуть першими. Замаскований під геніна Трави Шіоре Орочімару підходить ззаду й повертає Анко її кунай — їхня перша пряма зустріч на цьому іспиті."
+    origin: "M"
+    extent: "interval"
+    display_rank: 150
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "affected", mode: "physical"}
+      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "ev-y0-0701-candidates-sign-waivers-receive-scrolls"
+    title: "Кандидати підписують відмови від відповідальності й отримують сувої"
+    text: "Анко вимагає від кожного кандидата підписати згоду, що Коноха та екзаменатори не відповідають за можливу смерть під час етапу. Після цього команди обмінюють форми на запечатані сувої Неба або Землі й розходяться до окремих воріт."
+    origin: "M"
+    extent: "interval"
+    display_rank: 175
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
   - id: "ev-y0-0701-forest-stage-begins"
     legacy_ids: ["V10-000040-C"]
     title: "Другий етап починається о 14:32"
@@ -34,5 +57,8 @@ events:
       - {entity_id: "c-anko", role: "focus", mode: "physical"}
     evidence_ids: ["evd-v10-000040-C", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
 relations:
-  - {id: "rel-0701-forest-start-1", kind: "before", a: "ev-y0-0701-anko-briefs-candidates", b: "ev-y0-0701-forest-stage-begins", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
-presence: []
+  - {id: "rel-0701-forest-start-1", kind: "before", a: "ev-y0-0701-anko-briefs-candidates", b: "ev-y0-0701-anko-cuts-naruto-shiore-returns-kunai", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-forest-start-2", kind: "before", a: "ev-y0-0701-anko-cuts-naruto-shiore-returns-kunai", b: "ev-y0-0701-candidates-sign-waivers-receive-scrolls", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+  - {id: "rel-0701-forest-start-3", kind: "before", a: "ev-y0-0701-candidates-sign-waivers-receive-scrolls", b: "ev-y0-0701-forest-stage-begins", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+presence:
+  - {id: "pr-0701-forest-start-anko", entity_id: "c-anko", from: "sc-y0-0701-forest-start.start", to: "sc-y0-0701-forest-start.end", basis: "source", evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"], review: "accepted"}
