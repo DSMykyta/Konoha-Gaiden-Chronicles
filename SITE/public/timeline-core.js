@@ -98,15 +98,24 @@ const TimelineCore = {
     for(const n of nodes){const normalized=(y.get(n.id)-(lo+hi)/2)/span*1.7;out.set(n.id,middle+Math.max(-.92,Math.min(.92,normalized))*amplitude);}
     return out;
   },
-  strand(anchors,id,middle,amplitude,lead=1) {
+  strand(anchors,id,middle,amplitude,lead=1,pixelsPerDay=24) {
     if(!anchors.length)return [];
-    // Fade into the first recorded scene, then connect scenes directly.
+    // Fade into the first recorded scene, then connect scenes directly. Organic
+    // wandering is based on visible horizontal room: close nodes stay clean,
+    // while long spans get a broad, low-frequency drift instead of a sharp hump.
     const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y+(this.seed(id+'start')-.5)*amplitude*.65,id:'start'},...anchors.map(p=>({...p,node:true})),{day:Math.min(365,last.day+lead),y:last.y+(this.seed(id+'end')-.5)*amplitude*.65,id:'end'}],points=[];
     for(let i=0;i<ends.length-1;i++){
-      const a=ends[i],b=ends[i+1];points.push(a);
-      if(b.day-a.day<1e-8)continue;
-      const steps=Math.max(1,Math.ceil((b.day-a.day)/24));
-      for(let j=0;j<steps;j++){const t=(j+.5)/steps,offset=(this.seed(id+':'+a.id+':'+b.id+':'+j)-.5)*amplitude*.65;points.push({day:a.day+(b.day-a.day)*t,y:a.y+(b.y-a.y)*t+offset});}
+      const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
+      if(gap<1e-8)continue;
+      const pixelGap=gap*Math.max(1,pixelsPerDay),wander=Math.max(0,Math.min(1,(pixelGap-90)/260));
+      if(!wander)continue;
+      const controls=Math.max(1,Math.ceil(pixelGap/180)-1);
+      const primary=(this.seed(id+':'+a.id+':'+b.id+':drift')-.5)*amplitude*.48*wander;
+      const secondary=(this.seed(id+':'+a.id+':'+b.id+':wave')-.5)*amplitude*.18*wander;
+      for(let j=1;j<=controls;j++){
+        const t=j/(controls+1),envelope=Math.sin(Math.PI*t),offset=envelope*(primary+secondary*Math.sin(Math.PI*2*t));
+        points.push({day:a.day+gap*t,y:a.y+(b.y-a.y)*t+offset});
+      }
     }
     points.push(ends.at(-1));return points.filter((p,i,a)=>!i||p.day>a[i-1].day);
   },
