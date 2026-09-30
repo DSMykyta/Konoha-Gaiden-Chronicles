@@ -843,7 +843,7 @@ button:disabled:hover {
   position:fixed;
   inset:0;
   margin:auto;
-  width:min(540px,calc(100vw - 28px));
+  width:min(920px,calc(100vw - 28px));
   max-height:calc(100dvh - 40px);
   border:1px solid var(--border);
   border-radius:16px;
@@ -904,15 +904,55 @@ button:disabled:hover {
 #profileContent p {
   color:#506079
 }
+.profile-layout {
+  display:grid;
+  grid-template-columns:minmax(180px,260px) minmax(0,1fr);
+  gap:28px;
+  align-items:start
+}
+.profile-visual {
+  position:sticky;
+  top:0
+}
 .profile-image {
+  display:block;
   width:100%;
-  max-height:300px;
+  aspect-ratio:3/4;
+  max-height:min(52dvh,520px);
   object-fit:contain;
-  border-radius:10px
+  object-position:center top;
+  border-radius:12px;
+  background:#f5f7fb;
+  border:1px solid #e5eaf1
+}
+.profile-image-empty {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#9aa6b6;
+  border-style:dashed
+}
+.profile-image-empty span {
+  font-size:15px;
+  font-weight:600
+}
+.profile-image-empty small {
+  margin-top:4px;
+  font-size:11px
 }
 .profile-age {
+  margin:9px 0 0;
+  text-align:center;
   font-size:12px;
+  font-weight:600;
   color:var(--muted)
+}
+.profile-details {
+  min-width:0
+}
+.profile-summary p:first-child {
+  margin-top:0
 }
 .profile-facts {
   margin:18px 0
@@ -940,6 +980,36 @@ button:disabled:hover {
 .profile-section h3 {
   font-size:14px;
   margin:0 0 8px
+}
+.profile-compact-facts {
+  margin:0
+}
+.profile-list {
+  margin:0;
+  padding-left:19px;
+  color:#506079
+}
+.profile-list li {
+  margin:5px 0
+}
+.profile-entry-list {
+  display:grid;
+  gap:8px
+}
+.profile-entry {
+  display:grid;
+  grid-template-columns:minmax(120px,.9fr) minmax(0,1.4fr);
+  gap:12px;
+  padding:8px 0;
+  border-bottom:1px solid #eff2f6
+}
+.profile-entry strong {
+  font-size:13px;
+  font-weight:600
+}
+.profile-entry span {
+  color:#506079;
+  font-size:13px
 }
 .profile-actions {
   display:flex;
@@ -1001,11 +1071,29 @@ button:disabled:hover {
     padding:8px 16px
   }
   .profile-dialog {
-    padding:20px;
-    max-height:calc(100dvh - 28px)
+    padding:18px;
+    max-height:calc(100dvh - 20px)
   }
   .profile-heading h2 {
     font-size:22px
+  }
+  .profile-layout {
+    grid-template-columns:112px minmax(0,1fr);
+    gap:14px
+  }
+  .profile-visual {
+    top:0
+  }
+  .profile-image {
+    max-height:210px;
+    border-radius:9px
+  }
+  .profile-entry {
+    grid-template-columns:1fr;
+    gap:2px
+  }
+  .profile-facts>div {
+    grid-template-columns:1fr
   }
   .focus-bar button {
     min-height:44px
