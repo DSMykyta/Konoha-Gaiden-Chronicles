@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0119-hokage-response"
 continuity_id: "main"
+episode_id: "ep-y0-scroll-theft"
 title: "Пошук викраденого Сувою Печатей"
 location_id: "loc-hokage-residence"
 placement: {anchor_id: "ta-y0-0119", day_offset: 0}
