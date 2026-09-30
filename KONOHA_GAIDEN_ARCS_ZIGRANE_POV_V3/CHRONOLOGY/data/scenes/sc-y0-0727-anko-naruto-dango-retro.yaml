@@ -1,0 +1,25 @@
+schema_version: 1
+id: "sc-y0-0727-anko-naruto-dango-retro"
+continuity_id: "main"
+title: "Наруто розпитує Анко про спадщину Четвертого"
+location_id: "loc-dango-shop"
+placement: {anchor_id: "ta-y0-0727", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0727-naruto-asks-anko-fourth-legacy"
+    title: "Наруто чіпляється до Анко з питанням про Четвертого"
+    text: "У ретроспективній аніме-сцені перед фіналами Наруто знаходить Анко в її улюбленій данґо-крамниці й розпитує про «спадщину Четвертого Хокаґе». Поки Анко не збирається допомагати, Наруто без дозволу з’їдає один із її данґо; вона миттєво переходить у напад і виганяє його з крамниці."
+    origin: "R"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-anko", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-minato", role: "subject", mode: "remote"}
+    evidence_ids: ["evd-shippuden-170-anko-dango"]
+relations: []
+presence:
+  - {id: "pr-0727-anko-dango-anko", entity_id: "c-anko", from: "sc-y0-0727-anko-naruto-dango-retro.start", to: "sc-y0-0727-anko-naruto-dango-retro.end", basis: "source", evidence_ids: ["evd-shippuden-170-anko-dango"], review: "accepted"}
+  - {id: "pr-0727-anko-dango-naruto", entity_id: "c-naruto", from: "sc-y0-0727-anko-naruto-dango-retro.start", to: "sc-y0-0727-anko-naruto-dango-retro.end", basis: "source", evidence_ids: ["evd-shippuden-170-anko-dango"], review: "accepted"}
