@@ -17,460 +17,460 @@ review:
   text: "accepted"
 events:
   - id: "ev-y0-0122-team10-departs"
-      title: "Асума забирає Команду 10"
-      text: "Асума забирає Іно, Шикамару й Чоджі з класу."
-      prose: |-
-        Після перерви випускники знову сиділи по своїх місцях.
-        
-        Двері відчинилися. У проході став Асума.
-        
-        — Команда десять.
-        
-        Іно підхопилася першою. Шикамару підвівся слідом; Чоджі згорнув пакет із чипсами й засунув його в кишеню.
-        
-        Асума відійшов від дверей. Усі троє вийшли за ним у коридор.
-        
-        Двері зачинилися, але ненадовго.
-      origin: "A"
-      extent: "interval"
-      display_rank: 100
-      involvement:
-        - entity_id: "c-asuma"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-ino"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-shikamaru"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-choji"
-            role: "participant"
-            mode: "physical"
-      focus_teams:
-        - "team-10"
-      evidence_ids:
-        - "evd-anime-team8-10-departures"
-        - "evd-project-team8-10-before-raido"
+    title: "Асума забирає Команду 10"
+    text: "Асума забирає Іно, Шикамару й Чоджі з класу."
+    prose: |-
+      Після перерви випускники знову сиділи по своїх місцях.
+
+      Двері відчинилися. У проході став Асума.
+
+      — Команда десять.
+
+      Іно підхопилася першою. Шикамару підвівся слідом; Чоджі згорнув пакет із чипсами й засунув його в кишеню.
+
+      Асума відійшов від дверей. Усі троє вийшли за ним у коридор.
+
+      Двері зачинилися, але ненадовго.
+    origin: "A"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - entity_id: "c-asuma"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-ino"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-shikamaru"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-choji"
+        role: "participant"
+        mode: "physical"
+    focus_teams:
+      - "team-10"
+    evidence_ids:
+      - "evd-anime-team8-10-departures"
+      - "evd-project-team8-10-before-raido"
   - id: "ev-y0-0122-team8-departs"
-      title: "Куренай забирає Команду 8"
-      text: "Куренай забирає Хінату, Кібу й Шіно з класу; перед виходом Кіба коротко киває Кіті."
-      prose: |-
-        Наступною в клас зайшла Куренай.
-        
-        — Команда вісім.
-        
-        Хіната підвелася. Шіно мовчки рушив до проходу. Кіба зіскочив із місця й пішов за ними.
-        
-        Уже біля дверей він обернувся до Кіти й коротко кивнув.
-        
-        Потім вийшов услід за Куренай.
-        
-        У класі стало помітно вільніше.
-      origin: "A"
-      extent: "interval"
-      display_rank: 200
-      involvement:
-        - entity_id: "c-kurenai"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-hinata"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-kiba"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-shino"
-            role: "participant"
-            mode: "physical"
-      focus_teams:
-        - "team-8"
-      evidence_ids:
-        - "evd-anime-team8-10-departures"
-        - "evd-project-team8-10-before-raido"
+    title: "Куренай забирає Команду 8"
+    text: "Куренай забирає Хінату, Кібу й Шіно з класу; перед виходом Кіба коротко киває Кіті."
+    prose: |-
+      Наступною в клас зайшла Куренай.
+
+      — Команда вісім.
+
+      Хіната підвелася. Шіно мовчки рушив до проходу. Кіба зіскочив із місця й пішов за ними.
+
+      Уже біля дверей він обернувся до Кіти й коротко кивнув.
+
+      Потім вийшов услід за Куренай.
+
+      У класі стало помітно вільніше.
+    origin: "A"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - entity_id: "c-kurenai"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-hinata"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-kiba"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-shino"
+        role: "participant"
+        mode: "physical"
+    focus_teams:
+      - "team-8"
+    evidence_ids:
+      - "evd-anime-team8-10-departures"
+      - "evd-project-team8-10-before-raido"
   - id: "ev-y0-0122-naruto-prepares-trap"
-      title: "Наруто готує пастку для Какаші"
-      text: "Після виходу Команди 9 Наруто, Саске й Сакура залишаються чекати Какаші. Наруто готує пастку над дверима для запізнілого наставника."
-      prose: |-
-        Наруто кілька секунд дивився на зачинені двері.
-        
-        Потім підвівся, взяв стиранку для дошки й поставив її на верхній край дверей.
-        
-        Сакура дивилася на нього з-за парти.
-        
-        Саске сидів на місці.
-        
-        Наруто повернувся до них, широко посміхнувся й сів чекати.
-      origin: "M"
-      extent: "interval"
-      display_rank: 550
-      involvement:
-        - entity_id: "c-naruto"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-sasuke"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-sakura"
-            role: "participant"
-            mode: "physical"
-      focus_teams:
-        - "team-7"
-      evidence_ids:
-        - "evd-manga-team7-formation"
+    title: "Наруто готує пастку для Какаші"
+    text: "Після виходу Команди 9 Наруто, Саске й Сакура залишаються чекати Какаші. Наруто готує пастку над дверима для запізнілого наставника."
+    prose: |-
+      Наруто кілька секунд дивився на зачинені двері.
+
+      Потім підвівся, взяв стиранку для дошки й поставив її на верхній край дверей.
+
+      Сакура дивилася на нього з-за парти.
+
+      Саске сидів на місці.
+
+      Наруто повернувся до них, широко посміхнувся й сів чекати.
+    origin: "M"
+    extent: "interval"
+    display_rank: 550
+    involvement:
+      - entity_id: "c-naruto"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-sasuke"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-sakura"
+        role: "participant"
+        mode: "physical"
+    focus_teams:
+      - "team-7"
+    evidence_ids:
+      - "evd-manga-team7-formation"
   - id: "ev-y0-0122-raido-question"
-      title: "Райдо звертається до Сакури"
-      text: "Райдо входить до класу, питає «Дев’ята?», а Сакура відповідає: «Сьома»."
-      prose: |-
-        Минуло ще трохи часу.
-        
-        Двері знову відчинилися. На порозі з’явився Райдо. Погляд ковзнув по тих, хто лишився.
-        
-        — Дев’ята?
-        
-        Сакура, сидячи біля Саске й Наруто, підняла руку.
-        
-        — Сьома.
-        
-        Райдо перевів погляд далі в клас.
-      origin: "P"
-      extent: "interval"
-      display_rank: 400
-      involvement:
-        - entity_id: "c-raido"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-sakura"
-            role: "focus"
-            mode: "physical"
-      evidence_ids:
-        - "evd-raido-question"
+    title: "Райдо звертається до Сакури"
+    text: "Райдо входить до класу, питає «Дев’ята?», а Сакура відповідає: «Сьома»."
+    prose: |-
+      Минуло ще трохи часу.
+
+      Двері знову відчинилися. На порозі з’явився Райдо. Погляд ковзнув по тих, хто лишився.
+
+      — Дев’ята?
+
+      Сакура, сидячи біля Саске й Наруто, підняла руку.
+
+      — Сьома.
+
+      Райдо перевів погляд далі в клас.
+    origin: "P"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - entity_id: "c-raido"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-sakura"
+        role: "focus"
+        mode: "physical"
+    evidence_ids:
+      - "evd-raido-question"
   - id: "ev-y0-0122-team9-departs"
-      title: "Райдо забирає Команду 9"
-      text: "Райдо знаходить Кіту, Рена й Сору та веде Команду 9 з аудиторії."
-      prose: |-
-        Кіта підвівся. За ним зі своїх місць встали Рен і Сора; Сора прибрала блокнот.
-        
-        Райдо відступив від дверей, пропускаючи їх у коридор.
-        
-        — За мною.
-        
-        Кіта вийшов першим. Рен рушив за ним, Сора — останньою.
-        
-        Райдо зачинив двері.
-        
-        У класі залишилися Наруто, Саске й Сакура.
-      origin: "P"
-      extent: "interval"
-      display_rank: 500
-      involvement:
-        - entity_id: "c-raido"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-kita"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-ren"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-sora"
-            role: "focus"
-            mode: "physical"
-      focus_teams:
-        - "team-9"
-      evidence_ids:
-        - "evd-team9-departure"
+    title: "Райдо забирає Команду 9"
+    text: "Райдо знаходить Кіту, Рена й Сору та веде Команду 9 з аудиторії."
+    prose: |-
+      Кіта підвівся. За ним зі своїх місць встали Рен і Сора; Сора прибрала блокнот.
+
+      Райдо відступив від дверей, пропускаючи їх у коридор.
+
+      — За мною.
+
+      Кіта вийшов першим. Рен рушив за ним, Сора — останньою.
+
+      Райдо зачинив двері.
+
+      У класі залишилися Наруто, Саске й Сакура.
+    origin: "P"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - entity_id: "c-raido"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-kita"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-ren"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-sora"
+        role: "focus"
+        mode: "physical"
+    focus_teams:
+      - "team-9"
+    evidence_ids:
+      - "evd-team9-departure"
   - id: "ev-y0-0122-kakashi-arrives"
-      title: "Какаші приходить до Команди 7"
-      text: "Після виходу Команди 9 Какаші нарешті приходить до класу й відчиняє двері, за якими його чекають Наруто, Саске й Сакура."
-      prose: |-
-        Кроки зупинилися в коридорі.
-        
-        Ручка дверей повільно опустилася.
-        
-        Наруто випростався на стільці. Сакура повернула голову до входу. Саске підняв очі.
-        
-        Двері відчинилися.
-        
-        У прорізі з’явився Какаші.
-      origin: "M"
-      extent: "interval"
-      display_rank: 600
-      involvement:
-        - entity_id: "c-kakashi"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-naruto"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-sasuke"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-sakura"
-            role: "participant"
-            mode: "physical"
-      focus_teams:
-        - "team-7"
-      evidence_ids:
-        - "evd-manga-team7-formation"
+    title: "Какаші приходить до Команди 7"
+    text: "Після виходу Команди 9 Какаші нарешті приходить до класу й відчиняє двері, за якими його чекають Наруто, Саске й Сакура."
+    prose: |-
+      Кроки зупинилися в коридорі.
+
+      Ручка дверей повільно опустилася.
+
+      Наруто випростався на стільці. Сакура повернула голову до входу. Саске підняв очі.
+
+      Двері відчинилися.
+
+      У прорізі з’явився Какаші.
+    origin: "M"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - entity_id: "c-kakashi"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-naruto"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-sasuke"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-sakura"
+        role: "participant"
+        mode: "physical"
+    focus_teams:
+      - "team-7"
+    evidence_ids:
+      - "evd-manga-team7-formation"
   - id: "ev-y0-0122-trap-hits-kakashi"
-      title: "Пастка Наруто спрацьовує на Какаші"
-      text: "Коли Какаші відчиняє двері класу, підготовлена Наруто пастка спрацьовує: стиранка для дошки падає Какаші на голову."
-      prose: |-
-        Стиранка зісковзнула з верхнього краю дверей і впала Какаші просто на голову.
-        
-        Наруто зареготав.
-        
-        Сакура різко підвелася.
-        
-        — Сенсей, це Наруто!
-        
-        Саске лишився сидіти.
-        
-        Какаші нахилився, підняв стиранку з підлоги й подивився на трьох генінів.
-        
-        Кілька секунд ніхто не говорив.
-      origin: "M"
-      extent: "interval"
-      display_rank: 650
-      involvement:
-        - entity_id: "c-kakashi"
-            role: "affected"
-            mode: "physical"
-        - entity_id: "c-naruto"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-sasuke"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-sakura"
-            role: "participant"
-            mode: "physical"
-      focus_teams:
-        - "team-7"
-      evidence_ids:
-        - "evd-manga-team7-formation"
-        - "evd-anime-team8-10-departures"
+    title: "Пастка Наруто спрацьовує на Какаші"
+    text: "Коли Какаші відчиняє двері класу, підготовлена Наруто пастка спрацьовує: стиранка для дошки падає Какаші на голову."
+    prose: |-
+      Стиранка зісковзнула з верхнього краю дверей і впала Какаші просто на голову.
+
+      Наруто зареготав.
+
+      Сакура різко підвелася.
+
+      — Сенсей, це Наруто!
+
+      Саске лишився сидіти.
+
+      Какаші нахилився, підняв стиранку з підлоги й подивився на трьох генінів.
+
+      Кілька секунд ніхто не говорив.
+    origin: "M"
+    extent: "interval"
+    display_rank: 650
+    involvement:
+      - entity_id: "c-kakashi"
+        role: "affected"
+        mode: "physical"
+      - entity_id: "c-naruto"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-sasuke"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-sakura"
+        role: "participant"
+        mode: "physical"
+    focus_teams:
+      - "team-7"
+    evidence_ids:
+      - "evd-manga-team7-formation"
+      - "evd-anime-team8-10-departures"
   - id: "ev-y0-0122-team7-departs"
-      title: "Команда 7 виходить із Какаші"
-      text: "Какаші забирає Наруто, Саске й Сакуру з класу."
-      prose: |-
-        Какаші розвернувся в коридор.
-        
-        — За мною.
-        
-        Саске підвівся першим. Сакура швидко пішла слідом. Наруто вискочив із-за парти останнім.
-        
-        Четверо вийшли з класу.
-        
-        Двері за ними зачинилися.
-      origin: "M"
-      extent: "interval"
-      display_rank: 700
-      involvement:
-        - entity_id: "c-kakashi"
-            role: "focus"
-            mode: "physical"
-        - entity_id: "c-naruto"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-sasuke"
-            role: "participant"
-            mode: "physical"
-        - entity_id: "c-sakura"
-            role: "participant"
-            mode: "physical"
-      focus_teams:
-        - "team-7"
-      evidence_ids:
-        - "evd-manga-team7-formation"
+    title: "Команда 7 виходить із Какаші"
+    text: "Какаші забирає Наруто, Саске й Сакуру з класу."
+    prose: |-
+      Какаші розвернувся в коридор.
+
+      — За мною.
+
+      Саске підвівся першим. Сакура швидко пішла слідом. Наруто вискочив із-за парти останнім.
+
+      Четверо вийшли з класу.
+
+      Двері за ними зачинилися.
+    origin: "M"
+    extent: "interval"
+    display_rank: 700
+    involvement:
+      - entity_id: "c-kakashi"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-naruto"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-sasuke"
+        role: "participant"
+        mode: "physical"
+      - entity_id: "c-sakura"
+        role: "participant"
+        mode: "physical"
+    focus_teams:
+      - "team-7"
+    evidence_ids:
+      - "evd-manga-team7-formation"
 relations:
   - id: "rel-0122-team10-before-raido"
-      kind: "before"
-      a: "ev-y0-0122-team10-departs"
-      b: "ev-y0-0122-raido-question"
-      basis: "project_decision"
-      review: "accepted"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
+    kind: "before"
+    a: "ev-y0-0122-team10-departs"
+    b: "ev-y0-0122-raido-question"
+    basis: "project_decision"
+    review: "accepted"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
   - id: "rel-0122-team8-before-raido"
-      kind: "before"
-      a: "ev-y0-0122-team8-departs"
-      b: "ev-y0-0122-raido-question"
-      basis: "project_decision"
-      review: "accepted"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
+    kind: "before"
+    a: "ev-y0-0122-team8-departs"
+    b: "ev-y0-0122-raido-question"
+    basis: "project_decision"
+    review: "accepted"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
   - id: "rel-0122-raido-question-before-departure"
-      kind: "before"
-      a: "ev-y0-0122-raido-question"
-      b: "ev-y0-0122-team9-departs"
-      basis: "source"
-      review: "accepted"
-      evidence_ids:
-        - "evd-team9-departure"
+    kind: "before"
+    a: "ev-y0-0122-raido-question"
+    b: "ev-y0-0122-team9-departs"
+    basis: "source"
+    review: "accepted"
+    evidence_ids:
+      - "evd-team9-departure"
   - id: "rel-0122-team9-before-trap"
-      kind: "before"
-      a: "ev-y0-0122-team9-departs"
-      b: "ev-y0-0122-naruto-prepares-trap"
-      basis: "project_decision"
-      review: "accepted"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
+    kind: "before"
+    a: "ev-y0-0122-team9-departs"
+    b: "ev-y0-0122-naruto-prepares-trap"
+    basis: "project_decision"
+    review: "accepted"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
   - id: "rel-0122-trap-before-kakashi"
-      kind: "before"
-      a: "ev-y0-0122-naruto-prepares-trap"
-      b: "ev-y0-0122-kakashi-arrives"
-      basis: "source"
-      review: "pending"
-      evidence_ids:
-        - "evd-manga-team7-formation"
+    kind: "before"
+    a: "ev-y0-0122-naruto-prepares-trap"
+    b: "ev-y0-0122-kakashi-arrives"
+    basis: "source"
+    review: "pending"
+    evidence_ids:
+      - "evd-manga-team7-formation"
   - id: "rel-0122-kakashi-before-trap-hits"
-      kind: "before"
-      a: "ev-y0-0122-kakashi-arrives"
-      b: "ev-y0-0122-trap-hits-kakashi"
-      basis: "source"
-      review: "accepted"
-      evidence_ids:
-        - "evd-manga-team7-formation"
+    kind: "before"
+    a: "ev-y0-0122-kakashi-arrives"
+    b: "ev-y0-0122-trap-hits-kakashi"
+    basis: "source"
+    review: "accepted"
+    evidence_ids:
+      - "evd-manga-team7-formation"
   - id: "rel-0122-trap-hits-before-team7-leaves"
-      kind: "before"
-      a: "ev-y0-0122-trap-hits-kakashi"
-      b: "ev-y0-0122-team7-departs"
-      basis: "source"
-      review: "accepted"
-      evidence_ids:
-        - "evd-manga-team7-formation"
+    kind: "before"
+    a: "ev-y0-0122-trap-hits-kakashi"
+    b: "ev-y0-0122-team7-departs"
+    basis: "source"
+    review: "accepted"
+    evidence_ids:
+      - "evd-manga-team7-formation"
 presence:
   - id: "pr-0122-wait-naruto"
-      entity_id: "c-naruto"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team7-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-team9-classroom-wait"
-      review: "accepted"
+    entity_id: "c-naruto"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team7-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-team9-classroom-wait"
+    review: "accepted"
   - id: "pr-0122-wait-sasuke"
-      entity_id: "c-sasuke"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team7-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-team9-classroom-wait"
-      review: "accepted"
+    entity_id: "c-sasuke"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team7-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-team9-classroom-wait"
+    review: "accepted"
   - id: "pr-0122-wait-sakura"
-      entity_id: "c-sakura"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team7-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-team9-classroom-wait"
-      review: "accepted"
+    entity_id: "c-sakura"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team7-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-team9-classroom-wait"
+    review: "accepted"
   - id: "pr-0122-wait-kita"
-      entity_id: "c-kita"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team9-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-team9-classroom-wait"
-        - "evd-team9-departure"
-      review: "accepted"
+    entity_id: "c-kita"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team9-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-team9-classroom-wait"
+      - "evd-team9-departure"
+    review: "accepted"
   - id: "pr-0122-wait-ren"
-      entity_id: "c-ren"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team9-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-team9-classroom-wait"
-        - "evd-team9-departure"
-      review: "accepted"
+    entity_id: "c-ren"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team9-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-team9-classroom-wait"
+      - "evd-team9-departure"
+    review: "accepted"
   - id: "pr-0122-wait-sora"
-      entity_id: "c-sora"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team9-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-team9-classroom-wait"
-        - "evd-team9-departure"
-      review: "accepted"
+    entity_id: "c-sora"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team9-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-team9-classroom-wait"
+      - "evd-team9-departure"
+    review: "accepted"
   - id: "pr-0122-wait-ino"
-      entity_id: "c-ino"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team10-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-ino"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team10-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-shikamaru"
-      entity_id: "c-shikamaru"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team10-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-shikamaru"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team10-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-choji"
-      entity_id: "c-choji"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team10-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-choji"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team10-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-hinata"
-      entity_id: "c-hinata"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team8-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-hinata"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team8-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-kiba"
-      entity_id: "c-kiba"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team8-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-kiba"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team8-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-shino"
-      entity_id: "c-shino"
-      from: "sc-y0-0122-academy-waiting.start"
-      to: "ev-y0-0122-team8-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-shino"
+    from: "sc-y0-0122-academy-waiting.start"
+    to: "ev-y0-0122-team8-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-asuma"
-      entity_id: "c-asuma"
-      from: "ev-y0-0122-team10-departs.start"
-      to: "ev-y0-0122-team10-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-asuma"
+    from: "ev-y0-0122-team10-departs.start"
+    to: "ev-y0-0122-team10-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-kurenai"
-      entity_id: "c-kurenai"
-      from: "ev-y0-0122-team8-departs.start"
-      to: "ev-y0-0122-team8-departs.end"
-      basis: "project_decision"
-      evidence_ids:
-        - "evd-project-team8-10-before-raido"
-      review: "accepted"
+    entity_id: "c-kurenai"
+    from: "ev-y0-0122-team8-departs.start"
+    to: "ev-y0-0122-team8-departs.end"
+    basis: "project_decision"
+    evidence_ids:
+      - "evd-project-team8-10-before-raido"
+    review: "accepted"
   - id: "pr-0122-wait-raido"
-      entity_id: "c-raido"
-      from: "ev-y0-0122-raido-question.start"
-      to: "ev-y0-0122-team9-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-raido-question"
-        - "evd-team9-departure"
-      review: "accepted"
+    entity_id: "c-raido"
+    from: "ev-y0-0122-raido-question.start"
+    to: "ev-y0-0122-team9-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-raido-question"
+      - "evd-team9-departure"
+    review: "accepted"
   - id: "pr-0122-wait-kakashi"
-      entity_id: "c-kakashi"
-      from: "ev-y0-0122-kakashi-arrives.start"
-      to: "ev-y0-0122-team7-departs.end"
-      basis: "source"
-      evidence_ids:
-        - "evd-manga-team7-formation"
-      review: "pending"
+    entity_id: "c-kakashi"
+    from: "ev-y0-0122-kakashi-arrives.start"
+    to: "ev-y0-0122-team7-departs.end"
+    basis: "source"
+    evidence_ids:
+      - "evd-manga-team7-formation"
+    review: "pending"
