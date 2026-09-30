@@ -56,7 +56,8 @@ function semanticNodes(level,allScenes){
  if(level==='episode')return episodeNodes;
  const arcBuckets=new Map();
  for(const ep of episodeNodes){
-  const arcId=ep.story?.arc_id||'episode:'+ep.rawId;
+  const arcId=ep.story?.arc_id;
+  if(!arcId||!arcMap.has(arcId))continue;
   if(!arcBuckets.has(arcId))arcBuckets.set(arcId,[]);
   arcBuckets.get(arcId).push(ep);
  }
