@@ -11,15 +11,17 @@ events:
   - id: "ev-y0-0119-naruto-fails-clone"
     legacy_ids: ["V10-000002"]
     title: "Наруто провалює випускний іспит"
-    text: "Наруто не може створити стабільного клона й не проходить випускний іспит Академії."
+    text: "Наруто створює лише одного нестабільного клона. Мідзукі пропонує зарахувати його через зусилля, але Ірука відмовляється робити виняток і не пропускає Наруто на випускному іспиті."
     origin: "M"
     extent: "interval"
     display_rank: 100
     involvement:
       - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-mizuki", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
 relations: []
 presence:
   - {id: "pr-0119-exam-naruto", entity_id: "c-naruto", from: "sc-y0-0119-graduation-exam.start", to: "sc-y0-0119-graduation-exam.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
+  - {id: "pr-0119-exam-mizuki", entity_id: "c-mizuki", from: "sc-y0-0119-graduation-exam.start", to: "sc-y0-0119-graduation-exam.end", basis: "source", evidence_ids: ["evd-manga-ch1-prologue"], review: "accepted"}
   - {id: "pr-0119-exam-iruka", entity_id: "c-iruka", from: "sc-y0-0119-graduation-exam.start", to: "sc-y0-0119-graduation-exam.end", basis: "source", evidence_ids: ["evd-v10-000002"], review: "accepted"}
