@@ -131,7 +131,7 @@ function render(){
  ids.forEach(id=>{
   const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>({day:p.day,y:p.y,id:p.id}));
   if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
-  const route=TimelineCore.avoid(TimelineCore.strand(anchors,id,mid,amplitude,lead),graphNodes.filter(p=>!linked(p,id)),id,30);
+  const route=TimelineCore.avoid(TimelineCore.strand(anchors,id,mid,amplitude,lead,plot/(hi-lo)),graphNodes.filter(p=>!linked(p,id)),id,30);
   const coordinates=route.map(p=>({x:px(p.day),y:p.y,node:p.node,flat:p.flat}));
   const d=smoothPath(coordinates),dim=focusedCharacter&&focusedCharacter!==id;
   const gradient=svg('linearGradient',{id:'strand-'+id,gradientUnits:'userSpaceOnUse',x1:px(route[0].day),x2:px(route.at(-1).day),y1:0,y2:0},defs),fade=Math.min(.45,lead*.65/Math.max(.001,route.at(-1).day-route[0].day));
