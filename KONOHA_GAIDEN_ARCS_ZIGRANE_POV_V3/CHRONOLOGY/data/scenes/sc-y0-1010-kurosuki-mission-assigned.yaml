@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1010-kurosuki-mission-assigned"
+episode_id: ep-y0-kurosuki-mission-opening
+display_rank: 100
 continuity_id: "main"
 title: "Наруто приєднується до місії проти родини Куросукі"
 location_id: "loc-konohagakure"

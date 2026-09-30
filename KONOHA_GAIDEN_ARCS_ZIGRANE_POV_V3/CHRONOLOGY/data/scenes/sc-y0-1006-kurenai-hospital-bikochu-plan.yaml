@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1006-kurenai-hospital-bikochu-plan"
+episode_id: ep-y0-bikochu-mission-planning
+display_rank: 100
 continuity_id: "main"
 title: "Команда 8 пропонує використати бікоочу для пошуку Саске"
 location_id: "loc-konoha-hospital"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1014-uzumaki-chronicles-finale"
+episode_id: ep-alt-y0-1014-uzumaki-chronicles-finale
+display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles"
 title: "Наруто зриває фінальний план Орочімару в гілці Uzumaki Chronicles"
 placement: {anchor_id: "ta-alt-y0-1012-uzumaki-chronicles", day_offset: 2}

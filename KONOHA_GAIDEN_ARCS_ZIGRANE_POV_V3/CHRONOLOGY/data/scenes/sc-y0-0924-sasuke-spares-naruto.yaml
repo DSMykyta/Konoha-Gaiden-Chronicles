@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0924-sasuke-spares-naruto"
+episode_id: ep-y0-valley-of-end
+display_rank: 500
 continuity_id: "main"
-episode_id: "ep-y0-valley-of-end"
 title: "Саске перемагає Наруто, але залишає його живим"
 location_id: "loc-valley-of-end"
 placement: {anchor_id: "ta-y0-0924", day_offset: 0}

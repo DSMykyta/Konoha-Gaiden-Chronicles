@@ -1,0 +1,39 @@
+schema_version: 1
+id: sc-y0-0925-lee-operation-success
+episode_id: ep-y0-lee-operation
+display_rank: 300
+continuity_id: main
+title: Підтвердження успішної операції Лі
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-y0-0925
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0925-lee-operation-confirmed-success
+  legacy_ids:
+  - V10-000123-B
+  title: Операція Рока Лі виявляється успішною
+  text: Паралельно підтверджується, що операція Рока Лі пройшла успішно.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-lee
+    role: focus
+    mode: physical
+  - entity_id: c-tsunade
+    role: cause
+    mode: remote
+  evidence_ids:
+  - evd-v10-000123-B
+  - evd-manga-sasuke-recovery
+relations: []
+presence: []

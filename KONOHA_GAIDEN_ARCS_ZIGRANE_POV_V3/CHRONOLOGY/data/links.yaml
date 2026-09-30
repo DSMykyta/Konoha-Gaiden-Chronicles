@@ -1,2223 +1,2821 @@
 schema_version: 1
 links:
-  - id: "lnk-0122-kiss-before-announcements"
-    kind: "before"
-    a: "ev-y0-0122-naruto-sasuke-kiss"
-    b: "sc-y0-0122-academy-announcements"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-team7-formation"]
-  - id: "lnk-0122-announcements-before-search"
-    kind: "before"
-    a: "sc-y0-0122-academy-announcements"
-    b: "sc-y0-0122-sakura-searches-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-team7-formation"]
-  - id: "lnk-0122-search-before-team10-lunch"
-    kind: "before"
-    a: "sc-y0-0122-sakura-searches-sasuke"
-    b: "sc-y0-0122-team10-lunch"
-    basis: "source"
-    review: "accepted"
-  - id: "lnk-0122-team10-lunch-before-impersonation"
-    kind: "before"
-    a: "sc-y0-0122-team10-lunch"
-    b: "sc-y0-0122-naruto-impersonates-sasuke"
-    basis: "source"
-    review: "accepted"
-
-  - id: "lnk-0122-announcements-before-impersonation"
-    kind: "before"
-    a: "sc-y0-0122-academy-announcements"
-    b: "sc-y0-0122-naruto-impersonates-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-team7-formation"]
-  - id: "lnk-0122-impersonation-before-wait"
-    kind: "before"
-    a: "sc-y0-0122-naruto-impersonates-sasuke"
-    b: "sc-y0-0122-academy-waiting"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-team7-formation"]
-  - id: "lnk-0122-announcements-before-wait"
-    kind: "before"
-    a: "sc-y0-0122-academy-announcements"
-    b: "sc-y0-0122-academy-waiting"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-classroom-wait"]
-  - id: "lnk-0122-impersonation-before-kakashi"
-    kind: "before"
-    a: "sc-y0-0122-naruto-impersonates-sasuke"
-    b: "ev-y0-0122-kakashi-arrives"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-manga-team7-formation"]
-  - id: "lnk-0122-class-observes-exterior"
-    kind: "observes"
-    a: "ev-y0-0122-kita-sees-jonin"
-    b: "sc-y0-0122-academy-exterior-jonin"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-announcement", "evd-project-jonin-identities"]
-  - id: "lnk-0122-team9-to-dango"
-    kind: "before"
-    a: "ev-y0-0122-team9-departs"
-    b: "sc-y0-0122-dango-shop"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-departure", "evd-dango-scene"]
-  - id: "lnk-0122-team7-to-rooftop"
-    kind: "before"
-    a: "ev-y0-0122-team7-departs"
-    b: "sc-y0-0122-team7-rooftop"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-manga-team7-formation"]
-  - id: "lnk-0122-dango-before-home"
-    kind: "before"
-    a: "sc-y0-0122-dango-shop"
-    b: "sc-y0-0122-kita-home-night"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-kita-home-night"]
-  - id: "lnk-0122-team7-rooftop-before-kita-home"
-    kind: "before"
-    a: "sc-y0-0122-team7-rooftop"
-    b: "sc-y0-0122-kita-home-night"
-    basis: "project_decision"
-    review: "accepted"
-    evidence_ids: ["evd-project-0122-rooftop-before-kita-home"]
-  - id: "lnk-0924-pursuit-before-valley"
-    kind: "before"
-    a: "ev-y0-0924-naruto-continues-pursuit"
-    b: "ev-y0-0924-naruto-catches-sasuke"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-manga-sasuke-recovery"]
-  - id: "lnk-0118-monument-before-talk"
-    kind: "before"
-    a: "sc-y0-0118-hokage-monument"
-    b: "sc-y0-0118-iruka-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
-  - id: "lnk-0118-class-before-cleanup"
-    kind: "before"
-    a: "sc-y0-0118-iruka-naruto"
-    b: "sc-y0-0118-hokage-monument-cleanup"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-ch1-prologue"]
-  - id: "lnk-0118-cleanup-before-ramen"
-    kind: "before"
-    a: "sc-y0-0118-hokage-monument-cleanup"
-    b: "sc-y0-0118-ichiraku"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-ch1-prologue"]
-  - id: "lnk-0119-exam-before-manipulation"
-    kind: "before"
-    a: "sc-y0-0119-graduation-exam"
-    b: "sc-y0-0119-scroll-theft"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000002"]
-  - id: "lnk-0119-theft-before-hokage-response"
-    kind: "before"
-    a: "ev-y0-0119-naruto-steals-scroll"
-    b: "sc-y0-0119-hokage-response"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000002"]
-  - id: "lnk-0119-theft-before-confrontation"
-    kind: "before"
-    a: "sc-y0-0119-scroll-theft"
-    b: "sc-y0-0119-mizuki-confrontation"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000002"]
-  - id: "lnk-0119-confrontation-before-0120-resolution"
-    kind: "before"
-    a: "sc-y0-0119-mizuki-confrontation"
-    b: "sc-y0-0120-mizuki-resolution"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000002", "evd-v10-000003"]
-  - id: "lnk-0123-kakashi-retro-before-bell-test"
-    kind: "before"
-    a: "sc-y0-0123-kakashi-pretest-retro"
-    b: "sc-y0-0123-team7-bell-test"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-kakashi-pretest"]
-  - id: "lnk-0123-field8-before-ravine"
-    kind: "before"
-    a: "sc-y0-0123-field8-observation"
-    b: "sc-y0-0123-team9-ravine"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-ravine"]
-  - id: "lnk-0123-ravine-before-catacombs"
-    kind: "before"
-    a: "sc-y0-0123-team9-ravine"
-    b: "sc-y0-0123-team9-catacombs"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-catacombs"]
-  - id: "lnk-0123-catacombs-before-field9"
-    kind: "before"
-    a: "sc-y0-0123-team9-catacombs"
-    b: "sc-y0-0123-team9-field9"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-field9-combat"]
-  - id: "lnk-0123-field9-before-ichiraku"
-    kind: "before"
-    a: "sc-y0-0123-team9-field9"
-    b: "sc-y0-0123-ichiraku-evening"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-ichiraku-evening"]
-  - id: "lnk-0123-bell-test-before-ichiraku"
-    kind: "before"
-    a: "sc-y0-0123-team7-bell-test"
-    b: "sc-y0-0123-ichiraku-evening"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-ichiraku-evening"]
-  - id: "lnk-0123-ichiraku-before-reports"
-    kind: "before"
-    a: "sc-y0-0123-ichiraku-evening"
-    b: "sc-y0-0123-hokage-reports-evening"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-team9-hokage-reports-evening"]
-  - id: "lnk-prewaves-dranks-before-tazuna"
-    kind: "before"
-    a: "sc-prewaves-team7-d-ranks"
-    b: "sc-y0-0315-tazuna-assignment"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000023", "evd-manga-land-waves"]
-  - id: "lnk-0315-assignment-before-departure"
-    kind: "before"
-    a: "sc-y0-0315-tazuna-assignment"
-    b: "sc-y0-0315-team7-departs-konoha"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000023", "evd-manga-land-waves"]
-  - id: "lnk-0315-departure-before-0316-demons"
-    kind: "before"
-    a: "sc-y0-0315-team7-departs-konoha"
-    b: "sc-y0-0316-demon-brothers"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000023", "evd-v10-000025"]
-  - id: "lnk-0316-demons-before-0317-crossing"
-    kind: "before"
-    a: "sc-y0-0316-demon-brothers"
-    b: "sc-y0-0317-wave-crossing"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000025-C", "evd-v10-000026"]
-  - id: "lnk-0317-crossing-before-arrival"
-    kind: "before"
-    a: "sc-y0-0317-wave-crossing"
-    b: "sc-y0-0317-arrival-waves"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000026"]
-  - id: "lnk-0317-arrival-before-zabuza"
-    kind: "before"
-    a: "sc-y0-0317-arrival-waves"
-    b: "sc-y0-0318-zabuza-first-battle"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000026", "evd-v10-000027"]
-  - id: "lnk-0318-zabuza-before-0322-briefing"
-    kind: "before"
-    a: "sc-y0-0318-zabuza-first-battle"
-    b: "sc-y0-0322-tazuna-home-briefing"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000027", "evd-v10-000028"]
-  - id: "lnk-0322-briefing-before-tree-training"
-    kind: "before"
-    a: "sc-y0-0322-tazuna-home-briefing"
-    b: "sc-y0-0322-tree-climbing-training"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000028"]
-  - id: "lnk-0322-training-before-0328-haku"
-    kind: "before"
-    a: "sc-y0-0322-tree-climbing-training"
-    b: "sc-y0-0328-naruto-meets-haku"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000028", "evd-v10-000029"]
-  - id: "lnk-0328-haku-before-0329-complete"
-    kind: "before"
-    a: "sc-y0-0328-naruto-meets-haku"
-    b: "sc-y0-0329-tree-training-complete"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000029", "evd-v10-000030"]
-  - id: "lnk-0329-complete-before-0330-bridge"
-    kind: "before"
-    a: "sc-y0-0329-tree-training-complete"
-    b: "sc-y0-0330-bridge-final-battle"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000030", "evd-v10-000031"]
-  - id: "lnk-0330-home-intersects-bridge"
-    kind: "intersects"
-    a: "sc-y0-0330-tazuna-home-attack"
-    b: "sc-y0-0330-bridge-final-battle"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000032"]
-  - id: "lnk-0330-home-rescue-before-villagers"
-    kind: "before"
-    a: "ev-y0-0330-naruto-rescues-inari-tsunami"
-    b: "ev-y0-0330-villagers-drive-off-mercenaries"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000032"]
-  - id: "lnk-0330-bridge-before-burial"
-    kind: "before"
-    a: "sc-y0-0330-bridge-final-battle"
-    b: "sc-y0-0330-zabuza-haku-burial"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000032", "evd-manga-land-waves"]
-  - id: "lnk-0330-burial-before-0413-bridge"
-    kind: "before"
-    a: "sc-y0-0330-zabuza-haku-burial"
-    b: "sc-y0-0413-bridge-complete"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000032", "evd-v10-000033"]
-  - id: "lnk-0413-farewell-before-extra"
-    kind: "before"
-    a: "ev-y0-0413-team7-says-farewell"
-    b: "sc-y0-0413-shippuden180-extra"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-180-wave-return"]
-  - id: "lnk-0413-extra-before-return"
-    kind: "before"
-    a: "sc-y0-0413-shippuden180-extra"
-    b: "sc-y0-0413-team7-returns-konoha"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000033", "evd-v10-000034"]
-  - id: "lnk-0413-return-before-rivalry"
-    kind: "before"
-    a: "sc-y0-0413-team7-returns-konoha"
-    b: "sc-y0-0413-post-waves-rivalry"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000035", "evd-shippuden-258-post-waves"]
-  - id: "lnk-0624-arrival-before-sand-encounter"
-    kind: "before"
-    a: "sc-y0-0624-foreign-genin-arrive"
-    b: "sc-y0-0624-sand-konohamaru-encounter"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000039", "evd-v10-000039-B"]
-  - id: "lnk-0624-meeting-before-team7-choice"
-    kind: "before"
-    a: "sc-y0-0624-hokage-chunin-meeting"
-    b: "sc-y0-0624-kakashi-gives-team7-choice"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000039-E", "evd-v10-000039-F"]
-  - id: "lnk-0701-gathering-before-written"
-    kind: "before"
-    a: "sc-y0-0701-candidate-gathering"
-    b: "sc-y0-0701-written-exam"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000040", "evd-v10-000040-B"]
-  - id: "lnk-0701-written-before-forest"
-    kind: "before"
-    a: "sc-y0-0701-written-exam"
-    b: "sc-y0-0701-forest-start"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000040-B", "evd-v10-000040-C"]
-  - id: "lnk-0701-forest-before-orochimaru"
-    kind: "before"
-    a: "sc-y0-0701-forest-start"
-    b: "sc-y0-0701-orochimaru-attacks-team7"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000040-C", "evd-v10-000040-D"]
-  - id: "lnk-0701-orochimaru-intersects-anko"
-    kind: "intersects"
-    a: "sc-y0-0701-orochimaru-attacks-team7"
-    b: "sc-y0-0701-anko-orochimaru"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000040-D", "evd-v10-000040-F"]
-  - id: "lnk-0701-orochimaru-before-0702-clearing"
-    kind: "before"
-    a: "sc-y0-0701-orochimaru-attacks-team7"
-    b: "sc-y0-0702-team7-clearing-sound-attack"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000040-E", "evd-v10-000042"]
-  - id: "lnk-0705-search-intersects-karin"
-    kind: "intersects"
-    a: "sc-y0-0705-team7-resumes-search"
-    b: "sc-y0-0705-sasuke-karin"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000043", "evd-v10-000044"]
-  - id: "lnk-0705-search-before-0706-kabuto"
-    kind: "before"
-    a: "sc-y0-0705-team7-resumes-search"
-    b: "sc-y0-0706-team7-forest-completion"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000043", "evd-v10-000045"]
-  - id: "lnk-0706-forest-before-iruka-message"
-    kind: "before"
-    a: "sc-y0-0706-team7-forest-completion"
-    b: "sc-y0-0706-iruka-team7-tower-message"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-chunin-prelims", "evd-anime-37-iruka-tower"]
-  - id: "lnk-0706-iruka-message-before-prelim-announcement"
-    kind: "before"
-    a: "sc-y0-0706-iruka-team7-tower-message"
-    b: "sc-y0-0706-preliminaries-announced"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-chunin-prelims", "evd-anime-37-iruka-tower"]
-  - id: "lnk-0706-team7-tower-before-kabuto-return"
-    kind: "before"
-    a: "ev-y0-0706-team7-reaches-tower"
-    b: "sc-y0-0706-kabuto-returns-to-sound"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000045-C", "evd-v10-000045-D"]
-  - id: "lnk-0706-prelim-announcement-before-matches"
-    kind: "before"
-    a: "sc-y0-0706-preliminaries-announced"
-    b: "sc-y0-0706-preliminary-matches"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000045-E", "evd-v10-000046"]
-  - id: "lnk-0706-sasuke-match-before-seal"
-    kind: "before"
-    a: "ev-y0-0706-sasuke-defeats-yoroi"
-    b: "sc-y0-0706-kakashi-seals-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000046", "evd-v10-000046-B"]
-  - id: "lnk-0706-seal-intersects-prelims"
-    kind: "intersects"
-    a: "sc-y0-0706-kakashi-seals-sasuke"
-    b: "sc-y0-0706-preliminary-matches"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000046-B"]
-  - id: "lnk-0706-last-match-before-draw"
-    kind: "before"
-    a: "ev-y0-0706-dosu-defeats-choji"
-    b: "sc-y0-0706-finals-draw"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000046-K", "evd-v10-000046-L"]
-  - id: "lnk-0706-draw-before-hospital"
-    kind: "before"
-    a: "sc-y0-0706-finals-draw"
-    b: "sc-y0-0706-kabuto-hospital-infiltration"
-    basis: "project_decision"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000046-L", "evd-v10-000047"]
-  - id: "lnk-0706-draw-before-ebisu"
-    kind: "before"
-    a: "sc-y0-0706-finals-draw"
-    b: "sc-y0-0706-kakashi-assigns-ebisu"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000046-L", "evd-v10-000046-M"]
-  - id: "lnk-0706-hospital-before-hayate-check"
-    kind: "before"
-    a: "sc-y0-0706-kabuto-hospital-infiltration"
-    b: "sc-y0-0706-hayate-checks-yugao"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000047", "evd-v10-000051"]
-  - id: "lnk-0706-hayate-check-before-order"
-    kind: "before"
-    a: "sc-y0-0706-hayate-checks-yugao"
-    b: "sc-y0-0706-hiruzen-orders-hayate"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000051"]
-  - id: "lnk-0706-order-before-farewell"
-    kind: "before"
-    a: "sc-y0-0706-hiruzen-orders-hayate"
-    b: "sc-y0-0706-hayate-yugao-farewell"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000051"]
-  - id: "lnk-0706-farewell-before-eavesdrop"
-    kind: "before"
-    a: "sc-y0-0706-hayate-yugao-farewell"
-    b: "ev-y0-0706-hayate-eavesdrops"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000051", "evd-shippuden-307-308"]
-  - id: "lnk-0706-hayate-death-before-body-found"
-    kind: "before"
-    a: "ev-y0-0706-baki-kills-hayate"
-    b: "sc-y0-0707-yugao-finds-hayate"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000049-C", "evd-v10-000051-B"]
-  - id: "lnk-0706-jiraiya-before-0707-summoning"
-    kind: "before"
-    a: "ev-y0-0706-jiraiya-takes-over-training"
-    b: "sc-y0-0707-naruto-summoning-training"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000048", "evd-v10-000052"]
-  - id: "lnk-pre0727-rasa-before-invasion-plan"
-    kind: "before"
-    a: "sc-pre0727-rasa-assassination"
-    b: "sc-y0-0727-baki-orochimaru-invasion-plan"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000055", "evd-v10-000057"]
-  - id: "lnk-0727-summoning-before-0728-gamabunta"
-    kind: "before"
-    a: "sc-y0-0727-naruto-summoning-stalls"
-    b: "sc-y0-0728-naruto-gamabunta"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000057", "evd-v10-000058"]
-  - id: "lnk-0728-gamabunta-before-0731-wake"
-    kind: "before"
-    a: "sc-y0-0728-naruto-gamabunta"
-    b: "sc-y0-0731-naruto-hospital-lee"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000058", "evd-v10-000060"]
-  - id: "lnk-0731-hospital-before-gaara-night"
-    kind: "before"
-    a: "sc-y0-0731-naruto-hospital-lee"
-    b: "sc-y0-0731-gaara-visits-lee"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000059", "evd-v10-000060"]
-  - id: "lnk-0801-hinata-before-finals"
-    kind: "before"
-    a: "sc-y0-0801-hinata-encourages-naruto"
-    b: "sc-y0-0801-finals-morning"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000063", "evd-v10-000064"]
-  - id: "lnk-0801-naruto-neji-before-hanabi-view"
-    kind: "intersects"
-    a: "ev-y0-0801-naruto-defeats-neji"
-    b: "sc-y0-0801-hanabi-watches-finals"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000064", "evd-v10-000068"]
-  - id: "lnk-0801-finals-before-sasuke-gaara"
-    kind: "before"
-    a: "sc-y0-0801-finals-morning"
-    b: "sc-y0-0801-sasuke-gaara-final"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000064-C", "evd-v10-000064-D"]
-  - id: "lnk-0801-sasuke-gaara-before-invasion"
-    kind: "before"
-    a: "sc-y0-0801-sasuke-gaara-final"
-    b: "sc-y0-0801-invasion-begins-arena"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000064-E", "evd-v10-000065"]
-  - id: "lnk-0801-invasion-intersects-rooftop"
-    kind: "intersects"
-    a: "sc-y0-0801-invasion-begins-arena"
-    b: "sc-y0-0801-hiruzen-orochimaru-rooftop"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000065", "evd-v10-000065-B"]
-  - id: "lnk-0801-invasion-intersects-pursuit"
-    kind: "intersects"
-    a: "sc-y0-0801-invasion-begins-arena"
-    b: "sc-y0-0801-sasuke-gaara-pursuit"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000065", "evd-v10-000065-D", "evd-v10-000069"]
-  - id: "lnk-0801-pursuit-before-gaara-battle"
-    kind: "before"
-    a: "sc-y0-0801-sasuke-gaara-pursuit"
-    b: "sc-y0-0801-naruto-gaara-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000065-D", "evd-v10-000065-E", "evd-v10-000069"]
-  - id: "lnk-0801-hiruzen-death-before-invasion-fails"
-    kind: "before"
-    a: "ev-y0-0801-hiruzen-dies"
-    b: "sc-y0-0801-invasion-fails"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000065-C", "evd-v10-000065-F"]
-  - id: "lnk-0801-gaara-defeat-before-invasion-fails"
-    kind: "before"
-    a: "ev-y0-0801-naruto-defeats-gaara"
-    b: "sc-y0-0801-invasion-fails"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000065-E", "evd-v10-000065-F"]
-  - id: "lnk-0801-invasion-fails-before-0802-aftermath"
-    kind: "before"
-    a: "sc-y0-0801-invasion-fails"
-    b: "sc-y0-0802-konoha-aftermath"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000065-F", "evd-v10-000072"]
-  - id: "lnk-0802-aftermath-before-funeral"
-    kind: "before"
-    a: "sc-y0-0802-konoha-aftermath"
-    b: "sc-y0-0803-hiruzen-funeral"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000072", "evd-v10-000073"]
-  - id: "lnk-0801-dispatch-before-shikamaru-delay"
-    kind: "before"
-    a: "ev-y0-0801-kakashi-dispatches-pursuit-team"
-    b: "sc-y0-0801-shikamaru-delays-sound"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000069", "evd-v10-000069-B"]
-  - id: "lnk-0801-sasuke-pursuit-before-shino-kankuro"
-    kind: "before"
-    a: "ev-y0-0801-sasuke-pursues-gaara"
-    b: "sc-y0-0801-shino-kankuro"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-v10-000065-D", "evd-v10-000069-C"]
-  - id: "lnk-0803-jiraiya-refusal-before-departure"
-    kind: "before"
-    a: "sc-y0-0803-jiraiya-refuses-hokage"
-    b: "sc-y0-0803-naruto-jiraiya-depart"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000073-C", "evd-v10-000073-E"]
-  - id: "lnk-0803-konoha-akatsuki-before-0804-inn"
-    kind: "before"
-    a: "sc-y0-0803-itachi-kisame-konoha-fight"
-    b: "sc-y0-0804-itachi-kisame-find-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000073-D", "evd-v10-000076"]
-  - id: "lnk-0803-departure-before-0804-inn"
-    kind: "before"
-    a: "sc-y0-0803-naruto-jiraiya-depart"
-    b: "sc-y0-0804-itachi-kisame-find-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000073-E", "evd-v10-000076"]
-  - id: "lnk-0822-stage1-before-0824-power"
-    kind: "before"
-    a: "sc-y0-0822-rasengan-stage1"
-    b: "sc-y0-0824-rasengan-power-training"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000077", "evd-v10-000078"]
-  - id: "lnk-0824-power-before-0825-stage2"
-    kind: "before"
-    a: "sc-y0-0824-rasengan-power-training"
-    b: "sc-y0-0825-naruto-completes-rasengan-stage2"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000078", "evd-v10-000079-B"]
-  - id: "lnk-0825-orochimaru-before-jiraiya-meets-tsunade"
-    kind: "before"
-    a: "sc-y0-0825-orochimaru-offers-tsunade"
-    b: "sc-y0-0825-jiraiya-naruto-meet-tsunade"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000079", "evd-v10-000079-C"]
-  - id: "lnk-0825-stage2-before-wager"
-    kind: "before"
-    a: "sc-y0-0825-naruto-completes-rasengan-stage2"
-    b: "ev-y0-0825-tsunade-naruto-wager"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000079-B", "evd-v10-000079-E"]
-  - id: "lnk-0825-wager-before-0826-final-stage"
-    kind: "before"
-    a: "ev-y0-0825-tsunade-naruto-wager"
-    b: "sc-y0-0826-naruto-final-rasengan-stage"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000079-E", "evd-v10-000080"]
-  - id: "lnk-0825-offer-before-0826-weighs"
-    kind: "before"
-    a: "sc-y0-0825-orochimaru-offers-tsunade"
-    b: "sc-y0-0826-tsunade-weighs-offer"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000079", "evd-v10-000080"]
-  - id: "lnk-0826-final-stage-before-0831-deadline"
-    kind: "before"
-    a: "sc-y0-0826-naruto-final-rasengan-stage"
-    b: "sc-y0-0831-wager-deadline"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000080", "evd-v10-000081"]
-  - id: "lnk-0831-drugs-before-reveal"
-    kind: "before"
-    a: "sc-y0-0831-tsunade-drugs-jiraiya"
-    b: "sc-y0-0831-shizune-reveals-deal"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000081"]
-  - id: "lnk-0831-pursuit-before-0901-meet"
-    kind: "before"
-    a: "sc-y0-0831-shizune-reveals-deal"
-    b: "sc-y0-0901-tsunade-meets-orochimaru"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000081", "evd-v10-000082"]
-  - id: "lnk-0901-meet-before-sannin-battle"
-    kind: "before"
-    a: "sc-y0-0901-tsunade-meets-orochimaru"
-    b: "sc-y0-0901-sannin-battle"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000082", "evd-v10-000082-C"]
-  - id: "lnk-0901-battle-before-tsunade-accepts"
-    kind: "before"
-    a: "sc-y0-0901-sannin-battle"
-    b: "sc-y0-0901-tsunade-accepts-hokage"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000082-G", "evd-v10-000082-H"]
-  - id: "lnk-0901-accepts-before-0902-recovery"
-    kind: "before"
-    a: "sc-y0-0901-tsunade-accepts-hokage"
-    b: "sc-y0-0902-naruto-recovers"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000082-H", "evd-v10-000083"]
-  - id: "lnk-0902-recovery-before-hot-springs"
-    kind: "before"
-    a: "sc-y0-0902-naruto-recovers"
-    b: "sc-y0-0902-hot-springs-debt-filler"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000083", "evd-v10-000084"]
-  - id: "lnk-0902-hot-springs-before-return"
-    kind: "before"
-    a: "sc-y0-0902-hot-springs-debt-filler"
-    b: "sc-y0-0902-tsunade-returns-konoha"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-97", "evd-v10-000083-B"]
-  - id: "lnk-0902-return-before-inauguration"
-    kind: "before"
-    a: "sc-y0-0902-tsunade-returns-konoha"
-    b: "sc-y0-0902-tsunade-inauguration"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000083-B", "evd-v10-000083-C"]
-  - id: "lnk-0902-konohamaru-intersects-inauguration"
-    kind: "intersects"
-    a: "sc-y0-0902-konohamaru-inauguration-filler"
-    b: "sc-y0-0902-tsunade-inauguration"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-99", "evd-v10-000083-C"]
-  - id: "lnk-0903-mask-plan-before-moya"
-    kind: "before"
-    a: "sc-y0-0903-team7-unmask-plan"
-    b: "sc-y0-0903-moya-interruption"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-101"]
-  - id: "lnk-0903-moya-before-second-mask"
-    kind: "before"
-    a: "sc-y0-0903-moya-interruption"
-    b: "sc-y0-0903-kakashi-second-mask"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-101"]
-  - id: "lnk-alt-0903-sukea-before-archive"
-    kind: "before"
-    a: "sc-alt-y0-0903-sukea-mask-hunt"
-    b: "sc-alt-y0-0903-secret-archive-infiltration"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-469"]
-  - id: "lnk-alt-0903-archive-before-rescue"
-    kind: "before"
-    a: "sc-alt-y0-0903-secret-archive-infiltration"
-    b: "sc-alt-y0-0903-fake-rescue-sukea-reveal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-469"]
-  - id: "lnk-alt-0903-snow-escort-before-identity"
-    kind: "before"
-    a: "sc-alt-y0-0903-land-snow-escort"
-    b: "sc-alt-y0-0903-koyuki-identity"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-land-of-snow"]
-  - id: "lnk-alt-0903-snow-identity-before-armored"
-    kind: "before"
-    a: "sc-alt-y0-0903-koyuki-identity"
-    b: "sc-alt-y0-0903-land-snow-armored-shinobi"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-land-of-snow"]
-  - id: "lnk-alt-0903-snow-armored-before-doto"
-    kind: "before"
-    a: "sc-alt-y0-0903-land-snow-armored-shinobi"
-    b: "sc-alt-y0-0903-naruto-defeats-doto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-land-of-snow"]
-  - id: "lnk-0904-tea-assignment-before-aoi"
-    kind: "before"
-    a: "sc-y0-0904-tsunade-assigns-tea-mission"
-    b: "sc-y0-0904-aoi-attacks-idate-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-102-106"]
-  - id: "lnk-0904-aoi-before-0905-rescue"
-    kind: "before"
-    a: "sc-y0-0904-aoi-attacks-idate-naruto"
-    b: "sc-y0-0905-team7-rescues-idate"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-102-106"]
-  - id: "lnk-0905-rescue-before-nagi"
-    kind: "before"
-    a: "sc-y0-0905-team7-rescues-idate"
-    b: "sc-y0-0905-nagi-aoi-betrayal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-102-106"]
-  - id: "lnk-0905-nagi-before-0906-aoi"
-    kind: "before"
-    a: "sc-y0-0905-nagi-aoi-betrayal"
-    b: "sc-y0-0906-sasuke-naruto-vs-aoi"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-102-106"]
-  - id: "lnk-0906-aoi-before-0907-aoi"
-    kind: "before"
-    a: "sc-y0-0906-sasuke-naruto-vs-aoi"
-    b: "sc-y0-0907-naruto-defeats-aoi"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-102-106"]
-  - id: "lnk-0907-aoi-before-race-finish"
-    kind: "before"
-    a: "sc-y0-0907-naruto-defeats-aoi"
-    b: "sc-y0-0907-idate-wins-race"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-v10-000097"]
-  - id: "lnk-0907-race-before-reconcile"
-    kind: "before"
-    a: "sc-y0-0907-idate-wins-race"
-    b: "sc-y0-0907-idate-reconciles"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000097"]
-  - id: "lnk-0904-waterfall-escort-before-threat"
-    kind: "before"
-    a: "sc-y0-0904-waterfall-escort"
-    b: "sc-y0-0904-waterfall-threat-revealed"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-ova-waterfall"]
-  - id: "lnk-0904-waterfall-threat-before-0905-capture"
-    kind: "before"
-    a: "sc-y0-0904-waterfall-threat-revealed"
-    b: "sc-y0-0905-waterfall-villagers-captured"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-ova-waterfall"]
-  - id: "lnk-0905-capture-before-crisis"
-    kind: "before"
-    a: "sc-y0-0905-waterfall-villagers-captured"
-    b: "sc-y0-0905-waterfall-shibuki-crisis"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-ova-waterfall"]
-  - id: "lnk-0905-crisis-before-0906-resist"
-    kind: "before"
-    a: "sc-y0-0905-waterfall-shibuki-crisis"
-    b: "sc-y0-0906-waterfall-resists-suien"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-ova-waterfall"]
-  - id: "lnk-0906-resist-before-defense-win"
-    kind: "before"
-    a: "sc-y0-0906-waterfall-resists-suien"
-    b: "sc-y0-0906-waterfall-defense-wins"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-ova-waterfall"]
-  - id: "lnk-alt-0905-waterfall-novel-before-ending"
-    kind: "before"
-    a: "sc-alt-y0-0905-waterfall-novel-siege"
-    b: "sc-alt-y0-0906-waterfall-novel-ending"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-novel-waterfall"]
-  - id: "lnk-alt-0909-un2-before-0910-un2"
-    kind: "before"
-    a: "sc-alt-y0-0909-ultimate-ninja2-threat"
-    b: "sc-alt-y0-0910-ultimate-ninja2-seal-battles"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-ultimate-ninja-2"]
-  - id: "lnk-alt-0910-un2-before-0911-un2"
-    kind: "before"
-    a: "sc-alt-y0-0910-ultimate-ninja2-seal-battles"
-    b: "sc-alt-y0-0911-ultimate-ninja2-ending"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-ultimate-ninja-2"]
-  - id: "lnk-0917-patrol-before-0918-conclusion"
-    kind: "before"
-    a: "sc-y0-0917-border-patrol-kosuke"
-    b: "sc-y0-0918-border-patrol-conclusion"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-190"]
-  - id: "lnk-0919-vision-before-herb"
-    kind: "before"
-    a: "sc-y0-0919-hinata-vision-loss"
-    b: "sc-y0-0919-clear-eye-herb-mission"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-306"]
-  - id: "lnk-0919-herb-before-fireworks"
-    kind: "before"
-    a: "sc-y0-0919-clear-eye-herb-mission"
-    b: "sc-y0-0919-hinata-fireworks"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-306"]
-  - id: "lnk-0920-shu-assignment-before-infiltration"
-    kind: "before"
-    a: "sc-y0-0920-shu-mission-assignment"
-    b: "sc-y0-0920-shu-infiltration"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-309-310"]
-  - id: "lnk-0920-shu-infiltration-intersects-extraction"
-    kind: "intersects"
-    a: "sc-y0-0920-shu-infiltration"
-    b: "sc-y0-0920-shu-extraction"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-309-310"]
-  - id: "lnk-0920-shu-extraction-before-0921-exposed"
-    kind: "intersects"
-    a: "sc-y0-0920-shu-extraction"
-    b: "sc-y0-0921-naruto-disguise-exposed"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-shippuden-309-310"]
-  - id: "lnk-0921-exposed-before-castle-attack"
-    kind: "before"
-    a: "sc-y0-0921-naruto-disguise-exposed"
-    b: "sc-y0-0921-castle-akatsuki-attack"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-309-310"]
-  - id: "lnk-0921-castle-before-shu-complete"
-    kind: "before"
-    a: "sc-y0-0921-castle-akatsuki-attack"
-    b: "sc-y0-0921-shu-mission-complete"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-309-310"]
-  - id: "lnk-0922-hospital-before-rooftop"
-    kind: "before"
-    a: "sc-y0-0922-sasuke-hospital-frustration"
-    b: "sc-y0-0922-hospital-rooftop-duel"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000117", "evd-v10-000117-B"]
-  - id: "lnk-0922-rooftop-before-kakashi-talk"
-    kind: "before"
-    a: "sc-y0-0922-hospital-rooftop-duel"
-    b: "sc-y0-0922-kakashi-talks-to-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000118", "evd-v10-000119"]
-  - id: "lnk-0922-kakashi-talk-before-sound-four"
-    kind: "before"
-    a: "sc-y0-0922-kakashi-talks-to-sasuke"
-    b: "sc-y0-0922-sound-four-recruit-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000119", "evd-v10-000118-B"]
-  - id: "lnk-0922-sound-four-before-decision"
-    kind: "before"
-    a: "sc-y0-0922-sound-four-recruit-sasuke"
-    b: "sc-y0-0922-sasuke-decides-to-leave"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000118-B", "evd-v10-000118-C"]
-  - id: "lnk-0922-decision-before-sakura"
-    kind: "before"
-    a: "sc-y0-0922-sasuke-decides-to-leave"
-    b: "sc-y0-0922-sakura-confronts-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000118-C", "evd-v10-000118-D"]
-  - id: "lnk-0923-sakura-report-before-order"
-    kind: "before"
-    a: "sc-y0-0923-sakura-reports-sasuke-missing"
-    b: "sc-y0-0923-tsunade-orders-retrieval"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000121", "evd-v10-000121-B"]
-  - id: "lnk-0923-order-before-assemble"
-    kind: "before"
-    a: "sc-y0-0923-tsunade-orders-retrieval"
-    b: "sc-y0-0923-shikamaru-assembles-retrieval-team"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000121-B"]
-  - id: "lnk-0923-assemble-before-promise"
-    kind: "before"
-    a: "sc-y0-0923-shikamaru-assembles-retrieval-team"
-    b: "sc-y0-0923-naruto-promises-sakura"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000121-B", "evd-v10-000121-C"]
-  - id: "lnk-0923-promise-before-departure"
-    kind: "before"
-    a: "sc-y0-0923-naruto-promises-sakura"
-    b: "sc-y0-0923-retrieval-team-departs"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000121-C", "evd-v10-000121-E"]
-  - id: "lnk-0923-departure-before-choji"
-    kind: "before"
-    a: "sc-y0-0923-retrieval-team-departs"
-    b: "sc-y0-0923-choji-vs-jirobo"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000121-E", "evd-v10-000121-F"]
-  - id: "lnk-0923-choji-before-neji"
-    kind: "before"
-    a: "sc-y0-0923-choji-vs-jirobo"
-    b: "sc-y0-0923-neji-vs-kidomaru"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000121-F", "evd-v10-000121-G"]
-  - id: "lnk-0923-guy-talk-before-lee-operation"
-    kind: "before"
-    a: "sc-y0-0923-guy-convinces-lee-surgery"
-    b: "sc-y0-0923-rock-lee-operation"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000120", "evd-v10-000121-D"]
-  - id: "lnk-0924-kiba-before-kankuro"
-    kind: "before"
-    a: "sc-y0-0924-kiba-sakon-ukon"
-    b: "sc-y0-0924-kankuro-rescues-kiba"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122", "evd-v10-000122-G"]
-  - id: "lnk-0924-shikamaru-before-temari"
-    kind: "before"
-    a: "sc-y0-0924-shikamaru-vs-tayuya"
-    b: "sc-y0-0924-temari-rescues-shikamaru"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-B", "evd-v10-000122-H"]
-  - id: "lnk-0924-kimimaro-before-lee"
-    kind: "before"
-    a: "sc-y0-0924-kimimaro-releases-sasuke"
-    b: "sc-y0-0924-lee-vs-kimimaro"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-C", "evd-v10-000122-E"]
-  - id: "lnk-0924-lee-before-naruto-resumes"
-    kind: "before"
-    a: "ev-y0-0924-lee-relieves-naruto-kimimaro"
-    b: "sc-y0-0924-naruto-resumes-pursuit"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-E", "evd-v10-000122-F"]
-  - id: "lnk-0924-lee-before-gaara"
-    kind: "before"
-    a: "sc-y0-0924-lee-vs-kimimaro"
-    b: "sc-y0-0924-gaara-vs-kimimaro"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-E", "evd-v10-000122-I"]
-  - id: "lnk-0924-gaara-before-kimimaro-death"
-    kind: "before"
-    a: "sc-y0-0924-gaara-vs-kimimaro"
-    b: "sc-y0-0924-kimimaro-dies"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-I", "evd-v10-000122-J"]
-  - id: "lnk-0924-pursuit-before-valley"
-    kind: "before"
-    a: "sc-y0-0924-naruto-resumes-pursuit"
-    b: "sc-y0-0924-valley-reunion"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-F", "evd-v10-000122-K"]
-  - id: "lnk-0924-valley-reunion-before-choice"
-    kind: "before"
-    a: "sc-y0-0924-valley-reunion"
-    b: "sc-y0-0924-valley-sasuke-choice"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-K", "evd-v10-000122-L"]
-  - id: "lnk-0924-valley-choice-before-power"
-    kind: "before"
-    a: "sc-y0-0924-valley-sasuke-choice"
-    b: "sc-y0-0924-valley-power-escalation"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-L", "evd-v10-000122-M"]
-  - id: "lnk-0924-valley-power-before-clash"
-    kind: "before"
-    a: "sc-y0-0924-valley-power-escalation"
-    b: "sc-y0-0924-valley-final-clash"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-M", "evd-v10-000122-N"]
-  - id: "lnk-0924-valley-clash-before-spare"
-    kind: "before"
-    a: "sc-y0-0924-valley-final-clash"
-    b: "sc-y0-0924-sasuke-spares-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000122-N", "evd-v10-000122-O"]
-  - id: "lnk-0925-kakashi-before-naruto-wakes"
-    kind: "before"
-    a: "sc-y0-0925-kakashi-finds-naruto"
-    b: "ev-y0-0925-naruto-wakes-hospital"
-    basis: "logical"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000123", "evd-v10-000123-C"]
-  - id: "lnk-0925-wakes-before-promise"
-    kind: "before"
-    a: "ev-y0-0925-naruto-wakes-hospital"
-    b: "ev-y0-0925-naruto-admits-failed-promise"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-sasuke-recovery"]
-  - id: "lnk-0925-promise-before-jiraiya"
-    kind: "before"
-    a: "sc-y0-0925-naruto-sakura-promise"
-    b: "sc-y0-0925-jiraiya-training-offer"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000123-D", "evd-v10-000123-E"]
-  - id: "lnk-0925-promise-before-sakura-tsunade"
-    kind: "before"
-    a: "sc-y0-0925-naruto-sakura-promise"
-    b: "sc-y0-0925-sakura-asks-tsunade"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000123-D", "evd-v10-000123-F"]
-  - id: "lnk-0926-rice-before-0927-sasame"
-    kind: "before"
-    a: "sc-y0-0926-rice-fields-mission-begins"
-    b: "sc-y0-0927-sasame-and-fuma"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-136-140"]
-  - id: "lnk-0927-sasame-before-fuma-ambush"
-    kind: "before"
-    a: "sc-y0-0927-sasame-and-fuma"
-    b: "sc-y0-0927-fuma-ambush"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-136-140"]
-  - id: "lnk-0927-fuma-before-0928-residence"
-    kind: "before"
-    a: "sc-y0-0927-fuma-ambush"
-    b: "sc-y0-0928-orochimaru-residence-infiltration"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-136-140"]
-  - id: "lnk-0928-residence-before-arashi"
-    kind: "before"
-    a: "sc-y0-0928-orochimaru-residence-infiltration"
-    b: "sc-y0-0928-arashi-chimera"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-136-140"]
-  - id: "lnk-0930-team8-fail-before-shino-home"
-    kind: "before"
-    a: "sc-y0-0930-team8-suika-failed-capture"
-    b: "sc-y0-0930-shino-withdraws"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-236"]
-  - id: "lnk-0930-shino-home-before-hot-springs"
-    kind: "before"
-    a: "sc-y0-0930-shino-withdraws"
-    b: "sc-y0-0930-team8-hot-springs-training"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-236"]
-  - id: "lnk-0930-hot-springs-before-suika-rematch"
-    kind: "before"
-    a: "sc-y0-0930-team8-hot-springs-training"
-    b: "sc-y0-0930-team8-suika-rematch"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-236"]
-  - id: "lnk-1001-warning-before-prison"
-    kind: "before"
-    a: "sc-y0-1001-tsunade-mizuki-warning"
-    b: "sc-y0-1001-mizuki-prison-break"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1001-prison-before-1002-injured"
-    kind: "before"
-    a: "sc-y0-1001-mizuki-prison-break"
-    b: "sc-y0-1002-naruto-finds-asuma-kurenai"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1002-injured-before-tonton"
-    kind: "before"
-    a: "sc-y0-1002-naruto-finds-asuma-kurenai"
-    b: "sc-y0-1002-tonton-tracking"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1002-tonton-before-brothers"
-    kind: "before"
-    a: "sc-y0-1002-tonton-tracking"
-    b: "sc-y0-1002-naruto-vs-fujin-raijin"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1002-tonton-before-iruka-branch"
-    kind: "before"
-    a: "sc-y0-1002-tonton-tracking"
-    b: "sc-y0-1002-iruka-pursues-mizuki"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1002-tsubaki-before-1003-joins"
-    kind: "before"
-    a: "sc-y0-1002-mizuki-meets-tsubaki"
-    b: "sc-y0-1003-tsubaki-joins-pursuit"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1002-brothers-before-1003-team10"
-    kind: "before"
-    a: "sc-y0-1002-naruto-vs-fujin-raijin"
-    b: "sc-y0-1003-team10-holds-brothers"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1002-iruka-before-1003-test-building"
-    kind: "before"
-    a: "sc-y0-1002-iruka-pursues-mizuki"
-    b: "sc-y0-1003-iruka-mizuki-test-building"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1003-test-building-before-tsubaki-joins"
-    kind: "before"
-    a: "sc-y0-1003-iruka-mizuki-test-building"
-    b: "sc-y0-1003-tsubaki-joins-pursuit"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1002-naruto-branch-before-tsubaki-joins"
-    kind: "before"
-    a: "sc-y0-1002-naruto-vs-fujin-raijin"
-    b: "sc-y0-1003-tsubaki-joins-pursuit"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1003-tsubaki-before-hideout"
-    kind: "before"
-    a: "sc-y0-1003-tsubaki-joins-pursuit"
-    b: "sc-y0-1003-mizuki-hideout-formula"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1003-team10-before-1004-tsunade"
-    kind: "before"
-    a: "sc-y0-1003-team10-holds-brothers"
-    b: "sc-y0-1004-tsunade-stops-brothers"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1003-hideout-before-1004-powered"
-    kind: "before"
-    a: "sc-y0-1003-mizuki-hideout-formula"
-    b: "sc-y0-1004-powered-mizuki-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1004-powered-before-aftermath"
-    kind: "before"
-    a: "sc-y0-1004-powered-mizuki-battle"
-    b: "sc-y0-1004-mizuki-aftermath"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-142-147"]
-  - id: "lnk-1005-animal-shino-before-lee"
-    kind: "before"
-    a: "sc-y0-1005-animal-district-shino-plants"
-    b: "sc-y0-1005-animal-district-lee-kangaroo"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-185"]
-  - id: "lnk-1005-animal-lee-before-condor"
-    kind: "before"
-    a: "sc-y0-1005-animal-district-lee-kangaroo"
-    b: "sc-y0-1005-animal-district-naruto-kotetsu-condor"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-185"]
-  - id: "lnk-1005-animal-condor-before-four-warriors"
-    kind: "before"
-    a: "sc-y0-1005-animal-district-naruto-kotetsu-condor"
-    b: "sc-y0-1005-animal-district-four-warriors"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-185"]
-  - id: "lnk-alt-1005-gelel-open-before-caravan"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-ferret-ambush"
-    b: "sc-alt-y0-1005-gelel-caravan-recovery"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-alt-1005-gelel-open-before-shikamaru"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-ferret-ambush"
-    b: "sc-alt-y0-1005-gelel-shikamaru-fortress"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-alt-1005-gelel-caravan-before-haido"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-caravan-recovery"
-    b: "sc-alt-y0-1005-gelel-haido-meeting"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-alt-1005-gelel-shikamaru-before-caravan-attack"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-shikamaru-fortress"
-    b: "sc-alt-y0-1005-gelel-caravan-attack"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-alt-1005-gelel-haido-before-caravan-attack"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-haido-meeting"
-    b: "sc-alt-y0-1005-gelel-caravan-attack"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-alt-1005-gelel-caravan-attack-before-mine"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-caravan-attack"
-    b: "sc-alt-y0-1005-gelel-mine-convergence"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-alt-1005-gelel-mine-before-seal"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-mine-convergence"
-    b: "sc-alt-y0-1005-gelel-sealing-chamber"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-alt-1005-gelel-seal-before-collapse"
-    kind: "before"
-    a: "sc-alt-y0-1005-gelel-sealing-chamber"
-    b: "sc-alt-y0-1005-gelel-mine-collapse"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-movie-gelel"]
-  - id: "lnk-1006-bikocho-hospital-before-approval"
-    kind: "before"
-    a: "sc-y0-1006-kurenai-hospital-bikochu-plan"
-    b: "sc-y0-1006-tsunade-approves-bikochu"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1006-bikocho-approval-before-waterfall"
-    kind: "before"
-    a: "sc-y0-1006-tsunade-approves-bikochu"
-    b: "sc-y0-1006-hinata-waterfall-training"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1006-waterfall-before-1007-search"
-    kind: "before"
-    a: "sc-y0-1006-hinata-waterfall-training"
-    b: "sc-y0-1007-bikochu-habitat-search"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1007-search-before-hinata-kidnap"
-    kind: "before"
-    a: "sc-y0-1007-bikochu-habitat-search"
-    b: "sc-y0-1007-hinata-kidnapped-kamizuru"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1007-kidnap-before-1008-trap"
-    kind: "before"
-    a: "sc-y0-1007-hinata-kidnapped-kamizuru"
-    b: "sc-y0-1008-kamizuru-exchange-trap"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1007-kidnap-before-1008-hinata-river"
-    kind: "before"
-    a: "sc-y0-1007-hinata-kidnapped-kamizuru"
-    b: "sc-y0-1008-hinata-river-escape"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1008-trap-before-hinata-rescue"
-    kind: "before"
-    a: "sc-y0-1008-kamizuru-exchange-trap"
-    b: "sc-y0-1008-hinata-protects-team"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1008-river-before-hinata-rescue"
-    kind: "before"
-    a: "sc-y0-1008-hinata-river-escape"
-    b: "sc-y0-1008-hinata-protects-team"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1008-hinata-rescue-before-scent-failure"
-    kind: "before"
-    a: "sc-y0-1008-hinata-protects-team"
-    b: "sc-y0-1008-bikochu-scent-failure"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-148-151"]
-  - id: "lnk-1010-kurosuki-assigned-before-curry"
-    kind: "before"
-    a: "sc-y0-1010-kurosuki-mission-assigned"
-    b: "sc-y0-1010-curry-shop-karashi"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1010-curry-before-1011-rescue"
-    kind: "before"
-    a: "sc-y0-1010-curry-shop-karashi"
-    b: "sc-y0-1011-kurosuki-rescue-karashi-betrayal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1011-rescue-before-raiga-fight"
-    kind: "before"
-    a: "sc-y0-1011-kurosuki-rescue-karashi-betrayal"
-    b: "sc-y0-1011-raiga-ranmaru-fog-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1011-raiga-before-1012-ambush"
-    kind: "before"
-    a: "sc-y0-1011-raiga-ranmaru-fog-battle"
-    b: "sc-y0-1012-kurosuki-ambush-karashi-spared"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1012-ambush-before-revival"
-    kind: "before"
-    a: "sc-y0-1012-kurosuki-ambush-karashi-spared"
-    b: "sc-y0-1012-ranmaru-revives-raiga"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1012-revival-before-1013-ranmaru-turns"
-    kind: "before"
-    a: "sc-y0-1012-ranmaru-revives-raiga"
-    b: "sc-y0-1013-curry-shop-ranmaru-turns"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1013-ranmaru-turns-before-curry-rescue"
-    kind: "before"
-    a: "sc-y0-1013-curry-shop-ranmaru-turns"
-    b: "sc-y0-1013-lightning-pass-curry-rescue"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1013-curry-before-1014-final"
-    kind: "before"
-    a: "sc-y0-1013-lightning-pass-curry-rescue"
-    b: "sc-y0-1014-raiga-final-defeat"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-1014-final-before-ranmaru-new-life"
-    kind: "before"
-    a: "sc-y0-1014-raiga-final-defeat"
-    b: "sc-y0-1014-ranmaru-new-life"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-alt-1012-uc-before-1013-counteroffensive"
-    kind: "before"
-    a: "sc-alt-y0-1012-uzumaki-chronicles-opening"
-    b: "sc-alt-y0-1013-uzumaki-chronicles-counteroffensive"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-game-uzumaki-chronicles"]
-  - id: "lnk-alt-1013-uc-before-1014-finale"
-    kind: "before"
-    a: "sc-alt-y0-1013-uzumaki-chronicles-counteroffensive"
-    b: "sc-alt-y0-1014-uzumaki-chronicles-finale"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-game-uzumaki-chronicles"]
-  - id: "lnk-1015-academy-assign-before-survival"
-    kind: "before"
-    a: "sc-y0-1015-academy-lead-assignment"
-    b: "sc-y0-1015-academy-survival-mountain"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-158"]
-  - id: "lnk-1015-survival-before-debrief"
-    kind: "before"
-    a: "sc-y0-1015-academy-survival-mountain"
-    b: "sc-y0-1015-academy-lead-debrief"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-158"]
-  - id: "lnk-1017-gosunkugi-open-before-sazanami-cabin"
-    kind: "before"
-    a: "sc-y0-1017-gosunkugi-mission-opening"
-    b: "sc-y0-1017-sazanami-wounded-identity"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-159-160"]
-  - id: "lnk-1017-sazanami-before-1018-ok-temple"
-    kind: "before"
-    a: "sc-y0-1017-sazanami-wounded-identity"
-    b: "sc-y0-1018-ok-temple-showdown"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-159-160"]
-  - id: "lnk-1019-impostors-before-real-return"
-    kind: "before"
-    a: "sc-y0-1019-mondai-potcha-infiltration"
-    b: "sc-y0-1019-real-guy-lee-return"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-161"]
-  - id: "lnk-1020-birds-arrival-before-first-warrior"
-    kind: "before"
-    a: "sc-y0-1020-birds-mission-arrival"
-    b: "sc-y0-1020-first-cursed-warrior"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-162-167"]
-  - id: "lnk-1020-first-warrior-before-1021-komei"
-    kind: "before"
-    a: "sc-y0-1020-first-cursed-warrior"
-    b: "sc-y0-1021-komei-cursed-warrior-investigation"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-162-167"]
-  - id: "lnk-1021-komei-before-prison"
-    kind: "before"
-    a: "sc-y0-1021-komei-cursed-warrior-investigation"
-    b: "sc-y0-1021-naruto-prison-cursed-warrior"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-162-167"]
-  - id: "lnk-1021-prison-before-1022-rescue"
-    kind: "before"
-    a: "sc-y0-1021-naruto-prison-cursed-warrior"
-    b: "sc-y0-1022-komei-rescue-moso-confrontation"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-162-167"]
-  - id: "lnk-alt-1020-potn2-before-1021-trials"
-    kind: "before"
-    a: "sc-alt-y0-1020-path-ninja-mirrors-opening"
-    b: "sc-alt-y0-1021-path-ninja-mirrors-trials"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-path-ninja-2"]
-  - id: "lnk-alt-1021-potn2-before-1022-finale"
-    kind: "before"
-    a: "sc-alt-y0-1021-path-ninja-mirrors-trials"
-    b: "sc-alt-y0-1022-path-ninja-spirit-beast-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-path-ninja-2"]
-  - id: "lnk-1022-birds-before-1023-reveal"
-    kind: "before"
-    a: "sc-y0-1022-komei-rescue-moso-confrontation"
-    b: "sc-y0-1023-toki-hoki-reveal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-166-167"]
-  - id: "lnk-1023-reveal-before-battle"
-    kind: "before"
-    a: "sc-y0-1023-toki-hoki-reveal"
-    b: "sc-y0-1023-birds-final-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-166-167"]
-  - id: "lnk-1023-battle-before-aftermath"
-    kind: "before"
-    a: "sc-y0-1023-birds-final-battle"
-    b: "sc-y0-1023-toki-daimyo-aftermath"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-166-167"]
-  - id: "lnk-1024-ayame-before-training"
-    kind: "before"
-    a: "sc-y0-1024-ayame-kidnapped"
-    b: "sc-y0-1024-ramen-training"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-168"]
-  - id: "lnk-1024-training-before-showdown"
-    kind: "before"
-    a: "sc-y0-1024-ramen-training"
-    b: "sc-y0-1024-cooking-nin-showdown"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-168"]
-  - id: "lnk-1026-kaima-depart-before-isaribi-save"
-    kind: "before"
-    a: "sc-y0-1026-kaima-mission-departure"
-    b: "sc-y0-1026-isaribi-saves-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1026-isaribi-save-before-1027-reveal"
-    kind: "before"
-    a: "sc-y0-1026-isaribi-saves-naruto"
-    b: "sc-y0-1027-isaribi-kaima-reveal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1027-kaima-reveal-before-anko-memory"
-    kind: "before"
-    a: "sc-y0-1027-isaribi-kaima-reveal"
-    b: "sc-y0-1027-anko-memory-lab"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1027-anko-memory-before-1028-demon-island"
-    kind: "before"
-    a: "sc-y0-1027-anko-memory-lab"
-    b: "sc-y0-1028-demon-island-infiltration"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1028-demon-before-isaribi-break"
-    kind: "before"
-    a: "sc-y0-1028-demon-island-infiltration"
-    b: "sc-y0-1028-isaribi-breaks-with-amachi"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1028-demon-before-government-ship"
-    kind: "before"
-    a: "sc-y0-1028-demon-island-infiltration"
-    b: "sc-y0-1028-government-ship-attack"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1028-isaribi-break-before-government-ship"
-    kind: "before"
-    a: "sc-y0-1028-isaribi-breaks-with-amachi"
-    b: "sc-y0-1028-government-ship-attack"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1028-government-ship-before-1029-amachi"
-    kind: "before"
-    a: "sc-y0-1028-government-ship-attack"
-    b: "sc-y0-1029-amachi-defeat"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1029-amachi-before-umibozu"
-    kind: "before"
-    a: "sc-y0-1029-amachi-defeat"
-    b: "sc-y0-1029-umibozu-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1029-umibozu-before-aftermath"
-    kind: "before"
-    a: "sc-y0-1029-umibozu-battle"
-    b: "sc-y0-1029-isaribi-anko-aftermath"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-169-173"]
-  - id: "lnk-1030-kunihisa-day-before-kidnap"
-    kind: "before"
-    a: "sc-y0-1030-kunihisa-ninja-day"
-    b: "sc-y0-1030-kunihisa-kidnapping-rescue"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-174"]
-  - id: "lnk-1031-gold-assign-before-team-collapse"
-    kind: "before"
-    a: "sc-y0-1031-buried-gold-assignment"
-    b: "sc-y0-1031-buried-gold-team-collapse"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-175-176"]
-  - id: "lnk-1031-team-collapse-before-kedoin-capture"
-    kind: "before"
-    a: "sc-y0-1031-buried-gold-team-collapse"
-    b: "sc-y0-1031-kedoin-capture-copies"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-175-176"]
-  - id: "lnk-1031-kedoin-before-1101-pursuit"
-    kind: "before"
-    a: "sc-y0-1031-kedoin-capture-copies"
-    b: "sc-y0-1101-kedoin-pursuit-konoha"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-175-176"]
-  - id: "lnk-1101-pursuit-before-test-reveal"
-    kind: "before"
-    a: "sc-y0-1101-kedoin-pursuit-konoha"
-    b: "sc-y0-1101-tsunade-kedoin-test-reveal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-175-176"]
-  - id: "lnk-alt-1101-uc2-attack-before-briefing"
-    kind: "before"
-    a: "sc-alt-y0-1101-uc2-shirogane-attack"
-    b: "sc-alt-y0-1101-uc2-hokage-briefing"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-uzumaki-chronicles-2"]
-  - id: "lnk-alt-1101-uc2-briefing-before-1102-orbs"
-    kind: "before"
-    a: "sc-alt-y0-1101-uc2-hokage-briefing"
-    b: "sc-alt-y0-1102-uc2-spirit-orb-war"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-uzumaki-chronicles-2"]
-  - id: "lnk-alt-1102-uc2-orbs-before-1103-finale"
-    kind: "before"
-    a: "sc-alt-y0-1102-uc2-spirit-orb-war"
-    b: "sc-alt-y0-1103-uc2-master-puppet-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-uzumaki-chronicles-2"]
-  - id: "lnk-1102-postman-mixup-before-chase"
-    kind: "before"
-    a: "sc-y0-1102-postman-manuscript-mixup"
-    b: "sc-y0-1102-postman-chase-peace"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-177"]
-  - id: "lnk-1103-hoshi-depart-before-sumaru"
-    kind: "before"
-    a: "sc-y0-1103-hoshigakure-mission-departure"
-    b: "sc-y0-1103-hoshigakure-meets-sumaru"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-178"]
-  - id: "lnk-1103-hoshi-before-1104-star-theft"
-    kind: "before"
-    a: "sc-y0-1103-hoshigakure-meets-sumaru"
-    b: "sc-y0-1104-star-stolen-investigation"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1104-star-theft-before-sumaru-bait"
-    kind: "before"
-    a: "sc-y0-1104-star-stolen-investigation"
-    b: "sc-y0-1104-akahoshi-sumaru-bait"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1104-star-theft-before-training-cost"
-    kind: "before"
-    a: "sc-y0-1104-star-stolen-investigation"
-    b: "sc-y0-1104-star-training-cost"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1104-sumaru-bait-before-1105-natsuhi"
-    kind: "before"
-    a: "sc-y0-1104-akahoshi-sumaru-bait"
-    b: "sc-y0-1105-natsuhi-identity-motive"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1105-natsuhi-before-akahoshi-truth"
-    kind: "before"
-    a: "sc-y0-1105-natsuhi-identity-motive"
-    b: "sc-y0-1105-akahoshi-third-hoshikage-truth"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1105-akahoshi-truth-before-natsuhi-final"
-    kind: "before"
-    a: "sc-y0-1105-akahoshi-third-hoshikage-truth"
-    b: "sc-y0-1105-natsuhi-final-attempt"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1105-natsuhi-final-before-1106-trainees"
-    kind: "before"
-    a: "sc-y0-1105-natsuhi-final-attempt"
-    b: "sc-y0-1106-hoshigakure-trainees-reveal-truth"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1106-trainees-before-akahoshi-battle"
-    kind: "before"
-    a: "sc-y0-1106-hoshigakure-trainees-reveal-truth"
-    b: "sc-y0-1106-akahoshi-star-fusion-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1106-akahoshi-battle-before-aftermath"
-    kind: "before"
-    a: "sc-y0-1106-akahoshi-star-fusion-battle"
-    b: "sc-y0-1106-hoshigakure-aftermath"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-179-183"]
-  - id: "lnk-1107-akamaru-detect-before-kiba-flees"
-    kind: "before"
-    a: "sc-y0-1107-akamaru-infection-detected"
-    b: "sc-y0-1107-kiba-flees-with-akamaru"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-184"]
-  - id: "lnk-1107-kiba-flees-before-antidote"
-    kind: "before"
-    a: "sc-y0-1107-kiba-flees-with-akamaru"
-    b: "sc-y0-1107-akamaru-antidote"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-184"]
-  - id: "lnk-1108-onbu-attach-before-grow"
-    kind: "before"
-    a: "sc-y0-1108-onbu-attaches-naruto"
-    b: "sc-y0-1108-onbu-grows-with-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-185"]
-  - id: "lnk-1108-onbu-grow-before-mother"
-    kind: "before"
-    a: "sc-y0-1108-onbu-grows-with-naruto"
-    b: "sc-y0-1108-onbaa-mother-reclaims-onbu"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-185"]
-  - id: "lnk-1109-kagetsu-brief-before-shino-drug"
-    kind: "before"
-    a: "sc-y0-1109-kagetsu-funeral-mission-briefing"
-    b: "sc-y0-1109-shino-laughing-drug"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-186"]
-  - id: "lnk-1109-shino-drug-before-funeral-reveal"
-    kind: "before"
-    a: "sc-y0-1109-shino-laughing-drug"
-    b: "sc-y0-1109-kagetsu-fake-funeral-reveal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-186"]
-  - id: "lnk-1110-greens-escort-before-haruna-reveal"
-    kind: "before"
-    a: "sc-y0-1110-greens-merchant-escort"
-    b: "sc-y0-1110-haruna-identity-reveal"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-187-191"]
-  - id: "lnk-1110-haruna-before-1111-ruiga"
-    kind: "before"
-    a: "sc-y0-1110-haruna-identity-reveal"
-    b: "sc-y0-1111-ruiga-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-187-191"]
-  - id: "lnk-1111-ruiga-before-haruna-flight"
-    kind: "before"
-    a: "sc-y0-1111-ruiga-battle"
-    b: "sc-y0-1111-haruna-abandons-hinata"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-187-191"]
-  - id: "lnk-1111-haruna-flight-before-1112-jiga"
-    kind: "before"
-    a: "sc-y0-1111-haruna-abandons-hinata"
-    b: "sc-y0-1112-greens-jiga-battle"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-187-191"]
-  - id: "lnk-1112-jiga-before-1113-renga"
-    kind: "before"
-    a: "sc-y0-1112-greens-jiga-battle"
-    b: "sc-y0-1113-greens-renga-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-187-191"]
-  - id: "lnk-alt-1110-phantom-before-climb"
-    kind: "before"
-    a: "sc-alt-y0-1110-phantom-fortress-summoned"
-    b: "sc-alt-y0-1111-phantom-fortress-climb"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-phantom-fortress"]
-  - id: "lnk-alt-1110-phantom-before-basement"
-    kind: "before"
-    a: "sc-alt-y0-1110-phantom-fortress-summoned"
-    b: "sc-alt-y0-1111-hidden-mugen-basement"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-phantom-fortress"]
-  - id: "lnk-alt-1111-climb-before-finale"
-    kind: "before"
-    a: "sc-alt-y0-1111-phantom-fortress-climb"
-    b: "sc-alt-y0-1112-mugen-castle-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-phantom-fortress"]
-  - id: "lnk-alt-1111-basement-before-finale"
-    kind: "before"
-    a: "sc-alt-y0-1111-hidden-mugen-basement"
-    b: "sc-alt-y0-1112-mugen-castle-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-phantom-fortress"]
-  - id: "lnk-1117-ryudoin-before-1118-finale"
-    kind: "before"
-    a: "sc-y0-1117-ryudoin-yagura-trap"
-    b: "sc-y0-1118-ryudoin-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-195-196"]
-  - id: "lnk-1119-genno-before-1120-investigation"
-    kind: "before"
-    a: "sc-y0-1119-genno-blueprints"
-    b: "sc-y0-1120-genno-investigation"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-197-201"]
-  - id: "lnk-1120-genno-before-1121-bombs"
-    kind: "before"
-    a: "sc-y0-1120-genno-investigation"
-    b: "sc-y0-1121-genno-paper-bombs"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-197-201"]
-  - id: "lnk-1121-genno-before-1122-final"
-    kind: "before"
-    a: "sc-y0-1121-genno-paper-bombs"
-    b: "sc-y0-1122-genno-final-trap"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-197-201"]
-  - id: "lnk-alt-1120-clash2-before-1121"
-    kind: "before"
-    a: "sc-alt-y0-1120-clash2-investigation"
-    b: "sc-alt-y0-1121-clash2-conspiracy"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-clash-revolution-2"]
-  - id: "lnk-alt-1121-clash2-before-1122"
-    kind: "before"
-    a: "sc-alt-y0-1121-clash2-conspiracy"
-    b: "sc-alt-y0-1122-clash2-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-clash-revolution-2"]
-  - id: "lnk-1124-yakumo-before-1125"
-    kind: "before"
-    a: "sc-y0-1124-yakumo-kurenai-resigns"
-    b: "sc-y0-1125-yakumo-sealed-power"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-203-207"]
-  - id: "lnk-1125-yakumo-before-1126"
-    kind: "before"
-    a: "sc-y0-1125-yakumo-sealed-power"
-    b: "sc-y0-1126-yakumo-genjutsu-konoha"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-203-207"]
-  - id: "lnk-1126-yakumo-before-1127"
-    kind: "before"
-    a: "sc-y0-1126-yakumo-genjutsu-konoha"
-    b: "sc-y0-1127-yakumo-ido-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-203-207"]
-  - id: "lnk-1129-gantetsu-before-1130"
-    kind: "before"
-    a: "sc-y0-1129-gantetsu-escort"
-    b: "sc-y0-1130-gantetsu-bewildering-forest"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-209-212"]
-  - id: "lnk-1130-gantetsu-before-1201"
-    kind: "before"
-    a: "sc-y0-1130-gantetsu-bewildering-forest"
-    b: "sc-y0-1201-gantetsu-akio-truth"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-209-212"]
-  - id: "lnk-1201-gantetsu-before-1202"
-    kind: "before"
-    a: "sc-y0-1201-gantetsu-akio-truth"
-    b: "sc-y0-1202-gantetsu-finale"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-209-212"]
-  - id: "lnk-alt-1201-nd2eu-before-1202"
-    kind: "before"
-    a: "sc-alt-y0-1201-ninja-destiny2eu-start"
-    b: "sc-alt-y0-1202-ninja-destiny2eu-scrolls"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-game-ninja-destiny-2-eu"]
-  - id: "lnk-alt-1202-nd2eu-before-1203"
-    kind: "before"
-    a: "sc-alt-y0-1202-ninja-destiny2eu-scrolls"
-    b: "sc-alt-y0-1203-ninja-destiny2eu-finale"
-    basis: "imported"
-    review: "partial"
-    evidence_ids: ["evd-v10-000211"]
-  - id: "lnk-1203-menma-before-1204"
-    kind: "before"
-    a: "sc-y0-1203-menma-found"
-    b: "sc-y0-1204-menma-rice-fields"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-213-215"]
-  - id: "lnk-1204-menma-before-1205"
-    kind: "before"
-    a: "sc-y0-1204-menma-rice-fields"
-    b: "sc-y0-1205-menma-sacrifice"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-213-215"]
+- id: lnk-0122-kiss-before-announcements
+  kind: before
+  a: ev-y0-0122-naruto-sasuke-kiss
+  b: sc-y0-0122-academy-announcements
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-team7-formation
+- id: lnk-0122-announcements-before-search
+  kind: before
+  a: sc-y0-0122-academy-announcements
+  b: sc-y0-0122-sakura-searches-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-team7-formation
+- id: lnk-0122-search-before-team10-lunch
+  kind: before
+  a: sc-y0-0122-sakura-searches-sasuke
+  b: sc-y0-0122-team10-lunch
+  basis: source
+  review: accepted
+- id: lnk-0122-team10-lunch-before-impersonation
+  kind: before
+  a: sc-y0-0122-team10-lunch
+  b: sc-y0-0122-naruto-impersonates-sasuke
+  basis: source
+  review: accepted
+- id: lnk-0122-announcements-before-impersonation
+  kind: before
+  a: sc-y0-0122-academy-announcements
+  b: sc-y0-0122-naruto-impersonates-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-team7-formation
+- id: lnk-0122-impersonation-before-wait
+  kind: before
+  a: sc-y0-0122-naruto-impersonates-sasuke
+  b: sc-y0-0122-academy-waiting
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-team7-formation
+- id: lnk-0122-announcements-before-wait
+  kind: before
+  a: sc-y0-0122-academy-announcements
+  b: sc-y0-0122-academy-waiting
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-classroom-wait
+- id: lnk-0122-impersonation-before-kakashi
+  kind: before
+  a: sc-y0-0122-naruto-impersonates-sasuke
+  b: ev-y0-0122-kakashi-arrives
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-manga-team7-formation
+- id: lnk-0122-class-observes-exterior
+  kind: observes
+  a: ev-y0-0122-kita-sees-jonin
+  b: sc-y0-0122-academy-exterior-jonin
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-announcement
+  - evd-project-jonin-identities
+- id: lnk-0122-team9-to-dango
+  kind: before
+  a: ev-y0-0122-team9-departs
+  b: sc-y0-0122-dango-shop
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-departure
+  - evd-dango-scene
+- id: lnk-0122-team7-to-rooftop
+  kind: before
+  a: ev-y0-0122-team7-departs
+  b: sc-y0-0122-team7-rooftop
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-team7-formation
+- id: lnk-0122-dango-before-home
+  kind: before
+  a: sc-y0-0122-dango-shop
+  b: sc-y0-0122-kita-home-night
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-kita-home-night
+- id: lnk-0122-team7-rooftop-before-kita-home
+  kind: before
+  a: sc-y0-0122-team7-rooftop
+  b: sc-y0-0122-kita-home-night
+  basis: project_decision
+  review: accepted
+  evidence_ids:
+  - evd-project-0122-rooftop-before-kita-home
+- id: lnk-0924-pursuit-before-valley
+  kind: before
+  a: ev-y0-0924-naruto-continues-pursuit
+  b: ev-y0-0924-naruto-catches-sasuke
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-sasuke-recovery
+- id: lnk-0118-monument-before-talk
+  kind: before
+  a: sc-y0-0118-hokage-monument
+  b: sc-y0-0118-iruka-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000001
+  - evd-manga-ch1-prologue
+- id: lnk-0118-class-before-cleanup
+  kind: before
+  a: sc-y0-0118-iruka-naruto
+  b: sc-y0-0118-hokage-monument-cleanup
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-ch1-prologue
+- id: lnk-0118-cleanup-before-ramen
+  kind: before
+  a: sc-y0-0118-hokage-monument-cleanup
+  b: sc-y0-0118-ichiraku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-ch1-prologue
+- id: lnk-0119-exam-before-manipulation
+  kind: before
+  a: sc-y0-0119-graduation-exam
+  b: sc-y0-0119-scroll-theft
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000002
+- id: lnk-0119-theft-before-hokage-response
+  kind: before
+  a: ev-y0-0119-naruto-steals-scroll
+  b: sc-y0-0119-hokage-response
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000002
+- id: lnk-0119-theft-before-confrontation
+  kind: before
+  a: sc-y0-0119-scroll-theft
+  b: sc-y0-0119-mizuki-confrontation
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000002
+- id: lnk-0119-confrontation-before-0120-resolution
+  kind: before
+  a: sc-y0-0119-mizuki-confrontation
+  b: sc-y0-0120-mizuki-resolution
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000002
+  - evd-v10-000003
+- id: lnk-0123-kakashi-retro-before-bell-test
+  kind: before
+  a: sc-y0-0123-kakashi-pretest-retro
+  b: sc-y0-0123-team7-bell-test
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-kakashi-pretest
+- id: lnk-0123-field8-before-ravine
+  kind: before
+  a: sc-y0-0123-field8-observation
+  b: sc-y0-0123-team9-ravine
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-ravine
+- id: lnk-0123-ravine-before-catacombs
+  kind: before
+  a: sc-y0-0123-team9-ravine
+  b: sc-y0-0123-team9-catacombs
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-catacombs
+- id: lnk-0123-catacombs-before-field9
+  kind: before
+  a: sc-y0-0123-team9-catacombs
+  b: sc-y0-0123-team9-field9
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-field9-combat
+- id: lnk-0123-field9-before-ichiraku
+  kind: before
+  a: sc-y0-0123-team9-field9
+  b: sc-y0-0123-ichiraku-evening
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-ichiraku-evening
+- id: lnk-0123-bell-test-before-ichiraku
+  kind: before
+  a: sc-y0-0123-team7-bell-test
+  b: sc-y0-0123-ichiraku-evening
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-ichiraku-evening
+- id: lnk-0123-ichiraku-before-reports
+  kind: before
+  a: sc-y0-0123-ichiraku-evening
+  b: sc-y0-0123-hokage-reports-evening
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-hokage-reports-evening
+- id: lnk-prewaves-dranks-before-tazuna
+  kind: before
+  a: sc-prewaves-team7-d-ranks
+  b: sc-y0-0315-tazuna-assignment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000023
+  - evd-manga-land-waves
+- id: lnk-0315-assignment-before-departure
+  kind: before
+  a: sc-y0-0315-tazuna-assignment
+  b: sc-y0-0315-team7-departs-konoha
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000023
+  - evd-manga-land-waves
+- id: lnk-0315-departure-before-0316-demons
+  kind: before
+  a: sc-y0-0315-team7-departs-konoha
+  b: sc-y0-0316-demon-brothers
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000023
+  - evd-v10-000025
+- id: lnk-0316-demons-before-0317-crossing
+  kind: before
+  a: sc-y0-0316-demon-brothers
+  b: sc-y0-0317-wave-crossing
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000025-C
+  - evd-v10-000026
+- id: lnk-0317-crossing-before-arrival
+  kind: before
+  a: sc-y0-0317-wave-crossing
+  b: sc-y0-0317-arrival-waves
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000026
+- id: lnk-0317-arrival-before-zabuza
+  kind: before
+  a: sc-y0-0317-arrival-waves
+  b: sc-y0-0318-zabuza-first-battle
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000026
+  - evd-v10-000027
+- id: lnk-0318-zabuza-before-0322-briefing
+  kind: before
+  a: sc-y0-0318-zabuza-first-battle
+  b: sc-y0-0322-tazuna-home-briefing
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000027
+  - evd-v10-000028
+- id: lnk-0322-briefing-before-tree-training
+  kind: before
+  a: sc-y0-0322-tazuna-home-briefing
+  b: sc-y0-0322-tree-climbing-training
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000028
+- id: lnk-0322-training-before-0328-haku
+  kind: before
+  a: sc-y0-0322-tree-climbing-training
+  b: sc-y0-0328-naruto-meets-haku
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000028
+  - evd-v10-000029
+- id: lnk-0328-haku-before-0329-complete
+  kind: before
+  a: sc-y0-0328-naruto-meets-haku
+  b: sc-y0-0329-tree-training-complete
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000029
+  - evd-v10-000030
+- id: lnk-0329-complete-before-0330-bridge
+  kind: before
+  a: sc-y0-0329-tree-training-complete
+  b: sc-y0-0330-bridge-final-battle
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000030
+  - evd-v10-000031
+- id: lnk-0330-home-intersects-bridge
+  kind: intersects
+  a: sc-y0-0330-tazuna-home-attack
+  b: sc-y0-0330-bridge-final-battle
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000032
+- id: lnk-0330-home-rescue-before-villagers
+  kind: before
+  a: ev-y0-0330-naruto-rescues-inari-tsunami
+  b: ev-y0-0330-villagers-drive-off-mercenaries
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000032
+- id: lnk-0330-bridge-before-burial
+  kind: before
+  a: sc-y0-0330-bridge-final-battle
+  b: sc-y0-0330-zabuza-haku-burial
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000032
+  - evd-manga-land-waves
+- id: lnk-0330-burial-before-0413-bridge
+  kind: before
+  a: sc-y0-0330-zabuza-haku-burial
+  b: sc-y0-0413-bridge-complete
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000032
+  - evd-v10-000033
+- id: lnk-0413-farewell-before-extra
+  kind: before
+  a: ev-y0-0413-team7-says-farewell
+  b: sc-y0-0413-shippuden180-extra
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-180-wave-return
+- id: lnk-0413-extra-before-return
+  kind: before
+  a: sc-y0-0413-shippuden180-extra
+  b: sc-y0-0413-team7-returns-konoha
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000033
+  - evd-v10-000034
+- id: lnk-0413-return-before-rivalry
+  kind: before
+  a: sc-y0-0413-team7-returns-konoha
+  b: sc-y0-0413-post-waves-rivalry
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000035
+  - evd-shippuden-258-post-waves
+- id: lnk-0624-arrival-before-sand-encounter
+  kind: before
+  a: sc-y0-0624-foreign-genin-arrive
+  b: sc-y0-0624-sand-konohamaru-encounter
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000039
+  - evd-v10-000039-B
+- id: lnk-0624-meeting-before-team7-choice
+  kind: before
+  a: sc-y0-0624-hokage-chunin-meeting
+  b: sc-y0-0624-kakashi-gives-team7-choice
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000039-E
+  - evd-v10-000039-F
+- id: lnk-0701-gathering-before-written
+  kind: before
+  a: sc-y0-0701-candidate-gathering
+  b: sc-y0-0701-written-exam
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000040
+  - evd-v10-000040-B
+- id: lnk-0701-written-before-forest
+  kind: before
+  a: sc-y0-0701-written-exam
+  b: sc-y0-0701-forest-start
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000040-B
+  - evd-v10-000040-C
+- id: lnk-0701-forest-before-orochimaru
+  kind: before
+  a: sc-y0-0701-forest-start
+  b: sc-y0-0701-orochimaru-attacks-team7
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000040-C
+  - evd-v10-000040-D
+- id: lnk-0701-orochimaru-intersects-anko
+  kind: intersects
+  a: sc-y0-0701-orochimaru-attacks-team7
+  b: sc-y0-0701-anko-orochimaru
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000040-D
+  - evd-v10-000040-F
+- id: lnk-0701-orochimaru-before-0702-clearing
+  kind: before
+  a: sc-y0-0701-orochimaru-attacks-team7
+  b: sc-y0-0702-team7-clearing-sound-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000040-E
+  - evd-v10-000042
+- id: lnk-0705-search-intersects-karin
+  kind: intersects
+  a: sc-y0-0705-team7-resumes-search
+  b: sc-y0-0705-sasuke-karin
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000043
+  - evd-v10-000044
+- id: lnk-0705-search-before-0706-kabuto
+  kind: before
+  a: sc-y0-0705-team7-resumes-search
+  b: sc-y0-0706-team7-forest-completion
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000043
+  - evd-v10-000045
+- id: lnk-0706-forest-before-iruka-message
+  kind: before
+  a: sc-y0-0706-team7-forest-completion
+  b: sc-y0-0706-iruka-team7-tower-message
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-prelims
+  - evd-anime-37-iruka-tower
+- id: lnk-0706-iruka-message-before-prelim-announcement
+  kind: before
+  a: sc-y0-0706-iruka-team7-tower-message
+  b: sc-y0-0706-preliminaries-announced
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-prelims
+  - evd-anime-37-iruka-tower
+- id: lnk-0706-team7-tower-before-kabuto-return
+  kind: before
+  a: ev-y0-0706-team7-reaches-tower
+  b: sc-y0-0706-kabuto-returns-to-sound
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000045-C
+  - evd-v10-000045-D
+- id: lnk-0706-prelim-announcement-before-matches
+  kind: before
+  a: sc-y0-0706-preliminaries-announced
+  b: sc-y0-0706-preliminary-matches
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000045-E
+  - evd-v10-000046
+- id: lnk-0706-sasuke-match-before-seal
+  kind: before
+  a: ev-y0-0706-sasuke-defeats-yoroi
+  b: sc-y0-0706-kakashi-seals-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000046
+  - evd-v10-000046-B
+- id: lnk-0706-seal-intersects-prelims
+  kind: intersects
+  a: sc-y0-0706-kakashi-seals-sasuke
+  b: sc-y0-0706-preliminary-matches
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000046-B
+- id: lnk-0706-last-match-before-draw
+  kind: before
+  a: ev-y0-0706-dosu-defeats-choji
+  b: sc-y0-0706-finals-draw
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000046-K
+  - evd-v10-000046-L
+- id: lnk-0706-draw-before-hospital
+  kind: before
+  a: sc-y0-0706-finals-draw
+  b: sc-y0-0706-kabuto-hospital-infiltration
+  basis: project_decision
+  review: accepted
+  evidence_ids:
+  - evd-v10-000046-L
+  - evd-v10-000047
+- id: lnk-0706-draw-before-ebisu
+  kind: before
+  a: sc-y0-0706-finals-draw
+  b: sc-y0-0706-kakashi-assigns-ebisu
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000046-L
+  - evd-v10-000046-M
+- id: lnk-0706-hospital-before-hayate-check
+  kind: before
+  a: sc-y0-0706-kabuto-hospital-infiltration
+  b: sc-y0-0706-hayate-checks-yugao
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000047
+  - evd-v10-000051
+- id: lnk-0706-hayate-check-before-order
+  kind: before
+  a: sc-y0-0706-hayate-checks-yugao
+  b: sc-y0-0706-hiruzen-orders-hayate
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000051
+- id: lnk-0706-order-before-farewell
+  kind: before
+  a: sc-y0-0706-hiruzen-orders-hayate
+  b: sc-y0-0706-hayate-yugao-farewell
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000051
+- id: lnk-0706-farewell-before-eavesdrop
+  kind: before
+  a: sc-y0-0706-hayate-yugao-farewell
+  b: ev-y0-0706-hayate-eavesdrops
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000051
+  - evd-shippuden-307-308
+- id: lnk-0706-hayate-death-before-body-found
+  kind: before
+  a: ev-y0-0706-baki-kills-hayate
+  b: sc-y0-0707-yugao-finds-hayate
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000049-C
+  - evd-v10-000051-B
+- id: lnk-0706-jiraiya-before-0707-summoning
+  kind: before
+  a: ev-y0-0706-jiraiya-takes-over-training
+  b: sc-y0-0707-naruto-summoning-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000048
+  - evd-v10-000052
+- id: lnk-pre0727-rasa-before-invasion-plan
+  kind: before
+  a: sc-pre0727-rasa-assassination
+  b: sc-y0-0727-baki-orochimaru-invasion-plan
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000055
+  - evd-v10-000057
+- id: lnk-0727-summoning-before-0728-gamabunta
+  kind: before
+  a: sc-y0-0727-naruto-summoning-stalls
+  b: sc-y0-0728-naruto-gamabunta
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000057
+  - evd-v10-000058
+- id: lnk-0728-gamabunta-before-0731-wake
+  kind: before
+  a: sc-y0-0728-naruto-gamabunta
+  b: sc-y0-0731-naruto-hospital-lee
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000058
+  - evd-v10-000060
+- id: lnk-0731-hospital-before-gaara-night
+  kind: before
+  a: sc-y0-0731-naruto-hospital-lee
+  b: sc-y0-0731-gaara-visits-lee
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000059
+  - evd-v10-000060
+- id: lnk-0801-hinata-before-finals
+  kind: before
+  a: sc-y0-0801-hinata-encourages-naruto
+  b: sc-y0-0801-finals-morning
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000063
+  - evd-v10-000064
+- id: lnk-0801-naruto-neji-before-hanabi-view
+  kind: intersects
+  a: ev-y0-0801-naruto-defeats-neji
+  b: sc-y0-0801-hanabi-watches-finals
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000064
+  - evd-v10-000068
+- id: lnk-0801-finals-before-sasuke-gaara
+  kind: before
+  a: sc-y0-0801-finals-morning
+  b: sc-y0-0801-sasuke-gaara-final
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000064-C
+  - evd-v10-000064-D
+- id: lnk-0801-sasuke-gaara-before-invasion
+  kind: before
+  a: sc-y0-0801-sasuke-gaara-final
+  b: sc-y0-0801-invasion-begins-arena
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000064-E
+  - evd-v10-000065
+- id: lnk-0801-invasion-intersects-rooftop
+  kind: intersects
+  a: sc-y0-0801-invasion-begins-arena
+  b: sc-y0-0801-hiruzen-orochimaru-rooftop
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000065
+  - evd-v10-000065-B
+- id: lnk-0801-invasion-intersects-pursuit
+  kind: intersects
+  a: sc-y0-0801-invasion-begins-arena
+  b: sc-y0-0801-sasuke-gaara-pursuit
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000065
+  - evd-v10-000065-D
+  - evd-v10-000069
+- id: lnk-0801-pursuit-before-gaara-battle
+  kind: before
+  a: sc-y0-0801-sasuke-gaara-pursuit
+  b: sc-y0-0801-naruto-gaara-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000065-D
+  - evd-v10-000065-E
+  - evd-v10-000069
+- id: lnk-0801-hiruzen-death-before-invasion-fails
+  kind: before
+  a: ev-y0-0801-hiruzen-dies
+  b: sc-y0-0801-invasion-fails
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000065-C
+  - evd-v10-000065-F
+- id: lnk-0801-gaara-defeat-before-invasion-fails
+  kind: before
+  a: ev-y0-0801-naruto-defeats-gaara
+  b: sc-y0-0801-invasion-fails
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000065-E
+  - evd-v10-000065-F
+- id: lnk-0801-invasion-fails-before-0802-aftermath
+  kind: before
+  a: sc-y0-0801-invasion-fails
+  b: sc-y0-0802-konoha-aftermath
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000065-F
+  - evd-v10-000072
+- id: lnk-0802-aftermath-before-funeral
+  kind: before
+  a: sc-y0-0802-konoha-aftermath
+  b: sc-y0-0803-hiruzen-funeral
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000072
+  - evd-v10-000073
+- id: lnk-0801-dispatch-before-shikamaru-delay
+  kind: before
+  a: ev-y0-0801-kakashi-dispatches-pursuit-team
+  b: sc-y0-0801-shikamaru-delays-sound
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000069
+  - evd-v10-000069-B
+- id: lnk-0801-sasuke-pursuit-before-shino-kankuro
+  kind: before
+  a: ev-y0-0801-sasuke-pursues-gaara
+  b: sc-y0-0801-shino-kankuro
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-v10-000065-D
+  - evd-v10-000069-C
+- id: lnk-0803-jiraiya-refusal-before-departure
+  kind: before
+  a: sc-y0-0803-jiraiya-refuses-hokage
+  b: sc-y0-0803-naruto-jiraiya-depart
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000073-C
+  - evd-v10-000073-E
+- id: lnk-0803-konoha-akatsuki-before-0804-inn
+  kind: before
+  a: sc-y0-0803-itachi-kisame-konoha-fight
+  b: sc-y0-0804-itachi-kisame-find-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000073-D
+  - evd-v10-000076
+- id: lnk-0803-departure-before-0804-inn
+  kind: before
+  a: sc-y0-0803-naruto-jiraiya-depart
+  b: sc-y0-0804-itachi-kisame-find-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000073-E
+  - evd-v10-000076
+- id: lnk-0822-stage1-before-0824-power
+  kind: before
+  a: sc-y0-0822-rasengan-stage1
+  b: sc-y0-0824-rasengan-power-training
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000077
+  - evd-v10-000078
+- id: lnk-0824-power-before-0825-stage2
+  kind: before
+  a: sc-y0-0824-rasengan-power-training
+  b: sc-y0-0825-naruto-completes-rasengan-stage2
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000078
+  - evd-v10-000079-B
+- id: lnk-0825-orochimaru-before-jiraiya-meets-tsunade
+  kind: before
+  a: sc-y0-0825-orochimaru-offers-tsunade
+  b: sc-y0-0825-jiraiya-naruto-meet-tsunade
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000079
+  - evd-v10-000079-C
+- id: lnk-0825-stage2-before-wager
+  kind: before
+  a: sc-y0-0825-naruto-completes-rasengan-stage2
+  b: ev-y0-0825-tsunade-naruto-wager
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000079-B
+  - evd-v10-000079-E
+- id: lnk-0825-wager-before-0826-final-stage
+  kind: before
+  a: ev-y0-0825-tsunade-naruto-wager
+  b: sc-y0-0826-naruto-final-rasengan-stage
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000079-E
+  - evd-v10-000080
+- id: lnk-0825-offer-before-0826-weighs
+  kind: before
+  a: sc-y0-0825-orochimaru-offers-tsunade
+  b: sc-y0-0826-tsunade-weighs-offer
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000079
+  - evd-v10-000080
+- id: lnk-0826-final-stage-before-0831-deadline
+  kind: before
+  a: sc-y0-0826-naruto-final-rasengan-stage
+  b: sc-y0-0831-wager-deadline
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000080
+  - evd-v10-000081
+- id: lnk-0831-drugs-before-reveal
+  kind: before
+  a: sc-y0-0831-tsunade-drugs-jiraiya
+  b: sc-y0-0831-shizune-reveals-deal
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000081
+- id: lnk-0831-pursuit-before-0901-meet
+  kind: before
+  a: sc-y0-0831-shizune-reveals-deal
+  b: sc-y0-0901-tsunade-meets-orochimaru
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000081
+  - evd-v10-000082
+- id: lnk-0901-meet-before-sannin-battle
+  kind: before
+  a: sc-y0-0901-tsunade-meets-orochimaru
+  b: sc-y0-0901-sannin-battle
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000082
+  - evd-v10-000082-C
+- id: lnk-0901-battle-before-tsunade-accepts
+  kind: before
+  a: sc-y0-0901-sannin-battle
+  b: sc-y0-0901-tsunade-accepts-hokage
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000082-G
+  - evd-v10-000082-H
+- id: lnk-0901-accepts-before-0902-recovery
+  kind: before
+  a: sc-y0-0901-tsunade-accepts-hokage
+  b: sc-y0-0902-naruto-recovers
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000082-H
+  - evd-v10-000083
+- id: lnk-0902-recovery-before-hot-springs
+  kind: before
+  a: sc-y0-0902-naruto-recovers
+  b: sc-y0-0902-hot-springs-debt-filler
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000083
+  - evd-v10-000084
+- id: lnk-0902-hot-springs-before-return
+  kind: before
+  a: sc-y0-0902-hot-springs-debt-filler
+  b: sc-y0-0902-tsunade-returns-konoha
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-97
+  - evd-v10-000083-B
+- id: lnk-0902-return-before-inauguration
+  kind: before
+  a: sc-y0-0902-tsunade-returns-konoha
+  b: sc-y0-0902-tsunade-inauguration
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000083-B
+  - evd-v10-000083-C
+- id: lnk-0902-konohamaru-intersects-inauguration
+  kind: intersects
+  a: sc-y0-0902-konohamaru-inauguration-filler
+  b: sc-y0-0902-tsunade-inauguration
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-99
+  - evd-v10-000083-C
+- id: lnk-0903-mask-plan-before-moya
+  kind: before
+  a: sc-y0-0903-team7-unmask-plan
+  b: sc-y0-0903-moya-interruption
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-101
+- id: lnk-0903-moya-before-second-mask
+  kind: before
+  a: sc-y0-0903-moya-interruption
+  b: sc-y0-0903-kakashi-second-mask
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-101
+- id: lnk-alt-0903-sukea-before-archive
+  kind: before
+  a: sc-alt-y0-0903-sukea-mask-hunt
+  b: sc-alt-y0-0903-secret-archive-infiltration
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-469
+- id: lnk-alt-0903-archive-before-rescue
+  kind: before
+  a: sc-alt-y0-0903-secret-archive-infiltration
+  b: sc-alt-y0-0903-fake-rescue-sukea-reveal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-469
+- id: lnk-alt-0903-snow-escort-before-identity
+  kind: before
+  a: sc-alt-y0-0903-land-snow-escort
+  b: sc-alt-y0-0903-koyuki-identity
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-land-of-snow
+- id: lnk-alt-0903-snow-identity-before-armored
+  kind: before
+  a: sc-alt-y0-0903-koyuki-identity
+  b: sc-alt-y0-0903-land-snow-armored-shinobi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-land-of-snow
+- id: lnk-alt-0903-snow-armored-before-doto
+  kind: before
+  a: sc-alt-y0-0903-land-snow-armored-shinobi
+  b: sc-alt-y0-0903-naruto-defeats-doto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-land-of-snow
+- id: lnk-0904-tea-assignment-before-aoi
+  kind: before
+  a: sc-y0-0904-tsunade-assigns-tea-mission
+  b: sc-y0-0904-aoi-attacks-idate-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-102-106
+- id: lnk-0904-aoi-before-0905-rescue
+  kind: before
+  a: sc-y0-0904-aoi-attacks-idate-naruto
+  b: sc-y0-0905-team7-rescues-idate
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-102-106
+- id: lnk-0905-rescue-before-nagi
+  kind: before
+  a: sc-y0-0905-team7-rescues-idate
+  b: sc-y0-0905-nagi-aoi-betrayal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-102-106
+- id: lnk-0905-nagi-before-0906-aoi
+  kind: before
+  a: sc-y0-0905-nagi-aoi-betrayal
+  b: sc-y0-0906-sasuke-naruto-vs-aoi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-102-106
+- id: lnk-0906-aoi-before-0907-aoi
+  kind: before
+  a: sc-y0-0906-sasuke-naruto-vs-aoi
+  b: sc-y0-0907-naruto-defeats-aoi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-102-106
+- id: lnk-0907-aoi-before-race-finish
+  kind: before
+  a: sc-y0-0907-naruto-defeats-aoi
+  b: sc-y0-0907-idate-wins-race
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-v10-000097
+- id: lnk-0907-race-before-reconcile
+  kind: before
+  a: sc-y0-0907-idate-wins-race
+  b: sc-y0-0907-idate-reconciles
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000097
+- id: lnk-0904-waterfall-escort-before-threat
+  kind: before
+  a: sc-y0-0904-waterfall-escort
+  b: sc-y0-0904-waterfall-threat-revealed
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-waterfall
+- id: lnk-0904-waterfall-threat-before-0905-capture
+  kind: before
+  a: sc-y0-0904-waterfall-threat-revealed
+  b: sc-y0-0905-waterfall-villagers-captured
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-waterfall
+- id: lnk-0905-capture-before-crisis
+  kind: before
+  a: sc-y0-0905-waterfall-villagers-captured
+  b: sc-y0-0905-waterfall-shibuki-crisis
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-ova-waterfall
+- id: lnk-0905-crisis-before-0906-resist
+  kind: before
+  a: sc-y0-0905-waterfall-shibuki-crisis
+  b: sc-y0-0906-waterfall-resists-suien
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-waterfall
+- id: lnk-0906-resist-before-defense-win
+  kind: before
+  a: sc-y0-0906-waterfall-resists-suien
+  b: sc-y0-0906-waterfall-defense-wins
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-waterfall
+- id: lnk-alt-0905-waterfall-novel-before-ending
+  kind: before
+  a: sc-alt-y0-0905-waterfall-novel-siege
+  b: sc-alt-y0-0906-waterfall-novel-ending
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-novel-waterfall
+- id: lnk-alt-0909-un2-before-0910-un2
+  kind: before
+  a: sc-alt-y0-0909-ultimate-ninja2-threat
+  b: sc-alt-y0-0910-ultimate-ninja2-seal-battles
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-ultimate-ninja-2
+- id: lnk-alt-0910-un2-before-0911-un2
+  kind: before
+  a: sc-alt-y0-0910-ultimate-ninja2-seal-battles
+  b: sc-alt-y0-0911-ultimate-ninja2-ending
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-ultimate-ninja-2
+- id: lnk-0917-patrol-before-0918-conclusion
+  kind: before
+  a: sc-y0-0917-border-patrol-kosuke
+  b: sc-y0-0918-border-patrol-conclusion
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-190
+- id: lnk-0919-vision-before-herb
+  kind: before
+  a: sc-y0-0919-hinata-vision-loss
+  b: sc-y0-0919-clear-eye-herb-mission
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-306
+- id: lnk-0919-herb-before-fireworks
+  kind: before
+  a: sc-y0-0919-clear-eye-herb-mission
+  b: sc-y0-0919-hinata-fireworks
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-306
+- id: lnk-0920-shu-assignment-before-infiltration
+  kind: before
+  a: sc-y0-0920-shu-mission-assignment
+  b: sc-y0-0920-shu-infiltration
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-309-310
+- id: lnk-0920-shu-infiltration-intersects-extraction
+  kind: intersects
+  a: sc-y0-0920-shu-infiltration
+  b: sc-y0-0920-shu-extraction
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-309-310
+- id: lnk-0920-shu-extraction-before-0921-exposed
+  kind: intersects
+  a: sc-y0-0920-shu-extraction
+  b: sc-y0-0921-naruto-disguise-exposed
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-shippuden-309-310
+- id: lnk-0921-exposed-before-castle-attack
+  kind: before
+  a: sc-y0-0921-naruto-disguise-exposed
+  b: sc-y0-0921-castle-akatsuki-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-309-310
+- id: lnk-0921-castle-before-shu-complete
+  kind: before
+  a: sc-y0-0921-castle-akatsuki-attack
+  b: sc-y0-0921-shu-mission-complete
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-309-310
+- id: lnk-0922-hospital-before-rooftop
+  kind: before
+  a: sc-y0-0922-sasuke-hospital-frustration
+  b: sc-y0-0922-hospital-rooftop-duel
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000117
+  - evd-v10-000117-B
+- id: lnk-0922-rooftop-before-kakashi-talk
+  kind: before
+  a: sc-y0-0922-hospital-rooftop-duel
+  b: sc-y0-0922-kakashi-talks-to-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000118
+  - evd-v10-000119
+- id: lnk-0922-kakashi-talk-before-sound-four
+  kind: before
+  a: sc-y0-0922-kakashi-talks-to-sasuke
+  b: sc-y0-0922-sound-four-recruit-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000119
+  - evd-v10-000118-B
+- id: lnk-0922-sound-four-before-decision
+  kind: before
+  a: sc-y0-0922-sound-four-recruit-sasuke
+  b: sc-y0-0922-sasuke-decides-to-leave
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000118-B
+  - evd-v10-000118-C
+- id: lnk-0922-decision-before-sakura
+  kind: before
+  a: sc-y0-0922-sasuke-decides-to-leave
+  b: sc-y0-0922-sakura-confronts-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000118-C
+  - evd-v10-000118-D
+- id: lnk-0923-sakura-report-before-order
+  kind: before
+  a: sc-y0-0923-sakura-reports-sasuke-missing
+  b: sc-y0-0923-tsunade-orders-retrieval
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000121
+  - evd-v10-000121-B
+- id: lnk-0923-order-before-assemble
+  kind: before
+  a: sc-y0-0923-tsunade-orders-retrieval
+  b: sc-y0-0923-shikamaru-assembles-retrieval-team
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000121-B
+- id: lnk-0923-assemble-before-promise
+  kind: before
+  a: sc-y0-0923-shikamaru-assembles-retrieval-team
+  b: sc-y0-0923-naruto-promises-sakura
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000121-B
+  - evd-v10-000121-C
+- id: lnk-0923-promise-before-departure
+  kind: before
+  a: sc-y0-0923-naruto-promises-sakura
+  b: sc-y0-0923-retrieval-team-departs
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000121-C
+  - evd-v10-000121-E
+- id: lnk-0923-departure-before-choji
+  kind: before
+  a: sc-y0-0923-retrieval-team-departs
+  b: sc-y0-0923-choji-vs-jirobo
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000121-E
+  - evd-v10-000121-F
+- id: lnk-0923-choji-before-neji
+  kind: before
+  a: sc-y0-0923-choji-vs-jirobo
+  b: sc-y0-0923-neji-vs-kidomaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000121-F
+  - evd-v10-000121-G
+- id: lnk-0923-guy-talk-before-lee-operation
+  kind: before
+  a: sc-y0-0923-guy-convinces-lee-surgery
+  b: sc-y0-0923-rock-lee-operation
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000120
+  - evd-v10-000121-D
+- id: lnk-0924-kiba-before-kankuro
+  kind: before
+  a: sc-y0-0924-kiba-sakon-ukon
+  b: sc-y0-0924-kankuro-rescues-kiba
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122
+  - evd-v10-000122-G
+- id: lnk-0924-shikamaru-before-temari
+  kind: before
+  a: sc-y0-0924-shikamaru-vs-tayuya
+  b: sc-y0-0924-temari-rescues-shikamaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-B
+  - evd-v10-000122-H
+- id: lnk-0924-kimimaro-before-lee
+  kind: before
+  a: sc-y0-0924-kimimaro-releases-sasuke
+  b: sc-y0-0924-lee-vs-kimimaro
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-C
+  - evd-v10-000122-E
+- id: lnk-0924-lee-before-naruto-resumes
+  kind: before
+  a: ev-y0-0924-lee-relieves-naruto-kimimaro
+  b: sc-y0-0924-naruto-resumes-pursuit
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-E
+  - evd-v10-000122-F
+- id: lnk-0924-lee-before-gaara
+  kind: before
+  a: sc-y0-0924-lee-vs-kimimaro
+  b: sc-y0-0924-gaara-vs-kimimaro
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-E
+  - evd-v10-000122-I
+- id: lnk-0924-gaara-before-kimimaro-death
+  kind: before
+  a: sc-y0-0924-gaara-vs-kimimaro
+  b: sc-y0-0924-kimimaro-dies
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-I
+  - evd-v10-000122-J
+- id: lnk-0924-pursuit-before-valley
+  kind: before
+  a: sc-y0-0924-naruto-resumes-pursuit
+  b: sc-y0-0924-valley-reunion
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-F
+  - evd-v10-000122-K
+- id: lnk-0924-valley-reunion-before-choice
+  kind: before
+  a: sc-y0-0924-valley-reunion
+  b: sc-y0-0924-valley-sasuke-choice
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-K
+  - evd-v10-000122-L
+- id: lnk-0924-valley-choice-before-power
+  kind: before
+  a: sc-y0-0924-valley-sasuke-choice
+  b: sc-y0-0924-valley-power-escalation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-L
+  - evd-v10-000122-M
+- id: lnk-0924-valley-power-before-clash
+  kind: before
+  a: sc-y0-0924-valley-power-escalation
+  b: sc-y0-0924-valley-final-clash
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-M
+  - evd-v10-000122-N
+- id: lnk-0924-valley-clash-before-spare
+  kind: before
+  a: sc-y0-0924-valley-final-clash
+  b: sc-y0-0924-sasuke-spares-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000122-N
+  - evd-v10-000122-O
+- id: lnk-0925-kakashi-before-naruto-wakes
+  kind: before
+  a: sc-y0-0925-kakashi-finds-naruto
+  b: ev-y0-0925-naruto-wakes-hospital
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-v10-000123
+  - evd-v10-000123-C
+- id: lnk-0925-wakes-before-promise
+  kind: before
+  a: ev-y0-0925-naruto-wakes-hospital
+  b: ev-y0-0925-naruto-admits-failed-promise
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-sasuke-recovery
+- id: lnk-0925-promise-before-jiraiya
+  kind: before
+  a: sc-y0-0925-naruto-sakura-promise
+  b: sc-y0-0925-jiraiya-training-offer
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000123-D
+  - evd-v10-000123-E
+- id: lnk-0925-promise-before-sakura-tsunade
+  kind: before
+  a: sc-y0-0925-naruto-sakura-promise
+  b: sc-y0-0925-sakura-asks-tsunade
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000123-D
+  - evd-v10-000123-F
+- id: lnk-0926-rice-before-0927-sasame
+  kind: before
+  a: sc-y0-0926-rice-fields-mission-begins
+  b: sc-y0-0927-sasame-and-fuma
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-136-140
+- id: lnk-0927-sasame-before-fuma-ambush
+  kind: before
+  a: sc-y0-0927-sasame-and-fuma
+  b: sc-y0-0927-fuma-ambush
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-136-140
+- id: lnk-0927-fuma-before-0928-residence
+  kind: before
+  a: sc-y0-0927-fuma-ambush
+  b: sc-y0-0928-orochimaru-residence-infiltration
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-136-140
+- id: lnk-0928-residence-before-arashi
+  kind: before
+  a: sc-y0-0928-orochimaru-residence-infiltration
+  b: sc-y0-0928-arashi-chimera
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-136-140
+- id: lnk-0930-team8-fail-before-shino-home
+  kind: before
+  a: sc-y0-0930-team8-suika-failed-capture
+  b: sc-y0-0930-shino-withdraws
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-236
+- id: lnk-0930-shino-home-before-hot-springs
+  kind: before
+  a: sc-y0-0930-shino-withdraws
+  b: sc-y0-0930-team8-hot-springs-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-236
+- id: lnk-0930-hot-springs-before-suika-rematch
+  kind: before
+  a: sc-y0-0930-team8-hot-springs-training
+  b: sc-y0-0930-team8-suika-rematch
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-236
+- id: lnk-1001-warning-before-prison
+  kind: before
+  a: sc-y0-1001-tsunade-mizuki-warning
+  b: sc-y0-1001-mizuki-prison-break
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1001-prison-before-1002-injured
+  kind: before
+  a: sc-y0-1001-mizuki-prison-break
+  b: sc-y0-1002-naruto-finds-asuma-kurenai
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1002-injured-before-tonton
+  kind: before
+  a: sc-y0-1002-naruto-finds-asuma-kurenai
+  b: sc-y0-1002-tonton-tracking
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1002-tonton-before-brothers
+  kind: before
+  a: sc-y0-1002-tonton-tracking
+  b: sc-y0-1002-naruto-vs-fujin-raijin
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1002-tonton-before-iruka-branch
+  kind: before
+  a: sc-y0-1002-tonton-tracking
+  b: sc-y0-1002-iruka-pursues-mizuki
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1002-tsubaki-before-1003-joins
+  kind: before
+  a: sc-y0-1002-mizuki-meets-tsubaki
+  b: sc-y0-1003-tsubaki-joins-pursuit
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1002-brothers-before-1003-team10
+  kind: before
+  a: sc-y0-1002-naruto-vs-fujin-raijin
+  b: sc-y0-1003-team10-holds-brothers
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1002-iruka-before-1003-test-building
+  kind: before
+  a: sc-y0-1002-iruka-pursues-mizuki
+  b: sc-y0-1003-iruka-mizuki-test-building
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1003-test-building-before-tsubaki-joins
+  kind: before
+  a: sc-y0-1003-iruka-mizuki-test-building
+  b: sc-y0-1003-tsubaki-joins-pursuit
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1002-naruto-branch-before-tsubaki-joins
+  kind: before
+  a: sc-y0-1002-naruto-vs-fujin-raijin
+  b: sc-y0-1003-tsubaki-joins-pursuit
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1003-tsubaki-before-hideout
+  kind: before
+  a: sc-y0-1003-tsubaki-joins-pursuit
+  b: sc-y0-1003-mizuki-hideout-formula
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1003-team10-before-1004-tsunade
+  kind: before
+  a: sc-y0-1003-team10-holds-brothers
+  b: sc-y0-1004-tsunade-stops-brothers
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1003-hideout-before-1004-powered
+  kind: before
+  a: sc-y0-1003-mizuki-hideout-formula
+  b: sc-y0-1004-powered-mizuki-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1004-powered-before-aftermath
+  kind: before
+  a: sc-y0-1004-powered-mizuki-battle
+  b: sc-y0-1004-mizuki-aftermath
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-142-147
+- id: lnk-1005-animal-shino-before-lee
+  kind: before
+  a: sc-y0-1005-animal-district-shino-plants
+  b: sc-y0-1005-animal-district-lee-kangaroo
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-185
+- id: lnk-1005-animal-lee-before-condor
+  kind: before
+  a: sc-y0-1005-animal-district-lee-kangaroo
+  b: sc-y0-1005-animal-district-naruto-kotetsu-condor
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-185
+- id: lnk-1005-animal-condor-before-four-warriors
+  kind: before
+  a: sc-y0-1005-animal-district-naruto-kotetsu-condor
+  b: sc-y0-1005-animal-district-four-warriors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-185
+- id: lnk-alt-1005-gelel-open-before-caravan
+  kind: before
+  a: sc-alt-y0-1005-gelel-ferret-ambush
+  b: sc-alt-y0-1005-gelel-caravan-recovery
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-alt-1005-gelel-open-before-shikamaru
+  kind: before
+  a: sc-alt-y0-1005-gelel-ferret-ambush
+  b: sc-alt-y0-1005-gelel-shikamaru-fortress
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-alt-1005-gelel-caravan-before-haido
+  kind: before
+  a: sc-alt-y0-1005-gelel-caravan-recovery
+  b: sc-alt-y0-1005-gelel-haido-meeting
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-alt-1005-gelel-shikamaru-before-caravan-attack
+  kind: before
+  a: sc-alt-y0-1005-gelel-shikamaru-fortress
+  b: sc-alt-y0-1005-gelel-caravan-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-alt-1005-gelel-haido-before-caravan-attack
+  kind: before
+  a: sc-alt-y0-1005-gelel-haido-meeting
+  b: sc-alt-y0-1005-gelel-caravan-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-alt-1005-gelel-caravan-attack-before-mine
+  kind: before
+  a: sc-alt-y0-1005-gelel-caravan-attack
+  b: sc-alt-y0-1005-gelel-mine-convergence
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-alt-1005-gelel-mine-before-seal
+  kind: before
+  a: sc-alt-y0-1005-gelel-mine-convergence
+  b: sc-alt-y0-1005-gelel-sealing-chamber
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-alt-1005-gelel-seal-before-collapse
+  kind: before
+  a: sc-alt-y0-1005-gelel-sealing-chamber
+  b: sc-alt-y0-1005-gelel-mine-collapse
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-gelel
+- id: lnk-1006-bikocho-hospital-before-approval
+  kind: before
+  a: sc-y0-1006-kurenai-hospital-bikochu-plan
+  b: sc-y0-1006-tsunade-approves-bikochu
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1006-bikocho-approval-before-waterfall
+  kind: before
+  a: sc-y0-1006-tsunade-approves-bikochu
+  b: sc-y0-1006-hinata-waterfall-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1006-waterfall-before-1007-search
+  kind: before
+  a: sc-y0-1006-hinata-waterfall-training
+  b: sc-y0-1007-bikochu-habitat-search
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1007-search-before-hinata-kidnap
+  kind: before
+  a: sc-y0-1007-bikochu-habitat-search
+  b: sc-y0-1007-hinata-kidnapped-kamizuru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1007-kidnap-before-1008-trap
+  kind: before
+  a: sc-y0-1007-hinata-kidnapped-kamizuru
+  b: sc-y0-1008-kamizuru-exchange-trap
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1007-kidnap-before-1008-hinata-river
+  kind: before
+  a: sc-y0-1007-hinata-kidnapped-kamizuru
+  b: sc-y0-1008-hinata-river-escape
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1008-trap-before-hinata-rescue
+  kind: before
+  a: sc-y0-1008-kamizuru-exchange-trap
+  b: sc-y0-1008-hinata-protects-team
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1008-river-before-hinata-rescue
+  kind: before
+  a: sc-y0-1008-hinata-river-escape
+  b: sc-y0-1008-hinata-protects-team
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1008-hinata-rescue-before-scent-failure
+  kind: before
+  a: sc-y0-1008-hinata-protects-team
+  b: sc-y0-1008-bikochu-scent-failure
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-148-151
+- id: lnk-1010-kurosuki-assigned-before-curry
+  kind: before
+  a: sc-y0-1010-kurosuki-mission-assigned
+  b: sc-y0-1010-curry-shop-karashi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1010-curry-before-1011-rescue
+  kind: before
+  a: sc-y0-1010-curry-shop-karashi
+  b: sc-y0-1011-kurosuki-rescue-karashi-betrayal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1011-rescue-before-raiga-fight
+  kind: before
+  a: sc-y0-1011-kurosuki-rescue-karashi-betrayal
+  b: sc-y0-1011-raiga-ranmaru-fog-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1011-raiga-before-1012-ambush
+  kind: before
+  a: sc-y0-1011-raiga-ranmaru-fog-battle
+  b: sc-y0-1012-kurosuki-ambush-karashi-spared
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1012-ambush-before-revival
+  kind: before
+  a: sc-y0-1012-kurosuki-ambush-karashi-spared
+  b: sc-y0-1012-ranmaru-revives-raiga
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1012-revival-before-1013-ranmaru-turns
+  kind: before
+  a: sc-y0-1012-ranmaru-revives-raiga
+  b: sc-y0-1013-curry-shop-ranmaru-turns
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1013-ranmaru-turns-before-curry-rescue
+  kind: before
+  a: sc-y0-1013-curry-shop-ranmaru-turns
+  b: sc-y0-1013-lightning-pass-curry-rescue
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1013-curry-before-1014-final
+  kind: before
+  a: sc-y0-1013-lightning-pass-curry-rescue
+  b: sc-y0-1014-raiga-final-defeat
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-1014-final-before-ranmaru-new-life
+  kind: before
+  a: sc-y0-1014-raiga-final-defeat
+  b: sc-y0-1014-ranmaru-new-life
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-alt-1012-uc-before-1013-counteroffensive
+  kind: before
+  a: sc-alt-y0-1012-uzumaki-chronicles-opening
+  b: sc-alt-y0-1013-uzumaki-chronicles-counteroffensive
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-game-uzumaki-chronicles
+- id: lnk-alt-1013-uc-before-1014-finale
+  kind: before
+  a: sc-alt-y0-1013-uzumaki-chronicles-counteroffensive
+  b: sc-alt-y0-1014-uzumaki-chronicles-finale
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-game-uzumaki-chronicles
+- id: lnk-1015-academy-assign-before-survival
+  kind: before
+  a: sc-y0-1015-academy-lead-assignment
+  b: sc-y0-1015-academy-survival-mountain
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-158
+- id: lnk-1015-survival-before-debrief
+  kind: before
+  a: sc-y0-1015-academy-survival-mountain
+  b: sc-y0-1015-academy-lead-debrief
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-158
+- id: lnk-1017-gosunkugi-open-before-sazanami-cabin
+  kind: before
+  a: sc-y0-1017-gosunkugi-mission-opening
+  b: sc-y0-1017-sazanami-wounded-identity
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-159-160
+- id: lnk-1017-sazanami-before-1018-ok-temple
+  kind: before
+  a: sc-y0-1017-sazanami-wounded-identity
+  b: sc-y0-1018-ok-temple-showdown
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-159-160
+- id: lnk-1019-impostors-before-real-return
+  kind: before
+  a: sc-y0-1019-mondai-potcha-infiltration
+  b: sc-y0-1019-real-guy-lee-return
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-161
+- id: lnk-1020-birds-arrival-before-first-warrior
+  kind: before
+  a: sc-y0-1020-birds-mission-arrival
+  b: sc-y0-1020-first-cursed-warrior
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-162-167
+- id: lnk-1020-first-warrior-before-1021-komei
+  kind: before
+  a: sc-y0-1020-first-cursed-warrior
+  b: sc-y0-1021-komei-cursed-warrior-investigation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-162-167
+- id: lnk-1021-komei-before-prison
+  kind: before
+  a: sc-y0-1021-komei-cursed-warrior-investigation
+  b: sc-y0-1021-naruto-prison-cursed-warrior
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-162-167
+- id: lnk-1021-prison-before-1022-rescue
+  kind: before
+  a: sc-y0-1021-naruto-prison-cursed-warrior
+  b: sc-y0-1022-komei-rescue-moso-confrontation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-162-167
+- id: lnk-alt-1020-potn2-before-1021-trials
+  kind: before
+  a: sc-alt-y0-1020-path-ninja-mirrors-opening
+  b: sc-alt-y0-1021-path-ninja-mirrors-trials
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-path-ninja-2
+- id: lnk-alt-1021-potn2-before-1022-finale
+  kind: before
+  a: sc-alt-y0-1021-path-ninja-mirrors-trials
+  b: sc-alt-y0-1022-path-ninja-spirit-beast-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-path-ninja-2
+- id: lnk-1022-birds-before-1023-reveal
+  kind: before
+  a: sc-y0-1022-komei-rescue-moso-confrontation
+  b: sc-y0-1023-toki-hoki-reveal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-166-167
+- id: lnk-1023-reveal-before-battle
+  kind: before
+  a: sc-y0-1023-toki-hoki-reveal
+  b: sc-y0-1023-birds-final-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-166-167
+- id: lnk-1023-battle-before-aftermath
+  kind: before
+  a: sc-y0-1023-birds-final-battle
+  b: sc-y0-1023-toki-daimyo-aftermath
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-166-167
+- id: lnk-1024-ayame-before-training
+  kind: before
+  a: sc-y0-1024-ayame-kidnapped
+  b: sc-y0-1024-ramen-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-168
+- id: lnk-1024-training-before-showdown
+  kind: before
+  a: sc-y0-1024-ramen-training
+  b: sc-y0-1024-cooking-nin-showdown
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-168
+- id: lnk-1026-kaima-depart-before-isaribi-save
+  kind: before
+  a: sc-y0-1026-kaima-mission-departure
+  b: sc-y0-1026-isaribi-saves-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1026-isaribi-save-before-1027-reveal
+  kind: before
+  a: sc-y0-1026-isaribi-saves-naruto
+  b: sc-y0-1027-isaribi-kaima-reveal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1027-kaima-reveal-before-anko-memory
+  kind: before
+  a: sc-y0-1027-isaribi-kaima-reveal
+  b: sc-y0-1027-anko-memory-lab
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1027-anko-memory-before-1028-demon-island
+  kind: before
+  a: sc-y0-1027-anko-memory-lab
+  b: sc-y0-1028-demon-island-infiltration
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1028-demon-before-isaribi-break
+  kind: before
+  a: sc-y0-1028-demon-island-infiltration
+  b: sc-y0-1028-isaribi-breaks-with-amachi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1028-demon-before-government-ship
+  kind: before
+  a: sc-y0-1028-demon-island-infiltration
+  b: sc-y0-1028-government-ship-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1028-isaribi-break-before-government-ship
+  kind: before
+  a: sc-y0-1028-isaribi-breaks-with-amachi
+  b: sc-y0-1028-government-ship-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1028-government-ship-before-1029-amachi
+  kind: before
+  a: sc-y0-1028-government-ship-attack
+  b: sc-y0-1029-amachi-defeat
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1029-amachi-before-umibozu
+  kind: before
+  a: sc-y0-1029-amachi-defeat
+  b: sc-y0-1029-umibozu-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1029-umibozu-before-aftermath
+  kind: before
+  a: sc-y0-1029-umibozu-battle
+  b: sc-y0-1029-isaribi-anko-aftermath
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: lnk-1030-kunihisa-day-before-kidnap
+  kind: before
+  a: sc-y0-1030-kunihisa-ninja-day
+  b: sc-y0-1030-kunihisa-kidnapping-rescue
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-174
+- id: lnk-1031-gold-assign-before-team-collapse
+  kind: before
+  a: sc-y0-1031-buried-gold-assignment
+  b: sc-y0-1031-buried-gold-team-collapse
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-175-176
+- id: lnk-1031-team-collapse-before-kedoin-capture
+  kind: before
+  a: sc-y0-1031-buried-gold-team-collapse
+  b: sc-y0-1031-kedoin-capture-copies
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-175-176
+- id: lnk-1031-kedoin-before-1101-pursuit
+  kind: before
+  a: sc-y0-1031-kedoin-capture-copies
+  b: sc-y0-1101-kedoin-pursuit-konoha
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-175-176
+- id: lnk-1101-pursuit-before-test-reveal
+  kind: before
+  a: sc-y0-1101-kedoin-pursuit-konoha
+  b: sc-y0-1101-tsunade-kedoin-test-reveal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-175-176
+- id: lnk-alt-1101-uc2-attack-before-briefing
+  kind: before
+  a: sc-alt-y0-1101-uc2-shirogane-attack
+  b: sc-alt-y0-1101-uc2-hokage-briefing
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-uzumaki-chronicles-2
+- id: lnk-alt-1101-uc2-briefing-before-1102-orbs
+  kind: before
+  a: sc-alt-y0-1101-uc2-hokage-briefing
+  b: sc-alt-y0-1102-uc2-spirit-orb-war
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-uzumaki-chronicles-2
+- id: lnk-alt-1102-uc2-orbs-before-1103-finale
+  kind: before
+  a: sc-alt-y0-1102-uc2-spirit-orb-war
+  b: sc-alt-y0-1103-uc2-master-puppet-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-uzumaki-chronicles-2
+- id: lnk-1102-postman-mixup-before-chase
+  kind: before
+  a: sc-y0-1102-postman-manuscript-mixup
+  b: sc-y0-1102-postman-chase-peace
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-177
+- id: lnk-1103-hoshi-depart-before-sumaru
+  kind: before
+  a: sc-y0-1103-hoshigakure-mission-departure
+  b: sc-y0-1103-hoshigakure-meets-sumaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-178
+- id: lnk-1103-hoshi-before-1104-star-theft
+  kind: before
+  a: sc-y0-1103-hoshigakure-meets-sumaru
+  b: sc-y0-1104-star-stolen-investigation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1104-star-theft-before-sumaru-bait
+  kind: before
+  a: sc-y0-1104-star-stolen-investigation
+  b: sc-y0-1104-akahoshi-sumaru-bait
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1104-star-theft-before-training-cost
+  kind: before
+  a: sc-y0-1104-star-stolen-investigation
+  b: sc-y0-1104-star-training-cost
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1104-sumaru-bait-before-1105-natsuhi
+  kind: before
+  a: sc-y0-1104-akahoshi-sumaru-bait
+  b: sc-y0-1105-natsuhi-identity-motive
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1105-natsuhi-before-akahoshi-truth
+  kind: before
+  a: sc-y0-1105-natsuhi-identity-motive
+  b: sc-y0-1105-akahoshi-third-hoshikage-truth
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1105-akahoshi-truth-before-natsuhi-final
+  kind: before
+  a: sc-y0-1105-akahoshi-third-hoshikage-truth
+  b: sc-y0-1105-natsuhi-final-attempt
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1105-natsuhi-final-before-1106-trainees
+  kind: before
+  a: sc-y0-1105-natsuhi-final-attempt
+  b: sc-y0-1106-hoshigakure-trainees-reveal-truth
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1106-trainees-before-akahoshi-battle
+  kind: before
+  a: sc-y0-1106-hoshigakure-trainees-reveal-truth
+  b: sc-y0-1106-akahoshi-star-fusion-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1106-akahoshi-battle-before-aftermath
+  kind: before
+  a: sc-y0-1106-akahoshi-star-fusion-battle
+  b: sc-y0-1106-hoshigakure-aftermath
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-179-183
+- id: lnk-1107-akamaru-detect-before-kiba-flees
+  kind: before
+  a: sc-y0-1107-akamaru-infection-detected
+  b: sc-y0-1107-kiba-flees-with-akamaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-184
+- id: lnk-1107-kiba-flees-before-antidote
+  kind: before
+  a: sc-y0-1107-kiba-flees-with-akamaru
+  b: sc-y0-1107-akamaru-antidote
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-184
+- id: lnk-1108-onbu-attach-before-grow
+  kind: before
+  a: sc-y0-1108-onbu-attaches-naruto
+  b: sc-y0-1108-onbu-grows-with-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-185
+- id: lnk-1108-onbu-grow-before-mother
+  kind: before
+  a: sc-y0-1108-onbu-grows-with-naruto
+  b: sc-y0-1108-onbaa-mother-reclaims-onbu
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-185
+- id: lnk-1109-kagetsu-brief-before-shino-drug
+  kind: before
+  a: sc-y0-1109-kagetsu-funeral-mission-briefing
+  b: sc-y0-1109-shino-laughing-drug
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-186
+- id: lnk-1109-shino-drug-before-funeral-reveal
+  kind: before
+  a: sc-y0-1109-shino-laughing-drug
+  b: sc-y0-1109-kagetsu-fake-funeral-reveal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-186
+- id: lnk-1110-greens-escort-before-haruna-reveal
+  kind: before
+  a: sc-y0-1110-greens-merchant-escort
+  b: sc-y0-1110-haruna-identity-reveal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: lnk-1110-haruna-before-1111-ruiga
+  kind: before
+  a: sc-y0-1110-haruna-identity-reveal
+  b: sc-y0-1111-ruiga-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: lnk-1111-ruiga-before-haruna-flight
+  kind: before
+  a: sc-y0-1111-ruiga-battle
+  b: sc-y0-1111-haruna-abandons-hinata
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: lnk-1111-haruna-flight-before-1112-jiga
+  kind: before
+  a: sc-y0-1111-haruna-abandons-hinata
+  b: sc-y0-1112-greens-jiga-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: lnk-1112-jiga-before-1113-renga
+  kind: before
+  a: sc-y0-1112-greens-jiga-battle
+  b: sc-y0-1113-greens-renga-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: lnk-alt-1110-phantom-before-climb
+  kind: before
+  a: sc-alt-y0-1110-phantom-fortress-summoned
+  b: sc-alt-y0-1111-phantom-fortress-climb
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-phantom-fortress
+- id: lnk-alt-1110-phantom-before-basement
+  kind: before
+  a: sc-alt-y0-1110-phantom-fortress-summoned
+  b: sc-alt-y0-1111-hidden-mugen-basement
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-phantom-fortress
+- id: lnk-alt-1111-climb-before-finale
+  kind: before
+  a: sc-alt-y0-1111-phantom-fortress-climb
+  b: sc-alt-y0-1112-mugen-castle-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-phantom-fortress
+- id: lnk-alt-1111-basement-before-finale
+  kind: before
+  a: sc-alt-y0-1111-hidden-mugen-basement
+  b: sc-alt-y0-1112-mugen-castle-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-phantom-fortress
+- id: lnk-1117-ryudoin-before-1118-finale
+  kind: before
+  a: sc-y0-1117-ryudoin-yagura-trap
+  b: sc-y0-1118-ryudoin-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-195-196
+- id: lnk-1119-genno-before-1120-investigation
+  kind: before
+  a: sc-y0-1119-genno-blueprints
+  b: sc-y0-1120-genno-investigation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-197-201
+- id: lnk-1120-genno-before-1121-bombs
+  kind: before
+  a: sc-y0-1120-genno-investigation
+  b: sc-y0-1121-genno-paper-bombs
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-197-201
+- id: lnk-1121-genno-before-1122-final
+  kind: before
+  a: sc-y0-1121-genno-paper-bombs
+  b: sc-y0-1122-genno-final-trap
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-197-201
+- id: lnk-alt-1120-clash2-before-1121
+  kind: before
+  a: sc-alt-y0-1120-clash2-investigation
+  b: sc-alt-y0-1121-clash2-conspiracy
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-clash-revolution-2
+- id: lnk-alt-1121-clash2-before-1122
+  kind: before
+  a: sc-alt-y0-1121-clash2-conspiracy
+  b: sc-alt-y0-1122-clash2-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-clash-revolution-2
+- id: lnk-1124-yakumo-before-1125
+  kind: before
+  a: sc-y0-1124-yakumo-kurenai-resigns
+  b: sc-y0-1125-yakumo-sealed-power
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-203-207
+- id: lnk-1125-yakumo-before-1126
+  kind: before
+  a: sc-y0-1125-yakumo-sealed-power
+  b: sc-y0-1126-yakumo-genjutsu-konoha
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-203-207
+- id: lnk-1126-yakumo-before-1127
+  kind: before
+  a: sc-y0-1126-yakumo-genjutsu-konoha
+  b: sc-y0-1127-yakumo-ido-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-203-207
+- id: lnk-1129-gantetsu-before-1130
+  kind: before
+  a: sc-y0-1129-gantetsu-escort
+  b: sc-y0-1130-gantetsu-bewildering-forest
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-209-212
+- id: lnk-1130-gantetsu-before-1201
+  kind: before
+  a: sc-y0-1130-gantetsu-bewildering-forest
+  b: sc-y0-1201-gantetsu-akio-truth
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-209-212
+- id: lnk-1201-gantetsu-before-1202
+  kind: before
+  a: sc-y0-1201-gantetsu-akio-truth
+  b: sc-y0-1202-gantetsu-finale
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-209-212
+- id: lnk-alt-1201-nd2eu-before-1202
+  kind: before
+  a: sc-alt-y0-1201-ninja-destiny2eu-start
+  b: sc-alt-y0-1202-ninja-destiny2eu-scrolls
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-ninja-destiny-2-eu
+- id: lnk-alt-1202-nd2eu-before-1203
+  kind: before
+  a: sc-alt-y0-1202-ninja-destiny2eu-scrolls
+  b: sc-alt-y0-1203-ninja-destiny2eu-finale
+  basis: imported
+  review: partial
+  evidence_ids:
+  - evd-v10-000211
+- id: lnk-1203-menma-before-1204
+  kind: before
+  a: sc-y0-1203-menma-found
+  b: sc-y0-1204-menma-rice-fields
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
+- id: lnk-1204-menma-before-1205
+  kind: before
+  a: sc-y0-1204-menma-rice-fields
+  b: sc-y0-1205-menma-sacrifice
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
+- id: rel-0701-kankuro-3
+  kind: before
+  a: ev-y0-0701-kankuro-leaves-for-toilet
+  b: ev-y0-0701-kankuro-gets-answers-in-toilet
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+- id: rel-0701-kankuro-4
+  kind: before
+  a: ev-y0-0701-kankuro-gets-answers-in-toilet
+  b: ev-y0-0701-kankuro-returns-from-toilet
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+- id: rel-alt-1121-clash2-1
+  kind: before
+  a: ev-alt-y0-1121-sakura-rescued
+  b: ev-alt-y0-1121-kagura-bando-revealed
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-clash-revolution-2
+- id: rel-alt-1121-clash2-2
+  kind: before
+  a: ev-alt-y0-1121-kagura-bando-revealed
+  b: ev-alt-y0-1121-soulbane-spreads-konoha
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-clash-revolution-2
+- id: rel-1112-greens-2
+  kind: before
+  a: ev-y0-1112-jiga-buried-iron-sand
+  b: ev-y0-1112-renga-captures-leaf-allies
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: rel-0924-lee-before-naruto-leaves
+  kind: before
+  a: ev-y0-0924-lee-replaces-naruto
+  b: ev-y0-0924-naruto-continues-pursuit
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-sasuke-recovery
+- id: rel-0701-gaara-2
+  kind: before
+  a: ev-y0-0701-sand-team-gets-scroll
+  b: ev-y0-0701-sand-team-reaches-tower
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000040-G
+- id: rel-0701-gaara-3
+  kind: before
+  a: ev-y0-0701-sand-team-reaches-tower
+  b: ev-y0-0701-anko-reviews-gaara-record
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+- id: rel-alt-1122-clash2-1
+  kind: before
+  a: ev-alt-y0-1122-jiraiya-defeats-bando
+  b: ev-alt-y0-1122-towa-komachi-find-kagura
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-clash-revolution-2
+- id: rel-alt-1122-clash2-2
+  kind: before
+  a: ev-alt-y0-1122-towa-komachi-find-kagura
+  b: ev-alt-y0-1122-tsunade-defeats-kagura
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-clash-revolution-2
+- id: rel-0924-pursuit-1
+  kind: before
+  a: ev-y0-0924-sasuke-continues-alone
+  b: ev-y0-0924-naruto-leaves-lee-and-pursues-sasuke
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000122-F
+- id: rel-0924-lee-1
+  kind: before
+  a: ev-y0-0924-lee-leaves-hospital
+  b: ev-y0-0924-lee-relieves-naruto-kimimaro
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-v10-000122-E
+- id: rel-alt-1118-moon-1
+  kind: before
+  a: ev-alt-y0-1118-moon-escort-assigned
+  b: ev-alt-y0-1118-shabadaba-coup-revealed
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-crescent-moon
+- id: rel-alt-1118-moon-2
+  kind: before
+  a: ev-alt-y0-1118-shabadaba-coup-revealed
+  b: ev-alt-y0-1118-michiru-captured-rescue
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-crescent-moon
+- id: rel-alt-1118-moon-3
+  kind: before
+  a: ev-alt-y0-1118-michiru-captured-rescue
+  b: ev-alt-y0-1118-naruto-defeats-ishidate
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-crescent-moon
+- id: rel-alt-1118-moon-4
+  kind: before
+  a: ev-alt-y0-1118-naruto-defeats-ishidate
+  b: ev-alt-y0-1118-michiru-takes-throne
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-movie-crescent-moon
+- id: rel-1201-gantetsu-2
+  kind: before
+  a: ev-y0-1201-children-demand-gantetsu
+  b: ev-y0-1201-akio-revealed-alive
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-209-212
+- id: rel-1029-isaribi-after-2
+  kind: before
+  a: ev-y0-1029-isaribi-accepts-konoha-treatment
+  b: ev-y0-1029-anko-recovers-final-memory-orochimaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-169-173
+- id: rel-1113-greens-4
+  kind: before
+  a: ev-y0-1113-naruto-defeats-renga
+  b: ev-y0-1113-haruna-restores-rule
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: rel-1113-greens-5
+  kind: before
+  a: ev-y0-1113-konoha-rescues-captives
+  b: ev-y0-1113-haruna-restores-rule
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-187-191
+- id: rel-alt-0909-sports-1
+  kind: intersects
+  a: ev-alt-y0-0909-konoha-teams-sports-festival
+  b: ev-alt-y0-0909-naruto-toilet-running-gag
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-sports-festival
 notes:
-  - "No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order, not simultaneity."
-
-  - id: "lnk-0707-yugao-before-hayate-briefing"
-    kind: "before"
-    a: "sc-y0-0707-yugao-finds-hayate"
-    b: "sc-y0-0707-hokage-hayate-briefing"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-55-hayate-meeting"]
-  - id: "lnk-0801-raido-wounded-before-barrier"
-    kind: "before"
-    a: "ev-y0-0801-raido-wounded-by-sound-four"
-    b: "ev-y0-0801-sound-four-barrier"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "lnk-0923-raido-genma-before-choji"
-    kind: "before"
-    a: "sc-y0-0923-raido-genma-sound-four"
-    b: "sc-y0-0923-choji-vs-jirobo"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]
-  - id: "lnk-0801-genma-dispatch-before-sasuke-pursuit"
-    kind: "before"
-    a: "ev-y0-0801-genma-confronts-baki-dispatches-sasuke"
-    b: "ev-y0-0801-sasuke-pursues-gaara"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "lnk-0123-bell-test-intersects-iruka-record-check"
-    kind: "intersects"
-    a: "sc-y0-0123-team7-bell-test"
-    b: "sc-y0-0123-iruka-checks-kakashi-record"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-bell-test"]
-  - id: "lnk-0624-team7-choice-before-iruka-test"
-    kind: "before"
-    a: "sc-y0-0624-kakashi-gives-team7-choice"
-    b: "sc-y0-0624-iruka-tests-team7"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-iruka-chunin-test"]
-  - id: "lnk-0722-summoning-intersects-iruka-lesson"
-    kind: "intersects"
-    a: "sc-y0-0722-naruto-summoning-practice"
-    b: "sc-y0-0722-iruka-hokage-rock-lesson"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-anime-56-iruka-hokage-rock"]
-  - id: "lnk-0801-invasion-intersects-iruka-evacuation"
-    kind: "intersects"
-    a: "sc-y0-0801-invasion-begins-arena"
-    b: "sc-y0-0801-iruka-evacuates-academy"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-iruka-evacuation"]
-  - id: "lnk-0801-iruka-evacuation-before-invasion-fails"
-    kind: "before"
-    a: "sc-y0-0801-iruka-evacuates-academy"
-    b: "sc-y0-0801-invasion-fails"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-anime-iruka-evacuation"]
-  - id: "lnk-0922-iruka-ramen-before-sasuke-hospital"
-    kind: "before"
-    a: "sc-y0-0922-iruka-naruto-ichiraku"
-    b: "sc-y0-0922-sasuke-hospital-frustration"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-ch174-iruka-naruto"]
-  - id: "lnk-0624-kakashi-iruka-report-before-meeting"
-    kind: "before"
-    a: "sc-y0-0624-kakashi-iruka-report"
-    b: "sc-y0-0624-hokage-chunin-meeting"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]
-  - id: "lnk-0727-summoning-intersects-anko-hiruzen"
-    kind: "intersects"
-    a: "sc-y0-0727-naruto-summoning-stalls"
-    b: "sc-y0-0727-anko-hiruzen-orochimaru-threat"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-54-60"]
-  - id: "lnk-0727-summoning-before-anko-dango-retro"
-    kind: "before"
-    a: "sc-y0-0727-naruto-summoning-stalls"
-    b: "sc-y0-0727-anko-naruto-dango-retro"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-shippuden-170-anko-dango"]
-  - id: "lnk-1010-anko-swamps-before-kurosuki-assignment"
-    kind: "before"
-    a: "sc-y0-1010-anko-returns-swamps"
-    b: "sc-y0-1010-kurosuki-mission-assigned"
-    basis: "source"
-    review: "pending"
-    evidence_ids: ["evd-anime-152-157"]
-  - id: "lnk-0701-anko-confrontation-before-gaara-review"
-    kind: "before"
-    a: "sc-y0-0701-anko-orochimaru"
-    b: "ev-y0-0701-anko-reviews-gaara-record"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
-  - id: "lnk-0701-gaara-review-before-anko-report"
-    kind: "before"
-    a: "ev-y0-0701-anko-reviews-gaara-record"
-    b: "sc-y0-0702-anko-reports-orochimaru"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-31-50"]
-  - id: "lnk-0801-invasion-intersects-ibiki-border"
-    kind: "intersects"
-    a: "sc-y0-0801-invasion-begins-arena"
-    b: "sc-y0-0801-ibiki-defends-konoha-border"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-anime-finals-konoha-crush"]
-  - id: "lnk-0801-ibiki-border-before-invasion-fails"
-    kind: "before"
-    a: "sc-y0-0801-ibiki-defends-konoha-border"
-    b: "sc-y0-0801-invasion-fails"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "lnk-0803-akatsuki-fight-before-aoba-reveal"
-    kind: "before"
-    a: "sc-y0-0803-itachi-kisame-konoha-fight"
-    b: "sc-y0-0803-aoba-reveals-itachi-to-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
-  - id: "lnk-0803-departure-before-aoba-reveal"
-    kind: "before"
-    a: "sc-y0-0803-naruto-jiraiya-depart"
-    b: "sc-y0-0803-aoba-reveals-itachi-to-sasuke"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
-  - id: "lnk-0803-aoba-reveal-before-0804-inn"
-    kind: "before"
-    a: "sc-y0-0803-aoba-reveals-itachi-to-sasuke"
-    b: "sc-y0-0804-itachi-kisame-find-naruto"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-ch144-aoba-sasuke", "evd-anime-83-aoba-sasuke"]
-  - id: "lnk-0801-baki-extraction-before-sasuke-pursuit"
-    kind: "before"
-    a: "ev-y0-0801-baki-orders-gaara-extraction"
-    b: "ev-y0-0801-sasuke-pursues-gaara"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "lnk-1207-baki-council-before-1216-departure"
-    kind: "before"
-    a: "sc-y0-1207-baki-suna-council-matsuri"
-    b: "sc-y0-1216-iruka-naruto-last-ramen"
-    basis: "imported"
-    review: "accepted"
-    evidence_ids: ["evd-v10-000214", "evd-anime-216-baki-suna-council"]
-  - id: "lnk-0727-baki-plan-before-siblings-briefing"
-    kind: "before"
-    a: "sc-y0-0727-baki-orochimaru-invasion-plan"
-    b: "sc-y0-0727-baki-briefs-sand-siblings"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-konoha-crush-prelude", "evd-anime-67-68"]
-  - id: "lnk-0727-baki-briefing-before-finals"
-    kind: "before"
-    a: "sc-y0-0727-baki-briefs-sand-siblings"
-    b: "sc-y0-0801-sasuke-gaara-final"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-konoha-crush-prelude"]
-  - id: "lnk-0801-invasion-before-rasa-discovery"
-    kind: "before"
-    a: "sc-y0-0801-invasion-fails"
-    b: "sc-y0-0802-suna-discovers-rasa-body"
-    basis: "source"
-    review: "accepted"
-    evidence_ids: ["evd-manga-post-crush-search"]
+- No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
+  relation means unknown order, not simultaneity.
+- id: lnk-0707-yugao-before-hayate-briefing
+  kind: before
+  a: sc-y0-0707-yugao-finds-hayate
+  b: sc-y0-0707-hokage-hayate-briefing
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-55-hayate-meeting
+- id: lnk-0801-raido-wounded-before-barrier
+  kind: before
+  a: ev-y0-0801-raido-wounded-by-sound-four
+  b: ev-y0-0801-sound-four-barrier
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: lnk-0923-raido-genma-before-choji
+  kind: before
+  a: sc-y0-0923-raido-genma-sound-four
+  b: sc-y0-0923-choji-vs-jirobo
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-sasuke-recovery
+  - evd-anime-111-sound-vs-leaf
+- id: lnk-0801-genma-dispatch-before-sasuke-pursuit
+  kind: before
+  a: ev-y0-0801-genma-confronts-baki-dispatches-sasuke
+  b: ev-y0-0801-sasuke-pursues-gaara
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: lnk-0123-bell-test-intersects-iruka-record-check
+  kind: intersects
+  a: sc-y0-0123-team7-bell-test
+  b: sc-y0-0123-iruka-checks-kakashi-record
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-bell-test
+- id: lnk-0624-team7-choice-before-iruka-test
+  kind: before
+  a: sc-y0-0624-kakashi-gives-team7-choice
+  b: sc-y0-0624-iruka-tests-team7
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-iruka-chunin-test
+- id: lnk-0722-summoning-intersects-iruka-lesson
+  kind: intersects
+  a: sc-y0-0722-naruto-summoning-practice
+  b: sc-y0-0722-iruka-hokage-rock-lesson
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-anime-56-iruka-hokage-rock
+- id: lnk-0801-invasion-intersects-iruka-evacuation
+  kind: intersects
+  a: sc-y0-0801-invasion-begins-arena
+  b: sc-y0-0801-iruka-evacuates-academy
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-iruka-evacuation
+- id: lnk-0801-iruka-evacuation-before-invasion-fails
+  kind: before
+  a: sc-y0-0801-iruka-evacuates-academy
+  b: sc-y0-0801-invasion-fails
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-anime-iruka-evacuation
+- id: lnk-0922-iruka-ramen-before-sasuke-hospital
+  kind: before
+  a: sc-y0-0922-iruka-naruto-ichiraku
+  b: sc-y0-0922-sasuke-hospital-frustration
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-ch174-iruka-naruto
+- id: lnk-0624-kakashi-iruka-report-before-meeting
+  kind: before
+  a: sc-y0-0624-kakashi-iruka-report
+  b: sc-y0-0624-hokage-chunin-meeting
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-intro
+  - evd-anime-20-23
+- id: lnk-0727-summoning-intersects-anko-hiruzen
+  kind: intersects
+  a: sc-y0-0727-naruto-summoning-stalls
+  b: sc-y0-0727-anko-hiruzen-orochimaru-threat
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-54-60
+- id: lnk-0727-summoning-before-anko-dango-retro
+  kind: before
+  a: sc-y0-0727-naruto-summoning-stalls
+  b: sc-y0-0727-anko-naruto-dango-retro
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-shippuden-170-anko-dango
+- id: lnk-1010-anko-swamps-before-kurosuki-assignment
+  kind: before
+  a: sc-y0-1010-anko-returns-swamps
+  b: sc-y0-1010-kurosuki-mission-assigned
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-anime-152-157
+- id: lnk-0701-anko-confrontation-before-gaara-review
+  kind: before
+  a: sc-y0-0701-anko-orochimaru
+  b: ev-y0-0701-anko-reviews-gaara-record
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+- id: lnk-0701-gaara-review-before-anko-report
+  kind: before
+  a: ev-y0-0701-anko-reviews-gaara-record
+  b: sc-y0-0702-anko-reports-orochimaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-31-50
+- id: lnk-0801-invasion-intersects-ibiki-border
+  kind: intersects
+  a: sc-y0-0801-invasion-begins-arena
+  b: sc-y0-0801-ibiki-defends-konoha-border
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-finals-konoha-crush
+- id: lnk-0801-ibiki-border-before-invasion-fails
+  kind: before
+  a: sc-y0-0801-ibiki-defends-konoha-border
+  b: sc-y0-0801-invasion-fails
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: lnk-0803-akatsuki-fight-before-aoba-reveal
+  kind: before
+  a: sc-y0-0803-itachi-kisame-konoha-fight
+  b: sc-y0-0803-aoba-reveals-itachi-to-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-ch144-aoba-sasuke
+  - evd-anime-83-aoba-sasuke
+- id: lnk-0803-departure-before-aoba-reveal
+  kind: before
+  a: sc-y0-0803-naruto-jiraiya-depart
+  b: sc-y0-0803-aoba-reveals-itachi-to-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-ch144-aoba-sasuke
+  - evd-anime-83-aoba-sasuke
+- id: lnk-0803-aoba-reveal-before-0804-inn
+  kind: before
+  a: sc-y0-0803-aoba-reveals-itachi-to-sasuke
+  b: sc-y0-0804-itachi-kisame-find-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-ch144-aoba-sasuke
+  - evd-anime-83-aoba-sasuke
+- id: lnk-0801-baki-extraction-before-sasuke-pursuit
+  kind: before
+  a: ev-y0-0801-baki-orders-gaara-extraction
+  b: ev-y0-0801-sasuke-pursues-gaara
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: lnk-1207-baki-council-before-1216-departure
+  kind: before
+  a: sc-y0-1207-baki-suna-council-matsuri
+  b: sc-y0-1216-iruka-naruto-last-ramen
+  basis: imported
+  review: accepted
+  evidence_ids:
+  - evd-v10-000214
+  - evd-anime-216-baki-suna-council
+- id: lnk-0727-baki-plan-before-siblings-briefing
+  kind: before
+  a: sc-y0-0727-baki-orochimaru-invasion-plan
+  b: sc-y0-0727-baki-briefs-sand-siblings
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-konoha-crush-prelude
+  - evd-anime-67-68
+- id: lnk-0727-baki-briefing-before-finals
+  kind: before
+  a: sc-y0-0727-baki-briefs-sand-siblings
+  b: sc-y0-0801-sasuke-gaara-final
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-konoha-crush-prelude
+- id: lnk-0801-invasion-before-rasa-discovery
+  kind: before
+  a: sc-y0-0801-invasion-fails
+  b: sc-y0-0802-suna-discovers-rasa-body
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-post-crush-search

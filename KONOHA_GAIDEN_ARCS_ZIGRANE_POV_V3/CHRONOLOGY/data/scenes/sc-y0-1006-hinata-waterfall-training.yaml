@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1006-hinata-waterfall-training"
+episode_id: ep-y0-hinata-waterfall-training
+display_rank: 100
 continuity_id: "main"
 title: "Хіната тренує власну захисну техніку біля водоспаду"
 location_id: "loc-bikocho-waterfall"

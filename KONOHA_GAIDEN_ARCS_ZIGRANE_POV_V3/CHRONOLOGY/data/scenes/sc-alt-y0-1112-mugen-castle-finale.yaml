@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1112-mugen-castle-finale"
+episode_id: ep-alt-mugen-hidden-branch
+display_rank: 200
 continuity_id: "alt-game-phantom-fortress"
 title: "Джерело Муґенджо знищене, і Примарний замок руйнується"
 location_id: "loc-mugen-castle"

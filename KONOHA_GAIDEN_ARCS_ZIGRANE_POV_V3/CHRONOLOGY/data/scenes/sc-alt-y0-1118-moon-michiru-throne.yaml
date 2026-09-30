@@ -1,0 +1,39 @@
+schema_version: 1
+id: sc-alt-y0-1118-moon-michiru-throne
+episode_id: ep-alt-moon-restoration
+display_rank: 100
+continuity_id: alt-movie-crescent-moon
+title: Мічіру посідає трон
+location_id: loc-land-of-moon
+placement:
+  anchor_id: ta-alt-y0-1118-crescent-moon
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-alt-y0-1118-michiru-takes-throne
+  legacy_ids:
+  - V10-000190
+  title: Мічіру стає правителем Країни Місяця
+  text: Після придушення перевороту Мічіру посідає трон і обіцяє правити, ставлячи людей вище за накопичення багатства.
+  origin: V
+  extent: interval
+  display_rank: 500
+  involvement:
+  - entity_id: c-michiru-tsuki
+    role: ruler
+    mode: physical
+  - entity_id: c-hikaru-tsuki
+    role: heir
+    mode: physical
+  evidence_ids:
+  - evd-v10-000190
+  - evd-movie-crescent-moon
+relations: []
+presence: []

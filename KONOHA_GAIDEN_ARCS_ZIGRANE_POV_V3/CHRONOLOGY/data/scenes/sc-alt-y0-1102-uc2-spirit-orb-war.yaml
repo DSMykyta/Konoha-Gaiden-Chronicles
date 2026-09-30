@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1102-uc2-spirit-orb-war"
+episode_id: ep-alt-y0-1102-uc2-spirit-orb-war
+display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles-2"
 title: "Шинобі Конохи й Суни борються за Сфери Духу з Шіроґане"
 placement: {anchor_id: "ta-alt-y0-1102-uc2", day_offset: 0}

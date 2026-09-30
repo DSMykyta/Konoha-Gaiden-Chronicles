@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0122-academy-waiting"
+episode_id: ep-y0-team-formation
+display_rank: 300
 continuity_id: "main"
-episode_id: "ep-y0-team-formation"
 title: "Очікування наставників у класі"
 location_id: "loc-academy-classroom"
 placement:

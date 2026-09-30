@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0203-konoha-ninpocho-missions"
+episode_id: ep-y0-0203-konoha-ninpocho-missions
+display_rank: 100
 continuity_id: "alt-game-konoha-ninpocho"
 title: "Подальші місії Konoha Ninpōchō"
 location_id: "loc-konohagakure"

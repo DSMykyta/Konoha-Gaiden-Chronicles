@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1013-curry-shop-ranmaru-turns"
+episode_id: ep-y0-ranmaru-choice
+display_rank: 200
 continuity_id: "main"
 title: "Ранмару починає відмовлятися від убивств Райґи"
 location_id: "loc-curry-of-life-shop"

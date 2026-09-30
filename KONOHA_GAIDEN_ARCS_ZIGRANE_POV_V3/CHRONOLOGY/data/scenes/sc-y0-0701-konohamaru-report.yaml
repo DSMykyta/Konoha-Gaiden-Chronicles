@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0701-konohamaru-report"
+episode_id: ep-y0-konohamaru-exam-report
+display_rank: 100
 continuity_id: "main"
 title: "Конохамару, Моегі й Удон готують репортаж про іспит"
 location_id: "loc-konohagakure"

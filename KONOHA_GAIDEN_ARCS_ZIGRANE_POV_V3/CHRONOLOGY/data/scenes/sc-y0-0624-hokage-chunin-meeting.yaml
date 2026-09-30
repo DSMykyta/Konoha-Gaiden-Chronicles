@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0624-hokage-chunin-meeting"
+episode_id: ep-y0-chunin-nominations
+display_rank: 100
 continuity_id: "main"
 title: "Нарада щодо іспиту на чуніна"
 location_id: "loc-hokage-residence"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0925-sakura-asks-tsunade"
+episode_id: ep-y0-sakura-tsunade-request
+display_rank: 100
 continuity_id: "main"
 title: "Сакура просить Цунаде навчати її"
 location_id: "loc-konohagakure"

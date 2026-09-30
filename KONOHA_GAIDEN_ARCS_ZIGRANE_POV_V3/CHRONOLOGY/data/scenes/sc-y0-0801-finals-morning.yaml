@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-finals-morning"
+episode_id: ep-y0-chunin-finals
+display_rank: 100
 continuity_id: "main"
 title: "Ранкові фінальні поєдинки"
 location_id: "loc-chunin-finals-arena"

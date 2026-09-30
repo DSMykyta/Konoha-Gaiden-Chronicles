@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0803-naruto-jiraiya-depart"
+episode_id: ep-y0-naruto-jiraiya-search
+display_rank: 100
 continuity_id: "main"
 title: "Наруто й Джирая вирушають шукати Цунаде"
 location_id: "loc-konohagakure"

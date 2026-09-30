@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1116-haunted-castle-chameleon"
+episode_id: ep-y0-haunted-castle
+display_rank: 100
 continuity_id: "main"
 title: "Наруто, Кіба й Хіната розкривають природу «проклятого замку»"
 location_id: "loc-haunted-castle"

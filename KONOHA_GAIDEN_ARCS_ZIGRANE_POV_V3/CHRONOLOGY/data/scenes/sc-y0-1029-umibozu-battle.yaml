@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1029-umibozu-battle"
+episode_id: ep-y0-kaima-final-battle
+display_rank: 200
 continuity_id: "main"
 title: "Ґамабунта знищує Умібодзу"
 location_id: "loc-land-sea-government-ship"

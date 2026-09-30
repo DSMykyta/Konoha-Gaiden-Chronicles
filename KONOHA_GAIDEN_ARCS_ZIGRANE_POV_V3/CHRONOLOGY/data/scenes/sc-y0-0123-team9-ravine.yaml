@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0123-team9-ravine"
+episode_id: ep-y0-raido-evaluation
+display_rank: 300
 continuity_id: "main"
-episode_id: "ep-y0-raido-evaluation"
 title: "Переправа Команди 9 через яр"
 location_id: "loc-team9-ravine"
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}

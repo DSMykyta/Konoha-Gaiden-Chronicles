@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1101-tsunade-kedoin-test-reveal"
+episode_id: ep-y0-kedoin-pursuit
+display_rank: 200
 continuity_id: "main"
 title: "Цунаде відкриває, що Кедоїн були частиною перевірки"
 location_id: "loc-hokage-residence"

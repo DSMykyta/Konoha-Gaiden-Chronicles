@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1008-kamizuru-exchange-trap"
+episode_id: ep-y0-kamizuru-exchange-trap
+display_rank: 100
 continuity_id: "main"
 title: "Спроба обміну перетворюється на пастку Камізуру"
 location_id: "loc-bikocho-habitat"

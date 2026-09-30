@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1111-hidden-mugen-basement"
+episode_id: ep-alt-mugen-hidden-branch
+display_rank: 100
 continuity_id: "alt-game-phantom-fortress"
 title: "Джирая веде приховану гілку через підземні поверхи Муґенджо"
 location_id: "loc-mugen-castle"

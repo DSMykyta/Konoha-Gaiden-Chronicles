@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0902-tsunade-assesses-lee"
+episode_id: ep-y0-lee-surgery-decision
+display_rank: 100
 continuity_id: "main"
 title: "Цунаде оцінює стан Рока Лі"
 location_id: "loc-konoha-hospital"

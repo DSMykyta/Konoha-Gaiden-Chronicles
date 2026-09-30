@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0123-team9-catacombs"
+episode_id: ep-y0-raido-evaluation
+display_rank: 400
 continuity_id: "main"
-episode_id: "ep-y0-raido-evaluation"
 title: "Команда 9 проходить катакомби"
 location_id: "loc-team9-catacombs"
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}

@@ -1,0 +1,46 @@
+schema_version: 1
+id: sc-y0-1007-kamizuru-observation
+episode_id: ep-y0-kamizuru-observation
+display_rank: 100
+continuity_id: main
+title: Камізуру стежать за пошуковою групою
+location_id: loc-bikocho-habitat
+placement:
+  anchor_id: ta-y0-1007
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1007-kamizuru-spy-on-search-team
+  legacy_ids:
+  - V10-000137
+  title: Троє Камізуру стежать за пошуком
+  text: 'Судзумебачі, Куробачі й Джібачі потай спостерігають за командою: клан Камізуру теж прагне здобути бікоочу, щоб знайти
+    прихований сувій свого засновника й відновити становище клану.'
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-suzumebachi
+    role: observer
+    mode: physical
+  - entity_id: c-kurobachi
+    role: observer
+    mode: physical
+  - entity_id: c-jibachi
+    role: observer
+    mode: physical
+  - entity_id: group-kamizuru
+    role: affiliation
+    mode: remote
+  evidence_ids:
+  - evd-v10-000137
+  - evd-anime-148-151
+relations: []
+presence: []

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0624-iruka-tests-team7"
+episode_id: ep-y0-iruka-readiness-test
+display_rank: 100
 continuity_id: "main"
 title: "Ірука перевіряє готовність Команди 7"
 location_id: null

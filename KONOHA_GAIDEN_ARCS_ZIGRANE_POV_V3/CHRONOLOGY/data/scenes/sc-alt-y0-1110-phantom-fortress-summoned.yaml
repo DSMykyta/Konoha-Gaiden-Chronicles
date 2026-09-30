@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1110-phantom-fortress-summoned"
+episode_id: ep-alt-y0-1110-phantom-fortress-summoned
+display_rank: 100
 continuity_id: "alt-game-phantom-fortress"
 title: "Муґенджо з'являється біля Конохи й починає висмоктувати життєву силу"
 location_id: "loc-mugen-castle"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0315-team7-departs-konoha"
+episode_id: ep-y0-waves-departure
+display_rank: 200
 continuity_id: "main"
 title: "Команда 7 виходить із Конохи з Тадзуною"
 location_id: "loc-konoha-gate"

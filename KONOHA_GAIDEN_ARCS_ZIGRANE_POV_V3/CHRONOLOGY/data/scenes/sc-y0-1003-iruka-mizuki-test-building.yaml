@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1003-iruka-mizuki-test-building"
+episode_id: ep-y0-iruka-mizuki-pursuit
+display_rank: 200
 continuity_id: "main"
 title: "Мідзукі заманює Іруку до старої випробувальної будівлі"
 location_id: "loc-academy-instructor-test-building"

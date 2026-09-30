@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0923-retrieval-team-departs"
+episode_id: ep-y0-retrieval-team-formation
+display_rank: 500
 continuity_id: "main"
 title: "Загін Шикамару залишає Коноху"
 location_id: "loc-konoha-gate"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0315-tazuna-assignment"
+episode_id: ep-y0-waves-departure
+display_rank: 100
 continuity_id: "main"
 title: "Команда 7 отримує місію супроводу Тадзуни"
 location_id: "loc-hokage-residence"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0317-wave-crossing"
+episode_id: ep-y0-waves-departure
+display_rank: 400
 continuity_id: "main"
 title: "Переправа до Країни Хвиль"
 location_id: "loc-wave-coast"

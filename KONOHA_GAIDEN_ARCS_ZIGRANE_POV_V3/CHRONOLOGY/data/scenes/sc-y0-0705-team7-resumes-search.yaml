@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0705-team7-resumes-search"
+episode_id: ep-y0-team7-forest-trial
+display_rank: 300
 continuity_id: "main"
 title: "Команда 7 відновлює пошук другого сувою"
 location_id: "loc-forest-death"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-invasion-begins-arena"
+episode_id: ep-y0-arena-invasion
+display_rank: 100
 continuity_id: "main"
 title: "Початок нападу на Коноху"
 location_id: "loc-chunin-finals-arena"

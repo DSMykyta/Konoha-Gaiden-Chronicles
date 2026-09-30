@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0330-tazuna-home-attack"
+episode_id: ep-y0-tazuna-home-defense
+display_rank: 100
 continuity_id: "main"
 title: "Напад людей Ґато на дім Тадзуни"
 location_id: "loc-tazuna-home"

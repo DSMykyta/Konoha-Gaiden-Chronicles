@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0701-forest-start"
+episode_id: ep-y0-chunin-forest-rules
+display_rank: 100
 continuity_id: "main"
 title: "Початок другого етапу в Лісі Смерті"
 location_id: "loc-forest-death"

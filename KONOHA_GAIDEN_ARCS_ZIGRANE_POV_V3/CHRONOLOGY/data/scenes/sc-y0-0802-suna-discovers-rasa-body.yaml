@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0802-suna-discovers-rasa-body"
+episode_id: ep-y0-suna-rasa-discovery
+display_rank: 100
 continuity_id: "main"
 title: "Суна викриває підміну Казекаґе"
 location_id: null

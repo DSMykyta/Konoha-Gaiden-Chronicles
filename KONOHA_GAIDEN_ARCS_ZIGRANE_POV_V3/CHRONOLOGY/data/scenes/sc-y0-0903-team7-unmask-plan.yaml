@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0903-team7-unmask-plan"
+episode_id: ep-y0-mask-hunt
+display_rank: 100
 continuity_id: "main"
 title: "Команда 7 намагається побачити обличчя Какаші"
 location_id: "loc-konohagakure"

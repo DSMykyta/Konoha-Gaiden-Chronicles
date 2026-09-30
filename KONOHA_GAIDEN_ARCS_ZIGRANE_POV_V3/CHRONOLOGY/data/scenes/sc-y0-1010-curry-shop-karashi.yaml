@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1010-curry-shop-karashi"
+episode_id: ep-y0-kurosuki-mission-opening
+display_rank: 200
 continuity_id: "main"
 title: "Саншо й Караші розповідають про Райґу та Катабамі"
 location_id: "loc-curry-of-life-shop"

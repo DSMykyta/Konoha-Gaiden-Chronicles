@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-hiruzen-orochimaru-rooftop"
+episode_id: ep-y0-hiruzen-orochimaru-battle
+display_rank: 100
 continuity_id: "main"
 title: "Бій Хірузена з Орочімару"
 location_id: "loc-hokage-rooftop"

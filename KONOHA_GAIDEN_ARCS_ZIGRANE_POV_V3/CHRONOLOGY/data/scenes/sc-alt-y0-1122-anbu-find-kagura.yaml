@@ -1,0 +1,46 @@
+schema_version: 1
+id: sc-alt-y0-1122-anbu-find-kagura
+episode_id: ep-alt-clash2-anbu-investigation
+display_rank: 200
+continuity_id: alt-game-clash-revolution-2
+title: Това й Комачі знаходять Каґуру
+location_id: null
+placement:
+  anchor_id: ta-alt-y0-1122-clash2
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-alt-y0-1122-towa-komachi-find-kagura
+  legacy_ids:
+  - V10-000197
+  title: Това й Комачі знаходять Каґуру
+  text: АНБУ виходять на сховок Каґури й дізнаються, що її справжня мета — виманити Цунаде та помститися їй за давню відмову
+    взяти Каґуру в учениці.
+  origin: G
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-towa
+    role: investigator
+    mode: physical
+  - entity_id: c-komachi
+    role: investigator
+    mode: physical
+  - entity_id: c-kagura-game
+    role: antagonist
+    mode: physical
+  - entity_id: c-tsunade
+    role: target
+    mode: remote
+  evidence_ids:
+  - evd-v10-000197
+  - evd-game-clash-revolution-2
+relations: []
+presence: []

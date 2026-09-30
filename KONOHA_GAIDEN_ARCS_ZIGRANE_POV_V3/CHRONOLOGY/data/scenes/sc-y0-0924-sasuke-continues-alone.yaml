@@ -1,0 +1,35 @@
+schema_version: 1
+id: sc-y0-0924-sasuke-continues-alone
+episode_id: ep-y0-sasuke-reaches-orochimaru
+display_rank: 100
+continuity_id: main
+title: Саске продовжує шлях до Орочімару
+location_id: null
+placement:
+  anchor_id: ta-y0-0924
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0924-sasuke-continues-alone
+  legacy_ids:
+  - V10-000122-F
+  title: Саске продовжує шлях сам
+  text: Після звільнення з контейнера Саске продовжує шлях самостійно.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000122-F
+relations: []
+presence: []

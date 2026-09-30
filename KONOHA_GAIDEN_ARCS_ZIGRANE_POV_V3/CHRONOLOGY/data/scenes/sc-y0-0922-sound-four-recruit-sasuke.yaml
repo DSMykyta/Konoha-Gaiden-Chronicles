@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0922-sound-four-recruit-sasuke"
+episode_id: ep-y0-sasuke-departure
+display_rank: 100
 continuity_id: "main"
 title: "Четвірка Звуку вербує Саске"
 location_id: "loc-konohagakure"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0204-konoha-ninpocho-end"
+episode_id: ep-y0-0204-konoha-ninpocho-end
+display_rank: 100
 continuity_id: "alt-game-konoha-ninpocho"
 title: "Завершення ранньої ігрової гілки"
 location_id: "loc-konohagakure"

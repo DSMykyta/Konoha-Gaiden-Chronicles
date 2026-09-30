@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0925-jiraiya-training-offer"
+episode_id: ep-y0-jiraiya-training-offer
+display_rank: 100
 continuity_id: "main"
 title: "Джирая пропонує Наруто довгострокове тренування"
 location_id: "loc-konoha-hospital"

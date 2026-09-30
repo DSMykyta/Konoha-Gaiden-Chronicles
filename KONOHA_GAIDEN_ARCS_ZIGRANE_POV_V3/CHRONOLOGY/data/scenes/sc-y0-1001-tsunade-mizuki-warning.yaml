@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1001-tsunade-mizuki-warning"
+episode_id: ep-y0-mizuki-warning
+display_rank: 100
 continuity_id: "main"
 title: "Цунаде реагує на зв'язок Мідзукі з Орочімару"
 location_id: "loc-konohagakure"

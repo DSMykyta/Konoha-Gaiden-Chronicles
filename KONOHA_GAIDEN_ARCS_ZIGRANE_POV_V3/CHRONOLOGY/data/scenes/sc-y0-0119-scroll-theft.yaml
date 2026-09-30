@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0119-scroll-theft"
+episode_id: ep-y0-scroll-theft
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-scroll-theft"
 title: "Мідзукі підштовхує Наруто викрасти Сувій Печатей"
 location_id: null
 placement: {anchor_id: "ta-y0-0119", day_offset: 0}

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1028-government-ship-attack"
+episode_id: ep-y0-amachi-fleet-attack
+display_rank: 100
 continuity_id: "main"
 title: "Амачі атакує урядовий флот Країни Моря"
 location_id: "loc-land-sea-government-ship"

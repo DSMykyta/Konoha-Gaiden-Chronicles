@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0908-team7-returns-from-tea"
+episode_id: ep-y0-tea-mission-return
+display_rank: 100
 continuity_id: "main"
 title: "Команда 7 повертається з Країни Чаю"
 location_id: "loc-konoha-gate"

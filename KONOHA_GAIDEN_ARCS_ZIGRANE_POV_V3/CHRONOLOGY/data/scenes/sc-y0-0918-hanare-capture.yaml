@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0918-hanare-capture"
+episode_id: ep-y0-hanare
+display_rank: 100
 continuity_id: "main"
 title: "Команда 7 затримує Ханаре"
 location_id: null

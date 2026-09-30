@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0707-yugao-finds-hayate"
+episode_id: ep-y0-yugao-finds-hayate
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-hayate-investigation"
 title: "Юґао знаходить тіло Хаяте"
 location_id: null
 placement: {anchor_id: "ta-y0-0707", day_offset: 0}

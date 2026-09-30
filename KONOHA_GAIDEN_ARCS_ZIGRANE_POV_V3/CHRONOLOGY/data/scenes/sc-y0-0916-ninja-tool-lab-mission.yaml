@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0916-ninja-tool-lab-mission"
+episode_id: ep-y0-tool-lab
+display_rank: 100
 continuity_id: "main"
 title: "Наруто тимчасово приєднується до Команди Ґая"
 location_id: null

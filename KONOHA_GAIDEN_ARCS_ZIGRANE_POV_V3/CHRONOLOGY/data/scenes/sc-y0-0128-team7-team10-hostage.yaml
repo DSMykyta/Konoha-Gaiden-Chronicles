@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0128-team7-team10-hostage"
+episode_id: ep-y0-hostage-rescue
+display_rank: 100
 continuity_id: "main"
 title: "Команди 7 і 10 визволяють заручника"
 location_id: null

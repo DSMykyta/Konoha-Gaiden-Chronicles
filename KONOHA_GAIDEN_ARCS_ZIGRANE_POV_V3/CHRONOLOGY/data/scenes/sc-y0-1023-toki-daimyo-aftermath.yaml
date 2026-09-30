@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1023-toki-daimyo-aftermath"
+episode_id: ep-y0-toki-aftermath
+display_rank: 100
 continuity_id: "main"
 title: "Токі відмовляється від помсти й лишається правителькою"
 location_id: "loc-birds-daimyo-palace"

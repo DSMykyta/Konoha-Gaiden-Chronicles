@@ -1,8 +1,8 @@
 schema_version: 1
 id: "sc-y0-0122-naruto-impersonates-sasuke"
+episode_id: ep-y0-naruto-impersonation
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-team-formation"
-display_rank: 500
 title: "Наруто підміняє Саске перед Сакурою"
 location_id: null
 placement: {anchor_id: "ta-team-formation", day_offset: 0}

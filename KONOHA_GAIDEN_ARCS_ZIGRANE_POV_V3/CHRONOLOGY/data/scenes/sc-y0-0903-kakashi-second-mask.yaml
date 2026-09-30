@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0903-kakashi-second-mask"
+episode_id: ep-y0-mask-hunt
+display_rank: 300
 continuity_id: "main"
 title: "Какаші показує під маскою ще одну маску"
 location_id: "loc-konohagakure"

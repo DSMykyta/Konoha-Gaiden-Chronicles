@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1101-uc2-hokage-briefing"
+episode_id: ep-alt-y0-1101-uc2-hokage-briefing
+display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles-2"
 title: "Канкуро пояснює мету Шіроґане й Сфер Духу"
 location_id: "loc-hokage-residence"

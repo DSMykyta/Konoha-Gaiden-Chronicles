@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0919-clear-eye-herb-mission"
+episode_id: ep-y0-clear-eye-herb
+display_rank: 100
 continuity_id: "main"
 title: "Наруто, Сакура й Неджі шукають траву «Ясне око»"
 location_id: "loc-valley-of-end"

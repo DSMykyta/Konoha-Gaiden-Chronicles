@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0920-shu-extraction"
+episode_id: ep-y0-shu-infiltration
+display_rank: 300
 continuity_id: "main"
 title: "Команда Асуми вивозить справжнього Шю"
 location_id: null

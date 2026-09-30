@@ -1,21 +1,566 @@
 schema_version: 1
 arcs:
-  - id: "arc-y0-scroll-of-seals"
-    continuity_id: "main"
-    title: "Наруто і Сувій Печатей"
-    description: "Від витівки Наруто на Монументі Хокаґе та провалу випускного іспиту до викрадення Сувою Печатей, бою з Мідзукі й отримання пов’язки геніна."
-
-  - id: "arc-y0-genin-formation"
-    continuity_id: "main"
-    title: "Розподіл на команди"
-    description: "Розподіл випускників Академії по командах, знайомство з наставниками, перші випробування та підсумкові звіти."
-
-  - id: "arc-y0-chunin-exams"
-    continuity_id: "main"
-    title: "Іспит на чуніна"
-    description: "Іспит на чуніна та пов'язані з ним паралельні лінії, що ведуть до загрози вторгнення."
-
-  - id: "arc-y0-sasuke-retrieval"
-    continuity_id: "main"
-    title: "Місія з повернення Саске"
-    description: "Переслідування Саске після його втечі з Конохи та фінальна сутичка в Долині Завершення."
+- id: arc-y0-scroll-of-seals
+  continuity_id: main
+  title: Наруто і Сувій Печатей
+  description: Сюжетна арка «Наруто і Сувій Печатей». Самостійні паралельні лінії оформлено окремими епізодами.
+  period_id: part-i
+  kind: canonical
+- id: arc-y0-genin-formation
+  continuity_id: main
+  title: Розподіл на команди
+  description: Сюжетна арка «Розподіл на команди». Самостійні паралельні лінії оформлено окремими епізодами.
+  period_id: part-i
+  kind: canonical
+- id: arc-y0-chunin-exams
+  continuity_id: main
+  title: Іспит на чуніна
+  description: Сюжетна арка «Іспит на чуніна». Самостійні паралельні лінії оформлено окремими епізодами.
+  period_id: part-i
+  kind: canonical
+- id: arc-y0-sasuke-retrieval
+  continuity_id: main
+  title: Місія з повернення Саске
+  description: Сюжетна арка «Місія з повернення Саске». Самостійні паралельні лінії оформлено окремими епізодами.
+  period_id: part-i
+  kind: canonical
+- id: arc-y0-team9-first-day
+  continuity_id: main
+  period_id: part-i
+  kind: project
+  title: 'Команда 9: перший день'
+  description: 'Сюжетна арка «Команда 9: перший день». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-team9-raido-evaluation
+  continuity_id: main
+  period_id: part-i
+  kind: project
+  title: 'Команда 9: перевірка Райдо'
+  description: 'Сюжетна арка «Команда 9: перевірка Райдо». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-first-tests-aftermath
+  continuity_id: main
+  period_id: part-i
+  kind: project
+  title: Після перших випробувань
+  description: Сюжетна арка «Після перших випробувань». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-red-clover
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Багряний чотирилисник
+  description: Сюжетна арка «Багряний чотирилисник». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-nekomata
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Відбиток лапи Некомати
+  description: Сюжетна арка «Відбиток лапи Некомати». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-kisuke
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Привид Кісуке
+  description: Сюжетна арка «Привид Кісуке». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-webbed-together
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Зв’язані павутиною
+  description: Сюжетна арка «Зв’язані павутиною». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-hostage-rescue
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Визволення заручника
+  description: Сюжетна арка «Визволення заручника». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-team10-kosuke
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Команда 10 і Косуке
+  description: Сюжетна арка «Команда 10 і Косуке». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-d-rank-missions
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Перші D-рангові місії Команди 7
+  description: Сюжетна арка «Перші D-рангові місії Команди 7». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-condor-escort
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Супровід Кондора
+  description: Сюжетна арка «Супровід Кондора». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-chen-lesson
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Урок майстра Чена
+  description: Сюжетна арка «Урок майстра Чена». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-iruka-rock-lesson
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Урок біля Монумента Хокаґе
+  description: Сюжетна арка «Урок біля Монумента Хокаґе». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-tenten-confidence
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Тентен після іспиту
+  description: Сюжетна арка «Тентен після іспиту». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-hot-springs-debt
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Борг у гарячих джерелах
+  description: Сюжетна арка «Борг у гарячих джерелах». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-konohamaru-new-hokage
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Конохамару і П’ята Хокаґе
+  description: Сюжетна арка «Конохамару і П’ята Хокаґе». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-gaara-settlement
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Захист поселення з Ґаарою
+  description: Сюжетна арка «Захист поселення з Ґаарою». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-chakra-virus
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Хибна тривога про вірус чакри
+  description: Сюжетна арка «Хибна тривога про вірус чакри». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-clear-eye-flower
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Пошук квітки
+  description: Сюжетна арка «Пошук квітки». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-tool-lab
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Лабораторія ніндзя-інструментів
+  description: Сюжетна арка «Лабораторія ніндзя-інструментів». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-hanare
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Затримання Ханаре
+  description: Сюжетна арка «Затримання Ханаре». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-clear-eye-herb
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Пошук трави «Ясне око»
+  description: Сюжетна арка «Пошук трави «Ясне око»». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-anko-swamps
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: 'Анко: місія в Країні Боліт'
+  description: 'Сюжетна арка «Анко: місія в Країні Боліт». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-naruto-birthday
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Тринадцятий день народження Наруто
+  description: Сюжетна арка «Тринадцятий день народження Наруто». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-fuku-matchmaking
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Сватання Фуку
+  description: Сюжетна арка «Сватання Фуку». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-lee-dojo
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Доджьо Рока Лі
+  description: Сюжетна арка «Доджьо Рока Лі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-haunted-castle
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Проклятий замок
+  description: Сюжетна арка «Проклятий замок». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-shinemon-bowl
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Коштовна чаша Шінемона
+  description: Сюжетна арка «Коштовна чаша Шінемона». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-matsuri-rescue
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Порятунок Мацурі
+  description: Сюжетна арка «Порятунок Мацурі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-land-of-waves
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Країна Хвиль
+  description: Сюжетна арка «Країна Хвиль». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-waves-coupon-return
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Повернення за купоном
+  description: Сюжетна арка «Повернення за купоном». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-naruto-sasuke-rivalry
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Суперництво після Країни Хвиль
+  description: Сюжетна арка «Суперництво після Країни Хвиль». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-konohamaru-exam-report
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Репортаж Конохамару
+  description: Сюжетна арка «Репортаж Конохамару». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-hyuga-family
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Хіната, Неджі й Ханабі
+  description: Сюжетна арка «Хіната, Неджі й Ханабі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-fourth-hokage-legacy
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Спадщина Четвертого Хокаґе
+  description: Сюжетна арка «Спадщина Четвертого Хокаґе». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-konoha-crush
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Вторгнення в Коноху
+  description: Сюжетна арка «Вторгнення в Коноху». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-yugao-hayate-memory
+  continuity_id: main
+  period_id: part-i
+  kind: project
+  title: 'Юґао: пам’ять про Хаяте'
+  description: 'Сюжетна арка «Юґао: пам’ять про Хаяте». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-itachi-return
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Повернення Ітачі
+  description: Сюжетна арка «Повернення Ітачі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-search-for-tsunade
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Пошук Цунаде
+  description: Сюжетна арка «Пошук Цунаде». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-lee-surgery
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: 'Рок Лі: рішення про операцію'
+  description: 'Сюжетна арка «Рок Лі: рішення про операцію». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-kakashi-mask
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Обличчя Какаші
+  description: Сюжетна арка «Обличчя Какаші». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-tea-race
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Перегони в Країні Чаю
+  description: Сюжетна арка «Перегони в Країні Чаю». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-waterfall-defense
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Оборона Такіґакуре
+  description: Сюжетна арка «Оборона Такіґакуре». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-kosuke-border
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: 'Косуке: патрулювання кордону'
+  description: 'Сюжетна арка «Косуке: патрулювання кордону». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-hinata-vision
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: 'Хіната: тимчасова втрата зору'
+  description: 'Сюжетна арка «Хіната: тимчасова втрата зору». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-shu-rescue
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Таємна місія щодо Шю
+  description: Сюжетна арка «Таємна місія щодо Шю». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-naruto-long-training
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: Підготовка Наруто до довгого тренування
+  description: Сюжетна арка «Підготовка Наруто до довгого тренування». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-sakura-apprenticeship
+  continuity_id: main
+  period_id: part-i
+  kind: canonical
+  title: 'Сакура: учениця Цунаде'
+  description: 'Сюжетна арка «Сакура: учениця Цунаде». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-fuma-clan
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Місія до клану Фума
+  description: Сюжетна арка «Місія до клану Фума». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-shino-growth
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: 'Шіно: повернення до Команди 8'
+  description: 'Сюжетна арка «Шіно: повернення до Команди 8». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-y0-mizuki-return
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Повернення Мідзукі
+  description: Сюжетна арка «Повернення Мідзукі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-animal-district
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Нульова ділянка й ніндзя-тварини
+  description: Сюжетна арка «Нульова ділянка й ніндзя-тварини». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-bikochu-search
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Пошук бікоочу
+  description: Сюжетна арка «Пошук бікоочу». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-raiga-ranmaru
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Райґа й Ранмару
+  description: Сюжетна арка «Райґа й Ранмару». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-academy-survival
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Наруто веде учнів Академії
+  description: Сюжетна арка «Наруто веде учнів Академії». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-gosunkugi
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Погоня за Ґосункуґі
+  description: Сюжетна арка «Погоня за Ґосункуґі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-guy-lee-impostors
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Самозванці Ґай і Лі
+  description: Сюжетна арка «Самозванці Ґай і Лі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-land-of-birds
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Проклятий Воїн Країни Птахів
+  description: Сюжетна арка «Проклятий Воїн Країни Птахів». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-ayame-rescue
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Порятунок Аяме
+  description: Сюжетна арка «Порятунок Аяме». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-kaima-sea
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Кайма Країни Моря
+  description: Сюжетна арка «Кайма Країни Моря». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-kunihisa
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Куніхіса й життя шинобі
+  description: Сюжетна арка «Куніхіса й життя шинобі». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-buried-gold
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Скарб і двійники Кедоїн
+  description: Сюжетна арка «Скарб і двійники Кедоїн». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-postman
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Рукопис Джираї й листоноші
+  description: Сюжетна арка «Рукопис Джираї й листоноші». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-hoshigakure
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Зірка Хошіґакуре
+  description: Сюжетна арка «Зірка Хошіґакуре». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-akamaru-infection
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Хвороба Акамару
+  description: Сюжетна арка «Хвороба Акамару». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-onba
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Наруто й Онбу
+  description: Сюжетна арка «Наруто й Онбу». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-kagetsu-funeral
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Постановний похорон Каґецу
+  description: Сюжетна арка «Постановний похорон Каґецу». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-land-of-greens
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Харуна й Країна Овочів
+  description: Сюжетна арка «Харуна й Країна Овочів». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-ryudoin
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Помста братів Рюдоін
+  description: Сюжетна арка «Помста братів Рюдоін». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-genno
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Пастки Ґенно
+  description: Сюжетна арка «Пастки Ґенно». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-yakumo-kurenai
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Якумо й Куренай
+  description: Сюжетна арка «Якумо й Куренай». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-gantetsu
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Ґантецу й сироти
+  description: Сюжетна арка «Ґантецу й сироти». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-y0-menma
+  continuity_id: main
+  period_id: part-i
+  kind: adaptation
+  title: Наруто й Менма
+  description: Сюжетна арка «Наруто й Менма». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-game-clash-revolution-2
+  continuity_id: alt-game-clash-revolution-2
+  period_id: part-i
+  kind: alternate
+  title: Clash of Ninja Revolution 2
+  description: Сюжетна арка «Clash of Ninja Revolution 2». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-game-konoha-ninpocho
+  continuity_id: alt-game-konoha-ninpocho
+  period_id: part-i
+  kind: alternate
+  title: Konoha Ninpōchō
+  description: Сюжетна арка «Konoha Ninpōchō». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-game-ninja-destiny-2-eu
+  continuity_id: alt-game-ninja-destiny-2-eu
+  period_id: part-i
+  kind: alternate
+  title: 'Ninja Destiny 2: європейська гілка'
+  description: 'Сюжетна арка «Ninja Destiny 2: європейська гілка». Самостійні паралельні лінії оформлено окремими епізодами.'
+- id: arc-alt-game-path-ninja-2
+  continuity_id: alt-game-path-ninja-2
+  period_id: part-i
+  kind: alternate
+  title: Path of the Ninja 2
+  description: Сюжетна арка «Path of the Ninja 2». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-game-phantom-fortress
+  continuity_id: alt-game-phantom-fortress
+  period_id: part-i
+  kind: alternate
+  title: Примарний замок Муґенджо
+  description: Сюжетна арка «Примарний замок Муґенджо». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-game-uzumaki-chronicles
+  continuity_id: alt-game-uzumaki-chronicles
+  period_id: part-i
+  kind: alternate
+  title: Uzumaki Chronicles
+  description: Сюжетна арка «Uzumaki Chronicles». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-game-uzumaki-chronicles-2
+  continuity_id: alt-game-uzumaki-chronicles-2
+  period_id: part-i
+  kind: alternate
+  title: Uzumaki Chronicles 2
+  description: Сюжетна арка «Uzumaki Chronicles 2». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-genie-three-wishes
+  continuity_id: alt-genie-three-wishes
+  period_id: part-i
+  kind: alternate
+  title: Три бажання
+  description: Сюжетна арка «Три бажання». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-jonin-vs-genin
+  continuity_id: alt-jonin-vs-genin
+  period_id: part-i
+  kind: alternate
+  title: Турнір джонінів і генінів
+  description: Сюжетна арка «Турнір джонінів і генінів». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-movie-crescent-moon
+  continuity_id: alt-movie-crescent-moon
+  period_id: part-i
+  kind: alternate
+  title: Країна Місяця
+  description: Сюжетна арка «Країна Місяця». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-movie-gelel
+  continuity_id: alt-movie-gelel
+  period_id: part-i
+  kind: alternate
+  title: Камінь Ґелеля
+  description: Сюжетна арка «Камінь Ґелеля». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-movie-land-of-snow
+  continuity_id: alt-movie-land-of-snow
+  period_id: part-i
+  kind: alternate
+  title: Країна Снігу
+  description: Сюжетна арка «Країна Снігу». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-ova-cross-roads
+  continuity_id: alt-ova-cross-roads
+  period_id: part-i
+  kind: alternate
+  title: The Cross Roads
+  description: Сюжетна арка «The Cross Roads». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-shippuden-469
+  continuity_id: alt-shippuden-469
+  period_id: part-i
+  kind: alternate
+  title: Скеа й полювання на маску
+  description: Сюжетна арка «Скеа й полювання на маску». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-sports-festival
+  continuity_id: alt-sports-festival
+  period_id: part-i
+  kind: alternate
+  title: Спортивний фестиваль Конохи
+  description: Сюжетна арка «Спортивний фестиваль Конохи». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-ultimate-ninja-2
+  continuity_id: alt-ultimate-ninja-2
+  period_id: part-i
+  kind: alternate
+  title: Ultimate Ninja 2
+  description: Сюжетна арка «Ultimate Ninja 2». Самостійні паралельні лінії оформлено окремими епізодами.
+- id: arc-alt-waterfall-novel
+  continuity_id: alt-waterfall-novel
+  period_id: part-i
+  kind: alternate
+  title: 'Такіґакуре: новельна версія'
+  description: 'Сюжетна арка «Такіґакуре: новельна версія». Самостійні паралельні лінії оформлено окремими епізодами.'

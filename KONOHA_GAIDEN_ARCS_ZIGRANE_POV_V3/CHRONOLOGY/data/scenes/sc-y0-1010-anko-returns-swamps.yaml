@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1010-anko-returns-swamps"
+episode_id: ep-y0-anko-swamps
+display_rank: 100
 continuity_id: "main"
 title: "Анко повертається з місії в Країні Боліт"
 location_id: "loc-hokage-residence"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0904-tsunade-assigns-tea-mission"
+episode_id: ep-y0-tea-escort-assignment
+display_rank: 100
 continuity_id: "main"
 title: "Цунаде відправляє трійку Команди 7 до Країни Чаю"
 location_id: "loc-hokage-residence"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0920-shu-mission-assignment"
+episode_id: ep-y0-shu-infiltration
+display_rank: 100
 continuity_id: "main"
 title: "Цунаде доручає Наруто й Команді 10 таємну місію щодо Шю"
 location_id: "loc-konohagakure"

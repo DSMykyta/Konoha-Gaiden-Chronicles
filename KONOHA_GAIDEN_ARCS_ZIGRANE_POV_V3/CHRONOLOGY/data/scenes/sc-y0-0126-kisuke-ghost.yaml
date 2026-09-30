@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0126-kisuke-ghost"
+episode_id: ep-y0-kisuke
+display_rank: 100
 continuity_id: "main"
 title: "Наруто допомагає привиду Кісуке"
 location_id: "loc-konohagakure"

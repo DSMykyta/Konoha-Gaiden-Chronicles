@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0317-arrival-waves"
+episode_id: ep-y0-waves-departure
+display_rank: 500
 continuity_id: "main"
 title: "Команда 7 висаджується в Країні Хвиль"
 location_id: "loc-land-waves"

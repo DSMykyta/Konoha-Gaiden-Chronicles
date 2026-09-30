@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0930-shino-withdraws"
+episode_id: ep-y0-shino-confidence
+display_rank: 100
 continuity_id: "main"
 title: "Шіно сумнівається у своєму місці в Команді 8"
 location_id: "loc-shino-home"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0905-waterfall-shibuki-crisis"
+episode_id: ep-y0-shibuki-crisis
+display_rank: 100
 continuity_id: "main"
 title: "Шібукі паралізує страх перед Суїєном"
 location_id: "loc-takigakure"

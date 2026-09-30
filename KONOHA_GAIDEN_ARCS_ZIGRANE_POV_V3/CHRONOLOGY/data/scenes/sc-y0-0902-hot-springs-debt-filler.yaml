@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0902-hot-springs-debt-filler"
+episode_id: ep-y0-hot-springs-debt
+display_rank: 100
 continuity_id: "main"
 title: "Кредитори викрадають Наруто дорогою до Конохи"
 location_id: null

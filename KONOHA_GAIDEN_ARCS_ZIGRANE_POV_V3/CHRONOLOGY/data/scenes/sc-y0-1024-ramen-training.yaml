@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1024-ramen-training"
+episode_id: ep-y0-ayame-cooking-rescue
+display_rank: 200
 continuity_id: "main"
 title: "Наруто, Сакура й Чоджі допомагають Теучі створити нову локшину"
 location_id: "loc-ichiraku"

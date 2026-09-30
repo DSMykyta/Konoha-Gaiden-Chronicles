@@ -1,48 +1,70 @@
 schema_version: 1
-id: "sc-alt-y0-1120-clash2-investigation"
-continuity_id: "alt-game-clash-revolution-2"
-title: "Това й Комачі починають розслідування ігрової змови проти Конохи"
-location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-alt-y0-1120-clash2", day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "approximate", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+id: sc-alt-y0-1120-clash2-investigation
+episode_id: ep-alt-clash2-anbu-investigation
+display_rank: 100
+continuity_id: alt-game-clash-revolution-2
+title: Това й Комачі розслідують сліди нукенінів
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-alt-y0-1120-clash2
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-alt-y0-1120-towa-komachi-investigate"
-    legacy_ids: ["V10-000193"]
-    title: "АНБУ Това й Комачі переслідують двох нукенінів"
-    text: "В альтернативній історії Clash of Ninja Revolution 2 Това й Комачі стикаються з двома нукенінами, а після їхньої втечі продовжують розслідування."
-    origin: "G"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-towa", role: "investigator", mode: "physical"}
-      - {entity_id: "c-komachi", role: "investigator", mode: "physical"}
-    evidence_ids: ["evd-v10-000193", "evd-game-clash-revolution-2"]
-  - id: "ev-alt-y0-1120-destroyed-village-clue"
-    legacy_ids: ["V10-000193"]
-    title: "АНБУ знаходять село, мешканці якого винищили одне одного"
-    text: "Сліди втікачів приводять Това й Комачі до знищеного поселення; вони роблять висновок, що людей примусили напасти одне на одного, й доповідають Конохі."
-    origin: "G"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-towa", role: "investigator", mode: "physical"}
-      - {entity_id: "c-komachi", role: "investigator", mode: "physical"}
-      - {entity_id: "c-tsunade", role: "recipient", mode: "remote"}
-    evidence_ids: ["evd-v10-000193", "evd-game-clash-revolution-2"]
-  - id: "ev-alt-y0-1120-sakura-abducted"
-    legacy_ids: ["V10-000193"]
-    title: "Ворожі шинобі викрадають Сакуру"
-    text: "Паралельно змова переходить до прямої дії: Сакуру викрадають сили, пов'язані з ґенджюцу, і Коноха починає її пошук."
-    origin: "G"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-sakura", role: "captive", mode: "physical"}
-      - {entity_id: "c-naruto", role: "rescuer", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "rescuer", mode: "physical"}
-    evidence_ids: ["evd-v10-000193", "evd-game-clash-revolution-2"]
+- id: ev-alt-y0-1120-towa-komachi-investigate
+  legacy_ids:
+  - V10-000193
+  title: АНБУ Това й Комачі переслідують двох нукенінів
+  text: В альтернативній історії Clash of Ninja Revolution 2 Това й Комачі стикаються з двома нукенінами, а після їхньої втечі
+    продовжують розслідування.
+  origin: G
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-towa
+    role: investigator
+    mode: physical
+  - entity_id: c-komachi
+    role: investigator
+    mode: physical
+  evidence_ids:
+  - evd-v10-000193
+  - evd-game-clash-revolution-2
+- id: ev-alt-y0-1120-destroyed-village-clue
+  legacy_ids:
+  - V10-000193
+  title: АНБУ знаходять село, мешканці якого винищили одне одного
+  text: Сліди втікачів приводять Това й Комачі до знищеного поселення; вони роблять висновок, що людей примусили напасти одне
+    на одного, й доповідають Конохі.
+  origin: G
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-towa
+    role: investigator
+    mode: physical
+  - entity_id: c-komachi
+    role: investigator
+    mode: physical
+  - entity_id: c-tsunade
+    role: recipient
+    mode: remote
+  evidence_ids:
+  - evd-v10-000193
+  - evd-game-clash-revolution-2
 relations:
-  - {id: "rel-alt-1120-clash2-1", kind: "before", a: "ev-alt-y0-1120-towa-komachi-investigate", b: "ev-alt-y0-1120-destroyed-village-clue", basis: "source", review: "accepted", evidence_ids: ["evd-game-clash-revolution-2"]}
+- id: rel-alt-1120-clash2-1
+  kind: before
+  a: ev-alt-y0-1120-towa-komachi-investigate
+  b: ev-alt-y0-1120-destroyed-village-clue
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-game-clash-revolution-2
 presence: []

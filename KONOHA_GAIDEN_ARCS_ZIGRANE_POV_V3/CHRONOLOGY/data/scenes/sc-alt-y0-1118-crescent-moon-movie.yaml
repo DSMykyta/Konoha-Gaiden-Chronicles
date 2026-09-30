@@ -1,85 +1,52 @@
 schema_version: 1
-id: "sc-alt-y0-1118-crescent-moon-movie"
-continuity_id: "alt-movie-crescent-moon"
-title: "Команда Какаші захищає Мічіру й Хікару під час перевороту в Країні Місяця"
-location_id: "loc-land-of-moon"
-placement: {anchor_id: "ta-alt-y0-1118-crescent-moon", day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "approximate", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+id: sc-alt-y0-1118-crescent-moon-movie
+episode_id: ep-alt-y0-1118-crescent-moon-movie
+display_rank: 100
+continuity_id: alt-movie-crescent-moon
+title: Супровід Мічіру й Хікару
+location_id: loc-land-of-moon
+placement:
+  anchor_id: ta-alt-y0-1118-crescent-moon
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-alt-y0-1118-moon-escort-assigned"
-    legacy_ids: ["V10-000190"]
-    title: "Наруто, Сакура, Лі й Какаші супроводжують Мічіру та Хікару"
-    text: "В альтернативній кінолінії Какаші, Наруто, Сакура й Лі охороняють спадкоємця Країни Місяця Мічіру та його сина Хікару на шляху додому."
-    origin: "V"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-kakashi", role: "leader", mode: "physical"}
-      - {entity_id: "c-naruto", role: "escort", mode: "physical"}
-      - {entity_id: "c-sakura", role: "escort", mode: "physical"}
-      - {entity_id: "c-lee", role: "escort", mode: "physical"}
-      - {entity_id: "c-michiru-tsuki", role: "protected", mode: "physical"}
-      - {entity_id: "c-hikaru-tsuki", role: "protected", mode: "physical"}
-    evidence_ids: ["evd-v10-000190", "evd-movie-crescent-moon"]
-  - id: "ev-alt-y0-1118-shabadaba-coup-revealed"
-    legacy_ids: ["V10-000190"]
-    title: "Після повернення відкривається переворот Шабадаби"
-    text: "У Країні Місяця команда дізнається, що Шабадаба захопив владу й наказав усунути Мічіру та Хікару, останніх законних спадкоємців."
-    origin: "V"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-shabadaba", role: "usurper", mode: "physical"}
-      - {entity_id: "c-michiru-tsuki", role: "target", mode: "physical"}
-      - {entity_id: "c-hikaru-tsuki", role: "target", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "protector", mode: "physical"}
-    evidence_ids: ["evd-v10-000190", "evd-movie-crescent-moon"]
-  - id: "ev-alt-y0-1118-michiru-captured-rescue"
-    legacy_ids: ["V10-000190"]
-    title: "Мічіру потрапляє в полон, і команда організовує порятунок"
-    text: "Найманці Ішідате захоплюють Мічіру; Хікару, команда Какаші та союзники повертаються до палацу, щоб урятувати його від страти."
-    origin: "V"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-michiru-tsuki", role: "captive", mode: "physical"}
-      - {entity_id: "c-hikaru-tsuki", role: "rescuer", mode: "physical"}
-      - {entity_id: "c-ishidate", role: "enemy_leader", mode: "physical"}
-      - {entity_id: "c-naruto", role: "rescuer", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "rescuer", mode: "physical"}
-      - {entity_id: "c-sakura", role: "rescuer", mode: "physical"}
-      - {entity_id: "c-lee", role: "rescuer", mode: "physical"}
-    evidence_ids: ["evd-v10-000190", "evd-movie-crescent-moon"]
-  - id: "ev-alt-y0-1118-naruto-defeats-ishidate"
-    legacy_ids: ["V10-000190"]
-    title: "Наруто перемагає Ішідате за допомогою Мічіру й Хікару"
-    text: "Після часткової петрифікації ноги Наруто Мічіру й Хікару допомагають йому дістатися до Ішідате; посилений місячним світлом Расенґан завершує бій."
-    origin: "V"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-naruto", role: "victor", mode: "physical"}
-      - {entity_id: "c-ishidate", role: "defeated", mode: "physical"}
-      - {entity_id: "c-michiru-tsuki", role: "support", mode: "physical"}
-      - {entity_id: "c-hikaru-tsuki", role: "support", mode: "physical"}
-      - {entity_id: "c-shabadaba", role: "casualty", mode: "physical"}
-    evidence_ids: ["evd-v10-000190", "evd-movie-crescent-moon"]
-  - id: "ev-alt-y0-1118-michiru-takes-throne"
-    legacy_ids: ["V10-000190"]
-    title: "Мічіру стає правителем Країни Місяця"
-    text: "Після придушення перевороту Мічіру посідає трон і обіцяє правити, ставлячи людей вище за накопичення багатства."
-    origin: "V"
-    extent: "interval"
-    display_rank: 500
-    involvement:
-      - {entity_id: "c-michiru-tsuki", role: "ruler", mode: "physical"}
-      - {entity_id: "c-hikaru-tsuki", role: "heir", mode: "physical"}
-    evidence_ids: ["evd-v10-000190", "evd-movie-crescent-moon"]
-relations:
-  - {id: "rel-alt-1118-moon-1", kind: "before", a: "ev-alt-y0-1118-moon-escort-assigned", b: "ev-alt-y0-1118-shabadaba-coup-revealed", basis: "source", review: "accepted", evidence_ids: ["evd-movie-crescent-moon"]}
-  - {id: "rel-alt-1118-moon-2", kind: "before", a: "ev-alt-y0-1118-shabadaba-coup-revealed", b: "ev-alt-y0-1118-michiru-captured-rescue", basis: "source", review: "accepted", evidence_ids: ["evd-movie-crescent-moon"]}
-  - {id: "rel-alt-1118-moon-3", kind: "before", a: "ev-alt-y0-1118-michiru-captured-rescue", b: "ev-alt-y0-1118-naruto-defeats-ishidate", basis: "source", review: "accepted", evidence_ids: ["evd-movie-crescent-moon"]}
-  - {id: "rel-alt-1118-moon-4", kind: "before", a: "ev-alt-y0-1118-naruto-defeats-ishidate", b: "ev-alt-y0-1118-michiru-takes-throne", basis: "source", review: "accepted", evidence_ids: ["evd-movie-crescent-moon"]}
+- id: ev-alt-y0-1118-moon-escort-assigned
+  legacy_ids:
+  - V10-000190
+  title: Наруто, Сакура, Лі й Какаші супроводжують Мічіру та Хікару
+  text: В альтернативній кінолінії Какаші, Наруто, Сакура й Лі охороняють спадкоємця Країни Місяця Мічіру та його сина Хікару
+    на шляху додому.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: leader
+    mode: physical
+  - entity_id: c-naruto
+    role: escort
+    mode: physical
+  - entity_id: c-sakura
+    role: escort
+    mode: physical
+  - entity_id: c-lee
+    role: escort
+    mode: physical
+  - entity_id: c-michiru-tsuki
+    role: protected
+    mode: physical
+  - entity_id: c-hikaru-tsuki
+    role: protected
+    mode: physical
+  evidence_ids:
+  - evd-v10-000190
+  - evd-movie-crescent-moon
+relations: []
 presence: []

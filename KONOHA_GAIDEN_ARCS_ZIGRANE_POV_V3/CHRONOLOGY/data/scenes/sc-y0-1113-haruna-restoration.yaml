@@ -1,0 +1,39 @@
+schema_version: 1
+id: sc-y0-1113-haruna-restoration
+episode_id: ep-y0-haruna-restoration
+display_rank: 100
+continuity_id: main
+title: Харуна успадковує владу
+location_id: loc-land-of-greens
+placement:
+  anchor_id: ta-y0-1113-greens
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1113-haruna-restores-rule
+  legacy_ids:
+  - V10-000184
+  title: Харуна успадковує владу в Країні Овочів
+  text: Після поразки Ренґи Харуна стає наступницею свого батька й повертається до керування Країною Овочів.
+  origin: F
+  extent: interval
+  display_rank: 600
+  involvement:
+  - entity_id: c-haruna
+    role: ruler
+    mode: physical
+  - entity_id: c-naruto
+    role: ally
+    mode: physical
+  evidence_ids:
+  - evd-v10-000184
+  - evd-anime-187-191
+relations: []
+presence: []

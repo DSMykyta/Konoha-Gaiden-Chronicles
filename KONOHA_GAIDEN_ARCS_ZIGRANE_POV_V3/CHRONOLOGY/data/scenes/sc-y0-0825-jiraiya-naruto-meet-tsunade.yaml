@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0825-jiraiya-naruto-meet-tsunade"
+episode_id: ep-y0-meeting-tsunade
+display_rank: 100
 continuity_id: "main"
 title: "Джирая й Наруто знаходять Цунаде"
 location_id: "loc-tanzaku"

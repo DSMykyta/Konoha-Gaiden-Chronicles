@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0706-kabuto-hospital-infiltration"
+episode_id: ep-y0-kabuto-hospital-infiltration
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-hayate-investigation"
 title: "Кабуто проникає до палати Саске"
 location_id: "loc-konoha-hospital"
 placement: {anchor_id: "ta-y0-0706", day_offset: 0}

@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0122-accidental-kiss"
+episode_id: ep-y0-team-formation
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-team-formation"
 title: "Випадковий поцілунок Наруто й Саске"
 location_id: "loc-academy-classroom"
 placement: {anchor_id: "ta-team-formation", day_offset: 0}

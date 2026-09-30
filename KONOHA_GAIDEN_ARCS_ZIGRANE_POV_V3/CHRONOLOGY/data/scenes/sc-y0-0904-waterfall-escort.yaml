@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0904-waterfall-escort"
+episode_id: ep-y0-waterfall-escort
+display_rank: 100
 continuity_id: "main"
 title: "Команда 7 супроводжує Шібукі до Такіґакуре"
 location_id: "loc-takigakure"

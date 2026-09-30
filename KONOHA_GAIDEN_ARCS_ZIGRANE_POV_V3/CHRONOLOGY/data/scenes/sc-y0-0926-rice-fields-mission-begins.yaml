@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0926-rice-fields-mission-begins"
+episode_id: ep-y0-fuma-mission-opening
+display_rank: 100
 continuity_id: "main"
 title: "Наруто, Джирая й Сакура вирушають до Країни Рисових Полів"
 location_id: "loc-konohagakure"

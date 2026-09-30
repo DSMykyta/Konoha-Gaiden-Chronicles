@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0118-ichiraku"
+episode_id: ep-y0-naruto-monument
+display_rank: 400
 continuity_id: "main"
-episode_id: "ep-y0-naruto-monument"
 title: "Ірука пригощає Наруто раменом"
 location_id: "loc-ichiraku"
 placement: {anchor_id: "ta-y0-0118", day_offset: 0}

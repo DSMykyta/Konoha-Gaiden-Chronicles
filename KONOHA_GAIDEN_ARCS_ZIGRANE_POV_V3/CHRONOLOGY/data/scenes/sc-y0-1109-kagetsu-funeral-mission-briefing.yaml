@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1109-kagetsu-funeral-mission-briefing"
+episode_id: ep-y0-kagetsu-funeral
+display_rank: 100
 continuity_id: "main"
 title: "Наруто й Шіно отримують дивне завдання на похороні Каґецу"
 location_id: "loc-kagetsu-estate"

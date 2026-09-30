@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0415-condor-escort"
+episode_id: ep-y0-condor-escort
+display_rank: 100
 continuity_id: "main"
 title: "Команда 7 супроводжує страуса Кондора"
 location_id: null

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-shikamaru-delays-sound"
+episode_id: ep-y0-shikamaru-sound-delay
+display_rank: 100
 continuity_id: "main"
 title: "Шикамару затримує переслідувачів Звуку"
 location_id: "loc-konoha-outskirts"

@@ -44,7 +44,7 @@ for path in sorted((DATA/"scenes").glob("*.yaml")):
     scene_ids.add(sid); global_ids.add(sid)
     loc=s.get("location_id")
     if loc is not None and loc not in entity_ids: errors.append(f"{sid}: unknown location {loc}")
-    anchor=s.get("placement",{}).get("anchor_id")
+    anchor=(s.get("placement") or {}).get("anchor_id")
     if anchor and anchor not in anchor_ids: errors.append(f"{sid}: unknown anchor {anchor}")
     local={sid}
     for e in s.get("events",[]):
@@ -69,6 +69,45 @@ for path in sorted((DATA/"scenes").glob("*.yaml")):
         if base_ref(r.get("a")) not in local or base_ref(r.get("b")) not in local:
             errors.append(f"{r.get('id')}: non-local relation")
         if r.get("kind")=="before": before_edges.append((base_ref(r["a"]),base_ref(r["b"])))
+
+# Source hierarchy: every scene has one episode and every episode one arc.
+arcs=load(DATA/"arcs.yaml").get("arcs",[])
+episodes=load(DATA/"episodes.yaml").get("episodes",[])
+periods=load(DATA/"timeline-periods.yaml").get("periods",[])
+def registry(items,label):
+    result={}
+    for item in items:
+        key=item.get("id")
+        if not key or key in result: errors.append(f"missing or duplicate {label} ID: {key}")
+        if label!="period" and (not item.get("title") or not item.get("continuity_id")):
+            errors.append(f"{key}: missing {label} metadata")
+        result[key]=item
+    return result
+arc_map=registry(arcs,"arc"); episode_map=registry(episodes,"episode"); period_map=registry(periods,"period")
+arc_members=set(); episode_members=set()
+for arc in arcs:
+    if arc.get("period_id") not in period_map: errors.append(f"{arc['id']}: unknown period")
+    if arc.get("kind") not in {"canonical","adaptation","project","alternate"}: errors.append(f"{arc['id']}: unknown kind")
+    if "episode_ids" in arc: errors.append(f"{arc['id']}: derived episode_ids in source")
+for episode in episodes:
+    arc=arc_map.get(episode.get("arc_id"))
+    if not arc: errors.append(f"{episode['id']}: unknown arc")
+    elif arc.get("continuity_id")!=episode.get("continuity_id"): errors.append(f"{episode['id']}: arc continuity mismatch")
+    arc_members.add(episode.get("arc_id"))
+    if "scene_ids" in episode: errors.append(f"{episode['id']}: derived scene_ids in source")
+for path,scene in scenes:
+    episode=episode_map.get(scene.get("episode_id"))
+    if not episode: errors.append(f"{scene['id']}: missing or unknown episode")
+    elif episode.get("continuity_id")!=scene.get("continuity_id"): errors.append(f"{scene['id']}: episode continuity mismatch")
+    episode_members.add(scene.get("episode_id"))
+    if "arc_id" in scene: errors.append(f"{scene['id']}: redundant arc_id in source")
+for eid in episode_map:
+    if eid not in episode_members: errors.append(f"{eid}: empty episode")
+for aid in arc_map:
+    if aid not in arc_members: errors.append(f"{aid}: empty arc")
+for key in list(arc_map)+list(episode_map):
+    if key in global_ids: errors.append(f"hierarchy ID reused: {key}")
+    global_ids.add(key)
 
 known=scene_ids|event_ids
 for l in links.get("links",[]):
@@ -112,4 +151,4 @@ if len(legacy)!=346: errors.append(f"migration ledger has {len(legacy)} rows; ex
 
 if errors:
     print("\n".join(errors)); sys.exit(1)
-print(f"OK: {len(scene_ids)} scenes, {len(event_ids)} events, {len(entity_ids)} entities, {len(legacy)} legacy rows tracked")
+print(f"OK: {len(arcs)} arcs, {len(episodes)} episodes, {len(scene_ids)} scenes, {len(event_ids)} events, {len(entity_ids)} entities, {len(legacy)} legacy rows tracked")

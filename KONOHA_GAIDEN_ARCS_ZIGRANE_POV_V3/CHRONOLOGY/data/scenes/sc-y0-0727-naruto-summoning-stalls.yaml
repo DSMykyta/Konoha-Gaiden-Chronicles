@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0727-naruto-summoning-stalls"
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 500
 continuity_id: "main"
 title: "Наруто все ще не може викликати бойову жабу"
 location_id: null

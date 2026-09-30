@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0416-chen-lesson"
+episode_id: ep-y0-chen-lesson
+display_rank: 100
 continuity_id: "main"
 title: "Лі зустрічає майстра Чена"
 location_id: null

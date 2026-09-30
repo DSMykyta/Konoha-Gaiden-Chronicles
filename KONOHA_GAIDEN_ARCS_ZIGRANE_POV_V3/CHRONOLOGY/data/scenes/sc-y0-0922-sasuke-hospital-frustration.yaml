@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0922-sasuke-hospital-frustration"
+episode_id: ep-y0-sasuke-rooftop-conflict
+display_rank: 100
 continuity_id: "main"
 title: "Саске зривається в палаті"
 location_id: "loc-konoha-hospital"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-0912-jonin-vs-genin-tournament"
+episode_id: ep-alt-y0-0912-jonin-vs-genin-tournament
+display_rank: 100
 continuity_id: "alt-jonin-vs-genin"
 title: "Цунаде проводить турнір джонінів і генінів"
 location_id: "loc-konohagakure"

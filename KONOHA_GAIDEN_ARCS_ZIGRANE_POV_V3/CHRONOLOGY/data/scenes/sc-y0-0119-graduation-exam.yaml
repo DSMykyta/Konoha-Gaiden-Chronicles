@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0119-graduation-exam"
+episode_id: ep-y0-graduation-failure
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-graduation-failure"
 title: "Випускний іспит Наруто"
 location_id: "loc-academy-classroom"
 placement: {anchor_id: "ta-y0-0119", day_offset: 0}

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1021-komei-cursed-warrior-investigation"
+episode_id: ep-y0-birds-investigation
+display_rank: 300
 continuity_id: "main"
 title: "Підозра падає на Комея, але справа Проклятого Воїна ускладнюється"
 location_id: "loc-birds-lake"

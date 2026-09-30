@@ -1,0 +1,66 @@
+schema_version: 1
+id: sc-alt-y0-1121-sakura-rescued
+episode_id: ep-alt-clash2-sakura-rescue
+display_rank: 200
+continuity_id: alt-game-clash-revolution-2
+title: Порятунок Сакури й викриття Каґури
+location_id: null
+placement:
+  anchor_id: ta-alt-y0-1121-clash2
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-alt-y0-1121-sakura-rescued
+  legacy_ids:
+  - V10-000195
+  title: Наруто й Какаші знаходять викрадену Сакуру
+  text: Пошук Сакури приводить Наруто й Какаші до сховку противника та пов'язує викрадення з ширшою атакою на Коноху.
+  origin: G
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: rescued
+    mode: physical
+  - entity_id: c-naruto
+    role: rescuer
+    mode: physical
+  - entity_id: c-kakashi
+    role: rescuer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000195
+  - evd-game-clash-revolution-2
+- id: ev-alt-y0-1121-kagura-bando-revealed
+  legacy_ids:
+  - V10-000195
+  title: Какаші впізнає колишню АНБУ Каґуру
+  text: Під час сутички з Каґури збивають маску; Какаші впізнає колишню АНБУ, а поруч із нею діє торговець зброєю Бандо.
+  origin: G
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kagura-game
+    role: antagonist
+    mode: physical
+  - entity_id: c-bando-game
+    role: antagonist
+    mode: physical
+  - entity_id: c-kakashi
+    role: recogniser
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000195
+  - evd-game-clash-revolution-2
+relations: []
+presence: []

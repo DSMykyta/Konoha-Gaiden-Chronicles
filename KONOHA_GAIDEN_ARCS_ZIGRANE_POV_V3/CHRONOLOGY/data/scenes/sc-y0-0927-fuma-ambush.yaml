@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0927-fuma-ambush"
+episode_id: ep-y0-sasame-fuma-ambush
+display_rank: 100
 continuity_id: "main"
 title: "Сасаме відмовляється доводити пастку до кінця"
 location_id: "loc-land-of-rice-fields"

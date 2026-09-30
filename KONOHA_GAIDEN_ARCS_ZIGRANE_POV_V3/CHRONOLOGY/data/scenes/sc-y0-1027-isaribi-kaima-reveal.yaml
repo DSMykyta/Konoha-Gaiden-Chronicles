@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1027-isaribi-kaima-reveal"
+episode_id: ep-y0-kaima-mission-opening
+display_rank: 300
 continuity_id: "main"
 title: "Команда з'ясовує, що кайма — це Ісарібі"
 location_id: "loc-land-sea-coast"

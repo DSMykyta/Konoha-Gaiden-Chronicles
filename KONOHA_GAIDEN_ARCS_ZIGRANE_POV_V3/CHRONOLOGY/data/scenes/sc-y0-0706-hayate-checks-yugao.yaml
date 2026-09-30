@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0706-hayate-checks-yugao"
+episode_id: ep-y0-hayate-investigation
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-hayate-investigation"
 title: "Хаяте перевіряє, чи Юґао жива"
 location_id: "loc-konoha-hospital"
 placement: {anchor_id: "ta-y0-0706", day_offset: 0}

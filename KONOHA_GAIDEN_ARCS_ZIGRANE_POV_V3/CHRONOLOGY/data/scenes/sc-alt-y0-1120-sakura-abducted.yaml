@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-alt-y0-1120-sakura-abducted
+episode_id: ep-alt-clash2-sakura-rescue
+display_rank: 100
+continuity_id: alt-game-clash-revolution-2
+title: Викрадення Сакури
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-alt-y0-1120-clash2
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-alt-y0-1120-sakura-abducted
+  legacy_ids:
+  - V10-000193
+  title: Ворожі шинобі викрадають Сакуру
+  text: 'Паралельно змова переходить до прямої дії: Сакуру викрадають сили, пов''язані з ґенджюцу, і Коноха починає її пошук.'
+  origin: G
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sakura
+    role: captive
+    mode: physical
+  - entity_id: c-naruto
+    role: rescuer
+    mode: physical
+  - entity_id: c-kakashi
+    role: rescuer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000193
+  - evd-game-clash-revolution-2
+relations: []
+presence: []

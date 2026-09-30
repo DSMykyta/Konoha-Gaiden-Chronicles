@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1005-animal-district-naruto-kotetsu-condor"
+episode_id: ep-y0-naruto-kotetsu-condor
+display_rank: 100
 continuity_id: "main"
 title: "Наруто й Котецу не можуть схопити Кондора"
 location_id: "loc-zeroth-training-ground"

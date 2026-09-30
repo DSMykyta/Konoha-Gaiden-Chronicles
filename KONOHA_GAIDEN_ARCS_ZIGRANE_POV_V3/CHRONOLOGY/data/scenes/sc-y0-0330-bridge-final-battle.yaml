@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0330-bridge-final-battle"
+episode_id: ep-y0-bridge-final-battle
+display_rank: 200
 continuity_id: "main"
 title: "Фінальна битва на мосту"
 location_id: "loc-great-naruto-bridge"

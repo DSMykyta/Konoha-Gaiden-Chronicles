@@ -1,0 +1,45 @@
+schema_version: 1
+id: sc-y0-0701-suna-reaches-tower
+episode_id: ep-y0-sand-forest-trial
+display_rank: 200
+continuity_id: main
+title: Команда Суни прибуває до центральної вежі
+location_id: loc-forest-death-tower
+placement:
+  anchor_id: ta-y0-0701
+  day_offset: 0
+day_part: afternoon
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0701-sand-team-reaches-tower
+  legacy_ids:
+  - V10-000040-G
+  title: Команда Суни встановлює рекорд проходження
+  text: Ґаара, Темарі й Канкуро дістаються центральної вежі Лісу Смерті лише за 97 хвилин, встановлюючи новий рекорд другого
+    етапу.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000040-G
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+relations: []
+presence: []

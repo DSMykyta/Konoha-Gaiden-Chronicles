@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0802-konoha-aftermath"
+episode_id: ep-y0-konoha-rebuilding
+display_rank: 100
 continuity_id: "main"
 title: "Коноха оговтується після вторгнення"
 location_id: "loc-konohagakure"

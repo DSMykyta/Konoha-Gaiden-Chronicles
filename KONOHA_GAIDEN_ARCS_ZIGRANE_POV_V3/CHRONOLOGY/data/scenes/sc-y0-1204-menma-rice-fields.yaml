@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1204-menma-rice-fields"
+episode_id: ep-y0-menma-memory
+display_rank: 200
 continuity_id: "main"
 title: "Пошук пам'яті Менми приводить групу до Країни Рисових Полів"
 location_id: "loc-land-of-rice-fields"

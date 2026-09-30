@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1107-akamaru-infection-detected"
+episode_id: ep-y0-akamaru-antidote
+display_rank: 100
 continuity_id: "main"
 title: "Після місії в Акамару виявляють бактерію, що руйнує контроль"
 location_id: "loc-konohagakure"

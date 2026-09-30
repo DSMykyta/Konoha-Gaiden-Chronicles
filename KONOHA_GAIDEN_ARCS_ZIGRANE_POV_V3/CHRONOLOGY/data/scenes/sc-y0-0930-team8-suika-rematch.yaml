@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0930-team8-suika-rematch"
+episode_id: ep-y0-team8-suika-capture
+display_rank: 200
 continuity_id: "main"
 title: "Шіно повертається й допомагає затримати Суїку"
 location_id: "loc-land-of-fire"

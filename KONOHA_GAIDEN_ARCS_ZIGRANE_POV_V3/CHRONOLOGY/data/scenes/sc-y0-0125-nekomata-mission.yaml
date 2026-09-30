@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0125-nekomata-mission"
+episode_id: ep-y0-nekomata
+display_rank: 100
 continuity_id: "main"
 title: "Команда 7 добуває відбиток лапи Некомати"
 location_id: "loc-nekomata-domain"

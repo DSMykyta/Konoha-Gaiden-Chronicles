@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0923-sakura-reports-sasuke-missing"
+episode_id: ep-y0-retrieval-team-formation
+display_rank: 100
 continuity_id: "main"
 title: "Сакура повідомляє Цунаде про втечу Саске"
 location_id: "loc-konohagakure"

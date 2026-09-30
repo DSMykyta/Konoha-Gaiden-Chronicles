@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0624-foreign-genin-arrive"
+episode_id: ep-y0-foreign-genin-arrival
+display_rank: 100
 continuity_id: "main"
 title: "Іноземні геніни прибувають до Конохи"
 location_id: "loc-konohagakure"

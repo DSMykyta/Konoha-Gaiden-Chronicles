@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1107-akamaru-antidote"
+episode_id: ep-y0-akamaru-antidote
+display_rank: 300
 continuity_id: "main"
 title: "Кіба сам вводить Акамару ризикований антидот"
 location_id: "loc-land-of-fire"

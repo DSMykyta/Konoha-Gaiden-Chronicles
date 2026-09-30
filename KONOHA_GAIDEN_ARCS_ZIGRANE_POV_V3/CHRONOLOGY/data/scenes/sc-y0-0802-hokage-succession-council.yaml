@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0802-hokage-succession-council"
+episode_id: ep-y0-hokage-succession
+display_rank: 100
 continuity_id: "main"
 title: "Керівництво шукає наступного Хокаґе"
 location_id: "loc-konohagakure"

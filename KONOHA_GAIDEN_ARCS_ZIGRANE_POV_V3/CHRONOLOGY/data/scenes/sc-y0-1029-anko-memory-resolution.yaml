@@ -1,0 +1,48 @@
+schema_version: 1
+id: sc-y0-1029-anko-memory-resolution
+episode_id: ep-y0-anko-laboratory-memory
+display_rank: 200
+continuity_id: main
+title: Анко остаточно відновлює пам’ять
+location_id: loc-land-of-sea
+placement:
+  anchor_id: ta-y0-1029
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1029-anko-recovers-final-memory-orochimaru
+  legacy_ids:
+  - V10-000163
+  title: Анко остаточно відновлює ключовий спогад про Орочімару
+  text: До кінця місії Анко складає докупи уривки пам'яті й більше не спирається на хибну версію, ніби сама добровільно залишила
+    Орочімару.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-orochimaru
+    role: memory_subject
+    mode: memory
+  evidence_ids:
+  - evd-v10-000163
+  - evd-anime-169-173
+relations: []
+presence:
+- id: pr-1029-isaribi-aftermath-anko
+  entity_id: c-anko
+  from: sc-y0-1029-anko-memory-resolution.start
+  to: sc-y0-1029-anko-memory-resolution.end
+  basis: source
+  evidence_ids:
+  - evd-anime-169-173
+  review: accepted

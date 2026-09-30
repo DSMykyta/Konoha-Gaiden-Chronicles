@@ -1,0 +1,46 @@
+schema_version: 1
+id: sc-alt-y0-1118-moon-coup-revealed
+episode_id: ep-alt-moon-coup
+display_rank: 100
+continuity_id: alt-movie-crescent-moon
+title: Викриття перевороту Шабадаби
+location_id: loc-land-of-moon
+placement:
+  anchor_id: ta-alt-y0-1118-crescent-moon
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-alt-y0-1118-shabadaba-coup-revealed
+  legacy_ids:
+  - V10-000190
+  title: Після повернення відкривається переворот Шабадаби
+  text: У Країні Місяця команда дізнається, що Шабадаба захопив владу й наказав усунути Мічіру та Хікару, останніх законних
+    спадкоємців.
+  origin: V
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-shabadaba
+    role: usurper
+    mode: physical
+  - entity_id: c-michiru-tsuki
+    role: target
+    mode: physical
+  - entity_id: c-hikaru-tsuki
+    role: target
+    mode: physical
+  - entity_id: c-kakashi
+    role: protector
+    mode: physical
+  evidence_ids:
+  - evd-v10-000190
+  - evd-movie-crescent-moon
+relations: []
+presence: []

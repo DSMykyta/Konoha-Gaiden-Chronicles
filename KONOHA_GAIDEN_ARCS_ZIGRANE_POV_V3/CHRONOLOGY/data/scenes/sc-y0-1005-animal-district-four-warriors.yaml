@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1005-animal-district-four-warriors"
+episode_id: ep-y0-animal-four-warriors
+display_rank: 100
 continuity_id: "main"
 title: "Чотири ніндзя-тварини атакують загін"
 location_id: "loc-zeroth-training-ground"

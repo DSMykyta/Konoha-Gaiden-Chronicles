@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0731-gaara-visits-lee"
+episode_id: ep-y0-gaara-hospital-attack
+display_rank: 100
 continuity_id: "main"
 title: "Ґаара приходить убити Лі в шпиталі"
 location_id: "loc-konoha-hospital"

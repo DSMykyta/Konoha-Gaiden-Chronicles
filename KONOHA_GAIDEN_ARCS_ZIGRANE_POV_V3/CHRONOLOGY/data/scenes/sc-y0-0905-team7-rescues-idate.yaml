@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0905-team7-rescues-idate"
+episode_id: ep-y0-idate-aoi-betrayal
+display_rank: 300
 continuity_id: "main"
 title: "Команда 7 рятує Ідате"
 location_id: "loc-land-of-tea"

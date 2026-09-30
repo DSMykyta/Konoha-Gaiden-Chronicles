@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1130-gantetsu-bewildering-forest"
+episode_id: ep-y0-gantetsu-forest
+display_rank: 100
 continuity_id: "main"
 title: "Наруто, Тодорокі й Ґантецу губляться в Лісі Заблудження"
 placement: {anchor_id: "ta-y0-1130-gantetsu", day_offset: 0}

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-invasion-fails"
+episode_id: ep-y0-invasion-end
+display_rank: 100
 continuity_id: "main"
 title: "Вторгнення в Коноху провалюється"
 location_id: "loc-konohagakure"

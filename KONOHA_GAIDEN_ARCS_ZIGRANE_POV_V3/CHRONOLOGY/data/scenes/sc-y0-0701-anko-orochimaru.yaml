@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0701-anko-orochimaru"
+episode_id: ep-y0-anko-exam-security
+display_rank: 100
 continuity_id: "main"
 title: "Анко виявляє проникнення Орочімару"
 location_id: "loc-forest-death"

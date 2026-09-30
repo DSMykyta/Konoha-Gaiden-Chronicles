@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1101-kedoin-pursuit-konoha"
+episode_id: ep-y0-kedoin-pursuit
+display_rank: 100
 continuity_id: "main"
 title: "Справжня трійця виривається з печери й переслідує своїх двійників до Конохи"
 location_id: "loc-konohagakure"

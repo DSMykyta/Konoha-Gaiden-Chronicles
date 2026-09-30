@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0928-orochimaru-residence-infiltration"
+episode_id: ep-y0-fuma-hideout-infiltration
+display_rank: 100
 continuity_id: "main"
 title: "Група проникає до покинутої резиденції Орочімару"
 location_id: "loc-land-of-rice-fields"

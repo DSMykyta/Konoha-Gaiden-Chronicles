@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1129-gantetsu-escort"
+episode_id: ep-y0-gantetsu-escort
+display_rank: 100
 continuity_id: "main"
 title: "Наруто, Сакура й Лі охороняють Ґантецу під час перевезення"
 placement: {anchor_id: "ta-y0-1129-gantetsu", day_offset: 0}

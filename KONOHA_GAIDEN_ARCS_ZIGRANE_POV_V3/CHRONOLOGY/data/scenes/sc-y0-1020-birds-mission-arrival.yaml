@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1020-birds-mission-arrival"
+episode_id: ep-y0-birds-investigation
+display_rank: 100
 continuity_id: "main"
 title: "Наруто, Неджи й Тентен прибувають до Країни Птахів"
 location_id: "loc-land-of-birds"

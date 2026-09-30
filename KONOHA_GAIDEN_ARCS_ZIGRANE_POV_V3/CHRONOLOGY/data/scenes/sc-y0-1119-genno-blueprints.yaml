@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1119-genno-blueprints"
+episode_id: ep-y0-genno-investigation
+display_rank: 100
 continuity_id: "main"
 title: "Крадіжка креслень Ґенно запускає надзвичайний стан у Конохі"
 location_id: "loc-konohagakure"

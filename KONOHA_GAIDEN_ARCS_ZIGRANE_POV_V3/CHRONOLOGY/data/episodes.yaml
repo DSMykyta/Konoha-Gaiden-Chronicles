@@ -1,121 +1,1624 @@
 schema_version: 1
 episodes:
-  - id: "ep-y0-naruto-monument"
-    continuity_id: "main"
-    arc_id: "arc-y0-scroll-of-seals"
-    title: "Витівка Наруто й Ірука"
-    description: "Витівка на Монументі Хокаґе, покарання Іруки, повернення до класу та рамен після прибирання."
-
-  - id: "ep-y0-graduation-failure"
-    continuity_id: "main"
-    arc_id: "arc-y0-scroll-of-seals"
-    title: "Провал випускного іспиту"
-    description: "Наруто провалює випускний іспит, після чого Мідзукі використовує його розчарування."
-
-  - id: "ep-y0-scroll-theft"
-    continuity_id: "main"
-    arc_id: "arc-y0-scroll-of-seals"
-    title: "Викрадення Сувою Печатей"
-    description: "Мідзукі підштовхує Наруто викрасти Сувій Печатей, а Коноха починає пошук."
-
-  - id: "ep-y0-mizuki-confrontation"
-    continuity_id: "main"
-    arc_id: "arc-y0-scroll-of-seals"
-    title: "Ірука, Мідзукі й Наруто"
-    description: "Ірука знаходить Наруто, Мідзукі розкриває таємницю Дев’ятихвостого, а Наруто перемагає його й стає геніном."
-
-  - id: "ep-y0-konohamaru"
-    continuity_id: "main"
-    arc_id: "arc-y0-scroll-of-seals"
-    title: "Наруто й Конохамару"
-    description: "Перший день Наруто як геніна до формування Команди 7: зустріч із Конохамару."
-
-  - id: "ep-y0-team-formation"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Призначення команд"
-    description: "Від подій у класі перед розподілом через оголошення команд та обідню перерву до повернення в клас, очікування наставників і виходу команд з Академії."
-
-  - id: "ep-y0-jonin-outside-academy"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Джоніни перед Академією"
-    description: "Окрема паралельна лінія Асуми, Куренай і Райдо перед Академією; вона не є частиною епізоду розподілу в класі."
-
-  - id: "ep-y0-kakashi-background-check"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Какаші досліджує нову Команду 7"
-    description: "Окрема ретроспективна лінія Какаші: доручення Команди 7 та перевірка відомостей про нових учнів."
-
-  - id: "ep-y0-team7-introduction"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Перша розмова Команди 7"
-    description: "Какаші знайомиться з Наруто, Саске й Сакурою на даху."
-
-  - id: "ep-y0-team9-introduction"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Перша розмова Команди 9"
-    description: "Райдо знайомиться з Кітою, Реном і Сорою в крамниці данґо."
-
-  - id: "ep-y0-kita-home-after-formation"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Кіта вдома після розподілу"
-    description: "Окремий вечірній епізод Кіти після першої зустрічі Команди 9."
-
-  - id: "ep-y0-kakashi-pretest"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Какаші готує випробування"
-    description: "Окрема лінія Какаші перед тестом Команди 7: попередні невдалі команди, Меморіальний камінь і розмова з Тензо."
-
-  - id: "ep-y0-team7-exam"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Випробування Какаші — Команда 7"
-    description: "Тест із дзвіночками від пояснення правил до рішення Какаші зарахувати Команду 7."
-
-  - id: "ep-y0-iruka-checks-kakashi"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Ірука перевіряє Какаші"
-    description: "Паралельний епізод у резиденції Хокаґе: Ірука з’ясовує історію попередніх випробувань Какаші."
-
-  - id: "ep-y0-raido-evaluation"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Перевірка Райдо — Команда 9"
-    description: "Одна безперервна перевірка Команди 9, що переходить між кількома сценами: Поле 8, Поле 9, яр і катакомби."
-
-  - id: "ep-y0-team-reports"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Звіти наставників"
-    description: "Окремий епізод із підсумковими звітами після випробувань нових команд."
-
-  - id: "ep-y0-students-after-tests"
-    continuity_id: "main"
-    arc_id: "arc-y0-genin-formation"
-    title: "Учні після випробувань"
-    description: "Окремий вечірній епізод: Наруто, Кіба й Кіта порівнюють, як пройшли випробування їхніх команд."
-
-  - id: "ep-y0-chunin-preliminaries"
-    continuity_id: "main"
-    arc_id: "arc-y0-chunin-exams"
-    title: "Попередні поєдинки іспиту на чуніна"
-    description: "Оголошення попереднього раунду, серія індивідуальних поєдинків, паралельне запечатування Проклятої Печатки Саске та жеребкування фіналу."
-
-  - id: "ep-y0-hayate-investigation"
-    continuity_id: "main"
-    arc_id: "arc-y0-chunin-exams"
-    title: "Останнє завдання Хаяте"
-    description: "Від проникнення Кабуто до шпиталю через доручення Хірузена й прощання з Юґао до підслуханого плану вторгнення, загибелі Хаяте та ранкової наради."
-
-  - id: "ep-y0-valley-of-end"
-    continuity_id: "main"
-    arc_id: "arc-y0-sasuke-retrieval"
-    title: "Бій Наруто і Саске в Долині Завершення"
-    description: "Безперервна послідовність від зустрічі Наруто із Саске до фінального зіткнення та відходу Саске."
+- id: ep-y0-naruto-monument
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Витівка Наруто й Ірука
+  description: 'Одна сюжетна лінія: Витівка Наруто й Ірука. Сцени: Витівка Наруто на Монументі Хокаґе; Ірука повертає Наруто
+    до класу; Наруто відмиває Монумент Хокаґе; Ірука пригощає Наруто раменом.'
+- id: ep-y0-graduation-failure
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Провал випускного іспиту
+  description: 'Одна сюжетна лінія: Провал випускного іспиту. Сцени: Випускний іспит Наруто.'
+- id: ep-y0-scroll-theft
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Викрадення Сувою Печатей
+  description: 'Одна сюжетна лінія: Викрадення Сувою Печатей. Сцени: Мідзукі підштовхує Наруто викрасти Сувій Печатей.'
+- id: ep-y0-mizuki-confrontation
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Ірука, Мідзукі й Наруто
+  description: 'Одна сюжетна лінія: Ірука, Мідзукі й Наруто. Сцени: Ірука знаходить Наруто; Мідзукі розкриває таємницю; Наруто
+    перемагає Мідзукі й стає геніном.'
+- id: ep-y0-konohamaru
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Наруто й Конохамару
+  description: 'Одна сюжетна лінія: Наруто й Конохамару. Сцени: Наруто знайомиться з Конохамару.'
+- id: ep-y0-team-formation
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Розподіл у класі Академії
+  description: 'Одна сюжетна лінія: Розподіл у класі Академії. Сцени: Випадковий поцілунок Наруто й Саске; Оголошення команд
+    у класі Академії; Очікування наставників у класі.'
+- id: ep-y0-jonin-outside-academy
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Джоніни перед Академією
+  description: 'Одна сюжетна лінія: Джоніни перед Академією. Сцени: Троє джонінів перед Академією.'
+- id: ep-y0-kakashi-background-check
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Какаші досліджує нову Команду 7
+  description: 'Одна сюжетна лінія: Какаші досліджує нову Команду 7. Сцени: Ретроспектива підготовки Какаші до Команди 7.'
+- id: ep-y0-team7-introduction
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Перша розмова Команди 7
+  description: 'Одна сюжетна лінія: Перша розмова Команди 7. Сцени: Знайомство Команди 7 з Какаші.'
+- id: ep-y0-team9-introduction
+  continuity_id: main
+  arc_id: arc-y0-team9-first-day
+  title: Перша розмова Команди 9
+  description: 'Одна сюжетна лінія: Перша розмова Команди 9. Сцени: Знайомство Команди 9 в крамниці данґо.'
+- id: ep-y0-kita-home-after-formation
+  continuity_id: main
+  arc_id: arc-y0-team9-first-day
+  title: Кіта вдома після розподілу
+  description: 'Одна сюжетна лінія: Кіта вдома після розподілу. Сцени: Кіта вдома після першого дня Команди 9.'
+- id: ep-y0-kakashi-pretest
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Какаші готує випробування
+  description: 'Одна сюжетна лінія: Какаші готує випробування. Сцени: Какаші готується до випробування Команди 7.'
+- id: ep-y0-team7-exam
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Випробування Какаші — Команда 7
+  description: 'Одна сюжетна лінія: Випробування Какаші — Команда 7. Сцени: Випробування Команди 7 з дзвіночками.'
+- id: ep-y0-iruka-checks-kakashi
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Ірука перевіряє Какаші
+  description: 'Одна сюжетна лінія: Ірука перевіряє Какаші. Сцени: Ірука перевіряє історію випробувань Какаші.'
+- id: ep-y0-raido-evaluation
+  continuity_id: main
+  arc_id: arc-y0-team9-raido-evaluation
+  title: Перевірка Райдо — Команда 9
+  description: 'Одна сюжетна лінія: Перевірка Райдо — Команда 9. Сцени: Команда 9 спостерігає за Командою 8; Бойова оцінка
+    Команди 9 на Полі 9; Переправа Команди 9 через яр; Команда 9 проходить катакомби.'
+- id: ep-y0-team-reports
+  continuity_id: main
+  arc_id: arc-y0-first-tests-aftermath
+  title: Звіти наставників
+  description: 'Одна сюжетна лінія: Звіти наставників. Сцени: Наставники здають звіти після першого дня.'
+- id: ep-y0-students-after-tests
+  continuity_id: main
+  arc_id: arc-y0-first-tests-aftermath
+  title: Учні після випробувань
+  description: 'Одна сюжетна лінія: Учні після випробувань. Сцени: Кіта, Наруто й Кіба обговорюють перший день.'
+- id: ep-y0-chunin-preliminaries
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Попередні поєдинки й жеребкування
+  description: 'Одна сюжетна лінія: Попередні поєдинки й жеребкування. Сцени: Організатори призначають попередні поєдинки;
+    Попередні поєдинки іспиту на чуніна; Фіналісти отримують пари.'
+- id: ep-y0-hayate-investigation
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Останнє завдання Хаяте
+  description: 'Одна сюжетна лінія: Останнє завдання Хаяте. Сцени: Хаяте перевіряє, чи Юґао жива; Хірузен наказує Хаяте простежити
+    за Кабуто; Остання розмова Хаяте й Юґао; Хаяте підслуховує план вторгнення.'
+- id: ep-y0-valley-of-end
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Бій Наруто і Саске в Долині Завершення
+  description: 'Одна сюжетна лінія: Бій Наруто і Саске в Долині Завершення. Сцени: Наруто наздоганяє Саске в Долині Завершення;
+    Саске відкидає повернення; Бій Наруто й Саске переходить на найвищий рівень; Расенґан і Чідорі стикаються; Саске перемагає
+    Наруто, але залишає його живим.'
+- id: ep-y0-hokage-scroll-response
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Хірузен організовує пошук сувою
+  description: 'Одна сюжетна лінія: Хірузен організовує пошук сувою. Сцени: Пошук викраденого Сувою Печатей.'
+- id: ep-y0-naruto-impersonation
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Наруто підміняє Саске
+  description: 'Одна сюжетна лінія: Наруто підміняє Саске. Сцени: Наруто підміняє Саске перед Сакурою.'
+- id: ep-y0-sakura-searches-sasuke
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Сакура шукає Саске
+  description: 'Одна сюжетна лінія: Сакура шукає Саске. Сцени: Сакура шукає Саске під час перерви.'
+- id: ep-y0-team10-first-lunch
+  continuity_id: main
+  arc_id: arc-y0-genin-formation
+  title: Перший обід Команди 10
+  description: 'Одна сюжетна лінія: Перший обід Команди 10. Сцени: Команда 10 під час обідньої перерви.'
+- id: ep-y0-red-clover
+  continuity_id: main
+  arc_id: arc-y0-red-clover
+  title: Пошук багряного чотирилисника
+  description: 'Одна сюжетна лінія: Пошук багряного чотирилисника. Сцени: Пошук багряного чотирилисника.'
+- id: ep-y0-nekomata
+  continuity_id: main
+  arc_id: arc-y0-nekomata
+  title: Команда 7 добуває відбиток лапи Некомати
+  description: 'Одна сюжетна лінія: Команда 7 добуває відбиток лапи Некомати. Сцени: Команда 7 добуває відбиток лапи Некомати.'
+- id: ep-y0-kisuke
+  continuity_id: main
+  arc_id: arc-y0-kisuke
+  title: Наруто допомагає привиду Кісуке
+  description: 'Одна сюжетна лінія: Наруто допомагає привиду Кісуке. Сцени: Наруто допомагає привиду Кісуке.'
+- id: ep-y0-webbed-together
+  continuity_id: main
+  arc_id: arc-y0-webbed-together
+  title: Наруто й Саске рятують Сакуру, зв’язані павутиною
+  description: 'Одна сюжетна лінія: Наруто й Саске рятують Сакуру, зв’язані павутиною. Сцени: Наруто й Саске рятують Сакуру,
+    зв’язані павутиною.'
+- id: ep-y0-hostage-rescue
+  continuity_id: main
+  arc_id: arc-y0-hostage-rescue
+  title: Команди 7 і 10 визволяють заручника
+  description: 'Одна сюжетна лінія: Команди 7 і 10 визволяють заручника. Сцени: Команди 7 і 10 визволяють заручника.'
+- id: ep-y0-team10-kosuke
+  continuity_id: main
+  arc_id: arc-y0-team10-kosuke
+  title: Команда 10 рятує Косуке
+  description: 'Одна сюжетна лінія: Команда 10 рятує Косуке. Сцени: Команда 10 рятує Косуке.'
+- id: ep-y0-d-rank-missions
+  continuity_id: main
+  arc_id: arc-y0-d-rank-missions
+  title: Серія D-рангових місій Команди 7 перед Тадзуною
+  description: 'Одна сюжетна лінія: Серія D-рангових місій Команди 7 перед Тадзуною. Сцени: Серія D-рангових місій Команди
+    7 перед Тадзуною.'
+- id: ep-y0-condor-escort
+  continuity_id: main
+  arc_id: arc-y0-condor-escort
+  title: Команда 7 супроводжує страуса Кондора
+  description: 'Одна сюжетна лінія: Команда 7 супроводжує страуса Кондора. Сцени: Команда 7 супроводжує страуса Кондора.'
+- id: ep-y0-chen-lesson
+  continuity_id: main
+  arc_id: arc-y0-chen-lesson
+  title: Лі зустрічає майстра Чена
+  description: 'Одна сюжетна лінія: Лі зустрічає майстра Чена. Сцени: Лі зустрічає майстра Чена.'
+- id: ep-y0-iruka-rock-lesson
+  continuity_id: main
+  arc_id: arc-y0-iruka-rock-lesson
+  title: Ірука проводить урок біля Монумента Хокаґе
+  description: 'Одна сюжетна лінія: Ірука проводить урок біля Монумента Хокаґе. Сцени: Ірука проводить урок біля Монумента
+    Хокаґе.'
+- id: ep-y0-tenten-confidence
+  continuity_id: main
+  arc_id: arc-y0-tenten-confidence
+  title: Ґай підбадьорює Тентен після іспиту
+  description: 'Одна сюжетна лінія: Ґай підбадьорює Тентен після іспиту. Сцени: Ґай підбадьорює Тентен після іспиту.'
+- id: ep-y0-hot-springs-debt
+  continuity_id: main
+  arc_id: arc-y0-hot-springs-debt
+  title: Кредитори викрадають Наруто дорогою до Конохи
+  description: 'Одна сюжетна лінія: Кредитори викрадають Наруто дорогою до Конохи. Сцени: Кредитори викрадають Наруто дорогою
+    до Конохи.'
+- id: ep-y0-konohamaru-new-hokage
+  continuity_id: main
+  arc_id: arc-y0-konohamaru-new-hokage
+  title: Конохамару намагається зірвати вступ Цунаде на посаду
+  description: 'Одна сюжетна лінія: Конохамару намагається зірвати вступ Цунаде на посаду. Сцени: Конохамару намагається зірвати
+    вступ Цунаде на посаду.'
+- id: ep-y0-gaara-settlement
+  continuity_id: main
+  arc_id: arc-y0-gaara-settlement
+  title: Команда 7 і Ґаара спільно захищають поселення
+  description: 'Одна сюжетна лінія: Команда 7 і Ґаара спільно захищають поселення. Сцени: Команда 7 і Ґаара спільно захищають
+    поселення.'
+- id: ep-y0-chakra-virus
+  continuity_id: main
+  arc_id: arc-y0-chakra-virus
+  title: Підозра на «вірус чакри» виявляється хибною
+  description: 'Одна сюжетна лінія: Підозра на «вірус чакри» виявляється хибною. Сцени: Підозра на «вірус чакри» виявляється
+    хибною.'
+- id: ep-y0-clear-eye-flower
+  continuity_id: main
+  arc_id: arc-y0-clear-eye-flower
+  title: Наруто, Сакура й Іно шукають особливу квітку
+  description: 'Одна сюжетна лінія: Наруто, Сакура й Іно шукають особливу квітку. Сцени: Наруто, Сакура й Іно шукають особливу
+    квітку.'
+- id: ep-y0-tool-lab
+  continuity_id: main
+  arc_id: arc-y0-tool-lab
+  title: Наруто тимчасово приєднується до Команди Ґая
+  description: 'Одна сюжетна лінія: Наруто тимчасово приєднується до Команди Ґая. Сцени: Наруто тимчасово приєднується до
+    Команди Ґая.'
+- id: ep-y0-hanare
+  continuity_id: main
+  arc_id: arc-y0-hanare
+  title: Команда 7 затримує Ханаре
+  description: 'Одна сюжетна лінія: Команда 7 затримує Ханаре. Сцени: Команда 7 затримує Ханаре.'
+- id: ep-y0-clear-eye-herb
+  continuity_id: main
+  arc_id: arc-y0-clear-eye-herb
+  title: Наруто, Сакура й Неджі шукають траву «Ясне око»
+  description: 'Одна сюжетна лінія: Наруто, Сакура й Неджі шукають траву «Ясне око». Сцени: Наруто, Сакура й Неджі шукають
+    траву «Ясне око».'
+- id: ep-y0-anko-swamps
+  continuity_id: main
+  arc_id: arc-y0-anko-swamps
+  title: Анко повертається з місії в Країні Боліт
+  description: 'Одна сюжетна лінія: Анко повертається з місії в Країні Боліт. Сцени: Анко повертається з місії в Країні Боліт.'
+- id: ep-y0-naruto-birthday
+  continuity_id: main
+  arc_id: arc-y0-naruto-birthday
+  title: Наруто виповнюється 13 років
+  description: 'Одна сюжетна лінія: Наруто виповнюється 13 років. Сцени: Наруто виповнюється 13 років.'
+- id: ep-y0-fuku-matchmaking
+  continuity_id: main
+  arc_id: arc-y0-fuku-matchmaking
+  title: Іно підміняє Фуку на зустрічі з Чікарою, але справжня принцеса все одно відкривається
+  description: 'Одна сюжетна лінія: Іно підміняє Фуку на зустрічі з Чікарою, але справжня принцеса все одно відкривається.
+    Сцени: Іно підміняє Фуку на зустрічі з Чікарою, але справжня принцеса все одно відкривається.'
+- id: ep-y0-lee-dojo
+  continuity_id: main
+  arc_id: arc-y0-lee-dojo
+  title: Лі відкриває доджьо, а шпигун Нанафуші випадково стає його першим суперником
+  description: 'Одна сюжетна лінія: Лі відкриває доджьо, а шпигун Нанафуші випадково стає його першим суперником. Сцени: Лі
+    відкриває доджьо, а шпигун Нанафуші випадково стає його першим суперником.'
+- id: ep-y0-haunted-castle
+  continuity_id: main
+  arc_id: arc-y0-haunted-castle
+  title: Наруто, Кіба й Хіната розкривають природу «проклятого замку»
+  description: 'Одна сюжетна лінія: Наруто, Кіба й Хіната розкривають природу «проклятого замку». Сцени: Наруто, Кіба й Хіната
+    розкривають природу «проклятого замку».'
+- id: ep-y0-shinemon-bowl
+  continuity_id: main
+  arc_id: arc-y0-shinemon-bowl
+  title: Наруто й Кіба охороняють Шінемона та його коштовну чашу
+  description: 'Одна сюжетна лінія: Наруто й Кіба охороняють Шінемона та його коштовну чашу. Сцени: Наруто й Кіба охороняють
+    Шінемона та його коштовну чашу.'
+- id: ep-y0-matsuri-rescue
+  continuity_id: main
+  arc_id: arc-y0-matsuri-rescue
+  title: Бакі бере участь у нараді Суни після викрадення Мацурі
+  description: 'Одна сюжетна лінія: Бакі бере участь у нараді Суни після викрадення Мацурі. Сцени: Бакі бере участь у нараді
+    Суни після викрадення Мацурі.'
+- id: ep-y0-waves-departure
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Супровід Тадзуни до Країни Хвиль
+  description: 'Одна сюжетна лінія: Супровід Тадзуни до Країни Хвиль. Сцени: Команда 7 отримує місію супроводу Тадзуни; Команда
+    7 виходить із Конохи з Тадзуною; Напад Братів-Демонів; Переправа до Країни Хвиль; Команда 7 висаджується в Країні Хвиль.'
+- id: ep-y0-zabuza-first-battle
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Перша сутичка із Забузою
+  description: 'Одна сюжетна лінія: Перша сутичка із Забузою. Сцени: Перша сутичка із Забузою.'
+- id: ep-y0-waves-team-briefing
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Какаші готує Команду 7 до повторної зустрічі із Забузою
+  description: 'Одна сюжетна лінія: Какаші готує Команду 7 до повторної зустрічі із Забузою. Сцени: Какаші готує Команду 7
+    до повторної зустрічі із Забузою.'
+- id: ep-y0-waves-chakra-training
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Тренування контролю чакри
+  description: 'Одна сюжетна лінія: Тренування контролю чакри. Сцени: Команда 7 починає тренування контролю чакри; Наруто
+    й Саске завершують вправу з ходіння по деревах.'
+- id: ep-y0-naruto-haku-meeting
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Наруто зустрічає Хаку під час тренувань
+  description: 'Одна сюжетна лінія: Наруто зустрічає Хаку під час тренувань. Сцени: Наруто зустрічає Хаку під час тренувань.'
+- id: ep-y0-bridge-final-battle
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Повторна битва на мосту
+  description: 'Одна сюжетна лінія: Повторна битва на мосту. Сцени: Какаші, Саске й Сакура виходять із Тадзуною; Фінальна
+    битва на мосту.'
+- id: ep-y0-tazuna-home-defense
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Напад людей Ґато на дім Тадзуни
+  description: 'Одна сюжетна лінія: Напад людей Ґато на дім Тадзуни. Сцени: Напад людей Ґато на дім Тадзуни.'
+- id: ep-y0-waves-farewell
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Завершення місії в Країні Хвиль
+  description: 'Одна сюжетна лінія: Завершення місії в Країні Хвиль. Сцени: Поховання Забузи й Хаку; Великий Міст Наруто завершено;
+    Команда 7 повертається до Конохи.'
+- id: ep-y0-waves-coupon-return
+  continuity_id: main
+  arc_id: arc-y0-waves-coupon-return
+  title: Наруто й Саске повертаються після прощання
+  description: 'Одна сюжетна лінія: Наруто й Саске повертаються після прощання. Сцени: Наруто й Саске повертаються після прощання.'
+- id: ep-y0-post-waves-rivalry
+  continuity_id: main
+  arc_id: arc-y0-naruto-sasuke-rivalry
+  title: Наруто й Саске сперечаються після повернення з Країни Хвиль
+  description: 'Одна сюжетна лінія: Наруто й Саске сперечаються після повернення з Країни Хвиль. Сцени: Наруто й Саске сперечаються
+    після повернення з Країни Хвиль.'
+- id: ep-y0-foreign-genin-arrival
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Іноземні геніни прибувають до Конохи
+  description: 'Одна сюжетна лінія: Іноземні геніни прибувають до Конохи. Сцени: Іноземні геніни прибувають до Конохи.'
+- id: ep-y0-chunin-nominations
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Нарада щодо іспиту на чуніна
+  description: 'Одна сюжетна лінія: Нарада щодо іспиту на чуніна. Сцени: Нарада щодо іспиту на чуніна.'
+- id: ep-y0-iruka-readiness-test
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Ірука перевіряє готовність Команди 7
+  description: 'Одна сюжетна лінія: Ірука перевіряє готовність Команди 7. Сцени: Ірука перевіряє готовність Команди 7.'
+- id: ep-y0-team7-chunin-choice
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Какаші залишає вибір Команді 7
+  description: 'Одна сюжетна лінія: Какаші залишає вибір Команді 7. Сцени: Какаші залишає вибір Команді 7.'
+- id: ep-y0-kakashi-iruka-readiness-report
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Ірука розпитує Какаші про Команду 7
+  description: 'Одна сюжетна лінія: Ірука розпитує Какаші про Команду 7. Сцени: Ірука розпитує Какаші про Команду 7.'
+- id: ep-y0-lee-sasuke-challenge
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Рок Лі викликає Саске на бій
+  description: 'Одна сюжетна лінія: Рок Лі викликає Саске на бій. Сцени: Рок Лі викликає Саске на бій.'
+- id: ep-y0-sand-first-encounter
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Зустріч Команди 7 з генінами Суни
+  description: 'Одна сюжетна лінія: Зустріч Команди 7 з генінами Суни. Сцени: Зустріч Команди 7 з генінами Суни.'
+- id: ep-y0-chunin-written-stage
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Перший етап Ібікі
+  description: 'Одна сюжетна лінія: Перший етап Ібікі. Сцени: Кандидати збираються перед першим етапом; Письмовий етап Ібікі;
+    Канкуро отримує відповіді поза екзаменаційною залою.'
+- id: ep-y0-chunin-forest-rules
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Початок другого етапу в Лісі Смерті
+  description: 'Одна сюжетна лінія: Початок другого етапу в Лісі Смерті. Сцени: Початок другого етапу в Лісі Смерті.'
+- id: ep-y0-team7-forest-trial
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Команда 7 в Лісі Смерті
+  description: 'Одна сюжетна лінія: Команда 7 в Лісі Смерті. Сцени: Орочімару атакує Команду 7; Сакура захищає непритомних
+    Наруто й Саске; Команда 7 відновлює пошук другого сувою; Команда 7 завершує Ліс Смерті; Ірука зустрічає Команду 7 у вежі.'
+- id: ep-y0-sasuke-rescues-karin
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Саске рятує Карін у Лісі Смерті
+  description: 'Одна сюжетна лінія: Саске рятує Карін у Лісі Смерті. Сцени: Саске рятує Карін у Лісі Смерті.'
+- id: ep-y0-sand-forest-trial
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Команда Суни в Лісі Смерті
+  description: 'Одна сюжетна лінія: Команда Суни в Лісі Смерті. Сцени: Команда Суни здобуває сувій у Лісі Смерті; Команда
+    Суни прибуває до центральної вежі.'
+- id: ep-y0-sasuke-curse-sealing
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Какаші стримує Прокляту Печатку Саске
+  description: 'Одна сюжетна лінія: Какаші стримує Прокляту Печатку Саске. Сцени: Какаші стримує Прокляту Печатку Саске.'
+- id: ep-y0-kabuto-hospital-infiltration
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Кабуто проникає до палати Саске
+  description: 'Одна сюжетна лінія: Кабуто проникає до палати Саске. Сцени: Кабуто проникає до палати Саске.'
+- id: ep-y0-kabuto-sound-return
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Кабуто повертається до союзників Звуку
+  description: 'Одна сюжетна лінія: Кабуто повертається до союзників Звуку. Сцени: Кабуто повертається до союзників Звуку.'
+- id: ep-y0-yugao-finds-hayate
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Юґао знаходить тіло Хаяте
+  description: 'Одна сюжетна лінія: Юґао знаходить тіло Хаяте. Сцени: Юґао знаходить тіло Хаяте.'
+- id: ep-y0-hayate-security-briefing
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Нарада після загибелі Хаяте
+  description: 'Одна сюжетна лінія: Нарада після загибелі Хаяте. Сцени: Нарада після загибелі Хаяте.'
+- id: ep-y0-anko-exam-security
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Анко розслідує проникнення Орочімару
+  description: 'Одна сюжетна лінія: Анко розслідує проникнення Орочімару. Сцени: Анко виявляє проникнення Орочімару; Анко
+    доповідає Хірузену після сутички з Орочімару; Анко й Хірузен оцінюють загрозу Орочімару.'
+- id: ep-y0-gaara-dosu
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Ґаара вбиває Досу
+  description: 'Одна сюжетна лінія: Ґаара вбиває Досу. Сцени: Ґаара вбиває Досу.'
+- id: ep-y0-naruto-summoning-training
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Наруто опановує Техніку Призову
+  description: 'Одна сюжетна лінія: Наруто опановує Техніку Призову. Сцени: Какаші передає тренування Наруто Ебісу; Джирая
+    перебирає тренування Наруто; Джирая починає вчити Наруто Техніки Призову; Наруто продовжує практику призову; Наруто все
+    ще не може викликати бойову жабу; Наруто викликає Ґамабунту.'
+- id: ep-y0-sasuke-chidori-training
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Саске опановує Чідорі
+  description: 'Одна сюжетна лінія: Саске опановує Чідорі. Сцени: Саске просить Какаші тренувати його; Какаші інтенсивно тренує
+    Саске; Саске самостійно відпрацьовує Чідорі.'
+- id: ep-y0-naruto-visits-lee
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Наруто прокидається й відвідує Лі
+  description: 'Одна сюжетна лінія: Наруто прокидається й відвідує Лі. Сцени: Наруто прокидається й відвідує Лі.'
+- id: ep-y0-gaara-hospital-attack
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Ґаара приходить убити Лі в шпиталі
+  description: 'Одна сюжетна лінія: Ґаара приходить убити Лі в шпиталі. Сцени: Ґаара приходить убити Лі в шпиталі.'
+- id: ep-y0-hinata-encourages-naruto
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Хіната повертає Наруто впевненість перед фіналом
+  description: 'Одна сюжетна лінія: Хіната повертає Наруто впевненість перед фіналом. Сцени: Хіната повертає Наруто впевненість
+    перед фіналом.'
+- id: ep-y0-chunin-finals
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Фінальні поєдинки
+  description: 'Одна сюжетна лінія: Фінальні поєдинки. Сцени: Ранкові фінальні поєдинки; Саске прибуває на фінал і б’ється
+    з Ґаарою.'
+- id: ep-y0-shikamaru-promotion
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Шикамару стає чуніном
+  description: 'Одна сюжетна лінія: Шикамару стає чуніном. Сцени: Шикамару стає чуніном.'
+- id: ep-y0-konohamaru-exam-report
+  continuity_id: main
+  arc_id: arc-y0-konohamaru-exam-report
+  title: Конохамару, Моегі й Удон готують репортаж про іспит
+  description: 'Одна сюжетна лінія: Конохамару, Моегі й Удон готують репортаж про іспит. Сцени: Конохамару, Моегі й Удон готують
+    репортаж про іспит.'
+- id: ep-y0-hanabi-visits-hinata
+  continuity_id: main
+  arc_id: arc-y0-hyuga-family
+  title: Ханабі відвідує поранену Хінату
+  description: 'Одна сюжетна лінія: Ханабі відвідує поранену Хінату. Сцени: Ханабі відвідує поранену Хінату.'
+- id: ep-y0-hanabi-watches-finals
+  continuity_id: main
+  arc_id: arc-y0-hyuga-family
+  title: Ханабі дивиться фінал разом із Хіаші
+  description: 'Одна сюжетна лінія: Ханабі дивиться фінал разом із Хіаші. Сцени: Ханабі дивиться фінал разом із Хіаші.'
+- id: ep-y0-neji-hizashi-truth
+  continuity_id: main
+  arc_id: arc-y0-hyuga-family
+  title: Неджі дізнається правду про смерть Хізаші
+  description: 'Одна сюжетна лінія: Неджі дізнається правду про смерть Хізаші. Сцени: Неджі дізнається правду про смерть Хізаші.'
+- id: ep-y0-hinata-neji-training
+  continuity_id: main
+  arc_id: arc-y0-hyuga-family
+  title: Ханабі бачить нову впевненість Хінати
+  description: 'Одна сюжетна лінія: Ханабі бачить нову впевненість Хінати. Сцени: Ханабі бачить нову впевненість Хінати.'
+- id: ep-y0-fourth-legacy-question
+  continuity_id: main
+  arc_id: arc-y0-fourth-hokage-legacy
+  title: Наруто розпитує Анко про спадщину Четвертого
+  description: 'Одна сюжетна лінія: Наруто розпитує Анко про спадщину Четвертого. Сцени: Наруто розпитує Анко про спадщину
+    Четвертого.'
+- id: ep-y0-honegami-search
+  continuity_id: main
+  arc_id: arc-y0-fourth-hokage-legacy
+  title: Пошук «спадщини Четвертого Хокаґе» на полі Хонегамі
+  description: 'Одна сюжетна лінія: Пошук «спадщини Четвертого Хокаґе» на полі Хонегамі. Сцени: Пошук «спадщини Четвертого
+    Хокаґе» на полі Хонегамі.'
+- id: ep-y0-rasa-assassination
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Орочімару вбиває Расу до фіналів
+  description: 'Одна сюжетна лінія: Орочімару вбиває Расу до фіналів. Сцени: Орочімару вбиває Расу до фіналів.'
+- id: ep-y0-invasion-conspiracy
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Підготовка змови Суни й Звуку
+  description: 'Одна сюжетна лінія: Підготовка змови Суни й Звуку. Сцени: Бакі й Орочімару узгоджують вторгнення; Бакі вводить
+    Ґаару, Темарі й Канкуро в план вторгнення.'
+- id: ep-y0-edo-sacrifices
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Кін і Заку стають жертвами Нечистого Воскресіння
+  description: 'Одна сюжетна лінія: Кін і Заку стають жертвами Нечистого Воскресіння. Сцени: Кін і Заку стають жертвами Нечистого
+    Воскресіння.'
+- id: ep-y0-arena-invasion
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Початок нападу на Коноху
+  description: 'Одна сюжетна лінія: Початок нападу на Коноху. Сцени: Початок нападу на Коноху.'
+- id: ep-y0-hiruzen-orochimaru-battle
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Бій Хірузена з Орочімару
+  description: 'Одна сюжетна лінія: Бій Хірузена з Орочімару. Сцени: Бій Хірузена з Орочімару.'
+- id: ep-y0-sasuke-gaara-pursuit
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Погоня за Ґаарою
+  description: 'Одна сюжетна лінія: Погоня за Ґаарою. Сцени: Погоня за Ґаарою.'
+- id: ep-y0-naruto-gaara-battle
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Наруто перемагає Ґаару
+  description: 'Одна сюжетна лінія: Наруто перемагає Ґаару. Сцени: Наруто перемагає Ґаару.'
+- id: ep-y0-shikamaru-sound-delay
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Шикамару затримує переслідувачів Звуку
+  description: 'Одна сюжетна лінія: Шикамару затримує переслідувачів Звуку. Сцени: Шикамару затримує переслідувачів Звуку.'
+- id: ep-y0-shino-kankuro
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Шіно затримує Канкуро
+  description: 'Одна сюжетна лінія: Шіно затримує Канкуро. Сцени: Шіно затримує Канкуро.'
+- id: ep-y0-hinata-kidnapping
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Хінату викрадають під час вторгнення
+  description: 'Одна сюжетна лінія: Хінату викрадають під час вторгнення. Сцени: Хінату викрадають під час вторгнення.'
+- id: ep-y0-ibiki-border-defense
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Ібікі обороняє кордон Конохи під час вторгнення
+  description: 'Одна сюжетна лінія: Ібікі обороняє кордон Конохи під час вторгнення. Сцени: Ібікі обороняє кордон Конохи під
+    час вторгнення.'
+- id: ep-y0-adult-ino-shika-cho-rescue
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Доросла трійця Іно–Шіка–Чо рятує Косуке
+  description: 'Одна сюжетна лінія: Доросла трійця Іно–Шіка–Чо рятує Косуке. Сцени: Доросла трійця Іно–Шіка–Чо рятує Косуке.'
+- id: ep-y0-iruka-evacuation
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Ірука евакуює учнів Академії
+  description: 'Одна сюжетна лінія: Ірука евакуює учнів Академії. Сцени: Ірука евакуює учнів Академії.'
+- id: ep-y0-invasion-end
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Вторгнення в Коноху провалюється
+  description: 'Одна сюжетна лінія: Вторгнення в Коноху провалюється. Сцени: Вторгнення в Коноху провалюється.'
+- id: ep-y0-konoha-rebuilding
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Коноха оговтується після вторгнення
+  description: 'Одна сюжетна лінія: Коноха оговтується після вторгнення. Сцени: Коноха оговтується після вторгнення.'
+- id: ep-y0-suna-rasa-discovery
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Суна викриває підміну Казекаґе
+  description: 'Одна сюжетна лінія: Суна викриває підміну Казекаґе. Сцени: Суна викриває підміну Казекаґе.'
+- id: ep-y0-hiruzen-funeral
+  continuity_id: main
+  arc_id: arc-y0-konoha-crush
+  title: Похорон Хірузена
+  description: 'Одна сюжетна лінія: Похорон Хірузена. Сцени: Похорон Хірузена.'
+- id: ep-y0-yugao-memorial
+  continuity_id: main
+  arc_id: arc-y0-yugao-hayate-memory
+  title: Юґао присягається помститися за Хаяте
+  description: 'Одна сюжетна лінія: Юґао присягається помститися за Хаяте. Сцени: Юґао присягається помститися за Хаяте.'
+- id: ep-y0-itachi-kisame-konoha
+  continuity_id: main
+  arc_id: arc-y0-itachi-return
+  title: Ітачі й Кісаме б’ються з джонінами Конохи
+  description: 'Одна сюжетна лінія: Ітачі й Кісаме б’ються з джонінами Конохи. Сцени: Ітачі й Кісаме б’ються з джонінами Конохи.'
+- id: ep-y0-sasuke-learns-itachi-return
+  continuity_id: main
+  arc_id: arc-y0-itachi-return
+  title: Аоба ненавмисно повідомляє Саске про повернення Ітачі
+  description: 'Одна сюжетна лінія: Аоба ненавмисно повідомляє Саске про повернення Ітачі. Сцени: Аоба ненавмисно повідомляє
+    Саске про повернення Ітачі.'
+- id: ep-y0-itachi-kisame-naruto
+  continuity_id: main
+  arc_id: arc-y0-itachi-return
+  title: Ітачі й Кісаме знаходять Наруто
+  description: 'Одна сюжетна лінія: Ітачі й Кісаме знаходять Наруто. Сцени: Ітачі й Кісаме знаходять Наруто.'
+- id: ep-y0-hokage-succession
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Вибір наступного Хокаґе
+  description: 'Одна сюжетна лінія: Вибір наступного Хокаґе. Сцени: Керівництво шукає наступного Хокаґе; Джирая відмовляється
+    від посади П’ятого Хокаґе.'
+- id: ep-y0-naruto-jiraiya-search
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Наруто й Джирая вирушають шукати Цунаде
+  description: 'Одна сюжетна лінія: Наруто й Джирая вирушають шукати Цунаде. Сцени: Наруто й Джирая вирушають шукати Цунаде.'
+- id: ep-y0-naruto-rasengan-training
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Наруто опановує Расенґан
+  description: 'Одна сюжетна лінія: Наруто опановує Расенґан. Сцени: Наруто завершує перший етап Расенґана; Наруто працює
+    над силовим етапом Расенґана; Наруто завершує другий етап Расенґана; Наруто починає фінальний етап Расенґана; Спливає
+    строк парі Наруто й Цунаде.'
+- id: ep-y0-meeting-tsunade
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Знайомство Наруто з Цунаде
+  description: 'Одна сюжетна лінія: Знайомство Наруто з Цунаде. Сцени: Джирая й Наруто знаходять Цунаде; Шізуне пояснює Наруто
+    минуле Цунаде.'
+- id: ep-y0-tsunade-orochimaru-bargain
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Цунаде й угода Орочімару
+  description: 'Одна сюжетна лінія: Цунаде й угода Орочімару. Сцени: Орочімару пропонує Цунаде угоду; Цунаде вагається щодо
+    угоди Орочімару; Цунаде присипляє Джираю й вирушає до Орочімару; Цунаде намагається обдурити Орочімару.'
+- id: ep-y0-shizune-reveals-bargain
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Шізуне розкриває угоду Цунаде з Орочімару
+  description: 'Одна сюжетна лінія: Шізуне розкриває угоду Цунаде з Орочімару. Сцени: Шізуне розкриває угоду Цунаде з Орочімару.'
+- id: ep-y0-sannin-battle
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Битва трьох саннінів
+  description: 'Одна сюжетна лінія: Битва трьох саннінів. Сцени: Битва трьох саннінів.'
+- id: ep-y0-fifth-hokage-return
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Цунаде приймає посаду й повертається до Конохи
+  description: 'Одна сюжетна лінія: Цунаде приймає посаду й повертається до Конохи. Сцени: Цунаде визнає Наруто й приймає
+    посаду Хокаґе; Цунаде повертається до Конохи; Цунаде вступає на посаду П’ятої Хокаґе.'
+- id: ep-y0-naruto-recovers
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Наруто відновлюється після бою з Кабуто
+  description: 'Одна сюжетна лінія: Наруто відновлюється після бою з Кабуто. Сцени: Наруто відновлюється після бою з Кабуто.'
+- id: ep-y0-tsunade-heals-kakashi-sasuke
+  continuity_id: main
+  arc_id: arc-y0-search-for-tsunade
+  title: Цунаде лікує Какаші й Саске
+  description: 'Одна сюжетна лінія: Цунаде лікує Какаші й Саске. Сцени: Цунаде лікує Какаші й Саске.'
+- id: ep-y0-lee-surgery-decision
+  continuity_id: main
+  arc_id: arc-y0-lee-surgery
+  title: Лі приймає рішення про операцію
+  description: 'Одна сюжетна лінія: Лі приймає рішення про операцію. Сцени: Цунаде оцінює стан Рока Лі; Ґай переконує Лі погодитися
+    на операцію.'
+- id: ep-y0-lee-operation
+  continuity_id: main
+  arc_id: arc-y0-lee-surgery
+  title: Цунаде оперує Рока Лі
+  description: 'Одна сюжетна лінія: Цунаде оперує Рока Лі. Сцени: Цунаде оперує Рока Лі; Лі залишає лікарню після операції;
+    Підтвердження успішної операції Лі.'
+- id: ep-y0-mask-hunt
+  continuity_id: main
+  arc_id: arc-y0-kakashi-mask
+  title: Полювання Команди 7 на маску
+  description: 'Одна сюжетна лінія: Полювання Команди 7 на маску. Сцени: Команда 7 намагається побачити обличчя Какаші; Полювання
+    на маску перетинається з трійцею Моя; Какаші показує під маскою ще одну маску.'
+- id: ep-y0-tea-escort-assignment
+  continuity_id: main
+  arc_id: arc-y0-tea-race
+  title: Цунаде відправляє трійку Команди 7 до Країни Чаю
+  description: 'Одна сюжетна лінія: Цунаде відправляє трійку Команди 7 до Країни Чаю. Сцени: Цунаде відправляє трійку Команди
+    7 до Країни Чаю.'
+- id: ep-y0-idate-aoi-betrayal
+  continuity_id: main
+  arc_id: arc-y0-tea-race
+  title: Напад Аої й порятунок Ідате
+  description: 'Одна сюжетна лінія: Напад Аої й порятунок Ідате. Сцени: Аої виводить Ідате з ладу й скидає Наруто в море;
+    На острові Нагі розкривається зрада Аої; Команда 7 рятує Ідате.'
+- id: ep-y0-aoi-battle
+  continuity_id: main
+  arc_id: arc-y0-tea-race
+  title: Бій Команди 7 з Аої
+  description: 'Одна сюжетна лінія: Бій Команди 7 з Аої. Сцени: Саске й Наруто стримують Аої; Наруто остаточно перемагає Аої.'
+- id: ep-y0-idate-race-finish
+  continuity_id: main
+  arc_id: arc-y0-tea-race
+  title: Ідате завершує перегони
+  description: 'Одна сюжетна лінія: Ідате завершує перегони. Сцени: Ідате завершує перегони перемогою; Ідате примиряється
+    з Ібікі.'
+- id: ep-y0-tea-mission-return
+  continuity_id: main
+  arc_id: arc-y0-tea-race
+  title: Команда 7 повертається з Країни Чаю
+  description: 'Одна сюжетна лінія: Команда 7 повертається з Країни Чаю. Сцени: Команда 7 повертається з Країни Чаю.'
+- id: ep-y0-waterfall-escort
+  continuity_id: main
+  arc_id: arc-y0-waterfall-defense
+  title: Супровід Шібукі й загроза Суїєна
+  description: 'Одна сюжетна лінія: Супровід Шібукі й загроза Суїєна. Сцени: Команда 7 супроводжує Шібукі до Такіґакуре; У
+    Такіґакуре виявляють загрозу Суїєна.'
+- id: ep-y0-shibuki-crisis
+  continuity_id: main
+  arc_id: arc-y0-waterfall-defense
+  title: Шібукі паралізує страх перед Суїєном
+  description: 'Одна сюжетна лінія: Шібукі паралізує страх перед Суїєном. Сцени: Шібукі паралізує страх перед Суїєном.'
+- id: ep-y0-waterfall-villagers-captured
+  continuity_id: main
+  arc_id: arc-y0-waterfall-defense
+  title: Нападники захоплюють мешканців Такіґакуре
+  description: 'Одна сюжетна лінія: Нападники захоплюють мешканців Такіґакуре. Сцени: Нападники захоплюють мешканців Такіґакуре.'
+- id: ep-y0-waterfall-defense
+  continuity_id: main
+  arc_id: arc-y0-waterfall-defense
+  title: Оборона Такіґакуре
+  description: 'Одна сюжетна лінія: Оборона Такіґакуре. Сцени: Наруто й Саске чинять опір Суїєну; Шібукі очолює оборону Такіґакуре.'
+- id: ep-y0-kosuke-border-patrol
+  continuity_id: main
+  arc_id: arc-y0-kosuke-border
+  title: Патрулювання кордону
+  description: 'Одна сюжетна лінія: Патрулювання кордону. Сцени: Наруто патрулює кордон разом із Косуке; Загін відбиває напад
+    на кордоні.'
+- id: ep-y0-hinata-vision-loss
+  continuity_id: main
+  arc_id: arc-y0-hinata-vision
+  title: Хіната після втрати зору
+  description: 'Одна сюжетна лінія: Хіната після втрати зору. Сцени: Хіната тимчасово втрачає зір; Хіната дивиться феєрверк
+    із дому.'
+- id: ep-y0-shu-infiltration
+  continuity_id: main
+  arc_id: arc-y0-shu-rescue
+  title: Підміна й вивезення Шю
+  description: 'Одна сюжетна лінія: Підміна й вивезення Шю. Сцени: Цунаде доручає Наруто й Команді 10 таємну місію щодо Шю;
+    Команда виконує підміну Шю; Команда Асуми вивозить справжнього Шю.'
+- id: ep-y0-akatsuki-castle-attack
+  continuity_id: main
+  arc_id: arc-y0-shu-rescue
+  title: Сасорі й Дейдара атакують замок
+  description: 'Одна сюжетна лінія: Сасорі й Дейдара атакують замок. Сцени: Сасорі й Дейдара атакують замок.'
+- id: ep-y0-shu-mission-finish
+  continuity_id: main
+  arc_id: arc-y0-shu-rescue
+  title: Викриття маскування й завершення місії
+  description: 'Одна сюжетна лінія: Викриття маскування й завершення місії. Сцени: Маскування Наруто під Шю викривають; Шю
+    доставляють за призначенням.'
+- id: ep-y0-sasuke-naho-rescue
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Саске рятує Нахо й загострює кризу перед втечею
+  description: 'Одна сюжетна лінія: Саске рятує Нахо й загострює кризу перед втечею. Сцени: Саске рятує Нахо й загострює кризу
+    перед втечею.'
+- id: ep-y0-sasuke-rooftop-conflict
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Криза Саске й бій на даху
+  description: 'Одна сюжетна лінія: Криза Саске й бій на даху. Сцени: Саске зривається в палаті; Саске викликає Наруто на
+    бій на даху; Какаші говорить із Саске про помсту.'
+- id: ep-y0-sasuke-departure
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Саске залишає Коноху
+  description: 'Одна сюжетна лінія: Саске залишає Коноху. Сцени: Четвірка Звуку вербує Саске; Саске вирішує залишити Коноху;
+    Сакура намагається зупинити Саске.'
+- id: ep-y0-iruka-supports-naruto
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Ірука підтримує Наруто в Ічіраку
+  description: 'Одна сюжетна лінія: Ірука підтримує Наруто в Ічіраку. Сцени: Ірука підтримує Наруто в Ічіраку.'
+- id: ep-y0-retrieval-team-formation
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Створення й вихід загону повернення Саске
+  description: 'Одна сюжетна лінія: Створення й вихід загону повернення Саске. Сцени: Сакура повідомляє Цунаде про втечу Саске;
+    Цунаде наказує Шикамару повернути Саске; Шикамару збирає загін повернення Саске; Наруто обіцяє Сакурі повернути Саске;
+    Загін Шикамару залишає Коноху.'
+- id: ep-y0-raido-genma-sound-four
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Райдо й Ґенма проти Четвірки Звуку
+  description: 'Одна сюжетна лінія: Райдо й Ґенма проти Четвірки Звуку. Сцени: Райдо й Ґенма проти Четвірки Звуку.'
+- id: ep-y0-choji-jirobo
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Чоджі залишається битися з Джіро́бо
+  description: 'Одна сюжетна лінія: Чоджі залишається битися з Джіро́бо. Сцени: Чоджі залишається битися з Джіро́бо.'
+- id: ep-y0-neji-kidomaru
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Неджі залишається битися з Кідомару
+  description: 'Одна сюжетна лінія: Неджі залишається битися з Кідомару. Сцени: Неджі залишається битися з Кідомару.'
+- id: ep-y0-kiba-sakon-ukon
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Кіба й Канкуро проти Сакона та Укона
+  description: 'Одна сюжетна лінія: Кіба й Канкуро проти Сакона та Укона. Сцени: Кіба й Акамару проти Сакона та Укона; Канкуро
+    приходить на допомогу Кібі.'
+- id: ep-y0-shikamaru-tayuya
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Шикамару й Темарі проти Таюї
+  description: 'Одна сюжетна лінія: Шикамару й Темарі проти Таюї. Сцени: Шикамару проти Таюї; Шикамару залишається битися
+    з Таюєю; Темарі приходить на допомогу Шикамару.'
+- id: ep-y0-kimimaro-battle
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Лі й Ґаара проти Кімімаро
+  description: 'Одна сюжетна лінія: Лі й Ґаара проти Кімімаро. Сцени: Кімімаро забирає контейнер із Саске; Кімімаро затримує
+    переслідувачів; Рок Лі змінює Наруто в бою з Кімімаро; Ґаара змінює Лі в бою з Кімімаро; Кімімаро помирає від хвороби.'
+- id: ep-y0-naruto-pursues-sasuke
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Наруто продовжує погоню за Саске
+  description: 'Одна сюжетна лінія: Наруто продовжує погоню за Саске. Сцени: Наруто продовжує погоню за Саске.'
+- id: ep-y0-orochimaru-body-transfer
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Орочімару змінює тіло
+  description: 'Одна сюжетна лінія: Орочімару змінює тіло. Сцени: Орочімару змінює тіло без Саске; Орочімару проводить перенесення
+    тіла.'
+- id: ep-y0-sasuke-reaches-orochimaru
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Саске прибуває до сховку Орочімару
+  description: 'Одна сюжетна лінія: Саске прибуває до сховку Орочімару. Сцени: Саске продовжує шлях до Орочімару; Саске прибуває
+    до сховку Орочімару.'
+- id: ep-y0-kakashi-retrieval-rescue
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Какаші знаходить Наруто в Долині Завершення
+  description: 'Одна сюжетна лінія: Какаші знаходить Наруто в Долині Завершення. Сцени: Какаші знаходить Наруто в Долині Завершення.'
+- id: ep-y0-retrieval-recovery
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Поранених учасників місії повертають до Конохи
+  description: 'Одна сюжетна лінія: Поранених учасників місії повертають до Конохи. Сцени: Поранених учасників місії повертають
+    до Конохи.'
+- id: ep-y0-naruto-sakura-promise
+  continuity_id: main
+  arc_id: arc-y0-sasuke-retrieval
+  title: Наруто й Сакура вирішують повернути Саске разом
+  description: 'Одна сюжетна лінія: Наруто й Сакура вирішують повернути Саске разом. Сцени: Наруто й Сакура вирішують повернути
+    Саске разом.'
+- id: ep-y0-jiraiya-training-offer
+  continuity_id: main
+  arc_id: arc-y0-naruto-long-training
+  title: Джирая пропонує Наруто довгострокове тренування
+  description: 'Одна сюжетна лінія: Джирая пропонує Наруто довгострокове тренування. Сцени: Джирая пропонує Наруто довгострокове
+    тренування.'
+- id: ep-y0-naruto-iruka-farewell
+  continuity_id: main
+  arc_id: arc-y0-naruto-long-training
+  title: Останній рамен Наруто з Ірукою перед відбуттям
+  description: 'Одна сюжетна лінія: Останній рамен Наруто з Ірукою перед відбуттям. Сцени: Останній рамен Наруто з Ірукою
+    перед відбуттям.'
+- id: ep-y0-sakura-tsunade-request
+  continuity_id: main
+  arc_id: arc-y0-sakura-apprenticeship
+  title: Сакура просить Цунаде навчати її
+  description: 'Одна сюжетна лінія: Сакура просить Цунаде навчати її. Сцени: Сакура просить Цунаде навчати її.'
+- id: ep-y0-fuma-mission-opening
+  continuity_id: main
+  arc_id: arc-y0-fuma-clan
+  title: Місія й зустріч із Сасаме
+  description: 'Одна сюжетна лінія: Місія й зустріч із Сасаме. Сцени: Наруто, Джирая й Сакура вирушають до Країни Рисових
+    Полів; Група зустрічає Сасаме й дізнається про клан Фума.'
+- id: ep-y0-sasame-fuma-ambush
+  continuity_id: main
+  arc_id: arc-y0-fuma-clan
+  title: Сасаме відмовляється доводити пастку до кінця
+  description: 'Одна сюжетна лінія: Сасаме відмовляється доводити пастку до кінця. Сцени: Сасаме відмовляється доводити пастку
+    до кінця.'
+- id: ep-y0-fuma-hideout-infiltration
+  continuity_id: main
+  arc_id: arc-y0-fuma-clan
+  title: Проникнення до сховку й Араші
+  description: 'Одна сюжетна лінія: Проникнення до сховку й Араші. Сцени: Група проникає до покинутої резиденції Орочімару;
+    Араші використаний як жива зброя.'
+- id: ep-y0-shino-confidence
+  continuity_id: main
+  arc_id: arc-y0-shino-growth
+  title: Шіно сумнівається й тренується
+  description: 'Одна сюжетна лінія: Шіно сумнівається й тренується. Сцени: Шіно сумнівається у своєму місці в Команді 8; Команда
+    8 тренує ближній бій Шіно.'
+- id: ep-y0-team8-suika-capture
+  continuity_id: main
+  arc_id: arc-y0-shino-growth
+  title: Повторна спроба затримати Суїку
+  description: 'Одна сюжетна лінія: Повторна спроба затримати Суїку. Сцени: Команда 8 не затримує Суїку; Шіно повертається
+    й допомагає затримати Суїку.'
+- id: ep-y0-mizuki-escape
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Мідзукі тікає з в'язниці разом із Фуджіном і Райджіном
+  description: 'Одна сюжетна лінія: Мідзукі тікає з в''язниці разом із Фуджіном і Райджіном. Сцени: Мідзукі тікає з в''язниці
+    разом із Фуджіном і Райджіном.'
+- id: ep-y0-mizuki-warning
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Цунаде реагує на зв'язок Мідзукі з Орочімару
+  description: 'Одна сюжетна лінія: Цунаде реагує на зв''язок Мідзукі з Орочімару. Сцени: Цунаде реагує на зв''язок Мідзукі
+    з Орочімару.'
+- id: ep-y0-mizuki-tracking
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Тонтон веде Наруто й Іруку по сліду Мідзукі
+  description: 'Одна сюжетна лінія: Тонтон веде Наруто й Іруку по сліду Мідзукі. Сцени: Тонтон веде Наруто й Іруку по сліду
+    Мідзукі.'
+- id: ep-y0-iruka-mizuki-pursuit
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Ірука переслідує Мідзукі
+  description: 'Одна сюжетна лінія: Ірука переслідує Мідзукі. Сцени: Ірука переслідує Мідзукі окремою гілкою; Мідзукі заманює
+    Іруку до старої випробувальної будівлі.'
+- id: ep-y0-mizuki-formula
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Мідзукі й формула Орочімару
+  description: 'Одна сюжетна лінія: Мідзукі й формула Орочімару. Сцени: Цубакі просить Мідзукі зупинитися; Мідзукі завершує
+    формулу Орочімару.'
+- id: ep-y0-tsubaki-pursuit
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Цубакі приєднується до переслідування Мідзукі
+  description: 'Одна сюжетна лінія: Цубакі приєднується до переслідування Мідзукі. Сцени: Цубакі приєднується до переслідування
+    Мідзукі.'
+- id: ep-y0-naruto-fujin-raijin
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Наруто проти Фуджіна й Райджіна
+  description: 'Одна сюжетна лінія: Наруто проти Фуджіна й Райджіна. Сцени: Наруто знаходить поранених Асуму й Куренай; Наруто
+    стикається з Фуджіном і Райджіном.'
+- id: ep-y0-team10-fujin-raijin
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Іно–Шіка–Чо стримують Фуджіна й Райджіна
+  description: 'Одна сюжетна лінія: Іно–Шіка–Чо стримують Фуджіна й Райджіна. Сцени: Іно–Шіка–Чо стримують Фуджіна й Райджіна.'
+- id: ep-y0-tsunade-stops-brothers
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Цунаде зупиняє Фуджіна й Райджіна
+  description: 'Одна сюжетна лінія: Цунаде зупиняє Фуджіна й Райджіна. Сцени: Цунаде зупиняє Фуджіна й Райджіна.'
+- id: ep-y0-mizuki-final-battle
+  continuity_id: main
+  arc_id: arc-y0-mizuki-return
+  title: Поразка Мідзукі й наслідки
+  description: 'Одна сюжетна лінія: Поразка Мідзукі й наслідки. Сцени: Наруто й Ірука б''ються з посиленим Мідзукі; Наслідки
+    поразки Мідзукі.'
+- id: ep-y0-shino-carnivorous-plants
+  continuity_id: main
+  arc_id: arc-y0-animal-district
+  title: Шіно натрапляє на хижі рослини Нульової ділянки
+  description: 'Одна сюжетна лінія: Шіно натрапляє на хижі рослини Нульової ділянки. Сцени: Шіно натрапляє на хижі рослини
+    Нульової ділянки.'
+- id: ep-y0-lee-kangaroo
+  continuity_id: main
+  arc_id: arc-y0-animal-district
+  title: Лі переслідує Кондора й зустрічає боксерського кенгуру
+  description: 'Одна сюжетна лінія: Лі переслідує Кондора й зустрічає боксерського кенгуру. Сцени: Лі переслідує Кондора й
+    зустрічає боксерського кенгуру.'
+- id: ep-y0-naruto-kotetsu-condor
+  continuity_id: main
+  arc_id: arc-y0-animal-district
+  title: Наруто й Котецу не можуть схопити Кондора
+  description: 'Одна сюжетна лінія: Наруто й Котецу не можуть схопити Кондора. Сцени: Наруто й Котецу не можуть схопити Кондора.'
+- id: ep-y0-animal-four-warriors
+  continuity_id: main
+  arc_id: arc-y0-animal-district
+  title: Чотири ніндзя-тварини атакують загін
+  description: 'Одна сюжетна лінія: Чотири ніндзя-тварини атакують загін. Сцени: Чотири ніндзя-тварини атакують загін.'
+- id: ep-y0-hinata-waterfall-training
+  continuity_id: main
+  arc_id: arc-y0-bikochu-search
+  title: Хіната тренує власну захисну техніку біля водоспаду
+  description: 'Одна сюжетна лінія: Хіната тренує власну захисну техніку біля водоспаду. Сцени: Хіната тренує власну захисну
+    техніку біля водоспаду.'
+- id: ep-y0-bikochu-mission-planning
+  continuity_id: main
+  arc_id: arc-y0-bikochu-search
+  title: План і дозвіл на пошук бікоочу
+  description: 'Одна сюжетна лінія: План і дозвіл на пошук бікоочу. Сцени: Команда 8 пропонує використати бікоочу для пошуку
+    Саске; Цунаде санкціонує пошук бікоочу.'
+- id: ep-y0-bikochu-search
+  continuity_id: main
+  arc_id: arc-y0-bikochu-search
+  title: Пошукова група знаходить бікоочу
+  description: 'Одна сюжетна лінія: Пошукова група знаходить бікоочу. Сцени: Пошукова група знаходить бікоочу.'
+- id: ep-y0-hinata-captivity
+  continuity_id: main
+  arc_id: arc-y0-bikochu-search
+  title: Полон і втеча Хінати
+  description: 'Одна сюжетна лінія: Полон і втеча Хінати. Сцени: Камізуру викрадають Хінату; Хіната вибирається з полону після
+    падіння в річку.'
+- id: ep-y0-kamizuru-exchange-trap
+  continuity_id: main
+  arc_id: arc-y0-bikochu-search
+  title: Спроба обміну перетворюється на пастку Камізуру
+  description: 'Одна сюжетна лінія: Спроба обміну перетворюється на пастку Камізуру. Сцени: Спроба обміну перетворюється на
+    пастку Камізуру.'
+- id: ep-y0-bikochu-rescue-finish
+  continuity_id: main
+  arc_id: arc-y0-bikochu-search
+  title: Порятунок команди й невдача пошуку
+  description: 'Одна сюжетна лінія: Порятунок команди й невдача пошуку. Сцени: Хіната повертається й рятує товаришів новою
+    технікою; Бікоочу запам''ятовує запах Наруто замість Саске.'
+- id: ep-y0-kurosuki-mission-opening
+  continuity_id: main
+  arc_id: arc-y0-raiga-ranmaru
+  title: Місія проти Куросукі
+  description: 'Одна сюжетна лінія: Місія проти Куросукі. Сцени: Наруто приєднується до місії проти родини Куросукі; Саншо
+    й Караші розповідають про Райґу та Катабамі.'
+- id: ep-y0-raiga-first-battle
+  continuity_id: main
+  arc_id: arc-y0-raiga-ranmaru
+  title: Перша сутичка з Райґою й Куросукі
+  description: 'Одна сюжетна лінія: Перша сутичка з Райґою й Куросукі. Сцени: Команда входить до Катабамі й стикається зі
+    зрадою Караші; Ранмару нівелює перевагу Б''якуґана в бою з Райґою; Люди Куросукі влаштовують пастку, а Лі заступається
+    за Караші.'
+- id: ep-y0-ranmaru-choice
+  continuity_id: main
+  arc_id: arc-y0-raiga-ranmaru
+  title: Ранмару між Райґою та новим життям
+  description: 'Одна сюжетна лінія: Ранмару між Райґою та новим життям. Сцени: Ранмару повертається до урвища й оживляє Райґу;
+    Ранмару починає відмовлятися від убивств Райґи.'
+- id: ep-y0-raiga-final-battle
+  continuity_id: main
+  arc_id: arc-y0-raiga-ranmaru
+  title: Повернення до бою й поразка Райґи
+  description: 'Одна сюжетна лінія: Повернення до бою й поразка Райґи. Сцени: Карі Життя повертає бійців до бою на Блискавичному
+    перевалі; Ранмару відмовляється від Райґи, а Наруто завершує бій.'
+- id: ep-y0-ranmaru-new-life
+  continuity_id: main
+  arc_id: arc-y0-raiga-ranmaru
+  title: Ранмару лишається з Саншо й Караші
+  description: 'Одна сюжетна лінія: Ранмару лишається з Саншо й Караші. Сцени: Ранмару лишається з Саншо й Караші.'
+- id: ep-y0-academy-survival
+  continuity_id: main
+  arc_id: arc-y0-academy-survival
+  title: Гірське випробування учнів Академії
+  description: 'Одна сюжетна лінія: Гірське випробування учнів Академії. Сцени: Наруто отримує трьох учнів Академії для польового
+    випробування; Група Наруто губиться під час гірського випробування; Цунаде розбирає небезпечне рішення Наруто після повернення.'
+- id: ep-y0-gosunkugi-pursuit
+  continuity_id: main
+  arc_id: arc-y0-gosunkugi
+  title: Погоня й правда про Садзанамі
+  description: 'Одна сюжетна лінія: Погоня й правда про Садзанамі. Сцени: Наруто, Кіба й Хіната вирушають ловити Ґосункуґі;
+    Поранений Садзанамі виявляється розшукуваним Токічі; Садзанамі й команда наздоганяють Ґосункуґі в храмі О.К..'
+- id: ep-y0-guy-lee-impostors
+  continuity_id: main
+  arc_id: arc-y0-guy-lee-impostors
+  title: Викриття Мондая й Потчі
+  description: 'Одна сюжетна лінія: Викриття Мондая й Потчі. Сцени: Мондай і Потча входять до Конохи під виглядом Ґая та Лі;
+    Справжні Ґай і Лі повертаються й проганяють самозванців.'
+- id: ep-y0-birds-investigation
+  continuity_id: main
+  arc_id: arc-y0-land-of-birds
+  title: Розслідування Проклятого Воїна
+  description: 'Одна сюжетна лінія: Розслідування Проклятого Воїна. Сцени: Наруто, Неджи й Тентен прибувають до Країни Птахів;
+    Перша зустріч із Проклятим Воїном показує порожню броню; Підозра падає на Комея, але справа Проклятого Воїна ускладнюється.'
+- id: ep-y0-naruto-birds-prison
+  continuity_id: main
+  arc_id: arc-y0-land-of-birds
+  title: Наруто знаходить підземні ходи й викриває Проклятого Воїна як Саґі
+  description: 'Одна сюжетна лінія: Наруто знаходить підземні ходи й викриває Проклятого Воїна як Саґі. Сцени: Наруто знаходить
+    підземні ходи й викриває Проклятого Воїна як Саґі.'
+- id: ep-y0-birds-moso-confrontation
+  continuity_id: main
+  arc_id: arc-y0-land-of-birds
+  title: Наруто рятує Комея й група переходить до відкритого протистояння з Мосо
+  description: 'Одна сюжетна лінія: Наруто рятує Комея й група переходить до відкритого протистояння з Мосо. Сцени: Наруто
+    рятує Комея й група переходить до відкритого протистояння з Мосо.'
+- id: ep-y0-birds-truth-finale
+  continuity_id: main
+  arc_id: arc-y0-land-of-birds
+  title: Викриття Токі й Хокі та фінальний бій
+  description: 'Одна сюжетна лінія: Викриття Токі й Хокі та фінальний бій. Сцени: Токі та Хокі відкривають свої справжні ролі;
+    Наруто й союзники розбивають Хокі та Ватарі.'
+- id: ep-y0-toki-aftermath
+  continuity_id: main
+  arc_id: arc-y0-land-of-birds
+  title: Токі відмовляється від помсти й лишається правителькою
+  description: 'Одна сюжетна лінія: Токі відмовляється від помсти й лишається правителькою. Сцени: Токі відмовляється від
+    помсти й лишається правителькою.'
+- id: ep-y0-ayame-cooking-rescue
+  continuity_id: main
+  arc_id: arc-y0-ayame-rescue
+  title: Кулінарний поєдинок за Аяме
+  description: 'Одна сюжетна лінія: Кулінарний поєдинок за Аяме. Сцени: Ніндзя-кухарі викрадають Аяме заради рецепту Ічіраку;
+    Наруто, Сакура й Чоджі допомагають Теучі створити нову локшину; Теучі й команда перемагають ніндзя-кухарів у кулінарному
+    поєдинку.'
+- id: ep-y0-kaima-mission-opening
+  continuity_id: main
+  arc_id: arc-y0-kaima-sea
+  title: Місія й зустріч з Ісарібі
+  description: 'Одна сюжетна лінія: Місія й зустріч з Ісарібі. Сцени: Анко веде Наруто, Іно й Шіно до Країни Моря; Наруто
+    зустрічає Ісарібі й вона рятує його після нападу; Команда з''ясовує, що кайма — це Ісарібі.'
+- id: ep-y0-anko-laboratory-memory
+  continuity_id: main
+  arc_id: arc-y0-kaima-sea
+  title: Анко пригадує лабораторію Орочімару й своє залишення
+  description: 'Одна сюжетна лінія: Анко пригадує лабораторію Орочімару й своє залишення. Сцени: Анко пригадує лабораторію
+    Орочімару й своє залишення; Анко остаточно відновлює пам’ять.'
+- id: ep-y0-kaima-demon-island
+  continuity_id: main
+  arc_id: arc-y0-kaima-sea
+  title: Команда проникає на Острів Демона й знаходить лабораторію
+  description: 'Одна сюжетна лінія: Команда проникає на Острів Демона й знаходить лабораторію. Сцени: Команда проникає на
+    Острів Демона й знаходить лабораторію.'
+- id: ep-y0-amachi-fleet-attack
+  continuity_id: main
+  arc_id: arc-y0-kaima-sea
+  title: Амачі атакує урядовий флот Країни Моря
+  description: 'Одна сюжетна лінія: Амачі атакує урядовий флот Країни Моря. Сцени: Амачі атакує урядовий флот Країни Моря.'
+- id: ep-y0-isaribi-breaks-amachi
+  continuity_id: main
+  arc_id: arc-y0-kaima-sea
+  title: Ісарібі вагається між обіцянкою лікування та допомогою Наруто
+  description: 'Одна сюжетна лінія: Ісарібі вагається між обіцянкою лікування та допомогою Наруто. Сцени: Ісарібі вагається
+    між обіцянкою лікування та допомогою Наруто.'
+- id: ep-y0-kaima-final-battle
+  continuity_id: main
+  arc_id: arc-y0-kaima-sea
+  title: Бій Наруто з Амачі й Умібодзу
+  description: 'Одна сюжетна лінія: Бій Наруто з Амачі й Умібодзу. Сцени: Наруто перемагає трансформованого Амачі; Ґамабунта
+    знищує Умібодзу.'
+- id: ep-y0-kaima-aftermath
+  continuity_id: main
+  arc_id: arc-y0-kaima-sea
+  title: Ісарібі погоджується на лікування
+  description: 'Одна сюжетна лінія: Ісарібі погоджується на лікування. Сцени: Ісарібі погоджується на лікування в Конохі.'
+- id: ep-y0-kunihisa-ninja-day
+  continuity_id: main
+  arc_id: arc-y0-kunihisa
+  title: День шинобі й порятунок Куніхіси
+  description: 'Одна сюжетна лінія: День шинобі й порятунок Куніхіси. Сцени: Наруто проводить Куніхісу через день життя шинобі;
+    Справжнє викрадення змушує Куніхісу діяти без грошей.'
+- id: ep-y0-buried-gold-search
+  continuity_id: main
+  arc_id: arc-y0-buried-gold
+  title: Невдалий пошук скарбу
+  description: 'Одна сюжетна лінія: Невдалий пошук скарбу. Сцени: Цунаде дає Наруто, Кібі й Хінаті останній шанс як команді;
+    Суперечки Наруто й Кіби розвалюють пошук скарбу.'
+- id: ep-y0-kedoin-copies
+  continuity_id: main
+  arc_id: arc-y0-buried-gold
+  title: Кедоїн захоплюють трійцю та копіюють їхні особи
+  description: 'Одна сюжетна лінія: Кедоїн захоплюють трійцю та копіюють їхні особи. Сцени: Кедоїн захоплюють трійцю та копіюють
+    їхні особи.'
+- id: ep-y0-kedoin-pursuit
+  continuity_id: main
+  arc_id: arc-y0-buried-gold
+  title: Погоня за двійниками й викриття перевірки
+  description: 'Одна сюжетна лінія: Погоня за двійниками й викриття перевірки. Сцени: Справжня трійця виривається з печери
+    й переслідує своїх двійників до Конохи; Цунаде відкриває, що Кедоїн були частиною перевірки.'
+- id: ep-y0-postman-chase
+  continuity_id: main
+  arc_id: arc-y0-postman
+  title: Погоня за переплутаним рукописом
+  description: 'Одна сюжетна лінія: Погоня за переплутаним рукописом. Сцени: Наруто плутає рукопис Джираї з мирною угодою;
+    Наруто й Джирая не встигають перехопити рукопис, але він несподівано приносить мир.'
+- id: ep-y0-hoshi-mission-opening
+  continuity_id: main
+  arc_id: arc-y0-hoshigakure
+  title: Прибуття до Хошіґакуре
+  description: 'Одна сюжетна лінія: Прибуття до Хошіґакуре. Сцени: Наруто приєднується до місії з охорони Зірки Хошіґакуре;
+    Загін проходить отруйну долину й зустрічає Сумару.'
+- id: ep-y0-hoshi-investigation
+  continuity_id: main
+  arc_id: arc-y0-hoshigakure
+  title: Зірку викрадає шинобі Хошіґакуре, і команда шукає внутрішнього винуватця
+  description: 'Одна сюжетна лінія: Зірку викрадає шинобі Хошіґакуре, і команда шукає внутрішнього винуватця. Сцени: Зірку
+    викрадає шинобі Хошіґакуре, і команда шукає внутрішнього винуватця.'
+- id: ep-y0-hoshi-training-cost
+  continuity_id: main
+  arc_id: arc-y0-hoshigakure
+  title: Діти розкривають шкоду Зірки
+  description: 'Одна сюжетна лінія: Діти розкривають шкоду Зірки. Сцени: Команда бачить, що тренування із Зіркою калічить
+    дітей; Учні Хошіґакуре відкрито показують, що Зірка руйнує їхні тіла.'
+- id: ep-y0-akahoshi-scheme
+  continuity_id: main
+  arc_id: arc-y0-hoshigakure
+  title: Шантаж і злочини Акагоші
+  description: 'Одна сюжетна лінія: Шантаж і злочини Акагоші. Сцени: Акагоші викрадає Сумару, щоб виманити злодія Зірки; Акагоші
+    визнає вбивство Третього Хошікаґе.'
+- id: ep-y0-natsuhi-star-rescue
+  continuity_id: main
+  arc_id: arc-y0-hoshigakure
+  title: Нацухі намагається врятувати дітей
+  description: 'Одна сюжетна лінія: Нацухі намагається врятувати дітей. Сцени: Наруто дізнається, що викрадачка Зірки — Нацухі,
+    мати Сумару; Нацухі востаннє намагається забрати Зірку й гине.'
+- id: ep-y0-akahoshi-final-battle
+  continuity_id: main
+  arc_id: arc-y0-hoshigakure
+  title: Акагоші вбудовує Зірку у власне тіло й б'ється з Наруто
+  description: 'Одна сюжетна лінія: Акагоші вбудовує Зірку у власне тіло й б''ється з Наруто. Сцени: Акагоші вбудовує Зірку
+    у власне тіло й б''ється з Наруто.'
+- id: ep-y0-hoshi-aftermath
+  continuity_id: main
+  arc_id: arc-y0-hoshigakure
+  title: Хошіґакуре припиняє небезпечні тренування після знищення Зірки
+  description: 'Одна сюжетна лінія: Хошіґакуре припиняє небезпечні тренування після знищення Зірки. Сцени: Хошіґакуре припиняє
+    небезпечні тренування після знищення Зірки.'
+- id: ep-y0-akamaru-antidote
+  continuity_id: main
+  arc_id: arc-y0-akamaru-infection
+  title: Кіба рятує Акамару
+  description: 'Одна сюжетна лінія: Кіба рятує Акамару. Сцени: Після місії в Акамару виявляють бактерію, що руйнує контроль;
+    Кіба забирає Акамару з-під варти; Кіба сам вводить Акамару ризикований антидот.'
+- id: ep-y0-onba-naruto
+  continuity_id: main
+  arc_id: arc-y0-onba
+  title: Онбу знаходить свою матір
+  description: 'Одна сюжетна лінія: Онбу знаходить свою матір. Сцени: Дитинча онба чіпляється до Наруто; Онбу швидко виростає,
+    не залишаючи Наруто; Доросла онба повертає Онбу.'
+- id: ep-y0-kagetsu-funeral
+  continuity_id: main
+  arc_id: arc-y0-kagetsu-funeral
+  title: Завдання Шіно й викриття постановки
+  description: 'Одна сюжетна лінія: Завдання Шіно й викриття постановки. Сцени: Наруто й Шіно отримують дивне завдання на
+    похороні Каґецу; Шіно отруюють речовиною, що викликає неконтрольований сміх; Похорон виявляється постановкою Тобея Каґецу.'
+- id: ep-y0-greens-escort
+  continuity_id: main
+  arc_id: arc-y0-land-of-greens
+  title: Супровід каравану й принцеса Харуна
+  description: 'Одна сюжетна лінія: Супровід каравану й принцеса Харуна. Сцени: Наруто, Хіната й Чоджі беруть під охорону
+    караван із Країни Овочів; Шун виявляється принцесою Харуною.'
+- id: ep-y0-ruiga-battle
+  continuity_id: main
+  arc_id: arc-y0-land-of-greens
+  title: Наруто, Чоджі й Юріношін зупиняють Руйґу
+  description: 'Одна сюжетна лінія: Наруто, Чоджі й Юріношін зупиняють Руйґу. Сцени: Наруто, Чоджі й Юріношін зупиняють Руйґу.'
+- id: ep-y0-haruna-escape
+  continuity_id: main
+  arc_id: arc-y0-land-of-greens
+  title: Страх Харуни змушує її покинути Хінату й тікати самій
+  description: 'Одна сюжетна лінія: Страх Харуни змушує її покинути Хінату й тікати самій. Сцени: Страх Харуни змушує її покинути
+    Хінату й тікати самій.'
+- id: ep-y0-hinata-jiga-battle
+  continuity_id: main
+  arc_id: arc-y0-land-of-greens
+  title: Харуна тікає, а Хіната ламає контроль Джіґи над магнетизмом
+  description: 'Одна сюжетна лінія: Харуна тікає, а Хіната ламає контроль Джіґи над магнетизмом. Сцени: Харуна тікає, а Хіната
+    ламає контроль Джіґи над магнетизмом.'
+- id: ep-y0-renga-finale
+  continuity_id: main
+  arc_id: arc-y0-land-of-greens
+  title: Харуна змінює рішення, Наруто перемагає Ренґу, а полонених звільняють
+  description: 'Одна сюжетна лінія: Харуна змінює рішення, Наруто перемагає Ренґу, а полонених звільняють. Сцени: Ренґа захоплює
+    союзників Конохи; Харуна змінює рішення, Наруто перемагає Ренґу, а полонених звільняють.'
+- id: ep-y0-ryudoin-revenge
+  continuity_id: main
+  arc_id: arc-y0-ryudoin
+  title: Ґай і Команда Ґая проти Рюдоін
+  description: 'Одна сюжетна лінія: Ґай і Команда Ґая проти Рюдоін. Сцени: Ґеншо Рюдоін під виглядом Яґури входить у довіру
+    до Ґая; Команда Ґая руйнує помсту братів Рюдоін.'
+- id: ep-y0-genno-investigation
+  continuity_id: main
+  arc_id: arc-y0-genno
+  title: Пошук Ґенно й викрадених креслень
+  description: 'Одна сюжетна лінія: Пошук Ґенно й викрадених креслень. Сцени: Крадіжка креслень Ґенно запускає надзвичайний
+    стан у Конохі; Розслідування Ґенно повертає загрозу всередину Конохи.'
+- id: ep-y0-genno-bomb-network
+  continuity_id: main
+  arc_id: arc-y0-genno
+  title: Коноха таємно знімає мережу вибухових печаток Ґенно
+  description: 'Одна сюжетна лінія: Коноха таємно знімає мережу вибухових печаток Ґенно. Сцени: Коноха таємно знімає мережу
+    вибухових печаток Ґенно.'
+- id: ep-y0-genno-final-trap
+  continuity_id: main
+  arc_id: arc-y0-genno
+  title: Наруто й одинадцятеро шинобі зупиняють останню пастку Ґенно
+  description: 'Одна сюжетна лінія: Наруто й одинадцятеро шинобі зупиняють останню пастку Ґенно. Сцени: Наруто й одинадцятеро
+    шинобі зупиняють останню пастку Ґенно.'
+- id: ep-y0-kurenai-yakumo-past
+  continuity_id: main
+  arc_id: arc-y0-yakumo-kurenai
+  title: Куренай повертається до справи Якумо
+  description: 'Одна сюжетна лінія: Куренай повертається до справи Якумо. Сцени: Куренай залишає Команду 8 через справу Якумо
+    Курами; Минуле Якумо й обіцянка Куренай Хірузену виходять на поверхню.'
+- id: ep-y0-yakumo-illusion
+  continuity_id: main
+  arc_id: arc-y0-yakumo-kurenai
+  title: Ґенджюцу Якумо накриває Коноху і видає ілюзію за реальність
+  description: 'Одна сюжетна лінія: Ґенджюцу Якумо накриває Коноху і видає ілюзію за реальність. Сцени: Ґенджюцу Якумо накриває
+    Коноху і видає ілюзію за реальність.'
+- id: ep-y0-yakumo-ido-resolution
+  continuity_id: main
+  arc_id: arc-y0-yakumo-kurenai
+  title: Якумо дізнається правду про Ідо й звільняється від неконтрольованої сили
+  description: 'Одна сюжетна лінія: Якумо дізнається правду про Ідо й звільняється від неконтрольованої сили. Сцени: Якумо
+    дізнається правду про Ідо й звільняється від неконтрольованої сили.'
+- id: ep-y0-gantetsu-escort
+  continuity_id: main
+  arc_id: arc-y0-gantetsu
+  title: Наруто, Сакура й Лі охороняють Ґантецу під час перевезення
+  description: 'Одна сюжетна лінія: Наруто, Сакура й Лі охороняють Ґантецу під час перевезення. Сцени: Наруто, Сакура й Лі
+    охороняють Ґантецу під час перевезення.'
+- id: ep-y0-gantetsu-forest
+  continuity_id: main
+  arc_id: arc-y0-gantetsu
+  title: Наруто й Тодорокі дізнаються правду про Ґантецу
+  description: 'Одна сюжетна лінія: Наруто й Тодорокі дізнаються правду про Ґантецу. Сцени: Наруто, Тодорокі й Ґантецу губляться
+    в Лісі Заблудження; Тодорокі дізнається, що Акіо живий і що Ґантецу захищав сиріт.'
+- id: ep-y0-gantetsu-finale
+  continuity_id: main
+  arc_id: arc-y0-gantetsu
+  title: Шура зазнає поразки, Акіо врятовано, а Тодорокі відмовляється від помсти
+  description: 'Одна сюжетна лінія: Шура зазнає поразки, Акіо врятовано, а Тодорокі відмовляється від помсти. Сцени: Шура
+    зазнає поразки, Акіо врятовано, а Тодорокі відмовляється від помсти.'
+- id: ep-y0-menma-memory
+  continuity_id: main
+  arc_id: arc-y0-menma
+  title: Пошук пам’яті й вибір Менми
+  description: 'Одна сюжетна лінія: Пошук пам’яті й вибір Менми. Сцени: Наруто знаходить юнака без пам''яті й називає його
+    Менмою; Пошук пам''яті Менми приводить групу до Країни Рисових Полів; Менма відмовляється від банди й гине, рятуючи селище.'
+- id: ep-alt-y0-1121-clash2-conspiracy
+  continuity_id: alt-game-clash-revolution-2
+  arc_id: arc-alt-game-clash-revolution-2
+  title: Масове ґенджюцу в Конохі
+  description: 'Одна сюжетна лінія: Масове ґенджюцу в Конохі. Сцени: Масове ґенджюцу в Конохі.'
+- id: ep-alt-y0-1122-clash2-finale
+  continuity_id: alt-game-clash-revolution-2
+  arc_id: arc-alt-game-clash-revolution-2
+  title: Цунаде зупиняє Каґуру
+  description: 'Одна сюжетна лінія: Цунаде зупиняє Каґуру. Сцени: Цунаде перемагає Каґуру.'
+- id: ep-y0-0201-konoha-ninpocho-start
+  continuity_id: alt-game-konoha-ninpocho
+  arc_id: arc-alt-game-konoha-ninpocho
+  title: Початок ігрової гілки Konoha Ninpōchō
+  description: 'Одна сюжетна лінія: Початок ігрової гілки Konoha Ninpōchō. Сцени: Початок ігрової гілки Konoha Ninpōchō.'
+- id: ep-y0-0202-konoha-ninpocho-mizuki
+  continuity_id: alt-game-konoha-ninpocho
+  arc_id: arc-alt-game-konoha-ninpocho
+  title: Втеча Мідзукі в Konoha Ninpōchō
+  description: 'Одна сюжетна лінія: Втеча Мідзукі в Konoha Ninpōchō. Сцени: Втеча Мідзукі в Konoha Ninpōchō.'
+- id: ep-y0-0203-konoha-ninpocho-missions
+  continuity_id: alt-game-konoha-ninpocho
+  arc_id: arc-alt-game-konoha-ninpocho
+  title: Подальші місії Konoha Ninpōchō
+  description: 'Одна сюжетна лінія: Подальші місії Konoha Ninpōchō. Сцени: Подальші місії Konoha Ninpōchō.'
+- id: ep-y0-0204-konoha-ninpocho-end
+  continuity_id: alt-game-konoha-ninpocho
+  arc_id: arc-alt-game-konoha-ninpocho
+  title: Завершення ранньої ігрової гілки
+  description: 'Одна сюжетна лінія: Завершення ранньої ігрової гілки. Сцени: Завершення ранньої ігрової гілки.'
+- id: ep-alt-y0-1201-ninja-destiny2eu-start
+  continuity_id: alt-game-ninja-destiny-2-eu
+  arc_id: arc-alt-game-ninja-destiny-2-eu
+  title: Європейська версія Ninja Destiny 2 починає окрему пост-сасківську історію
+  description: 'Одна сюжетна лінія: Європейська версія Ninja Destiny 2 починає окрему пост-сасківську історію. Сцени: Європейська
+    версія Ninja Destiny 2 починає окрему пост-сасківську історію.'
+- id: ep-alt-y0-1202-ninja-destiny2eu-scrolls
+  continuity_id: alt-game-ninja-destiny-2-eu
+  arc_id: arc-alt-game-ninja-destiny-2-eu
+  title: Наруто проходить окрему ігрову серію тренувань і сутичок
+  description: 'Одна сюжетна лінія: Наруто проходить окрему ігрову серію тренувань і сутичок. Сцени: Наруто проходить окрему
+    ігрову серію тренувань і сутичок.'
+- id: ep-alt-y0-1203-ninja-destiny2eu-finale
+  continuity_id: alt-game-ninja-destiny-2-eu
+  arc_id: arc-alt-game-ninja-destiny-2-eu
+  title: Європейська ігрова лінія завершує пост-сасківський тренувальний сюжет
+  description: 'Одна сюжетна лінія: Європейська ігрова лінія завершує пост-сасківський тренувальний сюжет. Сцени: Європейська
+    ігрова лінія завершує пост-сасківський тренувальний сюжет.'
+- id: ep-alt-y0-1020-path-ninja-mirrors-opening
+  continuity_id: alt-game-path-ninja-2
+  arc_id: arc-alt-game-path-ninja-2
+  title: Починається пошук П'яти Дзеркал Надії
+  description: 'Одна сюжетна лінія: Починається пошук П''яти Дзеркал Надії. Сцени: Починається пошук П''яти Дзеркал Надії.'
+- id: ep-alt-y0-1021-path-ninja-mirrors-trials
+  continuity_id: alt-game-path-ninja-2
+  arc_id: arc-alt-game-path-ninja-2
+  title: Збір Дзеркал змушує героїв повторно проходити минулі бої
+  description: 'Одна сюжетна лінія: Збір Дзеркал змушує героїв повторно проходити минулі бої. Сцени: Збір Дзеркал змушує героїв
+    повторно проходити минулі бої.'
+- id: ep-alt-y0-1022-path-ninja-spirit-beast-finale
+  continuity_id: alt-game-path-ninja-2
+  arc_id: arc-alt-game-path-ninja-2
+  title: Група намагається запечатати Духовного Звіра й перемагає його
+  description: 'Одна сюжетна лінія: Група намагається запечатати Духовного Звіра й перемагає його. Сцени: Група намагається
+    запечатати Духовного Звіра й перемагає його.'
+- id: ep-alt-y0-1110-phantom-fortress-summoned
+  continuity_id: alt-game-phantom-fortress
+  arc_id: arc-alt-game-phantom-fortress
+  title: Муґенджо з'являється біля Конохи й починає висмоктувати життєву силу
+  description: 'Одна сюжетна лінія: Муґенджо з''являється біля Конохи й починає висмоктувати життєву силу. Сцени: Муґенджо
+    з''являється біля Конохи й починає висмоктувати життєву силу.'
+- id: ep-alt-y0-1111-phantom-fortress-climb
+  continuity_id: alt-game-phantom-fortress
+  arc_id: arc-alt-game-phantom-fortress
+  title: Наруто збирає загін і знімає печатки Муґенджо
+  description: 'Одна сюжетна лінія: Наруто збирає загін і знімає печатки Муґенджо. Сцени: Наруто збирає загін і знімає печатки
+    Муґенджо.'
+- id: ep-alt-y0-1012-uzumaki-chronicles-opening
+  continuity_id: alt-game-uzumaki-chronicles
+  arc_id: arc-alt-game-uzumaki-chronicles
+  title: Наруто бере на себе надскладні місії у гілці Uzumaki Chronicles
+  description: 'Одна сюжетна лінія: Наруто бере на себе надскладні місії у гілці Uzumaki Chronicles. Сцени: Наруто бере на
+    себе надскладні місії у гілці Uzumaki Chronicles.'
+- id: ep-alt-y0-1013-uzumaki-chronicles-counteroffensive
+  continuity_id: alt-game-uzumaki-chronicles
+  arc_id: arc-alt-game-uzumaki-chronicles
+  title: Наруто збирає союзників проти схеми Орочімару
+  description: 'Одна сюжетна лінія: Наруто збирає союзників проти схеми Орочімару. Сцени: Наруто збирає союзників проти схеми
+    Орочімару.'
+- id: ep-alt-y0-1014-uzumaki-chronicles-finale
+  continuity_id: alt-game-uzumaki-chronicles
+  arc_id: arc-alt-game-uzumaki-chronicles
+  title: Наруто зриває фінальний план Орочімару в гілці Uzumaki Chronicles
+  description: 'Одна сюжетна лінія: Наруто зриває фінальний план Орочімару в гілці Uzumaki Chronicles. Сцени: Наруто зриває
+    фінальний план Орочімару в гілці Uzumaki Chronicles.'
+- id: ep-alt-y0-1101-uc2-hokage-briefing
+  continuity_id: alt-game-uzumaki-chronicles-2
+  arc_id: arc-alt-game-uzumaki-chronicles-2
+  title: Канкуро пояснює мету Шіроґане й Сфер Духу
+  description: 'Одна сюжетна лінія: Канкуро пояснює мету Шіроґане й Сфер Духу. Сцени: Канкуро пояснює мету Шіроґане й Сфер
+    Духу.'
+- id: ep-alt-y0-1101-uc2-shirogane-attack
+  continuity_id: alt-game-uzumaki-chronicles-2
+  arc_id: arc-alt-game-uzumaki-chronicles-2
+  title: Маріонетки Шіроґане атакують Коноху за останньою Сферою Духу
+  description: 'Одна сюжетна лінія: Маріонетки Шіроґане атакують Коноху за останньою Сферою Духу. Сцени: Маріонетки Шіроґане
+    атакують Коноху за останньою Сферою Духу.'
+- id: ep-alt-y0-1102-uc2-spirit-orb-war
+  continuity_id: alt-game-uzumaki-chronicles-2
+  arc_id: arc-alt-game-uzumaki-chronicles-2
+  title: Шинобі Конохи й Суни борються за Сфери Духу з Шіроґане
+  description: 'Одна сюжетна лінія: Шинобі Конохи й Суни борються за Сфери Духу з Шіроґане. Сцени: Шинобі Конохи й Суни борються
+    за Сфери Духу з Шіроґане.'
+- id: ep-alt-y0-1103-uc2-master-puppet-finale
+  continuity_id: alt-game-uzumaki-chronicles-2
+  arc_id: arc-alt-game-uzumaki-chronicles-2
+  title: Майстер Маріонеток відроджується й гине
+  description: 'Одна сюжетна лінія: Майстер Маріонеток відроджується й гине. Сцени: Майстер Маріонеток відроджується й гине.'
+- id: ep-alt-y0-0910-genie-three-wishes
+  continuity_id: alt-genie-three-wishes
+  arc_id: arc-alt-genie-three-wishes
+  title: Наруто й геніни змагаються за три бажання
+  description: 'Одна сюжетна лінія: Наруто й геніни змагаються за три бажання. Сцени: Наруто й геніни змагаються за три бажання.'
+- id: ep-alt-y0-0912-jonin-vs-genin-tournament
+  continuity_id: alt-jonin-vs-genin
+  arc_id: arc-alt-jonin-vs-genin
+  title: Цунаде проводить турнір джонінів і генінів
+  description: 'Одна сюжетна лінія: Цунаде проводить турнір джонінів і генінів. Сцени: Цунаде проводить турнір джонінів і
+    генінів.'
+- id: ep-alt-y0-1118-crescent-moon-movie
+  continuity_id: alt-movie-crescent-moon
+  arc_id: arc-alt-movie-crescent-moon
+  title: Супровід Мічіру й Хікару
+  description: 'Одна сюжетна лінія: Супровід Мічіру й Хікару. Сцени: Супровід Мічіру й Хікару.'
+- id: ep-alt-y0-1005-gelel-caravan-attack
+  continuity_id: alt-movie-gelel
+  arc_id: arc-alt-movie-gelel
+  title: Фуґай атакує караван заради відомостей про Ґелель
+  description: 'Одна сюжетна лінія: Фуґай атакує караван заради відомостей про Ґелель. Сцени: Фуґай атакує караван заради
+    відомостей про Ґелель.'
+- id: ep-alt-y0-1005-gelel-shikamaru-fortress
+  continuity_id: alt-movie-gelel
+  arc_id: arc-alt-movie-gelel
+  title: Шікамару досліджує рухому фортецю Хайдо
+  description: 'Одна сюжетна лінія: Шікамару досліджує рухому фортецю Хайдо. Сцени: Шікамару досліджує рухому фортецю Хайдо.'
+- id: ep-alt-y0-0903-koyuki-identity
+  continuity_id: alt-movie-land-of-snow
+  arc_id: arc-alt-movie-land-of-snow
+  title: Юкіе виявляється принцесою Коюкі
+  description: 'Одна сюжетна лінія: Юкіе виявляється принцесою Коюкі. Сцени: Юкіе виявляється принцесою Коюкі.'
+- id: ep-alt-y0-0903-land-snow-armored-shinobi
+  continuity_id: alt-movie-land-of-snow
+  arc_id: arc-alt-movie-land-of-snow
+  title: Команда 7 б’ється з броньованими шинобі Дото
+  description: 'Одна сюжетна лінія: Команда 7 б’ється з броньованими шинобі Дото. Сцени: Команда 7 б’ється з броньованими
+    шинобі Дото.'
+- id: ep-alt-y0-0903-land-snow-escort
+  continuity_id: alt-movie-land-of-snow
+  arc_id: arc-alt-movie-land-of-snow
+  title: Команда 7 супроводжує Юкіе до Країни Снігу
+  description: 'Одна сюжетна лінія: Команда 7 супроводжує Юкіе до Країни Снігу. Сцени: Команда 7 супроводжує Юкіе до Країни
+    Снігу.'
+- id: ep-alt-y0-0903-naruto-defeats-doto
+  continuity_id: alt-movie-land-of-snow
+  arc_id: arc-alt-movie-land-of-snow
+  title: Наруто перемагає Дото, а Коюкі повертає країну
+  description: 'Одна сюжетна лінія: Наруто перемагає Дото, а Коюкі повертає країну. Сцени: Наруто перемагає Дото, а Коюкі
+    повертає країну.'
+- id: ep-y0-0414-cross-roads
+  continuity_id: alt-ova-cross-roads
+  arc_id: arc-alt-ova-cross-roads
+  title: Окрема місія Команди 7 у The Cross Roads
+  description: 'Одна сюжетна лінія: Окрема місія Команди 7 у The Cross Roads. Сцени: Окрема місія Команди 7 у The Cross Roads.'
+- id: ep-alt-y0-0909-sports-festival
+  continuity_id: alt-sports-festival
+  arc_id: arc-alt-sports-festival
+  title: Спортивні змагання команд Конохи
+  description: 'Одна сюжетна лінія: Спортивні змагання команд Конохи. Сцени: Великий спортивний фестиваль Конохи.'
+- id: ep-alt-y0-0909-ultimate-ninja2-threat
+  continuity_id: alt-ultimate-ninja-2
+  arc_id: arc-alt-ultimate-ninja-2
+  title: Починається ігрова загроза спеціальної печатки
+  description: 'Одна сюжетна лінія: Починається ігрова загроза спеціальної печатки. Сцени: Починається ігрова загроза спеціальної
+    печатки.'
+- id: ep-alt-y0-0910-ultimate-ninja2-seal-battles
+  continuity_id: alt-ultimate-ninja-2
+  arc_id: arc-alt-ultimate-ninja-2
+  title: Орочімару й Кабуто використовують ігрову печать
+  description: 'Одна сюжетна лінія: Орочімару й Кабуто використовують ігрову печать. Сцени: Орочімару й Кабуто використовують
+    ігрову печать.'
+- id: ep-alt-y0-0911-ultimate-ninja2-ending
+  continuity_id: alt-ultimate-ninja-2
+  arc_id: arc-alt-ultimate-ninja-2
+  title: Наруто та союзники зривають план Орочімару
+  description: 'Одна сюжетна лінія: Наруто та союзники зривають план Орочімару. Сцени: Наруто та союзники зривають план Орочімару.'
+- id: ep-alt-sukea-mask-hunt
+  continuity_id: alt-shippuden-469
+  arc_id: arc-alt-shippuden-469
+  title: Скеа й спроба розкрити обличчя Какаші
+  description: 'Одна сюжетна лінія: Скеа й спроба розкрити обличчя Какаші. Сцени: Конохівські команди разом зі Скеа полюють
+    за обличчям Какаші; Команди проникають до сховища секретних документів; Інсценований порятунок не розкриває обличчя Какаші.'
+- id: ep-alt-waterfall-novel
+  continuity_id: alt-waterfall-novel
+  arc_id: arc-alt-waterfall-novel
+  title: Оборона Такіґакуре в новельній версії
+  description: 'Одна сюжетна лінія: Оборона Такіґакуре в новельній версії. Сцени: Новельна версія облоги Такіґакуре; Новельна
+    версія місії в Такіґакуре завершується.'
+- id: ep-alt-gelel-naruto-temujin
+  continuity_id: alt-movie-gelel
+  arc_id: arc-alt-movie-gelel
+  title: Наруто й Темуджин до викриття Хайдо
+  description: 'Одна сюжетна лінія: Наруто й Темуджин до викриття Хайдо. Сцени: Місія з повернення Неруґуї переростає в бій
+    із Темуджином; Наруто й Темуджин приходять до тями в каравані Кахіко; Темуджин приводить Наруто до Хайдо.'
+- id: ep-alt-gelel-final-battle
+  continuity_id: alt-movie-gelel
+  arc_id: arc-alt-movie-gelel
+  title: Спільна битва в копальні Ґелеля
+  description: 'Одна сюжетна лінія: Спільна битва в копальні Ґелеля. Сцени: Сторони сходяться біля руїн і копальні Ґелеля;
+    Наруто й Темуджин зупиняють Хайдо в Залі Запечатування; Копальня Ґелеля руйнується.'
+- id: ep-alt-mugen-hidden-branch
+  continuity_id: alt-game-phantom-fortress
+  arc_id: arc-alt-game-phantom-fortress
+  title: Прихована гілка Джираї в Муґенджо
+  description: 'Одна сюжетна лінія: Прихована гілка Джираї в Муґенджо. Сцени: Джирая веде приховану гілку через підземні поверхи
+    Муґенджо; Джерело Муґенджо знищене, і Примарний замок руйнується.'
+- id: ep-y0-anko-suna-record
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Анко оцінює рекорд команди Суни
+  description: 'Одна сюжетна лінія: Анко оцінює рекорд команди Суни. Сцени: Анко переглядає запис команди Суни.'
+- id: ep-y0-kamizuru-observation
+  continuity_id: main
+  arc_id: arc-y0-bikochu-search
+  title: Камізуру стежать за пошуком бікоочу
+  description: 'Одна сюжетна лінія: Камізуру стежать за пошуком бікоочу. Сцени: Камізуру стежать за пошуковою групою.'
+- id: ep-y0-gantetsu-orphans
+  continuity_id: main
+  arc_id: arc-y0-gantetsu
+  title: Сакура й Лі зустрічають сиріт
+  description: 'Одна сюжетна лінія: Сакура й Лі зустрічають сиріт. Сцени: Діти просять Сакуру й Лі повернути Ґантецу.'
+- id: ep-alt-clash2-sakura-rescue
+  continuity_id: alt-game-clash-revolution-2
+  arc_id: arc-alt-game-clash-revolution-2
+  title: Викрадення й порятунок Сакури
+  description: 'Одна сюжетна лінія: Викрадення й порятунок Сакури. Сцени: Викрадення Сакури; Порятунок Сакури й викриття Каґури.'
+- id: ep-alt-clash2-jiraiya-bando
+  continuity_id: alt-game-clash-revolution-2
+  arc_id: arc-alt-game-clash-revolution-2
+  title: Джирая зупиняє Бандо
+  description: 'Одна сюжетна лінія: Джирая зупиняє Бандо. Сцени: Джирая перемагає Бандо.'
+- id: ep-alt-clash2-anbu-investigation
+  continuity_id: alt-game-clash-revolution-2
+  arc_id: arc-alt-game-clash-revolution-2
+  title: Това й Комачі знаходять організаторів змови
+  description: 'Одна сюжетна лінія: Това й Комачі знаходять організаторів змови. Сцени: Това й Комачі розслідують сліди нукенінів;
+    Това й Комачі знаходять Каґуру.'
+- id: ep-alt-moon-coup
+  continuity_id: alt-movie-crescent-moon
+  arc_id: arc-alt-movie-crescent-moon
+  title: Викриття перевороту Шабадаби
+  description: 'Одна сюжетна лінія: Викриття перевороту Шабадаби. Сцени: Викриття перевороту Шабадаби.'
+- id: ep-alt-moon-palace-rescue
+  continuity_id: alt-movie-crescent-moon
+  arc_id: arc-alt-movie-crescent-moon
+  title: Порятунок Мічіру й бій з Ішідате
+  description: 'Одна сюжетна лінія: Порятунок Мічіру й бій з Ішідате. Сцени: Порятунок Мічіру й бій з Ішідате.'
+- id: ep-alt-moon-restoration
+  continuity_id: alt-movie-crescent-moon
+  arc_id: arc-alt-movie-crescent-moon
+  title: Мічіру посідає трон
+  description: 'Одна сюжетна лінія: Мічіру посідає трон. Сцени: Мічіру посідає трон.'
+- id: ep-y0-greens-captive-rescue
+  continuity_id: main
+  arc_id: arc-y0-land-of-greens
+  title: Загін Конохи звільняє полонених
+  description: 'Одна сюжетна лінія: Загін Конохи звільняє полонених. Сцени: Звільнення полонених Конохи.'
+- id: ep-y0-haruna-restoration
+  continuity_id: main
+  arc_id: arc-y0-land-of-greens
+  title: Харуна повертає владу
+  description: 'Одна сюжетна лінія: Харуна повертає владу. Сцени: Харуна успадковує владу.'
+- id: ep-alt-sports-naruto-toilet
+  continuity_id: alt-sports-festival
+  arc_id: arc-alt-sports-festival
+  title: Наруто намагається дістатися туалету
+  description: 'Одна сюжетна лінія: Наруто намагається дістатися туалету. Сцени: Наруто шукає туалет під час турніру.'

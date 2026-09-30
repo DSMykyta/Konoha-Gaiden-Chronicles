@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-y0-1201-gantetsu-orphans
+episode_id: ep-y0-gantetsu-orphans
+display_rank: 100
+continuity_id: main
+title: Діти просять Сакуру й Лі повернути Ґантецу
+placement:
+  anchor_id: ta-y0-1201-gantetsu
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1201-children-demand-gantetsu
+  legacy_ids:
+  - V10-000206
+  title: Діти вимагають від Сакури й Лі повернути Ґантецу
+  text: Сакуру й Лі оточують діти, які вважають Ґантецу своїм захисником і вимагають його повернення.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-gantetsu
+    role: protector_subject
+    mode: remote
+  evidence_ids:
+  - evd-v10-000206
+  - evd-anime-209-212
+relations: []
+presence: []
+location_id: null

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-yugao-memorial"
+episode_id: ep-y0-yugao-memorial
+display_rank: 100
 continuity_id: "main"
 title: "Юґао присягається помститися за Хаяте"
 location_id: "loc-konoha-memorial-stone"

@@ -1,60 +1,90 @@
 schema_version: 1
-id: "sc-y0-1201-gantetsu-akio-truth"
-continuity_id: "main"
-title: "Тодорокі дізнається, що Акіо живий і що Ґантецу захищав сиріт"
-placement: {anchor_id: "ta-y0-1201-gantetsu", day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+id: sc-y0-1201-gantetsu-akio-truth
+episode_id: ep-y0-gantetsu-forest
+display_rank: 200
+continuity_id: main
+title: Тодорокі дізнається, що Акіо живий і що Ґантецу захищав сиріт
+placement:
+  anchor_id: ta-y0-1201-gantetsu
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1201-todoroki-confronts-gantetsu"
-    legacy_ids: ["V10-000206"]
-    title: "Тодорокі намагається помститися Ґантецу за родину"
-    text: "Залишившись поруч із людиною, яку вважає винною в загибелі своєї сім'ї, Тодорокі намагається здійснити особисту помсту, а Наруто не дозволяє йому вбити полоненого."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-todoroki", role: "avenger", mode: "physical"}
-      - {entity_id: "c-gantetsu", role: "target", mode: "physical"}
-      - {entity_id: "c-naruto", role: "intervener", mode: "physical"}
-    evidence_ids: ["evd-v10-000206", "evd-anime-209-212"]
-  - id: "ev-y0-1201-shinobazu-capture-gantetsu"
-    legacy_ids: ["V10-000206"]
-    title: "Шінобадзу користуються конфліктом і захоплюють Ґантецу"
-    text: "Поки Наруто й Тодорокі сперечаються, Шінобадзу втручаються й забирають Ґантецу."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "group-shinobazu", role: "captor", mode: "physical"}
-      - {entity_id: "c-gantetsu", role: "captive", mode: "physical"}
-    evidence_ids: ["evd-v10-000206", "evd-anime-209-212"]
-  - id: "ev-y0-1201-children-demand-gantetsu"
-    legacy_ids: ["V10-000206"]
-    title: "Діти вимагають від Сакури й Лі повернути Ґантецу"
-    text: "Сакуру й Лі оточують діти, які вважають Ґантецу своїм захисником і вимагають його повернення."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-      - {entity_id: "c-lee", role: "participant", mode: "physical"}
-      - {entity_id: "c-gantetsu", role: "protector_subject", mode: "remote"}
-    evidence_ids: ["evd-v10-000206", "evd-anime-209-212"]
-  - id: "ev-y0-1201-akio-revealed-alive"
-    legacy_ids: ["V10-000206"]
-    title: "Серед дітей виявляється живий Акіо"
-    text: "Тодорокі дізнається, що його молодший брат Акіо, якого він вважав загиблим, живий і був одним із дітей, про яких піклувався Ґантецу."
-    origin: "F"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-akio", role: "revealed_survivor", mode: "physical"}
-      - {entity_id: "c-todoroki", role: "brother", mode: "physical"}
-      - {entity_id: "c-gantetsu", role: "protector", mode: "remote"}
-    evidence_ids: ["evd-v10-000206", "evd-anime-209-212"]
+- id: ev-y0-1201-todoroki-confronts-gantetsu
+  legacy_ids:
+  - V10-000206
+  title: Тодорокі намагається помститися Ґантецу за родину
+  text: Залишившись поруч із людиною, яку вважає винною в загибелі своєї сім'ї, Тодорокі намагається здійснити особисту помсту,
+    а Наруто не дозволяє йому вбити полоненого.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-todoroki
+    role: avenger
+    mode: physical
+  - entity_id: c-gantetsu
+    role: target
+    mode: physical
+  - entity_id: c-naruto
+    role: intervener
+    mode: physical
+  evidence_ids:
+  - evd-v10-000206
+  - evd-anime-209-212
+- id: ev-y0-1201-shinobazu-capture-gantetsu
+  legacy_ids:
+  - V10-000206
+  title: Шінобадзу користуються конфліктом і захоплюють Ґантецу
+  text: Поки Наруто й Тодорокі сперечаються, Шінобадзу втручаються й забирають Ґантецу.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: group-shinobazu
+    role: captor
+    mode: physical
+  - entity_id: c-gantetsu
+    role: captive
+    mode: physical
+  evidence_ids:
+  - evd-v10-000206
+  - evd-anime-209-212
+- id: ev-y0-1201-akio-revealed-alive
+  legacy_ids:
+  - V10-000206
+  title: Серед дітей виявляється живий Акіо
+  text: Тодорокі дізнається, що його молодший брат Акіо, якого він вважав загиблим, живий і був одним із дітей, про яких піклувався
+    Ґантецу.
+  origin: F
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-akio
+    role: revealed_survivor
+    mode: physical
+  - entity_id: c-todoroki
+    role: brother
+    mode: physical
+  - entity_id: c-gantetsu
+    role: protector
+    mode: remote
+  evidence_ids:
+  - evd-v10-000206
+  - evd-anime-209-212
 relations:
-  - {id: "rel-1201-gantetsu-1", kind: "before", a: "ev-y0-1201-todoroki-confronts-gantetsu", b: "ev-y0-1201-shinobazu-capture-gantetsu", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
-  - {id: "rel-1201-gantetsu-2", kind: "before", a: "ev-y0-1201-children-demand-gantetsu", b: "ev-y0-1201-akio-revealed-alive", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
+- id: rel-1201-gantetsu-1
+  kind: before
+  a: ev-y0-1201-todoroki-confronts-gantetsu
+  b: ev-y0-1201-shinobazu-capture-gantetsu
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-209-212
 presence: []

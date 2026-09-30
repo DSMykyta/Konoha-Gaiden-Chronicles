@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1031-kedoin-capture-copies"
+episode_id: ep-y0-kedoin-copies
+display_rank: 100
 continuity_id: "main"
 title: "Кедоїн захоплюють трійцю та копіюють їхні особи"
 location_id: "loc-treasure-cave"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0322-tazuna-home-briefing"
+episode_id: ep-y0-waves-team-briefing
+display_rank: 100
 continuity_id: "main"
 title: "Какаші готує Команду 7 до повторної зустрічі із Забузою"
 location_id: "loc-tazuna-home"

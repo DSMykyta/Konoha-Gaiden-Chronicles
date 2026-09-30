@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1027-anko-memory-lab"
+episode_id: ep-y0-anko-laboratory-memory
+display_rank: 100
 continuity_id: "main"
 title: "Анко пригадує лабораторію Орочімару й своє залишення"
 location_id: "loc-orochimaru-lab-sea"

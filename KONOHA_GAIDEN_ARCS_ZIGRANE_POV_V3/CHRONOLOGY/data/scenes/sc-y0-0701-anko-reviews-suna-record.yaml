@@ -1,0 +1,45 @@
+schema_version: 1
+id: sc-y0-0701-anko-reviews-suna-record
+episode_id: ep-y0-anko-suna-record
+display_rank: 100
+continuity_id: main
+title: Анко переглядає запис команди Суни
+location_id: loc-forest-death-tower
+placement:
+  anchor_id: ta-y0-0701
+  day_offset: 0
+day_part: afternoon
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0701-anko-reviews-gaara-record
+  title: Анко переглядає запис рекордного проходження Ґаари
+  text: У центральній вежі Анко переглядає запис проходження команди Суни й бачить, що Ґаара, Темарі та Канкуро завершили
+    етап за 97 хвилин. Її особливо насторожує те, що Ґаара пройшов Ліс Смерті без жодної подряпини чи навіть сліду бруду.
+  origin: M
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-gaara
+    role: subject
+    mode: remote
+  - entity_id: c-temari
+    role: subject
+    mode: remote
+  - entity_id: c-kankuro
+    role: subject
+    mode: remote
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+relations: []
+presence: []

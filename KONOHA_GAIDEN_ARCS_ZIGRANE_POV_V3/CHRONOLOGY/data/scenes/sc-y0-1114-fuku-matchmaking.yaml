@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1114-fuku-matchmaking"
+episode_id: ep-y0-fuku-matchmaking
+display_rank: 100
 continuity_id: "main"
 title: "Іно підміняє Фуку на зустрічі з Чікарою, але справжня принцеса все одно відкривається"
 location_id: "loc-fuku-castle"

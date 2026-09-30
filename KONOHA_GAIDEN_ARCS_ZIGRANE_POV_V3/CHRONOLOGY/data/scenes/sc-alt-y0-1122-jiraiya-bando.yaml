@@ -1,0 +1,43 @@
+schema_version: 1
+id: sc-alt-y0-1122-jiraiya-bando
+episode_id: ep-alt-clash2-jiraiya-bando
+display_rank: 100
+continuity_id: alt-game-clash-revolution-2
+title: Джирая перемагає Бандо
+location_id: null
+placement:
+  anchor_id: ta-alt-y0-1122-clash2
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-alt-y0-1122-jiraiya-defeats-bando
+  legacy_ids:
+  - V10-000197
+  title: Джирая перемагає Бандо й руйнує один із бар'єрів
+  text: Джирая знаходить Бандо на стадіоні, перемагає торговця зброєю й змушує його зняти бар'єр, що підтримував атаку на
+    Коноху; Това бере Бандо під варту.
+  origin: G
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: victor
+    mode: physical
+  - entity_id: c-bando-game
+    role: captured
+    mode: physical
+  - entity_id: c-towa
+    role: custodian
+    mode: physical
+  evidence_ids:
+  - evd-v10-000197
+  - evd-game-clash-revolution-2
+relations: []
+presence: []

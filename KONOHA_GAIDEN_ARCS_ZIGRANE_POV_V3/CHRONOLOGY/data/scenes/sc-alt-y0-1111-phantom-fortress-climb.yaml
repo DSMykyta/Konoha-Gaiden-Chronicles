@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1111-phantom-fortress-climb"
+episode_id: ep-alt-y0-1111-phantom-fortress-climb
+display_rank: 100
 continuity_id: "alt-game-phantom-fortress"
 title: "Наруто збирає загін і знімає печатки Муґенджо"
 location_id: "loc-mugen-castle"

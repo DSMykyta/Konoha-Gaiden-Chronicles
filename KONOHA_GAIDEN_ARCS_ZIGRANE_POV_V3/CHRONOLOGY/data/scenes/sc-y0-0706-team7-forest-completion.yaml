@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0706-team7-forest-completion"
+episode_id: ep-y0-team7-forest-trial
+display_rank: 400
 continuity_id: "main"
 title: "Команда 7 завершує Ліс Смерті"
 location_id: "loc-forest-death"

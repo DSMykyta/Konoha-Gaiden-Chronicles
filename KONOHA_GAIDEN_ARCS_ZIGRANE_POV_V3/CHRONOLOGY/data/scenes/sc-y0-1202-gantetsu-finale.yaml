@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1202-gantetsu-finale"
+episode_id: ep-y0-gantetsu-finale
+display_rank: 100
 continuity_id: "main"
 title: "Шура зазнає поразки, Акіо врятовано, а Тодорокі відмовляється від помсти"
 placement: {anchor_id: "ta-y0-1202-gantetsu", day_offset: 0}

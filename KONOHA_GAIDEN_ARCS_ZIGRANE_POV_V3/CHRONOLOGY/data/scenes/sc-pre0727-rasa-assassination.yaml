@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-pre0727-rasa-assassination"
+episode_id: ep-y0-rasa-assassination
+display_rank: 100
 continuity_id: "main"
 title: "Орочімару вбиває Расу до фіналів"
 location_id: null

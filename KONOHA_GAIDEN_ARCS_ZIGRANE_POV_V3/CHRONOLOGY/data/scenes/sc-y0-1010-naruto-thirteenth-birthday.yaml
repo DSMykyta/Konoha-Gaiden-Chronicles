@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1010-naruto-thirteenth-birthday"
+episode_id: ep-y0-naruto-birthday
+display_rank: 100
 continuity_id: "main"
 title: "Наруто виповнюється 13 років"
 placement: {anchor_id: "ta-y0-1010-naruto-birthday", day_offset: 0}

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1110-greens-merchant-escort"
+episode_id: ep-y0-greens-escort
+display_rank: 100
 continuity_id: "main"
 title: "Наруто, Хіната й Чоджі беруть під охорону караван із Країни Овочів"
 location_id: "loc-land-of-greens"

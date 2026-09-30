@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0706-iruka-team7-tower-message"
+episode_id: ep-y0-team7-forest-trial
+display_rank: 500
 continuity_id: "main"
 title: "Ірука зустрічає Команду 7 у вежі"
 location_id: "loc-forest-death-tower"

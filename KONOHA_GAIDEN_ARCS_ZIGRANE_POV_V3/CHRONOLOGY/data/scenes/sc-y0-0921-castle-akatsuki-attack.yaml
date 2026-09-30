@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0921-castle-akatsuki-attack"
+episode_id: ep-y0-akatsuki-castle-attack
+display_rank: 100
 continuity_id: "main"
 title: "Сасорі й Дейдара атакують замок"
 location_id: null

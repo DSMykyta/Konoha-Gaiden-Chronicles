@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-hanabi-watches-finals"
+episode_id: ep-y0-hanabi-watches-finals
+display_rank: 100
 continuity_id: "main"
 title: "Ханабі дивиться фінал разом із Хіаші"
 location_id: "loc-chunin-finals-arena"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0914-chakra-virus-false-alarm"
+episode_id: ep-y0-chakra-virus
+display_rank: 100
 continuity_id: "main"
 title: "Підозра на «вірус чакри» виявляється хибною"
 location_id: "loc-konohagakure"

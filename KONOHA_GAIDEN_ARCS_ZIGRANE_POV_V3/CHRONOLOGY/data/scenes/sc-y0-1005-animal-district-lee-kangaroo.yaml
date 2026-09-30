@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1005-animal-district-lee-kangaroo"
+episode_id: ep-y0-lee-kangaroo
+display_rank: 100
 continuity_id: "main"
 title: "Лі переслідує Кондора й зустрічає боксерського кенгуру"
 location_id: "loc-zeroth-training-ground"

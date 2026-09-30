@@ -1,0 +1,45 @@
+schema_version: 1
+id: sc-y0-1112-renga-captures-allies
+episode_id: ep-y0-renga-finale
+display_rank: 100
+continuity_id: main
+title: Ренґа захоплює союзників Конохи
+location_id: loc-land-of-greens
+placement:
+  anchor_id: ta-y0-1112-greens
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1112-renga-captures-leaf-allies
+  legacy_ids:
+  - V10-000182
+  title: Ренґа захоплює Хінату, Чоджі та Юріноджо
+  text: Поки Наруто вирушає за Харуною, люди Ренґи захоплюють поранених Хінату, Чоджі та Юріноджо разом з іншими шинобі.
+  origin: F
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-renga
+    role: captor
+    mode: remote
+  - entity_id: c-hinata
+    role: captive
+    mode: physical
+  - entity_id: c-choji
+    role: captive
+    mode: physical
+  - entity_id: c-yurinojo
+    role: captive
+    mode: physical
+  evidence_ids:
+  - evd-v10-000182
+  - evd-anime-187-191
+relations: []
+presence: []

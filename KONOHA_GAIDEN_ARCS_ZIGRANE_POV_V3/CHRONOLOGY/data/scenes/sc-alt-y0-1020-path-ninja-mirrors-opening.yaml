@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1020-path-ninja-mirrors-opening"
+episode_id: ep-alt-y0-1020-path-ninja-mirrors-opening
+display_rank: 100
 continuity_id: "alt-game-path-ninja-2"
 title: "Починається пошук П'яти Дзеркал Надії"
 placement: {anchor_id: "ta-alt-y0-1020-path-ninja-2", day_offset: 0}

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0907-idate-wins-race"
+episode_id: ep-y0-idate-race-finish
+display_rank: 100
 continuity_id: "main"
 title: "Ідате завершує перегони перемогою"
 location_id: "loc-modoroki-shrine"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0624-sand-konohamaru-encounter"
+episode_id: ep-y0-sand-first-encounter
+display_rank: 100
 continuity_id: "main"
 title: "Зустріч Команди 7 з генінами Суни"
 location_id: "loc-konohagakure"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1012-uzumaki-chronicles-opening"
+episode_id: ep-alt-y0-1012-uzumaki-chronicles-opening
+display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles"
 title: "Наруто бере на себе надскладні місії у гілці Uzumaki Chronicles"
 placement: {anchor_id: "ta-alt-y0-1012-uzumaki-chronicles", day_offset: 0}

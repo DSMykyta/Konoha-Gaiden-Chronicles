@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1104-star-stolen-investigation"
+episode_id: ep-y0-hoshi-investigation
+display_rank: 100
 continuity_id: "main"
 title: "Зірку викрадає шинобі Хошіґакуре, і команда шукає внутрішнього винуватця"
 location_id: "loc-hoshigakure"

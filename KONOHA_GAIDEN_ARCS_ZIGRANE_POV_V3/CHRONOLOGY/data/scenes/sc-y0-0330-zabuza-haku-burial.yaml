@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0330-zabuza-haku-burial"
+episode_id: ep-y0-waves-farewell
+display_rank: 100
 continuity_id: "main"
 title: "Поховання Забузи й Хаку"
 location_id: "loc-wave-burial-hill"

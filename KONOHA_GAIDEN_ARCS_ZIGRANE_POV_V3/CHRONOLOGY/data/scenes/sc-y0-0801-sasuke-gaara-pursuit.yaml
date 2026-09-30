@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0801-sasuke-gaara-pursuit"
+episode_id: ep-y0-sasuke-gaara-pursuit
+display_rank: 100
 continuity_id: "main"
 title: "Погоня за Ґаарою"
 location_id: "loc-konoha-outskirts"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1104-star-training-cost"
+episode_id: ep-y0-hoshi-training-cost
+display_rank: 100
 continuity_id: "main"
 title: "Команда бачить, що тренування із Зіркою калічить дітей"
 location_id: "loc-star-training-building"

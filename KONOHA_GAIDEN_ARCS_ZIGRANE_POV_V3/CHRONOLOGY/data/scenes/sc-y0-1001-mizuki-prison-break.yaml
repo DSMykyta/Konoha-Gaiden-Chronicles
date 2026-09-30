@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1001-mizuki-prison-break"
+episode_id: ep-y0-mizuki-escape
+display_rank: 100
 continuity_id: "main"
 title: "Мідзукі тікає з в'язниці разом із Фуджіном і Райджіном"
 location_id: "loc-konoha-correctional-facility"

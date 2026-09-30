@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1109-kagetsu-fake-funeral-reveal"
+episode_id: ep-y0-kagetsu-funeral
+display_rank: 300
 continuity_id: "main"
 title: "Похорон виявляється постановкою Тобея Каґецу"
 location_id: "loc-kagetsu-funeral"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1203-ninja-destiny2eu-finale"
+episode_id: ep-alt-y0-1203-ninja-destiny2eu-finale
+display_rank: 100
 continuity_id: "alt-game-ninja-destiny-2-eu"
 title: "Європейська ігрова лінія завершує пост-сасківський тренувальний сюжет"
 placement: {anchor_id: "ta-alt-y0-1203-nd2eu", day_offset: 0}

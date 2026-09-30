@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0901-sannin-battle"
+episode_id: ep-y0-sannin-battle
+display_rank: 100
 continuity_id: "main"
 title: "Битва трьох саннінів"
 location_id: null

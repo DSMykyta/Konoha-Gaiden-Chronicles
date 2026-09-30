@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0930-team8-hot-springs-training"
+episode_id: ep-y0-shino-confidence
+display_rank: 200
 continuity_id: "main"
 title: "Команда 8 тренує ближній бій Шіно"
 location_id: "loc-konoha-hot-springs"

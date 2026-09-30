@@ -824,11 +824,6 @@ entities:
     name: "Kidōmaru"
     aliases:
       - "Кідомару"
-  - id: "group-sound-four"
-    kind: "organization"
-    name: "Sound Four"
-    aliases:
-      - "Четвірка Звуку"
   - id: "group-sunagakure-forces"
     kind: "organization"
     name: "Sunagakure invasion forces"

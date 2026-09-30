@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0119-mizuki-confrontation"
+episode_id: ep-y0-mizuki-confrontation
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-mizuki-confrontation"
 title: "Ірука знаходить Наруто; Мідзукі розкриває таємницю"
 location_id: null
 placement: {anchor_id: "ta-y0-0119", day_offset: 0}

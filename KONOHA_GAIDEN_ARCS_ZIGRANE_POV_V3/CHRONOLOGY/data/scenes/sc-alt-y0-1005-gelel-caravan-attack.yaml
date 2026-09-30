@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1005-gelel-caravan-attack"
+episode_id: ep-alt-y0-1005-gelel-caravan-attack
+display_rank: 100
 continuity_id: "alt-movie-gelel"
 title: "Фуґай атакує караван заради відомостей про Ґелель"
 location_id: "loc-gelel-caravan"

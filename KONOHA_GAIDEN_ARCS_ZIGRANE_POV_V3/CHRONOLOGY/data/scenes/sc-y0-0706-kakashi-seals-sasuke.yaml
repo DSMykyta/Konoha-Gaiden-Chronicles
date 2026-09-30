@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0706-kakashi-seals-sasuke"
+episode_id: ep-y0-sasuke-curse-sealing
+display_rank: 100
 continuity_id: "main"
-episode_id: "ep-y0-chunin-preliminaries"
 title: "Какаші стримує Прокляту Печатку Саске"
 location_id: "loc-chunin-tower-side-room"
 placement: {anchor_id: "ta-y0-0706", day_offset: 0}

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1028-demon-island-infiltration"
+episode_id: ep-y0-kaima-demon-island
+display_rank: 100
 continuity_id: "main"
 title: "Команда проникає на Острів Демона й знаходить лабораторію"
 location_id: "loc-orochimaru-lab-sea"

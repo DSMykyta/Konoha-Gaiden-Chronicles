@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1203-menma-found"
+episode_id: ep-y0-menma-memory
+display_rank: 100
 continuity_id: "main"
 title: "Наруто знаходить юнака без пам'яті й називає його Менмою"
 location_id: "loc-konohagakure"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0920-shu-infiltration"
+episode_id: ep-y0-shu-infiltration
+display_rank: 200
 continuity_id: "main"
 title: "Команда виконує підміну Шю"
 location_id: null

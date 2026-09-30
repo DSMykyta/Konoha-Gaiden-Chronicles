@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0921-shu-mission-complete"
+episode_id: ep-y0-shu-mission-finish
+display_rank: 200
 continuity_id: "main"
 title: "Шю доставляють за призначенням"
 location_id: null

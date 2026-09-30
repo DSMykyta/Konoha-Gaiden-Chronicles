@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-1103-uc2-master-puppet-finale"
+episode_id: ep-alt-y0-1103-uc2-master-puppet-finale
+display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles-2"
 title: "Майстер Маріонеток відроджується й гине"
 placement: {anchor_id: "ta-alt-y0-1103-uc2", day_offset: 0}

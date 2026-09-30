@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-alt-y0-0905-waterfall-novel-siege"
+episode_id: ep-alt-waterfall-novel
+display_rank: 100
 continuity_id: "alt-waterfall-novel"
 title: "Новельна версія облоги Такіґакуре"
 location_id: "loc-takigakure"

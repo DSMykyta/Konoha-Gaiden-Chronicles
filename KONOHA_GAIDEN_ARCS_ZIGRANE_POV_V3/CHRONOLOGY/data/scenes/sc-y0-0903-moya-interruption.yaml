@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0903-moya-interruption"
+episode_id: ep-y0-mask-hunt
+display_rank: 200
 continuity_id: "main"
 title: "Полювання на маску перетинається з трійцею Моя"
 location_id: "loc-konohagakure"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0328-naruto-meets-haku"
+episode_id: ep-y0-naruto-haku-meeting
+display_rank: 100
 continuity_id: "main"
 title: "Наруто зустрічає Хаку під час тренувань"
 location_id: "loc-wave-forest"

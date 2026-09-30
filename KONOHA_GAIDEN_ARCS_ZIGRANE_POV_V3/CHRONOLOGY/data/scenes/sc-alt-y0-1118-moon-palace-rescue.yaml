@@ -1,0 +1,83 @@
+schema_version: 1
+id: sc-alt-y0-1118-moon-palace-rescue
+episode_id: ep-alt-moon-palace-rescue
+display_rank: 100
+continuity_id: alt-movie-crescent-moon
+title: Порятунок Мічіру й бій з Ішідате
+location_id: loc-land-of-moon
+placement:
+  anchor_id: ta-alt-y0-1118-crescent-moon
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-alt-y0-1118-michiru-captured-rescue
+  legacy_ids:
+  - V10-000190
+  title: Мічіру потрапляє в полон, і команда організовує порятунок
+  text: Найманці Ішідате захоплюють Мічіру; Хікару, команда Какаші та союзники повертаються до палацу, щоб урятувати його
+    від страти.
+  origin: V
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-michiru-tsuki
+    role: captive
+    mode: physical
+  - entity_id: c-hikaru-tsuki
+    role: rescuer
+    mode: physical
+  - entity_id: c-ishidate
+    role: enemy_leader
+    mode: physical
+  - entity_id: c-naruto
+    role: rescuer
+    mode: physical
+  - entity_id: c-kakashi
+    role: rescuer
+    mode: physical
+  - entity_id: c-sakura
+    role: rescuer
+    mode: physical
+  - entity_id: c-lee
+    role: rescuer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000190
+  - evd-movie-crescent-moon
+- id: ev-alt-y0-1118-naruto-defeats-ishidate
+  legacy_ids:
+  - V10-000190
+  title: Наруто перемагає Ішідате за допомогою Мічіру й Хікару
+  text: Після часткової петрифікації ноги Наруто Мічіру й Хікару допомагають йому дістатися до Ішідате; посилений місячним
+    світлом Расенґан завершує бій.
+  origin: V
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: victor
+    mode: physical
+  - entity_id: c-ishidate
+    role: defeated
+    mode: physical
+  - entity_id: c-michiru-tsuki
+    role: support
+    mode: physical
+  - entity_id: c-hikaru-tsuki
+    role: support
+    mode: physical
+  - entity_id: c-shabadaba
+    role: casualty
+    mode: physical
+  evidence_ids:
+  - evd-v10-000190
+  - evd-movie-crescent-moon
+relations: []
+presence: []

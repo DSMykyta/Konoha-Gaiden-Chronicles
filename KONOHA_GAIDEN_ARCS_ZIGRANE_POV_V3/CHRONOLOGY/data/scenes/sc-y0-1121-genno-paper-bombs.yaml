@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1121-genno-paper-bombs"
+episode_id: ep-y0-genno-bomb-network
+display_rank: 100
 continuity_id: "main"
 title: "Коноха таємно знімає мережу вибухових печаток Ґенно"
 location_id: "loc-konohagakure"

@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0701-orochimaru-attacks-team7"
+episode_id: ep-y0-team7-forest-trial
+display_rank: 100
 continuity_id: "main"
 title: "Орочімару атакує Команду 7"
 location_id: "loc-forest-death"

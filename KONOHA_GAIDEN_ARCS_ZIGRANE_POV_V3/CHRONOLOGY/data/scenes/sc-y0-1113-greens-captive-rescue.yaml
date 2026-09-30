@@ -1,0 +1,48 @@
+schema_version: 1
+id: sc-y0-1113-greens-captive-rescue
+episode_id: ep-y0-greens-captive-rescue
+display_rank: 100
+continuity_id: main
+title: Звільнення полонених Конохи
+location_id: loc-land-of-greens
+placement:
+  anchor_id: ta-y0-1113-greens
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1113-konoha-rescues-captives
+  legacy_ids:
+  - V10-000184
+  title: Шізуне, Шикамару й шинобі Конохи звільняють полонених
+  text: Паралельно Шізуне, Шикамару та інші шинобі Конохи звільняють Хінату, Чоджі й Юріноджо з полону людей Ренґи.
+  origin: F
+  extent: interval
+  display_rank: 500
+  involvement:
+  - entity_id: c-shizune
+    role: rescuer
+    mode: physical
+  - entity_id: c-shikamaru
+    role: rescuer
+    mode: physical
+  - entity_id: c-hinata
+    role: rescued
+    mode: physical
+  - entity_id: c-choji
+    role: rescued
+    mode: physical
+  - entity_id: c-yurinojo
+    role: rescued
+    mode: physical
+  evidence_ids:
+  - evd-v10-000184
+  - evd-anime-187-191
+relations: []
+presence: []

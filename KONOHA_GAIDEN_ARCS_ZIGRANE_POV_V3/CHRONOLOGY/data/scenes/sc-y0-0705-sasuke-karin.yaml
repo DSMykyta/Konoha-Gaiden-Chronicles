@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0705-sasuke-karin"
+episode_id: ep-y0-sasuke-rescues-karin
+display_rank: 100
 continuity_id: "main"
 title: "Саске рятує Карін у Лісі Смерті"
 location_id: "loc-forest-death"

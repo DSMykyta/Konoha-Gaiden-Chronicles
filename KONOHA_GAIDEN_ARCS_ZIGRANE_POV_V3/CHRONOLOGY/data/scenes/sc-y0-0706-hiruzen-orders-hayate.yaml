@@ -1,7 +1,8 @@
 schema_version: 1
 id: "sc-y0-0706-hiruzen-orders-hayate"
+episode_id: ep-y0-hayate-investigation
+display_rank: 200
 continuity_id: "main"
-episode_id: "ep-y0-hayate-investigation"
 title: "Хірузен наказує Хаяте простежити за Кабуто"
 location_id: "loc-hokage-residence"
 placement: {anchor_id: "ta-y0-0706", day_offset: 0}

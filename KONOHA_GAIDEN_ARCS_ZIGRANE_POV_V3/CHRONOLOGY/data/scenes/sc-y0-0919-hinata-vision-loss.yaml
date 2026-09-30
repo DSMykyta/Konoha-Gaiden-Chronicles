@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0919-hinata-vision-loss"
+episode_id: ep-y0-hinata-vision-loss
+display_rank: 100
 continuity_id: "main"
 title: "Хіната тимчасово втрачає зір"
 location_id: "loc-konohagakure"

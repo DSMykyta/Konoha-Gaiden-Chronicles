@@ -1,52 +1,46 @@
 schema_version: 1
-id: "sc-alt-y0-1122-clash2-finale"
-continuity_id: "alt-game-clash-revolution-2"
-title: "Бандо й Каґура зазнають поразки, і змова проти Конохи руйнується"
-location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-alt-y0-1122-clash2", day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "approximate", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+id: sc-alt-y0-1122-clash2-finale
+episode_id: ep-alt-y0-1122-clash2-finale
+display_rank: 100
+continuity_id: alt-game-clash-revolution-2
+title: Цунаде перемагає Каґуру
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-alt-y0-1122-clash2
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-alt-y0-1122-jiraiya-defeats-bando"
-    legacy_ids: ["V10-000197"]
-    title: "Джирая перемагає Бандо й руйнує один із бар'єрів"
-    text: "Джирая знаходить Бандо на стадіоні, перемагає торговця зброєю й змушує його зняти бар'єр, що підтримував атаку на Коноху; Това бере Бандо під варту."
-    origin: "G"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-jiraiya", role: "victor", mode: "physical"}
-      - {entity_id: "c-bando-game", role: "captured", mode: "physical"}
-      - {entity_id: "c-towa", role: "custodian", mode: "physical"}
-    evidence_ids: ["evd-v10-000197", "evd-game-clash-revolution-2"]
-  - id: "ev-alt-y0-1122-towa-komachi-find-kagura"
-    legacy_ids: ["V10-000197"]
-    title: "Това й Комачі знаходять Каґуру"
-    text: "АНБУ виходять на сховок Каґури й дізнаються, що її справжня мета — виманити Цунаде та помститися їй за давню відмову взяти Каґуру в учениці."
-    origin: "G"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-towa", role: "investigator", mode: "physical"}
-      - {entity_id: "c-komachi", role: "investigator", mode: "physical"}
-      - {entity_id: "c-kagura-game", role: "antagonist", mode: "physical"}
-      - {entity_id: "c-tsunade", role: "target", mode: "remote"}
-    evidence_ids: ["evd-v10-000197", "evd-game-clash-revolution-2"]
-  - id: "ev-alt-y0-1122-tsunade-defeats-kagura"
-    legacy_ids: ["V10-000197"]
-    title: "Цунаде перемагає Каґуру"
-    text: "Після того як Какаші й Сакура стримують Каґуру, Цунаде приходить до сховку й перемагає колишню АНБУ; Каґура визнає власну помилку та залишає поле бою."
-    origin: "G"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-tsunade", role: "victor", mode: "physical"}
-      - {entity_id: "c-kagura-game", role: "defeated", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000197", "evd-game-clash-revolution-2"]
-relations:
-  - {id: "rel-alt-1122-clash2-1", kind: "before", a: "ev-alt-y0-1122-jiraiya-defeats-bando", b: "ev-alt-y0-1122-towa-komachi-find-kagura", basis: "source", review: "accepted", evidence_ids: ["evd-game-clash-revolution-2"]}
-  - {id: "rel-alt-1122-clash2-2", kind: "before", a: "ev-alt-y0-1122-towa-komachi-find-kagura", b: "ev-alt-y0-1122-tsunade-defeats-kagura", basis: "source", review: "accepted", evidence_ids: ["evd-game-clash-revolution-2"]}
+- id: ev-alt-y0-1122-tsunade-defeats-kagura
+  legacy_ids:
+  - V10-000197
+  title: Цунаде перемагає Каґуру
+  text: Після того як Какаші й Сакура стримують Каґуру, Цунаде приходить до сховку й перемагає колишню АНБУ; Каґура визнає
+    власну помилку та залишає поле бою.
+  origin: G
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-tsunade
+    role: victor
+    mode: physical
+  - entity_id: c-kagura-game
+    role: defeated
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000197
+  - evd-game-clash-revolution-2
+relations: []
 presence: []

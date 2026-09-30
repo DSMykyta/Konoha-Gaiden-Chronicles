@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1102-postman-manuscript-mixup"
+episode_id: ep-y0-postman-chase
+display_rank: 100
 continuity_id: "main"
 title: "Наруто плутає рукопис Джираї з мирною угодою"
 location_id: "loc-hot-springs-town"

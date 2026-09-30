@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-0722-naruto-summoning-practice"
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 400
 continuity_id: "main"
 title: "Наруто продовжує практику призову"
 location_id: null

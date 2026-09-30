@@ -1,5 +1,7 @@
 schema_version: 1
 id: "sc-y0-1005-animal-district-shino-plants"
+episode_id: ep-y0-shino-carnivorous-plants
+display_rank: 100
 continuity_id: "main"
 title: "Шіно натрапляє на хижі рослини Нульової ділянки"
 location_id: "loc-zeroth-training-ground"
