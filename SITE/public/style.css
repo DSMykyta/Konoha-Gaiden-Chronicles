@@ -437,7 +437,9 @@ a:hover {
   flex:none
 }
 .result {
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   width:100%;
   text-align:left;
   border-bottom:1px solid #eef1f5;
