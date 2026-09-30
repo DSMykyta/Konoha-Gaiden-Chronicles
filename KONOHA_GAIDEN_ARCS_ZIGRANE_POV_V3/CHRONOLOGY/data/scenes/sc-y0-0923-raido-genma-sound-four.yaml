@@ -1,0 +1,66 @@
+schema_version: 1
+id: "sc-y0-0923-raido-genma-sound-four"
+continuity_id: "main"
+title: "Райдо й Ґенма проти Четвірки Звуку"
+location_id: null
+placement: {anchor_id: "ta-y0-0923", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0923-special-platoon-detects-sound"
+    title: "Загін, що повертається з місії, помічає підозрілий рух"
+    text: "Райдо, Ґенма, Шізуне та Іваші повертаються після виснажливої місії й помічають підозрілу присутність неподалік."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-genma", role: "participant", mode: "physical"}
+      - {entity_id: "c-shizune", role: "participant", mode: "physical"}
+      - {entity_id: "c-iwashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]
+  - id: "ev-y0-0923-raido-genma-confront-sound-four"
+    title: "Райдо й Ґенма перехоплюють Четвірку Звуку"
+    text: "Райдо й Ґенма йдуть перевірити підозрілий рух і стикаються з Четвіркою Звуку, яка несе Саске з Конохи."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-genma", role: "focus", mode: "physical"}
+      - {entity_id: "group-sound-four", role: "opponent", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "target", mode: "physical"}
+    evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]
+  - id: "ev-y0-0923-sound-four-defeat-raido-genma"
+    title: "Четвірка Звуку перемагає Райдо й Ґенму"
+    text: "Попри втому після місії, Райдо й Ґенма змушують Четвірку Звуку перейти до другого рівня проклятих печаток. Після бою обидва шинобі Конохи залишаються тяжко пораненими."
+    origin: "M"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-raido", role: "affected", mode: "physical"}
+      - {entity_id: "c-genma", role: "affected", mode: "physical"}
+      - {entity_id: "group-sound-four", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]
+  - id: "ev-y0-0923-shizune-iwashi-find-raido-genma"
+    title: "Шізуне та Іваші знаходять поранених"
+    text: "Коли Райдо й Ґенма не повертаються, Шізуне та Іваші йдуть на пошуки, знаходять їх у критичному стані; Шізуне надає невідкладну допомогу, після чого поранених повертають до Конохи для лікування."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-shizune", role: "focus", mode: "physical"}
+      - {entity_id: "c-iwashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-raido", role: "affected", mode: "physical"}
+      - {entity_id: "c-genma", role: "affected", mode: "physical"}
+    evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]
+relations:
+  - {id: "rel-0923-raido-genma-1", kind: "before", a: "ev-y0-0923-special-platoon-detects-sound", b: "ev-y0-0923-raido-genma-confront-sound-four", basis: "source", review: "accepted", evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]}
+  - {id: "rel-0923-raido-genma-2", kind: "before", a: "ev-y0-0923-raido-genma-confront-sound-four", b: "ev-y0-0923-sound-four-defeat-raido-genma", basis: "source", review: "accepted", evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]}
+  - {id: "rel-0923-raido-genma-3", kind: "before", a: "ev-y0-0923-sound-four-defeat-raido-genma", b: "ev-y0-0923-shizune-iwashi-find-raido-genma", basis: "source", review: "accepted", evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"]}
+presence:
+  - {id: "pr-0923-raido-genma-raido", entity_id: "c-raido", from: "sc-y0-0923-raido-genma-sound-four.start", to: "sc-y0-0923-raido-genma-sound-four.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"], review: "accepted"}
+  - {id: "pr-0923-raido-genma-genma", entity_id: "c-genma", from: "sc-y0-0923-raido-genma-sound-four.start", to: "sc-y0-0923-raido-genma-sound-four.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"], review: "accepted"}
+  - {id: "pr-0923-raido-genma-shizune", entity_id: "c-shizune", from: "sc-y0-0923-raido-genma-sound-four.start", to: "sc-y0-0923-raido-genma-sound-four.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"], review: "accepted"}
+  - {id: "pr-0923-raido-genma-iwashi", entity_id: "c-iwashi", from: "sc-y0-0923-raido-genma-sound-four.start", to: "sc-y0-0923-raido-genma-sound-four.end", basis: "source", evidence_ids: ["evd-manga-sasuke-recovery", "evd-anime-111-sound-vs-leaf"], review: "accepted"}
