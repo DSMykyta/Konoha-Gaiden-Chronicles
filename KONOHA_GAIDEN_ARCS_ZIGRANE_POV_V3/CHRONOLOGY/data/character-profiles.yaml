@@ -1,0 +1,85 @@
+# Вікові версії профілю. Додавати versions можна до будь-якого entity_id.
+# summary / facts / sections — лише затверджені дані; image — media/profiles/...
+schema_version: 1
+profiles:
+  - entity_id: "c-naruto"
+    display_name: "Наруто Узумакі"
+    versions:
+      - id: naruto-12
+        label: "12 років"
+        age: 12
+        summary: null
+        facts: []
+        sections: []
+      - id: naruto-15
+        label: "15 років"
+        age: 15
+        summary: null
+        facts: []
+        sections: []
+  - entity_id: "c-sasuke"
+    display_name: "Саске Учіха"
+    versions: []
+  - entity_id: "c-sakura"
+    display_name: "Сакура Харуно"
+    versions: []
+  - entity_id: "c-hinata"
+    display_name: "Хіната Х’юґа"
+    versions: []
+  - entity_id: "c-kiba"
+    display_name: "Кіба Інудзука"
+    versions: []
+  - entity_id: "c-shino"
+    display_name: "Шіно Абураме"
+    versions: []
+  - entity_id: "c-ino"
+    display_name: "Іно Яманака"
+    versions: []
+  - entity_id: "c-shikamaru"
+    display_name: "Шикамару Нара"
+    versions: []
+  - entity_id: "c-choji"
+    display_name: "Чоджі Акімічі"
+    versions: []
+  - entity_id: "c-iruka"
+    display_name: "Ірука Уміно"
+    versions: []
+  - entity_id: "c-asuma"
+    display_name: "Асума Сарутобі"
+    versions: []
+  - entity_id: "c-kurenai"
+    display_name: "Куренай Юхі"
+    versions: []
+  - entity_id: "c-kakashi"
+    display_name: "Какаші Хатаке"
+    versions: []
+  - entity_id: "c-raido"
+    display_name: "Райдо Наміаші"
+    versions: []
+  - entity_id: "c-kita"
+    display_name: "Кіта Хаяші"
+    versions: []
+  - entity_id: "c-ren"
+    display_name: "Рен Тецу"
+    versions: []
+  - entity_id: "c-sora"
+    display_name: "Сора Ямано"
+    versions: []
+  - entity_id: "c-nobari"
+    display_name: "Нобарі Хаяші"
+    versions: []
+  - entity_id: "c-itachi"
+    display_name: "Ітачі Учіха"
+    versions: []
+  - entity_id: "c-hiruzen"
+    display_name: "Хірузен Сарутобі"
+    versions: []
+  - entity_id: "c-neji"
+    display_name: "Неджі Х’юґа"
+    versions: []
+  - entity_id: "c-lee"
+    display_name: "Рок Лі"
+    versions: []
+  - entity_id: "c-guy"
+    display_name: "Майто Ґай"
+    versions: []

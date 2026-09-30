@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import YAML from 'yaml';
+import {loadEnrichment} from './enrichment.mjs';
 const project=path.resolve(import.meta.dirname,'..');
 const relative='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data';
 // Vercel builds current repository data. There is no browser GitHub token or write endpoint.
@@ -26,6 +27,9 @@ for(const file of fs.readdirSync(path.join(p,'scenes')).filter(f=>f.endsWith('.y
 if(new Set(events.map(e=>e.id)).size!==events.length)throw new Error('Duplicate event IDs');
 const known=new Set(entities.entities.map(e=>e.id));for(const e of events)for(const id of e.tracks)if(!known.has(id))throw new Error('Unknown entity '+id);
 let revision=process.env.VERCEL_GIT_COMMIT_SHA;try{revision=execFileSync('git',['-C',source,'rev-parse','HEAD'],{encoding:'utf8'}).trim();}catch{if(!revision)throw new Error('Source revision is required');}
-const output={revision,base:relative,entities:entities.entities,memberships:entities.memberships||[],scenes,events,sources:read('sources.yaml'),links:read('links.yaml').links||[],repairs};
+const sources=read('sources.yaml');
+const enrichment=loadEnrichment({source,relative,project,entities:entities.entities,events,sourceIds:new Set(sources.sources.map(s=>s.id))});
+const output={...enrichment,revision,base:relative,entities:entities.entities,memberships:entities.memberships||[],scenes,events,sources,links:read('links.yaml').links||[],repairs};
 fs.writeFileSync(path.join(project,'public','data.json'),JSON.stringify(output));
+fs.writeFileSync(path.join(project,'public','version.json'),JSON.stringify({revision}));
 console.log(`Built ${scenes.length} scenes and ${events.length} events from ${revision}.`);

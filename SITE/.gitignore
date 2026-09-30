@@ -1,3 +1,6 @@
 node_modules/
 public/data.json
 .vercel/
+
+public/version.json
+public/media/

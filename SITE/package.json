@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check public/app.js"
+    "check": "node --check public/app.js && node --check scripts/build.mjs && node --check scripts/enrichment.mjs && node --check scripts/media.mjs",
+    "media": "node scripts/media.mjs",
+    "test": "npm run build && node tests/interface.cjs && node --test tests/enrichment.test.mjs"
   },
   "dependencies": {
     "yaml": "2.8.1"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.12"
   }
 }

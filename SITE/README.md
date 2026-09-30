@@ -13,3 +13,7 @@ The build reads the current authoritative YAML under `KONOHA_GAIDEN_ARCS_ZIGRANE
 For local builds, use Node 22+, `npm ci`, then `CHRONOLOGY_SOURCE_ROOT=/absolute/path/to/source npm run build`. Six malformed January 22 YAML serializations are normalized only in memory; the source files are never edited.
 
 `public/data.json` is generated at deployment. It is a snapshot of that source revision, not a live editor or an automatic scheduled refresh. Source changes reach the website through the next Git-triggered deployment.
+
+## Лінії, профілі та фото
+
+Усі персонажі обрані початково. Натискання на лінію вмикає фокус; стрілки ведуть до її попередньої/наступної події. Фото і вікові профілі зберігаються в CHRONOLOGY/data. [Формат і механізм додавання для моделі](docs/MEDIA_AND_PROFILES.md).

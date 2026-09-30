@@ -1,0 +1,4 @@
+# Зображення подій. Сайт показує тільки status: published.
+# Приклад і команди додавання: SITE/docs/MEDIA_AND_PROFILES.md
+schema_version: 1
+media: []
