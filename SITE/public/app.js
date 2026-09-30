@@ -33,8 +33,17 @@ function storyNodeCast(group){return [...new Set(group.flatMap(e=>e.physical||[]
 function semanticNodes(level,allScenes){
  if(level==='moment'){
   const result=[];
-  for(const s of allScenes){
-   const scene=sceneMap.get(s.id),count=s.group.length,spread=Math.min(.055,.36/Math.max(2,count));
+  for(let si=0;si<allScenes.length;si++){
+   const s=allScenes[si],scene=sceneMap.get(s.id),count=s.group.length;
+   const prev=allScenes[si-1],next=allScenes[si+1],gaps=[
+    prev?.day===s.day?s.position-prev.position:null,
+    next?.day===s.day?next.position-s.position:null
+   ].filter(g=>g>1e-8);
+   const nearestGap=gaps.length?Math.min(...gaps):.18;
+   // Keep a scene's moments inside its own chronological slot. The old fixed
+   // spread could make neighbouring scenes overlap in X, so strand() received
+   // anchors out of order and could drop a real event node from the line.
+   const spread=Math.min(.055,.36/Math.max(2,count),nearestGap*.72/Math.max(1,count-1));
    s.group.forEach((e,i)=>{
     const day=clamp(s.position+(i-(count-1)/2)*spread,s.day+.02,s.day+.98),layoutCast=[...new Set(e.physical||[])];
     result.push({id:e.id,kind:'moment',title:e.title,scene,group:[e],day,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,locationId:e.location_id||scene?.location_id||null,childCount:1,sourceSceneIds:[s.id],sourceEpisodeIds:scene?.episode_id?[scene.episode_id]:[]});
@@ -129,7 +138,7 @@ function render(){
  ticks.forEach((t,i)=>{if(t.day<lo||t.day>=hi||i%step)return;svg('line',{x1:px(t.day),x2:px(t.day),y1:5,y2:10,stroke:'#bfcbdc'},axis);const txt=svg('text',{x:px(t.day),y:28,'text-anchor':'middle'},axis);txt.textContent=t.text;});
  const labelPositions=[],defs=svg('defs',{}),lead=clamp((hi-lo)*.18,.08,4);
  ids.forEach(id=>{
-  const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>({day:p.day,y:p.y,id:p.id}));
+  const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>({day:p.day,y:p.y,id:p.id})).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
   if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
   const route=TimelineCore.avoid(TimelineCore.strand(anchors,id,mid,amplitude,lead,plot/(hi-lo)),graphNodes.filter(p=>!linked(p,id)),id,30);
   const coordinates=route.map(p=>({x:px(p.day),y:p.y,node:p.node,flat:p.flat}));
