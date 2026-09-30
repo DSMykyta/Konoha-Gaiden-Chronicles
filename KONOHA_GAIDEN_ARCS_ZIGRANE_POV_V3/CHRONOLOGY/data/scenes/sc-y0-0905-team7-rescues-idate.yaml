@@ -20,7 +20,6 @@ events:
       - {entity_id: "c-naruto", role: "participant", mode: "physical"}
       - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
     focus_teams: ["team-7"]
     evidence_ids: ["evd-v10-000091", "evd-anime-102-106"]
 relations: []
