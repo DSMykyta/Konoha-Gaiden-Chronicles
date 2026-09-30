@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0123-iruka-checks-kakashi-record"
 continuity_id: "main"
+episode_id: "ep-y0-team-examinations"
 title: "Ірука перевіряє історію випробувань Какаші"
 location_id: "loc-hokage-residence"
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}
