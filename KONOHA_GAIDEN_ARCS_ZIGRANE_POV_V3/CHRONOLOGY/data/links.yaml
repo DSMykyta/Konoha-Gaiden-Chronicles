@@ -74,9 +74,9 @@ links:
     kind: "before"
     a: "sc-y0-0118-hokage-monument"
     b: "sc-y0-0118-iruka-naruto"
-    basis: "imported"
-    review: "pending"
-    evidence_ids: ["evd-v10-000001"]
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
   - id: "lnk-0118-class-before-cleanup"
     kind: "before"
     a: "sc-y0-0118-iruka-naruto"
