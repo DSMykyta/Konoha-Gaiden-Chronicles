@@ -199,36 +199,37 @@ function render(){
  const allEvents=events().filter(e=>e.day!==null),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  const n=ids.length,overview=zoom<3,h=viewport,mid=viewport*.59,amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),level=semanticLevel();
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);axis.setAttribute('viewBox',`0 0 ${w} 40`);
- const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,allScenes=orderedScenes().filter(s=>s.day!==null);
+ const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
  const baseNodes=semanticNodes(level,allScenes).filter(p=>p.day!==null).map(p=>({...p,x:px(p.day)})),owner=semanticOwner(baseNodes),nodeY=TimelineCore.sceneLayout(baseNodes,chronologyRelations(),owner,mid,amplitude);
  const globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
  const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
- graphNodes=globalNodes.filter(p=>p.day>=lo&&p.day<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e)));
+ graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));});
  timeline.replaceChildren();axis.replaceChildren();$('linesCount').textContent=`Лінії · ${selected.size}`;
  // Alternating calendar days, including empty days. Long empty spans are omitted
  // after retaining one calendar week on each side of the nearest events.
- if(timeScale.dayPx>=2)for(let day=Math.floor(lo);day<Math.ceil(hi);day++){if(day%2===1&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
- const activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(center,true)} · Рік 0`:`${dateText(lo)} — ${dateText(hi-.01)} · Рік 0`;$('periodButton').textContent=label;
+ if(timeScale.dayPx>=2)for(let day=Math.floor(loDay);day<Math.ceil(hiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=lo&&a<hi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
+ const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(centerDay,true)} · Рік 0`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))} · Рік 0`;$('periodButton').textContent=label;
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
- const ticks=zoom<8?starts.map((d,i)=>({day:d,text:months[i].slice(0,3)})):Array.from({length:Math.ceil(hi)-Math.floor(lo)+1},(_,i)=>({day:Math.floor(lo)+i,text:dateText(Math.floor(lo)+i)}));
- const visibleTicks=ticks.filter(t=>t.day>=lo&&t.day<hi&&!timeScale.hidden(t.day)),step=zoom<8?1:Math.max(1,Math.ceil(visibleTicks.length/(plot/75)));
+ const ticks=zoom<8?starts.map((d,i)=>({day:d,text:months[i].slice(0,3)})):Array.from({length:Math.max(0,Math.ceil(hiDay)-Math.floor(loDay)+1)},(_,i)=>({day:Math.floor(loDay)+i,text:dateText(Math.floor(loDay)+i)}));
+ const visibleTicks=ticks.filter(t=>{const a=dayToAxis(t.day,allEvents);return a>=lo&&a<hi&&!timeScale.hidden(t.day);}),step=zoom<8?1:Math.max(1,Math.ceil(visibleTicks.length/(plot/75)));
  visibleTicks.forEach((t,i)=>{if(i%step)return;svg('line',{x1:px(t.day),x2:px(t.day),y1:5,y2:10,stroke:'#bfcbdc'},axis);const txt=svg('text',{x:px(t.day),y:28,'text-anchor':'middle'},axis);txt.textContent=t.text;});
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
  const labelPositions=[],defs=svg('defs',{}),lead=clamp((hi-lo)*.18,.08,4);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
  ids.forEach(id=>{
-  const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>({day:p.day,y:p.y,id:p.id})).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+  const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>({day:dayToAxis(p.day,allEvents),y:p.y,id:p.id})).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
   if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
-  const route=TimelineCore.avoid(TimelineCore.strand(anchors,id,mid,amplitude,lead,plot/(hi-lo)),graphNodes.filter(p=>!linked(p,id)),id,30);
-  const coordinates=route.map(p=>({x:px(p.day),y:p.y,node:p.node,flat:p.flat}));
+  const blockers=graphNodes.filter(p=>!linked(p,id)).map(p=>({...p,day:dayToAxis(p.day,allEvents)}));
+  const route=TimelineCore.avoid(TimelineCore.strand(anchors,id,mid,amplitude,lead,plot/(hi-lo)),blockers,id,30);
+  const coordinates=route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}));
   const d=smoothPath(coordinates),dim=focusedCharacter&&focusedCharacter!==id;
-  const gradient=svg('linearGradient',{id:'strand-'+id,gradientUnits:'userSpaceOnUse',x1:px(route[0].day),x2:px(route.at(-1).day),y1:0,y2:0},defs),fade=Math.min(.45,lead*.65/Math.max(.001,route.at(-1).day-route[0].day));
+  const gradient=svg('linearGradient',{id:'strand-'+id,gradientUnits:'userSpaceOnUse',x1:pxAxis(route[0].day),x2:pxAxis(route.at(-1).day),y1:0,y2:0},defs),fade=Math.min(.45,lead*.65/Math.max(.001,route.at(-1).day-route[0].day));
   for(const [offset,opacity] of [[0,0],[fade,1],[1-fade,1],[1,0]])svg('stop',{offset,'stop-color':color(id),'stop-opacity':opacity},gradient);
   svg('path',{d,class:'thread',stroke:`url(#strand-${id})`,'stroke-width':id===focusedCharacter?3:overview?1.5:n>24?1.2:2.1,opacity:dim?'.12':n>24?'.35':'.85','data-character':id});
   const hit=svg('path',{d,class:'thread-hit',stroke:'transparent','stroke-width':14,role:'button',tabindex:overview&&n>20?-1:0,'aria-label':`Зосередитися: ${fullName(id)}`,'aria-pressed':id===focusedCharacter,'data-character':id});
   hit.addEventListener('click',()=>setFocus(id));hit.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setFocus(id);}});
   if(!overview&&(focusedCharacter?id===focusedCharacter:n<=18)){
-   const labelDay=Math.max(lo,route[0].day),labelX=px(labelDay),actualY=TimelineCore.curveY(route,labelDay);let labelY=actualY-12;while(labelPositions.some(y=>Math.abs(y-labelY)<16))labelY-=16;labelPositions.push(labelY);
+   const labelDay=Math.max(lo,route[0].day),labelX=pxAxis(labelDay),actualY=TimelineCore.curveY(route,labelDay);let labelY=actualY-12;while(labelPositions.some(y=>Math.abs(y-labelY)<16))labelY-=16;labelPositions.push(labelY);
    if(Math.abs(labelY-(actualY-12))>1)svg('line',{x1:labelX+2,x2:labelX+2,y1:actualY-3,y2:labelY+3,stroke:color(id),'stroke-width':.6,opacity:.5});
    const text=svg('text',{x:labelX+6,y:labelY,class:'line-label',role:'button',tabindex:0,'aria-label':`Зосередитися: ${fullName(id)}`,style:`fill:${color(id)};font-size:12px`});text.textContent=name(id);text.addEventListener('click',()=>setFocus(id));text.addEventListener('keydown',e=>{if(e.key==='Enter')setFocus(id);});
   }
