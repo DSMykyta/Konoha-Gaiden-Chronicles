@@ -1258,3 +1258,11 @@ anchors:
     evidence_ids: ["evd-v10-000213"]
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 215."
+  - id: "ta-y0-1216"
+    date: {year: 0, month: 12, day: 16}
+    precision: "day"
+    placement_status: "approximate"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000222-G", "evd-manga-ch238-iruka-departure"]
+    review: "accepted"
+    reason: "Project placement for the chapter 238 departure day; inherited from v10 and treated as approximate rather than an explicitly stated manga calendar date."
