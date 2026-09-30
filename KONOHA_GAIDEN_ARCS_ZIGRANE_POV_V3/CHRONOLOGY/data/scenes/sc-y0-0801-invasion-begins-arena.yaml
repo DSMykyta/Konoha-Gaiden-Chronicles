@@ -19,6 +19,16 @@ events:
     involvement:
       - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
     evidence_ids: ["evd-v10-000065", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto"
+    title: "Аоба знімає гендзюцу й викриває Кабуто"
+    text: "Аоба розриває сонне гендзюцу на арені й помічає, що джерелом техніки є Кабуто, замаскований під шинобі АНБУ Конохи. Після викриття він переходить до відкритого бою з нападниками; в аніме його атаку деталізовано вогняною технікою проти кількох ворогів."
+    origin: "M"
+    extent: "interval"
+    display_rank: 150
+    involvement:
+      - {entity_id: "c-aoba", role: "focus", mode: "physical"}
+      - {entity_id: "c-kabuto", role: "identified", mode: "physical"}
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
   - id: "ev-y0-0801-sand-sound-invasion-starts"
     legacy_ids: ["V10-000065"]
     title: "Сили Суни й Звуку починають скоординований напад"
@@ -53,9 +63,12 @@ events:
       - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
     evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
 relations:
+  - {id: "rel-0801-aoba-genjutsu-1", kind: "before", a: "ev-y0-0801-kabuto-casts-arena-genjutsu", b: "ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
+  - {id: "rel-0801-aoba-genjutsu-2", kind: "before", a: "ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto", b: "ev-y0-0801-sand-sound-invasion-starts", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush"]}
   - {id: "rel-0801-invasion-genma-1", kind: "before", a: "ev-y0-0801-sand-sound-invasion-starts", b: "ev-y0-0801-genma-confronts-baki-dispatches-sasuke", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
   - {id: "rel-0801-invasion-raido-1", kind: "before", a: "ev-y0-0801-sand-sound-invasion-starts", b: "ev-y0-0801-raido-wounded-by-sound-four", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
   - {id: "rel-0801-invasion-arena-1", kind: "intersects", a: "ev-y0-0801-kabuto-casts-arena-genjutsu", b: "ev-y0-0801-sand-sound-invasion-starts", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush"]}
 presence:
+  - {id: "pr-0801-invasion-aoba", entity_id: "c-aoba", from: "sc-y0-0801-invasion-begins-arena.start", to: "sc-y0-0801-invasion-begins-arena.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
   - {id: "pr-0801-invasion-genma", entity_id: "c-genma", from: "sc-y0-0801-invasion-begins-arena.start", to: "sc-y0-0801-invasion-begins-arena.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
   - {id: "pr-0801-invasion-raido", entity_id: "c-raido", from: "sc-y0-0801-invasion-begins-arena.start", to: "ev-y0-0801-raido-wounded-by-sound-four.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
