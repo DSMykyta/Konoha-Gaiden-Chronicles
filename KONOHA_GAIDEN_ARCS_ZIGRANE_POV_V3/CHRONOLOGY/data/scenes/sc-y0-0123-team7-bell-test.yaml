@@ -1,7 +1,7 @@
 schema_version: 1
 id: "sc-y0-0123-team7-bell-test"
 continuity_id: "main"
-episode_id: "ep-y0-team-examinations"
+episode_id: "ep-y0-team7-exam"
 title: "Випробування Команди 7 з дзвіночками"
 location_id: null
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}
