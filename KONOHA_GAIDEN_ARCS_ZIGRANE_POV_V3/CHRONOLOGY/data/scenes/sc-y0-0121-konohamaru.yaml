@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0121-konohamaru"
 continuity_id: "main"
+episode_id: "ep-y0-konohamaru"
 title: "Наруто знайомиться з Конохамару"
 location_id: "loc-konohagakure"
 placement: {anchor_id: "ta-y0-0121", day_offset: 0}
