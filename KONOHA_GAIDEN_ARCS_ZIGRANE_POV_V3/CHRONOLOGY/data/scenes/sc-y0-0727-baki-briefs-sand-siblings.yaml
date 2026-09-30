@@ -1,0 +1,28 @@
+schema_version: 1
+id: "sc-y0-0727-baki-briefs-sand-siblings"
+continuity_id: "main"
+title: "Бакі вводить Ґаару, Темарі й Канкуро в план вторгнення"
+location_id: null
+placement: {anchor_id: "ta-y0-0727", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0727-baki-briefs-sand-siblings-invasion"
+    title: "Бакі пояснює трійці Суни їхню роль у нападі"
+    text: "Після узгодження операції Бакі повідомляє Ґаарі, Темарі й Канкуро, що участь Суни в іспиті прикриває майбутній напад на Коноху. Він наголошує, що ключова частина плану залежить від Ґаари та сили Шукаку, а Темарі й Канкуро мають підтримати його під час виконання операції."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-baki", role: "focus", mode: "physical"}
+      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
+      - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-konoha-crush-prelude", "evd-anime-67-68"]
+relations: []
+presence:
+  - {id: "pr-0727-baki-briefing-baki", entity_id: "c-baki", from: "sc-y0-0727-baki-briefs-sand-siblings.start", to: "sc-y0-0727-baki-briefs-sand-siblings.end", basis: "source", evidence_ids: ["evd-manga-konoha-crush-prelude", "evd-anime-67-68"], review: "accepted"}
+  - {id: "pr-0727-baki-briefing-gaara", entity_id: "c-gaara", from: "sc-y0-0727-baki-briefs-sand-siblings.start", to: "sc-y0-0727-baki-briefs-sand-siblings.end", basis: "source", evidence_ids: ["evd-manga-konoha-crush-prelude"], review: "accepted"}
+  - {id: "pr-0727-baki-briefing-temari", entity_id: "c-temari", from: "sc-y0-0727-baki-briefs-sand-siblings.start", to: "sc-y0-0727-baki-briefs-sand-siblings.end", basis: "source", evidence_ids: ["evd-manga-konoha-crush-prelude"], review: "accepted"}
+  - {id: "pr-0727-baki-briefing-kankuro", entity_id: "c-kankuro", from: "sc-y0-0727-baki-briefs-sand-siblings.start", to: "sc-y0-0727-baki-briefs-sand-siblings.end", basis: "source", evidence_ids: ["evd-manga-konoha-crush-prelude"], review: "accepted"}
