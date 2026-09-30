@@ -11,7 +11,7 @@ events:
   - id: "ev-y0-0118-iruka-treats-ramen"
     legacy_ids: ["V10-000001"]
     title: "Ірука пригощає Наруто раменом"
-    text: "Після розмови Ірука пригощає Наруто раменом."
+    text: "Після того як Наруто закінчує відмивати Монумент, Ірука виконує обіцянку й пригощає його раменом."
     origin: "M"
     extent: "interval"
     display_rank: 100
@@ -19,7 +19,19 @@ events:
       - {entity_id: "c-iruka", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
-relations: []
+  - id: "ev-y0-0118-naruto-declares-hokage-goal"
+    legacy_ids: ["V10-000001"]
+    title: "Наруто заявляє, що перевершить усіх Хокаґе"
+    text: "За раменом Ірука питає Наруто, чому той знову розмалював Монумент. Наруто пояснює, що хоче, аби його визнали, і заявляє, що одного дня стане Хокаґе та перевершить усіх попередників."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
+relations:
+  - {id: "rel-0118-ramen-before-hokage-goal", kind: "before", a: "ev-y0-0118-iruka-treats-ramen", b: "ev-y0-0118-naruto-declares-hokage-goal", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch1-prologue"]}
 presence:
   - {id: "pr-0118-ramen-naruto", entity_id: "c-naruto", from: "sc-y0-0118-ichiraku.start", to: "sc-y0-0118-ichiraku.end", basis: "source", evidence_ids: ["evd-v10-000001"], review: "accepted"}
   - {id: "pr-0118-ramen-iruka", entity_id: "c-iruka", from: "sc-y0-0118-ichiraku.start", to: "sc-y0-0118-ichiraku.end", basis: "source", evidence_ids: ["evd-v10-000001"], review: "accepted"}
