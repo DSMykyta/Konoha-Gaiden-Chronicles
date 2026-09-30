@@ -1,0 +1,25 @@
+schema_version: 1
+episodes:
+  - id: "ep-y0-team-formation"
+    continuity_id: "main"
+    arc_id: "arc-y0-genin-formation"
+    title: "Формування команд"
+    description: "Оголошення складів нових команд і паралельне очікування наставників після випуску з Академії."
+
+  - id: "ep-y0-chunin-preliminaries"
+    continuity_id: "main"
+    arc_id: "arc-y0-chunin-exams"
+    title: "Попередні поєдинки іспиту на чуніна"
+    description: "Оголошення попереднього раунду, серія індивідуальних поєдинків, паралельне запечатування Проклятої Печатки Саске та жеребкування фіналу."
+
+  - id: "ep-y0-hayate-investigation"
+    continuity_id: "main"
+    arc_id: "arc-y0-chunin-exams"
+    title: "Останнє завдання Хаяте"
+    description: "Від проникнення Кабуто до шпиталю через доручення Хірузена й прощання з Юґао до підслуханого плану вторгнення, загибелі Хаяте та ранкової наради."
+
+  - id: "ep-y0-valley-of-end"
+    continuity_id: "main"
+    arc_id: "arc-y0-sasuke-retrieval"
+    title: "Бій Наруто і Саске в Долині Завершення"
+    description: "Безперервна послідовність від зустрічі Наруто із Саске до фінального зіткнення та відходу Саске."
