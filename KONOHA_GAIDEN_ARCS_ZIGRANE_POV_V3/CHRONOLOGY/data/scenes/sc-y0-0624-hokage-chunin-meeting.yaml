@@ -52,7 +52,7 @@ events:
   - id: "ev-y0-0624-iruka-objects-to-nominations"
     legacy_ids: ["V10-000039-E"]
     title: "Ірука заперечує проти висунення нових генінів"
-    text: "Ірука заперечує проти участі недавніх випускників у небезпечному іспиті."
+    text: "Ірука різко заперечує проти висунення недавніх випускників, особливо Команди 7, вважаючи їх надто молодими й недосвідченими для такого небезпечного випробування. Какаші відповідає, що вони вже не учні Іруки, а шинобі під його командуванням, і наполягає, що вони готові."
     origin: "M"
     extent: "interval"
     display_rank: 300
@@ -65,10 +65,23 @@ events:
       - {entity_id: "c-raido", role: "participant", mode: "physical"}
       - {entity_id: "c-genma", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000039-E", "evd-manga-chunin-intro", "evd-anime-20-23", "evd-project-raido-team9-chunin-nomination"]
+  - id: "ev-y0-0624-iruka-requests-second-exam-messenger"
+    title: "Ірука просить стати посланцем другого етапу"
+    text: "Після суперечки Ірука відступає від заперечень, але просить дозволити йому бути посланцем наприкінці другого етапу іспиту, щоб особисто побачити, як упоралися його колишні учні."
+    origin: "M"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-chunin-intro"]
 relations:
   - {id: "rel-0624-meeting-1", kind: "before", a: "ev-y0-0624-hiruzen-announces-chunin-exam", b: "ev-y0-0624-genma-asks-about-daimyo", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]}
   - {id: "rel-0624-meeting-1b", kind: "before", a: "ev-y0-0624-genma-asks-about-daimyo", b: "ev-y0-0624-jonin-nominate-teams", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]}
   - {id: "rel-0624-meeting-2", kind: "before", a: "ev-y0-0624-jonin-nominate-teams", b: "ev-y0-0624-iruka-objects-to-nominations", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000039-E"]}
+  - {id: "rel-0624-meeting-3", kind: "before", a: "ev-y0-0624-iruka-objects-to-nominations", b: "ev-y0-0624-iruka-requests-second-exam-messenger", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-intro"]}
 presence:
+  - {id: "pr-0624-hokage-chunin-meeting-iruka", entity_id: "c-iruka", from: "ev-y0-0624-iruka-objects-to-nominations.start", to: "ev-y0-0624-iruka-requests-second-exam-messenger.end", basis: "source", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"], review: "accepted"}
   - {id: "pr-0624-hokage-chunin-meeting-genma", entity_id: "c-genma", from: "sc-y0-0624-hokage-chunin-meeting.start", to: "sc-y0-0624-hokage-chunin-meeting.end", basis: "source", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"], review: "accepted"}
   - {id: "pr-0624-hokage-chunin-meeting-raido", entity_id: "c-raido", from: "sc-y0-0624-hokage-chunin-meeting.start", to: "sc-y0-0624-hokage-chunin-meeting.end", basis: "project_decision", evidence_ids: ["evd-project-raido-team9-chunin-nomination"], review: "accepted"}
