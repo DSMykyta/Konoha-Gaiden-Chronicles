@@ -96,20 +96,30 @@ function chronologyBreaks(dated=events().filter(e=>e.day!==null)){
  return breaks;
 }
 function makeTimeScale(lo,hi,pad,plot,dated){
- const breaks=chronologyBreaks(dated).filter(b=>b.from>=lo&&b.to<=hi),count=breaks.length;
- const breakPx=count?Math.min(18,Math.max(4,plot*.32/count)):0,removed=breaks.reduce((sum,b)=>sum+b.omitted,0);
- const visibleSpan=Math.max(.001,(hi-lo)-removed),dayPx=Math.max(.001,(plot-breakPx*count)/visibleSpan);
+ const breaks=chronologyBreaks(dated).filter(b=>b.to>lo&&b.from<hi).map(b=>({...b,viewFrom:Math.max(lo,b.from),viewTo:Math.min(hi,b.to)})).filter(b=>b.viewTo>b.viewFrom),count=breaks.length;
+ const removed=breaks.reduce((sum,b)=>sum+(b.viewTo-b.viewFrom),0),visibleSpan=Math.max(0,(hi-lo)-removed);
+ const breakPx=count?(visibleSpan<1e-6?plot/count:Math.min(18,Math.max(4,plot*.32/count))):0;
+ const dayPx=visibleSpan>1e-6?Math.max(.001,(plot-breakPx*count)/visibleSpan):0;
  const offset=day=>{
   let calendar=day-lo,pixels=0;
   for(const b of breaks){
-   if(day<=b.from)break;
-   if(day>=b.to){calendar-=b.omitted;pixels+=breakPx;continue;}
-   const inside=day-b.from,t=inside/b.omitted;
+   const omitted=b.viewTo-b.viewFrom;
+   if(day<=b.viewFrom)break;
+   if(day>=b.viewTo){calendar-=omitted;pixels+=breakPx;continue;}
+   const inside=day-b.viewFrom,t=inside/omitted;
    calendar-=inside;pixels+=breakPx*clamp(t,0,1);break;
   }
   return calendar*dayPx+pixels;
  };
- return {breaks,breakPx,dayPx,px:day=>pad+offset(day),hidden:day=>breaks.some(b=>day>b.from&&day<b.to)};
+ return {breaks,breakPx,dayPx,px:day=>pad+offset(day),hidden:day=>breaks.some(b=>day>b.viewFrom&&day<b.viewTo)};
+}
+function snapVisibleCenter(day,direction=0){
+ if(!data)return day;
+ const gap=chronologyBreaks().find(b=>day>b.from&&day<b.to);
+ if(!gap)return day;
+ if(direction<0)return gap.from;
+ if(direction>0)return gap.to;
+ return day-gap.from<=gap.to-day?gap.from:gap.to;
 }
 function svg(tag,attrs,parent=$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
 function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);}
@@ -149,6 +159,7 @@ function smoothPath(points){
 }
 function render(){
  if(!data)return;
+ center=snapVisibleCenter(center);
  const canvas=$('canvas'),timeline=$('timeline'),axis=$('timeAxis'),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
  const allEvents=events().filter(e=>e.day!==null),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  const n=ids.length,overview=zoom<3,h=viewport,mid=viewport*.59,amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),level=semanticLevel();
@@ -167,7 +178,7 @@ function render(){
  const ticks=zoom<8?starts.map((d,i)=>({day:d,text:months[i].slice(0,3)})):Array.from({length:Math.ceil(hi)-Math.floor(lo)+1},(_,i)=>({day:Math.floor(lo)+i,text:dateText(Math.floor(lo)+i)}));
  const visibleTicks=ticks.filter(t=>t.day>=lo&&t.day<hi&&!timeScale.hidden(t.day)),step=zoom<8?1:Math.max(1,Math.ceil(visibleTicks.length/(plot/75)));
  visibleTicks.forEach((t,i)=>{if(i%step)return;svg('line',{x1:px(t.day),x2:px(t.day),y1:5,y2:10,stroke:'#bfcbdc'},axis);const txt=svg('text',{x:px(t.day),y:28,'text-anchor':'middle'},axis);txt.textContent=t.text;});
- timeScale.breaks.forEach(b=>{const x1=px(b.from),x2=px(b.to),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
+ timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
  const labelPositions=[],defs=svg('defs',{}),lead=clamp((hi-lo)*.18,.08,4);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
  ids.forEach(id=>{
@@ -188,7 +199,7 @@ function render(){
   }
  });
  timeScale.breaks.forEach(b=>{
-  const x1=px(b.from),x2=px(b.to),width=Math.max(1,x2-x1),g=svg('g',{class:'time-break','aria-hidden':'true'});
+  const x1=px(b.viewFrom),x2=px(b.viewTo),width=Math.max(1,x2-x1),g=svg('g',{class:'time-break','aria-hidden':'true'});
   const title=svg('title',{},g);title.textContent=`Пропущено ${Math.max(1,Math.round(b.omitted))} дн. між ${dateText(b.previous,true)} і ${dateText(b.next,true)}`;
   svg('rect',{x:x1,y:0,width,height:h,class:'time-break-mask'},g);
   svg('rect',{x:x1,y:0,width,height:h,class:'time-break-hatch'},g);
