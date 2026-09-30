@@ -214,11 +214,20 @@ function bindSceneActionPreviews(){
 }
 function bindCard(){
  $('cardContent').querySelectorAll('[data-card-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.cardEvent)));
+ $('cardContent').querySelectorAll('[data-story-episode]').forEach(b=>b.addEventListener('click',()=>navigateEpisodeLevel(b.dataset.storyEpisode)));
+ $('cardContent').querySelectorAll('[data-story-scene]').forEach(b=>b.addEventListener('click',()=>navigateSceneLevel(b.dataset.storyScene)));
  $('cardContent').querySelectorAll('[data-step-event]').forEach(b=>b.addEventListener('click',()=>stepEvent(+b.dataset.stepEvent)));
  $('cardContent').querySelectorAll('[data-event-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.eventFocusCharacter;if(focusedCharacter!==id)setFocus(id);}));
  $('cardContent').querySelectorAll('[data-close-card]').forEach(b=>b.addEventListener('click',closeCard));
  $('cardContent').querySelectorAll('[data-open-scene]').forEach(b=>b.addEventListener('click',()=>openScene(b.dataset.openScene,b)));
  $('cardContent').querySelectorAll('[data-step-scene]').forEach(b=>b.addEventListener('click',()=>stepScene(+b.dataset.stepScene)));
+}
+function navigateEpisodeLevel(id){
+ const episode=episodeMap.get(id);if(!episode)return;const scenes=(episode.scene_ids||[]).map(id=>sceneMap.get(id)).filter(Boolean),days=scenes.map(s=>s.day).filter(d=>d!==null);
+ if(days.length)center=clamp((Math.min(...days)+Math.max(...days))/2+.5,.5,364.5);zoom=zoomModes.month;closeCard();render();const node=graphNodes.find(p=>p.kind==='episode'&&p.rawId===id);if(node)openNode(node,true);
+}
+function navigateSceneLevel(id){
+ const scene=sceneMap.get(id);if(!scene||scene.day===null)return;center=clamp(scene.day+.5,.5,364.5);zoom=zoomModes.week;closeCard();render();const node=graphNodes.find(p=>p.kind==='scene'&&p.id===id);if(node)openNode(node,true);
 }
 function cardTop(day,navigation,kind='event',openSceneId=null){
  const arrow=(direction,label)=>`<button class="card-arrow" data-step-${kind}="${direction}" aria-label="${label}" title="${label}" ${navigation[direction<0?'previous':'next']?'':'disabled'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${direction<0?'m14 6-6 6 6 6':'m10 6 6 6-6 6'}"/></svg></button>`;
@@ -250,8 +259,10 @@ function renderScene(){
 function showGroup(group){$('cardContent').innerHTML=`<div class="card-top"><span class="card-date">${dateText(group[0].day,true)} · ${group.length} моментів</span><button class="close" data-close-card aria-label="Закрити">×</button></div>${group.map(e=>`<button class="result" data-card-event="${esc(e.id)}">${esc(e.title)}</button>`).join('')}`;bindCard();}
 function showStoryGroup(point){
  const kind=point.kind==='arc'?'Арка':'Епізод',days=point.group.map(e=>e.day).filter(d=>d!==null),start=days.length?Math.min(...days):null,end=days.length?Math.max(...days):null,range=start===null?'Без установленої дати':start===end?dateText(start,true):`${dateText(start,true)} — ${dateText(end,true)}`;
- const scenes=(point.sourceSceneIds||[]).map(id=>({scene:sceneMap.get(id),group:sceneEvents(id)})).filter(x=>x.scene&&x.group.length);
- $('cardContent').innerHTML=`<div class="card-top"><span class="card-date">${esc(range)} · Рік 0</span><button class="close" data-close-card aria-label="Закрити">×</button></div><p class="card-meta">${kind}</p><h2>${esc(point.title)}</h2>${point.story?.description?`<p class="event-text">${esc(point.story.description)}</p>`:''}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${scenes.map(({scene,group})=>`<button class="result" data-card-event="${esc(group[0].id)}"><strong>${esc(scene.title)}</strong><small>${actionCount(group.length)}</small></button>`).join('')}</div>`;
+ const children=point.kind==='arc'
+  ?(point.sourceEpisodeIds||[]).map(id=>{const episode=episodeMap.get(id),count=(episode?.scene_ids||[]).length;return episode?{id,title:episode.title,meta:`${count} ${count===1?'сцена':'сцен'}`}:null;}).filter(Boolean)
+  :(point.sourceSceneIds||[]).map(id=>{const scene=sceneMap.get(id),group=sceneEvents(id);return scene&&group.length?{id,title:scene.title,meta:actionCount(group.length)}:null;}).filter(Boolean);
+ $('cardContent').innerHTML=`<div class="card-top"><span class="card-date">${esc(range)} · Рік 0</span><button class="close" data-close-card aria-label="Закрити">×</button></div><p class="card-meta">${kind}</p><h2>${esc(point.title)}</h2>${point.story?.description?`<p class="event-text">${esc(point.story.description)}</p>`:''}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong><small>${esc(child.meta)}</small></button>`).join('')}</div>`;
  bindCard();
 }
 function eventDetailsHtml(e,relationAttribute='data-card-event',showSceneContext=true){
