@@ -11,7 +11,7 @@ events:
   - id: "ev-y0-0315-naruto-demands-harder-mission"
     legacy_ids: ["V10-000023", "V10-000024"]
     title: "Наруто вимагає складнішої місії"
-    text: "Після серії D-рангів Наруто протестує проти побутових завдань і вимагає складнішої роботи."
+    text: "Після серії D-рангів Наруто протестує проти побутових завдань і вимагає складнішої роботи. Ірука нагадує, що недосвідчені геніни починають із простих D-рангових місій і поступово набираються досвіду; Наруто все одно наполягає на складнішому завданні."
     origin: "M"
     extent: "interval"
     display_rank: 100
@@ -21,6 +21,7 @@ events:
       - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
       - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
     focus_teams: ["team-7"]
     evidence_ids: ["evd-v10-000023", "evd-v10-000024", "evd-manga-land-waves", "evd-anime-land-waves"]
   - id: "ev-y0-0315-hiruzen-assigns-tazuna"
@@ -37,6 +38,7 @@ events:
       - {entity_id: "c-naruto", role: "participant", mode: "physical"}
       - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
     focus_teams: ["team-7"]
     evidence_ids: ["evd-v10-000023", "evd-v10-000024", "evd-manga-land-waves", "evd-anime-land-waves", "evd-novel-land-waves"]
 relations:
@@ -46,5 +48,6 @@ presence:
   - {id: "pr-0315-assign-sasuke", entity_id: "c-sasuke", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
   - {id: "pr-0315-assign-sakura", entity_id: "c-sakura", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
   - {id: "pr-0315-assign-kakashi", entity_id: "c-kakashi", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
+  - {id: "pr-0315-assign-iruka", entity_id: "c-iruka", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-manga-land-waves", "evd-anime-land-waves"], review: "accepted"}
   - {id: "pr-0315-assign-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0315-tazuna-assignment.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
   - {id: "pr-0315-assign-tazuna", entity_id: "c-tazuna", from: "ev-y0-0315-hiruzen-assigns-tazuna.start", to: "sc-y0-0315-tazuna-assignment.end", basis: "source", evidence_ids: ["evd-v10-000023"], review: "accepted"}
