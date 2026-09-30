@@ -19,6 +19,16 @@ events:
       - {entity_id: "c-raido", role: "focus", mode: "physical"}
       - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
     evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-genma-takes-over-finals"
+    title: "Ґенма проводить фінальну частину іспиту"
+    text: "Після загибелі Хаяте Ґекко обов’язки екзаменатора фінальної частини іспиту переходять до Ґенми Шірануї."
+    origin: "M"
+    extent: "interval"
+    display_rank: 75
+    involvement:
+      - {entity_id: "c-genma", role: "focus", mode: "physical"}
+      - {entity_id: "c-hayate", role: "mentioned", mode: "remote"}
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
   - id: "ev-y0-0801-naruto-defeats-neji"
     legacy_ids: ["V10-000064"]
     title: "Наруто перемагає Неджі"
@@ -29,7 +39,18 @@ events:
     involvement:
       - {entity_id: "c-naruto", role: "focus", mode: "physical"}
       - {entity_id: "c-neji", role: "focus", mode: "physical"}
+      - {entity_id: "c-genma", role: "referee", mode: "physical"}
     evidence_ids: ["evd-v10-000064", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+  - id: "ev-y0-0801-genma-talks-to-neji"
+    title: "Ґенма говорить із Неджі після його поразки"
+    text: "Після перемоги Наруто Ґенма говорить Неджі, що навіть птах у клітці може колись спробувати вибратися на волю."
+    origin: "M"
+    extent: "interval"
+    display_rank: 150
+    involvement:
+      - {entity_id: "c-genma", role: "focus", mode: "physical"}
+      - {entity_id: "c-neji", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
   - id: "ev-y0-0801-shikamaru-traps-temari"
     legacy_ids: ["V10-000064-C"]
     title: "Шикамару ловить Темарі тіньовою технікою"
@@ -40,6 +61,7 @@ events:
     involvement:
       - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
       - {entity_id: "c-temari", role: "focus", mode: "physical"}
+      - {entity_id: "c-genma", role: "referee", mode: "physical"}
     evidence_ids: ["evd-v10-000064-C", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
   - id: "ev-y0-0801-shikamaru-surrenders"
     legacy_ids: ["V10-000064-C"]
@@ -51,9 +73,13 @@ events:
     involvement:
       - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
       - {entity_id: "c-temari", role: "participant", mode: "physical"}
+      - {entity_id: "c-genma", role: "referee", mode: "physical"}
     evidence_ids: ["evd-v10-000064-C", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
 relations:
-  - {id: "rel-0801-finals-morning-1", kind: "before", a: "ev-y0-0801-naruto-defeats-neji", b: "ev-y0-0801-shikamaru-traps-temari", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000064","evd-v10-000064-C"]}
+  - {id: "rel-0801-finals-proctor-before-neji", kind: "before", a: "ev-y0-0801-genma-takes-over-finals", b: "ev-y0-0801-naruto-defeats-neji", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
+  - {id: "rel-0801-finals-morning-1", kind: "before", a: "ev-y0-0801-naruto-defeats-neji", b: "ev-y0-0801-genma-talks-to-neji", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
+  - {id: "rel-0801-finals-morning-1b", kind: "before", a: "ev-y0-0801-genma-talks-to-neji", b: "ev-y0-0801-shikamaru-traps-temari", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
   - {id: "rel-0801-finals-morning-2", kind: "before", a: "ev-y0-0801-shikamaru-traps-temari", b: "ev-y0-0801-shikamaru-surrenders", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
 presence:
+  - {id: "pr-0801-finals-genma", entity_id: "c-genma", from: "ev-y0-0801-genma-takes-over-finals.start", to: "sc-y0-0801-finals-morning.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
   - {id: "pr-0801-finals-raido", entity_id: "c-raido", from: "sc-y0-0801-finals-morning.start", to: "sc-y0-0801-finals-morning.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
