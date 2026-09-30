@@ -126,9 +126,10 @@ redirects:
     replacement_ids:
       - "ev-y0-0118-naruto-paints-monument"
       - "ev-y0-0118-iruka-catches-naruto"
-      - "ev-y0-0118-naruto-declares-hokage-goal"
       - "ev-y0-0118-naruto-transformation"
+      - "ev-y0-0118-iruka-orders-monument-cleanup"
       - "ev-y0-0118-iruka-treats-ramen"
+      - "ev-y0-0118-naruto-declares-hokage-goal"
     reason: "Split monument, conversation and ramen into separate scenes."
   - legacy_id: "V10-000002"
     status: "superseded"
