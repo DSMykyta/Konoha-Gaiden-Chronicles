@@ -1266,3 +1266,11 @@ anchors:
     evidence_ids: ["evd-v10-000222-G", "evd-manga-ch238-iruka-departure"]
     review: "accepted"
     reason: "Project placement for the chapter 238 departure day; inherited from v10 and treated as approximate rather than an explicitly stated manga calendar date."
+  - id: "ta-y0-1207-suna-support"
+    date: {year: 0, month: 12, day: 7}
+    precision: "day"
+    placement_status: "working"
+    basis: "imported"
+    evidence_ids: ["evd-v10-000214", "evd-anime-216-baki-suna-council"]
+    review: "accepted"
+    reason: "Working project date inherited from v10 for Naruto episode 216."
