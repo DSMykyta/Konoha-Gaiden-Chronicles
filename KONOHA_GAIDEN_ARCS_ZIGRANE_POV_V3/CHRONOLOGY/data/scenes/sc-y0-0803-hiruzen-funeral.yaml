@@ -19,6 +19,7 @@ events:
     involvement:
       - {entity_id: "c-hiruzen", role: "affected", mode: "physical"}
       - {entity_id: "c-anko", role: "mourner", mode: "physical"}
+      - {entity_id: "c-aoba", role: "mourner", mode: "physical"}
     evidence_ids: ["evd-v10-000073", "evd-manga-ch139-iruka-funeral"]
   - id: "ev-y0-0803-iruka-explains-will-fire"
     legacy_ids: ["V10-000073-B"]
@@ -36,6 +37,7 @@ events:
 relations:
   - {id: "rel-0803-funeral-before-will-fire", kind: "before", a: "ev-y0-0803-hiruzen-funeral", b: "ev-y0-0803-iruka-explains-will-fire", basis: "source", review: "accepted", evidence_ids: ["evd-manga-ch139-iruka-funeral"]}
 presence:
+  - {id: "pr-0803-funeral-aoba", entity_id: "c-aoba", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
   - {id: "pr-0803-funeral-anko", entity_id: "c-anko", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-anime-anko-hiruzen-funeral"], review: "accepted"}
   - {id: "pr-0803-funeral-iruka", entity_id: "c-iruka", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
   - {id: "pr-0803-funeral-naruto", entity_id: "c-naruto", from: "sc-y0-0803-hiruzen-funeral.start", to: "sc-y0-0803-hiruzen-funeral.end", basis: "source", evidence_ids: ["evd-manga-ch139-iruka-funeral"], review: "accepted"}
