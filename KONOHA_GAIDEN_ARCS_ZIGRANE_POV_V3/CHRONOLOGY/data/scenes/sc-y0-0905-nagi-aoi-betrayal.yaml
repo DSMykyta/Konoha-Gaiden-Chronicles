@@ -24,14 +24,16 @@ events:
     evidence_ids: ["evd-v10-000091", "evd-anime-102-106"]
   - id: "ev-y0-0905-aoi-betrayal-thunder-sword-revealed"
     legacy_ids: ["V10-000091"]
-    title: "З’ясовується зрада Аої та викрадення Меча Бога Грому"
-    text: "Група дізнається про зраду Аої та викрадення ним Меча Бога Грому."
+    title: "Ідате розповідає про Ібікі, Аої та викрадення Меча Бога Грому"
+    text: "Ідате пояснює, чому ненавидить шинобі. Під час давнішого іспиту на чуніна його старший брат Ібікі був екзаменатором і поставив команді жорстке фінальне випробування; Ідате обрав особистий шанс на підвищення всупереч інтересам товаришів, після чого Ібікі провалив усю команду й сказав, що Ідате не готовий бути шинобі. Скориставшись його відчаєм, наставник Аої переконав Ідате викрасти секретний сувій і Меч Бога Грому, пообіцявши підвищення. Коли Аої втік до Аме, Ібікі з двома АНБУ переслідував їх; людей Ібікі вбили, самого Ібікі схопили й катували заради відомостей із сувою. Ібікі допоміг братові втекти, але пожежа розділила їх, і Ідате вважав, що залишив брата помирати."
     origin: "F"
     extent: "interval"
     display_rank: 200
     involvement:
-      - {entity_id: "c-aoi", role: "identified", mode: "remote"}
-      - {entity_id: "c-idate", role: "affected", mode: "physical"}
+      - {entity_id: "c-aoi", role: "memory_subject", mode: "memory"}
+      - {entity_id: "c-ibiki", role: "memory_subject", mode: "memory"}
+      - {entity_id: "group-anbu", role: "memory_subject", mode: "memory"}
+      - {entity_id: "c-idate", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "participant", mode: "physical"}
       - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
