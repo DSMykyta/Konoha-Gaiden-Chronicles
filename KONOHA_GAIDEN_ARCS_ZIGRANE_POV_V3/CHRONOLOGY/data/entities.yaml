@@ -535,6 +535,12 @@ entities:
     name: "Ibiki Morino"
     aliases:
       - "Ібікі"
+  - id: "c-shinobu-mibu"
+    kind: "person"
+    name: "Shinobu Mibu"
+    aliases:
+      - "Шінобу Мібу"
+
   - id: "c-anko"
     kind: "person"
     name: "Anko Mitarashi"
@@ -669,6 +675,11 @@ entities:
     name: "Gamabunta"
     aliases:
       - "Ґамабунта"
+  - id: "c-gamahiro"
+    kind: "summon"
+    name: "Gamahiro"
+    aliases:
+      - "Ґамахіро"
   - id: "c-kurama"
     kind: "tailed_beast"
     name: "Kurama / Nine-Tails"
