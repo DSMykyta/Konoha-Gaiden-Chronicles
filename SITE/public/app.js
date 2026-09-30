@@ -64,7 +64,7 @@ function render(){
  const n=ids.length,overview=zoom<3,h=viewport,mid=viewport*.59,amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),detailed=zoom>=8;
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);axis.setAttribute('viewBox',`0 0 ${w} 40`);
  const px=day=>pad+(day-lo)/(hi-lo)*plot,allScenes=orderedScenes().filter(s=>s.day!==null),byDay=new Map();allEvents.forEach(e=>{if(!byDay.has(e.day))byDay.set(e.day,[]);byDay.get(e.day).push(e);});
- const detailedNodes=detailed?allScenes.map(s=>{const scene=sceneMap.get(s.id),day=s.position,layoutCast=sceneCast(scene,s.group),cast=sceneCast(scene,s.group).filter(id=>selected.has(id));return {id:s.id,scene,group:s.group,day,x:px(day),cast,layoutCast};}):[];
+ const detailedNodes=detailed?allScenes.map(s=>{const scene=sceneMap.get(s.id),day=s.position,layoutCast=sceneCast(scene,s.group),cast=sceneCast(scene,s.group).filter(id=>selected.has(id));return {id:s.id,scene,group:s.group,day,x:px(day),cast,layoutCast,locationId:scene?.location_id||null,calendarDay:s.day};}):[];
  const sceneOwner=Object.fromEntries(allEvents.map(e=>[e.id,e.scene_id])),sceneY=detailed?TimelineCore.sceneLayout(detailedNodes,chronologyRelations(),sceneOwner,mid,amplitude):null;
  const globalNodes=detailed?detailedNodes.map(p=>({...p,y:sceneY.get(p.id)??mid})):[...byDay].map(([day,group])=>({id:'day-'+day,day:day+.5,x:px(day+.5),y:mid+Math.sin(day*.07)*amplitude,cast:[...new Set(group.flatMap(e=>e.physical))].filter(id=>selected.has(id)),group}));
  const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
