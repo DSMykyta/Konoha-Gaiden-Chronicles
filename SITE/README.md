@@ -2,7 +2,7 @@
 
 Read-only, minimal timeline. Hover a node for its title, click for an anchored card above it. No persistent header, sidebar, event list, editing interface, or write API.
 
-Smooth cubic Bézier paths interpolate each physical participation node. Decorative braid crossings never assert co-presence. Main and alternate continuities are selected independently. Date placement, sources, scene presence and temporal relationships remain in the data.
+Smooth cubic Bézier paths converge at shared scene nodes. A scene is grouped only by its authoritative YAML ID, never by a shared date or location. The number inside a node counts its actions; clicking shows those actions, and “Читати сцену цілком” opens all descriptions together. Line convergence means presence at different moments of the scene, without asserting that everyone met simultaneously. Decorative crossings never assert co-presence. Selected lines remain visible through dates with no events. Main and alternate continuities are selected independently.
 
 ## Vercel
 

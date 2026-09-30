@@ -20,7 +20,7 @@ async function check(width,height){
  // Native profile modal, age-specific content and keyboard tabs.
  click('[data-profile="c-naruto"]');assert(!doc.getElementById('profileDialog').hidden);assert(doc.getElementById('profileDialog').hasAttribute('open'));assert.equal(doc.querySelectorAll('[role="tab"]').length,2);click('[data-profile-version="naruto-15"]');assert(doc.getElementById('profileContent').textContent.includes('15 років'));assert(doc.querySelector('[data-profile-version="naruto-15"]').getAttribute('aria-selected')==='true');click('#closeProfile');assert(doc.getElementById('profileDialog').hidden);
  // Focus is a separate state: selected characters remain selected, other lines dim.
- click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);assert([...canvas.querySelectorAll('.node')].every(el=>run(`eventMap.get(${JSON.stringify(el.dataset.event)}).tracks.includes('c-raido')`)));assert([...canvas.querySelectorAll('.thread')].some(p=>p.getAttribute('opacity')==='.12'));
+ click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);assert([...canvas.querySelectorAll('.node')].every(el=>run(`sceneEvents(${JSON.stringify(el.dataset.scene)}).some(e=>e.tracks.includes('c-raido'))`)));assert([...canvas.querySelectorAll('.thread')].some(p=>p.getAttribute('opacity')==='.12'));
  run("navigateEvent('ev-y0-0624-jonin-nominate-teams')");await sleep();assert(doc.querySelector('#cardContent h2').textContent.includes('Райдо'));const current=run('anchorEvent');click('#focusNext');await sleep();const next=run('anchorEvent');assert.notEqual(next,current);assert(run('eventMap.get(anchorEvent).tracks.includes(focusedCharacter)'));click('#focusPrevious');await sleep();assert.equal(run('anchorEvent'),current);
  // A visual screenshot may exist above the title; candidates stay hidden.
  snapshot.media=[{id:'fixture',event_id:current,status:'candidate',src:'media/test.png',alt:'Fixture',locator:'test',source_id:'src-anime-20-23'}];snapshot.revision='test-update';version=snapshot.revision;await run('refreshData()');assert.equal(run('data.revision'),'test-update');assert.equal(run('selected.size'),count);assert.equal(run('focusedCharacter'),'c-raido');assert.equal(doc.querySelectorAll('.event-gallery').length,0);
@@ -28,6 +28,21 @@ async function check(width,height){
  click('#clearFocus');await sleep();assert.equal(run('focusedCharacter'),null);assert(doc.getElementById('focusBar').hidden);
  // First/last event buttons are disabled, and card movement respects selection.
  click('[data-team="team-8"]');await sleep();assert.equal(run('selected.size'),4);run("navigateEvent(TimelineCore.ordered(navigationEvents().filter(e=>e.day!==null))[0].id)");assert(doc.querySelector('[data-step-event="-1"]').disabled);click('[data-step-event="1"]');await sleep();assert(run('relevant(eventMap.get(anchorEvent))'));
+
+ // Chosen lines persist when there are no events in the displayed date range.
+ click('[data-team="team-7"]');run('zoom=16;center=160;render()');assert.equal(canvas.querySelectorAll('.thread').length,4);assert.equal(canvas.querySelectorAll('.node').length,0);run('zoom=32;render()');assert.equal(canvas.querySelectorAll('.thread').length,4);
+ // The classroom and academy exterior are separate scene hubs, including all actions.
+ run('selected=new Set(selectable().map(e=>e.id));zoom=365;center=21.5;render()');
+ assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,1);
+ assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,1);
+ const hub=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-announcements")');assert.equal(hub.group.length,6);assert(hub.cast.includes('c-iruka'));assert(hub.cast.includes('c-naruto'));
+ // Every line physically present in a scene meets its common hub exactly.
+ for(const id of hub.cast){const path=canvas.querySelector('.thread[data-character="'+id+'"]').getAttribute('d');assert(path.includes(hub.x.toFixed(2)+','+hub.y.toFixed(2)),id+' does not reach scene hub');}
+ click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(doc.querySelectorAll('.scene-actions li').length,6);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
+ click('[data-open-scene="sc-y0-0122-academy-announcements"]');assert(!doc.getElementById('sceneDialog').hidden);assert.equal(doc.querySelectorAll('[data-scene-action]').length,6);assert(!doc.getElementById('sceneContent').textContent.includes('Асума, Куренай і Райдо чекають'));
+ click('[data-scene-event="ev-y0-0122-team7-announced"]');await sleep();assert(doc.getElementById('sceneDialog').hidden);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
+ assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Назад');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Далі');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
+ click('[data-open-scene]');click('#closeScene');assert(doc.getElementById('sceneDialog').hidden);
  console.log('PASS',width,height,'all/none, names, focus, event navigation, day backgrounds, age tabs, gallery, live refresh');
 }
 (async()=>{await check(1440,900);await check(375,760);await check(812,375)})().catch(e=>{console.error(e);process.exitCode=1});
