@@ -275,12 +275,18 @@ async function init(){
  $('continuity').addEventListener('change',()=>{continuity=$('continuity').value;focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();});
  $('closeCharacterEvents').addEventListener('click',closeCharacterEvents);
  $('characterEventsDialog').addEventListener('cancel',e=>{e.preventDefault();closeCharacterEvents();});
+ let characterWheelLocked=false;
  $('characterEventsDialog').addEventListener('wheel',e=>{
   const track=$('characterEventsTrack');if($('characterEventsDialog').hidden||!track)return;
   const dominant=Math.abs(e.deltaY)>=Math.abs(e.deltaX)?e.deltaY:e.deltaX;if(!dominant)return;
   e.preventDefault();
-  const unit=e.deltaMode===1?48:e.deltaMode===2?Math.max(320,track.clientWidth*.85):1;
-  track.scrollLeft+=dominant*unit;
+  if(characterWheelLocked)return;
+  const card=track.querySelector('.character-event-card');
+  const style=getComputedStyle(track),gap=parseFloat(style.columnGap||style.gap)||0;
+  const step=(card?.getBoundingClientRect().width||track.clientWidth*.8)+gap;
+  characterWheelLocked=true;
+  track.scrollTo({left:track.scrollLeft+Math.sign(dominant)*step,behavior:'smooth'});
+  setTimeout(()=>{characterWheelLocked=false;},180);
  },{passive:false,capture:true});
  $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дату у форматі 22.01.';$('dateError').hidden=false;return;}$('dateError').hidden=true;zoom=365;center=starts[+m[2]-1]+(+m[1]-1)+.5;closePanels();closeCard();});
  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setZoom(zoomModes[b.dataset.mode])));$('zoomIn').addEventListener('click',()=>setZoom(zoom*2));$('zoomOut').addEventListener('click',()=>setZoom(zoom/2));$('fit').addEventListener('click',()=>setZoom(zoomModes.year));
