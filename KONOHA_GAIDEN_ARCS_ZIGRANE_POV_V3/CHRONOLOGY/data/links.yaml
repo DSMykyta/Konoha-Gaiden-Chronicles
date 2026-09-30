@@ -2089,3 +2089,31 @@ notes:
     basis: "source"
     review: "accepted"
     evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]
+  - id: "lnk-0701-anko-confrontation-before-report"
+    kind: "before"
+    a: "sc-y0-0701-anko-orochimaru"
+    b: "sc-y0-0702-anko-reports-orochimaru"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+  - id: "lnk-0727-summoning-intersects-anko-hiruzen"
+    kind: "intersects"
+    a: "sc-y0-0727-naruto-summoning-stalls"
+    b: "sc-y0-0727-anko-hiruzen-orochimaru-threat"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-anime-54-60"]
+  - id: "lnk-0727-summoning-before-anko-dango-retro"
+    kind: "before"
+    a: "sc-y0-0727-naruto-summoning-stalls"
+    b: "sc-y0-0727-anko-naruto-dango-retro"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-shippuden-170-anko-dango"]
+  - id: "lnk-1010-anko-swamps-before-kurosuki-assignment"
+    kind: "before"
+    a: "sc-y0-1010-anko-returns-swamps"
+    b: "sc-y0-1010-kurosuki-mission-assigned"
+    basis: "source"
+    review: "pending"
+    evidence_ids: ["evd-anime-152-157"]
