@@ -18,7 +18,9 @@ events:
     involvement:
       - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "affected", mode: "remote"}
+      - {entity_id: "c-iruka", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000002", "evd-manga-ch1-prologue"]
 relations: []
 presence:
+  - {id: "pr-0119-hokage-iruka", entity_id: "c-iruka", from: "sc-y0-0119-hokage-response.start", to: "sc-y0-0119-hokage-response.end", basis: "source", evidence_ids: ["evd-manga-ch1-prologue"], review: "accepted"}
   - {id: "pr-0119-hokage-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0119-hokage-response.start", to: "sc-y0-0119-hokage-response.end", basis: "imported", evidence_ids: ["evd-v10-000002"], review: "accepted"}
