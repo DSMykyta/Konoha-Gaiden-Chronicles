@@ -9,7 +9,8 @@
 - `kakashi_gaiden_ARCS_FULL_LOG_FIXED/` — архів зіграних арок, хронологія та джерельні логи.
 - `Iniichi Team/` — кампанія Юґірі Мікати, матеріали команди Іноїчі та профілі.
 - `TEAM9_AGE12_MAXIMUM/` — матеріали Team 9.
-- `Kusagakure_Exam/` і `KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/` — матеріали ліній Кусаґакуре та Ейзана.
+- `KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/` — майстер-збірка всіх рольових ігор репозиторію: Team 9, Kakashi Gaiden, Kitsune Kon, Календар Конохи, команда Іноїчі та іспит Ейзана в Кусаґакуре; також містить спільну хронологію, канонічні рішення й аудити.
+- `Kusagakure_Exam/` — окремі матеріали про іспит у Кусаґакуре.
 - `Kitcune Kon Gaiden/` — матеріали Kitsune Kon.
 - `AI_AGENT_PIPELINE/` — робочий пайплайн агентів.
 
