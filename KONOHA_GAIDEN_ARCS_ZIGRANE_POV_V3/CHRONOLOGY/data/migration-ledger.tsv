@@ -326,7 +326,7 @@ V10-000210	0	03.12	F	superseded	ev-y0-1203-naruto-finds-amnesiac-youth;ev-y0-120
 V10-000211	0	03.12	G	superseded	ev-alt-y0-1203-nd2eu-sasuke-linked-finale	Ninja Destiny 2 EU finale retained only as an alternative, weakly dated game event; exact internal chronology remains unresolved.
 V10-000212	0	04.12	F	superseded	ev-y0-1204-menma-jutsu-links-sound;ev-y0-1204-naruto-neji-tenten-investigate-menma;ev-y0-1204-villagers-recognize-menma	Episode 214 decomposed into the clue linking Menma to the Sound/Rice Fields, the investigation and the villagers identifying him.
 V10-000213	0	05.12	F	superseded	ev-y0-1205-menma-revealed-bandit;ev-y0-1205-menma-sides-with-village;ev-y0-1205-menma-sacrifices-himself;ev-y0-1205-naruto-keeps-menma-ocarina	Episode 215 decomposed into Menma's bandit past reveal, his choice to defend the village, his sacrifice and Naruto retaining the ocarina.
-V10-000214	0	07.12	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
+V10-000214	0	07.12	F	migrated	ev-y0-1207-suna-council-responds-matsuri-kidnapping	Episode 216 opening migrated with Baki and the Suna Council response to Matsuri kidnapping.
 V10-000215	0	08.12	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000216	0	09.12	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
 V10-000217	0	10.12	F	pending		Awaiting scene-level migration; original row preserved verbatim in this staging record and archive snapshot.
