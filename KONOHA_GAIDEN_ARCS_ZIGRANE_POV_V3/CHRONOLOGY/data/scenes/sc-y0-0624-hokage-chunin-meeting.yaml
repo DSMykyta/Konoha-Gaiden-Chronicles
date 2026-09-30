@@ -21,7 +21,18 @@ events:
       - {entity_id: "c-asuma", role: "participant", mode: "physical"}
       - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
       - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-genma", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000039-D", "evd-manga-chunin-intro", "evd-anime-20-23", "evd-project-raido-team9-chunin-nomination"]
+  - id: "ev-y0-0624-genma-asks-about-daimyo"
+    title: "Ґенма уточнює, чи повідомлені даймьо"
+    text: "Під час обговорення майбутнього іспиту Ґенма питає Хірузена, чи повідомлені про нього даймьо інших країн."
+    origin: "M"
+    extent: "interval"
+    display_rank: 150
+    involvement:
+      - {entity_id: "c-genma", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]
   - id: "ev-y0-0624-jonin-nominate-teams"
     legacy_ids: ["V10-000039-E"]
     title: "Какаші, Куренай, Асума та Райдо висувають свої команди"
@@ -34,6 +45,7 @@ events:
       - {entity_id: "c-kurenai", role: "focus", mode: "physical"}
       - {entity_id: "c-asuma", role: "focus", mode: "physical"}
       - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-genma", role: "participant", mode: "physical"}
       - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
     focus_teams: ["team-7", "team-8", "team-9", "team-10"]
     evidence_ids: ["evd-v10-000039-E", "evd-manga-chunin-intro", "evd-anime-20-23", "evd-project-raido-team9-chunin-nomination"]
@@ -51,9 +63,12 @@ events:
       - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
       - {entity_id: "c-asuma", role: "participant", mode: "physical"}
       - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-genma", role: "participant", mode: "physical"}
     evidence_ids: ["evd-v10-000039-E", "evd-manga-chunin-intro", "evd-anime-20-23", "evd-project-raido-team9-chunin-nomination"]
 relations:
-  - {id: "rel-0624-meeting-1", kind: "before", a: "ev-y0-0624-hiruzen-announces-chunin-exam", b: "ev-y0-0624-jonin-nominate-teams", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000039-D", "evd-v10-000039-E"]}
+  - {id: "rel-0624-meeting-1", kind: "before", a: "ev-y0-0624-hiruzen-announces-chunin-exam", b: "ev-y0-0624-genma-asks-about-daimyo", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]}
+  - {id: "rel-0624-meeting-1b", kind: "before", a: "ev-y0-0624-genma-asks-about-daimyo", b: "ev-y0-0624-jonin-nominate-teams", basis: "source", review: "pending", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]}
   - {id: "rel-0624-meeting-2", kind: "before", a: "ev-y0-0624-jonin-nominate-teams", b: "ev-y0-0624-iruka-objects-to-nominations", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000039-E"]}
 presence:
+  - {id: "pr-0624-hokage-chunin-meeting-genma", entity_id: "c-genma", from: "sc-y0-0624-hokage-chunin-meeting.start", to: "sc-y0-0624-hokage-chunin-meeting.end", basis: "source", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"], review: "accepted"}
   - {id: "pr-0624-hokage-chunin-meeting-raido", entity_id: "c-raido", from: "sc-y0-0624-hokage-chunin-meeting.start", to: "sc-y0-0624-hokage-chunin-meeting.end", basis: "project_decision", evidence_ids: ["evd-project-raido-team9-chunin-nomination"], review: "accepted"}
