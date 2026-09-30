@@ -1,0 +1,6 @@
+schema_version: 1
+periods:
+  - id: "part-i"
+    label: "Part I"
+    from_year: 0
+    to_year: 0
