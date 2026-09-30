@@ -8,18 +8,60 @@ state: "active"
 presence_coverage: "complete"
 review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
 events:
-  - id: "ev-y0-0118-naruto-transformation"
-    legacy_ids: ["V10-000001"]
-    title: "Наруто використовує Sexy Jutsu на уроці"
-    text: "Після повернення Наруто до класу Ірука змушує учнів повторити Техніку Перетворення. Замість звичайного перетворення Наруто використовує Sexy Jutsu; Ірука реагує носовою кровотечею й сердито його відчитує."
+  - id: "ev-y0-0118-class-repeats-transformation"
+    title: "Ірука змушує клас повторити Техніку Перетворення"
+    text: "Після повернення Наруто до класу Ірука як покарання змушує весь клас ще раз виконати Техніку Перетворення."
     origin: "M"
     extent: "interval"
     display_rank: 100
     involvement:
       - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
+      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
+      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
+      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
+      - {entity_id: "c-shino", role: "participant", mode: "physical"}
+      - {entity_id: "c-ino", role: "participant", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-choji", role: "participant", mode: "physical"}
+      - {entity_id: "c-kita", role: "participant", mode: "physical"}
+      - {entity_id: "c-ren", role: "participant", mode: "physical"}
+      - {entity_id: "c-sora", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-manga-ch1-prologue", "evd-project-0118-class-cast"]
+
+  - id: "ev-y0-0118-naruto-transformation"
+    legacy_ids: ["V10-000001"]
+    title: "Наруто використовує Sexy Jutsu на уроці"
+    text: "Коли настає черга Наруто виконувати Техніку Перетворення, замість звичайного перетворення він використовує Sexy Jutsu; Ірука реагує носовою кровотечею й сердито його відчитує."
+    origin: "M"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "focus", mode: "physical"}
     evidence_ids: ["evd-v10-000001", "evd-manga-ch1-prologue"]
-relations: []
+
+relations:
+  - id: "rel-0118-class-repeat-before-sexy-jutsu"
+    kind: "before"
+    a: "ev-y0-0118-class-repeats-transformation"
+    b: "ev-y0-0118-naruto-transformation"
+    basis: "source"
+    review: "accepted"
+    evidence_ids: ["evd-manga-ch1-prologue"]
+
 presence:
   - {id: "pr-0118-talk-naruto", entity_id: "c-naruto", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "source", evidence_ids: ["evd-v10-000001"], review: "accepted"}
+  - {id: "pr-0118-talk-sasuke", entity_id: "c-sasuke", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-sakura", entity_id: "c-sakura", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-hinata", entity_id: "c-hinata", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-kiba", entity_id: "c-kiba", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-shino", entity_id: "c-shino", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-ino", entity_id: "c-ino", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-shikamaru", entity_id: "c-shikamaru", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-choji", entity_id: "c-choji", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-kita", entity_id: "c-kita", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-ren", entity_id: "c-ren", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
+  - {id: "pr-0118-talk-sora", entity_id: "c-sora", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "project_decision", evidence_ids: ["evd-project-0118-class-cast"], review: "accepted"}
   - {id: "pr-0118-talk-iruka", entity_id: "c-iruka", from: "sc-y0-0118-iruka-naruto.start", to: "sc-y0-0118-iruka-naruto.end", basis: "source", evidence_ids: ["evd-v10-000001"], review: "accepted"}
