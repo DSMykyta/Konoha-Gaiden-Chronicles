@@ -1373,12 +1373,12 @@ button:disabled:hover {
   padding:0;
   border:0;
   border-radius:0;
-  background:#f7f9fc;
+  background:transparent;
   color:var(--text);
   overflow:hidden
 }
 .character-events-dialog::backdrop {
-  background:#24324766;
+  background:#24324755;
   backdrop-filter:blur(3px)
 }
 .character-events-heading {
@@ -1388,8 +1388,8 @@ button:disabled:hover {
   justify-content:space-between;
   gap:20px;
   padding:16px 28px;
-  border-bottom:1px solid var(--border);
-  background:white
+  border-bottom:0;
+  background:transparent
 }
 .character-events-heading small {
   font-size:11px;
