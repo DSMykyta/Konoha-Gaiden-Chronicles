@@ -876,11 +876,18 @@ button:disabled:hover {
   font-size:14px;
   margin:0 0 8px
 }
+.profile-actions {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap
+}
 .profile-follow {
   background:#edf3fc;
-  padding:9px 14px;
-  font-size:12px;
-  min-height:44px
+  padding:6px 10px;
+  font-size:11px;
+  min-height:32px;
+  line-height:1.25
 }
 #characterList {
   max-height:min(390px,42dvh)
@@ -1358,9 +1365,8 @@ button:disabled:hover {
 }
 
 .profile-timeline-button {
-  display:block;
-  width:100%;
-  margin:4px 0 12px
+  width:auto;
+  margin:0
 }
 .character-events-dialog {
   position:fixed;
