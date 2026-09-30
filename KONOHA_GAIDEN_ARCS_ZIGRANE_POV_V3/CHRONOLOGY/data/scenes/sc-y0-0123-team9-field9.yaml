@@ -1,6 +1,7 @@
 schema_version: 1
 id: "sc-y0-0123-team9-field9"
 continuity_id: "main"
+episode_id: "ep-y0-team-examinations"
 title: "Бойова оцінка Команди 9 на Полі 9"
 location_id: "loc-training-ground-9"
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}
