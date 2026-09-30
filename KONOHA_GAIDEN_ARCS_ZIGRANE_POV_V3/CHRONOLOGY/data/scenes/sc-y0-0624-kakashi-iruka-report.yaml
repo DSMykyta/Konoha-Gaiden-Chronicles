@@ -1,0 +1,27 @@
+schema_version: 1
+id: "sc-y0-0624-kakashi-iruka-report"
+continuity_id: "main"
+title: "Ірука розпитує Какаші про Команду 7"
+location_id: null
+placement: {anchor_id: "ta-y0-0624", day_offset: 0}
+state: "active"
+presence_coverage: "complete"
+review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0624-iruka-asks-kakashi-about-naruto"
+    title: "Какаші звітує Іруці про розвиток Наруто"
+    text: "Після чергової місії Какаші передає звіт. Ірука, який давно не бачив Наруто після повернення Команди 7, питає, чи той ладнає з товаришами. Какаші пояснює, що суперництво Наруто із Саске створює напругу, але водночас помітно прискорює розвиток здібностей Наруто. Відповідь трохи заспокоює Іруку, хоча він і далі хвилюється за колишнього учня."
+    origin: "M"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "subject", mode: "remote"}
+      - {entity_id: "c-sasuke", role: "subject", mode: "remote"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"]
+relations: []
+presence:
+  - {id: "pr-0624-kakashi-iruka-report-iruka", entity_id: "c-iruka", from: "sc-y0-0624-kakashi-iruka-report.start", to: "sc-y0-0624-kakashi-iruka-report.end", basis: "source", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"], review: "accepted"}
+  - {id: "pr-0624-kakashi-iruka-report-kakashi", entity_id: "c-kakashi", from: "sc-y0-0624-kakashi-iruka-report.start", to: "sc-y0-0624-kakashi-iruka-report.end", basis: "source", evidence_ids: ["evd-manga-chunin-intro", "evd-anime-20-23"], review: "accepted"}
