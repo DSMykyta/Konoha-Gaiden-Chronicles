@@ -63,11 +63,14 @@ checked_anime_episodes:
 - 58
 - 59
 - 60
+- 61
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 61
+next_anime_episode: 62
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-kiba-checks-hinata-coughing-blood
+- ev-y0-0801-kabuto-kills-anbu-for-disguise
 - ev-y0-0801-anbu-search-sasuke
 - ev-y0-0801-kazekage-arrives-finals
 - ev-y0-0801-konohamaru-shortcut-bull-stampede
@@ -130,6 +133,8 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-hinata-unwell-in-stands
+- sc-y0-0801-kabuto-steals-anbu-disguise
 - sc-y0-0801-anbu-search-sasuke
 - sc-y0-0801-kazekage-arrives-finals
 - sc-y0-0801-naruto-shortcut-to-finals
@@ -1137,6 +1142,22 @@ episode_audits:
   - Expanded the opening phase of the complete Naruto–Neji fight without creating attack-by-attack moments. Existing
     later battle outcome retained for separate episode 61–62 verification. Added the false Kazekage arrival and ANBU
     search for absent Sasuke. Project Raidō guard presence and Hanabi/Hiashi observation scene retained.
+- episode: 61
+  baseline_revision: c6823c22214c107e57d4a1d94aa091f50cd13ff5
+  added_moment_ids:
+  - ev-y0-0801-kabuto-kills-anbu-for-disguise
+  - ev-y0-0801-kiba-checks-hinata-coughing-blood
+  added_scene_ids:
+  - sc-y0-0801-kabuto-steals-anbu-disguise
+  - sc-y0-0801-hinata-unwell-in-stands
+  updated_moment_ids:
+  - ev-y0-0801-naruto-defeats-neji
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Expanded the middle of the complete Naruto–Neji fight with clone bait, Rotation, Sixty-Four Palms and the branch-family
+    confession. Added Kabuto’s ANBU murder/disguise and Hinata’s physical deterioration observed by Kiba. Iruka’s worry
+    is a state rather than a separate action, so no idle-thought moment added. Later battle outcome remains retained
+    for episode 62 verification.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

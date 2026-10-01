@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0801-hinata-unwell-in-stands
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Хінаті стає зле на трибуні
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-kiba-checks-hinata-coughing-blood
+  title: Кіба помічає, що Хіната кашляє кров’ю
+  text: Під час бою Наруто з Неджі Хіната кашляє кров’ю; Кіба помічає це й запитує про її стан.
+  involvement:
+  - entity_id: c-hinata
+    role: affected
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep61-audit
+relations: []
+presence:
+- id: pr-audit-61-ev-y0-0801-kiba-checks-hinata-coughing-blood-c-hinata
+  entity_id: c-hinata
+  from: ev-y0-0801-kiba-checks-hinata-coughing-blood.start
+  to: ev-y0-0801-kiba-checks-hinata-coughing-blood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep61-audit
+- id: pr-audit-61-ev-y0-0801-kiba-checks-hinata-coughing-blood-c-kiba
+  entity_id: c-kiba
+  from: ev-y0-0801-kiba-checks-hinata-coughing-blood.start
+  to: ev-y0-0801-kiba-checks-hinata-coughing-blood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep61-audit

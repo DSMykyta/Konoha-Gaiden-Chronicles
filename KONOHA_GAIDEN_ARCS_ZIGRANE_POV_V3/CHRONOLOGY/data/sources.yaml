@@ -1111,6 +1111,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep61-audit
+    type: reference
+    title: 'Narutopedia — Ultimate Defence: Zero Blind Spot!'
+    url: https://naruto.fandom.com/wiki/Ultimate_Defence%3A_Zero_Blind_Spot%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4017,5 +4024,11 @@ evidence:
   - id: evd-narutopedia-ep60-audit
     source_id: src-narutopedia-ep60-audit
     locator: Episode 60, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep61-audit
+    source_id: src-narutopedia-ep61-audit
+    locator: Episode 61, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

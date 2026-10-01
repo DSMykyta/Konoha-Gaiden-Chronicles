@@ -1,0 +1,41 @@
+schema_version: 1
+id: sc-y0-0801-kabuto-steals-anbu-disguise
+episode_id: ep-y0-invasion-conspiracy
+display_rank: 100
+continuity_id: main
+title: Кабуто здобуває маскування Анбу
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-kabuto-kills-anbu-for-disguise
+  title: Кабуто вбиває Анбу для перевтілення
+  text: Поза ареною Кабуто вбиває одного Анбу й використовує його особу як маскування.
+  involvement:
+  - entity_id: c-kabuto
+    role: focus
+    mode: physical
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep61-audit
+relations: []
+presence:
+- id: pr-audit-61-ev-y0-0801-kabuto-kills-anbu-for-disguise-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0801-kabuto-kills-anbu-for-disguise.start
+  to: ev-y0-0801-kabuto-kills-anbu-for-disguise.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep61-audit

@@ -68,7 +68,10 @@ events:
   title: Наруто перемагає Неджі
   text: Наруто починає бій кунаями й прямою атакою; Неджі ухиляється та відповідає М’яким Кулаком. Він розбиває групи
     тіньових клонів і твердить, що доля визначається народженням. Наруто відмовляється здаватися та створює масових клонів.
-    Згодом Наруто відновлює доступ до чакри Дев’ятихвостого, використовує атаку з-під землі й перемагає Неджі.
+    Наруто відтягує одного клона, обманюючи Неджі щодо справжнього тіла. Неджі відбиває атаки Обертанням і закриває чакрові
+    точки Шістдесятьма Чотирма Долонями. Згадавши наполегливість Лі й Хінати, Наруто підводиться. Неджі показує прокляту
+    печатку та пояснює підлеглість побічної гілки Хюґа й своє бачення смерті батька. Згодом Наруто відновлює доступ до
+    чакри Дев’ятихвостого, використовує атаку з-під землі й перемагає Неджі.
   origin: M
   extent: interval
   display_rank: 100
@@ -82,11 +85,24 @@ events:
   - entity_id: c-genma
     role: referee
     mode: physical
+  - entity_id: c-hiashi
+    role: observer
+    mode: physical
+  - entity_id: c-hinata
+    role: observer
+    mode: physical
+  - entity_id: c-tenten
+    role: observer
+    mode: physical
+  - entity_id: c-kiba
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000064
   - evd-manga-finals-konoha-crush
   - evd-anime-finals-konoha-crush
   - evd-narutopedia-ep60-audit
+  - evd-narutopedia-ep61-audit
 - id: ev-y0-0801-genma-talks-to-neji
   title: Ґенма говорить із Неджі після його поразки
   text: Після перемоги Наруто Ґенма говорить Неджі, що навіть птах у клітці може колись спробувати вибратися на волю.
@@ -258,3 +274,35 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep60-audit
+- id: pr-audit-61-finals-c-hiashi
+  entity_id: c-hiashi
+  from: ev-y0-0801-naruto-defeats-neji.start
+  to: ev-y0-0801-naruto-defeats-neji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep61-audit
+- id: pr-audit-61-finals-c-hinata
+  entity_id: c-hinata
+  from: ev-y0-0801-naruto-defeats-neji.start
+  to: ev-y0-0801-naruto-defeats-neji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep61-audit
+- id: pr-audit-61-finals-c-tenten
+  entity_id: c-tenten
+  from: ev-y0-0801-naruto-defeats-neji.start
+  to: ev-y0-0801-naruto-defeats-neji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep61-audit
+- id: pr-audit-61-finals-c-kiba
+  entity_id: c-kiba
+  from: ev-y0-0801-naruto-defeats-neji.start
+  to: ev-y0-0801-naruto-defeats-neji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep61-audit
