@@ -6,13 +6,66 @@
   const baseBindSceneActionPreviews = bindSceneActionPreviews;
   const baseShowSceneCard = showSceneCard;
   const baseRenderProfile = renderProfile;
+  const baseShowEventPreview = showEventPreview;
   const cascade = [];
   const closeTimers = [];
 
   const style = document.createElement('style');
   style.textContent = `
-    .hierarchy-preview-content { padding: 22px; }
-    .hierarchy-preview .preview-top { min-height: 34px; }
+    /* One panel surface for ARC / EPISODE / SCENE / MOMENT. */
+    .event-card,
+    .event-preview {
+      width: min(480px, calc(100vw - 24px)) !important;
+      max-width: calc(100vw - 24px) !important;
+      border: 1px solid var(--glass-border) !important;
+      border-radius: 18px !important;
+      background: transparent !important;
+      -webkit-backdrop-filter: blur(12px) saturate(1) !important;
+      backdrop-filter: blur(12px) saturate(1) !important;
+      color: var(--text);
+      box-shadow: var(--shadow-lg) !important;
+    }
+    #cardHeader,
+    #cardScroll,
+    #eventPreviewContent,
+    .hierarchy-preview-content {
+      background: transparent !important;
+    }
+    #cardHeader {
+      padding: 0 !important;
+      border-bottom: 0 !important;
+    }
+    #cardScroll { padding-top: 20px; }
+    #eventPreviewContent,
+    .hierarchy-preview-content {
+      padding: 0 22px 22px !important;
+    }
+    .story-panel-header,
+    .card-top,
+    .preview-top {
+      position: relative !important;
+      top: auto !important;
+      z-index: 1 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 8px !important;
+      min-height: 49px !important;
+      margin: 0 !important;
+      padding: 8px 14px !important;
+      border-bottom: 1px solid #d9dfe799 !important;
+      background: transparent !important;
+    }
+    #eventPreviewContent > :is(.story-panel-header,.preview-top),
+    .hierarchy-preview-content > :is(.story-panel-header,.preview-top) {
+      margin: 0 -22px 18px !important;
+    }
+    .story-panel-header .card-meta-line,
+    .card-top .card-meta-line,
+    .preview-top .card-meta-line {
+      min-height: 32px;
+      align-items: center;
+    }
 
     .story-children,
     .scene-actions {
@@ -110,7 +163,10 @@
     .hierarchy-preview .scene-actions li { cursor: pointer; }
 
     @media (max-width: 760px) {
-      .hierarchy-preview-content { padding: 18px; }
+      #eventPreviewContent,
+      .hierarchy-preview-content { padding: 0 18px 18px !important; }
+      #eventPreviewContent > :is(.story-panel-header,.preview-top),
+      .hierarchy-preview-content > :is(.story-panel-header,.preview-top) { margin: 0 -18px 18px !important; }
       .story-children .result,
       .scene-actions li {
         grid-template-columns: 20px minmax(0,1fr);
@@ -123,6 +179,11 @@
     }
   `;
   document.head.append(style);
+
+  function unifyPanelSurface(root, surface = root?.closest?.('.event-card,.event-preview')) {
+    if (surface) surface.classList.add('story-panel');
+    root?.querySelectorAll?.('.card-top,.preview-top').forEach(header => header.classList.add('story-panel-header'));
+  }
 
   if (typeof StoryClouds !== 'undefined') {
     const baseCloudGroups = StoryClouds.groups.bind(StoryClouds);
@@ -192,10 +253,8 @@
     glass.setAttribute('aria-hidden', 'true');
     container.prepend(glass);
     const moveTo = row => {
-      const top = row.offsetTop;
-      const height = row.offsetHeight;
-      glass.style.transform = `translate3d(0,${top}px,0)`;
-      glass.style.height = `${height}px`;
+      glass.style.transform = `translate3d(0,${row.offsetTop}px,0)`;
+      glass.style.height = `${row.offsetHeight}px`;
       glass.style.opacity = '1';
     };
     for (const row of hierarchyRows(container)) {
@@ -206,7 +265,8 @@
     container.addEventListener('focusout', event => { if (!container.contains(event.relatedTarget)) glass.style.opacity = '0'; });
   }
 
-  function prepareHierarchyLists(root) {
+  function prepareHierarchyLists(root, surface) {
+    unifyPanelSurface(root, surface);
     root?.querySelectorAll?.('.story-children .result small, .scene-actions li small, .scene-actions li .event-gallery').forEach(node => node.remove());
     root?.querySelectorAll?.('.story-children, .scene-actions').forEach(bindMovingHighlight);
   }
@@ -241,8 +301,7 @@
   }
 
   function panelWidth(depth, viewportWidth) {
-    const preferred = [360, 340, 320][depth] || 300;
-    return Math.min(preferred, Math.max(260, viewportWidth - 24));
+    return Math.min(480, Math.max(260, viewportWidth - 24));
   }
 
   function positionPanel(panel, parentSurface, depth) {
@@ -275,7 +334,7 @@
     const sceneRows = scenes.map(scene => `<button class="result" data-story-scene="${esc(scene.id)}"><strong>${esc(scene.title)}</strong></button>`).join('');
     return {
       label: 'Опис епізоду',
-      html: `<div class="preview-top">${cardMetaLine('episode', range.text, range.hasYear)}</div><h2>${esc(episode.title)}</h2>${episode.description ? `<p class="event-text">${esc(episode.description)}</p>` : ''}<p class="scene-location">${countLabel(scenes.length, 'сцена', 'сцени', 'сцен')} · ${actionCount(moments.length)}</p>${sceneRows ? `<div class="story-children">${sceneRows}</div>` : ''}`
+      html: `<div class="story-panel-header">${cardMetaLine('episode', range.text, range.hasYear)}</div><h2>${esc(episode.title)}</h2>${episode.description ? `<p class="event-text">${esc(episode.description)}</p>` : ''}<p class="scene-location">${countLabel(scenes.length, 'сцена', 'сцени', 'сцен')} · ${actionCount(moments.length)}</p>${sceneRows ? `<div class="story-children">${sceneRows}</div>` : ''}`
     };
   }
 
@@ -286,14 +345,14 @@
     const actions = group.map(event => `<li data-scene-preview="${esc(event.id)}"><div><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(event.title)}">${esc(event.title)}</button></div></li>`).join('');
     return {
       label: 'Опис сцени',
-      html: `<div class="preview-top">${cardMetaLine('scene', range.text, range.hasYear)}</div><h2>${esc(scene.title)}</h2><button class="scene-context" data-open-scene="${esc(scene.id)}" title="Читати сцену цілком"><span>Сцена · ${actionCount(group.length)}</span>${esc(name(scene.location_id))} <span aria-hidden="true">↗</span></button>${cast.length ? `<div class="people scene-people">${cast.map(entityId => `<button class="person" data-event-focus-character="${esc(entityId)}" aria-label="Зосередитися на лінії ${esc(name(entityId))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(entityId)}"></span>${esc(name(entityId))}</button>`).join('')}</div>` : ''}${actions ? `<ol class="scene-actions">${actions}</ol>` : ''}`
+      html: `<div class="story-panel-header">${cardMetaLine('scene', range.text, range.hasYear)}</div><h2>${esc(scene.title)}</h2><button class="scene-context" data-open-scene="${esc(scene.id)}" title="Читати сцену цілком"><span>Сцена · ${actionCount(group.length)}</span>${esc(name(scene.location_id))} <span aria-hidden="true">↗</span></button>${cast.length ? `<div class="people scene-people">${cast.map(entityId => `<button class="person" data-event-focus-character="${esc(entityId)}" aria-label="Зосередитися на лінії ${esc(name(entityId))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(entityId)}"></span>${esc(name(entityId))}</button>`).join('')}</div>` : ''}${actions ? `<ol class="scene-actions">${actions}</ol>` : ''}`
     };
   }
 
   function momentPreviewHtml(id) {
     const event = eventMap.get(id);
     if (!event) return null;
-    return { label: 'Опис моменту', html: `<div class="preview-top">${cardMetaLine('moment', event.day === null ? 'Без установленої дати' : dateText(event.day, true), event.day !== null)}</div>${eventDetailsHtml(event, 'data-hierarchy-event', false)}` };
+    return { label: 'Опис моменту', html: `<div class="story-panel-header">${cardMetaLine('moment', event.day === null ? 'Без установленої дати' : dateText(event.day, true), event.day !== null)}</div>${eventDetailsHtml(event, 'data-hierarchy-event', false)}` };
   }
 
   function previewHtml(kind, id) {
@@ -347,7 +406,7 @@
     closeFrom(depth);
     trigger.classList.add('is-preview-active');
     const panel = document.createElement('aside');
-    panel.className = 'event-preview hierarchy-preview is-visible';
+    panel.className = 'event-preview hierarchy-preview story-panel is-visible';
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-label', rendered.label);
     panel.dataset.hierarchyDepth = String(depth);
@@ -358,7 +417,7 @@
     document.body.append(panel);
     cascade[depth] = { panel, trigger, parentSurface, kind, id, pinned };
     positionPanel(panel, parentSurface, depth);
-    prepareHierarchyLists(content);
+    prepareHierarchyLists(content, panel);
     bindPanelActions(content, depth);
     bindChildTriggers(content, panel, depth, kind);
     panel.addEventListener('pointerenter', clearTimers);
@@ -369,18 +428,28 @@
   function bindRootStoryPreviews() {
     const card = $('eventCard');
     if (card.hidden) return;
-    prepareHierarchyLists($('cardContent'));
+    prepareHierarchyLists($('cardContent'), card);
     bindStoryTriggers($('cardContent'), card, 0);
   }
 
   showSceneCard = function showSceneCardWithUnifiedRows(scene, group) {
     baseShowSceneCard(scene, group);
-    prepareHierarchyLists($('cardContent'));
+    prepareHierarchyLists($('cardContent'), $('eventCard'));
   };
 
   bindSceneActionPreviews = function bindSceneActionHierarchyPreviews() {
     baseBindSceneActionPreviews();
-    prepareHierarchyLists($('cardContent'));
+    prepareHierarchyLists($('cardContent'), $('eventCard'));
+  };
+
+  showEventPreview = function showUnifiedEventPreview(...args) {
+    baseShowEventPreview(...args);
+    const preview = $('eventPreview');
+    const content = $('eventPreviewContent');
+    if (preview && content) {
+      preview.classList.add('story-panel');
+      unifyPanelSurface(content, preview);
+    }
   };
 
   bindCard = function bindCardWithHierarchyPreview() {
