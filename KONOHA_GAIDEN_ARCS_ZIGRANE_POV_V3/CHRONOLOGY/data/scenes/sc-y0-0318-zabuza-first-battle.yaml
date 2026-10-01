@@ -237,11 +237,104 @@ events:
   evidence_ids:
   - evd-v10-000027
   - evd-manga-land-waves
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-kakashi-orders-retreat
+  display_rank: 310
+  title: Какаші наказує генінам тікати
+  text: Полонений Какаші наказує учням тікати; водяний клон Забузи загрожує групі Тадзуни.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-naruto-reclaims-headband
+  display_rank: 320
+  title: Наруто повертає свою пов’язку
+  text: Біль у руці нагадує Наруто про клятву. Він вирішує битися й забирає свою пов’язку з-під ноги Забузи.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-naruto-clones-distract-zabuza
+  display_rank: 330
+  title: Клони Наруто відволікають Забузу
+  text: Наруто повідомляє Саске про план і оточує водяного клона тіньовими клонами. Забуза розсіює більшість одним помахом
+    меча.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-sasuke-throws-shadow-shuriken
+  display_rank: 340
+  title: Саске кидає прихований другий сюрикен
+  text: 'Наруто передає Саске сюрикен Фума. Саске кидає два сюрикени: Забуза ловить перший і ухиляється від другого.'
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
 - id: ev-y0-0318-naruto-sasuke-free-kakashi
   legacy_ids:
   - V10-000027
   title: Наруто й Саске звільняють Какаші
-  text: Наруто й Саске виконують спільний трюк із сюрикенами, змушуючи Забузу відпустити Водяну В’язницю.
+  text: Другий сюрикен обертається на Наруто позаду Забузи. Наруто кидає кунай, змушуючи Забузу прибрати руку з Водяної В’язниці
+    й звільнити Какаші.
   origin: M
   extent: interval
   display_rank: 400
@@ -263,6 +356,7 @@ events:
   evidence_ids:
   - evd-v10-000027
   - evd-manga-land-waves
+  - evd-narutopedia-ep8-audit
 - id: ev-y0-0318-kakashi-defeats-zabuza
   legacy_ids:
   - V10-000027
@@ -436,6 +530,46 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep7-audit
+- id: rel-audit-8-y0-0318-kakashi-water-prison-before-y0-0318-kakashi-orders-retreat
+  kind: before
+  a: ev-y0-0318-kakashi-water-prison
+  b: ev-y0-0318-kakashi-orders-retreat
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
+- id: rel-audit-8-y0-0318-kakashi-orders-retreat-before-y0-0318-naruto-reclaims-headband
+  kind: before
+  a: ev-y0-0318-kakashi-orders-retreat
+  b: ev-y0-0318-naruto-reclaims-headband
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
+- id: rel-audit-8-y0-0318-naruto-reclaims-headband-before-y0-0318-naruto-clones-distract-zabuza
+  kind: before
+  a: ev-y0-0318-naruto-reclaims-headband
+  b: ev-y0-0318-naruto-clones-distract-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
+- id: rel-audit-8-y0-0318-naruto-clones-distract-zabuza-before-y0-0318-sasuke-throws-shadow-shuriken
+  kind: before
+  a: ev-y0-0318-naruto-clones-distract-zabuza
+  b: ev-y0-0318-sasuke-throws-shadow-shuriken
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
+- id: rel-audit-8-y0-0318-sasuke-throws-shadow-shuriken-before-y0-0318-naruto-sasuke-free-kakashi
+  kind: before
+  a: ev-y0-0318-sasuke-throws-shadow-shuriken
+  b: ev-y0-0318-naruto-sasuke-free-kakashi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep8-audit
 presence:
 - id: pr-0318-kakashi
   entity_id: c-kakashi
