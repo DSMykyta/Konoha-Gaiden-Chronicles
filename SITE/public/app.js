@@ -1,5 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+const UI_VERSION='20261001-glass-1';
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
 const lengths=[31,28,31,30,31,30,31,31,30,31,30,31],starts=lengths.map((_,i)=>lengths.slice(0,i).reduce((a,b)=>a+b,0));
 const palette=['#3f80cf','#cb833e','#7462bc','#ba6487','#358b96','#7d9953','#b89442','#6687b5','#ab7cba','#67877d','#b97a73','#8b91a1'];
@@ -171,7 +172,7 @@ function makeTimeScale(lo,hi,pad,plot,dated){
 }
 function svg(tag,attrs,parent=$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
 function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);}
-let hoverCloseTimer=null,hoverCard=false,pinnedNodeId=null,cardReturnFocus=null;
+let hoverCloseTimer=null,hoverCard=false,pinnedNodeId=null,cardReturnFocus=null,readingScrollTop=null,graphClouds=[],cloudRenderer=null;
 let previewEventId=null,previewPinned=false,previewCloseTimer=null;
 function cancelHoverClose(){clearTimeout(hoverCloseTimer);hoverCloseTimer=null;}
 function deferHoverClose(){cancelHoverClose();if(hoverCard&&!pinnedNodeId)hoverCloseTimer=setTimeout(()=>{if(hoverCard&&!pinnedNodeId)closeCard();},320);}
@@ -186,11 +187,22 @@ function openNode(p,pin=false){
   // use explicit activation because the reading surface docks over the graph.
   if(pinnedNodeId||w<760||h<520||p.y-canvas.scrollTop-18-headerBottom-12<180)return;
  }
- if(pin){pinnedNodeId=p.id;rememberCardFocus();}
- if(focusId===p.id&&!$('eventCard').hidden){hoverCard=!pin;paintNodes();if(pin)focusReadingCard();return;}
+ if(pin){if(readingScrollTop===null)readingScrollTop=$('canvas').scrollTop;rememberCardFocus();pinnedNodeId=p.id;}
+ if(focusId===p.id&&!$('eventCard').hidden){hoverCard=!pin;if(pin){render();revealReadingNode();focusReadingCard();}paintNodes();return;}
  closePanels();hoverCard=!pin;focusId=p.id;anchorDay=p.day;anchorEvent=p.kind==='moment'?p.group[0]?.id:null;
  if(p.kind==='moment')showEvent(p.group[0]);else if(p.kind==='scene')showSceneCard(p.scene,p.group);else showStoryGroup(p);
- positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();if(pin)focusReadingCard();
+ $('eventCard').hidden=false;if(pin){render();revealReadingNode();}else positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();if(pin)focusReadingCard();
+}
+function headerBottom(){return document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||(($('canvas').clientWidth||1000)<480?144:($('canvas').clientWidth||1000)<=1240?118:64);}
+function readingBounds(){const viewport=$('canvas').clientHeight||700,top=headerBottom()+(focusedCharacter?96:44);return {top,height:Math.max(120,Math.min(580,viewport-top-100))};}
+function showCloudCaptions(){
+ const canvas=$('canvas'),reading=!!pinnedNodeId&&!$('eventCard').hidden,bounds=readingBounds(),top=canvas.scrollTop+(reading?bounds.top+bounds.height+12:headerBottom()+36),bottom=canvas.scrollTop+(canvas.clientHeight||700)-52;
+ document.querySelectorAll('.cloud-label').forEach(label=>{const y=Number(label.dataset.captionY),height=Number(label.dataset.captionHeight);label.style.visibility=y<top||y+height>bottom?'hidden':'visible';});
+}
+function revealReadingNode(){const p=graphNodes.find(n=>n.id===focusId);if(!p)return;const canvas=$('canvas'),target=(canvas.clientHeight||700)-64;canvas.scrollTop=Math.max(0,p.y-target);positionCard(p);}
+function setCardContent(html){
+ $('eventCard').hidden=false;const container=$('cardContent');container.innerHTML=html;
+ const top=container.querySelector('.card-top'),header=document.createElement('div'),scroll=document.createElement('div');header.id='cardHeader';scroll.id='cardScroll';if(top)header.append(top);while(container.firstChild)scroll.append(container.firstChild);container.replaceChildren(header,scroll);
 }
 function rememberCardFocus(){
  const active=document.activeElement;
@@ -201,12 +213,14 @@ function focusReadingCard(){
  if(document.documentElement.dataset.input==='keyboard')$('cardContent').querySelector('.card-top button:not(:disabled)')?.focus();
 }
 function closeCard(restoreFocus=false){
+ const wasReading=readingScrollTop!==null;
  cancelHoverClose();closeEventPreview(true);hoverCard=false;pinnedNodeId=null;focusId=null;anchorDay=null;anchorEvent=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;paintNodes();updateFocusBar();
  if(restoreFocus){
   const id=cardReturnFocus?.dataset?.event,target=id?[...document.querySelectorAll('.node')].find(n=>n.dataset.event===id):cardReturnFocus;
   if(target?.isConnected)target.focus();
  }
  cardReturnFocus=null;
+ if(wasReading){$('canvas').scrollTop=readingScrollTop;readingScrollTop=null;schedule();}
 }
 function setZoom(value,pivot=center){const old=zoom;zoom=clamp(value,1,730);center=pivot+(center-pivot)*old/zoom;center=clampAxisCenter(center);$('hoverTip').hidden=true;schedule();}
 function closePanels(except){
@@ -220,7 +234,7 @@ function togglePanel(id){
  const panel=$(id),opening=panel.hidden;closePanels(id);
  if(!opening){closePanels();return;}
  panel.hidden=false;$(id.replace('Panel','Button')).setAttribute('aria-expanded','true');
- closeEventPreview(true);pinnedNodeId=null;hoverCard=false;focusId=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;paintNodes();
+ closeCard();
  if(panel.showPopover)panel.showPopover();
  else panel.querySelector('input')?.focus();
 }
@@ -244,6 +258,7 @@ function smoothPath(points){
 function render(){
  if(!data)return;
  const canvas=$('canvas'),timeline=$('timeline'),axis=$('timeAxis'),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
+ const chrome=headerBottom();document.documentElement.style.setProperty('--legend-top',(chrome+4)+'px');document.documentElement.style.setProperty('--panel-top',(chrome+12)+'px');document.documentElement.style.setProperty('--focus-top',(chrome+44)+'px');
  const allEvents=datedEvents(),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  let h=viewport;
  const n=ids.length,overview=zoom<3,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),level=semanticLevel();
@@ -262,15 +277,24 @@ function render(){
   layoutCache.set(layoutKey,new Map(separated.map(p=>[p.id,p.y])));
  }
  const nodeY=layoutCache.get(layoutKey);
- const globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
+ let globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
  const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));});
- h=Math.max(viewport,...graphNodes.map(p=>p.y+156));
+ const reading=!!pinnedNodeId&&!$('eventCard').hidden,bounds=readingBounds(),readingTop=bounds.top+bounds.height+36;
+ if(reading&&graphNodes.length){
+  const offset=Math.max(0,readingTop-Math.min(...graphNodes.map(p=>p.y)));
+  globalNodes=globalNodes.map(p=>({...p,y:p.y+offset}));graphNodes=graphNodes.map(p=>({...p,y:p.y+offset}));
+ }
+ graphClouds=StoryClouds.groups(graphNodes,level,sceneMap,episodeMap);
+ const cloudLabels=StoryClouds.labels(graphClouds,graphNodes,w,chrome+38);
+ h=Math.max(viewport,...graphNodes.map(p=>p.y+156),...cloudLabels.map(label=>label.y+label.height+60));
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
  timeline.replaceChildren();axis.replaceChildren();$('linesCount').textContent=`Лінії · ${selected.size}`;
  // Alternating calendar days, including empty days. Long empty spans are omitted
  // after retaining one calendar week on each side of the nearest events.
  if(timeScale.dayPx>=2)for(let day=Math.floor(loDay);day<Math.ceil(hiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=lo&&a<hi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
+ if(!cloudRenderer)cloudRenderer=StoryClouds.create($('storyClouds'));
+ cloudRenderer.update({groups:graphClouds,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,paused:reading});
  const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(centerDay,true)} · Рік 0`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))} · Рік 0`;$('periodLabel').textContent=label;
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
  document.querySelectorAll('[data-level]').forEach(e=>e.setAttribute('aria-current',String(e.dataset.level===level)));
@@ -308,6 +332,15 @@ function render(){
   svg('line',{x1,x2:x1,y1:0,y2:h,class:'time-break-edge'},g);
   svg('line',{x1:x2,x2,y1:0,y2:h,class:'time-break-edge'},g);
  });
+ cloudLabels.forEach(label=>{
+  const g=svg('g',{class:'cloud-label','data-cloud-kind':label.kind,'data-cloud-id':label.id,'data-cloud-parent':label.parentId||'','data-caption-y':label.y,'data-caption-height':label.height,'aria-hidden':'true'});
+  const lx=clamp(label.anchor.x,label.x,label.x+label.width),ly=clamp(label.anchor.y,label.y,label.y+label.height);
+  if(Math.hypot(lx-label.anchor.x,ly-label.anchor.y)>24)svg('line',{x1:lx,y1:ly,x2:label.anchor.x,y2:label.anchor.y,class:'cloud-guide'},g);
+  svg('title',{},g).textContent=(label.parentTitle?label.parentTitle+' · ':'')+label.title;
+  const parent=label.kind==='scene'?'Епізод · '+(label.parentTitle||'Не встановлено'):'ЕПІЗОД';
+  const limit=Math.floor(label.width/5.3);svg('text',{x:label.x,y:label.y+11,class:'cloud-parent'},g).textContent=parent.length>limit?parent.slice(0,limit-1)+'…':parent;
+  label.lines.forEach((line,i)=>svg('text',{x:label.x,y:label.y+29+i*17,class:'cloud-title'},g).textContent=line);
+ });
  // Large touch targets stay below every visible mark. A neighboring transparent
  // target can never intercept a tap directly on another node's visible center.
  const hitLayer=svg('g',{'aria-hidden':'true'});
@@ -335,19 +368,12 @@ function render(){
   $('emptyAction').textContent=selected.size?'До найближчої події':'Обрати всіх';
  }
  if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else{pinnedNodeId=null;hoverCard=false;focusId=null;$('eventCard').hidden=true;}}
- paintNodes();updateFocusBar();
+ paintNodes();updateFocusBar();showCloudCaptions();
 }
 function positionCard(point){
- const card=$('eventCard'),canvas=$('canvas'),w=canvas.clientWidth||1000,vh=canvas.clientHeight||window.innerHeight||700,y=point.y-canvas.scrollTop,width=Math.min(480,w-24),left=clamp(point.x,width/2+12,w-width/2-12);
- const headerBottom=document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||(w<760?112:86);
- const topLimit=headerBottom+12,bottomLimit=vh-($('focusBar').hidden?132:182),above=y-18-topLimit;
- card.hidden=false;card.style.left=left+'px';card.style.width=width+'px';
- if(w<760||vh<520||above<180){
-  card.dataset.placement='docked';card.style.top=topLimit+'px';card.style.setProperty('--card-height',Math.max(120,bottomLimit-topLimit)+'px');
- }else{
-  card.dataset.placement='above';card.style.top=Math.min(y-18,bottomLimit)+'px';card.style.setProperty('--card-height',Math.max(160,Math.min(520,above,bottomLimit-topLimit))+'px');
- }
- card.style.setProperty('--tail-x',clamp(point.x-left+width/2,20,width-20)+'px');
+ const card=$('eventCard'),canvas=$('canvas'),w=canvas.clientWidth||1000,width=Math.min(600,w-24),left=clamp(point.x,width/2+12,w-width/2-12),bounds=readingBounds();
+ card.hidden=false;card.style.left=left+'px';card.style.width=width+'px';card.dataset.placement='reading';card.style.top=bounds.top+'px';
+ const room=pinnedNodeId?bounds.height:Math.max(120,point.y-canvas.scrollTop-bounds.top-18);card.style.setProperty('--card-height',Math.min(bounds.height,room)+'px');
  positionEventPreview();
 }
 function ensureEventPreview(){
@@ -440,12 +466,16 @@ function cardTop(day,navigation,kind='moment',openSceneId=null){
  return `<div class="card-top">${cardMetaLine(kind,day===null?'Без установленої дати':dateText(day,true),day!==null)}<div class="card-top-actions">${openScene}<nav class="card-arrows" aria-label="Перехід між ${kind==='scene'?'сценами':'моментами'}">${arrow(-1,'Назад')}${arrow(1,'Далі')}</nav><button class="close" data-close-card aria-label="Закрити" title="Закрити">×</button></div></div>`;
 }
 function sceneNavigation(id){const list=orderedScenes().filter(s=>s.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))),i=list.findIndex(s=>s.id===id);return {previous:list[i-1]||null,next:list[i+1]||null};}
-function stepScene(direction){const target=sceneNavigation(focusId)[direction<0?'previous':'next'];if(target)navigateScene(target.id);}
-function navigateScene(id){const group=sceneEvents(id);if(!group.length)return;const e=group.find(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))||group[0];navigateEvent(e.id);anchorEvent=null;focusId=id;showSceneCard(sceneMap.get(id),group);render();}
+function stepScene(direction){const id=sceneMap.has(focusId)?focusId:eventMap.get(focusId)?.scene_id,target=sceneNavigation(id)[direction<0?'previous':'next'];if(target)navigateScene(target.id);}
+function navigateScene(id){
+ const group=sceneEvents(id),e=group.find(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))||group[0];if(!prepareNavigation(e))return;
+ if(e.day!==null){zoom=zoomModes.week;center=clampAxisCenter(dayToAxis(e.day+.5));}
+ focusId=group.length===1?e.id:id;pinnedNodeId=focusId;anchorEvent=null;showSceneCard(sceneMap.get(id),group);$('eventCard').hidden=false;render();revealReadingNode();focusReadingCard();
+}
 function showSceneCard(scene,group){
  closeEventPreview(true);
  const cast=sceneCast(scene,group);
- $('cardContent').innerHTML=`${cardTop(group[0].day,sceneNavigation(scene.id),'scene',scene.id)}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${actionCount(group.length)}</p>${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(id)}"></span>${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><div>${eventGallery(e)}<button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></div></li>`).join('')}</ol>`;
+ setCardContent(`${cardTop(group[0].day,sceneNavigation(scene.id),'scene',scene.id)}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${actionCount(group.length)}</p>${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(id)}"></span>${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><div>${eventGallery(e)}<button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></div></li>`).join('')}</ol>`);
  bindCard();bindSceneActionPreviews();
 }
 function eventGallery(e){
@@ -467,7 +497,7 @@ function showStoryGroup(point){
  const children=point.kind==='arc'
   ?(point.sourceEpisodeIds||[]).map(id=>{const episode=episodeMap.get(id),count=(episode?.scene_ids||[]).length;return episode?{id,title:episode.title,meta:`${count} ${count===1?'сцена':'сцен'}`}:null;}).filter(Boolean)
   :(point.sourceSceneIds||[]).map(id=>{const scene=sceneMap.get(id),group=sceneEvents(id);return scene&&group.length?{id,title:scene.title,meta:actionCount(group.length)}:null;}).filter(Boolean);
- $('cardContent').innerHTML=`<div class="card-top">${cardMetaLine(point.kind,range,start!==null)}<button class="close" data-close-card aria-label="Закрити" title="Закрити">×</button></div><h2>${esc(point.title)}</h2>${point.story?.description?`<p class="event-text">${esc(point.story.description)}</p>`:''}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong><small>${esc(child.meta)}</small></button>`).join('')}</div>`;
+ setCardContent(`<div class="card-top">${cardMetaLine(point.kind,range,start!==null)}<button class="close" data-close-card aria-label="Закрити" title="Закрити">×</button></div><h2>${esc(point.title)}</h2>${point.story?.description?`<p class="event-text">${esc(point.story.description)}</p>`:''}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong><small>${esc(child.meta)}</small></button>`).join('')}</div>`);
  bindCard();
 }
 function eventDetailsHtml(e,relationAttribute='data-card-event',showSceneContext=true){
@@ -481,7 +511,7 @@ function eventDetailsHtml(e,relationAttribute='data-card-event',showSceneContext
 }
 function showEvent(e){
  const navigation=nav();
- $('cardContent').innerHTML=`${cardTop(e.day,navigation,'moment')}${eventDetailsHtml(e,'data-card-event')}`;
+ setCardContent(`${cardTop(e.day,navigation,'moment')}${eventDetailsHtml(e,'data-card-event')}`);
  bindCard();
 }
 function showEventPreview(id,pin=false){
@@ -496,7 +526,18 @@ function showEventPreview(id,pin=false){
  preview.classList.add('is-visible');
  if(pin&&document.documentElement.dataset.input==='keyboard')$('eventPreviewContent').querySelector('[data-close-preview]')?.focus();
 }
-function navigateEvent(id){rememberCardFocus();cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;pinnedNodeId=e.id;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clampAxisCenter(dayToAxis(e.day+.5));}focusId=e.id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();focusReadingCard();}
+function prepareNavigation(e){
+ if(!e)return false;rememberCardFocus();cancelHoverClose();closeEventPreview(true);hoverCard=false;
+ if(readingScrollTop===null)readingScrollTop=$('canvas').scrollTop;
+ if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;
+ continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();return true;
+}
+function navigateEvent(id){
+ const e=eventMap.get(id);if(!prepareNavigation(e))return;
+ if(e.day!==null){zoom=365;center=clampAxisCenter(dayToAxis(e.day+.5));}
+ pinnedNodeId=e.id;focusId=e.id;anchorEvent=e.id;showEvent(e);$('eventCard').hidden=false;render();
+ const anchor=graphNodes.find(p=>p.id===e.id);if(anchor)revealReadingNode();else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();focusReadingCard();
+}
 function search(){
  const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));
  $('searchSummary').textContent=q?`Знайдено: ${found.length}`:`${found.length} подій · у порядку хронології`;
@@ -597,8 +638,17 @@ async function refreshData(){
  if(refreshing||document.visibilityState==='hidden'||window.__TIMELINE_DATA__)return;refreshing=true;
  try{const v=await fetch(`version.json?t=${Date.now()}`,{cache:'no-store'});if(!v.ok)return;const version=await v.json();if(version.revision===data.revision)return;const response=await fetch(`data.json?v=${encodeURIComponent(version.revision)}`,{cache:'no-store'});if(!response.ok)return;const next=await response.json();ingest(next);renderCharacters();search();if(anchorEvent&&eventMap.has(anchorEvent)&&!$('eventCard').hidden)showEvent(eventMap.get(anchorEvent));if(profileEntity)renderProfile();if(sceneId)renderScene();if(!anchorEvent&&sceneMap.has(focusId)&&!$('eventCard').hidden)showSceneCard(sceneMap.get(focusId),sceneEvents(focusId));render();}catch{}finally{refreshing=false;}
 }
+function ensureInterface(){
+ const required=['canvas','timeline','storyClouds','periodLabel','emptyAction','searchSummary','characterEventPrevious','characterEventNext','characterEventPosition','cardHeader','cardScroll'];
+ if(required.every(id=>$(id)))return true;
+ if(window.location.href&&window.location.protocol!=='file:'&&window.location.replace){
+  const url=new URL(window.location.href);
+  if(url.searchParams.get('_ui')!==UI_VERSION){url.searchParams.set('_ui',UI_VERSION);window.location.replace(url.href);return false;}
+ }
+ throw new Error('Сторінка і скрипти мають різні версії. Онови репозиторій і перезавантаж сторінку через Ctrl + F5.');
+}
 async function init(){
- try{const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);$('status').hidden=true;
+ try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);$('status').hidden=true;
  const names={'alt-shippuden-469':'Альтернатива · обличчя Какаші','alt-movie-land-of-snow':'Альтернатива · Країна Снігу'};[...new Set(data.events.map(e=>e.continuity))].filter(c=>c!=='main').forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=names[c]||c;$('continuity').append(o);});
  for(const id of ['lines','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>{closePanels();}));
  for(const id of ['linesPanel','searchPanel','periodPanel'])$(id).addEventListener('toggle',e=>{
@@ -644,13 +694,13 @@ async function init(){
  canvas.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.node-hit,.thread-hit,.line-label'))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);if(touches.size===1){drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};canvas.classList.add('dragging');}else if(touches.size===2){const a=[...touches.values()];pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom};drag=null;}});
  canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);const pad=canvas.clientWidth<600?22:48;center=clampAxisCenter(drag.center-(e.clientX-drag.x)/Math.max(1,canvas.clientWidth-pad*2)*365/zoom);schedule();}});
  const end=e=>{touches.delete(e.pointerId);drag=null;pinch=null;canvas.classList.remove('dragging');};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);new ResizeObserver(schedule).observe($('canvas'));
- $('canvas').addEventListener('scroll',()=>{$('hoverTip').hidden=true;const p=graphNodes.find(p=>p.id===focusId);if(p&&!$('eventCard').hidden)positionCard(p);},{passive:true});
+ $('canvas').addEventListener('scroll',()=>{$('hoverTip').hidden=true;cloudRenderer?.scroll($('canvas').scrollTop);showCloudCaptions();const p=graphNodes.find(p=>p.id===focusId);if(p&&!$('eventCard').hidden)positionCard(p);},{passive:true});
  $('focusPrevious').addEventListener('click',()=>stepEvent(-1));$('focusNext').addEventListener('click',()=>stepEvent(1));$('focusName').addEventListener('click',()=>openProfile(focusedCharacter,$('focusName')));$('clearFocus').addEventListener('click',()=>{focusedCharacter=null;closeCard();renderCharacters();render();});
  $('eventCard').addEventListener('pointerenter',cancelHoverClose);$('eventCard').addEventListener('pointerleave',deferHoverClose);
  $('closeScene').addEventListener('click',closeScene);$('sceneDialog').addEventListener('cancel',e=>{e.preventDefault();closeScene();});
  $('closeProfile').addEventListener('click',closeProfile);$('profileDialog').addEventListener('cancel',e=>{e.preventDefault();closeProfile();});$('profileDialog').addEventListener('click',e=>{if(e.target===$('profileDialog')){const b=$('profileDialog').getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeProfile();}});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState!=='hidden')refreshData();});window.addEventListener('focus',refreshData);setInterval(refreshData,60000);
  renderCharacters();render();const params=new URLSearchParams(window.location.search);if(entityMap.has(params.get('character')))setFocus(params.get('character'));if(eventMap.has(params.get('event')))navigateEvent(params.get('event'));
- }catch(e){$('status').hidden=true;$('error').textContent=e.message;$('error').hidden=false;}
+ }catch(e){if($('status'))$('status').hidden=true;if($('error')){$('error').textContent=e.message;$('error').hidden=false;}console.error(e);}
 }
-init();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();

@@ -6,7 +6,7 @@ async function check(width,height){
  Object.defineProperty(doc.getElementById('continuity'),'value',{value:'main',writable:true});Object.defineProperties(canvas,{clientWidth:{value:width},clientHeight:{value:height}});Object.defineProperties(outer,{clientWidth:{value:width},clientHeight:{value:height}});outer.scrollTop=0;window.location={search:''};window.matchMedia=()=>({matches:width>=600});
  let snapshot=structuredClone(original),version=snapshot.revision;
  const ctx=vm.createContext({window,document:doc,console,URLSearchParams,setTimeout,clearTimeout,fetch:async url=>({ok:true,json:async()=>url.startsWith('version')?{revision:version}:structuredClone(snapshot)}),requestAnimationFrame:cb=>setTimeout(cb,0),cancelAnimationFrame:clearTimeout,setInterval:()=>0,ResizeObserver:class{observe(){}}});
- for(const file of ['timeline-core.js','relations.js','app.js'])vm.runInContext(fs.readFileSync(project+file,'utf8'),ctx);await sleep();
+ for(const file of ['timeline-core.js','relations.js','story-clouds.js','app.js','hierarchy-preview.js'])vm.runInContext(fs.readFileSync(project+file,'utf8'),ctx);await sleep();
  const click=q=>{const el=doc.querySelector(q);assert(el,'Missing '+q);el.dispatchEvent(new window.Event('click'));};
  const run=s=>vm.runInContext(s,ctx);
  assert(doc.getElementById('error').hidden,doc.getElementById('error').textContent);

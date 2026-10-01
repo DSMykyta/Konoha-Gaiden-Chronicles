@@ -3,6 +3,7 @@
 (() => {
   const baseBindCard = bindCard;
   const baseCloseCard = closeCard;
+  const baseBindSceneActionPreviews = bindSceneActionPreviews;
   const cascade = [];
   const closeTimers = [];
 
@@ -41,7 +42,8 @@
     cancelHoverClose();
   }
 
-  function closeFrom(depth = 0) {
+  function closeFrom(depth = 0, restoreFocus = false) {
+    const trigger = cascade[depth]?.trigger;
     for (let i = cascade.length - 1; i >= depth; i--) {
       const entry = cascade[i];
       if (!entry) continue;
@@ -52,6 +54,7 @@
       closeTimers[i] = null;
     }
     while (cascade.length && !cascade[cascade.length - 1]) cascade.pop();
+    if (restoreFocus && trigger?.isConnected) trigger.focus();
   }
 
   function scheduleClose(depth) {
@@ -128,13 +131,13 @@
   }
 
   function previewHtml(kind, id) {
-    if (kind === 'episode') return episodePreviewHtml(id);
-    if (kind === 'scene') return scenePreviewHtml(id);
-    if (kind === 'moment') return momentPreviewHtml(id);
-    return null;
+    const rendered = kind === 'episode' ? episodePreviewHtml(id) : kind === 'scene' ? scenePreviewHtml(id) : kind === 'moment' ? momentPreviewHtml(id) : null;
+    if (rendered) rendered.html = rendered.html.replace('</div>', '<button class="close" data-close-hierarchy aria-label="Закрити перегляд" title="Закрити">×</button></div>');
+    return rendered;
   }
 
-  function bindPanelActions(content) {
+  function bindPanelActions(content, depth) {
+    content.querySelector('[data-close-hierarchy]')?.addEventListener('click', () => closeFrom(depth, true));
     content.querySelectorAll('[data-event-focus-character]').forEach(button => button.addEventListener('click', () => {
       const id = button.dataset.eventFocusCharacter;
       if (focusedCharacter !== id) setFocus(id);
@@ -149,6 +152,8 @@
     trigger.addEventListener('pointerenter', event => {
       clearTimers();
       if (!canHover(event)) return;
+      const rect = parentSurface.getBoundingClientRect(), viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+      if (Math.max(rect.left - 12, viewportWidth - rect.right - 12) < panelWidth(depth, viewportWidth)) return;
       openPreview(kind, id, parentSurface, trigger, depth, false);
     });
     trigger.addEventListener('pointerleave', () => scheduleClose(depth));
@@ -194,11 +199,12 @@
 
     cascade[depth] = { panel, trigger, parentSurface, kind, id, pinned };
     positionPanel(panel, parentSurface, depth);
-    bindPanelActions(content);
+    bindPanelActions(content, depth);
     bindChildTriggers(content, panel, depth, kind);
 
     panel.addEventListener('pointerenter', clearTimers);
     panel.addEventListener('pointerleave', () => scheduleClose(depth));
+    if (pinned && document.documentElement.dataset.input === 'keyboard') content.querySelector('[data-close-hierarchy]')?.focus();
   }
 
   function bindRootStoryPreviews() {
@@ -208,9 +214,9 @@
   }
 
   bindSceneActionPreviews = function bindSceneActionHierarchyPreviews() {
-    const card = $('eventCard');
-    if (card.hidden) return;
-    bindMomentTriggers($('cardContent'), card, 0);
+    // The root scene keeps its responsive preview and explicit return action.
+    // Nested episode -> scene -> moment panels still use the full cascade.
+    baseBindSceneActionPreviews();
   };
 
   bindCard = function bindCardWithHierarchyPreview() {
@@ -229,7 +235,7 @@
     if (event.key !== 'Escape' || !cascade.length) return;
     event.preventDefault();
     event.stopImmediatePropagation();
-    closeFrom(cascade.length - 1);
+    closeFrom(cascade.length - 1, true);
   }, true);
 
   window.addEventListener('resize', () => {
