@@ -2,18 +2,31 @@
 (() => {
   if (typeof StoryClouds === 'undefined') return;
 
+  const LEVEL_LABELS = {moment: 'Момент', scene: 'Сцена', episode: 'Епізод'};
+  const LEVELS = Object.keys(LEVEL_LABELS);
   const basePalette = StoryClouds.palette.bind(StoryClouds);
-  StoryClouds.__storyLabelHighlight = null;
-  StoryClouds.palette = function highlightedPalette(kind, key) {
+
+  window.__storyScaleFocus = {
+    active: false,
+    mode: null,
+    key: null,
+    eventIds: new Set(),
+    characterIds: new Set(),
+    cloudKeys: new Set()
+  };
+
+  StoryClouds.palette = function storyScalePalette(kind, key) {
     const colors = basePalette(kind, key);
-    if (StoryClouds.__storyLabelHighlight === key) {
-      return {...colors, alpha: Math.min(1, Math.max(.92, colors.alpha * 1.55))};
+    const focus = window.__storyScaleFocus;
+    if (!focus?.active) return colors;
+    if (focus.cloudKeys instanceof Set && focus.cloudKeys.has(key)) {
+      return {...colors, alpha: Math.min(1, Math.max(colors.alpha, focus.mode === 'fixed' ? .86 : .76))};
     }
-    return colors;
+    return {...colors, alpha: colors.alpha * (focus.mode === 'fixed' ? .025 : .13)};
   };
 
   const baseCreate = StoryClouds.create.bind(StoryClouds);
-  StoryClouds.create = function createStoryCloudRenderer(canvas) {
+  StoryClouds.create = function createStoryScaleCloudRenderer(canvas) {
     const renderer = baseCreate(canvas);
     let lastUpdate = null;
     const api = {
@@ -23,11 +36,11 @@
         return renderer.update(next);
       },
       scroll(scrollTop) {
+        if (lastUpdate) lastUpdate.scrollTop = scrollTop;
         return renderer.scroll(scrollTop);
       },
-      highlight(key) {
-        StoryClouds.__storyLabelHighlight = key || null;
-        if (lastUpdate) renderer.update(lastUpdate);
+      refresh() {
+        if (lastUpdate) return renderer.update(lastUpdate);
       }
     };
     StoryClouds.__storyLabelRenderer = api;
@@ -36,141 +49,498 @@
 
   const style = document.createElement('style');
   style.textContent = `
-    #timeline .story-scale-label { cursor: default; opacity: 1; transition: opacity 150ms ease; }
-    #timeline .story-scale-label text { fill: #4d5664; font: 500 11px/1.25 Manrope, sans-serif; }
-    #timeline .story-scale-label .story-scale-tick { stroke: #aeb6c1; stroke-width: 1; vector-effect: non-scaling-stroke; }
-    #timeline .story-scale-label.is-story-active text { fill: #252c35; font-weight: 700; }
-    #timeline.story-label-hover .story-scale-label:not(.is-story-active) { opacity: .18; }
-    #timeline .moment-inline-label { pointer-events: none; }
-    #timeline .moment-inline-label text { fill: #4d5664; font: 500 10.5px/1.25 Manrope, sans-serif; paint-order: stroke; stroke: #f5f6f8e8; stroke-width: 4px; stroke-linejoin: round; }
-    @media (prefers-reduced-motion: reduce) { #timeline .story-scale-label { transition: none; } }
+    .time-axis { bottom: calc(48px + env(safe-area-inset-bottom)) !important; }
+    #timeline .cloud-label,
+    #timeline .story-scale-label,
+    #timeline .moment-inline-label { display: none !important; }
+
+    .story-title-scale {
+      position: fixed;
+      z-index: var(--z-chrome);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: calc(54px + env(safe-area-inset-bottom));
+      padding-bottom: env(safe-area-inset-bottom);
+      border-top: 1px solid #dfe3e8c7;
+      background: linear-gradient(180deg,#f8fafbd9,#f5f6f8f5 34%,#f5f6f8 100%);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+    .story-title-level {
+      position: absolute;
+      z-index: 3;
+      top: 10px;
+      left: max(12px,env(safe-area-inset-left));
+      width: 102px;
+      height: 34px;
+      padding: 0 28px 0 10px;
+      border: 1px solid #d6dbe2;
+      border-radius: 9px;
+      background: #ffffffed;
+      box-shadow: 0 1px 4px #27364c0b;
+      color: #3f4854;
+      font-size: 11px;
+      font-weight: 700;
+      appearance: auto;
+      cursor: pointer;
+    }
+    .story-title-track {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .story-title-slot {
+      position: absolute;
+      top: 0;
+      height: 54px;
+      pointer-events: none;
+    }
+    .story-title-slot::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: var(--story-anchor,50%);
+      width: 1px;
+      height: 8px;
+      background: #adb5c0;
+      transform: translateX(-.5px);
+      opacity: .78;
+    }
+    .story-title-label {
+      position: absolute;
+      inset: 10px 3px 4px;
+      display: block;
+      width: calc(100% - 6px);
+      min-width: 0;
+      padding: 7px 5px 6px;
+      overflow: hidden;
+      border-radius: 7px;
+      color: #4f5967;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 550;
+      line-height: 1.3;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: opacity 150ms ease, background 150ms ease, color 150ms ease;
+    }
+    .story-title-label:hover,
+    .story-title-label:focus-visible,
+    .story-title-label.is-active {
+      color: #20262e;
+      background: #ffffffd9;
+    }
+    .story-title-scale.is-hovering .story-title-label:not(.is-active) { opacity: .16; }
+    .story-title-scale.is-fixed .story-title-label:not(.is-active) {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .story-title-label.is-active { font-weight: 750; }
+
+    #timeline .thread,
+    #timeline .node,
+    #timeline .line-label,
+    #timeline .thread-hit,
+    #timeline .node-hit { transition: opacity 150ms ease; }
+    #timeline .is-story-scale-hover-muted { opacity: .1 !important; }
+    #timeline .is-story-scale-fixed-hidden { opacity: 0 !important; pointer-events: none !important; }
+    #timeline .thread-hit.is-story-scale-hover-muted,
+    #timeline .node-hit.is-story-scale-hover-muted { pointer-events: none; }
+
+    @media (max-width: 760px) {
+      .story-title-level { width: 90px; left: 8px; padding-left: 8px; font-size: 10px; }
+      .story-title-label { font-size: 10px; padding-inline: 3px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .story-title-label,
+      #timeline .thread,
+      #timeline .node,
+      #timeline .line-label,
+      #timeline .thread-hit,
+      #timeline .node-hit { transition: none; }
+    }
   `;
   document.head.append(style);
 
-  const NS = 'http://www.w3.org/2000/svg';
-  const svg = (tag, attrs, parent) => {
-    const node = document.createElementNS(NS, tag);
-    for (const [key, value] of Object.entries(attrs || {})) node.setAttribute(key, String(value));
-    parent.append(node);
-    return node;
-  };
-  const truncate = (text, max) => {
-    const value = String(text || '').trim();
-    if (value.length <= max) return value;
-    return value.slice(0, Math.max(1, max - 1)).trimEnd() + '…';
-  };
-  const wrap = (text, limit = 28) => {
-    const words = String(text || '').trim().split(/\s+/).filter(Boolean), lines = [];
-    let line = '';
-    for (const word of words) {
-      if (line && line.length + word.length + 1 > limit) {
-        lines.push(line);
-        line = word;
-        if (lines.length === 2) break;
-      } else line += (line ? ' ' : '') + word;
-    }
-    if (line && lines.length < 2) lines.push(line);
-    if (words.join(' ').length > lines.join(' ').length && lines.length) lines[lines.length - 1] = truncate(lines[lines.length - 1], limit);
-    return lines;
-  };
+  let scaleLevel = null;
+  let hoverKey = null;
+  let fixedKey = null;
+  let currentItems = new Map();
+  let scheduled = false;
+  let applying = false;
+  let scaleRoot = null;
+  let scaleTrack = null;
+  let levelSelect = null;
 
-  let applying = false, scheduled = false;
-  function semanticLevel() {
-    return document.querySelector('.timeline-key [data-level][aria-current="true"]')?.dataset.level || 'episode';
+  function currentSemanticLevel() {
+    const level = document.querySelector('.timeline-key [data-level][aria-current="true"]')?.dataset.level;
+    return LEVELS.includes(level) ? level : 'episode';
   }
-  function setHighlight(key, activeLabel = null) {
-    const timeline = document.getElementById('timeline');
-    if (!timeline) return;
-    timeline.classList.toggle('story-label-hover', !!key);
-    timeline.querySelectorAll('.story-scale-label').forEach(label => label.classList.toggle('is-story-active', !!key && label.dataset.cloudKey === key));
-    StoryClouds.__storyLabelRenderer?.highlight(key);
-    if (activeLabel && key) activeLabel.classList.add('is-story-active');
+
+  function eventVisible(event) {
+    if (!event) return false;
+    if (typeof focusedCharacter !== 'undefined' && focusedCharacter) return event.tracks?.includes(focusedCharacter);
+    if (typeof selected === 'undefined' || !(selected instanceof Set)) return true;
+    return (event.tracks || []).some(id => selected.has(id));
   }
-  function expandTimeline(timeline, requiredHeight) {
-    const viewBox = (timeline.getAttribute('viewBox') || '').trim().split(/\s+/).map(Number);
-    if (viewBox.length !== 4 || viewBox.some(Number.isNaN) || requiredHeight <= viewBox[3]) return;
-    viewBox[3] = requiredHeight;
-    timeline.setAttribute('viewBox', viewBox.join(' '));
-    timeline.style.height = requiredHeight + 'px';
+
+  function visibleScenes() {
+    if (typeof orderedScenes !== 'function') return [];
+    return orderedScenes().filter(scene => scene.day !== null && (scene.group || []).some(eventVisible));
   }
-  function addScaleLabels(timeline, level, groups, width, nodes) {
-    const kind = level === 'episode' ? 'episode' : level === 'scene' ? 'scene' : null;
-    if (!kind) return;
-    const candidates = groups.filter(group => group.kind === kind && group.nodes?.length)
-      .map(group => ({group, start: Math.min(...group.nodes.map(node => node.x))}))
-      .sort((a, b) => a.start - b.start || a.group.key.localeCompare(b.group.key));
-    if (!candidates.length) return;
-    const maxY = Math.max(...nodes.map(node => node.y || 0), 0);
-    const baseline = maxY + (level === 'episode' ? 96 : 108);
-    expandTimeline(timeline, baseline + 52);
-    candidates.forEach((entry, index) => {
-      const nextStart = candidates[index + 1]?.start ?? width - 18;
-      const x = Math.max(12, Math.min(width - 24, entry.start));
-      const available = Math.max(54, nextStart - x - 12);
-      const maxChars = Math.max(9, Math.floor(available / 6.35));
-      const group = svg('g', {
-        class: 'story-scale-label',
-        'data-cloud-key': entry.group.key,
-        'data-cloud-kind': entry.group.kind,
-        'data-cloud-id': entry.group.id,
-        tabindex: '0',
-        role: 'button',
-        'aria-label': entry.group.title
-      }, timeline);
-      svg('line', {class: 'story-scale-tick', x1: x, x2: x, y1: baseline - 17, y2: baseline - 5}, group);
-      const text = svg('text', {x: x + 5, y: baseline + 8}, group);
-      text.textContent = truncate(entry.group.title, maxChars);
-      const title = svg('title', {}, group);
-      title.textContent = entry.group.title;
-      const enter = () => setHighlight(entry.group.key, group);
-      const leave = () => setHighlight(null);
-      group.addEventListener('pointerenter', enter);
-      group.addEventListener('pointerleave', leave);
-      group.addEventListener('focus', enter);
-      group.addEventListener('blur', leave);
+
+  function buildItems(level) {
+    const scenes = visibleScenes();
+    const items = [];
+
+    if (level === 'moment') {
+      const moments = typeof semanticNodes === 'function' ? semanticNodes('moment', scenes) : [];
+      for (const node of moments) {
+        const events = (node.group || []).filter(eventVisible);
+        if (!events.length || node.day === null) continue;
+        items.push({
+          key: `moment:${node.id}`,
+          kind: 'moment',
+          id: node.id,
+          title: node.title,
+          day: node.day,
+          events
+        });
+      }
+    } else if (level === 'scene') {
+      for (const scene of scenes) {
+        const meta = sceneMap?.get(scene.id);
+        const events = (scene.group || []).filter(eventVisible);
+        if (!events.length || scene.position === null) continue;
+        items.push({
+          key: `scene:${scene.id}`,
+          kind: 'scene',
+          id: scene.id,
+          title: meta?.title || events[0]?.scene_title || scene.id,
+          day: scene.position,
+          events
+        });
+      }
+    } else {
+      const buckets = new Map();
+      for (const scene of scenes) {
+        const meta = sceneMap?.get(scene.id);
+        const episodeId = meta?.episode_id;
+        if (!episodeId || !episodeMap?.has(episodeId)) continue;
+        if (!buckets.has(episodeId)) buckets.set(episodeId, []);
+        buckets.get(episodeId).push(scene);
+      }
+      for (const [episodeId, episodeScenes] of buckets) {
+        const episode = episodeMap.get(episodeId);
+        const events = episodeScenes.flatMap(scene => (scene.group || []).filter(eventVisible));
+        if (!events.length) continue;
+        const days = episodeScenes.map(scene => scene.position).filter(day => day !== null);
+        if (!days.length) continue;
+        items.push({
+          key: `episode:${episodeId}`,
+          kind: 'episode',
+          id: episodeId,
+          title: episode?.title || episodeId,
+          day: (Math.min(...days) + Math.max(...days)) / 2,
+          events
+        });
+      }
+    }
+
+    return items;
+  }
+
+  function layoutItems(items) {
+    const canvas = document.getElementById('canvas');
+    const width = canvas?.clientWidth || window.innerWidth || 1000;
+    const pad = width < 600 ? 22 : 48;
+    const plot = Math.max(1, width - pad * 2);
+    if (typeof range !== 'function' || typeof makeTimeScale !== 'function' || typeof datedEvents !== 'function') return [];
+    const [lo, hi] = range();
+    const dated = datedEvents();
+    const timeScale = makeTimeScale(lo, hi, pad, plot, dated);
+
+    const visible = items
+      .filter(item => {
+        const axis = dayToAxis(item.day, dated);
+        return axis >= lo && axis < hi;
+      })
+      .map(item => ({...item, x: timeScale.px(item.day)}))
+      .sort((a, b) => a.x - b.x || a.key.localeCompare(b.key));
+
+    return visible.map((item, index) => {
+      const previousX = visible[index - 1]?.x;
+      const nextX = visible[index + 1]?.x;
+      const left = index ? (previousX + item.x) / 2 : 0;
+      const right = index < visible.length - 1 ? (item.x + nextX) / 2 : width;
+      const slotLeft = Math.max(0, left + 2);
+      const slotRight = Math.min(width, right - 2);
+      return {
+        ...item,
+        slotLeft,
+        slotWidth: Math.max(22, slotRight - slotLeft),
+        anchor: clamp((item.x - slotLeft) / Math.max(1, slotRight - slotLeft) * 100, 0, 100)
+      };
     });
   }
-  function addMomentTitles(timeline, nodes, width) {
-    const moments = nodes.filter(node => node.kind === 'moment');
-    for (const [index, node] of moments.entries()) {
-      const right = node.x < width * .72;
-      const x = node.x + (right ? 11 : -11);
-      const y = node.y + (index % 2 ? 18 : -14);
-      const group = svg('g', {class: 'moment-inline-label'}, timeline);
-      const text = svg('text', {x, y, 'text-anchor': right ? 'start' : 'end'}, group);
-      const lines = wrap(node.title, width < 700 ? 22 : 29);
-      lines.forEach((line, lineIndex) => {
-        const span = svg('tspan', {x, dy: lineIndex ? 13 : 0}, text);
-        span.textContent = line;
-      });
+
+  function ensureScale() {
+    if (scaleRoot?.isConnected) return;
+    scaleRoot = document.createElement('section');
+    scaleRoot.id = 'storyTitleScale';
+    scaleRoot.className = 'story-title-scale';
+    scaleRoot.setAttribute('aria-label', 'Шкала назв хронології');
+
+    levelSelect = document.createElement('select');
+    levelSelect.id = 'storyTitleLevel';
+    levelSelect.className = 'story-title-level';
+    levelSelect.setAttribute('aria-label', 'Рівень назв');
+    for (const level of LEVELS) {
+      const option = document.createElement('option');
+      option.value = level;
+      option.textContent = LEVEL_LABELS[level];
+      levelSelect.append(option);
     }
-  }
-  function apply() {
-    scheduled = false;
-    if (applying) return;
-    const timeline = document.getElementById('timeline'), state = StoryClouds.__lastUpdate;
-    if (!timeline || !state?.groups || !state?.nodes) return;
-    applying = true;
-    try {
-      timeline.querySelectorAll('.cloud-label,.story-scale-label,.moment-inline-label').forEach(node => node.remove());
-      timeline.classList.remove('story-label-hover');
-      StoryClouds.__storyLabelHighlight = null;
-      const level = semanticLevel();
-      const width = state.width || timeline.viewBox?.baseVal?.width || timeline.clientWidth || 1000;
-      if (level === 'moment') addMomentTitles(timeline, state.nodes, width);
-      else addScaleLabels(timeline, level, state.groups, width, state.nodes);
-    } finally {
-      applying = false;
-    }
-  }
-  function scheduleApply() {
-    if (applying || scheduled) return;
-    scheduled = true;
-    requestAnimationFrame(apply);
+    levelSelect.addEventListener('change', () => {
+      scaleLevel = levelSelect.value;
+      hoverKey = null;
+      fixedKey = null;
+      clearStoryFocus();
+      renderScale();
+    });
+
+    scaleTrack = document.createElement('div');
+    scaleTrack.className = 'story-title-track';
+    scaleRoot.append(levelSelect, scaleTrack);
+    document.body.append(scaleRoot);
   }
 
-  const timeline = document.getElementById('timeline');
-  if (timeline) new MutationObserver(scheduleApply).observe(timeline, {childList: true});
-  window.addEventListener('resize', scheduleApply);
-  document.addEventListener('DOMContentLoaded', scheduleApply, {once: true});
+  function relatedNodeIds(item) {
+    const eventIds = new Set((item?.events || []).map(event => event.id));
+    const ids = new Set();
+    for (const node of (typeof graphNodes !== 'undefined' && Array.isArray(graphNodes) ? graphNodes : [])) {
+      if ((node.group || []).some(event => eventIds.has(event.id))) ids.add(node.id);
+    }
+    return ids;
+  }
+
+  function relatedCloudKeys(item, nodeIds) {
+    const keys = new Set();
+    const groups = typeof graphClouds !== 'undefined' && Array.isArray(graphClouds) ? graphClouds : [];
+    for (const group of groups) {
+      if (item.kind === 'episode') {
+        if ((group.kind === 'episode' && group.id === item.id) || (group.kind === 'scene' && group.parentId === item.id)) keys.add(group.key);
+        continue;
+      }
+      if (item.kind === 'scene') {
+        if (group.kind === 'scene' && group.id === item.id) keys.add(group.key);
+        continue;
+      }
+      if (group.kind === 'moment' && group.id === item.id) keys.add(group.key);
+    }
+    if (!keys.size && item.kind !== 'moment') {
+      for (const group of groups) if ((group.nodes || []).some(node => nodeIds.has(node.id))) keys.add(group.key);
+    }
+    return keys;
+  }
+
+  function lineLabelCharacterId(element) {
+    const text = element.textContent.trim();
+    if (typeof entityMap === 'undefined' || !entityMap) return null;
+    for (const id of entityMap.keys()) if (name(id) === text || fullName(id) === text) return id;
+    return null;
+  }
+
+  function applyDomFocus(item, mode) {
+    const timeline = document.getElementById('timeline');
+    if (!timeline || !item) return;
+    const nodeIds = relatedNodeIds(item);
+    const characterIds = new Set((item.events || []).flatMap(event => event.tracks || []));
+    const cloudKeys = relatedCloudKeys(item, nodeIds);
+    const fixed = mode === 'fixed';
+
+    window.__storyScaleFocus = {
+      active: true,
+      mode,
+      key: item.key,
+      eventIds: new Set((item.events || []).map(event => event.id)),
+      characterIds,
+      cloudKeys
+    };
+
+    timeline.querySelectorAll('.node').forEach(element => {
+      const related = nodeIds.has(element.dataset.event);
+      element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
+      element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+    });
+    timeline.querySelectorAll('.node-hit').forEach(element => {
+      const related = nodeIds.has(element.dataset.nodeId);
+      element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
+      element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+    });
+    timeline.querySelectorAll('.thread,.thread-hit').forEach(element => {
+      const related = characterIds.has(element.dataset.character);
+      element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
+      element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+    });
+    timeline.querySelectorAll('.line-label').forEach(element => {
+      const id = lineLabelCharacterId(element);
+      const related = id ? characterIds.has(id) : false;
+      element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
+      element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+    });
+
+    scaleRoot?.classList.toggle('is-hovering', !fixed);
+    scaleRoot?.classList.toggle('is-fixed', fixed);
+    scaleRoot?.querySelectorAll('.story-title-label').forEach(label => {
+      label.classList.toggle('is-active', label.dataset.storyKey === item.key);
+    });
+    StoryClouds.__storyLabelRenderer?.refresh();
+  }
+
+  function clearDomFocusClasses() {
+    document.querySelectorAll('#timeline .is-story-scale-hover-muted,#timeline .is-story-scale-fixed-hidden').forEach(element => {
+      element.classList.remove('is-story-scale-hover-muted', 'is-story-scale-fixed-hidden');
+    });
+    scaleRoot?.classList.remove('is-hovering', 'is-fixed');
+    scaleRoot?.querySelectorAll('.story-title-label.is-active').forEach(label => label.classList.remove('is-active'));
+  }
+
+  function clearStoryFocus() {
+    clearDomFocusClasses();
+    window.__storyScaleFocus = {
+      active: false,
+      mode: null,
+      key: null,
+      eventIds: new Set(),
+      characterIds: new Set(),
+      cloudKeys: new Set()
+    };
+    StoryClouds.__storyLabelRenderer?.refresh();
+  }
+
+  function focusItem(item, mode) {
+    clearDomFocusClasses();
+    applyDomFocus(item, mode);
+  }
+
+  function bindLabel(button, item) {
+    const activateHover = () => {
+      if (fixedKey) return;
+      hoverKey = item.key;
+      focusItem(item, 'hover');
+    };
+    const deactivateHover = () => {
+      if (fixedKey || hoverKey !== item.key) return;
+      hoverKey = null;
+      clearStoryFocus();
+    };
+    button.addEventListener('pointerenter', activateHover);
+    button.addEventListener('pointerleave', deactivateHover);
+    button.addEventListener('focus', activateHover);
+    button.addEventListener('blur', deactivateHover);
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      hoverKey = null;
+      if (fixedKey === item.key) {
+        fixedKey = null;
+        clearStoryFocus();
+        return;
+      }
+      if (typeof closeCard === 'function' && document.getElementById('eventCard') && !document.getElementById('eventCard').hidden) closeCard();
+      fixedKey = item.key;
+      focusItem(item, 'fixed');
+    });
+  }
+
+  function renderScale() {
+    ensureScale();
+    if (!scaleLevel) scaleLevel = currentSemanticLevel();
+    if (!LEVELS.includes(scaleLevel)) scaleLevel = 'episode';
+    levelSelect.value = scaleLevel;
+
+    const items = layoutItems(buildItems(scaleLevel));
+    currentItems = new Map(items.map(item => [item.key, item]));
+    scaleTrack.replaceChildren();
+
+    for (const item of items) {
+      const slot = document.createElement('div');
+      slot.className = 'story-title-slot';
+      slot.style.left = `${item.slotLeft}px`;
+      slot.style.width = `${item.slotWidth}px`;
+      slot.style.setProperty('--story-anchor', `${item.anchor}%`);
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'story-title-label';
+      button.dataset.storyKey = item.key;
+      button.title = item.title;
+      button.textContent = item.title;
+      button.setAttribute('aria-label', `${LEVEL_LABELS[item.kind]}: ${item.title}`);
+      bindLabel(button, item);
+      slot.append(button);
+      scaleTrack.append(slot);
+    }
+
+    document.querySelectorAll('#timeline .cloud-label,#timeline .story-scale-label,#timeline .moment-inline-label').forEach(node => node.remove());
+
+    const activeKey = fixedKey || hoverKey;
+    if (activeKey) {
+      const item = currentItems.get(activeKey);
+      if (item) focusItem(item, fixedKey ? 'fixed' : 'hover');
+      else {
+        fixedKey = null;
+        hoverKey = null;
+        clearStoryFocus();
+      }
+    } else clearStoryFocus();
+  }
+
+  function scheduleRenderScale() {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      if (applying) return;
+      applying = true;
+      try { renderScale(); }
+      finally { applying = false; }
+    });
+  }
+
+  function init() {
+    ensureScale();
+    scaleLevel = currentSemanticLevel();
+    levelSelect.value = scaleLevel;
+
+    const timeline = document.getElementById('timeline');
+    if (timeline) new MutationObserver(scheduleRenderScale).observe(timeline, {childList: true});
+
+    if (typeof render === 'function') {
+      const baseRender = render;
+      render = function renderWithStoryTitleScale() {
+        const result = baseRender.apply(this, arguments);
+        scheduleRenderScale();
+        return result;
+      };
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !fixedKey) return;
+      fixedKey = null;
+      hoverKey = null;
+      clearStoryFocus();
+    });
+    window.addEventListener('resize', scheduleRenderScale);
+    scheduleRenderScale();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once: true});
+  else init();
 })();
