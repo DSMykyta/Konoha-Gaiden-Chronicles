@@ -1,72 +1,91 @@
 'use strict';
 
 (() => {
+  const PANEL_WIDTH = 390;
+  const PANEL_GAP = 12;
+  const VIEWPORT_GUTTER = 12;
   let parentTarget = null;
   let parentButton = null;
-  let resizeObserver = null;
+  let tooltip = null;
+  let tooltipTarget = null;
+  let reflowRaf = 0;
 
   const style = document.createElement('style');
   style.textContent = `
-    /* Parent navigation is an external control, never an inline content block. */
-    .scene-context,
-    .card-open-scene {
+    /* All story panels share one compact width and one continuous cascade. */
+    .story-panel,
+    .event-card,
+    .event-preview {
+      width: min(${PANEL_WIDTH}px, calc(100vw - 24px)) !important;
+      max-width: calc(100vw - 24px) !important;
+    }
+
+    /* Parent navigation belongs to the panel header, never outside the card. */
+    .card-parent-level-button {
+      position: static !important;
+      inset: auto !important;
+      margin: 0 !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .card-parent-level-button[hidden] { display: none !important; }
+
+    /* These detail accordions duplicate information already visible in the card. */
+    .event-card .disclosure,
+    .event-preview .disclosure,
+    .hierarchy-preview .disclosure {
       display: none !important;
     }
 
-    .card-parent-level-button {
-      position: fixed;
-      z-index: calc(var(--z-card, 40) + 3);
-      display: grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
-      min-height: 36px;
-      padding: 0;
-      border: 1px solid rgba(255,255,255,.94);
-      border-radius: 999px;
-      background: linear-gradient(145deg,rgba(255,255,255,.88),rgba(225,234,245,.48));
-      -webkit-backdrop-filter: blur(14px) saturate(1.16);
-      backdrop-filter: blur(14px) saturate(1.16);
-      box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(132,148,169,.12), 0 5px 16px rgba(42,54,70,.14);
-      color: #596575;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(2px);
-      transition: opacity .14s ease, transform .14s ease, background .14s ease, box-shadow .14s ease;
+    /* One restrained scrollbar treatment across reading surfaces. */
+    :where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.hierarchy-preview-content,.technique-card-track) {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(102,116,134,.34) transparent;
     }
-    .card-parent-level-button.is-visible {
-      opacity: 1;
-      transform: translateY(0);
+    :where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.hierarchy-preview-content,.technique-card-track)::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
     }
-    .card-parent-level-button:hover,
-    .card-parent-level-button:focus-visible {
-      color: #20262e;
-      background: linear-gradient(145deg,rgba(255,255,255,.98),rgba(229,237,246,.66));
-      box-shadow: inset 0 1px 0 #fff, 0 7px 18px rgba(42,54,70,.17);
+    :where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.hierarchy-preview-content,.technique-card-track)::-webkit-scrollbar-track {
+      background: transparent;
     }
-    .card-parent-level-button svg {
-      width: 17px;
-      height: 17px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    :where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.hierarchy-preview-content,.technique-card-track)::-webkit-scrollbar-thumb {
+      border: 2px solid transparent;
+      border-radius: 99px;
+      background: rgba(102,116,134,.30);
+      background-clip: padding-box;
+    }
+    :where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.hierarchy-preview-content,.technique-card-track)::-webkit-scrollbar-thumb:hover {
+      background: rgba(102,116,134,.46);
+      background-clip: padding-box;
     }
 
-    @media (max-width: 760px) {
-      .card-parent-level-button {
-        width: 34px;
-        height: 34px;
-        min-width: 34px;
-        min-height: 34px;
-      }
+    .glass-tooltip {
+      position: fixed;
+      z-index: 9999;
+      max-width: 260px;
+      padding: 6px 9px;
+      border: 1px solid rgba(255,255,255,.92);
+      border-radius: 9px;
+      background: linear-gradient(145deg,rgba(255,255,255,.84),rgba(230,237,246,.56));
+      -webkit-backdrop-filter: blur(14px) saturate(1.08);
+      backdrop-filter: blur(14px) saturate(1.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.96),0 5px 16px rgba(40,53,70,.12);
+      color: #4f5a68;
+      font: 500 10.5px/1.35 Manrope,sans-serif;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(3px);
+      transition: opacity .12s ease,transform .12s ease;
+    }
+    .glass-tooltip.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   `;
   document.head.append(style);
 
-  function ensureButton() {
+  function ensureParentButton() {
     if (parentButton?.isConnected) return parentButton;
     parentButton = document.createElement('button');
     parentButton.type = 'button';
@@ -77,57 +96,52 @@
       event.stopPropagation();
       if (parentTarget) navigateParent(parentTarget);
     });
-    document.body.append(parentButton);
     return parentButton;
   }
 
   function labelFor(kind) {
-    return ({scene:'До сцени', episode:'До епізоду', arc:'До арки'})[kind] || 'Рівнем вище';
+    return ({scene:'До сцени',episode:'До епізоду',arc:'До арки'})[kind] || 'Рівнем вище';
+  }
+
+  function childCascadeOpen() {
+    return Boolean(document.querySelector('.hierarchy-preview.is-visible')) || Boolean(document.querySelector('#eventPreview:not([hidden])'));
+  }
+
+  function attachParentButton() {
+    const button = ensureParentButton();
+    const card = document.getElementById('eventCard');
+    if (!card || card.hidden || !parentTarget || childCascadeOpen()) {
+      button.hidden = true;
+      return;
+    }
+    const header = card.querySelector('.story-panel-header,.card-top,.preview-top');
+    if (!header) {
+      button.hidden = true;
+      return;
+    }
+    let actions = header.querySelector('.card-top-actions');
+    if (!actions) {
+      actions = document.createElement('div');
+      actions.className = 'card-top-actions';
+      const controls = [...header.children].filter(node => node.matches?.('.close,.card-arrow,.card-open-scene'));
+      controls.forEach(node => actions.append(node));
+      header.append(actions);
+    }
+    if (button.parentElement !== actions) actions.prepend(button);
+    const label = labelFor(parentTarget.kind);
+    button.dataset.tooltip = label;
+    button.setAttribute('aria-label', label);
+    button.removeAttribute('title');
+    button.hidden = false;
   }
 
   function setParentTarget(target) {
     parentTarget = target || null;
-    const button = ensureButton();
-    if (!parentTarget) {
-      button.classList.remove('is-visible');
-      button.tabIndex = -1;
-      return;
-    }
-    const label = labelFor(parentTarget.kind);
-    button.setAttribute('aria-label', label);
-    button.title = label;
-    button.tabIndex = 0;
-    requestAnimationFrame(() => {
-      positionButton();
-      button.classList.add('is-visible');
-    });
-  }
-
-  function positionButton() {
-    if (!parentButton || !parentTarget) return;
-    const card = document.getElementById('eventCard');
-    if (!card || card.hidden) {
-      parentButton.classList.remove('is-visible');
-      return;
-    }
-    const rect = card.getBoundingClientRect();
-    const size = parentButton.offsetWidth || 36;
-    const gap = 9;
-    let left = rect.left - size - gap;
-    let top = rect.top + 8;
-
-    // Prefer the outer edge. On a narrow viewport keep it at the card edge,
-    // but never turn it back into an inline content control.
-    if (left < 8) left = Math.max(8, rect.left + 8);
-    top = Math.max(8, Math.min(window.innerHeight - size - 8, top));
-
-    parentButton.style.left = `${Math.round(left)}px`;
-    parentButton.style.top = `${Math.round(top)}px`;
+    requestAnimationFrame(attachParentButton);
   }
 
   function episodeParentArc(episodeId) {
-    const episode = episodeMap?.get?.(episodeId);
-    return episode?.arc_id || null;
+    return episodeMap?.get?.(episodeId)?.arc_id || null;
   }
 
   function visibleStoryScenes() {
@@ -143,9 +157,12 @@
     const card = document.getElementById('eventCard');
     if (card) card.hidden = false;
     render();
-    if (typeof revealReadingNode === 'function') revealReadingNode();
-    if (typeof focusReadingCard === 'function') focusReadingCard();
-    requestAnimationFrame(positionButton);
+    requestAnimationFrame(() => {
+      if (typeof revealReadingNode === 'function') revealReadingNode();
+      if (typeof focusReadingCard === 'function') focusReadingCard();
+      attachParentButton();
+      scheduleCascadeReflow();
+    });
   }
 
   function replaceWithScene(id) {
@@ -153,12 +170,8 @@
     if (!scene) return;
     const group = sceneEvents(id);
     if (!group.length) return;
-
     zoom = zoomModes.week;
-    if (scene.day !== null && scene.day !== undefined) {
-      center = clampAxisCenter(dayToAxis(scene.day + .5));
-    }
-
+    if (scene.day !== null && scene.day !== undefined) center = clampAxisCenter(dayToAxis(scene.day + .5));
     pinCard(id, () => showSceneCard(scene, group));
   }
 
@@ -190,12 +203,8 @@
     const point = episodePoint(id);
     if (!point) return;
     const positions = point.scenes.map(scene => scene.position ?? scene.day).filter(Number.isFinite);
-
     zoom = zoomModes.month;
-    if (positions.length) {
-      center = clampAxisCenter(dayToAxis((Math.min(...positions) + Math.max(...positions)) / 2));
-    }
-
+    if (positions.length) center = clampAxisCenter(dayToAxis((Math.min(...positions) + Math.max(...positions)) / 2));
     pinCard(point.id, () => showStoryGroup(point));
   }
 
@@ -232,12 +241,8 @@
       .filter(Boolean)
       .map(scene => scene.position ?? scene.day)
       .filter(Number.isFinite);
-
     zoom = zoomModes.year;
-    if (positions.length) {
-      center = clampAxisCenter(dayToAxis((Math.min(...positions) + Math.max(...positions)) / 2));
-    }
-
+    if (positions.length) center = clampAxisCenter(dayToAxis((Math.min(...positions) + Math.max(...positions)) / 2));
     pinCard(point.id, () => showStoryGroup(point));
   }
 
@@ -248,8 +253,6 @@
     if (target.kind === 'arc') return replaceWithArc(target.id);
   }
 
-  // Remove the old full-scene modal behavior globally. Every old call to
-  // openScene now replaces the current card with the scene-level card.
   openScene = function openSceneAsParentCard(id) {
     replaceWithScene(id);
   };
@@ -258,7 +261,7 @@
   showEvent = function showEventWithParentLevel(event) {
     const result = baseShowEvent.apply(this, arguments);
     const sceneId = event?.scene_id || null;
-    setParentTarget(sceneId ? {kind:'scene', id:sceneId} : null);
+    setParentTarget(sceneId ? {kind:'scene',id:sceneId} : null);
     return result;
   };
 
@@ -266,7 +269,7 @@
   showSceneCard = function showSceneCardWithParentLevel(scene, group) {
     const result = baseShowSceneCard.apply(this, arguments);
     const episodeId = scene?.episode_id || null;
-    setParentTarget(episodeId ? {kind:'episode', id:episodeId} : null);
+    setParentTarget(episodeId ? {kind:'episode',id:episodeId} : null);
     return result;
   };
 
@@ -276,7 +279,7 @@
     if (point?.kind === 'episode') {
       const episodeId = point.rawId || point.story?.id || null;
       const arcId = episodeParentArc(episodeId);
-      setParentTarget(arcId ? {kind:'arc', id:arcId} : null);
+      setParentTarget(arcId ? {kind:'arc',id:arcId} : null);
     } else {
       setParentTarget(null);
     }
@@ -286,24 +289,162 @@
   const baseCloseCard = closeCard;
   closeCard = function closeCardWithParentLevel() {
     setParentTarget(null);
+    parentButton?.remove();
+    parentButton = null;
     return baseCloseCard.apply(this, arguments);
   };
 
-  // Keep the floating parent control attached to the card while the reading
-  // layout moves vertically or the viewport changes.
+  function visualLeft(surface) {
+    return surface.getBoundingClientRect().left;
+  }
+
+  function setVisualLeft(surface, targetLeft) {
+    const rect = surface.getBoundingClientRect();
+    const current = parseFloat(surface.style.left);
+    if (!Number.isFinite(current)) return;
+    surface.style.left = `${current + targetLeft - rect.left}px`;
+  }
+
+  function visibleCascadePanels() {
+    const root = document.getElementById('eventCard');
+    if (!root || root.hidden) return [];
+    const hierarchy = [...document.querySelectorAll('.hierarchy-preview.is-visible')]
+      .sort((a,b) => Number(a.dataset.hierarchyDepth || 0) - Number(b.dataset.hierarchyDepth || 0));
+    const preview = document.getElementById('eventPreview');
+    const panels = [root, ...hierarchy];
+    if (preview && !preview.hidden && !preview.classList.contains('hierarchy-preview') && !panels.includes(preview)) panels.push(preview);
+    return panels;
+  }
+
+  function reflowCascade() {
+    const panels = visibleCascadePanels();
+    if (!panels.length) return;
+    const vw = document.documentElement.clientWidth || window.innerWidth;
+    const widths = panels.map(panel => panel.getBoundingClientRect().width || PANEL_WIDTH);
+    const total = widths.reduce((sum,width) => sum + width,0) + PANEL_GAP * Math.max(0,panels.length - 1);
+    const rootLeft = visualLeft(panels[0]);
+    const maxStart = Math.max(VIEWPORT_GUTTER, vw - VIEWPORT_GUTTER - total);
+    let x = Math.max(VIEWPORT_GUTTER, Math.min(rootLeft, maxStart));
+    panels.forEach((panel,index) => {
+      setVisualLeft(panel, x);
+      x += widths[index] + PANEL_GAP;
+    });
+  }
+
+  function scheduleCascadeReflow() {
+    cancelAnimationFrame(reflowRaf);
+    reflowRaf = requestAnimationFrame(() => requestAnimationFrame(reflowCascade));
+  }
+
+  function syncGlass(container) {
+    const glass = container?.querySelector(':scope > .hierarchy-hover-glass');
+    if (!glass) return;
+    const activeRow = container.querySelector(':scope > .is-preview-active');
+    if (!activeRow) {
+      glass.style.opacity = '0';
+      return;
+    }
+    glass.style.transform = `translate3d(0,${activeRow.offsetTop}px,0)`;
+    glass.style.height = `${activeRow.offsetHeight}px`;
+    glass.style.opacity = '1';
+  }
+
+  document.addEventListener('pointerout', event => {
+    const container = event.target instanceof Element ? event.target.closest('.story-children,.scene-actions') : null;
+    if (!container) return;
+    if (event.relatedTarget instanceof Node && container.contains(event.relatedTarget)) return;
+    requestAnimationFrame(() => syncGlass(container));
+  }, true);
+
+  const observer = new MutationObserver(mutations => {
+    let needsReflow = false;
+    for (const mutation of mutations) {
+      if (mutation.type === 'childList') needsReflow = true;
+      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+        const target = mutation.target;
+        const container = target instanceof Element ? target.closest('.story-children,.scene-actions') : null;
+        if (container) requestAnimationFrame(() => syncGlass(container));
+        if (target instanceof Element && (target.matches('.hierarchy-preview,.event-preview,.event-card') || target.closest('.hierarchy-preview,.event-preview,.event-card'))) needsReflow = true;
+      }
+    }
+    if (needsReflow) {
+      requestAnimationFrame(attachParentButton);
+      scheduleCascadeReflow();
+    }
+  });
+  observer.observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class','hidden']});
+
+  function ensureTooltip() {
+    if (tooltip?.isConnected) return tooltip;
+    tooltip = document.createElement('div');
+    tooltip.className = 'glass-tooltip';
+    tooltip.setAttribute('role','tooltip');
+    document.body.append(tooltip);
+    return tooltip;
+  }
+
+  function tooltipTrigger(target) {
+    return target instanceof Element ? target.closest('[data-tooltip],button[title]') : null;
+  }
+
+  function tooltipText(target) {
+    if (!target) return '';
+    const text = target.dataset.tooltip || target.dataset.glassTooltip || target.getAttribute('title') || '';
+    const title = target.getAttribute('title');
+    if (title) {
+      target.dataset.glassTooltip = title;
+      target.removeAttribute('title');
+    }
+    return text;
+  }
+
+  function placeTooltip(target) {
+    if (!tooltip || !target) return;
+    const rect = target.getBoundingClientRect();
+    const tip = tooltip.getBoundingClientRect();
+    const vw = document.documentElement.clientWidth || innerWidth;
+    const vh = document.documentElement.clientHeight || innerHeight;
+    let left = rect.left + rect.width / 2 - tip.width / 2;
+    let top = rect.bottom + 8;
+    left = Math.max(8,Math.min(vw - tip.width - 8,left));
+    if (top + tip.height > vh - 8) top = rect.top - tip.height - 8;
+    tooltip.style.left = `${Math.round(left)}px`;
+    tooltip.style.top = `${Math.round(Math.max(8,top))}px`;
+  }
+
+  document.addEventListener('pointerover', event => {
+    const target = tooltipTrigger(event.target);
+    if (!target || !canHover(event)) return;
+    if (tooltipTarget === target) return;
+    const text = tooltipText(target);
+    if (!text) return;
+    tooltipTarget = target;
+    const tip = ensureTooltip();
+    tip.textContent = text;
+    requestAnimationFrame(() => {
+      placeTooltip(target);
+      tip.classList.add('is-visible');
+    });
+  },true);
+
+  document.addEventListener('pointerout', event => {
+    if (!tooltipTarget) return;
+    if (event.relatedTarget instanceof Node && tooltipTarget.contains(event.relatedTarget)) return;
+    const target = tooltipTrigger(event.target);
+    if (target !== tooltipTarget) return;
+    tooltip?.classList.remove('is-visible');
+    tooltipTarget = null;
+  },true);
+
   const baseRender = render;
   render = function renderWithParentLevelButton() {
     const result = baseRender.apply(this, arguments);
-    requestAnimationFrame(positionButton);
+    requestAnimationFrame(() => {
+      attachParentButton();
+      scheduleCascadeReflow();
+    });
     return result;
   };
 
-  window.addEventListener('resize', positionButton);
-  document.getElementById('canvas')?.addEventListener('scroll', positionButton, {passive:true});
-
-  const card = document.getElementById('eventCard');
-  if (card && 'ResizeObserver' in window) {
-    resizeObserver = new ResizeObserver(positionButton);
-    resizeObserver.observe(card);
-  }
+  window.addEventListener('resize',scheduleCascadeReflow);
 })();
