@@ -22,9 +22,10 @@ checked_anime_episodes:
 - 17
 - 18
 - 19
+- 20
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 20
+next_anime_episode: 21
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -323,3 +324,21 @@ episode_audits:
   cast_review: Existing project cast checked; no additional author-character presence established.
   notes:
   - Bridge naming moved after farewell; inherited relation ID retained with corrected endpoints.
+- episode: 20
+  baseline_revision: 2bfb44d8a7bd85f78db154e8c383c897e47119eb
+  added_moment_ids:
+  - ev-y0-0413-kakashi-dismisses-disorganised-team
+  - ev-y0-0624-konohamaru-friends-follow-naruto
+  - ev-y0-0624-sasuke-stone-saves-konohamaru
+  - ev-y0-0624-gaara-stops-kankuro
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0413-sasuke-challenges-naruto-to-improve
+  - ev-y0-0624-kankuro-confronts-konohamaru
+  - ev-y0-0624-team7-intervenes
+  - ev-y0-0624-hiruzen-announces-chunin-exam
+  cast_review: Raido already present in the Hokage nomination scene with Teams 7–10; attendance preserved and announcement
+    enriched.
+  notes:
+  - Existing April 13 rivalry anchor retained as project placement; the synopsis describes subsequent missions without exact
+    calendar dates.

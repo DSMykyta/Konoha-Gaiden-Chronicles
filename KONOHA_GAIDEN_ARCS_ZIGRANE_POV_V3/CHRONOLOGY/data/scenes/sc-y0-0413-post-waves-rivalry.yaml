@@ -1,39 +1,130 @@
 schema_version: 1
-id: "sc-y0-0413-post-waves-rivalry"
+id: sc-y0-0413-post-waves-rivalry
 episode_id: ep-y0-post-waves-rivalry
 display_rank: 100
-continuity_id: "main"
-title: "Наруто й Саске сперечаються після повернення з Країни Хвиль"
+continuity_id: main
+title: Наруто й Саске сперечаються після повернення з Країни Хвиль
 location_id: null
-placement: {anchor_id: "ta-y0-0413", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "accepted", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+placement:
+  anchor_id: ta-y0-0413
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: accepted
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0413-naruto-confronts-sasuke"
-    legacy_ids: ["V10-000035"]
-    title: "Наруто дорікає Саске за зверхність"
-    text: "Після повернення Команди 7 з Країни Хвиль Наруто дорікає Саске за його ставлення."
-    origin: "R"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000035", "evd-shippuden-258-post-waves"]
-  - id: "ev-y0-0413-sasuke-challenges-naruto-to-improve"
-    legacy_ids: ["V10-000035"]
-    title: "Саске пропонує Наруто стати сильнішим"
-    text: "Саске відповідає, що вважає себе кращим лише за Наруто, і пропонує тому стати сильнішим, якщо він хоче звести рахунки."
-    origin: "R"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000035", "evd-shippuden-258-post-waves"]
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0413-kakashi-dismisses-disorganised-team
+  display_rank: 50
+  title: Какаші відпускає команду через погану взаємодію
+  text: На місіях після Країни Хвиль Наруто намагається перевершити Саске й заважає команді. Какаші припиняє роботу того дня
+    та відпускає учнів.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep20-audit
+- id: ev-y0-0413-naruto-confronts-sasuke
+  legacy_ids:
+  - V10-000035
+  title: Наруто дорікає Саске за зверхність
+  text: Після повернення Команди 7 з Країни Хвиль Наруто дорікає Саске за його ставлення.
+  origin: R
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000035
+  - evd-shippuden-258-post-waves
+- id: ev-y0-0413-sasuke-challenges-naruto-to-improve
+  legacy_ids:
+  - V10-000035
+  title: Саске пропонує Наруто стати сильнішим
+  text: Саске каже Наруто просто стати сильнішим. Коли Сакура пропонує обом попрацювати над навичками, він відповідає, що
+    вона слабша навіть за Наруто.
+  origin: R
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000035
+  - evd-shippuden-258-post-waves
+  - evd-narutopedia-ep20-audit
 relations:
-  - {id: "rel-0413-rivalry-100-200", kind: "before", a: "ev-y0-0413-naruto-confronts-sasuke", b: "ev-y0-0413-sasuke-challenges-naruto-to-improve", basis: "source", review: "pending", evidence_ids: ["evd-shippuden-258-post-waves"]}
+- id: rel-0413-rivalry-100-200
+  kind: before
+  a: ev-y0-0413-naruto-confronts-sasuke
+  b: ev-y0-0413-sasuke-challenges-naruto-to-improve
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-shippuden-258-post-waves
+- id: rel-audit-20-y0-0413-kakashi-dismisses-disorganised-team-before-y0-0413-naruto-confronts-sasuke
+  kind: before
+  a: ev-y0-0413-kakashi-dismisses-disorganised-team
+  b: ev-y0-0413-naruto-confronts-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep20-audit
 presence:
-  - {id: "pr-0413-rivalry-naruto", entity_id: "c-naruto", from: "sc-y0-0413-post-waves-rivalry.start", to: "sc-y0-0413-post-waves-rivalry.end", basis: "source", evidence_ids: ["evd-v10-000035"], review: "accepted"}
-  - {id: "pr-0413-rivalry-sasuke", entity_id: "c-sasuke", from: "sc-y0-0413-post-waves-rivalry.start", to: "sc-y0-0413-post-waves-rivalry.end", basis: "source", evidence_ids: ["evd-v10-000035"], review: "accepted"}
+- id: pr-0413-rivalry-naruto
+  entity_id: c-naruto
+  from: sc-y0-0413-post-waves-rivalry.start
+  to: sc-y0-0413-post-waves-rivalry.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000035
+  review: accepted
+- id: pr-0413-rivalry-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-0413-post-waves-rivalry.start
+  to: sc-y0-0413-post-waves-rivalry.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000035
+  review: accepted
+- id: pr-audit-20-y0-0413-post-waves-rivalry-c-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-0413-post-waves-rivalry.start
+  to: ev-y0-0413-kakashi-dismisses-disorganised-team.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep20-audit
+- id: pr-audit-20-y0-0413-post-waves-rivalry-c-sakura
+  entity_id: c-sakura
+  from: sc-y0-0413-post-waves-rivalry.start
+  to: sc-y0-0413-post-waves-rivalry.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep20-audit
