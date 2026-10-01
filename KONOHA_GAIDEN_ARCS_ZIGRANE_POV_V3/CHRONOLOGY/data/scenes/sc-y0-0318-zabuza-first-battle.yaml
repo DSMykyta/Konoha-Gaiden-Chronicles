@@ -55,7 +55,8 @@ events:
   legacy_ids:
   - V10-000027
   title: Какаші відкриває Шарінґан
-  text: Какаші відкриває Шарінґан, готуючись битися із Забузою.
+  text: Какаші відкриває Шарінґан, готуючись битися із Забузою. Саске впізнає Шарінґан, але не розуміє, чому його має людина
+    поза кланом Учіха.
   origin: M
   extent: interval
   display_rank: 200
@@ -66,25 +67,8 @@ events:
   - entity_id: c-zabuza
     role: participant
     mode: physical
-  evidence_ids:
-  - evd-v10-000027
-  - evd-manga-land-waves
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0318-sasuke-recognises-sharingan
-  display_rank: 210
-  title: Саске впізнає Шарінґан Какаші
-  text: Саске впізнає Шарінґан, але не розуміє, чому його має людина поза кланом Учіха.
-  involvement:
   - entity_id: c-sasuke
     role: focus
-    mode: physical
-  - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  - entity_id: c-zabuza
-    role: participant
     mode: physical
   - entity_id: c-naruto
     role: participant
@@ -96,6 +80,8 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
   - evd-narutopedia-ep7-audit
 - origin: A
   extent: interval
@@ -103,7 +89,8 @@ events:
   id: ev-y0-0318-zabuza-summons-mist
   display_rank: 220
   title: Забуза приховує себе туманом
-  text: Забуза здіймає густий туман; Какаші наказує генінам охороняти Тадзуну.
+  text: Забуза здіймає густий туман; Какаші наказує генінам охороняти Тадзуну. Саске охоплює паніка від напруження між джонінами.
+    Какаші запевняє, що захистить учнів.
   involvement:
   - entity_id: c-zabuza
     role: focus
@@ -115,31 +102,6 @@ events:
     role: participant
     mode: physical
   - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0318-kakashi-calms-sasuke
-  display_rank: 230
-  title: Какаші заспокоює Саске
-  text: Саске охоплює паніка від напруження між джонінами. Какаші запевняє, що захистить учнів.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
     role: participant
     mode: physical
   - entity_id: c-sakura
@@ -155,8 +117,9 @@ events:
   focus_teams: []
   id: ev-y0-0318-kakashi-stabs-water-clone
   display_rank: 240
-  title: Какаші перехоплює удар по Тадзуні
-  text: Забуза з’являється біля групи. Какаші встромляє в нього кунай, але це водяний клон.
+  title: Какаші й Забуза обмінюються водяними підмінами
+  text: Забуза з’являється біля групи. Какаші встромляє в нього кунай, але це водяний клон. Забуза розрубує Какаші, який теж
+    виявляється водяним клоном. Какаші з’являється позаду Забузи й приставляє кунай до його горла.
   involvement:
   - entity_id: c-kakashi
     role: focus
@@ -174,38 +137,6 @@ events:
     role: participant
     mode: physical
   - entity_id: c-sakura
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0318-zabuza-cuts-water-clone
-  display_rank: 250
-  title: Забуза розрубує водяного клона Какаші
-  text: Забуза розрубує Какаші, який теж виявляється водяним клоном.
-  involvement:
-  - entity_id: c-zabuza
-    role: focus
-    mode: physical
-  - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0318-kakashi-threatens-zabuza
-  display_rank: 260
-  title: Какаші приставляє кунай до горла Забузи
-  text: Какаші з’являється позаду Забузи й приставляє кунай до його горла.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-zabuza
     role: participant
     mode: physical
   evidence_ids:
@@ -240,38 +171,11 @@ events:
 - origin: A
   extent: interval
   focus_teams: []
-  id: ev-y0-0318-kakashi-orders-retreat
-  display_rank: 310
-  title: Какаші наказує генінам тікати
-  text: Полонений Какаші наказує учням тікати; водяний клон Забузи загрожує групі Тадзуни.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  - entity_id: c-zabuza
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep8-audit
-- origin: A
-  extent: interval
-  focus_teams: []
   id: ev-y0-0318-naruto-reclaims-headband
   display_rank: 320
-  title: Наруто повертає свою пов’язку
-  text: Біль у руці нагадує Наруто про клятву. Він вирішує битися й забирає свою пов’язку з-під ноги Забузи.
+  title: Наруто відмовляється тікати й повертає пов’язку
+  text: Полонений Какаші наказує учням тікати; водяний клон Забузи загрожує групі Тадзуни. Біль у руці нагадує Наруто про
+    клятву. Він вирішує битися й забирає свою пов’язку з-під ноги Забузи.
   involvement:
   - entity_id: c-naruto
     role: focus
@@ -287,6 +191,9 @@ events:
     mode: physical
   - entity_id: c-tazuna
     role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep8-audit
@@ -383,7 +290,9 @@ events:
   id: ev-y0-0318-haku-stops-finishing-blow
   display_rank: 550
   title: Хаку перехоплює завершальний удар
-  text: До завершального удару Какаші юний мисливець-нін з Кірі влучає сенбонами в Забузу, начебто вбивши його.
+  text: До завершального удару Какаші юний мисливець-нін з Кірі влучає сенбонами в Забузу, начебто вбивши його. Наруто обурюється,
+    що ровесник легко здолав їхнього важкого супротивника. Какаші пояснює, що існують молодші за Наруто ніндзя, сильніші за
+    нього самого.
   involvement:
   - entity_id: c-haku
     role: focus
@@ -395,35 +304,6 @@ events:
     role: participant
     mode: physical
   - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep9-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0318-naruto-protests-hunter
-  display_rank: 600
-  title: Наруто обурюється втручанням мисливця-нін
-  text: Наруто обурюється, що ровесник легко здолав їхнього важкого супротивника. Какаші пояснює, що існують молодші за Наруто
-    ніндзя, сильніші за нього самого.
-  involvement:
-  - entity_id: c-naruto
-    role: focus
-    mode: physical
-  - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  - entity_id: c-haku
     role: participant
     mode: physical
   - entity_id: c-sasuke
@@ -537,78 +417,6 @@ relations:
   review: pending
   evidence_ids:
   - evd-v10-000027
-- id: rel-audit-7-y0-0318-kakashi-reveals-sharingan-before-y0-0318-sasuke-recognises-sharingan
-  kind: before
-  a: ev-y0-0318-kakashi-reveals-sharingan
-  b: ev-y0-0318-sasuke-recognises-sharingan
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- id: rel-audit-7-y0-0318-sasuke-recognises-sharingan-before-y0-0318-zabuza-summons-mist
-  kind: before
-  a: ev-y0-0318-sasuke-recognises-sharingan
-  b: ev-y0-0318-zabuza-summons-mist
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- id: rel-audit-7-y0-0318-zabuza-summons-mist-before-y0-0318-kakashi-calms-sasuke
-  kind: before
-  a: ev-y0-0318-zabuza-summons-mist
-  b: ev-y0-0318-kakashi-calms-sasuke
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- id: rel-audit-7-y0-0318-kakashi-calms-sasuke-before-y0-0318-kakashi-stabs-water-clone
-  kind: before
-  a: ev-y0-0318-kakashi-calms-sasuke
-  b: ev-y0-0318-kakashi-stabs-water-clone
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- id: rel-audit-7-y0-0318-kakashi-stabs-water-clone-before-y0-0318-zabuza-cuts-water-clone
-  kind: before
-  a: ev-y0-0318-kakashi-stabs-water-clone
-  b: ev-y0-0318-zabuza-cuts-water-clone
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- id: rel-audit-7-y0-0318-zabuza-cuts-water-clone-before-y0-0318-kakashi-threatens-zabuza
-  kind: before
-  a: ev-y0-0318-zabuza-cuts-water-clone
-  b: ev-y0-0318-kakashi-threatens-zabuza
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- id: rel-audit-7-y0-0318-kakashi-threatens-zabuza-before-y0-0318-kakashi-water-prison
-  kind: before
-  a: ev-y0-0318-kakashi-threatens-zabuza
-  b: ev-y0-0318-kakashi-water-prison
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep7-audit
-- id: rel-audit-8-y0-0318-kakashi-water-prison-before-y0-0318-kakashi-orders-retreat
-  kind: before
-  a: ev-y0-0318-kakashi-water-prison
-  b: ev-y0-0318-kakashi-orders-retreat
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep8-audit
-- id: rel-audit-8-y0-0318-kakashi-orders-retreat-before-y0-0318-naruto-reclaims-headband
-  kind: before
-  a: ev-y0-0318-kakashi-orders-retreat
-  b: ev-y0-0318-naruto-reclaims-headband
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep8-audit
 - id: rel-audit-8-y0-0318-naruto-reclaims-headband-before-y0-0318-naruto-clones-distract-zabuza
   kind: before
   a: ev-y0-0318-naruto-reclaims-headband
@@ -641,22 +449,54 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep9-audit
-- id: rel-audit-9-y0-0318-haku-stops-finishing-blow-before-y0-0318-naruto-protests-hunter
+- id: rel-whole-action-y0-0318-kakashi-reveals-sharingan-y0-0318-zabuza-summons-mist
   kind: before
-  a: ev-y0-0318-haku-stops-finishing-blow
-  b: ev-y0-0318-naruto-protests-hunter
+  a: ev-y0-0318-kakashi-reveals-sharingan
+  b: ev-y0-0318-zabuza-summons-mist
   basis: source
   review: accepted
   evidence_ids:
-  - evd-narutopedia-ep9-audit
-- id: rel-audit-9-y0-0318-naruto-protests-hunter-before-y0-0318-haku-takes-zabuza
+  - evd-v10-000027
+  - evd-manga-land-waves
+  - evd-narutopedia-ep7-audit
+- id: rel-whole-action-y0-0318-zabuza-summons-mist-y0-0318-kakashi-stabs-water-clone
   kind: before
-  a: ev-y0-0318-naruto-protests-hunter
+  a: ev-y0-0318-zabuza-summons-mist
+  b: ev-y0-0318-kakashi-stabs-water-clone
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-whole-action-y0-0318-kakashi-stabs-water-clone-y0-0318-kakashi-water-prison
+  kind: before
+  a: ev-y0-0318-kakashi-stabs-water-clone
+  b: ev-y0-0318-kakashi-water-prison
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+  - evd-v10-000027
+  - evd-manga-land-waves
+- id: rel-whole-action-y0-0318-kakashi-water-prison-y0-0318-naruto-reclaims-headband
+  kind: before
+  a: ev-y0-0318-kakashi-water-prison
+  b: ev-y0-0318-naruto-reclaims-headband
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
+  - evd-narutopedia-ep8-audit
+- id: rel-whole-action-y0-0318-haku-stops-finishing-blow-y0-0318-haku-takes-zabuza
+  kind: before
+  a: ev-y0-0318-haku-stops-finishing-blow
   b: ev-y0-0318-haku-takes-zabuza
   basis: source
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep9-audit
+  - evd-v10-000027
+  - evd-manga-land-waves
 presence:
 - id: pr-0318-kakashi
   entity_id: c-kakashi

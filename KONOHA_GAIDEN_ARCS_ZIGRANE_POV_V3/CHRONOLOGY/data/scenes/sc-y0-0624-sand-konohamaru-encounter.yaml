@@ -17,33 +17,12 @@ review:
   origin: accepted
   text: accepted
 events:
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0624-konohamaru-friends-follow-naruto
-  display_rank: 50
-  title: Конохамару з друзями стежать за Наруто
-  text: Конохамару, Моегі й Удон стежать за Наруто, перш ніж натрапляють на чужих ніндзя.
-  involvement:
-  - entity_id: c-konohamaru
-    role: focus
-    mode: physical
-  - entity_id: c-moegi
-    role: participant
-    mode: physical
-  - entity_id: c-udon
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep20-audit
 - id: ev-y0-0624-kankuro-confronts-konohamaru
   legacy_ids:
   - V10-000039-B
   title: Канкуро стикається з Конохамару
-  text: Конохамару випадково врізається в Канкуро й ображає його. Канкуро хапає хлопця та погрожує вбити.
+  text: Конохамару, Моегі й Удон стежать за Наруто, перш ніж натрапляють на чужих ніндзя. Конохамару випадково врізається
+    в Канкуро й ображає його. Канкуро хапає хлопця та погрожує вбити.
   origin: M
   extent: interval
   display_rank: 100
@@ -58,6 +37,9 @@ events:
     role: participant
     mode: physical
   - entity_id: c-udon
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
     role: participant
     mode: physical
   evidence_ids:
@@ -121,8 +103,9 @@ events:
 - id: ev-y0-0624-team7-meets-sand-siblings
   legacy_ids:
   - V10-000039-B
-  title: Команда 7 вперше зустрічає Темарі й Ґаару
-  text: Втручання приводить Наруто, Саске й Сакуру до першої зустрічі з Темарі та Ґаарою.
+  title: Ґаара припиняє конфлікт Канкуро з Командою 7
+  text: Втручання приводить Наруто, Саске й Сакуру до першої зустрічі з Темарі та Ґаарою. Канкуро готується атакувати Саске,
+    але Ґаара наказує йому припинити бавитися.
   origin: M
   extent: interval
   display_rank: 300
@@ -151,33 +134,6 @@ events:
   - evd-v10-000039-B
   - evd-manga-chunin-intro
   - evd-anime-20-23
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0624-gaara-stops-kankuro
-  display_rank: 350
-  title: Ґаара зупиняє Канкуро
-  text: Канкуро готується атакувати Саске, але Ґаара наказує йому припинити бавитися.
-  involvement:
-  - entity_id: c-gaara
-    role: focus
-    mode: physical
-  - entity_id: c-kankuro
-    role: participant
-    mode: physical
-  - entity_id: c-temari
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  evidence_ids:
   - evd-narutopedia-ep20-audit
 relations:
 - id: rel-0624-sand-1
@@ -196,14 +152,6 @@ relations:
   review: pending
   evidence_ids:
   - evd-v10-000039-B
-- id: rel-audit-20-y0-0624-konohamaru-friends-follow-naruto-before-y0-0624-kankuro-confronts-konohamaru
-  kind: before
-  a: ev-y0-0624-konohamaru-friends-follow-naruto
-  b: ev-y0-0624-kankuro-confronts-konohamaru
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep20-audit
 - id: rel-audit-20-y0-0624-team7-intervenes-before-y0-0624-sasuke-stone-saves-konohamaru
   kind: before
   a: ev-y0-0624-team7-intervenes
@@ -216,14 +164,6 @@ relations:
   kind: before
   a: ev-y0-0624-sasuke-stone-saves-konohamaru
   b: ev-y0-0624-team7-meets-sand-siblings
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep20-audit
-- id: rel-audit-20-y0-0624-team7-meets-sand-siblings-before-y0-0624-gaara-stops-kankuro
-  kind: before
-  a: ev-y0-0624-team7-meets-sand-siblings
-  b: ev-y0-0624-gaara-stops-kankuro
   basis: source
   review: accepted
   evidence_ids:

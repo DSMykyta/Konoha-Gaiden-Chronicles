@@ -21,7 +21,8 @@ events:
   legacy_ids:
   - V10-000032
   title: Забузу й Хаку ховають поруч
-  text: Після завершення бою Забузу й Хаку ховають поруч на височині над Країною Хвиль.
+  text: Після завершення бою Забузу й Хаку ховають поруч на височині над Країною Хвиль. Після поховання Наруто відкидає уявлення
+    про ніндзя як прості знаряддя й заявляє, що знайде власний шлях.
   origin: M
   extent: interval
   display_rank: 100
@@ -32,17 +33,6 @@ events:
   - entity_id: c-haku
     role: affected
     mode: physical
-  evidence_ids:
-  - evd-v10-000032
-  - evd-manga-land-waves
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-naruto-chooses-ninja-way
-  display_rank: 200
-  title: Наруто вирішує знайти власний шлях ніндзя
-  text: Після поховання Наруто відкидає уявлення про ніндзя як прості знаряддя й заявляє, що знайде власний шлях.
-  involvement:
   - entity_id: c-naruto
     role: focus
     mode: physical
@@ -56,14 +46,8 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-v10-000032
+  - evd-manga-land-waves
   - evd-narutopedia-ep19-audit
-relations:
-- id: rel-audit-19-y0-0330-zabuza-haku-buried-before-y0-0330-naruto-chooses-ninja-way
-  kind: before
-  a: ev-y0-0330-zabuza-haku-buried
-  b: ev-y0-0330-naruto-chooses-ninja-way
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep19-audit
+relations: []
 presence: []

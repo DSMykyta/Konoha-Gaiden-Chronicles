@@ -87,29 +87,12 @@ events:
 - origin: A
   extent: interval
   focus_teams: []
-  id: ev-y0-0330-sakura-throws-kunai-at-haku
-  display_rank: 130
-  title: Сакура намагається допомогти Саске
-  text: Сакура кидає кунай у напрямку Хаку, намагаючись урятувати Саске. Хаку ловить зброю.
-  involvement:
-  - entity_id: c-sakura
-    role: focus
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep13-audit
-- origin: A
-  extent: interval
-  focus_teams: []
   id: ev-y0-0330-naruto-arrives-with-shuriken
   display_rank: 140
-  title: Наруто вибиває Хаку з дзеркал
-  text: До того, як Хаку повертає кунай Сакурі, Наруто прибуває й вибиває його з дзеркал сюрикенами.
+  title: Наруто прибуває на міст і перериває атаку Хаку
+  text: Сакура кидає кунай у напрямку Хаку, намагаючись урятувати Саске. Хаку ловить зброю. До того, як Хаку повертає кунай
+    Сакурі, Наруто прибуває й вибиває його з дзеркал сюрикенами. Наруто голосно оголошує свій прихід; Какаші дорікає, що прихована
+    атака була б ефективнішою.
   involvement:
   - entity_id: c-naruto
     role: focus
@@ -134,36 +117,6 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep13-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-kakashi-rebukes-naruto-entrance
-  display_rank: 150
-  title: Какаші дорікає Наруто за гучну появу
-  text: Наруто голосно оголошує свій прихід; Какаші дорікає, що прихована атака була б ефективнішою.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  - entity_id: c-zabuza
-    role: participant
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  evidence_ids:
   - evd-narutopedia-ep14-audit
 - origin: A
   extent: interval
@@ -187,29 +140,11 @@ events:
 - origin: A
   extent: interval
   focus_teams: []
-  id: ev-y0-0330-sasuke-attacks-distracted-haku
-  display_rank: 170
-  title: Саске атакує Хаку під час розмови
-  text: Саске кидає кунай, поки Хаку говорить із Наруто. Хаку знову входить у дзеркала й продовжує бій.
-  involvement:
-  - entity_id: c-sasuke
-    role: focus
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep14-audit
-- origin: A
-  extent: interval
-  focus_teams: []
   id: ev-y0-0330-naruto-enters-ice-mirrors
   display_rank: 180
   title: Наруто заходить усередину крижаних дзеркал
-  text: Какаші пропонує атакувати дзеркала ззовні й зсередини. Наруто натомість заходить до Саске та теж опиняється в пастці.
+  text: Саске кидає кунай, поки Хаку говорить із Наруто. Хаку знову входить у дзеркала й продовжує бій. Какаші пропонує атакувати
+    дзеркала ззовні й зсередини. Наруто натомість заходить до Саске та теж опиняється в пастці.
   involvement:
   - entity_id: c-naruto
     role: focus
@@ -246,70 +181,12 @@ events:
 - origin: A
   extent: interval
   focus_teams: []
-  id: ev-y0-0330-kakashi-reveals-sharingan-again
-  display_rank: 191
-  title: Какаші знову відкриває Шарінґан
-  text: Какаші знову відкриває Шарінґан. Забуза попереджає, що знайшов спосіб протидіяти йому.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-zabuza
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-haku-counters-naruto-clones
-  display_rank: 192
-  title: Хаку відбиває атаки клонів Наруто
-  text: Усередині дзеркал Хаку неодноразово відбиває атаки тіньових клонів Наруто.
-  involvement:
-  - entity_id: c-haku
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-sasuke-reads-haku-movement
-  display_rank: 193
-  title: Саске починає розрізняти рухи Хаку
-  text: Спостерігаючи за атаками Хаку на клонів, Саске починає розрізняти його рухи.
-  involvement:
-  - entity_id: c-sasuke
-    role: focus
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- origin: A
-  extent: interval
-  focus_teams: []
   id: ev-y0-0330-sasuke-fireball-hits-haku
   display_rank: 194
-  title: Вогняна куля Саске зачіпає Хаку
-  text: Поки Хаку зайнятий клонами, Саске обпалює край його одягу Вогняною кулею. Хаку починає сповільнюватися.
+  title: Наруто й Саске атакують Хаку спільно
+  text: Усередині дзеркал Хаку неодноразово відбиває атаки тіньових клонів Наруто. Спостерігаючи за атаками Хаку на клонів,
+    Саске починає розрізняти його рухи. Поки Хаку зайнятий клонами, Саске обпалює край його одягу Вогняною кулею. Хаку починає
+    сповільнюватися.
   involvement:
   - entity_id: c-sasuke
     role: focus
@@ -328,34 +205,13 @@ events:
   id: ev-y0-0330-zabuza-mist-negates-sharingan
   display_rank: 195
   title: Забуза приховує себе від Шарінґана
-  text: Забуза здіймає туман, щоб нейтралізувати Шарінґан, і зникає з поля зору Какаші.
+  text: Какаші знову відкриває Шарінґан. Забуза попереджає, що знайшов спосіб протидіяти йому. Забуза здіймає туман, щоб нейтралізувати
+    Шарінґан, і зникає з поля зору Какаші.
   involvement:
   - entity_id: c-zabuza
     role: focus
     mode: physical
   - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-kakashi-intercepts-through-mist
-  display_rank: 196
-  title: Какаші кидається захищати Тадзуну й Сакуру
-  text: Какаші розуміє, що Забуза цілитиметься в Тадзуну та Сакуру, й кидається перехопити удар. Сакура кричить у тумані.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-zabuza
     role: participant
     mode: physical
   - entity_id: c-sakura
@@ -407,30 +263,12 @@ events:
   - evd-v10-000031
   - evd-manga-land-waves
   - evd-narutopedia-ep16-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-haku-targets-unconscious-naruto
-  display_rank: 250
-  title: Хаку цілиться в непритомного Наруто
-  text: Зрозумівши, що Шарінґан Саске ускладнить тривалий бій, Хаку спрямовує сенбони в беззахисного Наруто.
-  involvement:
-  - entity_id: c-haku
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
 - id: ev-y0-0330-sasuke-protects-naruto
   legacy_ids:
   - V10-000031
   title: Саске прикриває Наруто
-  text: Саске приймає на себе атаку Хаку, прикриваючи Наруто.
+  text: Зрозумівши, що Шарінґан Саске ускладнить тривалий бій, Хаку спрямовує сенбони в беззахисного Наруто. Саске приймає
+    на себе атаку Хаку, прикриваючи Наруто.
   origin: M
   extent: interval
   display_rank: 300
@@ -447,13 +285,15 @@ events:
   evidence_ids:
   - evd-v10-000031
   - evd-manga-land-waves
+  - evd-narutopedia-ep16-audit
 - origin: A
   extent: interval
   focus_teams: []
   id: ev-y0-0330-kakashi-cut-protecting-tazuna
   display_rank: 350
-  title: Какаші отримує поріз, захищаючи групу
-  text: Перехоплюючи удар по Сакурі й Тадзуні, Какаші отримує удар мечем Забузи.
+  title: Какаші отримує поріз, захищаючи Тадзуну й Сакуру
+  text: Какаші розуміє, що Забуза цілитиметься в Тадзуну та Сакуру, й кидається перехопити удар. Сакура кричить у тумані.
+    Перехоплюючи удар по Сакурі й Тадзуні, Какаші отримує удар мечем Забузи.
   involvement:
   - entity_id: c-kakashi
     role: focus
@@ -469,30 +309,14 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep16-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-naruto-catches-sasuke
-  display_rank: 360
-  title: Наруто підхоплює пораненого Саске
-  text: Наруто приходить до тями й підхоплює Саске, пронизаного сенбонами. Коли той завмирає, Наруто вважає його мертвим.
-  involvement:
-  - entity_id: c-naruto
-    role: focus
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
+  - evd-narutopedia-ep15-audit
 - id: ev-y0-0330-naruto-nine-tails-chakra
   legacy_ids:
   - V10-000031
   title: Наруто вивільняє чакру Дев’ятихвостого
-  text: Вважаючи Саске смертельно пораненим, Наруто вивільняє чакру Дев’ятихвостого й прориває техніку Хаку.
+  text: Наруто приходить до тями й підхоплює Саске, пронизаного сенбонами. Коли той завмирає, Наруто вважає його мертвим.
+    Вважаючи Саске смертельно пораненим, Наруто вивільняє чакру Дев’ятихвостого й прориває техніку Хаку. Какаші й Забуза відчувають
+    зміну чакри. Какаші непокоїться про печатку; Хаку бачить, як сила Лиса загоює рани Наруто.
   origin: M
   extent: interval
   display_rank: 400
@@ -506,30 +330,15 @@ events:
   - entity_id: c-sasuke
     role: affected
     mode: physical
-  evidence_ids:
-  - evd-v10-000031
-  - evd-manga-land-waves
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-jonin-sense-fox-chakra
-  display_rank: 410
-  title: Джоніни відчувають чакру Дев’ятихвостого
-  text: Какаші й Забуза відчувають зміну чакри. Какаші непокоїться про печатку; Хаку бачить, як сила Лиса загоює рани Наруто.
-  involvement:
   - entity_id: c-kakashi
     role: focus
     mode: physical
   - entity_id: c-zabuza
     role: participant
     mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
   evidence_ids:
+  - evd-v10-000031
+  - evd-manga-land-waves
   - evd-narutopedia-ep16-audit
 - origin: A
   extent: interval
@@ -553,27 +362,11 @@ events:
 - origin: A
   extent: interval
   focus_teams: []
-  id: ev-y0-0330-naruto-recognises-haku
-  display_rank: 430
-  title: Наруто впізнає Хаку без маски
-  text: Маска Хаку падає. Наруто впізнає хлопця з лісу й зупиняє наступний удар.
-  involvement:
-  - entity_id: c-naruto
-    role: focus
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep17-audit
-- origin: A
-  extent: interval
-  focus_teams: []
   id: ev-y0-0330-haku-explains-past
   display_rank: 440
-  title: Хаку просить смерті й розповідає про минуле
-  text: Хаку вважає себе непотрібним Забузі й просить Наруто вбити його. Він розповідає про успадковану силу, загибель батьків
-    і прийняття Забузою.
+  title: Наруто зупиняє бій і вислуховує Хаку
+  text: Маска Хаку падає. Наруто впізнає хлопця з лісу й зупиняє наступний удар. Хаку вважає себе непотрібним Забузі й просить
+    Наруто вбити його. Він розповідає про успадковану силу, загибель батьків і прийняття Забузою.
   involvement:
   - entity_id: c-haku
     role: focus
@@ -588,8 +381,9 @@ events:
   focus_teams: []
   id: ev-y0-0330-kakashi-summons-tracking-ninken
   display_rank: 450
-  title: Какаші викликає псів для затримання Забузи
-  text: Какаші викликає нінкен через сувій. Пси знаходять Забузу за кров’ю Какаші на його мечі й утримують його.
+  title: Какаші затримує Забузу псами й готує завершальний удар
+  text: Какаші викликає нінкен через сувій. Пси знаходять Забузу за кров’ю Какаші на його мечі й утримують його. Какаші представляє
+    власну техніку — Різак блискавки — та готується завершити бій.
   involvement:
   - entity_id: c-kakashi
     role: focus
@@ -602,59 +396,13 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep17-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-kakashi-readies-lightning-cutter
-  display_rank: 460
-  title: Какаші готує Різак блискавки
-  text: Какаші представляє власну техніку — Різак блискавки — та готується завершити бій.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-zabuza
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep17-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-naruto-accepts-haku-request
-  display_rank: 480
-  title: Наруто погоджується виконати прохання Хаку
-  text: Після суперечки про роль ніндзя Наруто погоджується й кидається до Хаку з кунаєм.
-  involvement:
-  - entity_id: c-naruto
-    role: focus
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-haku-leaves-naruto-for-zabuza
-  display_rank: 490
-  title: Хаку зупиняє Наруто й кидається до Забузи
-  text: Відчувши небезпеку для Забузи, Хаку зупиняє атаку Наруто й кидається до напарника.
-  involvement:
-  - entity_id: c-haku
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
 - id: ev-y0-0330-haku-sacrifices-self
   legacy_ids:
   - V10-000031
   title: Хаку жертвує собою за Забузу
-  text: Хаку залишає бій із Наруто й підставляється під удар Какаші, призначений Забузі.
+  text: Після суперечки про роль ніндзя Наруто погоджується й кидається до Хаку з кунаєм. Відчувши небезпеку для Забузи, Хаку
+    зупиняє атаку Наруто й кидається до напарника. Хаку залишає бій із Наруто й підставляється під удар Какаші, призначений
+    Забузі. Під час втручання Хаку сенбони влучають у закривавлений сувій. Викликані пси зникають, звільняючи Забузу.
   origin: M
   extent: interval
   display_rank: 500
@@ -668,37 +416,25 @@ events:
   - entity_id: c-kakashi
     role: participant
     mode: physical
-  evidence_ids:
-  - evd-v10-000031
-  - evd-manga-land-waves
-- id: ev-y0-0330-ninken-release-zabuza
-  title: Пси припиняють утримувати Забузу
-  text: Під час втручання Хаку сенбони влучають у закривавлений сувій. Викликані пси зникають, звільняючи Забузу.
-  origin: M
-  extent: interval
-  display_rank: 505
-  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
   - entity_id: group-kakashi-ninken
     role: focus
     mode: physical
-  - entity_id: c-zabuza
-    role: participant
-    mode: physical
-  - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
   evidence_ids:
+  - evd-v10-000031
+  - evd-manga-land-waves
+  - evd-narutopedia-ep18-audit
   - evd-narutopedia-wave-arc-dogs
 - origin: A
   extent: interval
   focus_teams: []
   id: ev-y0-0330-zabuza-swings-at-haku-body
   display_rank: 510
-  title: Забуза намагається вдарити Какаші крізь тіло Хаку
-  text: Забуза замахується на Какаші й мертвого Хаку. Какаші ухиляється, забираючи тіло.
+  title: Какаші рятує тіло Хаку від удару Забузи
+  text: Забуза замахується на Какаші й мертвого Хаку. Какаші ухиляється, забираючи тіло. Побачивши загиблого Хаку, Наруто
+    обурюється. Какаші наказує йому триматися осторонь від бою.
   involvement:
   - entity_id: c-zabuza
     role: focus
@@ -708,27 +444,8 @@ events:
     mode: physical
   - entity_id: c-haku
     role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-kakashi-orders-naruto-stay-back
-  display_rank: 520
-  title: Какаші наказує Наруто не втручатися
-  text: Побачивши загиблого Хаку, Наруто обурюється. Какаші наказує йому триматися осторонь від бою.
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
     mode: physical
   - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  - entity_id: c-zabuza
     role: participant
     mode: physical
   evidence_ids:
@@ -792,35 +509,11 @@ events:
 - origin: A
   extent: interval
   focus_teams: []
-  id: ev-y0-0330-gato-desecrates-haku
-  display_rank: 610
-  title: Ґато знущається з тіла Хаку
-  text: Ґато оголошує, що від початку планував зрадити Забузу, й копає тіло Хаку. Забуза припиняє бій із Какаші.
-  involvement:
-  - entity_id: c-gato
-    role: focus
-    mode: physical
-  - entity_id: c-zabuza
-    role: participant
-    mode: physical
-  - entity_id: c-haku
-    role: participant
-    mode: physical
-  - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep19-audit
-- origin: A
-  extent: interval
-  focus_teams: []
   id: ev-y0-0330-naruto-confronts-zabuza-about-haku
   display_rank: 620
   title: Наруто змушує Забузу визнати почуття до Хаку
-  text: Наруто зі сльозами говорить про відданість Хаку. Забуза теж плаче й визнає його жертву.
+  text: Ґато оголошує, що від початку планував зрадити Забузу, й копає тіло Хаку. Забуза припиняє бій із Какаші. Наруто зі
+    сльозами говорить про відданість Хаку. Забуза теж плаче й визнає його жертву.
   involvement:
   - entity_id: c-naruto
     role: focus
@@ -834,24 +527,8 @@ events:
   - entity_id: c-kakashi
     role: participant
     mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep19-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-zabuza-borrows-naruto-kunai
-  display_rank: 630
-  title: Забуза позичає кунай Наруто
-  text: Забуза просить кунай Наруто й бере його в зуби, готуючись атакувати Ґато.
-  involvement:
-  - entity_id: c-zabuza
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
   - entity_id: c-gato
-    role: participant
+    role: focus
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep19-audit
@@ -859,8 +536,8 @@ events:
   legacy_ids:
   - V10-000031
   title: Забуза вбиває Ґато
-  text: Позбавлений можливості користуватися руками Забуза бере кунай у зуби, проривається крізь найманців і вбиває Ґато,
-    отримуючи численні рани.
+  text: Забуза просить кунай Наруто й бере його в зуби, готуючись атакувати Ґато. Позбавлений можливості користуватися руками
+    Забуза бере кунай у зуби, проривається крізь найманців і вбиває Ґато, отримуючи численні рани.
   origin: M
   extent: interval
   display_rank: 700
@@ -1020,22 +697,6 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep13-audit
-- id: rel-audit-13-y0-0330-haku-traps-sasuke-in-mirrors-before-y0-0330-sakura-throws-kunai-at-haku
-  kind: before
-  a: ev-y0-0330-haku-traps-sasuke-in-mirrors
-  b: ev-y0-0330-sakura-throws-kunai-at-haku
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep13-audit
-- id: rel-audit-13-y0-0330-sakura-throws-kunai-at-haku-before-y0-0330-naruto-arrives-with-shuriken
-  kind: before
-  a: ev-y0-0330-sakura-throws-kunai-at-haku
-  b: ev-y0-0330-naruto-arrives-with-shuriken
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep13-audit
 - id: rel-audit-13-y0-0330-naruto-arrives-with-shuriken-before-y0-0330-sasuke-awakens-sharingan
   kind: before
   a: ev-y0-0330-naruto-arrives-with-shuriken
@@ -1044,38 +705,6 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep13-audit
-- id: rel-audit-14-y0-0330-naruto-arrives-with-shuriken-before-y0-0330-kakashi-rebukes-naruto-entrance
-  kind: before
-  a: ev-y0-0330-naruto-arrives-with-shuriken
-  b: ev-y0-0330-kakashi-rebukes-naruto-entrance
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep14-audit
-- id: rel-audit-14-y0-0330-kakashi-rebukes-naruto-entrance-before-y0-0330-haku-intercepts-zabuza-shuriken
-  kind: before
-  a: ev-y0-0330-kakashi-rebukes-naruto-entrance
-  b: ev-y0-0330-haku-intercepts-zabuza-shuriken
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep14-audit
-- id: rel-audit-14-y0-0330-haku-intercepts-zabuza-shuriken-before-y0-0330-sasuke-attacks-distracted-haku
-  kind: before
-  a: ev-y0-0330-haku-intercepts-zabuza-shuriken
-  b: ev-y0-0330-sasuke-attacks-distracted-haku
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep14-audit
-- id: rel-audit-14-y0-0330-sasuke-attacks-distracted-haku-before-y0-0330-naruto-enters-ice-mirrors
-  kind: before
-  a: ev-y0-0330-sasuke-attacks-distracted-haku
-  b: ev-y0-0330-naruto-enters-ice-mirrors
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep14-audit
 - id: rel-audit-14-y0-0330-naruto-enters-ice-mirrors-before-y0-0330-sasuke-awakens-sharingan
   kind: before
   a: ev-y0-0330-naruto-enters-ice-mirrors
@@ -1100,38 +729,6 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep14-audit
-- id: rel-audit-15-y0-0330-sasuke-fails-to-melt-mirrors-before-y0-0330-kakashi-reveals-sharingan-again
-  kind: before
-  a: ev-y0-0330-sasuke-fails-to-melt-mirrors
-  b: ev-y0-0330-kakashi-reveals-sharingan-again
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- id: rel-audit-15-y0-0330-kakashi-reveals-sharingan-again-before-y0-0330-haku-counters-naruto-clones
-  kind: before
-  a: ev-y0-0330-kakashi-reveals-sharingan-again
-  b: ev-y0-0330-haku-counters-naruto-clones
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- id: rel-audit-15-y0-0330-haku-counters-naruto-clones-before-y0-0330-sasuke-reads-haku-movement
-  kind: before
-  a: ev-y0-0330-haku-counters-naruto-clones
-  b: ev-y0-0330-sasuke-reads-haku-movement
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- id: rel-audit-15-y0-0330-sasuke-reads-haku-movement-before-y0-0330-sasuke-fireball-hits-haku
-  kind: before
-  a: ev-y0-0330-sasuke-reads-haku-movement
-  b: ev-y0-0330-sasuke-fireball-hits-haku
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
 - id: rel-audit-15-y0-0330-sasuke-fireball-hits-haku-before-y0-0330-zabuza-mist-negates-sharingan
   kind: before
   a: ev-y0-0330-sasuke-fireball-hits-haku
@@ -1140,50 +737,10 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep15-audit
-- id: rel-audit-15-y0-0330-zabuza-mist-negates-sharingan-before-y0-0330-kakashi-intercepts-through-mist
-  kind: before
-  a: ev-y0-0330-zabuza-mist-negates-sharingan
-  b: ev-y0-0330-kakashi-intercepts-through-mist
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- id: rel-audit-15-y0-0330-kakashi-intercepts-through-mist-before-y0-0330-sasuke-awakens-sharingan
-  kind: before
-  a: ev-y0-0330-kakashi-intercepts-through-mist
-  b: ev-y0-0330-sasuke-awakens-sharingan
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep15-audit
-- id: rel-audit-16-y0-0330-kakashi-intercepts-through-mist-before-y0-0330-naruto-faints-in-mirrors
-  kind: before
-  a: ev-y0-0330-kakashi-intercepts-through-mist
-  b: ev-y0-0330-naruto-faints-in-mirrors
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
 - id: rel-audit-16-y0-0330-naruto-faints-in-mirrors-before-y0-0330-sasuke-awakens-sharingan
   kind: before
   a: ev-y0-0330-naruto-faints-in-mirrors
   b: ev-y0-0330-sasuke-awakens-sharingan
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
-- id: rel-audit-16-y0-0330-sasuke-awakens-sharingan-before-y0-0330-haku-targets-unconscious-naruto
-  kind: before
-  a: ev-y0-0330-sasuke-awakens-sharingan
-  b: ev-y0-0330-haku-targets-unconscious-naruto
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
-- id: rel-audit-16-y0-0330-haku-targets-unconscious-naruto-before-y0-0330-sasuke-protects-naruto
-  kind: before
-  a: ev-y0-0330-haku-targets-unconscious-naruto
-  b: ev-y0-0330-sasuke-protects-naruto
   basis: source
   review: accepted
   evidence_ids:
@@ -1196,62 +753,6 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep16-audit
-- id: rel-audit-16-y0-0330-kakashi-cut-protecting-tazuna-before-y0-0330-naruto-catches-sasuke
-  kind: before
-  a: ev-y0-0330-kakashi-cut-protecting-tazuna
-  b: ev-y0-0330-naruto-catches-sasuke
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
-- id: rel-audit-16-y0-0330-naruto-catches-sasuke-before-y0-0330-naruto-nine-tails-chakra
-  kind: before
-  a: ev-y0-0330-naruto-catches-sasuke
-  b: ev-y0-0330-naruto-nine-tails-chakra
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
-- id: rel-audit-16-y0-0330-naruto-nine-tails-chakra-before-y0-0330-jonin-sense-fox-chakra
-  kind: before
-  a: ev-y0-0330-naruto-nine-tails-chakra
-  b: ev-y0-0330-jonin-sense-fox-chakra
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
-- id: rel-audit-16-y0-0330-jonin-sense-fox-chakra-before-y0-0330-haku-sacrifices-self
-  kind: before
-  a: ev-y0-0330-jonin-sense-fox-chakra
-  b: ev-y0-0330-haku-sacrifices-self
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep16-audit
-- id: rel-audit-17-y0-0330-jonin-sense-fox-chakra-before-y0-0330-naruto-breaks-ice-mirrors
-  kind: before
-  a: ev-y0-0330-jonin-sense-fox-chakra
-  b: ev-y0-0330-naruto-breaks-ice-mirrors
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep17-audit
-- id: rel-audit-17-y0-0330-naruto-breaks-ice-mirrors-before-y0-0330-naruto-recognises-haku
-  kind: before
-  a: ev-y0-0330-naruto-breaks-ice-mirrors
-  b: ev-y0-0330-naruto-recognises-haku
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep17-audit
-- id: rel-audit-17-y0-0330-naruto-recognises-haku-before-y0-0330-haku-explains-past
-  kind: before
-  a: ev-y0-0330-naruto-recognises-haku
-  b: ev-y0-0330-haku-explains-past
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep17-audit
 - id: rel-audit-17-y0-0330-haku-explains-past-before-y0-0330-kakashi-summons-tracking-ninken
   kind: before
   a: ev-y0-0330-haku-explains-past
@@ -1260,66 +761,10 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep17-audit
-- id: rel-audit-17-y0-0330-kakashi-summons-tracking-ninken-before-y0-0330-kakashi-readies-lightning-cutter
-  kind: before
-  a: ev-y0-0330-kakashi-summons-tracking-ninken
-  b: ev-y0-0330-kakashi-readies-lightning-cutter
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep17-audit
-- id: rel-audit-17-y0-0330-kakashi-readies-lightning-cutter-before-y0-0330-haku-sacrifices-self
-  kind: before
-  a: ev-y0-0330-kakashi-readies-lightning-cutter
-  b: ev-y0-0330-haku-sacrifices-self
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep17-audit
-- id: rel-audit-18-y0-0330-kakashi-readies-lightning-cutter-before-y0-0330-naruto-accepts-haku-request
-  kind: before
-  a: ev-y0-0330-kakashi-readies-lightning-cutter
-  b: ev-y0-0330-naruto-accepts-haku-request
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
-- id: rel-audit-18-y0-0330-naruto-accepts-haku-request-before-y0-0330-haku-leaves-naruto-for-zabuza
-  kind: before
-  a: ev-y0-0330-naruto-accepts-haku-request
-  b: ev-y0-0330-haku-leaves-naruto-for-zabuza
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
-- id: rel-audit-18-y0-0330-haku-leaves-naruto-for-zabuza-before-y0-0330-haku-sacrifices-self
-  kind: before
-  a: ev-y0-0330-haku-leaves-naruto-for-zabuza
-  b: ev-y0-0330-haku-sacrifices-self
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
 - id: rel-audit-18-y0-0330-haku-sacrifices-self-before-y0-0330-zabuza-swings-at-haku-body
   kind: before
   a: ev-y0-0330-haku-sacrifices-self
   b: ev-y0-0330-zabuza-swings-at-haku-body
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
-- id: rel-audit-18-y0-0330-zabuza-swings-at-haku-body-before-y0-0330-kakashi-orders-naruto-stay-back
-  kind: before
-  a: ev-y0-0330-zabuza-swings-at-haku-body
-  b: ev-y0-0330-kakashi-orders-naruto-stay-back
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep18-audit
-- id: rel-audit-18-y0-0330-kakashi-orders-naruto-stay-back-before-y0-0330-sakura-finds-sasuke-body
-  kind: before
-  a: ev-y0-0330-kakashi-orders-naruto-stay-back
-  b: ev-y0-0330-sakura-finds-sasuke-body
   basis: source
   review: accepted
   evidence_ids:
@@ -1340,54 +785,6 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep18-audit
-- id: rel-0330-ninken-ev-y0-0330-haku-sacrifices-self-ev-y0-0330-ninken-release-zabuza
-  kind: before
-  a: ev-y0-0330-haku-sacrifices-self
-  b: ev-y0-0330-ninken-release-zabuza
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-wave-arc-dogs
-- id: rel-0330-ninken-ev-y0-0330-ninken-release-zabuza-ev-y0-0330-zabuza-swings-at-haku-body
-  kind: before
-  a: ev-y0-0330-ninken-release-zabuza
-  b: ev-y0-0330-zabuza-swings-at-haku-body
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-wave-arc-dogs
-- id: rel-audit-19-y0-0330-gato-arrives-before-y0-0330-gato-desecrates-haku
-  kind: before
-  a: ev-y0-0330-gato-arrives
-  b: ev-y0-0330-gato-desecrates-haku
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep19-audit
-- id: rel-audit-19-y0-0330-gato-desecrates-haku-before-y0-0330-naruto-confronts-zabuza-about-haku
-  kind: before
-  a: ev-y0-0330-gato-desecrates-haku
-  b: ev-y0-0330-naruto-confronts-zabuza-about-haku
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep19-audit
-- id: rel-audit-19-y0-0330-naruto-confronts-zabuza-about-haku-before-y0-0330-zabuza-borrows-naruto-kunai
-  kind: before
-  a: ev-y0-0330-naruto-confronts-zabuza-about-haku
-  b: ev-y0-0330-zabuza-borrows-naruto-kunai
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep19-audit
-- id: rel-audit-19-y0-0330-zabuza-borrows-naruto-kunai-before-y0-0330-zabuza-kills-gato
-  kind: before
-  a: ev-y0-0330-zabuza-borrows-naruto-kunai
-  b: ev-y0-0330-zabuza-kills-gato
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep19-audit
 - id: rel-audit-19-y0-0330-zabuza-kills-gato-before-y0-0330-sasuke-found-alive
   kind: before
   a: ev-y0-0330-zabuza-kills-gato
@@ -1404,6 +801,120 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep19-audit
+- id: rel-whole-action-y0-0330-haku-traps-sasuke-in-mirrors-y0-0330-naruto-arrives-with-shuriken
+  kind: before
+  a: ev-y0-0330-haku-traps-sasuke-in-mirrors
+  b: ev-y0-0330-naruto-arrives-with-shuriken
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep13-audit
+  - evd-narutopedia-ep14-audit
+- id: rel-whole-action-y0-0330-naruto-arrives-with-shuriken-y0-0330-haku-intercepts-zabuza-shuriken
+  kind: before
+  a: ev-y0-0330-naruto-arrives-with-shuriken
+  b: ev-y0-0330-haku-intercepts-zabuza-shuriken
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep13-audit
+  - evd-narutopedia-ep14-audit
+- id: rel-whole-action-y0-0330-haku-intercepts-zabuza-shuriken-y0-0330-naruto-enters-ice-mirrors
+  kind: before
+  a: ev-y0-0330-haku-intercepts-zabuza-shuriken
+  b: ev-y0-0330-naruto-enters-ice-mirrors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: rel-whole-action-y0-0330-sasuke-fails-to-melt-mirrors-y0-0330-sasuke-fireball-hits-haku
+  kind: before
+  a: ev-y0-0330-sasuke-fails-to-melt-mirrors
+  b: ev-y0-0330-sasuke-fireball-hits-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+  - evd-narutopedia-ep15-audit
+- id: rel-whole-action-y0-0330-zabuza-mist-negates-sharingan-y0-0330-naruto-faints-in-mirrors
+  kind: before
+  a: ev-y0-0330-zabuza-mist-negates-sharingan
+  b: ev-y0-0330-naruto-faints-in-mirrors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+  - evd-narutopedia-ep16-audit
+- id: rel-whole-action-y0-0330-kakashi-cut-protecting-tazuna-y0-0330-naruto-nine-tails-chakra
+  kind: before
+  a: ev-y0-0330-kakashi-cut-protecting-tazuna
+  b: ev-y0-0330-naruto-nine-tails-chakra
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+  - evd-narutopedia-ep15-audit
+  - evd-v10-000031
+  - evd-manga-land-waves
+- id: rel-whole-action-y0-0330-naruto-nine-tails-chakra-y0-0330-naruto-breaks-ice-mirrors
+  kind: before
+  a: ev-y0-0330-naruto-nine-tails-chakra
+  b: ev-y0-0330-naruto-breaks-ice-mirrors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000031
+  - evd-manga-land-waves
+  - evd-narutopedia-ep16-audit
+  - evd-narutopedia-ep17-audit
+- id: rel-whole-action-y0-0330-naruto-breaks-ice-mirrors-y0-0330-haku-explains-past
+  kind: before
+  a: ev-y0-0330-naruto-breaks-ice-mirrors
+  b: ev-y0-0330-haku-explains-past
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- id: rel-whole-action-y0-0330-kakashi-summons-tracking-ninken-y0-0330-haku-sacrifices-self
+  kind: before
+  a: ev-y0-0330-kakashi-summons-tracking-ninken
+  b: ev-y0-0330-haku-sacrifices-self
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+  - evd-v10-000031
+  - evd-manga-land-waves
+  - evd-narutopedia-ep18-audit
+  - evd-narutopedia-wave-arc-dogs
+- id: rel-whole-action-y0-0330-zabuza-swings-at-haku-body-y0-0330-sakura-finds-sasuke-body
+  kind: before
+  a: ev-y0-0330-zabuza-swings-at-haku-body
+  b: ev-y0-0330-sakura-finds-sasuke-body
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-whole-action-y0-0330-gato-arrives-y0-0330-naruto-confronts-zabuza-about-haku
+  kind: before
+  a: ev-y0-0330-gato-arrives
+  b: ev-y0-0330-naruto-confronts-zabuza-about-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000031
+  - evd-manga-land-waves
+  - evd-narutopedia-ep19-audit
+- id: rel-whole-action-y0-0330-naruto-confronts-zabuza-about-haku-y0-0330-zabuza-kills-gato
+  kind: before
+  a: ev-y0-0330-naruto-confronts-zabuza-about-haku
+  b: ev-y0-0330-zabuza-kills-gato
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+  - evd-v10-000031
+  - evd-manga-land-waves
 presence:
 - id: pr-0330-bridge-naruto
   entity_id: c-naruto
@@ -1464,7 +975,7 @@ presence:
 - id: pr-audit-17-y0-0330-bridge-final-battle-group-kakashi-ninken
   entity_id: group-kakashi-ninken
   from: ev-y0-0330-kakashi-summons-tracking-ninken.start
-  to: ev-y0-0330-ninken-release-zabuza.end
+  to: ev-y0-0330-haku-sacrifices-self.end
   basis: source
   review: accepted
   evidence_ids:

@@ -134,38 +134,12 @@ events:
   - evd-v10-000025
   - evd-manga-land-waves
   - evd-narutopedia-ep6-audit
-- id: ev-y0-0316-kakashi-reviews-ambush
-  title: Какаші пояснює підміну й перевіряє поранення
-  text: Какаші пояснює, що помітив підозрілу калюжу за сухої погоди й застосував Підміну. Він хвалить Саске й Сакуру, дорікає
-    Наруто за заціпеніння та виявляє отруєну подряпину від рукавиці нападника.
-  origin: A
-  extent: interval
-  display_rank: 300
-  involvement:
-  - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  focus_teams:
-  - team-7
-  evidence_ids:
-  - evd-narutopedia-ep6-audit
 - id: ev-y0-0316-kakashi-questions-mission-rank
-  title: Какаші викриває приховану загрозу місії
-  text: У відповідь на запитання Тадзуни Какаші пояснює, що чекав, аби встановити справжню ціль нападників. Ніндзя полюють
-    на Тадзуну, тому завдання мало б бути щонайменше B-рангу; Сакура пропонує повернутися, зважаючи також на отруєну рану
-    Наруто.
+  title: Какаші перевіряє наслідки засідки та приховану небезпеку місії
+  text: Какаші пояснює, що помітив підозрілу калюжу за сухої погоди й застосував Підміну. Він хвалить Саске й Сакуру, дорікає
+    Наруто за заціпеніння та виявляє отруєну подряпину від рукавиці нападника. У відповідь на запитання Тадзуни Какаші пояснює,
+    що чекав, аби встановити справжню ціль нападників. Ніндзя полюють на Тадзуну, тому завдання мало б бути щонайменше B-рангу;
+    Сакура пропонує повернутися, зважаючи також на отруєну рану Наруто.
   origin: A
   extent: interval
   display_rank: 400
@@ -286,22 +260,6 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep6-audit
-- id: rel-audit-y0-0316-kakashi-sasuke-stop-demons-before-y0-0316-kakashi-reviews-ambush
-  kind: before
-  a: ev-y0-0316-kakashi-sasuke-stop-demons
-  b: ev-y0-0316-kakashi-reviews-ambush
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep6-audit
-- id: rel-audit-y0-0316-kakashi-reviews-ambush-before-y0-0316-kakashi-questions-mission-rank
-  kind: before
-  a: ev-y0-0316-kakashi-reviews-ambush
-  b: ev-y0-0316-kakashi-questions-mission-rank
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep6-audit
 - id: rel-audit-y0-0316-kakashi-questions-mission-rank-before-y0-0316-naruto-blood-oath
   kind: before
   a: ev-y0-0316-kakashi-questions-mission-rank
@@ -317,6 +275,16 @@ relations:
   basis: source
   review: accepted
   evidence_ids:
+  - evd-narutopedia-ep6-audit
+- id: rel-whole-final-ev-y0-0316-kakashi-sasuke-stop-demons-ev-y0-0316-kakashi-questions-mission-rank
+  kind: before
+  a: ev-y0-0316-kakashi-sasuke-stop-demons
+  b: ev-y0-0316-kakashi-questions-mission-rank
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-v10-000025
+  - evd-manga-land-waves
   - evd-narutopedia-ep6-audit
 presence:
 - id: pr-0316-demons-kakashi

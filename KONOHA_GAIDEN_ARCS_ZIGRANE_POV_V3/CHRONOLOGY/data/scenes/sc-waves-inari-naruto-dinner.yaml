@@ -13,8 +13,9 @@ events:
 - id: ev-y0-0329-naruto-collapses-overtraining
   legacy_ids:
   - V10-000030
-  title: Наруто повертається додому виснаженим
-  text: Наруто й Саске повертаються до дому Тадзуни після завершення вправи. Наруто радіє успіху, але виснажений.
+  title: Наруто сперечається з Інарі після тренування
+  text: Наруто й Саске повертаються до дому Тадзуни після завершення вправи. Наруто радіє успіху, але виснажений. Інарі каже,
+    що Наруто не знає його страждань і не переможе Ґато. Наруто називає його боягузом та йде від столу.
   origin: M
   extent: interval
   display_rank: 100
@@ -25,28 +26,10 @@ events:
   - entity_id: c-sasuke
     role: participant
     mode: physical
-  evidence_ids:
-  - evd-v10-000030
-  - evd-manga-land-waves
-  - evd-narutopedia-ep12-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-waves-inari-naruto-dispute
-  display_rank: 300
-  title: Інарі й Наруто сперечаються
-  text: Інарі каже, що Наруто не знає його страждань і не переможе Ґато. Наруто називає його боягузом та йде від столу.
-  involvement:
   - entity_id: c-inari
     role: focus
     mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
   - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
     role: participant
     mode: physical
   - entity_id: c-sakura
@@ -59,6 +42,8 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-v10-000030
+  - evd-manga-land-waves
   - evd-narutopedia-ep12-audit
 relations: []
 presence:

@@ -41,8 +41,9 @@ events:
 - id: ev-y0-0328-haku-strength-for-precious-person
   legacy_ids:
   - V10-000029
-  title: Хаку говорить про силу заради дорогої людини
-  text: Хаку пояснює Наруто, що людина стає по-справжньому сильною, коли захищає когось дорогого.
+  title: Хаку говорить з Наруто про силу заради близьких
+  text: Хаку пояснює Наруто, що людина стає по-справжньому сильною, коли захищає когось дорогого. Перед відходом Хаку каже
+    Наруто, що він хлопець, чим дивує його.
   origin: M
   extent: interval
   display_rank: 200
@@ -56,21 +57,6 @@ events:
   evidence_ids:
   - evd-v10-000029
   - evd-manga-land-waves
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0328-haku-reveals-gender
-  display_rank: 300
-  title: Хаку прощається й уточнює, що він хлопець
-  text: Перед відходом Хаку каже Наруто, що він хлопець, чим дивує його.
-  involvement:
-  - entity_id: c-haku
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  evidence_ids:
   - evd-narutopedia-ep12-audit
 - origin: A
   extent: interval
@@ -97,21 +83,15 @@ relations:
   review: pending
   evidence_ids:
   - evd-v10-000029
-- id: rel-audit-12-y0-0328-haku-strength-for-precious-person-before-y0-0328-haku-reveals-gender
+- id: rel-whole-action-y0-0328-haku-strength-for-precious-person-y0-0328-sasuke-checks-naruto
   kind: before
   a: ev-y0-0328-haku-strength-for-precious-person
-  b: ev-y0-0328-haku-reveals-gender
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep12-audit
-- id: rel-audit-12-y0-0328-haku-reveals-gender-before-y0-0328-sasuke-checks-naruto
-  kind: before
-  a: ev-y0-0328-haku-reveals-gender
   b: ev-y0-0328-sasuke-checks-naruto
   basis: source
   review: accepted
   evidence_ids:
+  - evd-v10-000029
+  - evd-manga-land-waves
   - evd-narutopedia-ep12-audit
 presence:
 - id: pr-0328-naruto
@@ -125,7 +105,7 @@ presence:
 - id: pr-0328-haku
   entity_id: c-haku
   from: sc-y0-0328-naruto-meets-haku.start
-  to: ev-y0-0328-haku-reveals-gender.end
+  to: ev-y0-0328-haku-strength-for-precious-person.end
   basis: imported
   evidence_ids:
   - evd-v10-000029

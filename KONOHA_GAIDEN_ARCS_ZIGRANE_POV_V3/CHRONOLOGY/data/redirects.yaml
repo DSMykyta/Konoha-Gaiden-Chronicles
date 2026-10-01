@@ -2320,3 +2320,225 @@ redirects:
     replacement_ids:
       - "ev-y0-1207-suna-council-responds-matsuri-kidnapping"
     reason: "Episode 216 opening migrated to the Suna Council response scene with Baki."
+
+  - legacy_id: ev-y0-0123-naruto-shadow-clone-attack
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-naruto-attacks-kakashi
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0123-clones-fight-each-other
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-naruto-attacks-kakashi
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0123-sasuke-fireball-buried
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-sasuke-nearly-gets-bell
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0123-team7-defends-sharing
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-kakashi-passes-team7
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0317-kakashi-demands-explanation
+    status: merged
+    replacement_ids:
+    - ev-y0-0317-tazuna-explains-gato-control
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0318-sasuke-recognises-sharingan
+    status: merged
+    replacement_ids:
+    - ev-y0-0318-kakashi-reveals-sharingan
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0318-kakashi-calms-sasuke
+    status: merged
+    replacement_ids:
+    - ev-y0-0318-zabuza-summons-mist
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0318-zabuza-cuts-water-clone
+    status: merged
+    replacement_ids:
+    - ev-y0-0318-kakashi-stabs-water-clone
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0318-kakashi-threatens-zabuza
+    status: merged
+    replacement_ids:
+    - ev-y0-0318-kakashi-stabs-water-clone
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0318-kakashi-orders-retreat
+    status: merged
+    replacement_ids:
+    - ev-y0-0318-naruto-reclaims-headband
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0318-naruto-protests-hunter
+    status: merged
+    replacement_ids:
+    - ev-y0-0318-haku-stops-finishing-blow
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-prewaves-zabuza-plans-rematch
+    status: merged
+    replacement_ids:
+    - ev-prewaves-haku-revives-zabuza
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0322-sakura-asks-family-photo
+    status: merged
+    replacement_ids:
+    - ev-y0-0322-tazuna-tells-kaiza-story
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0322-naruto-promises-inari-hero
+    status: merged
+    replacement_ids:
+    - ev-y0-0322-tazuna-tells-kaiza-story
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0328-haku-reveals-gender
+    status: merged
+    replacement_ids:
+    - ev-y0-0328-haku-strength-for-precious-person
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-waves-inari-naruto-dispute
+    status: merged
+    replacement_ids:
+    - ev-y0-0329-naruto-collapses-overtraining
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-tsunami-protects-inari
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-gato-men-attack-tazuna-home
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-naruto-apologises-to-inari
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-naruto-rescues-inari-tsunami
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-sakura-throws-kunai-at-haku
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-naruto-arrives-with-shuriken
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-kakashi-rebukes-naruto-entrance
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-naruto-arrives-with-shuriken
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-sasuke-attacks-distracted-haku
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-naruto-enters-ice-mirrors
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-kakashi-reveals-sharingan-again
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-zabuza-mist-negates-sharingan
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-haku-counters-naruto-clones
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-sasuke-fireball-hits-haku
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-sasuke-reads-haku-movement
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-sasuke-fireball-hits-haku
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-kakashi-intercepts-through-mist
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-kakashi-cut-protecting-tazuna
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-haku-targets-unconscious-naruto
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-sasuke-protects-naruto
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-naruto-catches-sasuke
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-naruto-nine-tails-chakra
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-jonin-sense-fox-chakra
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-naruto-nine-tails-chakra
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-naruto-recognises-haku
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-haku-explains-past
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-kakashi-readies-lightning-cutter
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-kakashi-summons-tracking-ninken
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-naruto-accepts-haku-request
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-haku-sacrifices-self
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-haku-leaves-naruto-for-zabuza
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-haku-sacrifices-self
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-ninken-release-zabuza
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-haku-sacrifices-self
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-kakashi-orders-naruto-stay-back
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-zabuza-swings-at-haku-body
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-gato-desecrates-haku
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-naruto-confronts-zabuza-about-haku
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-zabuza-borrows-naruto-kunai
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-zabuza-kills-gato
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0330-naruto-chooses-ninja-way
+    status: merged
+    replacement_ids:
+    - ev-y0-0330-zabuza-haku-buried
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0624-konohamaru-friends-follow-naruto
+    status: merged
+    replacement_ids:
+    - ev-y0-0624-kankuro-confronts-konohamaru
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+  - legacy_id: ev-y0-0624-gaara-stops-kankuro
+    status: merged
+    replacement_ids:
+    - ev-y0-0624-team7-meets-sand-siblings
+    reason: Minor reaction, dialogue or preparation component included in the complete action.
+
+  - legacy_id: ev-y0-0123-sasuke-refuses-next-year
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-sakura-finds-buried-sasuke
+    reason: Conversation or closing reaction belongs inside the complete action.
+  - legacy_id: ev-y0-0123-kakashi-announces-failure
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-kakashi-forbids-feeding-naruto
+    reason: Conversation or closing reaction belongs inside the complete action.
+  - legacy_id: ev-y0-0123-kakashi-explains-teamwork
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-kakashi-forbids-feeding-naruto
+    reason: Conversation or closing reaction belongs inside the complete action.
+  - legacy_id: ev-y0-0123-team7-leaves-naruto-tied
+    status: merged
+    replacement_ids:
+    - ev-y0-0123-kakashi-passes-team7
+    reason: Conversation or closing reaction belongs inside the complete action.
+  - legacy_id: ev-y0-0316-kakashi-reviews-ambush
+    status: merged
+    replacement_ids:
+    - ev-y0-0316-kakashi-questions-mission-rank
+    reason: Conversation or closing reaction belongs inside the complete action.

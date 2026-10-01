@@ -41,43 +41,13 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep11-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0322-sakura-asks-family-photo
-  display_rank: 100
-  title: Сакура питає про розірване фото
-  text: Сакура питає про розірване сімейне фото. Інарі сердиться й залишає стіл; Цунамі йде за ним.
-  involvement:
-  - entity_id: c-sakura
-    role: focus
-    mode: physical
-  - entity_id: c-inari
-    role: participant
-    mode: physical
-  - entity_id: c-tsunami
-    role: participant
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep11-audit
 - id: ev-y0-0322-tazuna-tells-kaiza-story
   legacy_ids:
   - V10-000028
-  title: Тадзуна розповідає про Кайзу та Інарі
-  text: Тадзуна розповідає, як рибалка Кайза врятував Інарі від утоплення, став його вітчимом і захистив село від повені.
-    Ґато наказав убити Кайзу, зруйнувавши надію мешканців.
+  title: Тадзуна розповідає команді історію Кайзи
+  text: Сакура питає про розірване сімейне фото. Інарі сердиться й залишає стіл; Цунамі йде за ним. Тадзуна розповідає, як
+    рибалка Кайза врятував Інарі від утоплення, став його вітчимом і захистив село від повені. Ґато наказав убити Кайзу, зруйнувавши
+    надію мешканців. Після розповіді Тадзуни Наруто вирішує показати Інарі, що герої ще існують.
   origin: M
   extent: interval
   display_rank: 200
@@ -106,73 +76,32 @@ events:
   - entity_id: c-sakura
     role: participant
     mode: physical
+  - entity_id: c-inari
+    role: participant
+    mode: physical
+  - entity_id: c-tsunami
+    role: participant
+    mode: physical
   evidence_ids:
   - evd-v10-000028
   - evd-manga-land-waves
   - evd-narutopedia-ep11-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0322-naruto-promises-inari-hero
-  display_rank: 300
-  title: Наруто вирішує довести Інарі, що герої існують
-  text: Після розповіді Тадзуни Наруто вирішує показати Інарі, що герої ще існують.
-  involvement:
-  - entity_id: c-naruto
-    role: focus
-    mode: physical
-  - entity_id: c-tazuna
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-kakashi
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep11-audit
 relations:
-- id: rel-audit-11-y0-0322-naruto-sasuke-eating-contest-before-y0-0322-sakura-asks-family-photo
+- id: rel-whole-action-y0-0322-naruto-sasuke-eating-contest-y0-0322-tazuna-tells-kaiza-story
   kind: before
   a: ev-y0-0322-naruto-sasuke-eating-contest
-  b: ev-y0-0322-sakura-asks-family-photo
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep11-audit
-- id: rel-audit-11-y0-0322-sakura-asks-family-photo-before-y0-0322-naruto-promises-inari-hero
-  kind: before
-  a: ev-y0-0322-sakura-asks-family-photo
-  b: ev-y0-0322-naruto-promises-inari-hero
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep11-audit
-- id: rel-audit11-ev-y0-0322-sakura-asks-family-photo-ev-y0-0322-tazuna-tells-kaiza-story
-  kind: before
-  a: ev-y0-0322-sakura-asks-family-photo
   b: ev-y0-0322-tazuna-tells-kaiza-story
   basis: source
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep11-audit
-- id: rel-audit11-ev-y0-0322-tazuna-tells-kaiza-story-ev-y0-0322-naruto-promises-inari-hero
-  kind: before
-  a: ev-y0-0322-tazuna-tells-kaiza-story
-  b: ev-y0-0322-naruto-promises-inari-hero
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep11-audit
+  - evd-v10-000028
+  - evd-manga-land-waves
 presence:
 - id: pr-audit-11-y0-0322-kaiza-dinner-c-inari
   entity_id: c-inari
   from: sc-y0-0322-kaiza-dinner.start
-  to: ev-y0-0322-sakura-asks-family-photo.end
+  to: ev-y0-0322-tazuna-tells-kaiza-story.end
   basis: source
   review: accepted
   evidence_ids:
@@ -180,7 +109,7 @@ presence:
 - id: pr-audit-11-y0-0322-kaiza-dinner-c-tsunami
   entity_id: c-tsunami
   from: sc-y0-0322-kaiza-dinner.start
-  to: ev-y0-0322-sakura-asks-family-photo.end
+  to: ev-y0-0322-tazuna-tells-kaiza-story.end
   basis: source
   review: accepted
   evidence_ids:

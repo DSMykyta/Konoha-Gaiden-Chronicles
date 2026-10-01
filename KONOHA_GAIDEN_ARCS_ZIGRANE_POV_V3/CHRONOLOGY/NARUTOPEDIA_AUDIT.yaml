@@ -342,3 +342,71 @@ episode_audits:
   notes:
   - Existing April 13 rivalry anchor retained as project placement; the synopsis describes subsequent missions without exact
     calendar dates.
+granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
+  short replies and preparation stay inside it.
+granularity_corrections:
+- checked_anime_episodes:
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  merged_ids:
+    ev-y0-0123-naruto-shadow-clone-attack: ev-y0-0123-naruto-attacks-kakashi
+    ev-y0-0123-clones-fight-each-other: ev-y0-0123-naruto-attacks-kakashi
+    ev-y0-0123-sasuke-fireball-buried: ev-y0-0123-sasuke-nearly-gets-bell
+    ev-y0-0123-team7-defends-sharing: ev-y0-0123-kakashi-passes-team7
+    ev-y0-0317-kakashi-demands-explanation: ev-y0-0317-tazuna-explains-gato-control
+    ev-y0-0318-sasuke-recognises-sharingan: ev-y0-0318-kakashi-reveals-sharingan
+    ev-y0-0318-kakashi-calms-sasuke: ev-y0-0318-zabuza-summons-mist
+    ev-y0-0318-zabuza-cuts-water-clone: ev-y0-0318-kakashi-stabs-water-clone
+    ev-y0-0318-kakashi-threatens-zabuza: ev-y0-0318-kakashi-stabs-water-clone
+    ev-y0-0318-kakashi-orders-retreat: ev-y0-0318-naruto-reclaims-headband
+    ev-y0-0318-naruto-protests-hunter: ev-y0-0318-haku-stops-finishing-blow
+    ev-prewaves-zabuza-plans-rematch: ev-prewaves-haku-revives-zabuza
+    ev-y0-0322-sakura-asks-family-photo: ev-y0-0322-tazuna-tells-kaiza-story
+    ev-y0-0322-naruto-promises-inari-hero: ev-y0-0322-tazuna-tells-kaiza-story
+    ev-y0-0328-haku-reveals-gender: ev-y0-0328-haku-strength-for-precious-person
+    ev-waves-inari-naruto-dispute: ev-y0-0329-naruto-collapses-overtraining
+    ev-y0-0330-tsunami-protects-inari: ev-y0-0330-gato-men-attack-tazuna-home
+    ev-y0-0330-naruto-apologises-to-inari: ev-y0-0330-naruto-rescues-inari-tsunami
+    ev-y0-0330-sakura-throws-kunai-at-haku: ev-y0-0330-naruto-arrives-with-shuriken
+    ev-y0-0330-kakashi-rebukes-naruto-entrance: ev-y0-0330-naruto-arrives-with-shuriken
+    ev-y0-0330-sasuke-attacks-distracted-haku: ev-y0-0330-naruto-enters-ice-mirrors
+    ev-y0-0330-kakashi-reveals-sharingan-again: ev-y0-0330-zabuza-mist-negates-sharingan
+    ev-y0-0330-haku-counters-naruto-clones: ev-y0-0330-sasuke-fireball-hits-haku
+    ev-y0-0330-sasuke-reads-haku-movement: ev-y0-0330-sasuke-fireball-hits-haku
+    ev-y0-0330-kakashi-intercepts-through-mist: ev-y0-0330-kakashi-cut-protecting-tazuna
+    ev-y0-0330-haku-targets-unconscious-naruto: ev-y0-0330-sasuke-protects-naruto
+    ev-y0-0330-naruto-catches-sasuke: ev-y0-0330-naruto-nine-tails-chakra
+    ev-y0-0330-jonin-sense-fox-chakra: ev-y0-0330-naruto-nine-tails-chakra
+    ev-y0-0330-naruto-recognises-haku: ev-y0-0330-haku-explains-past
+    ev-y0-0330-kakashi-readies-lightning-cutter: ev-y0-0330-kakashi-summons-tracking-ninken
+    ev-y0-0330-naruto-accepts-haku-request: ev-y0-0330-haku-sacrifices-self
+    ev-y0-0330-haku-leaves-naruto-for-zabuza: ev-y0-0330-haku-sacrifices-self
+    ev-y0-0330-ninken-release-zabuza: ev-y0-0330-haku-sacrifices-self
+    ev-y0-0330-kakashi-orders-naruto-stay-back: ev-y0-0330-zabuza-swings-at-haku-body
+    ev-y0-0330-gato-desecrates-haku: ev-y0-0330-naruto-confronts-zabuza-about-haku
+    ev-y0-0330-zabuza-borrows-naruto-kunai: ev-y0-0330-zabuza-kills-gato
+    ev-y0-0330-naruto-chooses-ninja-way: ev-y0-0330-zabuza-haku-buried
+    ev-y0-0624-konohamaru-friends-follow-naruto: ev-y0-0624-kankuro-confronts-konohamaru
+    ev-y0-0624-gaara-stops-kankuro: ev-y0-0624-team7-meets-sand-siblings
+    ev-y0-0123-sasuke-refuses-next-year: ev-y0-0123-sakura-finds-buried-sasuke
+    ev-y0-0123-kakashi-announces-failure: ev-y0-0123-kakashi-forbids-feeding-naruto
+    ev-y0-0123-kakashi-explains-teamwork: ev-y0-0123-kakashi-forbids-feeding-naruto
+    ev-y0-0123-team7-leaves-naruto-tied: ev-y0-0123-kakashi-passes-team7
+    ev-y0-0316-kakashi-reviews-ambush: ev-y0-0316-kakashi-questions-mission-rank
+  note: 'User clarification: merged over-fragmented additions into whole actions; retained replacement IDs, participants and
+    evidence.'

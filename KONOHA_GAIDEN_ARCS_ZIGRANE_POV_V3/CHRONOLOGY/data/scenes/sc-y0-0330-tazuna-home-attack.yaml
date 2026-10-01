@@ -20,8 +20,9 @@ events:
 - id: ev-y0-0330-gato-men-attack-tazuna-home
   legacy_ids:
   - V10-000032
-  title: Люди Ґато нападають на дім Тадзуни
-  text: Поки основна битва триває на мосту, люди Ґато нападають на дім Тадзуни й намагаються викрасти Цунамі.
+  title: Люди Ґато викрадають Цунамі
+  text: Поки основна битва триває на мосту, люди Ґато нападають на дім Тадзуни й намагаються викрасти Цунамі. Вараджі погрожує
+    вбити Інарі. Цунамі погрожує вбити себе, якщо сина не відпустять; нападники погоджуються забрати лише її.
   origin: M
   extent: interval
   display_rank: 100
@@ -41,28 +42,6 @@ events:
   evidence_ids:
   - evd-v10-000032
   - evd-manga-land-waves
-  - evd-narutopedia-waraji-wave-audit
-- id: ev-y0-0330-tsunami-protects-inari
-  title: Цунамі змушує нападників залишити Інарі
-  text: Вараджі погрожує вбити Інарі. Цунамі погрожує вбити себе, якщо сина не відпустять; нападники погоджуються забрати
-    лише її.
-  origin: A
-  extent: interval
-  display_rank: 150
-  involvement:
-  - entity_id: c-tsunami
-    role: focus
-    mode: physical
-  - entity_id: c-inari
-    role: participant
-    mode: physical
-  - entity_id: c-waraji
-    role: participant
-    mode: physical
-  - entity_id: c-zori
-    role: participant
-    mode: physical
-  evidence_ids:
   - evd-narutopedia-waraji-wave-audit
 - id: ev-y0-0330-inari-defends-tsunami
   legacy_ids:
@@ -93,7 +72,8 @@ events:
   legacy_ids:
   - V10-000032
   title: Наруто рятує Інарі й Цунамі
-  text: Наруто повертається до дому Тадзуни й знешкоджує нападників.
+  text: Наруто повертається до дому Тадзуни й знешкоджує нападників. Перед відходом на міст Наруто вибачається за слово «боягуз»
+    і визнає, що Інарі проявив відвагу.
   origin: M
   extent: interval
   display_rank: 300
@@ -117,24 +97,6 @@ events:
   - evd-v10-000032
   - evd-manga-land-waves
   - evd-narutopedia-waraji-wave-audit
-- origin: A
-  extent: interval
-  focus_teams: []
-  id: ev-y0-0330-naruto-apologises-to-inari
-  display_rank: 400
-  title: Наруто визнає відвагу Інарі
-  text: Перед відходом на міст Наруто вибачається за слово «боягуз» і визнає, що Інарі проявив відвагу.
-  involvement:
-  - entity_id: c-naruto
-    role: focus
-    mode: physical
-  - entity_id: c-inari
-    role: participant
-    mode: physical
-  - entity_id: c-tsunami
-    role: participant
-    mode: physical
-  evidence_ids:
   - evd-narutopedia-ep13-audit
 relations:
 - id: rel-0330-home-100-200
@@ -153,30 +115,6 @@ relations:
   review: pending
   evidence_ids:
   - evd-manga-land-waves
-- id: rel-audit-13-y0-0330-naruto-rescues-inari-tsunami-before-y0-0330-naruto-apologises-to-inari
-  kind: before
-  a: ev-y0-0330-naruto-rescues-inari-tsunami
-  b: ev-y0-0330-naruto-apologises-to-inari
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep13-audit
-- id: rel-0330-hostage-ev-y0-0330-gato-men-attack-tazuna-home-ev-y0-0330-tsunami-protects-inari
-  kind: before
-  a: ev-y0-0330-gato-men-attack-tazuna-home
-  b: ev-y0-0330-tsunami-protects-inari
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-waraji-wave-audit
-- id: rel-0330-hostage-ev-y0-0330-tsunami-protects-inari-ev-y0-0330-inari-defends-tsunami
-  kind: before
-  a: ev-y0-0330-tsunami-protects-inari
-  b: ev-y0-0330-inari-defends-tsunami
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-waraji-wave-audit
 presence:
 - id: pr-0330-home-inari
   entity_id: c-inari
