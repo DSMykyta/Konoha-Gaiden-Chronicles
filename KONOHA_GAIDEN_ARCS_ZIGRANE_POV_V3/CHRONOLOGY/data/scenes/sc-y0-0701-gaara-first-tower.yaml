@@ -7,12 +7,12 @@ title: Команда Суни здобуває сувій у Лісі Смер�
 location_id: loc-forest-death
 placement:
   anchor_id: ta-y0-0701
-  day_offset: 0
+  day_offset: 1
 day_part: afternoon
 state: active
 presence_coverage: partial
 review:
-  time: accepted
+  time: partial
   cast: partial
   location: accepted
   origin: accepted

@@ -22,8 +22,8 @@ events:
   legacy_ids:
   - V10-000040-C
   title: Анко пояснює правила Лісу Смерті
-  text: 'Анко приводить кандидатів до 44-го тренувального полігону — Лісу Смерті — й пояснює, що команди матимуть п’ять днів,
-    аби повним складом дістатися центральної вежі з двома різними сувоями: Неба і Землі.'
+  text: 'Перед входом Анко пояснює правила: кожна команда отримує сувій Неба або Землі й має здобути другий у суперників;
+    протягом п’яти днів усі троє мусять дістатися центральної вежі з обома. Такий відбір усуває щонайменше половину команд.'
   origin: M
   extent: interval
   display_rank: 100
@@ -40,10 +40,21 @@ events:
   - entity_id: c-sakura
     role: participant
     mode: physical
+  - entity_id: c-kita
+    role: participant
+    mode: physical
+  - entity_id: c-ren
+    role: participant
+    mode: physical
+  - entity_id: c-sora
+    role: participant
+    mode: physical
   evidence_ids:
   - evd-v10-000040-C
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep27-audit
+  - evd-project-team9-forest-entry
 - id: ev-y0-0701-anko-cuts-naruto-shiore-returns-kunai
   title: Анко ранить Наруто; «Шіоре» повертає їй кунай
   text: Коли Наруто демонстративно заявляє, що Ліс Смерті його не лякає, Анко миттєво проводить кунаєм по його щоці й попереджає,
@@ -65,6 +76,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep27-audit
 - id: ev-y0-0701-candidates-sign-waivers-receive-scrolls
   title: Кандидати підписують відмови від відповідальності й отримують сувої
   text: Анко вимагає від кожного кандидата підписати згоду, що Коноха та екзаменатори не відповідають за можливу смерть під
@@ -85,9 +97,20 @@ events:
   - entity_id: c-sakura
     role: participant
     mode: physical
+  - entity_id: c-kita
+    role: participant
+    mode: physical
+  - entity_id: c-ren
+    role: participant
+    mode: physical
+  - entity_id: c-sora
+    role: participant
+    mode: physical
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep27-audit
+  - evd-project-team9-forest-entry
 - id: ev-y0-0701-forest-stage-begins
   legacy_ids:
   - V10-000040-C
@@ -101,10 +124,21 @@ events:
   - entity_id: c-anko
     role: focus
     mode: physical
+  - entity_id: c-kita
+    role: participant
+    mode: physical
+  - entity_id: c-ren
+    role: participant
+    mode: physical
+  - entity_id: c-sora
+    role: participant
+    mode: physical
   evidence_ids:
   - evd-v10-000040-C
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep27-audit
+  - evd-project-team9-forest-entry
 relations:
 - id: rel-0701-forest-start-1
   kind: before
@@ -140,3 +174,51 @@ presence:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
   review: accepted
+- id: pr-audit-27-y0-0701-forest-start-c-naruto
+  entity_id: c-naruto
+  from: sc-y0-0701-forest-start.start
+  to: sc-y0-0701-forest-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-0701-forest-start-c-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-0701-forest-start.start
+  to: sc-y0-0701-forest-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-0701-forest-start-c-sakura
+  entity_id: c-sakura
+  from: sc-y0-0701-forest-start.start
+  to: sc-y0-0701-forest-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-0701-forest-start-c-kita
+  entity_id: c-kita
+  from: sc-y0-0701-forest-start.start
+  to: sc-y0-0701-forest-start.end
+  basis: project_decision
+  review: accepted
+  evidence_ids:
+  - evd-project-team9-forest-entry
+- id: pr-audit-27-y0-0701-forest-start-c-ren
+  entity_id: c-ren
+  from: sc-y0-0701-forest-start.start
+  to: sc-y0-0701-forest-start.end
+  basis: project_decision
+  review: accepted
+  evidence_ids:
+  - evd-project-team9-forest-entry
+- id: pr-audit-27-y0-0701-forest-start-c-sora
+  entity_id: c-sora
+  from: sc-y0-0701-forest-start.start
+  to: sc-y0-0701-forest-start.end
+  basis: project_decision
+  review: accepted
+  evidence_ids:
+  - evd-project-team9-forest-entry

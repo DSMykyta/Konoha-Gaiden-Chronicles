@@ -3140,6 +3140,31 @@ links:
   a: sc-y0-0701-konohamaru-report
   b: sc-y0-0701-forest-start
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+  id: lnk-audit27-start-before-team8-scroll
+  kind: before
+  a: sc-y0-0701-forest-start
+  b: sc-y0-team8-first-forest-scroll
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+  id: lnk-audit27-start-before-first-impostor
+  kind: before
+  a: sc-y0-0701-forest-start
+  b: sc-y0-team7-first-forest-impostor
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+  id: lnk-audit27-impostor-before-orochimaru
+  kind: before
+  a: sc-y0-team7-first-forest-impostor
+  b: sc-y0-0701-orochimaru-attacks-team7
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

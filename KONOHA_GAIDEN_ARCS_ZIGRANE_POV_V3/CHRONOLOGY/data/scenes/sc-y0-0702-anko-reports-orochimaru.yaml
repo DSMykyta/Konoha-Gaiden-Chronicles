@@ -1,66 +1,148 @@
 schema_version: 1
-id: "sc-y0-0702-anko-reports-orochimaru"
+id: sc-y0-0702-anko-reports-orochimaru
 episode_id: ep-y0-anko-exam-security
 display_rank: 200
-continuity_id: "main"
-title: "Анко доповідає Хірузену після сутички з Орочімару"
-location_id: "loc-forest-death-tower"
-placement: {anchor_id: "ta-y0-0702", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Анко доповідає Хірузену після сутички з Орочімару
+location_id: loc-forest-death-tower
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 1
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0702-hiruzen-stabilizes-anko-seal"
-    title: "Хірузен стабілізує Прокляту Печатку Анко"
-    text: "Попри біль Анко дістається центральної вежі. Хірузен оглядає її реактивовану Прокляту Печатку Неба й приглушує її дію, щоб Анко могла нормально доповісти."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
-      - {entity_id: "c-anko", role: "affected", mode: "physical"}
-      - {entity_id: "c-orochimaru", role: "cause", mode: "remote"}
-    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-31-50"]
-  - id: "ev-y0-0702-anko-reports-orochimaru"
-    legacy_ids: ["V10-000042-F"]
-    title: "Анко повідомляє про проникнення Орочімару"
-    text: "Анко доповідає Хірузену, що Орочімару проник на іспит."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-anko", role: "focus", mode: "physical"}
-      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
-      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-v10-000042-F", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
-  - id: "ev-y0-0702-anko-urges-sasuke-protection"
-    title: "Анко просить усунути Саске від іспиту й охороняти його"
-    text: "Після доповіді Хірузен робить висновок, що головна ціль Орочімару — Саске. Анко наполягає, що хлопця треба негайно зняти з іспиту й узяти під охорону, аби Орочімару не отримав до нього доступ."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-anko", role: "focus", mode: "physical"}
-      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "subject", mode: "remote"}
-      - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
-    evidence_ids: ["evd-manga-chunin-stage1-forest", "evd-anime-31-50"]
-  - id: "ev-y0-0702-hiruzen-continues-exam"
-    legacy_ids: ["V10-000042-F"]
-    title: "Хірузен вирішує не зупиняти іспит"
-    text: "Попри загрозу Орочімару Хірузен не припиняє поточне випробування."
-    origin: "M"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
-      - {entity_id: "c-anko", role: "participant", mode: "physical"}
-      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-v10-000042-F", "evd-manga-chunin-stage1-forest", "evd-anime-24-30"]
+- id: ev-y0-0702-hiruzen-stabilizes-anko-seal
+  title: Хірузен стабілізує Прокляту Печатку Анко
+  text: Попри біль Анко дістається центральної вежі. Хірузен оглядає її реактивовану Прокляту Печатку Неба й приглушує її
+    дію, щоб Анко могла нормально доповісти.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: affected
+    mode: physical
+  - entity_id: c-orochimaru
+    role: cause
+    mode: remote
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-31-50
+- id: ev-y0-0702-anko-reports-orochimaru
+  legacy_ids:
+  - V10-000042-F
+  title: Анко повідомляє про проникнення Орочімару
+  text: Анко доповідає Хірузену, що Орочімару проник на іспит.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-v10-000042-F
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+- id: ev-y0-0702-anko-urges-sasuke-protection
+  title: Анко просить усунути Саске від іспиту й охороняти його
+  text: Після доповіді Хірузен робить висновок, що головна ціль Орочімару — Саске. Анко наполягає, що хлопця треба негайно
+    зняти з іспиту й узяти під охорону, аби Орочімару не отримав до нього доступ.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: subject
+    mode: remote
+  - entity_id: c-orochimaru
+    role: subject
+    mode: remote
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-31-50
+- id: ev-y0-0702-hiruzen-continues-exam
+  legacy_ids:
+  - V10-000042-F
+  title: Хірузен вирішує не зупиняти іспит
+  text: Попри загрозу Орочімару Хірузен не припиняє поточне випробування.
+  origin: M
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-v10-000042-F
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
 relations:
-  - {id: "rel-0702-report-0", kind: "before", a: "ev-y0-0702-hiruzen-stabilizes-anko-seal", b: "ev-y0-0702-anko-reports-orochimaru", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
-  - {id: "rel-0702-report-1", kind: "before", a: "ev-y0-0702-anko-reports-orochimaru", b: "ev-y0-0702-anko-urges-sasuke-protection", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
-  - {id: "rel-0702-report-2", kind: "before", a: "ev-y0-0702-anko-urges-sasuke-protection", b: "ev-y0-0702-hiruzen-continues-exam", basis: "source", review: "accepted", evidence_ids: ["evd-manga-chunin-stage1-forest"]}
+- id: rel-0702-report-0
+  kind: before
+  a: ev-y0-0702-hiruzen-stabilizes-anko-seal
+  b: ev-y0-0702-anko-reports-orochimaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+- id: rel-0702-report-1
+  kind: before
+  a: ev-y0-0702-anko-reports-orochimaru
+  b: ev-y0-0702-anko-urges-sasuke-protection
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
+- id: rel-0702-report-2
+  kind: before
+  a: ev-y0-0702-anko-urges-sasuke-protection
+  b: ev-y0-0702-hiruzen-continues-exam
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-chunin-stage1-forest
 presence:
-  - {id: "pr-0702-report-anko", entity_id: "c-anko", from: "sc-y0-0702-anko-reports-orochimaru.start", to: "sc-y0-0702-anko-reports-orochimaru.end", basis: "source", evidence_ids: ["evd-v10-000042-F"], review: "accepted"}
-  - {id: "pr-0702-report-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0702-anko-reports-orochimaru.start", to: "sc-y0-0702-anko-reports-orochimaru.end", basis: "source", evidence_ids: ["evd-v10-000042-F"], review: "accepted"}
+- id: pr-0702-report-anko
+  entity_id: c-anko
+  from: sc-y0-0702-anko-reports-orochimaru.start
+  to: sc-y0-0702-anko-reports-orochimaru.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000042-F
+  review: accepted
+- id: pr-0702-report-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-0702-anko-reports-orochimaru.start
+  to: sc-y0-0702-anko-reports-orochimaru.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000042-F
+  review: accepted

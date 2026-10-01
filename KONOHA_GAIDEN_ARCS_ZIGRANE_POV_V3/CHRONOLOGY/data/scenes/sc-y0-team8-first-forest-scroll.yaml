@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-y0-team8-first-forest-scroll
+continuity_id: main
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-team8-traps-ame-for-scroll
+  display_rank: 100
+  title: Команда 8 ловить генінів Дощу й забирає сувій
+  text: Невдовзі після входу до лісу Команда 8 спрямовує суперників із Амеґакуре до отруйних п’явок. Ті, тікаючи, потрапляють
+    у сітку; команда забирає потрібний сувій.
+  involvement:
+  - entity_id: c-shino
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+  - evd-narutopedia-team8-trap
+relations: []
+presence:
+- id: pr-audit-27-y0-team8-first-forest-scroll-c-shino
+  entity_id: c-shino
+  from: sc-y0-team8-first-forest-scroll.start
+  to: sc-y0-team8-first-forest-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-team8-first-forest-scroll-c-kiba
+  entity_id: c-kiba
+  from: sc-y0-team8-first-forest-scroll.start
+  to: sc-y0-team8-first-forest-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-team8-first-forest-scroll-c-hinata
+  entity_id: c-hinata
+  from: sc-y0-team8-first-forest-scroll.start
+  to: sc-y0-team8-first-forest-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-team8-first-forest-scroll-c-akamaru
+  entity_id: c-akamaru
+  from: sc-y0-team8-first-forest-scroll.start
+  to: sc-y0-team8-first-forest-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+episode_id: ep-y0-team8-forest-trial
+display_rank: 100
+title: Команда 8 здобуває другий сувій пасткою
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 0

@@ -766,6 +766,26 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep27-audit
+    type: reference
+    title: 'Narutopedia — The Chūnin Exam Stage 2: The Forest of Death'
+    url: https://naruto.fandom.com/wiki/The_Ch%C5%ABnin_Exam_Stage_2%3A_The_Forest_of_Death
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-team8-trap
+    type: reference
+    title: "Narutopedia \u2014 Shino Aburame, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Shino_Aburame
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-oboro-first-attack
+    type: reference
+    title: "Narutopedia \u2014 Oboro, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Oboro
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3362,4 +3382,28 @@ evidence:
     source_id: src-narutopedia-ep26-audit
     locator: Episode 26, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep27-audit
+    source_id: src-narutopedia-ep27-audit
+    locator: Episode 27, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-team8-trap
+    source_id: src-narutopedia-team8-trap
+    locator: "Part I / Ch\u016Bnin Exams; poisonous leeches and net trap; anime enemies\
+      \ from Ame"
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-oboro-first-attack
+    source_id: src-narutopedia-oboro-first-attack
+    locator: "Part I / Ch\u016Bnin Exams; Naruto substitution and Sasuke confrontation"
+    basis: source
+    review: accepted
+  - id: evd-project-team9-forest-entry
+    source_id: src-project-decisions
+    locator: User requires author characters at applicable shared events; established
+      Team 9 written participation and passage support forest briefing and entry.
+    basis: project_decision
     review: accepted

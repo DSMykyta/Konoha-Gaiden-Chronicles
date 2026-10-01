@@ -1,0 +1,66 @@
+schema_version: 1
+id: sc-y0-team7-first-forest-impostor
+continuity_id: main
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-team7-first-forest-impostor
+  display_rank: 100
+  title: Нападник із Амеґакуре видає себе за Наруто
+  text: Коли Наруто відокремлюється від товаришів, до Саске й Сакури під його виглядом підходить ніндзя Амеґакуре. Це перша
+    підміна учасника Команди 7 у лісі.
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-oboro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+  - evd-narutopedia-oboro-first-attack
+relations: []
+presence:
+- id: pr-audit-27-y0-team7-first-forest-impostor-c-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-team7-first-forest-impostor.start
+  to: sc-y0-team7-first-forest-impostor.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-team7-first-forest-impostor-c-sakura
+  entity_id: c-sakura
+  from: sc-y0-team7-first-forest-impostor.start
+  to: sc-y0-team7-first-forest-impostor.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+- id: pr-audit-27-y0-team7-first-forest-impostor-c-oboro
+  entity_id: c-oboro
+  from: sc-y0-team7-first-forest-impostor.start
+  to: sc-y0-team7-first-forest-impostor.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep27-audit
+episode_id: ep-y0-team7-forest-trial
+display_rank: 100
+title: Команда 7 стикається з підробленим Наруто
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 0

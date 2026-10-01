@@ -29,9 +29,10 @@ checked_anime_episodes:
 - 24
 - 25
 - 26
+- 27
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 27
+next_anime_episode: 28
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -466,6 +467,35 @@ episode_audits:
     stable despite corrected working date.'
   - Forest start scene moved to the same next-day July 2 anchor so the interview-before-entry relation does not run backwards
     in working dates. Internal forest chronology is checked episode by episode.
+- episode: 27
+  baseline_revision: ee94098e3ebdec7deb74e88c903d5caa6faa3fbf
+  added_moment_ids:
+  - ev-y0-team8-traps-ame-for-scroll
+  - ev-y0-team7-first-forest-impostor
+  added_scene_ids:
+  - sc-y0-team8-first-forest-scroll
+  - sc-y0-team7-first-forest-impostor
+  updated_moment_ids:
+  - ev-y0-0701-anko-briefs-candidates
+  - ev-y0-0701-anko-cuts-naruto-shiore-returns-kunai
+  - ev-y0-0701-candidates-sign-waivers-receive-scrolls
+  - ev-y0-0701-forest-stage-begins
+  cast_review: Team 9 included among entering candidates; no insertion in Team 8 trap or isolated Team 7 attack.
+  notes:
+  - Added two whole forest actions on independent branches. No inferred order between Team 8 trap and Team 7 encounter. Early
+    forest working dates shifted one day to preserve next-day start established in episode 25. Oboro identity and leech trap
+    corroborated by Narutopedia character summaries; duel continuation audited in episode 28.
+  date_corrections:
+    reason: 'Working dates only: preserve relative early forest days after next-day July 2 start; source calendar dates not
+      claimed.'
+    scene_ids:
+    - sc-y0-0701-orochimaru-attacks-team7
+    - sc-y0-0701-gaara-first-tower
+    - sc-y0-0701-anko-orochimaru
+    - sc-y0-0701-anko-reviews-suna-record
+    - sc-y0-0701-suna-reaches-tower
+    - sc-y0-0702-team7-clearing-sound-attack
+    - sc-y0-0702-anko-reports-orochimaru
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

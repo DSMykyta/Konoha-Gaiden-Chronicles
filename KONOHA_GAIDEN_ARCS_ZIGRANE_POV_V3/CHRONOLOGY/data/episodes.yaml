@@ -1697,3 +1697,9 @@ episodes:
   arc_id: arc-y0-chunin-exams
   title: Наставники обговорюють письмовий іспит
   description: Під час першого етапу наставники чекають результатів в учительській Академії.
+
+- id: ep-y0-team8-forest-trial
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Команда 8 полює на сувої в Лісі Смерті
+  description: Хіната, Кіба, Акамару й Шіно здобувають другий сувій та спостерігають за іншими командами.
