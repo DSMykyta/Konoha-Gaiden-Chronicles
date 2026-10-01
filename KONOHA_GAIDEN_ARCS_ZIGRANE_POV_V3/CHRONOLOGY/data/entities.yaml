@@ -1995,6 +1995,12 @@ entities:
     aliases:
     - Каджі
 
+  - id: c-giichi
+    kind: person
+    name: Giichi
+    aliases:
+    - Ґіічі
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

@@ -633,6 +633,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep11-audit
+    type: reference
+    title: Narutopedia — The Land Where a Hero Once Lived
+    url: https://naruto.fandom.com/wiki/The_Land_Where_a_Hero_Once_Lived
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3095,5 +3102,11 @@ evidence:
   - id: evd-narutopedia-ep10-audit
     source_id: src-narutopedia-ep10-audit
     locator: Episode 10, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep11-audit
+    source_id: src-narutopedia-ep11-audit
+    locator: Episode 11, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

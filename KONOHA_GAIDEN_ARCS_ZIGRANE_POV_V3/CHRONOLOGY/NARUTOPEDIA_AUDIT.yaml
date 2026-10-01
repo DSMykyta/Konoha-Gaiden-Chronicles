@@ -13,9 +13,10 @@ checked_anime_episodes:
 - 8
 - 9
 - 10
+- 11
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 11
+next_anime_episode: 12
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -173,3 +174,21 @@ episode_audits:
   cast_review: Existing project cast checked; no additional author-character presence established.
   notes:
   - No exact date or hideout location assigned to the opposing recovery scene.
+- episode: 11
+  baseline_revision: 3c82d89d9e0a211e1550f89a7b81fc1d3ed2f36c
+  added_moment_ids:
+  - ev-waves-giichi-quits
+  - ev-waves-sakura-market
+  - ev-y0-0322-naruto-sasuke-eating-contest
+  - ev-y0-0322-sakura-asks-family-photo
+  - ev-y0-0322-naruto-promises-inari-hero
+  added_scene_ids:
+  - sc-waves-giichi-quits
+  - sc-waves-sakura-market
+  - sc-y0-0322-kaiza-dinner
+  updated_moment_ids: []
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - Kaiza flashback remains a reported past event; no invented historical date assigned.
+  moved_moment_ids:
+  - ev-y0-0322-tazuna-tells-kaiza-story

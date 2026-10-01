@@ -1655,3 +1655,15 @@ episodes:
   arc_id: arc-y0-land-of-waves
   title: Хаку відновлює Забузу після першого бою
   description: 'Окрема лінія супротивників: розкриття інсценованої смерті та підготовка повторного нападу.'
+
+- id: ep-y0-waves-bridge-workers
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Будівництво мосту під загрозою Ґато
+  description: Окрема лінія Тадзуни та робітників мосту.
+
+- id: ep-y0-sakura-wave-market
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Сакура й Тадзуна повертаються з ринку
+  description: Сакура бачить становище мешканців Країни Хвиль.

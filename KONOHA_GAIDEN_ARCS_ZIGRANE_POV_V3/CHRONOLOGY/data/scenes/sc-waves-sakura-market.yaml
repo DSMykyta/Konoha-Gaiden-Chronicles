@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-waves-sakura-market
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-waves-sakura-market
+  display_rank: 100
+  title: Сакура бачить бідність мешканців
+  text: Дорогою з ринку Сакура стикається зі спробами вкрасти її сумку. Тадзуна пояснює, що завершений міст допоможе позбутися
+    влади Ґато.
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+relations: []
+presence:
+- id: pr-audit-11-waves-sakura-market-c-sakura
+  entity_id: c-sakura
+  from: sc-waves-sakura-market.start
+  to: sc-waves-sakura-market.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+- id: pr-audit-11-waves-sakura-market-c-tazuna
+  entity_id: c-tazuna
+  from: sc-waves-sakura-market.start
+  to: sc-waves-sakura-market.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+episode_id: ep-y0-sakura-wave-market
+display_rank: 100
+title: Сакура бачить бідність Країни Хвиль
+location_id: null
+placement: null

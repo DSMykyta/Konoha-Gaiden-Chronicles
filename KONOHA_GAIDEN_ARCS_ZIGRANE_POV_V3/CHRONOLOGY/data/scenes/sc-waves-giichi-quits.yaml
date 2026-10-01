@@ -1,0 +1,51 @@
+schema_version: 1
+id: sc-waves-giichi-quits
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-waves-giichi-quits
+  display_rank: 100
+  title: Ґіічі відмовляється будувати міст
+  text: Ґіічі звільняється й закликає Тадзуну припинити будівництво через загрозу Ґато.
+  involvement:
+  - entity_id: c-giichi
+    role: focus
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+relations: []
+presence:
+- id: pr-audit-11-waves-giichi-quits-c-giichi
+  entity_id: c-giichi
+  from: sc-waves-giichi-quits.start
+  to: sc-waves-giichi-quits.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+- id: pr-audit-11-waves-giichi-quits-c-tazuna
+  entity_id: c-tazuna
+  from: sc-waves-giichi-quits.start
+  to: sc-waves-giichi-quits.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+episode_id: ep-y0-waves-bridge-workers
+display_rank: 100
+title: Ґіічі відмовляється будувати міст
+location_id: loc-great-naruto-bridge
+placement: null
