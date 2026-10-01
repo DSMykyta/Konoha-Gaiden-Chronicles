@@ -661,6 +661,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep14-audit
+    type: reference
+    title: Narutopedia — The Number One Hyperactive, Knucklehead Ninja Joins the Fight!
+    url: https://naruto.fandom.com/wiki/The_Number_One_Hyperactive%2C_Knucklehead_Ninja_Joins_the_Fight%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3148,5 +3155,11 @@ evidence:
     source_id: src-narutopedia-waraji-wave-audit
     locator: "Part I / Prologue \u2014 Land of Waves: identified kidnappers, hostage\
       \ threat and defeat"
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep14-audit
+    source_id: src-narutopedia-ep14-audit
+    locator: Episode 14, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

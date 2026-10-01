@@ -134,6 +134,115 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep13-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-rebukes-naruto-entrance
+  display_rank: 150
+  title: Какаші дорікає Наруто за гучну появу
+  text: Наруто голосно оголошує свій прихід; Какаші дорікає, що прихована атака була б ефективнішою.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-haku-intercepts-zabuza-shuriken
+  display_rank: 160
+  title: Хаку перехоплює сюрикени Забузи
+  text: Забуза кидає в Наруто сюрикени. Хаку збиває їх сенбонами й просить дозволити йому самому розібратися з Наруто.
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-sasuke-attacks-distracted-haku
+  display_rank: 170
+  title: Саске атакує Хаку під час розмови
+  text: Саске кидає кунай, поки Хаку говорить із Наруто. Хаку знову входить у дзеркала й продовжує бій.
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-enters-ice-mirrors
+  display_rank: 180
+  title: Наруто заходить усередину крижаних дзеркал
+  text: Какаші пропонує атакувати дзеркала ззовні й зсередини. Наруто натомість заходить до Саске та теж опиняється в пастці.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: ev-y0-0330-sasuke-fails-to-melt-mirrors
+  title: Саске намагається розплавити дзеркала
+  text: Саске застосовує Велику вогняну кулю, але її жару недостатньо, щоб пошкодити крижані дзеркала.
+  origin: A
+  extent: interval
+  display_rank: 190
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
 - id: ev-y0-0330-sasuke-awakens-sharingan
   legacy_ids:
   - V10-000031
@@ -407,6 +516,62 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep13-audit
+- id: rel-audit-14-y0-0330-naruto-arrives-with-shuriken-before-y0-0330-kakashi-rebukes-naruto-entrance
+  kind: before
+  a: ev-y0-0330-naruto-arrives-with-shuriken
+  b: ev-y0-0330-kakashi-rebukes-naruto-entrance
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: rel-audit-14-y0-0330-kakashi-rebukes-naruto-entrance-before-y0-0330-haku-intercepts-zabuza-shuriken
+  kind: before
+  a: ev-y0-0330-kakashi-rebukes-naruto-entrance
+  b: ev-y0-0330-haku-intercepts-zabuza-shuriken
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: rel-audit-14-y0-0330-haku-intercepts-zabuza-shuriken-before-y0-0330-sasuke-attacks-distracted-haku
+  kind: before
+  a: ev-y0-0330-haku-intercepts-zabuza-shuriken
+  b: ev-y0-0330-sasuke-attacks-distracted-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: rel-audit-14-y0-0330-sasuke-attacks-distracted-haku-before-y0-0330-naruto-enters-ice-mirrors
+  kind: before
+  a: ev-y0-0330-sasuke-attacks-distracted-haku
+  b: ev-y0-0330-naruto-enters-ice-mirrors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: rel-audit-14-y0-0330-naruto-enters-ice-mirrors-before-y0-0330-sasuke-awakens-sharingan
+  kind: before
+  a: ev-y0-0330-naruto-enters-ice-mirrors
+  b: ev-y0-0330-sasuke-awakens-sharingan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: rel-0330-enter-before-melting-attempt
+  kind: before
+  a: ev-y0-0330-naruto-enters-ice-mirrors
+  b: ev-y0-0330-sasuke-fails-to-melt-mirrors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
+- id: rel-0330-melting-before-sharingan
+  kind: before
+  a: ev-y0-0330-sasuke-fails-to-melt-mirrors
+  b: ev-y0-0330-sasuke-awakens-sharingan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep14-audit
 presence:
 - id: pr-0330-bridge-naruto
   entity_id: c-naruto
