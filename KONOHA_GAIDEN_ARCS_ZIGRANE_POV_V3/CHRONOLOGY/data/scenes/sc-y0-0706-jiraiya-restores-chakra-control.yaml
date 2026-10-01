@@ -1,0 +1,61 @@
+schema_version: 1
+id: sc-y0-0706-jiraiya-restores-chakra-control
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 300
+continuity_id: main
+title: Джирая відновлює контроль чакри Наруто
+location_id: loc-konoha-hot-springs
+placement:
+  anchor_id: ta-y0-0706
+  day_offset: 1
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0706-jiraiya-removes-five-elements-seal
+  legacy_ids:
+  - V10-000048
+  title: Джирая знімає Печатку П’яти Стихій; Наруто проходить по воді
+  text: Повернувшись до вправи на воді, Джирая помічає додаткову печатку Орочімару й знімає її. Наруто відразу відновлює
+    контроль чакри та проходить по воді; Джирая планує навчати його користуватися чакрою Дев’ятихвостого.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: affected
+    mode: physical
+  - entity_id: c-orochimaru
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-v10-000048
+  - evd-manga-ch88-97
+  - evd-anime-52-54
+  - evd-narutopedia-ep53-audit
+relations: []
+presence:
+- id: pr-audit-53-ev-y0-0706-jiraiya-removes-five-elements-seal-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0706-jiraiya-removes-five-elements-seal.start
+  to: ev-y0-0706-jiraiya-removes-five-elements-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+- id: pr-audit-53-ev-y0-0706-jiraiya-removes-five-elements-seal-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-jiraiya-removes-five-elements-seal.start
+  to: ev-y0-0706-jiraiya-removes-five-elements-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit

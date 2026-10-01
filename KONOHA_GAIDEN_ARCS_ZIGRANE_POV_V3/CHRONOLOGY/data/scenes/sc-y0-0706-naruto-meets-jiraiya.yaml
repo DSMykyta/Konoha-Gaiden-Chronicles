@@ -3,7 +3,7 @@ id: sc-y0-0706-naruto-meets-jiraiya
 episode_id: ep-y0-naruto-summoning-training
 display_rank: 200
 continuity_id: main
-title: Джирая перебирає тренування Наруто
+title: Ебісу навчає Наруто біля гарячих джерел; з’являється Джирая
 location_id: loc-konoha-hot-springs
 placement:
   anchor_id: ta-y0-0706
@@ -64,50 +64,6 @@ events:
   - evd-manga-ch88-97
   - evd-anime-52-54
   - evd-narutopedia-ep52-audit
-- id: ev-y0-0706-jiraiya-removes-five-elements-seal
-  legacy_ids:
-  - V10-000048
-  title: Джирая знімає Печатку П’яти Стихій
-  text: Джирая помічає порушення печатки Наруто й прибирає Печатку П’яти Стихій, накладену Орочімару.
-  origin: M
-  extent: interval
-  display_rank: 300
-  involvement:
-  - entity_id: c-jiraiya
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: affected
-    mode: physical
-  - entity_id: c-orochimaru
-    role: mentioned
-    mode: remote
-  evidence_ids:
-  - evd-v10-000048
-  - evd-manga-ch88-97
-  - evd-anime-52-54
-- id: ev-y0-0706-jiraiya-takes-over-training
-  legacy_ids:
-  - V10-000048
-  title: Джирая перебирає підготовку Наруто
-  text: Після виправлення печатки Джирая погоджується тренувати Наруто замість Ебісу.
-  origin: M
-  extent: interval
-  display_rank: 400
-  involvement:
-  - entity_id: c-jiraiya
-    role: focus
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-ebisu
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-v10-000048
-  - evd-manga-ch88-97
-  - evd-anime-52-54
 relations:
 - id: rel-0706-jiraiya-1
   kind: before
@@ -118,22 +74,6 @@ relations:
   evidence_ids:
   - evd-manga-ch88-97
   - evd-narutopedia-ep52-audit
-- id: rel-0706-jiraiya-2
-  kind: before
-  a: ev-y0-0706-jiraiya-appears
-  b: ev-y0-0706-jiraiya-removes-five-elements-seal
-  basis: source
-  review: pending
-  evidence_ids:
-  - evd-manga-ch88-97
-- id: rel-0706-jiraiya-3
-  kind: before
-  a: ev-y0-0706-jiraiya-removes-five-elements-seal
-  b: ev-y0-0706-jiraiya-takes-over-training
-  basis: source
-  review: pending
-  evidence_ids:
-  - evd-manga-ch88-97
 presence:
 - id: pr-0706-jiraiya-naruto
   entity_id: c-naruto
@@ -146,7 +86,7 @@ presence:
 - id: pr-0706-jiraiya-ebisu
   entity_id: c-ebisu
   from: sc-y0-0706-naruto-meets-jiraiya.start
-  to: ev-y0-0706-jiraiya-takes-over-training.end
+  to: ev-y0-0706-jiraiya-appears.end
   basis: source
   evidence_ids:
   - evd-v10-000048

@@ -3347,3 +3347,30 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep52-audit
+
+- id: lnk-audit-53-sc-y0-0706-naruto-meets-jiraiya-sc-y0-0706-naruto-recruits-jiraiya
+  kind: before
+  a: sc-y0-0706-naruto-meets-jiraiya
+  b: sc-y0-0706-naruto-recruits-jiraiya
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+
+- id: lnk-audit-53-sc-y0-0706-naruto-recruits-jiraiya-sc-y0-0706-jiraiya-restores-chakra-control
+  kind: before
+  a: sc-y0-0706-naruto-recruits-jiraiya
+  b: sc-y0-0706-jiraiya-restores-chakra-control
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+
+- id: lnk-audit-53-sc-y0-0706-jiraiya-restores-chakra-control-sc-y0-0706-ebisu-recognizes-jiraiya
+  kind: before
+  a: sc-y0-0706-jiraiya-restores-chakra-control
+  b: sc-y0-0706-ebisu-recognizes-jiraiya
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit

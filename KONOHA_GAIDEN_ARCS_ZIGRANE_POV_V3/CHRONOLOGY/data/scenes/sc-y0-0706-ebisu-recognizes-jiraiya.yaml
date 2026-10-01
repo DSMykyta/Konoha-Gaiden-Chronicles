@@ -1,0 +1,70 @@
+schema_version: 1
+id: sc-y0-0706-ebisu-recognizes-jiraiya
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 400
+continuity_id: main
+title: Нічна розмова Ебісу та Джираї
+location_id: null
+placement:
+  anchor_id: ta-y0-0706
+  day_offset: 1
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0706-jiraiya-takes-over-training
+  legacy_ids:
+  - V10-000048
+  title: Ебісу впізнає Джираю та говорить про Орочімару
+  text: Уночі, коли Наруто спить, Ебісу впізнає в новому наставнику Джираю з Саннінів і говорить із ним про загрозу Орочімару.
+    Ебісу визнає його здатність зупинити ворога.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: affected
+    mode: physical
+  - entity_id: c-ebisu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000048
+  - evd-manga-ch88-97
+  - evd-anime-52-54
+  - evd-narutopedia-ep53-audit
+relations: []
+presence:
+- id: pr-audit-53-ev-y0-0706-jiraiya-takes-over-training-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0706-jiraiya-takes-over-training.start
+  to: ev-y0-0706-jiraiya-takes-over-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+- id: pr-audit-53-ev-y0-0706-jiraiya-takes-over-training-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-jiraiya-takes-over-training.start
+  to: ev-y0-0706-jiraiya-takes-over-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+- id: pr-audit-53-ev-y0-0706-jiraiya-takes-over-training-c-ebisu
+  entity_id: c-ebisu
+  from: ev-y0-0706-jiraiya-takes-over-training.start
+  to: ev-y0-0706-jiraiya-takes-over-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+day_part: night

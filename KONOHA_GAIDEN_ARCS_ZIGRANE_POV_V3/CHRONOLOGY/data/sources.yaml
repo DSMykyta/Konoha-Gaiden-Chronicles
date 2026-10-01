@@ -1041,6 +1041,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep53-audit
+    type: reference
+    title: 'Narutopedia — Long Time No See: Jiraiya Returns!'
+    url: https://naruto.fandom.com/wiki/Long_Time_No_See%3A_Jiraiya_Returns%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3885,5 +3892,11 @@ evidence:
   - id: evd-narutopedia-ep52-audit
     source_id: src-narutopedia-ep52-audit
     locator: Episode 52, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep53-audit
+    source_id: src-narutopedia-ep53-audit
+    locator: Episode 53, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

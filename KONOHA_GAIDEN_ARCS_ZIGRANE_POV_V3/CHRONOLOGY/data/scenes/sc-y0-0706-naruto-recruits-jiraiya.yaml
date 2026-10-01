@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-0706-naruto-recruits-jiraiya
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 250
+continuity_id: main
+title: Наруто домагається згоди Джираї на навчання
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0706
+  day_offset: 1
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0706-naruto-recruits-jiraiya
+  title: Наруто переслідує Джираю й переконує стати наставником
+  text: Джирая представляється автором книг Какаші, проте відмовляється замінити Ебісу й тікає. Наруто переслідує його
+    попри пастку та перевтілення. Зрештою техніка Спокуси допомагає отримати згоду на навчання.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-jiraiya
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+relations: []
+presence:
+- id: pr-audit-53-ev-y0-0706-naruto-recruits-jiraiya-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-naruto-recruits-jiraiya.start
+  to: ev-y0-0706-naruto-recruits-jiraiya.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit
+- id: pr-audit-53-ev-y0-0706-naruto-recruits-jiraiya-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0706-naruto-recruits-jiraiya.start
+  to: ev-y0-0706-naruto-recruits-jiraiya.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep53-audit

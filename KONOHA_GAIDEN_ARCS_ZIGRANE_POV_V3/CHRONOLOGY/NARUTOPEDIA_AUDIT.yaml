@@ -55,11 +55,13 @@ checked_anime_episodes:
 - 50
 - 51
 - 52
+- 53
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 53
+next_anime_episode: 54
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0706-naruto-recruits-jiraiya
 - ev-y0-0706-ebisu-explains-chakra-control
 - ev-y0-0706-ebisu-catches-naruto
 - ev-y0-0706-orochimaru-orders-sasuke-abduction
@@ -96,6 +98,9 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0706-ebisu-recognizes-jiraiya
+- sc-y0-0706-jiraiya-restores-chakra-control
+- sc-y0-0706-naruto-recruits-jiraiya
 - sc-y0-0706-ebisu-chakra-lesson
 - sc-y0-0706-ebisu-catches-naruto
 - sc-y0-0706-orochimaru-orders-sasuke-abduction
@@ -902,6 +907,22 @@ episode_audits:
   notes:
   - Added the complete escape challenge and the Ichiraku chakra lesson; enriched the existing hospital assignment, water-walking
     practice and Jiraiya encounter. No individual gags split into separate moments. Project dates retained.
+- episode: 53
+  baseline_revision: af4c478b64a54837fceeead8816d78b120441bc9
+  added_moment_ids:
+  - ev-y0-0706-naruto-recruits-jiraiya
+  added_scene_ids:
+  - sc-y0-0706-naruto-recruits-jiraiya
+  - sc-y0-0706-jiraiya-restores-chakra-control
+  - sc-y0-0706-ebisu-recognizes-jiraiya
+  updated_moment_ids:
+  - ev-y0-0706-jiraiya-removes-five-elements-seal
+  - ev-y0-0706-jiraiya-takes-over-training
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Added the continuous pursuit through which Naruto obtains Jiraiya’s agreement to teach him. Split the return to water-walking
+    and the later night conversation from the initial encounter; existing event IDs retained. Ebisu is not placed at
+    the seal-removal lesson; the night conversation location remains unknown.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
