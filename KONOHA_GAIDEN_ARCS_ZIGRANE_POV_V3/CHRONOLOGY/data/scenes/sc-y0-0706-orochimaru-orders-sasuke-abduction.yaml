@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-0706-orochimaru-orders-sasuke-abduction
+episode_id: ep-y0-kabuto-hospital-infiltration
+display_rank: 100
+continuity_id: main
+title: Орочімару наказує Кабуто викрасти Саске
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0706
+  day_offset: 1
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0706-orochimaru-orders-sasuke-abduction
+  title: Орочімару доручає Кабуто захопити Саске
+  text: Поза ареною Орочімару та Кабуто обговорюють ослаблення військової пильності Конохи. Орочімару відхиляє пропозицію
+    напасти на Хірузена негайно та наказує викрасти Саске, побоюючись впливу Наруто на його прагнення сили. Кабуто погоджується.
+  involvement:
+  - entity_id: c-orochimaru
+    role: focus
+    mode: physical
+  - entity_id: c-kabuto
+    role: focus
+    mode: physical
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+relations: []
+presence:
+- id: pr-audit-51-ev-y0-0706-orochimaru-orders-sasuke-abduction-c-orochimaru
+  entity_id: c-orochimaru
+  from: ev-y0-0706-orochimaru-orders-sasuke-abduction.start
+  to: ev-y0-0706-orochimaru-orders-sasuke-abduction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-ev-y0-0706-orochimaru-orders-sasuke-abduction-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-orochimaru-orders-sasuke-abduction.start
+  to: ev-y0-0706-orochimaru-orders-sasuke-abduction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit

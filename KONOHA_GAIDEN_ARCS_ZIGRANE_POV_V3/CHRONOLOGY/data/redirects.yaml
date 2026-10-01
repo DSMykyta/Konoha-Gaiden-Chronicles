@@ -647,7 +647,6 @@ redirects:
   status: superseded
   replacement_ids:
   - ev-y0-0706-kabuto-kills-anbu-guards
-  - ev-y0-0706-kabuto-approaches-sasuke
   - ev-y0-0706-kakashi-intercepts-kabuto
   - ev-y0-0706-kabuto-escapes-kakashi
   reason: Kabuto hospital infiltration split into guard killings, approach, interception and escape.

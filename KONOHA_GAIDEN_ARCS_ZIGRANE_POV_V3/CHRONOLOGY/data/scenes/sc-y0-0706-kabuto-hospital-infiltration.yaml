@@ -20,8 +20,10 @@ events:
 - id: ev-y0-0706-kabuto-kills-anbu-guards
   legacy_ids:
   - V10-000047
-  title: Кабуто вбиває охоронців АНБУ
-  text: За наказом Орочімару Кабуто проникає до шпиталю й убиває охоронців АНБУ біля Саске.
+  - ev-y0-0706-kabuto-approaches-sasuke
+  title: Кабуто проникає до Саске й готує напад
+  text: За наказом Орочімару Кабуто проникає до шпиталю, вбиває охоронців АНБУ та наближається зі скальпелем до непритомного
+    Саске, підключеного до апарата дихання.
   origin: M
   extent: interval
   display_rank: 100
@@ -38,29 +40,12 @@ events:
   evidence_ids:
   - evd-v10-000047
   - evd-manga-ch88-97
-- id: ev-y0-0706-kabuto-approaches-sasuke
-  legacy_ids:
-  - V10-000047
-  title: Кабуто підходить до Саске зі скальпелем
-  text: Кабуто наближається до Саске з медичним скальпелем.
-  origin: M
-  extent: interval
-  display_rank: 200
-  involvement:
-  - entity_id: c-kabuto
-    role: focus
-    mode: physical
-  - entity_id: c-sasuke
-    role: affected
-    mode: physical
-  evidence_ids:
-  - evd-v10-000047
-  - evd-manga-ch88-97
+  - evd-narutopedia-ep51-audit
 - id: ev-y0-0706-kakashi-intercepts-kabuto
   legacy_ids:
   - V10-000047
   title: Какаші перехоплює Кабуто
-  text: Какаші зупиняє Кабуто біля палати Саске.
+  text: Какаші перехоплює Кабуто зі скальпелем біля Саске й намагається затримати його, захищаючи учня.
   origin: M
   extent: interval
   display_rank: 300
@@ -77,11 +62,13 @@ events:
   evidence_ids:
   - evd-v10-000047
   - evd-manga-ch88-97
+  - evd-narutopedia-ep51-audit
 - id: ev-y0-0706-kabuto-escapes-kakashi
   legacy_ids:
   - V10-000047
   title: Кабуто вислизає від Какаші
-  text: Кабуто уникає затримання й залишає шпиталь.
+  text: Кабуто використовує Техніку мертвої душі й тіло одного з охоронців як обман, уникає затримання Какаші та залишає
+    шпиталь.
   origin: M
   extent: interval
   display_rank: 400
@@ -95,29 +82,80 @@ events:
   evidence_ids:
   - evd-v10-000047
   - evd-manga-ch88-97
+  - evd-narutopedia-ep51-audit
 relations:
-- id: rel-0706-hospital-1
-  kind: before
-  a: ev-y0-0706-kabuto-kills-anbu-guards
-  b: ev-y0-0706-kabuto-approaches-sasuke
-  basis: source
-  review: pending
-  evidence_ids:
-  - evd-manga-ch88-97
 - id: rel-0706-hospital-2
   kind: before
-  a: ev-y0-0706-kabuto-approaches-sasuke
+  a: ev-y0-0706-kabuto-kills-anbu-guards
   b: ev-y0-0706-kakashi-intercepts-kabuto
   basis: source
-  review: pending
+  review: accepted
   evidence_ids:
   - evd-manga-ch88-97
+  - evd-narutopedia-ep51-audit
 - id: rel-0706-hospital-3
   kind: before
   a: ev-y0-0706-kakashi-intercepts-kabuto
   b: ev-y0-0706-kabuto-escapes-kakashi
   basis: source
-  review: pending
+  review: accepted
   evidence_ids:
   - evd-manga-ch88-97
-presence: []
+  - evd-narutopedia-ep51-audit
+presence:
+- id: pr-audit-51-y0-0706-kabuto-kills-anbu-guards-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-kabuto-kills-anbu-guards.start
+  to: ev-y0-0706-kabuto-kills-anbu-guards.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kabuto-kills-anbu-guards-c-sasuke
+  entity_id: c-sasuke
+  from: ev-y0-0706-kabuto-kills-anbu-guards.start
+  to: ev-y0-0706-kabuto-kills-anbu-guards.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kakashi-intercepts-kabuto-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0706-kakashi-intercepts-kabuto.start
+  to: ev-y0-0706-kakashi-intercepts-kabuto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kakashi-intercepts-kabuto-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-kakashi-intercepts-kabuto.start
+  to: ev-y0-0706-kakashi-intercepts-kabuto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kakashi-intercepts-kabuto-c-sasuke
+  entity_id: c-sasuke
+  from: ev-y0-0706-kakashi-intercepts-kabuto.start
+  to: ev-y0-0706-kakashi-intercepts-kabuto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kabuto-escapes-kakashi-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-kabuto-escapes-kakashi.start
+  to: ev-y0-0706-kabuto-escapes-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kabuto-escapes-kakashi-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0706-kabuto-escapes-kakashi.start
+  to: ev-y0-0706-kabuto-escapes-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit

@@ -4,7 +4,7 @@ episode_id: ep-y0-naruto-summoning-training
 display_rank: 100
 continuity_id: main
 title: Какаші передає тренування Наруто Ебісу
-location_id: loc-konohagakure
+location_id: loc-konoha-hospital
 placement:
   anchor_id: ta-y0-0706
   day_offset: 1
@@ -13,7 +13,7 @@ presence_coverage: complete
 review:
   time: partial
   cast: accepted
-  location: partial
+  location: accepted
   origin: accepted
   text: accepted
 events:
@@ -21,7 +21,8 @@ events:
   legacy_ids:
   - V10-000046-M
   title: Какаші призначає Ебісу тренером Наруто
-  text: Какаші доручає Ебісу готувати Наруто до фінального етапу іспиту.
+  text: Наруто приходить до шпиталю й просить Какаші негайно почати підготовку до фіналу. Какаші повідомляє, що тренуватиме
+    Саске, а заняття Наруто доручає Ебісу, якого представляє новим наставником.
   origin: M
   extent: interval
   display_rank: 100
@@ -39,6 +40,7 @@ events:
   - evd-v10-000046-M
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep51-audit
 relations: []
 presence:
 - id: pr-0706-ebisu-kakashi
@@ -65,3 +67,27 @@ presence:
   evidence_ids:
   - evd-v10-000046-M
   review: accepted
+- id: pr-audit-51-y0-0706-kakashi-assigns-ebisu-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0706-kakashi-assigns-ebisu.start
+  to: ev-y0-0706-kakashi-assigns-ebisu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kakashi-assigns-ebisu-c-ebisu
+  entity_id: c-ebisu
+  from: ev-y0-0706-kakashi-assigns-ebisu.start
+  to: ev-y0-0706-kakashi-assigns-ebisu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-kakashi-assigns-ebisu-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-kakashi-assigns-ebisu.start
+  to: ev-y0-0706-kakashi-assigns-ebisu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit

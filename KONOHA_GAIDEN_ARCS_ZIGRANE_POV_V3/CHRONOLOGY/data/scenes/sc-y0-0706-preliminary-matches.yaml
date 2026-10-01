@@ -378,7 +378,9 @@ events:
   legacy_ids:
   - V10-000046-K
   title: Досу перемагає Чоджі
-  text: Досу перемагає Чоджі в останньому попередньому поєдинку.
+  text: Чоджі збільшує тіло та закриває вуха, розраховуючи захиститися від звукової техніки Досу. Досу уникає його атак
+    перекочуванням; коли Чоджі застрягає біля стіни, прикладає звуковий пристрій до його тіла й перемагає. Звук проходить
+    крізь тканини тіла попри закриті вуха. Хаяте оголошує перемогу Досу, завершуючи попередні поєдинки.
   origin: M
   extent: interval
   display_rank: 1000
@@ -396,6 +398,7 @@ events:
   - evd-v10-000046-K
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep51-audit
 relations:
 - id: rel-0706-match-1
   kind: before
@@ -996,3 +999,27 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep50-audit
+- id: pr-audit-51-y0-0706-dosu-defeats-choji-c-dosu
+  entity_id: c-dosu
+  from: ev-y0-0706-dosu-defeats-choji.start
+  to: ev-y0-0706-dosu-defeats-choji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-dosu-defeats-choji-c-choji
+  entity_id: c-choji
+  from: ev-y0-0706-dosu-defeats-choji.start
+  to: ev-y0-0706-dosu-defeats-choji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+- id: pr-audit-51-y0-0706-dosu-defeats-choji-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-dosu-defeats-choji.start
+  to: ev-y0-0706-dosu-defeats-choji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit

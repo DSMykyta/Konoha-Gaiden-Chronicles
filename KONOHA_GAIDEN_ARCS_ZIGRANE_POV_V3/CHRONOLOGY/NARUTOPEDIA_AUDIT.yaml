@@ -53,11 +53,13 @@ checked_anime_episodes:
 - 48
 - 49
 - 50
+- 51
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 51
+next_anime_episode: 52
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0706-orochimaru-orders-sasuke-abduction
 - ev-y0-0118-hiruzen-inspects-graffiti
 - ev-y0-0118-naruto-evades-pursuers
 - ev-y0-0119-hiruzen-reminds-iruka
@@ -91,6 +93,7 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0706-orochimaru-orders-sasuke-abduction
 - sc-y0-0118-naruto-pursuit
 - sc-y0-0119-academy-swing
 - sc-y0-0119-hiruzen-iruka-talk
@@ -846,7 +849,8 @@ episode_audits:
   notes:
   - Completed retained whole Lee–Gaara fight across episodes 48–50, including Guy stopping fatal attack. Added a distinct
     post-bout medical assessment/evacuation, which establishes injury prognosis and ends Lee participation. No separate
-    crying, unconscious stance or spectator reaction moments.  presence_interval_merges:
+    crying, unconscious stance or spectator reaction moments.
+  presence_interval_merges:
     pr-audit-42-y0-0706-sakura-ino-double-ko-c-sakura: pr-audit-41-y0-0706-sakura-ino-double-ko-c-sakura
     pr-audit-42-y0-0706-sakura-ino-double-ko-c-ino: pr-audit-41-y0-0706-sakura-ino-double-ko-c-ino
     pr-audit-42-y0-0706-sakura-ino-double-ko-c-hayate: pr-audit-41-y0-0706-sakura-ino-double-ko-c-hayate
@@ -857,6 +861,26 @@ episode_audits:
     pr-audit-45-y0-0706-naruto-defeats-kiba-c-akamaru: pr-audit-44-y0-0706-naruto-defeats-kiba-c-akamaru
     pr-audit-45-y0-0706-naruto-defeats-kiba-c-hayate: pr-audit-44-y0-0706-naruto-defeats-kiba-c-hayate
 
+- episode: 51
+  baseline_revision: 744f9f8325ac682052b93e3508ea47fb07985696
+  added_moment_ids:
+  - ev-y0-0706-orochimaru-orders-sasuke-abduction
+  added_scene_ids:
+  - sc-y0-0706-orochimaru-orders-sasuke-abduction
+  updated_moment_ids:
+  - ev-y0-0706-dosu-defeats-choji
+  - ev-y0-0706-finalists-draw-pairs
+  - ev-y0-0706-kabuto-kills-anbu-guards
+  - ev-y0-0706-kakashi-intercepts-kabuto
+  - ev-y0-0706-kabuto-escapes-kakashi
+  - ev-y0-0706-kakashi-assigns-ebisu
+  merged_moment_ids:
+    ev-y0-0706-kabuto-approaches-sasuke: ev-y0-0706-kabuto-kills-anbu-guards
+  cast_review: Sasuke finalist pairing is not physical presence at draw. Author forest-failure outcome retained.
+  notes:
+  - Enriched last bout, finals rules, hospital interception/escape and tutor assignment; assignment location corrected
+    to hospital. Added missing separate abduction-order scene. Merged scalpel approach into whole infiltration action;
+    preserved alias and updated migration mappings. Corrected audit log newline; YAML log parsed before committing.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

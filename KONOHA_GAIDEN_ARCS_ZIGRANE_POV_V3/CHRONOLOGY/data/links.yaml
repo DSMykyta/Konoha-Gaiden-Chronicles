@@ -3302,3 +3302,21 @@ links:
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.
+
+- id: lnk-audit-51-sc-y0-0706-orochimaru-orders-sasuke-abduction-sc-y0-0706-kabuto-hospital-infiltration
+  kind: before
+  a: sc-y0-0706-orochimaru-orders-sasuke-abduction
+  b: sc-y0-0706-kabuto-hospital-infiltration
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
+
+- id: lnk-audit-51-sc-y0-0706-kabuto-hospital-infiltration-sc-y0-0706-kakashi-assigns-ebisu
+  kind: before
+  a: sc-y0-0706-kabuto-hospital-infiltration
+  b: sc-y0-0706-kakashi-assigns-ebisu
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep51-audit
