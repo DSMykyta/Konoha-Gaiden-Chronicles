@@ -15,14 +15,24 @@ function name(id){const e=entityMap.get(id);return e?.aliases?.find(a=>/[А-Яа
 function fullName(id){return TimelineCore.fullName(entityMap.get(id),profileMap?.get(id));}
 function selectable(){return TimelineCore.selectable(data.entities,events());}
 function color(id){return palette[[...entityMap.keys()].indexOf(id)%palette.length]||'#8797ac';}
-function events(){return data.events.filter(e=>e.continuity===continuity&&e.scene_state!=='inactive');}
+let cachedData=null,cachedContinuity=null,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedRelations=null,cachedBreaks=null;
+const layoutCache=new Map(),baseLayoutCache=new Map();
+function events(){
+ if(cachedData!==data||cachedContinuity!==continuity){
+  cachedData=data;cachedContinuity=continuity;
+  cachedEvents=data.events.filter(e=>e.continuity===continuity&&e.scene_state!=='inactive');
+  cachedDated=cachedEvents.filter(e=>e.day!==null);cachedScenes=null;cachedRelations=null;cachedBreaks=null;layoutCache.clear();baseLayoutCache.clear();
+ }
+ return cachedEvents;
+}
+function datedEvents(){events();return cachedDated;}
 function relevant(e){return e.tracks.some(id=>selected.has(id));}
 function sceneEvents(id){return TimelineCore.ordered(events().filter(e=>e.scene_id===id));}
 function sceneCast(scene,group){return [...new Set([...(scene?.presence||[]).filter(p=>!p.mode||['physical','physical_hidden'].includes(p.mode)).map(p=>p.entity_id),...group.flatMap(e=>e.physical)])];}
 function actionCount(n){return `${n} ${n%100>=11&&n%100<=14?'дій':n%10===1?'дія':n%10>=2&&n%10<=4?'дії':'дій'}`;}
 function navigationEvents(){return events().filter(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));}
-function chronologyRelations(){return [...data.links,...data.scenes.flatMap(s=>s.relations||[])];}
-function orderedScenes(){return TimelineCore.scenes(events(),chronologyRelations(),data.scenes);}
+function chronologyRelations(){events();return cachedRelations??= [...data.links,...data.scenes.flatMap(s=>s.relations||[])];}
+function orderedScenes(){events();return cachedScenes??= TimelineCore.scenes(events(),chronologyRelations(),data.scenes);}
 function semanticLevel(){
  if(zoom>=Math.sqrt(zoomModes.day*zoomModes.week))return 'moment';
  if(zoom>=Math.sqrt(zoomModes.week*zoomModes.month))return 'scene';
@@ -84,7 +94,8 @@ function setFocus(id){focusedCharacter=focusedCharacter===id?null:id;if(focusedC
 function updateFocusBar(){const bar=$('focusBar');bar.hidden=!focusedCharacter;if(!focusedCharacter)return;const n=nav();$('focusName').textContent=fullName(focusedCharacter);$('focusPosition').textContent=n.index>=0?`${n.index+1} / ${n.total}`:`${n.total} подій`;$('focusPrevious').disabled=!n.previous;$('focusNext').disabled=!n.next;}
 function selectionChanged(){if(focusedCharacter&&!selected.has(focusedCharacter))focusedCharacter=null;closeCard();renderCharacters();render();}
 const TIME_GAP_THRESHOLD=14,TIME_GAP_EDGE=7,TIME_BREAK_PX=14;
-function chronologyBreaks(dated=events().filter(e=>e.day!==null)){
+function chronologyBreaks(dated=datedEvents()){
+ if(dated===datedEvents()&&cachedBreaks)return cachedBreaks;
  const days=[...new Set(dated.map(e=>Math.floor(e.day)))].sort((a,b)=>a-b),breaks=[];
  for(let i=1;i<days.length;i++){
   const previous=days[i-1],next=days[i];
@@ -92,9 +103,10 @@ function chronologyBreaks(dated=events().filter(e=>e.day!==null)){
   const from=previous+TIME_GAP_EDGE,to=next-TIME_GAP_EDGE;
   if(to>from)breaks.push({previous,next,from,to,omitted:to-from});
  }
+ if(dated===datedEvents())cachedBreaks=breaks;
  return breaks;
 }
-function axisBreaks(dated=events().filter(e=>e.day!==null)){
+function axisBreaks(dated=datedEvents()){
  let removed=0;
  return chronologyBreaks(dated).map(b=>{
   const axis=b.from-removed;
@@ -102,7 +114,7 @@ function axisBreaks(dated=events().filter(e=>e.day!==null)){
   return {...b,axis};
  });
 }
-function dayToAxis(day,dated=events().filter(e=>e.day!==null)){
+function dayToAxis(day,dated=datedEvents()){
  let value=day;
  for(const b of chronologyBreaks(dated)){
   if(day>=b.to)value-=b.omitted;
@@ -111,7 +123,7 @@ function dayToAxis(day,dated=events().filter(e=>e.day!==null)){
  }
  return value;
 }
-function axisToDay(value,side='after',dated=events().filter(e=>e.day!==null)){
+function axisToDay(value,side='after',dated=datedEvents()){
  let removed=0;
  for(const b of chronologyBreaks(dated)){
   const axis=b.from-removed;
@@ -159,32 +171,68 @@ function makeTimeScale(lo,hi,pad,plot,dated){
 }
 function svg(tag,attrs,parent=$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
 function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);}
-let hoverCloseTimer=null,hoverCard=false,pinnedNodeId=null;
+let hoverCloseTimer=null,hoverCard=false,pinnedNodeId=null,cardReturnFocus=null;
 let previewEventId=null,previewPinned=false,previewCloseTimer=null;
 function cancelHoverClose(){clearTimeout(hoverCloseTimer);hoverCloseTimer=null;}
 function deferHoverClose(){cancelHoverClose();if(hoverCard&&!pinnedNodeId)hoverCloseTimer=setTimeout(()=>{if(hoverCard&&!pinnedNodeId)closeCard();},320);}
 function canHover(e){return e.pointerType!=='touch'&&(!window.matchMedia||window.matchMedia('(any-hover: hover)').matches);}
-function paintNodes(){const p=graphNodes.find(p=>p.id===focusId);document.querySelectorAll('.node').forEach(g=>{const active=g.dataset.event===focusId;g.classList.toggle('is-open',active);g.classList.toggle('is-pinned',g.dataset.event===pinnedNodeId);});document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!p&&!member);});}
+function paintNodes(){const p=graphNodes.find(p=>p.id===focusId);document.querySelectorAll('.node').forEach(g=>{const active=g.dataset.event===focusId;g.classList.toggle('is-open',active);g.classList.toggle('is-pinned',g.dataset.event===pinnedNodeId);});document.querySelectorAll('.node-hit').forEach(hit=>hit.classList.toggle('is-pinned',hit.dataset.nodeId===pinnedNodeId));document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!p&&!member);});}
 function openNode(p,pin=false){
  cancelHoverClose();
- if(!pin&&pinnedNodeId)return;
- if(pin)pinnedNodeId=p.id;
- if(focusId===p.id&&!$('eventCard').hidden){hoverCard=!pin;paintNodes();return;}
+ if(!pin){
+  const canvas=$('canvas'),w=canvas.clientWidth||1000,h=canvas.clientHeight||700;
+  const headerBottom=document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||(w<760?112:86);
+  // A hover card must leave its trigger visible and clickable. Compact windows
+  // use explicit activation because the reading surface docks over the graph.
+  if(pinnedNodeId||w<760||h<520||p.y-canvas.scrollTop-18-headerBottom-12<180)return;
+ }
+ if(pin){pinnedNodeId=p.id;rememberCardFocus();}
+ if(focusId===p.id&&!$('eventCard').hidden){hoverCard=!pin;paintNodes();if(pin)focusReadingCard();return;}
  closePanels();hoverCard=!pin;focusId=p.id;anchorDay=p.day;anchorEvent=p.kind==='moment'?p.group[0]?.id:null;
  if(p.kind==='moment')showEvent(p.group[0]);else if(p.kind==='scene')showSceneCard(p.scene,p.group);else showStoryGroup(p);
- positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();
+ positionCard(p);$('hoverTip').hidden=true;paintNodes();updateFocusBar();if(pin)focusReadingCard();
 }
-function closeCard(){cancelHoverClose();closeEventPreview(true);hoverCard=false;pinnedNodeId=null;focusId=null;anchorDay=null;anchorEvent=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;schedule();}
+function rememberCardFocus(){
+ const active=document.activeElement;
+ if(!active||$('eventCard').contains(active))return;
+ const panel=active.closest('.panel');cardReturnFocus=panel?$(panel.id.replace('Panel','Button')):active;
+}
+function focusReadingCard(){
+ if(document.documentElement.dataset.input==='keyboard')$('cardContent').querySelector('.card-top button:not(:disabled)')?.focus();
+}
+function closeCard(restoreFocus=false){
+ cancelHoverClose();closeEventPreview(true);hoverCard=false;pinnedNodeId=null;focusId=null;anchorDay=null;anchorEvent=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;paintNodes();updateFocusBar();
+ if(restoreFocus){
+  const id=cardReturnFocus?.dataset?.event,target=id?[...document.querySelectorAll('.node')].find(n=>n.dataset.event===id):cardReturnFocus;
+  if(target?.isConnected)target.focus();
+ }
+ cardReturnFocus=null;
+}
 function setZoom(value,pivot=center){const old=zoom;zoom=clamp(value,1,730);center=pivot+(center-pivot)*old/zoom;center=clampAxisCenter(center);$('hoverTip').hidden=true;schedule();}
-function closePanels(except){for(const id of ['linesPanel','searchPanel','periodPanel'])if(id!==except){$(id).hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');}}
-function togglePanel(id){const opening=$(id).hidden;closePanels(id);$(id).hidden=!opening;$(id.replace('Panel','Button')).setAttribute('aria-expanded',String(opening));if(opening){closeEventPreview(true);pinnedNodeId=null;hoverCard=false;focusId=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;paintNodes();const input=$(id).querySelector('input');if(input)input.focus();}}
+function closePanels(except){
+ for(const id of ['linesPanel','searchPanel','periodPanel'])if(id!==except){
+  const panel=$(id);
+  if(panel.hidePopover&&!panel.hidden)panel.hidePopover();
+  panel.hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');
+ }
+}
+function togglePanel(id){
+ const panel=$(id),opening=panel.hidden;closePanels(id);
+ if(!opening){closePanels();return;}
+ panel.hidden=false;$(id.replace('Panel','Button')).setAttribute('aria-expanded','true');
+ closeEventPreview(true);pinnedNodeId=null;hoverCard=false;focusId=null;$('eventCard').hidden=true;$('hoverTip').hidden=true;paintNodes();
+ if(panel.showPopover)panel.showPopover();
+ else panel.querySelector('input')?.focus();
+}
 function renderCharacters(){
  const counts=new Map();events().forEach(e=>e.tracks.forEach(id=>counts.set(id,(counts.get(id)||0)+1)));const q=$('characterSearch').value.toLowerCase().trim();
- $('characterList').innerHTML=selectable().filter(e=>(fullName(e.id)+' '+e.name+' '+(e.aliases||[]).join(' ')).toLowerCase().includes(q)).sort((a,b)=>(defaults.includes(b.id)-defaults.includes(a.id))||fullName(a.id).localeCompare(fullName(b.id),'uk')).map(e=>`<div class="character ${focusedCharacter===e.id?'is-focused':''}"><label class="character-check"><input type="checkbox" value="${esc(e.id)}" aria-label="Показати лінію ${esc(fullName(e.id))}" ${selected.has(e.id)?'checked':''}><span class="swatch" style="background:${color(e.id)}"></span></label><button class="character-name" data-focus-character="${esc(e.id)}" aria-pressed="${focusedCharacter===e.id}" title="Зосередитися на лінії">${esc(fullName(e.id))}</button><span class="count">${counts.get(e.id)}</span><button class="profile-arrow" data-profile="${esc(e.id)}" aria-label="Профіль: ${esc(fullName(e.id))}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button></div>`).join('')||'<p class="empty">Персонажа не знайдено.</p>';
+ $('characterList').innerHTML=selectable().filter(e=>(fullName(e.id)+' '+e.name+' '+(e.aliases||[]).join(' ')).toLowerCase().includes(q)).sort((a,b)=>(defaults.includes(b.id)-defaults.includes(a.id))||fullName(a.id).localeCompare(fullName(b.id),'uk')).map(e=>`<div class="character ${focusedCharacter===e.id?'is-focused':''}"><label class="character-check"><input type="checkbox" value="${esc(e.id)}" aria-label="Показати лінію ${esc(fullName(e.id))}" ${selected.has(e.id)?'checked':''}><span class="swatch" style="background:${color(e.id)}"></span></label><button class="character-name" data-focus-character="${esc(e.id)}" aria-pressed="${focusedCharacter===e.id}" title="Зосередитися на лінії">${esc(fullName(e.id))}</button><span class="count" aria-label="${counts.get(e.id)} подій">${counts.get(e.id)}</span><button class="profile-arrow" data-profile="${esc(e.id)}" aria-label="Профіль: ${esc(fullName(e.id))}" title="Відкрити профіль"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button></div>`).join('')||'<div class="empty"><p>Персонажа не знайдено.</p><button class="secondary-button" data-reset-character-search>Очистити пошук</button></div>';
  $('characterList').querySelectorAll('input').forEach(i=>i.addEventListener('change',()=>{i.checked?selected.add(i.value):selected.delete(i.value);selectionChanged();}));
  $('characterList').querySelectorAll('[data-focus-character]').forEach(b=>b.addEventListener('click',()=>setFocus(b.dataset.focusCharacter)));
  $('characterList').querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>openProfile(b.dataset.profile,b)));
  const all=selectable();$('selectAll').disabled=all.every(e=>selected.has(e.id));$('deselectAll').disabled=!selected.size;
+ $('characterList').querySelector('[data-reset-character-search]')?.addEventListener('click',()=>{$('characterSearch').value='';renderCharacters();$('characterSearch').focus();});
+ document.querySelectorAll('[data-team]').forEach(b=>{const ids=teams[b.dataset.team];b.setAttribute('aria-pressed',String(selected.size===ids.length&&ids.every(id=>selected.has(id))));});
 }
 // Cubic Hermite interpolation produces C1-continuous Bézier paths; event anchors are exact.
 function smoothPath(points){
@@ -196,20 +244,38 @@ function smoothPath(points){
 function render(){
  if(!data)return;
  const canvas=$('canvas'),timeline=$('timeline'),axis=$('timeAxis'),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
- const allEvents=events().filter(e=>e.day!==null),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
- const n=ids.length,overview=zoom<3,h=viewport,mid=viewport*.59,amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),level=semanticLevel();
- timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);axis.setAttribute('viewBox',`0 0 ${w} 40`);
+ const allEvents=datedEvents(),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
+ let h=viewport;
+ const n=ids.length,overview=zoom<3,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-220)*.25,24,150)*(overview?.08:1),level=semanticLevel();
+ axis.style.width=w+'px';axis.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
- const baseNodes=semanticNodes(level,allScenes).filter(p=>p.day!==null).map(p=>({...p,x:px(p.day)})),owner=semanticOwner(baseNodes),nodeY=TimelineCore.sceneLayout(baseNodes,chronologyRelations(),owner,mid,amplitude);
+ const baseNodes=semanticNodes(level,allScenes).filter(p=>p.day!==null).map(p=>({...p,x:px(p.day)})),owner=semanticOwner(baseNodes),layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}`;
+ if(!layoutCache.has(layoutKey)){
+  if(layoutCache.size>=8)layoutCache.clear();
+  const baseKey=`${level}:${viewport}:${amplitude}`;
+  if(!baseLayoutCache.has(baseKey)){
+   if(baseLayoutCache.size>=8)baseLayoutCache.clear();
+   baseLayoutCache.set(baseKey,TimelineCore.sceneLayout(baseNodes,chronologyRelations(),owner,mid,amplitude));
+  }
+  const baseY=baseLayoutCache.get(baseKey),top=viewport<520?104:w<760?180:166,bottom=Math.max(top+80,viewport-156);
+  const separated=TimelineCore.separateNodes(baseNodes.map(p=>({...p,x:dayToAxis(p.day,allEvents)*plot/(hi-lo),y:baseY.get(p.id)??mid})),top,bottom);
+  layoutCache.set(layoutKey,new Map(separated.map(p=>[p.id,p.y])));
+ }
+ const nodeY=layoutCache.get(layoutKey);
  const globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
  const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));});
+ h=Math.max(viewport,...graphNodes.map(p=>p.y+156));
+ timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
  timeline.replaceChildren();axis.replaceChildren();$('linesCount').textContent=`Лінії · ${selected.size}`;
  // Alternating calendar days, including empty days. Long empty spans are omitted
  // after retaining one calendar week on each side of the nearest events.
  if(timeScale.dayPx>=2)for(let day=Math.floor(loDay);day<Math.ceil(hiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=lo&&a<hi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
- const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(centerDay,true)} · Рік 0`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))} · Рік 0`;$('periodButton').textContent=label;
+ const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(centerDay,true)} · Рік 0`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))} · Рік 0`;$('periodLabel').textContent=label;
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
+ document.querySelectorAll('[data-level]').forEach(e=>e.setAttribute('aria-current',String(e.dataset.level===level)));
+ $('previous').disabled=lo<=.001;$('next').disabled=hi>=axisLength()-.001;
+ $('zoomOut').disabled=zoom<=1;$('zoomIn').disabled=zoom>=730;
  const ticks=zoom<8?starts.map((d,i)=>({day:d,text:months[i].slice(0,3)})):Array.from({length:Math.max(0,Math.ceil(hiDay)-Math.floor(loDay)+1)},(_,i)=>({day:Math.floor(loDay)+i,text:dateText(Math.floor(loDay)+i)}));
  const visibleTicks=ticks.filter(t=>{const a=dayToAxis(t.day,allEvents);return a>=lo&&a<hi&&!timeScale.hidden(t.day);}),step=zoom<8?1:Math.max(1,Math.ceil(visibleTicks.length/(plot/75)));
  visibleTicks.forEach((t,i)=>{if(i%step)return;svg('line',{x1:px(t.day),x2:px(t.day),y1:5,y2:10,stroke:'#bfcbdc'},axis);const txt=svg('text',{x:px(t.day),y:28,'text-anchor':'middle'},axis);txt.textContent=t.text;});
@@ -231,7 +297,7 @@ function render(){
   if(!overview&&(focusedCharacter?id===focusedCharacter:n<=18)){
    const labelDay=Math.max(lo,route[0].day),labelX=pxAxis(labelDay),actualY=TimelineCore.curveY(route,labelDay);let labelY=actualY-12;while(labelPositions.some(y=>Math.abs(y-labelY)<16))labelY-=16;labelPositions.push(labelY);
    if(Math.abs(labelY-(actualY-12))>1)svg('line',{x1:labelX+2,x2:labelX+2,y1:actualY-3,y2:labelY+3,stroke:color(id),'stroke-width':.6,opacity:.5});
-   const text=svg('text',{x:labelX+6,y:labelY,class:'line-label',role:'button',tabindex:0,'aria-label':`Зосередитися: ${fullName(id)}`,style:`fill:${color(id)};font-size:12px`});text.textContent=name(id);text.addEventListener('click',()=>setFocus(id));text.addEventListener('keydown',e=>{if(e.key==='Enter')setFocus(id);});
+   const text=svg('text',{x:labelX+6,y:labelY,class:'line-label',role:'button',tabindex:0,'aria-label':`Зосередитися: ${fullName(id)}`,style:`fill:color-mix(in srgb,${color(id)} 60%,#272f2b);font-size:12px`});text.textContent=name(id);text.addEventListener('click',()=>setFocus(id));text.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setFocus(id);}});
   }
  });
  timeScale.breaks.forEach(b=>{
@@ -242,27 +308,46 @@ function render(){
   svg('line',{x1,x2:x1,y1:0,y2:h,class:'time-break-edge'},g);
   svg('line',{x1:x2,x2,y1:0,y2:h,class:'time-break-edge'},g);
  });
+ // Large touch targets stay below every visible mark. A neighboring transparent
+ // target can never intercept a tap directly on another node's visible center.
+ const hitLayer=svg('g',{'aria-hidden':'true'});
+ graphNodes.forEach(p=>{
+  const hit=svg(p.kind==='arc'?'ellipse':'circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,...(p.kind==='arc'?{rx:24,ry:22}:{r:22})},hitLayer);
+  hit.addEventListener('click',()=>openNode(p,true));
+  hit.addEventListener('pointerenter',e=>{if(canHover(e))openNode(p);});hit.addEventListener('pointerleave',deferHoverClose);
+ });
  graphNodes.forEach(p=>{
   const kindLabel={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'}[p.kind]||'Вузол',label=`${kindLabel}: ${p.title}${p.kind==='moment'||p.kind==='arc'?'':` · ${p.childCount}`}`,g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':'')+(pinnedNodeId===p.id?' is-pinned':''),tabindex:0,role:'button','aria-label':label,'aria-haspopup':'dialog','data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):''});
   if(p.kind==='arc'){
    svg('ellipse',{class:'mark',cx:p.x,cy:p.y,rx:16,ry:9},g);
-   svg('ellipse',{class:'target',cx:p.x,cy:p.y,rx:23,ry:17},g);
   }else{
    const radius=p.kind==='moment'?5:p.kind==='scene'?9:11;
-   svg('circle',{class:'target',cx:p.x,cy:p.y,r:Math.max(16,radius+7)},g);
    svg('circle',{class:'mark',cx:p.x,cy:p.y,r:radius},g);
    if(p.kind==='scene'||p.kind==='episode'){const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);count.textContent=p.childCount>99?'99+':p.childCount;}
   }
   g.addEventListener('click',()=>openNode(p,true));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openNode(p,true);}});
-  g.addEventListener('pointerenter',e=>{if(canHover(e))openNode(p);});g.addEventListener('pointerover',e=>{if(canHover(e)&&!g.contains(e.relatedTarget))openNode(p);});g.addEventListener('pointerleave',deferHoverClose);g.addEventListener('focus',()=>{if(!pinnedNodeId)openNode(p);});
+  g.addEventListener('pointerenter',e=>{if(canHover(e))openNode(p);});g.addEventListener('pointerover',e=>{if(canHover(e)&&!g.contains(e.relatedTarget))openNode(p);});g.addEventListener('pointerleave',deferHoverClose);
  });
- if(!selected.size){const t=svg('text',{x:w/2,y:mid,'text-anchor':'middle'});t.textContent='Обери персонажів у меню «Лінії»';}
+ $('timelineEmpty').hidden=graphNodes.length>0;
+ if(!graphNodes.length){
+  $('emptyTitle').textContent=selected.size?'У цьому періоді немає подій':'Обери лінії персонажів';
+  $('emptyDescription').textContent=selected.size?'Перейди до найближчої події обраних персонажів.':'Їхні події з’являться на хронології.';
+  $('emptyAction').textContent=selected.size?'До найближчої події':'Обрати всіх';
+ }
  if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else{pinnedNodeId=null;hoverCard=false;focusId=null;$('eventCard').hidden=true;}}
  paintNodes();updateFocusBar();
 }
 function positionCard(point){
- const card=$('eventCard'),canvas=$('canvas'),w=canvas.clientWidth||1000,y=point.y-canvas.scrollTop,width=Math.min(480,w-24),left=clamp(point.x,width/2+12,w-width/2-12);
- card.hidden=false;card.style.left=left+'px';card.style.top=(y-16)+'px';card.style.setProperty('--tail-x',(point.x-left+width/2)+'px');card.style.setProperty('--card-height',Math.max(70,Math.min(520,y-32))+'px');
+ const card=$('eventCard'),canvas=$('canvas'),w=canvas.clientWidth||1000,vh=canvas.clientHeight||window.innerHeight||700,y=point.y-canvas.scrollTop,width=Math.min(480,w-24),left=clamp(point.x,width/2+12,w-width/2-12);
+ const headerBottom=document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||(w<760?112:86);
+ const topLimit=headerBottom+12,bottomLimit=vh-($('focusBar').hidden?132:182),above=y-18-topLimit;
+ card.hidden=false;card.style.left=left+'px';card.style.width=width+'px';
+ if(w<760||vh<520||above<180){
+  card.dataset.placement='docked';card.style.top=topLimit+'px';card.style.setProperty('--card-height',Math.max(120,bottomLimit-topLimit)+'px');
+ }else{
+  card.dataset.placement='above';card.style.top=Math.min(y-18,bottomLimit)+'px';card.style.setProperty('--card-height',Math.max(160,Math.min(520,above,bottomLimit-topLimit))+'px');
+ }
+ card.style.setProperty('--tail-x',clamp(point.x-left+width/2,20,width-20)+'px');
  positionEventPreview();
 }
 function ensureEventPreview(){
@@ -278,9 +363,14 @@ function scheduleEventPreviewClose(){
 }
 function closeEventPreview(force=false){
  if(previewPinned&&!force)return;
+ const returnId=previewEventId;
  clearTimeout(previewCloseTimer);previewCloseTimer=null;previewEventId=null;previewPinned=false;
  const preview=$('eventPreview');if(preview){preview.classList.remove('is-visible');preview.hidden=true;}
+ $('eventCard').removeAttribute('data-preview-open');
  document.querySelectorAll('.scene-actions li.is-preview-active').forEach(li=>li.classList.remove('is-preview-active'));
+ if(force&&returnId&&document.documentElement.dataset.input==='keyboard'){
+  [...$('cardContent').querySelectorAll('[data-scene-preview]')].find(li=>li.dataset.scenePreview===returnId)?.querySelector('button')?.focus();
+ }
 }
 function positionEventPreview(){
  const preview=$('eventPreview'),card=$('eventCard');if(!preview||preview.hidden||card.hidden)return;
@@ -293,8 +383,16 @@ function positionEventPreview(){
  let left=side==='right'?cardRect.right+gap:cardRect.left-gap-width;
  left=clamp(left,12,Math.max(12,vw-width-12));
  preview.style.left=left+'px';
- const previewHeight=Math.min(preview.scrollHeight||480,vh-24);
- preview.style.top=clamp(cardRect.top,12,Math.max(12,vh-previewHeight-12))+'px';
+ const overlay=Math.max(rightSpace,leftSpace)<width;
+ $('eventCard').setAttribute('data-preview-open',String(overlay));
+ preview.dataset.overlay=String(overlay);
+ if(overlay){
+  preview.style.width=cardRect.width+'px';preview.style.left=cardRect.left+'px';preview.style.top=cardRect.top+'px';preview.style.maxHeight=cardRect.height+'px';
+ }else{
+  const top=document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||86,bottom=vh-132;
+  const previewHeight=Math.min(preview.scrollHeight||480,Math.max(120,bottom-top-12));
+  preview.style.maxHeight=Math.max(120,bottom-top-12)+'px';preview.style.top=clamp(cardRect.top,top+12,Math.max(top+12,bottom-previewHeight))+'px';
+ }
 }
 function bindEventPreview(){
  const preview=ensureEventPreview(),content=$('eventPreviewContent');
@@ -302,17 +400,18 @@ function bindEventPreview(){
  content.querySelectorAll('[data-preview-event]').forEach(b=>b.addEventListener('click',()=>showEventPreview(b.dataset.previewEvent,true)));
  content.querySelectorAll('[data-event-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.eventFocusCharacter;if(focusedCharacter!==id)setFocus(id);}));
  content.querySelectorAll('[data-open-scene]').forEach(b=>b.addEventListener('click',()=>openScene(b.dataset.openScene,b)));
- preview.addEventListener('keydown',e=>{if(e.key==='Escape')closeEventPreview(true);},{once:true});
 }
 function bindSceneActionPreviews(){
  $('cardContent').querySelectorAll('[data-scene-preview]').forEach(li=>{
   const id=li.dataset.scenePreview;
-  li.addEventListener('pointerenter',e=>{clearTimeout(previewCloseTimer);if(canHover(e))showEventPreview(id,false);});
+  li.addEventListener('pointerenter',e=>{
+   clearTimeout(previewCloseTimer);
+   if(!canHover(e))return;
+   const box=$('eventCard').getBoundingClientRect(),vw=document.documentElement.clientWidth||window.innerWidth;
+   if(Math.max(box.left-12,vw-box.right-12)>=Math.min(390,vw-24))showEventPreview(id,false);
+  });
   li.addEventListener('pointerleave',scheduleEventPreviewClose);
-  li.addEventListener('focusin',()=>showEventPreview(id,false));
-  li.addEventListener('focusout',e=>{if(!li.contains(e.relatedTarget))scheduleEventPreviewClose();});
   li.addEventListener('click',()=>showEventPreview(id,true));
-  li.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showEventPreview(id,true);}});
  });
 }
 function bindCard(){
@@ -321,7 +420,7 @@ function bindCard(){
  $('cardContent').querySelectorAll('[data-story-scene]').forEach(b=>b.addEventListener('click',()=>navigateSceneLevel(b.dataset.storyScene)));
  $('cardContent').querySelectorAll('[data-step-event]').forEach(b=>b.addEventListener('click',()=>stepEvent(+b.dataset.stepEvent)));
  $('cardContent').querySelectorAll('[data-event-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.eventFocusCharacter;if(focusedCharacter!==id)setFocus(id);}));
- $('cardContent').querySelectorAll('[data-close-card]').forEach(b=>b.addEventListener('click',closeCard));
+ $('cardContent').querySelectorAll('[data-close-card]').forEach(b=>b.addEventListener('click',()=>closeCard(true)));
  $('cardContent').querySelectorAll('[data-open-scene]').forEach(b=>b.addEventListener('click',()=>openScene(b.dataset.openScene,b)));
  $('cardContent').querySelectorAll('[data-step-scene]').forEach(b=>b.addEventListener('click',()=>stepScene(+b.dataset.stepScene)));
 }
@@ -346,7 +445,7 @@ function navigateScene(id){const group=sceneEvents(id);if(!group.length)return;c
 function showSceneCard(scene,group){
  closeEventPreview(true);
  const cast=sceneCast(scene,group);
- $('cardContent').innerHTML=`${cardTop(group[0].day,sceneNavigation(scene.id),'scene',scene.id)}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${actionCount(group.length)}</p>${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(id)}"></span>${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}"><div>${eventGallery(e)}<div class="scene-action-title">${esc(e.title)}</div></div></li>`).join('')}</ol>`;
+ $('cardContent').innerHTML=`${cardTop(group[0].day,sceneNavigation(scene.id),'scene',scene.id)}<h2>${esc(scene.title)}</h2><p class="scene-location">${esc(name(scene.location_id))} · ${actionCount(group.length)}</p>${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(id)}"></span>${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><div>${eventGallery(e)}<button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></div></li>`).join('')}</ol>`;
  bindCard();bindSceneActionPreviews();
 }
 function eventGallery(e){
@@ -389,15 +488,23 @@ function showEventPreview(id,pin=false){
  const e=eventMap.get(id);if(!e)return;
  if(previewPinned&&!pin&&previewEventId!==id)return;
  const preview=ensureEventPreview();
- previewEventId=id;if(pin)previewPinned=true;
- $('eventPreviewContent').innerHTML=`<div class="preview-top">${cardMetaLine('moment',e.day===null?'Без установленої дати':dateText(e.day,true),e.day!==null)}<button class="close" data-close-preview aria-label="Закрити опис події" title="Закрити">×</button></div>${eventDetailsHtml(e,'data-preview-event',false)}`;
+ previewEventId=id;if(pin){previewPinned=true;cancelHoverClose();if(focusId&&!pinnedNodeId)pinnedNodeId=focusId;hoverCard=false;paintNodes();}
+ $('eventPreviewContent').innerHTML=`<div class="preview-top"><button class="preview-back" data-close-preview aria-label="Повернутися до сцени">‹ До сцени</button>${cardMetaLine('moment',e.day===null?'Без установленої дати':dateText(e.day,true),e.day!==null)}</div>${eventDetailsHtml(e,'data-preview-event',false)}`;
  preview.hidden=false;
  document.querySelectorAll('.scene-actions li').forEach(li=>li.classList.toggle('is-preview-active',li.dataset.scenePreview===id));
  positionEventPreview();bindEventPreview();
- preview.classList.remove('is-visible');requestAnimationFrame(()=>preview.classList.add('is-visible'));
+ preview.classList.add('is-visible');
+ if(pin&&document.documentElement.dataset.input==='keyboard')$('eventPreviewContent').querySelector('[data-close-preview]')?.focus();
 }
-function navigateEvent(id){cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;pinnedNodeId=e.id;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clampAxisCenter(dayToAxis(e.day+.5));}focusId=e.id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();}
-function search(){const q=$('eventSearch').value.trim().toLowerCase();const found=events().filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));$('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}">${esc(e.title)}<small>${dateText(e.day)}</small></button>`).join('')||'<p class="empty">Подій не знайдено.</p>';$('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));$('moreResults').hidden=found.length<=searchLimit;}
+function navigateEvent(id){rememberCardFocus();cancelHoverClose();hoverCard=false;const e=eventMap.get(id);if(!e)return;pinnedNodeId=e.id;if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();if(e.day!==null){zoom=365;center=clampAxisCenter(dayToAxis(e.day+.5));}focusId=e.id;anchorEvent=e.id;showEvent(e);render();const anchor=graphNodes.find(p=>p.id===e.id);if(anchor){$('canvas').scrollTop=Math.max(0,anchor.y-($('canvas').clientHeight||700)*.7);positionCard(anchor);}else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();focusReadingCard();}
+function search(){
+ const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));
+ $('searchSummary').textContent=q?`Знайдено: ${found.length}`:`${found.length} подій · у порядку хронології`;
+ $('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}"><span>${esc(e.title)}<span class="result-context">${esc(e.scene_title)}</span></span><small>${dateText(e.day)}</small></button>`).join('')||'<div class="empty"><p>Подій не знайдено. Спробуй коротший запит.</p><button class="secondary-button" data-reset-event-search>Очистити пошук</button></div>';
+ $('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));
+ $('searchResults').querySelector('[data-reset-event-search]')?.addEventListener('click',()=>{$('eventSearch').value='';searchLimit=30;search();$('eventSearch').focus();});
+ $('moreResults').hidden=found.length<=searchLimit;
+}
 function openProfile(id,trigger){if(!entityMap.has(id))return;profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}$('closeProfile').focus();}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;profileReturnFocus?.focus();}
 function characterTimelineEvents(id){
@@ -410,11 +517,26 @@ function openCharacterEvents(id,trigger){
  $('characterEventsTitle').textContent=fullName(id);
  $('characterEventsMeta').textContent=`${list.length} подій${dated.length?` · ${dateText(dated[0].day)} — ${dateText(dated.at(-1).day)}`:''}`;
  track.innerHTML=list.length?list.map((e,index)=>`<article class="character-event-card" data-character-event="${esc(e.id)}"><div class="character-event-top"><span class="card-date">${esc(dateText(e.day,true))}${e.day!==null?' · Рік 0':''}</span><span class="character-event-index">${index+1} / ${list.length}</span></div>${eventDetailsHtml(e,'data-character-timeline-event')}</article>`).join(''):'<p class="empty">Подій персонажа не знайдено.</p>';
- track.querySelectorAll('[data-character-timeline-event]').forEach(b=>b.addEventListener('click',()=>{closeCharacterEvents();navigateEvent(b.dataset.characterTimelineEvent);}));
+ track.querySelectorAll('[data-character-timeline-event]').forEach(b=>b.addEventListener('click',()=>{closeCharacterEvents();closeProfile();navigateEvent(b.dataset.characterTimelineEvent);}));
  track.querySelectorAll('[data-event-focus-character]').forEach(b=>b.addEventListener('click',()=>{const target=b.dataset.eventFocusCharacter;closeCharacterEvents();closeProfile();if(focusedCharacter!==target)setFocus(target);}));
  track.querySelectorAll('[data-open-scene]').forEach(b=>b.addEventListener('click',()=>{const scene=b.dataset.openScene;closeCharacterEvents();openScene(scene,b);}));
  dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}
- requestAnimationFrame(()=>{track.scrollLeft=0;$('closeCharacterEvents').focus();});
+ requestAnimationFrame(()=>{track.scrollLeft=0;updateCharacterReader();$('closeCharacterEvents').focus();});
+}
+function characterReaderStep(){
+ const track=$('characterEventsTrack'),card=track.querySelector('.character-event-card');
+ if(!card)return 1;
+ return card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).columnGap)||0);
+}
+function updateCharacterReader(){
+ const track=$('characterEventsTrack'),total=track.querySelectorAll('.character-event-card').length,index=Math.min(Math.max(0,total-1),Math.round(track.scrollLeft/characterReaderStep()));
+ $('characterEventPosition').textContent=total?`${index+1} / ${total}`:'0 / 0';
+ $('characterEventPrevious').disabled=index===0;$('characterEventNext').disabled=index>=total-1;
+}
+function moveCharacterReader(direction){
+ const track=$('characterEventsTrack'),step=characterReaderStep(),index=Math.round(track.scrollLeft/step);
+ track.scrollTo({left:(index+direction)*step,behavior:'instant'});
+ updateCharacterReader();
 }
 function closeCharacterEvents(){
  const dialog=$('characterEventsDialog');if(dialog.hidden)return;
@@ -476,35 +598,51 @@ async function refreshData(){
  try{const v=await fetch(`version.json?t=${Date.now()}`,{cache:'no-store'});if(!v.ok)return;const version=await v.json();if(version.revision===data.revision)return;const response=await fetch(`data.json?v=${encodeURIComponent(version.revision)}`,{cache:'no-store'});if(!response.ok)return;const next=await response.json();ingest(next);renderCharacters();search();if(anchorEvent&&eventMap.has(anchorEvent)&&!$('eventCard').hidden)showEvent(eventMap.get(anchorEvent));if(profileEntity)renderProfile();if(sceneId)renderScene();if(!anchorEvent&&sceneMap.has(focusId)&&!$('eventCard').hidden)showSceneCard(sceneMap.get(focusId),sceneEvents(focusId));render();}catch{}finally{refreshing=false;}
 }
 async function init(){
- try{const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');ingest(await response.json(),true);$('status').hidden=true;
+ try{const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);$('status').hidden=true;
  const names={'alt-shippuden-469':'Альтернатива · обличчя Какаші','alt-movie-land-of-snow':'Альтернатива · Країна Снігу'};[...new Set(data.events.map(e=>e.continuity))].filter(c=>c!=='main').forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=names[c]||c;$('continuity').append(o);});
  for(const id of ['lines','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>{closePanels();}));
+ for(const id of ['linesPanel','searchPanel','periodPanel'])$(id).addEventListener('toggle',e=>{
+  if(e.newState==='closed'&&!$(id).matches?.(':popover-open')){$(id).hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');}
+ });
+ $('emptyAction').addEventListener('click',()=>{
+  if(!selected.size){selected=new Set(selectable().map(e=>e.id));selectionChanged();return;}
+  const nearest=navigationEvents().filter(e=>e.day!==null).sort((a,b)=>Math.abs(dayToAxis(a.day)-center)-Math.abs(dayToAxis(b.day)-center))[0];
+  if(nearest)navigateEvent(nearest.id);
+ });
  $('characterSearch').addEventListener('input',renderCharacters);$('selectAll').addEventListener('click',()=>{selected=new Set(selectable().map(e=>e.id));selectionChanged();});$('deselectAll').addEventListener('click',()=>{selected.clear();selectionChanged();});document.querySelectorAll('[data-team]').forEach(b=>b.addEventListener('click',()=>{selected=new Set(teams[b.dataset.team]);focusedCharacter=null;selectionChanged();}));
  $('eventSearch').addEventListener('input',()=>{searchLimit=30;search();});$('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
  $('continuity').addEventListener('change',()=>{const calendarCenter=axisToDay(center);continuity=$('continuity').value;center=clampAxisCenter(dayToAxis(calendarCenter));focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();});
  $('closeCharacterEvents').addEventListener('click',closeCharacterEvents);
  $('characterEventsDialog').addEventListener('cancel',e=>{e.preventDefault();closeCharacterEvents();});
- let characterWheelLocked=false;
- $('characterEventsDialog').addEventListener('wheel',e=>{
-  const track=$('characterEventsTrack');if($('characterEventsDialog').hidden||!track)return;
-  const dominant=Math.abs(e.deltaY)>=Math.abs(e.deltaX)?e.deltaY:e.deltaX;if(!dominant)return;
-  e.preventDefault();
-  if(characterWheelLocked)return;
-  const card=track.querySelector('.character-event-card');
-  const style=getComputedStyle(track),gap=parseFloat(style.columnGap||style.gap)||0;
-  const step=(card?.getBoundingClientRect().width||track.clientWidth*.8)+gap;
-  characterWheelLocked=true;
-  track.scrollTo({left:track.scrollLeft+Math.sign(dominant)*step,behavior:'smooth'});
-  setTimeout(()=>{characterWheelLocked=false;},180);
- },{passive:false,capture:true});
- $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дату у форматі 22.01.';$('dateError').hidden=false;return;}$('dateError').hidden=true;zoom=365;center=clampAxisCenter(dayToAxis(starts[+m[2]-1]+(+m[1]-1)+.5));closePanels();closeCard();});
+ $('characterEventPrevious').addEventListener('click',()=>moveCharacterReader(-1));
+ $('characterEventNext').addEventListener('click',()=>moveCharacterReader(1));
+ $('characterEventsTrack').addEventListener('scroll',updateCharacterReader,{passive:true});
+ $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дійсну дату у форматі 22.01.';$('dateError').hidden=false;$('dateInput').setAttribute('aria-invalid','true');return;}$('dateError').hidden=true;$('dateInput').removeAttribute('aria-invalid');zoom=365;center=clampAxisCenter(dayToAxis(starts[+m[2]-1]+(+m[1]-1)+.5));closePanels();closeCard();schedule();});
  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setZoom(zoomModes[b.dataset.mode])));$('zoomIn').addEventListener('click',()=>setZoom(zoom*2));$('zoomOut').addEventListener('click',()=>setZoom(zoom/2));$('fit').addEventListener('click',()=>setZoom(zoomModes.year));
  for(const [id,s] of [['previous',-1],['next',1]])$(id).addEventListener('click',()=>{closeCard();const mode=currentZoomMode(),preset=zoomModes[mode],isPreset=Math.abs(Math.log(zoom/preset))<.03,step=isPreset?365/preset:365/zoom*.7;center=clampAxisCenter(center+s*step);schedule();});
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('characterEventsDialog').hidden){e.preventDefault();closeCharacterEvents();return;}if(!$('sceneDialog').hidden){e.preventDefault();closeScene();return;}if(!$('profileDialog').hidden){e.preventDefault();closeProfile();return;}closePanels();closeCard();if(focusedCharacter){focusedCharacter=null;render();}}});document.addEventListener('pointerdown',e=>{if(!e.target.closest('.panel,.tools,.period,.scene-dialog'))closePanels();if(!e.target.closest('.event-card,.event-preview,.node,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.scene-dialog,.time-controls,.panel,.tools,.period'))closeCard();});
+ document.addEventListener('keydown',e=>{
+  document.documentElement.dataset.input='keyboard';
+  if(e.key==='Escape'){
+   if(!$('sceneDialog').hidden){e.preventDefault();closeScene();return;}
+   if(!$('characterEventsDialog').hidden){e.preventDefault();closeCharacterEvents();return;}
+   if(!$('profileDialog').hidden){e.preventDefault();closeProfile();return;}
+   if($('eventPreview')&&!$('eventPreview').hidden){e.preventDefault();closeEventPreview(true);return;}
+   const openPanel=['linesPanel','searchPanel','periodPanel'].find(id=>!$(id).hidden);
+   if(openPanel){e.preventDefault();closePanels();$(openPanel.replace('Panel','Button')).focus();return;}
+   if(!$('eventCard').hidden){closeCard(true);return;}
+   if(focusedCharacter){focusedCharacter=null;renderCharacters();render();}
+  }
+  if(e.key==='/'&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.target.closest('input,textarea,select,[contenteditable="true"]')&&document.querySelector('dialog[open]')===null){e.preventDefault();if($('searchPanel').hidden)togglePanel('searchPanel');$('eventSearch').focus();search();}
+ });
+ document.addEventListener('pointerdown',e=>{
+  document.documentElement.dataset.input='pointer';
+  if(!e.target.closest('.panel,.tools,.period,.scene-dialog'))closePanels();
+  if(!e.target.closest('.event-card,.event-preview,.node,.node-hit,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.scene-dialog,.time-controls,.panel,.tools,.period'))closeCard();
+ });
  const canvas=$('timeline'),touches=new Map();let drag=null,pinch=null;
  canvas.addEventListener('wheel',e=>{e.preventDefault();const box=canvas.getBoundingClientRect(),pad=box.width<600?22:48,t=clamp((e.clientX-box.left-pad)/(box.width-pad*2),0,1),[lo,hi]=range();setZoom(zoom*Math.exp(-clamp(e.deltaY,-100,100)*.007),lo+t*(hi-lo));},{passive:false});
- canvas.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.thread-hit,.line-label'))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);if(touches.size===1){drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};canvas.classList.add('dragging');}else if(touches.size===2){const a=[...touches.values()];pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom};drag=null;}});
- canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);center=clampAxisCenter(drag.center-(e.clientX-drag.x)/(canvas.clientWidth-96)*365/zoom);schedule();}});
+ canvas.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.node-hit,.thread-hit,.line-label'))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);if(touches.size===1){drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};canvas.classList.add('dragging');}else if(touches.size===2){const a=[...touches.values()];pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom};drag=null;}});
+ canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);const pad=canvas.clientWidth<600?22:48;center=clampAxisCenter(drag.center-(e.clientX-drag.x)/Math.max(1,canvas.clientWidth-pad*2)*365/zoom);schedule();}});
  const end=e=>{touches.delete(e.pointerId);drag=null;pinch=null;canvas.classList.remove('dragging');};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);new ResizeObserver(schedule).observe($('canvas'));
  $('canvas').addEventListener('scroll',()=>{$('hoverTip').hidden=true;const p=graphNodes.find(p=>p.id===focusId);if(p&&!$('eventCard').hidden)positionCard(p);},{passive:true});
  $('focusPrevious').addEventListener('click',()=>stepEvent(-1));$('focusNext').addEventListener('click',()=>stepEvent(1));$('focusName').addEventListener('click',()=>openProfile(focusedCharacter,$('focusName')));$('clearFocus').addEventListener('click',()=>{focusedCharacter=null;closeCard();renderCharacters();render();});

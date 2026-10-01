@@ -37,3 +37,29 @@ test('characters sharing two scenes still have distinguishable curved strands',(
  assert.notEqual(core.curveY(one,15),140);assert.notEqual(core.curveY(one,15),core.curveY(two,15));
  assert.equal(core.curveY(one,10),core.curveY(two,10));assert.equal(core.curveY(one,20),core.curveY(two,20));
 });
+
+test('a character strand reaches distinct scenes that share a display time',()=>{
+ const anchors=[{id:'a',day:10,y:140},{id:'b',day:10,y:190},{id:'c',day:20,y:160}];
+ const route=core.avoid(core.strand(anchors,'one',180,80),[{id:'unrelated',day:10,y:165}],'one',30);
+ for(const a of anchors)assert(route.some(p=>p.node&&p.id===a.id&&p.day===a.day&&p.y===a.y));
+ assert(route.every((p,i)=>!i||p.day>=route[i-1].day));
+});
+
+test('dense scene nodes retain time coordinates and have independently tappable centers',()=>{
+ const nodes=Array.from({length:6},(_,i)=>({id:'scene-'+i,kind:'scene',x:100+i*3,y:240+i,day:21}));
+ const separated=core.separateNodes(nodes,80,500);
+ assert.equal(separated.length,nodes.length);
+ for(let i=0;i<separated.length;i++){
+  const a=separated[i];assert.equal(a.x,nodes[i].x);assert.equal(a.day,nodes[i].day);assert(a.y>=80&&a.y<=500);
+  for(const b of separated.slice(i+1))assert(Math.hypot(a.x-b.x,a.y-b.y)>=44,'44px hit areas overlap');
+ }
+ assert.deepEqual(nodes.map(n=>n.y),[240,241,242,243,244,245]);
+});
+
+test('a short viewport extends the canvas instead of stacking scene markers',()=>{
+ const nodes=Array.from({length:12},(_,i)=>({id:'scene-'+i,kind:'scene',x:100,y:150,day:21}));
+ const separated=core.separateNodes(nodes,100,190);
+ assert(separated.some(n=>n.y>190));
+ for(let i=0;i<separated.length;i++)for(const b of separated.slice(i+1))assert(Math.abs(separated[i].y-b.y)>=24);
+ assert(separated.every(n=>n.x===100&&n.day===21));
+});

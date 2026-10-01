@@ -31,6 +31,30 @@ const TimelineCore = {
     return result.sort((a,b)=>(a.position??Infinity)-(b.position??Infinity));
   },
   seed(id) { let value=2166136261;for(const c of id){value=Math.imul(value^c.charCodeAt(0),16777619);}return (value>>>0)/4294967296; },
+  separateNodes(nodes,top,bottom,clearance=46) {
+    // Time/X stays exact. Separate overlapping hit areas vertically, and use the
+    // resulting anchors for both the marks and their character strands.
+    const sorted=[...nodes].sort((a,b)=>a.x-b.x||a.id.localeCompare(b.id)),y=new Map(),placed=[];
+    for(const n of sorted){
+      const wanted=Math.max(top,Math.min(bottom,n.y));let chosen=null;
+      const nearby=placed.filter(p=>n.x-p.x<clearance+4);
+      for(const spacing of [clearance,40,34,28,26]){
+        const intervals=nearby.map(p=>{
+          const dx=n.x-p.x,gap=spacing+(n.kind==='arc'||p.kind==='arc'?4:0);
+          if(dx>=gap)return null;
+          const distance=Math.sqrt(gap*gap-dx*dx),center=y.get(p.id);
+          return [center-distance,center+distance];
+        }).filter(Boolean);
+        const candidates=[wanted,top,bottom,...intervals.flatMap(([a,b])=>[a-.1,b+.1])].filter(v=>v>=top&&v<=bottom&&intervals.every(([a,b])=>v<a||v>b));
+        if(candidates.length){chosen=candidates.sort((a,b)=>Math.abs(a-wanted)-Math.abs(b-wanted)||a-b)[0];break;}
+      }
+      // If the viewport is too short for the local density, grow the scrollable
+      // canvas rather than putting a node on top of another visible mark.
+      if(chosen===null)chosen=Math.max(bottom+clearance,...nearby.map(p=>y.get(p.id)+clearance+4));
+      y.set(n.id,chosen);placed.push(n);
+    }
+    return nodes.map(n=>({...n,y:y.get(n.id)}));
+  },
   sceneLayout(nodes,relations=[],owner={},middle=0,amplitude=100) {
     if(!nodes.length)return new Map();
     const byId=new Map(nodes.map(n=>[n.id,n])),edges=new Map(nodes.map(n=>[n.id,new Map()])),baseRef=ref=>typeof ref==='string'?(ref.endsWith('.start')?ref.slice(0,-6):ref.endsWith('.end')?ref.slice(0,-4):ref):ref;
@@ -117,7 +141,9 @@ const TimelineCore = {
         points.push({day:a.day+gap*t,y:a.y+(b.y-a.y)*t+offset});
       }
     }
-    points.push(ends.at(-1));return points.filter((p,i,a)=>!i||p.day>a[i-1].day);
+    // Separate nodes can share a display time. Keep both physical anchors so
+    // the strand reaches each mark through a vertical segment at that X.
+    points.push(ends.at(-1));return points.filter((p,i,a)=>!i||p.day>=a[i-1].day);
   },
   curveY(points,day) {
     if(day<=points[0].day)return points[0].y;if(day>=points.at(-1).day)return points.at(-1).y;

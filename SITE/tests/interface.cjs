@@ -65,11 +65,18 @@ async function check(width,height){
  // Desktop hover opens complete scene data without a click.
  run('zoom=zoomModes.week;center=21.5;render()');await sleep();const sceneNode=doc.querySelector('[data-scene="sc-y0-0122-academy-announcements"]');
  const hover=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hover,'pointerType',{value:width>=600?'mouse':'touch'});sceneNode.querySelector('.scene-count').dispatchEvent(hover);
- assert.equal(doc.getElementById('eventCard').hidden,width<600);
- if(width>=600){assert.equal(doc.querySelectorAll('.scene-actions .scene-action-title').length,classroomCount);assert(sceneNode.classList.contains('is-open'));assert.equal(run('pinnedNodeId'),null);assert(doc.querySelector('.thread[data-character="c-naruto"]').classList.contains('is-scene-member'));assert(doc.querySelector('.thread[data-character="c-raido"]').classList.contains('is-scene-muted'));sceneNode.dispatchEvent(new window.Event('pointerleave'));doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerenter'));await new Promise(r=>setTimeout(r,350));assert(!doc.getElementById('eventCard').hidden);doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerleave'));await new Promise(r=>setTimeout(r,350));assert(doc.getElementById('eventCard').hidden);}
+ assert.equal(doc.getElementById('eventCard').hidden,width<760||height<520);
+ if(width>=760&&height>=520){assert.equal(doc.querySelectorAll('.scene-actions .scene-action-title').length,classroomCount);assert(sceneNode.classList.contains('is-open'));assert.equal(run('pinnedNodeId'),null);assert(doc.querySelector('.thread[data-character="c-naruto"]').classList.contains('is-scene-member'));assert(doc.querySelector('.thread[data-character="c-raido"]').classList.contains('is-scene-muted'));sceneNode.dispatchEvent(new window.Event('pointerleave'));doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerenter'));await new Promise(r=>setTimeout(r,350));assert(!doc.getElementById('eventCard').hidden);doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerleave'));await new Promise(r=>setTimeout(r,350));assert(doc.getElementById('eventCard').hidden);}
  else{sceneNode.dispatchEvent(new window.Event('click'));assert(!doc.getElementById('eventCard').hidden);}
  // Characters not yet introduced do not draw unrelated lanes through early scenes.
- assert(!canvas.querySelector('.thread[data-character="c-genma"]'));assert(canvas.querySelector('.thread[data-character="c-naruto"]'));assert.equal(canvas.style.height,height+'px');
+ assert(!canvas.querySelector('.thread[data-character="c-genma"]'));assert(canvas.querySelector('.thread[data-character="c-naruto"]'));assert(parseFloat(canvas.style.height)>=height);
+ // After hit-area separation, every physical cast member still reaches the mark
+ // exactly, including aggregate nodes at identical display times.
+ for(const mode of ['year','month','week','day']){
+  run('closeCard();zoom=zoomModes.'+mode+';center=21.5;render()');
+  const missing=run(`graphNodes.flatMap(p=>p.cast.filter(id=>{const path=document.querySelector('.thread[data-character="'+id+'"]');return !path||!path.getAttribute('d').includes(p.x.toFixed(2)+','+p.y.toFixed(2));}).map(character=>({node:p.id,character})))`);
+  assert.equal(missing.length,0,mode+' floating nodes: '+JSON.stringify(missing));
+ }
  console.log('PASS',width,height,'all/none, names, focus, event navigation, day backgrounds, age tabs, gallery, live refresh');
 }
 (async()=>{await check(1440,900);await check(375,760);await check(812,375)})().catch(e=>{console.error(e);process.exitCode=1});

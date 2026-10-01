@@ -1,16 +1,91 @@
-<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fbfcfe"><meta name="description" content="Хронологія Naruto: лінії персонажів, події й джерела."><title>Коноха · Хронологія</title><link rel="stylesheet" href="style.css"><script defer src="relations.js"></script><script defer src="timeline-core.js"></script><script defer src="app.js"></script></head><body>
-<main id="canvas" aria-label="Хронологія Naruto"><svg id="timeline" aria-label="Полотно ліній персонажів"></svg></main>
-<svg id="timeAxis" class="time-axis" aria-hidden="true"></svg>
-<div class="tools"><button id="linesButton" aria-expanded="false" aria-controls="linesPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></svg><span id="linesCount">Лінії</span></button><button id="searchButton" aria-label="Знайти подію" aria-expanded="false" aria-controls="searchPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg></button></div>
-<button class="period" id="periodButton" aria-expanded="false" aria-controls="periodPanel">Рік 0</button>
-<section id="linesPanel" class="panel left-panel" aria-label="Лінії персонажів" hidden><div class="panel-heading"><h1>Лінії персонажів</h1><button class="close" data-close="linesPanel" aria-label="Закрити">×</button></div><label class="field"><span class="sr-only">Знайти персонажа</span><input id="characterSearch" placeholder="Знайти персонажа"></label><div class="teams"><button data-team="team-7">Команда 7</button><button data-team="team-8">Команда 8</button><button data-team="team-9">Команда 9</button></div><div id="characterList"></div><div class="selection-actions"><button id="selectAll">Обрати всіх</button><button id="deselectAll">Зняти всіх</button></div></section>
-<section id="searchPanel" class="panel left-panel" aria-label="Пошук подій" hidden><div class="panel-heading"><h1>Знайти подію</h1><button class="close" data-close="searchPanel" aria-label="Закрити">×</button></div><label class="field"><span class="sr-only">Назва або текст події</span><input id="eventSearch" placeholder="Назва або текст події"></label><div id="searchResults"></div><button id="moreResults" hidden>Показати ще</button></section>
-<section id="periodPanel" class="panel right-panel" aria-label="Період та історія" hidden><div class="panel-heading"><h1>Період</h1><button class="close" data-close="periodPanel" aria-label="Закрити">×</button></div><form id="dateForm"><label for="dateInput">Перейти до дня</label><div class="date-field"><input id="dateInput" placeholder="22.01" inputmode="decimal" aria-describedby="dateError"><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form><label class="select-label" for="continuity">Історична лінія</label><select id="continuity"><option value="main">Основна історія</option></select><p class="help">Натисни на лінію — зосередитися на персонажі. Стрілки — попередня й наступна подія. Перетягування — рух у часі; колесо або жест двома пальцями — масштаб.</p><p class="help">Переплетення — форма ліній. Спільний вузол — сцена. Число всередині — кількість її дій. Натисни на вузол, щоб переглянути сцену.</p><a id="sourceLink" target="_blank" rel="noopener">Дані в репозиторії</a><small id="revision"></small></section>
-<div id="focusBar" class="focus-bar" hidden><button id="focusPrevious" aria-label="Попередня подія персонажа">‹</button><button id="focusName" aria-label="Відкрити профіль персонажа"></button><span id="focusPosition"></span><button id="focusNext" aria-label="Наступна подія персонажа">›</button><button id="clearFocus" aria-label="Зняти фокус">×</button></div>
-<div class="time-controls"><button id="previous" aria-label="Попередній період">‹</button><div class="modes"><button data-mode="year">Рік</button><button data-mode="month" aria-pressed="true">Місяць</button><button data-mode="week">Тиждень</button><button data-mode="day">День</button></div><button id="next" aria-label="Наступний період">›</button><span class="control-divider"></span><button id="zoomOut" aria-label="Віддалити">−</button><button id="zoomIn" aria-label="Наблизити">+</button><button id="fit" aria-label="Показати весь рік"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4M16 4h4v4M4 16v4h4M20 16v4h-4"/></svg></button></div>
-<div id="hoverTip" class="hover-tip" role="tooltip" hidden></div><section id="eventCard" class="event-card" role="dialog" aria-label="Подія" hidden><div id="cardContent"></div><span class="card-tail" aria-hidden="true"></span></section>
-<dialog id="profileDialog" class="profile-dialog" aria-labelledby="profileTitle" hidden><div class="profile-heading"><div><small>Персонаж</small><h2 id="profileTitle"></h2></div><button id="closeProfile" class="close" aria-label="Закрити профіль">×</button></div><div id="profileTabs" class="profile-tabs" role="tablist" aria-label="Вік персонажа"></div><div id="profileContent" role="tabpanel"></div></dialog>
-<dialog id="characterEventsDialog" class="character-events-dialog" aria-labelledby="characterEventsTitle" hidden><header class="character-events-heading"><div><small>Події персонажа</small><h2 id="characterEventsTitle"></h2><p id="characterEventsMeta"></p></div><button id="closeCharacterEvents" class="close" aria-label="Закрити перегляд подій" title="Закрити">×</button></header><div id="characterEventsTrack" class="character-events-track"></div></dialog>
-<dialog id="sceneDialog" class="scene-dialog" aria-labelledby="sceneTitle" hidden><header class="scene-heading"><div><small>Сцена цілком</small><h2 id="sceneTitle"></h2><p id="sceneMeta"></p></div><button id="closeScene" class="close" aria-label="Закрити сцену" title="Закрити">×</button></header><div id="sceneContent"></div></dialog>
-<div id="status" class="status" role="status">Завантаження хронології…</div><div id="error" class="error" role="alert" hidden></div>
-</body></html>
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f8f7f2">
+  <meta name="description" content="Хронологія Конохи: стеж за персонажами, досліджуй події та читай сцени Naruto.">
+  <title>Коноха · Хронологія</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="relations.js"></script>
+  <script defer src="timeline-core.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="identity">
+      <svg class="identity-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7c8 0 7 18 15 18h7M5 16h22M5 25c8 0 7-18 15-18h7"/><circle cx="16" cy="16" r="3"/></svg>
+      <div><h1>Коноха</h1><span>Хронологія</span></div>
+    </div>
+    <nav class="tools" aria-label="Навігація хронології">
+      <button id="linesButton" aria-expanded="false" aria-controls="linesPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></svg><span id="linesCount">Лінії</span></button>
+      <button id="searchButton" aria-label="Знайти подію" aria-expanded="false" aria-controls="searchPanel" aria-keyshortcuts="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Пошук</span><kbd aria-hidden="true">/</kbd></button>
+    </nav>
+    <button class="period" id="periodButton" aria-label="Обрати період та історичну лінію" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Рік 0</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
+  </header>
+
+  <main id="canvas" tabindex="-1" aria-label="Хронологія Naruto" aria-describedby="canvasHelp">
+    <svg id="timeline" aria-label="Полотно ліній персонажів"></svg>
+  </main>
+  <p id="canvasHelp" class="canvas-hint">Перетягни полотно · натисни на подію, щоб читати</p>
+  <div class="timeline-key" aria-label="Позначення подій">
+    <span data-level="moment"><i class="key-mark key-moment" aria-hidden="true"></i>Момент</span>
+    <span data-level="scene"><i class="key-mark key-scene" aria-hidden="true"></i>Сцена</span>
+    <span data-level="episode"><i class="key-mark key-episode" aria-hidden="true"></i>Епізод</span>
+    <span data-level="arc"><i class="key-mark key-arc" aria-hidden="true"></i>Арка</span>
+  </div>
+  <div id="timelineEmpty" class="timeline-empty" role="status" hidden><h2 id="emptyTitle">Обери лінії персонажів</h2><p id="emptyDescription">Їхні події з’являться на хронології.</p><button id="emptyAction" class="primary-button">Обрати всіх</button></div>
+  <svg id="timeAxis" class="time-axis" aria-hidden="true"></svg>
+
+  <section id="linesPanel" class="panel left-panel" popover="auto" aria-labelledby="linesTitle" hidden>
+    <div class="panel-heading"><div><h2 id="linesTitle">Лінії персонажів</h2><p>Обери лінії або зосередься на одній.</p></div><button class="close" data-close="linesPanel" aria-label="Закрити лінії">×</button></div>
+    <label class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span class="sr-only">Знайти персонажа</span><input id="characterSearch" placeholder="Знайти персонажа" type="search" autocomplete="off" autofocus></label>
+    <div class="teams" aria-label="Обрати команду"><button data-team="team-7">Команда 7</button><button data-team="team-8">Команда 8</button><button data-team="team-9">Команда 9</button></div>
+    <div id="characterList"></div>
+    <div class="selection-actions"><button id="selectAll">Обрати всіх</button><button id="deselectAll">Зняти всіх</button></div>
+  </section>
+
+  <section id="searchPanel" class="panel left-panel" popover="auto" aria-labelledby="searchTitle" hidden>
+    <div class="panel-heading"><div><h2 id="searchTitle">Знайти подію</h2><p>Шукай за назвою або текстом.</p></div><button class="close" data-close="searchPanel" aria-label="Закрити пошук">×</button></div>
+    <label class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span class="sr-only">Назва або текст події</span><input id="eventSearch" placeholder="Наприклад, екзамен" type="search" autocomplete="off" autofocus></label>
+    <p id="searchSummary" class="search-summary" role="status" aria-live="polite"></p>
+    <div id="searchResults"></div>
+    <button id="moreResults" class="secondary-button" hidden>Показати ще</button>
+  </section>
+
+  <section id="periodPanel" class="panel right-panel" popover="auto" aria-labelledby="periodTitle" hidden>
+    <div class="panel-heading"><h2 id="periodTitle">Період та історія</h2><button class="close" data-close="periodPanel" aria-label="Закрити період">×</button></div>
+    <form id="dateForm"><label for="dateInput">Перейти до дня · Рік 0</label><div class="date-field"><input id="dateInput" placeholder="22.01" inputmode="decimal" autocomplete="off" aria-describedby="dateError" autofocus><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form>
+    <label class="select-label" for="continuity">Історична лінія</label>
+    <select id="continuity"><option value="main">Основна історія</option></select>
+    <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо або жест двома пальцями змінює масштаб. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
+    <div class="source-footer"><a id="sourceLink" target="_blank" rel="noopener">Дані в репозиторії <span aria-hidden="true">↗</span></a><small id="revision"></small></div>
+  </section>
+
+  <div id="focusBar" class="focus-bar" aria-label="Події обраного персонажа" hidden><button id="focusPrevious" aria-label="Попередня подія персонажа">‹</button><button id="focusName" aria-label="Відкрити профіль персонажа"></button><span id="focusPosition"></span><button id="focusNext" aria-label="Наступна подія персонажа">›</button><button id="clearFocus" aria-label="Зняти фокус">×</button></div>
+  <nav class="time-controls" aria-label="Масштаб і переміщення в часі">
+    <button id="previous" aria-label="Попередній період">‹</button>
+    <div class="modes" aria-label="Масштаб"><button data-mode="year" aria-pressed="false" title="Рік · арки">Рік</button><button data-mode="month" aria-pressed="true" title="Місяць · епізоди">Місяць</button><button data-mode="week" aria-pressed="false" title="Тиждень · сцени">Тиждень</button><button data-mode="day" aria-pressed="false" title="День · моменти">День</button></div>
+    <button id="next" aria-label="Наступний період">›</button>
+    <div class="zoom-tools"><span class="control-divider"></span><button id="zoomOut" aria-label="Віддалити">−</button><button id="zoomIn" aria-label="Наблизити">+</button><button id="fit" aria-label="Показати весь рік" title="Показати весь рік"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4M16 4h4v4M4 16v4h4M20 16v4h-4"/></svg></button></div>
+  </nav>
+
+  <div id="hoverTip" class="hover-tip" role="tooltip" hidden></div>
+  <section id="eventCard" class="event-card" role="dialog" aria-label="Подія" hidden><div id="cardContent"></div><span class="card-tail" aria-hidden="true"></span></section>
+  <dialog id="profileDialog" class="profile-dialog" aria-labelledby="profileTitle" hidden>
+    <div class="profile-heading"><div><small>Досьє персонажа</small><h2 id="profileTitle"></h2></div><button id="closeProfile" class="close" aria-label="Закрити профіль">×</button></div>
+    <div id="profileTabs" class="profile-tabs" role="tablist" aria-label="Вік персонажа"></div>
+    <div id="profileContent" role="tabpanel" tabindex="0"></div>
+  </dialog>
+  <dialog id="characterEventsDialog" class="character-events-dialog" aria-labelledby="characterEventsTitle" hidden>
+    <header class="character-events-heading"><div><small>Події персонажа</small><h2 id="characterEventsTitle"></h2><p id="characterEventsMeta"></p></div><nav class="reader-navigation" aria-label="Перегляд подій"><button id="characterEventPrevious" aria-label="Попередня картка">‹</button><output id="characterEventPosition">1 / 1</output><button id="characterEventNext" aria-label="Наступна картка">›</button></nav><button id="closeCharacterEvents" class="close" aria-label="Закрити перегляд подій">×</button></header>
+    <div id="characterEventsTrack" class="character-events-track"></div>
+  </dialog>
+  <dialog id="sceneDialog" class="scene-dialog" aria-labelledby="sceneTitle" hidden>
+    <header class="scene-heading"><div><small>Сцена цілком</small><h2 id="sceneTitle"></h2><p id="sceneMeta"></p></div><button id="closeScene" class="close" aria-label="Закрити сцену">×</button></header>
+    <div id="sceneContent"></div>
+  </dialog>
+  <div id="status" class="status" role="status"><div class="loading-lines" aria-hidden="true"><i></i><i></i><i></i></div>Завантаження хронології…</div>
+  <div id="error" class="error" role="alert" hidden></div>
+</body>
+</html>

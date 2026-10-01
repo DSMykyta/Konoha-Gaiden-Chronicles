@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node --check public/app.js && node --check scripts/build.mjs && node --check scripts/enrichment.mjs && node --check scripts/media.mjs",
+    "check": "node --check public/app.js && node --check public/timeline-core.js && node --check public/relations.js && node --check scripts/build.mjs && node --check scripts/enrichment.mjs && node --check scripts/media.mjs",
     "media": "node scripts/media.mjs",
     "test": "npm run build && node tests/interface.cjs && node --test tests/*.test.mjs"
   },
