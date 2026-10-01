@@ -64,6 +64,24 @@
     if (pendingNodeId === id) clearPendingHover();
   }
 
+  // A child preview is already visually attached to its parent surface.
+  // Do not repeat obvious hierarchy with labels such as "До сцени".
+  // All hierarchy levels use the same neutral close affordance instead.
+  const originalShowEventPreview = showEventPreview;
+  showEventPreview = function showEventPreviewWithoutRedundantParentLabel(...args) {
+    originalShowEventPreview(...args);
+    const preview = $('eventPreview');
+    const back = preview?.querySelector('.preview-back[data-close-preview]');
+    if (!back) return;
+    back.classList.remove('preview-back');
+    back.classList.add('close');
+    back.textContent = '×';
+    back.setAttribute('aria-label', 'Закрити перегляд');
+    back.setAttribute('title', 'Закрити');
+    back.style.marginLeft = 'auto';
+    back.parentElement?.append(back);
+  };
+
   // Hover cards need readable space without becoming a full-screen overlay.
   // On desktop, prefer the larger side of the hovered node. This keeps the
   // node and most of the timeline visible while allowing a useful card height.
