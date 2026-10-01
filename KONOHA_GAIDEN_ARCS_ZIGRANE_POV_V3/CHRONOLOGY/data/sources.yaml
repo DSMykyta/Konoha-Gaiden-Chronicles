@@ -668,6 +668,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep15-audit
+    type: reference
+    title: 'Narutopedia — Zero Visibility: The Sharingan Shatters'
+    url: https://naruto.fandom.com/wiki/Zero_Visibility%3A_The_Sharingan_Shatters
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3161,5 +3168,11 @@ evidence:
   - id: evd-narutopedia-ep14-audit
     source_id: src-narutopedia-ep14-audit
     locator: Episode 14, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep15-audit
+    source_id: src-narutopedia-ep15-audit
+    locator: Episode 15, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

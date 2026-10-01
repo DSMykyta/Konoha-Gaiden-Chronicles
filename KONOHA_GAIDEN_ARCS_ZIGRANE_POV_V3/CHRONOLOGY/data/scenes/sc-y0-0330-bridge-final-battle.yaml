@@ -243,6 +243,129 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep14-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-reveals-sharingan-again
+  display_rank: 191
+  title: Какаші знову відкриває Шарінґан
+  text: Какаші знову відкриває Шарінґан. Забуза попереджає, що знайшов спосіб протидіяти йому.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-haku-counters-naruto-clones
+  display_rank: 192
+  title: Хаку відбиває атаки клонів Наруто
+  text: Усередині дзеркал Хаку неодноразово відбиває атаки тіньових клонів Наруто.
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-sasuke-reads-haku-movement
+  display_rank: 193
+  title: Саске починає розрізняти рухи Хаку
+  text: Спостерігаючи за атаками Хаку на клонів, Саске починає розрізняти його рухи.
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-sasuke-fireball-hits-haku
+  display_rank: 194
+  title: Вогняна куля Саске зачіпає Хаку
+  text: Поки Хаку зайнятий клонами, Саске обпалює край його одягу Вогняною кулею. Хаку починає сповільнюватися.
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-zabuza-mist-negates-sharingan
+  display_rank: 195
+  title: Забуза приховує себе від Шарінґана
+  text: Забуза здіймає туман, щоб нейтралізувати Шарінґан, і зникає з поля зору Какаші.
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-intercepts-through-mist
+  display_rank: 196
+  title: Какаші кидається захищати Тадзуну й Сакуру
+  text: Какаші розуміє, що Забуза цілитиметься в Тадзуну та Сакуру, й кидається перехопити удар. Сакура кричить у тумані.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
 - id: ev-y0-0330-sasuke-awakens-sharingan
   legacy_ids:
   - V10-000031
@@ -572,6 +695,62 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep14-audit
+- id: rel-audit-15-y0-0330-sasuke-fails-to-melt-mirrors-before-y0-0330-kakashi-reveals-sharingan-again
+  kind: before
+  a: ev-y0-0330-sasuke-fails-to-melt-mirrors
+  b: ev-y0-0330-kakashi-reveals-sharingan-again
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- id: rel-audit-15-y0-0330-kakashi-reveals-sharingan-again-before-y0-0330-haku-counters-naruto-clones
+  kind: before
+  a: ev-y0-0330-kakashi-reveals-sharingan-again
+  b: ev-y0-0330-haku-counters-naruto-clones
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- id: rel-audit-15-y0-0330-haku-counters-naruto-clones-before-y0-0330-sasuke-reads-haku-movement
+  kind: before
+  a: ev-y0-0330-haku-counters-naruto-clones
+  b: ev-y0-0330-sasuke-reads-haku-movement
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- id: rel-audit-15-y0-0330-sasuke-reads-haku-movement-before-y0-0330-sasuke-fireball-hits-haku
+  kind: before
+  a: ev-y0-0330-sasuke-reads-haku-movement
+  b: ev-y0-0330-sasuke-fireball-hits-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- id: rel-audit-15-y0-0330-sasuke-fireball-hits-haku-before-y0-0330-zabuza-mist-negates-sharingan
+  kind: before
+  a: ev-y0-0330-sasuke-fireball-hits-haku
+  b: ev-y0-0330-zabuza-mist-negates-sharingan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- id: rel-audit-15-y0-0330-zabuza-mist-negates-sharingan-before-y0-0330-kakashi-intercepts-through-mist
+  kind: before
+  a: ev-y0-0330-zabuza-mist-negates-sharingan
+  b: ev-y0-0330-kakashi-intercepts-through-mist
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
+- id: rel-audit-15-y0-0330-kakashi-intercepts-through-mist-before-y0-0330-sasuke-awakens-sharingan
+  kind: before
+  a: ev-y0-0330-kakashi-intercepts-through-mist
+  b: ev-y0-0330-sasuke-awakens-sharingan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep15-audit
 presence:
 - id: pr-0330-bridge-naruto
   entity_id: c-naruto
