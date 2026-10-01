@@ -964,6 +964,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep44-audit
+    type: reference
+    title: Narutopedia — Akamaru Unleashed! Who's Top Dog Now?
+    url: https://naruto.fandom.com/wiki/Akamaru_Unleashed%21_Who%27s_Top_Dog_Now%3F
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3741,5 +3748,11 @@ evidence:
   - id: evd-narutopedia-ep43-audit
     source_id: src-narutopedia-ep43-audit
     locator: Episode 43, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep44-audit
+    source_id: src-narutopedia-ep44-audit
+    locator: Episode 44, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

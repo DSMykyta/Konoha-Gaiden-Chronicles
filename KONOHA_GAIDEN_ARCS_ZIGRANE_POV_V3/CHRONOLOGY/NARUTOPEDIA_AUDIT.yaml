@@ -46,9 +46,10 @@ checked_anime_episodes:
 - 41
 - 42
 - 43
+- 44
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 44
+next_anime_episode: 45
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -766,6 +767,16 @@ episode_audits:
   notes:
   - 'Enriched both retained whole bouts. Added the missing intervention after the fifth bout: Lee rescues Tenten and
     Guy prevents escalation. This changes physical safety and is a whole action, not a reaction.'
+- episode: 44
+  baseline_revision: 839d940dbf6c6bd19651d80766834f250b452741
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-naruto-defeats-kiba
+  cast_review: Author forest-failure outcome preserved; no unsupported Team 9 presence added to preliminaries.
+  notes:
+  - Enriched opening and counterplay inside retained whole Naruto–Kiba bout. Episode 45 ending will be audited next;
+    no separate boast, pill consumption, clone reveal or reaction moments.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

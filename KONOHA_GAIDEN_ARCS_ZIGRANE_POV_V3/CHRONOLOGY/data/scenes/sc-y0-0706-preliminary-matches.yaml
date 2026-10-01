@@ -246,7 +246,10 @@ events:
   legacy_ids:
   - V10-000046-H
   title: Наруто перемагає Кібу
-  text: Наруто перемагає Кібу та Акамару.
+  text: Кіба й Акамару спільно атакують Наруто. Під прикриттям димових бомб Наруто залишає тіньового клона замість себе
+    й перетворюється на Акамару, щоб наблизитися до Кіби; інший клон утримує справжнього пса. Кіба та Акамару приймають
+    бойові пігулки, застосовують звірині перетворення та «Ікло за іклом», знову отримуючи перевагу. Попри удари Наруто
+    продовжує бій і зрештою перемагає обох.
   origin: M
   extent: interval
   display_rank: 700
@@ -267,6 +270,7 @@ events:
   - evd-v10-000046-H
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep44-audit
 - id: ev-y0-0706-neji-defeats-hinata
   legacy_ids:
   - V10-000046-I
@@ -793,3 +797,35 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep43-audit
+- id: pr-audit-44-y0-0706-naruto-defeats-kiba-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep44-audit
+- id: pr-audit-44-y0-0706-naruto-defeats-kiba-c-kiba
+  entity_id: c-kiba
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep44-audit
+- id: pr-audit-44-y0-0706-naruto-defeats-kiba-c-akamaru
+  entity_id: c-akamaru
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep44-audit
+- id: pr-audit-44-y0-0706-naruto-defeats-kiba-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep44-audit
