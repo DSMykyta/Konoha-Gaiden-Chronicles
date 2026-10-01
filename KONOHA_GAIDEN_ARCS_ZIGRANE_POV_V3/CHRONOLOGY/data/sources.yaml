@@ -1167,6 +1167,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep68-audit
+    type: reference
+    title: Narutopedia — Zero Hour! The Konoha Crush Begins!
+    url: https://naruto.fandom.com/wiki/Zero_Hour%21_The_Konoha_Crush_Begins%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4122,5 +4129,11 @@ evidence:
   - id: evd-narutopedia-ep67-audit
     source_id: src-narutopedia-ep67-audit
     locator: Episode 67, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep68-audit
+    source_id: src-narutopedia-ep68-audit
+    locator: Episode 68, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

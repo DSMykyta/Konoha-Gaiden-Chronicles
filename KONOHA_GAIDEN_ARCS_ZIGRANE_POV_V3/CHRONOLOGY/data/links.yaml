@@ -3517,3 +3517,30 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep67-audit
+
+- id: lnk-audit-68-ev-y0-0801-kabuto-casts-arena-genjutsu-ev-y0-0801-suna-snake-breaches-wall
+  kind: before
+  a: ev-y0-0801-kabuto-casts-arena-genjutsu
+  b: ev-y0-0801-suna-snake-breaches-wall
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+
+- id: lnk-audit-68-ev-y0-0801-suna-snake-breaches-wall-ev-y0-0801-ibiki-border-unit-faces-snakes
+  kind: before
+  a: ev-y0-0801-suna-snake-breaches-wall
+  b: ev-y0-0801-ibiki-border-unit-faces-snakes
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+
+- id: lnk-audit-68-ev-y0-0801-sasuke-pursues-gaara-ev-y0-0801-kakashi-dispatches-pursuit-team
+  kind: before
+  a: ev-y0-0801-sasuke-pursues-gaara
+  b: ev-y0-0801-kakashi-dispatches-pursuit-team
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit

@@ -70,11 +70,13 @@ checked_anime_episodes:
 - 65
 - 66
 - 67
+- 68
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 68
+next_anime_episode: 69
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-suna-snake-breaches-wall
 - ev-y0-0801-kakashi-explains-sasuke-preparation
 - ev-y0-0801-naruto-shikamaru-warn-kakashi
 - ev-y0-0801-gaara-kills-match-fixers
@@ -146,6 +148,8 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-kakashi-assigns-pursuit-mission
+- sc-y0-0801-snake-breaches-konoha-wall
 - sc-y0-0801-kakashi-comments-sasuke-fight
 - sc-y0-0801-gaara-kills-match-fixers
 - sc-y0-0801-guy-lee-arrive-finals
@@ -1265,6 +1269,23 @@ episode_audits:
   merged_moment_ids:
     ev-y0-0801-sasuke-pierces-gaara-chidori: ev-y0-0801-sasuke-fights-gaara
 
+- episode: 68
+  baseline_revision: 625488dee38da3bcd92320ffbd2926d785ec898a
+  added_moment_ids:
+  - ev-y0-0801-suna-snake-breaches-wall
+  added_scene_ids:
+  - sc-y0-0801-snake-breaches-konoha-wall
+  - sc-y0-0801-kakashi-assigns-pursuit-mission
+  updated_moment_ids:
+  - ev-y0-0801-sound-four-barrier
+  - ev-y0-0801-sasuke-pursues-gaara
+  - ev-y0-0801-kakashi-dispatches-pursuit-team
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Added the giant-snake wall breach as one coherent assault scene. Expanded the hostage/barrier action including the
+    fatal Anbu rescue attempt without inventing a named victim. Corrected Sakura dispelling her own genjutsu. Moved the
+    existing Kakashi mission moment to the arena; pursuit remains in the outskirts. Episode 69 will verify the full briefing
+    and Pakkun’s summoning. Preserved project date and existing character canon.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-0801-snake-breaches-konoha-wall
+episode_id: ep-y0-ibiki-border-defense
+display_rank: 100
+continuity_id: main
+title: Призвана змія проламує стіну Конохи
+location_id: loc-konoha-outskirts
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-suna-snake-breaches-wall
+  title: Сили Суни відкривають шлях вторгненню
+  text: Шинобі Суни призивають велетенську змію, яка проламує захисну стіну Конохи. Крізь прорив заходять нападники Суни
+    та Звуку; бої поширюються селом.
+  involvement:
+  - entity_id: group-sunagakure-forces
+    role: focus
+    mode: physical
+  - entity_id: group-otogakure-forces
+    role: participant
+    mode: physical
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+relations: []
+presence:
+- id: pr-audit-68-ev-y0-0801-suna-snake-breaches-wall-group-sunagakure-forces
+  entity_id: group-sunagakure-forces
+  from: ev-y0-0801-suna-snake-breaches-wall.start
+  to: ev-y0-0801-suna-snake-breaches-wall.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+- id: pr-audit-68-ev-y0-0801-suna-snake-breaches-wall-group-otogakure-forces
+  entity_id: group-otogakure-forces
+  from: ev-y0-0801-suna-snake-breaches-wall.start
+  to: ev-y0-0801-suna-snake-breaches-wall.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit

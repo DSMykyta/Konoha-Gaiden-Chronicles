@@ -1,0 +1,94 @@
+schema_version: 1
+id: sc-y0-0801-kakashi-assigns-pursuit-mission
+episode_id: ep-y0-sasuke-gaara-pursuit
+display_rank: 100
+continuity_id: main
+title: Какаші готує місію переслідування на арені
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+day_part: afternoon
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-kakashi-dispatches-pursuit-team
+  legacy_ids:
+  - V10-000069
+  title: Какаші відправляє Наруто, Сакуру, Шикамару й Паккуна
+  text: Сакура самостійно розвіює сонне гендзюцу. Какаші, зайнятий обороною арени, доручає їй розбудити Наруто й Шикамару
+    та повідомляє, що вони отримають місію рангу A — вирушити за Саске.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-pakkun
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: affected
+    mode: remote
+  evidence_ids:
+  - evd-v10-000069
+  - evd-manga-finals-konoha-crush
+  - evd-narutopedia-ep68-audit
+relations: []
+presence:
+- id: pr-audit-68-y0-0801-kakashi-dispatches-pursuit-team-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0801-kakashi-dispatches-pursuit-team.start
+  to: ev-y0-0801-kakashi-dispatches-pursuit-team.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+- id: pr-audit-68-y0-0801-kakashi-dispatches-pursuit-team-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0801-kakashi-dispatches-pursuit-team.start
+  to: ev-y0-0801-kakashi-dispatches-pursuit-team.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+- id: pr-audit-68-y0-0801-kakashi-dispatches-pursuit-team-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-kakashi-dispatches-pursuit-team.start
+  to: ev-y0-0801-kakashi-dispatches-pursuit-team.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+- id: pr-audit-68-y0-0801-kakashi-dispatches-pursuit-team-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0801-kakashi-dispatches-pursuit-team.start
+  to: ev-y0-0801-kakashi-dispatches-pursuit-team.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep68-audit
+- id: pr-audit-68-y0-0801-kakashi-dispatches-pursuit-team-c-pakkun
+  entity_id: c-pakkun
+  from: ev-y0-0801-kakashi-dispatches-pursuit-team.start
+  to: ev-y0-0801-kakashi-dispatches-pursuit-team.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
