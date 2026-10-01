@@ -1,608 +1,213 @@
 'use strict';
 
-(() => {
-  const baseBindCard = bindCard;
-  const baseCloseCard = closeCard;
-  const baseBindSceneActionPreviews = bindSceneActionPreviews;
-  const baseShowSceneCard = showSceneCard;
-  const baseRenderProfile = renderProfile;
-  const baseShowEventPreview = showEventPreview;
+const HierarchyPreview = (() => {
   const cascade = [];
-  const closeTimers = [];
-  const PANEL_WIDTH = 430;
-  const PANEL_GAP = 12;
-  const VIEWPORT_GUTTER = 12;
+  const hoverTargets = new Map();
 
-  const style = document.createElement('style');
-  style.textContent = `
-    /* One panel surface for ARC / EPISODE / SCENE / MOMENT. */
-    .event-card,
-    .event-preview {
-      width: min(${PANEL_WIDTH}px, calc(100vw - 24px)) !important;
-      max-width: calc(100vw - 24px) !important;
-      border: 1px solid var(--glass-border) !important;
-      border-radius: 18px !important;
-      background: transparent !important;
-      -webkit-backdrop-filter: blur(12px) saturate(1) !important;
-      backdrop-filter: blur(12px) saturate(1) !important;
-      color: var(--text);
-      box-shadow: inset 0 0 0 999px rgba(248,250,252,.52), var(--shadow-lg) !important;
-    }
-    .story-panel {
-      transition: left 220ms cubic-bezier(.2,.72,.2,1), top 180ms ease !important;
-    }
-    #cardHeader,
-    #cardScroll,
-    #eventPreviewContent,
-    .hierarchy-preview-content {
-      background: transparent !important;
-    }
-    #cardHeader {
-      padding: 0 !important;
-      border-bottom: 0 !important;
-    }
-    #cardScroll { padding-top: 20px; }
-    #eventPreviewContent,
-    .hierarchy-preview-content {
-      padding: 0 22px 22px !important;
-    }
-    .story-panel-header,
-    .card-top,
-    .preview-top {
-      position: relative !important;
-      top: auto !important;
-      z-index: 1 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 8px !important;
-      min-height: 49px !important;
-      margin: 0 !important;
-      padding: 8px 14px !important;
-      border-bottom: 1px solid #d9dfe799 !important;
-      background: transparent !important;
-    }
-    #eventPreviewContent > :is(.story-panel-header,.preview-top),
-    .hierarchy-preview-content > :is(.story-panel-header,.preview-top) {
-      margin: 0 -22px 18px !important;
-    }
-    .story-panel-header .card-meta-line,
-    .card-top .card-meta-line,
-    .preview-top .card-meta-line {
-      min-height: 32px;
-      align-items: center;
-    }
-
-    .story-children,
-    .scene-actions {
-      position: relative;
-      isolation: isolate;
-      counter-reset: hierarchy-row;
-      display: grid;
-      gap: 4px;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    .scene-actions { list-style: none; }
-    .story-children .result,
-    .scene-actions li {
-      position: relative;
-      z-index: 1;
-      counter-increment: hierarchy-row;
-      display: grid;
-      grid-template-columns: 22px minmax(0,1fr);
-      align-items: center;
-      column-gap: 9px;
-      width: 100%;
-      min-height: 42px;
-      margin: 0;
-      padding: 9px 12px;
-      border: 0 !important;
-      border-radius: 14px;
-      background: transparent !important;
-      box-shadow: none !important;
-      text-align: left;
-      cursor: pointer;
-      transform: none !important;
-    }
-    .story-children .result::before,
-    .scene-actions li::before {
-      content: counter(hierarchy-row, decimal-leading-zero);
-      position: static;
-      grid-column: 1;
-      justify-self: start;
-      align-self: center;
-      padding: 0 !important;
-      color: var(--muted);
-      font-size: 9px;
-      line-height: 1;
-      font-variant-numeric: tabular-nums;
-      pointer-events: none;
-      transition: color .16s ease;
-    }
-    .story-children .result > span,
-    .story-children .result > strong,
-    .scene-actions li > div,
-    .scene-actions li > .scene-action-title {
-      grid-column: 2;
-      min-width: 0;
-      width: 100%;
-      align-self: center;
-    }
-    .scene-actions li > div { display: contents; }
-    .story-children .result strong,
-    .scene-action-title {
-      display: block;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      background: transparent !important;
-      color: var(--text);
-      text-align: left;
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.4;
-      transform: none !important;
-    }
-    .story-children .result small,
-    .story-row-description,
-    .scene-actions li .event-gallery { display: none !important; }
-
-    .hierarchy-hover-glass {
-      position: absolute;
-      z-index: 0;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 0;
-      border: 1px solid rgba(255,255,255,.92);
-      border-radius: 14px;
-      opacity: 0;
-      pointer-events: none;
-      background: linear-gradient(145deg, rgba(255,255,255,.70), rgba(232,239,247,.34));
-      -webkit-backdrop-filter: blur(14px) saturate(1.08);
-      backdrop-filter: blur(14px) saturate(1.08);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.96), inset 0 -1px 0 rgba(124,142,164,.10), 0 5px 14px rgba(42,54,70,.09);
-      transform: translate3d(0,0,0);
-      transition: transform 210ms cubic-bezier(.2,.72,.2,1), height 210ms cubic-bezier(.2,.72,.2,1), opacity 110ms ease;
-      will-change: transform,height,opacity;
-    }
-    .story-children .result:hover::before,
-    .story-children .result:focus-visible::before,
-    .scene-actions li:hover::before,
-    .scene-actions li:focus-within::before { color: var(--text); }
-    .hierarchy-preview .scene-actions li { cursor: pointer; }
-
-    @media (max-width: 760px) {
-      #eventPreviewContent,
-      .hierarchy-preview-content { padding: 0 18px 18px !important; }
-      #eventPreviewContent > :is(.story-panel-header,.preview-top),
-      .hierarchy-preview-content > :is(.story-panel-header,.preview-top) { margin: 0 -18px 18px !important; }
-      .story-children .result,
-      .scene-actions li {
-        grid-template-columns: 20px minmax(0,1fr);
-        column-gap: 7px;
-        padding: 9px 10px;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .hierarchy-hover-glass,
-      .story-panel { transition: opacity 80ms linear !important; }
-    }
-  `;
-  document.head.append(style);
-
-  function unifyPanelSurface(root, surface = root?.closest?.('.event-card,.event-preview')) {
-    if (surface) surface.classList.add('story-panel');
-    root?.querySelectorAll?.('.card-top,.preview-top').forEach(header => header.classList.add('story-panel-header'));
-  }
-
-  if (typeof StoryClouds !== 'undefined') {
-    const baseCloudGroups = StoryClouds.groups.bind(StoryClouds);
-    StoryClouds.groups = function hierarchyAwareCloudGroups(nodes, level, sceneMapArg, episodeMapArg) {
-      const groups = baseCloudGroups(nodes, level, sceneMapArg, episodeMapArg);
-      const momentsByScene = new Map();
-      const scenesByEpisode = new Map();
-      for (const node of nodes) {
-        const sceneIds = (node.sourceSceneIds?.length ? node.sourceSceneIds : node.scene?.id ? [node.scene.id] : []).filter(Boolean);
-        const momentIds = (node.group || []).map(event => event?.id).filter(Boolean);
-        for (const sceneId of sceneIds) {
-          if (!momentsByScene.has(sceneId)) momentsByScene.set(sceneId, new Set());
-          for (const momentId of momentIds) momentsByScene.get(sceneId).add(momentId);
-        }
-        const episodeIds = (node.kind === 'episode' && node.rawId ? [node.rawId] : node.sourceEpisodeIds?.length ? node.sourceEpisodeIds : node.scene?.episode_id ? [node.scene.episode_id] : []).filter(Boolean);
-        for (const episodeId of episodeIds) {
-          if (!scenesByEpisode.has(episodeId)) scenesByEpisode.set(episodeId, new Set());
-          for (const sceneId of sceneIds) scenesByEpisode.get(episodeId).add(sceneId);
-        }
-      }
-      return groups.filter(group => {
-        if (group.kind === 'moment') return false;
-        if (group.kind === 'episode') return (scenesByEpisode.get(group.id)?.size || 0) > 1;
-        if (group.kind === 'scene') return (momentsByScene.get(group.id)?.size || 0) > 1;
-        return true;
+  function lists(root) {
+    root.querySelectorAll('.story-children,.scene-actions').forEach(container => {
+      if (container.dataset.highlightBound) return;
+      container.dataset.highlightBound = 'true';
+      const glass = document.createElement('span');
+      glass.className = 'hierarchy-hover-glass';
+      glass.setAttribute('aria-hidden', 'true');
+      container.prepend(glass);
+      const move = row => {
+        glass.style.transform = `translate3d(0,${row.offsetTop}px,0)`;
+        glass.style.height = `${row.offsetHeight}px`;
+        glass.style.opacity = '1';
+      };
+      container.querySelectorAll(':scope > .result,:scope > li').forEach(row => {
+        row.addEventListener('pointerenter', event => { if (canHover(event)) move(row); });
+        row.addEventListener('focusin', () => move(row));
       });
-    };
-  }
-
-  function normalizeCloudLabels(root = document) {
-    root.querySelectorAll?.('.cloud-label').forEach(label => {
-      const parent = label.querySelector('.cloud-parent');
-      if (!parent) return;
-      const wanted = label.dataset.cloudKind === 'scene' ? 'СЦЕНА' : label.dataset.cloudKind === 'episode' ? 'ЕПІЗОД' : null;
-      if (wanted && parent.textContent !== wanted) parent.textContent = wanted;
+      const restore = () => {
+        const active = container.querySelector(':scope > .is-preview-active');
+        if (active) move(active); else glass.style.opacity = '0';
+      };
+      container.addEventListener('pointerleave', restore);
+      container.addEventListener('focusout', event => { if (!container.contains(event.relatedTarget)) restore(); });
+      container.syncHighlight = restore;
     });
   }
 
-  const timeline = document.getElementById('timeline');
-  if (timeline) {
-    normalizeCloudLabels(timeline);
-    new MutationObserver(() => normalizeCloudLabels(timeline)).observe(timeline, { childList: true, subtree: true });
-  }
-
-  function countLabel(n, one, few, many) {
-    const mod100 = n % 100, mod10 = n % 10;
-    const form = mod100 >= 11 && mod100 <= 14 ? many : mod10 === 1 ? one : mod10 >= 2 && mod10 <= 4 ? few : many;
-    return `${n} ${form}`;
-  }
-
-  function storyRange(items) {
-    const days = items.map(item => item?.day).filter(day => day !== null && day !== undefined);
-    if (!days.length) return { text: 'Без установленої дати', hasYear: false };
-    const start = Math.min(...days), end = Math.max(...days);
-    return { text: start === end ? dateText(start, true) : `${dateText(start, true)} — ${dateText(end, true)}`, hasYear: true };
-  }
-
-  function hierarchyRows(container) {
-    return container.matches('.scene-actions') ? [...container.querySelectorAll(':scope > li')] : [...container.querySelectorAll(':scope > .result')];
-  }
-
-  function bindMovingHighlight(container) {
-    if (!container || container.dataset.glidingHighlightBound === 'true') return;
-    container.dataset.glidingHighlightBound = 'true';
-    const glass = document.createElement('span');
-    glass.className = 'hierarchy-hover-glass';
-    glass.setAttribute('aria-hidden', 'true');
-    container.prepend(glass);
-    const moveTo = row => {
-      glass.style.transform = `translate3d(0,${row.offsetTop}px,0)`;
-      glass.style.height = `${row.offsetHeight}px`;
-      glass.style.opacity = '1';
-    };
-    for (const row of hierarchyRows(container)) {
-      row.addEventListener('pointerenter', event => { if (canHover(event)) moveTo(row); });
-      row.addEventListener('focusin', () => moveTo(row));
-    }
-    container.addEventListener('pointerleave', () => { glass.style.opacity = '0'; });
-    container.addEventListener('focusout', event => { if (!container.contains(event.relatedTarget)) glass.style.opacity = '0'; });
-  }
-
-  function normalizeSceneRows(root) {
-    root?.querySelectorAll?.('.scene-actions li').forEach(row => {
-      const title = row.querySelector('.scene-action-title');
-      if (!title) return;
-      row.querySelectorAll('.event-gallery,.story-row-description,small').forEach(node => node.remove());
-      if (title.parentElement !== row) row.append(title);
-      [...row.children].forEach(child => {
-        if (child !== title) child.remove();
-      });
-    });
-  }
-
-  function prepareHierarchyLists(root, surface) {
-    unifyPanelSurface(root, surface);
-    root?.querySelectorAll?.('.story-children .result small').forEach(node => node.remove());
-    normalizeSceneRows(root);
-    root?.querySelectorAll?.('.story-children, .scene-actions').forEach(bindMovingHighlight);
-  }
-
-  function clearTimers() {
-    for (let i = 0; i < closeTimers.length; i++) {
-      clearTimeout(closeTimers[i]);
-      closeTimers[i] = null;
-    }
+  function keep() {
+    uiTimers.cancelAll('hierarchy-close:');
     cancelHoverClose();
+  }
+
+  function layout() {
+    const root = $('eventCard');
+    if (root.hidden || !cardPlacement) return;
+    const surfaces = [root, ...cascade.map(entry => entry.panel)];
+    const width = document.documentElement.clientWidth || window.innerWidth || $('canvas').clientWidth;
+    const viewportHeight = window.innerHeight || $('canvas').clientHeight;
+    const minTop = Math.min(readingBounds().top, Math.max(12, viewportHeight - 92));
+    const bottom = Math.max(minTop + 80, viewportHeight - 116);
+    const height = Math.min(cardPlacement.height, bottom - minTop);
+    const top = Math.max(minTop, Math.min(cardPlacement.top, bottom - height));
+    const slots = TimelineInteractions.panelLayout(surfaces.length, width, cardPlacement.left, top, top + height);
+    surfaces.forEach((surface, index) => {
+      const slot = slots[index];
+      surface.style.left = `${slot.left}px`;
+      surface.style.top = `${slot.top}px`;
+      surface.style.width = `${slot.width}px`;
+      surface.style.maxHeight = `${slot.height}px`;
+      surface.style.setProperty('--card-height', `${slot.height}px`);
+      surface.dataset.cascadeObscured = String(slot.obscured);
+      surface.inert = slot.obscured;
+      if (slot.obscured) surface.setAttribute('aria-hidden', 'true');
+      else surface.removeAttribute('aria-hidden');
+    });
+    const parent = root.querySelector('.card-parent-level-button');
+    if (parent) parent.hidden = cascade.length > 0;
+    tooltipController?.refresh();
   }
 
   function closeFrom(depth = 0, restoreFocus = false) {
     const trigger = cascade[depth]?.trigger;
     for (let i = cascade.length - 1; i >= depth; i--) {
+      uiTimers.cancel(`hierarchy-open:${i}`);
+      uiTimers.cancel(`hierarchy-close:${i}`);
       const entry = cascade[i];
-      if (!entry) continue;
       entry.trigger?.classList.remove('is-preview-active');
-      entry.panel?.remove();
-      cascade[i] = null;
-      clearTimeout(closeTimers[i]);
-      closeTimers[i] = null;
+      entry.trigger?.closest('.story-children,.scene-actions')?.syncHighlight?.();
+      entry.panel.remove();
     }
-    while (cascade.length && !cascade[cascade.length - 1]) cascade.pop();
-    if (restoreFocus && trigger?.isConnected) trigger.focus();
-  }
-
-  function scheduleClose(depth) {
-    clearTimeout(closeTimers[depth]);
-    if (cascade[depth]?.pinned) return;
-    closeTimers[depth] = setTimeout(() => closeFrom(depth), 220);
-  }
-
-  function panelWidth(viewportWidth) {
-    return Math.min(PANEL_WIDTH, Math.max(260, viewportWidth - VIEWPORT_GUTTER * 2));
-  }
-
-  function openSurfacesBefore(depth, parentSurface) {
-    const surfaces = [];
-    const root = $('eventCard');
-    if (root && !root.hidden) surfaces.push(root);
-    for (let i = 0; i < depth; i++) {
-      const panel = cascade[i]?.panel;
-      if (panel?.isConnected && !surfaces.includes(panel)) surfaces.push(panel);
+    cascade.splice(depth);
+    for (const key of hoverTargets.keys()) if (key >= depth) {
+      hoverTargets.delete(key);
+      uiTimers.cancel(`hierarchy-open:${key}`);
     }
-    if (parentSurface?.isConnected && !surfaces.includes(parentSurface)) surfaces.push(parentSurface);
-    return surfaces;
+    layout();
+    if (restoreFocus && trigger?.isConnected) (trigger.matches('button') ? trigger : trigger.querySelector('button'))?.focus({ preventScroll: true });
   }
 
-  function shiftSurfacesLeft(surfaces, amount) {
-    if (amount <= 0 || !surfaces.length) return;
-    for (const surface of surfaces) {
-      const current = parseFloat(surface.style.left);
-      if (!Number.isFinite(current)) continue;
-      surface.style.left = `${current - amount}px`;
+  function scheduleClose(depth = 0) {
+    if (cascade.slice(depth).some(entry => entry.pinned)) return;
+    uiTimers.defer(`hierarchy-close:${depth}`, TimelineInteractions.CLOSE_DELAY, () => closeFrom(depth));
+  }
+
+  function leave(event, depth) {
+    const next = event.relatedTarget;
+    if (next && cascade.slice(depth).some(entry => entry.panel.contains(next))) return keep();
+    const ancestor = cascade.findIndex(entry => next && entry.panel.contains(next));
+    scheduleClose(ancestor >= 0 ? ancestor + 1 : 0);
+    deferHoverClose();
+  }
+
+  function range(items) {
+    const days = items.map(item => item.day).filter(Number.isFinite);
+    if (!days.length) return 'Без установленої дати';
+    const start = Math.min(...days), end = Math.max(...days);
+    return start === end ? dateText(start, true) : `${dateText(start, true)} — ${dateText(end, true)}`;
+  }
+
+  function html(kind, id) {
+    const event = kind === 'moment' ? eventMap.get(id) : null;
+    const scene = kind === 'scene' ? sceneMap.get(id) : null;
+    const point = kind === 'episode' ? storyPoint(kind, id) : null;
+    const group = event ? [event] : scene ? sceneEvents(id) : point?.group;
+    if (!group?.length) return null;
+    const header = `<div class="story-panel-header">${cardMetaLine(kind, range(group), group.some(event => event.day !== null))}<button class="close" data-close-hierarchy aria-label="Закрити перегляд" data-tooltip="Закрити">×</button></div>`;
+    const body = event ? eventDetailsHtml(event, 'data-hierarchy-event') : scene ? sceneCardBody(scene, group) : storyCardBody(point);
+    return { header, body };
+  }
+
+  function pin(depth) {
+    pinOpenCard();
+    cascade.slice(0, depth + 1).forEach(entry => { entry.pinned = true; });
+    keep();
+  }
+
+  function open(kind, id, parentSurface, trigger, depth = 0, pinned = false) {
+    if ($('eventCard').hidden || !parentSurface?.isConnected) return;
+    const existing = cascade[depth];
+    if (existing?.pinned && !pinned && existing.id !== id) return;
+    uiTimers.cancel(`hierarchy-open:${depth}`);
+    keep();
+    if (existing?.kind === kind && existing.id === id) {
+      if (pinned) pin(depth);
+      return;
     }
-  }
-
-  function positionPanel(panel, parentSurface, depth) {
-    const vw = document.documentElement.clientWidth || window.innerWidth;
-    const vh = document.documentElement.clientHeight || window.innerHeight;
-    const width = panelWidth(vw);
-    panel.style.width = `${width}px`;
-    panel.dataset.side = 'right';
-
-    let parentRect = parentSurface.getBoundingClientRect();
-    let desiredLeft = parentRect.right + PANEL_GAP;
-    const overflow = desiredLeft + width + VIEWPORT_GUTTER - vw;
-    if (overflow > 0) {
-      const surfaces = openSurfacesBefore(depth, parentSurface);
-      const leftmost = Math.min(...surfaces.map(surface => surface.getBoundingClientRect().left));
-      const availableShift = Math.max(0, leftmost - VIEWPORT_GUTTER);
-      const shift = Math.min(overflow, availableShift || overflow);
-      shiftSurfacesLeft(surfaces, shift);
-      parentRect = parentSurface.getBoundingClientRect();
-      desiredLeft = parentRect.right + PANEL_GAP;
-    }
-
-    panel.style.left = `${desiredLeft}px`;
-    const headerBottom = document.querySelector('.masthead')?.getBoundingClientRect?.().bottom || 86;
-    const topLimit = headerBottom + 12;
-    const bottomLimit = vh - 132;
-    panel.style.maxHeight = `${Math.max(160, bottomLimit - topLimit)}px`;
-    panel.style.top = `${clamp(parentRect.top, topLimit, Math.max(topLimit, bottomLimit - Math.min(panel.scrollHeight || 480, bottomLimit - topLimit)))}px`;
-  }
-
-  function episodePreviewHtml(id) {
-    const episode = episodeMap.get(id);
-    if (!episode) return null;
-    const scenes = (episode.scene_ids || []).map(sceneId => sceneMap.get(sceneId)).filter(Boolean);
-    const moments = scenes.flatMap(scene => sceneEvents(scene.id));
-    const range = storyRange(moments.length ? moments : scenes);
-    const sceneRows = scenes.map(scene => `<button class="result" data-story-scene="${esc(scene.id)}"><strong>${esc(scene.title)}</strong></button>`).join('');
-    return {
-      label: 'Опис епізоду',
-      html: `<div class="story-panel-header">${cardMetaLine('episode', range.text, range.hasYear)}</div><h2>${esc(episode.title)}</h2>${episode.description ? `<p class="event-text">${esc(episode.description)}</p>` : ''}<p class="scene-location">${countLabel(scenes.length, 'сцена', 'сцени', 'сцен')} · ${actionCount(moments.length)}</p>${sceneRows ? `<div class="story-children">${sceneRows}</div>` : ''}`
-    };
-  }
-
-  function scenePreviewHtml(id) {
-    const scene = sceneMap.get(id);
-    if (!scene) return null;
-    const group = sceneEvents(id), cast = sceneCast(scene, group), range = storyRange(group.length ? group : [scene]);
-    const actions = group.map(event => `<li data-scene-preview="${esc(event.id)}"><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(event.title)}">${esc(event.title)}</button></li>`).join('');
-    return {
-      label: 'Опис сцени',
-      html: `<div class="story-panel-header">${cardMetaLine('scene', range.text, range.hasYear)}</div><h2>${esc(scene.title)}</h2><button class="scene-context" data-open-scene="${esc(scene.id)}" title="Читати сцену цілком"><span>Сцена · ${actionCount(group.length)}</span>${esc(name(scene.location_id))} <span aria-hidden="true">↗</span></button>${cast.length ? `<div class="people scene-people">${cast.map(entityId => `<button class="person" data-event-focus-character="${esc(entityId)}" aria-label="Зосередитися на лінії ${esc(name(entityId))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(entityId)}"></span>${esc(name(entityId))}</button>`).join('')}</div>` : ''}${actions ? `<ol class="scene-actions">${actions}</ol>` : ''}`
-    };
-  }
-
-  function momentPreviewHtml(id) {
-    const event = eventMap.get(id);
-    if (!event) return null;
-    return { label: 'Опис моменту', html: `<div class="story-panel-header">${cardMetaLine('moment', event.day === null ? 'Без установленої дати' : dateText(event.day, true), event.day !== null)}</div>${eventDetailsHtml(event, 'data-hierarchy-event', false)}` };
-  }
-
-  function previewHtml(kind, id) {
-    const rendered = kind === 'episode' ? episodePreviewHtml(id) : kind === 'scene' ? scenePreviewHtml(id) : kind === 'moment' ? momentPreviewHtml(id) : null;
-    if (rendered) rendered.html = rendered.html.replace('</div>', '<button class="close" data-close-hierarchy aria-label="Закрити перегляд" title="Закрити">×</button></div>');
-    return rendered;
-  }
-
-  function bindPanelActions(content, depth) {
-    content.querySelector('[data-close-hierarchy]')?.addEventListener('click', () => closeFrom(depth, true));
-    content.querySelectorAll('[data-event-focus-character]').forEach(button => button.addEventListener('click', () => {
-      const id = button.dataset.eventFocusCharacter;
-      if (focusedCharacter !== id) setFocus(id);
-    }));
-    content.querySelectorAll('[data-open-scene]').forEach(button => button.addEventListener('click', () => openScene(button.dataset.openScene, button)));
-    content.querySelectorAll('[data-hierarchy-event]').forEach(button => button.addEventListener('click', () => navigateEvent(button.dataset.hierarchyEvent)));
-  }
-
-  function bindTrigger(trigger, kind, id, parentSurface, depth, allowPin = false) {
-    if (trigger.dataset.hierarchyPreviewBound === 'true') return;
-    trigger.dataset.hierarchyPreviewBound = 'true';
-    trigger.addEventListener('pointerenter', event => {
-      clearTimers();
-      if (!canHover(event)) return;
-      openPreview(kind, id, parentSurface, trigger, depth, false);
-    });
-    trigger.addEventListener('pointerleave', () => scheduleClose(depth));
-    if (allowPin) trigger.addEventListener('click', event => { event.preventDefault(); openPreview(kind, id, parentSurface, trigger, depth, true); });
-  }
-
-  function bindStoryTriggers(root, parentSurface, depth) {
-    root.querySelectorAll('[data-story-episode]').forEach(trigger => bindTrigger(trigger, 'episode', trigger.dataset.storyEpisode, parentSurface, depth));
-    root.querySelectorAll('[data-story-scene]').forEach(trigger => bindTrigger(trigger, 'scene', trigger.dataset.storyScene, parentSurface, depth));
-  }
-
-  function bindMomentTriggers(root, parentSurface, depth) {
-    root.querySelectorAll('[data-scene-preview]').forEach(trigger => bindTrigger(trigger, 'moment', trigger.dataset.scenePreview, parentSurface, depth, true));
-  }
-
-  function bindChildTriggers(content, panel, depth, kind) {
-    if (kind === 'episode') bindStoryTriggers(content, panel, depth + 1);
-    if (kind === 'scene') bindMomentTriggers(content, panel, depth + 1);
-  }
-
-  function openPreview(kind, id, parentSurface, trigger, depth, pinned) {
-    const rendered = previewHtml(kind, id);
+    const rendered = html(kind, id);
     if (!rendered) return;
-    clearTimers();
     closeFrom(depth);
-    trigger.classList.add('is-preview-active');
     const panel = document.createElement('aside');
-    panel.className = 'event-preview hierarchy-preview story-panel is-visible';
-    panel.setAttribute('role', 'dialog');
-    panel.setAttribute('aria-label', rendered.label);
+    panel.className = 'event-preview hierarchy-preview story-panel';
     panel.dataset.hierarchyDepth = String(depth);
-    const content = document.createElement('div');
-    content.className = 'hierarchy-preview-content';
-    content.innerHTML = rendered.html;
-    panel.append(content);
+    if (depth === 0 && kind === 'moment') panel.id = 'eventPreview';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-label', `Опис ${kind === 'moment' ? 'моменту' : kind === 'scene' ? 'сцени' : 'епізоду'}`);
+    panel.innerHTML = `<div class="hierarchy-preview-content">${rendered.header}<div class="preview-scroll">${rendered.body}</div></div>`;
     document.body.append(panel);
-    cascade[depth] = { panel, trigger, parentSurface, kind, id, pinned };
-    positionPanel(panel, parentSurface, depth);
-    prepareHierarchyLists(content, panel);
-    bindPanelActions(content, depth);
-    bindChildTriggers(content, panel, depth, kind);
-    panel.addEventListener('pointerenter', clearTimers);
-    panel.addEventListener('pointerleave', () => scheduleClose(depth));
-    if (pinned && document.documentElement.dataset.input === 'keyboard') content.querySelector('[data-close-hierarchy]')?.focus();
+    cascade.push({ panel, trigger, parentSurface, kind, id, pinned: false });
+    trigger?.classList.add('is-preview-active');
+    trigger?.closest('.story-children,.scene-actions')?.syncHighlight?.();
+    lists(panel);
+    bind(panel, panel, depth + 1);
+    panel.addEventListener('pointerenter', keep);
+    panel.addEventListener('pointerleave', event => leave(event, depth));
+    panel.addEventListener('click', event => {
+      const button = event.target.closest('button');
+      if (!button) return;
+      if (button.hasAttribute('data-close-hierarchy')) closeFrom(depth, true);
+      else if (button.dataset.eventFocusCharacter) setFocus(button.dataset.eventFocusCharacter);
+      else if (button.dataset.hierarchyEvent) navigateEvent(button.dataset.hierarchyEvent);
+    });
+    if (pinned) pin(depth);
+    layout();
+    if (pinned && document.documentElement.dataset.input === 'keyboard') panel.querySelector('[data-close-hierarchy]').focus({ preventScroll: true });
   }
 
-  function bindRootStoryPreviews() {
-    const card = $('eventCard');
-    if (card.hidden) return;
-    prepareHierarchyLists($('cardContent'), card);
-    bindStoryTriggers($('cardContent'), card, 0);
+  function bind(root, parentSurface = $('eventCard'), depth = 0) {
+    lists(root);
+    root.querySelectorAll('[data-story-episode],[data-story-scene],[data-scene-preview]').forEach(trigger => {
+      if (trigger.dataset.previewBound) return;
+      trigger.dataset.previewBound = 'true';
+      const kind = trigger.dataset.storyEpisode ? 'episode' : trigger.dataset.storyScene ? 'scene' : 'moment';
+      const id = trigger.dataset.storyEpisode || trigger.dataset.storyScene || trigger.dataset.scenePreview;
+      trigger.addEventListener('pointerenter', event => {
+        if (!canHover(event)) return;
+        keep();
+        hoverTargets.set(depth, trigger);
+        // Hover must leave its row usable. Compact screens drill down by click.
+        const viewport = document.documentElement.clientWidth || window.innerWidth;
+        if (viewport < TimelineInteractions.PANEL_WIDTH * 2 + TimelineInteractions.PANEL_GAP + 24) return;
+        uiTimers.defer(`hierarchy-open:${depth}`, TimelineInteractions.OPEN_DELAY, () => {
+          if (hoverTargets.get(depth) === trigger && trigger.isConnected && parentSurface.isConnected) open(kind, id, parentSurface, trigger, depth);
+        });
+      });
+      trigger.addEventListener('pointerleave', event => {
+        if (hoverTargets.get(depth) === trigger) hoverTargets.delete(depth);
+        uiTimers.cancel(`hierarchy-open:${depth}`);
+        leave(event, depth);
+      });
+      trigger.addEventListener('click', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        open(kind, id, parentSurface, trigger, depth, true);
+      });
+    });
   }
 
-  showSceneCard = function showSceneCardWithUnifiedRows(scene, group) {
-    baseShowSceneCard(scene, group);
-    prepareHierarchyLists($('cardContent'), $('eventCard'));
-  };
-
-  bindSceneActionPreviews = function bindSceneActionHierarchyPreviews() {
-    baseBindSceneActionPreviews();
-    prepareHierarchyLists($('cardContent'), $('eventCard'));
-  };
-
-  showEventPreview = function showUnifiedEventPreview(...args) {
-    baseShowEventPreview(...args);
-    const preview = $('eventPreview');
-    const content = $('eventPreviewContent');
-    const card = $('eventCard');
-    if (preview && content && card && !preview.hidden) {
-      preview.classList.add('story-panel');
-      unifyPanelSurface(content, preview);
-      card.removeAttribute('data-preview-open');
-      preview.dataset.overlay = 'false';
-      positionPanel(preview, card, 0);
+  return {
+    bind, open, layout, keep, leave,
+    clear() { uiTimers.cancelAll('hierarchy-'); hoverTargets.clear(); closeFrom(0); },
+    closeFrom,
+    escape() {
+      uiTimers.cancelAll('hierarchy-open:');
+      hoverTargets.clear();
+      if (!cascade.length) return false;
+      closeFrom(cascade.length - 1, true);
+      return true;
+    },
+    get size() { return cascade.length; },
+    dismissTransient() {
+      const depth = cascade.findIndex(entry => !entry.pinned);
+      if (depth >= 0) closeFrom(depth);
+      uiTimers.cancelAll('hierarchy-open:');
+      hoverTargets.clear();
     }
   };
-
-  bindCard = function bindCardWithHierarchyPreview() {
-    closeEventPreview(true);
-    closeFrom(0);
-    baseBindCard();
-    bindRootStoryPreviews();
-  };
-
-  closeCard = function closeCardWithHierarchyPreview(restoreFocus = false) {
-    closeFrom(0);
-    return baseCloseCard(restoreFocus);
-  };
-
-  function abilityRegistry() {
-    return new Map((data?.abilities || []).map(ability => [ability.id, ability]));
-  }
-
-  function techniqueCard(item, index, registry) {
-    const source = registry.get(item.id) || {};
-    const ability = { ...source, ...item };
-    const classifications = Array.isArray(ability.classification) ? ability.classification : ability.kind ? [ability.kind] : [];
-    const facts = [
-      ability.mechanics ? ['Принцип', ability.mechanics] : null,
-      ability.limitation ? ['Обмеження', ability.limitation] : null
-    ].filter(Boolean);
-    return `<article class="profile-entry technique-card" data-ability="${esc(ability.id || '')}" tabindex="0"><div class="technique-card-top"><span class="technique-card-index">${String(index + 1).padStart(2, '0')}</span>${ability.rank ? `<span class="technique-card-rank">Ранг ${esc(ability.rank)}</span>` : ''}</div><strong class="technique-card-name">${esc(ability.name || ability.label || ability.id || 'Техніка')}</strong>${ability.romanized_name ? `<p class="technique-card-romanized">${esc(ability.romanized_name)}</p>` : ''}${classifications.length ? `<p class="technique-card-tags">${classifications.map(value => `<span>${esc(value)}</span>`).join('')}</p>` : ''}${ability.summary ? `<p class="technique-card-summary">${esc(ability.summary)}</p>` : ''}${facts.length ? `<dl class="technique-card-facts">${facts.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>` : ''}${item.status ? `<div class="technique-card-status"><span>Статус</span><strong>${esc(item.status)}</strong></div>` : ''}</article>`;
-  }
-
-  function bindTechniqueTrack(track) {
-    if (!track || track.dataset.techniqueTrackBound === 'true') return;
-    track.dataset.techniqueTrackBound = 'true';
-    track.tabIndex = 0;
-    track.setAttribute('aria-label', 'Картотека технік');
-    let drag = null;
-    track.addEventListener('pointerdown', event => {
-      if (event.button !== 0 || event.pointerType === 'touch') return;
-      drag = { id: event.pointerId, x: event.clientX, left: track.scrollLeft };
-      track.setPointerCapture?.(event.pointerId);
-      track.classList.add('is-dragging');
-    });
-    track.addEventListener('pointermove', event => {
-      if (!drag || drag.id !== event.pointerId) return;
-      const dx = event.clientX - drag.x;
-      if (Math.abs(dx) > 2) event.preventDefault();
-      track.scrollLeft = drag.left - dx;
-    });
-    const end = event => {
-      if (!drag || (event?.pointerId !== undefined && drag.id !== event.pointerId)) return;
-      drag = null;
-      track.classList.remove('is-dragging');
-    };
-    track.addEventListener('pointerup', end);
-    track.addEventListener('pointercancel', end);
-    track.addEventListener('lostpointercapture', end);
-    track.addEventListener('keydown', event => {
-      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
-      event.preventDefault();
-      const card = track.querySelector('.technique-card');
-      const step = card ? card.getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0) : track.clientWidth * .8;
-      track.scrollBy({ left: event.key === 'ArrowRight' ? step : -step, behavior: 'smooth' });
-    });
-  }
-
-  function decorateTechniqueCards() {
-    const root = $('profileContent');
-    if (!root || !profileEntity) return;
-    const profile = profileMap.get(profileEntity);
-    const versions = profile?.versions?.length ? profile.versions : [{ id: 'general', label: 'Профіль' }];
-    const index = Math.max(0, versions.findIndex(version => version.id === profileVersion));
-    const version = mergedProfileVersion(versions, index);
-    const abilities = version.abilities || [];
-    if (!abilities.length) return;
-    const section = [...root.querySelectorAll('.profile-section')].find(node => node.querySelector(':scope > h3')?.textContent.trim() === 'Здібності');
-    const track = section?.querySelector('.profile-entry-list');
-    if (!track) return;
-    const registry = abilityRegistry();
-    track.classList.add('technique-card-track');
-    track.innerHTML = abilities.map((item, abilityIndex) => techniqueCard(item, abilityIndex, registry)).join('');
-    bindTechniqueTrack(track);
-  }
-
-  renderProfile = function renderProfileWithTechniqueCards() {
-    baseRenderProfile();
-    decorateTechniqueCards();
-  };
-
-  document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape' || !cascade.length) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    closeFrom(cascade.length - 1, true);
-  }, true);
-
-  window.addEventListener('resize', () => {
-    cascade.forEach((entry, depth) => {
-      if (entry?.panel?.isConnected && entry?.parentSurface?.isConnected) positionPanel(entry.panel, entry.parentSurface, depth);
-    });
-  });
 })();

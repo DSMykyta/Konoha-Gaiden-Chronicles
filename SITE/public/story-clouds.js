@@ -16,19 +16,21 @@ const StoryClouds = {
    if(!buckets.has(key)){
     const meta=kind==='scene'?sceneMap.get(id):kind==='episode'?episodeMap.get(id):null;
     const episodeId=kind==='scene'?(meta?.episode_id||parentId):kind==='episode'?id:parentId;
-    buckets.set(key,{key,kind,id,parentId:kind==='scene'?episodeId:null,title:meta?.title||node.title,parentTitle:episodeMap.get(episodeId)?.title||'',nodes:[]});
+    buckets.set(key,{key,kind,id,momentIds:new Set(),sceneIds:new Set(),parentId:kind==='scene'?episodeId:null,title:meta?.title||node.title,parentTitle:episodeMap.get(episodeId)?.title||'',nodes:[]});
    }
-   buckets.get(key).nodes.push({id:node.id,x:node.x,y:node.y});
+   const bucket=buckets.get(key);bucket.nodes.push({id:node.id,x:node.x,y:node.y});
+   (node.group||[]).forEach(event=>bucket.momentIds.add(event.id));(node.sourceSceneIds||[node.scene?.id]).filter(Boolean).forEach(id=>bucket.sceneIds.add(id));
   };
   for(const node of nodes){
    const sceneId=node.scene?.id||node.sourceSceneIds?.[0]||null;
    const episodeIds=node.kind==='episode'?[node.rawId]:(node.sourceEpisodeIds||[node.scene?.episode_id]).filter(Boolean);
    const episodeId=episodeIds[0]||null;
-   if(level==='moment')add('moment',node.id,node,episodeId);
+
    if(level==='moment'||level==='scene')add('scene',sceneId,node,episodeId);
    for(const id of episodeIds)add('episode',id,node);
   }
   return [...buckets.values()]
+   .filter(group=>group.kind==='episode'?group.sceneIds.size>1:group.momentIds.size>1)
    .sort((a,b)=>rank[a.kind]-rank[b.kind]||a.key.localeCompare(b.key))
    .map(group=>({...group,parts:group.nodes.length?[group.nodes]:[]}));
  },
@@ -115,21 +117,27 @@ const StoryClouds = {
   return loops;
  },
  create(canvas){
-  const context=canvas?.getContext?.('2d');if(!context)return {update(){},scroll(){}};
+  const context=canvas?.getContext?.('2d');if(!context)return {update(){},scroll(){},refresh(){},setPaused(){}};
   const motion=window.matchMedia('(prefers-reduced-motion: reduce)'),contrast=window.matchMedia('(prefers-contrast: more)'),transparency=window.matchMedia('(prefers-reduced-transparency: reduce)');
   let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,paused:false},frame=null,last=0,phase=0;
+  const geometry=new Map();
   const stop=()=>{if(frame!==null)cancelAnimationFrame(frame);frame=null;};
   const draw=()=>{
    const dpr=Math.min(window.devicePixelRatio||1,2),width=Math.round(state.width*dpr),height=Math.round(state.height*dpr);
    if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
    context.setTransform(dpr,0,0,dpr,0,-state.scrollTop*dpr);context.clearRect(0,state.scrollTop,state.width,state.height);
    for(const group of state.groups){
-    const own=new Set(group.nodes.map(n=>n.id)),foreign=group.kind==='moment'?state.nodes.filter(n=>!own.has(n.id)):[],radius=group.kind==='episode'?70:group.kind==='scene'?48:25,colors=StoryClouds.palette(group.kind,group.key);
+    const own=new Set(group.nodes.map(n=>n.id)),foreign=group.kind==='moment'?state.nodes.filter(n=>!own.has(n.id)):[],radius=group.kind==='episode'?70:group.kind==='scene'?48:25,colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.key),group.kind,group.key),group.kind,group.key);
     for(const part of group.parts){
      const minY=Math.min(...part.map(n=>n.y))-radius*2.4,maxY=Math.max(...part.map(n=>n.y))+radius*2.4;
      if(maxY<state.scrollTop||minY>state.scrollTop+state.height)continue;
-     const contours=StoryClouds.contours(part,foreign,radius,phase,group.kind==='moment'?6:8,group.kind),path=new Path2D();
-     for(const loop of contours){const last=loop.at(-1),first=loop[0];path.moveTo((last.x+first.x)/2,(last.y+first.y)/2);loop.forEach((p,i)=>{const next=loop[(i+1)%loop.length];path.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);});path.closePath();}
+     let shape=geometry.get(part);
+     if(!shape||shape.phase!==phase){
+      const contours=StoryClouds.contours(part,foreign,radius,phase,group.kind==='moment'?6:8,group.kind),path=new Path2D();
+      for(const loop of contours){const last=loop.at(-1),first=loop[0];path.moveTo((last.x+first.x)/2,(last.y+first.y)/2);loop.forEach((p,i)=>{const next=loop[(i+1)%loop.length];path.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);});path.closePath();}
+      shape={path,phase};geometry.set(part,shape);
+     }
+     const path=shape.path;
      const gradient=context.createLinearGradient(0,minY,0,maxY);gradient.addColorStop(0,colors.top);gradient.addColorStop(1,colors.bottom);
      context.globalAlpha=colors.alpha;context.fillStyle=contrast.matches?'rgba(222,224,228,.82)':gradient;context.fill(path,'evenodd');
      context.strokeStyle=contrast.matches?'#858b94':colors.stroke;context.lineWidth=group.kind==='moment'?.8:1;context.stroke(path);
@@ -140,16 +148,16 @@ const StoryClouds = {
   };
   const animate=time=>{
    frame=null;if(document.visibilityState==='hidden'||motion.matches||transparency.matches||state.paused||!state.groups.length)return;
-   if(time-last>=100){phase=time/14000;draw();last=time;}frame=requestAnimationFrame(animate);
+   if(time-last>=100){phase=time/14000;draw();last=performance.now();}frame=requestAnimationFrame(animate);
   };
-  const resume=()=>{stop();draw();if(!motion.matches&&!transparency.matches&&!state.paused&&document.visibilityState!=='hidden'&&state.groups.length)frame=requestAnimationFrame(animate);};
+  const resume=()=>{stop();if(document.visibilityState==='hidden')return;draw();last=performance.now();if(!motion.matches&&!transparency.matches&&!state.paused&&state.groups.length)frame=requestAnimationFrame(animate);};
   for(const preference of [motion,contrast,transparency])preference.addEventListener?.('change',resume);
   document.addEventListener('visibilitychange',resume);
-  return {update(next){state={...state,...next};if(motion.matches||transparency.matches)phase=0;resume();},scroll(scrollTop){state.scrollTop=scrollTop;draw();}};
+  return {
+   update(next){if(next.groups&&next.groups!==state.groups)geometry.clear();state={...state,...next};if(motion.matches||transparency.matches)phase=0;resume();},
+   scroll(scrollTop){state.scrollTop=scrollTop;draw();},refresh(){draw();},
+   setPaused(paused){if(state.paused===paused)return;state.paused=paused;resume();}
+  };
  }
 };
 if(typeof module!=='undefined')module.exports=StoryClouds;
-
-// Strands are shaped by their own participation anchors only. Unrelated story
-// nodes must not bend a line and visually imply that the character was there.
-if(typeof TimelineCore!=='undefined')TimelineCore.avoid=(route)=>route;

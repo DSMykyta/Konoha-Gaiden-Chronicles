@@ -1,16 +1,9 @@
 'use strict';
 
-(() => {
-  if (typeof StoryClouds === 'undefined') return;
+const StoryTitleScale = (() => {
 
   const LEVEL_LABELS = {moment: 'Момент', scene: 'Сцена', episode: 'Епізод'};
   const LEVELS = Object.keys(LEVEL_LABELS);
-  const LARGE_MIN = 96;
-  const SMALL_MIN = 76;
-  const MAX_WIDTH = 190;
-  const GAP = 6;
-  const localClamp = (value, min, max) => Math.max(min, Math.min(max, value));
-  const basePalette = StoryClouds.palette.bind(StoryClouds);
 
   window.__storyScaleFocus = {
     active: false,
@@ -21,179 +14,13 @@
     cloudKeys: new Set()
   };
 
-  StoryClouds.palette = function storyScalePalette(kind, key) {
-    const colors = basePalette(kind, key);
-    const focus = window.__storyScaleFocus;
-    if (!focus?.active) return colors;
-    if (focus.cloudKeys instanceof Set && focus.cloudKeys.has(key)) {
-      return {...colors, alpha: Math.min(1, Math.max(colors.alpha, focus.mode === 'fixed' ? .88 : .78))};
-    }
-    return {...colors, alpha: colors.alpha * (focus.mode === 'fixed' ? .025 : .13)};
-  };
-
-  const baseCreate = StoryClouds.create.bind(StoryClouds);
-  StoryClouds.create = function createStoryScaleCloudRenderer(canvas) {
-    const renderer = baseCreate(canvas);
-    let lastUpdate = null;
-    const api = {
-      update(next) {
-        lastUpdate = {...(lastUpdate || {}), ...next};
-        StoryClouds.__lastUpdate = lastUpdate;
-        return renderer.update(next);
-      },
-      scroll(scrollTop) {
-        if (lastUpdate) lastUpdate.scrollTop = scrollTop;
-        return renderer.scroll(scrollTop);
-      },
-      refresh() {
-        if (lastUpdate) return renderer.update(lastUpdate);
-      }
-    };
-    StoryClouds.__storyLabelRenderer = api;
-    return api;
-  };
-
-  const style = document.createElement('style');
-  style.textContent = `
-    .time-axis { bottom: calc(70px + env(safe-area-inset-bottom)) !important; }
-    #timeline .cloud-label,
-    #timeline .story-scale-label,
-    #timeline .moment-inline-label { display: none !important; }
-
-    .story-title-scale {
-      position: fixed;
-      z-index: var(--z-chrome);
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: calc(76px + env(safe-area-inset-bottom));
-      padding-bottom: env(safe-area-inset-bottom);
-      border-top: 1px solid #dfe3e8c7;
-      background: linear-gradient(180deg,#f8fafbd9,#f5f6f8f5 34%,#f5f6f8 100%);
-      -webkit-backdrop-filter: blur(16px);
-      backdrop-filter: blur(16px);
-      overflow: hidden;
-    }
-    .story-title-level {
-      position: absolute;
-      z-index: 5;
-      top: 20px;
-      left: max(12px,env(safe-area-inset-left));
-      width: 102px;
-      height: 34px;
-      padding: 0 28px 0 10px;
-      border: 1px solid #d6dbe2;
-      border-radius: 9px;
-      background: #ffffffed;
-      box-shadow: 0 1px 4px #27364c0b;
-      color: #3f4854;
-      font-size: 11px;
-      font-weight: 700;
-      appearance: auto;
-      cursor: pointer;
-    }
-    .story-title-track {
-      position: absolute;
-      inset: 0;
-      overflow: visible;
-      pointer-events: none;
-    }
-    .story-title-slot {
-      position: absolute;
-      top: 0;
-      height: 76px;
-      overflow: visible;
-      pointer-events: none;
-    }
-    .story-title-slot::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: var(--story-anchor,50%);
-      width: 1px;
-      height: 10px;
-      background: #aeb6c1;
-      transform: translateX(-.5px);
-      opacity: .82;
-    }
-    .story-title-label {
-      position: absolute;
-      inset: 11px 3px 4px;
-      display: -webkit-box;
-      width: calc(100% - 6px);
-      height: 60px;
-      min-width: 0;
-      padding: 6px 7px;
-      overflow: hidden;
-      border-radius: 7px;
-      color: #4a5461;
-      background: transparent;
-      text-align: left;
-      white-space: normal;
-      text-overflow: clip;
-      overflow-wrap: anywhere;
-      word-break: normal;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      font-size: 10.5px;
-      font-weight: 560;
-      line-height: 1.35;
-      cursor: pointer;
-      pointer-events: auto;
-      transition: opacity 150ms ease, background 150ms ease, color 150ms ease, box-shadow 150ms ease;
-    }
-    .story-title-label:hover,
-    .story-title-label:focus-visible,
-    .story-title-label.is-active {
-      z-index: 4;
-      color: #20262e;
-      background: #fffffff0;
-      box-shadow: 0 2px 9px #27364c12;
-    }
-    .story-title-scale.is-hovering .story-title-label:not(.is-active) { opacity: .16; }
-    .story-title-scale.is-fixed .story-title-label:not(.is-active) {
-      opacity: 0;
-      pointer-events: none;
-    }
-    .story-title-label.is-active { font-weight: 760; }
-
-    #timeline .thread,
-    #timeline .node,
-    #timeline .line-label,
-    #timeline .thread-hit,
-    #timeline .node-hit { transition: opacity 150ms ease; }
-    #timeline .is-story-scale-hover-muted { opacity: .1 !important; }
-    #timeline .is-story-scale-fixed-hidden { opacity: 0 !important; pointer-events: none !important; }
-    #timeline .thread-hit.is-story-scale-hover-muted,
-    #timeline .node-hit.is-story-scale-hover-muted { pointer-events: none; }
-
-    @media (min-width: 1400px) {
-      .story-title-label { font-size: 11px; }
-    }
-    @media (max-width: 760px) {
-      .time-axis { bottom: calc(66px + env(safe-area-inset-bottom)) !important; }
-      .story-title-scale { height: calc(72px + env(safe-area-inset-bottom)); }
-      .story-title-level { width: 90px; top: 18px; left: 8px; padding-left: 8px; font-size: 10px; }
-      .story-title-slot { height: 72px; }
-      .story-title-label { height: 56px; padding-inline: 5px; font-size: 9.5px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .story-title-label,
-      #timeline .thread,
-      #timeline .node,
-      #timeline .line-label,
-      #timeline .thread-hit,
-      #timeline .node-hit { transition: none; }
-    }
-  `;
-  document.head.append(style);
-
   let scaleLevel = null;
   let hoverKey = null;
   let fixedKey = null;
+  let hoverSuspended = false;
+  let pointerPosition = null;
+  let dismissedPointer = null;
   let currentItems = new Map();
-  let scheduled = false;
-  let applying = false;
   let scaleRoot = null;
   let scaleTrack = null;
   let levelSelect = null;
@@ -268,97 +95,16 @@
     return items;
   }
 
-  function preferredWidth(title, minimum) {
-    const length = String(title || '').trim().length;
-    return Math.max(minimum, Math.min(MAX_WIDTH, 74 + Math.sqrt(Math.max(1, length)) * 15));
-  }
-
-  function packReadable(entries, width) {
-    if (!entries.length) return [];
-    const compact = width <= 760;
-    const leftBound = compact ? 104 : 122;
-    const rightBound = width - (compact ? 6 : 10);
-    const available = Math.max(1, rightBound - leftBound);
-    const minimum = compact ? SMALL_MIN : LARGE_MIN;
-    let widths = entries.map(entry => preferredWidth(entry.title, minimum));
-    const gaps = GAP * Math.max(0, entries.length - 1);
-    const preferredTotal = widths.reduce((sum, itemWidth) => sum + itemWidth, 0) + gaps;
-
-    if (preferredTotal > available) {
-      const usable = Math.max(1, available - gaps);
-      const idealTotal = widths.reduce((sum, itemWidth) => sum + itemWidth, 0);
-      const scale = usable / idealTotal;
-      const hardFloor = Math.max(compact ? 54 : 66, usable / entries.length * .78);
-      widths = widths.map(itemWidth => Math.max(hardFloor, itemWidth * scale));
-      const total = widths.reduce((sum, itemWidth) => sum + itemWidth, 0);
-      if (total > usable) {
-        const secondScale = usable / total;
-        widths = widths.map(itemWidth => itemWidth * secondScale);
-      }
-    }
-
-    const positions = [];
-    let cursor = leftBound;
-    for (let i = 0; i < entries.length; i++) {
-      const itemWidth = widths[i];
-      const desired = entries[i].x - itemWidth / 2;
-      const left = Math.max(cursor, desired);
-      positions.push(left);
-      cursor = left + itemWidth + GAP;
-    }
-
-    const end = positions.at(-1) + widths.at(-1);
-    if (end > rightBound) {
-      let right = rightBound;
-      for (let i = entries.length - 1; i >= 0; i--) {
-        positions[i] = Math.min(positions[i], right - widths[i]);
-        right = positions[i] - GAP;
-      }
-    }
-
-    if (positions[0] < leftBound) {
-      const shift = leftBound - positions[0];
-      for (let i = 0; i < positions.length; i++) positions[i] += shift;
-    }
-
-    const finalEnd = positions.at(-1) + widths.at(-1);
-    if (finalEnd > rightBound) {
-      const shift = finalEnd - rightBound;
-      for (let i = 0; i < positions.length; i++) positions[i] -= shift;
-    }
-
-    return entries.map((entry, index) => ({
-      ...entry,
-      slotLeft: positions[index],
-      slotWidth: widths[index],
-      anchor: ((entry.x - positions[index]) / Math.max(1, widths[index])) * 100
-    }));
-  }
-
   function layoutItems(items) {
-    const canvas = document.getElementById('canvas');
-    const width = canvas?.clientWidth || window.innerWidth || 1000;
-    const pad = width < 600 ? 22 : 48;
-    const plot = Math.max(1, width - pad * 2);
-    if (typeof range !== 'function' || typeof makeTimeScale !== 'function' || typeof datedEvents !== 'function') return [];
     const [lo, hi] = range();
-    const dated = datedEvents();
-    const timeScale = makeTimeScale(lo, hi, pad, plot, dated);
-
-    const visible = items
-      .filter(item => {
-        const axis = dayToAxis(item.day, dated);
-        return axis >= lo && axis < hi;
-      })
-      .map(item => ({...item, x:timeScale.px(item.day)}))
-      .sort((a,b) => a.x-b.x || a.key.localeCompare(b.key));
-
-    return packReadable(visible, width);
+    return items.filter(item => { const axis=dayToAxis(item.day); return axis>=lo&&axis<hi; })
+      .sort((a,b)=>a.day-b.day||a.key.localeCompare(b.key));
   }
 
   function ensureScale() {
     if (scaleRoot?.isConnected) return;
     scaleRoot = document.createElement('section');
+    document.addEventListener('pointermove', event => { pointerPosition = { x:event.clientX, y:event.clientY }; });
     scaleRoot.id = 'storyTitleScale';
     scaleRoot.className = 'story-title-scale';
     scaleRoot.setAttribute('aria-label', 'Шкала назв хронології');
@@ -377,6 +123,7 @@
       scaleLevel = levelSelect.value;
       hoverKey = null;
       fixedKey = null;
+      hoverSuspended = false;
       clearStoryFocus();
       renderScale();
     });
@@ -417,10 +164,25 @@
   }
 
   function lineLabelCharacterId(element) {
+    if (element.dataset.character) return element.dataset.character;
     const text = element.textContent.trim();
     if (typeof entityMap === 'undefined' || !entityMap) return null;
     for (const id of entityMap.keys()) if (name(id) === text || fullName(id) === text) return id;
     return null;
+  }
+
+  function scopeVisibility(element, hidden) {
+    if (hidden) {
+      if (element.hasAttribute('tabindex') && element.dataset.storyTabindex === undefined) element.dataset.storyTabindex = element.getAttribute('tabindex');
+      if (element.hasAttribute('tabindex')) element.setAttribute('tabindex', '-1');
+      element.setAttribute('aria-hidden', 'true');
+      element.dataset.storyHidden = 'true';
+    } else if (element.dataset.storyHidden) {
+      if (element.dataset.storyTabindex !== undefined) { element.setAttribute('tabindex', element.dataset.storyTabindex); delete element.dataset.storyTabindex; }
+      element.removeAttribute('aria-hidden');
+      delete element.dataset.storyHidden;
+    }
+    if (element.classList.contains('story-title-label')) element.inert = hidden;
   }
 
   function applyDomFocus(item, mode) {
@@ -444,41 +206,49 @@
       const related = nodeIds.has(element.dataset.event);
       element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
       element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+      scopeVisibility(element, fixed && !related);
     });
     timeline.querySelectorAll('.node-hit').forEach(element => {
       const related = nodeIds.has(element.dataset.nodeId);
       element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
       element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+      scopeVisibility(element, fixed && !related);
     });
-    timeline.querySelectorAll('.thread,.thread-hit').forEach(element => {
-      const related = characterIds.has(element.dataset.character);
+    timeline.querySelectorAll('.thread,.thread-hit,.focus-guest-entry').forEach(element => {
+      const related = characterIds.has(element.dataset.character) && (!element.dataset.nodeId || nodeIds.has(element.dataset.nodeId));
       element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
       element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+      scopeVisibility(element, fixed && !related);
     });
     timeline.querySelectorAll('.line-label').forEach(element => {
       const id = lineLabelCharacterId(element);
       const related = id ? characterIds.has(id) : false;
       element.classList.toggle('is-story-scale-hover-muted', !fixed && !related);
       element.classList.toggle('is-story-scale-fixed-hidden', fixed && !related);
+      scopeVisibility(element, fixed && !related);
     });
 
     scaleRoot?.classList.toggle('is-hovering', !fixed);
     scaleRoot?.classList.toggle('is-fixed', fixed);
     scaleRoot?.querySelectorAll('.story-title-label').forEach(label => {
       label.classList.toggle('is-active', label.dataset.storyKey === item.key);
+      scopeVisibility(label, fixed && label.dataset.storyKey !== item.key);
     });
-    StoryClouds.__storyLabelRenderer?.refresh();
+    updateFocusBar();
+    cloudRenderer?.refresh();
   }
 
   function clearDomFocusClasses() {
     document.querySelectorAll('#timeline .is-story-scale-hover-muted,#timeline .is-story-scale-fixed-hidden').forEach(element => {
       element.classList.remove('is-story-scale-hover-muted','is-story-scale-fixed-hidden');
+      scopeVisibility(element, false);
     });
     scaleRoot?.classList.remove('is-hovering','is-fixed');
-    scaleRoot?.querySelectorAll('.story-title-label.is-active').forEach(label => label.classList.remove('is-active'));
+    scaleRoot?.querySelectorAll('.story-title-label').forEach(label => { label.classList.remove('is-active'); scopeVisibility(label, false); });
   }
 
   function clearStoryFocus() {
+    if (!window.__storyScaleFocus.active) return;
     clearDomFocusClasses();
     window.__storyScaleFocus = {
       active:false,
@@ -488,7 +258,8 @@
       characterIds:new Set(),
       cloudKeys:new Set()
     };
-    StoryClouds.__storyLabelRenderer?.refresh();
+    updateFocusBar();
+    cloudRenderer?.refresh();
   }
 
   function focusItem(item, mode) {
@@ -496,33 +267,40 @@
     applyDomFocus(item, mode);
   }
 
-  function bindLabel(button, item) {
-    const activateHover = () => {
+  function bindLabel(button, key) {
+    const current = () => currentItems.get(key);
+    const activateHover = event => {
       if (fixedKey) return;
-      hoverKey = item.key;
+      if (hoverSuspended && event.type !== 'focus' && dismissedPointer && event.clientX === dismissedPointer.x && event.clientY === dismissedPointer.y) return;
+      hoverSuspended = false;
+      const item = current(); if (!item) return;
+      hoverKey = key;
       focusItem(item,'hover');
     };
     const deactivateHover = () => {
-      if (fixedKey || hoverKey !== item.key) return;
+      if (fixedKey || hoverKey !== key) return;
       hoverKey = null;
       clearStoryFocus();
     };
-    button.addEventListener('pointerenter',activateHover);
+    button.addEventListener('pointerenter', event => { if (canHover(event)) activateHover(event); });
+    button.addEventListener('pointermove', event => { if (hoverSuspended && canHover(event)) activateHover(event); });
     button.addEventListener('pointerleave',deactivateHover);
-    button.addEventListener('focus',activateHover);
+    button.addEventListener('focus', event => { if (document.documentElement.dataset.input === 'keyboard') activateHover(event); });
     button.addEventListener('blur',deactivateHover);
     button.addEventListener('click',event => {
+      const item = current(); if (!item) return;
       event.preventDefault();
       event.stopPropagation();
       hoverKey = null;
       if (fixedKey === item.key) {
-        fixedKey = null;
-        clearStoryFocus();
+        StoryTitleScale.clear();
         return;
       }
       if (typeof closeCard === 'function' && document.getElementById('eventCard') && !document.getElementById('eventCard').hidden) closeCard();
       fixedKey = item.key;
+      hoverSuspended = false;
       focusItem(item,'fixed');
+      focusViewport(item.kind, item.id);
     });
   }
 
@@ -534,28 +312,32 @@
 
     const items = layoutItems(buildItems(scaleLevel));
     currentItems = new Map(items.map(item => [item.key,item]));
-    scaleTrack.replaceChildren();
-
+    const previous = new Map([...scaleTrack.children].map(slot => [slot.dataset.key, slot]));
+    previous.forEach((slot, key) => { if (!currentItems.has(key)) { slot.remove(); previous.delete(key); } });
+    let cursor = scaleTrack.firstChild;
     for (const item of items) {
-      const slot = document.createElement('div');
-      slot.className = 'story-title-slot';
-      slot.style.left = `${item.slotLeft}px`;
-      slot.style.width = `${item.slotWidth}px`;
-      slot.style.setProperty('--story-anchor',`${item.anchor}%`);
-
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'story-title-label';
-      button.dataset.storyKey = item.key;
-      button.title = item.title;
-      button.textContent = item.title;
-      button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);
-      bindLabel(button,item);
-      slot.append(button);
-      scaleTrack.append(slot);
+      let slot = previous.get(item.key);
+      previous.delete(item.key);
+      if (!slot) {
+        slot = document.createElement('div');
+        slot.className = 'story-title-slot';
+        slot.dataset.key = item.key;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'story-title-label';
+        button.dataset.storyKey = item.key;
+        button.textContent = item.title;
+        button.dataset.tooltip = item.title;
+        button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);
+        bindLabel(button, item.key);
+        slot.append(button);
+      }
+      if (slot !== cursor) scaleTrack.insertBefore(slot, cursor);
+      cursor = slot.nextSibling;
+      const button=slot.querySelector('button');
+      if(button.textContent!==item.title){button.textContent=item.title;button.dataset.tooltip=item.title;button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);}
     }
-
-    document.querySelectorAll('#timeline .cloud-label,#timeline .story-scale-label,#timeline .moment-inline-label').forEach(node => node.remove());
+    previous.forEach(slot => slot.remove());
 
     const activeKey = fixedKey || hoverKey;
     if (activeKey) {
@@ -569,45 +351,83 @@
     } else clearStoryFocus();
   }
 
-  function scheduleRenderScale() {
-    if (scheduled) return;
-    scheduled = true;
-    requestAnimationFrame(() => {
-      scheduled = false;
-      if (applying) return;
-      applying = true;
-      try { renderScale(); }
-      finally { applying = false; }
-    });
-  }
+  const MIN_VIEW_DAYS = {
+    episode: 2.5,
+    scene: 1,
+    moment: .65
+  };
+  const PADDING = {
+    episode: 1.4,
+    scene: 1.25,
+    moment: 1
+  };
+  const MAX_ZOOM = 730;
 
-  function init() {
-    ensureScale();
-    scaleLevel = currentSemanticLevel();
-    levelSelect.value = scaleLevel;
+  function chronologyPositions(kind, id) {
+    if (typeof orderedScenes !== 'function') return [];
+    const scenes = orderedScenes().filter(scene => scene.day !== null);
 
-    const timeline = document.getElementById('timeline');
-    if (timeline) new MutationObserver(scheduleRenderScale).observe(timeline,{childList:true});
-
-    if (typeof render === 'function') {
-      const baseRender = render;
-      render = function renderWithStoryTitleScale() {
-        const result = baseRender.apply(this,arguments);
-        scheduleRenderScale();
-        return result;
-      };
+    if (kind === 'episode') {
+      return scenes
+        .filter(scene => sceneMap?.get(scene.id)?.episode_id === id)
+        .map(scene => scene.position ?? scene.day + .5)
+        .filter(Number.isFinite);
     }
 
-    document.addEventListener('keydown',event => {
-      if (event.key !== 'Escape' || !fixedKey) return;
-      fixedKey = null;
-      hoverKey = null;
-      clearStoryFocus();
-    });
-    window.addEventListener('resize',scheduleRenderScale);
-    scheduleRenderScale();
+    if (kind === 'scene') {
+      const scene = scenes.find(item => item.id === id);
+      const position = scene?.position ?? (scene?.day !== null && scene?.day !== undefined ? scene.day + .5 : null);
+      return Number.isFinite(position) ? [position] : [];
+    }
+
+    if (kind === 'moment') {
+      if (typeof semanticNodes === 'function') {
+        const node = semanticNodes('moment', scenes).find(item => item.id === id);
+        if (Number.isFinite(node?.day)) return [node.day];
+      }
+      const event = eventMap?.get(id);
+      return Number.isFinite(event?.day) ? [event.day + .5] : [];
+    }
+
+    return [];
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
-  else init();
+  function focusViewport(kind, id) {
+    if (!MIN_VIEW_DAYS[kind]) return;
+    if (typeof dayToAxis !== 'function' || typeof clampAxisCenter !== 'function' || typeof render !== 'function') return;
+
+    const positions = chronologyPositions(kind, id);
+    if (!positions.length) return;
+
+    const axes = positions.map(day => dayToAxis(day)).filter(Number.isFinite);
+    if (!axes.length) return;
+
+    const first = Math.min(...axes);
+    const last = Math.max(...axes);
+    const span = Math.max(0, last - first);
+    const visibleSpan = Math.max(MIN_VIEW_DAYS[kind], span * PADDING[kind]);
+    const desiredZoom = Math.min(MAX_ZOOM, 365 / Math.max(.5, visibleSpan));
+
+    zoom = Math.min(MAX_ZOOM, Math.max(zoom, desiredZoom));
+    center = clampAxisCenter((first + last) / 2, zoom);
+
+    const canvas = document.getElementById('canvas');
+    if (canvas) canvas.scrollTop = 0;
+    render();
+  }
+
+
+  return {
+    update: renderScale,
+    clear() { hoverSuspended = true; dismissedPointer = pointerPosition; fixedKey = null; hoverKey = null; clearStoryFocus(); },
+    escape() { if (!fixedKey) return false; this.clear(); return true; },
+    dismissTransient() { if (!fixedKey) this.clear(); },
+    allows(event) { return window.__storyScaleFocus.mode !== 'fixed' || window.__storyScaleFocus.eventIds.has(event.id); },
+    palette(colors, kind, key) {
+      const focus = window.__storyScaleFocus;
+      if (!focus?.active) return colors;
+      if (focus.cloudKeys.has(key)) return {...colors, alpha: Math.min(1, Math.max(colors.alpha, focus.mode === 'fixed' ? .88 : .78))};
+      return {...colors, alpha: colors.alpha * (focus.mode === 'fixed' ? .025 : .13)};
+    }
+  };
 })();

@@ -7,14 +7,16 @@
     "prestart": "npm run build",
     "start": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node --check public/app.js && node --check public/story-clouds.js && node --check public/hierarchy-preview.js && node --check public/timeline-core.js && node --check public/relations.js && node --check scripts/build.mjs && node --check scripts/enrichment.mjs && node --check scripts/media.mjs && node --check scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
     "media": "node scripts/media.mjs",
-    "test": "npm run build && node tests/interface.cjs && node --test tests/*.test.mjs"
+    "test": "npm run build && node tests/interface.cjs && node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs"
   },
   "dependencies": {
     "yaml": "2.8.1"
   },
   "devDependencies": {
-    "linkedom": "0.18.12"
+    "linkedom": "0.18.12",
+    "playwright": "1.62.1"
   }
 }

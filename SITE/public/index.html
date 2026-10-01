@@ -6,117 +6,21 @@
   <meta name="theme-color" content="#f5f6f8">
   <meta name="description" content="Хронологія Конохи: стеж за персонажами, досліджуй події та читай сцени Naruto.">
   <title>Коноха · Хронологія</title>
-  <link rel="stylesheet" href="style.css?v=20261001-glass-1">
-  <link rel="stylesheet" href="profile-dossier.css?v=20261001-dossier-1">
-  <style id="button-components">
-    /* Compact icon controls: one component, 32px control / 16px glyph. */
-    :is(.close,.card-arrow,.card-open-scene,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) {
-      display: grid !important;
-      place-items: center !important;
-      flex: 0 0 32px !important;
-      width: 32px !important;
-      min-width: 32px !important;
-      max-width: 32px !important;
-      height: 32px !important;
-      min-height: 32px !important;
-      max-height: 32px !important;
-      padding: 0 !important;
-      border: 1px solid rgba(255,255,255,.92) !important;
-      border-radius: 99px !important;
-      background: linear-gradient(145deg,rgba(255,255,255,.76),rgba(225,234,245,.38)) !important;
-      -webkit-backdrop-filter: blur(14px) saturate(1.16) !important;
-      backdrop-filter: blur(14px) saturate(1.16) !important;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.98), inset 0 -1px 0 rgba(132,148,169,.12), 0 4px 12px rgba(42,54,70,.10) !important;
-      color: #647080;
-      font-size: 16px !important;
-      line-height: 1 !important;
-      transform: none !important;
-      transition: background .14s ease,border-color .14s ease,box-shadow .14s ease,color .14s ease,opacity .14s ease !important;
-    }
-    :is(.close,.card-arrow,.card-open-scene,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) svg {
-      width: 16px !important;
-      height: 16px !important;
-    }
-    :is(.close,.card-arrow,.card-open-scene,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):hover {
-      border-color: #fff !important;
-      background: linear-gradient(145deg,rgba(255,255,255,.94),rgba(225,234,245,.54)) !important;
-      box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(125,143,166,.14), 0 5px 15px rgba(42,54,70,.14) !important;
-      color: var(--text);
-      transform: none !important;
-    }
-    :is(.close,.card-arrow,.card-open-scene,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):active {
-      background: linear-gradient(145deg,rgba(229,237,246,.55),rgba(255,255,255,.76)) !important;
-      box-shadow: inset 0 2px 4px rgba(54,67,84,.12),0 1px 4px rgba(42,54,70,.06) !important;
-      transform: none !important;
-    }
-
-    /* Top-level text controls: glass pills, not icon circles. */
-    :is(#linesButton,#searchButton,#periodButton) {
-      border: 1px solid rgba(255,255,255,.88);
-      border-radius: 99px;
-      background: linear-gradient(145deg,rgba(255,255,255,.66),rgba(225,234,245,.30));
-      -webkit-backdrop-filter: blur(14px) saturate(1.14);
-      backdrop-filter: blur(14px) saturate(1.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.94),0 3px 10px rgba(42,54,70,.08);
-      transition: background .14s ease,border-color .14s ease,box-shadow .14s ease,color .14s ease;
-    }
-    :is(#linesButton,#searchButton,#periodButton):not(:disabled):hover,
-    :is(#linesButton,#searchButton,#periodButton)[aria-expanded="true"] {
-      border-color: #fff;
-      background: linear-gradient(145deg,rgba(255,255,255,.88),rgba(225,234,245,.48));
-      box-shadow: inset 0 1px 0 #fff,0 4px 13px rgba(42,54,70,.11);
-    }
-
-    /* Character chips: same character color, 20% glass fill / 100% label. */
-    .person {
-      --person-color: var(--accent);
-      gap: 0 !important;
-      border: 1px solid color-mix(in srgb,var(--person-color) 32%,transparent) !important;
-      border-radius: 99px !important;
-      background: color-mix(in srgb,var(--person-color) 20%,transparent) !important;
-      color: var(--person-color) !important;
-      -webkit-backdrop-filter: blur(12px) saturate(1.14);
-      backdrop-filter: blur(12px) saturate(1.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.72), inset 0 -1px 0 color-mix(in srgb,var(--person-color) 12%,transparent), 0 2px 7px rgba(39,54,76,.07);
-      text-shadow: 0 1px 0 rgba(255,255,255,.44);
-      transition: border-color .14s ease,box-shadow .14s ease,transform .14s ease !important;
-    }
-    .person > .swatch { display: none !important; }
-    .person:has(> .swatch[style*="#3f80cf"]) { --person-color: #3f80cf; }
-    .person:has(> .swatch[style*="#cb833e"]) { --person-color: #cb833e; }
-    .person:has(> .swatch[style*="#7462bc"]) { --person-color: #7462bc; }
-    .person:has(> .swatch[style*="#ba6487"]) { --person-color: #ba6487; }
-    .person:has(> .swatch[style*="#358b96"]) { --person-color: #358b96; }
-    .person:has(> .swatch[style*="#7d9953"]) { --person-color: #7d9953; }
-    .person:has(> .swatch[style*="#b89442"]) { --person-color: #b89442; }
-    .person:has(> .swatch[style*="#6687b5"]) { --person-color: #6687b5; }
-    .person:has(> .swatch[style*="#ab7cba"]) { --person-color: #ab7cba; }
-    .person:has(> .swatch[style*="#67877d"]) { --person-color: #67877d; }
-    .person:has(> .swatch[style*="#b97a73"]) { --person-color: #b97a73; }
-    .person:has(> .swatch[style*="#8b91a1"]) { --person-color: #8b91a1; }
-    .person:not(:disabled):hover {
-      background: color-mix(in srgb,var(--person-color) 20%,transparent) !important;
-      border-color: color-mix(in srgb,var(--person-color) 46%,transparent) !important;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.88), inset 0 -1px 0 color-mix(in srgb,var(--person-color) 16%,transparent), 0 4px 11px color-mix(in srgb,var(--person-color) 15%,transparent) !important;
-      color: var(--person-color) !important;
-      transform: translateY(-1px) !important;
-    }
-    .person:not(:disabled):active {
-      background: color-mix(in srgb,var(--person-color) 20%,transparent) !important;
-      box-shadow: inset 0 2px 4px color-mix(in srgb,var(--person-color) 18%,transparent), inset 0 -1px 0 rgba(255,255,255,.5) !important;
-      color: var(--person-color) !important;
-      transform: translateY(0) scale(.98) !important;
-    }
-  </style>
-  <script defer src="relations.js?v=20261001-glass-1"></script>
-  <script defer src="timeline-core.js?v=20261001-glass-1"></script>
-  <script defer src="story-clouds.js?v=20261001-glass-1"></script>
-  <script defer src="story-label-scale.js?v=20261001-story-scale-2"></script>
-  <script defer src="app.js?v=20261001-glass-1"></script>
-  <script defer src="hover-delay.js?v=20261001-hover-delay-3"></script>
-  <script defer src="hierarchy-preview.js?v=20261001-glass-2"></script>
-  <script defer src="selection-focus.js?v=20261001-selection-focus-2"></script>
-  <script defer src="story-focus-zoom.js?v=20261001-story-focus-1"></script>
+  <link rel="stylesheet" href="style.css?v=20261001-ui-stable-1">
+  <link rel="stylesheet" href="profile-dossier.css?v=20261001-ui-stable-1">
+  <link rel="stylesheet" href="controls.css?v=20261001-ui-stable-1">
+  <link rel="stylesheet" href="panels.css?v=20261001-ui-stable-1">
+  <link rel="stylesheet" href="focus.css?v=20261001-ui-stable-1">
+  <link rel="stylesheet" href="story-labels.css?v=20261001-ui-stable-1">
+  <script defer src="relations.js?v=20261001-ui-stable-1"></script>
+  <script defer src="timeline-core.js?v=20261001-ui-stable-1"></script>
+  <script defer src="interaction-core.js?v=20261001-ui-stable-1"></script>
+  <script defer src="story-clouds.js?v=20261001-ui-stable-1"></script>
+  <script defer src="selection-focus.js?v=20261001-ui-stable-1"></script>
+  <script defer src="story-label-scale.js?v=20261001-ui-stable-1"></script>
+  <script defer src="hierarchy-preview.js?v=20261001-ui-stable-1"></script>
+  <script defer src="profile-techniques.js?v=20261001-ui-stable-1"></script>
+  <script defer src="app.js?v=20261001-ui-stable-1"></script>
 </head>
 <body>
   <header class="masthead">
@@ -178,7 +82,6 @@
   <div id="focusBar" class="focus-bar" aria-label="Події обраного персонажа" hidden><button id="focusPrevious" aria-label="Попередня подія персонажа">‹</button><button id="focusName" aria-label="Відкрити профіль персонажа"></button><span id="focusPosition"></span><button id="focusNext" aria-label="Наступна подія персонажа">›</button><button id="clearFocus" aria-label="Зняти фокус">×</button></div>
 
 
-  <div id="hoverTip" class="hover-tip" role="tooltip" hidden></div>
   <section id="eventCard" class="event-card" role="dialog" aria-label="Подія" hidden><div id="cardContent"><div id="cardHeader"></div><div id="cardScroll"></div></div></section>
   <dialog id="profileDialog" class="profile-dialog" aria-labelledby="profileTitle" hidden>
     <div class="profile-heading"><div><small>Досьє персонажа</small><h2 id="profileTitle"></h2></div><button id="closeProfile" class="close" aria-label="Закрити профіль">×</button></div>

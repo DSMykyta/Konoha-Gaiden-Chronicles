@@ -1,0 +1,190 @@
+/* Reading surfaces and hierarchy rows use one component system. */
+
+#cardHeader,
+#cardScroll,
+.hierarchy-preview-content {
+  background: transparent;
+}
+#cardHeader { flex: none; }
+#cardContent,
+.hierarchy-preview-content { display: flex; flex-direction: column; max-height: var(--card-height,560px); padding: 0; }
+#cardScroll,
+.preview-scroll { min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 20px 22px 24px; background: transparent; }
+.story-panel-header,
+.card-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 49px;
+  margin: 0;
+  padding: 8px 14px;
+  border-bottom: 1px solid #d9dfe799;
+  background: rgba(248,250,252,.94);
+}
+.story-panel-header .card-meta-line,
+.card-top .card-meta-line {
+  min-height: 32px;
+  align-items: center;
+}
+
+.story-children,
+.scene-actions {
+  position: relative;
+  isolation: isolate;
+  counter-reset: hierarchy-row;
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.scene-actions { list-style: none; }
+.story-children .result,
+.scene-actions li {
+  position: relative;
+  z-index: 1;
+  counter-increment: hierarchy-row;
+  display: grid;
+  grid-template-columns: 22px minmax(0,1fr);
+  align-items: center;
+  column-gap: 9px;
+  width: 100%;
+  min-height: 42px;
+  margin: 0;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+  cursor: pointer;
+  transform: none;
+}
+.story-children .result::before,
+.scene-actions li::before {
+  content: counter(hierarchy-row, decimal-leading-zero);
+  position: static;
+  grid-column: 1;
+  justify-self: start;
+  align-self: center;
+  padding: 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  transition: color .16s ease;
+}
+.story-children .result > strong,
+.scene-actions li > .scene-action-title {
+  grid-column: 2;
+  min-width: 0;
+  width: 100%;
+  align-self: center;
+}
+.story-children .result strong,
+.scene-action-title {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  transform: none;
+}
+
+.hierarchy-hover-glass {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0;
+  border: 1px solid rgba(255,255,255,.92);
+  border-radius: 14px;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(255,255,255,.70), rgba(232,239,247,.34));
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  backdrop-filter: blur(14px) saturate(1.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.96), inset 0 -1px 0 rgba(124,142,164,.10), 0 5px 14px rgba(42,54,70,.09);
+  transform: translate3d(0,0,0);
+  transition: transform 160ms ease-out, opacity 110ms ease;
+}
+.story-children .result:hover::before,
+.story-children .result:focus-visible::before,
+.scene-actions li:hover::before,
+.scene-actions li:focus-within::before { color: var(--text); }
+
+@media (max-width: 760px) {
+  #cardScroll, .preview-scroll { padding: 18px; }
+  .story-children .result,
+  .scene-actions li {
+    grid-template-columns: 20px minmax(0,1fr);
+    column-gap: 7px;
+    padding: 9px 10px;
+  }
+}
+@media (max-height: 520px) {
+  #cardScroll, .preview-scroll { padding: 12px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hierarchy-hover-glass { transition: opacity 80ms linear; }
+}
+
+/* Parent navigation belongs to the panel header, never outside the card. */
+.card-parent-level-button {
+  position: static;
+  inset: auto;
+  margin: 0;
+  opacity: 1;
+  transform: none;
+}
+.card-parent-level-button[hidden] { display: none; }
+
+/* One restrained scrollbar treatment across reading surfaces. */
+:where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.preview-scroll,.technique-card-track) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(102,116,134,.34) transparent;
+}
+:where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.preview-scroll,.technique-card-track)::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+:where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.preview-scroll,.technique-card-track)::-webkit-scrollbar-track {
+  background: transparent;
+}
+:where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.preview-scroll,.technique-card-track)::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 99px;
+  background: rgba(102,116,134,.30);
+  background-clip: padding-box;
+}
+:where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.preview-scroll,.technique-card-track)::-webkit-scrollbar-thumb:hover {
+  background: rgba(102,116,134,.46);
+  background-clip: padding-box;
+}
+
+.glass-tooltip {
+  position: fixed;
+  z-index: var(--z-tooltip);
+  max-width: 260px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,.92);
+  border-radius: 9px;
+  background: linear-gradient(145deg,rgba(255,255,255,.84),rgba(230,237,246,.56));
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  backdrop-filter: blur(14px) saturate(1.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.96),0 5px 16px rgba(40,53,70,.12);
+  color: #4f5a68;
+  font: 500 10.5px/1.35 Manrope,sans-serif;
+  pointer-events: none;
+}
+
+[data-cascade-obscured="true"] { visibility: hidden; pointer-events: none; }

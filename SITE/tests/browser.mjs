@@ -1,0 +1,194 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {createLocalServer} from '../scripts/serve.mjs';
+
+const require = createRequire(import.meta.url);
+const playwright = process.env.PLAYWRIGHT_MODULE_PATH || (process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES ? path.join(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, 'playwright') : 'playwright');
+const {chromium} = require(playwright);
+const executablePath = process.env.CHROMIUM_EXECUTABLE_PATH;
+const server = createLocalServer();
+await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+const url = `http://127.0.0.1:${server.address().port}`;
+let browser;
+const output = process.env.BROWSER_SCREENSHOTS;
+if (output) await fs.mkdir(output, {recursive: true});
+
+try {
+  browser = await chromium.launch({executablePath, args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--no-zygote']});
+  for (const [width, height] of [[1440,900], [375,812], [320,700], [812,375], [768,1024], [2000,1100]]) {
+    const page = await browser.newPage({viewport: {width, height}});
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+    await page.goto(url, {waitUntil: 'networkidle'});
+    await page.waitForSelector('.node');
+    assert.equal(await page.locator('#error').isVisible(), false);
+
+    // A tooltip still recognizes the trigger after its native title is removed.
+    const tooltipButton = page.locator('[data-mode="week"]');
+    await tooltipButton.hover();
+    await page.waitForTimeout(320);
+    assert.equal(await page.locator('#glassTooltip').isVisible(), true);
+    await page.mouse.move(1, height / 2);
+    assert.equal(await page.locator('#glassTooltip').isVisible(), false);
+    await tooltipButton.hover();
+    await page.waitForTimeout(320);
+    await page.keyboard.press('Escape');
+    await page.mouse.move(1, height / 2);
+    assert.equal(await page.locator('#glassTooltip').isVisible(), false);
+
+    await page.evaluate(() => { closeCard(); zoom=zoomModes.week; center=21.5; render(); });
+    const node = page.locator('[data-event="sc-y0-0122-academy-announcements"] .mark');
+    const box = await node.boundingBox();
+    if (width > 760 && height >= 520) {
+      // Passing through a node, Escape and zoom cancel delayed opening.
+      await page.mouse.move(box.x + box.width/2, box.y + box.height/2);
+      await page.waitForTimeout(50);
+      assert.equal(await page.locator('#eventCard').isVisible(), false);
+      await page.mouse.move(1, height/2);
+      await page.waitForTimeout(320);
+      assert.equal(await page.locator('#eventCard').isVisible(), false);
+      await node.hover();
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(320);
+      assert.equal(await page.locator('#eventCard').isVisible(), false);
+      await page.mouse.move(1, height/2);
+      await node.hover();
+      await page.evaluate(() => setZoom(zoom * 1.01));
+      await page.waitForTimeout(320);
+      assert.equal(await page.locator('#eventCard').isVisible(), false, 'Zoom left a stale open callback');
+      await page.evaluate(() => { zoom=zoomModes.week; render(); });
+      await page.mouse.move(1, height/2);
+      await node.hover();
+      await page.waitForTimeout(320);
+      assert.equal(await page.locator('#eventCard').isVisible(), true);
+      const before = await page.locator('#eventCard').boundingBox();
+      const scrollBefore = await page.locator('#canvas').evaluate(canvas => canvas.scrollTop);
+      await node.click();
+      assert.deepEqual(await page.locator('#eventCard').boundingBox(), before, 'Pinning changed card geometry');
+      assert.equal(await page.locator('#canvas').evaluate(canvas => canvas.scrollTop), scrollBefore, 'Pinning scrolled the graph');
+      assert.equal(await page.evaluate(() => pinnedNodeId), 'sc-y0-0122-academy-announcements');
+    } else {
+      await node.click();
+      assert.equal(await page.locator('#eventCard').isVisible(), true);
+    }
+    assert.equal(await page.evaluate(() => {
+      const original = StoryClouds.contours; let rebuilt=0;
+      StoryClouds.contours=(...args)=>{rebuilt++;return original(...args);};
+      try { cloudRenderer.refresh(); cloudRenderer.refresh(); cloudRenderer.scroll($('canvas').scrollTop); return rebuilt; }
+      finally { StoryClouds.contours=original; }
+    }), 0, 'A palette/scroll update rebuilt unchanged contours');
+
+    // All levels share one cascade, headers stay fixed, and no idle reflow runs.
+    await page.evaluate(() => navigateStory('arc', 'arc-y0-genin-formation'));
+    if (width >= 816) {
+      const row = page.locator('#eventCard [data-story-episode="ep-y0-team-formation"]');
+      await row.hover();
+      await page.waitForTimeout(50);
+      assert.equal(await page.locator('.hierarchy-preview').count(), 0);
+      await page.mouse.move(1, height / 2);
+      await page.waitForTimeout(320);
+      assert.equal(await page.locator('.hierarchy-preview').count(), 0, 'Leaving a row did not cancel its delay');
+      await row.hover();
+      await page.waitForTimeout(320);
+      assert.equal(await page.locator('.hierarchy-preview').count(), 1);
+      await page.mouse.move(1, height - 130);
+      await page.waitForTimeout(320);
+      assert.equal(await page.locator('.hierarchy-preview').count(), 0, 'An unpinned child stuck open');
+      assert.equal(await page.locator('#eventCard').isVisible(), true, 'Leaving a child closed its pinned parent');
+    }
+    await page.locator('#eventCard [data-story-episode="ep-y0-team-formation"]').click();
+    await page.locator('[data-hierarchy-depth="0"] [data-story-scene="sc-y0-0122-academy-announcements"]').click();
+    await page.locator('[data-hierarchy-depth="1"] [data-scene-preview="ev-y0-0122-team7-announced"]').click();
+    assert.equal(await page.locator('.hierarchy-preview').count(), 3);
+    const activeParentRows = await page.locator('.is-preview-active').count();
+    assert.equal(activeParentRows, 3);
+    const panels = page.locator('.story-panel:visible');
+    const bounds = await panels.evaluateAll(elements => elements.filter(element => getComputedStyle(element).visibility !== 'hidden').map(element => {
+      const rect = element.getBoundingClientRect(); return {left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom};
+    }));
+    for (const rect of bounds) {
+      assert(rect.left >= 11 && rect.right <= width - 11, 'Cascade is outside the viewport');
+      assert(rect.top >= 0 && rect.bottom <= height, 'Cascade controls are clipped vertically');
+    }
+    const detail = page.locator('[data-hierarchy-depth="2"]');
+    const headerBefore = await detail.locator('.story-panel-header').boundingBox();
+    await detail.locator('.preview-scroll').evaluate(element => { element.scrollTop = element.scrollHeight; });
+    assert.deepEqual(await detail.locator('.story-panel-header').boundingBox(), headerBefore, 'Preview header scrolled');
+    const positions = await panels.evaluateAll(elements => elements.map(element => element.style.left));
+    await page.waitForTimeout(600);
+    assert.deepEqual(await panels.evaluateAll(elements => elements.map(element => element.style.left)), positions, 'Idle cascade drifted');
+    if (width === 1440) {
+      // A pinned aggregate survives zoom even when its graph node disappears.
+      await page.evaluate(() => { zoom=zoomModes.day; render(); });
+      await page.setViewportSize({width:375, height:375});
+      await page.waitForTimeout(80);
+      const small = await page.locator('[data-hierarchy-depth="2"]').boundingBox();
+      assert(small.x >= 11 && small.x + small.width <= 364 && small.y >= 0 && small.y + small.height <= 375, 'A resized pinned cascade is clipped');
+      await page.setViewportSize({width,height});
+      await page.waitForTimeout(80);
+    }
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('.hierarchy-preview').count(), 2);
+    await page.locator('[data-hierarchy-depth="1"] [data-close-hierarchy]').click();
+    assert.equal(await page.locator('.hierarchy-preview').count(), 1);
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('.hierarchy-preview').count(), 0);
+    assert.equal(await page.locator('#eventCard').isVisible(), true);
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#eventCard').isVisible(), false);
+
+    // Clicks bypass hover delays and upward navigation handles singleton scenes.
+    await page.evaluate(() => navigateEvent('ev-y0-0122-three-jonin-wait-outside'));
+    await page.locator('#eventCard [data-parent-kind="scene"]').click();
+    assert.equal(await page.locator('#eventCard .card-kind').textContent(), 'СЦЕНА');
+    await page.locator('#eventCard [data-parent-kind="episode"]').click();
+    assert.equal(await page.locator('#eventCard .card-kind').textContent(), 'ЕПІЗОД');
+    await page.locator('#eventCard [data-parent-kind="arc"]').click();
+    assert.equal(await page.locator('#eventCard .card-kind').textContent(), 'АРКА');
+    await page.evaluate(() => closeCard());
+
+    // Search, fixed story concentration, single-character focus and profiles.
+    await page.keyboard.press('/');
+    await page.locator('#eventSearch').fill('Команда 7');
+    await page.locator('#searchResults [data-search-event]').first().click();
+    assert.equal(await page.locator('#eventCard').isVisible(), true);
+    await page.keyboard.press('Escape');
+    await page.evaluate(() => { zoom=zoomModes.week; center=21.5; render(); });
+    await page.locator('#storyTitleLevel').selectOption('scene');
+    await page.locator('.story-title-label[data-story-key="scene:sc-y0-0122-academy-announcements"]').click();
+    assert.equal(await page.evaluate(() => window.__storyScaleFocus.mode), 'fixed');
+    assert(await page.locator('.is-story-scale-fixed-hidden').count() > 0);
+    assert.equal(await page.locator('.is-story-scale-fixed-hidden[tabindex="0"]').count(), 0, 'Hidden scope controls remain in keyboard navigation');
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(320);
+    assert.equal(await page.evaluate(() => window.__storyScaleFocus.active), false);
+    await page.evaluate(() => setFocus('c-naruto'));
+    assert(await page.evaluate(() => graphNodes.every(node => node.y === graphNodes[0].y)));
+    assert.equal(await page.locator('.thread').count(),1);
+    assert.equal(await page.locator('.thread').getAttribute('data-character'),'c-naruto');
+    assert(await page.locator('.focus-guest-entry').count()>0);
+    await page.locator('#clearFocus').click();
+    await page.evaluate(() => openProfile('c-naruto', $('linesButton')));
+    assert.equal(await page.locator('#profileDialog').isVisible(), true);
+    assert(await page.locator('.technique-card').count() > 0);
+    await page.evaluate(() => openCharacterEvents('c-naruto', $('profileDialog')));
+    assert.equal(await page.locator('#characterEventsDialog').isVisible(), true);
+    await page.keyboard.press('Escape');
+    await page.keyboard.press('Escape');
+    await page.emulateMedia({reducedMotion: 'reduce'});
+    await page.evaluate(() => navigateScene('sc-y0-0122-academy-announcements'));
+    await page.evaluate(() => readScene('sc-y0-0122-academy-announcements', $('cardContent')));
+    assert.equal(await page.locator('#sceneDialog').isVisible(), true);
+    await page.keyboard.press('Escape');
+    if (output) await page.screenshot({path: path.join(output, `site-${width}-${height}.png`), animations: 'disabled'});
+    assert.deepEqual(errors, [], 'Browser errors: ' + errors.join('; '));
+    console.log(`PASS browser ${width}×${height}: hover, tooltips, stable pin, cascade, parent navigation, focus, search, readers and profiles`);
+    await page.close();
+  }
+} finally {
+  await browser?.close();
+  await new Promise(resolve => server.close(resolve));
+}

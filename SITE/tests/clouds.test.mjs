@@ -11,13 +11,13 @@ const scenes=new Map([
  ['raido',{id:'raido',episode_id:'evaluation',title:'Зустріч із Райдо'}]
 ]);
 const episodes=new Map(['formation','jonin','evaluation'].map(id=>[id,{id,title:id}]));
-const nodes=[{id:'class-1',x:100,y:240,day:21,scene:scenes.get('class')},{id:'class-2',x:150,y:245,day:21.05,scene:scenes.get('class')},{id:'outside',x:100,y:300,day:21,scene:scenes.get('outside')},{id:'raido',x:240,y:250,day:21.1,scene:scenes.get('raido')}].map(node=>({...node,kind:'moment',sourceSceneIds:[node.scene.id],sourceEpisodeIds:[node.scene.episode_id]}));
+const nodes=[{id:'class-1',x:100,y:240,day:21,scene:scenes.get('class')},{id:'class-2',x:150,y:245,day:21.05,scene:scenes.get('class')},{id:'outside',x:100,y:300,day:21,scene:scenes.get('outside')},{id:'raido',x:240,y:250,day:21.1,scene:scenes.get('raido')}].map(node=>({...node,kind:'moment',group:[{id:node.id}],sourceSceneIds:[node.scene.id],sourceEpisodeIds:[node.scene.episode_id]}));
 
-test('moment scale builds moment, scene and episode cloud hierarchy without moving anchors',()=>{
+test('moment scale groups sibling moments without redundant singleton clouds or moving anchors',()=>{
  const original=structuredClone(nodes),groups=clouds.groups(nodes,'moment',scenes,episodes),sceneGroups=groups.filter(g=>g.kind==='scene');
- assert.equal(groups.filter(g=>g.kind==='moment').length,4);
- assert.equal(sceneGroups.length,3);
- assert.equal(groups.filter(g=>g.kind==='episode').length,3);
+ assert.equal(groups.filter(g=>g.kind==='moment').length,0);
+ assert.equal(sceneGroups.length,1);
+ assert.equal(groups.filter(g=>g.kind==='episode').length,0);
  const classroom=sceneGroups.find(g=>g.id==='class');
  assert.equal(classroom.parentId,'formation');
  assert.deepEqual(Array.from(classroom.nodes,n=>n.id),['class-1','class-2']);
@@ -29,8 +29,8 @@ test('moment scale builds moment, scene and episode cloud hierarchy without movi
 
 test('scene scale keeps each scene cloud inside an episode cloud',()=>{
  const groups=clouds.groups(nodes,'scene',scenes,episodes);
- assert.equal(groups.filter(g=>g.kind==='scene').length,3);
- assert.equal(groups.filter(g=>g.kind==='episode').length,3);
+ assert.equal(groups.filter(g=>g.kind==='scene').length,1);
+ assert.equal(groups.filter(g=>g.kind==='episode').length,0);
  assert.equal(groups.filter(g=>g.kind==='moment').length,0);
  assert.equal(groups.find(g=>g.kind==='scene'&&g.id==='class').nodes.length,2);
  assert.equal(clouds.groups(nodes,'arc',scenes,episodes).length,0);
@@ -49,11 +49,4 @@ test('all moments of one scene are bridged into one continuous organic cloud',()
  assert(contours[0].length>3&&contours[0].every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)));
  const before=JSON.stringify(own),animated=clouds.contours(own,[],48,Math.PI/2,8,'scene');
  assert.notEqual(JSON.stringify(animated),JSON.stringify(contours));assert.equal(JSON.stringify(own),before);
-});
-
-test('unrelated nodes no longer bend a character strand',()=>{
- const context={TimelineCore:{avoid:()=>['bent']}};
- vm.runInNewContext(source,context);
- const route=[{day:1,y:10},{day:2,y:20}],blockers=[{day:1.5,y:15}];
- assert.equal(context.TimelineCore.avoid(route,blockers,'c-test',30),route);
 });
