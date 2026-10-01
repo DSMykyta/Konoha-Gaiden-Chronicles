@@ -55,8 +55,9 @@ events:
   legacy_ids:
   - V10-000064-E
   title: Саске вступає в бій із Ґаарою
-  text: Саске демонструє швидкість, розвинену під час тренувань із Какаші, та змушує Ґаару перейти до захисту піщаною
-    сферою.
+  text: Саске атакує зі швидкістю та тайдзюцу Лі, які відтворив на тренуваннях із Какаші після спостереження Шарінґаном.
+    Він обходить автоматичний піщаний захист і неодноразово влучає в Ґаару. Той замикається в піщаній сфері, щоб почати
+    перетворення; самої швидкості Саске вже недостатньо, щоб пробити її.
   origin: M
   extent: interval
   display_rank: 200
@@ -73,10 +74,29 @@ events:
   - entity_id: c-baki
     role: observer
     mode: physical
+  - entity_id: c-kakashi
+    role: observer
+    mode: physical
+  - entity_id: c-might-guy
+    role: observer
+    mode: physical
+  - entity_id: c-lee
+    role: observer
+    mode: physical
+  - entity_id: c-sakura
+    role: observer
+    mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000064-E
   - evd-manga-finals-konoha-crush
   - evd-anime-finals-konoha-crush
+  - evd-narutopedia-ep66-audit
 - id: ev-y0-0801-sasuke-pierces-gaara-chidori
   legacy_ids:
   - V10-000064-E
@@ -186,3 +206,83 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep65-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-sasuke
+  entity_id: c-sasuke
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-gaara
+  entity_id: c-gaara
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-genma
+  entity_id: c-genma
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-baki
+  entity_id: c-baki
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-lee
+  entity_id: c-lee
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-y0-0801-sasuke-fights-gaara-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0801-sasuke-fights-gaara.start
+  to: ev-y0-0801-sasuke-fights-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit

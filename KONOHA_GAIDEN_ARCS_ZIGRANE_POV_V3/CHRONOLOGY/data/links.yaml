@@ -3527,3 +3527,12 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep65-audit
+
+- id: lnk-audit-66-ev-y0-0801-naruto-shikamaru-warn-kakashi-ev-y0-0801-sasuke-pierces-gaara-chidori
+  kind: before
+  a: ev-y0-0801-naruto-shikamaru-warn-kakashi
+  b: ev-y0-0801-sasuke-pierces-gaara-chidori
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit

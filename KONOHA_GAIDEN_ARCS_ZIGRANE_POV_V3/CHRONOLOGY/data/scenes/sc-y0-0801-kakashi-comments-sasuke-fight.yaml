@@ -1,0 +1,126 @@
+schema_version: 1
+id: sc-y0-0801-kakashi-comments-sasuke-fight
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Какаші пояснює підготовку Саске та заспокоює Наруто
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-kakashi-explains-sasuke-preparation
+  title: Какаші обговорює підготовку Саске й охорону арени
+  text: 'Какаші перепрошує Сакуру за запізнення й обговорює з Ґаєм присутність Анбу через загрозу нападу. Він пояснює
+    розвиток швидкості Саске; Лі застерігає, що її самої недостатньо, а Ґай розуміє: вона готує іншу атаку.'
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: ev-y0-0801-naruto-shikamaru-warn-kakashi
+  title: Наруто й Шикамару просять Какаші зупинити небезпечний бій
+  text: 'Побачивши піщану сферу, Наруто й Шикамару біжать нагору попередити Какаші про небезпеку. Він заспокоює їх: запізнення
+    мало вагому причину.'
+  display_rank: 200
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+relations:
+- id: rel-audit-66-comment-before-warning
+  kind: before
+  a: ev-y0-0801-kakashi-explains-sasuke-preparation
+  b: ev-y0-0801-naruto-shikamaru-warn-kakashi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+presence:
+- id: pr-audit-66-ev-y0-0801-kakashi-explains-sasuke-preparation-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0801-kakashi-explains-sasuke-preparation.start
+  to: ev-y0-0801-kakashi-explains-sasuke-preparation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-ev-y0-0801-kakashi-explains-sasuke-preparation-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0801-kakashi-explains-sasuke-preparation.start
+  to: ev-y0-0801-kakashi-explains-sasuke-preparation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-ev-y0-0801-kakashi-explains-sasuke-preparation-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0801-kakashi-explains-sasuke-preparation.start
+  to: ev-y0-0801-kakashi-explains-sasuke-preparation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-ev-y0-0801-kakashi-explains-sasuke-preparation-c-lee
+  entity_id: c-lee
+  from: ev-y0-0801-kakashi-explains-sasuke-preparation.start
+  to: ev-y0-0801-kakashi-explains-sasuke-preparation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-ev-y0-0801-naruto-shikamaru-warn-kakashi-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0801-naruto-shikamaru-warn-kakashi.start
+  to: ev-y0-0801-naruto-shikamaru-warn-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-ev-y0-0801-naruto-shikamaru-warn-kakashi-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-naruto-shikamaru-warn-kakashi.start
+  to: ev-y0-0801-naruto-shikamaru-warn-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit
+- id: pr-audit-66-ev-y0-0801-naruto-shikamaru-warn-kakashi-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0801-naruto-shikamaru-warn-kakashi.start
+  to: ev-y0-0801-naruto-shikamaru-warn-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep66-audit

@@ -68,11 +68,14 @@ checked_anime_episodes:
 - 63
 - 64
 - 65
+- 66
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 66
+next_anime_episode: 67
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-kakashi-explains-sasuke-preparation
+- ev-y0-0801-naruto-shikamaru-warn-kakashi
 - ev-y0-0801-gaara-kills-match-fixers
 - ev-y0-0801-guy-lee-arrive-finals
 - ev-y0-0801-asuma-explains-shikamaru-genius
@@ -142,6 +145,7 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-kakashi-comments-sasuke-fight
 - sc-y0-0801-gaara-kills-match-fixers
 - sc-y0-0801-guy-lee-arrive-finals
 - sc-y0-0801-asuma-explains-shikamaru-genius
@@ -1229,6 +1233,21 @@ episode_audits:
   - 'Added injured Lee’s arrival with Guy and the whole tunnel encounter in which Gaara kills two match-fixing shinobi,
     witnessed by Naruto/Shikamaru. Expanded the Sasuke deadline/arrival and Asuma’s assessment of retreat as a chunin
     quality. Removed Gaara from the arrival event’s physical cast: his arena entrance follows the tunnel encounter.'
+- episode: 66
+  baseline_revision: eb5aca0e14f5d4112fcf5e48cc586903ba6b84b9
+  added_moment_ids:
+  - ev-y0-0801-kakashi-explains-sasuke-preparation
+  - ev-y0-0801-naruto-shikamaru-warn-kakashi
+  added_scene_ids:
+  - sc-y0-0801-kakashi-comments-sasuke-fight
+  updated_moment_ids:
+  - ev-y0-0801-sasuke-fights-gaara
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Expanded the opening Sasuke–Gaara battle with copied Lee taijutsu, speed bypassing sand and the transformation sphere.
+    Added one coherent stands scene containing Kakashi’s analysis/security conversation and Naruto/Shikamaru’s later
+    warning; no individual apology or technique comments turned into standalone micro-moments. The Chidori outcome remains
+    for episode 67 verification.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
