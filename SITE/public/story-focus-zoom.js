@@ -94,3 +94,12 @@
     });
   }, true);
 })();
+
+// Parent-level navigation must wrap the final card handlers, so load it after
+// all deferred card/focus extensions have finished initializing.
+(() => {
+  const script = document.createElement('script');
+  script.src = 'parent-level-navigation.js?v=20261001-parent-level-1';
+  script.defer = true;
+  document.head.append(script);
+})();
