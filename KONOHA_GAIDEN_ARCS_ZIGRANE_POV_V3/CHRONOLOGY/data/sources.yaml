@@ -828,6 +828,26 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep33-audit
+    type: reference
+    title: 'Narutopedia — Battle Formation: Ino–Shika–Chō!!'
+    url: https://naruto.fandom.com/wiki/Battle_Formation%3A_Ino%E2%80%93Shika%E2%80%93Ch%C5%8D%21%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-shikamaru-forest-formation
+    type: reference
+    title: "Narutopedia \u2014 Shikamaru Nara, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Shikamaru_Nara
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-team-dosu-forest-fight
+    type: reference
+    title: "Narutopedia \u2014 Team Dosu, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Team_Dosu
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3484,5 +3504,24 @@ evidence:
   - id: evd-narutopedia-ep32-audit
     source_id: src-narutopedia-ep32-audit
     locator: Episode 32, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep33-audit
+    source_id: src-narutopedia-ep33-audit
+    locator: Episode 33, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-shikamaru-forest-formation
+    source_id: src-narutopedia-shikamaru-forest-formation
+    locator: "Ch\u016Bnin Exams; Human Bullet Tank against Zaku, shadow against Dosu,\
+      \ possession against Kin"
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-team-dosu-forest-fight
+    source_id: src-narutopedia-team-dosu-forest-fight
+    locator: "Ch\u016Bnin Exams; Ino takes Kin hostage; Zaku attacks, injuring both\
+      \ and knocking Kin out"
     basis: source
     review: accepted

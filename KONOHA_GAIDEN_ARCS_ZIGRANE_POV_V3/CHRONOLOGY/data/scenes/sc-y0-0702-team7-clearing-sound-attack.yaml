@@ -159,9 +159,10 @@ events:
 - id: ev-y0-0702-team10-intervenes
   legacy_ids:
   - V10-000042-C
-  title: Команда 10 приходить Сакурі на допомогу
-  text: Побачивши, що Заку може вбити Сакуру, Іно, Шикамару й Чоджі виходять зі схованки та вступають у бій на її боці. Іно
-    нагадує про своє суперництво із Сакурою, підтримуючи подругу.
+  title: Команда 10 вступає в бій, захищаючи Сакуру
+  text: 'Іно, Шикамару й Чоджі захищають Сакуру формацією Іно–Шика–Чо. Чоджі атакує Заку Людським Кульовим Танком, Шикамару
+    утримує Досу тінню, а Іно захоплює тіло Кін. Іно вимагає сувій, погрожуючи заручницею, але Заку атакує власну товаришку:
+    удар ранить обох дівчат і позбавляє Кін свідомості. Досу та Заку продовжують опір.'
   origin: M
   extent: interval
   display_rank: 600
@@ -194,11 +195,15 @@ events:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
   - evd-narutopedia-ep32-audit
+  - evd-narutopedia-ep33-audit
+  - evd-narutopedia-shikamaru-forest-formation
+  - evd-narutopedia-team-dosu-forest-fight
 - id: ev-y0-0702-sasuke-awakens-curse-mark
   legacy_ids:
   - V10-000042-D
   title: Саске прокидається під впливом Проклятої Печатки
-  text: Саске приходить до тями, а Проклята Печатка різко підсилює його агресію й силу.
+  text: Коли Неджі й Тентен приходять на допомогу Лі, Саске прокидається. Проклята Печатка поширюється його тілом і підсилює
+    агресію; побачивши поранення Сакури, він переходить до нападу.
   origin: M
   extent: interval
   display_rank: 700
@@ -212,15 +217,23 @@ events:
   - entity_id: c-naruto
     role: affected
     mode: physical
+  - entity_id: c-neji
+    role: observer
+    mode: physical
+  - entity_id: c-tenten
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000042-D
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep33-audit
 - id: ev-y0-0702-sasuke-breaks-zaku-arms
   legacy_ids:
   - V10-000042-D
-  title: Саске ламає руки Заку
-  text: Під дією печатки Саске жорстоко атакує Заку й ламає йому руки.
+  title: Саске вивихує Заку обидві руки
+  text: Під дією печатки Саске атакує Заку за поранення Сакури й вивихує йому обидві руки. Після цього він звертає увагу на
+    Досу.
   origin: M
   extent: interval
   display_rank: 800
@@ -241,11 +254,12 @@ events:
   - evd-v10-000042-D
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep33-audit
 - id: ev-y0-0702-sakura-calms-sasuke
   legacy_ids:
   - V10-000042-D
   title: Сакура обіймає Саске й допомагає придушити печатку
-  text: Налякана поведінкою Саске, Сакура обіймає його; це допомагає йому зупинитися й придушити вплив печатки.
+  text: Сакура підбігає до Саске, обіймає й благає зупинитися. Вплив печатки відступає; Саске падає на землю.
   origin: M
   extent: interval
   display_rank: 900
@@ -260,11 +274,12 @@ events:
   - evd-v10-000042-D
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep33-audit
 - id: ev-y0-0702-sound-team-retreats
   legacy_ids:
   - V10-000042-E
   title: Команда Досу віддає сувій і відступає
-  text: Після пробудження Саске Досу вирішує припинити бій; команда Звуку залишає свій сувій і відходить.
+  text: Досу визнає силу Саске, залишає сувій та відступає, забираючи Заку й Кін. Він обіцяє наступного разу не тікати.
   origin: M
   extent: interval
   display_rank: 1000
@@ -287,6 +302,7 @@ events:
   - evd-v10-000042-E
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep33-audit
 relations:
 - id: rel-0702-clearing-1
   kind: before
@@ -441,3 +457,19 @@ presence:
   evidence_ids:
   - evd-v10-000042-C
   review: accepted
+- id: pr-audit-33-y0-0702-team7-clearing-sound-attack-c-neji
+  entity_id: c-neji
+  from: ev-y0-0702-sasuke-awakens-curse-mark.start
+  to: sc-y0-0702-team7-clearing-sound-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep33-audit
+- id: pr-audit-33-y0-0702-team7-clearing-sound-attack-c-tenten
+  entity_id: c-tenten
+  from: ev-y0-0702-sasuke-awakens-curse-mark.start
+  to: sc-y0-0702-team7-clearing-sound-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep33-audit
