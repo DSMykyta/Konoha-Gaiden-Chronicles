@@ -1,25 +1,69 @@
 schema_version: 1
-id: "sc-y0-0330-zabuza-haku-burial"
+id: sc-y0-0330-zabuza-haku-burial
 episode_id: ep-y0-waves-farewell
 display_rank: 100
-continuity_id: "main"
-title: "Поховання Забузи й Хаку"
-location_id: "loc-wave-burial-hill"
-placement: {anchor_id: "ta-y0-0330", day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Поховання Забузи й Хаку
+location_id: loc-wave-burial-hill
+placement:
+  anchor_id: ta-y0-0330
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0330-zabuza-haku-buried"
-    legacy_ids: ["V10-000032"]
-    title: "Забузу й Хаку ховають поруч"
-    text: "Після завершення бою Забузу й Хаку ховають поруч на височині над Країною Хвиль."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-zabuza", role: "affected", mode: "physical"}
-      - {entity_id: "c-haku", role: "affected", mode: "physical"}
-    evidence_ids: ["evd-v10-000032", "evd-manga-land-waves"]
-relations: []
+- id: ev-y0-0330-zabuza-haku-buried
+  legacy_ids:
+  - V10-000032
+  title: Забузу й Хаку ховають поруч
+  text: Після завершення бою Забузу й Хаку ховають поруч на височині над Країною Хвиль.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-zabuza
+    role: affected
+    mode: physical
+  - entity_id: c-haku
+    role: affected
+    mode: physical
+  evidence_ids:
+  - evd-v10-000032
+  - evd-manga-land-waves
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-chooses-ninja-way
+  display_rank: 200
+  title: Наруто вирішує знайти власний шлях ніндзя
+  text: Після поховання Наруто відкидає уявлення про ніндзя як прості знаряддя й заявляє, що знайде власний шлях.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+relations:
+- id: rel-audit-19-y0-0330-zabuza-haku-buried-before-y0-0330-naruto-chooses-ninja-way
+  kind: before
+  a: ev-y0-0330-zabuza-haku-buried
+  b: ev-y0-0330-naruto-chooses-ninja-way
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
 presence: []

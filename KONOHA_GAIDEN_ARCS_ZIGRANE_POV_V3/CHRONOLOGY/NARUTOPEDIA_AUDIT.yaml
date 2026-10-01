@@ -21,9 +21,10 @@ checked_anime_episodes:
 - 16
 - 17
 - 18
+- 19
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 19
+next_anime_episode: 20
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -307,3 +308,18 @@ episode_audits:
   notes:
   - Dog release crosschecked against arc synopsis; M tag retained for blood-scroll variant rather than asserting an anime
     shot.
+- episode: 19
+  baseline_revision: 0a4ec80f9a01b1ae461950e7287ca2c83cf0541a
+  added_moment_ids:
+  - ev-y0-0330-gato-desecrates-haku
+  - ev-y0-0330-naruto-confronts-zabuza-about-haku
+  - ev-y0-0330-zabuza-borrows-naruto-kunai
+  - ev-y0-0330-sasuke-found-alive
+  - ev-y0-0330-naruto-chooses-ninja-way
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0330-zabuza-kills-gato
+  - ev-y0-0413-bridge-named-after-naruto
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - Bridge naming moved after farewell; inherited relation ID retained with corrected endpoints.

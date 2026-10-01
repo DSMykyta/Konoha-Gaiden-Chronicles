@@ -789,11 +789,78 @@ events:
   evidence_ids:
   - evd-v10-000031
   - evd-manga-land-waves
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-gato-desecrates-haku
+  display_rank: 610
+  title: Ґато знущається з тіла Хаку
+  text: Ґато оголошує, що від початку планував зрадити Забузу, й копає тіло Хаку. Забуза припиняє бій із Какаші.
+  involvement:
+  - entity_id: c-gato
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-confronts-zabuza-about-haku
+  display_rank: 620
+  title: Наруто змушує Забузу визнати почуття до Хаку
+  text: Наруто зі сльозами говорить про відданість Хаку. Забуза теж плаче й визнає його жертву.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-zabuza-borrows-naruto-kunai
+  display_rank: 630
+  title: Забуза позичає кунай Наруто
+  text: Забуза просить кунай Наруто й бере його в зуби, готуючись атакувати Ґато.
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-gato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
 - id: ev-y0-0330-zabuza-kills-gato
   legacy_ids:
   - V10-000031
   title: Забуза вбиває Ґато
-  text: Після слів Наруто про Хаку тяжко поранений Забуза проривається крізь найманців і вбиває Ґато.
+  text: Позбавлений можливості користуватися руками Забуза бере кунай у зуби, проривається крізь найманців і вбиває Ґато,
+    отримуючи численні рани.
   origin: M
   extent: interval
   display_rank: 700
@@ -810,6 +877,26 @@ events:
   evidence_ids:
   - evd-v10-000031
   - evd-manga-land-waves
+  - evd-narutopedia-ep19-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-sasuke-found-alive
+  display_rank: 750
+  title: Сакура виявляє, що Саске живий
+  text: 'Команда виявляє, що Саске живий: Хаку навмисно уникнув смертельних ушкоджень.'
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
 - id: ev-y0-0330-zabuza-dies-by-haku
   legacy_ids:
   - V10-000031
@@ -1269,6 +1356,54 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-wave-arc-dogs
+- id: rel-audit-19-y0-0330-gato-arrives-before-y0-0330-gato-desecrates-haku
+  kind: before
+  a: ev-y0-0330-gato-arrives
+  b: ev-y0-0330-gato-desecrates-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- id: rel-audit-19-y0-0330-gato-desecrates-haku-before-y0-0330-naruto-confronts-zabuza-about-haku
+  kind: before
+  a: ev-y0-0330-gato-desecrates-haku
+  b: ev-y0-0330-naruto-confronts-zabuza-about-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- id: rel-audit-19-y0-0330-naruto-confronts-zabuza-about-haku-before-y0-0330-zabuza-borrows-naruto-kunai
+  kind: before
+  a: ev-y0-0330-naruto-confronts-zabuza-about-haku
+  b: ev-y0-0330-zabuza-borrows-naruto-kunai
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- id: rel-audit-19-y0-0330-zabuza-borrows-naruto-kunai-before-y0-0330-zabuza-kills-gato
+  kind: before
+  a: ev-y0-0330-zabuza-borrows-naruto-kunai
+  b: ev-y0-0330-zabuza-kills-gato
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- id: rel-audit-19-y0-0330-zabuza-kills-gato-before-y0-0330-sasuke-found-alive
+  kind: before
+  a: ev-y0-0330-zabuza-kills-gato
+  b: ev-y0-0330-sasuke-found-alive
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- id: rel-audit-19-y0-0330-sasuke-found-alive-before-y0-0330-zabuza-dies-by-haku
+  kind: before
+  a: ev-y0-0330-sasuke-found-alive
+  b: ev-y0-0330-zabuza-dies-by-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
 presence:
 - id: pr-0330-bridge-naruto
   entity_id: c-naruto
@@ -1334,3 +1469,11 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep17-audit
+- id: pr-audit-19-y0-0330-bridge-final-battle-c-gato
+  entity_id: c-gato
+  from: ev-y0-0330-gato-arrives.start
+  to: ev-y0-0330-zabuza-kills-gato.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit

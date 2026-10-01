@@ -703,6 +703,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep19-audit
+    type: reference
+    title: Narutopedia — The Demon in the Snow
+    url: https://naruto.fandom.com/wiki/The_Demon_in_the_Snow
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3227,5 +3234,11 @@ evidence:
     source_id: src-narutopedia-wave-arc-audit
     locator: 'The Tool’s Feelings: Haku receives Lightning Cutter; needles strike the
       scroll and the dogs disappear'
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep19-audit
+    source_id: src-narutopedia-ep19-audit
+    locator: Episode 19, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted
