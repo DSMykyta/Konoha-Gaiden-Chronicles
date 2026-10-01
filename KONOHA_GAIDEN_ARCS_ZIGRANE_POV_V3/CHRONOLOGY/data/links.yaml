@@ -3320,3 +3320,30 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep51-audit
+
+- id: lnk-audit-52-sc-y0-0706-kakashi-assigns-ebisu-sc-y0-0706-ebisu-catches-naruto
+  kind: before
+  a: sc-y0-0706-kakashi-assigns-ebisu
+  b: sc-y0-0706-ebisu-catches-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+
+- id: lnk-audit-52-sc-y0-0706-ebisu-catches-naruto-sc-y0-0706-ebisu-chakra-lesson
+  kind: before
+  a: sc-y0-0706-ebisu-catches-naruto
+  b: sc-y0-0706-ebisu-chakra-lesson
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+
+- id: lnk-audit-52-sc-y0-0706-ebisu-chakra-lesson-sc-y0-0706-naruto-meets-jiraiya
+  kind: before
+  a: sc-y0-0706-ebisu-chakra-lesson
+  b: sc-y0-0706-naruto-meets-jiraiya
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit

@@ -1,0 +1,59 @@
+schema_version: 1
+id: sc-y0-0706-ebisu-chakra-lesson
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 150
+continuity_id: main
+title: Розмова про контроль чакри в Ічіраку
+location_id: loc-ichiraku
+placement:
+  anchor_id: ta-y0-0706
+  day_offset: 1
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0706-ebisu-explains-chakra-control
+  title: Ебісу пояснює Наруто надмірну витрату чакри
+  text: 'За раменом Ебісу порівнює контроль чакри Наруто з Сакурою та Саске: Наруто витрачає найбільше зайвої енергії.
+    Незвичайні можливості учня він пов’язує з Дев’ятихвостим.'
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-ebisu
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: mentioned
+    mode: remote
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+relations: []
+presence:
+- id: pr-audit-52-ev-y0-0706-ebisu-explains-chakra-control-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-ebisu-explains-chakra-control.start
+  to: ev-y0-0706-ebisu-explains-chakra-control.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+- id: pr-audit-52-ev-y0-0706-ebisu-explains-chakra-control-c-ebisu
+  entity_id: c-ebisu
+  from: ev-y0-0706-ebisu-explains-chakra-control.start
+  to: ev-y0-0706-ebisu-explains-chakra-control.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit

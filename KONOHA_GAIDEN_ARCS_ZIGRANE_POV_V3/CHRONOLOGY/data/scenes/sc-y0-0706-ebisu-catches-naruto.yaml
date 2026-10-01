@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-0706-ebisu-catches-naruto
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 125
+continuity_id: main
+title: Ебісу ловить Наруто під час випробування
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0706
+  day_offset: 1
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0706-ebisu-catches-naruto
+  title: Наруто програє випробування втечею
+  text: Ебісу обіцяє поступитися навчанням Какаші, якщо Наруто втече. Наруто ховається, перевтілюється й розсіює клонів,
+    але після погоні Ебісу ловить справжнього учня.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-ebisu
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+relations: []
+presence:
+- id: pr-audit-52-ev-y0-0706-ebisu-catches-naruto-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-ebisu-catches-naruto.start
+  to: ev-y0-0706-ebisu-catches-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+- id: pr-audit-52-ev-y0-0706-ebisu-catches-naruto-c-ebisu
+  entity_id: c-ebisu
+  from: ev-y0-0706-ebisu-catches-naruto.start
+  to: ev-y0-0706-ebisu-catches-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit

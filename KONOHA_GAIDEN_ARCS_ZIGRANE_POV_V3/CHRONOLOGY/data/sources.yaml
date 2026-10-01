@@ -1034,6 +1034,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep52-audit
+    type: reference
+    title: 'Narutopedia — Ebisu Returns: Naruto''s Toughest Training Yet!'
+    url: https://naruto.fandom.com/wiki/Ebisu_Returns%3A_Naruto%27s_Toughest_Training_Yet%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3872,5 +3879,11 @@ evidence:
   - id: evd-narutopedia-ep51-audit
     source_id: src-narutopedia-ep51-audit
     locator: Episode 51, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep52-audit
+    source_id: src-narutopedia-ep52-audit
+    locator: Episode 52, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

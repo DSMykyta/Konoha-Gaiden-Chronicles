@@ -21,7 +21,8 @@ events:
   legacy_ids:
   - V10-000048
   title: Наруто починає тренування з Ебісу
-  text: Не отримавши тренування від Какаші, Наруто починає заняття з Ебісу.
+  text: Біля гарячих джерел Ебісу навчає Наруто ходити по воді. Після численних падінь учень починає засвоювати вправу,
+    змінюючи думку наставника про себе.
   origin: M
   extent: interval
   display_rank: 100
@@ -38,11 +39,13 @@ events:
   evidence_ids:
   - evd-v10-000048
   - evd-manga-ch88-97
+  - evd-narutopedia-ep52-audit
 - id: ev-y0-0706-jiraiya-appears
   legacy_ids:
   - V10-000048
   title: Наруто зустрічає Джираю біля гарячих джерел
-  text: Під час тренування біля гарячих джерел Наруто знайомиться з Джираєю.
+  text: Ебісу нападає на Джираю, помітивши підглядання за жіночою роздягальнею. Викликана жаба знешкоджує Ебісу; Наруто
+    бачить, як незнайомець легко перемагає його наставника.
   origin: M
   extent: interval
   display_rank: 200
@@ -60,6 +63,7 @@ events:
   - evd-v10-000048
   - evd-manga-ch88-97
   - evd-anime-52-54
+  - evd-narutopedia-ep52-audit
 - id: ev-y0-0706-jiraiya-removes-five-elements-seal
   legacy_ids:
   - V10-000048
@@ -110,9 +114,10 @@ relations:
   a: ev-y0-0706-naruto-trains-with-ebisu
   b: ev-y0-0706-jiraiya-appears
   basis: source
-  review: pending
+  review: accepted
   evidence_ids:
   - evd-manga-ch88-97
+  - evd-narutopedia-ep52-audit
 - id: rel-0706-jiraiya-2
   kind: before
   a: ev-y0-0706-jiraiya-appears
@@ -154,3 +159,43 @@ presence:
   evidence_ids:
   - evd-v10-000048
   review: accepted
+- id: pr-audit-52-y0-0706-naruto-trains-with-ebisu-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-naruto-trains-with-ebisu.start
+  to: ev-y0-0706-naruto-trains-with-ebisu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+- id: pr-audit-52-y0-0706-naruto-trains-with-ebisu-c-ebisu
+  entity_id: c-ebisu
+  from: ev-y0-0706-naruto-trains-with-ebisu.start
+  to: ev-y0-0706-naruto-trains-with-ebisu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+- id: pr-audit-52-y0-0706-jiraiya-appears-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0706-jiraiya-appears.start
+  to: ev-y0-0706-jiraiya-appears.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+- id: pr-audit-52-y0-0706-jiraiya-appears-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-jiraiya-appears.start
+  to: ev-y0-0706-jiraiya-appears.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
+- id: pr-audit-52-y0-0706-jiraiya-appears-c-ebisu
+  entity_id: c-ebisu
+  from: ev-y0-0706-jiraiya-appears.start
+  to: ev-y0-0706-jiraiya-appears.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep52-audit
