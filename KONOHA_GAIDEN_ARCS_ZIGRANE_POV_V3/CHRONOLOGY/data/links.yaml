@@ -3289,11 +3289,9 @@ links:
   kind: before
   a: sc-y0-0706-iruka-team7-tower-message
   b: sc-y0-0706-preliminaries-announced
-
 notes:
-- No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
-  relation means unknown order, not simultaneity.
-
+- No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence
+  of relation means unknown order, not simultaneity.
 - id: lnk-audit-51-sc-y0-0706-orochimaru-orders-sasuke-abduction-sc-y0-0706-kabuto-hospital-infiltration
   kind: before
   a: sc-y0-0706-orochimaru-orders-sasuke-abduction
@@ -3302,7 +3300,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep51-audit
-
 - id: lnk-audit-51-sc-y0-0706-kabuto-hospital-infiltration-sc-y0-0706-kakashi-assigns-ebisu
   kind: before
   a: sc-y0-0706-kabuto-hospital-infiltration
@@ -3311,7 +3308,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep51-audit
-
 - id: lnk-audit-52-sc-y0-0706-kakashi-assigns-ebisu-sc-y0-0706-ebisu-catches-naruto
   kind: before
   a: sc-y0-0706-kakashi-assigns-ebisu
@@ -3320,7 +3316,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep52-audit
-
 - id: lnk-audit-52-sc-y0-0706-ebisu-catches-naruto-sc-y0-0706-ebisu-chakra-lesson
   kind: before
   a: sc-y0-0706-ebisu-catches-naruto
@@ -3329,7 +3324,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep52-audit
-
 - id: lnk-audit-52-sc-y0-0706-ebisu-chakra-lesson-sc-y0-0706-naruto-meets-jiraiya
   kind: before
   a: sc-y0-0706-ebisu-chakra-lesson
@@ -3338,7 +3332,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep52-audit
-
 - id: lnk-audit-53-sc-y0-0706-naruto-meets-jiraiya-sc-y0-0706-naruto-recruits-jiraiya
   kind: before
   a: sc-y0-0706-naruto-meets-jiraiya
@@ -3347,7 +3340,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep53-audit
-
 - id: lnk-audit-53-sc-y0-0706-naruto-recruits-jiraiya-sc-y0-0706-jiraiya-restores-chakra-control
   kind: before
   a: sc-y0-0706-naruto-recruits-jiraiya
@@ -3356,7 +3348,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep53-audit
-
 - id: lnk-audit-53-sc-y0-0706-jiraiya-restores-chakra-control-sc-y0-0706-ebisu-recognizes-jiraiya
   kind: before
   a: sc-y0-0706-jiraiya-restores-chakra-control
@@ -3365,7 +3356,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep53-audit
-
 - id: lnk-audit-54-sc-y0-0706-gaara-kills-dosu-sc-y0-0706-baki-kabuto-hayate
   kind: before
   a: sc-y0-0706-gaara-kills-dosu
@@ -3374,7 +3364,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep54-audit
-
 - id: lnk-audit-55-sc-y0-0722-sakura-ino-flowers-sc-y0-0722-sakura-ino-see-team10
   kind: before
   a: sc-y0-0722-sakura-ino-flowers
@@ -3383,7 +3372,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep55-audit
-
 - id: lnk-audit-55-sc-y0-0722-sakura-ino-see-team10-sc-y0-0722-sakura-ino-hospital
   kind: before
   a: sc-y0-0722-sakura-ino-see-team10
@@ -3392,7 +3380,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep55-audit
-
 - id: lnk-audit-56-sc-y0-0728-jiraiya-naruto-bath-sc-y0-0728-jiraiya-naruto-meal
   kind: before
   a: sc-y0-0728-jiraiya-naruto-bath
@@ -3401,7 +3388,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep56-audit
-
 - id: lnk-audit-56-sc-y0-0728-jiraiya-naruto-meal-sc-y0-0728-naruto-tries-hugging-sakura
   kind: before
   a: sc-y0-0728-jiraiya-naruto-meal
@@ -3410,7 +3396,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep56-audit
-
 - id: lnk-audit-56-sc-y0-0728-naruto-tries-hugging-sakura-sc-y0-0728-naruto-gamabunta
   kind: before
   a: sc-y0-0728-naruto-tries-hugging-sakura
@@ -3419,7 +3404,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep56-audit
-
 - id: lnk-audit-57-sc-y0-0727-baki-briefs-sand-siblings-sc-y0-0727-baki-orochimaru-invasion-plan
   kind: before
   a: sc-y0-0727-baki-briefs-sand-siblings
@@ -3428,7 +3412,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep57-audit
-
 - id: lnk-audit-57-sc-y0-0728-naruto-gamabunta-sc-y0-0728-gamabunta-delivers-naruto
   kind: before
   a: sc-y0-0728-naruto-gamabunta
@@ -3437,7 +3420,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep57-audit
-
 - id: lnk-audit-58-sc-y0-0731-baki-finds-gaara-missing-sc-y0-0731-gaara-visits-lee
   kind: before
   a: sc-y0-0731-baki-finds-gaara-missing
@@ -3446,7 +3428,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep58-audit
-
 - id: lnk-audit-58-sc-y0-0731-gaara-visits-lee-sc-y0-0731-naruto-leaves-hospital
   kind: before
   a: sc-y0-0731-gaara-visits-lee
@@ -3455,7 +3436,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep58-audit
-
 - id: lnk-audit-59-sc-y0-0801-hinata-encourages-naruto-sc-y0-0801-naruto-shortcut-to-finals
   kind: before
   a: sc-y0-0801-hinata-encourages-naruto
@@ -3464,7 +3444,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep59-audit
-
 - id: lnk-audit-59-sc-y0-0801-naruto-shortcut-to-finals-sc-y0-0801-finals-morning
   kind: before
   a: sc-y0-0801-naruto-shortcut-to-finals
@@ -3473,7 +3452,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep59-audit
-
 - id: lnk-audit-60-sc-y0-0801-kazekage-arrives-finals-sc-y0-0801-finals-morning
   kind: before
   a: sc-y0-0801-kazekage-arrives-finals
@@ -3482,7 +3460,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep60-audit
-
 - id: lnk-audit-63-ev-y0-0801-naruto-defeats-neji-sc-y0-0801-finals-rescheduled
   kind: before
   a: ev-y0-0801-naruto-defeats-neji
@@ -3491,7 +3468,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep63-audit
-
 - id: lnk-audit-63-sc-y0-0801-finals-rescheduled-ev-y0-0801-shikamaru-traps-temari
   kind: before
   a: sc-y0-0801-finals-rescheduled
@@ -3500,7 +3476,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep63-audit
-
 - id: lnk-audit-65-ev-y0-0801-kakashi-sasuke-arrive-late-sc-y0-0801-gaara-kills-match-fixers
   kind: before
   a: ev-y0-0801-kakashi-sasuke-arrive-late
@@ -3509,7 +3484,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep65-audit
-
 - id: lnk-audit-65-sc-y0-0801-gaara-kills-match-fixers-ev-y0-0801-sasuke-fights-gaara
   kind: before
   a: sc-y0-0801-gaara-kills-match-fixers
@@ -3518,7 +3492,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep65-audit
-
 - id: lnk-audit-65-sc-y0-0801-guy-lee-arrive-finals-ev-y0-0801-kakashi-sasuke-arrive-late
   kind: before
   a: sc-y0-0801-guy-lee-arrive-finals
@@ -3527,7 +3500,6 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep65-audit
-
 - id: lnk-audit-66-ev-y0-0801-naruto-shikamaru-warn-kakashi-ev-y0-0801-sasuke-pierces-gaara-chidori
   kind: before
   a: ev-y0-0801-naruto-shikamaru-warn-kakashi
@@ -3536,3 +3508,12 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep66-audit
+
+- id: lnk-audit-67-ev-y0-0801-sasuke-fights-gaara-ev-y0-0801-kabuto-casts-arena-genjutsu
+  kind: before
+  a: ev-y0-0801-sasuke-fights-gaara
+  b: ev-y0-0801-kabuto-casts-arena-genjutsu
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep67-audit

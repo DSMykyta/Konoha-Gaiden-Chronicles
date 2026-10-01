@@ -1160,6 +1160,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep67-audit
+    type: reference
+    title: Narutopedia — Late for the Show, but Ready to Go! The Ultimate Secret Technique is Born!
+    url: https://naruto.fandom.com/wiki/Late_for_the_Show%2C_but_Ready_to_Go%21_The_Ultimate_Secret_Technique_is_Born%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4109,5 +4116,11 @@ evidence:
   - id: evd-narutopedia-ep66-audit
     source_id: src-narutopedia-ep66-audit
     locator: Episode 66, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep67-audit
+    source_id: src-narutopedia-ep67-audit
+    locator: Episode 67, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

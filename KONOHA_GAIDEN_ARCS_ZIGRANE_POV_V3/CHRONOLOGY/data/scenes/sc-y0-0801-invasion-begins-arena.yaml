@@ -1,90 +1,239 @@
 schema_version: 1
-id: "sc-y0-0801-invasion-begins-arena"
+id: sc-y0-0801-invasion-begins-arena
 episode_id: ep-y0-arena-invasion
 display_rank: 100
-continuity_id: "main"
-title: "Початок нападу на Коноху"
-location_id: "loc-chunin-finals-arena"
-placement: {anchor_id: "ta-y0-0801", day_offset: 0}
-day_part: "afternoon"
-state: "active"
-presence_coverage: "partial"
-review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Початок нападу на Коноху
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+day_part: afternoon
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0801-kabuto-casts-arena-genjutsu"
-    legacy_ids: ["V10-000065"]
-    title: "Кабуто накриває арену масовим гендзюцу"
-    text: "Під час фіналу Кабуто запускає масове гендзюцу над глядачами арени."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-kabuto", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000065", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto"
-    title: "Аоба знімає гендзюцу й викриває Кабуто"
-    text: "Аоба розриває сонне гендзюцу на арені й помічає, що джерелом техніки є Кабуто, замаскований під шинобі АНБУ Конохи. Після викриття він переходить до відкритого бою з нападниками; в аніме його атаку деталізовано вогняною технікою проти кількох ворогів."
-    origin: "M"
-    extent: "interval"
-    display_rank: 150
-    involvement:
-      - {entity_id: "c-aoba", role: "focus", mode: "physical"}
-      - {entity_id: "c-kabuto", role: "identified", mode: "physical"}
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-sand-sound-invasion-starts"
-    legacy_ids: ["V10-000065"]
-    title: "Сили Суни й Звуку починають скоординований напад"
-    text: "Одночасно з гендзюцу сили Суни та Звуку переходять до відкритого нападу на Коноху."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    evidence_ids: ["evd-v10-000065", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-baki-orders-gaara-extraction"
-    title: "Бакі наказує Темарі й Канкуро вивести Ґаару"
-    text: "Коли вторгнення починається, поранений Чідорі Ґаара не може виконати заплановану роль у нападі. Бакі наказує Темарі й Канкуро негайно забрати його з арени й відступати, щоб урятувати ключову силу Суни."
-    origin: "M"
-    extent: "interval"
-    display_rank: 225
-    involvement:
-      - {entity_id: "c-baki", role: "focus", mode: "physical"}
-      - {entity_id: "c-gaara", role: "affected", mode: "physical"}
-      - {entity_id: "c-temari", role: "participant", mode: "physical"}
-      - {entity_id: "c-kankuro", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-genma-confronts-baki-dispatches-sasuke"
-    title: "Ґенма переходить від іспиту до оборони Конохи"
-    text: "Коли напад стає очевидним, Ґенма з’ясовує, чи за ним стоїть Орочімару, і сходиться з Бакі. Після відступу пораненого Ґаари він говорить Саске, що іспит для нього закінчено, оцінює його як уже достатньо підготовленого для рівня чуніна й наказує діяти як шинобі Конохи — переслідувати Ґаару. Ґенма не дає Бакі зупинити Саске й продовжує бій із ним."
-    origin: "M"
-    extent: "interval"
-    display_rank: 250
-    involvement:
-      - {entity_id: "c-genma", role: "focus", mode: "physical"}
-      - {entity_id: "c-baki", role: "opponent", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-gaara", role: "affected", mode: "physical"}
-      - {entity_id: "c-orochimaru", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-raido-wounded-by-sound-four"
-    title: "Четвірка Звуку тяжко ранить Райдо"
-    text: "Коли Орочімару атакує Хірузена, Райдо намагається втрутитися. Четвірка Звуку, замаскована під охоронців Казекаґе, атакує Райдо; він дістає тяжкі поранення і втрачає свідомість, через що не може допомогти Хокаґе."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-raido", role: "focus", mode: "physical"}
-      - {entity_id: "group-sound-four", role: "opponent", mode: "physical"}
-      - {entity_id: "c-hiruzen", role: "protected", mode: "physical"}
-      - {entity_id: "c-orochimaru", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+- id: ev-y0-0801-kabuto-casts-arena-genjutsu
+  legacy_ids:
+  - V10-000065
+  title: Кабуто накриває арену масовим гендзюцу
+  text: Коли Чідорі Саске ранить Ґаару й зупиняє його перетворення, замаскований під Анбу Кабуто застосовує гендзюцу,
+    що присипляє глядачів. Це сигнал до початку нападу на Коноху.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000065
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  - evd-narutopedia-ep67-audit
+- id: ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto
+  title: Аоба знімає гендзюцу й викриває Кабуто
+  text: Аоба розриває сонне гендзюцу на арені й помічає, що джерелом техніки є Кабуто, замаскований під шинобі АНБУ Конохи.
+    Після викриття він переходить до відкритого бою з нападниками; в аніме його атаку деталізовано вогняною технікою
+    проти кількох ворогів.
+  origin: M
+  extent: interval
+  display_rank: 150
+  involvement:
+  - entity_id: c-aoba
+    role: focus
+    mode: physical
+  - entity_id: c-kabuto
+    role: identified
+    mode: physical
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-sand-sound-invasion-starts
+  legacy_ids:
+  - V10-000065
+  title: Сили Суни й Звуку починають скоординований напад
+  text: Одночасно з гендзюцу сили Суни та Звуку переходять до відкритого нападу на Коноху.
+  origin: M
+  extent: interval
+  display_rank: 200
+  evidence_ids:
+  - evd-v10-000065
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-baki-orders-gaara-extraction
+  title: Бакі наказує Темарі й Канкуро вивести Ґаару
+  text: Коли вторгнення починається, поранений Чідорі Ґаара не може виконати заплановану роль у нападі. Бакі наказує
+    Темарі й Канкуро негайно забрати його з арени й відступати, щоб урятувати ключову силу Суни.
+  origin: M
+  extent: interval
+  display_rank: 225
+  involvement:
+  - entity_id: c-baki
+    role: focus
+    mode: physical
+  - entity_id: c-gaara
+    role: affected
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-genma-confronts-baki-dispatches-sasuke
+  title: Ґенма переходить від іспиту до оборони Конохи
+  text: Коли напад стає очевидним, Ґенма з’ясовує, чи за ним стоїть Орочімару, і сходиться з Бакі. Після відступу пораненого
+    Ґаари він говорить Саске, що іспит для нього закінчено, оцінює його як уже достатньо підготовленого для рівня чуніна
+    й наказує діяти як шинобі Конохи — переслідувати Ґаару. Ґенма не дає Бакі зупинити Саске й продовжує бій із ним.
+  origin: M
+  extent: interval
+  display_rank: 250
+  involvement:
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  - entity_id: c-baki
+    role: opponent
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: affected
+    mode: physical
+  - entity_id: c-orochimaru
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-raido-wounded-by-sound-four
+  title: Четвірка Звуку тяжко ранить Райдо
+  text: Коли Орочімару атакує Хірузена, Райдо намагається втрутитися. Четвірка Звуку, замаскована під охоронців Казекаґе,
+    атакує Райдо; він дістає тяжкі поранення і втрачає свідомість, через що не може допомогти Хокаґе.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: group-sound-four
+    role: opponent
+    mode: physical
+  - entity_id: c-hiruzen
+    role: protected
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
 relations:
-  - {id: "rel-0801-aoba-genjutsu-1", kind: "before", a: "ev-y0-0801-kabuto-casts-arena-genjutsu", b: "ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
-  - {id: "rel-0801-aoba-genjutsu-2", kind: "before", a: "ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto", b: "ev-y0-0801-sand-sound-invasion-starts", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush"]}
-  - {id: "rel-0801-invasion-baki-extract-1", kind: "before", a: "ev-y0-0801-sand-sound-invasion-starts", b: "ev-y0-0801-baki-orders-gaara-extraction", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
-  - {id: "rel-0801-invasion-genma-1", kind: "before", a: "ev-y0-0801-baki-orders-gaara-extraction", b: "ev-y0-0801-genma-confronts-baki-dispatches-sasuke", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
-  - {id: "rel-0801-invasion-raido-1", kind: "before", a: "ev-y0-0801-sand-sound-invasion-starts", b: "ev-y0-0801-raido-wounded-by-sound-four", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
-  - {id: "rel-0801-invasion-arena-1", kind: "intersects", a: "ev-y0-0801-kabuto-casts-arena-genjutsu", b: "ev-y0-0801-sand-sound-invasion-starts", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+- id: rel-0801-aoba-genjutsu-1
+  kind: before
+  a: ev-y0-0801-kabuto-casts-arena-genjutsu
+  b: ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: rel-0801-aoba-genjutsu-2
+  kind: before
+  a: ev-y0-0801-aoba-breaks-genjutsu-identifies-kabuto
+  b: ev-y0-0801-sand-sound-invasion-starts
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+- id: rel-0801-invasion-baki-extract-1
+  kind: before
+  a: ev-y0-0801-sand-sound-invasion-starts
+  b: ev-y0-0801-baki-orders-gaara-extraction
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: rel-0801-invasion-genma-1
+  kind: before
+  a: ev-y0-0801-baki-orders-gaara-extraction
+  b: ev-y0-0801-genma-confronts-baki-dispatches-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: rel-0801-invasion-raido-1
+  kind: before
+  a: ev-y0-0801-sand-sound-invasion-starts
+  b: ev-y0-0801-raido-wounded-by-sound-four
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: rel-0801-invasion-arena-1
+  kind: intersects
+  a: ev-y0-0801-kabuto-casts-arena-genjutsu
+  b: ev-y0-0801-sand-sound-invasion-starts
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
 presence:
-  - {id: "pr-0801-invasion-baki", entity_id: "c-baki", from: "sc-y0-0801-invasion-begins-arena.start", to: "sc-y0-0801-invasion-begins-arena.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
-  - {id: "pr-0801-invasion-aoba", entity_id: "c-aoba", from: "sc-y0-0801-invasion-begins-arena.start", to: "sc-y0-0801-invasion-begins-arena.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
-  - {id: "pr-0801-invasion-genma", entity_id: "c-genma", from: "sc-y0-0801-invasion-begins-arena.start", to: "sc-y0-0801-invasion-begins-arena.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
-  - {id: "pr-0801-invasion-raido", entity_id: "c-raido", from: "sc-y0-0801-invasion-begins-arena.start", to: "ev-y0-0801-raido-wounded-by-sound-four.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
+- id: pr-0801-invasion-baki
+  entity_id: c-baki
+  from: sc-y0-0801-invasion-begins-arena.start
+  to: sc-y0-0801-invasion-begins-arena.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-0801-invasion-aoba
+  entity_id: c-aoba
+  from: sc-y0-0801-invasion-begins-arena.start
+  to: sc-y0-0801-invasion-begins-arena.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-0801-invasion-genma
+  entity_id: c-genma
+  from: sc-y0-0801-invasion-begins-arena.start
+  to: sc-y0-0801-invasion-begins-arena.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-0801-invasion-raido
+  entity_id: c-raido
+  from: sc-y0-0801-invasion-begins-arena.start
+  to: ev-y0-0801-raido-wounded-by-sound-four.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-audit-67-y0-0801-kabuto-casts-arena-genjutsu-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0801-kabuto-casts-arena-genjutsu.start
+  to: ev-y0-0801-kabuto-casts-arena-genjutsu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep67-audit

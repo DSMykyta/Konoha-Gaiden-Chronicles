@@ -69,9 +69,10 @@ checked_anime_episodes:
 - 64
 - 65
 - 66
+- 67
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 67
+next_anime_episode: 68
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0801-kakashi-explains-sasuke-preparation
@@ -1248,6 +1249,22 @@ episode_audits:
     Added one coherent stands scene containing Kakashi’s analysis/security conversation and Naruto/Shikamaru’s later
     warning; no individual apology or technique comments turned into standalone micro-moments. The Chidori outcome remains
     for episode 67 verification.
+- episode: 67
+  baseline_revision: 726937413e56331c879241bdd69534110a553c1b
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0801-sasuke-fights-gaara
+  - ev-y0-0801-kabuto-casts-arena-genjutsu
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Verified Chidori breaking the sphere, wounding Gaara and stopping transformation, together with Kabuto’s sleeping
+    genjutsu as the invasion signal. Merged the separate finishing strike into the complete Sasuke–Gaara match; preserved
+    its ID as a legacy alias and updated redirects/ledger. The warning on the stands intersects the battle rather than
+    preceding the entire bout. No speculative spectator presence or isolated technique micro-moment added.
+  merged_moment_ids:
+    ev-y0-0801-sasuke-pierces-gaara-chidori: ev-y0-0801-sasuke-fights-gaara
+
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
