@@ -19,21 +19,21 @@
     .hierarchy-preview .preview-top > button {
       display: grid;
       place-items: center;
-      width: 16px;
-      min-width: 16px;
-      height: 16px;
-      min-height: 16px;
+      width: 32px;
+      min-width: 32px;
+      height: 32px;
+      min-height: 32px;
       padding: 0;
       border: 1px solid rgba(255,255,255,.78);
       border-radius: 99px;
       background: rgba(255,255,255,.28);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 4px rgba(39,54,76,.08);
       color: var(--muted);
-      font-size: 9px;
+      font-size: 16px;
       line-height: 1;
       transform: none;
     }
-    .event-card .card-arrow svg { width: 8px; height: 8px; }
+    .event-card .card-arrow svg { width: 16px; height: 16px; }
     .event-card .card-arrow:not(:disabled):hover,
     .event-card .card-top-actions > .close:hover,
     .event-preview .preview-top > button:hover,
