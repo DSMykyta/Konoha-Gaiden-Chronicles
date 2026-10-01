@@ -57,7 +57,7 @@ const StoryClouds = {
    }
    const score=p=>Math.min(...part.map(n=>Math.hypot(Math.max(p.x-n.x,0,n.x-p.x-p.width),Math.max(p.y-n.y,0,n.y-p.y-p.height))))+Math.abs(p.x+labelWidth/2-middle)*.1+Math.abs(p.y+height/2-middleY)*.05;
    const position=positions.sort((a,b)=>score(a)-score(b))[0]||{x:16,y:Math.max(top,...labels.map(l=>l.y+l.height))+20,width:labelWidth,height};
-   const anchor=part.reduce((nearest,n)=>Math.hypot(n.x-(position.x+labelWidth/2),n.y-(position.y+height/2))<Math.hypot(nearest.x-(position.x+labelWidth/2),nearest.y-(position.y+height/2))?n:nearest,part[0]);
+   const anchor=part.reduce((nearest,n)=>Math.hypot(n.x-(position.x+labelWidth/2),n.y-(position.y+labelWidth/2))<Math.hypot(nearest.x-(position.x+labelWidth/2),nearest.y-(position.y+labelWidth/2))?n:nearest,part[0]);
    labels.push({...position,anchor,key:group.key,kind:group.kind,id:group.id,parentId:group.parentId,title:group.title,parentTitle:group.parentTitle,lines,count:group.nodes.length});
   }
   return labels;
@@ -124,7 +124,7 @@ const StoryClouds = {
    if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
    context.setTransform(dpr,0,0,dpr,0,-state.scrollTop*dpr);context.clearRect(0,state.scrollTop,state.width,state.height);
    for(const group of state.groups){
-    const own=new Set(group.nodes.map(n=>n.id)),foreign=group.kind==='episode'?[]:state.nodes.filter(n=>!own.has(n.id)),radius=group.kind==='episode'?70:group.kind==='scene'?48:25,colors=StoryClouds.palette(group.kind,group.key);
+    const own=new Set(group.nodes.map(n=>n.id)),foreign=group.kind==='moment'?state.nodes.filter(n=>!own.has(n.id)):[],radius=group.kind==='episode'?70:group.kind==='scene'?48:25,colors=StoryClouds.palette(group.kind,group.key);
     for(const part of group.parts){
      const minY=Math.min(...part.map(n=>n.y))-radius*2.4,maxY=Math.max(...part.map(n=>n.y))+radius*2.4;
      if(maxY<state.scrollTop||minY>state.scrollTop+state.height)continue;
