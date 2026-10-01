@@ -1013,6 +1013,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep50-audit
+    type: reference
+    title: 'Narutopedia — The Fifth Gate: A Splendid Ninja is Born'
+    url: https://naruto.fandom.com/wiki/The_Fifth_Gate%3A_A_Splendid_Ninja_is_Born
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep50-crosscheck-200
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://naruto.fandom.com/fr/wiki/Mitate
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3832,5 +3846,18 @@ evidence:
   - id: evd-narutopedia-ep49-audit
     source_id: src-narutopedia-ep49-audit
     locator: Episode 49, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep50-audit
+    source_id: src-narutopedia-ep50-audit
+    locator: Episode 50, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep50-audit-crosscheck
+    source_id: src-narutopedia-ep50-crosscheck-200
+    locator: "Part I, Chunin Exam; Chapter 87 pages 5\u20136; identifies Lee examining\
+      \ medic and prognosis"
     basis: source
     review: accepted

@@ -2085,6 +2085,12 @@ entities:
     aliases:
     - Mubi
 
+  - id: c-mitate
+    kind: person
+    name: Mitate
+    aliases:
+      - Мітате
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

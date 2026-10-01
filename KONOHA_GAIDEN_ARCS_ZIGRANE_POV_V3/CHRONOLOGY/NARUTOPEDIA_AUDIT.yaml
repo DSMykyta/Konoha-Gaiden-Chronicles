@@ -52,9 +52,10 @@ checked_anime_episodes:
 - 47
 - 48
 - 49
+- 50
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 50
+next_anime_episode: 51
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -87,6 +88,8 @@ added_moment_ids:
 - ev-y0-0121-naruto-persuades-hiruzen
 - ev-y0-0121-naruto-punches-konohamaru
 - ev-y0-0121-naruto-spots-konohamaru
+- ev-y0-0706-lee-protects-tenten
+- ev-y0-0706-medics-examine-lee
 added_scene_ids:
 - sc-y0-0118-naruto-pursuit
 - sc-y0-0119-academy-swing
@@ -832,6 +835,28 @@ episode_audits:
   notes:
   - 'Enriched the same whole bout: sand decoy and Second/Third Gate escalation. Guy and Neji memories are not July arena
     events; no separate exhaustion, gate-opening or surprise moments.'
+- episode: 50
+  baseline_revision: 2a40b0890a33cc4268a71830af94e2f27e9d0d38
+  added_moment_ids:
+  - ev-y0-0706-medics-examine-lee
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-gaara-defeats-lee
+  cast_review: Author forest-failure outcome preserved; no unsupported Team 9 presence added to preliminaries.
+  notes:
+  - Completed retained whole Lee–Gaara fight across episodes 48–50, including Guy stopping fatal attack. Added a distinct
+    post-bout medical assessment/evacuation, which establishes injury prognosis and ends Lee participation. No separate
+    crying, unconscious stance or spectator reaction moments.  presence_interval_merges:
+    pr-audit-42-y0-0706-sakura-ino-double-ko-c-sakura: pr-audit-41-y0-0706-sakura-ino-double-ko-c-sakura
+    pr-audit-42-y0-0706-sakura-ino-double-ko-c-ino: pr-audit-41-y0-0706-sakura-ino-double-ko-c-ino
+    pr-audit-42-y0-0706-sakura-ino-double-ko-c-hayate: pr-audit-41-y0-0706-sakura-ino-double-ko-c-hayate
+    pr-audit-42-y0-0706-sakura-ino-double-ko-c-neji: pr-audit-41-y0-0706-sakura-ino-double-ko-c-neji
+    pr-audit-42-y0-0706-sakura-ino-double-ko-c-tenten: pr-audit-41-y0-0706-sakura-ino-double-ko-c-tenten
+    pr-audit-45-y0-0706-naruto-defeats-kiba-c-naruto: pr-audit-44-y0-0706-naruto-defeats-kiba-c-naruto
+    pr-audit-45-y0-0706-naruto-defeats-kiba-c-kiba: pr-audit-44-y0-0706-naruto-defeats-kiba-c-kiba
+    pr-audit-45-y0-0706-naruto-defeats-kiba-c-akamaru: pr-audit-44-y0-0706-naruto-defeats-kiba-c-akamaru
+    pr-audit-45-y0-0706-naruto-defeats-kiba-c-hayate: pr-audit-44-y0-0706-naruto-defeats-kiba-c-hayate
+
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

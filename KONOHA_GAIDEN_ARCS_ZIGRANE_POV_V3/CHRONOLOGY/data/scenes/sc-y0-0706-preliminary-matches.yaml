@@ -318,11 +318,11 @@ events:
   legacy_ids:
   - V10-000046-J
   title: Ґаара перемагає й тяжко травмує Лі
-  text: У дев’ятому поєдинку автоматичний піщаний захист Ґаари відбиває атаки Лі. Знявши обтяжувачі, Лі долає його швидкістю,
-    але на тілі Ґаари виявляється піщана броня. Лі підкидає супротивника й застосовує Передній лотос, проте влучає в
-    порожню піщану підміну. Справжній Ґаара контратакує виснаженого Лі. Лі відкриває Другі внутрішні ворота, відновлюючи
-    сили, а потім Треті, щоб продовжити наступ. Зрештою Ґаара перемагає та тяжко ушкоджує руку й ногу Лі; Бакі спостерігає
-    за виступом свого учня.
+  text: У дев’ятому поєдинку Лі знімає обтяжувачі та швидкістю долає автоматичний піщаний захист Ґаари, але стикається
+    з піщаною бронею. Передній лотос уражає піщану підміну. Після контратаки Ґаари Лі відкриває внутрішні ворота, доходить
+    до П’ятих і застосовує Зворотний лотос. Ґаара пом’якшує падіння піском із гарбуза та розтрощує ліву руку й ногу Лі.
+    Ґай перехоплює пісок, зупиняючи добивання. Непритомний Лі ще підводиться в бойову стійку, але вже не може продовжувати;
+    Ґаару оголошують переможцем. Бакі спостерігає за виступом свого учня.
   origin: M
   extent: interval
   display_rank: 900
@@ -351,6 +351,29 @@ events:
   - evd-anime-31-50
   - evd-narutopedia-ep48-audit
   - evd-narutopedia-ep49-audit
+  - evd-narutopedia-ep50-audit
+  - evd-narutopedia-ep50-audit-crosscheck
+- id: ev-y0-0706-medics-examine-lee
+  title: Медики оглядають Лі після поєдинку
+  text: Медики оглядають тяжко пораненого Лі й забирають його для лікування. Мітате повідомляє Ґаю, що ушкодження надто
+    тяжкі для повного відновлення й Лі, за цим первинним висновком, більше не зможе бути ніндзя. Ґай залишає арену перед
+    останнім попереднім поєдинком.
+  display_rank: 950
+  involvement:
+  - entity_id: c-lee
+    role: affected
+    mode: physical
+  - entity_id: c-mitate
+    role: focus
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep50-audit
+  - evd-narutopedia-ep50-audit-crosscheck
 - id: ev-y0-0706-dosu-defeats-choji
   legacy_ids:
   - V10-000046-K
@@ -473,6 +496,22 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep43-audit
+- id: rel-audit-50-ev-y0-0706-gaara-defeats-lee-ev-y0-0706-medics-examine-lee
+  kind: before
+  a: ev-y0-0706-gaara-defeats-lee
+  b: ev-y0-0706-medics-examine-lee
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep50-audit
+- id: rel-audit-50-ev-y0-0706-medics-examine-lee-ev-y0-0706-dosu-defeats-choji
+  kind: before
+  a: ev-y0-0706-medics-examine-lee
+  b: ev-y0-0706-dosu-defeats-choji
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep50-audit
 presence:
 - id: pr-0706-prelims-baki
   entity_id: c-baki
@@ -636,6 +675,7 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep41-audit
+  - evd-narutopedia-ep42-audit
 - id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-ino
   entity_id: c-ino
   from: ev-y0-0706-sakura-ino-double-ko.start
@@ -644,6 +684,7 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep41-audit
+  - evd-narutopedia-ep42-audit
 - id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-hayate
   entity_id: c-hayate
   from: ev-y0-0706-sakura-ino-double-ko.start
@@ -652,6 +693,7 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep41-audit
+  - evd-narutopedia-ep42-audit
 - id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-neji
   entity_id: c-neji
   from: ev-y0-0706-sakura-ino-double-ko.start
@@ -660,6 +702,7 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep41-audit
+  - evd-narutopedia-ep42-audit
 - id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-tenten
   entity_id: c-tenten
   from: ev-y0-0706-sakura-ino-double-ko.start
@@ -668,45 +711,6 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep41-audit
-- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-sakura
-  entity_id: c-sakura
-  from: ev-y0-0706-sakura-ino-double-ko.start
-  to: ev-y0-0706-sakura-ino-double-ko.end
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep42-audit
-- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-ino
-  entity_id: c-ino
-  from: ev-y0-0706-sakura-ino-double-ko.start
-  to: ev-y0-0706-sakura-ino-double-ko.end
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep42-audit
-- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-hayate
-  entity_id: c-hayate
-  from: ev-y0-0706-sakura-ino-double-ko.start
-  to: ev-y0-0706-sakura-ino-double-ko.end
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep42-audit
-- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-neji
-  entity_id: c-neji
-  from: ev-y0-0706-sakura-ino-double-ko.start
-  to: ev-y0-0706-sakura-ino-double-ko.end
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep42-audit
-- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-tenten
-  entity_id: c-tenten
-  from: ev-y0-0706-sakura-ino-double-ko.start
-  to: ev-y0-0706-sakura-ino-double-ko.end
-  basis: source
-  review: accepted
-  evidence_ids:
   - evd-narutopedia-ep42-audit
 - id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-naruto
   entity_id: c-naruto
@@ -836,6 +840,7 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep44-audit
+  - evd-narutopedia-ep45-audit
 - id: pr-audit-44-y0-0706-naruto-defeats-kiba-c-kiba
   entity_id: c-kiba
   from: ev-y0-0706-naruto-defeats-kiba.start
@@ -844,6 +849,7 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep44-audit
+  - evd-narutopedia-ep45-audit
 - id: pr-audit-44-y0-0706-naruto-defeats-kiba-c-akamaru
   entity_id: c-akamaru
   from: ev-y0-0706-naruto-defeats-kiba.start
@@ -852,6 +858,7 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep44-audit
+  - evd-narutopedia-ep45-audit
 - id: pr-audit-44-y0-0706-naruto-defeats-kiba-c-hayate
   entity_id: c-hayate
   from: ev-y0-0706-naruto-defeats-kiba.start
@@ -860,37 +867,6 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep44-audit
-- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-naruto
-  entity_id: c-naruto
-  from: ev-y0-0706-naruto-defeats-kiba.start
-  to: ev-y0-0706-naruto-defeats-kiba.end
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep45-audit
-- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-kiba
-  entity_id: c-kiba
-  from: ev-y0-0706-naruto-defeats-kiba.start
-  to: ev-y0-0706-naruto-defeats-kiba.end
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep45-audit
-- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-akamaru
-  entity_id: c-akamaru
-  from: ev-y0-0706-naruto-defeats-kiba.start
-  to: ev-y0-0706-naruto-defeats-kiba.end
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-narutopedia-ep45-audit
-- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-hayate
-  entity_id: c-hayate
-  from: ev-y0-0706-naruto-defeats-kiba.start
-  to: ev-y0-0706-naruto-defeats-kiba.end
-  basis: source
-  review: accepted
-  evidence_ids:
   - evd-narutopedia-ep45-audit
 - id: pr-audit-46-y0-0706-neji-defeats-hinata-c-neji
   entity_id: c-neji
@@ -996,3 +972,27 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep49-audit
+- id: pr-audit-50-ev-y0-0706-medics-examine-lee-c-lee
+  entity_id: c-lee
+  from: ev-y0-0706-medics-examine-lee.start
+  to: ev-y0-0706-medics-examine-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep50-audit
+- id: pr-audit-50-ev-y0-0706-medics-examine-lee-c-mitate
+  entity_id: c-mitate
+  from: ev-y0-0706-medics-examine-lee.start
+  to: ev-y0-0706-medics-examine-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep50-audit
+- id: pr-audit-50-ev-y0-0706-medics-examine-lee-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0706-medics-examine-lee.start
+  to: ev-y0-0706-medics-examine-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep50-audit
