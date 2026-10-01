@@ -150,7 +150,11 @@
   filter: saturate(.9) contrast(.98);
 }
 
-#profileDialog .profile-image-empty {
+#profileDialog .profile-image.profile-image-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 72mm;
   padding: 0;
   border-style: solid;
@@ -168,6 +172,7 @@
 }
 
 #profileDialog .profile-image-empty small {
+  margin-top: 4px;
   color: #8c8376;
 }
 
