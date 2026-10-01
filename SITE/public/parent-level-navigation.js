@@ -8,10 +8,8 @@
   const style = document.createElement('style');
   style.textContent = `
     /* Parent navigation is an external control, never an inline content block. */
-    .event-card .scene-context,
-    .event-card .card-open-scene,
-    .event-preview .scene-context,
-    .hierarchy-preview .scene-context {
+    .scene-context,
+    .card-open-scene {
       display: none !important;
     }
 
@@ -118,7 +116,8 @@
     let left = rect.left - size - gap;
     let top = rect.top + 8;
 
-    // If there is no safe room outside, sit on the outer edge rather than inside content.
+    // Prefer the outer edge. On a narrow viewport keep it at the card edge,
+    // but never turn it back into an inline content control.
     if (left < 8) left = Math.max(8, rect.left + 8);
     top = Math.max(8, Math.min(window.innerHeight - size - 8, top));
 
@@ -131,49 +130,129 @@
     return episode?.arc_id || null;
   }
 
-  function navigateArcLevel(id) {
-    if (!id || !arcMap?.has?.(id)) return;
+  function visibleStoryScenes() {
+    return typeof orderedScenes === 'function' ? orderedScenes().filter(scene => scene.day !== null) : [];
+  }
 
-    const episodes = [...episodeMap.values()].filter(episode => episode?.arc_id === id);
-    const scenes = episodes.flatMap(episode => (episode.scene_ids || []).map(sceneId => sceneMap.get(sceneId)).filter(Boolean));
-    const days = scenes.map(scene => scene.day).filter(day => day !== null && day !== undefined);
+  function pinCard(focusKey, drawCard) {
+    closeCard();
+    focusId = focusKey;
+    pinnedNodeId = focusKey;
+    anchorEvent = null;
+    drawCard();
+    const card = document.getElementById('eventCard');
+    if (card) card.hidden = false;
+    render();
+    if (typeof revealReadingNode === 'function') revealReadingNode();
+    if (typeof focusReadingCard === 'function') focusReadingCard();
+    requestAnimationFrame(positionButton);
+  }
 
-    zoom = zoomModes.year;
-    if (days.length) {
-      const middleDay = (Math.min(...days) + Math.max(...days)) / 2 + .5;
-      center = clampAxisCenter(dayToAxis(middleDay));
+  function replaceWithScene(id) {
+    const scene = sceneMap?.get?.(id);
+    if (!scene) return;
+    const group = sceneEvents(id);
+    if (!group.length) return;
+
+    zoom = zoomModes.week;
+    if (scene.day !== null && scene.day !== undefined) {
+      center = clampAxisCenter(dayToAxis(scene.day + .5));
     }
 
-    closeCard();
-    render();
-    const node = graphNodes.find(point => point.kind === 'arc' && point.rawId === id);
-    if (node) openNode(node, true);
+    pinCard(id, () => showSceneCard(scene, group));
+  }
+
+  function episodePoint(id) {
+    const episode = episodeMap?.get?.(id);
+    if (!episode) return null;
+    const scenes = visibleStoryScenes().filter(scene => sceneMap?.get?.(scene.id)?.episode_id === id);
+    if (!scenes.length) return null;
+    const group = scenes.flatMap(scene => scene.group || []);
+    const positions = scenes.map(scene => scene.position ?? scene.day).filter(Number.isFinite);
+    const day = positions.length ? (Math.min(...positions) + Math.max(...positions)) / 2 : scenes[0].day;
+    return {
+      id:`episode:${id}`,
+      rawId:id,
+      kind:'episode',
+      title:episode.title || id,
+      story:episode,
+      group,
+      day,
+      calendarDay:scenes[0].day,
+      childCount:scenes.length,
+      sourceSceneIds:scenes.map(scene => scene.id),
+      sourceEpisodeIds:[id],
+      scenes
+    };
+  }
+
+  function replaceWithEpisode(id) {
+    const point = episodePoint(id);
+    if (!point) return;
+    const positions = point.scenes.map(scene => scene.position ?? scene.day).filter(Number.isFinite);
+
+    zoom = zoomModes.month;
+    if (positions.length) {
+      center = clampAxisCenter(dayToAxis((Math.min(...positions) + Math.max(...positions)) / 2));
+    }
+
+    pinCard(point.id, () => showStoryGroup(point));
+  }
+
+  function arcPoint(id) {
+    const arc = arcMap?.get?.(id);
+    if (!arc) return null;
+    const episodes = [...episodeMap.values()].filter(episode => episode?.arc_id === id);
+    const episodeIds = new Set(episodes.map(episode => episode.id));
+    const scenes = visibleStoryScenes().filter(scene => episodeIds.has(sceneMap?.get?.(scene.id)?.episode_id));
+    if (!scenes.length) return null;
+    const group = scenes.flatMap(scene => scene.group || []);
+    const positions = scenes.map(scene => scene.position ?? scene.day).filter(Number.isFinite);
+    const day = positions.length ? (Math.min(...positions) + Math.max(...positions)) / 2 : scenes[0].day;
+    return {
+      id:`arc:${id}`,
+      rawId:id,
+      kind:'arc',
+      title:arc.title || id,
+      story:arc,
+      group,
+      day,
+      calendarDay:scenes[0].day,
+      childCount:episodes.length,
+      sourceSceneIds:scenes.map(scene => scene.id),
+      sourceEpisodeIds:episodes.map(episode => episode.id)
+    };
+  }
+
+  function replaceWithArc(id) {
+    const point = arcPoint(id);
+    if (!point) return;
+    const positions = point.sourceSceneIds
+      .map(sceneId => visibleStoryScenes().find(scene => scene.id === sceneId))
+      .filter(Boolean)
+      .map(scene => scene.position ?? scene.day)
+      .filter(Number.isFinite);
+
+    zoom = zoomModes.year;
+    if (positions.length) {
+      center = clampAxisCenter(dayToAxis((Math.min(...positions) + Math.max(...positions)) / 2));
+    }
+
+    pinCard(point.id, () => showStoryGroup(point));
   }
 
   function navigateParent(target) {
     if (!target) return;
-    if (target.kind === 'scene') {
-      navigateSceneLevel(target.id);
-      return;
-    }
-    if (target.kind === 'episode') {
-      navigateEpisodeLevel(target.id);
-      return;
-    }
-    if (target.kind === 'arc') navigateArcLevel(target.id);
+    if (target.kind === 'scene') return replaceWithScene(target.id);
+    if (target.kind === 'episode') return replaceWithEpisode(target.id);
+    if (target.kind === 'arc') return replaceWithArc(target.id);
   }
 
-  // Any legacy "open full scene" control now climbs to the scene card instead
-  // of opening the separate scene dialog/modal.
-  document.addEventListener('click', event => {
-    const trigger = event.target instanceof Element ? event.target.closest('[data-open-scene]') : null;
-    if (!trigger) return;
-    const sceneId = trigger.dataset.openScene;
-    if (!sceneId) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    navigateSceneLevel(sceneId);
-  }, true);
+  // Remove the old full-scene modal behavior globally. Every old call to
+  // openScene now replaces the current card with the scene-level card.
+  openScene = function openSceneAsParentCard(id) {
+    replaceWithScene(id);
+  };
 
   const baseShowEvent = showEvent;
   showEvent = function showEventWithParentLevel(event) {
