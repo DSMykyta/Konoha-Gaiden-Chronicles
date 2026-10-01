@@ -1,0 +1,161 @@
+schema_version: 2
+entity_id: "c-naruto"
+
+display:
+  name: "Наруто Узумакі"
+  short_name: "Наруто"
+
+identity:
+  species: "human"
+  sex: "male"
+  birth:
+    month: 10
+    day: 10
+  blood_type: "B"
+
+# Об'єктивна істина зберігається окремо від того, що Наруто знає у вибраний момент.
+truth:
+  family:
+    parents:
+      - entity_id: "c-minato"
+        name: "Мінато Намікадзе"
+      - entity_id: null
+        name: "Кушина Узумакі"
+
+states:
+  - id: "naruto-12"
+    label: "12 років"
+    age: 12
+    period_id: "part-i"
+    image: null
+    image_alt: "Наруто Узумакі у віці 12 років, повний зріст"
+
+    summary: "Генін Конохи й джинчурікі Дев’ятихвостого. У цьому віковому періоді Наруто випускається з Академії, входить до Команди 7 під керівництвом Какаші Хатаке й продовжує прагнути стати Хокаґе та здобути визнання села."
+
+    knowledge:
+      family:
+        parents:
+          status: "unknown"
+          display_value: "сирота"
+
+    facts:
+      set:
+        village: {label: "Село", value: "Конохаґакуре"}
+        rank: {label: "Ранг", value: "генін"}
+        birthday: {label: "День народження", value: "10 жовтня"}
+        height: {label: "Зріст", value: "145,3 см"}
+        weight: {label: "Вага", value: "40,1 кг"}
+        blood_type: {label: "Група крові", value: "B"}
+        classification: {label: "Класифікація", value: "джинчурікі Дев’ятихвостого"}
+
+    appearance:
+      set:
+        build: null
+        hair: "світле, коротке й скуйовджене"
+        eyes: "блакитні"
+        features: "по три характерні смуги на кожній щоці"
+        clothing: "помаранчево-синій костюм; після випуску — протектор Конохи"
+        identifying_features:
+          - "по три смуги на кожній щоці"
+        accessories: []
+
+    personality:
+      set:
+        core_traits:
+          - "гучний і прямолінійний"
+          - "імпульсивний"
+          - "упертий і дуже наполегливий"
+          - "схильний до суперництва"
+          - "прагне визнання й сильно прив’язується до людей, які його приймають"
+        outward_behavior: []
+        values: []
+        fears: []
+        vulnerabilities: []
+        strengths: []
+        flaws: []
+        habits: []
+        stress_response: []
+        social_style: []
+        contradictions: []
+
+    voice:
+      set:
+        speech_style: null
+        vocabulary: null
+        mannerisms: []
+        tells: []
+        humor: null
+        address_style: null
+
+    drives:
+      set:
+        wants: []
+        needs: []
+        goals:
+          - "стати Хокаґе"
+          - "домогтися визнання мешканців Конохи"
+          - "захищати людей, яких вважає своїми"
+        motives: []
+        stakes: []
+        internal_conflict: []
+        external_pressures: []
+
+    abilities:
+      upsert:
+        abl-shadow-clone-multi:
+          status: "основна техніка"
+        abl-transformation:
+          status: "опанована"
+        abl-chakra-surface-control:
+          status: "контроль чакри, опановує протягом Part I"
+        abl-toad-summoning:
+          status: "опановує протягом Part I"
+        abl-rasengan:
+          status: "опановує протягом Part I"
+        abl-nine-tails-chakra:
+          status: "нестабільний доступ у стресових ситуаціях"
+
+    skills:
+      upsert: {}
+
+    equipment:
+      set:
+        - "протектор Конохи"
+        - "кунаї"
+        - "сюрикени"
+        - "стандартне спорядження геніна"
+
+    condition:
+      set:
+        general: null
+        injuries: []
+        disabilities: []
+        temporary_conditions: []
+
+    social:
+      set:
+        residence_id: null
+        reputation: null
+        roles: []
+
+    relationships:
+      upsert:
+        c-iruka:
+          label: "наставник і перший дорослий, який відкрито його визнав"
+        c-kakashi:
+          label: "сенсей Команди 7"
+        c-sasuke:
+          label: "товариш по команді та суперник"
+        c-sakura:
+          label: "товаришка по команді"
+        c-jiraiya:
+          label: "учитель протягом Part I"
+
+    narrative:
+      set:
+        role: null
+        current_arc: null
+        unresolved_threads: []
+        secrets: []
+
+    sections: []
