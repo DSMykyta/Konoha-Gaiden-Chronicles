@@ -1,28 +1,77 @@
 schema_version: 1
-id: "sc-y0-0801-neji-learns-hizashi-truth"
+id: sc-y0-0801-neji-learns-hizashi-truth
 episode_id: ep-y0-neji-hizashi-truth
 display_rank: 100
-continuity_id: "main"
-title: "Неджі дізнається правду про смерть Хізаші"
-location_id: "loc-hyuga-compound"
-placement: {anchor_id: "ta-y0-0801", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Неджі дізнається правду про смерть Хізаші
+location_id: null
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0801-hiashi-tells-neji-hizashi-truth"
-    legacy_ids: ["V10-000064-B"]
-    title: "Хіаші пояснює Неджі вибір Хізаші"
-    text: "Після поразки Неджі дізнається, що Хізаші добровільно вирішив пожертвувати собою, а не був примусово відданий головною гілкою."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-hiashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-neji", role: "focus", mode: "physical"}
-      - {entity_id: "c-hizashi", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-v10-000064-B", "evd-manga-finals-konoha-crush"]
+- id: ev-y0-0801-hiashi-tells-neji-hizashi-truth
+  legacy_ids:
+  - V10-000064-B
+  title: Хіаші пояснює Неджі вибір Хізаші
+  text: Після лікування травм Неджі Хіаші просить залишити їх удвох і передає сувій із почерком Хізаші. Батько Неджі
+    сам обрав смерть заради брата й села. Хіаші схиляє голову й просить пробачення; Неджі просить підвестися та вирішує
+    стати сильнішим.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hiashi
+    role: focus
+    mode: physical
+  - entity_id: c-neji
+    role: focus
+    mode: physical
+  - entity_id: c-hizashi
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-v10-000064-B
+  - evd-manga-finals-konoha-crush
+  - evd-narutopedia-ep63-audit
 relations: []
 presence:
-  - {id: "pr-0801-neji-truth-hiashi", entity_id: "c-hiashi", from: "sc-y0-0801-neji-learns-hizashi-truth.start", to: "sc-y0-0801-neji-learns-hizashi-truth.end", basis: "source", evidence_ids: ["evd-v10-000064-B"], review: "accepted"}
-  - {id: "pr-0801-neji-truth-neji", entity_id: "c-neji", from: "sc-y0-0801-neji-learns-hizashi-truth.start", to: "sc-y0-0801-neji-learns-hizashi-truth.end", basis: "source", evidence_ids: ["evd-v10-000064-B"], review: "accepted"}
+- id: pr-0801-neji-truth-hiashi
+  entity_id: c-hiashi
+  from: sc-y0-0801-neji-learns-hizashi-truth.start
+  to: sc-y0-0801-neji-learns-hizashi-truth.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000064-B
+  review: accepted
+- id: pr-0801-neji-truth-neji
+  entity_id: c-neji
+  from: sc-y0-0801-neji-learns-hizashi-truth.start
+  to: sc-y0-0801-neji-learns-hizashi-truth.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000064-B
+  review: accepted
+- id: pr-audit-63-y0-0801-hiashi-tells-neji-hizashi-truth-c-hiashi
+  entity_id: c-hiashi
+  from: ev-y0-0801-hiashi-tells-neji-hizashi-truth.start
+  to: ev-y0-0801-hiashi-tells-neji-hizashi-truth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+- id: pr-audit-63-y0-0801-hiashi-tells-neji-hizashi-truth-c-neji
+  entity_id: c-neji
+  from: ev-y0-0801-hiashi-tells-neji-hizashi-truth.start
+  to: ev-y0-0801-hiashi-tells-neji-hizashi-truth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit

@@ -1125,6 +1125,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep63-audit
+    type: reference
+    title: 'Narutopedia — Hit it or Quit it: The Final Rounds Get Complicated!'
+    url: https://naruto.fandom.com/wiki/Hit_it_or_Quit_it%3A_The_Final_Rounds_Get_Complicated%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4043,5 +4050,11 @@ evidence:
   - id: evd-narutopedia-ep62-audit
     source_id: src-narutopedia-ep62-audit
     locator: Episode 62, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep63-audit
+    source_id: src-narutopedia-ep63-audit
+    locator: Episode 63, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

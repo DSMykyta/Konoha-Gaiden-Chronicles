@@ -3482,3 +3482,21 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep60-audit
+
+- id: lnk-audit-63-ev-y0-0801-naruto-defeats-neji-sc-y0-0801-finals-rescheduled
+  kind: before
+  a: ev-y0-0801-naruto-defeats-neji
+  b: sc-y0-0801-finals-rescheduled
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+
+- id: lnk-audit-63-sc-y0-0801-finals-rescheduled-ev-y0-0801-shikamaru-traps-temari
+  kind: before
+  a: sc-y0-0801-finals-rescheduled
+  b: ev-y0-0801-shikamaru-traps-temari
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit

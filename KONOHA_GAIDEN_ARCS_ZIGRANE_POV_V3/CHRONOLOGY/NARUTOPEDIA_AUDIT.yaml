@@ -65,11 +65,14 @@ checked_anime_episodes:
 - 60
 - 61
 - 62
+- 63
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 63
+next_anime_episode: 64
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-sasuke-match-postponed
+- ev-y0-0801-kankuro-forfeits-shino-match
 - ev-y0-0801-kiba-checks-hinata-coughing-blood
 - ev-y0-0801-kabuto-kills-anbu-for-disguise
 - ev-y0-0801-anbu-search-sasuke
@@ -134,6 +137,7 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-finals-rescheduled
 - sc-y0-0801-hinata-unwell-in-stands
 - sc-y0-0801-kabuto-steals-anbu-disguise
 - sc-y0-0801-anbu-search-sasuke
@@ -1170,6 +1174,21 @@ episode_audits:
   - 'Verified and expanded the end of the whole Naruto–Neji fight: blocked chakra, Nine-Tails reserve, crater/clone deception,
     underground uppercut and Genma’s declaration. No extra attack nodes or invented scenes; the fight stays one complete
     moment across episodes 60–62.'
+- episode: 63
+  baseline_revision: 319363ac1e40c1147c0110bc389d7164e5e31a30
+  added_moment_ids:
+  - ev-y0-0801-sasuke-match-postponed
+  - ev-y0-0801-kankuro-forfeits-shino-match
+  added_scene_ids:
+  - sc-y0-0801-finals-rescheduled
+  updated_moment_ids:
+  - ev-y0-0801-hiashi-tells-neji-hizashi-truth
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - 'Added the complete finals rescheduling decision and Kankuro’s withdrawal without revealing Karasu. Expanded Hiashi/Neji’s
+    whole reconciliation conversation with Hizashi’s scroll and voluntary choice. Removed the unsupported Hyuga-compound
+    location: the synopsis identifies a treatment room but does not establish the exact building. Project dates and author
+    attendance retained.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

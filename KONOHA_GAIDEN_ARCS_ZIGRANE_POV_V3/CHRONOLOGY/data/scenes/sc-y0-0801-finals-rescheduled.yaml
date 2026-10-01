@@ -1,0 +1,110 @@
+schema_version: 1
+id: sc-y0-0801-finals-rescheduled
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Фінал перебудовують через відсутність Саске
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-sasuke-match-postponed
+  title: Хірузен відкладає бій Саске після втручання гостя
+  text: Хірузен збирається дискваліфікувати відсутнього Саске. Орочімару в образі Казекаґе нагадує про гостей, які прибули
+    подивитися на Учіху проти Ґаари; Хірузен відкладає бій.
+  display_rank: 100
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-orochimaru
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  - entity_id: c-gaara
+    role: mentioned
+    mode: remote
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+- id: ev-y0-0801-kankuro-forfeits-shino-match
+  title: Канкуро відмовляється від бою із Шіно
+  text: Бій Канкуро пересувають уперед, але він здається, щоб не розкрити механізми Карасу. Шіно перемагає без бою; наступними
+    стають Темарі й Шикамару.
+  display_rank: 200
+  involvement:
+  - entity_id: c-kankuro
+    role: focus
+    mode: physical
+  - entity_id: c-shino
+    role: affected
+    mode: physical
+  - entity_id: c-genma
+    role: referee
+    mode: physical
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+relations:
+- id: rel-audit-63-postpone-before-forfeit
+  kind: before
+  a: ev-y0-0801-sasuke-match-postponed
+  b: ev-y0-0801-kankuro-forfeits-shino-match
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+presence:
+- id: pr-audit-63-ev-y0-0801-sasuke-match-postponed-c-hiruzen
+  entity_id: c-hiruzen
+  from: ev-y0-0801-sasuke-match-postponed.start
+  to: ev-y0-0801-sasuke-match-postponed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+- id: pr-audit-63-ev-y0-0801-sasuke-match-postponed-c-orochimaru
+  entity_id: c-orochimaru
+  from: ev-y0-0801-sasuke-match-postponed.start
+  to: ev-y0-0801-sasuke-match-postponed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+- id: pr-audit-63-ev-y0-0801-kankuro-forfeits-shino-match-c-kankuro
+  entity_id: c-kankuro
+  from: ev-y0-0801-kankuro-forfeits-shino-match.start
+  to: ev-y0-0801-kankuro-forfeits-shino-match.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+- id: pr-audit-63-ev-y0-0801-kankuro-forfeits-shino-match-c-shino
+  entity_id: c-shino
+  from: ev-y0-0801-kankuro-forfeits-shino-match.start
+  to: ev-y0-0801-kankuro-forfeits-shino-match.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
+- id: pr-audit-63-ev-y0-0801-kankuro-forfeits-shino-match-c-genma
+  entity_id: c-genma
+  from: ev-y0-0801-kankuro-forfeits-shino-match.start
+  to: ev-y0-0801-kankuro-forfeits-shino-match.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep63-audit
