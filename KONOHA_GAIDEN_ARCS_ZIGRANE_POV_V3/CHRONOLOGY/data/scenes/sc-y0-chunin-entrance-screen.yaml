@@ -1,0 +1,123 @@
+schema_version: 1
+id: sc-y0-chunin-entrance-screen
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-chunin-entrance-screen
+  display_rank: 100
+  title: Рок Лі зупиняє сутичку біля реєстрації
+  text: Ізумо й Котецу, замасковані під генінів, не пропускають кандидатів та відмовляють їх від іспиту. Команда Ґая спершу
+    вдає безпорадність. Команда 7 розпізнає гендзюцу, що приховує справжній поверх. Саске й Котецу переходять до ударів, але
+    Рок Лі зупиняє обох. Лі пропонує Сакурі зустрічатися й отримує відмову. Коли Команда 7 іде далі, перевіряльники знімають
+    маскування й відзначають здібності кандидатів.
+  involvement:
+  - entity_id: c-lee
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-kotetsu
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+  - evd-narutopedia-entry-screen-cast
+relations: []
+presence:
+- id: pr-audit-21-y0-chunin-entrance-screen-c-lee
+  entity_id: c-lee
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit-21-y0-chunin-entrance-screen-c-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit-21-y0-chunin-entrance-screen-c-naruto
+  entity_id: c-naruto
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit-21-y0-chunin-entrance-screen-c-sakura
+  entity_id: c-sakura
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit21-entry-c-izumo
+  entity_id: c-izumo
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit21-entry-c-kotetsu
+  entity_id: c-kotetsu
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit21-entry-c-neji
+  entity_id: c-neji
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit21-entry-c-tenten
+  entity_id: c-tenten
+  from: sc-y0-chunin-entrance-screen.start
+  to: sc-y0-chunin-entrance-screen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+episode_id: ep-y0-chunin-entrance-screen
+display_rank: 100
+title: Перевірка кандидатів біля реєстрації
+location_id: null
+placement:
+  anchor_id: ta-y0-0701
+  day_offset: 0

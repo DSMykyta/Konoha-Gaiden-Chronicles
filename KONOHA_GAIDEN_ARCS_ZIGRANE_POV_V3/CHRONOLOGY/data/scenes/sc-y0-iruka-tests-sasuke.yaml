@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-iruka-tests-sasuke
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-iruka-tests-sasuke
+  display_rank: 100
+  title: Саске перемагає замаскованого Іруку
+  text: Саске перемагає ніндзя, під якого замаскувався Ірука, й наказує йому залишити Коноху.
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+relations: []
+presence:
+- id: pr-audit-21-y0-iruka-tests-sasuke-c-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iruka-tests-sasuke.start
+  to: sc-y0-iruka-tests-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit-21-y0-iruka-tests-sasuke-c-iruka
+  entity_id: c-iruka
+  from: sc-y0-iruka-tests-sasuke.start
+  to: sc-y0-iruka-tests-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+episode_id: ep-y0-iruka-readiness-test
+display_rank: 300
+title: Ірука перевіряє Саске нападом
+location_id: null
+placement:
+  anchor_id: ta-y0-0624
+  day_offset: 1

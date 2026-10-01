@@ -3065,6 +3065,39 @@ links:
   kind: before
   a: sc-y0-0330-inari-leaves-home
   b: ev-y0-0330-villagers-drive-off-mercenaries
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+  id: lnk-audit21-naruto-test-before-report
+  kind: before
+  a: sc-y0-iruka-tests-naruto
+  b: sc-y0-0624-iruka-tests-team7
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+  id: lnk-audit21-sakura-test-before-report
+  kind: before
+  a: sc-y0-iruka-tests-sakura
+  b: sc-y0-0624-iruka-tests-team7
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+  id: lnk-audit21-sasuke-test-before-report
+  kind: before
+  a: sc-y0-iruka-tests-sasuke
+  b: sc-y0-0624-iruka-tests-team7
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+  id: lnk-audit21-entry-before-lee-duel
+  kind: before
+  a: sc-y0-chunin-entrance-screen
+  b: sc-y0-0624-lee-challenges-sasuke
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

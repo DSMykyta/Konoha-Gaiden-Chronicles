@@ -23,9 +23,10 @@ checked_anime_episodes:
 - 18
 - 19
 - 20
+- 21
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 21
+next_anime_episode: 22
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -342,6 +343,32 @@ episode_audits:
   notes:
   - Existing April 13 rivalry anchor retained as project placement; the synopsis describes subsequent missions without exact
     calendar dates.
+- episode: 21
+  baseline_revision: a9d8b1b397dcf05548a7b1aaf927b6d78a16e2e6
+  added_moment_ids:
+  - ev-y0-iruka-tests-naruto
+  - ev-y0-iruka-tests-sakura
+  - ev-y0-iruka-tests-sasuke
+  - ev-y0-chunin-entrance-screen
+  - ev-y0-unidentified-team-observes-sand
+  added_scene_ids:
+  - sc-y0-iruka-tests-naruto
+  - sc-y0-iruka-tests-sakura
+  - sc-y0-iruka-tests-sasuke
+  - sc-y0-chunin-entrance-screen
+  - sc-y0-unidentified-team-observes-sand
+  updated_moment_ids:
+  - ev-y0-0624-kakashi-offers-exam-choice
+  - ev-y0-0624-iruka-tests-team7-readiness
+  - ev-y0-0624-lee-challenges-sasuke
+  - ev-y0-0624-team7-meets-sand-siblings
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - The three tests are separate scenes and whole actions; no inferred order between them. Post-nomination application handoff
+    corrected to June 25 using established June 24 anchor plus one day; registration and Lee encounter placed on established
+    July 1 exam day.
+  - Entry screen participants verified via Kotetsu Hagane and Izumo Kamizuki Narutopedia character summaries. Unidentified
+    tree observers retained with unknown cast rather than invented identities.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

@@ -1,0 +1,32 @@
+schema_version: 1
+id: sc-y0-unidentified-team-observes-sand
+episode_id: ep-y0-sand-first-encounter
+display_rank: 200
+continuity_id: main
+title: Невідома команда спостерігає за зустріччю
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0624
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: unknown
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-unidentified-team-observes-sand
+  title: Команда на дереві непомітно спостерігає за суперниками
+  text: Поруч із місцем зустрічі Команди 7 та генінів Суни інша команда непомітно спостерігає з дерева. Її склад у перевіреному
+    переказі не названий.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement: []
+  focus_teams: []
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+relations: []
+presence: []

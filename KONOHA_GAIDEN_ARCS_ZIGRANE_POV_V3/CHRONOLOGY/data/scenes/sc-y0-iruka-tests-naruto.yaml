@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-y0-iruka-tests-naruto
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-iruka-tests-naruto
+  display_rank: 100
+  title: Наруто рятує Моегі під час перевірки Іруки
+  text: 'Замаскований під чужого ніндзя Ірука влаштовує перевірку: Моегі зв’язана й із затуленим ротом. Наруто рятує її, але
+    нападник утікає.'
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+relations: []
+presence:
+- id: pr-audit-21-y0-iruka-tests-naruto-c-naruto
+  entity_id: c-naruto
+  from: sc-y0-iruka-tests-naruto.start
+  to: sc-y0-iruka-tests-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit-21-y0-iruka-tests-naruto-c-moegi
+  entity_id: c-moegi
+  from: sc-y0-iruka-tests-naruto.start
+  to: sc-y0-iruka-tests-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+- id: pr-audit-21-y0-iruka-tests-naruto-c-iruka
+  entity_id: c-iruka
+  from: sc-y0-iruka-tests-naruto.start
+  to: sc-y0-iruka-tests-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep21-audit
+episode_id: ep-y0-iruka-readiness-test
+display_rank: 100
+title: Ірука перевіряє Наруто через викрадення Моегі
+location_id: null
+placement:
+  anchor_id: ta-y0-0624
+  day_offset: 1

@@ -717,6 +717,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep21-audit
+    type: reference
+    title: 'Narutopedia — Identify Yourself: Powerful New Rivals'
+    url: https://naruto.fandom.com/wiki/Identify_Yourself%3A_Powerful_New_Rivals
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-entry-screen-cast
+    type: reference
+    title: "Narutopedia \u2014 Kotetsu Hagane, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Kotetsu_Hagane
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3253,5 +3267,18 @@ evidence:
   - id: evd-narutopedia-ep20-audit
     source_id: src-narutopedia-ep20-audit
     locator: Episode 20, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep21-audit
+    source_id: src-narutopedia-ep21-audit
+    locator: Episode 21, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-entry-screen-cast
+    source_id: src-narutopedia-entry-screen-cast
+    locator: "Part I / Ch\u016Bnin Exams; disguised screeners, genjutsu, Lee interrupts\
+      \ kicks"
     basis: source
     review: accepted
