@@ -67,8 +67,9 @@ select { width: 100%; padding: 11px 12px; border: 1px solid var(--border); borde
 [hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
-/* Glass belongs to the controls; reading surfaces keep a quiet, legible fill. */
-.masthead { position: fixed; inset: 0 0 auto; z-index: var(--z-chrome); display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; min-height: 64px; padding: max(8px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) 8px max(20px,env(safe-area-inset-left)); border-bottom: 1px solid #ffffffdc; background: var(--glass); -webkit-backdrop-filter: blur(22px) saturate(1.15); backdrop-filter: blur(22px) saturate(1.15); box-shadow: 0 1px 12px #27364c06; }
+/* The timeline is one continuous canvas. The top controls float above it without a masthead surface. */
+.masthead { position: fixed; inset: 0 0 auto; z-index: var(--z-chrome); display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; min-height: 64px; padding: max(8px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) 8px max(20px,env(safe-area-inset-left)); border: 0; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; pointer-events: none; }
+.masthead :where(button, a, input, select, summary, [tabindex]) { pointer-events: auto; }
 .identity h1 { margin: 0; white-space: nowrap; font: 600 14px/1.4 Manrope, sans-serif; }
 .header-actions, .tools { display: flex; align-items: center; gap: 4px; }
 .tools button { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; }
@@ -419,7 +420,7 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 }
 @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
   :root { --glass: #ffffff; --glass-border: #b3bcc9; --border: #b3bcc9; --muted: #515c6b; }
-  .masthead, .panel, .focus-bar, .event-card, .event-preview { background: #ffffff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .panel, .focus-bar, .event-card, .event-preview { background: #ffffff; -webkit-backdrop-filter: none; backdrop-filter: none; }
   .time-controls { background: #edf0f4; border-color: #b3bcc9; }
   .modes button[aria-pressed="true"] { background: #ffffff; }
 }
