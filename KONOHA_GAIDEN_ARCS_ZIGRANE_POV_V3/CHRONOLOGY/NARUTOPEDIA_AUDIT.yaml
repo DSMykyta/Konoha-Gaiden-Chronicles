@@ -20,9 +20,10 @@ checked_anime_episodes:
 - 15
 - 16
 - 17
+- 18
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 18
+next_anime_episode: 19
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -285,3 +286,24 @@ episode_audits:
   cast_review: Existing project cast checked; no additional author-character presence established.
   notes:
   - Haku's childhood is represented as his account to Naruto; no unverified flashback calendar date invented.
+- episode: 18
+  baseline_revision: 31b57dcf1d1ff992fa8520b899a582bd8a9ef288
+  added_moment_ids:
+  - ev-y0-0330-inari-asks-villagers
+  - ev-y0-0330-tsunami-tries-to-stop-inari
+  - ev-y0-0330-inari-finds-supporters
+  - ev-y0-0330-naruto-accepts-haku-request
+  - ev-y0-0330-haku-leaves-naruto-for-zabuza
+  - ev-y0-0330-zabuza-swings-at-haku-body
+  - ev-y0-0330-kakashi-orders-naruto-stay-back
+  - ev-y0-0330-sakura-finds-sasuke-body
+  - ev-y0-0330-kakashi-disables-zabuza-arms
+  - ev-y0-0330-ninken-release-zabuza
+  added_scene_ids:
+  - sc-y0-0330-inari-asks-villagers
+  - sc-y0-0330-inari-leaves-home
+  updated_moment_ids: []
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - Dog release crosschecked against arc synopsis; M tag retained for blood-scroll variant rather than asserting an anime
+    shot.

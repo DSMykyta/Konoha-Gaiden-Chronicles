@@ -689,6 +689,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep18-audit
+    type: reference
+    title: Narutopedia — The Weapons Known as Shinobi
+    url: https://naruto.fandom.com/wiki/The_Weapons_Known_as_Shinobi
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-wave-arc-audit
+    type: reference
+    title: Narutopedia — Prologue — Land of Waves
+    url: https://naruto.fandom.com/wiki/Prologue_%E2%80%94_Land_of_Waves
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3200,5 +3214,18 @@ evidence:
   - id: evd-narutopedia-ep17-audit
     source_id: src-narutopedia-ep17-audit
     locator: Episode 17, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep18-audit
+    source_id: src-narutopedia-ep18-audit
+    locator: Episode 18, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-wave-arc-dogs
+    source_id: src-narutopedia-wave-arc-audit
+    locator: 'The Tool’s Feelings: Haku receives Lightning Cutter; needles strike the
+      scroll and the dogs disappear'
     basis: source
     review: accepted

@@ -1679,3 +1679,9 @@ episodes:
   arc_id: arc-y0-land-of-waves
   title: Команда непокоїться через нічне тренування Наруто
   description: Розмова в домі Тадзуни, поки Наруто перебуває в лісі.
+
+- id: ep-y0-inari-rallies-villagers
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Інарі збирає мешканців на захист мосту
+  description: 'Окрема паралельна лінія Інарі: звернення до мешканців, розмова з матір’ю та вихід до мосту.'

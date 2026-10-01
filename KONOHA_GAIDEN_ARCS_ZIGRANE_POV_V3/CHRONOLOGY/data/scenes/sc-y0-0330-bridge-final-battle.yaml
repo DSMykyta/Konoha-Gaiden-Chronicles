@@ -618,6 +618,38 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep17-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-accepts-haku-request
+  display_rank: 480
+  title: Наруто погоджується виконати прохання Хаку
+  text: Після суперечки про роль ніндзя Наруто погоджується й кидається до Хаку з кунаєм.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-haku-leaves-naruto-for-zabuza
+  display_rank: 490
+  title: Хаку зупиняє Наруто й кидається до Забузи
+  text: Відчувши небезпеку для Забузи, Хаку зупиняє атаку Наруто й кидається до напарника.
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
 - id: ev-y0-0330-haku-sacrifices-self
   legacy_ids:
   - V10-000031
@@ -639,6 +671,103 @@ events:
   evidence_ids:
   - evd-v10-000031
   - evd-manga-land-waves
+- id: ev-y0-0330-ninken-release-zabuza
+  title: Пси припиняють утримувати Забузу
+  text: Під час втручання Хаку сенбони влучають у закривавлений сувій. Викликані пси зникають, звільняючи Забузу.
+  origin: M
+  extent: interval
+  display_rank: 505
+  involvement:
+  - entity_id: group-kakashi-ninken
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-wave-arc-dogs
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-zabuza-swings-at-haku-body
+  display_rank: 510
+  title: Забуза намагається вдарити Какаші крізь тіло Хаку
+  text: Забуза замахується на Какаші й мертвого Хаку. Какаші ухиляється, забираючи тіло.
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-orders-naruto-stay-back
+  display_rank: 520
+  title: Какаші наказує Наруто не втручатися
+  text: Побачивши загиблого Хаку, Наруто обурюється. Какаші наказує йому триматися осторонь від бою.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-sakura-finds-sasuke-body
+  display_rank: 530
+  title: Сакура плаче біля Саске
+  text: Сакура й Тадзуна підходять до нерухомого Саске. Сакура не витримує й плаче.
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-disables-zabuza-arms
+  display_rank: 540
+  title: Какаші позбавляє Забузу можливості користуватися руками
+  text: Какаші ушкоджує обидві руки Забузи, не даючи йому користуватися мечем або техніками.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
 - id: ev-y0-0330-gato-arrives
   legacy_ids:
   - V10-000031
@@ -1060,6 +1189,86 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep17-audit
+- id: rel-audit-18-y0-0330-kakashi-readies-lightning-cutter-before-y0-0330-naruto-accepts-haku-request
+  kind: before
+  a: ev-y0-0330-kakashi-readies-lightning-cutter
+  b: ev-y0-0330-naruto-accepts-haku-request
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-audit-18-y0-0330-naruto-accepts-haku-request-before-y0-0330-haku-leaves-naruto-for-zabuza
+  kind: before
+  a: ev-y0-0330-naruto-accepts-haku-request
+  b: ev-y0-0330-haku-leaves-naruto-for-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-audit-18-y0-0330-haku-leaves-naruto-for-zabuza-before-y0-0330-haku-sacrifices-self
+  kind: before
+  a: ev-y0-0330-haku-leaves-naruto-for-zabuza
+  b: ev-y0-0330-haku-sacrifices-self
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-audit-18-y0-0330-haku-sacrifices-self-before-y0-0330-zabuza-swings-at-haku-body
+  kind: before
+  a: ev-y0-0330-haku-sacrifices-self
+  b: ev-y0-0330-zabuza-swings-at-haku-body
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-audit-18-y0-0330-zabuza-swings-at-haku-body-before-y0-0330-kakashi-orders-naruto-stay-back
+  kind: before
+  a: ev-y0-0330-zabuza-swings-at-haku-body
+  b: ev-y0-0330-kakashi-orders-naruto-stay-back
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-audit-18-y0-0330-kakashi-orders-naruto-stay-back-before-y0-0330-sakura-finds-sasuke-body
+  kind: before
+  a: ev-y0-0330-kakashi-orders-naruto-stay-back
+  b: ev-y0-0330-sakura-finds-sasuke-body
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-audit-18-y0-0330-sakura-finds-sasuke-body-before-y0-0330-kakashi-disables-zabuza-arms
+  kind: before
+  a: ev-y0-0330-sakura-finds-sasuke-body
+  b: ev-y0-0330-kakashi-disables-zabuza-arms
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-audit-18-y0-0330-kakashi-disables-zabuza-arms-before-y0-0330-gato-arrives
+  kind: before
+  a: ev-y0-0330-kakashi-disables-zabuza-arms
+  b: ev-y0-0330-gato-arrives
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: rel-0330-ninken-ev-y0-0330-haku-sacrifices-self-ev-y0-0330-ninken-release-zabuza
+  kind: before
+  a: ev-y0-0330-haku-sacrifices-self
+  b: ev-y0-0330-ninken-release-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-wave-arc-dogs
+- id: rel-0330-ninken-ev-y0-0330-ninken-release-zabuza-ev-y0-0330-zabuza-swings-at-haku-body
+  kind: before
+  a: ev-y0-0330-ninken-release-zabuza
+  b: ev-y0-0330-zabuza-swings-at-haku-body
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-wave-arc-dogs
 presence:
 - id: pr-0330-bridge-naruto
   entity_id: c-naruto
@@ -1120,7 +1329,7 @@ presence:
 - id: pr-audit-17-y0-0330-bridge-final-battle-group-kakashi-ninken
   entity_id: group-kakashi-ninken
   from: ev-y0-0330-kakashi-summons-tracking-ninken.start
-  to: ev-y0-0330-haku-sacrifices-self.end
+  to: ev-y0-0330-ninken-release-zabuza.end
   basis: source
   review: accepted
   evidence_ids:

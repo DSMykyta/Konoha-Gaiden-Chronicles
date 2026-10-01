@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-y0-0330-inari-leaves-home
+continuity_id: main
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-tsunami-tries-to-stop-inari
+  display_rank: 100
+  title: Цунамі намагається зупинити Інарі
+  text: Цунамі вважає Інарі надто юним для бою. Він наполягає, що захищатиме село, нагадуючи їй Кайзу.
+  involvement:
+  - entity_id: c-tsunami
+    role: focus
+    mode: physical
+  - entity_id: c-inari
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-inari-finds-supporters
+  display_rank: 200
+  title: Інарі знаходить людей біля виходу
+  text: Інарі виходить до мосту й бачить натовп, що вже чекає на нього.
+  involvement:
+  - entity_id: c-inari
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+relations:
+- id: rel-audit-18-y0-0330-tsunami-tries-to-stop-inari-before-y0-0330-inari-finds-supporters
+  kind: before
+  a: ev-y0-0330-tsunami-tries-to-stop-inari
+  b: ev-y0-0330-inari-finds-supporters
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+presence:
+- id: pr-audit-18-y0-0330-inari-leaves-home-c-tsunami
+  entity_id: c-tsunami
+  from: sc-y0-0330-inari-leaves-home.start
+  to: sc-y0-0330-inari-leaves-home.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: pr-audit-18-y0-0330-inari-leaves-home-c-inari
+  entity_id: c-inari
+  from: sc-y0-0330-inari-leaves-home.start
+  to: sc-y0-0330-inari-leaves-home.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+episode_id: ep-y0-inari-rallies-villagers
+display_rank: 200
+title: Інарі виходить захищати міст
+location_id: loc-tazuna-home
+placement:
+  anchor_id: ta-y0-0330
+  day_offset: 0

@@ -3056,6 +3056,23 @@ links:
   a: ev-y0-0330-naruto-apologises-to-inari
   b: ev-y0-0330-naruto-arrives-with-shuriken
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+  id: lnk-audit18-rally-before-inari-home
+  kind: before
+  a: sc-y0-0330-inari-asks-villagers
+  b: sc-y0-0330-inari-leaves-home
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+  id: lnk-audit18-inari-home-before-villagers-arrive
+  kind: before
+  a: sc-y0-0330-inari-leaves-home
+  b: ev-y0-0330-villagers-drive-off-mercenaries
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order,
   not simultaneity.

@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-y0-0330-inari-asks-villagers
+continuity_id: main
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-inari-asks-villagers
+  display_rank: 100
+  title: Інарі закликає мешканців захистити міст
+  text: Інарі обходить будинки й просить захистити Тадзуну та міст. Дорослі бояться, але він готовий піти сам.
+  involvement:
+  - entity_id: c-inari
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+relations: []
+presence:
+- id: pr-audit-18-y0-0330-inari-asks-villagers-c-inari
+  entity_id: c-inari
+  from: sc-y0-0330-inari-asks-villagers.start
+  to: sc-y0-0330-inari-asks-villagers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+episode_id: ep-y0-inari-rallies-villagers
+display_rank: 100
+title: Інарі звертається до мешканців
+location_id: null
+placement:
+  anchor_id: ta-y0-0330
+  day_offset: 0
