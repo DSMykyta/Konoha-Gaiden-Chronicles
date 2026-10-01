@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-y0-kakashi-confirms-team7-exam-entry
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-kakashi-confirms-team7-exam-entry
+  display_rank: 100
+  title: Какаші пояснює умову командної реєстрації
+  text: 'Перед входом у залу Какаші зустрічає Команду 7. Він пояснює: їх допустять лише за добровільної згоди всіх трьох;
+    якби хтось відмовився, не увійшла б уся команда. Переконавшись, що всі прийшли, Какаші бажає їм удачі.'
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep23-audit
+relations: []
+presence:
+- id: pr-audit-23-y0-kakashi-confirms-team7-exam-entry-c-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-kakashi-confirms-team7-exam-entry.start
+  to: sc-y0-kakashi-confirms-team7-exam-entry.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep23-audit
+- id: pr-audit-23-y0-kakashi-confirms-team7-exam-entry-c-naruto
+  entity_id: c-naruto
+  from: sc-y0-kakashi-confirms-team7-exam-entry.start
+  to: sc-y0-kakashi-confirms-team7-exam-entry.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep23-audit
+- id: pr-audit-23-y0-kakashi-confirms-team7-exam-entry-c-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-kakashi-confirms-team7-exam-entry.start
+  to: sc-y0-kakashi-confirms-team7-exam-entry.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep23-audit
+- id: pr-audit-23-y0-kakashi-confirms-team7-exam-entry-c-sakura
+  entity_id: c-sakura
+  from: sc-y0-kakashi-confirms-team7-exam-entry.start
+  to: sc-y0-kakashi-confirms-team7-exam-entry.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep23-audit
+episode_id: ep-y0-chunin-written-stage
+display_rank: 50
+title: Какаші перевіряє добровільну участь Команди 7
+location_id: null
+placement:
+  anchor_id: ta-y0-0701
+  day_offset: 0

@@ -3098,6 +3098,23 @@ links:
   a: sc-y0-chunin-entrance-screen
   b: sc-y0-0624-lee-challenges-sasuke
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep23-audit
+  id: lnk-audit23-duel-before-consent
+  kind: before
+  a: sc-y0-0624-lee-challenges-sasuke
+  b: sc-y0-kakashi-confirms-team7-exam-entry
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep23-audit
+  id: lnk-audit23-consent-before-candidates
+  kind: before
+  a: sc-y0-kakashi-confirms-team7-exam-entry
+  b: sc-y0-0701-candidate-gathering
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

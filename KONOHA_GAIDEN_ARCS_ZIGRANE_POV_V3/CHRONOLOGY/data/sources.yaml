@@ -738,6 +738,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep23-audit
+    type: reference
+    title: Narutopedia — Genin Takedown! All Nine Rookies Face Off!
+    url: https://naruto.fandom.com/wiki/Genin_Takedown%21_All_Nine_Rookies_Face_Off%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3294,4 +3301,18 @@ evidence:
     source_id: src-narutopedia-ep22-audit
     locator: Episode 22, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep23-audit
+    source_id: src-narutopedia-ep23-audit
+    locator: Episode 23, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-project-team9-candidate-hall
+    source_id: src-project-decisions
+    locator: User instruction to include author characters where present; established
+      Raido nomination and Team 9 written-exam participation on July 1 support background
+      candidate-hall presence.
+    basis: project_decision
     review: accepted
