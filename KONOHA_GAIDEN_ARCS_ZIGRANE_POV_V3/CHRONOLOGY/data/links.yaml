@@ -3005,6 +3005,48 @@ links:
   evidence_ids:
   - evd-v10-000028
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+  id: lnk-audit12-morning-concern-before-sasuke-finds-naruto
+  kind: before
+  a: sc-waves-home-morning-concern
+  b: ev-y0-0328-sasuke-checks-naruto
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+  id: lnk-audit12-training-before-dinner
+  kind: before
+  a: ev-y0-0329-naruto-sasuke-complete-tree-training
+  b: sc-waves-inari-naruto-dinner
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+  id: lnk-audit12-dinner-before-kakashi-comfort
+  kind: before
+  a: sc-waves-inari-naruto-dinner
+  b: sc-waves-kakashi-comforts-inari
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+  id: lnk-audit12-comfort-before-departure
+  kind: before
+  a: sc-waves-kakashi-comforts-inari
+  b: sc-y0-0329-group-leaves-with-tazuna
+
+- id: rel-0329-tree-complete-before-collapse
+  kind: before
+  a: ev-y0-0329-naruto-sasuke-complete-tree-training
+  b: ev-y0-0329-naruto-collapses-overtraining
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000030
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order,
   not simultaneity.

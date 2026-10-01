@@ -1,0 +1,125 @@
+schema_version: 1
+id: sc-waves-inari-naruto-dinner
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0329-naruto-collapses-overtraining
+  legacy_ids:
+  - V10-000030
+  title: Наруто повертається додому виснаженим
+  text: Наруто й Саске повертаються до дому Тадзуни після завершення вправи. Наруто радіє успіху, але виснажений.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000030
+  - evd-manga-land-waves
+  - evd-narutopedia-ep12-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-waves-inari-naruto-dispute
+  display_rank: 300
+  title: Інарі й Наруто сперечаються
+  text: Інарі каже, що Наруто не знає його страждань і не переможе Ґато. Наруто називає його боягузом та йде від столу.
+  involvement:
+  - entity_id: c-inari
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  - entity_id: c-tsunami
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+relations: []
+presence:
+- id: pr-audit-12-waves-inari-naruto-dinner-c-inari
+  entity_id: c-inari
+  from: sc-waves-inari-naruto-dinner.start
+  to: sc-waves-inari-naruto-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-inari-naruto-dinner-c-naruto
+  entity_id: c-naruto
+  from: sc-waves-inari-naruto-dinner.start
+  to: sc-waves-inari-naruto-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-inari-naruto-dinner-c-kakashi
+  entity_id: c-kakashi
+  from: sc-waves-inari-naruto-dinner.start
+  to: sc-waves-inari-naruto-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-inari-naruto-dinner-c-sasuke
+  entity_id: c-sasuke
+  from: sc-waves-inari-naruto-dinner.start
+  to: sc-waves-inari-naruto-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-inari-naruto-dinner-c-sakura
+  entity_id: c-sakura
+  from: sc-waves-inari-naruto-dinner.start
+  to: sc-waves-inari-naruto-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-inari-naruto-dinner-c-tazuna
+  entity_id: c-tazuna
+  from: sc-waves-inari-naruto-dinner.start
+  to: sc-waves-inari-naruto-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-inari-naruto-dinner-c-tsunami
+  entity_id: c-tsunami
+  from: sc-waves-inari-naruto-dinner.start
+  to: sc-waves-inari-naruto-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+episode_id: ep-y0-inari-naruto-dispute
+display_rank: 100
+title: Інарі сперечається з Наруто за вечерею
+location_id: loc-tazuna-home
+placement: null

@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-waves-kakashi-comforts-inari
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-waves-kakashi-comforts-inari
+  display_rank: 100
+  title: Какаші пояснює Інарі пережите Наруто
+  text: Уночі Какаші пояснює Інарі, що Наруто — сирота, який сам пережив багато болю й розуміє його почуття.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-inari
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+relations: []
+presence:
+- id: pr-audit-12-waves-kakashi-comforts-inari-c-kakashi
+  entity_id: c-kakashi
+  from: sc-waves-kakashi-comforts-inari.start
+  to: sc-waves-kakashi-comforts-inari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-kakashi-comforts-inari-c-inari
+  entity_id: c-inari
+  from: sc-waves-kakashi-comforts-inari.start
+  to: sc-waves-kakashi-comforts-inari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+episode_id: ep-y0-inari-naruto-dispute
+display_rank: 200
+title: Какаші говорить з Інарі після сварки
+location_id: loc-tazuna-home
+placement: null
+day_part: night

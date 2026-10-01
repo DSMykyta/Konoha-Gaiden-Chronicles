@@ -1667,3 +1667,15 @@ episodes:
   arc_id: arc-y0-land-of-waves
   title: Сакура й Тадзуна повертаються з ринку
   description: Сакура бачить становище мешканців Країни Хвиль.
+
+- id: ep-y0-inari-naruto-dispute
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Інарі сперечається з Наруто
+  description: Після тренування Інарі заперечує можливість перемогти Ґато; Какаші говорить із ним про Наруто.
+
+- id: ep-y0-waves-morning-concern
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Команда непокоїться через нічне тренування Наруто
+  description: Розмова в домі Тадзуни, поки Наруто перебуває в лісі.

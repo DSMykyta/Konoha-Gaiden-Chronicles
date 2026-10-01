@@ -640,6 +640,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep12-audit
+    type: reference
+    title: Narutopedia — Battle on the Bridge! Zabuza Returns!
+    url: https://naruto.fandom.com/wiki/Battle_on_the_Bridge%21_Zabuza_Returns%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3108,5 +3115,11 @@ evidence:
   - id: evd-narutopedia-ep11-audit
     source_id: src-narutopedia-ep11-audit
     locator: Episode 11, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep12-audit
+    source_id: src-narutopedia-ep12-audit
+    locator: Episode 12, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

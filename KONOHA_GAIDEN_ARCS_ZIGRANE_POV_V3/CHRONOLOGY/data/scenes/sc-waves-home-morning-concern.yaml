@@ -1,0 +1,73 @@
+schema_version: 1
+id: sc-waves-home-morning-concern
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-waves-sakura-tsunami-worry-naruto
+  display_rank: 100
+  title: Какаші заспокоює Сакуру й Цунамі
+  text: Сакура й Цунамі непокояться, що Наруто провів ніч у лісі. Какаші їх заспокоює; Саске виходить на ранкову прогулянку.
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-tsunami
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+relations: []
+presence:
+- id: pr-audit-12-waves-home-morning-concern-c-sakura
+  entity_id: c-sakura
+  from: sc-waves-home-morning-concern.start
+  to: sc-waves-home-morning-concern.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-home-morning-concern-c-tsunami
+  entity_id: c-tsunami
+  from: sc-waves-home-morning-concern.start
+  to: sc-waves-home-morning-concern.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-home-morning-concern-c-kakashi
+  entity_id: c-kakashi
+  from: sc-waves-home-morning-concern.start
+  to: sc-waves-home-morning-concern.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: pr-audit-12-waves-home-morning-concern-c-sasuke
+  entity_id: c-sasuke
+  from: sc-waves-home-morning-concern.start
+  to: sc-waves-home-morning-concern.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+episode_id: ep-y0-waves-morning-concern
+display_rank: 100
+title: Сакура й Цунамі непокояться через Наруто
+location_id: loc-tazuna-home
+placement: null
