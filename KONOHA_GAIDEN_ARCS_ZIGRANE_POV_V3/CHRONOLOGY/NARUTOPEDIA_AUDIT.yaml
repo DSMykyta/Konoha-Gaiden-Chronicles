@@ -24,9 +24,10 @@ checked_anime_episodes:
 - 19
 - 20
 - 21
+- 22
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 22
+next_anime_episode: 23
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -369,6 +370,20 @@ episode_audits:
     July 1 exam day.
   - Entry screen participants verified via Kotetsu Hagane and Izumo Kamizuki Narutopedia character summaries. Unidentified
     tree observers retained with unknown cast rather than invented identities.
+- episode: 22
+  baseline_revision: 3148c2929eb0d7fc89ca8d7027e024fd7a786ad6
+  added_moment_ids:
+  - ev-y0-lee-defeats-naruto-before-sasuke
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0624-lee-challenges-sasuke
+  - ev-y0-0624-lee-outclasses-sasuke
+  - ev-y0-0624-guy-stops-lee
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - One missing combat attempt added as a whole action. Sharingan failure, interrupted finisher and post-fight conversation
+    incorporated into retained moments; no dialogue or reaction fragments. Ningame identity verified from its Narutopedia
+    profile.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

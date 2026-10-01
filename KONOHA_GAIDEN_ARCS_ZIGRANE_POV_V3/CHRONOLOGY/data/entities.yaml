@@ -2019,6 +2019,12 @@ entities:
     - Нінкен Какаші
     - Пси Какаші
 
+  - id: c-ningame
+    kind: animal
+    name: Нінґаме
+    aliases:
+    - Ningame
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

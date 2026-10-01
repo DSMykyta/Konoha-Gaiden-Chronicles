@@ -21,7 +21,7 @@ events:
   legacy_ids:
   - V10-000039-C
   title: Лі викликає Саске
-  text: Після зустрічі біля реєстрації Рок Лі наздоганяє Саске й викликає його на поєдинок перед іспитом.
+  text: Лі викликає Саске на поєдинок, щоб випробувати свої здібності проти нащадка Учіх, і виявляє симпатію до Сакури.
   origin: M
   extent: interval
   display_rank: 100
@@ -45,11 +45,36 @@ events:
   - evd-manga-chunin-intro
   - evd-anime-20-23
   - evd-narutopedia-ep21-audit
+  - evd-narutopedia-ep22-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-lee-defeats-naruto-before-sasuke
+  display_rank: 150
+  title: Наруто намагається битися з Лі й зазнає поразки
+  text: Наруто пропонує битися замість Саске та кидається на Лі. Лі легко збиває його й тимчасово позбавляє свідомості, після
+    чого заявляє про свою перевагу над генінами Конохи.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep22-audit
 - id: ev-y0-0624-lee-outclasses-sasuke
   legacy_ids:
   - V10-000039-C
   title: Лі демонструє перевагу тайдзюцу
-  text: Лі завдяки тайдзюцу отримує перевагу над Саске.
+  text: Саске приймає виклик і атакує, але Лі відкидає його Вихором Листа. Саске активує шарінґан, однак не встигає фізично
+    реагувати на швидке тайдзюцу Лі. Лі переходить до Тіні Танцюючого Листа й готує завершальний прийом.
   origin: M
   extent: interval
   display_rank: 200
@@ -70,11 +95,15 @@ events:
   - evd-v10-000039-C
   - evd-manga-chunin-intro
   - evd-anime-20-23
+  - evd-narutopedia-ep22-audit
 - id: ev-y0-0624-guy-stops-lee
   legacy_ids:
   - V10-000039-C
-  title: Майто Ґай зупиняє поєдинок
-  text: Майто Ґай втручається й припиняє бій Лі із Саске.
+  title: Нінґаме та Ґай припиняють бій Лі із Саске
+  text: Черепаха Нінґаме зупиняє Лі перед завершальним прийомом і дорікає за використання забороненої техніки. Ґай з’являється
+    на її панцирі, карає Лі ударом, а потім обіймає його. У розмові з Командою 7 Ґай називає Какаші своїм суперником і наводить
+    рахунок 50 перемог та 49 поразок. Після його відходу Лі визнає, що найсильніший генін у їхній команді — Неджі. Наруто
+    вказує Саске на наполегливі тренування Лі.
   origin: M
   extent: interval
   display_rank: 300
@@ -83,21 +112,31 @@ events:
     role: focus
     mode: physical
   - entity_id: c-lee
-    role: participant
+    role: focus
+    mode: physical
+  - entity_id: c-ningame
+    role: focus
     mode: physical
   - entity_id: c-sasuke
     role: participant
     mode: physical
   - entity_id: c-naruto
-    role: observer
+    role: participant
     mode: physical
   - entity_id: c-sakura
-    role: observer
+    role: participant
     mode: physical
+  - entity_id: c-neji
+    role: mentioned
+    mode: remote
+  - entity_id: c-kakashi
+    role: mentioned
+    mode: remote
   evidence_ids:
   - evd-v10-000039-C
   - evd-manga-chunin-intro
   - evd-anime-20-23
+  - evd-narutopedia-ep22-audit
 relations:
 - id: rel-0624-lee-1
   kind: before
@@ -115,6 +154,22 @@ relations:
   review: pending
   evidence_ids:
   - evd-manga-chunin-intro
+- id: rel-audit-22-y0-0624-lee-challenges-sasuke-before-y0-lee-defeats-naruto-before-sasuke
+  kind: before
+  a: ev-y0-0624-lee-challenges-sasuke
+  b: ev-y0-lee-defeats-naruto-before-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep22-audit
+- id: rel-audit-22-y0-lee-defeats-naruto-before-sasuke-before-y0-0624-lee-outclasses-sasuke
+  kind: before
+  a: ev-y0-lee-defeats-naruto-before-sasuke
+  b: ev-y0-0624-lee-outclasses-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep22-audit
 presence:
 - id: pr-0624-lee-sasuke
   entity_id: c-sasuke
@@ -156,3 +211,11 @@ presence:
   evidence_ids:
   - evd-v10-000039-C
   review: accepted
+- id: pr-audit-22-y0-0624-lee-challenges-sasuke-c-ningame
+  entity_id: c-ningame
+  from: ev-y0-0624-guy-stops-lee.start
+  to: ev-y0-0624-guy-stops-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep22-audit
