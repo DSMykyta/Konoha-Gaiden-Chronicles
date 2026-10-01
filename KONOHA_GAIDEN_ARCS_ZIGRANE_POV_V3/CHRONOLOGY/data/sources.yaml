@@ -605,6 +605,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep7-audit
+    type: reference
+    title: Narutopedia — The Assassin of the Mist!
+    url: https://naruto.fandom.com/wiki/The_Assassin_of_the_Mist%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3043,5 +3050,11 @@ evidence:
   - id: evd-narutopedia-ch11-audit
     source_id: src-narutopedia-ch11-audit
     locator: Chapter 11, Summary; secondary summary inspected, no manga panels inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep7-audit
+    source_id: src-narutopedia-ep7-audit
+    locator: Episode 7, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

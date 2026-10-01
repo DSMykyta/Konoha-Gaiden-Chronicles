@@ -1989,6 +1989,12 @@ entities:
     name: Madam Shijimi
     aliases: [Пані Шіджімі, Шіджімі]
 
+  - id: c-kaji
+    kind: person
+    name: Kaji
+    aliases:
+    - Каджі
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

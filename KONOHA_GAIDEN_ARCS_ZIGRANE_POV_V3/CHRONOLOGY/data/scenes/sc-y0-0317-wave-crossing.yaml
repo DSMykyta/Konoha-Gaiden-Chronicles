@@ -21,11 +21,14 @@ events:
   legacy_ids:
   - V10-000026
   title: Група пересідає до човна
-  text: Команда 7 і Тадзуна дістаються узбережжя та пересідають у човен для прихованої переправи.
+  text: Каджі перевозить Команду 7 і Тадзуну своїм човном до Країни Хвиль.
   origin: M
   extent: interval
   display_rank: 100
   involvement:
+  - entity_id: c-kaji
+    role: focus
+    mode: physical
   - entity_id: c-kakashi
     role: participant
     mode: physical
@@ -39,13 +42,14 @@ events:
     role: participant
     mode: physical
   - entity_id: c-tazuna
-    role: focus
+    role: participant
     mode: physical
   focus_teams:
   - team-7
   evidence_ids:
   - evd-v10-000026
   - evd-manga-land-waves
+  - evd-narutopedia-ep7-audit
 - id: ev-y0-0317-boat-crosses-in-mist
   legacy_ids:
   - V10-000026
@@ -75,6 +79,34 @@ events:
   evidence_ids:
   - evd-v10-000026
   - evd-manga-land-waves
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0317-kakashi-demands-explanation
+  display_rank: 250
+  title: Какаші вимагає пояснити приховану небезпеку
+  text: У човні Какаші попереджає Тадзуну, що припинить місію, якщо той не пояснить обман.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kaji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
 - id: ev-y0-0317-tazuna-explains-gato-control
   legacy_ids:
   - V10-000026
@@ -149,6 +181,22 @@ relations:
   review: pending
   evidence_ids:
   - evd-v10-000026
+- id: rel-audit-7-y0-0317-boat-crosses-in-mist-before-y0-0317-kakashi-demands-explanation
+  kind: before
+  a: ev-y0-0317-boat-crosses-in-mist
+  b: ev-y0-0317-kakashi-demands-explanation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-audit-7-y0-0317-kakashi-demands-explanation-before-y0-0317-tazuna-explains-gato-control
+  kind: before
+  a: ev-y0-0317-kakashi-demands-explanation
+  b: ev-y0-0317-tazuna-explains-gato-control
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
 presence:
 - id: pr-0317-boat-kakashi
   entity_id: c-kakashi
@@ -190,3 +238,11 @@ presence:
   evidence_ids:
   - evd-v10-000026
   review: accepted
+- id: pr-audit-7-y0-0317-wave-crossing-c-kaji
+  entity_id: c-kaji
+  from: sc-y0-0317-wave-crossing.start
+  to: sc-y0-0317-wave-crossing.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit

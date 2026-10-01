@@ -1,120 +1,495 @@
 schema_version: 1
-id: "sc-y0-0318-zabuza-first-battle"
+id: sc-y0-0318-zabuza-first-battle
 episode_id: ep-y0-zabuza-first-battle
 display_rank: 100
-continuity_id: "main"
-title: "Перша сутичка із Забузою"
-location_id: "loc-wave-forest"
-placement: {anchor_id: "ta-y0-0318", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Перша сутичка із Забузою
+location_id: loc-wave-forest
+placement:
+  anchor_id: ta-y0-0318
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: accepted
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0318-zabuza-attacks"
-    legacy_ids: ["V10-000027"]
-    title: "Забуза атакує групу Тадзуни"
-    text: "Забуза Момочі атакує Команду 7 і Тадзуну."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-zabuza", role: "focus", mode: "physical"}
-      - {entity_id: "c-tazuna", role: "affected", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-000027", "evd-manga-land-waves"]
-  - id: "ev-y0-0318-kakashi-reveals-sharingan"
-    legacy_ids: ["V10-000027"]
-    title: "Какаші відкриває Шарінґан"
-    text: "Какаші відкриває Шарінґан, готуючись битися із Забузою."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-zabuza", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000027", "evd-manga-land-waves"]
-  - id: "ev-y0-0318-kakashi-water-prison"
-    legacy_ids: ["V10-000027"]
-    title: "Забуза ловить Какаші у Водяну В’язницю"
-    text: "Забуза утримує Какаші у Водяній В’язниці й залишає водяного клона проти генінів."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-zabuza", role: "focus", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "affected", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000027", "evd-manga-land-waves"]
-  - id: "ev-y0-0318-naruto-sasuke-free-kakashi"
-    legacy_ids: ["V10-000027"]
-    title: "Наруто й Саске звільняють Какаші"
-    text: "Наруто й Саске виконують спільний трюк із сюрикенами, змушуючи Забузу відпустити Водяну В’язницю."
-    origin: "M"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "affected", mode: "physical"}
-      - {entity_id: "c-zabuza", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-000027", "evd-manga-land-waves"]
-  - id: "ev-y0-0318-kakashi-defeats-zabuza"
-    legacy_ids: ["V10-000027"]
-    title: "Какаші перемагає Забузу"
-    text: "Звільнений Какаші копіює техніки Забузи й доводить бій до поразки Забузи."
-    origin: "M"
-    extent: "interval"
-    display_rank: 500
-    involvement:
-      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-zabuza", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000027", "evd-manga-land-waves"]
-  - id: "ev-y0-0318-haku-takes-zabuza"
-    legacy_ids: ["V10-000027"]
-    title: "Хаку під виглядом мисливця-нін забирає Забузу"
-    text: "Хаку інсценує смерть Забузи, видаючи себе за мисливця-нін, і забирає непритомного напарника."
-    origin: "M"
-    extent: "interval"
-    display_rank: 600
-    involvement:
-      - {entity_id: "c-haku", role: "focus", mode: "physical"}
-      - {entity_id: "c-zabuza", role: "affected", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000027", "evd-manga-land-waves"]
-  - id: "ev-y0-0318-kakashi-collapses"
-    legacy_ids: ["V10-000027"]
-    title: "Какаші непритомніє від виснаження"
-    text: "Після завершення сутички Какаші падає від виснаження."
-    origin: "M"
-    extent: "interval"
-    display_rank: 700
-    involvement:
-      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-      - {entity_id: "c-tazuna", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-000027", "evd-manga-land-waves"]
+- id: ev-y0-0318-zabuza-attacks
+  legacy_ids:
+  - V10-000027
+  title: Забуза атакує групу Тадзуни
+  text: Какаші наказує групі пригнутися перед летючим мечем. Забуза Момочі стає на його руків’я й вимагає віддати Тадзуну;
+    Какаші відмовляє.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-tazuna
+    role: affected
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
+  - evd-narutopedia-ep7-audit
+- id: ev-y0-0318-kakashi-reveals-sharingan
+  legacy_ids:
+  - V10-000027
+  title: Какаші відкриває Шарінґан
+  text: Какаші відкриває Шарінґан, готуючись битися із Забузою.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-sasuke-recognises-sharingan
+  display_rank: 210
+  title: Саске впізнає Шарінґан Какаші
+  text: Саске впізнає Шарінґан, але не розуміє, чому його має людина поза кланом Учіха.
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-zabuza-summons-mist
+  display_rank: 220
+  title: Забуза приховує себе туманом
+  text: Забуза здіймає густий туман; Какаші наказує генінам охороняти Тадзуну.
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-kakashi-calms-sasuke
+  display_rank: 230
+  title: Какаші заспокоює Саске
+  text: Саске охоплює паніка від напруження між джонінами. Какаші запевняє, що захистить учнів.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-kakashi-stabs-water-clone
+  display_rank: 240
+  title: Какаші перехоплює удар по Тадзуні
+  text: Забуза з’являється біля групи. Какаші встромляє в нього кунай, але це водяний клон.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-zabuza-cuts-water-clone
+  display_rank: 250
+  title: Забуза розрубує водяного клона Какаші
+  text: Забуза розрубує Какаші, який теж виявляється водяним клоном.
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-kakashi-threatens-zabuza
+  display_rank: 260
+  title: Какаші приставляє кунай до горла Забузи
+  text: Какаші з’являється позаду Забузи й приставляє кунай до його горла.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: ev-y0-0318-kakashi-water-prison
+  legacy_ids:
+  - V10-000027
+  title: Забуза ловить Какаші у Водяну В’язницю
+  text: Забуза утримує Какаші у Водяній В’язниці й залишає водяного клона проти генінів.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: affected
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
+- id: ev-y0-0318-naruto-sasuke-free-kakashi
+  legacy_ids:
+  - V10-000027
+  title: Наруто й Саске звільняють Какаші
+  text: Наруто й Саске виконують спільний трюк із сюрикенами, змушуючи Забузу відпустити Водяну В’язницю.
+  origin: M
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: affected
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
+- id: ev-y0-0318-kakashi-defeats-zabuza
+  legacy_ids:
+  - V10-000027
+  title: Какаші перемагає Забузу
+  text: Звільнений Какаші копіює техніки Забузи й доводить бій до поразки Забузи.
+  origin: M
+  extent: interval
+  display_rank: 500
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
+- id: ev-y0-0318-haku-takes-zabuza
+  legacy_ids:
+  - V10-000027
+  title: Хаку під виглядом мисливця-нін забирає Забузу
+  text: Хаку інсценує смерть Забузи, видаючи себе за мисливця-нін, і забирає непритомного напарника.
+  origin: M
+  extent: interval
+  display_rank: 600
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: affected
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
+- id: ev-y0-0318-kakashi-collapses
+  legacy_ids:
+  - V10-000027
+  title: Какаші непритомніє від виснаження
+  text: Після завершення сутички Какаші падає від виснаження.
+  origin: M
+  extent: interval
+  display_rank: 700
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-000027
+  - evd-manga-land-waves
 relations:
-  - {id: "rel-0318-1", kind: "before", a: "ev-y0-0318-zabuza-attacks", b: "ev-y0-0318-kakashi-reveals-sharingan", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000027"]}
-  - {id: "rel-0318-2", kind: "before", a: "ev-y0-0318-kakashi-reveals-sharingan", b: "ev-y0-0318-kakashi-water-prison", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000027"]}
-  - {id: "rel-0318-3", kind: "before", a: "ev-y0-0318-kakashi-water-prison", b: "ev-y0-0318-naruto-sasuke-free-kakashi", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000027"]}
-  - {id: "rel-0318-4", kind: "before", a: "ev-y0-0318-naruto-sasuke-free-kakashi", b: "ev-y0-0318-kakashi-defeats-zabuza", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000027"]}
-  - {id: "rel-0318-5", kind: "before", a: "ev-y0-0318-kakashi-defeats-zabuza", b: "ev-y0-0318-haku-takes-zabuza", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000027"]}
-  - {id: "rel-0318-6", kind: "before", a: "ev-y0-0318-haku-takes-zabuza", b: "ev-y0-0318-kakashi-collapses", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000027"]}
+- id: rel-0318-1
+  kind: before
+  a: ev-y0-0318-zabuza-attacks
+  b: ev-y0-0318-kakashi-reveals-sharingan
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000027
+- id: rel-0318-2
+  kind: before
+  a: ev-y0-0318-kakashi-reveals-sharingan
+  b: ev-y0-0318-kakashi-water-prison
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000027
+- id: rel-0318-3
+  kind: before
+  a: ev-y0-0318-kakashi-water-prison
+  b: ev-y0-0318-naruto-sasuke-free-kakashi
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000027
+- id: rel-0318-4
+  kind: before
+  a: ev-y0-0318-naruto-sasuke-free-kakashi
+  b: ev-y0-0318-kakashi-defeats-zabuza
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000027
+- id: rel-0318-5
+  kind: before
+  a: ev-y0-0318-kakashi-defeats-zabuza
+  b: ev-y0-0318-haku-takes-zabuza
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000027
+- id: rel-0318-6
+  kind: before
+  a: ev-y0-0318-haku-takes-zabuza
+  b: ev-y0-0318-kakashi-collapses
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000027
+- id: rel-audit-7-y0-0318-kakashi-reveals-sharingan-before-y0-0318-sasuke-recognises-sharingan
+  kind: before
+  a: ev-y0-0318-kakashi-reveals-sharingan
+  b: ev-y0-0318-sasuke-recognises-sharingan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-audit-7-y0-0318-sasuke-recognises-sharingan-before-y0-0318-zabuza-summons-mist
+  kind: before
+  a: ev-y0-0318-sasuke-recognises-sharingan
+  b: ev-y0-0318-zabuza-summons-mist
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-audit-7-y0-0318-zabuza-summons-mist-before-y0-0318-kakashi-calms-sasuke
+  kind: before
+  a: ev-y0-0318-zabuza-summons-mist
+  b: ev-y0-0318-kakashi-calms-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-audit-7-y0-0318-kakashi-calms-sasuke-before-y0-0318-kakashi-stabs-water-clone
+  kind: before
+  a: ev-y0-0318-kakashi-calms-sasuke
+  b: ev-y0-0318-kakashi-stabs-water-clone
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-audit-7-y0-0318-kakashi-stabs-water-clone-before-y0-0318-zabuza-cuts-water-clone
+  kind: before
+  a: ev-y0-0318-kakashi-stabs-water-clone
+  b: ev-y0-0318-zabuza-cuts-water-clone
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-audit-7-y0-0318-zabuza-cuts-water-clone-before-y0-0318-kakashi-threatens-zabuza
+  kind: before
+  a: ev-y0-0318-zabuza-cuts-water-clone
+  b: ev-y0-0318-kakashi-threatens-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
+- id: rel-audit-7-y0-0318-kakashi-threatens-zabuza-before-y0-0318-kakashi-water-prison
+  kind: before
+  a: ev-y0-0318-kakashi-threatens-zabuza
+  b: ev-y0-0318-kakashi-water-prison
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep7-audit
 presence:
-  - {id: "pr-0318-kakashi", entity_id: "c-kakashi", from: "sc-y0-0318-zabuza-first-battle.start", to: "sc-y0-0318-zabuza-first-battle.end", basis: "imported", evidence_ids: ["evd-v10-000027"], review: "accepted"}
-  - {id: "pr-0318-naruto", entity_id: "c-naruto", from: "sc-y0-0318-zabuza-first-battle.start", to: "sc-y0-0318-zabuza-first-battle.end", basis: "imported", evidence_ids: ["evd-v10-000027"], review: "accepted"}
-  - {id: "pr-0318-sasuke", entity_id: "c-sasuke", from: "sc-y0-0318-zabuza-first-battle.start", to: "sc-y0-0318-zabuza-first-battle.end", basis: "imported", evidence_ids: ["evd-v10-000027"], review: "accepted"}
-  - {id: "pr-0318-sakura", entity_id: "c-sakura", from: "sc-y0-0318-zabuza-first-battle.start", to: "sc-y0-0318-zabuza-first-battle.end", basis: "imported", evidence_ids: ["evd-v10-000027"], review: "accepted"}
-  - {id: "pr-0318-tazuna", entity_id: "c-tazuna", from: "sc-y0-0318-zabuza-first-battle.start", to: "sc-y0-0318-zabuza-first-battle.end", basis: "imported", evidence_ids: ["evd-v10-000027"], review: "accepted"}
-  - {id: "pr-0318-zabuza", entity_id: "c-zabuza", from: "ev-y0-0318-zabuza-attacks.start", to: "ev-y0-0318-haku-takes-zabuza.end", basis: "imported", evidence_ids: ["evd-v10-000027"], review: "accepted"}
-  - {id: "pr-0318-haku", entity_id: "c-haku", from: "ev-y0-0318-haku-takes-zabuza.start", to: "ev-y0-0318-haku-takes-zabuza.end", basis: "imported", evidence_ids: ["evd-v10-000027"], review: "accepted"}
+- id: pr-0318-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-0318-zabuza-first-battle.start
+  to: sc-y0-0318-zabuza-first-battle.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000027
+  review: accepted
+- id: pr-0318-naruto
+  entity_id: c-naruto
+  from: sc-y0-0318-zabuza-first-battle.start
+  to: sc-y0-0318-zabuza-first-battle.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000027
+  review: accepted
+- id: pr-0318-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-0318-zabuza-first-battle.start
+  to: sc-y0-0318-zabuza-first-battle.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000027
+  review: accepted
+- id: pr-0318-sakura
+  entity_id: c-sakura
+  from: sc-y0-0318-zabuza-first-battle.start
+  to: sc-y0-0318-zabuza-first-battle.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000027
+  review: accepted
+- id: pr-0318-tazuna
+  entity_id: c-tazuna
+  from: sc-y0-0318-zabuza-first-battle.start
+  to: sc-y0-0318-zabuza-first-battle.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000027
+  review: accepted
+- id: pr-0318-zabuza
+  entity_id: c-zabuza
+  from: ev-y0-0318-zabuza-attacks.start
+  to: ev-y0-0318-haku-takes-zabuza.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000027
+  review: accepted
+- id: pr-0318-haku
+  entity_id: c-haku
+  from: ev-y0-0318-haku-takes-zabuza.start
+  to: ev-y0-0318-haku-takes-zabuza.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000027
+  review: accepted
