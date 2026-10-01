@@ -64,22 +64,51 @@
     if (pendingNodeId === id) clearPendingHover();
   }
 
-  // Clicking a node must be the same visual action as hovering it, with pinning
-  // added on top. app.js normally turns a pinned click into a separate reading
-  // mode: it scrolls the canvas via revealReadingNode() and repositions the card.
-  // Preserve the pre-click scroll position and restore the same card placement
-  // before the browser paints, so the card does not jump when it becomes pinned.
+  // Pinning is persistence only. The old click path in app.js enters a separate
+  // reading mode (render -> revealReadingNode -> focusReadingCard), which moves
+  // the canvas and card. Do not call that path. Open exactly the same card as
+  // hover, at exactly the same position, then only mark that node as pinned.
   const originalOpenNode = openNode;
   openNode = function openNodeWithStablePin(point, pin = false) {
     if (!pin) return originalOpenNode(point, false);
 
-    const canvas = $('canvas');
-    const scrollTop = canvas.scrollTop;
-    const result = originalOpenNode(point, true);
+    cancelHoverClose();
+    clearPendingHover();
 
-    canvas.scrollTop = scrollTop;
-    positionCard(point);
-    return result;
+    const card = $('eventCard');
+    const canvas = $('canvas');
+    const alreadyOpen = focusId === point.id && !card.hidden;
+
+    if (readingScrollTop === null) readingScrollTop = canvas.scrollTop;
+    rememberCardFocus();
+
+    if (!alreadyOpen) {
+      // Render the same content path as hover while no node is pinned. This also
+      // prevents pin-only focus/dimming wrappers from changing the visual state.
+      const previousPinned = pinnedNodeId;
+      pinnedNodeId = null;
+      closePanels();
+      hoverCard = true;
+      focusId = point.id;
+      anchorDay = point.day;
+      anchorEvent = point.kind === 'moment' ? point.group[0]?.id : null;
+
+      if (point.kind === 'moment') showEvent(point.group[0]);
+      else if (point.kind === 'scene') showSceneCard(point.scene, point.group);
+      else showStoryGroup(point);
+
+      card.hidden = false;
+      positionCard(point);
+      $('hoverTip').hidden = true;
+      pinnedNodeId = previousPinned;
+    }
+
+    // The only click-specific state change.
+    pinnedNodeId = point.id;
+    hoverCard = false;
+    paintNodes();
+    updateFocusBar();
+    return undefined;
   };
 
   // A child preview is already visually attached to its parent surface.
