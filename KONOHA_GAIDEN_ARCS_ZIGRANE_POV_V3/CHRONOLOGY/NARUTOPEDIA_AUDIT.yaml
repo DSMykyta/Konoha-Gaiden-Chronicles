@@ -44,9 +44,10 @@ checked_anime_episodes:
 - 39
 - 40
 - 41
+- 42
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 42
+next_anime_episode: 43
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -742,6 +743,16 @@ episode_audits:
   - 'Enriched whole Kankuro–Misumi bout and opening of the existing Sakura–Ino bout, which spans episodes 41–42. Flashbacks
     kept out of July chronology: undated childhood memories are not new present-day scenes. No separate insults, forehead-protector
     moves or spectator comments.'
+- episode: 42
+  baseline_revision: 3925dde135667a7a3fecb33c52781d3ca59319ac
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-sakura-ino-double-ko
+  cast_review: Author forest-failure outcome preserved; no unsupported Team 9 presence added to preliminaries.
+  notes:
+  - 'Completed the same whole Sakura–Ino bout audited in episode 41: hair trap, possession, resistance and double knockout
+    retained inside one moment. Naruto encouragement is involvement within that bout, not a separate speech moment.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

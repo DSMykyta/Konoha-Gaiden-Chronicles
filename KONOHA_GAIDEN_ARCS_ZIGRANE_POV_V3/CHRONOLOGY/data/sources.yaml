@@ -950,6 +950,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep42-audit
+    type: reference
+    title: 'Narutopedia — The Ultimate Battle: Cha!'
+    url: https://naruto.fandom.com/wiki/The_Ultimate_Battle%3A_Cha%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3715,5 +3722,11 @@ evidence:
   - id: evd-narutopedia-ep41-audit
     source_id: src-narutopedia-ep41-audit
     locator: Episode 41, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep42-audit
+    source_id: src-narutopedia-ep42-audit
+    locator: Episode 42, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

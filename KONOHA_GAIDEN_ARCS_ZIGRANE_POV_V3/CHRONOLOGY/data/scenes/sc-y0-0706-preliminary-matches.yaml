@@ -125,9 +125,11 @@ events:
   legacy_ids:
   - V10-000046-E
   title: Сакура й Іно вибувають разом
-  text: Сакура та Іно починають четвертий поєдинок, стримуючи удари. Сакура вимагає, щоб Іно перестала її жаліти; обидві
-    закріплюють пов’язки на лобі й переходять до серйозного бою. Зрештою поєдинок завершиться взаємним нокаутом, і обидві
-    вибудуть.
+  text: 'Сакура та Іно починають четвертий поєдинок, стримуючи удари, але після виклику Сакури переходять до серйозного
+    бою. Іно зрізає волосся та використовує пасма з чакрою як пастку: удавано промахнувшись Перенесенням свідомості,
+    заманює Сакуру в пута й захоплює її тіло другою спробою. Коли Іно намагається змусити її здатися, Наруто підбадьорює
+    Сакуру, а та витісняє Іно зі своєї свідомості. Виснажені суперниці обмінюються останніми ударами й одночасно непритомніють.
+    Хаяте оголошує, що жодна не проходить далі.'
   origin: M
   extent: interval
   display_rank: 400
@@ -147,11 +149,18 @@ events:
   - entity_id: c-tenten
     role: observer
     mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-kakashi
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046-E
   - evd-manga-chunin-prelims
   - evd-anime-31-50
   - evd-narutopedia-ep41-audit
+  - evd-narutopedia-ep42-audit
 - id: ev-y0-0706-temari-defeats-tenten
   legacy_ids:
   - V10-000046-F
@@ -573,3 +582,59 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep41-audit
+- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep42-audit
+- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-ino
+  entity_id: c-ino
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep42-audit
+- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep42-audit
+- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-neji
+  entity_id: c-neji
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep42-audit
+- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-tenten
+  entity_id: c-tenten
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep42-audit
+- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep42-audit
+- id: pr-audit-42-y0-0706-sakura-ino-double-ko-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep42-audit
