@@ -20,6 +20,12 @@
       max-width: calc(100vw - 24px) !important;
     }
 
+    /* Redundant scene context/open-scene block is not shown in card hierarchy. */
+    .scene-context,
+    .card-open-scene {
+      display: none !important;
+    }
+
     /* Parent navigation belongs to the panel header, never outside the card. */
     .card-parent-level-button {
       position: static !important;
