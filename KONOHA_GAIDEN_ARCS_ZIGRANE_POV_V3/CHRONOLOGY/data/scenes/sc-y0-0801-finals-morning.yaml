@@ -125,8 +125,11 @@ events:
 - id: ev-y0-0801-shikamaru-traps-temari
   legacy_ids:
   - V10-000064-C
-  title: Шикамару ловить Темарі тіньовою технікою
-  text: У наступному фінальному поєдинку Шикамару домагається позиції, з якої повністю захоплює Темарі тіньовою технікою.
+  - ev-y0-0801-shikamaru-surrenders
+  title: Шикамару ловить Темарі, але добровільно здається
+  text: 'Шикамару неохоче починає бій із Темарі й вивчає арену. Знаючи його тіньову техніку, Темарі уникає атак, але
+    він поступово заманює її до тунелю Наруто. Провівши тінь крізь нього, Шикамару повністю сковує суперницю. Попри виграшну
+    позицію він добровільно здається: витрачено забагато чакри, а продовження означало б ще більше роботи.'
   origin: M
   extent: interval
   display_rank: 200
@@ -144,28 +147,8 @@ events:
   - evd-v10-000064-C
   - evd-manga-finals-konoha-crush
   - evd-anime-finals-konoha-crush
-- id: ev-y0-0801-shikamaru-surrenders
-  legacy_ids:
-  - V10-000064-C
-  title: Шикамару добровільно здається
-  text: Оцінивши залишок чакри й ресурси для продовження бою, Шикамару добровільно здається Темарі.
-  origin: M
-  extent: interval
-  display_rank: 300
-  involvement:
-  - entity_id: c-shikamaru
-    role: focus
-    mode: physical
-  - entity_id: c-temari
-    role: participant
-    mode: physical
-  - entity_id: c-genma
-    role: referee
-    mode: physical
-  evidence_ids:
-  - evd-v10-000064-C
-  - evd-manga-finals-konoha-crush
-  - evd-anime-finals-konoha-crush
+  - evd-narutopedia-ep64-audit
+  - evd-narutopedia-ep64-audit-crosscheck
 relations:
 - id: rel-0801-finals-proctor-before-neji
   kind: before
@@ -190,14 +173,6 @@ relations:
   kind: before
   a: ev-y0-0801-genma-talks-to-neji
   b: ev-y0-0801-shikamaru-traps-temari
-  basis: source
-  review: pending
-  evidence_ids:
-  - evd-manga-finals-konoha-crush
-- id: rel-0801-finals-morning-2
-  kind: before
-  a: ev-y0-0801-shikamaru-traps-temari
-  b: ev-y0-0801-shikamaru-surrenders
   basis: source
   review: pending
   evidence_ids:
@@ -309,3 +284,27 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep61-audit
+- id: pr-audit-64-y0-0801-shikamaru-traps-temari-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0801-shikamaru-traps-temari.start
+  to: ev-y0-0801-shikamaru-traps-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep64-audit
+- id: pr-audit-64-y0-0801-shikamaru-traps-temari-c-temari
+  entity_id: c-temari
+  from: ev-y0-0801-shikamaru-traps-temari.start
+  to: ev-y0-0801-shikamaru-traps-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep64-audit
+- id: pr-audit-64-y0-0801-shikamaru-traps-temari-c-genma
+  entity_id: c-genma
+  from: ev-y0-0801-shikamaru-traps-temari.start
+  to: ev-y0-0801-shikamaru-traps-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep64-audit

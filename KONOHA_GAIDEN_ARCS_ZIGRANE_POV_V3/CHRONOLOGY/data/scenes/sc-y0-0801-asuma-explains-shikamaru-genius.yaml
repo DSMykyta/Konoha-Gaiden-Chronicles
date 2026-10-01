@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-0801-asuma-explains-shikamaru-genius
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Асума пояснює Куренай талант Шикамару
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-asuma-explains-shikamaru-genius
+  title: Асума розкриває стратегічний хист Шикамару
+  text: Спостерігаючи за боєм, Асума пояснює Куренай, що лінивий учень є видатним стратегом з IQ понад 200. Він упізнає
+    позу, в якій Шикамару обмірковує план.
+  involvement:
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: participant
+    mode: physical
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep64-audit-crosscheck
+relations: []
+presence:
+- id: pr-audit-64-ev-y0-0801-asuma-explains-shikamaru-genius-c-asuma
+  entity_id: c-asuma
+  from: ev-y0-0801-asuma-explains-shikamaru-genius.start
+  to: ev-y0-0801-asuma-explains-shikamaru-genius.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep64-audit-crosscheck
+- id: pr-audit-64-ev-y0-0801-asuma-explains-shikamaru-genius-c-kurenai
+  entity_id: c-kurenai
+  from: ev-y0-0801-asuma-explains-shikamaru-genius.start
+  to: ev-y0-0801-asuma-explains-shikamaru-genius.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep64-audit-crosscheck

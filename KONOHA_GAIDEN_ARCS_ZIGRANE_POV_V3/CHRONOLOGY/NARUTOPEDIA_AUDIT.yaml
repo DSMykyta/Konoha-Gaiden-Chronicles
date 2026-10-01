@@ -66,11 +66,13 @@ checked_anime_episodes:
 - 61
 - 62
 - 63
+- 64
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 64
+next_anime_episode: 65
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-asuma-explains-shikamaru-genius
 - ev-y0-0801-sasuke-match-postponed
 - ev-y0-0801-kankuro-forfeits-shino-match
 - ev-y0-0801-kiba-checks-hinata-coughing-blood
@@ -137,6 +139,7 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-asuma-explains-shikamaru-genius
 - sc-y0-0801-finals-rescheduled
 - sc-y0-0801-hinata-unwell-in-stands
 - sc-y0-0801-kabuto-steals-anbu-disguise
@@ -1189,6 +1192,22 @@ episode_audits:
     whole reconciliation conversation with Hizashi’s scroll and voluntary choice. Removed the unsupported Hyuga-compound
     location: the synopsis identifies a treatment room but does not establish the exact building. Project dates and author
     attendance retained.'
+- episode: 64
+  baseline_revision: 082ffa4902693181894e5f8fd9fa7c48e78b5aed
+  added_moment_ids:
+  - ev-y0-0801-asuma-explains-shikamaru-genius
+  added_scene_ids:
+  - sc-y0-0801-asuma-explains-shikamaru-genius
+  updated_moment_ids:
+  - ev-y0-0801-shikamaru-traps-temari
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Expanded and merged the entire Shikamaru–Temari bout into one complete battle, including her informed defence, arena/tunnel
+    strategy and voluntary surrender. Removed surrender ID retained as a legacy alias; redirects and migration ledger
+    updated. Added Asuma/Kurenai’s explanation of Shikamaru’s strategic talent, crosschecked against the chapter recap.
+  merged_moment_ids:
+    ev-y0-0801-shikamaru-surrenders: ev-y0-0801-shikamaru-traps-temari
+
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

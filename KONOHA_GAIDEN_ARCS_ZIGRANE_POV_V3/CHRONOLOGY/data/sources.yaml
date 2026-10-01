@@ -1132,6 +1132,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep64-audit
+    type: reference
+    title: 'Narutopedia — Zero Motivation: The Guy with Cloud Envy!'
+    url: https://naruto.fandom.com/wiki/Zero_Motivation%3A_The_Guy_with_Cloud_Envy%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep64-crosscheck-217
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://www.leafninja.com/volume-12.php
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4056,5 +4070,18 @@ evidence:
   - id: evd-narutopedia-ep63-audit
     source_id: src-narutopedia-ep63-audit
     locator: Episode 63, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep64-audit
+    source_id: src-narutopedia-ep64-audit
+    locator: Episode 64, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep64-audit-crosscheck
+    source_id: src-narutopedia-ep64-crosscheck-217
+    locator: "Volume 12 chapter recap: Asuma explains Shikamaru\u2019s strategic intelligence\
+      \ and IQ to Kurenai during the Temari match"
     basis: source
     review: accepted

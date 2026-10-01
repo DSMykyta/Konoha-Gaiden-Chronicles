@@ -787,8 +787,7 @@ redirects:
   status: superseded
   replacement_ids:
   - ev-y0-0801-shikamaru-traps-temari
-  - ev-y0-0801-shikamaru-surrenders
-  reason: Shikamaru/Temari final split into tactical win and voluntary surrender.
+  reason: Shikamaru/Temari final retained as one complete battle including voluntary surrender.
 - legacy_id: V10-000064-D
   status: migrated
   replacement_ids:
