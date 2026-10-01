@@ -3,8 +3,8 @@
 (() => {
   const HOVER_OPEN_DELAY = 260;
   let hoverOpenTimer = null;
+  let hoveredNodeId = null;
   let pendingNodeId = null;
-  let pendingElement = null;
 
   function nodeElement(target) {
     return target instanceof Element ? target.closest('.node,.node-hit') : null;
@@ -18,7 +18,6 @@
     clearTimeout(hoverOpenTimer);
     hoverOpenTimer = null;
     pendingNodeId = null;
-    pendingElement = null;
   }
 
   function scheduleNodeHover(event) {
@@ -28,21 +27,23 @@
     const id = nodeId(element);
     if (!id) return;
 
-    // Prevent the timeline's immediate pointerenter/pointerover handlers from
-    // opening every node the pointer merely crosses.
+    // Block the immediate hover handlers already attached in app.js.
     event.stopImmediatePropagation();
 
     const related = nodeElement(event.relatedTarget);
-    if (related && nodeId(related) === id) return;
-    if (pendingNodeId === id && pendingElement === element) return;
+    if (related && nodeId(related) === id) {
+      hoveredNodeId = id;
+      return;
+    }
 
+    hoveredNodeId = id;
     clearPendingHover();
     pendingNodeId = id;
-    pendingElement = element;
     hoverOpenTimer = setTimeout(() => {
-      const stillHovered = pendingElement?.isConnected && pendingElement.matches(':hover');
-      const node = stillHovered ? graphNodes.find(item => item.id === pendingNodeId) : null;
+      const idToOpen = pendingNodeId;
       clearPendingHover();
+      if (!idToOpen || hoveredNodeId !== idToOpen) return;
+      const node = graphNodes.find(item => item.id === idToOpen);
       if (node) openNode(node);
     }, HOVER_OPEN_DELAY);
   }
@@ -54,6 +55,8 @@
     const id = nodeId(element);
     const related = nodeElement(event.relatedTarget);
     if (related && nodeId(related) === id) return;
+
+    if (hoveredNodeId === id) hoveredNodeId = null;
     if (pendingNodeId === id) clearPendingHover();
   }
 
@@ -61,5 +64,8 @@
   document.addEventListener('pointerover', scheduleNodeHover, true);
   document.addEventListener('pointerleave', cancelNodeHover, true);
   document.addEventListener('pointerout', cancelNodeHover, true);
-  document.addEventListener('pointerdown', clearPendingHover, true);
+  document.addEventListener('pointerdown', () => {
+    hoveredNodeId = null;
+    clearPendingHover();
+  }, true);
 })();
