@@ -943,6 +943,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep41-audit
+    type: reference
+    title: 'Narutopedia — Kunoichi Rumble: The Rivals Get Serious!'
+    url: https://naruto.fandom.com/wiki/Kunoichi_Rumble%3A_The_Rivals_Get_Serious%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3702,5 +3709,11 @@ evidence:
     source_id: src-narutopedia-ep40-crosscheck-188
     locator: "Chunin Exams, preliminary Shino\u2013Zaku match; crosscheck of insect\
       \ blockage mechanism"
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep41-audit
+    source_id: src-narutopedia-ep41-audit
+    locator: Episode 41, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

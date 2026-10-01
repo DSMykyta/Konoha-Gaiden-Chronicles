@@ -97,7 +97,9 @@ events:
   legacy_ids:
   - V10-000046-D
   title: Канкуро перемагає Місумі
-  text: Канкуро перемагає Місумі Цуругі, використовуючи Карасу; Бакі спостерігає за виступом свого учня.
+  text: Місумі обвиває супротивника гнучким тілом і намагається зламати йому шию, але замість Канкуро захопив маріонетку
+    Карасу. Канкуро використовує близькість Місумі, щоб затиснути його маріонеткою та перемогти. Місумі виживає завдяки
+    здатності вигинати тіло; Бакі спостерігає за виступом свого учня.
   origin: M
   extent: interval
   display_rank: 300
@@ -118,11 +120,14 @@ events:
   - evd-v10-000046-D
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep41-audit
 - id: ev-y0-0706-sakura-ino-double-ko
   legacy_ids:
   - V10-000046-E
   title: Сакура й Іно вибувають разом
-  text: Сакура та Іно завершують поєдинок взаємним нокаутом; обидві вибувають.
+  text: Сакура та Іно починають четвертий поєдинок, стримуючи удари. Сакура вимагає, щоб Іно перестала її жаліти; обидві
+    закріплюють пов’язки на лобі й переходять до серйозного бою. Зрештою поєдинок завершиться взаємним нокаутом, і обидві
+    вибудуть.
   origin: M
   extent: interval
   display_rank: 400
@@ -136,10 +141,17 @@ events:
   - entity_id: c-hayate
     role: observer
     mode: physical
+  - entity_id: c-neji
+    role: observer
+    mode: physical
+  - entity_id: c-tenten
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046-E
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep41-audit
 - id: ev-y0-0706-temari-defeats-tenten
   legacy_ids:
   - V10-000046-F
@@ -306,11 +318,12 @@ relations:
   kind: before
   a: ev-y0-0706-kankuro-defeats-misumi
   b: ev-y0-0706-sakura-ino-double-ko
-  basis: imported
-  review: pending
+  basis: source
+  review: accepted
   evidence_ids:
   - evd-v10-000046-D
   - evd-v10-000046-E
+  - evd-narutopedia-ep41-audit
 - id: rel-0706-match-4
   kind: before
   a: ev-y0-0706-sakura-ino-double-ko
@@ -488,3 +501,75 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep40-audit
+- id: pr-audit-41-y0-0706-kankuro-defeats-misumi-c-kankuro
+  entity_id: c-kankuro
+  from: ev-y0-0706-kankuro-defeats-misumi.start
+  to: ev-y0-0706-kankuro-defeats-misumi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-kankuro-defeats-misumi-c-misumi
+  entity_id: c-misumi
+  from: ev-y0-0706-kankuro-defeats-misumi.start
+  to: ev-y0-0706-kankuro-defeats-misumi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-kankuro-defeats-misumi-c-baki
+  entity_id: c-baki
+  from: ev-y0-0706-kankuro-defeats-misumi.start
+  to: ev-y0-0706-kankuro-defeats-misumi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-kankuro-defeats-misumi-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-kankuro-defeats-misumi.start
+  to: ev-y0-0706-kankuro-defeats-misumi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-ino
+  entity_id: c-ino
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-neji
+  entity_id: c-neji
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit
+- id: pr-audit-41-y0-0706-sakura-ino-double-ko-c-tenten
+  entity_id: c-tenten
+  from: ev-y0-0706-sakura-ino-double-ko.start
+  to: ev-y0-0706-sakura-ino-double-ko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep41-audit

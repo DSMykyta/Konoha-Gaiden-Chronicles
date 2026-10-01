@@ -43,9 +43,10 @@ checked_anime_episodes:
 - 38
 - 39
 - 40
+- 41
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 41
+next_anime_episode: 42
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -729,6 +730,18 @@ episode_audits:
   notes:
   - Enriched the existing confrontation and entire Shino–Zaku bout; no separate threat, arm reveal, explanation or reaction
     moments. Anime arm-injury difference distinguished from manga. Next bout retained for episode 41.
+- episode: 41
+  baseline_revision: 5a26d94fa39976394bfabb69f32937134b061cb4
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-kankuro-defeats-misumi
+  - ev-y0-0706-sakura-ino-double-ko
+  cast_review: Author forest-failure outcome preserved; no unsupported Team 9 presence added to preliminaries.
+  notes:
+  - 'Enriched whole Kankuro–Misumi bout and opening of the existing Sakura–Ino bout, which spans episodes 41–42. Flashbacks
+    kept out of July chronology: undated childhood memories are not new present-day scenes. No separate insults, forehead-protector
+    moves or spectator comments.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
