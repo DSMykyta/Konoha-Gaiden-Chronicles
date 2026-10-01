@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-y0-team7-arrives-forest-tower
+episode_id: ep-y0-team7-forest-trial
+display_rank: 450
+continuity_id: main
+title: Команда 7 й Кабуто дістаються вежі та розходяться
+location_id: loc-forest-death-tower
+placement:
+  anchor_id: ta-y0-0707
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0706-team7-reaches-tower
+  legacy_ids:
+  - V10-000045-C
+  title: Команда 7 встигає до центральної вежі
+  text: Команда 7 із потрібними сувоями дістається центральної вежі. Кабуто зустрічає Йорої та Місумі; групи розходяться й
+    входять різними дверима.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-yoroi
+    role: participant
+    mode: physical
+  - entity_id: c-misumi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-000045-C
+  - evd-manga-chunin-prelims
+  - evd-anime-31-50
+  - evd-narutopedia-ep36-audit
+  - evd-narutopedia-chapter63-forest-exit
+relations: []
+presence:
+- id: pr-audit36-tower-arrival-naruto
+  entity_id: c-naruto
+  from: sc-y0-team7-arrives-forest-tower.start
+  to: sc-y0-team7-arrives-forest-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: pr-audit36-tower-arrival-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-team7-arrives-forest-tower.start
+  to: sc-y0-team7-arrives-forest-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: pr-audit36-tower-arrival-sakura
+  entity_id: c-sakura
+  from: sc-y0-team7-arrives-forest-tower.start
+  to: sc-y0-team7-arrives-forest-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: pr-audit36-tower-arrival-kabuto
+  entity_id: c-kabuto
+  from: sc-y0-team7-arrives-forest-tower.start
+  to: sc-y0-team7-arrives-forest-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: pr-audit36-tower-arrival-yoroi
+  entity_id: c-yoroi
+  from: sc-y0-team7-arrives-forest-tower.start
+  to: sc-y0-team7-arrives-forest-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: pr-audit36-tower-arrival-misumi
+  entity_id: c-misumi
+  from: sc-y0-team7-arrives-forest-tower.start
+  to: sc-y0-team7-arrives-forest-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit

@@ -72,6 +72,12 @@ events:
   - entity_id: c-sakura
     role: participant
     mode: physical
+  - entity_id: c-kagari
+    role: attacker
+    mode: physical
+  - entity_id: c-mubi
+    role: attacker
+    mode: physical
   focus_teams:
   - team-oboro
   - team-7
@@ -80,11 +86,14 @@ events:
   - evd-manga-chunin-prelims
   - evd-anime-31-50
   - evd-narutopedia-ep35-audit
+  - evd-narutopedia-ep36-audit
 - id: ev-y0-0706-naruto-exhausts-oboro-team
   legacy_ids:
   - V10-000045-B
-  title: Наруто виснажує справжніх нападників
-  text: Наруто безперервно створює тіньових клонів і змушує справжніх членів Команди Оборо виснажитися.
+  title: Наруто виманює справжню Команду Оборо нічним боєм клонів
+  text: Розпізнавши ілюзорні клони, Наруто маскує свої тіньові клони під товаришів і б’ється всю ніч, поки справжні Саске,
+    Сакура й Кабуто відпочивають. Коли Оборо, Каґарі та Мубі виходять добити нібито виснажену групу, їх оточують. Кабуто зазнає
+    поранення, захищаючи Наруто й створюючи нагоду для його атаки. Попри витрату чакри Наруто збиває всіх трьох генінів Дощу.
   origin: M
   extent: interval
   display_rank: 300
@@ -104,10 +113,18 @@ events:
   - entity_id: c-sakura
     role: participant
     mode: physical
+  - entity_id: c-kagari
+    role: participant
+    mode: physical
+  - entity_id: c-mubi
+    role: participant
+    mode: physical
   evidence_ids:
   - evd-v10-000045-B
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep36-audit
+  - evd-narutopedia-chapter63-forest-exit
 - id: ev-y0-0706-team7-gets-second-scroll
   legacy_ids:
   - V10-000045-C
@@ -132,30 +149,7 @@ events:
   - evd-v10-000045-C
   - evd-manga-chunin-prelims
   - evd-anime-31-50
-- id: ev-y0-0706-team7-reaches-tower
-  legacy_ids:
-  - V10-000045-C
-  title: Команда 7 встигає до центральної вежі
-  text: Наруто, Саске й Сакура дістаються центральної вежі до завершення другого етапу.
-  origin: M
-  extent: interval
-  display_rank: 500
-  involvement:
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  focus_teams:
-  - team-7
-  evidence_ids:
-  - evd-v10-000045-C
-  - evd-manga-chunin-prelims
-  - evd-anime-31-50
+  - evd-narutopedia-ep36-audit
 relations:
 - id: rel-0706-forest-1
   kind: before
@@ -178,14 +172,6 @@ relations:
   kind: before
   a: ev-y0-0706-naruto-exhausts-oboro-team
   b: ev-y0-0706-team7-gets-second-scroll
-  basis: imported
-  review: pending
-  evidence_ids:
-  - evd-v10-000045-C
-- id: rel-0706-forest-4
-  kind: before
-  a: ev-y0-0706-team7-gets-second-scroll
-  b: ev-y0-0706-team7-reaches-tower
   basis: imported
   review: pending
   evidence_ids:
@@ -223,3 +209,27 @@ presence:
   evidence_ids:
   - evd-v10-000045
   review: accepted
+- id: pr-audit-36-y0-0706-team7-forest-completion-c-oboro
+  entity_id: c-oboro
+  from: ev-y0-0706-team-oboro-traps-group.start
+  to: ev-y0-0706-team7-gets-second-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: pr-audit-36-y0-0706-team7-forest-completion-c-kagari
+  entity_id: c-kagari
+  from: ev-y0-0706-team-oboro-traps-group.start
+  to: ev-y0-0706-team7-gets-second-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: pr-audit-36-y0-0706-team7-forest-completion-c-mubi
+  entity_id: c-mubi
+  from: ev-y0-0706-team-oboro-traps-group.start
+  to: ev-y0-0706-team7-gets-second-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit

@@ -2073,6 +2073,18 @@ entities:
     aliases:
     - Team Shibire
 
+  - id: c-kagari
+    kind: person
+    name: Каґарі
+    aliases:
+    - Kagari
+
+  - id: c-mubi
+    kind: person
+    name: Мубі
+    aliases:
+    - Mubi
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

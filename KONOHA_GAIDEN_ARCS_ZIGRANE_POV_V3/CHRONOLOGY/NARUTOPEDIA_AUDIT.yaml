@@ -38,9 +38,10 @@ checked_anime_episodes:
 - 33
 - 34
 - 35
+- 36
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 36
+next_anime_episode: 37
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -629,6 +630,45 @@ episode_audits:
     remarks. Actual Shibire-team failure added separately with unknown date; Tanzo explicitly absent. Trap includes disorientation
     and clone attack as one action. Source Shibire team profile corroborates shown rule violation, unlike merely retelling
     it as a new event.
+- episode: 36
+  baseline_revision: ceaa29e03b725feb06ffef6bf63f570902097e63
+  added_moment_ids: []
+  added_scene_ids:
+  - sc-y0-team7-arrives-forest-tower
+  updated_moment_ids:
+  - ev-y0-0706-team-oboro-traps-group
+  - ev-y0-0706-naruto-exhausts-oboro-team
+  - ev-y0-0706-team7-gets-second-scroll
+  - ev-y0-0706-team7-reaches-tower
+  - ev-y0-0706-kabuto-returns-to-sound
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - 'No new fragmented combat moments: clone deception, overnight fight, Kabuto injury and final punches are one whole encounter.
+    Missing Kagari/Mubi cast added. Tower arrival moved to separate location scene, keeping event ID. Kabuto report/healing
+    incorporated into retained return scene. Chapter 63 Narutopedia summary corroborates protection injury, reunion and physical
+    reporting party. Working dates follow July 2 start, July 6 search/night combat and July 7 arrival; dependent baseline
+    July 6 scenes shift one day, with individual later-episode dates still subject to their audits.'
+  moved_moment_ids:
+  - ev-y0-0706-team7-reaches-tower
+  date_corrections:
+    scene_ids:
+    - sc-y0-0706-hayate-checks-yugao
+    - sc-y0-0706-hiruzen-orders-hayate
+    - sc-y0-0706-sasuke-asks-kakashi-training
+    - sc-y0-0706-kakashi-seals-sasuke
+    - sc-y0-0706-hayate-yugao-farewell
+    - sc-y0-0706-naruto-meets-jiraiya
+    - sc-y0-0706-baki-kabuto-hayate
+    - sc-y0-0706-kakashi-assigns-ebisu
+    - sc-y0-0706-kabuto-hospital-infiltration
+    - sc-y0-0706-preliminary-matches
+    - sc-y0-0706-gaara-kills-dosu
+    - sc-y0-0706-finals-draw
+    - sc-y0-0706-iruka-team7-tower-message
+    - sc-y0-0706-preliminaries-announced
+    - sc-y0-0705-team7-resumes-search
+    reason: Preserve baseline relative post-forest days after overnight fight ends July 7; exact later canon dates are checked
+      in their own episode audits.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

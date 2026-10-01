@@ -888,6 +888,26 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep36-audit
+    type: reference
+    title: 'Narutopedia — Clone vs. Clone: Mine are Better Than Yours!'
+    url: https://naruto.fandom.com/wiki/Clone_vs._Clone%3A_Mine_are_Better_Than_Yours%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-chapter63-forest-exit
+    type: reference
+    title: Narutopedia — One More Face, chapter 63
+    url: https://naruto.fandom.com/wiki/One_More_Face
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-team-oboro-cast
+    type: reference
+    title: Narutopedia — Team Oboro
+    url: https://naruto.fandom.com/wiki/Team_Oboro
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3599,5 +3619,22 @@ evidence:
     locator: "Original Ch\u016Bnin Exams paragraph; Minoji and Shibire open early while\
       \ Tanzo absent; summoned Konoha shinobi knock them out; separate from later Shippuden\
       \ exam."
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep36-audit
+    source_id: src-narutopedia-ep36-audit
+    locator: Episode 36, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-chapter63-forest-exit
+    source_id: src-narutopedia-chapter63-forest-exit
+    locator: Summary; Kabuto protection injury, team reunion / different doors, report to Orochimaru and healing
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-team-oboro-cast
+    source_id: src-narutopedia-team-oboro-cast
+    locator: 'Members: Oboro, Kagari, Mubi'
     basis: source
     review: accepted

@@ -3194,7 +3194,6 @@ links:
   kind: before
   a: ev-y0-0701-orochimaru-curse-mark-sasuke
   b: sc-y0-0701-anko-orochimaru
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3219,7 +3218,6 @@ links:
   kind: before
   a: sc-y0-neji-spares-team10
   b: ev-y0-0702-team10-intervenes
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3244,7 +3242,6 @@ links:
   kind: before
   a: sc-y0-neji-spares-team10
   b: sc-y0-team10-watches-sakura-fight
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3269,7 +3266,6 @@ links:
   kind: before
   a: sc-y0-0701-anko-orochimaru
   b: sc-y0-0701-anko-reviews-suna-record
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3278,7 +3274,22 @@ links:
   kind: before
   a: sc-y0-shibire-opens-forest-scroll
   b: ev-y0-0706-kabuto-joins-team7
-
+- id: lnk-audit36-forest-before-tower-arrival
+  kind: before
+  a: sc-y0-0706-team7-forest-completion
+  b: sc-y0-team7-arrives-forest-tower
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
+- id: lnk-audit36-tower-arrival-before-iruka-message
+  kind: before
+  a: sc-y0-team7-arrives-forest-tower
+  b: sc-y0-0706-iruka-team7-tower-message
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep36-audit
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.
