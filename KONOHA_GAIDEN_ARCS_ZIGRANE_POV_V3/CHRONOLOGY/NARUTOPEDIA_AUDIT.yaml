@@ -64,9 +64,10 @@ checked_anime_episodes:
 - 59
 - 60
 - 61
+- 62
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 62
+next_anime_episode: 63
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0801-kiba-checks-hinata-coughing-blood
@@ -1158,6 +1159,17 @@ episode_audits:
     confession. Added Kabuto’s ANBU murder/disguise and Hinata’s physical deterioration observed by Kiba. Iruka’s worry
     is a state rather than a separate action, so no idle-thought moment added. Later battle outcome remains retained
     for episode 62 verification.
+- episode: 62
+  baseline_revision: 4edff96d6b790f37403dc91663b5b516d6ffddc0
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0801-naruto-defeats-neji
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - 'Verified and expanded the end of the whole Naruto–Neji fight: blocked chakra, Nine-Tails reserve, crater/clone deception,
+    underground uppercut and Genma’s declaration. No extra attack nodes or invented scenes; the fight stays one complete
+    moment across episodes 60–62.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
