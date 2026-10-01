@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-prewaves-haku-revives-zabuza
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-prewaves-haku-revives-zabuza
+  display_rank: 100
+  title: Хаку приводить Забузу до тями
+  text: Хаку приводить Забузу до тями, розкриваючи їхню співпрацю та інсценовану смерть.
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep10-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-prewaves-zabuza-plans-rematch
+  display_rank: 200
+  title: Забуза готується знову битися з Какаші
+  text: Забуза заявляє, що переможе Какаші наступного разу. Після першого бою йому потрібен відпочинок для відновлення.
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep10-audit
+relations:
+- id: rel-audit-10-prewaves-haku-revives-zabuza-before-prewaves-zabuza-plans-rematch
+  kind: before
+  a: ev-prewaves-haku-revives-zabuza
+  b: ev-prewaves-zabuza-plans-rematch
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep10-audit
+presence:
+- id: pr-audit-10-prewaves-haku-revives-zabuza-c-haku
+  entity_id: c-haku
+  from: sc-prewaves-haku-revives-zabuza.start
+  to: sc-prewaves-haku-revives-zabuza.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep10-audit
+- id: pr-audit-10-prewaves-haku-revives-zabuza-c-zabuza
+  entity_id: c-zabuza
+  from: sc-prewaves-haku-revives-zabuza.start
+  to: sc-prewaves-haku-revives-zabuza.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep10-audit
+episode_id: ep-y0-zabuza-recovery
+display_rank: 100
+title: Хаку приводить Забузу до тями
+location_id: null
+placement: null

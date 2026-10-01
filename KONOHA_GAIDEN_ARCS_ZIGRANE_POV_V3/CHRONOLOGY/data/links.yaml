@@ -2979,6 +2979,23 @@ links:
   evidence_ids:
   - evd-narutopedia-ep6-audit
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep10-audit
+  id: lnk-audit10-battle-before-zabuza-revival
+  kind: before
+  a: sc-y0-0318-zabuza-first-battle
+  b: sc-prewaves-haku-revives-zabuza
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep10-audit
+  id: lnk-audit10-revival-before-rematch
+  kind: before
+  a: sc-prewaves-haku-revives-zabuza
+  b: sc-y0-0330-bridge-final-battle
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order,
   not simultaneity.

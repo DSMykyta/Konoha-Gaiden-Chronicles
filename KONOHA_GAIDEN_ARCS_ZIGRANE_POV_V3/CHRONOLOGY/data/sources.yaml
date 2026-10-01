@@ -626,6 +626,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep10-audit
+    type: reference
+    title: Narutopedia — The Forest of Chakra
+    url: https://naruto.fandom.com/wiki/The_Forest_of_Chakra
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3082,5 +3089,11 @@ evidence:
   - id: evd-narutopedia-ep9-audit
     source_id: src-narutopedia-ep9-audit
     locator: Episode 9, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep10-audit
+    source_id: src-narutopedia-ep10-audit
+    locator: Episode 10, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

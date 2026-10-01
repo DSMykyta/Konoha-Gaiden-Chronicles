@@ -12,9 +12,10 @@ checked_anime_episodes:
 - 7
 - 8
 - 9
+- 10
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 10
+next_anime_episode: 11
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -159,3 +160,16 @@ episode_audits:
   - ev-y0-0318-haku-takes-zabuza
   cast_review: Existing project cast checked; no additional author-character presence established.
   notes: []
+- episode: 10
+  baseline_revision: 6ffc615294803c0ab0e18bb8c72d69e3c50feaf2
+  added_moment_ids:
+  - ev-y0-0322-kakashi-recovery-at-tazuna
+  - ev-prewaves-haku-revives-zabuza
+  - ev-prewaves-zabuza-plans-rematch
+  added_scene_ids:
+  - sc-prewaves-haku-revives-zabuza
+  updated_moment_ids:
+  - ev-y0-0322-sakura-controls-chakra-first
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - No exact date or hideout location assigned to the opposing recovery scene.
