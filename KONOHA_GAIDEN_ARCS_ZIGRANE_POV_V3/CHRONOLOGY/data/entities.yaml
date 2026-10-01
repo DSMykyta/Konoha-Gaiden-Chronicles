@@ -2031,6 +2031,12 @@ entities:
     aliases:
     - Academy staff room
 
+  - id: c-shiore
+    kind: person
+    name: Шіоре
+    aliases:
+    - Shiore
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

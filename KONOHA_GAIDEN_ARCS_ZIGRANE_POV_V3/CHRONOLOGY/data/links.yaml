@@ -430,12 +430,13 @@ links:
 - id: lnk-0701-orochimaru-intersects-anko
   kind: intersects
   a: sc-y0-0701-orochimaru-attacks-team7
-  b: sc-y0-0701-anko-orochimaru
+  b: sc-y0-anko-discovers-grass-team-bodies
   basis: imported
   review: pending
   evidence_ids:
   - evd-v10-000040-D
   - evd-v10-000040-F
+  - evd-narutopedia-ep29-audit
 - id: lnk-0701-orochimaru-before-0702-clearing
   kind: before
   a: sc-y0-0701-orochimaru-attacks-team7
@@ -3121,7 +3122,6 @@ links:
   kind: before
   a: ev-y0-0701-anko-takes-over-second-stage
   b: ev-y0-ibiki-checks-naruto-empty-paper
-
 - id: lnk-audit25-mentors-during-written
   kind: intersects
   a: sc-y0-chunin-mentors-staff-room
@@ -3130,7 +3130,6 @@ links:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep25-audit
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3139,7 +3138,6 @@ links:
   kind: before
   a: sc-y0-0701-konohamaru-report
   b: sc-y0-0701-forest-start
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3164,7 +3162,6 @@ links:
   kind: before
   a: sc-y0-team7-first-forest-impostor
   b: sc-y0-0701-orochimaru-attacks-team7
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3181,7 +3178,14 @@ links:
   kind: before
   a: sc-y0-naruto-escapes-forest-snake
   b: ev-y0-0701-naruto-fights-orochimaru
-
+- id: lnk-audit29-bodies-before-anko-duel
+  kind: before
+  a: sc-y0-anko-discovers-grass-team-bodies
+  b: sc-y0-0701-anko-orochimaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep29-audit
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

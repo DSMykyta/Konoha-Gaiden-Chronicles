@@ -793,6 +793,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep29-audit
+    type: reference
+    title: 'Narutopedia — Naruto''s Counterattack: Never Give In!'
+    url: https://naruto.fandom.com/wiki/Naruto%27s_Counterattack%3A_Never_Give_In%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3418,5 +3425,11 @@ evidence:
   - id: evd-narutopedia-ep28-audit
     source_id: src-narutopedia-ep28-audit
     locator: Episode 28, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep29-audit
+    source_id: src-narutopedia-ep29-audit
+    locator: Episode 29, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

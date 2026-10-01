@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-y0-0701-anko-orochimaru
 episode_id: ep-y0-anko-exam-security
-display_rank: 100
+display_rank: 200
 continuity_id: main
-title: Анко виявляє проникнення Орочімару
+title: Анко намагається зупинити Орочімару в лісі
 location_id: loc-forest-death
 placement:
   anchor_id: ta-y0-0701
@@ -17,28 +17,6 @@ review:
   origin: accepted
   text: accepted
 events:
-- id: ev-y0-0701-anko-finds-grass-team
-  legacy_ids:
-  - V10-000040-F
-  title: Анко знаходить убиту команду Трави
-  text: Екзаменатори показують Анко тіла трьох генінів Трави. Вони мертві вже певний час, а їхні обличчя зняті; Анко впізнає
-    серед документів Шіоре й розуміє, що хтось використав зовнішність команди для проникнення на іспит. За характером техніки
-    вона одразу підозрює Орочімару, наказує повідомити Хірузена та запросити дві команди АНБУ, а сама вирушає в Ліс Смерті
-    на пошуки.
-  origin: M
-  extent: interval
-  display_rank: 100
-  involvement:
-  - entity_id: c-anko
-    role: focus
-    mode: physical
-  - entity_id: c-orochimaru
-    role: affected
-    mode: remote
-  evidence_ids:
-  - evd-v10-000040-F
-  - evd-manga-chunin-stage1-forest
-  - evd-anime-24-30
 - id: ev-y0-0701-anko-confronts-orochimaru
   legacy_ids:
   - V10-000040-F
@@ -82,14 +60,6 @@ events:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
 relations:
-- id: rel-0701-anko-1
-  kind: before
-  a: ev-y0-0701-anko-finds-grass-team
-  b: ev-y0-0701-anko-confronts-orochimaru
-  basis: source
-  review: pending
-  evidence_ids:
-  - evd-manga-chunin-stage1-forest
 - id: rel-0701-anko-2
   kind: before
   a: ev-y0-0701-anko-confronts-orochimaru
@@ -117,3 +87,4 @@ presence:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
   review: accepted
+day_part: night

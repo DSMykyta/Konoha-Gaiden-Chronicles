@@ -1,0 +1,55 @@
+schema_version: 1
+id: sc-y0-anko-discovers-grass-team-bodies
+episode_id: ep-y0-anko-exam-security
+display_rank: 100
+continuity_id: main
+title: Анко оглядає тіла справжніх генінів Трави
+location_id: null
+placement:
+  anchor_id: ta-y0-0701
+  day_offset: 1
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0701-anko-finds-grass-team
+  legacy_ids:
+  - V10-000040-F
+  title: Анко знаходить убиту команду Трави
+  text: Екзаменатори показують Анко тіла трьох генінів Трави. Вони мертві вже певний час, а їхні обличчя зняті; Анко впізнає
+    серед документів Шіоре й розуміє, що хтось використав зовнішність команди для проникнення на іспит. За характером техніки
+    вона одразу підозрює Орочімару, наказує повідомити Хірузена та запросити дві команди АНБУ, а сама вирушає в Ліс Смерті
+    на пошуки.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-orochimaru
+    role: affected
+    mode: remote
+  - entity_id: c-shiore
+    role: deceased
+    mode: physical
+  evidence_ids:
+  - evd-v10-000040-F
+  - evd-manga-chunin-stage1-forest
+  - evd-anime-24-30
+  - evd-narutopedia-ep29-audit
+relations: []
+presence:
+- id: pr-audit29-anko-bodies
+  entity_id: c-anko
+  from: sc-y0-anko-discovers-grass-team-bodies.start
+  to: sc-y0-anko-discovers-grass-team-bodies.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep29-audit
