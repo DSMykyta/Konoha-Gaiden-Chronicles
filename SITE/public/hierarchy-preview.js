@@ -17,7 +17,8 @@
   `;
   document.head.append(style);
 
-  // Clouds obey the same collapse rules as semantic nodes:
+  // Clouds exist only for grouping layers. A moment is a leaf and never gets a cloud.
+  // Higher layers obey the same collapse rules as semantic nodes:
   // one scene does not create an episode layer; one moment does not create a scene layer.
   if (typeof StoryClouds !== 'undefined') {
     const baseCloudGroups = StoryClouds.groups.bind(StoryClouds);
@@ -52,6 +53,7 @@
       }
 
       return groups.filter(group => {
+        if (group.kind === 'moment') return false;
         if (group.kind === 'episode') return (scenesByEpisode.get(group.id)?.size || 0) > 1;
         if (group.kind === 'scene') return (momentsByScene.get(group.id)?.size || 0) > 1;
         return true;
