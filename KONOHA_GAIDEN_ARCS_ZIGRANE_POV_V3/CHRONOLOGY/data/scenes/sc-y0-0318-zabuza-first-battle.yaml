@@ -361,7 +361,8 @@ events:
   legacy_ids:
   - V10-000027
   title: Какаші перемагає Забузу
-  text: Звільнений Какаші копіює техніки Забузи й доводить бій до поразки Забузи.
+  text: Звільнений Какаші копіює водяні техніки Забузи Шарінґаном. Забуза втрачає спокій, бачачи власні техніки проти себе;
+    Какаші перемагає його.
   origin: M
   extent: interval
   display_rank: 500
@@ -375,14 +376,75 @@ events:
   evidence_ids:
   - evd-v10-000027
   - evd-manga-land-waves
+  - evd-narutopedia-ep9-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-haku-stops-finishing-blow
+  display_rank: 550
+  title: Хаку перехоплює завершальний удар
+  text: До завершального удару Какаші юний мисливець-нін з Кірі влучає сенбонами в Забузу, начебто вбивши його.
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep9-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0318-naruto-protests-hunter
+  display_rank: 600
+  title: Наруто обурюється втручанням мисливця-нін
+  text: Наруто обурюється, що ровесник легко здолав їхнього важкого супротивника. Какаші пояснює, що існують молодші за Наруто
+    ніндзя, сильніші за нього самого.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep9-audit
 - id: ev-y0-0318-haku-takes-zabuza
   legacy_ids:
   - V10-000027
   title: Хаку під виглядом мисливця-нін забирає Забузу
-  text: Хаку інсценує смерть Забузи, видаючи себе за мисливця-нін, і забирає непритомного напарника.
+  text: Мисливець-нін забирає тіло Забузи. Його прихована особа — Хаку, який лише інсценував загибель напарника.
   origin: M
   extent: interval
-  display_rank: 600
+  display_rank: 650
   involvement:
   - entity_id: c-haku
     role: focus
@@ -396,6 +458,7 @@ events:
   evidence_ids:
   - evd-v10-000027
   - evd-manga-land-waves
+  - evd-narutopedia-ep9-audit
 - id: ev-y0-0318-kakashi-collapses
   legacy_ids:
   - V10-000027
@@ -570,6 +633,30 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep8-audit
+- id: rel-audit-9-y0-0318-kakashi-defeats-zabuza-before-y0-0318-haku-stops-finishing-blow
+  kind: before
+  a: ev-y0-0318-kakashi-defeats-zabuza
+  b: ev-y0-0318-haku-stops-finishing-blow
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep9-audit
+- id: rel-audit-9-y0-0318-haku-stops-finishing-blow-before-y0-0318-naruto-protests-hunter
+  kind: before
+  a: ev-y0-0318-haku-stops-finishing-blow
+  b: ev-y0-0318-naruto-protests-hunter
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep9-audit
+- id: rel-audit-9-y0-0318-naruto-protests-hunter-before-y0-0318-haku-takes-zabuza
+  kind: before
+  a: ev-y0-0318-naruto-protests-hunter
+  b: ev-y0-0318-haku-takes-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep9-audit
 presence:
 - id: pr-0318-kakashi
   entity_id: c-kakashi
@@ -627,3 +714,11 @@ presence:
   evidence_ids:
   - evd-v10-000027
   review: accepted
+- id: pr-audit-9-y0-0318-zabuza-first-battle-c-haku
+  entity_id: c-haku
+  from: ev-y0-0318-haku-stops-finishing-blow.start
+  to: ev-y0-0318-haku-takes-zabuza.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep9-audit

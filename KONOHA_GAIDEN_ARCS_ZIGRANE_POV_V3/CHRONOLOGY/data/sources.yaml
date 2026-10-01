@@ -619,6 +619,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep9-audit
+    type: reference
+    title: 'Narutopedia — Kakashi: Sharingan Warrior!'
+    url: https://naruto.fandom.com/wiki/Kakashi%3A_Sharingan_Warrior%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3069,5 +3076,11 @@ evidence:
   - id: evd-narutopedia-ep8-audit
     source_id: src-narutopedia-ep8-audit
     locator: Episode 8, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep9-audit
+    source_id: src-narutopedia-ep9-audit
+    locator: Episode 9, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted
