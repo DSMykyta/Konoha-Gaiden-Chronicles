@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-y0-0801-gaara-kills-match-fixers
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Ґаара вбиває шинобі, які намагаються підлаштувати бій
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-gaara-kills-match-fixers
+  title: Наруто й Шикамару бачать убивство в проході до арени
+  text: Дорогою на арену Ґаара вбиває двох шинобі, які намагаються підлаштувати результат поєдинку. Наруто й Шикамару
+    бачать це та починають боятися за життя Саске.
+  involvement:
+  - entity_id: c-gaara
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+relations: []
+presence:
+- id: pr-audit-65-ev-y0-0801-gaara-kills-match-fixers-c-gaara
+  entity_id: c-gaara
+  from: ev-y0-0801-gaara-kills-match-fixers.start
+  to: ev-y0-0801-gaara-kills-match-fixers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-ev-y0-0801-gaara-kills-match-fixers-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-gaara-kills-match-fixers.start
+  to: ev-y0-0801-gaara-kills-match-fixers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-ev-y0-0801-gaara-kills-match-fixers-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0801-gaara-kills-match-fixers.start
+  to: ev-y0-0801-gaara-kills-match-fixers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit

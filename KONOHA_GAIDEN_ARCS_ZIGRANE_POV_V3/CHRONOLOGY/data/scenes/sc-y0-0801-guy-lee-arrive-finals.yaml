@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0801-guy-lee-arrive-finals
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Ґай приводить травмованого Лі на фінал
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-guy-lee-arrive-finals
+  title: Лі приходить подивитися бій попри травми
+  text: 'Ґай і травмований Лі проходять крізь ворота стадіону: Лі наполягає на тому, щоб побачити останній бій.'
+  involvement:
+  - entity_id: c-might-guy
+    role: focus
+    mode: physical
+  - entity_id: c-lee
+    role: focus
+    mode: physical
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+relations: []
+presence:
+- id: pr-audit-65-ev-y0-0801-guy-lee-arrive-finals-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0801-guy-lee-arrive-finals.start
+  to: ev-y0-0801-guy-lee-arrive-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-ev-y0-0801-guy-lee-arrive-finals-c-lee
+  entity_id: c-lee
+  from: ev-y0-0801-guy-lee-arrive-finals.start
+  to: ev-y0-0801-guy-lee-arrive-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit

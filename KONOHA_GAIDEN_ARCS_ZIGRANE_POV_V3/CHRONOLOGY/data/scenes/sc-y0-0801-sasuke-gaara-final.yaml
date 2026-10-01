@@ -1,59 +1,188 @@
 schema_version: 1
-id: "sc-y0-0801-sasuke-gaara-final"
+id: sc-y0-0801-sasuke-gaara-final
 episode_id: ep-y0-chunin-finals
 display_rank: 200
-continuity_id: "main"
-title: "Саске прибуває на фінал і б’ється з Ґаарою"
-location_id: "loc-chunin-finals-arena"
-placement: {anchor_id: "ta-y0-0801", day_offset: 0}
-day_part: "noon"
-state: "active"
-presence_coverage: "partial"
-review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Саске прибуває на фінал і б’ється з Ґаарою
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+day_part: noon
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0801-kakashi-sasuke-arrive-late"
-    legacy_ids: ["V10-000064-D"]
-    title: "Какаші й Саске запізнюються на арену"
-    text: "Какаші приводить Саске на арену, коли поєдинок Саске з Ґаарою вже опинився під загрозою скасування."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-      - {entity_id: "c-gaara", role: "participant", mode: "physical"}
-      - {entity_id: "c-genma", role: "referee", mode: "physical"}
-      - {entity_id: "c-baki", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000064-D", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-sasuke-fights-gaara"
-    legacy_ids: ["V10-000064-E"]
-    title: "Саске вступає в бій із Ґаарою"
-    text: "Саске демонструє швидкість, розвинену під час тренувань із Какаші, та змушує Ґаару перейти до захисту піщаною сферою."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-      - {entity_id: "c-gaara", role: "focus", mode: "physical"}
-      - {entity_id: "c-genma", role: "referee", mode: "physical"}
-      - {entity_id: "c-baki", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000064-E", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-sasuke-pierces-gaara-chidori"
-    legacy_ids: ["V10-000064-E"]
-    title: "Чідорі пробиває піщану сферу Ґаари"
-    text: "Саске використовує Чідорі й пробиває захисну піщану сферу Ґаари."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-      - {entity_id: "c-gaara", role: "affected", mode: "physical"}
-      - {entity_id: "c-genma", role: "referee", mode: "physical"}
-      - {entity_id: "c-baki", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000064-E", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+- id: ev-y0-0801-kakashi-sasuke-arrive-late
+  legacy_ids:
+  - V10-000064-D
+  title: Какаші й Саске запізнюються на арену
+  text: Хірузен установлює останній термін появи Саске. Какаші й Саске прибувають перед самою дискваліфікацією; Наруто
+    вітає Саске та повідомляє про перемогу над Неджі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: referee
+    mode: physical
+  - entity_id: c-baki
+    role: observer
+    mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-hiruzen
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000064-D
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  - evd-narutopedia-ep65-audit
+- id: ev-y0-0801-sasuke-fights-gaara
+  legacy_ids:
+  - V10-000064-E
+  title: Саске вступає в бій із Ґаарою
+  text: Саске демонструє швидкість, розвинену під час тренувань із Какаші, та змушує Ґаару перейти до захисту піщаною
+    сферою.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-gaara
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: referee
+    mode: physical
+  - entity_id: c-baki
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000064-E
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-sasuke-pierces-gaara-chidori
+  legacy_ids:
+  - V10-000064-E
+  title: Чідорі пробиває піщану сферу Ґаари
+  text: Саске використовує Чідорі й пробиває захисну піщану сферу Ґаари.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-gaara
+    role: affected
+    mode: physical
+  - entity_id: c-genma
+    role: referee
+    mode: physical
+  - entity_id: c-baki
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000064-E
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
 relations:
-  - {id: "rel-0801-sasuke-final-1", kind: "before", a: "ev-y0-0801-kakashi-sasuke-arrive-late", b: "ev-y0-0801-sasuke-fights-gaara", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
-  - {id: "rel-0801-sasuke-final-2", kind: "before", a: "ev-y0-0801-sasuke-fights-gaara", b: "ev-y0-0801-sasuke-pierces-gaara-chidori", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+- id: rel-0801-sasuke-final-1
+  kind: before
+  a: ev-y0-0801-kakashi-sasuke-arrive-late
+  b: ev-y0-0801-sasuke-fights-gaara
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+- id: rel-0801-sasuke-final-2
+  kind: before
+  a: ev-y0-0801-sasuke-fights-gaara
+  b: ev-y0-0801-sasuke-pierces-gaara-chidori
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
 presence:
-  - {id: "pr-0801-sasuke-gaara-baki", entity_id: "c-baki", from: "sc-y0-0801-sasuke-gaara-final.start", to: "sc-y0-0801-sasuke-gaara-final.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
-  - {id: "pr-0801-sasuke-gaara-genma", entity_id: "c-genma", from: "sc-y0-0801-sasuke-gaara-final.start", to: "sc-y0-0801-sasuke-gaara-final.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
+- id: pr-0801-sasuke-gaara-baki
+  entity_id: c-baki
+  from: sc-y0-0801-sasuke-gaara-final.start
+  to: sc-y0-0801-sasuke-gaara-final.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-0801-sasuke-gaara-genma
+  entity_id: c-genma
+  from: sc-y0-0801-sasuke-gaara-final.start
+  to: sc-y0-0801-sasuke-gaara-final.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-audit-65-y0-0801-kakashi-sasuke-arrive-late-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0801-kakashi-sasuke-arrive-late.start
+  to: ev-y0-0801-kakashi-sasuke-arrive-late.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-y0-0801-kakashi-sasuke-arrive-late-c-sasuke
+  entity_id: c-sasuke
+  from: ev-y0-0801-kakashi-sasuke-arrive-late.start
+  to: ev-y0-0801-kakashi-sasuke-arrive-late.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-y0-0801-kakashi-sasuke-arrive-late-c-genma
+  entity_id: c-genma
+  from: ev-y0-0801-kakashi-sasuke-arrive-late.start
+  to: ev-y0-0801-kakashi-sasuke-arrive-late.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-y0-0801-kakashi-sasuke-arrive-late-c-baki
+  entity_id: c-baki
+  from: ev-y0-0801-kakashi-sasuke-arrive-late.start
+  to: ev-y0-0801-kakashi-sasuke-arrive-late.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-y0-0801-kakashi-sasuke-arrive-late-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-kakashi-sasuke-arrive-late.start
+  to: ev-y0-0801-kakashi-sasuke-arrive-late.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+- id: pr-audit-65-y0-0801-kakashi-sasuke-arrive-late-c-hiruzen
+  entity_id: c-hiruzen
+  from: ev-y0-0801-kakashi-sasuke-arrive-late.start
+  to: ev-y0-0801-kakashi-sasuke-arrive-late.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit

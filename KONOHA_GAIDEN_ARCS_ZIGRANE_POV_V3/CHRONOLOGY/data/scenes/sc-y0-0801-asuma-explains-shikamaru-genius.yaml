@@ -19,8 +19,9 @@ review:
 events:
 - id: ev-y0-0801-asuma-explains-shikamaru-genius
   title: Асума розкриває стратегічний хист Шикамару
-  text: Спостерігаючи за боєм, Асума пояснює Куренай, що лінивий учень є видатним стратегом з IQ понад 200. Він упізнає
-    позу, в якій Шикамару обмірковує план.
+  text: 'Спостерігаючи за боєм, Асума пояснює Куренай, що лінивий учень є видатним стратегом з IQ понад 200. Він упізнає
+    позу, в якій Шикамару обмірковує план. Після здачі учня Асума відзначає головну рису чуніна: вчасно відступити, не
+    ризикуючи життям заради гордості.'
   involvement:
   - entity_id: c-asuma
     role: focus
@@ -33,6 +34,7 @@ events:
   display_rank: 100
   evidence_ids:
   - evd-narutopedia-ep64-audit-crosscheck
+  - evd-narutopedia-ep65-audit
 relations: []
 presence:
 - id: pr-audit-64-ev-y0-0801-asuma-explains-shikamaru-genius-c-asuma

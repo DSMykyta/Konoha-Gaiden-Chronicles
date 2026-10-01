@@ -67,11 +67,14 @@ checked_anime_episodes:
 - 62
 - 63
 - 64
+- 65
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 65
+next_anime_episode: 66
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-gaara-kills-match-fixers
+- ev-y0-0801-guy-lee-arrive-finals
 - ev-y0-0801-asuma-explains-shikamaru-genius
 - ev-y0-0801-sasuke-match-postponed
 - ev-y0-0801-kankuro-forfeits-shino-match
@@ -139,6 +142,8 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-gaara-kills-match-fixers
+- sc-y0-0801-guy-lee-arrive-finals
 - sc-y0-0801-asuma-explains-shikamaru-genius
 - sc-y0-0801-finals-rescheduled
 - sc-y0-0801-hinata-unwell-in-stands
@@ -1208,6 +1213,22 @@ episode_audits:
   merged_moment_ids:
     ev-y0-0801-shikamaru-surrenders: ev-y0-0801-shikamaru-traps-temari
 
+- episode: 65
+  baseline_revision: f542c1965312bfb7072aae1c3ebfe81d4b55bd8b
+  added_moment_ids:
+  - ev-y0-0801-guy-lee-arrive-finals
+  - ev-y0-0801-gaara-kills-match-fixers
+  added_scene_ids:
+  - sc-y0-0801-guy-lee-arrive-finals
+  - sc-y0-0801-gaara-kills-match-fixers
+  updated_moment_ids:
+  - ev-y0-0801-asuma-explains-shikamaru-genius
+  - ev-y0-0801-kakashi-sasuke-arrive-late
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - 'Added injured Lee’s arrival with Guy and the whole tunnel encounter in which Gaara kills two match-fixing shinobi,
+    witnessed by Naruto/Shikamaru. Expanded the Sasuke deadline/arrival and Asuma’s assessment of retreat as a chunin
+    quality. Removed Gaara from the arrival event’s physical cast: his arena entrance follows the tunnel encounter.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

@@ -3500,3 +3500,30 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep63-audit
+
+- id: lnk-audit-65-ev-y0-0801-kakashi-sasuke-arrive-late-sc-y0-0801-gaara-kills-match-fixers
+  kind: before
+  a: ev-y0-0801-kakashi-sasuke-arrive-late
+  b: sc-y0-0801-gaara-kills-match-fixers
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+
+- id: lnk-audit-65-sc-y0-0801-gaara-kills-match-fixers-ev-y0-0801-sasuke-fights-gaara
+  kind: before
+  a: sc-y0-0801-gaara-kills-match-fixers
+  b: ev-y0-0801-sasuke-fights-gaara
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
+
+- id: lnk-audit-65-sc-y0-0801-guy-lee-arrive-finals-ev-y0-0801-kakashi-sasuke-arrive-late
+  kind: before
+  a: sc-y0-0801-guy-lee-arrive-finals
+  b: ev-y0-0801-kakashi-sasuke-arrive-late
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep65-audit
