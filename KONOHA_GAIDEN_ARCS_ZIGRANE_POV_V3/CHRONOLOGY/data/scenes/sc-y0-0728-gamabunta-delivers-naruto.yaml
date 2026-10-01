@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0728-gamabunta-delivers-naruto
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 650
+continuity_id: main
+title: Ґамабунта доставляє виснаженого Наруто до шпиталю
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-y0-0728
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0728-gamabunta-delivers-naruto
+  title: Ґамабунта залишає Наруто в шпиталі
+  text: Після випробування Ґамабунта доставляє виснаженого Наруто до шпиталю Конохи.
+  involvement:
+  - entity_id: c-gamabunta
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: affected
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep57-audit
+relations: []
+presence:
+- id: pr-audit-57-ev-y0-0728-gamabunta-delivers-naruto-c-gamabunta
+  entity_id: c-gamabunta
+  from: ev-y0-0728-gamabunta-delivers-naruto.start
+  to: ev-y0-0728-gamabunta-delivers-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit
+- id: pr-audit-57-ev-y0-0728-gamabunta-delivers-naruto-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0728-gamabunta-delivers-naruto.start
+  to: ev-y0-0728-gamabunta-delivers-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit

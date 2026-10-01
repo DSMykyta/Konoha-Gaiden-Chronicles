@@ -59,11 +59,14 @@ checked_anime_episodes:
 - 54
 - 55
 - 56
+- 57
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 57
+next_anime_episode: 58
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0728-temari-kankuro-discuss-finals
+- ev-y0-0728-gamabunta-delivers-naruto
 - ev-y0-0728-naruto-tries-hugging-sakura
 - ev-y0-0728-jiraiya-naruto-last-meal
 - ev-y0-0728-jiraiya-naruto-bath
@@ -113,6 +116,8 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0728-temari-kankuro-watch-finalists
+- sc-y0-0728-gamabunta-delivers-naruto
 - sc-y0-0728-naruto-tries-hugging-sakura
 - sc-y0-0728-jiraiya-naruto-meal
 - sc-y0-0728-jiraiya-naruto-bath
@@ -1022,6 +1027,24 @@ episode_audits:
   - Added the hot-spring, Ichiraku meal and rejected Sakura hug before the cliff trial. Confirmed the exhaustion, Anko/Hiruzen
     conversation, academy lesson, internal Nine-Tails meeting and giant-toad summoning. Existing project dates retained;
     no extra physical presence added from episode credits.
+- episode: 57
+  baseline_revision: 7ac25b3f8e759d7571990eb8e77996a440218114
+  added_moment_ids:
+  - ev-y0-0728-gamabunta-delivers-naruto
+  - ev-y0-0728-temari-kankuro-discuss-finals
+  added_scene_ids:
+  - sc-y0-0728-gamabunta-delivers-naruto
+  - sc-y0-0728-temari-kankuro-watch-finalists
+  updated_moment_ids:
+  - ev-y0-0728-naruto-earns-gamabunta-recognition
+  - ev-y0-0727-baki-briefs-sand-siblings-invasion
+  - ev-y0-0727-baki-confirms-invasion-plan
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - 'Expanded the whole Gamabunta endurance trial, corrected Jiraiya to a distant observer during it, and added Naruto’s
+    hospital delivery. Recognised the Sand-sibling briefing as a pre-exam flashback: exact date unknown, existing ID
+    retained, erroneous plan-before-briefing ordering corrected. Kazekage identity follows existing project chronology;
+    episode synopsis alone does not resolve the disguise.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

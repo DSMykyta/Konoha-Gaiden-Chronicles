@@ -1076,6 +1076,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep57-audit
+    type: reference
+    title: Narutopedia — He Flies! He Jumps! He Lurks! Chief Toad Appears!
+    url: https://naruto.fandom.com/wiki/He_Flies%21_He_Jumps%21_He_Lurks%21_Chief_Toad_Appears%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep57-crosscheck-209
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://www.animefamily.com/Naruto/Nar/Nar57.htm
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3951,5 +3965,18 @@ evidence:
   - id: evd-narutopedia-ep56-audit
     source_id: src-narutopedia-ep56-audit
     locator: Episode 56, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep57-audit
+    source_id: src-narutopedia-ep57-audit
+    locator: Episode 57, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep57-audit-crosscheck
+    source_id: src-narutopedia-ep57-crosscheck-209
+    locator: 'Episode 57 recap: pre-exam briefing, Suna/Konoha economic pressure, distant
+      Jiraiya observation and Baki report'
     basis: source
     review: accepted

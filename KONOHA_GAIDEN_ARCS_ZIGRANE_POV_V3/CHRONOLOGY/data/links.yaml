@@ -2921,15 +2921,6 @@ links:
   evidence_ids:
   - evd-v10-000214
   - evd-anime-216-baki-suna-council
-- id: lnk-0727-baki-plan-before-siblings-briefing
-  kind: before
-  a: sc-y0-0727-baki-orochimaru-invasion-plan
-  b: sc-y0-0727-baki-briefs-sand-siblings
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-manga-konoha-crush-prelude
-  - evd-anime-67-68
 - id: lnk-0727-baki-briefing-before-finals
   kind: before
   a: sc-y0-0727-baki-briefs-sand-siblings
@@ -3428,3 +3419,21 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep56-audit
+
+- id: lnk-audit-57-sc-y0-0727-baki-briefs-sand-siblings-sc-y0-0727-baki-orochimaru-invasion-plan
+  kind: before
+  a: sc-y0-0727-baki-briefs-sand-siblings
+  b: sc-y0-0727-baki-orochimaru-invasion-plan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit
+
+- id: lnk-audit-57-sc-y0-0728-naruto-gamabunta-sc-y0-0728-gamabunta-delivers-naruto
+  kind: before
+  a: sc-y0-0728-naruto-gamabunta
+  b: sc-y0-0728-gamabunta-delivers-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit

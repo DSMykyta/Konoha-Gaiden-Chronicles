@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-0728-temari-kankuro-watch-finalists
+episode_id: ep-y0-invasion-conspiracy
+display_rank: 100
+continuity_id: main
+title: Темарі й Канкуро спостерігають за суперниками
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0728
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0728-temari-kankuro-discuss-finals
+  title: Темарі й Канкуро говорять про Ґаару та майбутній бій
+  text: Побачивши Команду 10 біля ресторану, Темарі й Канкуро обговорюють її майбутній бій із Шикамару. Канкуро запевняє,
+    що вдень залишений без нагляду Ґаара не вчинить нічого дивного.
+  involvement:
+  - entity_id: c-temari
+    role: focus
+    mode: physical
+  - entity_id: c-kankuro
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep57-audit-crosscheck
+relations: []
+presence:
+- id: pr-audit-57-ev-y0-0728-temari-kankuro-discuss-finals-c-temari
+  entity_id: c-temari
+  from: ev-y0-0728-temari-kankuro-discuss-finals.start
+  to: ev-y0-0728-temari-kankuro-discuss-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit-crosscheck
+- id: pr-audit-57-ev-y0-0728-temari-kankuro-discuss-finals-c-kankuro
+  entity_id: c-kankuro
+  from: ev-y0-0728-temari-kankuro-discuss-finals.start
+  to: ev-y0-0728-temari-kankuro-discuss-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit-crosscheck

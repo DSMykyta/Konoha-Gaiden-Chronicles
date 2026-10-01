@@ -85,9 +85,10 @@ events:
   legacy_ids:
   - V10-000058
   title: Наруто тримається на Ґамабунті до визнання
-  text: Наруто залишається на спині Ґамабунти, доки той не визнає його наполегливість; після цього Наруто непритомніє
-    від виснаження.
-  origin: M
+  text: Ґамабунта не вірить, що Наруто викликав його. Щоб отримати визнання, Наруто тримається на його спині до кінця
+    дня, витримуючи стрибки й занурення та рятуючись ланцюгом клонів. Коли виснажений учень падає, Ґамабунта ловить його
+    язиком і визнає наполегливість.
+  origin: A
   extent: interval
   display_rank: 400
   involvement:
@@ -98,12 +99,14 @@ events:
     role: focus
     mode: physical
   - entity_id: c-jiraiya
-    role: participant
-    mode: physical
+    role: observer
+    mode: remote
   evidence_ids:
   - evd-v10-000058
   - evd-manga-ch88-97
   - evd-anime-54-60
+  - evd-narutopedia-ep57-audit
+  - evd-narutopedia-ep57-audit-crosscheck
 relations:
 - id: rel-0728-gama-1
   kind: before
@@ -143,7 +146,7 @@ presence:
 - id: pr-0728-gama-jiraiya
   entity_id: c-jiraiya
   from: sc-y0-0728-naruto-gamabunta.start
-  to: sc-y0-0728-naruto-gamabunta.end
+  to: ev-y0-0728-jiraiya-throws-naruto-ravine.end
   basis: source
   evidence_ids:
   - evd-v10-000058
@@ -188,3 +191,19 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep56-audit
+- id: pr-audit-57-y0-0728-naruto-earns-gamabunta-recognition-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0728-naruto-earns-gamabunta-recognition.start
+  to: ev-y0-0728-naruto-earns-gamabunta-recognition.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit
+- id: pr-audit-57-y0-0728-naruto-earns-gamabunta-recognition-c-gamabunta
+  entity_id: c-gamabunta
+  from: ev-y0-0728-naruto-earns-gamabunta-recognition.start
+  to: ev-y0-0728-naruto-earns-gamabunta-recognition.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit

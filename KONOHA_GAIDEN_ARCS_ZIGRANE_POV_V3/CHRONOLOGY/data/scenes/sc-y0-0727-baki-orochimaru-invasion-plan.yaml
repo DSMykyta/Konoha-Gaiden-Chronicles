@@ -1,39 +1,103 @@
 schema_version: 1
-id: "sc-y0-0727-baki-orochimaru-invasion-plan"
+id: sc-y0-0727-baki-orochimaru-invasion-plan
 episode_id: ep-y0-invasion-conspiracy
 display_rank: 100
-continuity_id: "main"
-title: "Бакі й Орочімару узгоджують вторгнення"
-location_id: null
-placement: {anchor_id: "ta-y0-0727", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Бакі й Орочімару узгоджують вторгнення
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-y0-0727
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0727-orochimaru-poses-as-kazekage"
-    legacy_ids: ["V10-000055", "V10-000057"]
-    title: "Орочімару використовує особу Четвертого Казекаґе"
-    text: "Після смерті Раси Орочімару діє під виглядом Четвертого Казекаґе для координації вторгнення."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
-      - {entity_id: "c-rasa", role: "portrayed", mode: "remote"}
-    evidence_ids: ["evd-v10-000055", "evd-v10-000057", "evd-manga-konoha-crush-prelude"]
-  - id: "ev-y0-0727-baki-confirms-invasion-plan"
-    legacy_ids: ["V10-000057"]
-    title: "Бакі підтверджує фінальні домовленості"
-    text: "Бакі доповідає людині, яку вважає Четвертим Казекаґе, і підтверджує остаточні домовленості щодо вторгнення. Насправді перед ним Орочімару, який уже вбив Расу й використовує його особу для керування операцією Суни."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-baki", role: "focus", mode: "physical"}
-      - {entity_id: "c-orochimaru", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000057", "evd-manga-konoha-crush-prelude", "evd-anime-67-68"]
+- id: ev-y0-0727-orochimaru-poses-as-kazekage
+  legacy_ids:
+  - V10-000055
+  - V10-000057
+  title: Орочімару використовує особу Четвертого Казекаґе
+  text: Після смерті Раси Орочімару діє під виглядом Четвертого Казекаґе для координації вторгнення.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-orochimaru
+    role: focus
+    mode: physical
+  - entity_id: c-rasa
+    role: portrayed
+    mode: remote
+  evidence_ids:
+  - evd-v10-000055
+  - evd-v10-000057
+  - evd-manga-konoha-crush-prelude
+- id: ev-y0-0727-baki-confirms-invasion-plan
+  legacy_ids:
+  - V10-000057
+  title: Бакі підтверджує фінальні домовленості
+  text: У Суні Бакі передає план Ото людині в образі Четвертого Казекаґе та обговорює підготовку вторгнення. У проектній
+    хронології це вже Орочімару після вбивства Раси.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-baki
+    role: focus
+    mode: physical
+  - entity_id: c-orochimaru
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000057
+  - evd-manga-konoha-crush-prelude
+  - evd-anime-67-68
+  - evd-narutopedia-ep57-audit
+  - evd-narutopedia-ep57-audit-crosscheck
 relations:
-  - {id: "rel-0727-invasion-1", kind: "before", a: "ev-y0-0727-orochimaru-poses-as-kazekage", b: "ev-y0-0727-baki-confirms-invasion-plan", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000057"]}
+- id: rel-0727-invasion-1
+  kind: before
+  a: ev-y0-0727-orochimaru-poses-as-kazekage
+  b: ev-y0-0727-baki-confirms-invasion-plan
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000057
 presence:
-  - {id: "pr-0727-plan-orochimaru", entity_id: "c-orochimaru", from: "sc-y0-0727-baki-orochimaru-invasion-plan.start", to: "sc-y0-0727-baki-orochimaru-invasion-plan.end", basis: "source", evidence_ids: ["evd-v10-000057"], review: "accepted"}
-  - {id: "pr-0727-plan-baki", entity_id: "c-baki", from: "ev-y0-0727-baki-confirms-invasion-plan.start", to: "sc-y0-0727-baki-orochimaru-invasion-plan.end", basis: "source", evidence_ids: ["evd-v10-000057"], review: "accepted"}
+- id: pr-0727-plan-orochimaru
+  entity_id: c-orochimaru
+  from: sc-y0-0727-baki-orochimaru-invasion-plan.start
+  to: sc-y0-0727-baki-orochimaru-invasion-plan.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000057
+  review: accepted
+- id: pr-0727-plan-baki
+  entity_id: c-baki
+  from: ev-y0-0727-baki-confirms-invasion-plan.start
+  to: sc-y0-0727-baki-orochimaru-invasion-plan.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000057
+  review: accepted
+- id: pr-audit-57-y0-0727-baki-confirms-invasion-plan-c-baki
+  entity_id: c-baki
+  from: ev-y0-0727-baki-confirms-invasion-plan.start
+  to: ev-y0-0727-baki-confirms-invasion-plan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit
+- id: pr-audit-57-y0-0727-baki-confirms-invasion-plan-c-orochimaru
+  entity_id: c-orochimaru
+  from: ev-y0-0727-baki-confirms-invasion-plan.start
+  to: ev-y0-0727-baki-confirms-invasion-plan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep57-audit
