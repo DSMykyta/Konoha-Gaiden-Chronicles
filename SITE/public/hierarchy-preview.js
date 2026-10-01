@@ -28,10 +28,14 @@
       position: relative;
       z-index: 1;
       counter-increment: hierarchy-row;
+      display: grid;
+      grid-template-columns: 22px minmax(0,1fr);
+      align-items: center;
+      column-gap: 8px;
       width: 100%;
       min-height: 0;
       margin: 0;
-      padding: 10px 12px 10px 38px;
+      padding: 10px 12px;
       border: 0 !important;
       border-radius: 14px;
       background: transparent !important;
@@ -43,22 +47,25 @@
     .story-children .result::before,
     .scene-actions li::before {
       content: counter(hierarchy-row, decimal-leading-zero);
-      position: absolute;
-      left: 12px;
-      top: 12px;
+      position: static;
+      grid-column: 1;
+      justify-self: start;
+      align-self: center;
       color: var(--muted);
       font-size: 9px;
-      line-height: 1.6;
+      line-height: 1;
       font-variant-numeric: tabular-nums;
       pointer-events: none;
       transition: color .16s ease;
     }
-    .story-children .result { display: block; }
     .story-children .result > span,
+    .story-children .result > strong,
     .scene-actions li > div {
+      grid-column: 2;
       display: block;
       min-width: 0;
       width: 100%;
+      align-self: center;
     }
     .story-children .result strong,
     .scene-action-title {
@@ -70,14 +77,13 @@
       text-align: left;
       font-size: 13px;
       font-weight: 600;
-      line-height: 1.65;
+      line-height: 1.4;
       transform: none !important;
     }
     .story-children .result small,
     .story-row-description,
     .scene-actions li .event-gallery { display: none !important; }
 
-    /* One physical glass surface per list. Rows only move this surface. */
     .hierarchy-hover-glass {
       position: absolute;
       z-index: 0;
@@ -106,9 +112,11 @@
     @media (max-width: 760px) {
       .hierarchy-preview-content { padding: 18px; }
       .story-children .result,
-      .scene-actions li { padding: 9px 10px 9px 34px; }
-      .story-children .result::before,
-      .scene-actions li::before { left: 10px; top: 11px; }
+      .scene-actions li {
+        grid-template-columns: 20px minmax(0,1fr);
+        column-gap: 7px;
+        padding: 9px 10px;
+      }
     }
     @media (prefers-reduced-motion: reduce) {
       .hierarchy-hover-glass { transition: opacity 80ms linear; }
