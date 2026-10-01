@@ -67,8 +67,6 @@
     const visibleSpan = Math.max(MIN_VIEW_DAYS[kind], span * PADDING[kind]);
     const desiredZoom = Math.min(MAX_ZOOM, 365 / Math.max(.5, visibleSpan));
 
-    // Concentration should only move closer. If the user is already closer,
-    // keep their scale and only center the selected story object.
     zoom = Math.min(MAX_ZOOM, Math.max(zoom, desiredZoom));
     center = clampAxisCenter((first + last) / 2, zoom);
 
@@ -85,8 +83,6 @@
     const target = parseStoryKey(key);
     if (!target) return;
 
-    // story-label-scale owns the actual fixed-focus toggle. Run after its click
-    // handler, then zoom only if this click really ended in fixed concentration.
     requestAnimationFrame(() => {
       const focus = window.__storyScaleFocus;
       if (!focus?.active || focus.mode !== 'fixed' || focus.key !== key) return;
@@ -95,11 +91,9 @@
   }, true);
 })();
 
-// Parent-level navigation must wrap the final card handlers, so load it after
-// all deferred card/focus extensions have finished initializing.
 (() => {
   const script = document.createElement('script');
-  script.src = 'parent-level-navigation.js?v=20261001-parent-level-1';
+  script.src = 'parent-level-navigation.js?v=20261001-parent-level-2';
   script.defer = true;
   document.head.append(script);
 })();
