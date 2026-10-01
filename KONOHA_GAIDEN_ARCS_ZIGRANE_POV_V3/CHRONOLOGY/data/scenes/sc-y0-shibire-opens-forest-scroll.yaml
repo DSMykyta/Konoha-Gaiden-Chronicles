@@ -1,0 +1,57 @@
+schema_version: 1
+id: sc-y0-shibire-opens-forest-scroll
+continuity_id: main
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams:
+  - team-shibire
+  id: ev-y0-shibire-opens-forest-scroll
+  display_rank: 100
+  title: Передчасне відкриття сувою виводить двох генінів із випробування
+  text: Поки Танзо відсутній, Міноджі й Шібіре відкривають свій сувій. Викликані ним ніндзя Конохи позбавляють їх свідомості,
+    через що команда не завершує другий етап.
+  involvement:
+  - entity_id: c-minoji
+    role: focus
+    mode: physical
+  - entity_id: c-shibire
+    role: focus
+    mode: physical
+  - entity_id: c-tanzo
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-narutopedia-ep35-audit
+  - evd-narutopedia-shibire-forest-failure
+relations: []
+presence:
+- id: pr-audit-35-y0-shibire-opens-forest-scroll-c-minoji
+  entity_id: c-minoji
+  from: sc-y0-shibire-opens-forest-scroll.start
+  to: sc-y0-shibire-opens-forest-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep35-audit
+- id: pr-audit-35-y0-shibire-opens-forest-scroll-c-shibire
+  entity_id: c-shibire
+  from: sc-y0-shibire-opens-forest-scroll.start
+  to: sc-y0-shibire-opens-forest-scroll.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep35-audit
+episode_id: ep-y0-shibire-forest-failure
+display_rank: 100
+title: Міноджі й Шібіре відкривають сувій без Танзо
+location_id: loc-forest-death
+placement: null

@@ -37,9 +37,10 @@ checked_anime_episodes:
 - 32
 - 33
 - 34
+- 35
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 35
+next_anime_episode: 36
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -613,6 +614,21 @@ episode_audits:
     scroll outcome. Shigure teammates added. Gaara record stays on first forest day; episode presentation order does not move
     it after next-day clearing battle. Removed unsupported first-day-afternoon placement for Anko viewing: her later entry
     into tower follows nighttime Orochimaru duel; viewing date kept unknown instead of invented.'
+- episode: 35
+  baseline_revision: 6434cc48ef72a7ddee8b86e9addeb4bc1d04c697
+  added_moment_ids:
+  - ev-y0-shibire-opens-forest-scroll
+  added_scene_ids:
+  - sc-y0-shibire-opens-forest-scroll
+  updated_moment_ids:
+  - ev-y0-0706-kabuto-joins-team7
+  - ev-y0-0706-team-oboro-traps-group
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - Kabuto encounter expanded as one whole warning / joining conversation, rather than split into Naruto idea and individual
+    remarks. Actual Shibire-team failure added separately with unknown date; Tanzo explicitly absent. Trap includes disorientation
+    and clone attack as one action. Source Shibire team profile corroborates shown rule violation, unlike merely retelling
+    it as a new event.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

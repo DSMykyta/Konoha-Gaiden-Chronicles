@@ -874,6 +874,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep35-audit
+    type: reference
+    title: 'Narutopedia — The Scroll''s Secret: No Peeking Allowed'
+    url: https://naruto.fandom.com/wiki/The_Scroll%27s_Secret%3A_No_Peeking_Allowed
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-shibire-forest-failure
+    type: reference
+    title: "Narutopedia \u2014 Team Shibire"
+    url: https://naruto.fandom.com/wiki/Team_Shibire
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3571,5 +3585,19 @@ evidence:
   - id: evd-narutopedia-anko-forest-sequence
     source_id: src-narutopedia-anko-forest-sequence
     locator: Chūnin Exams; body discovery before nighttime duel, tower entry afterward; record viewing exact date not stated
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep35-audit
+    source_id: src-narutopedia-ep35-audit
+    locator: Episode 35, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-shibire-forest-failure
+    source_id: src-narutopedia-shibire-forest-failure
+    locator: "Original Ch\u016Bnin Exams paragraph; Minoji and Shibire open early while\
+      \ Tanzo absent; summoned Konoha shinobi knock them out; separate from later Shippuden\
+      \ exam."
     basis: source
     review: accepted

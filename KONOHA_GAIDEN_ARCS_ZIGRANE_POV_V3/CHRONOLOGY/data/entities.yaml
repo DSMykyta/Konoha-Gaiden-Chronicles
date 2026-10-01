@@ -2048,6 +2048,31 @@ entities:
     aliases:
     - Midare
 
+  - id: c-minoji
+    kind: person
+    name: Міноджі
+    aliases:
+    - Minoji
+
+  - id: c-shibire
+    kind: person
+    name: Шібіре
+    aliases:
+    - Shibire
+
+  - id: c-tanzo
+    kind: person
+    name: Танзо
+    aliases:
+    - Tanzō
+    - Tanzo
+
+  - id: team-shibire
+    kind: team
+    name: Команда Шібіре
+    aliases:
+    - Team Shibire
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

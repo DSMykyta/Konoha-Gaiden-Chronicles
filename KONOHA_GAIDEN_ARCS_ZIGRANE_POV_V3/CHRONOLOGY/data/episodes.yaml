@@ -1709,3 +1709,9 @@ episodes:
   arc_id: arc-y0-chunin-exams
   title: Команда Ґая шукає другий сувій
   description: Лі й Неджі окремо шукають суперників у лісі.
+
+- id: ep-y0-shibire-forest-failure
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Команда Шібіре порушує заборону відкривати сувій
+  description: Міноджі й Шібіре відкривають сувій у лісі та вибувають із випробування.
