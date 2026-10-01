@@ -20,8 +20,9 @@ events:
 - id: ev-y0-0706-seven-teams-reach-tower
   legacy_ids:
   - V10-000045-E
-  title: До вежі доходять сім команд
-  text: Після завершення другого етапу до центральної вежі дістаються сім команд.
+  title: Сім команд, що пройшли другий етап, збираються у головній залі
+  text: 'Після зустрічі з Ірукою Команда 7 входить до головної зали вежі, де збираються інші команди, що пройшли Ліс Смерті:
+    Команди 10 і 8, команда Ґая, трійця Піску, команда Кабуто та команда Досу. Разом другий етап завершили сім команд.'
   origin: M
   extent: interval
   display_rank: 100
@@ -29,6 +30,179 @@ events:
   - evd-v10-000045-E
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep37-audit
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-yoroi
+    role: participant
+    mode: physical
+  - entity_id: c-misumi
+    role: participant
+    mode: physical
+  - entity_id: c-dosu
+    role: participant
+    mode: physical
+  - entity_id: c-zaku
+    role: participant
+    mode: physical
+  - entity_id: c-kin
+    role: participant
+    mode: physical
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0707-hiruzen-addresses-forest-survivors
+  display_rank: 150
+  title: Хірузен звертається до кандидатів і передає проведення іспиту Хаяте
+  text: Перед зібраними кандидатами Третій Хокаґе коротко говорить про чунінський іспит, після чого передає Хаяте Ґекко проведення
+    наступної частини випробування. Наставники та організатори присутні в залі; Орочімару приховує свою особу під виглядом
+    наставника команди Кабуто.
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-hayate
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-sasuke
+    role: observer
+    mode: physical
+  - entity_id: c-sakura
+    role: observer
+    mode: physical
+  - entity_id: c-ino
+    role: observer
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  - entity_id: c-choji
+    role: observer
+    mode: physical
+  - entity_id: c-hinata
+    role: observer
+    mode: physical
+  - entity_id: c-kiba
+    role: observer
+    mode: physical
+  - entity_id: c-shino
+    role: observer
+    mode: physical
+  - entity_id: c-lee
+    role: observer
+    mode: physical
+  - entity_id: c-neji
+    role: observer
+    mode: physical
+  - entity_id: c-tenten
+    role: observer
+    mode: physical
+  - entity_id: c-gaara
+    role: observer
+    mode: physical
+  - entity_id: c-temari
+    role: observer
+    mode: physical
+  - entity_id: c-kankuro
+    role: observer
+    mode: physical
+  - entity_id: c-kabuto
+    role: observer
+    mode: physical
+  - entity_id: c-yoroi
+    role: observer
+    mode: physical
+  - entity_id: c-misumi
+    role: observer
+    mode: physical
+  - entity_id: c-dosu
+    role: observer
+    mode: physical
+  - entity_id: c-zaku
+    role: observer
+    mode: physical
+  - entity_id: c-kin
+    role: observer
+    mode: physical
+  - entity_id: c-kakashi
+    role: observer
+    mode: physical
+  - entity_id: c-kurenai
+    role: observer
+    mode: physical
+  - entity_id: c-might-guy
+    role: observer
+    mode: physical
+  - entity_id: c-baki
+    role: observer
+    mode: physical
+  - entity_id: c-orochimaru
+    role: observer
+    mode: physical
+  - entity_id: c-izumo
+    role: observer
+    mode: physical
+  - entity_id: c-kotetsu
+    role: observer
+    mode: physical
+  - entity_id: c-iwashi
+    role: observer
+    mode: physical
+  - entity_id: c-anko
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
 - id: ev-y0-0706-hayate-announces-preliminaries
   legacy_ids:
   - V10-000045-E
@@ -57,6 +231,22 @@ relations:
   review: pending
   evidence_ids:
   - evd-v10-000045-E
+- id: rel-audit-37-y0-0706-seven-teams-reach-tower-before-y0-0707-hiruzen-addresses-forest-survivors
+  kind: before
+  a: ev-y0-0706-seven-teams-reach-tower
+  b: ev-y0-0707-hiruzen-addresses-forest-survivors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: rel-audit-37-y0-0707-hiruzen-addresses-forest-survivors-before-y0-0706-hayate-announces-preliminaries
+  kind: before
+  a: ev-y0-0707-hiruzen-addresses-forest-survivors
+  b: ev-y0-0706-hayate-announces-preliminaries
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
 presence:
 - id: pr-0706-prelim-announce-anko
   entity_id: c-anko
@@ -69,9 +259,250 @@ presence:
   review: accepted
 - id: pr-0706-prelim-announce-hayate
   entity_id: c-hayate
-  from: ev-y0-0706-hayate-announces-preliminaries.start
+  from: ev-y0-0707-hiruzen-addresses-forest-survivors.start
   to: sc-y0-0706-preliminaries-announced.end
   basis: source
   evidence_ids:
   - evd-manga-chunin-prelims
-  review: pending
+  - evd-narutopedia-ep37-audit
+  review: accepted
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-naruto
+  entity_id: c-naruto
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-sakura
+  entity_id: c-sakura
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-ino
+  entity_id: c-ino
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-choji
+  entity_id: c-choji
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-hinata
+  entity_id: c-hinata
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-kiba
+  entity_id: c-kiba
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-shino
+  entity_id: c-shino
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-lee
+  entity_id: c-lee
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-neji
+  entity_id: c-neji
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-tenten
+  entity_id: c-tenten
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-gaara
+  entity_id: c-gaara
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-temari
+  entity_id: c-temari
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-kankuro
+  entity_id: c-kankuro
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-kabuto
+  entity_id: c-kabuto
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-yoroi
+  entity_id: c-yoroi
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-misumi
+  entity_id: c-misumi
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-dosu
+  entity_id: c-dosu
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-zaku
+  entity_id: c-zaku
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-kin
+  entity_id: c-kin
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-kurenai
+  entity_id: c-kurenai
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-might-guy
+  entity_id: c-might-guy
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-baki
+  entity_id: c-baki
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-izumo
+  entity_id: c-izumo
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-kotetsu
+  entity_id: c-kotetsu
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-iwashi
+  entity_id: c-iwashi
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+- id: pr-audit-37-y0-0706-preliminaries-announced-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-0706-preliminaries-announced.start
+  to: sc-y0-0706-preliminaries-announced.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit

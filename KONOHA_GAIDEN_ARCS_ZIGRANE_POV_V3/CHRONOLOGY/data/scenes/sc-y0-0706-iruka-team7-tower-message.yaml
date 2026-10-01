@@ -46,6 +46,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-prelims
   - evd-anime-37-iruka-tower
+  - evd-narutopedia-ep37-audit
 relations: []
 presence:
 - id: pr-0706-iruka-tower-iruka

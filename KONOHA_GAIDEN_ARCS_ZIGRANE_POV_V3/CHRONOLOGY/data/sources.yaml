@@ -908,6 +908,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep37-audit
+    type: reference
+    title: 'Narutopedia — Surviving the Cut: The Rookie 9 Together Again!'
+    url: https://naruto.fandom.com/wiki/Surviving_the_Cut%3A_The_Rookie_9_Together_Again%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3636,5 +3643,11 @@ evidence:
   - id: evd-narutopedia-team-oboro-cast
     source_id: src-narutopedia-team-oboro-cast
     locator: 'Members: Oboro, Kagari, Mubi'
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep37-audit
+    source_id: src-narutopedia-ep37-audit
+    locator: Episode 37, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

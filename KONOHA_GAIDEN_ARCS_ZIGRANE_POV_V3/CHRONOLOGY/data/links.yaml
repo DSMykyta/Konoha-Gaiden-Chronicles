@@ -3290,6 +3290,15 @@ links:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep36-audit
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep37-audit
+  id: ln-audit-37-iruka-before-main-hall
+  kind: before
+  a: sc-y0-0706-iruka-team7-tower-message
+  b: sc-y0-0706-preliminaries-announced
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.
