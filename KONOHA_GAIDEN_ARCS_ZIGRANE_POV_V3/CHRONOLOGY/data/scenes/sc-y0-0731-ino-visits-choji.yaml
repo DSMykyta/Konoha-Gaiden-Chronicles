@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0731-ino-visits-choji
+episode_id: ep-y0-sakura-ino-hospital-visit
+display_rank: 100
+continuity_id: main
+title: Іно відвідує шпиталізованого Чоджі
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-y0-0731
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0731-ino-brings-choji-fruit
+  title: Іно приносить Чоджі кошик фруктів
+  text: Чоджі скаржиться на голод; Іно приходить до його палати з кошиком фруктів.
+  involvement:
+  - entity_id: c-ino
+    role: focus
+    mode: physical
+  - entity_id: c-choji
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep58-audit
+relations: []
+presence:
+- id: pr-audit-58-ev-y0-0731-ino-brings-choji-fruit-c-ino
+  entity_id: c-ino
+  from: ev-y0-0731-ino-brings-choji-fruit.start
+  to: ev-y0-0731-ino-brings-choji-fruit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep58-audit
+- id: pr-audit-58-ev-y0-0731-ino-brings-choji-fruit-c-choji
+  entity_id: c-choji
+  from: ev-y0-0731-ino-brings-choji-fruit.start
+  to: ev-y0-0731-ino-brings-choji-fruit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep58-audit

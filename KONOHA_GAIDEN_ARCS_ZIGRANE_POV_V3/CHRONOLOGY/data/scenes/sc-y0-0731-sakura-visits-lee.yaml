@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0731-sakura-visits-lee
+episode_id: ep-y0-sakura-ino-hospital-visit
+display_rank: 100
+continuity_id: main
+title: Сакура знову приходить до Лі
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-y0-0731
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0731-sakura-replaces-lee-flower
+  title: Сакура замінює квітку в палаті Лі
+  text: Сакура відвідує палату Лі й замінює квітку.
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-lee
+    role: affected
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep58-audit
+relations: []
+presence:
+- id: pr-audit-58-ev-y0-0731-sakura-replaces-lee-flower-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0731-sakura-replaces-lee-flower.start
+  to: ev-y0-0731-sakura-replaces-lee-flower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep58-audit
+- id: pr-audit-58-ev-y0-0731-sakura-replaces-lee-flower-c-lee
+  entity_id: c-lee
+  from: ev-y0-0731-sakura-replaces-lee-flower.start
+  to: ev-y0-0731-sakura-replaces-lee-flower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep58-audit

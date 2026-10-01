@@ -1,0 +1,50 @@
+schema_version: 1
+id: sc-y0-0731-naruto-leaves-hospital
+episode_id: ep-y0-naruto-visits-lee
+display_rank: 200
+continuity_id: main
+title: Наруто виходить зі шпиталю перед фіналом
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-y0-0731
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0731-naruto-leaves-to-prepare-finals
+  legacy_ids:
+  - V10-000060
+  title: Наруто виходить готуватися до фіналу
+  text: Після відвідин Лі Наруто залишає шпиталь і переходить до останньої підготовки перед фінальними боями; Саске все
+    ще тренується окремо з Какаші.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  - entity_id: c-kakashi
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-v10-000060
+  - evd-anime-54-60
+relations: []
+presence:
+- id: pr-0731-naruto-leaves-hospital
+  entity_id: c-naruto
+  from: ev-y0-0731-naruto-leaves-to-prepare-finals.start
+  to: ev-y0-0731-naruto-leaves-to-prepare-finals.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

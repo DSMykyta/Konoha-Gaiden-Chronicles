@@ -1090,6 +1090,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep58-audit
+    type: reference
+    title: 'Narutopedia — Hospital Besieged: The Evil Hand Revealed!'
+    url: https://naruto.fandom.com/wiki/Hospital_Besieged%3A_The_Evil_Hand_Revealed%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3978,5 +3985,11 @@ evidence:
     source_id: src-narutopedia-ep57-crosscheck-209
     locator: 'Episode 57 recap: pre-exam briefing, Suna/Konoha economic pressure, distant
       Jiraiya observation and Baki report'
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep58-audit
+    source_id: src-narutopedia-ep58-audit
+    locator: Episode 58, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

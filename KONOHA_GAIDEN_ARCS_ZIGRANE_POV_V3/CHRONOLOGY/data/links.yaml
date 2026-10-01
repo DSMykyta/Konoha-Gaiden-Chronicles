@@ -3437,3 +3437,21 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep57-audit
+
+- id: lnk-audit-58-sc-y0-0731-baki-finds-gaara-missing-sc-y0-0731-gaara-visits-lee
+  kind: before
+  a: sc-y0-0731-baki-finds-gaara-missing
+  b: sc-y0-0731-gaara-visits-lee
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep58-audit
+
+- id: lnk-audit-58-sc-y0-0731-gaara-visits-lee-sc-y0-0731-naruto-leaves-hospital
+  kind: before
+  a: sc-y0-0731-gaara-visits-lee
+  b: sc-y0-0731-naruto-leaves-hospital
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep58-audit
