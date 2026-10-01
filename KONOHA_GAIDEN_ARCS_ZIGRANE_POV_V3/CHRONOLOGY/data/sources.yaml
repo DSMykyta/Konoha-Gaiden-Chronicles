@@ -971,6 +971,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep45-audit
+    type: reference
+    title: Narutopedia — Surprise Attack! Naruto's Secret Weapon!
+    url: https://naruto.fandom.com/wiki/Surprise_Attack%21_Naruto%27s_Secret_Weapon%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3754,5 +3761,11 @@ evidence:
   - id: evd-narutopedia-ep44-audit
     source_id: src-narutopedia-ep44-audit
     locator: Episode 44, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep45-audit
+    source_id: src-narutopedia-ep45-audit
+    locator: Episode 45, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

@@ -246,10 +246,11 @@ events:
   legacy_ids:
   - V10-000046-H
   title: Наруто перемагає Кібу
-  text: Кіба й Акамару спільно атакують Наруто. Під прикриттям димових бомб Наруто залишає тіньового клона замість себе
-    й перетворюється на Акамару, щоб наблизитися до Кіби; інший клон утримує справжнього пса. Кіба та Акамару приймають
-    бойові пігулки, застосовують звірині перетворення та «Ікло за іклом», знову отримуючи перевагу. Попри удари Наруто
-    продовжує бій і зрештою перемагає обох.
+  text: 'Кіба й Акамару атакують Наруто, використовуючи димові бомби, бойові пігулки, звірині перетворення та «Ікло за
+    іклом». Наруто протидіє клонами й перетвореннями: спершу маскується під Акамару, а пізніше під прикриттям диму набуває
+    вигляду третього Кіби та змушує супротивника вдарити справжнього Акамару. Кіба продовжує тиснути швидкістю, але Наруто
+    випадково пускає гази перед його обличчям, приголомшуючи загострений нюх. Наруто завершує бій «Комбо Наруто Узумакі»
+    з тіньовими клонами, створеним за зразком переможної комбінації Саске.'
   origin: M
   extent: interval
   display_rank: 700
@@ -271,6 +272,7 @@ events:
   - evd-manga-chunin-prelims
   - evd-anime-31-50
   - evd-narutopedia-ep44-audit
+  - evd-narutopedia-ep45-audit
 - id: ev-y0-0706-neji-defeats-hinata
   legacy_ids:
   - V10-000046-I
@@ -829,3 +831,35 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep44-audit
+- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep45-audit
+- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-kiba
+  entity_id: c-kiba
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep45-audit
+- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-akamaru
+  entity_id: c-akamaru
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep45-audit
+- id: pr-audit-45-y0-0706-naruto-defeats-kiba-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-naruto-defeats-kiba.start
+  to: ev-y0-0706-naruto-defeats-kiba.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep45-audit
