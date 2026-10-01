@@ -4,7 +4,7 @@ episode_id: ep-y0-gaara-dosu
 display_rank: 100
 continuity_id: main
 title: Ґаара вбиває Досу
-location_id: null
+location_id: loc-kikyo-castle
 placement:
   anchor_id: ta-y0-0706
   day_offset: 1
@@ -14,36 +14,20 @@ presence_coverage: complete
 review:
   time: partial
   cast: accepted
-  location: unknown
+  location: accepted
   origin: accepted
   text: accepted
 events:
-- id: ev-y0-0706-dosu-attacks-gaara
-  legacy_ids:
-  - V10-000049
-  title: Досу намагається усунути Ґаару
-  text: Уночі Досу намагається вбити Ґаару до фінального етапу.
-  origin: M
-  extent: interval
-  display_rank: 100
-  involvement:
-  - entity_id: c-dosu
-    role: focus
-    mode: physical
-  - entity_id: c-gaara
-    role: focus
-    mode: physical
-  evidence_ids:
-  - evd-v10-000049
-  - evd-manga-ch88-97
 - id: ev-y0-0706-gaara-kills-dosu
   legacy_ids:
   - V10-000049
+  - ev-y0-0706-dosu-attacks-gaara
   title: Ґаара вбиває Досу
-  text: Ґаара вбиває Досу під час нічної сутички.
+  text: Досу приходить до замку Кікьо вбити Ґаару, щоб зустрітися з Саске у фіналі. Під повним місяцем Ґаара набуває
+    чудовиськового вигляду, вбиває Досу й повертається до звичного стану; Бакі та Кабуто спостерігають.
   origin: M
   extent: interval
-  display_rank: 200
+  display_rank: 100
   involvement:
   - entity_id: c-gaara
     role: focus
@@ -51,18 +35,17 @@ events:
   - entity_id: c-dosu
     role: affected
     mode: physical
+  - entity_id: c-baki
+    role: observer
+    mode: physical
+  - entity_id: c-kabuto
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000049
   - evd-manga-ch88-97
-relations:
-- id: rel-0706-dosu-1
-  kind: before
-  a: ev-y0-0706-dosu-attacks-gaara
-  b: ev-y0-0706-gaara-kills-dosu
-  basis: source
-  review: pending
-  evidence_ids:
-  - evd-manga-ch88-97
+  - evd-narutopedia-ep54-audit
+relations: []
 presence:
 - id: pr-0706-dosu-dosu
   entity_id: c-dosu
@@ -80,3 +63,35 @@ presence:
   evidence_ids:
   - evd-v10-000049
   review: accepted
+- id: pr-audit-54-y0-0706-gaara-kills-dosu-c-gaara
+  entity_id: c-gaara
+  from: ev-y0-0706-gaara-kills-dosu.start
+  to: ev-y0-0706-gaara-kills-dosu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-gaara-kills-dosu-c-dosu
+  entity_id: c-dosu
+  from: ev-y0-0706-gaara-kills-dosu.start
+  to: ev-y0-0706-gaara-kills-dosu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-gaara-kills-dosu-c-baki
+  entity_id: c-baki
+  from: ev-y0-0706-gaara-kills-dosu.start
+  to: ev-y0-0706-gaara-kills-dosu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-gaara-kills-dosu-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-gaara-kills-dosu.start
+  to: ev-y0-0706-gaara-kills-dosu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit

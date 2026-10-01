@@ -661,9 +661,8 @@ redirects:
 - legacy_id: V10-000049
   status: superseded
   replacement_ids:
-  - ev-y0-0706-dosu-attacks-gaara
   - ev-y0-0706-gaara-kills-dosu
-  reason: Dosu's attack and death separated.
+  reason: Dosu's attack and death retained as one complete encounter.
 - legacy_id: V10-000049-B
   status: migrated
   replacement_ids:

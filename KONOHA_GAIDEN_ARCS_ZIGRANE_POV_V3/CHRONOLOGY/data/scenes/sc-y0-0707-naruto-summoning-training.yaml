@@ -1,52 +1,165 @@
 schema_version: 1
-id: "sc-y0-0707-naruto-summoning-training"
+id: sc-y0-0707-naruto-summoning-training
 episode_id: ep-y0-naruto-summoning-training
 display_rank: 300
-continuity_id: "main"
-title: "Джирая починає вчити Наруто Техніки Призову"
-location_id: null
-placement: {anchor_id: "ta-y0-0707", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Джирая починає вчити Наруто Техніки Призову
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0707
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0707-jiraiya-starts-summoning-training"
-    legacy_ids: ["V10-000052"]
-    title: "Джирая навчає Наруто призову"
-    text: "Наступного дня Джирая починає вчити Наруто Техніки Призову."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000052", "evd-manga-ch88-97", "evd-anime-52-54"]
-  - id: "ev-y0-0707-naruto-summons-small-toads"
-    legacy_ids: ["V10-000052"]
-    title: "Наруто спершу викликає лише пуголовків і малих жаб"
-    text: "Перші спроби Наруто дають лише пуголовків і малих жаб."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000052", "evd-manga-ch88-97", "evd-anime-52-54"]
-  - id: "ev-y0-0707-jiraiya-prepares-nine-tails-training"
-    legacy_ids: ["V10-000052"]
-    title: "Джирая готує Наруто до свідомого використання чакри Дев’ятихвостого"
-    text: "Джирая переходить до підготовки Наруто до свідомого звернення по чакру Дев’ятихвостого."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-jiraiya", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-kurama", role: "affected", mode: "remote"}
-    evidence_ids: ["evd-v10-000052", "evd-manga-ch88-97", "evd-anime-52-54"]
+- id: ev-y0-0707-jiraiya-prepares-nine-tails-training
+  legacy_ids:
+  - V10-000052
+  title: Джирая готує Наруто до свідомого використання чакри Дев’ятихвостого
+  text: Уранці біля річки Наруто не може довільно викликати червону чакру. За вказівкою Джираї він виснажує звичайну
+    чакру клонами та боєм із ними.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: affected
+    mode: remote
+  evidence_ids:
+  - evd-v10-000052
+  - evd-manga-ch88-97
+  - evd-anime-52-54
+  - evd-narutopedia-ep54-audit
+- id: ev-y0-0707-jiraiya-starts-summoning-training
+  legacy_ids:
+  - V10-000052
+  title: Джирая навчає Наруто призову
+  text: Джирая демонструє призов жаби. Наруто підписує контракт кров’ю та залишає відбитки пальців.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000052
+  - evd-manga-ch88-97
+  - evd-anime-52-54
+  - evd-narutopedia-ep54-audit
+- id: ev-y0-0707-naruto-summons-small-toads
+  legacy_ids:
+  - V10-000052
+  title: Наруто вперше призиває пуголовка
+  text: Перша спроба призову дає лише пуголовка.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-jiraiya
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000052
+  - evd-manga-ch88-97
+  - evd-anime-52-54
+  - evd-narutopedia-ep54-audit
 relations:
-  - {id: "rel-0707-summon-1", kind: "before", a: "ev-y0-0707-jiraiya-starts-summoning-training", b: "ev-y0-0707-naruto-summons-small-toads", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch88-97"]}
-  - {id: "rel-0707-summon-2", kind: "before", a: "ev-y0-0707-naruto-summons-small-toads", b: "ev-y0-0707-jiraiya-prepares-nine-tails-training", basis: "imported", review: "pending", evidence_ids: ["evd-v10-000052"]}
+- id: rel-audit-54-summon-1
+  kind: before
+  a: ev-y0-0707-jiraiya-prepares-nine-tails-training
+  b: ev-y0-0707-jiraiya-starts-summoning-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: rel-audit-54-summon-2
+  kind: before
+  a: ev-y0-0707-jiraiya-starts-summoning-training
+  b: ev-y0-0707-naruto-summons-small-toads
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
 presence:
-  - {id: "pr-0707-summon-naruto", entity_id: "c-naruto", from: "sc-y0-0707-naruto-summoning-training.start", to: "sc-y0-0707-naruto-summoning-training.end", basis: "source", evidence_ids: ["evd-v10-000052"], review: "accepted"}
-  - {id: "pr-0707-summon-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0707-naruto-summoning-training.start", to: "sc-y0-0707-naruto-summoning-training.end", basis: "source", evidence_ids: ["evd-v10-000052"], review: "accepted"}
+- id: pr-0707-summon-naruto
+  entity_id: c-naruto
+  from: sc-y0-0707-naruto-summoning-training.start
+  to: sc-y0-0707-naruto-summoning-training.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000052
+  review: accepted
+- id: pr-0707-summon-jiraiya
+  entity_id: c-jiraiya
+  from: sc-y0-0707-naruto-summoning-training.start
+  to: sc-y0-0707-naruto-summoning-training.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000052
+  review: accepted
+- id: pr-audit-54-y0-0707-jiraiya-prepares-nine-tails-training-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0707-jiraiya-prepares-nine-tails-training.start
+  to: ev-y0-0707-jiraiya-prepares-nine-tails-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0707-jiraiya-prepares-nine-tails-training-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0707-jiraiya-prepares-nine-tails-training.start
+  to: ev-y0-0707-jiraiya-prepares-nine-tails-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0707-jiraiya-starts-summoning-training-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0707-jiraiya-starts-summoning-training.start
+  to: ev-y0-0707-jiraiya-starts-summoning-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0707-jiraiya-starts-summoning-training-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0707-jiraiya-starts-summoning-training.start
+  to: ev-y0-0707-jiraiya-starts-summoning-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0707-naruto-summons-small-toads-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0707-naruto-summons-small-toads.start
+  to: ev-y0-0707-naruto-summons-small-toads.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0707-naruto-summons-small-toads-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0707-naruto-summons-small-toads.start
+  to: ev-y0-0707-naruto-summons-small-toads.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit

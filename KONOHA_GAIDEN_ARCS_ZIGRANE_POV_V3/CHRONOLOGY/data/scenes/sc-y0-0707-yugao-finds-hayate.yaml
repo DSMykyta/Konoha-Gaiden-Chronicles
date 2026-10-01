@@ -1,27 +1,60 @@
 schema_version: 1
-id: "sc-y0-0707-yugao-finds-hayate"
+id: sc-y0-0707-yugao-finds-hayate
 episode_id: ep-y0-yugao-finds-hayate
 display_rank: 100
-continuity_id: "main"
-title: "Юґао знаходить тіло Хаяте"
+continuity_id: main
+title: Анбу знаходять тіло Хаяте
 location_id: null
-placement: {anchor_id: "ta-y0-0707", day_offset: 0}
-day_part: "morning"
-state: "active"
-presence_coverage: "partial"
-review: {time: "accepted", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
+placement:
+  anchor_id: ta-y0-0707
+  day_offset: 0
+day_part: morning
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: unknown
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0707-yugao-finds-hayate"
-    legacy_ids: ["V10-000051-B"]
-    title: "Юґао та її загін знаходять Хаяте мертвим"
-    text: "Наступного ранку Юґао та її загін знаходять тіло Хаяте після його загибелі від руки Бакі."
-    origin: "R"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-yugao", role: "focus", mode: "physical"}
-      - {entity_id: "c-hayate", role: "affected", mode: "physical"}
-      - {entity_id: "c-baki", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-v10-000051-B", "evd-shippuden-307-308"]
+- id: ev-y0-0707-yugao-finds-hayate
+  legacy_ids:
+  - V10-000051-B
+  title: Анбу та Юґао знаходять тіло Хаяте
+  text: Анбу знаходять тіло Хаяте; Юґао запитує, що з ним сталося.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yugao
+    role: focus
+    mode: physical
+  - entity_id: c-hayate
+    role: affected
+    mode: physical
+  - entity_id: c-baki
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-v10-000051-B
+  - evd-shippuden-307-308
+  - evd-narutopedia-ep54-audit
 relations: []
-presence: []
+presence:
+- id: pr-audit-54-y0-0707-yugao-finds-hayate-c-yugao
+  entity_id: c-yugao
+  from: ev-y0-0707-yugao-finds-hayate.start
+  to: ev-y0-0707-yugao-finds-hayate.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0707-yugao-finds-hayate-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0707-yugao-finds-hayate.start
+  to: ev-y0-0707-yugao-finds-hayate.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit

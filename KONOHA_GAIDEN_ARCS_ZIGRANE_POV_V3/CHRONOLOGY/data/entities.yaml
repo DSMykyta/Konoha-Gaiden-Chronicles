@@ -2091,6 +2091,12 @@ entities:
     aliases:
       - Мітате
 
+  - id: loc-kikyo-castle
+    kind: location
+    name: Kikyō Castle
+    aliases: [Замок Кікьо]
+    parent_id: loc-konohagakure
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

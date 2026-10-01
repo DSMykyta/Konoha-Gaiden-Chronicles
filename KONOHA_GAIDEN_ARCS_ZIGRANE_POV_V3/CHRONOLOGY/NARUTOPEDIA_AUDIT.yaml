@@ -56,9 +56,10 @@ checked_anime_episodes:
 - 51
 - 52
 - 53
+- 54
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 54
+next_anime_episode: 55
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0706-naruto-recruits-jiraiya
@@ -923,6 +924,27 @@ episode_audits:
   - Added the continuous pursuit through which Naruto obtains Jiraiya’s agreement to teach him. Split the return to water-walking
     and the later night conversation from the initial encounter; existing event IDs retained. Ebisu is not placed at
     the seal-removal lesson; the night conversation location remains unknown.
+- episode: 54
+  baseline_revision: 67a448ada6fd9c9a9a52e7ec69d5cff5012e3dcd
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-jiraiya-takes-over-training
+  - ev-y0-0706-gaara-kills-dosu
+  - ev-y0-0706-baki-kabuto-discuss-invasion
+  - ev-y0-0706-hayate-eavesdrops
+  - ev-y0-0706-baki-kills-hayate
+  - ev-y0-0707-jiraiya-prepares-nine-tails-training
+  - ev-y0-0707-jiraiya-starts-summoning-training
+  - ev-y0-0707-naruto-summons-small-toads
+  - ev-y0-0707-yugao-finds-hayate
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Merged Dosu’s attempted assassination and death into one complete encounter. Added Baki and Kabuto as witnessed observers.
+    Corrected chakra-exhaustion → contract → first tadpole order. Confirmed Yugao’s discovery in original anime episode
+    54, preserving project dates and author scenes.
+  merged_moment_ids:
+    ev-y0-0706-dosu-attacks-gaara: ev-y0-0706-gaara-kills-dosu
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

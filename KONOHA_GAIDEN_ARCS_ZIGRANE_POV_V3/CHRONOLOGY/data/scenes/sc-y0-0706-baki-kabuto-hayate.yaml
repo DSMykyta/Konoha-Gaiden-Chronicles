@@ -22,8 +22,8 @@ events:
   legacy_ids:
   - V10-000049-B
   title: Кабуто й Бакі обговорюють вторгнення
-  text: Кабуто й Бакі уточнюють план майбутнього вторгнення в Коноху та роль Суни в спільній операції. Коли стає зрозуміло,
-    що їх підслухали, Бакі бере на себе ліквідацію свідка як доказ серйозності домовленостей.
+  text: Обговорюючи смерть Досу та спільне вторгнення Суни й Ото, Кабуто передає Бакі план операції. Обидва знають про
+    підслуховування; Бакі береться усунути свідка.
   origin: M
   extent: interval
   display_rank: 100
@@ -37,11 +37,12 @@ events:
   evidence_ids:
   - evd-v10-000049-B
   - evd-manga-ch88-97
+  - evd-narutopedia-ep54-audit
 - id: ev-y0-0706-hayate-eavesdrops
   legacy_ids:
   - V10-000049-C
   title: Хаяте підслуховує змовників
-  text: Хаяте приховано слухає розмову Кабуто й Бакі про вторгнення.
+  text: Хаяте підслуховує змовників і намагається втекти, щоб попередити Третього Хокаґе.
   origin: M
   extent: interval
   display_rank: 200
@@ -58,12 +59,13 @@ events:
   evidence_ids:
   - evd-v10-000049-C
   - evd-manga-ch88-97
+  - evd-narutopedia-ep54-audit
 - id: ev-y0-0706-baki-kills-hayate
   legacy_ids:
   - V10-000049-C
   title: Бакі викриває й убиває Хаяте
-  text: Хаяте намагається втекти й вступає з Бакі в короткий бій. Його Танок Півмісяця не пробиває захист Бакі; Бакі визнає
-    майстерність Хаяте, після чого вбиває його технікою Леза Вітру.
+  text: Бакі перехоплює Хаяте. Танок Півмісяця не завдає тяжкої рани; Бакі затримує меч противника й убиває його Лезом
+    Вітру.
   origin: M
   extent: interval
   display_rank: 300
@@ -80,23 +82,26 @@ events:
   evidence_ids:
   - evd-v10-000049-C
   - evd-manga-ch88-97
+  - evd-narutopedia-ep54-audit
 relations:
 - id: rel-0706-hayate-death-1
   kind: before
   a: ev-y0-0706-baki-kabuto-discuss-invasion
   b: ev-y0-0706-hayate-eavesdrops
   basis: source
-  review: pending
+  review: accepted
   evidence_ids:
   - evd-manga-ch88-97
+  - evd-narutopedia-ep54-audit
 - id: rel-0706-hayate-death-2
   kind: before
   a: ev-y0-0706-hayate-eavesdrops
   b: ev-y0-0706-baki-kills-hayate
   basis: source
-  review: pending
+  review: accepted
   evidence_ids:
   - evd-manga-ch88-97
+  - evd-narutopedia-ep54-audit
 presence:
 - id: pr-0706-conspiracy-kabuto
   entity_id: c-kabuto
@@ -122,3 +127,59 @@ presence:
   evidence_ids:
   - evd-v10-000049-C
   review: accepted
+- id: pr-audit-54-y0-0706-baki-kabuto-discuss-invasion-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-baki-kabuto-discuss-invasion.start
+  to: ev-y0-0706-baki-kabuto-discuss-invasion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-baki-kabuto-discuss-invasion-c-baki
+  entity_id: c-baki
+  from: ev-y0-0706-baki-kabuto-discuss-invasion.start
+  to: ev-y0-0706-baki-kabuto-discuss-invasion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-hayate-eavesdrops-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-hayate-eavesdrops.start
+  to: ev-y0-0706-hayate-eavesdrops.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-hayate-eavesdrops-c-baki
+  entity_id: c-baki
+  from: ev-y0-0706-hayate-eavesdrops.start
+  to: ev-y0-0706-hayate-eavesdrops.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-baki-kills-hayate-c-baki
+  entity_id: c-baki
+  from: ev-y0-0706-baki-kills-hayate.start
+  to: ev-y0-0706-baki-kills-hayate.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-baki-kills-hayate-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-baki-kills-hayate.start
+  to: ev-y0-0706-baki-kills-hayate.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
+- id: pr-audit-54-y0-0706-baki-kills-hayate-c-kabuto
+  entity_id: c-kabuto
+  from: ev-y0-0706-baki-kills-hayate.start
+  to: ev-y0-0706-baki-kills-hayate.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit

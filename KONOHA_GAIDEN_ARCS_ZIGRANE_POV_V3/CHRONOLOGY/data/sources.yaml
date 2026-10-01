@@ -1048,6 +1048,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep54-audit
+    type: reference
+    title: 'Narutopedia — The Summoning Technique: Wisdom of the Toad Sage!'
+    url: https://naruto.fandom.com/wiki/The_Summoning_Technique%3A_Wisdom_of_the_Toad_Sage%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3898,5 +3905,11 @@ evidence:
   - id: evd-narutopedia-ep53-audit
     source_id: src-narutopedia-ep53-audit
     locator: Episode 53, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep54-audit
+    source_id: src-narutopedia-ep54-audit
+    locator: Episode 54, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

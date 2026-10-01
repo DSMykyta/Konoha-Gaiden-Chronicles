@@ -20,9 +20,8 @@ events:
 - id: ev-y0-0706-jiraiya-takes-over-training
   legacy_ids:
   - V10-000048
-  title: Ебісу впізнає Джираю та говорить про Орочімару
-  text: Уночі, коли Наруто спить, Ебісу впізнає в новому наставнику Джираю з Саннінів і говорить із ним про загрозу Орочімару.
-    Ебісу визнає його здатність зупинити ворога.
+  title: Ебісу передає Наруто під опіку Джираї
+  text: Поки Наруто спить, Ебісу завершує розмову про Орочімару й залишає учня під опікою Джираї.
   origin: M
   extent: interval
   display_rank: 100
@@ -41,6 +40,7 @@ events:
   - evd-manga-ch88-97
   - evd-anime-52-54
   - evd-narutopedia-ep53-audit
+  - evd-narutopedia-ep54-audit
 relations: []
 presence:
 - id: pr-audit-53-ev-y0-0706-jiraiya-takes-over-training-c-jiraiya

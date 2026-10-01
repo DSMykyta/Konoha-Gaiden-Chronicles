@@ -3374,3 +3374,12 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep53-audit
+
+- id: lnk-audit-54-sc-y0-0706-gaara-kills-dosu-sc-y0-0706-baki-kabuto-hayate
+  kind: before
+  a: sc-y0-0706-gaara-kills-dosu
+  b: sc-y0-0706-baki-kabuto-hayate
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep54-audit
