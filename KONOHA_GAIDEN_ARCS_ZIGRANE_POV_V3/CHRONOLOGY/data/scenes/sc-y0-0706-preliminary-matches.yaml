@@ -318,9 +318,10 @@ events:
   legacy_ids:
   - V10-000046-J
   title: Ґаара перемагає й тяжко травмує Лі
-  text: Ґаара перемагає Рока Лі; швидкість і сила Лі змушують навіть Бакі всерйоз оцінити небезпеку для Ґаари. Після
-    перемоги Ґаара намагається добити непритомного Лі, але Ґай зупиняє його; травми Лі ставлять під загрозу його подальшу
-    кар’єру шинобі.
+  text: У дев’ятому поєдинку автоматичний піщаний захист Ґаари відбиває атаки тайджюцу Лі. Лі знімає важкі обтяжувачі
+    з ніг і завдяки збільшеній швидкості долає цей захист, але виявляє на тілі Ґаари ще й піщану броню. Лі підкидає супротивника
+    серією ударів і застосовує Передній лотос. Зрештою Ґаара перемагає та тяжко ушкоджує руку й ногу Лі; Бакі спостерігає
+    за виступом свого учня.
   origin: M
   extent: interval
   display_rank: 900
@@ -341,6 +342,7 @@ events:
   - evd-v10-000046-J
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep48-audit
 - id: ev-y0-0706-dosu-defeats-choji
   legacy_ids:
   - V10-000046-K
@@ -938,3 +940,35 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep47-audit
+- id: pr-audit-48-y0-0706-gaara-defeats-lee-c-gaara
+  entity_id: c-gaara
+  from: ev-y0-0706-gaara-defeats-lee.start
+  to: ev-y0-0706-gaara-defeats-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep48-audit
+- id: pr-audit-48-y0-0706-gaara-defeats-lee-c-lee
+  entity_id: c-lee
+  from: ev-y0-0706-gaara-defeats-lee.start
+  to: ev-y0-0706-gaara-defeats-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep48-audit
+- id: pr-audit-48-y0-0706-gaara-defeats-lee-c-baki
+  entity_id: c-baki
+  from: ev-y0-0706-gaara-defeats-lee.start
+  to: ev-y0-0706-gaara-defeats-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep48-audit
+- id: pr-audit-48-y0-0706-gaara-defeats-lee-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-gaara-defeats-lee.start
+  to: ev-y0-0706-gaara-defeats-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep48-audit

@@ -999,6 +999,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep48-audit
+    type: reference
+    title: 'Narutopedia — Gaara vs. Rock Lee: The Power of Youth Explodes!'
+    url: https://naruto.fandom.com/wiki/Gaara_vs._Rock_Lee%3A_The_Power_of_Youth_Explodes%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3806,5 +3813,11 @@ evidence:
   - id: evd-narutopedia-ep47-audit-crosscheck
     source_id: src-narutopedia-ep47-crosscheck-196
     locator: Part I, Chunin Exams; identifies Kakashi, Guy, Kurenai and Hayate intervention
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep48-audit
+    source_id: src-narutopedia-ep48-audit
+    locator: Episode 48, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted
