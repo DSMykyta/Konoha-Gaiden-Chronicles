@@ -3220,6 +3220,31 @@ links:
   a: sc-y0-neji-spares-team10
   b: ev-y0-0702-team10-intervenes
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep32-audit
+  id: lnk-audit32-team10-observes-sakura
+  kind: observes
+  a: ev-y0-team10-watches-sakura-fight
+  b: ev-y0-0702-sakura-cuts-hair
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep32-audit
+  id: lnk-audit32-team10-watch-before-intervention
+  kind: before
+  a: sc-y0-team10-watches-sakura-fight
+  b: ev-y0-0702-team10-intervenes
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep32-audit
+  id: lnk-audit32-neji-before-team10-watch
+  kind: before
+  a: sc-y0-neji-spares-team10
+  b: sc-y0-team10-watches-sakura-fight
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

@@ -821,6 +821,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep32-audit
+    type: reference
+    title: Narutopedia — Sakura Blossoms!
+    url: https://naruto.fandom.com/wiki/Sakura_Blossoms%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3471,5 +3478,11 @@ evidence:
     source_id: src-narutopedia-neji-forest-scout
     locator: "Part I / Ch\u016Bnin Exams; Team Guy splits up and Neji chooses not to\
       \ fight Team 10."
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep32-audit
+    source_id: src-narutopedia-ep32-audit
+    locator: Episode 32, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

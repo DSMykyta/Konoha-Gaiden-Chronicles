@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-y0-team10-watches-sakura-fight
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-team10-watches-sakura-fight
+  display_rank: 100
+  title: Команда 10 вирішує допомогти Сакурі
+  text: Іно, Шикамару й Чоджі непомітно спостерігають за тим, як Сакура сама захищає товаришів. Для Іно бій пов’язаний зі
+    спільним дитинством і суперництвом із подругою. Команда вирішує втрутитися, перш ніж Заку її вб’є.
+  involvement:
+  - entity_id: c-ino
+    role: focus
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep32-audit
+relations: []
+presence:
+- id: pr-audit-32-y0-team10-watches-sakura-fight-c-ino
+  entity_id: c-ino
+  from: sc-y0-team10-watches-sakura-fight.start
+  to: sc-y0-team10-watches-sakura-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep32-audit
+- id: pr-audit-32-y0-team10-watches-sakura-fight-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-y0-team10-watches-sakura-fight.start
+  to: sc-y0-team10-watches-sakura-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep32-audit
+- id: pr-audit-32-y0-team10-watches-sakura-fight-c-choji
+  entity_id: c-choji
+  from: sc-y0-team10-watches-sakura-fight.start
+  to: sc-y0-team10-watches-sakura-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep32-audit
+episode_id: ep-y0-team7-forest-trial
+display_rank: 200
+title: Команда 10 спостерігає за боєм Сакури зі схованки
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 1
