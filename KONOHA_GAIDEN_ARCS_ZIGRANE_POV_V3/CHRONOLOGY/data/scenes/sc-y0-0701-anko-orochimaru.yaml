@@ -38,6 +38,7 @@ events:
   - evd-v10-000040-F
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep30-audit
 - id: ev-y0-0701-orochimaru-escapes-anko
   legacy_ids:
   - V10-000040-F
@@ -59,6 +60,7 @@ events:
   - evd-v10-000040-F
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep30-audit
 relations:
 - id: rel-0701-anko-2
   kind: before

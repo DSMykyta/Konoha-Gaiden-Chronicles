@@ -3186,6 +3186,15 @@ links:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep29-audit
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep30-audit
+  id: lnk-audit30-curse-before-anko-duel
+  kind: before
+  a: ev-y0-0701-orochimaru-curse-mark-sasuke
+  b: sc-y0-0701-anko-orochimaru
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

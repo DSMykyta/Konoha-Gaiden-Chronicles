@@ -128,7 +128,8 @@ events:
   legacy_ids:
   - V10-000040-E
   title: Саске переборює страх і атакує Орочімару
-  text: 'Саске зв’язує Орочімару дротом і застосовує Вогняний стиль: Техніку Драконячого Полум’я.'
+  text: Саске відновлює рішучість і веде тривалий бій із нападником. Він зв’язує його дротами та застосовує Техніку Драконячого
+    Полум’я. Нападник виживає; під частково згорілим обличчям проступає інше.
   origin: M
   extent: interval
   display_rank: 400
@@ -149,11 +150,13 @@ events:
   - evd-v10-000040-E
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep30-audit
 - id: ev-y0-0701-orochimaru-curse-mark-sasuke
   legacy_ids:
   - V10-000040-E
   title: Орочімару ставить Саске Прокляту Печатку Неба
-  text: Після сутички Орочімару кусає Саске й залишає на ньому Прокляту Печатку Неба.
+  text: Нападник називає себе Орочімару, видовжує шию та кусає Саске, залишаючи Прокляту Печатку Неба. Побажавши йому вижити,
+    Орочімару йде.
   origin: M
   extent: interval
   display_rank: 500
@@ -174,6 +177,7 @@ events:
   - evd-v10-000040-E
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep30-audit
 relations:
 - id: rel-0701-oro-1
   kind: before
