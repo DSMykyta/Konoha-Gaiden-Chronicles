@@ -5,6 +5,7 @@
   let focusedEventIds = new Set();
   let focusedCharacters = new Set();
   let hoveredCharacter = null;
+  let lastLayoutFocus = null;
 
   const style = document.createElement('style');
   style.textContent = `
@@ -238,6 +239,11 @@
 
   const baseRender = render;
   render = function renderWithMapFocus() {
+    if (lastLayoutFocus !== focusedCharacter) {
+      layoutCache?.clear?.();
+      baseLayoutCache?.clear?.();
+      lastLayoutFocus = focusedCharacter;
+    }
     const result = baseRender.apply(this, arguments);
     requestAnimationFrame(applySelectionFocus);
     return result;
