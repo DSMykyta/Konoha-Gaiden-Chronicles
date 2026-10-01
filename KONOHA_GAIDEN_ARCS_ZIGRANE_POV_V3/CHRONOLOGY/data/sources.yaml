@@ -1055,6 +1055,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep55-audit
+    type: reference
+    title: Narutopedia — A Feeling of Yearning, a Flower Full of Hope
+    url: https://naruto.fandom.com/wiki/A_Feeling_of_Yearning%2C_a_Flower_Full_of_Hope
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-recap-ep55-cast-crosscheck
+    type: reference
+    title: "Recap Avalanche \u2014 Episode 55 factual crosscheck"
+    url: https://recapavalanche.blogspot.com/2009/01/episode-55-feeling-of-yearning-flower.html
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3911,5 +3925,18 @@ evidence:
   - id: evd-narutopedia-ep54-audit
     source_id: src-narutopedia-ep54-audit
     locator: Episode 54, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep55-audit
+    source_id: src-narutopedia-ep55-audit
+    locator: Episode 55, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-recap-ep55-cast-crosscheck
+    source_id: src-recap-ep55-cast-crosscheck
+    locator: 'Episode 55 recap: Team 8 training and later Shikamaru/Choji practice;
+      no timestamps inspected'
     basis: source
     review: accepted

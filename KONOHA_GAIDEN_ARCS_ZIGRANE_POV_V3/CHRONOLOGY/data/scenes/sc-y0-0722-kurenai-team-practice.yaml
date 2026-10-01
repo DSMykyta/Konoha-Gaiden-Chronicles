@@ -1,0 +1,79 @@
+schema_version: 1
+id: sc-y0-0722-kurenai-team-practice
+episode_id: ep-y0-finalists-training
+display_rank: 100
+continuity_id: main
+title: Команда Куренай готує Шіно
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0722
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0722-kurenai-team-prepares-shino
+  title: Команда Куренай тренується до бою Шіно
+  text: Куренай та Кіба атакують Шіно під час тренування; він готує захист комахами. Хіната спостерігає збоку.
+  display_rank: 100
+  involvement:
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  - entity_id: c-shino
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: observer
+    mode: physical
+  origin: A
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+  - evd-recap-ep55-cast-crosscheck
+relations: []
+presence:
+- id: pr-audit-55-ev-y0-0722-kurenai-team-prepares-shino-c-kurenai
+  entity_id: c-kurenai
+  from: ev-y0-0722-kurenai-team-prepares-shino.start
+  to: ev-y0-0722-kurenai-team-prepares-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+  - evd-recap-ep55-cast-crosscheck
+- id: pr-audit-55-ev-y0-0722-kurenai-team-prepares-shino-c-shino
+  entity_id: c-shino
+  from: ev-y0-0722-kurenai-team-prepares-shino.start
+  to: ev-y0-0722-kurenai-team-prepares-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+  - evd-recap-ep55-cast-crosscheck
+- id: pr-audit-55-ev-y0-0722-kurenai-team-prepares-shino-c-kiba
+  entity_id: c-kiba
+  from: ev-y0-0722-kurenai-team-prepares-shino.start
+  to: ev-y0-0722-kurenai-team-prepares-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+  - evd-recap-ep55-cast-crosscheck
+- id: pr-audit-55-ev-y0-0722-kurenai-team-prepares-shino-c-hinata
+  entity_id: c-hinata
+  from: ev-y0-0722-kurenai-team-prepares-shino.start
+  to: ev-y0-0722-kurenai-team-prepares-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+  - evd-recap-ep55-cast-crosscheck

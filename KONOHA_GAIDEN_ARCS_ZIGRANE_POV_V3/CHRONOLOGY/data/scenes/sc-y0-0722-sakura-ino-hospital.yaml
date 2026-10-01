@@ -1,0 +1,102 @@
+schema_version: 1
+id: sc-y0-0722-sakura-ino-hospital
+episode_id: ep-y0-sakura-ino-hospital-visit
+display_rank: 100
+continuity_id: main
+title: Сакура й Іно шукають Саске та відвідують Лі
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-y0-0722
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0722-sakura-ino-find-sasuke-missing
+  title: Сакура й Іно знаходять порожню палату Саске
+  text: Отримавши дозвіл на короткий візит, Сакура й Іно виявляють, що Саске та його одяг зникли.
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: focus
+    mode: physical
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: ev-y0-0722-sakura-ino-visit-injured-lee
+  title: Дівчата бачать виснажливе тренування травмованого Лі
+  text: 'Сакура й Іно знаходять Лі надворі: після 199 віджимань він падає. Згодом у палаті Лі помічає залишений нарцис.'
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: focus
+    mode: physical
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+relations:
+- id: rel-audit-55-hospital-visit
+  kind: before
+  a: ev-y0-0722-sakura-ino-find-sasuke-missing
+  b: ev-y0-0722-sakura-ino-visit-injured-lee
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+presence:
+- id: pr-audit-55-ev-y0-0722-sakura-ino-find-sasuke-missing-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0722-sakura-ino-find-sasuke-missing.start
+  to: ev-y0-0722-sakura-ino-find-sasuke-missing.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-sakura-ino-find-sasuke-missing-c-ino
+  entity_id: c-ino
+  from: ev-y0-0722-sakura-ino-find-sasuke-missing.start
+  to: ev-y0-0722-sakura-ino-find-sasuke-missing.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-sakura-ino-visit-injured-lee-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0722-sakura-ino-visit-injured-lee.start
+  to: ev-y0-0722-sakura-ino-visit-injured-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-sakura-ino-visit-injured-lee-c-ino
+  entity_id: c-ino
+  from: ev-y0-0722-sakura-ino-visit-injured-lee.start
+  to: ev-y0-0722-sakura-ino-visit-injured-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-sakura-ino-visit-injured-lee-c-lee
+  entity_id: c-lee
+  from: ev-y0-0722-sakura-ino-visit-injured-lee.start
+  to: ev-y0-0722-sakura-ino-visit-injured-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit

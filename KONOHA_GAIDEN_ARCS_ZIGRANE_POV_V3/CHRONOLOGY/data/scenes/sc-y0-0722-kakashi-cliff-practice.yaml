@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0722-kakashi-cliff-practice
+episode_id: ep-y0-sasuke-chidori-training
+display_rank: 100
+continuity_id: main
+title: Какаші піднімається до Саске
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0722
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0722-kakashi-climbs-to-sasuke
+  title: Какаші долає скелю за допомогою Перших Врат
+  text: Під час скелелазіння Какаші ледь не падає, відкриває Перші Врата й дістається вершини, де чекає Саске.
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+relations: []
+presence:
+- id: pr-audit-55-ev-y0-0722-kakashi-climbs-to-sasuke-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0722-kakashi-climbs-to-sasuke.start
+  to: ev-y0-0722-kakashi-climbs-to-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-kakashi-climbs-to-sasuke-c-sasuke
+  entity_id: c-sasuke
+  from: ev-y0-0722-kakashi-climbs-to-sasuke.start
+  to: ev-y0-0722-kakashi-climbs-to-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit

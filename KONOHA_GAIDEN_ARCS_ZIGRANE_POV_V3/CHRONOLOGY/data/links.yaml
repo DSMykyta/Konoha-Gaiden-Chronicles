@@ -3383,3 +3383,21 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep54-audit
+
+- id: lnk-audit-55-sc-y0-0722-sakura-ino-flowers-sc-y0-0722-sakura-ino-see-team10
+  kind: before
+  a: sc-y0-0722-sakura-ino-flowers
+  b: sc-y0-0722-sakura-ino-see-team10
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+
+- id: lnk-audit-55-sc-y0-0722-sakura-ino-see-team10-sc-y0-0722-sakura-ino-hospital
+  kind: before
+  a: sc-y0-0722-sakura-ino-see-team10
+  b: sc-y0-0722-sakura-ino-hospital
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit

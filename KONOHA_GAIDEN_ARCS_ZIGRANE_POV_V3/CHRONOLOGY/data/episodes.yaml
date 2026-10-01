@@ -1715,3 +1715,15 @@ episodes:
   arc_id: arc-y0-chunin-exams
   title: Команда Шібіре порушує заборону відкривати сувій
   description: Міноджі й Шібіре відкривають сувій у лісі та вибувають із випробування.
+
+- id: ep-y0-sakura-ino-hospital-visit
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Сакура й Іно відвідують Саске та Лі
+  description: Сакура й Іно відвідують Саске та Лі.
+
+- id: ep-y0-finalists-training
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Фіналісти готуються до вирішальних боїв
+  description: Фіналісти готуються до вирішальних боїв.

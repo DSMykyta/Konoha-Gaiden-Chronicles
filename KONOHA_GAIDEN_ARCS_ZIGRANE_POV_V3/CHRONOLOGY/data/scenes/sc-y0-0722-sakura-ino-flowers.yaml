@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0722-sakura-ino-flowers
+episode_id: ep-y0-sakura-ino-hospital-visit
+display_rank: 100
+continuity_id: main
+title: Сакура й Іно купують квіти для шпиталю
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0722
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0722-sakura-ino-choose-flowers
+  title: Сакура й Іно домовляються про відвідини
+  text: У квітковій крамниці Іно бере троянду для Саске; Сакура — нарциси для Саске й Лі.
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+relations: []
+presence:
+- id: pr-audit-55-ev-y0-0722-sakura-ino-choose-flowers-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0722-sakura-ino-choose-flowers.start
+  to: ev-y0-0722-sakura-ino-choose-flowers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-sakura-ino-choose-flowers-c-ino
+  entity_id: c-ino
+  from: ev-y0-0722-sakura-ino-choose-flowers.start
+  to: ev-y0-0722-sakura-ino-choose-flowers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit

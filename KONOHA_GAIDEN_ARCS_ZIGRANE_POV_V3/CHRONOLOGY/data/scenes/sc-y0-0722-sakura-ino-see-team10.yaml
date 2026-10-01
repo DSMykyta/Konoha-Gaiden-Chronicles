@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-y0-0722-sakura-ino-see-team10
+episode_id: ep-y0-sakura-ino-hospital-visit
+display_rank: 100
+continuity_id: main
+title: Сакура й Іно бачать тренувальну домовленість Команди 10
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0722
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0722-asuma-treats-choji-shikamaru
+  title: Асума частує учнів за тренування
+  text: 'Дорогою дівчата бачать Асуму, Чоджі та Шикамару за барбекю: частування винагороджує Чоджі за щоденне тренування
+    з Шикамару.'
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: observer
+    mode: physical
+  - entity_id: c-ino
+    role: observer
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+relations: []
+presence:
+- id: pr-audit-55-ev-y0-0722-asuma-treats-choji-shikamaru-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0722-asuma-treats-choji-shikamaru.start
+  to: ev-y0-0722-asuma-treats-choji-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-asuma-treats-choji-shikamaru-c-ino
+  entity_id: c-ino
+  from: ev-y0-0722-asuma-treats-choji-shikamaru.start
+  to: ev-y0-0722-asuma-treats-choji-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-asuma-treats-choji-shikamaru-c-asuma
+  entity_id: c-asuma
+  from: ev-y0-0722-asuma-treats-choji-shikamaru.start
+  to: ev-y0-0722-asuma-treats-choji-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-asuma-treats-choji-shikamaru-c-choji
+  entity_id: c-choji
+  from: ev-y0-0722-asuma-treats-choji-shikamaru.start
+  to: ev-y0-0722-asuma-treats-choji-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit
+- id: pr-audit-55-ev-y0-0722-asuma-treats-choji-shikamaru-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0722-asuma-treats-choji-shikamaru.start
+  to: ev-y0-0722-asuma-treats-choji-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep55-audit

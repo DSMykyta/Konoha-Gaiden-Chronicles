@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0722-shikamaru-choji-practice
+episode_id: ep-y0-finalists-training
+display_rank: 100
+continuity_id: main
+title: Шикамару тренується з Чоджі
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0722
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0722-shikamaru-choji-practice
+  title: Шикамару ухиляється від Чоджі після виснаження чакри
+  text: На тренуванні з Чоджі Шикамару виснажує чакру й ховається від його атаки Людською Кулею.
+  involvement:
+  - entity_id: c-shikamaru
+    role: focus
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-recap-ep55-cast-crosscheck
+relations: []
+presence:
+- id: pr-audit-55-ev-y0-0722-shikamaru-choji-practice-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0722-shikamaru-choji-practice.start
+  to: ev-y0-0722-shikamaru-choji-practice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-recap-ep55-cast-crosscheck
+- id: pr-audit-55-ev-y0-0722-shikamaru-choji-practice-c-choji
+  entity_id: c-choji
+  from: ev-y0-0722-shikamaru-choji-practice.start
+  to: ev-y0-0722-shikamaru-choji-practice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-recap-ep55-cast-crosscheck
