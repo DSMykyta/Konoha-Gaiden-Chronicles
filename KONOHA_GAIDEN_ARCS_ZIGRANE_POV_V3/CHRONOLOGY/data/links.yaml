@@ -2427,7 +2427,7 @@ links:
   - evd-anime-213-215
 - id: rel-0701-kankuro-3
   kind: before
-  a: ev-y0-0701-kankuro-leaves-for-toilet
+  a: ev-y0-0701-kankuro-karasu-observes-answers
   b: ev-y0-0701-kankuro-gets-answers-in-toilet
   basis: source
   review: accepted
@@ -2437,7 +2437,7 @@ links:
 - id: rel-0701-kankuro-4
   kind: before
   a: ev-y0-0701-kankuro-gets-answers-in-toilet
-  b: ev-y0-0701-kankuro-returns-from-toilet
+  b: ev-y0-0701-kankuro-feeds-temari
   basis: source
   review: accepted
   evidence_ids:
@@ -3097,7 +3097,6 @@ links:
   kind: before
   a: sc-y0-chunin-entrance-screen
   b: sc-y0-0624-lee-challenges-sasuke
-
 - basis: source
   review: accepted
   evidence_ids:
@@ -3114,7 +3113,6 @@ links:
   kind: before
   a: sc-y0-kakashi-confirms-team7-exam-entry
   b: sc-y0-0701-candidate-gathering
-
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

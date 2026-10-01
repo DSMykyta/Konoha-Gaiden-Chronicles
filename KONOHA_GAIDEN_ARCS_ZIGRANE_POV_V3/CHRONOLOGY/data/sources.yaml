@@ -745,6 +745,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep24-audit
+    type: reference
+    title: 'Narutopedia — Start Your Engines: The Chūnin Exam Begins!'
+    url: https://naruto.fandom.com/wiki/Start_Your_Engines%3A_The_Ch%C5%ABnin_Exam_Begins%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3315,4 +3322,10 @@ evidence:
       Raido nomination and Team 9 written-exam participation on July 1 support background
       candidate-hall presence.
     basis: project_decision
+    review: accepted
+
+  - id: evd-narutopedia-ep24-audit
+    source_id: src-narutopedia-ep24-audit
+    locator: Episode 24, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
     review: accepted

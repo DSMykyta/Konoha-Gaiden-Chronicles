@@ -26,9 +26,10 @@ checked_anime_episodes:
 - 21
 - 22
 - 23
+- 24
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 24
+next_anime_episode: 25
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -401,6 +402,36 @@ episode_audits:
   notes:
   - Added whole admission conversation; details incorporated into existing hall moments. Team 9 included as background with
     project evidence, separately from canonical source.
+- episode: 24
+  baseline_revision: a5030392803bf4f03c406ed02ffcd9572b03e3f8
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0701-ibiki-starts-written-exam
+  - ev-y0-0701-sakura-solves-written-test
+  - ev-y0-0701-sasuke-copies-writing-sharingan
+  - ev-y0-0701-neji-reads-answers-byakugan
+  - ev-y0-0701-tenten-mirrors-answers-to-lee
+  - ev-y0-0701-ino-copies-sakura-for-team10
+  - ev-y0-0701-kiba-uses-akamaru
+  - ev-y0-0701-shino-uses-insect
+  - ev-y0-0701-gaara-third-eye
+  - ev-y0-0701-kankuro-karasu-observes-answers
+  - ev-y0-0701-kankuro-leaves-for-toilet
+  - ev-y0-0701-kankuro-returns-from-toilet
+  - ev-y0-0701-kankuro-feeds-temari
+  - ev-y0-0701-dosu-decodes-pencil-sounds
+  - ev-y0-0701-hinata-offers-naruto-answers
+  - ev-y0-0701-kankuro-gets-answers-in-toilet
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - 'All listed cheating methods already exist as whole information-gathering actions. Corrected rules and merged Kankuro
+    exit/return substeps; removed invented offscreen preparation as a displayed event. Distinct toilet scene preserved. No
+    additional author-character actions invented: Team 9 pencil signal already exists.'
+  merged_moment_ids:
+    ev-y0-0701-kankuro-prepares-karasu-proctor: ev-y0-0701-kankuro-karasu-observes-answers
+    ev-y0-0701-kankuro-leaves-for-toilet: ev-y0-0701-kankuro-karasu-observes-answers
+    ev-y0-0701-kankuro-returns-from-toilet: ev-y0-0701-kankuro-feeds-temari
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

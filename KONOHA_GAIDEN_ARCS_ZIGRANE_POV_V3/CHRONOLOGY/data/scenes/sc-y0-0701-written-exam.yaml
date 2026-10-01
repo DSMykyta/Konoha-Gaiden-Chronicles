@@ -21,9 +21,9 @@ events:
   legacy_ids:
   - V10-000040-B
   title: Ібікі починає письмове випробування
-  text: 'Ібікі розсаджує кандидатів і оголошує систему командного заліку та штрафів за викриті спроби шахрайства. Завдання
-    навмисно надто складні для звичайного геніна: серед кандидатів сидять підставні чуніни з правильними відповідями, а справжня
-    мета етапу — перевірити здатність непомітно збирати інформацію.'
+  text: 'Ібікі розсаджує кандидатів і оголошує письмове випробування: питання ставити заборонено, залік залежить від суми
+    балів усієї команди, а п’ять викритих спроб списування дискваліфікують геніна та його команду. Наглядачі стежать із боків
+    зали. Отримавши надто складні завдання, більшість кандидатів розуміє, що потрібно непомітно здобути відповіді.'
   origin: M
   extent: interval
   display_rank: 100
@@ -44,6 +44,7 @@ events:
   - evd-v10-000040-B
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-sakura-solves-written-test
   title: Сакура розв’язує завдання без списування
   text: Сакура швидко розуміє, що завдання значно складніші за звичайний рівень геніна, але завдяки знанням і сильним аналітичним
@@ -60,6 +61,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-sasuke-copies-writing-sharingan
   title: Саске копіює рухи руки Шарінґаном
   text: Саске розуміє справжню мету випробування й активує Шарінґан. Він стежить за рухами руки кандидата, який знає відповіді,
@@ -76,6 +78,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-neji-reads-answers-byakugan
   title: Неджі зчитує відповіді Б’якуґаном
   text: Неджі активує Б’якуґан і використовує його проникний зір, щоб побачити аркуш іншого кандидата та переписати правильні
@@ -92,6 +95,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-tenten-mirrors-answers-to-lee
   title: Тентен передає відповіді Лі через дзеркала
   text: Тентен за допомогою тонких дротів змінює положення відбивних поверхонь на стелі, ловить у них чужі аркуші й передає
@@ -111,6 +115,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-ino-copies-sakura-for-team10
   title: Іно бере відповіді Сакури й передає їх Команді 10
   text: Іно використовує Техніку Перенесення Свідомості на Сакурі, читає її вже заповнений аркуш, повертається у власне тіло,
@@ -137,6 +142,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-kiba-uses-akamaru
   title: Кіба використовує Акамару як спостерігача
   text: Акамару сидить у Кіби на голові й підглядає відповіді інших кандидатів, після чого передає їх Кібі умовними сигналами.
@@ -155,6 +161,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-shino-uses-insect
   title: Шіно добуває відповіді комахою
   text: Шіно непомітно використовує одну зі своїх комах, щоб підглянути відповіді іншого кандидата й передати йому інформацію.
@@ -170,6 +177,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-gaara-third-eye
   title: Ґаара створює Третє Око
   text: Ґаара засліплює іншого кандидата піском і формує з піску Третє Око, яким непомітно читає чужі відповіді.
@@ -183,24 +191,11 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
-- id: ev-y0-0701-kankuro-prepares-karasu-proctor
-  title: Канкуро готує Карасу під виглядом наглядача
-  text: Перед початком письмового етапу Карасу вже підготовлений під виглядом одного з наглядачів. Сам момент маскування канон
-    не показує; цей вузол фіксує необхідну підготовчу точку для подальшої схеми Канкуро.
-  origin: P
-  extent: point
-  display_rank: 90
-  involvement:
-  - entity_id: c-kankuro
-    role: focus
-    mode: physical
-  evidence_ids:
-  - evd-manga-chunin-stage1-forest
-  - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-kankuro-karasu-observes-answers
-  title: Карасу збирає відповіді серед наглядачів
-  text: Під час письмового етапу замаскований під наглядача Карасу дає Канкуро можливість зібрати правильні відповіді, не
-    підходячи до чужих аркушів самому.
+  title: Канкуро збирає відповіді через Карасу й виходить із зали
+  text: Карасу, замаскований під наглядача, спостерігає за аркушами кандидатів. Канкуро проситься до туалету й виходить у
+    супроводі своєї замаскованої ляльки.
   origin: M
   extent: interval
   display_rank: 181
@@ -211,35 +206,10 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
-- id: ev-y0-0701-kankuro-leaves-for-toilet
-  title: Канкуро проситься в туалет і виходить із зали
-  text: Канкуро проситься до туалету. Його виводить із зали наглядач, під виглядом якого діє Карасу.
-  origin: M
-  extent: point
-  display_rank: 182
-  involvement:
-  - entity_id: c-kankuro
-    role: focus
-    mode: physical
-  evidence_ids:
-  - evd-manga-chunin-stage1-forest
-  - evd-anime-24-30
-- id: ev-y0-0701-kankuro-returns-from-toilet
-  title: Канкуро повертається до екзаменаційної зали
-  text: Отримавши потрібну інформацію, Канкуро повертається на своє місце й продовжує письмовий етап.
-  origin: M
-  extent: point
-  display_rank: 184
-  involvement:
-  - entity_id: c-kankuro
-    role: focus
-    mode: physical
-  evidence_ids:
-  - evd-manga-chunin-stage1-forest
-  - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-kankuro-feeds-temari
-  title: Канкуро передає відповіді Темарі
-  text: Після повернення Канкуро передає здобуті відповіді Темарі, завершуючи власну схему проходження перших дев’яти питань.
+  title: Канкуро повертається й передає відповіді Темарі
+  text: Після отримання інформації від Карасу Канкуро повертається до зали та непомітно передає Темарі малий сувій із відповідями.
   origin: M
   extent: point
   display_rank: 185
@@ -253,6 +223,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-dosu-decodes-pencil-sounds
   title: Досу зчитує письмо за звуком олівця
   text: Досу слухає ритм і характер рухів чужого олівця та за звуковими коливаннями визначає, що саме кандидат записує на
@@ -269,6 +240,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-team9-pencil-signal-system
   title: Сора передає Кіті й Рену відповіді рухами олівця
   text: Сора знаходить відповіді й кодує їх ритмом та рухами олівця. Кіта й Рен стежать за її умовними жестами, зчитують узгоджений
@@ -311,6 +283,7 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 - id: ev-y0-0701-ibiki-announces-tenth-question
   legacy_ids:
   - V10-000040-B
@@ -562,37 +535,10 @@ relations:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
-- id: rel-0701-kankuro-prep-before-exam
-  kind: before
-  a: ev-y0-0701-kankuro-prepares-karasu-proctor
-  b: ev-y0-0701-ibiki-starts-written-exam
-  basis: project_decision
-  review: accepted
-  evidence_ids:
-  - evd-manga-chunin-stage1-forest
-  - evd-anime-24-30
 - id: rel-0701-kankuro-1
   kind: before
   a: ev-y0-0701-ibiki-starts-written-exam
   b: ev-y0-0701-kankuro-karasu-observes-answers
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-manga-chunin-stage1-forest
-  - evd-anime-24-30
-- id: rel-0701-kankuro-2
-  kind: before
-  a: ev-y0-0701-kankuro-karasu-observes-answers
-  b: ev-y0-0701-kankuro-leaves-for-toilet
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-manga-chunin-stage1-forest
-  - evd-anime-24-30
-- id: rel-0701-kankuro-5
-  kind: before
-  a: ev-y0-0701-kankuro-returns-from-toilet
-  b: ev-y0-0701-kankuro-feeds-temari
   basis: source
   review: accepted
   evidence_ids:
@@ -735,3 +681,187 @@ presence:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
   review: accepted
+- id: pr-audit24-written-naruto
+  entity_id: c-naruto
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-sakura
+  entity_id: c-sakura
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-hinata
+  entity_id: c-hinata
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-kiba
+  entity_id: c-kiba
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-akamaru
+  entity_id: c-akamaru
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-shino
+  entity_id: c-shino
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-ino
+  entity_id: c-ino
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-shikamaru
+  entity_id: c-shikamaru
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-choji
+  entity_id: c-choji
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-neji
+  entity_id: c-neji
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-tenten
+  entity_id: c-tenten
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-lee
+  entity_id: c-lee
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-gaara
+  entity_id: c-gaara
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-temari
+  entity_id: c-temari
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-dosu
+  entity_id: c-dosu
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-zaku
+  entity_id: c-zaku
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-kin
+  entity_id: c-kin
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-kabuto
+  entity_id: c-kabuto
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-izumo
+  entity_id: c-izumo
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-written-kotetsu
+  entity_id: c-kotetsu
+  from: sc-y0-0701-written-exam.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-kankuro-before-exit
+  entity_id: c-kankuro
+  from: sc-y0-0701-written-exam.start
+  to: ev-y0-0701-kankuro-karasu-observes-answers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
+- id: pr-audit24-kankuro-after-return
+  entity_id: c-kankuro
+  from: ev-y0-0701-kankuro-feeds-temari.start
+  to: sc-y0-0701-written-exam.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit

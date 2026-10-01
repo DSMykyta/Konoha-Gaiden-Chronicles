@@ -30,5 +30,14 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep24-audit
 relations: []
-presence: []
+presence:
+- id: pr-audit-24-y0-0701-kankuro-toilet-c-kankuro
+  entity_id: c-kankuro
+  from: sc-y0-0701-kankuro-toilet.start
+  to: sc-y0-0701-kankuro-toilet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep24-audit
