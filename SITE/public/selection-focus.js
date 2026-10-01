@@ -1,6 +1,11 @@
 'use strict';
 
 (() => {
+  const cardControls = document.createElement('link');
+  cardControls.rel = 'stylesheet';
+  cardControls.href = 'card-controls.css?v=20261001-card-controls-1';
+  document.head.append(cardControls);
+
   let active = false;
   let focusedEventIds = new Set();
   let focusedCharacters = new Set();
