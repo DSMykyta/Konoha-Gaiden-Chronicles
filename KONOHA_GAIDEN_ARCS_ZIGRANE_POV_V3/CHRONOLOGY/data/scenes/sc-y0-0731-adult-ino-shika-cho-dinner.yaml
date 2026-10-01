@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-y0-0731-adult-ino-shika-cho-dinner
+episode_id: ep-y0-finals-eve-preparation
+display_rank: 100
+continuity_id: main
+title: Доросла трійця Іно–Шіка–Чо вечеряє
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0731
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0731-adult-ino-shika-cho-dinner
+  title: Доросла трійця Іно–Шіка–Чо вечеряє
+  text: Іноїчі, Шікаку й Чодза вечеряють і жартують про доньку Іноїчі. Шикамару приходить забрати батька додому.
+  involvement:
+  - entity_id: c-inoichi
+    role: focus
+    mode: physical
+  - entity_id: c-shikaku
+    role: focus
+    mode: physical
+  - entity_id: c-choza
+    role: focus
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+relations: []
+presence:
+- id: pr-audit-59-ev-y0-0731-adult-ino-shika-cho-dinner-c-inoichi
+  entity_id: c-inoichi
+  from: ev-y0-0731-adult-ino-shika-cho-dinner.start
+  to: ev-y0-0731-adult-ino-shika-cho-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-ev-y0-0731-adult-ino-shika-cho-dinner-c-shikaku
+  entity_id: c-shikaku
+  from: ev-y0-0731-adult-ino-shika-cho-dinner.start
+  to: ev-y0-0731-adult-ino-shika-cho-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-ev-y0-0731-adult-ino-shika-cho-dinner-c-choza
+  entity_id: c-choza
+  from: ev-y0-0731-adult-ino-shika-cho-dinner.start
+  to: ev-y0-0731-adult-ino-shika-cho-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-ev-y0-0731-adult-ino-shika-cho-dinner-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0731-adult-ino-shika-cho-dinner.start
+  to: ev-y0-0731-adult-ino-shika-cho-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit

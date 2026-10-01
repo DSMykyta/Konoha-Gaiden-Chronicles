@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-y0-0801-naruto-shortcut-to-finals
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Наруто встигає на стадіон після невдалого короткого шляху
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-konohamaru-shortcut-bull-stampede
+  title: Конохамару заводить Наруто в обхід; бики несуть його до фіналу
+  text: Короткий шлях Конохамару заводить Наруто на інший кінець села. Спроба скористатися биками даймьо спричиняє тисняву,
+    проте Наруто встигає на стадіон.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+relations: []
+presence:
+- id: pr-audit-59-ev-y0-0801-konohamaru-shortcut-bull-stampede-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-konohamaru-shortcut-bull-stampede.start
+  to: ev-y0-0801-konohamaru-shortcut-bull-stampede.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-ev-y0-0801-konohamaru-shortcut-bull-stampede-c-konohamaru
+  entity_id: c-konohamaru
+  from: ev-y0-0801-konohamaru-shortcut-bull-stampede.start
+  to: ev-y0-0801-konohamaru-shortcut-bull-stampede.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+day_part: morning

@@ -3455,3 +3455,21 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep58-audit
+
+- id: lnk-audit-59-sc-y0-0801-hinata-encourages-naruto-sc-y0-0801-naruto-shortcut-to-finals
+  kind: before
+  a: sc-y0-0801-hinata-encourages-naruto
+  b: sc-y0-0801-naruto-shortcut-to-finals
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+
+- id: lnk-audit-59-sc-y0-0801-naruto-shortcut-to-finals-sc-y0-0801-finals-morning
+  kind: before
+  a: sc-y0-0801-naruto-shortcut-to-finals
+  b: sc-y0-0801-finals-morning
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit

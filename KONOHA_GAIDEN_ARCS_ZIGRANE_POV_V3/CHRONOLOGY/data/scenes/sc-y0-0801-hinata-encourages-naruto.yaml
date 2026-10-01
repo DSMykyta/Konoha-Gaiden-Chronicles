@@ -1,40 +1,77 @@
 schema_version: 1
-id: "sc-y0-0801-hinata-encourages-naruto"
+id: sc-y0-0801-hinata-encourages-naruto
 episode_id: ep-y0-hinata-encourages-naruto
 display_rank: 100
-continuity_id: "main"
-title: "Хіната повертає Наруто впевненість перед фіналом"
-location_id: "loc-konoha-training-field"
-placement: {anchor_id: "ta-y0-0801", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Хіната повертає Наруто впевненість перед фіналом
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0801-naruto-admits-fear-of-neji"
-    legacy_ids: ["V10-000063"]
-    title: "Наруто зізнається Хінаті, що боїться програти Неджі"
-    text: "Дорогою на фінали Наруто зустрічає Хінату на тренувальному полі й визнає, що непокоїться через майбутній бій із Неджі."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
-      - {entity_id: "c-neji", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-v10-000063", "evd-manga-finals-konoha-crush"]
-  - id: "ev-y0-0801-hinata-calls-naruto-proud-failure"
-    legacy_ids: ["V10-000063"]
-    title: "Хіната називає Наруто «гордим невдахою»"
-    text: "Хіната пояснює, що бачить силу Наруто в тому, що він щоразу підводиться після невдач, і повертає йому впевненість."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-hinata", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000063", "evd-manga-finals-konoha-crush"]
-relations:
-  - {id: "rel-0801-hinata-1", kind: "before", a: "ev-y0-0801-naruto-admits-fear-of-neji", b: "ev-y0-0801-hinata-calls-naruto-proud-failure", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+- id: ev-y0-0801-hinata-calls-naruto-proud-failure
+  legacy_ids:
+  - V10-000063
+  - ev-y0-0801-naruto-admits-fear-of-neji
+  title: Хіната повертає Наруто впевненість перед фіналом
+  text: На полі випробування з дзвіночками Наруто зізнається Хінаті в тривозі перед боєм із Неджі. Вона нагадує, як його
+    підтримка допомогла їй, і вірить у його перемогу. Наруто запрошує її на фінал; почувши феєрверки, поспішає на стадіон.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hinata
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-neji
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-v10-000063
+  - evd-manga-finals-konoha-crush
+  - evd-narutopedia-ep59-audit
+relations: []
 presence:
-  - {id: "pr-0801-hinata-naruto", entity_id: "c-naruto", from: "sc-y0-0801-hinata-encourages-naruto.start", to: "sc-y0-0801-hinata-encourages-naruto.end", basis: "source", evidence_ids: ["evd-v10-000063"], review: "accepted"}
-  - {id: "pr-0801-hinata-hinata", entity_id: "c-hinata", from: "sc-y0-0801-hinata-encourages-naruto.start", to: "sc-y0-0801-hinata-encourages-naruto.end", basis: "source", evidence_ids: ["evd-v10-000063"], review: "accepted"}
+- id: pr-0801-hinata-naruto
+  entity_id: c-naruto
+  from: sc-y0-0801-hinata-encourages-naruto.start
+  to: sc-y0-0801-hinata-encourages-naruto.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000063
+  review: accepted
+- id: pr-0801-hinata-hinata
+  entity_id: c-hinata
+  from: sc-y0-0801-hinata-encourages-naruto.start
+  to: sc-y0-0801-hinata-encourages-naruto.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000063
+  review: accepted
+- id: pr-audit-59-y0-0801-hinata-calls-naruto-proud-failure-c-hinata
+  entity_id: c-hinata
+  from: ev-y0-0801-hinata-calls-naruto-proud-failure.start
+  to: ev-y0-0801-hinata-calls-naruto-proud-failure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-y0-0801-hinata-calls-naruto-proud-failure-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-hinata-calls-naruto-proud-failure.start
+  to: ev-y0-0801-hinata-calls-naruto-proud-failure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit

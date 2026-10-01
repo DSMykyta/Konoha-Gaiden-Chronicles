@@ -1097,6 +1097,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep59-audit
+    type: reference
+    title: 'Narutopedia — The Final Rounds: Rush to the Battle Arena!'
+    url: https://naruto.fandom.com/wiki/The_Final_Rounds%3A_Rush_to_the_Battle_Arena%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3991,5 +3998,11 @@ evidence:
   - id: evd-narutopedia-ep58-audit
     source_id: src-narutopedia-ep58-audit
     locator: Episode 58, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep59-audit
+    source_id: src-narutopedia-ep59-audit
+    locator: Episode 59, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

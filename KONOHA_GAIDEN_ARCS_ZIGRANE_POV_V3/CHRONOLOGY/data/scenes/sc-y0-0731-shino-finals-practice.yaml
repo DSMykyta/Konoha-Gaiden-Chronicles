@@ -1,0 +1,41 @@
+schema_version: 1
+id: sc-y0-0731-shino-finals-practice
+episode_id: ep-y0-finals-eve-preparation
+display_rank: 100
+continuity_id: main
+title: Шіно готується до фінального бою
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0731
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0731-shino-finals-practice
+  title: Шіно готується до фінального бою
+  text: Шіно продовжує тренування напередодні свого фінального поєдинку.
+  involvement:
+  - entity_id: c-shino
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+relations: []
+presence:
+- id: pr-audit-59-ev-y0-0731-shino-finals-practice-c-shino
+  entity_id: c-shino
+  from: ev-y0-0731-shino-finals-practice.start
+  to: ev-y0-0731-shino-finals-practice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit

@@ -1727,3 +1727,9 @@ episodes:
   arc_id: arc-y0-chunin-exams
   title: Фіналісти готуються до вирішальних боїв
   description: Фіналісти готуються до вирішальних боїв.
+
+- id: ep-y0-finals-eve-preparation
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Переддень фіналу
+  description: Учасники та їхні родини проводять день перед фіналом.

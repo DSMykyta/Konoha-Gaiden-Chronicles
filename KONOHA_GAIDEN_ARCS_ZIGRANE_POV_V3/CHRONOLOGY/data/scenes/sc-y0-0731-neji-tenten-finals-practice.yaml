@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0731-neji-tenten-finals-practice
+episode_id: ep-y0-finals-eve-preparation
+display_rank: 100
+continuity_id: main
+title: Неджі й Тентен завершують підготовку
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0731
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0731-neji-tenten-finals-practice
+  title: Неджі й Тентен завершують підготовку
+  text: Напередодні фіналу Неджі тренується з Тентен.
+  involvement:
+  - entity_id: c-neji
+    role: focus
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+relations: []
+presence:
+- id: pr-audit-59-ev-y0-0731-neji-tenten-finals-practice-c-neji
+  entity_id: c-neji
+  from: ev-y0-0731-neji-tenten-finals-practice.start
+  to: ev-y0-0731-neji-tenten-finals-practice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-ev-y0-0731-neji-tenten-finals-practice-c-tenten
+  entity_id: c-tenten
+  from: ev-y0-0731-neji-tenten-finals-practice.start
+  to: ev-y0-0731-neji-tenten-finals-practice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit

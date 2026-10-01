@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-y0-0731-ichiraku-finals-eve
+episode_id: ep-y0-finals-eve-preparation
+display_rank: 100
+continuity_id: main
+title: Наруто отримує частування перед фіналом
+location_id: loc-ichiraku
+placement:
+  anchor_id: ta-y0-0731
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0731-ichiraku-treats-naruto
+  title: Наруто отримує частування перед фіналом
+  text: Після оголошення на стадіоні про завтрашній фінал Наруто йде до Ічіраку. Теучі й Аяме частують його великою порцією
+    рамену.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-teuchi
+    role: participant
+    mode: physical
+  - entity_id: c-ayame
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+relations: []
+presence:
+- id: pr-audit-59-ev-y0-0731-ichiraku-treats-naruto-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0731-ichiraku-treats-naruto.start
+  to: ev-y0-0731-ichiraku-treats-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-ev-y0-0731-ichiraku-treats-naruto-c-teuchi
+  entity_id: c-teuchi
+  from: ev-y0-0731-ichiraku-treats-naruto.start
+  to: ev-y0-0731-ichiraku-treats-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit
+- id: pr-audit-59-ev-y0-0731-ichiraku-treats-naruto-c-ayame
+  entity_id: c-ayame
+  from: ev-y0-0731-ichiraku-treats-naruto.start
+  to: ev-y0-0731-ichiraku-treats-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep59-audit

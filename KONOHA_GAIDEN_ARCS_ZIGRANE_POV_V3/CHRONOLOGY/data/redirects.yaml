@@ -771,9 +771,8 @@ redirects:
 - legacy_id: V10-000063
   status: superseded
   replacement_ids:
-  - ev-y0-0801-naruto-admits-fear-of-neji
   - ev-y0-0801-hinata-calls-naruto-proud-failure
-  reason: Pre-final Naruto/Hinata conversation split; Hinata restored to physical cast, Neji marked as mentioned.
+  reason: Pre-final Naruto/Hinata conversation retained as one whole moment; Neji mentioned only.
 - legacy_id: V10-000064
   status: migrated
   replacement_ids:

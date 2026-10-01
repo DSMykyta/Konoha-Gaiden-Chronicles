@@ -61,11 +61,18 @@ checked_anime_episodes:
 - 56
 - 57
 - 58
+- 59
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 59
+next_anime_episode: 60
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-konohamaru-shortcut-bull-stampede
+- ev-y0-0731-shino-finals-practice
+- ev-y0-0731-neji-tenten-finals-practice
+- ev-y0-0731-sand-siblings-prepare-finals
+- ev-y0-0731-adult-ino-shika-cho-dinner
+- ev-y0-0731-ichiraku-treats-naruto
 - ev-y0-0731-ino-brings-choji-fruit
 - ev-y0-0731-sakura-replaces-lee-flower
 - ev-y0-0731-baki-finds-gaara-missing
@@ -120,6 +127,12 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-naruto-shortcut-to-finals
+- sc-y0-0731-shino-finals-practice
+- sc-y0-0731-neji-tenten-finals-practice
+- sc-y0-0731-sand-siblings-prepare-finals
+- sc-y0-0731-adult-ino-shika-cho-dinner
+- sc-y0-0731-ichiraku-finals-eve
 - sc-y0-0731-naruto-leaves-hospital
 - sc-y0-0731-ino-visits-choji
 - sc-y0-0731-sakura-visits-lee
@@ -1077,6 +1090,32 @@ episode_audits:
     retained Gaara confession to the Shukaku/weapon/father-assassins account in episode 58; no Yashamaru flashback attributed
     here. Removed unsupported night label and moved Naruto’s hospital departure after the confrontation while retaining
     its ID and source.
+- episode: 59
+  baseline_revision: 9e702d6d62ce5e4c822a3dd5360212c77e01dd3b
+  added_moment_ids:
+  - ev-y0-0731-ichiraku-treats-naruto
+  - ev-y0-0731-adult-ino-shika-cho-dinner
+  - ev-y0-0731-sand-siblings-prepare-finals
+  - ev-y0-0731-neji-tenten-finals-practice
+  - ev-y0-0731-shino-finals-practice
+  - ev-y0-0801-konohamaru-shortcut-bull-stampede
+  added_scene_ids:
+  - sc-y0-0731-ichiraku-finals-eve
+  - sc-y0-0731-adult-ino-shika-cho-dinner
+  - sc-y0-0731-sand-siblings-prepare-finals
+  - sc-y0-0731-neji-tenten-finals-practice
+  - sc-y0-0731-shino-finals-practice
+  - sc-y0-0801-naruto-shortcut-to-finals
+  updated_moment_ids:
+  - ev-y0-0801-hinata-calls-naruto-proud-failure
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Merged the Naruto/Hinata conversation into one complete moment, preserving the removed ID as a legacy alias. Added
+    the prior-day Ichiraku meal, adult Ino–Shika–Cho dinner, Sand preparation, Neji/Tenten and Shino practice, and
+    the whole Konohamaru shortcut/bull-stampede race. Dates retained as July 31 and August 1 finals morning; exact time of day not claimed for the preparation scenes.
+  merged_moment_ids:
+    ev-y0-0801-naruto-admits-fear-of-neji: ev-y0-0801-hinata-calls-naruto-proud-failure
+
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
