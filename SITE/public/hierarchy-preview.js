@@ -9,13 +9,16 @@
   const baseShowEventPreview = showEventPreview;
   const cascade = [];
   const closeTimers = [];
+  const PANEL_WIDTH = 430;
+  const PANEL_GAP = 12;
+  const VIEWPORT_GUTTER = 12;
 
   const style = document.createElement('style');
   style.textContent = `
     /* One panel surface for ARC / EPISODE / SCENE / MOMENT. */
     .event-card,
     .event-preview {
-      width: min(480px, calc(100vw - 24px)) !important;
+      width: min(${PANEL_WIDTH}px, calc(100vw - 24px)) !important;
       max-width: calc(100vw - 24px) !important;
       border: 1px solid var(--glass-border) !important;
       border-radius: 18px !important;
@@ -23,7 +26,10 @@
       -webkit-backdrop-filter: blur(12px) saturate(1) !important;
       backdrop-filter: blur(12px) saturate(1) !important;
       color: var(--text);
-      box-shadow: var(--shadow-lg) !important;
+      box-shadow: inset 0 0 0 999px rgba(248,250,252,.52), var(--shadow-lg) !important;
+    }
+    .story-panel {
+      transition: left 220ms cubic-bezier(.2,.72,.2,1), top 180ms ease !important;
     }
     #cardHeader,
     #cardScroll,
@@ -74,8 +80,11 @@
       counter-reset: hierarchy-row;
       display: grid;
       gap: 4px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
     }
-    .scene-actions { list-style: none; padding-left: 0; }
+    .scene-actions { list-style: none; }
     .story-children .result,
     .scene-actions li {
       position: relative;
@@ -84,11 +93,11 @@
       display: grid;
       grid-template-columns: 22px minmax(0,1fr);
       align-items: center;
-      column-gap: 8px;
+      column-gap: 9px;
       width: 100%;
-      min-height: 0;
+      min-height: 42px;
       margin: 0;
-      padding: 10px 12px;
+      padding: 9px 12px;
       border: 0 !important;
       border-radius: 14px;
       background: transparent !important;
@@ -104,6 +113,7 @@
       grid-column: 1;
       justify-self: start;
       align-self: center;
+      padding: 0 !important;
       color: var(--muted);
       font-size: 9px;
       line-height: 1;
@@ -113,17 +123,19 @@
     }
     .story-children .result > span,
     .story-children .result > strong,
-    .scene-actions li > div {
+    .scene-actions li > div,
+    .scene-actions li > .scene-action-title {
       grid-column: 2;
-      display: block;
       min-width: 0;
       width: 100%;
       align-self: center;
     }
+    .scene-actions li > div { display: contents; }
     .story-children .result strong,
     .scene-action-title {
       display: block;
       width: 100%;
+      margin: 0;
       padding: 0;
       background: transparent !important;
       color: var(--text);
@@ -148,10 +160,10 @@
       border-radius: 14px;
       opacity: 0;
       pointer-events: none;
-      background: linear-gradient(145deg, rgba(255,255,255,.62), rgba(232,239,247,.22));
-      -webkit-backdrop-filter: blur(14px) saturate(1.14);
-      backdrop-filter: blur(14px) saturate(1.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.94), inset 0 -1px 0 rgba(124,142,164,.10), 0 5px 14px rgba(42,54,70,.09);
+      background: linear-gradient(145deg, rgba(255,255,255,.70), rgba(232,239,247,.34));
+      -webkit-backdrop-filter: blur(14px) saturate(1.08);
+      backdrop-filter: blur(14px) saturate(1.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.96), inset 0 -1px 0 rgba(124,142,164,.10), 0 5px 14px rgba(42,54,70,.09);
       transform: translate3d(0,0,0);
       transition: transform 210ms cubic-bezier(.2,.72,.2,1), height 210ms cubic-bezier(.2,.72,.2,1), opacity 110ms ease;
       will-change: transform,height,opacity;
@@ -175,7 +187,8 @@
       }
     }
     @media (prefers-reduced-motion: reduce) {
-      .hierarchy-hover-glass { transition: opacity 80ms linear; }
+      .hierarchy-hover-glass,
+      .story-panel { transition: opacity 80ms linear !important; }
     }
   `;
   document.head.append(style);
@@ -265,9 +278,22 @@
     container.addEventListener('focusout', event => { if (!container.contains(event.relatedTarget)) glass.style.opacity = '0'; });
   }
 
+  function normalizeSceneRows(root) {
+    root?.querySelectorAll?.('.scene-actions li').forEach(row => {
+      const title = row.querySelector('.scene-action-title');
+      if (!title) return;
+      row.querySelectorAll('.event-gallery,.story-row-description,small').forEach(node => node.remove());
+      if (title.parentElement !== row) row.append(title);
+      [...row.children].forEach(child => {
+        if (child !== title) child.remove();
+      });
+    });
+  }
+
   function prepareHierarchyLists(root, surface) {
     unifyPanelSurface(root, surface);
-    root?.querySelectorAll?.('.story-children .result small, .scene-actions li small, .scene-actions li .event-gallery').forEach(node => node.remove());
+    root?.querySelectorAll?.('.story-children .result small').forEach(node => node.remove());
+    normalizeSceneRows(root);
     root?.querySelectorAll?.('.story-children, .scene-actions').forEach(bindMovingHighlight);
   }
 
@@ -300,27 +326,55 @@
     closeTimers[depth] = setTimeout(() => closeFrom(depth), 220);
   }
 
-  function panelWidth(depth, viewportWidth) {
-    return Math.min(480, Math.max(260, viewportWidth - 24));
+  function panelWidth(viewportWidth) {
+    return Math.min(PANEL_WIDTH, Math.max(260, viewportWidth - VIEWPORT_GUTTER * 2));
+  }
+
+  function openSurfacesBefore(depth, parentSurface) {
+    const surfaces = [];
+    const root = $('eventCard');
+    if (root && !root.hidden) surfaces.push(root);
+    for (let i = 0; i < depth; i++) {
+      const panel = cascade[i]?.panel;
+      if (panel?.isConnected && !surfaces.includes(panel)) surfaces.push(panel);
+    }
+    if (parentSurface?.isConnected && !surfaces.includes(parentSurface)) surfaces.push(parentSurface);
+    return surfaces;
+  }
+
+  function shiftSurfacesLeft(surfaces, amount) {
+    if (amount <= 0 || !surfaces.length) return;
+    for (const surface of surfaces) {
+      const current = parseFloat(surface.style.left);
+      if (!Number.isFinite(current)) continue;
+      surface.style.left = `${current - amount}px`;
+    }
   }
 
   function positionPanel(panel, parentSurface, depth) {
-    const gap = 12;
     const vw = document.documentElement.clientWidth || window.innerWidth;
     const vh = document.documentElement.clientHeight || window.innerHeight;
-    const parentRect = parentSurface.getBoundingClientRect();
-    let width = panelWidth(depth, vw);
-    const rightSpace = vw - parentRect.right - gap, leftSpace = parentRect.left - gap;
-    const side = rightSpace >= width || rightSpace >= leftSpace ? 'right' : 'left';
-    const available = side === 'right' ? rightSpace : leftSpace;
-    if (available < width) width = Math.max(240, Math.min(width, available));
+    const width = panelWidth(vw);
     panel.style.width = `${width}px`;
-    panel.dataset.side = side;
-    let left = side === 'right' ? parentRect.right + gap : parentRect.left - gap - width;
-    left = clamp(left, 12, Math.max(12, vw - width - 12));
+    panel.dataset.side = 'right';
+
+    let parentRect = parentSurface.getBoundingClientRect();
+    let desiredLeft = parentRect.right + PANEL_GAP;
+    const overflow = desiredLeft + width + VIEWPORT_GUTTER - vw;
+    if (overflow > 0) {
+      const surfaces = openSurfacesBefore(depth, parentSurface);
+      const leftmost = Math.min(...surfaces.map(surface => surface.getBoundingClientRect().left));
+      const availableShift = Math.max(0, leftmost - VIEWPORT_GUTTER);
+      const shift = Math.min(overflow, availableShift || overflow);
+      shiftSurfacesLeft(surfaces, shift);
+      parentRect = parentSurface.getBoundingClientRect();
+      desiredLeft = parentRect.right + PANEL_GAP;
+    }
+
+    panel.style.left = `${desiredLeft}px`;
     const headerBottom = document.querySelector('.masthead')?.getBoundingClientRect?.().bottom || 86;
-    const topLimit = headerBottom + 12, bottomLimit = vh - 132;
-    panel.style.left = `${left}px`;
+    const topLimit = headerBottom + 12;
+    const bottomLimit = vh - 132;
     panel.style.maxHeight = `${Math.max(160, bottomLimit - topLimit)}px`;
     panel.style.top = `${clamp(parentRect.top, topLimit, Math.max(topLimit, bottomLimit - Math.min(panel.scrollHeight || 480, bottomLimit - topLimit)))}px`;
   }
@@ -342,7 +396,7 @@
     const scene = sceneMap.get(id);
     if (!scene) return null;
     const group = sceneEvents(id), cast = sceneCast(scene, group), range = storyRange(group.length ? group : [scene]);
-    const actions = group.map(event => `<li data-scene-preview="${esc(event.id)}"><div><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(event.title)}">${esc(event.title)}</button></div></li>`).join('');
+    const actions = group.map(event => `<li data-scene-preview="${esc(event.id)}"><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(event.title)}">${esc(event.title)}</button></li>`).join('');
     return {
       label: 'Опис сцени',
       html: `<div class="story-panel-header">${cardMetaLine('scene', range.text, range.hasYear)}</div><h2>${esc(scene.title)}</h2><button class="scene-context" data-open-scene="${esc(scene.id)}" title="Читати сцену цілком"><span>Сцена · ${actionCount(group.length)}</span>${esc(name(scene.location_id))} <span aria-hidden="true">↗</span></button>${cast.length ? `<div class="people scene-people">${cast.map(entityId => `<button class="person" data-event-focus-character="${esc(entityId)}" aria-label="Зосередитися на лінії ${esc(name(entityId))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(entityId)}"></span>${esc(name(entityId))}</button>`).join('')}</div>` : ''}${actions ? `<ol class="scene-actions">${actions}</ol>` : ''}`
@@ -377,8 +431,6 @@
     trigger.addEventListener('pointerenter', event => {
       clearTimers();
       if (!canHover(event)) return;
-      const rect = parentSurface.getBoundingClientRect(), viewportWidth = document.documentElement.clientWidth || window.innerWidth;
-      if (Math.max(rect.left - 12, viewportWidth - rect.right - 12) < panelWidth(depth, viewportWidth)) return;
       openPreview(kind, id, parentSurface, trigger, depth, false);
     });
     trigger.addEventListener('pointerleave', () => scheduleClose(depth));
@@ -446,9 +498,13 @@
     baseShowEventPreview(...args);
     const preview = $('eventPreview');
     const content = $('eventPreviewContent');
-    if (preview && content) {
+    const card = $('eventCard');
+    if (preview && content && card && !preview.hidden) {
       preview.classList.add('story-panel');
       unifyPanelSurface(content, preview);
+      card.removeAttribute('data-preview-open');
+      preview.dataset.overlay = 'false';
+      positionPanel(preview, card, 0);
     }
   };
 
