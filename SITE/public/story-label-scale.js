@@ -1,9 +1,15 @@
 'use strict';
+
 (() => {
   if (typeof StoryClouds === 'undefined') return;
 
   const LEVEL_LABELS = {moment: 'Момент', scene: 'Сцена', episode: 'Епізод'};
   const LEVELS = Object.keys(LEVEL_LABELS);
+  const LARGE_MIN = 96;
+  const SMALL_MIN = 76;
+  const MAX_WIDTH = 190;
+  const GAP = 6;
+  const localClamp = (value, min, max) => Math.max(min, Math.min(max, value));
   const basePalette = StoryClouds.palette.bind(StoryClouds);
 
   window.__storyScaleFocus = {
@@ -20,7 +26,7 @@
     const focus = window.__storyScaleFocus;
     if (!focus?.active) return colors;
     if (focus.cloudKeys instanceof Set && focus.cloudKeys.has(key)) {
-      return {...colors, alpha: Math.min(1, Math.max(colors.alpha, focus.mode === 'fixed' ? .86 : .76))};
+      return {...colors, alpha: Math.min(1, Math.max(colors.alpha, focus.mode === 'fixed' ? .88 : .78))};
     }
     return {...colors, alpha: colors.alpha * (focus.mode === 'fixed' ? .025 : .13)};
   };
@@ -49,7 +55,7 @@
 
   const style = document.createElement('style');
   style.textContent = `
-    .time-axis { bottom: calc(48px + env(safe-area-inset-bottom)) !important; }
+    .time-axis { bottom: calc(70px + env(safe-area-inset-bottom)) !important; }
     #timeline .cloud-label,
     #timeline .story-scale-label,
     #timeline .moment-inline-label { display: none !important; }
@@ -60,7 +66,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      height: calc(54px + env(safe-area-inset-bottom));
+      height: calc(76px + env(safe-area-inset-bottom));
       padding-bottom: env(safe-area-inset-bottom);
       border-top: 1px solid #dfe3e8c7;
       background: linear-gradient(180deg,#f8fafbd9,#f5f6f8f5 34%,#f5f6f8 100%);
@@ -70,8 +76,8 @@
     }
     .story-title-level {
       position: absolute;
-      z-index: 3;
-      top: 10px;
+      z-index: 5;
+      top: 20px;
       left: max(12px,env(safe-area-inset-left));
       width: 102px;
       height: 34px;
@@ -89,13 +95,14 @@
     .story-title-track {
       position: absolute;
       inset: 0;
-      overflow: hidden;
+      overflow: visible;
       pointer-events: none;
     }
     .story-title-slot {
       position: absolute;
       top: 0;
-      height: 54px;
+      height: 76px;
+      overflow: visible;
       pointer-events: none;
     }
     .story-title-slot::before {
@@ -104,43 +111,51 @@
       top: 0;
       left: var(--story-anchor,50%);
       width: 1px;
-      height: 8px;
-      background: #adb5c0;
+      height: 10px;
+      background: #aeb6c1;
       transform: translateX(-.5px);
-      opacity: .78;
+      opacity: .82;
     }
     .story-title-label {
       position: absolute;
-      inset: 10px 3px 4px;
-      display: block;
+      inset: 11px 3px 4px;
+      display: -webkit-box;
       width: calc(100% - 6px);
+      height: 60px;
       min-width: 0;
-      padding: 7px 5px 6px;
+      padding: 6px 7px;
       overflow: hidden;
       border-radius: 7px;
-      color: #4f5967;
-      text-align: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      font-size: 11px;
-      font-weight: 550;
-      line-height: 1.3;
+      color: #4a5461;
+      background: transparent;
+      text-align: left;
+      white-space: normal;
+      text-overflow: clip;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      font-size: 10.5px;
+      font-weight: 560;
+      line-height: 1.35;
       cursor: pointer;
       pointer-events: auto;
-      transition: opacity 150ms ease, background 150ms ease, color 150ms ease;
+      transition: opacity 150ms ease, background 150ms ease, color 150ms ease, box-shadow 150ms ease;
     }
     .story-title-label:hover,
     .story-title-label:focus-visible,
     .story-title-label.is-active {
+      z-index: 4;
       color: #20262e;
-      background: #ffffffd9;
+      background: #fffffff0;
+      box-shadow: 0 2px 9px #27364c12;
     }
     .story-title-scale.is-hovering .story-title-label:not(.is-active) { opacity: .16; }
     .story-title-scale.is-fixed .story-title-label:not(.is-active) {
       opacity: 0;
       pointer-events: none;
     }
-    .story-title-label.is-active { font-weight: 750; }
+    .story-title-label.is-active { font-weight: 760; }
 
     #timeline .thread,
     #timeline .node,
@@ -152,9 +167,15 @@
     #timeline .thread-hit.is-story-scale-hover-muted,
     #timeline .node-hit.is-story-scale-hover-muted { pointer-events: none; }
 
+    @media (min-width: 1400px) {
+      .story-title-label { font-size: 11px; }
+    }
     @media (max-width: 760px) {
-      .story-title-level { width: 90px; left: 8px; padding-left: 8px; font-size: 10px; }
-      .story-title-label { font-size: 10px; padding-inline: 3px; }
+      .time-axis { bottom: calc(66px + env(safe-area-inset-bottom)) !important; }
+      .story-title-scale { height: calc(72px + env(safe-area-inset-bottom)); }
+      .story-title-level { width: 90px; top: 18px; left: 8px; padding-left: 8px; font-size: 10px; }
+      .story-title-slot { height: 72px; }
+      .story-title-label { height: 56px; padding-inline: 5px; font-size: 9.5px; }
     }
     @media (prefers-reduced-motion: reduce) {
       .story-title-label,
@@ -203,14 +224,7 @@
       for (const node of moments) {
         const events = (node.group || []).filter(eventVisible);
         if (!events.length || node.day === null) continue;
-        items.push({
-          key: `moment:${node.id}`,
-          kind: 'moment',
-          id: node.id,
-          title: node.title,
-          day: node.day,
-          events
-        });
+        items.push({key:`moment:${node.id}`,kind:'moment',id:node.id,title:node.title,day:node.day,events});
       }
     } else if (level === 'scene') {
       for (const scene of scenes) {
@@ -218,11 +232,11 @@
         const events = (scene.group || []).filter(eventVisible);
         if (!events.length || scene.position === null) continue;
         items.push({
-          key: `scene:${scene.id}`,
-          kind: 'scene',
-          id: scene.id,
-          title: meta?.title || events[0]?.scene_title || scene.id,
-          day: scene.position,
+          key:`scene:${scene.id}`,
+          kind:'scene',
+          id:scene.id,
+          title:meta?.title || events[0]?.scene_title || scene.id,
+          day:scene.position,
           events
         });
       }
@@ -242,17 +256,83 @@
         const days = episodeScenes.map(scene => scene.position).filter(day => day !== null);
         if (!days.length) continue;
         items.push({
-          key: `episode:${episodeId}`,
-          kind: 'episode',
-          id: episodeId,
-          title: episode?.title || episodeId,
-          day: (Math.min(...days) + Math.max(...days)) / 2,
+          key:`episode:${episodeId}`,
+          kind:'episode',
+          id:episodeId,
+          title:episode?.title || episodeId,
+          day:(Math.min(...days)+Math.max(...days))/2,
           events
         });
       }
     }
-
     return items;
+  }
+
+  function preferredWidth(title, minimum) {
+    const length = String(title || '').trim().length;
+    return Math.max(minimum, Math.min(MAX_WIDTH, 74 + Math.sqrt(Math.max(1, length)) * 15));
+  }
+
+  function packReadable(entries, width) {
+    if (!entries.length) return [];
+    const compact = width <= 760;
+    const leftBound = compact ? 104 : 122;
+    const rightBound = width - (compact ? 6 : 10);
+    const available = Math.max(1, rightBound - leftBound);
+    const minimum = compact ? SMALL_MIN : LARGE_MIN;
+    let widths = entries.map(entry => preferredWidth(entry.title, minimum));
+    const gaps = GAP * Math.max(0, entries.length - 1);
+    const preferredTotal = widths.reduce((sum, itemWidth) => sum + itemWidth, 0) + gaps;
+
+    if (preferredTotal > available) {
+      const usable = Math.max(1, available - gaps);
+      const idealTotal = widths.reduce((sum, itemWidth) => sum + itemWidth, 0);
+      const scale = usable / idealTotal;
+      const hardFloor = Math.max(compact ? 54 : 66, usable / entries.length * .78);
+      widths = widths.map(itemWidth => Math.max(hardFloor, itemWidth * scale));
+      const total = widths.reduce((sum, itemWidth) => sum + itemWidth, 0);
+      if (total > usable) {
+        const secondScale = usable / total;
+        widths = widths.map(itemWidth => itemWidth * secondScale);
+      }
+    }
+
+    const positions = [];
+    let cursor = leftBound;
+    for (let i = 0; i < entries.length; i++) {
+      const itemWidth = widths[i];
+      const desired = entries[i].x - itemWidth / 2;
+      const left = Math.max(cursor, desired);
+      positions.push(left);
+      cursor = left + itemWidth + GAP;
+    }
+
+    const end = positions.at(-1) + widths.at(-1);
+    if (end > rightBound) {
+      let right = rightBound;
+      for (let i = entries.length - 1; i >= 0; i--) {
+        positions[i] = Math.min(positions[i], right - widths[i]);
+        right = positions[i] - GAP;
+      }
+    }
+
+    if (positions[0] < leftBound) {
+      const shift = leftBound - positions[0];
+      for (let i = 0; i < positions.length; i++) positions[i] += shift;
+    }
+
+    const finalEnd = positions.at(-1) + widths.at(-1);
+    if (finalEnd > rightBound) {
+      const shift = finalEnd - rightBound;
+      for (let i = 0; i < positions.length; i++) positions[i] -= shift;
+    }
+
+    return entries.map((entry, index) => ({
+      ...entry,
+      slotLeft: positions[index],
+      slotWidth: widths[index],
+      anchor: ((entry.x - positions[index]) / Math.max(1, widths[index])) * 100
+    }));
   }
 
   function layoutItems(items) {
@@ -270,23 +350,10 @@
         const axis = dayToAxis(item.day, dated);
         return axis >= lo && axis < hi;
       })
-      .map(item => ({...item, x: timeScale.px(item.day)}))
-      .sort((a, b) => a.x - b.x || a.key.localeCompare(b.key));
+      .map(item => ({...item, x:timeScale.px(item.day)}))
+      .sort((a,b) => a.x-b.x || a.key.localeCompare(b.key));
 
-    return visible.map((item, index) => {
-      const previousX = visible[index - 1]?.x;
-      const nextX = visible[index + 1]?.x;
-      const left = index ? (previousX + item.x) / 2 : 0;
-      const right = index < visible.length - 1 ? (item.x + nextX) / 2 : width;
-      const slotLeft = Math.max(0, left + 2);
-      const slotRight = Math.min(width, right - 2);
-      return {
-        ...item,
-        slotLeft,
-        slotWidth: Math.max(22, slotRight - slotLeft),
-        anchor: clamp((item.x - slotLeft) / Math.max(1, slotRight - slotLeft) * 100, 0, 100)
-      };
-    });
+    return packReadable(visible, width);
   }
 
   function ensureScale() {
@@ -365,10 +432,10 @@
     const fixed = mode === 'fixed';
 
     window.__storyScaleFocus = {
-      active: true,
+      active:true,
       mode,
-      key: item.key,
-      eventIds: new Set((item.events || []).map(event => event.id)),
+      key:item.key,
+      eventIds:new Set((item.events || []).map(event => event.id)),
       characterIds,
       cloudKeys
     };
@@ -405,21 +472,21 @@
 
   function clearDomFocusClasses() {
     document.querySelectorAll('#timeline .is-story-scale-hover-muted,#timeline .is-story-scale-fixed-hidden').forEach(element => {
-      element.classList.remove('is-story-scale-hover-muted', 'is-story-scale-fixed-hidden');
+      element.classList.remove('is-story-scale-hover-muted','is-story-scale-fixed-hidden');
     });
-    scaleRoot?.classList.remove('is-hovering', 'is-fixed');
+    scaleRoot?.classList.remove('is-hovering','is-fixed');
     scaleRoot?.querySelectorAll('.story-title-label.is-active').forEach(label => label.classList.remove('is-active'));
   }
 
   function clearStoryFocus() {
     clearDomFocusClasses();
     window.__storyScaleFocus = {
-      active: false,
-      mode: null,
-      key: null,
-      eventIds: new Set(),
-      characterIds: new Set(),
-      cloudKeys: new Set()
+      active:false,
+      mode:null,
+      key:null,
+      eventIds:new Set(),
+      characterIds:new Set(),
+      cloudKeys:new Set()
     };
     StoryClouds.__storyLabelRenderer?.refresh();
   }
@@ -433,18 +500,18 @@
     const activateHover = () => {
       if (fixedKey) return;
       hoverKey = item.key;
-      focusItem(item, 'hover');
+      focusItem(item,'hover');
     };
     const deactivateHover = () => {
       if (fixedKey || hoverKey !== item.key) return;
       hoverKey = null;
       clearStoryFocus();
     };
-    button.addEventListener('pointerenter', activateHover);
-    button.addEventListener('pointerleave', deactivateHover);
-    button.addEventListener('focus', activateHover);
-    button.addEventListener('blur', deactivateHover);
-    button.addEventListener('click', event => {
+    button.addEventListener('pointerenter',activateHover);
+    button.addEventListener('pointerleave',deactivateHover);
+    button.addEventListener('focus',activateHover);
+    button.addEventListener('blur',deactivateHover);
+    button.addEventListener('click',event => {
       event.preventDefault();
       event.stopPropagation();
       hoverKey = null;
@@ -455,7 +522,7 @@
       }
       if (typeof closeCard === 'function' && document.getElementById('eventCard') && !document.getElementById('eventCard').hidden) closeCard();
       fixedKey = item.key;
-      focusItem(item, 'fixed');
+      focusItem(item,'fixed');
     });
   }
 
@@ -466,7 +533,7 @@
     levelSelect.value = scaleLevel;
 
     const items = layoutItems(buildItems(scaleLevel));
-    currentItems = new Map(items.map(item => [item.key, item]));
+    currentItems = new Map(items.map(item => [item.key,item]));
     scaleTrack.replaceChildren();
 
     for (const item of items) {
@@ -474,7 +541,7 @@
       slot.className = 'story-title-slot';
       slot.style.left = `${item.slotLeft}px`;
       slot.style.width = `${item.slotWidth}px`;
-      slot.style.setProperty('--story-anchor', `${item.anchor}%`);
+      slot.style.setProperty('--story-anchor',`${item.anchor}%`);
 
       const button = document.createElement('button');
       button.type = 'button';
@@ -482,8 +549,8 @@
       button.dataset.storyKey = item.key;
       button.title = item.title;
       button.textContent = item.title;
-      button.setAttribute('aria-label', `${LEVEL_LABELS[item.kind]}: ${item.title}`);
-      bindLabel(button, item);
+      button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);
+      bindLabel(button,item);
       slot.append(button);
       scaleTrack.append(slot);
     }
@@ -493,7 +560,7 @@
     const activeKey = fixedKey || hoverKey;
     if (activeKey) {
       const item = currentItems.get(activeKey);
-      if (item) focusItem(item, fixedKey ? 'fixed' : 'hover');
+      if (item) focusItem(item,fixedKey ? 'fixed' : 'hover');
       else {
         fixedKey = null;
         hoverKey = null;
@@ -520,27 +587,27 @@
     levelSelect.value = scaleLevel;
 
     const timeline = document.getElementById('timeline');
-    if (timeline) new MutationObserver(scheduleRenderScale).observe(timeline, {childList: true});
+    if (timeline) new MutationObserver(scheduleRenderScale).observe(timeline,{childList:true});
 
     if (typeof render === 'function') {
       const baseRender = render;
       render = function renderWithStoryTitleScale() {
-        const result = baseRender.apply(this, arguments);
+        const result = baseRender.apply(this,arguments);
         scheduleRenderScale();
         return result;
       };
     }
 
-    document.addEventListener('keydown', event => {
+    document.addEventListener('keydown',event => {
       if (event.key !== 'Escape' || !fixedKey) return;
       fixedKey = null;
       hoverKey = null;
       clearStoryFocus();
     });
-    window.addEventListener('resize', scheduleRenderScale);
+    window.addEventListener('resize',scheduleRenderScale);
     scheduleRenderScale();
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once: true});
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',init,{once:true});
   else init();
 })();
