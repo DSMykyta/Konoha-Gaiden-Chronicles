@@ -1006,6 +1006,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep49-audit
+    type: reference
+    title: 'Narutopedia — Lee''s Hidden Strength: Forbidden Secret Jutsu!'
+    url: https://naruto.fandom.com/wiki/Lee%27s_Hidden_Strength%3A_Forbidden_Secret_Jutsu%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3819,5 +3826,11 @@ evidence:
   - id: evd-narutopedia-ep48-audit
     source_id: src-narutopedia-ep48-audit
     locator: Episode 48, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep49-audit
+    source_id: src-narutopedia-ep49-audit
+    locator: Episode 49, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

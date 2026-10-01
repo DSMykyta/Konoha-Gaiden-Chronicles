@@ -51,9 +51,10 @@ checked_anime_episodes:
 - 46
 - 47
 - 48
+- 49
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 49
+next_anime_episode: 50
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -821,6 +822,16 @@ episode_audits:
   notes:
   - Enriched beginning of one whole Lee–Gaara bout spanning episodes 48–50. Weights removal, armour discovery and Front
     Lotus are phases of this fight, not separate moments.
+- episode: 49
+  baseline_revision: 3b337da7bb931b1e95254d9f5d64392f08b96a70
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-gaara-defeats-lee
+  cast_review: Author forest-failure outcome preserved; no unsupported Team 9 presence added to preliminaries.
+  notes:
+  - 'Enriched the same whole bout: sand decoy and Second/Third Gate escalation. Guy and Neji memories are not July arena
+    events; no separate exhaustion, gate-opening or surprise moments.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

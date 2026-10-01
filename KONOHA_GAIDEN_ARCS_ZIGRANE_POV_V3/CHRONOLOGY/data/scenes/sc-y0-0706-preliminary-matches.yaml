@@ -318,9 +318,10 @@ events:
   legacy_ids:
   - V10-000046-J
   title: Ґаара перемагає й тяжко травмує Лі
-  text: У дев’ятому поєдинку автоматичний піщаний захист Ґаари відбиває атаки тайджюцу Лі. Лі знімає важкі обтяжувачі
-    з ніг і завдяки збільшеній швидкості долає цей захист, але виявляє на тілі Ґаари ще й піщану броню. Лі підкидає супротивника
-    серією ударів і застосовує Передній лотос. Зрештою Ґаара перемагає та тяжко ушкоджує руку й ногу Лі; Бакі спостерігає
+  text: У дев’ятому поєдинку автоматичний піщаний захист Ґаари відбиває атаки Лі. Знявши обтяжувачі, Лі долає його швидкістю,
+    але на тілі Ґаари виявляється піщана броня. Лі підкидає супротивника й застосовує Передній лотос, проте влучає в
+    порожню піщану підміну. Справжній Ґаара контратакує виснаженого Лі. Лі відкриває Другі внутрішні ворота, відновлюючи
+    сили, а потім Треті, щоб продовжити наступ. Зрештою Ґаара перемагає та тяжко ушкоджує руку й ногу Лі; Бакі спостерігає
     за виступом свого учня.
   origin: M
   extent: interval
@@ -338,11 +339,18 @@ events:
   - entity_id: c-hayate
     role: observer
     mode: physical
+  - entity_id: c-might-guy
+    role: observer
+    mode: physical
+  - entity_id: c-neji
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046-J
   - evd-manga-chunin-prelims
   - evd-anime-31-50
   - evd-narutopedia-ep48-audit
+  - evd-narutopedia-ep49-audit
 - id: ev-y0-0706-dosu-defeats-choji
   legacy_ids:
   - V10-000046-K
@@ -972,3 +980,19 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep48-audit
+- id: pr-audit-49-y0-0706-gaara-defeats-lee-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0706-gaara-defeats-lee.start
+  to: ev-y0-0706-gaara-defeats-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep49-audit
+- id: pr-audit-49-y0-0706-gaara-defeats-lee-c-neji
+  entity_id: c-neji
+  from: ev-y0-0706-gaara-defeats-lee.start
+  to: ev-y0-0706-gaara-defeats-lee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep49-audit
