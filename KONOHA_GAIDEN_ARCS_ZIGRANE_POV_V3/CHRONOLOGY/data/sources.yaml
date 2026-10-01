@@ -647,6 +647,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep13-audit
+    type: reference
+    title: 'Narutopedia — Haku''s Secret Jutsu: Demonic Mirroring Ice Crystals'
+    url: https://naruto.fandom.com/wiki/Haku%27s_Secret_Jutsu%3A_Demonic_Mirroring_Ice_Crystals
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-waraji-wave-audit
+    type: reference
+    title: "Narutopedia \u2014 Waraji"
+    url: https://naruto.fandom.com/wiki/Waraji
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3121,5 +3135,18 @@ evidence:
   - id: evd-narutopedia-ep12-audit
     source_id: src-narutopedia-ep12-audit
     locator: Episode 12, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep13-audit
+    source_id: src-narutopedia-ep13-audit
+    locator: Episode 13, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-waraji-wave-audit
+    source_id: src-narutopedia-waraji-wave-audit
+    locator: "Part I / Prologue \u2014 Land of Waves: identified kidnappers, hostage\
+      \ threat and defeat"
     basis: source
     review: accepted

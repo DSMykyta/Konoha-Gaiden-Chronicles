@@ -2001,6 +2001,17 @@ entities:
     aliases:
     - Ґіічі
 
+  - id: c-waraji
+    kind: person
+    name: Waraji
+    aliases:
+    - Вараджі
+  - id: c-zori
+    kind: person
+    name: Zōri
+    aliases:
+    - Зорі
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
