@@ -1638,3 +1638,14 @@ episodes:
   arc_id: arc-y0-scroll-of-seals
   title: Хірузен та Ірука про випуск Наруто
   description: Окрема лінія на даху резиденції під час пригоди Наруто й Конохамару.
+
+- id: ep-y0-tora-retrieval
+  continuity_id: main
+  arc_id: arc-y0-d-rank-missions
+  title: Команда 7 повертає загублену Тору
+  description: Пошук і впіймання кішки до отримання місії Тадзуни; точний день пошуку не встановлено.
+- id: ep-y0-gato-zabuza-response
+  continuity_id: main
+  arc_id: arc-y0-land-of-waves
+  title: Ґато й Забуза після невдалої засідки
+  description: Окрема лінія наймачів після провалу Братів-Демонів; точні місце та дата розмови не встановлені.

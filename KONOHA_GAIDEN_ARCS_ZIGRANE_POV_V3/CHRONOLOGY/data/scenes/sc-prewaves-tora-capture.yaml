@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-prewaves-tora-capture
+episode_id: ep-y0-tora-retrieval
+display_rank: 100
+continuity_id: main
+title: Команда 7 ловить Тору
+location_id: null
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-tora-capture
+  title: Команда 7 ловить загублену Тору
+  text: Команда 7 знаходить і ловить загублену кішку Тору для дружини даймьо Країни Вогню.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-tora
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  - evd-narutopedia-ch9-audit
+relations: []
+presence:
+- id: pr-prewaves-tora-capture-naruto
+  entity_id: c-naruto
+  from: sc-prewaves-tora-capture.start
+  to: sc-prewaves-tora-capture.end
+  basis: source
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  review: accepted
+- id: pr-prewaves-tora-capture-sasuke
+  entity_id: c-sasuke
+  from: sc-prewaves-tora-capture.start
+  to: sc-prewaves-tora-capture.end
+  basis: source
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  review: accepted
+- id: pr-prewaves-tora-capture-sakura
+  entity_id: c-sakura
+  from: sc-prewaves-tora-capture.start
+  to: sc-prewaves-tora-capture.end
+  basis: source
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  review: accepted
+- id: pr-prewaves-tora-capture-kakashi
+  entity_id: c-kakashi
+  from: sc-prewaves-tora-capture.start
+  to: sc-prewaves-tora-capture.end
+  basis: source
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  review: accepted
+- id: pr-prewaves-tora-capture-tora
+  entity_id: c-tora
+  from: sc-prewaves-tora-capture.start
+  to: sc-prewaves-tora-capture.end
+  basis: source
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  review: accepted

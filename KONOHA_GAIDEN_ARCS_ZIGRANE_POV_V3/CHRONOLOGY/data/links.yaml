@@ -2724,9 +2724,6 @@ links:
   evidence_ids:
   - evd-narutopedia-genzo-opening
   - evd-narutopedia-ep2-opening
-notes:
-- No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order,
-  not simultaneity.
 - id: lnk-0707-yugao-before-hayate-briefing
   kind: before
   a: sc-y0-0707-yugao-finds-hayate
@@ -2948,3 +2945,40 @@ notes:
   review: accepted
   evidence_ids:
   - evd-manga-post-crush-search
+
+- id: rel-0316-oath-before-truth
+  kind: before
+  a: ev-y0-0316-naruto-blood-oath
+  b: ev-y0-0316-tazuna-reveals-risk
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-000025-C
+- id: lnk-audit-tora-before-return
+  kind: before
+  a: sc-prewaves-tora-capture
+  b: ev-y0-0315-tora-returned
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+- id: lnk-audit-demons-before-zabuza-response
+  kind: before
+  a: sc-y0-0316-demon-brothers
+  b: sc-prewaves-gato-hires-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+- id: lnk-audit-gato-before-zabuza-battle
+  kind: before
+  a: sc-prewaves-gato-hires-zabuza
+  b: sc-y0-0318-zabuza-first-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+
+notes:
+- No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order,
+  not simultaneity.

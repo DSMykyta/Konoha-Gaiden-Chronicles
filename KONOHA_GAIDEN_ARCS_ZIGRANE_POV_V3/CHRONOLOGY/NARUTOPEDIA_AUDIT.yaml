@@ -6,9 +6,12 @@ checked_on: '2026-10-01'
 checked_anime_episodes:
 - 1
 - 2
+- 4
+- 5
+- 6
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 3
+next_anime_episode: 7
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -61,3 +64,55 @@ project_cast: Accepted January 18 classroom presence of Kita, Ren and Sora retai
 unresolved:
 - Exact hours and episode timestamps remain unverified
 - Manga/anime variant order is not asserted as simultaneity
+previously_processed_anime_episodes:
+- episode: 3
+  status: existing_academy_scenes_reviewed
+  note: Previously processed in project; reviewed for continuity before batch 4–6, not re-audited here.
+batches:
+- anime_episodes:
+  - 4
+  - 5
+  - 6
+  baseline_revision: 0b767ab0214292563e2557e9beb0b5caa431ae01
+  added_moment_ids:
+  - ev-y0-0123-arrival
+  - ev-y0-0123-naruto-shadow-clone-attack
+  - ev-y0-0123-clones-fight-each-other
+  - ev-y0-0123-naruto-snare
+  - ev-y0-0123-sasuke-projectiles
+  - ev-y0-0123-kakashi-log-replacement
+  - ev-y0-0123-sasuke-fireball-buried
+  - ev-y0-0123-naruto-steals-lunch
+  - ev-y0-0123-sakura-finds-buried-sasuke
+  - ev-y0-0123-sasuke-refuses-next-year
+  - ev-y0-0123-kakashi-announces-failure
+  - ev-y0-0123-kakashi-explains-teamwork
+  - ev-y0-0123-team7-defends-sharing
+  - ev-y0-0123-team7-leaves-naruto-tied
+  - ev-prewaves-tora-capture
+  - ev-y0-0315-tora-returned
+  - ev-y0-0315-hiruzen-explains-ranks
+  - ev-y0-0316-sasuke-saves-naruto
+  - ev-y0-0316-sakura-shields-tazuna
+  - ev-y0-0316-kakashi-reviews-ambush
+  - ev-y0-0316-kakashi-questions-mission-rank
+  - ev-y0-0316-kakashi-bandages-naruto
+  - ev-prewaves-gato-demands-zabuza
+  - ev-prewaves-gato-warns-zabuza
+  added_scene_ids:
+  - sc-prewaves-tora-capture
+  - sc-prewaves-gato-hires-zabuza
+  corrected_legacy_moment_ids:
+  - ev-y0-0123-sasuke-nearly-gets-bell
+  - ev-y0-0316-demon-brothers-attack
+  - ev-y0-0316-tazuna-reveals-risk
+  moved_moments:
+  - id: ev-y0-0316-tazuna-reveals-risk
+    from_scene: sc-y0-0316-demon-brothers
+    to_scene: sc-y0-0317-wave-crossing
+  cast_review: Existing project attendance preserved, including Raido with Kakashi, Asuma and Kurenai at January 23 reports.
+    No further author-character attendance established in the newly added Team 7 and opposing-line actions.
+  origin_review: Existing M tags retained; new details tagged A from checked anime synopses unless independently established
+    as manga. No timestamp claims.
+  structural_fix: Restored 26 pre-existing relation records incorrectly nested under notes in links.yaml, including the bell-test
+    / Iruka-record intersection; relation IDs and endpoints preserved.

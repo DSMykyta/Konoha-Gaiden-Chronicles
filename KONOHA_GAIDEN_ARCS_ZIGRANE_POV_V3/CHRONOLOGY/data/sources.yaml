@@ -572,6 +572,39 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep4-audit
+    type: reference
+    title: 'Narutopedia — Pass or Fail: Survival Test'
+    url: https://naruto.fandom.com/wiki/Pass_or_Fail%3A_Survival_Test
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep5-audit
+    type: reference
+    title: Narutopedia — You Failed! Kakashi's Final Decision
+    url: https://naruto.fandom.com/wiki/You_Failed%21_Kakashi%27s_Final_Decision
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep6-audit
+    type: reference
+    title: Narutopedia — A Dangerous Mission! Journey to the Land of Waves!
+    url: https://naruto.fandom.com/wiki/A_Dangerous_Mission%21_Journey_to_the_Land_of_Waves%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ch9-audit
+    type: reference
+    title: Narutopedia — The Worst Client
+    url: https://naruto.fandom.com/wiki/The_Worst_Client
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ch11-audit
+    type: reference
+    title: Narutopedia — Disembarking…!!
+    url: https://naruto.fandom.com/wiki/Disembarking%E2%80%A6%21%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -2979,5 +3012,36 @@ evidence:
   - id: evd-narutopedia-genzo-opening
     source_id: src-narutopedia-genzo-opening
     locator: 'Part I / Prologue — Land of Waves: Genzō photographs Naruto for ninja registration'
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep4-audit
+    source_id: src-narutopedia-ep4-audit
+    locator: Episode 4, Synopsis; factual action order checked against existing scenes;
+      exact episode timestamps and manga pages not inspected
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-ep5-audit
+    source_id: src-narutopedia-ep5-audit
+    locator: Episode 5, Synopsis; factual action order checked against existing scenes;
+      exact episode timestamps and manga pages not inspected
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-ep6-audit
+    source_id: src-narutopedia-ep6-audit
+    locator: Episode 6, Synopsis; factual action order checked against existing scenes;
+      exact episode timestamps and manga pages not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ch9-audit
+    source_id: src-narutopedia-ch9-audit
+    locator: Chapter 9, Summary; secondary summary inspected, no manga panels inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ch11-audit
+    source_id: src-narutopedia-ch11-audit
+    locator: Chapter 11, Summary; secondary summary inspected, no manga panels inspected
     basis: source
     review: accepted

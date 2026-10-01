@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-prewaves-gato-hires-zabuza
+episode_id: ep-y0-gato-zabuza-response
+display_rank: 100
+continuity_id: main
+title: Ґато доручає Забузі усунути Тадзуну
+location_id: null
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-gato-demands-zabuza
+  title: Ґато скаржиться Забузі на провал Братів-Демонів
+  text: Ґато дорікає Забузі через невдалу засідку Братів-Демонів. Забуза підносить до нього меч і заявляє, що сам візьметься
+    за Тадзуну.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gato
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  focus_teams: []
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+- id: ev-prewaves-gato-warns-zabuza
+  title: Ґато попереджає про сильного охоронця Тадзуни
+  text: Ґато нагадує, що Тадзуну охороняє ніндзя високого рівня й група чекатиме повторного нападу. Забуза підтверджує готовність
+    виконати завдання.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-gato
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  focus_teams: []
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+relations:
+- id: rel-audit-prewaves-gato-demands-zabuza-before-prewaves-gato-warns-zabuza
+  kind: before
+  a: ev-prewaves-gato-demands-zabuza
+  b: ev-prewaves-gato-warns-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+presence:
+- id: pr-prewaves-gato-hires-zabuza-gato
+  entity_id: c-gato
+  from: sc-prewaves-gato-hires-zabuza.start
+  to: sc-prewaves-gato-hires-zabuza.end
+  basis: source
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  review: accepted
+- id: pr-prewaves-gato-hires-zabuza-zabuza
+  entity_id: c-zabuza
+  from: sc-prewaves-gato-hires-zabuza.start
+  to: sc-prewaves-gato-hires-zabuza.end
+  basis: source
+  evidence_ids:
+  - evd-narutopedia-ep6-audit
+  review: accepted

@@ -1984,6 +1984,11 @@ entities:
     - Ґензо
     - Гензо
 
+  - id: c-shijimi
+    kind: person
+    name: Madam Shijimi
+    aliases: [Пані Шіджімі, Шіджімі]
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

@@ -1,116 +1,697 @@
 schema_version: 1
-id: "sc-y0-0123-team7-bell-test"
+id: sc-y0-0123-team7-bell-test
 episode_id: ep-y0-team7-exam
 display_rank: 100
-continuity_id: "main"
-title: "Випробування Команди 7 з дзвіночками"
-location_id: null
-placement: {anchor_id: "ta-y0-0123", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "pending", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Випробування Команди 7 з дзвіночками
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-y0-0123
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0123-kakashi-explains-bells"
-    legacy_ids: ["V10-000010"]
-    title: "Какаші ставить завдання відібрати два дзвіночки"
-    text: "Какаші дає Наруто, Саске й Сакурі завдання відібрати в нього два дзвіночки до полудня."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
-  - id: "ev-y0-0123-naruto-attacks-kakashi"
-    legacy_ids: ["V10-000010-B"]
-    title: "Наруто атакує Какаші напряму"
-    text: "Наруто відкрито атакує Какаші й кілька разів потрапляє в його пастки."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
-  - id: "ev-y0-0123-sasuke-nearly-gets-bell"
-    legacy_ids: ["V10-000010-C"]
-    title: "Саске майже дістає дзвіночок"
-    text: "Саске використовує приховану атаку й наближається до того, щоб відібрати дзвіночок у Какаші."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
-  - id: "ev-y0-0123-sakura-genjutsu"
-    legacy_ids: ["V10-000010-D"]
-    title: "Какаші виводить Сакуру з тесту гендзюцу"
-    text: "Какаші застосовує гендзюцу проти Сакури й тимчасово виводить її з випробування."
-    origin: "M"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
-  - id: "ev-y0-0123-kakashi-forbids-feeding-naruto"
-    legacy_ids: ["V10-000010-E"]
-    title: "Какаші забороняє годувати Наруто"
-    text: "Після основної частини тесту Какаші прив’язує Наруто до стовпа й забороняє Саске та Сакурі ділитися з ним їжею."
-    origin: "M"
-    extent: "interval"
-    display_rank: 500
-    involvement:
-      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
-  - id: "ev-y0-0123-team7-shares-food"
-    legacy_ids: ["V10-000010-F"]
-    title: "Саске й Сакура діляться їжею з Наруто"
-    text: "Саске й Сакура порушують наказ і діляться їжею з Наруто."
-    origin: "M"
-    extent: "interval"
-    display_rank: 600
-    involvement:
-      - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
-      - {entity_id: "c-sakura", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-kakashi", role: "observer", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
-  - id: "ev-y0-0123-kakashi-passes-team7"
-    legacy_ids: ["V10-000010-F"]
-    title: "Какаші зараховує Команду 7"
-    text: "Какаші визнає, що трійця поставила товариша вище за формальний наказ, і пропускає Команду 7."
-    origin: "M"
-    extent: "interval"
-    display_rank: 700
-    involvement:
-      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
-    focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-bell-test", "evd-manga-bell-test"]
+- id: ev-y0-0123-arrival
+  title: Геніни чекають на запізнілого Какаші
+  text: Наруто, Саске й Сакура приходять без сніданку й довго чекають. Какаші з’являється пізніше та виправдовується чорним
+    котом, що перетнув дорогу.
+  origin: A
+  extent: interval
+  display_rank: 50
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: ev-y0-0123-kakashi-explains-bells
+  legacy_ids:
+  - V10-000010
+  title: Какаші ставить завдання відібрати два дзвіночки
+  text: 'Какаші показує два дзвіночки й ставить таймер на полудень: троє генінів мають відібрати їх, атакуючи всерйоз. Той,
+    хто не здобуде дзвіночка, залишиться без обіду, прив’язаний до стовпа; геніни розуміють, що дзвіночків менше, ніж учасників.'
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-bell-test
+  - evd-manga-bell-test
+  - evd-narutopedia-ep4-audit
+- id: ev-y0-0123-naruto-attacks-kakashi
+  legacy_ids:
+  - V10-000010-B
+  title: Наруто атакує Какаші напряму
+  text: Після початку тесту Наруто відкрито атакує Какаші, поки Саске й Сакура ховаються. Какаші ухиляється, читаючи «Іча-Іча»,
+    а потім атакою «Тисяча років болю» відкидає Наруто у воду.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-bell-test
+  - evd-manga-bell-test
+  - evd-narutopedia-ep4-audit
+- id: ev-y0-0123-naruto-shadow-clone-attack
+  title: Наруто атакує тіньовими клонами
+  text: Наруто повертається з води й оточує Какаші тіньовими клонами. Один клон заходить ззаду й утримує наставника; Наруто
+    намагається скористатися захватом.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: ev-y0-0123-clones-fight-each-other
+  title: Какаші змушує клонів Наруто битися між собою
+  text: Какаші вислизає із захвату. Наруто припускає, що наставник перетворився на одного з клонів, і клони починають атакувати
+    одне одного; Наруто розвіює їх.
+  origin: A
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: ev-y0-0123-naruto-snare
+  title: Наруто потрапляє у мотузяну пастку
+  text: Наруто помічає дзвіночок-приманку й потрапляє у пастку, яка підвішує його догори ногами. Какаші пояснює, що очевидна
+    приманка не мала його обдурити.
+  origin: A
+  extent: interval
+  display_rank: 500
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: ev-y0-0123-sasuke-projectiles
+  title: Саске атакує Какаші метальною зброєю
+  text: Поки Какаші говорить із підвішеним Наруто, Саске з укриття кидає в наставника метальну зброю. Атака на вигляд влучає.
+  origin: A
+  extent: interval
+  display_rank: 600
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: ev-y0-0123-kakashi-log-replacement
+  title: Саске виявляє підміну й змінює укриття
+  text: Уражений Какаші виявляється підміненим колодою. Саске залишає викрите укриття й шукає інше.
+  origin: A
+  extent: interval
+  display_rank: 650
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams: []
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-sakura-genjutsu
+  legacy_ids:
+  - V10-000010-D
+  title: Какаші виводить Сакуру з тесту гендзюцу
+  text: Сакура шукає Саске. Какаші накладає гендзюцу, у якому вона бачить тяжко пораненого Саске; Сакура кричить і непритомніє.
+    Саске присутній у цьому видінні, а не фізично поруч.
+  origin: M
+  extent: interval
+  display_rank: 700
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-bell-test
+  - evd-manga-bell-test
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-sasuke-nearly-gets-bell
+  legacy_ids:
+  - V10-000010-C
+  title: Саске майже дістає дзвіночок
+  text: Саске вступає з Какаші в ближній бій, змушує його відкласти читання й використати обидві руки та майже торкається
+    дзвіночка.
+  origin: M
+  extent: interval
+  display_rank: 800
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-bell-test
+  - evd-manga-bell-test
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-sasuke-fireball-buried
+  title: Какаші закопує Саске після вогняної атаки
+  text: Саске застосовує Велику вогняну кулю. Какаші уникає її, опинившись під землею, хапає Саске й закопує його по шию.
+  origin: A
+  extent: interval
+  display_rank: 900
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams: []
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-naruto-steals-lunch
+  title: Какаші ловить Наруто біля обідів
+  text: Наруто звільняється з мотузяної пастки й намагається з’їсти залишені обіди. Какаші ловить його та прив’язує до дерев’яного
+    стовпа.
+  origin: A
+  extent: interval
+  display_rank: 1000
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-sakura-finds-buried-sasuke
+  title: Сакура знаходить закопаного Саске
+  text: Опритомнівши, Сакура бачить голову закопаного Саске й знову непритомніє, прийнявши її за відрубану. Саске звільняється
+    й приводить Сакуру до тями.
+  origin: A
+  extent: interval
+  display_rank: 1100
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  focus_teams: []
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-sasuke-refuses-next-year
+  title: Саске відмовляється чекати наступного року
+  text: Сакура пропонує спробувати пройти випробування наступного року. Саске відмовляється відступати, посилаючись на мету
+    помсти; спливає час, відведений на дзвіночки.
+  origin: A
+  extent: interval
+  display_rank: 1200
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams: []
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-kakashi-announces-failure
+  title: Какаші оголошує провал і стримує Саске
+  text: Какаші збирає учнів і заявляє, що вони не стануть ніндзя. Наруто вимагає пояснення; Саске атакує наставника, але Какаші
+    притискає його до землі.
+  origin: A
+  extent: interval
+  display_rank: 1300
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-kakashi-explains-teamwork
+  title: Какаші пояснює мету тесту біля пам’ятника
+  text: Какаші пояснює, що перевіряв командну роботу, та розбирає індивідуальні помилки учнів. Він звертає їхню увагу на пам’ятний
+    камінь загиблим ніндзя й нагадує про наслідки небезпечних місій.
+  origin: A
+  extent: interval
+  display_rank: 1400
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-kakashi-forbids-feeding-naruto
+  legacy_ids:
+  - V10-000010-E
+  title: Какаші забороняє годувати Наруто
+  text: Какаші дає другу спробу після обіду. Саске й Сакура можуть їсти, але прив’язаному за спробу вкрасти обіди Наруто їжу
+    заборонено; кожен, хто поділиться з ним, теж провалить тест.
+  origin: M
+  extent: interval
+  display_rank: 1500
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-bell-test
+  - evd-manga-bell-test
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-team7-shares-food
+  legacy_ids:
+  - V10-000010-F
+  title: Саске й Сакура діляться їжею з Наруто
+  text: 'Коли Какаші відходить, Саске пропонує Наруто свою їжу: для наступної спроби команді потрібен ситий товариш. Сакура
+    також погоджується допомогти й годує прив’язаного Наруто.'
+  origin: M
+  extent: interval
+  display_rank: 1600
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-bell-test
+  - evd-manga-bell-test
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-team7-defends-sharing
+  title: Команда 7 разом відповідає Какаші
+  text: Какаші повертається й удає гнів через порушення заборони. Учні разом заявляють, що вони одна команда й поділять наслідки.
+  origin: A
+  extent: interval
+  display_rank: 1700
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-kakashi-passes-team7
+  legacy_ids:
+  - V10-000010-F
+  title: Какаші зараховує Команду 7
+  text: Після спільної відповіді учнів Какаші зараховує Команду 7. Він пояснює, що покинути товаришів гірше, ніж порушити
+    наказ, і каже, що вони стали першою командою, яка пройшла його випробування.
+  origin: M
+  extent: interval
+  display_rank: 1800
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-v10-bell-test
+  - evd-manga-bell-test
+  - evd-narutopedia-ep5-audit
+- id: ev-y0-0123-team7-leaves-naruto-tied
+  title: Наруто просить розв’язати його після тесту
+  text: Какаші оголошує першу місію на наступний день і відпускає учнів додому. Коли він, Саске й Сакура йдуть, Наруто просить
+    зняти його зі стовпа.
+  origin: A
+  extent: interval
+  display_rank: 1900
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
 relations:
-  - {id: "rel-0123-bells-brief-before-naruto", kind: "before", a: "ev-y0-0123-kakashi-explains-bells", b: "ev-y0-0123-naruto-attacks-kakashi", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
-  - {id: "rel-0123-bells-brief-before-sasuke", kind: "before", a: "ev-y0-0123-kakashi-explains-bells", b: "ev-y0-0123-sasuke-nearly-gets-bell", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
-  - {id: "rel-0123-bells-brief-before-sakura", kind: "before", a: "ev-y0-0123-kakashi-explains-bells", b: "ev-y0-0123-sakura-genjutsu", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
-  - {id: "rel-0123-bells-action-before-food-rule", kind: "before", a: "ev-y0-0123-sakura-genjutsu", b: "ev-y0-0123-kakashi-forbids-feeding-naruto", basis: "imported", review: "pending", evidence_ids: ["evd-v10-bell-test"]}
-  - {id: "rel-0123-rule-before-share", kind: "before", a: "ev-y0-0123-kakashi-forbids-feeding-naruto", b: "ev-y0-0123-team7-shares-food", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
-  - {id: "rel-0123-share-before-pass", kind: "before", a: "ev-y0-0123-team7-shares-food", b: "ev-y0-0123-kakashi-passes-team7", basis: "source", review: "pending", evidence_ids: ["evd-manga-bell-test"]}
+- id: rel-0123-bells-brief-before-naruto
+  kind: before
+  a: ev-y0-0123-kakashi-explains-bells
+  b: ev-y0-0123-naruto-attacks-kakashi
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-bell-test
+- id: rel-0123-bells-brief-before-sasuke
+  kind: before
+  a: ev-y0-0123-kakashi-explains-bells
+  b: ev-y0-0123-sasuke-nearly-gets-bell
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-bell-test
+- id: rel-0123-bells-brief-before-sakura
+  kind: before
+  a: ev-y0-0123-kakashi-explains-bells
+  b: ev-y0-0123-sakura-genjutsu
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-bell-test
+- id: rel-0123-bells-action-before-food-rule
+  kind: before
+  a: ev-y0-0123-sakura-genjutsu
+  b: ev-y0-0123-kakashi-forbids-feeding-naruto
+  basis: imported
+  review: pending
+  evidence_ids:
+  - evd-v10-bell-test
+- id: rel-0123-rule-before-share
+  kind: before
+  a: ev-y0-0123-kakashi-forbids-feeding-naruto
+  b: ev-y0-0123-team7-shares-food
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-bell-test
+- id: rel-0123-share-before-pass
+  kind: before
+  a: ev-y0-0123-team7-shares-food
+  b: ev-y0-0123-kakashi-passes-team7
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-bell-test
+- id: rel-audit-y0-0123-arrival-before-y0-0123-kakashi-explains-bells
+  kind: before
+  a: ev-y0-0123-arrival
+  b: ev-y0-0123-kakashi-explains-bells
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: rel-audit-y0-0123-naruto-attacks-kakashi-before-y0-0123-naruto-shadow-clone-attack
+  kind: before
+  a: ev-y0-0123-naruto-attacks-kakashi
+  b: ev-y0-0123-naruto-shadow-clone-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: rel-audit-y0-0123-naruto-shadow-clone-attack-before-y0-0123-clones-fight-each-other
+  kind: before
+  a: ev-y0-0123-naruto-shadow-clone-attack
+  b: ev-y0-0123-clones-fight-each-other
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: rel-audit-y0-0123-clones-fight-each-other-before-y0-0123-naruto-snare
+  kind: before
+  a: ev-y0-0123-clones-fight-each-other
+  b: ev-y0-0123-naruto-snare
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: rel-audit-y0-0123-naruto-snare-before-y0-0123-sasuke-projectiles
+  kind: before
+  a: ev-y0-0123-naruto-snare
+  b: ev-y0-0123-sasuke-projectiles
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep4-audit
+- id: rel-audit-y0-0123-sasuke-projectiles-before-y0-0123-kakashi-log-replacement
+  kind: before
+  a: ev-y0-0123-sasuke-projectiles
+  b: ev-y0-0123-kakashi-log-replacement
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-kakashi-log-replacement-before-y0-0123-sakura-genjutsu
+  kind: before
+  a: ev-y0-0123-kakashi-log-replacement
+  b: ev-y0-0123-sakura-genjutsu
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-sakura-genjutsu-before-y0-0123-sasuke-nearly-gets-bell
+  kind: before
+  a: ev-y0-0123-sakura-genjutsu
+  b: ev-y0-0123-sasuke-nearly-gets-bell
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-sasuke-nearly-gets-bell-before-y0-0123-sasuke-fireball-buried
+  kind: before
+  a: ev-y0-0123-sasuke-nearly-gets-bell
+  b: ev-y0-0123-sasuke-fireball-buried
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-sasuke-fireball-buried-before-y0-0123-naruto-steals-lunch
+  kind: before
+  a: ev-y0-0123-sasuke-fireball-buried
+  b: ev-y0-0123-naruto-steals-lunch
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-naruto-steals-lunch-before-y0-0123-sakura-finds-buried-sasuke
+  kind: before
+  a: ev-y0-0123-naruto-steals-lunch
+  b: ev-y0-0123-sakura-finds-buried-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-sakura-finds-buried-sasuke-before-y0-0123-sasuke-refuses-next-year
+  kind: before
+  a: ev-y0-0123-sakura-finds-buried-sasuke
+  b: ev-y0-0123-sasuke-refuses-next-year
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-sasuke-refuses-next-year-before-y0-0123-kakashi-announces-failure
+  kind: before
+  a: ev-y0-0123-sasuke-refuses-next-year
+  b: ev-y0-0123-kakashi-announces-failure
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-kakashi-announces-failure-before-y0-0123-kakashi-explains-teamwork
+  kind: before
+  a: ev-y0-0123-kakashi-announces-failure
+  b: ev-y0-0123-kakashi-explains-teamwork
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-kakashi-explains-teamwork-before-y0-0123-kakashi-forbids-feeding-naruto
+  kind: before
+  a: ev-y0-0123-kakashi-explains-teamwork
+  b: ev-y0-0123-kakashi-forbids-feeding-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-team7-shares-food-before-y0-0123-team7-defends-sharing
+  kind: before
+  a: ev-y0-0123-team7-shares-food
+  b: ev-y0-0123-team7-defends-sharing
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-team7-defends-sharing-before-y0-0123-kakashi-passes-team7
+  kind: before
+  a: ev-y0-0123-team7-defends-sharing
+  b: ev-y0-0123-kakashi-passes-team7
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
+- id: rel-audit-y0-0123-kakashi-passes-team7-before-y0-0123-team7-leaves-naruto-tied
+  kind: before
+  a: ev-y0-0123-kakashi-passes-team7
+  b: ev-y0-0123-team7-leaves-naruto-tied
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep5-audit
 presence:
-  - {id: "pr-0123-bell-naruto", entity_id: "c-naruto", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
-  - {id: "pr-0123-bell-sasuke", entity_id: "c-sasuke", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
-  - {id: "pr-0123-bell-sakura", entity_id: "c-sakura", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
-  - {id: "pr-0123-bell-kakashi", entity_id: "c-kakashi", from: "sc-y0-0123-team7-bell-test.start", to: "sc-y0-0123-team7-bell-test.end", basis: "source", evidence_ids: ["evd-v10-bell-test"], review: "accepted"}
+- id: pr-0123-bell-naruto
+  entity_id: c-naruto
+  from: sc-y0-0123-team7-bell-test.start
+  to: sc-y0-0123-team7-bell-test.end
+  basis: source
+  evidence_ids:
+  - evd-v10-bell-test
+  review: accepted
+- id: pr-0123-bell-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-0123-team7-bell-test.start
+  to: sc-y0-0123-team7-bell-test.end
+  basis: source
+  evidence_ids:
+  - evd-v10-bell-test
+  review: accepted
+- id: pr-0123-bell-sakura
+  entity_id: c-sakura
+  from: sc-y0-0123-team7-bell-test.start
+  to: sc-y0-0123-team7-bell-test.end
+  basis: source
+  evidence_ids:
+  - evd-v10-bell-test
+  review: accepted
+- id: pr-0123-bell-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-0123-team7-bell-test.start
+  to: sc-y0-0123-team7-bell-test.end
+  basis: source
+  evidence_ids:
+  - evd-v10-bell-test
+  review: accepted
