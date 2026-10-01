@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0728-jiraiya-naruto-meal
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 560
+continuity_id: main
+title: Джирая називає рамен останньою трапезою
+location_id: loc-ichiraku
+placement:
+  anchor_id: ta-y0-0728
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0728-jiraiya-naruto-last-meal
+  title: Джирая називає рамен останньою трапезою
+  text: В Ічіраку Джирая радить їсти наче востаннє, а потім іде, залишивши Наруто сплачувати рахунок.
+  involvement:
+  - entity_id: c-jiraiya
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+relations: []
+presence:
+- id: pr-audit-56-ev-y0-0728-jiraiya-naruto-last-meal-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0728-jiraiya-naruto-last-meal.start
+  to: ev-y0-0728-jiraiya-naruto-last-meal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+- id: pr-audit-56-ev-y0-0728-jiraiya-naruto-last-meal-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0728-jiraiya-naruto-last-meal.start
+  to: ev-y0-0728-jiraiya-naruto-last-meal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit

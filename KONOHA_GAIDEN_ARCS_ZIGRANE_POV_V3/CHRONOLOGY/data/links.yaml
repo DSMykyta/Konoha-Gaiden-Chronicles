@@ -3401,3 +3401,30 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep55-audit
+
+- id: lnk-audit-56-sc-y0-0728-jiraiya-naruto-bath-sc-y0-0728-jiraiya-naruto-meal
+  kind: before
+  a: sc-y0-0728-jiraiya-naruto-bath
+  b: sc-y0-0728-jiraiya-naruto-meal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+
+- id: lnk-audit-56-sc-y0-0728-jiraiya-naruto-meal-sc-y0-0728-naruto-tries-hugging-sakura
+  kind: before
+  a: sc-y0-0728-jiraiya-naruto-meal
+  b: sc-y0-0728-naruto-tries-hugging-sakura
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+
+- id: lnk-audit-56-sc-y0-0728-naruto-tries-hugging-sakura-sc-y0-0728-naruto-gamabunta
+  kind: before
+  a: sc-y0-0728-naruto-tries-hugging-sakura
+  b: sc-y0-0728-naruto-gamabunta
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit

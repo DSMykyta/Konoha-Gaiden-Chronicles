@@ -1069,6 +1069,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep56-audit
+    type: reference
+    title: 'Narutopedia — Live or Die: Risk it All to Win it All!'
+    url: https://naruto.fandom.com/wiki/Live_or_Die%3A_Risk_it_All_to_Win_it_All%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3938,5 +3945,11 @@ evidence:
     source_id: src-recap-ep55-cast-crosscheck
     locator: 'Episode 55 recap: Team 8 training and later Shikamaru/Choji practice;
       no timestamps inspected'
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep56-audit
+    source_id: src-narutopedia-ep56-audit
+    locator: Episode 56, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

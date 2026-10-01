@@ -1,27 +1,73 @@
 schema_version: 1
-id: "sc-y0-0727-naruto-summoning-stalls"
+id: sc-y0-0727-naruto-summoning-stalls
 episode_id: ep-y0-naruto-summoning-training
 display_rank: 500
-continuity_id: "main"
-title: "Наруто все ще не може викликати бойову жабу"
+continuity_id: main
+title: Наруто все ще не може викликати бойову жабу
 location_id: null
-placement: {anchor_id: "ta-y0-0727", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+placement:
+  anchor_id: ta-y0-0727
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: unknown
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0727-naruto-still-fails-combat-summon"
-    legacy_ids: ["V10-000057"]
-    title: "Тренування Наруто з призовом буксує"
-    text: "До цього моменту Наруто все ще не здатен стабільно викликати жабу, придатну до бою."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-jiraiya", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000057", "evd-anime-54-60"]
+- id: ev-y0-0727-naruto-still-fails-combat-summon
+  legacy_ids:
+  - V10-000057
+  title: Тренування Наруто з призовом буксує
+  text: Наруто призиває маленьку жабу й непритомніє від виснаження. Джирая відзначає його наполегливість, а згодом будить
+    учня.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-jiraiya
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000057
+  - evd-anime-54-60
+  - evd-narutopedia-ep56-audit
 relations: []
 presence:
-  - {id: "pr-0727-summon-naruto", entity_id: "c-naruto", from: "sc-y0-0727-naruto-summoning-stalls.start", to: "sc-y0-0727-naruto-summoning-stalls.end", basis: "imported", evidence_ids: ["evd-v10-000057"], review: "accepted"}
-  - {id: "pr-0727-summon-jiraiya", entity_id: "c-jiraiya", from: "sc-y0-0727-naruto-summoning-stalls.start", to: "sc-y0-0727-naruto-summoning-stalls.end", basis: "imported", evidence_ids: ["evd-v10-000057"], review: "accepted"}
+- id: pr-0727-summon-naruto
+  entity_id: c-naruto
+  from: sc-y0-0727-naruto-summoning-stalls.start
+  to: sc-y0-0727-naruto-summoning-stalls.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000057
+  review: accepted
+- id: pr-0727-summon-jiraiya
+  entity_id: c-jiraiya
+  from: sc-y0-0727-naruto-summoning-stalls.start
+  to: sc-y0-0727-naruto-summoning-stalls.end
+  basis: imported
+  evidence_ids:
+  - evd-v10-000057
+  review: accepted
+- id: pr-audit-56-y0-0727-naruto-still-fails-combat-summon-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0727-naruto-still-fails-combat-summon.start
+  to: ev-y0-0727-naruto-still-fails-combat-summon.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+- id: pr-audit-56-y0-0727-naruto-still-fails-combat-summon-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0727-naruto-still-fails-combat-summon.start
+  to: ev-y0-0727-naruto-still-fails-combat-summon.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit

@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0728-jiraiya-naruto-bath
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 550
+continuity_id: main
+title: Джирая проводить Наруто до гарячих джерел
+location_id: loc-konoha-hot-springs
+placement:
+  anchor_id: ta-y0-0728
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0728-jiraiya-naruto-bath
+  title: Джирая проводить Наруто до гарячих джерел
+  text: Перед небезпечним випробуванням Джирая й Наруто разом купаються в гарячих джерелах.
+  involvement:
+  - entity_id: c-jiraiya
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+relations: []
+presence:
+- id: pr-audit-56-ev-y0-0728-jiraiya-naruto-bath-c-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-0728-jiraiya-naruto-bath.start
+  to: ev-y0-0728-jiraiya-naruto-bath.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+- id: pr-audit-56-ev-y0-0728-jiraiya-naruto-bath-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0728-jiraiya-naruto-bath.start
+  to: ev-y0-0728-jiraiya-naruto-bath.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit

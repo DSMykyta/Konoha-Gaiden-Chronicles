@@ -1,28 +1,79 @@
 schema_version: 1
-id: "sc-y0-0727-anko-hiruzen-orochimaru-threat"
+id: sc-y0-0727-anko-hiruzen-orochimaru-threat
 episode_id: ep-y0-anko-exam-security
 display_rank: 300
-continuity_id: "main"
-title: "Анко й Хірузен оцінюють загрозу Орочімару"
-location_id: "loc-hokage-residence"
-placement: {anchor_id: "ta-y0-0727", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Анко й Хірузен оцінюють загрозу Орочімару
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-y0-0727
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0727-anko-hiruzen-orochimaru-threat"
-    title: "Анко згадує Четвертого, говорячи про Орочімару"
-    text: "Напередодні фіналів Анко знову говорить із Хірузеном про Орочімару й звинувачує себе в тому, що не змогла зупинити колишнього вчителя. Хірузен визнає, що в Конохі майже немає нікого, хто міг би протистояти Орочімару напряму. Анко згадує Четвертого Хокаґе як того, хто міг би його зупинити; Хірузен відповідає, що Четвертий мертвий і селу доведеться покладатися на власні сили."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-anko", role: "focus", mode: "physical"}
-      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
-      - {entity_id: "c-orochimaru", role: "subject", mode: "remote"}
-      - {entity_id: "c-minato", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-manga-ch88-97", "evd-anime-54-60"]
+- id: ev-y0-0727-anko-hiruzen-orochimaru-threat
+  title: Анко згадує Четвертого, говорячи про Орочімару
+  text: Хірузен говорить з Анко про нездоланну для Конохи загрозу Орочімару. На згадку про Четвертого він відповідає,
+    що той мертвий і треба покладатися на власні сили.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-orochimaru
+    role: subject
+    mode: remote
+  - entity_id: c-minato
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-manga-ch88-97
+  - evd-anime-54-60
+  - evd-narutopedia-ep56-audit
 relations: []
 presence:
-  - {id: "pr-0727-anko-hiruzen-anko", entity_id: "c-anko", from: "sc-y0-0727-anko-hiruzen-orochimaru-threat.start", to: "sc-y0-0727-anko-hiruzen-orochimaru-threat.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-54-60"], review: "accepted"}
-  - {id: "pr-0727-anko-hiruzen-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0727-anko-hiruzen-orochimaru-threat.start", to: "sc-y0-0727-anko-hiruzen-orochimaru-threat.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-54-60"], review: "accepted"}
+- id: pr-0727-anko-hiruzen-anko
+  entity_id: c-anko
+  from: sc-y0-0727-anko-hiruzen-orochimaru-threat.start
+  to: sc-y0-0727-anko-hiruzen-orochimaru-threat.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch88-97
+  - evd-anime-54-60
+  review: accepted
+- id: pr-0727-anko-hiruzen-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-0727-anko-hiruzen-orochimaru-threat.start
+  to: sc-y0-0727-anko-hiruzen-orochimaru-threat.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch88-97
+  - evd-anime-54-60
+  review: accepted
+- id: pr-audit-56-y0-0727-anko-hiruzen-orochimaru-threat-c-anko
+  entity_id: c-anko
+  from: ev-y0-0727-anko-hiruzen-orochimaru-threat.start
+  to: ev-y0-0727-anko-hiruzen-orochimaru-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+- id: pr-audit-56-y0-0727-anko-hiruzen-orochimaru-threat-c-hiruzen
+  entity_id: c-hiruzen
+  from: ev-y0-0727-anko-hiruzen-orochimaru-threat.start
+  to: ev-y0-0727-anko-hiruzen-orochimaru-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit

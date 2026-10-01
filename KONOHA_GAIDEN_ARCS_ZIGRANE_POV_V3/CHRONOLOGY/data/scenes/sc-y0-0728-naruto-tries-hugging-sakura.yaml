@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0728-naruto-tries-hugging-sakura
+episode_id: ep-y0-naruto-summoning-training
+display_rank: 570
+continuity_id: main
+title: Наруто намагається обійняти Сакуру
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0728
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0728-naruto-tries-hugging-sakura
+  title: Наруто намагається обійняти Сакуру
+  text: За порадою Джираї Наруто намагається обійняти Сакуру й отримує удари у відповідь.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  origin: A
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+relations: []
+presence:
+- id: pr-audit-56-ev-y0-0728-naruto-tries-hugging-sakura-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0728-naruto-tries-hugging-sakura.start
+  to: ev-y0-0728-naruto-tries-hugging-sakura.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+- id: pr-audit-56-ev-y0-0728-naruto-tries-hugging-sakura-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0728-naruto-tries-hugging-sakura.start
+  to: ev-y0-0728-naruto-tries-hugging-sakura.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit

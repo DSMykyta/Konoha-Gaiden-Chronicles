@@ -1,28 +1,85 @@
 schema_version: 1
-id: "sc-y0-0722-iruka-hokage-rock-lesson"
+id: sc-y0-0722-iruka-hokage-rock-lesson
 episode_id: ep-y0-iruka-rock-lesson
 display_rank: 100
-continuity_id: "main"
-title: "Ірука проводить урок біля Монумента Хокаґе"
-location_id: "loc-hokage-monument"
-placement: {anchor_id: "ta-y0-0722", day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Ірука проводить урок біля Монумента Хокаґе
+location_id: loc-hokage-monument
+placement:
+  anchor_id: ta-y0-0722
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0722-iruka-hiruzen-academy-lesson"
-    title: "Хірузен приєднується до уроку Іруки"
-    text: "Поки Наруто тренується з Джираєю, Ірука проводить для учнів Академії урок про Хокаґе біля Монумента. Хірузен приєднується до класу й пояснює дітям, що сила Хокаґе потрібна для захисту дорогих людей; серед тих, кого він називає дорогими, — Конохамару й усі мешканці Конохи."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
-      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
-      - {entity_id: "c-konohamaru", role: "student", mode: "physical"}
-    evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"]
+- id: ev-y0-0722-iruka-hiruzen-academy-lesson
+  title: Хірузен приєднується до уроку Іруки
+  text: Біля Монумента Ірука знайомить учнів з історією Хокаґе та запрошує Хірузена. Третій закликає захищати близьких,
+    називаючи своїми Конохамару й усіх мешканців села.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: student
+    mode: physical
+  evidence_ids:
+  - evd-manga-ch88-97
+  - evd-anime-56-iruka-hokage-rock
+  - evd-narutopedia-ep56-audit
 relations: []
 presence:
-  - {id: "pr-0722-iruka-lesson-iruka", entity_id: "c-iruka", from: "sc-y0-0722-iruka-hokage-rock-lesson.start", to: "sc-y0-0722-iruka-hokage-rock-lesson.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"], review: "accepted"}
-  - {id: "pr-0722-iruka-lesson-hiruzen", entity_id: "c-hiruzen", from: "ev-y0-0722-iruka-hiruzen-academy-lesson.start", to: "ev-y0-0722-iruka-hiruzen-academy-lesson.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"], review: "accepted"}
-  - {id: "pr-0722-iruka-lesson-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0722-iruka-hokage-rock-lesson.start", to: "sc-y0-0722-iruka-hokage-rock-lesson.end", basis: "source", evidence_ids: ["evd-manga-ch88-97", "evd-anime-56-iruka-hokage-rock"], review: "accepted"}
+- id: pr-0722-iruka-lesson-iruka
+  entity_id: c-iruka
+  from: sc-y0-0722-iruka-hokage-rock-lesson.start
+  to: sc-y0-0722-iruka-hokage-rock-lesson.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch88-97
+  - evd-anime-56-iruka-hokage-rock
+  review: accepted
+- id: pr-0722-iruka-lesson-hiruzen
+  entity_id: c-hiruzen
+  from: ev-y0-0722-iruka-hiruzen-academy-lesson.start
+  to: ev-y0-0722-iruka-hiruzen-academy-lesson.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch88-97
+  - evd-anime-56-iruka-hokage-rock
+  review: accepted
+- id: pr-0722-iruka-lesson-konohamaru
+  entity_id: c-konohamaru
+  from: sc-y0-0722-iruka-hokage-rock-lesson.start
+  to: sc-y0-0722-iruka-hokage-rock-lesson.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch88-97
+  - evd-anime-56-iruka-hokage-rock
+  review: accepted
+- id: pr-audit-56-y0-0722-iruka-hiruzen-academy-lesson-c-iruka
+  entity_id: c-iruka
+  from: ev-y0-0722-iruka-hiruzen-academy-lesson.start
+  to: ev-y0-0722-iruka-hiruzen-academy-lesson.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit
+- id: pr-audit-56-y0-0722-iruka-hiruzen-academy-lesson-c-konohamaru
+  entity_id: c-konohamaru
+  from: ev-y0-0722-iruka-hiruzen-academy-lesson.start
+  to: ev-y0-0722-iruka-hiruzen-academy-lesson.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep56-audit

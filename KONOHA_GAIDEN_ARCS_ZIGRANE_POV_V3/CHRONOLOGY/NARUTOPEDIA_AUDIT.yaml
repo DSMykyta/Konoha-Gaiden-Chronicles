@@ -58,11 +58,15 @@ checked_anime_episodes:
 - 53
 - 54
 - 55
+- 56
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 56
+next_anime_episode: 57
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0728-naruto-tries-hugging-sakura
+- ev-y0-0728-jiraiya-naruto-last-meal
+- ev-y0-0728-jiraiya-naruto-bath
 - ev-y0-0722-shikamaru-choji-practice
 - ev-y0-0722-sand-siblings-discuss-invasion
 - ev-y0-0722-kakashi-climbs-to-sasuke
@@ -109,6 +113,9 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0728-naruto-tries-hugging-sakura
+- sc-y0-0728-jiraiya-naruto-meal
+- sc-y0-0728-jiraiya-naruto-bath
 - sc-y0-0722-shikamaru-choji-practice
 - sc-y0-0722-sand-siblings-invasion-discussion
 - sc-y0-0722-kakashi-cliff-practice
@@ -993,6 +1000,28 @@ episode_audits:
     cliff-climbing practice. New preparation scenes use the existing working training-day anchor with partial time review;
     no canonical calendar date claimed. Existing Raidō guard-return project decision preserved; later Baki briefing retained
     for its existing 67–68 source rather than duplicated.
+- episode: 56
+  baseline_revision: 307e4250b077f750d924aca205aade9e828d8240
+  added_moment_ids:
+  - ev-y0-0728-jiraiya-naruto-bath
+  - ev-y0-0728-jiraiya-naruto-last-meal
+  - ev-y0-0728-naruto-tries-hugging-sakura
+  added_scene_ids:
+  - sc-y0-0728-jiraiya-naruto-bath
+  - sc-y0-0728-jiraiya-naruto-meal
+  - sc-y0-0728-naruto-tries-hugging-sakura
+  updated_moment_ids:
+  - ev-y0-0727-naruto-still-fails-combat-summon
+  - ev-y0-0727-anko-hiruzen-orochimaru-threat
+  - ev-y0-0722-iruka-hiruzen-academy-lesson
+  - ev-y0-0728-jiraiya-throws-naruto-ravine
+  - ev-y0-0728-naruto-meets-kurama
+  - ev-y0-0728-naruto-summons-gamabunta
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Added the hot-spring, Ichiraku meal and rejected Sakura hug before the cliff trial. Confirmed the exhaustion, Anko/Hiruzen
+    conversation, academy lesson, internal Nine-Tails meeting and giant-toad summoning. Existing project dates retained;
+    no extra physical presence added from episode credits.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
