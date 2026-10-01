@@ -1,0 +1,371 @@
+/* Diegetic character dossier: a physical A4 sheet over the glass timeline. */
+#profileDialog.profile-dialog {
+  --paper: #f3eddf;
+  --paper-deep: #e7decd;
+  --ink: #27251f;
+  --ink-soft: #676054;
+  --rule: #9b907d;
+  position: fixed;
+  inset: max(18px, 3.5vh) 0 auto;
+  margin: 0 auto;
+  width: min(210mm, calc(100vw - 56px));
+  min-height: min(297mm, calc(100dvh - 36px));
+  max-height: calc(100dvh - max(18px, 3.5vh));
+  padding: 19mm 18mm 24mm;
+  border: 0;
+  border-radius: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #9e9588 transparent;
+  background:
+    radial-gradient(circle at 17% 9%, #fffaf0aa 0 12%, transparent 34%),
+    linear-gradient(92deg, #00000008, transparent 2.5%, transparent 97.5%, #00000008),
+    var(--paper);
+  color: var(--ink);
+  box-shadow:
+    0 48px 110px #05070b73,
+    0 14px 34px #05070b38,
+    0 1px 0 #ffffff inset,
+    0 0 0 1px #6f675b33;
+  transform-origin: 50% 100%;
+  animation: dossier-sheet-rise 520ms cubic-bezier(.2,.82,.2,1) both;
+}
+
+#profileDialog.profile-dialog::backdrop {
+  background: rgba(13, 16, 21, .62);
+  -webkit-backdrop-filter: blur(2px) saturate(.78);
+  backdrop-filter: blur(2px) saturate(.78);
+  animation: dossier-backdrop-in 300ms ease-out both;
+}
+
+#profileDialog.profile-dialog::before {
+  content: "";
+  position: fixed;
+  inset: max(18px, 3.5vh) 50% auto auto;
+  width: min(210mm, calc(100vw - 56px));
+  height: min(297mm, calc(100dvh - 36px));
+  translate: 50% 0;
+  pointer-events: none;
+  opacity: .2;
+  background:
+    repeating-linear-gradient(0deg, #2f2a2108 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, #ffffff12 0 1px, transparent 1px 5px);
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+#profileDialog.profile-dialog > * {
+  position: relative;
+  z-index: 1;
+}
+
+#profileDialog .profile-heading {
+  position: relative;
+  top: auto;
+  display: block;
+  margin: 0 0 9mm;
+  padding: 0 34mm 5mm 0;
+  background: transparent;
+  border-bottom: 2px solid var(--ink);
+}
+
+#profileDialog .profile-heading::after {
+  content: "ОСОБОВА СПРАВА";
+  position: absolute;
+  right: 0;
+  bottom: 5.5mm;
+  color: var(--ink-soft);
+  font: 700 10px/1.2 Manrope, sans-serif;
+  letter-spacing: .18em;
+}
+
+#profileDialog .profile-heading small {
+  display: block;
+  margin-bottom: 2mm;
+  color: var(--ink-soft);
+  font: 600 9px/1.3 Manrope, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#profileDialog .profile-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font: 600 clamp(27px, 3.4vw, 39px)/1.05 Lora, serif;
+  letter-spacing: -.025em;
+}
+
+/* Controls are intentionally removed from the physical document for now. */
+#profileDialog #closeProfile,
+#profileDialog #profileTabs,
+#profileDialog .profile-actions {
+  display: none !important;
+}
+
+#profileDialog #profileContent {
+  color: var(--ink);
+}
+
+#profileDialog #profileContent p {
+  color: #403c34;
+  line-height: 1.72;
+}
+
+#profileDialog .profile-layout {
+  display: block;
+  min-width: 0;
+}
+
+#profileDialog .profile-layout::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#profileDialog .profile-visual {
+  position: static;
+  float: left;
+  width: 34%;
+  max-width: 58mm;
+  margin: 0 10mm 7mm 0;
+}
+
+#profileDialog .profile-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: none;
+  padding: 2.2mm;
+  object-fit: contain;
+  object-position: center top;
+  border: 1px solid #766e61;
+  border-radius: 0;
+  background: #e9e2d4;
+  box-shadow:
+    0 1px 0 #fff9 inset,
+    0 0 0 1px #fff6 inset,
+    0 3px 7px #4a41331c;
+  filter: saturate(.9) contrast(.98);
+}
+
+#profileDialog .profile-image-empty {
+  min-height: 72mm;
+  padding: 0;
+  border-style: solid;
+  background:
+    linear-gradient(135deg, transparent 49.7%, #8b82741f 50%, transparent 50.3%),
+    linear-gradient(45deg, transparent 49.7%, #8b82741f 50%, transparent 50.3%),
+    #ebe4d7;
+  color: #756d60;
+}
+
+#profileDialog .profile-image-empty span {
+  font: 700 11px/1 Manrope, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#profileDialog .profile-image-empty small {
+  color: #8c8376;
+}
+
+#profileDialog .profile-age {
+  margin: 2.5mm 0 0;
+  padding: 2.5mm 0 0;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  text-align: left;
+  font: 700 10px/1.4 Manrope, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+#profileDialog .profile-details {
+  display: block;
+  min-width: 0;
+}
+
+#profileDialog .profile-summary {
+  margin: 0 0 6mm;
+}
+
+#profileDialog .profile-summary p:first-child {
+  margin-top: 0;
+}
+
+#profileDialog .profile-summary p {
+  font-family: Lora, serif;
+  font-size: 14px;
+}
+
+#profileDialog .profile-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 7mm;
+  margin: 0 0 7mm;
+  padding: 4mm 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+#profileDialog .profile-facts > div {
+  display: grid;
+  grid-template-columns: minmax(30mm, .9fr) minmax(0, 1.25fr);
+  gap: 4mm;
+  align-items: baseline;
+  min-height: 9mm;
+  padding: 2.2mm 0;
+  border-bottom: 1px dotted #9d9382;
+}
+
+#profileDialog .profile-facts > div:nth-last-child(-n + 2) {
+  border-bottom-color: transparent;
+}
+
+#profileDialog .profile-facts dt {
+  color: var(--ink-soft);
+  font: 700 9px/1.4 Manrope, sans-serif;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+#profileDialog .profile-facts dd {
+  margin: 0;
+  color: var(--ink);
+  font: 600 12px/1.45 Manrope, sans-serif;
+}
+
+#profileDialog .profile-section {
+  margin: 7mm 0 0;
+  break-inside: avoid;
+}
+
+#profileDialog .profile-section h3 {
+  margin: 0 0 3mm;
+  padding: 0 0 2mm;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font: 800 10px/1.4 Manrope, sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+#profileDialog .profile-list {
+  margin: 0;
+  padding-left: 5mm;
+  color: #403c34;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#profileDialog .profile-list li {
+  margin: 1.5mm 0;
+  padding-left: 1mm;
+}
+
+#profileDialog .profile-entry-list {
+  display: grid;
+  gap: 0;
+}
+
+#profileDialog .profile-entry {
+  display: grid;
+  grid-template-columns: minmax(38mm, .8fr) minmax(0, 1.6fr);
+  gap: 5mm;
+  padding: 2.4mm 0;
+  border-bottom: 1px dotted #aaa08f;
+}
+
+#profileDialog .profile-entry strong {
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+#profileDialog .profile-entry span {
+  color: #4f493f;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+#profileDialog .profile-chronology {
+  clear: both;
+  padding-top: 2mm;
+}
+
+#profileDialog .empty {
+  color: var(--ink-soft);
+}
+
+@keyframes dossier-sheet-rise {
+  from { opacity: .55; transform: translateY(92px) scale(.992); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes dossier-backdrop-in {
+  from { background: rgba(13, 16, 21, 0); -webkit-backdrop-filter: blur(0); backdrop-filter: blur(0); }
+  to { background: rgba(13, 16, 21, .62); -webkit-backdrop-filter: blur(2px) saturate(.78); backdrop-filter: blur(2px) saturate(.78); }
+}
+
+@media (max-width: 760px) {
+  #profileDialog.profile-dialog {
+    inset: 8px 0 auto;
+    width: calc(100vw - 16px);
+    min-height: calc(100dvh - 16px);
+    max-height: calc(100dvh - 16px);
+    padding: 30px 24px 54px;
+  }
+  #profileDialog.profile-dialog::before {
+    inset: 8px 50% auto auto;
+    width: calc(100vw - 16px);
+    height: calc(100dvh - 16px);
+  }
+  #profileDialog .profile-heading {
+    padding-right: 0;
+  }
+  #profileDialog .profile-heading::after {
+    position: static;
+    display: block;
+    margin-top: 8px;
+  }
+  #profileDialog .profile-visual {
+    width: 38%;
+    max-width: 190px;
+    margin: 0 22px 20px 0;
+  }
+  #profileDialog .profile-facts {
+    grid-template-columns: 1fr;
+  }
+  #profileDialog .profile-facts > div,
+  #profileDialog .profile-entry {
+    grid-template-columns: minmax(110px, .85fr) minmax(0, 1.4fr);
+  }
+  #profileDialog .profile-facts > div:nth-last-child(2) {
+    border-bottom-color: #9d9382;
+  }
+}
+
+@media (max-width: 480px) {
+  #profileDialog .profile-visual {
+    float: none;
+    width: min(58%, 190px);
+    margin: 0 auto 24px;
+  }
+  #profileDialog .profile-age {
+    text-align: center;
+  }
+  #profileDialog .profile-facts > div,
+  #profileDialog .profile-entry {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #profileDialog.profile-dialog,
+  #profileDialog.profile-dialog::backdrop {
+    animation: none;
+  }
+}
