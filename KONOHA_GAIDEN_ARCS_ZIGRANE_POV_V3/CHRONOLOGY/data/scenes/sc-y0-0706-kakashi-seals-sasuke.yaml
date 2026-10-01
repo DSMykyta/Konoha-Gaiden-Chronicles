@@ -21,7 +21,8 @@ events:
   legacy_ids:
   - V10-000046-B
   title: Какаші накладає стримувальну печать
-  text: Після бою Саске Какаші накладає на Прокляту Печатку стримувальну печать.
+  text: Після перемоги над Йорої Какаші відводить Саске в ізольоване приміщення вежі та накладає на Прокляту Печатку стримувальну
+    печать, щоб перешкоджати її подальшому впливу.
   origin: M
   extent: interval
   display_rank: 100
@@ -36,6 +37,7 @@ events:
   - evd-v10-000046-B
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep39-audit
 - id: ev-y0-0706-orochimaru-confronts-kakashi
   legacy_ids:
   - V10-000046-B
@@ -58,6 +60,7 @@ events:
   - evd-v10-000046-B
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep39-audit
 relations:
 - id: rel-0706-seal-1
   kind: before

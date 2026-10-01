@@ -922,6 +922,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep39-audit
+    type: reference
+    title: 'Narutopedia — Bushy Brow''s Jealousy: Lions Barrage Unleashed!'
+    url: https://naruto.fandom.com/wiki/Bushy_Brow%27s_Jealousy%3A_Lions_Barrage_Unleashed%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3662,5 +3669,11 @@ evidence:
   - id: evd-narutopedia-ep38-audit
     source_id: src-narutopedia-ep38-audit
     locator: Episode 38, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep39-audit
+    source_id: src-narutopedia-ep39-audit
+    locator: Episode 39, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

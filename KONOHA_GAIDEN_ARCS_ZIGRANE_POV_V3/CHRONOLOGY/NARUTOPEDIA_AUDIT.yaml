@@ -41,9 +41,10 @@ checked_anime_episodes:
 - 36
 - 37
 - 38
+- 39
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 39
+next_anime_episode: 40
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -702,6 +703,20 @@ episode_audits:
     Kakashi warning together. No separate pain reactions, private thought moment, individual replies or draw-display micro
     moment. Existing whole Sasuke–Yoroi bout retained for episode 39 audit. Presence covers the hall until exit; next episode
     will refine subsequent fight/observer intervals.'
+- episode: 39
+  baseline_revision: 8cfc3bbbde4e2017ded8e761f408ebc541766f9e
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-sasuke-defeats-yoroi
+  - ev-y0-0706-kakashi-seals-curse-mark
+  - ev-y0-0706-orochimaru-confronts-kakashi
+  cast_review: Existing author forest-failure outcome preserved; no new author preliminary participants invented.
+  notes:
+  - 'No new moment IDs: enriched the retained whole Sasuke–Yoroi bout and sealing. Yoroi chakra absorption, chakra-use restriction
+    and Lion Combo are phases of the same fight, not separate micro moments. Orochimaru arrival kept in existing confrontation;
+    episode 40 continues it. Second bout already exists and is audited as a whole in episode 40. Sasuke and Kakashi arena
+    presence ends with first bout rather than spanning later matches.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

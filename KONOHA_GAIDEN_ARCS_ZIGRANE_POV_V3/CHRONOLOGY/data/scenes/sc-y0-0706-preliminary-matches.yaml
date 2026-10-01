@@ -21,8 +21,10 @@ events:
   legacy_ids:
   - V10-000046
   title: Саске перемагає Йорої
-  text: У першому попередньому поєдинку Саске перемагає Йорої Акадо, свідомо стримуючи Прокляту Печатку. Анко спостерігає
-    поруч із Хірузеном і вражена тим, що Саске здатен сам придушити печатку, подібну до її власної.
+  text: Проклята Печатка паралізує Саске й завдає сильного болю, коли він намагається формувати чакру, тому він не може покладатися
+    на нінджюцу чи ґенджюцу. Йорої поглинає його чакру й отримує перевагу також у ближньому бою. Саске стримує печатку та
+    перемагає новою комбінацією «Левове комбо», використовуючи тайджюцу. Анко спостерігає поруч із Хірузеном і вражена тим,
+    що Саске здатен сам придушити печатку, подібну до її власної.
   origin: M
   extent: interval
   display_rank: 100
@@ -39,10 +41,29 @@ events:
   - entity_id: c-anko
     role: observer
     mode: physical
+  - entity_id: c-hiruzen
+    role: observer
+    mode: physical
+  - entity_id: c-kakashi
+    role: observer
+    mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-sakura
+    role: observer
+    mode: physical
+  - entity_id: c-lee
+    role: observer
+    mode: physical
+  - entity_id: c-might-guy
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep39-audit
 - id: ev-y0-0706-shino-defeats-zaku
   legacy_ids:
   - V10-000046-C
@@ -363,3 +384,67 @@ presence:
   evidence_ids:
   - evd-manga-chunin-prelims
   review: pending
+- id: pr-audit-39-y0-0706-preliminary-matches-c-sasuke
+  entity_id: c-sasuke
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
+- id: pr-audit-39-y0-0706-preliminary-matches-c-yoroi
+  entity_id: c-yoroi
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
+- id: pr-audit-39-y0-0706-preliminary-matches-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
+- id: pr-audit-39-y0-0706-preliminary-matches-c-hiruzen
+  entity_id: c-hiruzen
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
+- id: pr-audit-39-y0-0706-preliminary-matches-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
+- id: pr-audit-39-y0-0706-preliminary-matches-c-sakura
+  entity_id: c-sakura
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
+- id: pr-audit-39-y0-0706-preliminary-matches-c-lee
+  entity_id: c-lee
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
+- id: pr-audit-39-y0-0706-preliminary-matches-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0706-sasuke-defeats-yoroi.start
+  to: ev-y0-0706-sasuke-defeats-yoroi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep39-audit
