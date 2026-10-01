@@ -4,6 +4,7 @@
   let active = false;
   let focusedEventIds = new Set();
   let focusedCharacters = new Set();
+  let hoveredCharacter = null;
 
   const style = document.createElement('style');
   style.textContent = `
@@ -14,9 +15,13 @@
       transition: opacity 180ms ease;
     }
     #timeline .thread.is-context-muted { opacity: .07 !important; }
+    #timeline .thread.is-character-hover-muted { opacity: .055 !important; }
+    #timeline .thread.is-character-hover-active { opacity: 1 !important; stroke-width: 3px; }
     #timeline .node.is-context-muted { opacity: .14; }
     #timeline .cloud-label.is-context-muted,
     #timeline .line-label.is-context-muted { opacity: .14; }
+    #timeline .line-label.is-character-hover-muted { opacity: .08 !important; }
+    #timeline .line-label.is-character-hover-active { opacity: 1 !important; }
     @media (prefers-reduced-motion: reduce) {
       #timeline .thread,
       #timeline .node,
@@ -33,6 +38,33 @@
     const activeKeys = window.__timelineActiveCloudKeys;
     if (!focus?.enabled || !(activeKeys instanceof Set) || activeKeys.has(key)) return colors;
     return { ...colors, alpha: colors.alpha * .16 };
+  };
+
+  /* Single-character concentration is a true straight lane. */
+  const baseSeparateNodes = TimelineCore.separateNodes.bind(TimelineCore);
+  TimelineCore.separateNodes = function separateNodesWithFocusedLane(nodes, top, bottom, clearance = 46) {
+    const result = baseSeparateNodes(nodes, top, bottom, clearance);
+    if (!focusedCharacter) return result;
+    const y = (top + bottom) / 2;
+    return result.map(node => {
+      const belongs = (node.cast || []).includes(focusedCharacter) || (node.group || []).some(event => (event.tracks || []).includes(focusedCharacter));
+      return belongs ? { ...node, y } : node;
+    });
+  };
+
+  const baseStrand = TimelineCore.strand.bind(TimelineCore);
+  TimelineCore.strand = function strandWithFocusedLane(anchors, id, middle, amplitude, lead = 1, pixelsPerDay = 24) {
+    if (!focusedCharacter || id !== focusedCharacter || !anchors.length) {
+      return baseStrand(anchors, id, middle, amplitude, lead, pixelsPerDay);
+    }
+    const y = anchors.reduce((sum, point) => sum + point.y, 0) / anchors.length;
+    const first = anchors[0];
+    const last = anchors.at(-1);
+    return [
+      { day: Math.max(0, first.day - lead), y, id: 'start', flat: true },
+      ...anchors.map(point => ({ ...point, y, node: true, flat: true })),
+      { day: Math.min(365, last.day + lead), y, id: 'end', flat: true }
+    ];
   };
 
   function normalizeEvents(items) {
@@ -81,6 +113,20 @@
     }
   }
 
+  function applyCharacterHover() {
+    const labels = lineCharacterMap();
+    document.querySelectorAll('#timeline .thread').forEach(element => {
+      const id = element.dataset.character;
+      element.classList.toggle('is-character-hover-muted', Boolean(hoveredCharacter && id !== hoveredCharacter));
+      element.classList.toggle('is-character-hover-active', Boolean(hoveredCharacter && id === hoveredCharacter));
+    });
+    document.querySelectorAll('#timeline .line-label').forEach(element => {
+      const id = labels.get(element.textContent.trim());
+      element.classList.toggle('is-character-hover-muted', Boolean(hoveredCharacter && id && id !== hoveredCharacter));
+      element.classList.toggle('is-character-hover-active', Boolean(hoveredCharacter && id === hoveredCharacter));
+    });
+  }
+
   function applySelectionFocus() {
     const nodes = typeof graphNodes !== 'undefined' && Array.isArray(graphNodes) ? graphNodes : [];
     const relatedNodeIds = new Set();
@@ -121,8 +167,37 @@
       element.classList.toggle('is-context-muted', active && !activeCloudKeys.has(key));
     });
 
+    applyCharacterHover();
     redrawClouds();
   }
+
+  function characterTrigger(target) {
+    if (!(target instanceof Element)) return null;
+    return target.closest('.person[data-event-focus-character],.character-name[data-focus-character]');
+  }
+
+  function triggerCharacter(trigger) {
+    return trigger?.dataset.eventFocusCharacter || trigger?.dataset.focusCharacter || null;
+  }
+
+  document.addEventListener('pointerover', event => {
+    const trigger = characterTrigger(event.target);
+    if (!trigger || !canHover(event)) return;
+    const related = characterTrigger(event.relatedTarget);
+    if (related === trigger) return;
+    hoveredCharacter = triggerCharacter(trigger);
+    applyCharacterHover();
+  }, true);
+
+  document.addEventListener('pointerout', event => {
+    const trigger = characterTrigger(event.target);
+    if (!trigger) return;
+    const related = characterTrigger(event.relatedTarget);
+    if (related === trigger) return;
+    if (event.relatedTarget instanceof Node && trigger.contains(event.relatedTarget)) return;
+    hoveredCharacter = null;
+    applyCharacterHover();
+  }, true);
 
   const baseShowEvent = showEvent;
   showEvent = function showEventWithMapFocus(event) {
