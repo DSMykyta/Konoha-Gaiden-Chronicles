@@ -1,0 +1,164 @@
+schema_version: 1
+id: sc-y0-0121-ebisu-intercepts
+episode_id: ep-y0-konohamaru
+display_rank: 300
+continuity_id: main
+title: Ебісу втручається; Наруто й Конохамару стають суперниками
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0121
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0121-ebisu-orders-return
+  title: Ебісу наказує Конохамару повернутися
+  text: Ебісу знаходить учня й наказує повернутися; Конохамару відмовляється.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-ebisu
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-ep2-opening
+  - evd-narutopedia-ch2-opening
+- id: ev-y0-0121-konohamaru-shows-sexy-jutsu
+  title: Конохамару показує Sexy Jutsu Ебісу
+  text: Конохамару показує вивчену техніку; Ебісу намагається забрати його.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-ebisu
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids: *id001
+- id: ev-y0-0121-naruto-defeats-ebisu
+  legacy_ids:
+  - V10-000004
+  title: Наруто перемагає Ебісу Гаремною Технікою
+  text: Наруто створює тіньових клонів і застосовує Гаремну Техніку; Ебісу непритомніє.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-ebisu
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000004
+  - evd-manga-ch2-konohamaru
+  - evd-narutopedia-ep2-opening
+- id: ev-y0-0121-naruto-teaches-konohamaru
+  legacy_ids:
+  - V10-000004
+  title: Наруто говорить Конохамару, що короткого шляху до Хокаґе немає
+  text: Наруто говорить Конохамару, що короткого шляху до титулу Хокаґе немає; вони стають суперниками.
+  origin: M
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000004
+  - evd-manga-ch2-konohamaru
+  - evd-narutopedia-ep2-opening
+- id: ev-y0-0121-konohamaru-ends-apprenticeship
+  title: Конохамару припиняє бути учнем Наруто
+  text: Конохамару відмовляється залежати від Наруто на шляху до титулу Хокаґе й припиняє їхні стосунки вчителя та учня.
+  origin: M
+  extent: interval
+  display_rank: 500
+  involvement:
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ch2-opening
+relations:
+- id: rel-y0-0121-ebisu-orders-return-before-y0-0121-konohamaru-shows-sexy-jutsu
+  kind: before
+  a: ev-y0-0121-ebisu-orders-return
+  b: ev-y0-0121-konohamaru-shows-sexy-jutsu
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: rel-y0-0121-konohamaru-shows-sexy-jutsu-before-y0-0121-naruto-defeats-ebisu
+  kind: before
+  a: ev-y0-0121-konohamaru-shows-sexy-jutsu
+  b: ev-y0-0121-naruto-defeats-ebisu
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: rel-0121-defeat-before-pupil-ending
+  kind: before
+  a: ev-y0-0121-naruto-defeats-ebisu
+  b: ev-y0-0121-konohamaru-ends-apprenticeship
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ch2-opening
+- id: rel-0121-ebisu-before-lesson
+  kind: before
+  a: ev-y0-0121-naruto-defeats-ebisu
+  b: ev-y0-0121-naruto-teaches-konohamaru
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-ch2-konohamaru
+presence:
+- id: pr-y0-0121-ebisu-intercepts-naruto
+  entity_id: c-naruto
+  from: sc-y0-0121-ebisu-intercepts.start
+  to: sc-y0-0121-ebisu-intercepts.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0121-ebisu-intercepts-konohamaru
+  entity_id: c-konohamaru
+  from: sc-y0-0121-ebisu-intercepts.start
+  to: sc-y0-0121-ebisu-intercepts.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-0121-kon-ebisu
+  entity_id: c-ebisu
+  from: sc-y0-0121-ebisu-intercepts.start
+  to: sc-y0-0121-ebisu-intercepts.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

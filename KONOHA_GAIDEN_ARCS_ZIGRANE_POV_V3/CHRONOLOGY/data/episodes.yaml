@@ -4,18 +4,18 @@ episodes:
   continuity_id: main
   arc_id: arc-y0-scroll-of-seals
   title: Витівка Наруто й Ірука
-  description: 'Одна сюжетна лінія: Витівка Наруто й Ірука. Сцени: Витівка Наруто на Монументі Хокаґе; Ірука повертає Наруто
-    до класу; Наруто відмиває Монумент Хокаґе; Ірука пригощає Наруто раменом.'
+  description: Витівка на Монументі, втеча від переслідувачів, повернення до класу, прибирання й рамен
+    з Ірукою.
 - id: ep-y0-graduation-failure
   continuity_id: main
   arc_id: arc-y0-scroll-of-seals
   title: Провал випускного іспиту
-  description: 'Одна сюжетна лінія: Провал випускного іспиту. Сцени: Випускний іспит Наруто.'
+  description: Випускний іспит Наруто й очікування на гойдалці після провалу.
 - id: ep-y0-scroll-theft
   continuity_id: main
   arc_id: arc-y0-scroll-of-seals
   title: Викрадення Сувою Печатей
-  description: 'Одна сюжетна лінія: Викрадення Сувою Печатей. Сцени: Мідзукі підштовхує Наруто викрасти Сувій Печатей.'
+  description: Мідзукі обманює Наруто; хлопець викрадає сувій із резиденції та вивчає техніку в лісі.
 - id: ep-y0-mizuki-confrontation
   continuity_id: main
   arc_id: arc-y0-scroll-of-seals
@@ -26,7 +26,8 @@ episodes:
   continuity_id: main
   arc_id: arc-y0-scroll-of-seals
   title: Наруто й Конохамару
-  description: 'Одна сюжетна лінія: Наруто й Конохамару. Сцени: Наруто знайомиться з Конохамару.'
+  description: Реєстрація Наруто, зустріч із Конохамару, навчання, втручання Ебісу й домовленість про
+    суперництво.
 - id: ep-y0-team-formation
   continuity_id: main
   arc_id: arc-y0-genin-formation
@@ -112,7 +113,7 @@ episodes:
   continuity_id: main
   arc_id: arc-y0-scroll-of-seals
   title: Хірузен організовує пошук сувою
-  description: 'Одна сюжетна лінія: Хірузен організовує пошук сувою. Сцени: Пошук викраденого Сувою Печатей.'
+  description: Повідомлення про викрадення, організація пошуку та його скасування після перемоги Наруто.
 - id: ep-y0-naruto-impersonation
   continuity_id: main
   arc_id: arc-y0-genin-formation
@@ -1622,3 +1623,18 @@ episodes:
   arc_id: arc-alt-sports-festival
   title: Наруто намагається дістатися туалету
   description: 'Одна сюжетна лінія: Наруто намагається дістатися туалету. Сцени: Наруто шукає туалет під час турніру.'
+- id: ep-y0-hiruzen-iruka-after-exam
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Хірузен та Ірука після іспиту
+  description: Окрема розмова Хірузена й Іруки після провалу Наруто; перед викраденням сувою.
+- id: ep-y0-ebisu-searches-konohamaru
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Ебісу втрачає свого учня
+  description: Ебісу відмовляє Конохамару від Наруто, помічає його зникнення й починає пошук.
+- id: ep-y0-hiruzen-iruka-konohamaru
+  continuity_id: main
+  arc_id: arc-y0-scroll-of-seals
+  title: Хірузен та Ірука про випуск Наруто
+  description: Окрема лінія на даху резиденції під час пригоди Наруто й Конохамару.

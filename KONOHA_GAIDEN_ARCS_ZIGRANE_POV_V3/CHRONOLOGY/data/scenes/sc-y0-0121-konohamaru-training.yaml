@@ -1,0 +1,114 @@
+schema_version: 1
+id: sc-y0-0121-konohamaru-training
+episode_id: ep-y0-konohamaru
+display_rank: 200
+continuity_id: main
+title: Наруто навчає Конохамару
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0121
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0121-naruto-spots-konohamaru
+  title: Наруто помічає стеження Конохамару
+  text: Наруто розпізнає маскування Конохамару, який іде за ним.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-ep2-opening
+  - evd-narutopedia-ch2-opening
+- id: ev-y0-0121-naruto-accepts-pupil
+  title: Наруто погоджується навчати Конохамару
+  text: Конохамару просить навчати його; Наруто погоджується.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  evidence_ids: *id001
+- id: ev-y0-0121-konohamaru-practises-transformation
+  title: Конохамару вчиться Перетворенню
+  text: Наруто навчає Конохамару Техніки Перетворення.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  evidence_ids: *id001
+- id: ev-y0-0121-konohamaru-explains-goal
+  title: Конохамару пояснює бажання стати Хокаґе
+  text: Конохамару хоче, щоб його визнавали особисто, а не лише онуком Хірузена.
+  origin: M
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: *id001
+relations:
+- id: rel-y0-0121-naruto-spots-konohamaru-before-y0-0121-naruto-accepts-pupil
+  kind: before
+  a: ev-y0-0121-naruto-spots-konohamaru
+  b: ev-y0-0121-naruto-accepts-pupil
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: rel-y0-0121-naruto-accepts-pupil-before-y0-0121-konohamaru-practises-transformation
+  kind: before
+  a: ev-y0-0121-naruto-accepts-pupil
+  b: ev-y0-0121-konohamaru-practises-transformation
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: rel-y0-0121-konohamaru-practises-transformation-before-y0-0121-konohamaru-explains-goal
+  kind: before
+  a: ev-y0-0121-konohamaru-practises-transformation
+  b: ev-y0-0121-konohamaru-explains-goal
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+presence:
+- id: pr-y0-0121-konohamaru-training-naruto
+  entity_id: c-naruto
+  from: sc-y0-0121-konohamaru-training.start
+  to: sc-y0-0121-konohamaru-training.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0121-konohamaru-training-konohamaru
+  entity_id: c-konohamaru
+  from: sc-y0-0121-konohamaru-training.start
+  to: sc-y0-0121-konohamaru-training.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

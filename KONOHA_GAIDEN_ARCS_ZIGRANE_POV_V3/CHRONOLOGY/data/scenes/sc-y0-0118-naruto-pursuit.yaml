@@ -1,0 +1,73 @@
+schema_version: 1
+id: sc-y0-0118-naruto-pursuit
+episode_id: ep-y0-naruto-monument
+display_rank: 150
+continuity_id: main
+title: Наруто тікає від переслідувачів
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0118
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0118-naruto-evades-pursuers
+  title: Наруто тікає від шинобі після витівки
+  text: Шинобі переслідують Наруто через розмальований Монумент; він ухиляється від них.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-iruka-opening
+- id: ev-y0-0118-iruka-catches-naruto
+  legacy_ids:
+  - V10-000001
+  title: Ірука ловить Наруто
+  text: Ірука знаходить Наруто після його втечі від переслідувачів і повертає до Академії.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000001
+  - evd-manga-ch1-prologue
+  - evd-narutopedia-iruka-opening
+relations:
+- id: rel-y0-0118-naruto-evades-pursuers-before-y0-0118-iruka-catches-naruto
+  kind: before
+  a: ev-y0-0118-naruto-evades-pursuers
+  b: ev-y0-0118-iruka-catches-naruto
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+presence:
+- id: pr-y0-0118-naruto-pursuit-naruto
+  entity_id: c-naruto
+  from: sc-y0-0118-naruto-pursuit.start
+  to: sc-y0-0118-naruto-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-0118-monument-iruka
+  entity_id: c-iruka
+  from: ev-y0-0118-iruka-catches-naruto.start
+  to: ev-y0-0118-iruka-catches-naruto.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

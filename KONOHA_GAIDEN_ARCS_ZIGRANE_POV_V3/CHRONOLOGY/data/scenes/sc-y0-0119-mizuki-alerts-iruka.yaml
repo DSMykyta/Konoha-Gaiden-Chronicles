@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-y0-0119-mizuki-alerts-iruka
+episode_id: ep-y0-hokage-scroll-response
+display_rank: 50
+continuity_id: main
+title: Мідзукі повідомляє Іруці про викрадення
+location_id: null
+placement:
+  anchor_id: ta-y0-0119
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0119-mizuki-alerts-iruka
+  title: Мідзукі повідомляє Іруці про викрадений сувій
+  text: Мідзукі повідомляє Іруці, що Наруто викрав Сувій Печатей.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-mizuki
+    role: focus
+    mode: physical
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-narutopedia-ep1-differences
+relations: []
+presence:
+- id: pr-y0-0119-mizuki-alerts-iruka-mizuki
+  entity_id: c-mizuki
+  from: sc-y0-0119-mizuki-alerts-iruka.start
+  to: sc-y0-0119-mizuki-alerts-iruka.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0119-mizuki-alerts-iruka-iruka
+  entity_id: c-iruka
+  from: sc-y0-0119-mizuki-alerts-iruka.start
+  to: sc-y0-0119-mizuki-alerts-iruka.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+day_part: night

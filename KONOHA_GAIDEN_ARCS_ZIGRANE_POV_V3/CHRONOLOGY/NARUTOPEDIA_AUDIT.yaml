@@ -1,0 +1,63 @@
+schema_version: 1
+method: Narutopedia synopsis compared to authoritative scenes; chapter summaries and adaptation differences crosschecked;
+  factual YAML edits only
+baseline_revision: f5d56b5d301eb87e34934272783f6f9de82f880f
+checked_on: '2026-10-01'
+checked_anime_episodes:
+- 1
+- 2
+checked_project_dates:
+- year 0 / January 18–21
+next_anime_episode: 3
+scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
+added_moment_ids:
+- ev-y0-0118-hiruzen-inspects-graffiti
+- ev-y0-0118-naruto-evades-pursuers
+- ev-y0-0119-hiruzen-reminds-iruka
+- ev-y0-0119-iruka-shares-orphanhood
+- ev-y0-0119-mizuki-accuses-iruka
+- ev-y0-0119-mizuki-alerts-iruka
+- ev-y0-0119-mizuki-demands-scroll
+- ev-y0-0119-mizuki-kunai-attack
+- ev-y0-0119-naruto-distracts-hiruzen
+- ev-y0-0119-naruto-flees-mizuki
+- ev-y0-0119-naruto-sits-alone
+- ev-y0-0119-naruto-studies-scroll
+- ev-y0-0120-hiruzen-ends-search
+- ev-y0-0120-iruka-decoys-mizuki
+- ev-y0-0120-naruto-protects-iruka
+- ev-y0-0121-ebisu-dismisses-naruto
+- ev-y0-0121-ebisu-orders-return
+- ev-y0-0121-genzo-photographs-naruto
+- ev-y0-0121-hiruzen-explains-fear
+- ev-y0-0121-iruka-hopes-for-naruto
+- ev-y0-0121-konohamaru-ends-apprenticeship
+- ev-y0-0121-konohamaru-explains-goal
+- ev-y0-0121-konohamaru-leaves-ebisu
+- ev-y0-0121-konohamaru-practises-transformation
+- ev-y0-0121-konohamaru-shows-sexy-jutsu
+- ev-y0-0121-naruto-accepts-pupil
+- ev-y0-0121-naruto-leaves-hokage
+- ev-y0-0121-naruto-persuades-hiruzen
+- ev-y0-0121-naruto-punches-konohamaru
+- ev-y0-0121-naruto-spots-konohamaru
+added_scene_ids:
+- sc-y0-0118-naruto-pursuit
+- sc-y0-0119-academy-swing
+- sc-y0-0119-hiruzen-iruka-talk
+- sc-y0-0119-hokage-scroll-theft
+- sc-y0-0119-mizuki-alerts-iruka
+- sc-y0-0119-scroll-training
+- sc-y0-0120-hiruzen-ends-search
+- sc-y0-0121-ebisu-intercepts
+- sc-y0-0121-ebisu-loses-konohamaru
+- sc-y0-0121-hiruzen-iruka-rooftop
+- sc-y0-0121-konohamaru-training
+- sc-y0-0121-ninja-photo
+preserved_existing_moment_ids: true
+preserved_existing_presence_ids: true
+project_cast: Accepted January 18 classroom presence of Kita, Ren and Sora retained and explicitly added as background to
+  Naruto transformation; no invented attendance elsewhere
+unresolved:
+- Exact hours and episode timestamps remain unverified
+- Manga/anime variant order is not asserted as simultaneity

@@ -528,6 +528,50 @@ sources:
     title: "Naruto anime — episode 216"
     locator_status: "episode_known_timestamp_pending"
 
+  - id: src-narutopedia-ep1-opening
+    type: reference
+    title: 'Narutopedia — Enter: Naruto Uzumaki!'
+    url: https://naruto.fandom.com/wiki/Enter:_Naruto_Uzumaki!
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ch1-opening
+    type: reference
+    title: Narutopedia — Naruto Uzumaki!! (chapter 1)
+    url: https://naruto.fandom.com/wiki/Naruto_Uzumaki!!_(chapter_1)
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep1-differences
+    type: reference
+    title: Narutopedia — Anime-Manga Differences, opening
+    url: https://naruto.fandom.com/wiki/Anime-Manga_Differences
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-iruka-opening
+    type: reference
+    title: Narutopedia — Iruka Umino, Prologue
+    url: https://naruto.fandom.com/wiki/Iruka_Umino
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep2-opening
+    type: reference
+    title: Narutopedia — My Name is Konohamaru!
+    url: https://naruto.fandom.com/wiki/My_Name_is_Konohamaru!
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ch2-opening
+    type: reference
+    title: Narutopedia — Konohamaru!!
+    url: https://naruto.fandom.com/wiki/Konohamaru!!
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-genzo-opening
+    type: reference
+    title: Narutopedia — Genzō
+    url: https://naruto.fandom.com/wiki/Genz%C5%8D
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -2900,3 +2944,40 @@ evidence:
     locator: "legacy row V10-000214"
     basis: "imported"
     review: "accepted"
+
+  - id: evd-narutopedia-ep1-opening
+    source_id: src-narutopedia-ep1-opening
+    locator: Episode 1, Synopsis; canonical actions only; no episode timestamps inspected
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-ch1-opening
+    source_id: src-narutopedia-ch1-opening
+    locator: Chapter 1, Summary; historical prologue excluded from year-zero placement
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-ep1-differences
+    source_id: src-narutopedia-ep1-differences
+    locator: 'Part I, opening episode differences: pursuit, swing, theft, kunai, transformation and speech; manga/anime variants kept distinct'
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-iruka-opening
+    source_id: src-narutopedia-iruka-opening
+    locator: 'Part I / Prologue — Land of Waves: monument pursuit, kunai attack and protection of Naruto'
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-ep2-opening
+    source_id: src-narutopedia-ep2-opening
+    locator: 'Episode 2, Synopsis: registration, first meeting, training, separate rooftop conversation and Ebisu encounter; no timestamps inspected'
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ch2-opening
+    source_id: src-narutopedia-ch2-opening
+    locator: 'Chapter 2, Summary: teaching, Konohamaru motivation, Ebisu encounter and ending the pupil relationship'
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-genzo-opening
+    source_id: src-narutopedia-genzo-opening
+    locator: 'Part I / Prologue — Land of Waves: Genzō photographs Naruto for ninja registration'
+    basis: source
+    review: accepted

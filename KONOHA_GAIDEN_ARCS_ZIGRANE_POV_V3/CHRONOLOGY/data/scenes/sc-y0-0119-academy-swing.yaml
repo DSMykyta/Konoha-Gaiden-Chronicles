@@ -1,0 +1,40 @@
+schema_version: 1
+id: sc-y0-0119-academy-swing
+episode_id: ep-y0-graduation-failure
+display_rank: 200
+continuity_id: main
+title: Наруто залишається біля Академії після провалу
+location_id: loc-academy-swing
+placement:
+  anchor_id: ta-y0-0119
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0119-naruto-sits-alone
+  title: Наруто сидить на гойдалці після провалу
+  text: Після іспиту Наруто сидить сам на гойдалці біля Академії.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-ep1-differences
+relations: []
+presence:
+- id: pr-y0-0119-academy-swing-naruto
+  entity_id: c-naruto
+  from: sc-y0-0119-academy-swing.start
+  to: sc-y0-0119-academy-swing.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

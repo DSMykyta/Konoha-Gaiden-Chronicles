@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-0119-hiruzen-iruka-talk
+episode_id: ep-y0-hiruzen-iruka-after-exam
+display_rank: 100
+continuity_id: main
+title: Хірузен говорить з Ірукою після іспиту
+location_id: null
+placement:
+  anchor_id: ta-y0-0119
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0119-hiruzen-reminds-iruka
+  title: Хірузен нагадує Іруці про його власне сирітство
+  text: Хірузен говорить Іруці про втрату його батьків під час нападу Дев’ятихвостого й становище Наруто.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-narutopedia-ch1-opening
+relations: []
+presence:
+- id: pr-y0-0119-hiruzen-iruka-talk-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-0119-hiruzen-iruka-talk.start
+  to: sc-y0-0119-hiruzen-iruka-talk.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0119-hiruzen-iruka-talk-iruka
+  entity_id: c-iruka
+  from: sc-y0-0119-hiruzen-iruka-talk.start
+  to: sc-y0-0119-hiruzen-iruka-talk.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

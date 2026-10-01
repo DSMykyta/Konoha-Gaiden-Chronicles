@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-y0-0121-hiruzen-iruka-rooftop
+episode_id: ep-y0-hiruzen-iruka-konohamaru
+display_rank: 100
+continuity_id: main
+title: Хірузен та Ірука обговорюють становище Наруто
+location_id: loc-hokage-rooftop
+placement:
+  anchor_id: ta-y0-0121
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0121-iruka-hopes-for-naruto
+  title: Ірука говорить про надії Наруто після випуску
+  text: Ірука говорить Хірузену, що Наруто сподівається на зміни після випуску.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-narutopedia-ep2-opening
+- id: ev-y0-0121-hiruzen-explains-fear
+  title: Хірузен пояснює страх селян
+  text: Хірузен пояснює Іруці, що селяни бояться Дев’ятихвостого всередині Наруто.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: *id001
+relations:
+- id: rel-y0-0121-iruka-hopes-for-naruto-before-y0-0121-hiruzen-explains-fear
+  kind: before
+  a: ev-y0-0121-iruka-hopes-for-naruto
+  b: ev-y0-0121-hiruzen-explains-fear
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+presence:
+- id: pr-y0-0121-hiruzen-iruka-rooftop-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-0121-hiruzen-iruka-rooftop.start
+  to: sc-y0-0121-hiruzen-iruka-rooftop.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0121-hiruzen-iruka-rooftop-iruka
+  entity_id: c-iruka
+  from: sc-y0-0121-hiruzen-iruka-rooftop.start
+  to: sc-y0-0121-hiruzen-iruka-rooftop.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

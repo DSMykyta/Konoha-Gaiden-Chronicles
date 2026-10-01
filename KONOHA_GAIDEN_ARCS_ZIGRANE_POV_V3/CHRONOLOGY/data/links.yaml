@@ -112,13 +112,14 @@ links:
   - evd-manga-sasuke-recovery
 - id: lnk-0118-monument-before-talk
   kind: before
-  a: sc-y0-0118-hokage-monument
+  a: sc-y0-0118-naruto-pursuit
   b: sc-y0-0118-iruka-naruto
   basis: source
   review: accepted
   evidence_ids:
   - evd-v10-000001
   - evd-manga-ch1-prologue
+  - evd-narutopedia-iruka-opening
 - id: lnk-0118-class-before-cleanup
   kind: before
   a: sc-y0-0118-iruka-naruto
@@ -137,28 +138,28 @@ links:
   - evd-manga-ch1-prologue
 - id: lnk-0119-exam-before-manipulation
   kind: before
-  a: sc-y0-0119-graduation-exam
+  a: sc-y0-0119-academy-swing
   b: sc-y0-0119-scroll-theft
-  basis: imported
-  review: pending
+  basis: source
+  review: accepted
   evidence_ids:
-  - evd-v10-000002
+  - evd-narutopedia-ch1-opening
+  - evd-narutopedia-ep1-differences
 - id: lnk-0119-theft-before-hokage-response
   kind: before
   a: ev-y0-0119-naruto-steals-scroll
   b: sc-y0-0119-hokage-response
-  basis: imported
-  review: pending
-  evidence_ids:
-  - evd-v10-000002
+  basis: source
+  review: accepted
+  evidence_ids: &id001
+  - evd-narutopedia-ch1-opening
 - id: lnk-0119-theft-before-confrontation
   kind: before
-  a: sc-y0-0119-scroll-theft
+  a: sc-y0-0119-scroll-training
   b: sc-y0-0119-mizuki-confrontation
-  basis: imported
-  review: pending
-  evidence_ids:
-  - evd-v10-000002
+  basis: source
+  review: accepted
+  evidence_ids: *id001
 - id: lnk-0119-confrontation-before-0120-resolution
   kind: before
   a: sc-y0-0119-mizuki-confrontation
@@ -2595,9 +2596,137 @@ links:
   review: accepted
   evidence_ids:
   - evd-ova-sports-festival
+- id: lnk-0118-paint-before-pursuit
+  kind: before
+  a: ev-y0-0118-naruto-paints-monument
+  b: sc-y0-0118-naruto-pursuit
+  basis: source
+  review: accepted
+  evidence_ids: &id003
+  - evd-narutopedia-iruka-opening
+- id: lnk-0119-exam-before-swing
+  kind: before
+  a: sc-y0-0119-graduation-exam
+  b: sc-y0-0119-academy-swing
+  basis: source
+  review: accepted
+  evidence_ids: &id002
+  - evd-narutopedia-ep1-differences
+- id: lnk-0119-manipulation-before-theft
+  kind: before
+  a: sc-y0-0119-scroll-theft
+  b: sc-y0-0119-hokage-scroll-theft
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep1-opening
+- id: lnk-0119-theft-before-training
+  kind: before
+  a: sc-y0-0119-hokage-scroll-theft
+  b: sc-y0-0119-scroll-training
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: lnk-0119-exam-before-hiruzen-iruka
+  kind: before
+  a: sc-y0-0119-graduation-exam
+  b: sc-y0-0119-hiruzen-iruka-talk
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: lnk-0119-hiruzen-iruka-before-theft
+  kind: before
+  a: sc-y0-0119-hiruzen-iruka-talk
+  b: sc-y0-0119-hokage-scroll-theft
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: lnk-0119-theft-before-alert
+  kind: before
+  a: sc-y0-0119-hokage-scroll-theft
+  b: sc-y0-0119-mizuki-alerts-iruka
+  basis: source
+  review: accepted
+  evidence_ids: *id002
+- id: lnk-0119-alert-before-iruka-finds
+  kind: before
+  a: sc-y0-0119-mizuki-alerts-iruka
+  b: ev-y0-0119-iruka-finds-naruto
+  basis: source
+  review: accepted
+  evidence_ids: *id003
+- id: lnk-0119-recovery-before-find
+  kind: before
+  a: sc-y0-0119-hokage-response
+  b: ev-y0-0119-iruka-finds-naruto
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: lnk-0120-victory-before-search-end
+  kind: before
+  a: ev-y0-0120-naruto-defeats-mizuki
+  b: sc-y0-0120-hiruzen-ends-search
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: lnk-0121-meeting-before-ebisu-talk
+  kind: before
+  a: sc-y0-0121-konohamaru
+  b: sc-y0-0121-ebisu-loses-konohamaru
+  basis: source
+  review: accepted
+  evidence_ids: &id004
+  - evd-narutopedia-ep2-opening
+- id: lnk-0121-leaving-before-training
+  kind: before
+  a: ev-y0-0121-konohamaru-leaves-ebisu
+  b: sc-y0-0121-konohamaru-training
+  basis: source
+  review: accepted
+  evidence_ids: *id004
+- id: lnk-0121-training-before-ebisu
+  kind: before
+  a: sc-y0-0121-konohamaru-training
+  b: sc-y0-0121-ebisu-intercepts
+  basis: source
+  review: accepted
+  evidence_ids: *id004
+- id: rel-0118-paint-before-caught
+  kind: before
+  a: ev-y0-0118-naruto-paints-monument
+  b: ev-y0-0118-iruka-catches-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-ch1-prologue
+- id: rel-0119-mizuki-before-theft
+  kind: before
+  a: ev-y0-0119-mizuki-manipulates-naruto
+  b: ev-y0-0119-naruto-steals-scroll
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-ch1-prologue
+- id: rel-0121-meet-before-ebisu
+  kind: before
+  a: ev-y0-0121-naruto-meets-konohamaru
+  b: ev-y0-0121-naruto-defeats-ebisu
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-ch2-konohamaru
+- id: lnk-0121-photo-before-registration
+  kind: before
+  a: sc-y0-0121-ninja-photo
+  b: sc-y0-0121-konohamaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-genzo-opening
+  - evd-narutopedia-ep2-opening
 notes:
-- No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
-  relation means unknown order, not simultaneity.
+- No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of relation means unknown order,
+  not simultaneity.
 - id: lnk-0707-yugao-before-hayate-briefing
   kind: before
   a: sc-y0-0707-yugao-finds-hayate

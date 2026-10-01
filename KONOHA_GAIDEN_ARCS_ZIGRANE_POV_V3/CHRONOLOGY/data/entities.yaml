@@ -1964,6 +1964,26 @@ entities:
     name: "Menma (amnesiac youth)"
     aliases: ["Менма", "юнак без пам'яті"]
 
+  - id: loc-konoha-woods
+    kind: location
+    name: Woods near Konohagakure
+    aliases:
+    - Ліс поблизу Конохи
+    parent_id: loc-konohagakure
+  - id: loc-academy-swing
+    kind: location
+    name: Academy swing
+    aliases:
+    - Гойдалка біля Академії
+    parent_id: loc-konohagakure
+
+  - id: c-genzo
+    kind: person
+    name: Genzō
+    aliases:
+    - Ґензо
+    - Гензо
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

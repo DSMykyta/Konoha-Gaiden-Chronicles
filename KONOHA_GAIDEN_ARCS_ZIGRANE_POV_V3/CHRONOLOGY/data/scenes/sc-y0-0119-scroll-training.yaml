@@ -1,0 +1,41 @@
+schema_version: 1
+id: sc-y0-0119-scroll-training
+episode_id: ep-y0-scroll-theft
+display_rank: 300
+continuity_id: main
+title: Наруто вивчає техніку із сувою
+location_id: loc-konoha-woods
+placement:
+  anchor_id: ta-y0-0119
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0119-naruto-studies-scroll
+  title: Наруто вивчає техніку із Сувою Печатей
+  text: Наруто відкриває сувій і вивчає Техніку Множинних Тіньових Клонів.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-ep1-opening
+relations: []
+presence:
+- id: pr-y0-0119-scroll-training-naruto
+  entity_id: c-naruto
+  from: sc-y0-0119-scroll-training.start
+  to: sc-y0-0119-scroll-training.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+day_part: night

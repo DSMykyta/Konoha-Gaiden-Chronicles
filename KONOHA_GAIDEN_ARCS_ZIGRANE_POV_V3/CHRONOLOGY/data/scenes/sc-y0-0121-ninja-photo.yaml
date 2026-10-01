@@ -1,0 +1,50 @@
+schema_version: 1
+id: sc-y0-0121-ninja-photo
+episode_id: ep-y0-konohamaru
+display_rank: 50
+continuity_id: main
+title: Наруто фотографується для реєстрації
+location_id: null
+placement:
+  anchor_id: ta-y0-0121
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: unknown
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0121-genzo-photographs-naruto
+  title: Ґензо фотографує Наруто
+  text: Ґензо фотографує Наруто з розмальованим обличчям для його реєстраційного профілю.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-genzo
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-genzo-opening
+relations: []
+presence:
+- id: pr-y0-0121-ninja-photo-genzo
+  entity_id: c-genzo
+  from: sc-y0-0121-ninja-photo.start
+  to: sc-y0-0121-ninja-photo.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0121-ninja-photo-naruto
+  entity_id: c-naruto
+  from: sc-y0-0121-ninja-photo.start
+  to: sc-y0-0121-ninja-photo.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

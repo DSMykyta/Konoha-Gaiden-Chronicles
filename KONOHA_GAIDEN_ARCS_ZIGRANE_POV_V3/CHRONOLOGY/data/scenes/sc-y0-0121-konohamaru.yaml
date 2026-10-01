@@ -1,63 +1,153 @@
 schema_version: 1
-id: "sc-y0-0121-konohamaru"
+id: sc-y0-0121-konohamaru
 episode_id: ep-y0-konohamaru
 display_rank: 100
-continuity_id: "main"
-title: "Наруто знайомиться з Конохамару"
-location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-y0-0121", day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Реєстрація Наруто й зустріч із Конохамару
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-y0-0121
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0121-naruto-registers-ninja"
-    legacy_ids: ["V10-000004"]
-    title: "Наруто офіційно реєструється як шинобі"
-    text: "Після випуску Наруто проходить офіційну реєстрацію як шинобі Конохи."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
-  - id: "ev-y0-0121-naruto-meets-konohamaru"
-    legacy_ids: ["V10-000004"]
-    title: "Наруто знайомиться з Конохамару"
-    text: "Конохамару кидає Наруто виклик і намагається використати його як суперника на шляху до титулу Хокаґе."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
-  - id: "ev-y0-0121-naruto-defeats-ebisu"
-    legacy_ids: ["V10-000004"]
-    title: "Наруто перемагає Ебісу Гаремною Технікою"
-    text: "Коли Ебісу втручається, Наруто перемагає його Гаремною Технікою."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-ebisu", role: "participant", mode: "physical"}
-      - {entity_id: "c-konohamaru", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
-  - id: "ev-y0-0121-naruto-teaches-konohamaru"
-    legacy_ids: ["V10-000004"]
-    title: "Наруто говорить Конохамару, що короткого шляху до Хокаґе немає"
-    text: "Наруто пояснює Конохамару, що стати Хокаґе не можна коротким шляхом."
-    origin: "M"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000004", "evd-manga-ch2-konohamaru"]
+- id: ev-y0-0121-naruto-registers-ninja
+  legacy_ids:
+  - V10-000004
+  title: Наруто офіційно реєструється як шинобі
+  text: Наруто подає фотографію для реєстрації; Хірузен вимагає її переробити.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000004
+  - evd-manga-ch2-konohamaru
+  - evd-narutopedia-ep2-opening
+- id: ev-y0-0121-naruto-persuades-hiruzen
+  title: Наруто застосовує Sexy Jutsu перед Хірузеном
+  text: Наруто відмовляється переробити фото й застосовує Sexy Jutsu; у Хірузена починається носова кровотеча.
+  origin: A
+  extent: interval
+  display_rank: 150
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-ep2-opening
+- id: ev-y0-0121-naruto-meets-konohamaru
+  legacy_ids:
+  - V10-000004
+  title: Наруто знайомиться з Конохамару
+  text: Конохамару вбігає до Хірузена, щоб кинути йому виклик, падає й звинувачує Наруто.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000004
+  - evd-manga-ch2-konohamaru
+  - evd-narutopedia-ep2-opening
+- id: ev-y0-0121-naruto-punches-konohamaru
+  title: Наруто б’є Конохамару
+  text: Наруто б’є Конохамару попри його посилання на спорідненість із Хірузеном.
+  origin: A
+  extent: interval
+  display_rank: 250
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  evidence_ids: *id001
+- id: ev-y0-0121-naruto-leaves-hokage
+  title: Наруто залишає резиденцію Хокаґе
+  text: Наруто йде з резиденції після зустрічі з Конохамару.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep2-opening
 relations:
-  - {id: "rel-0121-meet-before-ebisu", kind: "before", a: "ev-y0-0121-naruto-meets-konohamaru", b: "ev-y0-0121-naruto-defeats-ebisu", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch2-konohamaru"]}
-  - {id: "rel-0121-ebisu-before-lesson", kind: "before", a: "ev-y0-0121-naruto-defeats-ebisu", b: "ev-y0-0121-naruto-teaches-konohamaru", basis: "source", review: "pending", evidence_ids: ["evd-manga-ch2-konohamaru"]}
+- id: rel-0121-registration-1
+  kind: before
+  a: ev-y0-0121-naruto-registers-ninja
+  b: ev-y0-0121-naruto-persuades-hiruzen
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: rel-0121-registration-2
+  kind: before
+  a: ev-y0-0121-naruto-persuades-hiruzen
+  b: ev-y0-0121-naruto-meets-konohamaru
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: rel-0121-registration-3
+  kind: before
+  a: ev-y0-0121-naruto-meets-konohamaru
+  b: ev-y0-0121-naruto-punches-konohamaru
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: rel-0121-punch-before-departure
+  kind: before
+  a: ev-y0-0121-naruto-punches-konohamaru
+  b: ev-y0-0121-naruto-leaves-hokage
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep2-opening
 presence:
-  - {id: "pr-0121-kon-naruto", entity_id: "c-naruto", from: "sc-y0-0121-konohamaru.start", to: "sc-y0-0121-konohamaru.end", basis: "source", evidence_ids: ["evd-v10-000004"], review: "accepted"}
-  - {id: "pr-0121-kon-konohamaru", entity_id: "c-konohamaru", from: "ev-y0-0121-naruto-meets-konohamaru.start", to: "sc-y0-0121-konohamaru.end", basis: "source", evidence_ids: ["evd-v10-000004"], review: "accepted"}
-  - {id: "pr-0121-kon-ebisu", entity_id: "c-ebisu", from: "ev-y0-0121-naruto-defeats-ebisu.start", to: "ev-y0-0121-naruto-defeats-ebisu.end", basis: "source", evidence_ids: ["evd-v10-000004"], review: "accepted"}
+- id: pr-0121-kon-naruto
+  entity_id: c-naruto
+  from: sc-y0-0121-konohamaru.start
+  to: sc-y0-0121-konohamaru.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0121-konohamaru-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-0121-konohamaru.start
+  to: sc-y0-0121-konohamaru.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-0121-kon-konohamaru
+  entity_id: c-konohamaru
+  from: ev-y0-0121-naruto-meets-konohamaru.start
+  to: ev-y0-0121-naruto-punches-konohamaru.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

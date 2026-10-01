@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-y0-0121-ebisu-loses-konohamaru
+episode_id: ep-y0-ebisu-searches-konohamaru
+display_rank: 100
+continuity_id: main
+title: Конохамару залишає Ебісу
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-y0-0121
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0121-ebisu-dismisses-naruto
+  title: Ебісу відмовляє Конохамару від Наруто
+  text: Ебісу зневажливо відгукується про Наруто й пропонує Конохамару вчитися в нього.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-ebisu
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-narutopedia-ep2-opening
+- id: ev-y0-0121-konohamaru-leaves-ebisu
+  title: Конохамару йде слідом за Наруто
+  text: Конохамару непомітно залишає Ебісу; наставник помічає зникнення й вирушає шукати його.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-ebisu
+    role: focus
+    mode: physical
+  evidence_ids: *id001
+relations:
+- id: rel-y0-0121-ebisu-dismisses-naruto-before-y0-0121-konohamaru-leaves-ebisu
+  kind: before
+  a: ev-y0-0121-ebisu-dismisses-naruto
+  b: ev-y0-0121-konohamaru-leaves-ebisu
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+presence:
+- id: pr-y0-0121-ebisu-loses-konohamaru-ebisu
+  entity_id: c-ebisu
+  from: sc-y0-0121-ebisu-loses-konohamaru.start
+  to: sc-y0-0121-ebisu-loses-konohamaru.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-y0-0121-ebisu-loses-konohamaru-konohamaru
+  entity_id: c-konohamaru
+  from: sc-y0-0121-ebisu-loses-konohamaru.start
+  to: sc-y0-0121-ebisu-loses-konohamaru.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

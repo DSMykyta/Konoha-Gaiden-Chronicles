@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-y0-0119-hokage-scroll-theft
+episode_id: ep-y0-scroll-theft
+display_rank: 200
+continuity_id: main
+title: Наруто викрадає сувій із резиденції
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-y0-0119
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0119-naruto-distracts-hiruzen
+  title: Наруто відволікає Хірузена під час викрадення
+  text: Хірузен застає Наруто в резиденції; Наруто застосовує Sexy Jutsu, щоб утекти із сувоєм.
+  origin: M
+  extent: interval
+  display_rank: 50
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-narutopedia-ep1-differences
+- id: ev-y0-0119-naruto-steals-scroll
+  legacy_ids:
+  - V10-000002
+  title: Наруто викрадає Сувій Печатей
+  text: Наруто викрадає Сувій Печатей із резиденції Хокаґе.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000002
+  - evd-manga-ch1-prologue
+  - evd-narutopedia-ch1-opening
+relations:
+- id: rel-0119-distraction-before-theft
+  kind: before
+  a: ev-y0-0119-naruto-distracts-hiruzen
+  b: ev-y0-0119-naruto-steals-scroll
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+presence:
+- id: pr-y0-0119-hokage-scroll-theft-naruto
+  entity_id: c-naruto
+  from: sc-y0-0119-hokage-scroll-theft.start
+  to: sc-y0-0119-hokage-scroll-theft.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ch1-opening
+- id: pr-y0-0119-hokage-scroll-theft-hiruzen
+  entity_id: c-hiruzen
+  from: ev-y0-0119-naruto-distracts-hiruzen.start
+  to: ev-y0-0119-naruto-distracts-hiruzen.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+day_part: night
