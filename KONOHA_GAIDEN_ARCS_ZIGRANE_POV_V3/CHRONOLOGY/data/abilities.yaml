@@ -1,0 +1,20 @@
+schema_version: 1
+abilities:
+  - id: abl-shadow-clone-multi
+    name: "Техніка множинного тіньового клонування"
+    kind: "ninjutsu"
+  - id: abl-transformation
+    name: "Техніка перетворення"
+    kind: "ninjutsu"
+  - id: abl-chakra-surface-control
+    name: "Ходіння по деревах і воді"
+    kind: "chakra_control"
+  - id: abl-toad-summoning
+    name: "Техніка призову жаб"
+    kind: "summoning"
+  - id: abl-rasengan
+    name: "Расенґан"
+    kind: "ninjutsu"
+  - id: abl-nine-tails-chakra
+    name: "Чакра Дев’ятихвостого"
+    kind: "jinchuriki"
