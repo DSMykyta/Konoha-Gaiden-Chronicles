@@ -28,9 +28,10 @@ checked_anime_episodes:
 - 23
 - 24
 - 25
+- 26
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 26
+next_anime_episode: 27
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -452,6 +453,19 @@ episode_audits:
   - A whole mentor conversation and post-exam inspection added. Raido background uses project evidence, without invented dialogue.
     Source places Forest of Death gathering on the next day; reconcile forest anchors when auditing its start rather than
     retaining same-day assumption.
+- episode: 26
+  baseline_revision: 2471d77a1fb76b368e99e9679ca796e56302b3d2
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0701-konohamaru-team-prepares-report
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - 'Recap frame retained as one whole interview moment; repeated past adventures are not duplicated as new events. Corrected
+    missing interviewee presence and placement: after July 1 written exam, before next-day forest start. Scene ID remains
+    stable despite corrected working date.'
+  - Forest start scene moved to the same next-day July 2 anchor so the interview-before-entry relation does not run backwards
+    in working dates. Internal forest chronology is checked episode by episode.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

@@ -3131,6 +3131,15 @@ links:
   evidence_ids:
   - evd-narutopedia-ep25-audit
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep26-audit
+  id: lnk-audit26-report-before-forest-briefing
+  kind: before
+  a: sc-y0-0701-konohamaru-report
+  b: sc-y0-0701-forest-start
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

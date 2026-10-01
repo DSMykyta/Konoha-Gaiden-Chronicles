@@ -759,6 +759,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep26-audit
+    type: reference
+    title: 'Narutopedia — Special Report: Live from the Forest of Death!'
+    url: https://naruto.fandom.com/wiki/Special_Report%3A_Live_from_the_Forest_of_Death%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3349,4 +3356,10 @@ evidence:
       already nominated Team 9 and is included as a background mentor during staff-room
       discussion. No dialogue assigned.
     basis: project_decision
+    review: accepted
+
+  - id: evd-narutopedia-ep26-audit
+    source_id: src-narutopedia-ep26-audit
+    locator: Episode 26, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
     review: accepted

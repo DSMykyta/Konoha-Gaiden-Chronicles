@@ -1,29 +1,106 @@
 schema_version: 1
-id: "sc-y0-0701-konohamaru-report"
+id: sc-y0-0701-konohamaru-report
 episode_id: ep-y0-konohamaru-exam-report
 display_rank: 100
-continuity_id: "main"
-title: "Конохамару, Моегі й Удон готують репортаж про іспит"
-location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-y0-0701", day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Команда 7 дає інтерв’ю трійці Конохамару
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0701-konohamaru-team-prepares-report"
-    legacy_ids: ["V10-000041"]
-    title: "Трійця Конохамару готує спеціальний репортаж"
-    text: "Конохамару, Моегі й Удон готують репортаж про перебіг іспиту; решта спеціальної серії переважно переказує вже відомі події."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-konohamaru", role: "focus", mode: "physical"}
-      - {entity_id: "c-moegi", role: "participant", mode: "physical"}
-      - {entity_id: "c-udon", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000041", "evd-anime-26-report"]
+- id: ev-y0-0701-konohamaru-team-prepares-report
+  legacy_ids:
+  - V10-000041
+  title: Конохамару, Моегі й Удон беруть інтерв’ю в Команди 7
+  text: Перед входом до Лісу Смерті Наруто помічає квадратний камінь, за яким ховається трійця Конохамару. Діти виходять із
+    маскування й просять інтерв’ю для шкільного репортажу. Конохамару розпитує Наруто, який переважно хвалиться; Моегі слухає
+    Сакуру про техніки, Саске й Какаші; Удон розмовляє із Саске, який заперечує перебільшення Наруто. Учасники переказують
+    попередні пригоди зі своїх позицій.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-konohamaru
+    role: focus
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: mentioned
+    mode: remote
+  evidence_ids:
+  - evd-v10-000041
+  - evd-anime-26-report
+  - evd-narutopedia-ep26-audit
 relations: []
 presence:
-  - {id: "pr-0701-report-konohamaru", entity_id: "c-konohamaru", from: "sc-y0-0701-konohamaru-report.start", to: "sc-y0-0701-konohamaru-report.end", basis: "source", evidence_ids: ["evd-v10-000041"], review: "accepted"}
-  - {id: "pr-0701-report-moegi", entity_id: "c-moegi", from: "sc-y0-0701-konohamaru-report.start", to: "sc-y0-0701-konohamaru-report.end", basis: "source", evidence_ids: ["evd-v10-000041"], review: "accepted"}
-  - {id: "pr-0701-report-udon", entity_id: "c-udon", from: "sc-y0-0701-konohamaru-report.start", to: "sc-y0-0701-konohamaru-report.end", basis: "source", evidence_ids: ["evd-v10-000041"], review: "accepted"}
+- id: pr-0701-report-konohamaru
+  entity_id: c-konohamaru
+  from: sc-y0-0701-konohamaru-report.start
+  to: sc-y0-0701-konohamaru-report.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000041
+  review: accepted
+- id: pr-0701-report-moegi
+  entity_id: c-moegi
+  from: sc-y0-0701-konohamaru-report.start
+  to: sc-y0-0701-konohamaru-report.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000041
+  review: accepted
+- id: pr-0701-report-udon
+  entity_id: c-udon
+  from: sc-y0-0701-konohamaru-report.start
+  to: sc-y0-0701-konohamaru-report.end
+  basis: source
+  evidence_ids:
+  - evd-v10-000041
+  review: accepted
+- id: pr-audit-26-y0-0701-konohamaru-report-c-naruto
+  entity_id: c-naruto
+  from: sc-y0-0701-konohamaru-report.start
+  to: sc-y0-0701-konohamaru-report.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep26-audit
+- id: pr-audit-26-y0-0701-konohamaru-report-c-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-0701-konohamaru-report.start
+  to: sc-y0-0701-konohamaru-report.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep26-audit
+- id: pr-audit-26-y0-0701-konohamaru-report-c-sakura
+  entity_id: c-sakura
+  from: sc-y0-0701-konohamaru-report.start
+  to: sc-y0-0701-konohamaru-report.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep26-audit
