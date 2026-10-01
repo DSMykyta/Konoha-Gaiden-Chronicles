@@ -682,6 +682,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep17-audit
+    type: reference
+    title: 'Narutopedia — White Past: Hidden Ambition'
+    url: https://naruto.fandom.com/wiki/White_Past%3A_Hidden_Ambition
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3187,5 +3194,11 @@ evidence:
   - id: evd-narutopedia-ep16-audit
     source_id: src-narutopedia-ep16-audit
     locator: Episode 16, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep17-audit
+    source_id: src-narutopedia-ep17-audit
+    locator: Episode 17, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

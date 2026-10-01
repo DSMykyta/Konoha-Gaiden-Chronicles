@@ -531,6 +531,93 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep16-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-breaks-ice-mirrors
+  display_rank: 420
+  title: Наруто руйнує крижані дзеркала
+  text: Посилений чакрою Лиса Наруто перехоплює Хаку й ударом пробиває дзеркало; техніка руйнується.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-recognises-haku
+  display_rank: 430
+  title: Наруто впізнає Хаку без маски
+  text: Маска Хаку падає. Наруто впізнає хлопця з лісу й зупиняє наступний удар.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-haku-explains-past
+  display_rank: 440
+  title: Хаку просить смерті й розповідає про минуле
+  text: Хаку вважає себе непотрібним Забузі й просить Наруто вбити його. Він розповідає про успадковану силу, загибель батьків
+    і прийняття Забузою.
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-summons-tracking-ninken
+  display_rank: 450
+  title: Какаші викликає псів для затримання Забузи
+  text: Какаші викликає нінкен через сувій. Пси знаходять Забузу за кров’ю Какаші на його мечі й утримують його.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: affected
+    mode: physical
+  - entity_id: group-kakashi-ninken
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-readies-lightning-cutter
+  display_rank: 460
+  title: Какаші готує Різак блискавки
+  text: Какаші представляє власну техніку — Різак блискавки — та готується завершити бій.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
 - id: ev-y0-0330-haku-sacrifices-self
   legacy_ids:
   - V10-000031
@@ -925,6 +1012,54 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep16-audit
+- id: rel-audit-17-y0-0330-jonin-sense-fox-chakra-before-y0-0330-naruto-breaks-ice-mirrors
+  kind: before
+  a: ev-y0-0330-jonin-sense-fox-chakra
+  b: ev-y0-0330-naruto-breaks-ice-mirrors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- id: rel-audit-17-y0-0330-naruto-breaks-ice-mirrors-before-y0-0330-naruto-recognises-haku
+  kind: before
+  a: ev-y0-0330-naruto-breaks-ice-mirrors
+  b: ev-y0-0330-naruto-recognises-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- id: rel-audit-17-y0-0330-naruto-recognises-haku-before-y0-0330-haku-explains-past
+  kind: before
+  a: ev-y0-0330-naruto-recognises-haku
+  b: ev-y0-0330-haku-explains-past
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- id: rel-audit-17-y0-0330-haku-explains-past-before-y0-0330-kakashi-summons-tracking-ninken
+  kind: before
+  a: ev-y0-0330-haku-explains-past
+  b: ev-y0-0330-kakashi-summons-tracking-ninken
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- id: rel-audit-17-y0-0330-kakashi-summons-tracking-ninken-before-y0-0330-kakashi-readies-lightning-cutter
+  kind: before
+  a: ev-y0-0330-kakashi-summons-tracking-ninken
+  b: ev-y0-0330-kakashi-readies-lightning-cutter
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
+- id: rel-audit-17-y0-0330-kakashi-readies-lightning-cutter-before-y0-0330-haku-sacrifices-self
+  kind: before
+  a: ev-y0-0330-kakashi-readies-lightning-cutter
+  b: ev-y0-0330-haku-sacrifices-self
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit
 presence:
 - id: pr-0330-bridge-naruto
   entity_id: c-naruto
@@ -982,3 +1117,11 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep13-audit
+- id: pr-audit-17-y0-0330-bridge-final-battle-group-kakashi-ninken
+  entity_id: group-kakashi-ninken
+  from: ev-y0-0330-kakashi-summons-tracking-ninken.start
+  to: ev-y0-0330-haku-sacrifices-self.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep17-audit

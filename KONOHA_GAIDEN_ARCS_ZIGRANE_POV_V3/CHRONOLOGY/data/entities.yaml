@@ -2012,6 +2012,13 @@ entities:
     aliases:
     - Зорі
 
+  - id: group-kakashi-ninken
+    kind: group
+    name: Kakashi's ninken
+    aliases:
+    - Нінкен Какаші
+    - Пси Какаші
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

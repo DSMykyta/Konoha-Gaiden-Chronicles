@@ -19,9 +19,10 @@ checked_anime_episodes:
 - 14
 - 15
 - 16
+- 17
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 17
+next_anime_episode: 18
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -271,3 +272,16 @@ episode_audits:
   - ev-y0-0330-sasuke-awakens-sharingan
   cast_review: Existing project cast checked; no additional author-character presence established.
   notes: []
+- episode: 17
+  baseline_revision: 20f91d05e31c0eaf6d62c37d73441f81907091df
+  added_moment_ids:
+  - ev-y0-0330-naruto-breaks-ice-mirrors
+  - ev-y0-0330-naruto-recognises-haku
+  - ev-y0-0330-haku-explains-past
+  - ev-y0-0330-kakashi-summons-tracking-ninken
+  - ev-y0-0330-kakashi-readies-lightning-cutter
+  added_scene_ids: []
+  updated_moment_ids: []
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - Haku's childhood is represented as his account to Naruto; no unverified flashback calendar date invented.
