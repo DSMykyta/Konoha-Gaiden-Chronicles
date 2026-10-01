@@ -957,6 +957,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep43-audit
+    type: reference
+    title: Narutopedia — Killer Kunoichi and a Shaky Shikamaru
+    url: https://naruto.fandom.com/wiki/Killer_Kunoichi_and_a_Shaky_Shikamaru
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3728,5 +3735,11 @@ evidence:
   - id: evd-narutopedia-ep42-audit
     source_id: src-narutopedia-ep42-audit
     locator: Episode 42, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep43-audit
+    source_id: src-narutopedia-ep43-audit
+    locator: Episode 43, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

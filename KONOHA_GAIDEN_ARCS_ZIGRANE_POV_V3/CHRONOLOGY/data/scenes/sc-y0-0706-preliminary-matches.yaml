@@ -165,7 +165,9 @@ events:
   legacy_ids:
   - V10-000046-F
   title: Темарі перемагає Тентен
-  text: Темарі перемагає Тентен, повністю нейтралізувавши її атаки вітром; Бакі спостерігає за виступом своєї учениці.
+  text: Тентен атакує метальною зброєю й технікою «Два дракони», а потім знову спрямовує зброю нитками. Темарі відбиває
+    атаки вітром великого віяла, здіймає Тентен у вихор і змушує впасти на віяло. Тентен непритомніє; Темарі оголошують
+    переможницею. Бакі спостерігає за виступом своєї учениці.
   origin: M
   extent: interval
   display_rank: 500
@@ -182,15 +184,46 @@ events:
   - entity_id: c-hayate
     role: observer
     mode: physical
+  - entity_id: c-lee
+    role: observer
+    mode: physical
+  - entity_id: c-might-guy
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046-F
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep43-audit
+- id: ev-y0-0706-lee-protects-tenten
+  title: Лі рятує Тентен після поєдинку
+  text: Після оголошення перемоги Темарі кидає непритомну Тентен у бік розкиданої зброї. Лі підхоплює товаришку й кидається
+    на Темарі; Ґай зупиняє його та застерігає ніндзя Суни не недооцінювати Лі.
+  display_rank: 550
+  involvement:
+  - entity_id: c-lee
+    role: focus
+    mode: physical
+  - entity_id: c-tenten
+    role: affected
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  origin: M
+  extent: interval
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
 - id: ev-y0-0706-shikamaru-defeats-kin
   legacy_ids:
   - V10-000046-G
   title: Шикамару перемагає Кін
-  text: Шикамару перемагає Кін Цучі, використовуючи тіньову техніку й оточення.
+  text: Кін уникає Тіньового наслідування й атакує Шикамару сенбонами з дзвіночками, використовуючи звук для ґенджюцу.
+    Шикамару подовжує свою тінь уздовж тіні нитки, яку тримає Кін, і захоплює її. Він кидає сюрикен та відхиляється назад;
+    змушена повторити рух, Кін ударяється головою об близьку стіну й непритомніє. Шикамару оголошують переможцем.
   origin: M
   extent: interval
   display_rank: 600
@@ -208,6 +241,7 @@ events:
   - evd-v10-000046-G
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep43-audit
 - id: ev-y0-0706-naruto-defeats-kiba
   legacy_ids:
   - V10-000046-H
@@ -346,11 +380,12 @@ relations:
   kind: before
   a: ev-y0-0706-temari-defeats-tenten
   b: ev-y0-0706-shikamaru-defeats-kin
-  basis: imported
-  review: pending
+  basis: source
+  review: accepted
   evidence_ids:
   - evd-v10-000046-F
   - evd-v10-000046-G
+  - evd-narutopedia-ep43-audit
 - id: rel-0706-match-6
   kind: before
   a: ev-y0-0706-shikamaru-defeats-kin
@@ -387,6 +422,22 @@ relations:
   evidence_ids:
   - evd-v10-000046-J
   - evd-v10-000046-K
+- id: rel-audit-43-ev-y0-0706-temari-defeats-tenten-ev-y0-0706-lee-protects-tenten
+  kind: before
+  a: ev-y0-0706-temari-defeats-tenten
+  b: ev-y0-0706-lee-protects-tenten
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: rel-audit-43-ev-y0-0706-lee-protects-tenten-ev-y0-0706-shikamaru-defeats-kin
+  kind: before
+  a: ev-y0-0706-lee-protects-tenten
+  b: ev-y0-0706-shikamaru-defeats-kin
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
 presence:
 - id: pr-0706-prelims-baki
   entity_id: c-baki
@@ -638,3 +689,107 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep42-audit
+- id: pr-audit-43-y0-0706-temari-defeats-tenten-c-temari
+  entity_id: c-temari
+  from: ev-y0-0706-temari-defeats-tenten.start
+  to: ev-y0-0706-temari-defeats-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-temari-defeats-tenten-c-tenten
+  entity_id: c-tenten
+  from: ev-y0-0706-temari-defeats-tenten.start
+  to: ev-y0-0706-temari-defeats-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-temari-defeats-tenten-c-baki
+  entity_id: c-baki
+  from: ev-y0-0706-temari-defeats-tenten.start
+  to: ev-y0-0706-temari-defeats-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-temari-defeats-tenten-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-temari-defeats-tenten.start
+  to: ev-y0-0706-temari-defeats-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-temari-defeats-tenten-c-lee
+  entity_id: c-lee
+  from: ev-y0-0706-temari-defeats-tenten.start
+  to: ev-y0-0706-temari-defeats-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-temari-defeats-tenten-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0706-temari-defeats-tenten.start
+  to: ev-y0-0706-temari-defeats-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-shikamaru-defeats-kin-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0706-shikamaru-defeats-kin.start
+  to: ev-y0-0706-shikamaru-defeats-kin.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-shikamaru-defeats-kin-c-kin
+  entity_id: c-kin
+  from: ev-y0-0706-shikamaru-defeats-kin.start
+  to: ev-y0-0706-shikamaru-defeats-kin.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-y0-0706-shikamaru-defeats-kin-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-shikamaru-defeats-kin.start
+  to: ev-y0-0706-shikamaru-defeats-kin.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-ev-y0-0706-lee-protects-tenten-c-lee
+  entity_id: c-lee
+  from: ev-y0-0706-lee-protects-tenten.start
+  to: ev-y0-0706-lee-protects-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-ev-y0-0706-lee-protects-tenten-c-tenten
+  entity_id: c-tenten
+  from: ev-y0-0706-lee-protects-tenten.start
+  to: ev-y0-0706-lee-protects-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-ev-y0-0706-lee-protects-tenten-c-temari
+  entity_id: c-temari
+  from: ev-y0-0706-lee-protects-tenten.start
+  to: ev-y0-0706-lee-protects-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
+- id: pr-audit-43-ev-y0-0706-lee-protects-tenten-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0706-lee-protects-tenten.start
+  to: ev-y0-0706-lee-protects-tenten.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep43-audit
