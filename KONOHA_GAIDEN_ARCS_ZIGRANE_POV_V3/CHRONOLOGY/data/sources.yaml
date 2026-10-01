@@ -978,6 +978,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep46-audit
+    type: reference
+    title: 'Narutopedia — Byakugan Battle: Hinata Grows Bold!'
+    url: https://naruto.fandom.com/wiki/Byakugan_Battle%3A_Hinata_Grows_Bold%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3767,5 +3774,11 @@ evidence:
   - id: evd-narutopedia-ep45-audit
     source_id: src-narutopedia-ep45-audit
     locator: Episode 45, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep46-audit
+    source_id: src-narutopedia-ep46-audit
+    locator: Episode 46, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted

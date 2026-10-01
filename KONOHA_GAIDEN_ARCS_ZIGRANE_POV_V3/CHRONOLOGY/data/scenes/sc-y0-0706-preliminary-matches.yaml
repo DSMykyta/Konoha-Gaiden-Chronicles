@@ -277,7 +277,9 @@ events:
   legacy_ids:
   - V10-000046-I
   title: Неджі тяжко ранить Хінату
-  text: Неджі перемагає Хінату й завдає їй тяжких ушкоджень.
+  text: У восьмому поєдинку зустрічаються Хіната та її двоюрідний брат Неджі з побічної гілки клану Х’юґа. Неджі переконує
+    її здатися, називаючи надто лагідною для ніндзя. Підбадьорена Наруто, Хіната вирішує продовжити бій. Обоє використовують
+    Б’якуґан і М’який кулак; Неджі зрештою перемагає та завдає їй тяжких ушкоджень.
   origin: M
   extent: interval
   display_rank: 800
@@ -291,10 +293,17 @@ events:
   - entity_id: c-hayate
     role: observer
     mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-kakashi
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046-I
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep46-audit
 - id: ev-y0-0706-gaara-defeats-lee
   legacy_ids:
   - V10-000046-J
@@ -863,3 +872,43 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep45-audit
+- id: pr-audit-46-y0-0706-neji-defeats-hinata-c-neji
+  entity_id: c-neji
+  from: ev-y0-0706-neji-defeats-hinata.start
+  to: ev-y0-0706-neji-defeats-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep46-audit
+- id: pr-audit-46-y0-0706-neji-defeats-hinata-c-hinata
+  entity_id: c-hinata
+  from: ev-y0-0706-neji-defeats-hinata.start
+  to: ev-y0-0706-neji-defeats-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep46-audit
+- id: pr-audit-46-y0-0706-neji-defeats-hinata-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-neji-defeats-hinata.start
+  to: ev-y0-0706-neji-defeats-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep46-audit
+- id: pr-audit-46-y0-0706-neji-defeats-hinata-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0706-neji-defeats-hinata.start
+  to: ev-y0-0706-neji-defeats-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep46-audit
+- id: pr-audit-46-y0-0706-neji-defeats-hinata-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0706-neji-defeats-hinata.start
+  to: ev-y0-0706-neji-defeats-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep46-audit
