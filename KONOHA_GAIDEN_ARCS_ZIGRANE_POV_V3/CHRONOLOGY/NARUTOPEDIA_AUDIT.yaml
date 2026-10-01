@@ -36,9 +36,10 @@ checked_anime_episodes:
 - 31
 - 32
 - 33
+- 34
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 34
+next_anime_episode: 35
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -594,6 +595,24 @@ episode_audits:
   - 'No new moments needed: battle, curse transformation, retaliation, calming and withdrawal already existed. Expanded Team
     10 fight and corrected broken-arms wording to dislocated arms per episode synopsis. Added missing Neji/Tenten arrival
     presence inside whole awakening moment.'
+- episode: 34
+  baseline_revision: 9ca4b6ac016bf376f54b15a7ba95d92b30a61f77
+  added_moment_ids:
+  - ev-y0-forest-clearing-regroups-after-sound
+  - ev-y0-team8-witnesses-gaara-killings
+  added_scene_ids:
+  - sc-y0-team8-witnesses-gaara-killings
+  updated_moment_ids:
+  - ev-y0-0701-gaara-kills-team-shigure
+  - ev-y0-0701-sand-team-gets-scroll
+  - ev-y0-0701-sand-team-reaches-tower
+  - ev-y0-0701-anko-reviews-gaara-record
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - 'Added whole post-fight regrouping and Team 8 observation. Gaara threat and sibling intervention incorporated into retained
+    scroll outcome. Shigure teammates added. Gaara record stays on first forest day; episode presentation order does not move
+    it after next-day clearing battle. Removed unsupported first-day-afternoon placement for Anko viewing: her later entry
+    into tower follows nighttime Orochimaru duel; viewing date kept unknown instead of invented.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

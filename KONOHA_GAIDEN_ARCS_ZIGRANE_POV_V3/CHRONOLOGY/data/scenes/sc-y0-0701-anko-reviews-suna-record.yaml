@@ -5,14 +5,12 @@ display_rank: 100
 continuity_id: main
 title: Анко переглядає запис команди Суни
 location_id: loc-forest-death-tower
-placement:
-  anchor_id: ta-y0-0701
-  day_offset: 1
-day_part: afternoon
+placement: null
+day_part: null
 state: active
 presence_coverage: partial
 review:
-  time: partial
+  time: unknown
   cast: partial
   location: accepted
   origin: accepted
@@ -41,5 +39,15 @@ events:
   evidence_ids:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep34-audit
+  - evd-narutopedia-anko-forest-sequence
 relations: []
-presence: []
+presence:
+- id: pr-audit-34-y0-0701-anko-reviews-suna-record-c-anko
+  entity_id: c-anko
+  from: sc-y0-0701-anko-reviews-suna-record.start
+  to: sc-y0-0701-anko-reviews-suna-record.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit

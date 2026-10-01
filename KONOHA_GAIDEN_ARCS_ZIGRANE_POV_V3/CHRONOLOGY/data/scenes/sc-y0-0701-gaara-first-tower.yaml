@@ -22,7 +22,8 @@ events:
   legacy_ids:
   - V10-000040-G
   title: Ґаара вбиває Команду Шіґуре
-  text: Ґаара безжально знищує команду Шіґуре під час боротьби за сувій.
+  text: Шіґуре намагається здобути сувій Суни й атакує Ґаару дощем сенбонів із парасольок. Пісок захищає Ґаару, після чого
+    він захоплює Шіґуре та його товаришів піском і вбиває їх розчавленням.
   origin: M
   extent: interval
   display_rank: 100
@@ -39,17 +40,27 @@ events:
   - entity_id: c-kankuro
     role: participant
     mode: physical
+  - entity_id: c-baiu
+    role: affected
+    mode: physical
+  - entity_id: c-midare
+    role: affected
+    mode: physical
   focus_teams:
   - team-shigure
   evidence_ids:
   - evd-v10-000040-G
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep34-audit
+  - evd-narutopedia-shigure-forest-battle
+  - evd-narutopedia-team-shigure-cast
 - id: ev-y0-0701-sand-team-gets-scroll
   legacy_ids:
   - V10-000040-G
-  title: Команда Суни здобуває потрібний сувій
-  text: Після перемоги команда Ґаари отримує другий потрібний сувій.
+  title: Команда Суни здобуває сувій і облишує Команду 8
+  text: Після загибелі команди Шіґуре Ґаара, Темарі й Канкуро забирають потрібний сувій. Ґаара збирається атакувати Команду
+    8, яка спостерігає зі схованки, але брат і сестра переконують його облишити цих суперників.
   origin: M
   extent: interval
   display_rank: 200
@@ -67,6 +78,7 @@ events:
   - evd-v10-000040-G
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep34-audit
 relations:
 - id: rel-0701-gaara-1
   kind: before
@@ -76,4 +88,52 @@ relations:
   review: pending
   evidence_ids:
   - evd-v10-000040-G
-presence: []
+presence:
+- id: pr-audit-34-y0-0701-gaara-first-tower-c-shigure
+  entity_id: c-shigure
+  from: ev-y0-0701-gaara-kills-team-shigure.start
+  to: ev-y0-0701-gaara-kills-team-shigure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-0701-gaara-first-tower-c-baiu
+  entity_id: c-baiu
+  from: ev-y0-0701-gaara-kills-team-shigure.start
+  to: ev-y0-0701-gaara-kills-team-shigure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-0701-gaara-first-tower-c-midare
+  entity_id: c-midare
+  from: ev-y0-0701-gaara-kills-team-shigure.start
+  to: ev-y0-0701-gaara-kills-team-shigure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-0701-gaara-first-tower-c-gaara
+  entity_id: c-gaara
+  from: sc-y0-0701-gaara-first-tower.start
+  to: sc-y0-0701-gaara-first-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-0701-gaara-first-tower-c-temari
+  entity_id: c-temari
+  from: sc-y0-0701-gaara-first-tower.start
+  to: sc-y0-0701-gaara-first-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-0701-gaara-first-tower-c-kankuro
+  entity_id: c-kankuro
+  from: sc-y0-0701-gaara-first-tower.start
+  to: sc-y0-0701-gaara-first-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit

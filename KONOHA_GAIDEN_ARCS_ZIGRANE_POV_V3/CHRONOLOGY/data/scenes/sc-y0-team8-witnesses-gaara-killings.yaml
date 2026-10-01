@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-y0-team8-witnesses-gaara-killings
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-team8-witnesses-gaara-killings
+  display_rank: 100
+  title: Команда 8 ховається від Ґаари після загибелі генінів Дощу
+  text: Хіната, Кіба, Шіно й Акамару зі схованки спостерігають, як Ґаара вбиває генінів Амеґакуре. Вони залишаються під загрозою,
+    доки Темарі й Канкуро не переконують Ґаару піти.
+  involvement:
+  - entity_id: c-hinata
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+relations: []
+presence:
+- id: pr-audit-34-y0-team8-witnesses-gaara-killings-c-hinata
+  entity_id: c-hinata
+  from: sc-y0-team8-witnesses-gaara-killings.start
+  to: sc-y0-team8-witnesses-gaara-killings.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-team8-witnesses-gaara-killings-c-kiba
+  entity_id: c-kiba
+  from: sc-y0-team8-witnesses-gaara-killings.start
+  to: sc-y0-team8-witnesses-gaara-killings.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-team8-witnesses-gaara-killings-c-shino
+  entity_id: c-shino
+  from: sc-y0-team8-witnesses-gaara-killings.start
+  to: sc-y0-team8-witnesses-gaara-killings.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-team8-witnesses-gaara-killings-c-akamaru
+  entity_id: c-akamaru
+  from: sc-y0-team8-witnesses-gaara-killings.start
+  to: sc-y0-team8-witnesses-gaara-killings.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+episode_id: ep-y0-team8-forest-trial
+display_rank: 200
+title: Команда 8 спостерігає за Ґаарою зі схованки
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 0

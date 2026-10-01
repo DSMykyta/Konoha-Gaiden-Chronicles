@@ -303,6 +303,43 @@ events:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
   - evd-narutopedia-ep33-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-forest-clearing-regroups-after-sound
+  display_rank: 1100
+  title: Команди 7, 10 й Ґая оговтуються після нападу Звуку
+  text: Після відступу Досу Команда 7, Команда 10 та товариші Лі оговтуються від бою й допомагають пораненим.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
 relations:
 - id: rel-0702-clearing-1
   kind: before
@@ -376,6 +413,14 @@ relations:
   review: pending
   evidence_ids:
   - evd-manga-chunin-stage1-forest
+- id: rel-audit-34-y0-0702-sound-team-retreats-before-y0-forest-clearing-regroups-after-sound
+  kind: before
+  a: ev-y0-0702-sound-team-retreats
+  b: ev-y0-forest-clearing-regroups-after-sound
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
 presence:
 - id: pr-0702-clear-sakura
   entity_id: c-sakura

@@ -848,6 +848,32 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep34-audit
+    type: reference
+    title: 'Narutopedia — Akamaru Trembles: Gaara''s Cruel Strength!'
+    url: https://naruto.fandom.com/wiki/Akamaru_Trembles%3A_Gaara%27s_Cruel_Strength%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-shigure-forest-battle
+    type: reference
+    title: Narutopedia — Shigure
+    url: https://naruto.fandom.com/wiki/Shigure
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-team-shigure-cast
+    type: reference
+    title: Narutopedia — Team Shigure
+    url: https://naruto.fandom.com/wiki/Team_Shigure
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-anko-forest-sequence
+    type: reference
+    title: Narutopedia — Anko Mitarashi, Chūnin Exams
+    url: https://naruto.fandom.com/wiki/Anko_Mitarashi
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3523,5 +3549,27 @@ evidence:
     source_id: src-narutopedia-team-dosu-forest-fight
     locator: "Ch\u016Bnin Exams; Ino takes Kin hostage; Zaku attacks, injuring both\
       \ and knocking Kin out"
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep34-audit
+    source_id: src-narutopedia-ep34-audit
+    locator: Episode 34, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-shigure-forest-battle
+    source_id: src-narutopedia-shigure-forest-battle
+    locator: Chūnin Exams; umbrella senbon attack, sand defence, Sand Binding Coffin / crushing
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-team-shigure-cast
+    source_id: src-narutopedia-team-shigure-cast
+    locator: 'Members: Shigure, Baiu, Midare; all killed by Gaara'
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-anko-forest-sequence
+    source_id: src-narutopedia-anko-forest-sequence
+    locator: Chūnin Exams; body discovery before nighttime duel, tower entry afterward; record viewing exact date not stated
     basis: source
     review: accepted

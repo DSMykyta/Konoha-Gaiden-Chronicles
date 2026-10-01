@@ -41,5 +41,30 @@ events:
   - evd-v10-000040-G
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep34-audit
 relations: []
-presence: []
+presence:
+- id: pr-audit-34-y0-0701-suna-reaches-tower-c-gaara
+  entity_id: c-gaara
+  from: sc-y0-0701-suna-reaches-tower.start
+  to: sc-y0-0701-suna-reaches-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-0701-suna-reaches-tower-c-temari
+  entity_id: c-temari
+  from: sc-y0-0701-suna-reaches-tower.start
+  to: sc-y0-0701-suna-reaches-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+- id: pr-audit-34-y0-0701-suna-reaches-tower-c-kankuro
+  entity_id: c-kankuro
+  from: sc-y0-0701-suna-reaches-tower.start
+  to: sc-y0-0701-suna-reaches-tower.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit

@@ -2037,6 +2037,17 @@ entities:
     aliases:
     - Shiore
 
+  - id: c-baiu
+    kind: person
+    name: Байу
+    aliases:
+    - Baiu
+  - id: c-midare
+    kind: person
+    name: Мідаре
+    aliases:
+    - Midare
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

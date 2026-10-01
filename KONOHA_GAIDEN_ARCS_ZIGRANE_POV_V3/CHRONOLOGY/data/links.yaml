@@ -3245,6 +3245,31 @@ links:
   a: sc-y0-neji-spares-team10
   b: sc-y0-team10-watches-sakura-fight
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+  id: lnk-audit34-team8-observes-gaara
+  kind: observes
+  a: ev-y0-team8-witnesses-gaara-killings
+  b: ev-y0-0701-gaara-kills-team-shigure
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+  id: lnk-audit34-team8-trap-before-gaara-watch
+  kind: before
+  a: sc-y0-team8-first-forest-scroll
+  b: sc-y0-team8-witnesses-gaara-killings
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep34-audit
+  id: lnk-audit34-anko-duel-before-record-viewing
+  kind: before
+  a: sc-y0-0701-anko-orochimaru
+  b: sc-y0-0701-anko-reviews-suna-record
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.
