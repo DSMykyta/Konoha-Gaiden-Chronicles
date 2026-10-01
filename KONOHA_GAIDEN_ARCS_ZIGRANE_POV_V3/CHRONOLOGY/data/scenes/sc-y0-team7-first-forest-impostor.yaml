@@ -2,10 +2,10 @@ schema_version: 1
 id: sc-y0-team7-first-forest-impostor
 continuity_id: main
 state: active
-presence_coverage: partial
+presence_coverage: complete
 review:
   time: partial
-  cast: partial
+  cast: accepted
   location: partial
   origin: accepted
   text: accepted
@@ -15,9 +15,10 @@ events:
   focus_teams: []
   id: ev-y0-team7-first-forest-impostor
   display_rank: 100
-  title: Нападник із Амеґакуре видає себе за Наруто
-  text: Коли Наруто відокремлюється від товаришів, до Саске й Сакури під його виглядом підходить ніндзя Амеґакуре. Це перша
-    підміна учасника Команди 7 у лісі.
+  title: Саске викриває та відбиває напад підробленого Наруто
+  text: Після того як Наруто відходить, Оборо видає себе за нього перед Саске й Сакурою. Саске помічає відсутність порізу
+    на щоці, викриває підміну та перемагає нападника. Він знаходить і звільняє справжнього Наруто. Щоб запобігти новим підмінам,
+    команда домовляється про довгий пароль.
   involvement:
   - entity_id: c-sasuke
     role: focus
@@ -28,9 +29,13 @@ events:
   - entity_id: c-oboro
     role: participant
     mode: physical
+  - entity_id: c-naruto
+    role: affected
+    mode: physical
   evidence_ids:
   - evd-narutopedia-ep27-audit
   - evd-narutopedia-oboro-first-attack
+  - evd-narutopedia-ep28-audit
 relations: []
 presence:
 - id: pr-audit-27-y0-team7-first-forest-impostor-c-sasuke
@@ -57,6 +62,14 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep27-audit
+- id: pr-audit-28-y0-team7-first-forest-impostor-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-team7-first-forest-impostor.end
+  to: sc-y0-team7-first-forest-impostor.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
 episode_id: ep-y0-team7-forest-trial
 display_rank: 100
 title: Команда 7 стикається з підробленим Наруто

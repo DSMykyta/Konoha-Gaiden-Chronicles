@@ -1,0 +1,43 @@
+schema_version: 1
+id: sc-y0-naruto-escapes-forest-snake
+continuity_id: main
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-naruto-escapes-forest-snake
+  display_rank: 100
+  title: Наруто розриває змію клонами та повертається до товаришів
+  text: Відокремленого Наруто ковтає велика змія. Він створює всередині тіньових клонів, виривається назовні й поспішає до
+    Саске та Сакури.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
+relations: []
+presence:
+- id: pr-audit-28-y0-naruto-escapes-forest-snake-c-naruto
+  entity_id: c-naruto
+  from: sc-y0-naruto-escapes-forest-snake.start
+  to: sc-y0-naruto-escapes-forest-snake.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
+episode_id: ep-y0-team7-forest-trial
+display_rank: 150
+title: Наруто виривається зі змії після розділення команди
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 0

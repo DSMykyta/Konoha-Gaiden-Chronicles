@@ -3165,6 +3165,23 @@ links:
   a: sc-y0-team7-first-forest-impostor
   b: sc-y0-0701-orochimaru-attacks-team7
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
+  id: lnk-audit28-separation-before-snake
+  kind: before
+  a: ev-y0-0701-orochimaru-separates-team7
+  b: sc-y0-naruto-escapes-forest-snake
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
+  id: lnk-audit28-snake-before-naruto-counterattack
+  kind: before
+  a: sc-y0-naruto-escapes-forest-snake
+  b: ev-y0-0701-naruto-fights-orochimaru
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

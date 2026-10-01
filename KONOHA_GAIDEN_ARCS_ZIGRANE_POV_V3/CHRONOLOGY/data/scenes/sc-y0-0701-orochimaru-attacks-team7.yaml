@@ -21,8 +21,9 @@ events:
 - id: ev-y0-0701-orochimaru-separates-team7
   legacy_ids:
   - V10-000040-D
-  title: Орочімару під виглядом геніна Трави розділяє Команду 7
-  text: Орочімару, замаскований під геніна Трави Шіоре, ізолює Наруто, Саске й Сакуру та починає атаку.
+  title: Порив вітру відокремлює Наруто від товаришів
+  text: Одразу після домовленості про пароль потужний порив вітру розділяє Команду 7. Наруто опиняється далеко від Саске й
+    Сакури.
   origin: M
   extent: interval
   display_rank: 100
@@ -45,6 +46,28 @@ events:
   - evd-v10-000040-D
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep28-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-orochimaru-terrorizes-sasuke-sakura
+  display_rank: 150
+  title: Саске викриває другу підміну; Орочімару залякує його й Сакуру
+  text: Другий підроблений Наруто безпомилково повторює пароль. Саске розуміє, що справжній Наруто його не запам’ятав би.
+    Нападник постає як генін Трави Шіоре, ковтає сувій і нав’язує Саске та Сакурі видіння смерті. Саске опановує себе й відводить
+    Сакуру від безпосередньої атаки, але нападник знову їх наздоганяє.
+  involvement:
+  - entity_id: c-orochimaru
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
 - id: ev-y0-0701-naruto-fights-orochimaru
   legacy_ids:
   - V10-000040-D
@@ -178,11 +201,27 @@ relations:
   review: pending
   evidence_ids:
   - evd-manga-chunin-stage1-forest
+- id: rel-audit-28-y0-0701-orochimaru-separates-team7-before-y0-orochimaru-terrorizes-sasuke-sakura
+  kind: before
+  a: ev-y0-0701-orochimaru-separates-team7
+  b: ev-y0-orochimaru-terrorizes-sasuke-sakura
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
+- id: rel-audit-28-y0-orochimaru-terrorizes-sasuke-sakura-before-y0-0701-naruto-fights-orochimaru
+  kind: before
+  a: ev-y0-orochimaru-terrorizes-sasuke-sakura
+  b: ev-y0-0701-naruto-fights-orochimaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep28-audit
 presence:
 - id: pr-0701-oro-naruto
   entity_id: c-naruto
   from: sc-y0-0701-orochimaru-attacks-team7.start
-  to: sc-y0-0701-orochimaru-attacks-team7.end
+  to: ev-y0-0701-orochimaru-separates-team7.end
   basis: source
   evidence_ids:
   - evd-v10-000040-D
@@ -211,3 +250,11 @@ presence:
   evidence_ids:
   - evd-v10-000040-D
   review: accepted
+- id: pr-audit28-naruto-returns-to-orochimaru-battle
+  entity_id: c-naruto
+  from: ev-y0-0701-naruto-fights-orochimaru.start
+  to: sc-y0-0701-orochimaru-attacks-team7.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep28-audit

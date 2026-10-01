@@ -786,6 +786,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep28-audit
+    type: reference
+    title: 'Narutopedia — Eat or be Eaten: Panic in the Forest'
+    url: https://naruto.fandom.com/wiki/Eat_or_be_Eaten%3A_Panic_in_the_Forest
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3406,4 +3413,10 @@ evidence:
     locator: User requires author characters at applicable shared events; established
       Team 9 written participation and passage support forest briefing and entry.
     basis: project_decision
+    review: accepted
+
+  - id: evd-narutopedia-ep28-audit
+    source_id: src-narutopedia-ep28-audit
+    locator: Episode 28, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
     review: accepted
