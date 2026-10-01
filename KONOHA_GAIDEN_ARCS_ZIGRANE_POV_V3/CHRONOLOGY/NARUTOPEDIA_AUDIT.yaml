@@ -62,11 +62,14 @@ checked_anime_episodes:
 - 57
 - 58
 - 59
+- 60
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 60
+next_anime_episode: 61
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
+- ev-y0-0801-anbu-search-sasuke
+- ev-y0-0801-kazekage-arrives-finals
 - ev-y0-0801-konohamaru-shortcut-bull-stampede
 - ev-y0-0731-shino-finals-practice
 - ev-y0-0731-neji-tenten-finals-practice
@@ -127,6 +130,8 @@ added_moment_ids:
 - ev-y0-0706-lee-protects-tenten
 - ev-y0-0706-medics-examine-lee
 added_scene_ids:
+- sc-y0-0801-anbu-search-sasuke
+- sc-y0-0801-kazekage-arrives-finals
 - sc-y0-0801-naruto-shortcut-to-finals
 - sc-y0-0731-shino-finals-practice
 - sc-y0-0731-neji-tenten-finals-practice
@@ -1116,6 +1121,22 @@ episode_audits:
   merged_moment_ids:
     ev-y0-0801-naruto-admits-fear-of-neji: ev-y0-0801-hinata-calls-naruto-proud-failure
 
+- episode: 60
+  baseline_revision: 0cd955402853d7ebea63e39d5f84241f8a122273
+  added_moment_ids:
+  - ev-y0-0801-kazekage-arrives-finals
+  - ev-y0-0801-anbu-search-sasuke
+  added_scene_ids:
+  - sc-y0-0801-kazekage-arrives-finals
+  - sc-y0-0801-anbu-search-sasuke
+  updated_moment_ids:
+  - ev-y0-0801-genma-takes-over-finals
+  - ev-y0-0801-naruto-defeats-neji
+  cast_review: Project character participation checked against existing chronology; no unsupported presence invented.
+  notes:
+  - Expanded the opening phase of the complete Naruto–Neji fight without creating attack-by-attack moments. Existing
+    later battle outcome retained for separate episode 61–62 verification. Added the false Kazekage arrival and ANBU
+    search for absent Sasuke. Project Raidō guard presence and Hanabi/Hiashi observation scene retained.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

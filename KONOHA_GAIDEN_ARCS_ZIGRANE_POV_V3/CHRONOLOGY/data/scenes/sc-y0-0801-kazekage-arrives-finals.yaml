@@ -1,0 +1,57 @@
+schema_version: 1
+id: sc-y0-0801-kazekage-arrives-finals
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Хірузен вітає гостя в образі Казекаґе
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-kazekage-arrives-finals
+  title: Гість у подобі Четвертого Казекаґе прибуває на фінал
+  text: Людина в образі Четвертого Казекаґе прибуває з охороною; Хірузен відкриває фінальну частину іспиту. Це Орочімару,
+    який використовує особу Раси.
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-orochimaru
+    role: focus
+    mode: physical
+  - entity_id: c-rasa
+    role: portrayed
+    mode: remote
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+relations: []
+presence:
+- id: pr-audit-60-ev-y0-0801-kazekage-arrives-finals-c-hiruzen
+  entity_id: c-hiruzen
+  from: ev-y0-0801-kazekage-arrives-finals.start
+  to: ev-y0-0801-kazekage-arrives-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+- id: pr-audit-60-ev-y0-0801-kazekage-arrives-finals-c-orochimaru
+  entity_id: c-orochimaru
+  from: ev-y0-0801-kazekage-arrives-finals.start
+  to: ev-y0-0801-kazekage-arrives-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+day_part: morning

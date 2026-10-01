@@ -3473,3 +3473,12 @@ notes:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep59-audit
+
+- id: lnk-audit-60-sc-y0-0801-kazekage-arrives-finals-sc-y0-0801-finals-morning
+  kind: before
+  a: sc-y0-0801-kazekage-arrives-finals
+  b: sc-y0-0801-finals-morning
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit

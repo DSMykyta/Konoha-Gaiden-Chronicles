@@ -1,0 +1,45 @@
+schema_version: 1
+id: sc-y0-0801-anbu-search-sasuke
+episode_id: ep-y0-chunin-finals
+display_rank: 100
+continuity_id: main
+title: Анбу шукають відсутнього Саске
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0801-anbu-search-sasuke
+  title: Анбу починають пошуки Саске перед фіналом
+  text: Оскільки Саске не з’явився на фінал, Анбу починають його шукати.
+  involvement:
+  - entity_id: group-anbu
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: subject
+    mode: remote
+  origin: M
+  extent: interval
+  display_rank: 100
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+relations: []
+presence:
+- id: pr-audit-60-ev-y0-0801-anbu-search-sasuke-group-anbu
+  entity_id: group-anbu
+  from: ev-y0-0801-anbu-search-sasuke.start
+  to: ev-y0-0801-anbu-search-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+day_part: morning

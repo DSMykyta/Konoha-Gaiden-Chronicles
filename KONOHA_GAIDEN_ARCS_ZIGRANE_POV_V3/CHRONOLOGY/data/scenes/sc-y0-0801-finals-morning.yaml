@@ -1,87 +1,260 @@
 schema_version: 1
-id: "sc-y0-0801-finals-morning"
+id: sc-y0-0801-finals-morning
 episode_id: ep-y0-chunin-finals
 display_rank: 100
-continuity_id: "main"
-title: "Ранкові фінальні поєдинки"
-location_id: "loc-chunin-finals-arena"
-placement: {anchor_id: "ta-y0-0801", day_offset: 0}
-day_part: "morning"
-state: "active"
-presence_coverage: "partial"
-review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Ранкові фінальні поєдинки
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-y0-0801
+  day_offset: 0
+day_part: morning
+state: active
+presence_coverage: partial
+review:
+  time: accepted
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-0801-raido-guards-hiruzen-finals"
-    title: "Райдо чергує поруч із Хірузеном на фіналах"
-    text: "Під час фінальних поєдинків Райдо перебуває в ложі Хокаґе поруч із Хірузеном, доповідає йому про перебіг подій і передає його розпорядження іншим шинобі."
-    origin: "M"
-    extent: "interval"
-    display_rank: 50
-    involvement:
-      - {entity_id: "c-raido", role: "focus", mode: "physical"}
-      - {entity_id: "c-hiruzen", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-genma-takes-over-finals"
-    title: "Ґенма проводить фінальну частину іспиту"
-    text: "Після загибелі Хаяте Ґекко обов’язки екзаменатора фінальної частини іспиту переходять до Ґенми Шірануї."
-    origin: "M"
-    extent: "interval"
-    display_rank: 75
-    involvement:
-      - {entity_id: "c-genma", role: "focus", mode: "physical"}
-      - {entity_id: "c-hayate", role: "mentioned", mode: "remote"}
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-naruto-defeats-neji"
-    legacy_ids: ["V10-000064"]
-    title: "Наруто перемагає Неджі"
-    text: "Наруто відновлює доступ до чакри Дев’ятихвостого, використовує атаку з-під землі й перемагає Неджі."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-neji", role: "focus", mode: "physical"}
-      - {entity_id: "c-genma", role: "referee", mode: "physical"}
-    evidence_ids: ["evd-v10-000064", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-genma-talks-to-neji"
-    title: "Ґенма говорить із Неджі після його поразки"
-    text: "Після перемоги Наруто Ґенма говорить Неджі, що навіть птах у клітці може колись спробувати вибратися на волю."
-    origin: "M"
-    extent: "interval"
-    display_rank: 150
-    involvement:
-      - {entity_id: "c-genma", role: "focus", mode: "physical"}
-      - {entity_id: "c-neji", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-shikamaru-traps-temari"
-    legacy_ids: ["V10-000064-C"]
-    title: "Шикамару ловить Темарі тіньовою технікою"
-    text: "У наступному фінальному поєдинку Шикамару домагається позиції, з якої повністю захоплює Темарі тіньовою технікою."
-    origin: "M"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
-      - {entity_id: "c-temari", role: "focus", mode: "physical"}
-      - {entity_id: "c-genma", role: "referee", mode: "physical"}
-    evidence_ids: ["evd-v10-000064-C", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
-  - id: "ev-y0-0801-shikamaru-surrenders"
-    legacy_ids: ["V10-000064-C"]
-    title: "Шикамару добровільно здається"
-    text: "Оцінивши залишок чакри й ресурси для продовження бою, Шикамару добровільно здається Темарі."
-    origin: "M"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-shikamaru", role: "focus", mode: "physical"}
-      - {entity_id: "c-temari", role: "participant", mode: "physical"}
-      - {entity_id: "c-genma", role: "referee", mode: "physical"}
-    evidence_ids: ["evd-v10-000064-C", "evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]
+- id: ev-y0-0801-raido-guards-hiruzen-finals
+  title: Райдо чергує поруч із Хірузеном на фіналах
+  text: Під час фінальних поєдинків Райдо перебуває в ложі Хокаґе поруч із Хірузеном, доповідає йому про перебіг подій
+    і передає його розпорядження іншим шинобі.
+  origin: M
+  extent: interval
+  display_rank: 50
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-genma-takes-over-finals
+  title: Ґенма проводить фінальну частину іспиту
+  text: Після загибелі Хаяте фінал проводить Ґенма. Наруто помічає відсутність Саске, а Шикамару — Досу; Ґенма оголошує
+    перший бій Наруто проти Неджі.
+  origin: M
+  extent: interval
+  display_rank: 75
+  involvement:
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  - entity_id: c-hayate
+    role: mentioned
+    mode: remote
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-neji
+    role: observer
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  - evd-narutopedia-ep60-audit
+- id: ev-y0-0801-naruto-defeats-neji
+  legacy_ids:
+  - V10-000064
+  title: Наруто перемагає Неджі
+  text: Наруто починає бій кунаями й прямою атакою; Неджі ухиляється та відповідає М’яким Кулаком. Він розбиває групи
+    тіньових клонів і твердить, що доля визначається народженням. Наруто відмовляється здаватися та створює масових клонів.
+    Згодом Наруто відновлює доступ до чакри Дев’ятихвостого, використовує атаку з-під землі й перемагає Неджі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-neji
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: referee
+    mode: physical
+  evidence_ids:
+  - evd-v10-000064
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  - evd-narutopedia-ep60-audit
+- id: ev-y0-0801-genma-talks-to-neji
+  title: Ґенма говорить із Неджі після його поразки
+  text: Після перемоги Наруто Ґенма говорить Неджі, що навіть птах у клітці може колись спробувати вибратися на волю.
+  origin: M
+  extent: interval
+  display_rank: 150
+  involvement:
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-shikamaru-traps-temari
+  legacy_ids:
+  - V10-000064-C
+  title: Шикамару ловить Темарі тіньовою технікою
+  text: У наступному фінальному поєдинку Шикамару домагається позиції, з якої повністю захоплює Темарі тіньовою технікою.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-shikamaru
+    role: focus
+    mode: physical
+  - entity_id: c-temari
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: referee
+    mode: physical
+  evidence_ids:
+  - evd-v10-000064-C
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: ev-y0-0801-shikamaru-surrenders
+  legacy_ids:
+  - V10-000064-C
+  title: Шикамару добровільно здається
+  text: Оцінивши залишок чакри й ресурси для продовження бою, Шикамару добровільно здається Темарі.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-shikamaru
+    role: focus
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-genma
+    role: referee
+    mode: physical
+  evidence_ids:
+  - evd-v10-000064-C
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
 relations:
-  - {id: "rel-0801-finals-proctor-before-neji", kind: "before", a: "ev-y0-0801-genma-takes-over-finals", b: "ev-y0-0801-naruto-defeats-neji", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
-  - {id: "rel-0801-finals-morning-1", kind: "before", a: "ev-y0-0801-naruto-defeats-neji", b: "ev-y0-0801-genma-talks-to-neji", basis: "source", review: "accepted", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"]}
-  - {id: "rel-0801-finals-morning-1b", kind: "before", a: "ev-y0-0801-genma-talks-to-neji", b: "ev-y0-0801-shikamaru-traps-temari", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
-  - {id: "rel-0801-finals-morning-2", kind: "before", a: "ev-y0-0801-shikamaru-traps-temari", b: "ev-y0-0801-shikamaru-surrenders", basis: "source", review: "pending", evidence_ids: ["evd-manga-finals-konoha-crush"]}
+- id: rel-0801-finals-proctor-before-neji
+  kind: before
+  a: ev-y0-0801-genma-takes-over-finals
+  b: ev-y0-0801-naruto-defeats-neji
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  - evd-narutopedia-ep60-audit
+- id: rel-0801-finals-morning-1
+  kind: before
+  a: ev-y0-0801-naruto-defeats-neji
+  b: ev-y0-0801-genma-talks-to-neji
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+- id: rel-0801-finals-morning-1b
+  kind: before
+  a: ev-y0-0801-genma-talks-to-neji
+  b: ev-y0-0801-shikamaru-traps-temari
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+- id: rel-0801-finals-morning-2
+  kind: before
+  a: ev-y0-0801-shikamaru-traps-temari
+  b: ev-y0-0801-shikamaru-surrenders
+  basis: source
+  review: pending
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
 presence:
-  - {id: "pr-0801-finals-genma", entity_id: "c-genma", from: "ev-y0-0801-genma-takes-over-finals.start", to: "sc-y0-0801-finals-morning.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
-  - {id: "pr-0801-finals-raido", entity_id: "c-raido", from: "sc-y0-0801-finals-morning.start", to: "sc-y0-0801-finals-morning.end", basis: "source", evidence_ids: ["evd-manga-finals-konoha-crush", "evd-anime-finals-konoha-crush"], review: "accepted"}
+- id: pr-0801-finals-genma
+  entity_id: c-genma
+  from: ev-y0-0801-genma-takes-over-finals.start
+  to: sc-y0-0801-finals-morning.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-0801-finals-raido
+  entity_id: c-raido
+  from: sc-y0-0801-finals-morning.start
+  to: sc-y0-0801-finals-morning.end
+  basis: source
+  evidence_ids:
+  - evd-manga-finals-konoha-crush
+  - evd-anime-finals-konoha-crush
+  review: accepted
+- id: pr-audit-60-y0-0801-genma-takes-over-finals-c-genma
+  entity_id: c-genma
+  from: ev-y0-0801-genma-takes-over-finals.start
+  to: ev-y0-0801-genma-takes-over-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+- id: pr-audit-60-y0-0801-genma-takes-over-finals-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-genma-takes-over-finals.start
+  to: ev-y0-0801-genma-takes-over-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+- id: pr-audit-60-y0-0801-genma-takes-over-finals-c-neji
+  entity_id: c-neji
+  from: ev-y0-0801-genma-takes-over-finals.start
+  to: ev-y0-0801-genma-takes-over-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+- id: pr-audit-60-y0-0801-genma-takes-over-finals-c-shikamaru
+  entity_id: c-shikamaru
+  from: ev-y0-0801-genma-takes-over-finals.start
+  to: ev-y0-0801-genma-takes-over-finals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+- id: pr-audit-60-y0-0801-naruto-defeats-neji-c-naruto
+  entity_id: c-naruto
+  from: ev-y0-0801-naruto-defeats-neji.start
+  to: ev-y0-0801-naruto-defeats-neji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+- id: pr-audit-60-y0-0801-naruto-defeats-neji-c-neji
+  entity_id: c-neji
+  from: ev-y0-0801-naruto-defeats-neji.start
+  to: ev-y0-0801-naruto-defeats-neji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit
+- id: pr-audit-60-y0-0801-naruto-defeats-neji-c-genma
+  entity_id: c-genma
+  from: ev-y0-0801-naruto-defeats-neji.start
+  to: ev-y0-0801-naruto-defeats-neji.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep60-audit

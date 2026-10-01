@@ -1104,6 +1104,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep60-audit
+    type: reference
+    title: Narutopedia — Byakugan vs. Shadow Clone Technique!
+    url: https://naruto.fandom.com/wiki/Byakugan_vs._Shadow_Clone_Technique%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4004,5 +4011,11 @@ evidence:
   - id: evd-narutopedia-ep59-audit
     source_id: src-narutopedia-ep59-audit
     locator: Episode 59, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep60-audit
+    source_id: src-narutopedia-ep60-audit
+    locator: Episode 60, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
     review: accepted
