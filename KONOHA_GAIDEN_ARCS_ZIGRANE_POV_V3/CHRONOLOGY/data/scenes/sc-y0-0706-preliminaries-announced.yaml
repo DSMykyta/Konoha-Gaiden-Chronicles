@@ -207,7 +207,8 @@ events:
   legacy_ids:
   - V10-000045-E
   title: Хаяте оголошує негайний попередній раунд
-  text: Через надлишок кандидатів перед фіналом призначають серію індивідуальних попередніх поєдинків.
+  text: 'Хаяте пояснює, що другий етап пройшло забагато генінів для фінального етапу. Тому негайно проводять індивідуальні
+    попередні поєдинки: далі проходять лише переможці кожної пари.'
   origin: M
   extent: interval
   display_rank: 200
@@ -222,6 +223,63 @@ events:
   - evd-v10-000045-E
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep38-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0707-kabuto-withdraws-preliminaries
+  display_rank: 300
+  title: Кабуто знімається з попередніх поєдинків
+  text: Кабуто одразу знімає свою кандидатуру, посилаючись на поранення, отримане раніше на іспиті. Насправді він побоюється,
+    що участь у бою може видати його справжню натуру. Його відмова залишає двадцять учасників попереднього раунду.
+  involvement:
+  - entity_id: c-kabuto
+    role: focus
+    mode: physical
+  - entity_id: c-hayate
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep38-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0707-sasuke-refuses-sakura-withdrawal-advice
+  display_rank: 400
+  title: Саске відмовляється вибути попри біль від Проклятої Печатки
+  text: 'Проклята Печатка продовжує завдавати Саске болю. Сакура просить його відмовитися від участі, але він наполягає на
+    продовженні: звання чуніна саме по собі його не цікавить, натомість він хоче перевірити свою силу проти найкращих нових
+    шинобі, щоб наблизитися до помсти за родину.'
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep38-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0707-kakashi-warns-sasuke-before-yoroi
+  display_rank: 500
+  title: Перед першим поєдинком Какаші обмежує застосування Шарінґана Саске
+  text: 'Першою парою обирають Саске Учіху та Йорої Акадо. Коли інші учасники звільняють арену, Какаші підходить до Саске
+    й повідомляє, що знає про Прокляту Печатку. Він застерігає від застосування Шарінґана та попереджає: якщо печатка почне
+    опановувати Саске, він зупинить поєдинок.'
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-yoroi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep38-audit
 relations:
 - id: rel-0706-prelim-announce-1
   kind: before
@@ -247,6 +305,30 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep37-audit
+- id: rel-audit-38-y0-0706-hayate-announces-preliminaries-before-y0-0707-kabuto-withdraws-preliminaries
+  kind: before
+  a: ev-y0-0706-hayate-announces-preliminaries
+  b: ev-y0-0707-kabuto-withdraws-preliminaries
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep38-audit
+- id: rel-audit-38-y0-0707-kabuto-withdraws-preliminaries-before-y0-0707-sasuke-refuses-sakura-withdrawal-advice
+  kind: before
+  a: ev-y0-0707-kabuto-withdraws-preliminaries
+  b: ev-y0-0707-sasuke-refuses-sakura-withdrawal-advice
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep38-audit
+- id: rel-audit-38-y0-0707-sasuke-refuses-sakura-withdrawal-advice-before-y0-0707-kakashi-warns-sasuke-before-yoroi
+  kind: before
+  a: ev-y0-0707-sasuke-refuses-sakura-withdrawal-advice
+  b: ev-y0-0707-kakashi-warns-sasuke-before-yoroi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep38-audit
 presence:
 - id: pr-0706-prelim-announce-anko
   entity_id: c-anko
@@ -389,11 +471,12 @@ presence:
 - id: pr-audit-37-y0-0706-preliminaries-announced-c-kabuto
   entity_id: c-kabuto
   from: sc-y0-0706-preliminaries-announced.start
-  to: sc-y0-0706-preliminaries-announced.end
+  to: ev-y0-0707-kabuto-withdraws-preliminaries.end
   basis: source
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep37-audit
+  - evd-narutopedia-ep38-audit
 - id: pr-audit-37-y0-0706-preliminaries-announced-c-yoroi
   entity_id: c-yoroi
   from: sc-y0-0706-preliminaries-announced.start

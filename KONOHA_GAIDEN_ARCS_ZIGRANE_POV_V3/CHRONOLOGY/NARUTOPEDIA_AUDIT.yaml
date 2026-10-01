@@ -40,9 +40,10 @@ checked_anime_episodes:
 - 35
 - 36
 - 37
+- 38
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 38
+next_anime_episode: 39
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -685,6 +686,22 @@ episode_audits:
   - 'One missing whole address/handoff added; gathering and Iruka conversation enriched, no dialogue/reaction fragments. Canonical
     seven passing teams preserved. Cast remains partial: episode credits establish several mentors/officials, but not a complete
     visual inventory. Hayate presence begins at Hiruzen handoff, before his next-episode explanation.'
+- episode: 38
+  baseline_revision: 1de63798290d1f84fa9dfbc0490b272697d207ba
+  added_moment_ids:
+  - ev-y0-0707-kabuto-withdraws-preliminaries
+  - ev-y0-0707-sasuke-refuses-sakura-withdrawal-advice
+  - ev-y0-0707-kakashi-warns-sasuke-before-yoroi
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-hayate-announces-preliminaries
+  cast_review: Team 9 failed the forest stage under master canon decisions section 12-a; no new author-character participation
+    in preliminaries invented.
+  notes:
+  - 'Added three whole actions/conversations: Kabuto withdrawal, Sasuke refusal of Sakura advice, first-match assignment and
+    Kakashi warning together. No separate pain reactions, private thought moment, individual replies or draw-display micro
+    moment. Existing whole Sasuke–Yoroi bout retained for episode 39 audit. Presence covers the hall until exit; next episode
+    will refine subsequent fight/observer intervals.'
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
