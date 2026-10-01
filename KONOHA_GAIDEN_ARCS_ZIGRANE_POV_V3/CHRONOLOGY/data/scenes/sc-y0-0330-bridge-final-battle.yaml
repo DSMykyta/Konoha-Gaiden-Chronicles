@@ -366,11 +366,30 @@ events:
     mode: physical
   evidence_ids:
   - evd-narutopedia-ep15-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-faints-in-mirrors
+  display_rank: 199
+  title: Наруто непритомніє всередині дзеркал
+  text: Хаку переходить до небезпечніших ударів. Виснажений Наруто приймає основну атаку й непритомніє.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
 - id: ev-y0-0330-sasuke-awakens-sharingan
   legacy_ids:
   - V10-000031
   title: Саске пробуджує Шарінґан
-  text: У бою проти Хаку Саске пробуджує Шарінґан і починає читати рухи супротивника.
+  text: Саске пробуджує Шарінґан і починає відстежувати рухи Хаку, захищаючи непритомного Наруто.
   origin: M
   extent: interval
   display_rank: 200
@@ -387,6 +406,26 @@ events:
   evidence_ids:
   - evd-v10-000031
   - evd-manga-land-waves
+  - evd-narutopedia-ep16-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-haku-targets-unconscious-naruto
+  display_rank: 250
+  title: Хаку цілиться в непритомного Наруто
+  text: Зрозумівши, що Шарінґан Саске ускладнить тривалий бій, Хаку спрямовує сенбони в беззахисного Наруто.
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
 - id: ev-y0-0330-sasuke-protects-naruto
   legacy_ids:
   - V10-000031
@@ -408,6 +447,47 @@ events:
   evidence_ids:
   - evd-v10-000031
   - evd-manga-land-waves
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-kakashi-cut-protecting-tazuna
+  display_rank: 350
+  title: Какаші отримує поріз, захищаючи групу
+  text: Перехоплюючи удар по Сакурі й Тадзуні, Какаші отримує удар мечем Забузи.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-naruto-catches-sasuke
+  display_rank: 360
+  title: Наруто підхоплює пораненого Саске
+  text: Наруто приходить до тями й підхоплює Саске, пронизаного сенбонами. Коли той завмирає, Наруто вважає його мертвим.
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
 - id: ev-y0-0330-naruto-nine-tails-chakra
   legacy_ids:
   - V10-000031
@@ -429,6 +509,28 @@ events:
   evidence_ids:
   - evd-v10-000031
   - evd-manga-land-waves
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-0330-jonin-sense-fox-chakra
+  display_rank: 410
+  title: Джоніни відчувають чакру Дев’ятихвостого
+  text: Какаші й Забуза відчувають зміну чакри. Какаші непокоїться про печатку; Хаку бачить, як сила Лиса загоює рани Наруто.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-zabuza
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
 - id: ev-y0-0330-haku-sacrifices-self
   legacy_ids:
   - V10-000031
@@ -751,6 +853,78 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep15-audit
+- id: rel-audit-16-y0-0330-kakashi-intercepts-through-mist-before-y0-0330-naruto-faints-in-mirrors
+  kind: before
+  a: ev-y0-0330-kakashi-intercepts-through-mist
+  b: ev-y0-0330-naruto-faints-in-mirrors
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-naruto-faints-in-mirrors-before-y0-0330-sasuke-awakens-sharingan
+  kind: before
+  a: ev-y0-0330-naruto-faints-in-mirrors
+  b: ev-y0-0330-sasuke-awakens-sharingan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-sasuke-awakens-sharingan-before-y0-0330-haku-targets-unconscious-naruto
+  kind: before
+  a: ev-y0-0330-sasuke-awakens-sharingan
+  b: ev-y0-0330-haku-targets-unconscious-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-haku-targets-unconscious-naruto-before-y0-0330-sasuke-protects-naruto
+  kind: before
+  a: ev-y0-0330-haku-targets-unconscious-naruto
+  b: ev-y0-0330-sasuke-protects-naruto
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-sasuke-protects-naruto-before-y0-0330-kakashi-cut-protecting-tazuna
+  kind: before
+  a: ev-y0-0330-sasuke-protects-naruto
+  b: ev-y0-0330-kakashi-cut-protecting-tazuna
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-kakashi-cut-protecting-tazuna-before-y0-0330-naruto-catches-sasuke
+  kind: before
+  a: ev-y0-0330-kakashi-cut-protecting-tazuna
+  b: ev-y0-0330-naruto-catches-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-naruto-catches-sasuke-before-y0-0330-naruto-nine-tails-chakra
+  kind: before
+  a: ev-y0-0330-naruto-catches-sasuke
+  b: ev-y0-0330-naruto-nine-tails-chakra
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-naruto-nine-tails-chakra-before-y0-0330-jonin-sense-fox-chakra
+  kind: before
+  a: ev-y0-0330-naruto-nine-tails-chakra
+  b: ev-y0-0330-jonin-sense-fox-chakra
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
+- id: rel-audit-16-y0-0330-jonin-sense-fox-chakra-before-y0-0330-haku-sacrifices-self
+  kind: before
+  a: ev-y0-0330-jonin-sense-fox-chakra
+  b: ev-y0-0330-haku-sacrifices-self
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep16-audit
 presence:
 - id: pr-0330-bridge-naruto
   entity_id: c-naruto
