@@ -64,6 +64,24 @@
     if (pendingNodeId === id) clearPendingHover();
   }
 
+  // Clicking a node must be the same visual action as hovering it, with pinning
+  // added on top. app.js normally turns a pinned click into a separate reading
+  // mode: it scrolls the canvas via revealReadingNode() and repositions the card.
+  // Preserve the pre-click scroll position and restore the same card placement
+  // before the browser paints, so the card does not jump when it becomes pinned.
+  const originalOpenNode = openNode;
+  openNode = function openNodeWithStablePin(point, pin = false) {
+    if (!pin) return originalOpenNode(point, false);
+
+    const canvas = $('canvas');
+    const scrollTop = canvas.scrollTop;
+    const result = originalOpenNode(point, true);
+
+    canvas.scrollTop = scrollTop;
+    positionCard(point);
+    return result;
+  };
+
   // A child preview is already visually attached to its parent surface.
   // Do not repeat obvious hierarchy with labels such as "До сцени".
   // All hierarchy levels use the same neutral close affordance instead.
@@ -82,12 +100,11 @@
     back.parentElement?.append(back);
   };
 
-  // Hover cards need readable space without becoming a full-screen overlay.
-  // On desktop, prefer the larger side of the hovered node. This keeps the
-  // node and most of the timeline visible while allowing a useful card height.
+  // Hover and pinned cards share exactly the same desktop placement. Pinning is
+  // only persistence; it must not switch the card to a different reading layout.
   const originalPositionCard = positionCard;
   positionCard = function positionHoverCard(point) {
-    if (pinnedNodeId || window.innerWidth <= 760) {
+    if (window.innerWidth <= 760) {
       originalPositionCard(point);
       return;
     }
