@@ -49,9 +49,10 @@ checked_anime_episodes:
 - 44
 - 45
 - 46
+- 47
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 47
+next_anime_episode: 48
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -799,6 +800,16 @@ episode_audits:
   notes:
   - Opening of retained whole Hinata–Neji bout enriched; intimidation and Naruto encouragement remain inside the fight,
     not separate replies/reactions. Hiashi and Hanabi debut is not evidence of physical presence at the preliminary arena.
+- episode: 47
+  baseline_revision: 1d23549897ea109e75ff5feedca40d55740a23ba
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-neji-defeats-hinata
+  cast_review: Author forest-failure outcome preserved; no unsupported Team 9 presence added to preliminaries.
+  notes:
+  - Completed the whole Hinata–Neji bout and emergency outcome, with the four intervening shinobi identified using Kurenai
+    synopsis. No separate sleeve reveal, tenketsu explanation, insult or reaction moment.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

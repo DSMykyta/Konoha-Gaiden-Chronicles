@@ -277,9 +277,11 @@ events:
   legacy_ids:
   - V10-000046-I
   title: Неджі тяжко ранить Хінату
-  text: У восьмому поєдинку зустрічаються Хіната та її двоюрідний брат Неджі з побічної гілки клану Х’юґа. Неджі переконує
-    її здатися, називаючи надто лагідною для ніндзя. Підбадьорена Наруто, Хіната вирішує продовжити бій. Обоє використовують
-    Б’якуґан і М’який кулак; Неджі зрештою перемагає та завдає їй тяжких ушкоджень.
+  text: У восьмому поєдинку Неджі намагається переконати Хінату здатися, але підтримка Наруто допомагає їй продовжити
+    бій. Обоє використовують Б’якуґан і М’який кулак. Неджі перекриває точки чакри на її руках, роблячи її удари неефективними,
+    та тяжко ранить її, але Хіната знову підводиться. Після її слів про долю побічної гілки Неджі намагається завдати
+    смертельного удару; Какаші, Куренай, Ґай і Хаяте зупиняють його. Хіната падає із зупинкою серця, і медики забирають
+    її для невідкладної допомоги. Наруто обіцяє перемогти Неджі.
   origin: M
   extent: interval
   display_rank: 800
@@ -299,11 +301,19 @@ events:
   - entity_id: c-kakashi
     role: observer
     mode: physical
+  - entity_id: c-kurenai
+    role: observer
+    mode: physical
+  - entity_id: c-might-guy
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046-I
   - evd-manga-chunin-prelims
   - evd-anime-31-50
   - evd-narutopedia-ep46-audit
+  - evd-narutopedia-ep47-audit
+  - evd-narutopedia-ep47-audit-crosscheck
 - id: ev-y0-0706-gaara-defeats-lee
   legacy_ids:
   - V10-000046-J
@@ -912,3 +922,19 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep46-audit
+- id: pr-audit-47-y0-0706-neji-defeats-hinata-c-kurenai
+  entity_id: c-kurenai
+  from: ev-y0-0706-neji-defeats-hinata.start
+  to: ev-y0-0706-neji-defeats-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep47-audit
+- id: pr-audit-47-y0-0706-neji-defeats-hinata-c-might-guy
+  entity_id: c-might-guy
+  from: ev-y0-0706-neji-defeats-hinata.start
+  to: ev-y0-0706-neji-defeats-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep47-audit

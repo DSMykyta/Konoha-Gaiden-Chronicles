@@ -985,6 +985,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep47-audit
+    type: reference
+    title: Narutopedia — A Failure Stands Tall!
+    url: https://naruto.fandom.com/wiki/A_Failure_Stands_Tall%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep47-crosscheck-196
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://naruto.fandom.com/wiki/Kurenai_Y%C5%ABhi
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3780,5 +3794,17 @@ evidence:
   - id: evd-narutopedia-ep46-audit
     source_id: src-narutopedia-ep46-audit
     locator: Episode 46, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep47-audit
+    source_id: src-narutopedia-ep47-audit
+    locator: Episode 47, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep47-audit-crosscheck
+    source_id: src-narutopedia-ep47-crosscheck-196
+    locator: Part I, Chunin Exams; identifies Kakashi, Guy, Kurenai and Hayate intervention
     basis: source
     review: accepted
