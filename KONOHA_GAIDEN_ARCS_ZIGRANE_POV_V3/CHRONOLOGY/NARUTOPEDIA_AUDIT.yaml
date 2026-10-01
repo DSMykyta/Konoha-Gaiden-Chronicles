@@ -42,9 +42,10 @@ checked_anime_episodes:
 - 37
 - 38
 - 39
+- 40
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 40
+next_anime_episode: 41
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -717,6 +718,17 @@ episode_audits:
     and Lion Combo are phases of the same fight, not separate micro moments. Orochimaru arrival kept in existing confrontation;
     episode 40 continues it. Second bout already exists and is audited as a whole in episode 40. Sasuke and Kakashi arena
     presence ends with first bout rather than spanning later matches.'
+- episode: 40
+  baseline_revision: 6529c7d84c28a3c038ca8989855f1eb43b0e79cc
+  added_moment_ids: []
+  added_scene_ids: []
+  updated_moment_ids:
+  - ev-y0-0706-orochimaru-confronts-kakashi
+  - ev-y0-0706-shino-defeats-zaku
+  cast_review: Author forest-failure outcome preserved; no unsupported Team 9 presence added to preliminaries.
+  notes:
+  - Enriched the existing confrontation and entire Shino–Zaku bout; no separate threat, arm reveal, explanation or reaction
+    moments. Anime arm-injury difference distinguished from manga. Next bout retained for episode 41.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

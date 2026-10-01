@@ -21,8 +21,8 @@ events:
   legacy_ids:
   - V10-000046-B
   title: Какаші накладає стримувальну печать
-  text: Після перемоги над Йорої Какаші відводить Саске в ізольоване приміщення вежі та накладає на Прокляту Печатку стримувальну
-    печать, щоб перешкоджати її подальшому впливу.
+  text: Після перемоги над Йорої Какаші відводить Саске в ізольоване приміщення вежі та накладає на Прокляту Печатку
+    стримувальну печать, щоб перешкоджати її подальшому впливу.
   origin: M
   extent: interval
   display_rank: 100
@@ -42,7 +42,9 @@ events:
   legacy_ids:
   - V10-000046-B
   title: Орочімару з’являється перед Какаші
-  text: Після запечатування мітки Орочімару з’являється й стикається з Какаші.
+  text: Орочімару приходить до Какаші після стримування Проклятої Печатки та заявляє, що все одно заволодіє Саске. Какаші
+    готує Різак блискавки й погрожує вбити його, але Орочімару не приймає погрозу всерйоз і йде, відклавши захоплення
+    Саске.
   origin: M
   extent: interval
   display_rank: 200
@@ -61,6 +63,8 @@ events:
   - evd-manga-chunin-prelims
   - evd-anime-31-50
   - evd-narutopedia-ep39-audit
+  - evd-narutopedia-ep40-audit
+  - evd-narutopedia-ep40-audit-crosscheck
 relations:
 - id: rel-0706-seal-1
   kind: before
@@ -95,3 +99,27 @@ presence:
   evidence_ids:
   - evd-v10-000046-B
   review: accepted
+- id: pr-audit-40-y0-0706-orochimaru-confronts-kakashi-c-orochimaru
+  entity_id: c-orochimaru
+  from: ev-y0-0706-orochimaru-confronts-kakashi.start
+  to: ev-y0-0706-orochimaru-confronts-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep40-audit
+- id: pr-audit-40-y0-0706-orochimaru-confronts-kakashi-c-kakashi
+  entity_id: c-kakashi
+  from: ev-y0-0706-orochimaru-confronts-kakashi.start
+  to: ev-y0-0706-orochimaru-confronts-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep40-audit
+- id: pr-audit-40-y0-0706-orochimaru-confronts-kakashi-c-sasuke
+  entity_id: c-sasuke
+  from: ev-y0-0706-orochimaru-confronts-kakashi.start
+  to: ev-y0-0706-orochimaru-confronts-kakashi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep40-audit

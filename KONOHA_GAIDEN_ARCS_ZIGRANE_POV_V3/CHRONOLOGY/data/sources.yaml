@@ -929,6 +929,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep40-audit
+    type: reference
+    title: 'Narutopedia — Kakashi and Orochimaru: Face-to-Face!'
+    url: https://naruto.fandom.com/wiki/Kakashi_and_Orochimaru%3A_Face-to-Face%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep40-crosscheck-188
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://naruto.fandom.com/wiki/Ch%C5%ABnin_Exams_%28Arc%29
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3675,5 +3689,18 @@ evidence:
   - id: evd-narutopedia-ep39-audit
     source_id: src-narutopedia-ep39-audit
     locator: Episode 39, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep40-audit
+    source_id: src-narutopedia-ep40-audit
+    locator: Episode 40, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep40-audit-crosscheck
+    source_id: src-narutopedia-ep40-crosscheck-188
+    locator: "Chunin Exams, preliminary Shino\u2013Zaku match; crosscheck of insect\
+      \ blockage mechanism"
     basis: source
     review: accepted

@@ -21,10 +21,10 @@ events:
   legacy_ids:
   - V10-000046
   title: Саске перемагає Йорої
-  text: Проклята Печатка паралізує Саске й завдає сильного болю, коли він намагається формувати чакру, тому він не може покладатися
-    на нінджюцу чи ґенджюцу. Йорої поглинає його чакру й отримує перевагу також у ближньому бою. Саске стримує печатку та
-    перемагає новою комбінацією «Левове комбо», використовуючи тайджюцу. Анко спостерігає поруч із Хірузеном і вражена тим,
-    що Саске здатен сам придушити печатку, подібну до її власної.
+  text: Проклята Печатка паралізує Саске й завдає сильного болю, коли він намагається формувати чакру, тому він не може
+    покладатися на нінджюцу чи ґенджюцу. Йорої поглинає його чакру й отримує перевагу також у ближньому бою. Саске стримує
+    печатку та перемагає новою комбінацією «Левове комбо», використовуючи тайджюцу. Анко спостерігає поруч із Хірузеном
+    і вражена тим, що Саске здатен сам придушити печатку, подібну до її власної.
   origin: M
   extent: interval
   display_rank: 100
@@ -68,7 +68,9 @@ events:
   legacy_ids:
   - V10-000046-C
   title: Шіно перемагає Заку
-  text: Шіно Абураме перемагає Заку Абумі.
+  text: 'Заку атакує Шіно повітряними ударами з долоні однієї руки. Шіно оточує його комахами, змушуючи захищатися з
+    двох боків. Заку дістає другу руку з перев’язі й намагається атакувати обома, але комахи вже перекрили трубки в його
+    руках: тиск ушкоджує руки зсередини, і Шіно перемагає. В аніме руки залишаються на місці; манґа показує тяжче ушкодження.'
   origin: M
   extent: interval
   display_rank: 200
@@ -82,10 +84,15 @@ events:
   - entity_id: c-hayate
     role: observer
     mode: physical
+  - entity_id: c-kurenai
+    role: observer
+    mode: physical
   evidence_ids:
   - evd-v10-000046-C
   - evd-manga-chunin-prelims
   - evd-anime-31-50
+  - evd-narutopedia-ep40-audit
+  - evd-narutopedia-ep40-audit-crosscheck
 - id: ev-y0-0706-kankuro-defeats-misumi
   legacy_ids:
   - V10-000046-D
@@ -231,8 +238,9 @@ events:
   legacy_ids:
   - V10-000046-J
   title: Ґаара перемагає й тяжко травмує Лі
-  text: Ґаара перемагає Рока Лі; швидкість і сила Лі змушують навіть Бакі всерйоз оцінити небезпеку для Ґаари. Після перемоги
-    Ґаара намагається добити непритомного Лі, але Ґай зупиняє його; травми Лі ставлять під загрозу його подальшу кар’єру шинобі.
+  text: Ґаара перемагає Рока Лі; швидкість і сила Лі змушують навіть Бакі всерйоз оцінити небезпеку для Ґаари. Після
+    перемоги Ґаара намагається добити непритомного Лі, але Ґай зупиняє його; травми Лі ставлять під загрозу його подальшу
+    кар’єру шинобі.
   origin: M
   extent: interval
   display_rank: 900
@@ -448,3 +456,35 @@ presence:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep39-audit
+- id: pr-audit-40-y0-0706-shino-defeats-zaku-c-shino
+  entity_id: c-shino
+  from: ev-y0-0706-shino-defeats-zaku.start
+  to: ev-y0-0706-shino-defeats-zaku.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep40-audit
+- id: pr-audit-40-y0-0706-shino-defeats-zaku-c-zaku
+  entity_id: c-zaku
+  from: ev-y0-0706-shino-defeats-zaku.start
+  to: ev-y0-0706-shino-defeats-zaku.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep40-audit
+- id: pr-audit-40-y0-0706-shino-defeats-zaku-c-hayate
+  entity_id: c-hayate
+  from: ev-y0-0706-shino-defeats-zaku.start
+  to: ev-y0-0706-shino-defeats-zaku.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep40-audit
+- id: pr-audit-40-y0-0706-shino-defeats-zaku-c-kurenai
+  entity_id: c-kurenai
+  from: ev-y0-0706-shino-defeats-zaku.start
+  to: ev-y0-0706-shino-defeats-zaku.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep40-audit
