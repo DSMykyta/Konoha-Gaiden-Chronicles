@@ -23,6 +23,20 @@
     #timeline .line-label.is-context-muted { opacity: .14; }
     #timeline .line-label.is-character-hover-muted { opacity: .08 !important; }
     #timeline .line-label.is-character-hover-active { opacity: 1 !important; }
+
+    /* Single-character concentration is one story lane, never an overview. */
+    #timeline.is-single-character-focus .thread.is-single-focus-hidden,
+    #timeline.is-single-character-focus .thread-hit.is-single-focus-hidden,
+    #timeline.is-single-character-focus .line-label.is-single-focus-hidden {
+      display: none !important;
+    }
+    #timeline .focus-guest-entry {
+      pointer-events: none;
+      fill: none;
+      stroke-linecap: round;
+      stroke-width: 1.8;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       #timeline .thread,
       #timeline .node,
@@ -128,9 +142,77 @@
     });
   }
 
+  function guestCharacters(node) {
+    const ids = new Set();
+    for (const event of node?.group || []) {
+      const physical = Array.isArray(event.physical) && event.physical.length ? event.physical : (event.tracks || []);
+      physical.forEach(id => {
+        if (id && id !== focusedCharacter && entityMap?.has?.(id)) ids.add(id);
+      });
+    }
+    return [...ids];
+  }
+
+  function renderFocusedGuestEntries() {
+    const timeline = document.getElementById('timeline');
+    timeline?.querySelector('.focus-guest-layer')?.remove();
+    if (!timeline || !focusedCharacter || !Array.isArray(graphNodes) || !graphNodes.length) return;
+
+    const group = document.createElementNS(NS, 'g');
+    group.setAttribute('class', 'focus-guest-layer');
+    group.setAttribute('aria-hidden', 'true');
+
+    graphNodes.forEach(node => {
+      const guests = guestCharacters(node);
+      guests.forEach((id, index) => {
+        const direction = index % 2 === 0 ? -1 : 1;
+        const tier = Math.floor(index / 2);
+        const startX = node.x - 34 - Math.min(18, tier * 4);
+        const startY = node.y + direction * (24 + tier * 11);
+        const gradientId = `focus-guest-${String(node.id).replace(/[^a-z0-9_-]/gi,'_')}-${String(id).replace(/[^a-z0-9_-]/gi,'_')}`;
+
+        let defs = timeline.querySelector('defs');
+        if (!defs) {
+          defs = document.createElementNS(NS, 'defs');
+          timeline.prepend(defs);
+        }
+        const gradient = document.createElementNS(NS, 'linearGradient');
+        gradient.setAttribute('id', gradientId);
+        gradient.setAttribute('gradientUnits', 'userSpaceOnUse');
+        gradient.setAttribute('x1', String(startX));
+        gradient.setAttribute('x2', String(node.x));
+        gradient.setAttribute('y1', String(startY));
+        gradient.setAttribute('y2', String(node.y));
+        const start = document.createElementNS(NS, 'stop');
+        start.setAttribute('offset', '0');
+        start.setAttribute('stop-color', color(id));
+        start.setAttribute('stop-opacity', '0');
+        const end = document.createElementNS(NS, 'stop');
+        end.setAttribute('offset', '1');
+        end.setAttribute('stop-color', color(id));
+        end.setAttribute('stop-opacity', '.82');
+        gradient.append(start, end);
+        defs.append(gradient);
+
+        const path = document.createElementNS(NS, 'path');
+        path.setAttribute('class', 'focus-guest-entry');
+        path.setAttribute('data-character', id);
+        path.setAttribute('stroke', `url(#${gradientId})`);
+        path.setAttribute('d', `M${startX.toFixed(2)},${startY.toFixed(2)} C${(node.x-24).toFixed(2)},${startY.toFixed(2)} ${(node.x-16).toFixed(2)},${node.y.toFixed(2)} ${node.x.toFixed(2)},${node.y.toFixed(2)}`);
+        group.append(path);
+      });
+    });
+
+    const firstNode = timeline.querySelector('.node');
+    timeline.insertBefore(group, firstNode || null);
+  }
+
   function applySelectionFocus() {
     const nodes = typeof graphNodes !== 'undefined' && Array.isArray(graphNodes) ? graphNodes : [];
     const relatedNodeIds = new Set();
+    const timeline = document.getElementById('timeline');
+    const singleFocus = Boolean(focusedCharacter);
+    timeline?.classList.toggle('is-single-character-focus', singleFocus);
 
     if (active) {
       for (const node of nodes) {
@@ -145,13 +227,19 @@
     });
 
     document.querySelectorAll('#timeline .thread').forEach(element => {
-      element.classList.toggle('is-context-muted', active && !focusedCharacters.has(element.dataset.character));
+      const id = element.dataset.character;
+      element.classList.toggle('is-context-muted', active && !focusedCharacters.has(id));
+      element.classList.toggle('is-single-focus-hidden', singleFocus && id !== focusedCharacter);
+    });
+    document.querySelectorAll('#timeline .thread-hit').forEach(element => {
+      element.classList.toggle('is-single-focus-hidden', singleFocus && element.dataset.character !== focusedCharacter);
     });
 
     const labels = lineCharacterMap();
     document.querySelectorAll('#timeline .line-label').forEach(element => {
       const characterId = labels.get(element.textContent.trim());
       element.classList.toggle('is-context-muted', active && characterId && !focusedCharacters.has(characterId));
+      element.classList.toggle('is-single-focus-hidden', singleFocus && characterId && characterId !== focusedCharacter);
     });
 
     const activeCloudKeys = new Set();
@@ -245,6 +333,7 @@
       lastLayoutFocus = focusedCharacter;
     }
     const result = baseRender.apply(this, arguments);
+    renderFocusedGuestEntries();
     requestAnimationFrame(applySelectionFocus);
     return result;
   };
