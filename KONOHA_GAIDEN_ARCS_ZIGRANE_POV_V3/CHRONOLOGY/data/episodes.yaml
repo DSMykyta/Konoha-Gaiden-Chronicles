@@ -1703,3 +1703,9 @@ episodes:
   arc_id: arc-y0-chunin-exams
   title: Команда 8 полює на сувої в Лісі Смерті
   description: Хіната, Кіба, Акамару й Шіно здобувають другий сувій та спостерігають за іншими командами.
+
+- id: ep-y0-team-guy-forest-search
+  continuity_id: main
+  arc_id: arc-y0-chunin-exams
+  title: Команда Ґая шукає другий сувій
+  description: Лі й Неджі окремо шукають суперників у лісі.

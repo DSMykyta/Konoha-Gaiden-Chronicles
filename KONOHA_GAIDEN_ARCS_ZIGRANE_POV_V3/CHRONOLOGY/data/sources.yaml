@@ -807,6 +807,20 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep31-audit
+    type: reference
+    title: 'Narutopedia — Bushy Brow''s Pledge: Undying Love and Protection!'
+    url: https://naruto.fandom.com/wiki/Bushy_Brow%27s_Pledge%3A_Undying_Love_and_Protection%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-neji-forest-scout
+    type: reference
+    title: "Narutopedia \u2014 Neji Hy\u016Bga, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Neji_Hy%C5%ABga
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3444,5 +3458,18 @@ evidence:
   - id: evd-narutopedia-ep30-audit
     source_id: src-narutopedia-ep30-audit
     locator: Episode 30, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep31-audit
+    source_id: src-narutopedia-ep31-audit
+    locator: Episode 31, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-narutopedia-neji-forest-scout
+    source_id: src-narutopedia-neji-forest-scout
+    locator: "Part I / Ch\u016Bnin Exams; Team Guy splits up and Neji chooses not to\
+      \ fight Team 10."
     basis: source
     review: accepted

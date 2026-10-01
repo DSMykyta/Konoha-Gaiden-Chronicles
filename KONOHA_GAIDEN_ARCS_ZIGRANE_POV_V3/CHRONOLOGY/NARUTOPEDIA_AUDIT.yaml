@@ -33,9 +33,10 @@ checked_anime_episodes:
 - 28
 - 29
 - 30
+- 31
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 31
+next_anime_episode: 32
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -544,6 +545,24 @@ episode_audits:
   - 'All episode actions already existed. Filled missing face-disguise reveal and Orochimaru identification inside retained
     battle/curse moments. Anko encounter remains a whole attack and counterattack; its clone and seal details corroborated
     by Anko Narutopedia character summary. Added explicit order: Sasuke curse before nighttime Anko duel.'
+- episode: 31
+  baseline_revision: 51c5773f17bb515171f8e1ad0f7bfad3c1bf8350
+  added_moment_ids:
+  - ev-y0-lee-disarms-squirrel-bomb
+  - ev-y0-neji-spares-team10
+  added_scene_ids:
+  - sc-y0-lee-disarms-squirrel-bomb
+  - sc-y0-neji-spares-team10
+  updated_moment_ids:
+  - ev-y0-0702-sakura-guards-team7
+  - ev-y0-0702-sound-team-attacks-sakura
+  - ev-y0-0702-lee-intervenes
+  - ev-y0-0702-dosu-defeats-lee
+  cast_review: Existing project cast checked; no additional author-character presence established.
+  notes:
+  - Added Lee bomb disposal and Neji-Team 10 encounter as whole actions on separate spatial branches. No guessed order between
+    independent scouting lines. Expanded Sakura traps and Lee-Dosu fight inside existing moments. Neji encounter corroborated
+    by character profile and episode trivia. No author cast established at these isolated encounters.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:

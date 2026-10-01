@@ -21,7 +21,8 @@ events:
   legacy_ids:
   - V10-000042
   title: Сакура всю ніч охороняє Наруто й Саске
-  text: Після нападу Орочімару Сакура не спить і охороняє непритомних Наруто та Саске.
+  text: Після нападу Орочімару Сакура всю ніч не спить, доглядає непритомних Наруто й Саске під деревом та охороняє схованку.
+    Вранці вона відганяє білку кунаєм, не помітивши вибухової печатки, яку прикріпила Команда Досу.
   origin: M
   extent: interval
   display_rank: 100
@@ -41,11 +42,13 @@ events:
   - evd-v10-000042
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep31-audit
 - id: ev-y0-0702-sound-team-attacks-sakura
   legacy_ids:
   - V10-000042-B
   title: Команда Досу атакує на світанку
-  text: На світанку Досу, Заку й Кін атакують Сакуру та непритомних членів Команди 7.
+  text: Досу, Заку й Кін вимагають бою із Саске. Сакура захищає непритомних товаришів підготовленими пастками, але Досу легко
+    їх руйнує й продовжує напад.
   origin: M
   extent: interval
   display_rank: 200
@@ -75,11 +78,13 @@ events:
   - evd-v10-000042-B
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep31-audit
 - id: ev-y0-0702-lee-intervenes
   legacy_ids:
   - V10-000042-B
   title: Рок Лі приходить Сакурі на допомогу
-  text: Рок Лі втручається в бій, щоб захистити Сакуру.
+  text: Лі приходить Сакурі на допомогу, відкидає трійцю й піднятим коренем перекриває атаку Досу. Захищаючи дорогу йому людину,
+    він застосовує Передній Лотос на Досу, але Заку пом’якшує падіння й рятує товариша.
   origin: M
   extent: interval
   display_rank: 300
@@ -103,11 +108,12 @@ events:
   - evd-v10-000042-B
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep31-audit
 - id: ev-y0-0702-dosu-defeats-lee
   legacy_ids:
   - V10-000042-B
   title: Звукова атака Досу перемагає Лі
-  text: Досу використовує звукову атаку й виводить Лі з бою.
+  text: Поки Лі відновлюється після навантаження Переднього Лотоса, Досу завдає йому звукової атаки та виводить із бою.
   origin: M
   extent: interval
   display_rank: 400
@@ -122,6 +128,7 @@ events:
   - evd-v10-000042-B
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
+  - evd-narutopedia-ep31-audit
 - id: ev-y0-0702-sakura-cuts-hair
   legacy_ids:
   - V10-000042-C

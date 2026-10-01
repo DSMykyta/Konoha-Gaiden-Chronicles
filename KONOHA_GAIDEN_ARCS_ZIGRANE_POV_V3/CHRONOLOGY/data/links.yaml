@@ -3195,6 +3195,31 @@ links:
   a: ev-y0-0701-orochimaru-curse-mark-sasuke
   b: sc-y0-0701-anko-orochimaru
 
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+  id: lnk-audit31-squirrel-before-lee-rescue
+  kind: before
+  a: sc-y0-lee-disarms-squirrel-bomb
+  b: ev-y0-0702-lee-intervenes
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+  id: lnk-audit31-sakura-squirrel-before-disarm
+  kind: before
+  a: ev-y0-0702-sakura-guards-team7
+  b: sc-y0-lee-disarms-squirrel-bomb
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+  id: lnk-audit31-neji-before-team10-rescue
+  kind: before
+  a: sc-y0-neji-spares-team10
+  b: ev-y0-0702-team10-intervenes
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

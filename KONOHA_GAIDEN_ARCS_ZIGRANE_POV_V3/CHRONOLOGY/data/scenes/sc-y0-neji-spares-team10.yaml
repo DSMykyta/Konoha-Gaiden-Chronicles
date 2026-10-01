@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-y0-neji-spares-team10
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-neji-spares-team10
+  display_rank: 100
+  title: Неджі відмовляється нападати на Команду 10
+  text: Під час пошуків Неджі виявляє схованку Іно, Шикамару й Чоджі. Вважаючи їх надто слабкими суперниками, він не вступає
+    в бій і йде далі.
+  involvement:
+  - entity_id: c-neji
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+  - evd-narutopedia-neji-forest-scout
+relations: []
+presence:
+- id: pr-audit-31-y0-neji-spares-team10-c-neji
+  entity_id: c-neji
+  from: sc-y0-neji-spares-team10.start
+  to: sc-y0-neji-spares-team10.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+- id: pr-audit-31-y0-neji-spares-team10-c-ino
+  entity_id: c-ino
+  from: sc-y0-neji-spares-team10.start
+  to: sc-y0-neji-spares-team10.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+- id: pr-audit-31-y0-neji-spares-team10-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-y0-neji-spares-team10.start
+  to: sc-y0-neji-spares-team10.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+- id: pr-audit-31-y0-neji-spares-team10-c-choji
+  entity_id: c-choji
+  from: sc-y0-neji-spares-team10.start
+  to: sc-y0-neji-spares-team10.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+episode_id: ep-y0-team-guy-forest-search
+display_rank: 200
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 1
+title: Неджі знаходить Команду 10 й оминає її

@@ -1,0 +1,43 @@
+schema_version: 1
+id: sc-y0-lee-disarms-squirrel-bomb
+continuity_id: main
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-lee-disarms-squirrel-bomb
+  display_rank: 100
+  title: Лі під час вправи помічає білку з вибуховою печаткою й рятує її
+  text: Шукаючи сувій, Лі зупиняється на гілці та намагається впіймати двадцять листків. Після дев’ятнадцятого він помічає
+    білку з вибуховою печаткою, рятує її та знищує печатку.
+  involvement:
+  - entity_id: c-lee
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+relations: []
+presence:
+- id: pr-audit-31-y0-lee-disarms-squirrel-bomb-c-lee
+  entity_id: c-lee
+  from: sc-y0-lee-disarms-squirrel-bomb.start
+  to: sc-y0-lee-disarms-squirrel-bomb.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep31-audit
+episode_id: ep-y0-team-guy-forest-search
+display_rank: 100
+location_id: loc-forest-death
+placement:
+  anchor_id: ta-y0-0702
+  day_offset: 1
+title: Лі знешкоджує вибухову пастку на білці
