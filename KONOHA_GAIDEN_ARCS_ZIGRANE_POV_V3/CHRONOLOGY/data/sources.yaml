@@ -752,6 +752,13 @@ sources:
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
 
+  - id: src-narutopedia-ep25-audit
+    type: reference
+    title: 'Narutopedia — The Tenth Question: All or Nothing!'
+    url: https://naruto.fandom.com/wiki/The_Tenth_Question%3A_All_or_Nothing%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -3328,4 +3335,18 @@ evidence:
     source_id: src-narutopedia-ep24-audit
     locator: Episode 24, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
+    review: accepted
+
+  - id: evd-narutopedia-ep25-audit
+    source_id: src-narutopedia-ep25-audit
+    locator: Episode 25, Synopsis; factual comparison only; exact timestamps not inspected
+    basis: source
+    review: accepted
+
+  - id: evd-project-raido-staff-room
+    source_id: src-project-decisions
+    locator: User requires author-continuity participants in applicable scenes; Raido
+      already nominated Team 9 and is included as a background mentor during staff-room
+      discussion. No dialogue assigned.
+    basis: project_decision
     review: accepted

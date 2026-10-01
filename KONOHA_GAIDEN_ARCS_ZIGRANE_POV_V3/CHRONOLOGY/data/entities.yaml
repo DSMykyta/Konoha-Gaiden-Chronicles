@@ -2025,6 +2025,12 @@ entities:
     aliases:
     - Ningame
 
+  - id: loc-academy-staff-room
+    kind: location
+    name: Учительська Академії
+    aliases:
+    - Academy staff room
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

@@ -3113,6 +3113,24 @@ links:
   kind: before
   a: sc-y0-kakashi-confirms-team7-exam-entry
   b: sc-y0-0701-candidate-gathering
+- basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep25-audit
+  id: lnk-audit25-anko-before-empty-paper
+  kind: before
+  a: ev-y0-0701-anko-takes-over-second-stage
+  b: ev-y0-ibiki-checks-naruto-empty-paper
+
+- id: lnk-audit25-mentors-during-written
+  kind: intersects
+  a: sc-y0-chunin-mentors-staff-room
+  b: sc-y0-0701-written-exam
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep25-audit
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence of
   relation means unknown order, not simultaneity.

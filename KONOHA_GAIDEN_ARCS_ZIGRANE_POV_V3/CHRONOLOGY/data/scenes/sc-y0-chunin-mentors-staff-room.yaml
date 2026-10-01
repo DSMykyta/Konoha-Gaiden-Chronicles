@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-y0-chunin-mentors-staff-room
+continuity_id: main
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- origin: A
+  extent: interval
+  focus_teams: []
+  id: ev-y0-chunin-mentors-discuss-ibiki
+  display_rank: 100
+  title: Наставники обговорюють шанси команд на випробуванні Ібікі
+  text: В учительській Какаші, Асума й Куренай обговорюють шанси своїх учнів. Какаші та Асума пояснюють Куренай, що Ібікі
+    спеціалізується на допитах і психологічному тиску. Райдо також перебуває серед наставників, які висунули команди.
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-kurenai
+    role: participant
+    mode: physical
+  - entity_id: c-raido
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-narutopedia-ep25-audit
+  - evd-project-raido-staff-room
+relations: []
+presence:
+- id: pr-audit-25-y0-chunin-mentors-staff-room-c-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-chunin-mentors-staff-room.start
+  to: sc-y0-chunin-mentors-staff-room.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep25-audit
+- id: pr-audit-25-y0-chunin-mentors-staff-room-c-asuma
+  entity_id: c-asuma
+  from: sc-y0-chunin-mentors-staff-room.start
+  to: sc-y0-chunin-mentors-staff-room.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep25-audit
+- id: pr-audit-25-y0-chunin-mentors-staff-room-c-kurenai
+  entity_id: c-kurenai
+  from: sc-y0-chunin-mentors-staff-room.start
+  to: sc-y0-chunin-mentors-staff-room.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep25-audit
+- id: pr-audit-25-y0-chunin-mentors-staff-room-c-raido
+  entity_id: c-raido
+  from: sc-y0-chunin-mentors-staff-room.start
+  to: sc-y0-chunin-mentors-staff-room.end
+  basis: project_decision
+  review: accepted
+  evidence_ids:
+  - evd-project-raido-staff-room
+episode_id: ep-y0-chunin-mentors-wait
+display_rank: 100
+title: Наставники чекають в учительській
+location_id: loc-academy-staff-room
+placement:
+  anchor_id: ta-y0-0701
+  day_offset: 0

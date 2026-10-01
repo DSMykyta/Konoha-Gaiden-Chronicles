@@ -27,9 +27,10 @@ checked_anime_episodes:
 - 22
 - 23
 - 24
+- 25
 checked_project_dates:
 - year 0 / January 18–21
-next_anime_episode: 25
+next_anime_episode: 26
 scope: Existing year-zero chronology; historical introductory Nine-Tails attack was not assigned a new date or era
 added_moment_ids:
 - ev-y0-0118-hiruzen-inspects-graffiti
@@ -432,6 +433,25 @@ episode_audits:
     ev-y0-0701-kankuro-prepares-karasu-proctor: ev-y0-0701-kankuro-karasu-observes-answers
     ev-y0-0701-kankuro-leaves-for-toilet: ev-y0-0701-kankuro-karasu-observes-answers
     ev-y0-0701-kankuro-returns-from-toilet: ev-y0-0701-kankuro-feeds-temari
+- episode: 25
+  baseline_revision: c0ed1a6227008111b641db95f36ae65e067000b2
+  added_moment_ids:
+  - ev-y0-ibiki-checks-naruto-empty-paper
+  - ev-y0-chunin-mentors-discuss-ibiki
+  added_scene_ids:
+  - sc-y0-chunin-mentors-staff-room
+  updated_moment_ids:
+  - ev-y0-0701-ibiki-announces-tenth-question
+  - ev-y0-0701-naruto-refuses-to-quit
+  - ev-y0-0701-ibiki-explains-real-purpose
+  - ev-y0-0701-written-exam-passes-26-teams
+  - ev-y0-0701-anko-takes-over-second-stage
+  cast_review: Raido added as background mentor consistent with user instruction and established Team 9 nomination; Team 9
+    included among passing candidates using existing written-stage presence.
+  notes:
+  - A whole mentor conversation and post-exam inspection added. Raido background uses project evidence, without invented dialogue.
+    Source places Forest of Death gathering on the next day; reconcile forest anchors when auditing its start rather than
+    retaining same-day assumption.
 granularity_rule: A moment is a complete meaningful action, decision or conversation that changes the situation. Reactions,
   short replies and preparation stay inside it.
 granularity_corrections:
