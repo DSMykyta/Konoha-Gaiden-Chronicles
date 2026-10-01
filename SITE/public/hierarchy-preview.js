@@ -17,6 +17,63 @@
   `;
   document.head.append(style);
 
+  // Clouds obey the same collapse rules as semantic nodes:
+  // one scene does not create an episode layer; one moment does not create a scene layer.
+  if (typeof StoryClouds !== 'undefined') {
+    const baseCloudGroups = StoryClouds.groups.bind(StoryClouds);
+    StoryClouds.groups = function hierarchyAwareCloudGroups(nodes, level, sceneMapArg, episodeMapArg) {
+      const groups = baseCloudGroups(nodes, level, sceneMapArg, episodeMapArg);
+      const momentsByScene = new Map();
+      const scenesByEpisode = new Map();
+
+      for (const node of nodes) {
+        const sceneIds = (node.sourceSceneIds?.length
+          ? node.sourceSceneIds
+          : node.scene?.id ? [node.scene.id] : []).filter(Boolean);
+        const momentIds = (node.group || []).map(event => event?.id).filter(Boolean);
+
+        for (const sceneId of sceneIds) {
+          if (!momentsByScene.has(sceneId)) momentsByScene.set(sceneId, new Set());
+          const moments = momentsByScene.get(sceneId);
+          for (const momentId of momentIds) moments.add(momentId);
+        }
+
+        const episodeIds = (node.kind === 'episode' && node.rawId
+          ? [node.rawId]
+          : node.sourceEpisodeIds?.length
+            ? node.sourceEpisodeIds
+            : node.scene?.episode_id ? [node.scene.episode_id] : []).filter(Boolean);
+
+        for (const episodeId of episodeIds) {
+          if (!scenesByEpisode.has(episodeId)) scenesByEpisode.set(episodeId, new Set());
+          const scenes = scenesByEpisode.get(episodeId);
+          for (const sceneId of sceneIds) scenes.add(sceneId);
+        }
+      }
+
+      return groups.filter(group => {
+        if (group.kind === 'episode') return (scenesByEpisode.get(group.id)?.size || 0) > 1;
+        if (group.kind === 'scene') return (momentsByScene.get(group.id)?.size || 0) > 1;
+        return true;
+      });
+    };
+  }
+
+  function normalizeCloudLabels(root = document) {
+    root.querySelectorAll?.('.cloud-label').forEach(label => {
+      const parent = label.querySelector('.cloud-parent');
+      if (!parent) return;
+      const wanted = label.dataset.cloudKind === 'scene' ? 'СЦЕНА' : label.dataset.cloudKind === 'episode' ? 'ЕПІЗОД' : null;
+      if (wanted && parent.textContent !== wanted) parent.textContent = wanted;
+    });
+  }
+
+  const timeline = document.getElementById('timeline');
+  if (timeline) {
+    normalizeCloudLabels(timeline);
+    new MutationObserver(() => normalizeCloudLabels(timeline)).observe(timeline, { childList: true, subtree: true });
+  }
+
   function countLabel(n, one, few, many) {
     const mod100 = n % 100;
     const mod10 = n % 10;
