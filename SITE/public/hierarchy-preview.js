@@ -4,16 +4,124 @@
   const baseBindCard = bindCard;
   const baseCloseCard = closeCard;
   const baseBindSceneActionPreviews = bindSceneActionPreviews;
+  const baseShowSceneCard = showSceneCard;
   const cascade = [];
   const closeTimers = [];
 
   const style = document.createElement('style');
   style.textContent = `
     .hierarchy-preview-content { padding: 22px; }
-    .result.is-preview-active { background: var(--accent-soft); }
     .hierarchy-preview .preview-top { min-height: 34px; }
+
+    /* One list-row component for arc -> episode -> scene -> moment. */
+    .story-children,
+    .scene-actions {
+      counter-reset: hierarchy-row;
+      display: grid;
+      gap: 4px;
+    }
+    .story-children .result,
+    .scene-actions li {
+      position: relative;
+      counter-increment: hierarchy-row;
+      width: 100%;
+      min-height: 0;
+      margin: 0;
+      padding: 10px 12px 10px 38px;
+      border: 0 !important;
+      border-radius: 14px;
+      background: transparent !important;
+      box-shadow: none;
+      text-align: left;
+      cursor: pointer;
+      transition: background .16s ease, box-shadow .16s ease, transform .16s ease, border-color .16s ease;
+    }
+    .story-children .result::before,
+    .scene-actions li::before {
+      content: counter(hierarchy-row, decimal-leading-zero);
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      padding: 0;
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1.6;
+      font-variant-numeric: tabular-nums;
+      pointer-events: none;
+    }
+    .story-children .result {
+      display: block;
+    }
+    .story-children .result > span,
+    .scene-actions li > div {
+      display: block;
+      min-width: 0;
+      width: 100%;
+    }
+    .story-children .result strong,
+    .scene-action-title {
+      display: block;
+      width: 100%;
+      padding: 0;
+      background: transparent !important;
+      color: var(--text);
+      text-align: left;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.65;
+      transform: none !important;
+    }
+    .story-children .result small,
+    .story-row-description {
+      display: -webkit-box;
+      margin-top: 3px;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      color: var(--muted);
+      font-size: 10.5px;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+    .scene-actions li .story-row-description {
+      margin: 2px 0 0;
+    }
+    .scene-actions li .event-gallery {
+      margin: 8px 0 10px;
+    }
+    .story-children .result:hover,
+    .story-children .result.is-preview-active,
+    .scene-actions li:hover,
+    .scene-actions li.is-preview-active {
+      background: linear-gradient(145deg, rgba(255,255,255,.62), rgba(232,239,247,.22)) !important;
+      -webkit-backdrop-filter: blur(14px) saturate(1.14);
+      backdrop-filter: blur(14px) saturate(1.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.94), inset 0 -1px 0 rgba(124,142,164,.10), 0 5px 14px rgba(42,54,70,.09);
+      transform: translateY(-1px);
+    }
+    .story-children .result:hover::before,
+    .story-children .result.is-preview-active::before,
+    .scene-actions li:hover::before,
+    .scene-actions li.is-preview-active::before {
+      color: var(--text);
+    }
+    .story-children .result:hover strong,
+    .story-children .result.is-preview-active strong,
+    .scene-actions li:hover .scene-action-title,
+    .scene-actions li.is-preview-active .scene-action-title {
+      background: transparent !important;
+      color: var(--text);
+      box-shadow: none !important;
+      transform: none !important;
+    }
     .hierarchy-preview .scene-actions li { cursor: pointer; }
-    @media (max-width: 760px) { .hierarchy-preview-content { padding: 18px; } }
+    @media (max-width: 760px) {
+      .hierarchy-preview-content { padding: 18px; }
+      .story-children .result,
+      .scene-actions li { padding: 9px 10px 9px 34px; }
+      .story-children .result::before,
+      .scene-actions li::before { left: 10px; top: 11px; }
+    }
   `;
   document.head.append(style);
 
@@ -91,6 +199,23 @@
       text: start === end ? dateText(start, true) : `${dateText(start, true)} — ${dateText(end, true)}`,
       hasYear: true
     };
+  }
+
+  function rowDescription(text) {
+    return String(text || '').trim();
+  }
+
+  function decorateSceneRows(root, group) {
+    root?.querySelectorAll?.('.scene-actions li').forEach((row, index) => {
+      const body = row.querySelector(':scope > div');
+      if (!body || body.querySelector('.story-row-description')) return;
+      const description = rowDescription(group[index]?.text);
+      if (!description) return;
+      const note = document.createElement('small');
+      note.className = 'story-row-description';
+      note.textContent = description;
+      body.append(note);
+    });
   }
 
   function clearTimers() {
@@ -173,7 +298,7 @@
     const group = sceneEvents(id);
     const cast = sceneCast(scene, group);
     const range = storyRange(group.length ? group : [scene]);
-    const actions = group.map(event => `<li data-scene-preview="${esc(event.id)}"><div>${eventGallery(event)}<button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(event.title)}">${esc(event.title)}</button></div></li>`).join('');
+    const actions = group.map(event => `<li data-scene-preview="${esc(event.id)}"><div>${eventGallery(event)}<button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(event.title)}">${esc(event.title)}</button>${event.text ? `<small class="story-row-description">${esc(event.text)}</small>` : ''}</div></li>`).join('');
     return {
       label: 'Опис сцени',
       html: `<div class="preview-top">${cardMetaLine('scene', range.text, range.hasYear)}</div><h2>${esc(scene.title)}</h2><button class="scene-context" data-open-scene="${esc(scene.id)}" title="Читати сцену цілком"><span>Сцена · ${actionCount(group.length)}</span>${esc(name(scene.location_id))} <span aria-hidden="true">↗</span></button>${cast.length ? `<div class="people scene-people">${cast.map(entityId => `<button class="person" data-event-focus-character="${esc(entityId)}" aria-label="Зосередитися на лінії ${esc(name(entityId))}" title="Зосередитися на лінії"><span class="swatch" style="background:${color(entityId)}"></span>${esc(name(entityId))}</button>`).join('')}</div>` : ''}${actions ? `<ol class="scene-actions">${actions}</ol>` : ''}`
@@ -271,6 +396,11 @@
     if (card.hidden) return;
     bindStoryTriggers($('cardContent'), card, 0);
   }
+
+  showSceneCard = function showSceneCardWithUnifiedRows(scene, group) {
+    baseShowSceneCard(scene, group);
+    decorateSceneRows($('cardContent'), group);
+  };
 
   bindSceneActionPreviews = function bindSceneActionHierarchyPreviews() {
     // The root scene keeps its responsive preview and explicit return action.
