@@ -1,83 +1,89 @@
-/* Diegetic character dossier: a physical A4 sheet over the glass timeline. */
+/* Character dossier: a real A4 paper sheet inside a viewport-scrolling modal. */
 #profileDialog.profile-dialog {
-  --paper: #f3eddf;
-  --paper-deep: #e7decd;
-  --ink: #27251f;
-  --ink-soft: #676054;
-  --rule: #9b907d;
+  --paper: #fbfbfa;
+  --paper-edge: #d8d9d6;
+  --ink: #202124;
+  --ink-soft: #666a70;
+  --rule: #c5c7c4;
   position: fixed;
-  inset: max(18px, 3.5vh) 0 auto;
-  margin: 0 auto;
-  width: min(210mm, calc(100vw - 56px));
-  min-height: min(297mm, calc(100dvh - 36px));
-  max-height: calc(100dvh - max(18px, 3.5vh));
-  padding: 19mm 18mm 24mm;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: clamp(18px, 4vh, 44px) 0 clamp(42px, 8vh, 88px);
+  box-sizing: border-box;
   border: 0;
-  border-radius: 2px;
+  border-radius: 0;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
-  scrollbar-color: #9e9588 transparent;
-  background:
-    radial-gradient(circle at 17% 9%, #fffaf0aa 0 12%, transparent 34%),
-    linear-gradient(92deg, #00000008, transparent 2.5%, transparent 97.5%, #00000008),
-    var(--paper);
+  scrollbar-color: #8b8f94 transparent;
+  background: transparent;
   color: var(--ink);
-  box-shadow:
-    0 48px 110px #05070b73,
-    0 14px 34px #05070b38,
-    0 1px 0 #ffffff inset,
-    0 0 0 1px #6f675b33;
-  transform-origin: 50% 100%;
-  animation: dossier-sheet-rise 520ms cubic-bezier(.2,.82,.2,1) both;
+  box-shadow: none;
 }
 
 #profileDialog.profile-dialog::backdrop {
-  background: rgba(13, 16, 21, .62);
-  -webkit-backdrop-filter: blur(2px) saturate(.78);
-  backdrop-filter: blur(2px) saturate(.78);
-  animation: dossier-backdrop-in 300ms ease-out both;
+  background: rgba(15, 17, 20, .72);
+  -webkit-backdrop-filter: blur(6px) saturate(.8);
+  backdrop-filter: blur(6px) saturate(.8);
 }
 
+/* The old pseudo-sheet was viewport-fixed, which made the paper stay behind while
+   only its contents scrolled. The paper is now made from the two real content
+   blocks below, so it moves through the viewport as one document. */
 #profileDialog.profile-dialog::before {
-  content: "";
-  position: fixed;
-  inset: max(18px, 3.5vh) 50% auto auto;
-  width: min(210mm, calc(100vw - 56px));
-  height: min(297mm, calc(100dvh - 36px));
-  translate: 50% 0;
-  pointer-events: none;
-  opacity: .2;
-  background:
-    repeating-linear-gradient(0deg, #2f2a2108 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, #ffffff12 0 1px, transparent 1px 5px);
-  mix-blend-mode: multiply;
-  z-index: 0;
+  content: none;
 }
 
-#profileDialog.profile-dialog > * {
-  position: relative;
-  z-index: 1;
+#profileDialog.profile-dialog > .profile-heading,
+#profileDialog.profile-dialog > #profileContent {
+  width: min(210mm, calc(100vw - 48px));
+  margin-inline: auto;
+  box-sizing: border-box;
+  background:
+    radial-gradient(circle at 18% 7%, rgba(0, 0, 0, .012) 0 .6px, transparent .8px) 0 0 / 5px 5px,
+    linear-gradient(90deg, rgba(0, 0, 0, .012), transparent 5%, transparent 95%, rgba(0, 0, 0, .012)),
+    var(--paper);
+  border-inline: 1px solid var(--paper-edge);
 }
 
 #profileDialog .profile-heading {
   position: relative;
-  top: auto;
   display: block;
-  margin: 0 0 9mm;
-  padding: 0 34mm 5mm 0;
-  background: transparent;
-  border-bottom: 2px solid var(--ink);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 18mm 18mm 6mm;
+  border-top: 1px solid var(--paper-edge);
+  border-bottom: 0;
+  box-shadow:
+    -18px 0 34px -30px rgba(0, 0, 0, .55),
+    18px 0 34px -30px rgba(0, 0, 0, .55),
+    0 -14px 30px -24px rgba(0, 0, 0, .48);
+}
+
+#profileDialog #profileContent {
+  min-height: 247mm;
+  padding: 3mm 18mm 22mm;
+  border-top: 0;
+  border-bottom: 1px solid var(--paper-edge);
+  box-shadow:
+    -18px 0 34px -30px rgba(0, 0, 0, .55),
+    18px 0 34px -30px rgba(0, 0, 0, .55),
+    0 32px 56px -28px rgba(0, 0, 0, .58);
+  color: var(--ink);
 }
 
 #profileDialog .profile-heading::after {
   content: "ОСОБОВА СПРАВА";
   position: absolute;
-  right: 0;
-  bottom: 5.5mm;
+  right: 18mm;
+  bottom: 7mm;
   color: var(--ink-soft);
-  font: 700 10px/1.2 Manrope, sans-serif;
+  font: 700 9px/1.2 Manrope, sans-serif;
   letter-spacing: .18em;
 }
 
@@ -85,32 +91,55 @@
   display: block;
   margin-bottom: 2mm;
   color: var(--ink-soft);
-  font: 600 9px/1.3 Manrope, sans-serif;
+  font: 650 9px/1.3 Manrope, sans-serif;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
 
 #profileDialog .profile-heading h2 {
   margin: 0;
+  padding-right: 46mm;
   color: var(--ink);
   font: 600 clamp(27px, 3.4vw, 39px)/1.05 Lora, serif;
   letter-spacing: -.025em;
 }
 
-/* Controls are intentionally removed from the physical document for now. */
-#profileDialog #closeProfile,
+/* Closing is interface chrome, not part of the printed sheet. */
+#profileDialog #closeProfile {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 10;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  background: rgba(23, 25, 29, .55);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .24);
+}
+
+#profileDialog #closeProfile:hover,
+#profileDialog #closeProfile:focus-visible {
+  background: rgba(23, 25, 29, .78);
+}
+
+/* Age/version controls remain out of the document until their visual language is defined. */
 #profileDialog #profileTabs,
 #profileDialog .profile-actions {
   display: none !important;
 }
 
-#profileDialog #profileContent {
-  color: var(--ink);
-}
-
 #profileDialog #profileContent p {
-  color: #403c34;
-  line-height: 1.72;
+  color: #3d4044;
+  line-height: 1.65;
 }
 
 #profileDialog .profile-layout {
@@ -137,17 +166,14 @@
   width: 100%;
   aspect-ratio: 3 / 4;
   max-height: none;
-  padding: 2.2mm;
+  padding: 2mm;
   object-fit: contain;
   object-position: center top;
-  border: 1px solid #766e61;
+  border: 1px solid #a9aaa7;
   border-radius: 0;
-  background: #e9e2d4;
-  box-shadow:
-    0 1px 0 #fff9 inset,
-    0 0 0 1px #fff6 inset,
-    0 3px 7px #4a41331c;
-  filter: saturate(.9) contrast(.98);
+  background: #f2f2ef;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+  filter: saturate(.94) contrast(.99);
 }
 
 #profileDialog .profile-image.profile-image-empty {
@@ -157,12 +183,11 @@
   justify-content: center;
   min-height: 72mm;
   padding: 0;
-  border-style: solid;
   background:
-    linear-gradient(135deg, transparent 49.7%, #8b82741f 50%, transparent 50.3%),
-    linear-gradient(45deg, transparent 49.7%, #8b82741f 50%, transparent 50.3%),
-    #ebe4d7;
-  color: #756d60;
+    linear-gradient(135deg, transparent 49.7%, rgba(0, 0, 0, .055) 50%, transparent 50.3%),
+    linear-gradient(45deg, transparent 49.7%, rgba(0, 0, 0, .055) 50%, transparent 50.3%),
+    #f1f1ee;
+  color: #74777b;
 }
 
 #profileDialog .profile-image-empty span {
@@ -173,7 +198,7 @@
 
 #profileDialog .profile-image-empty small {
   margin-top: 4px;
-  color: #8c8376;
+  color: #8b8e92;
 }
 
 #profileDialog .profile-age {
@@ -211,8 +236,8 @@
   gap: 0 7mm;
   margin: 0 0 7mm;
   padding: 4mm 0;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  border-top: 1px solid #7d8083;
+  border-bottom: 1px solid #7d8083;
 }
 
 #profileDialog .profile-facts > div {
@@ -222,7 +247,7 @@
   align-items: baseline;
   min-height: 9mm;
   padding: 2.2mm 0;
-  border-bottom: 1px dotted #9d9382;
+  border-bottom: 1px dotted #b7b9b6;
 }
 
 #profileDialog .profile-facts > div:nth-last-child(-n + 2) {
@@ -260,7 +285,7 @@
 #profileDialog .profile-list {
   margin: 0;
   padding-left: 5mm;
-  color: #403c34;
+  color: #3d4044;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -280,7 +305,7 @@
   grid-template-columns: minmax(38mm, .8fr) minmax(0, 1.6fr);
   gap: 5mm;
   padding: 2.4mm 0;
-  border-bottom: 1px dotted #aaa08f;
+  border-bottom: 1px dotted #b7b9b6;
 }
 
 #profileDialog .profile-entry strong {
@@ -290,12 +315,12 @@
 }
 
 #profileDialog .profile-entry span {
-  color: #4f493f;
+  color: #4d5054;
   font-size: 11px;
   line-height: 1.55;
 }
 
-/* Technique dossier: horizontal canvas of small physical index cards. */
+/* Techniques look like neutral archive/index cards instead of yellow note cards. */
 #profileDialog .profile-entry-list.technique-card-track {
   display: flex;
   gap: 5mm;
@@ -307,7 +332,7 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #9f927d transparent;
+  scrollbar-color: #9a9da1 transparent;
   cursor: grab;
   touch-action: pan-x pan-y;
 }
@@ -328,36 +353,23 @@
   flex-direction: column;
   gap: 2.3mm;
   padding: 5mm 5.5mm 4.5mm;
-  border: 1px solid #8d806a;
-  border-radius: 1.4mm;
+  border: 1px solid #c4c6c3;
+  border-radius: 1.2mm;
   overflow: hidden;
   scroll-snap-align: start;
   background:
-    linear-gradient(to bottom, transparent 0 12mm, #8f806a20 12mm 12.25mm, transparent 12.25mm),
-    repeating-linear-gradient(to bottom, transparent 0 6.25mm, #8f806a13 6.25mm 6.5mm),
-    radial-gradient(circle at 18% 5%, #fffdf5 0 12%, transparent 38%),
-    #efe3c8;
-  box-shadow:
-    inset 0 1px 0 #fffaf0,
-    inset 0 0 0 1px #fff8,
-    0 2px 3px #3e342919,
-    0 9px 18px #3e34291f;
-  transform: translateY(0) rotate(0deg);
-  transition: transform 220ms cubic-bezier(.2,.75,.2,1), box-shadow 220ms ease;
-}
-
-#profileDialog .profile-entry.technique-card:nth-child(even) {
-  transform: translateY(1px) rotate(.18deg);
+    linear-gradient(to bottom, transparent 0 12mm, rgba(80, 83, 87, .09) 12mm 12.25mm, transparent 12.25mm),
+    repeating-linear-gradient(to bottom, transparent 0 6.25mm, rgba(80, 83, 87, .055) 6.25mm 6.5mm),
+    #f7f7f5;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, .09);
+  transform: translateY(0);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 #profileDialog .profile-entry.technique-card:hover,
 #profileDialog .profile-entry.technique-card:focus-within {
-  transform: translateY(-3px) rotate(-.18deg);
-  box-shadow:
-    inset 0 1px 0 #fffdf6,
-    inset 0 0 0 1px #fff9,
-    0 5px 7px #3e34291a,
-    0 15px 28px #3e342929;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .13);
 }
 
 #profileDialog .technique-card-top {
@@ -366,7 +378,7 @@
   justify-content: space-between;
   gap: 4mm;
   min-height: 5mm;
-  color: #776b59;
+  color: #707378;
   font: 800 8px/1.25 Manrope, sans-serif;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -381,23 +393,23 @@
   align-items: center;
   min-height: 5mm;
   padding: .7mm 2mm;
-  border: 1px solid #81735e;
-  border-radius: 99px;
-  color: #5e5140;
-  background: #fff7e36b;
+  border: 1px solid #b1b3b0;
+  border-radius: 999px;
+  color: #52555a;
+  background: #fff;
 }
 
 #profileDialog .technique-card-name {
   display: block;
   margin: 0;
-  color: #28231c;
+  color: #25272a;
   font: 700 15px/1.18 Lora, serif;
   letter-spacing: -.015em;
 }
 
 #profileDialog .technique-card-romanized {
   margin: -1mm 0 0 !important;
-  color: #716655 !important;
+  color: #6c7074 !important;
   font: 600 9px/1.35 Manrope, sans-serif;
   letter-spacing: .025em;
 }
@@ -407,7 +419,7 @@
   flex-wrap: wrap;
   gap: 1.2mm 2.5mm;
   margin: 0;
-  color: #665947;
+  color: #64686d;
   font: 700 8px/1.35 Manrope, sans-serif;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -415,7 +427,7 @@
 
 #profileDialog .technique-card-summary {
   margin: .5mm 0 0 !important;
-  color: #383127 !important;
+  color: #383b3f !important;
   font: 500 10.5px/1.5 Lora, serif;
 }
 
@@ -424,7 +436,7 @@
   gap: 1.3mm;
   margin: 0;
   padding: 2.5mm 0 0;
-  border-top: 1px solid #9c8e77;
+  border-top: 1px solid #c3c5c2;
 }
 
 #profileDialog .technique-card-facts > div {
@@ -434,7 +446,7 @@
 }
 
 #profileDialog .technique-card-facts dt {
-  color: #786b59;
+  color: #73767a;
   font: 800 7.5px/1.45 Manrope, sans-serif;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -442,7 +454,7 @@
 
 #profileDialog .technique-card-facts dd {
   margin: 0;
-  color: #463d31;
+  color: #45484c;
   font: 500 9px/1.45 Manrope, sans-serif;
 }
 
@@ -453,18 +465,18 @@
   align-items: baseline;
   margin-top: auto;
   padding-top: 2.5mm;
-  border-top: 1px solid #9c8e77;
+  border-top: 1px solid #c3c5c2;
 }
 
 #profileDialog .technique-card-status span {
-  color: #786b59;
+  color: #73767a;
   font: 800 7.5px/1.35 Manrope, sans-serif;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 
 #profileDialog .technique-card-status strong {
-  color: #30291f;
+  color: #303337;
   font: 700 9.5px/1.4 Manrope, sans-serif;
 }
 
@@ -477,52 +489,54 @@
   color: var(--ink-soft);
 }
 
-@keyframes dossier-sheet-rise {
-  from { opacity: .55; transform: translateY(92px) scale(.992); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes dossier-backdrop-in {
-  from { background: rgba(13, 16, 21, 0); -webkit-backdrop-filter: blur(0); backdrop-filter: blur(0); }
-  to { background: rgba(13, 16, 21, .62); -webkit-backdrop-filter: blur(2px) saturate(.78); backdrop-filter: blur(2px) saturate(.78); }
-}
-
 @media (max-width: 760px) {
   #profileDialog.profile-dialog {
-    inset: 8px 0 auto;
-    width: calc(100vw - 16px);
-    min-height: calc(100dvh - 16px);
-    max-height: calc(100dvh - 16px);
-    padding: 30px 24px 54px;
+    padding: 10px 0 34px;
   }
-  #profileDialog.profile-dialog::before {
-    inset: 8px 50% auto auto;
-    width: calc(100vw - 16px);
-    height: calc(100dvh - 16px);
+
+  #profileDialog.profile-dialog > .profile-heading,
+  #profileDialog.profile-dialog > #profileContent {
+    width: calc(100vw - 20px);
   }
+
   #profileDialog .profile-heading {
-    padding-right: 0;
+    padding: 28px 24px 16px;
   }
+
+  #profileDialog #profileContent {
+    min-height: calc((100vw - 20px) * 1.4142 - 118px);
+    padding: 12px 24px 46px;
+  }
+
   #profileDialog .profile-heading::after {
     position: static;
     display: block;
     margin-top: 8px;
   }
+
+  #profileDialog .profile-heading h2 {
+    padding-right: 0;
+  }
+
   #profileDialog .profile-visual {
     width: 38%;
     max-width: 190px;
     margin: 0 22px 20px 0;
   }
+
   #profileDialog .profile-facts {
     grid-template-columns: 1fr;
   }
+
   #profileDialog .profile-facts > div,
   #profileDialog .profile-entry:not(.technique-card) {
     grid-template-columns: minmax(110px, .85fr) minmax(0, 1.4fr);
   }
+
   #profileDialog .profile-facts > div:nth-last-child(2) {
-    border-bottom-color: #9d9382;
+    border-bottom-color: #b7b9b6;
   }
+
   #profileDialog .profile-entry.technique-card {
     flex-basis: min(74mm, 82vw);
     width: min(74mm, 82vw);
@@ -530,19 +544,30 @@
 }
 
 @media (max-width: 480px) {
+  #profileDialog #closeProfile {
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
   #profileDialog .profile-visual {
     float: none;
     width: min(58%, 190px);
     margin: 0 auto 24px;
   }
+
   #profileDialog .profile-age {
     text-align: center;
   }
+
   #profileDialog .profile-facts > div,
   #profileDialog .profile-entry:not(.technique-card) {
     grid-template-columns: 1fr;
     gap: 2px;
   }
+
   #profileDialog .profile-entry.technique-card {
     flex-basis: min(70mm, 84vw);
     width: min(70mm, 84vw);
@@ -550,12 +575,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #profileDialog.profile-dialog,
-  #profileDialog.profile-dialog::backdrop,
   #profileDialog .profile-entry.technique-card {
-    animation: none;
     transition: none;
   }
+
   #profileDialog .profile-entry-list.technique-card-track {
     scroll-behavior: auto;
   }
