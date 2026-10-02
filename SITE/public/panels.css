@@ -100,6 +100,13 @@
   transform: none;
 }
 
+/* Hierarchy rows share one glass highlight. The global button hover must not
+   paint a second grey rectangle inside scene rows or over episode rows. */
+@media (hover: hover) and (pointer: fine) {
+  .story-children .result:not(:disabled):hover,
+  .scene-actions .scene-action-title:not(:disabled):hover { background: transparent; }
+}
+
 .hierarchy-hover-glass {
   position: absolute;
   z-index: 0;
@@ -136,6 +143,7 @@
 @media (prefers-reduced-motion: reduce) {
   .hierarchy-hover-glass { transition: opacity 80ms linear; }
 }
+:root[data-input="keyboard"] .hierarchy-hover-glass { transition: none; }
 
 /* A reading container keeps navigation outside its glass surface. */
 .event-card {

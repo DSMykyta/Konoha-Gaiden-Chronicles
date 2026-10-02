@@ -23,7 +23,20 @@ async function check(width,height){
  click('[data-profile="c-naruto"]');assert(!doc.getElementById('profileDialog').hidden);assert(doc.getElementById('profileDialog').hasAttribute('open'));assert(doc.querySelectorAll('[role="tab"]').length>=1);assert(doc.querySelector('.profile-layout'));assert(doc.querySelector('.profile-visual'));assert(doc.querySelector('.profile-details'));const firstProfileTab=doc.querySelector('[data-profile-version]');click('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]');assert(doc.querySelector('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]').getAttribute('aria-selected')==='true');assert(doc.getElementById('profileContent').textContent.includes('У хронології'));const narutoProfileText=doc.getElementById('profileContent').textContent;for(const heading of ['Зовнішність','Риси характеру','Цілі','Здібності','Стосунки','Спорядження'])assert(narutoProfileText.includes(heading),'Missing Naruto profile section: '+heading);assert(doc.querySelector('.profile-image'));click('#closeProfile');assert(doc.getElementById('profileDialog').hidden);
  // Focus preserves the original node coordinates and curves, with local guests.
  const unfocusedY=new Map(run('graphNodes.map(node=>[node.id,node.y])'));
- click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);assert(run("graphNodes.every(p=>p.group.some(e=>e.tracks.includes('c-raido')))"));assert(canvas.querySelectorAll('.thread').length>0);assert([...canvas.querySelectorAll('.thread')].every(path=>path.dataset.character==='c-raido'));assert(canvas.querySelector('.focus-guest-entry'));for(const point of run('graphNodes'))assert.equal(point.y,unfocusedY.get(point.id),'Focus flattened a story curve');
+ const originalNodes=[...canvas.querySelectorAll('.node')],originalStrands=[...canvas.querySelectorAll('.thread')],originalCurves=originalStrands.map(path=>path.getAttribute('d'));
+ const raidoHit=canvas.querySelector('.thread-hit[data-character="c-raido"]');assert.equal(raidoHit.dataset.tooltip,'Райдо Наміаші');
+ if(width>=600){
+  const lineHover=new window.Event('pointerover',{bubbles:true});Object.defineProperty(lineHover,'pointerType',{value:'mouse'});raidoHit.dispatchEvent(lineHover);
+  assert(canvas.querySelector('.thread[data-character="c-raido"].is-character-hover-active'));
+  assert(canvas.querySelector('.thread[data-character="c-naruto"].is-character-hover-muted'));
+  raidoHit.dispatchEvent(new window.Event('pointerout',{bubbles:true}));
+ }
+ click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);
+ assert.deepEqual([...canvas.querySelectorAll('.node')],originalNodes,'Focus replaced nodes');assert.deepEqual([...canvas.querySelectorAll('.thread')],originalStrands,'Focus replaced strands');
+ assert.deepEqual(originalStrands.map(path=>path.getAttribute('d')),originalCurves,'Focus changed curves or gaps');
+ assert(canvas.querySelector('.thread[data-character="c-raido"].is-line-focus-main'));assert.equal(canvas.querySelector('.focus-guest-entry'),null);
+ for(const path of originalStrands){const connected=path.dataset.character==='c-raido'||path.dataset.companions.split(' ').includes('c-raido');assert.equal(path.classList.contains('is-line-focus-hidden'),!connected);}
+ for(const point of run('graphNodes'))assert.equal(point.y,unfocusedY.get(point.id),'Focus flattened a story curve');
  run("navigateEvent('ev-y0-0624-jonin-nominate-teams')");await sleep();assert(doc.querySelector('#cardContent h2').textContent.includes('Райдо'));const current=run('anchorEvent');click('#focusNext');await sleep();const next=run('anchorEvent');assert.notEqual(next,current);assert(run('eventMap.get(anchorEvent).tracks.includes(focusedCharacter)'));click('#focusPrevious');await sleep();assert.equal(run('anchorEvent'),current);
  // A visual screenshot may exist above the title; candidates stay hidden.
  snapshot.media=[{id:'fixture',event_id:current,status:'candidate',src:'media/test.png',alt:'Fixture',locator:'test',source_id:'src-anime-20-23'}];snapshot.revision='test-update';version=snapshot.revision;await run('refreshData()');assert.equal(run('data.revision'),'test-update');assert.equal(run('selected.size'),count);assert.equal(run('focusedCharacter'),'c-raido');assert.equal(doc.querySelectorAll('.event-gallery').length,0);
@@ -161,6 +174,30 @@ async function check(width,height){
  run('zoom=zoomModes.year;center=dayToAxis(21.5);render()');const pivot=run('dayToAxis(73.5)'),fraction=run('dayToAxis(73.5)/axisLength()');run('setZoom(zoomModes.month,'+pivot+')');await sleep();const bounds=run('range()');assert(Math.abs((pivot-bounds[0])/(bounds[1]-bounds[0])-fraction)<1e-8);
  const moments=run("semanticNodes('moment',orderedScenes())");
  for(const scene of run('orderedScenes()')){if(scene.day===null)continue;const members=moments.filter(node=>node.scene?.id===scene.id);assert(members.every(node=>node.day>scene.day&&node.day<scene.day+1));}
+ // Enhanced search is the only renderer; readers open their own hierarchy level.
+ run('closeCard();zoom=zoomModes.week;center=dayToAxis(21.5);render()');
+ const query=doc.getElementById('eventSearch'),searchType=kind=>click('[data-search-type="'+kind+'"]');
+ const fillQuery=value=>{query.value=value;query.dispatchEvent(new window.Event('input'));};
+ click('#searchButton');fillQuery('Наруто');searchType('person');
+ assert.equal(doc.querySelector('[data-search-event]'),null,'Legacy search flashed over enhanced results');
+ const searchMap=run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),searchView=run('JSON.stringify([zoom,center])');
+ click('[data-search-kind="person"][data-search-id="c-naruto"]');assert(!doc.getElementById('profileDialog').hidden);
+ assert.equal(run('focusedCharacter'),null,'Opening a dossier focused the line');assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),searchMap);assert.equal(run('JSON.stringify([zoom,center])'),searchView);
+ assert(doc.querySelector('#openCharacterEvents'));doc.getElementById('profileDialog').scrollTop=400;click('#closeProfile');
+ click('#searchButton');fillQuery('Сора');searchType('person');click('[data-search-kind="person"][data-search-id="c-sora"]');
+ assert.equal(doc.getElementById('profileDialog').scrollTop,0);assert(!doc.getElementById('profileTabs').hidden);assert.equal(doc.querySelectorAll('[data-profile-version]').length,5);
+ const twelveText=doc.getElementById('profileContent').textContent;doc.getElementById('profileDialog').scrollTop=400;click('[data-profile-version="sora-13"]');
+ assert.equal(run('profileVersion'),'sora-13');assert.equal(doc.getElementById('profileDialog').scrollTop,0);assert.notEqual(doc.getElementById('profileContent').textContent,twelveText);assert(doc.getElementById('profileContent').textContent.includes('польова тактикиня'));assert.equal(doc.querySelector('[data-profile-version="sora-13"]').getAttribute('aria-selected'),'true');
+ const firstTab=doc.querySelector('[data-profile-version="sora-13"]'),tabKey=new window.Event('keydown');Object.defineProperty(tabKey,'key',{value:'ArrowRight'});firstTab.dispatchEvent(tabKey);assert.equal(run('profileVersion'),'sora-14');
+ const soraEvents=run('characterTimelineEvents("c-sora")').length;click('#openCharacterEvents');assert(!doc.getElementById('characterEventsDialog').hidden);assert.equal(doc.querySelectorAll('.character-event-card').length,soraEvents);
+ const soraEventButton=doc.querySelector('[data-character-timeline-event]'),soraEvent=soraEventButton.dataset.characterTimelineEvent;click('[data-character-timeline-event="'+soraEvent+'"]');
+ assert(doc.getElementById('characterEventsDialog').hidden);assert(doc.getElementById('profileDialog').hidden);assert.equal(run('anchorEvent'),soraEvent);run('closeCard()');
+ click('#searchButton');click('#clearSearchFilters');fillQuery('Оголошення команд');searchType('scene');
+ click('[data-search-kind="scene"][data-search-id="sc-y0-0122-academy-announcements"]');assert.equal(run('cardSelection.kind'),'scene');assert.equal(run('cardSelection.id'),'sc-y0-0122-academy-announcements');assert(doc.getElementById('sceneDialog').hidden);run('closeCard()');
+ click('#searchButton');click('#clearSearchFilters');searchType('moment');doc.getElementById('searchPerson').value='c-raido';doc.getElementById('searchPerson').dispatchEvent(new window.Event('change'));
+ const filtered=run('TimelineSearchEnhanced.searchDocs("").items');assert(filtered.length>0);assert(filtered.every(item=>item.kind==='moment'&&item.personIds.includes('c-raido')));
+ doc.getElementById('searchDate').value='31.02';doc.getElementById('searchDate').dispatchEvent(new window.Event('input'));assert(doc.getElementById('searchSummary').textContent.includes('Дата не розпізнана'));assert.equal(doc.querySelector('[data-search-kind]'),null);
+ click('#clearSearchFilters');fillQuery('какаш');searchType('person');assert(doc.querySelector('[data-search-kind="person"][data-search-id="c-kakashi"]'));click('#clearSearchFilters');run('closePanels()');
  console.log('PASS',width,height,'all/none, names, focus, event navigation, day backgrounds, age tabs, gallery, live refresh');
 }
 (async()=>{await check(1440,900);await check(375,760);await check(812,375)})().catch(e=>{console.error(e);process.exitCode=1});

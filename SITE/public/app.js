@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261002-stable-readers-2';
+const UI_VERSION='20261002-continuous-curves-3';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -89,7 +89,7 @@ function semanticOwner(nodes){
 }
 function nav(){const allowed=new Set(navigationEvents().map(e=>e.id)),list=orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&allowed.has(e.id)),i=list.findIndex(e=>e.id===anchorEvent),currentDay=axisToDay(center),next=list.findIndex(e=>e.day>=Math.floor(currentDay));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
 function stepEvent(direction){const target=nav()[direction<0?'previous':'next'];if(target)navigateEvent(target.id);}
-function setFocus(id){StoryTitleScale.clear();focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();$('canvas').scrollTop=0;renderCharacters();render();}
+function setFocus(id){StoryTitleScale.clear();const needsLine=!selected.has(id);focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();renderCharacters();if(needsLine&&focusedCharacter)render();else{SelectionFocus.update();updateFocusBar();}}
 function updateFocusBar(){const bar=$('focusBar');bar.hidden=!focusedCharacter;if(!focusedCharacter)return;const n=nav();$('focusName').textContent=fullName(focusedCharacter);$('focusPosition').textContent=n.index>=0?`${n.index+1} / ${n.total}`:`${n.total} подій`;$('focusPrevious').disabled=!n.previous;$('focusNext').disabled=!n.next;}
 function selectionChanged(){StoryTitleScale.clear();if(focusedCharacter&&!selected.has(focusedCharacter))focusedCharacter=null;closeCard();renderCharacters();render();}
 const TIME_GAP_THRESHOLD=14,TIME_GAP_EDGE=7,TIME_BREAK_PX=14;
@@ -291,8 +291,8 @@ function render(){
  }
  const nodeY=layoutCache.get(layoutKey);
  let globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
- const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
- graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));});
+ const linked=(p,id)=>p.cast.includes(id);
+ graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
  const numbered=phoneReader&&level==='moment';
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
  graphNodes.forEach((node,index)=>{node.number=numbered?index+1:null;});
@@ -321,15 +321,14 @@ function render(){
   const text=svg('text',{x,y:28,'text-anchor':'middle','data-date':tick.day},axis);text.textContent=tick.text;
  });
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
- const labelPositions=[],defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
+ const labelPositions=[],nodeById=new Map(globalNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
  ids.forEach(id=>{
-  if(focusedCharacter&&id!==focusedCharacter)return;
   const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
   if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
-  const lifetimes=TimelineCore.lifetimes(anchors,{pixelsPerDay,maxBridge:Math.min(480,plot*.6)});
+  const lifetimes=TimelineCore.lifetimes(anchors);
   const runs=lifetimes.filter(run=>run[0].day-lead<=hi&&run.at(-1).day+lead>=lo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
   if(!routes.length)return;
   const coordinates=routes.map(route=>route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
@@ -344,11 +343,13 @@ function render(){
   routes.forEach((route,index)=>{
    const run=runs[index],gradientId=`strand-${id}-${index}`,span=Math.max(.001,route.at(-1).day-route[0].day),gradient=svg('linearGradient',{id:gradientId,gradientUnits:'userSpaceOnUse',x1:pxAxis(route[0].day),x2:pxAxis(route.at(-1).day),y1:0,y2:0},defs);
    for(const [offset,opacity] of [[0,0],[(run[0].day-route[0].day)/span,1],[(run.at(-1).day-route[0].day)/span,1],[1,0]])svg('stop',{offset,'stop-color':color(id),'stop-opacity':opacity},gradient);
-   svg('path',{d:paths[index],class:'thread',stroke:`url(#${gradientId})`,'stroke-width':id===focusedCharacter?3:overview?1.5:n>24?1.2:2.1,opacity:focusedCharacter?'1':n>24?'.35':'.85','data-character':id,'data-first-axis':run[0].day,'data-last-axis':run.at(-1).day,...(mask?{mask}:{})});
+   const companions=[...new Set(run.flatMap(anchor=>nodeById.get(anchor.id)?.cast||[]))].join(' '),runNodes=run.map(anchor=>anchor.id).join(' '),opacity=n>24?.35:.85;
+   const metadata={'data-character':id,'data-companions':companions,'data-run-nodes':runNodes,'data-first-axis':run[0].day,'data-last-axis':run.at(-1).day};
+   svg('path',{d:paths[index],class:'thread',stroke:`url(#${gradientId})`,'stroke-width':overview?1.5:n>24?1.2:2.1,opacity,style:`--strand-opacity:${opacity}`,...metadata,...(mask?{mask}:{})});
+   const hit=svg('path',{d:paths[index],class:'thread-hit',stroke:'transparent','stroke-width':14,role:'button',tabindex:overview&&n>20?-1:0,'aria-label':`Зосередитися: ${fullName(id)}`,'aria-pressed':'false','data-tooltip':fullName(id),...metadata,...(mask?{mask}:{})});
+   hit.addEventListener('click',()=>setFocus(id));hit.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setFocus(id);}});
   });
-  const hit=svg('path',{d:paths.join(' '),class:'thread-hit',stroke:'transparent','stroke-width':14,role:'button',tabindex:overview&&n>20&&!focusedCharacter?-1:0,'aria-label':`Зосередитися: ${fullName(id)}`,'aria-pressed':id===focusedCharacter,'data-character':id,...(mask?{mask}:{})});
-  hit.addEventListener('click',()=>setFocus(id));hit.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setFocus(id);}});
-  if(!overview&&(focusedCharacter?id===focusedCharacter:n<=18)){
+  if(!overview&&n<=18){
    const route=routes[0];
    const labelDay=Math.max(lo,route[0].day),labelX=pxAxis(labelDay),actualY=TimelineCore.curveY(route,labelDay);let labelY=actualY-12;while(labelPositions.some(y=>Math.abs(y-labelY)<16))labelY-=16;labelPositions.push(labelY);
    if(Math.abs(labelY-(actualY-12))>1)svg('line',{x1:labelX+2,x2:labelX+2,y1:actualY-3,y2:labelY+3,stroke:color(id),'stroke-width':.6,opacity:.5});
@@ -363,18 +364,7 @@ function render(){
   svg('line',{x1,x2:x1,y1:0,y2:h,class:'time-break-edge'},g);
   svg('line',{x1:x2,x2,y1:0,y2:h,class:'time-break-edge'},g);
  });
- if(focusedCharacter){
-  const guests=svg('g',{class:'focus-guest-layer','aria-hidden':'true'});
-  graphNodes.forEach(node=>{
-   const ids=[...new Set(node.group.flatMap(event=>event.physical?.length?event.physical:event.tracks||[]))].filter(id=>id!==focusedCharacter&&entityMap.has(id));
-   ids.forEach((id,index)=>{
-    const tier=Math.floor(index/2),reach=16+18*spread,x=node.x-reach-Math.min(4+6*spread,tier*2),y=node.y+(index%2===0?-1:1)*(6+12*spread+Math.min(tier*2,4+6*spread)),gradientId=`focus-guest-${node.id.replace(/[^a-z0-9_-]/gi,'_')}-${id}`;
-    const gradient=svg('linearGradient',{id:gradientId,gradientUnits:'userSpaceOnUse',x1:x,x2:node.x,y1:y,y2:node.y},defs);
-    svg('stop',{offset:0,'stop-color':color(id),'stop-opacity':0},gradient);svg('stop',{offset:1,'stop-color':color(id),'stop-opacity':'.82'},gradient);
-    svg('path',{class:'focus-guest-entry','data-character':id,'data-node-id':node.id,stroke:`url(#${gradientId})`,d:`M${x.toFixed(2)},${y.toFixed(2)} C${(node.x-reach*.7).toFixed(2)},${y.toFixed(2)} ${(node.x-reach*.45).toFixed(2)},${node.y.toFixed(2)} ${node.x.toFixed(2)},${node.y.toFixed(2)}`},guests);
-   });
-  });
- }
+
  drawMapTitles(level,w,headerBottom()+42,h-readerHeight-42);
  // Large touch targets stay below every visible mark. A neighboring transparent
  // target can never intercept a tap directly on another node's visible center.
@@ -424,7 +414,7 @@ function drawMapTitles(level,width,top,bottom){
   const group=svg('g',{class:'cloud-label',role:'button',tabindex:0,'data-title-kind':label.kind,'data-title-id':label.id,'aria-haspopup':'dialog','aria-label':`${kindNames[label.kind]}: ${label.title}`},layer);
   const title=svg('title',{},group);title.textContent=label.title;
   const startX=clamp(label.anchor.x,label.x,label.x+label.width),startY=clamp(label.anchor.y,label.y,label.y+label.height),distance=Math.hypot(label.anchor.x-startX,label.anchor.y-startY),ratio=Math.max(0,(distance-14)/Math.max(1,distance));
-  svg('line',{x1:startX,y1:startY,x2:startX+(label.anchor.x-startX)*ratio,y2:startY+(label.anchor.y-startY)*ratio,class:'cloud-label-guide','aria-hidden':'true'},layer);
+  svg('line',{x1:startX,y1:startY,x2:startX+(label.anchor.x-startX)*ratio,y2:startY+(label.anchor.y-startY)*ratio,class:'cloud-label-guide','data-title-kind':label.kind,'data-title-id':label.id,'aria-hidden':'true'},layer);
   svg('rect',{x:label.x-4,y:label.y-4,width:label.width+8,height:Math.max(44,label.height+8),class:'cloud-label-hit'},group);
   const text=svg('text',{x:label.x,y:label.y+10,class:'cloud-label-copy'},group);
   const kind=svg('tspan',{x:label.x,class:'cloud-label-kind'},text);kind.textContent=kindNames[label.kind];
@@ -562,6 +552,7 @@ function navigateEvent(id){
  const anchor=graphNodes.find(p=>p.id===e.id);if(anchor)revealReadingNode();else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();focusReadingCard();
 }
 function search(){
+ if(window.TimelineSearchEnhanced)return window.TimelineSearchEnhanced.render();
  const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));
  $('searchSummary').textContent=q?`Знайдено: ${found.length}`:`${found.length} подій · у порядку хронології`;
  $('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}"><span>${esc(e.title)}<span class="result-context">${esc(e.scene_title)}</span></span><small>${dateText(e.day)}</small></button>`).join('')||'<div class="empty"><p>Подій не знайдено. Спробуй коротший запит.</p><button class="secondary-button" data-reset-event-search>Очистити пошук</button></div>';
@@ -569,7 +560,7 @@ function search(){
  $('searchResults').querySelector('[data-reset-event-search]')?.addEventListener('click',()=>{$('eventSearch').value='';searchLimit=30;search();$('eventSearch').focus();});
  $('moreResults').hidden=found.length<=searchLimit;
 }
-function openProfile(id,trigger){if(!entityMap.has(id))return;uiTimers.cancel('node-open');HierarchyPreview.dismissTransient();if(hoverCard)closeCard();tooltipController?.hide();profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}syncReadingState();$('closeProfile').focus();}
+function openProfile(id,trigger){if(!entityMap.has(id))return;uiTimers.cancel('node-open');HierarchyPreview.dismissTransient();if(hoverCard)closeCard();tooltipController?.hide();profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}dialog.scrollTop=0;syncReadingState();$('closeProfile').focus({preventScroll:true});}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;syncReadingState();profileReturnFocus?.focus();profileReturnFocus=null;}
 function characterTimelineEvents(id){
  return orderedScenes().flatMap(s=>s.group).filter(e=>e.tracks.includes(id));
@@ -643,7 +634,7 @@ function mergedProfileVersion(versions,index){
 function renderProfile(){
  const entity=entityMap.get(profileEntity);if(!entity){closeProfile();return;}const profile=profileMap.get(profileEntity),versions=profile?.versions?.length?profile.versions:[{id:'general',label:'Профіль'}];if(!versions.some(v=>v.id===profileVersion))profileVersion=versions[0].id;
  const versionIndex=versions.findIndex(v=>v.id===profileVersion),version=mergedProfileVersion(versions,versionIndex),associated=TimelineCore.ordered(events().filter(e=>e.tracks.includes(profileEntity))),dated=associated.filter(e=>e.day!==null),memberships=(data.memberships||[]).filter(m=>m.entity_id===profileEntity||m.person_id===profileEntity||m.member_id===profileEntity);
- $('profileTitle').textContent=fullName(profileEntity);$('profileTabs').innerHTML=versions.map(v=>`<button id="tab-${esc(v.id)}" role="tab" aria-selected="${v.id===profileVersion}" aria-controls="profileContent" tabindex="${v.id===profileVersion?0:-1}" data-profile-version="${esc(v.id)}">${esc(v.label)}</button>`).join('');$('profileContent').setAttribute('aria-labelledby','tab-'+version.id);
+ $('profileTitle').textContent=fullName(profileEntity);$('profileTabs').hidden=versions.length<2;$('profileTabs').innerHTML=versions.map(v=>`<button id="tab-${esc(v.id)}" role="tab" aria-selected="${v.id===profileVersion}" aria-controls="profileContent" tabindex="${v.id===profileVersion?0:-1}" data-profile-version="${esc(v.id)}">${esc(v.label)}</button>`).join('');$('profileContent').setAttribute('aria-labelledby','tab-'+version.id);
  const paragraphs=text=>String(text||'').split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');
  const listSection=(title,items)=>items?.length?`<section class="profile-section"><h3>${esc(title)}</h3><ul class="profile-list">${items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul></section>`:'';
  const appearanceLabels={hair:'Волосся',eyes:'Очі',features:'Особливості',clothing:'Одяг'};
@@ -654,9 +645,10 @@ function renderProfile(){
  const portrait=version.image?`<img class="profile-image" src="${esc(version.image)}" alt="${esc(version.image_alt||fullName(profileEntity))}" loading="lazy">`:`<div class="profile-image profile-image-empty" role="img" aria-label="Фото для ${esc(version.label)} ще не додано"><span>Фото</span><small>${esc(version.label)}</small></div>`;
  const info=`${version.summary?`<section class="profile-summary">${paragraphs(version.summary)}</section>`:!hasProfileData?'<p class="empty">Профіль цього віку ще не заповнений.</p>':''}${(version.facts||[]).length?`<dl class="profile-facts">${version.facts.map(f=>`<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('')}</dl>`:''}${appearance}${listSection('Риси характеру',version.traits)}${listSection('Цілі',version.goals)}${abilities}${relationships}${listSection('Спорядження',version.equipment)}${(version.sections||[]).map(section=>`<section class="profile-section"><h3>${esc(section.title)}</h3>${paragraphs(section.text)}</section>`).join('')}<section class="profile-section profile-chronology"><h3>У хронології</h3>${memberships.length?`<p>${memberships.map(m=>esc(name(m.team_id||m.group_id))).join(', ')}</p>`:''}<div class="profile-actions"><button id="followCharacter" class="profile-follow">Зосередитися на лінії</button><button id="openCharacterEvents" class="profile-follow profile-timeline-button">${associated.length} подій</button></div></section>`;
  $('profileContent').innerHTML=`<div class="profile-layout"><aside class="profile-visual">${portrait}<p class="profile-age">${esc(version.label||(version.age!==undefined?version.age+' років':'Профіль'))}</p></aside><div class="profile-details">${info}</div></div>`;
- $('profileTabs').querySelectorAll('[data-profile-version]').forEach((b,i)=>{b.addEventListener('click',()=>{profileVersion=b.dataset.profileVersion;renderProfile();$('profileTabs').querySelector('[aria-selected="true"]').focus();});b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const index=e.key==='Home'?0:e.key==='End'?versions.length-1:(i+(e.key==='ArrowRight'?1:-1)+versions.length)%versions.length;profileVersion=versions[index].id;renderProfile();$('profileTabs').querySelector('[aria-selected="true"]').focus();});});
+ const chooseVersion=id=>{profileVersion=id;renderProfile();$('profileDialog').scrollTop=0;$('profileTabs').querySelector('[aria-selected="true"]').focus({preventScroll:true});};
+ $('profileTabs').querySelectorAll('[data-profile-version]').forEach((b,i)=>{b.addEventListener('click',()=>chooseVersion(b.dataset.profileVersion));b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const index=e.key==='Home'?0:e.key==='End'?versions.length-1:(i+(e.key==='ArrowRight'?1:-1)+versions.length)%versions.length;chooseVersion(versions[index].id);});});
  $('openCharacterEvents').addEventListener('click',e=>openCharacterEvents(profileEntity,e.currentTarget));
- $('followCharacter').addEventListener('click',()=>{const id=profileEntity;closeProfile();if(focusedCharacter===id){closePanels();render();}else setFocus(id);});
+ $('followCharacter').addEventListener('click',()=>{const id=profileEntity;closeProfile();if(focusedCharacter===id){closePanels();SelectionFocus.update();updateFocusBar();}else setFocus(id);});
  ProfileTechniques.decorate();
 }
 function ingest(next,initial=false){

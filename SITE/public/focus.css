@@ -1,9 +1,15 @@
-#timeline :is(.thread,.focus-guest-entry).is-context-muted { opacity: .28; }
-#timeline :is(.thread,.focus-guest-entry).is-character-hover-muted { opacity: .22; }
-#timeline :is(.thread,.focus-guest-entry).is-character-hover-active { opacity: 1; stroke-width: 3px; }
+#timeline .thread.is-context-muted { opacity: .28; }
+#timeline .thread.is-character-hover-muted { opacity: calc(var(--strand-opacity,.85) * .7); }
+#timeline .thread.is-character-hover-active { opacity: 1; stroke-width: 3px; }
 #timeline .node.is-context-muted { opacity: .38; }
 #timeline .line-label.is-context-muted { opacity: .38; }
 #timeline .line-label.is-character-hover-muted { opacity: .28; }
 #timeline .line-label.is-character-hover-active { opacity: 1; }
-/* Focus retains the story's curves and inactive gaps; guests enter at its nodes. */
-.focus-guest-entry { pointer-events: none; fill: none; stroke-linecap: round; stroke-width: 1.8; }
+/* Focus changes visibility only; every path keeps its original activity runs. */
+#timeline .thread.is-line-focus-main { opacity: 1; stroke-width: 3px; }
+#timeline .thread.is-line-focus-related { opacity: .65; }
+#timeline .thread.is-line-focus-related.is-character-hover-muted { opacity: .455; }
+#timeline .thread.is-line-focus-main.is-character-hover-muted { opacity: .7; }
+#timeline .thread.is-character-hover-active { opacity: 1; }
+#timeline .is-line-focus-hidden { opacity: 0 !important; pointer-events: none !important; }
+#timeline .cloud-label-guide { pointer-events: none; }

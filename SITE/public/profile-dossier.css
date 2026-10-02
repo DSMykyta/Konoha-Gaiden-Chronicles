@@ -37,6 +37,7 @@
 }
 
 #profileDialog.profile-dialog > .profile-heading,
+#profileDialog.profile-dialog > #profileTabs,
 #profileDialog.profile-dialog > #profileContent {
   width: min(210mm, calc(100vw - 48px));
   margin-inline: auto;
@@ -127,9 +128,48 @@
   background: rgba(23, 25, 29, .78);
 }
 
-#profileDialog #profileTabs,
+#profileDialog #profileTabs {
+  display: flex;
+  gap: 6px;
+  margin-block: 0;
+  padding: 0 18mm 5mm;
+  border-bottom: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+#profileDialog #profileTabs[hidden] { display: none; }
+#profileDialog #profileTabs button {
+  flex: none;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 600 12px/1.3 Manrope, sans-serif;
+}
+#profileDialog #profileTabs button[aria-selected="true"] {
+  border-bottom-color: var(--ink);
+  color: var(--ink);
+  font-weight: 800;
+}
 #profileDialog .profile-actions {
-  display: none !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#profileDialog .profile-follow {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+}
+@media (hover: hover) and (pointer: fine) {
+  #profileDialog #profileTabs button:hover,
+  #profileDialog .profile-follow:hover { background: #e9eae6; }
 }
 
 #profileDialog #profileContent p {
@@ -493,9 +533,11 @@
   #profileDialog.profile-dialog { padding: 10px 0 34px; }
 
   #profileDialog.profile-dialog > .profile-heading,
+  #profileDialog.profile-dialog > #profileTabs,
   #profileDialog.profile-dialog > #profileContent { width: calc(100vw - 20px); }
 
   #profileDialog .profile-heading { padding: 28px 24px 16px; }
+  #profileDialog #profileTabs { padding: 0 24px 10px; }
 
   #profileDialog #profileContent {
     min-height: calc((100vw - 20px) * 1.4142 - 118px);

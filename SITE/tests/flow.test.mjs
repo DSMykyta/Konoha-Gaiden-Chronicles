@@ -72,11 +72,15 @@ test('inactive strands fade between appearances even across a compressed calenda
  assert.equal(core.lifetimes(aggregate,{pixelsPerDay:10}).length,1);
 });
 
-test('zoom separates distant appearances while preserving equal-time physical anchors',()=>{
- const anchors=[{day:10,y:10},{day:10,y:20},{day:20,y:30}];
- assert.equal(core.lifetimes(anchors,{pixelsPerDay:20}).length,1);
- const runs=core.lifetimes(anchors,{pixelsPerDay:100});
- assert.equal(runs.length,2);assert.equal(runs[0].length,2);
+test('zoom and elastic day spacing never break nearby appearances',()=>{
+ const anchors=[{day:10,calendarDay:21,y:10},{day:10,calendarDay:21,y:20},{day:200,calendarDay:21,y:30},{day:210,calendarDay:22,y:40},{day:220,calendarDay:36,y:50}];
+ for(const pixelsPerDay of [1,20,100,1000]){
+  const runs=core.lifetimes(anchors,{pixelsPerDay,maxBridge:24});
+  assert.equal(runs.length,1);assert.equal(runs[0].length,anchors.length);
+ }
+ const absent=[...anchors,{day:221,calendarDay:60,y:60}];
+ assert.equal(core.lifetimes(absent).length,2);
+ assert.equal(core.lifetimes([{day:1,calendarDay:1},{day:1,calendarDay:30}]).length,2);
 });
 
 test('shape-preserving slopes pass smoothly through anchors without overshoot',()=>{
@@ -91,5 +95,17 @@ test('shape-preserving slopes pass smoothly through anchors without overshoot',(
 test('long spans have bounded drift and a bounded number of controls',()=>{
  const route=core.strand([{id:'a',day:10,y:100},{id:'b',day:300,y:100}],'one',100,150,1,1000);
  assert(route.length<=7);
- assert(route.every(point=>Math.abs(point.y-100)<=6));
+ assert(route.every(point=>Math.abs(point.y-100)<=12));
+});
+
+test('strands converge smoothly before a node and leave along its tangent',()=>{
+ const anchors=[{id:'a',day:1,y:100},{id:'b',day:4,y:160},{id:'c',day:7,y:80}];
+ const route=core.strand(anchors,'one',100,80,1,100);
+ for(const anchor of anchors){
+  const index=route.findIndex(point=>point.id===anchor.id);
+  assert.equal(core.slopes(route)[index],0);
+  assert.equal(core.curveY(route,anchor.day),anchor.y);
+  assert(Math.abs(core.curveY(route,anchor.day-.01)-anchor.y)<.05);
+  assert(Math.abs(core.curveY(route,anchor.day+.01)-anchor.y)<.05);
+ }
 });

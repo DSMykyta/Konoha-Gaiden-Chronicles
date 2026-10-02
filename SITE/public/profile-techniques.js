@@ -1,6 +1,7 @@
 'use strict';
 
 const ProfileTechniques = (() => {
+  const kindLabels = {ninjutsu:'Ніндзюцу',chakra_control:'Контроль чакри',summoning:'Призов',jinchuriki:'Джінчюрікі'};
   function abilityRegistry() {
     return new Map((data?.abilities || []).map(ability => [ability.id, ability]));
   }
@@ -8,7 +9,7 @@ const ProfileTechniques = (() => {
   function techniqueCard(item, index, registry) {
     const source = registry.get(item.id) || {};
     const ability = { ...source, ...item };
-    const classifications = Array.isArray(ability.classification) ? ability.classification : ability.kind ? [ability.kind] : [];
+    const classifications = Array.isArray(ability.classification) ? ability.classification : ability.kind ? [kindLabels[ability.kind] || ability.kind] : [];
     const facts = [
       ability.mechanics ? ['Принцип', ability.mechanics] : null,
       ability.limitation ? ['Обмеження', ability.limitation] : null
@@ -47,7 +48,7 @@ const ProfileTechniques = (() => {
       event.preventDefault();
       const card = track.querySelector('.technique-card');
       const step = card ? card.getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 0) : track.clientWidth * .8;
-      track.scrollBy({ left: event.key === 'ArrowRight' ? step : -step, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      track.scrollBy({ left: event.key === 'ArrowRight' ? step : -step, behavior: 'instant' });
     });
   }
 

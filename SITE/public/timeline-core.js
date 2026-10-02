@@ -184,12 +184,14 @@ const TimelineCore = {
     for(const n of nodes){const normalized=(y.get(n.id)-(lo+hi)/2)/span*1.7;out.set(n.id,middle+Math.max(-.92,Math.min(.92,normalized))*amplitude);}
     return out;
   },
-  lifetimes(anchors,{idleDays=14,pixelsPerDay=24,maxBridge=480}={}) {
+  lifetimes(anchors,{idleDays=14}={}) {
     const runs=[];
     for(const anchor of anchors){
-      const previous=runs.at(-1)?.at(-1),gap=previous?anchor.day-previous.day:0;
+      const previous=runs.at(-1)?.at(-1);
       const inactive=previous?(anchor.activityFrom??anchor.calendarDay??anchor.day)-(previous.activityTo??previous.calendarDay??previous.day):0;
-      if(!previous||(gap>0&&(inactive>idleDays||gap*pixelsPerDay>maxBridge)))runs.push([]);
+      // Display days can expand within one calendar day. Screen distance and
+      // zoom must never turn nearby appearances into an absence from the story.
+      if(!previous||inactive>idleDays)runs.push([]);
       runs.at(-1).push(anchor);
     }
     return runs;
@@ -210,17 +212,17 @@ const TimelineCore = {
     if(!anchors.length)return [];
     // Recorded nodes determine the curve. Keep decorative drift small and bounded
     // regardless of the distance between appearances or the current zoom.
-    const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y,flat:true,id:'start'},...anchors.map(p=>({...p,node:true})),{day:Math.min(axisLength,last.day+lead),y:last.y,flat:true,id:'end'}],points=[];
+    const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y,flat:true,id:'start'},...anchors.map(p=>({...p,node:true,flat:true})),{day:Math.min(axisLength,last.day+lead),y:last.y,flat:true,id:'end'}],points=[];
     for(let i=0;i<ends.length-1;i++){
       const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
       if(gap<1e-8)continue;
       const pixelGap=gap*Math.max(1,pixelsPerDay),wander=Math.max(0,Math.min(1,(pixelGap-90)/260));
       if(!wander||!a.node||!b.node)continue;
       const controls=3;
-      const primary=(this.seed(id+':'+a.id+':'+b.id+':drift')-.5)*Math.min(12,amplitude*.12)*wander;
+      const primary=(this.seed(id+':'+a.id+':'+b.id+':drift')-.5)*Math.min(24,amplitude*.2)*wander;
       for(let j=1;j<=controls;j++){
-        const t=j/(controls+1),offset=Math.sin(Math.PI*t)**2*primary;
-        points.push({day:a.day+gap*t,y:a.y+(b.y-a.y)*t+offset});
+        const t=j/(controls+1),ease=t*t*(3-2*t),offset=Math.sin(Math.PI*t)**2*primary;
+        points.push({day:a.day+gap*t,y:a.y+(b.y-a.y)*ease+offset});
       }
     }
     // Separate nodes can share a display time. Keep both physical anchors so

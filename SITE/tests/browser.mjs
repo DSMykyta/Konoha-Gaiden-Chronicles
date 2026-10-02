@@ -262,7 +262,7 @@ try {
     // Search, reading from a bottom title, single-character focus and profiles.
     await page.keyboard.press('/');
     await page.locator('#eventSearch').fill('Команда 7');
-    await page.locator('#searchResults [data-search-event]').first().click();
+    await page.locator('#searchResults [data-search-kind="moment"]').first().click();
     assert.equal(await page.locator('#eventCard').isVisible(), true);
     await page.keyboard.press('Escape');
     await page.evaluate(() => { zoom=zoomModes.week; center=dayToAxis(21.5); render(); });
@@ -279,11 +279,13 @@ try {
     await page.waitForTimeout(320);
     assert.equal(await page.evaluate(() => window.__storyScaleFocus.active), false);
     const sceneCoordinates=await page.locator('.node .mark').evaluateAll(elements=>Object.fromEntries(elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')])));
+    const focusCurves=await page.locator('.thread').evaluateAll(elements=>elements.map(element=>element.getAttribute('d')));
     await page.evaluate(() => setFocus('c-naruto'));
     for(const [id,y] of await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')])))assert.equal(y,sceneCoordinates[id],'Focus flattened the chronological groups');
     assert(await page.locator('.thread').count()>0);
-    assert((await page.locator('.thread').evaluateAll(elements=>elements.map(element=>element.dataset.character))).every(id=>id==='c-naruto'));
-    assert(await page.locator('.focus-guest-entry').count()>0);
+    assert.deepEqual(await page.locator('.thread').evaluateAll(elements=>elements.map(element=>element.getAttribute('d'))),focusCurves,'Focus changed strands or gaps');
+    assert(await page.locator('.thread.is-line-focus-main').count()>0);
+    assert.equal(await page.locator('.focus-guest-entry').count(),0);
     await page.locator('#clearFocus').click();
     await page.evaluate(() => openProfile('c-naruto', $('linesButton')));
     assert.equal(await page.locator('#profileDialog').isVisible(), true);

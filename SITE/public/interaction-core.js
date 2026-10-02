@@ -97,7 +97,7 @@ const TimelineInteractions = {
       target = null;
       if (tip) tip.hidden = true;
     };
-    const show = (node, immediate = false) => {
+    const show = (node, immediate = false, pointer = null) => {
       if (!node || node.disabled || target === node) return;
       const instant = immediate || !!tip && !tip.hidden;
       hide();
@@ -117,7 +117,7 @@ const TimelineInteractions = {
         }
         tip.textContent = text;
         tip.hidden = false;
-        const rect = node.getBoundingClientRect(), box = tip.getBoundingClientRect();
+        const rect = pointer && node.classList.contains('thread-hit') ? {left:pointer.x,top:pointer.y,bottom:pointer.y,width:0} : node.getBoundingClientRect(), box = tip.getBoundingClientRect();
         const width = doc.documentElement.clientWidth || win.innerWidth;
         const height = doc.documentElement.clientHeight || win.innerHeight;
         tip.style.left = Math.round(Math.max(8, Math.min(width - box.width - 8, rect.left + (rect.width - box.width) / 2))) + 'px';
@@ -128,7 +128,7 @@ const TimelineInteractions = {
     doc.addEventListener('pointerover', event => {
       if (event.pointerType === 'touch' || !win.matchMedia('(any-hover: hover)').matches) return;
       const node = trigger(event.target);
-      if (node && !node.contains(event.relatedTarget)) show(node);
+      if (node && !node.contains(event.relatedTarget)) show(node, node.classList.contains('thread-hit'), Number.isFinite(event.clientX) ? {x:event.clientX,y:event.clientY} : null);
     });
     doc.addEventListener('pointerout', event => {
       if (target?.contains(event.target) && !target.contains(event.relatedTarget)) hide();

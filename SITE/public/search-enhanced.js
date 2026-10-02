@@ -37,8 +37,6 @@ const TimelineSearchEnhanced = (() => {
   let activeType = 'all';
   let cachedKey = '';
   let cachedDocs = [];
-  let cachedCounts = {};
-  let scheduled = false;
 
   function normalize(value) {
     return String(value ?? '')
@@ -330,7 +328,6 @@ const TimelineSearchEnhanced = (() => {
 
     cachedKey = key;
     cachedDocs = docs;
-    cachedCounts = docs.reduce((counts, doc) => ((counts[doc.kind] = (counts[doc.kind] || 0) + 1), counts), {});
     return docs;
   }
 
@@ -536,7 +533,12 @@ const TimelineSearchEnhanced = (() => {
       });
       row.addEventListener('focusin', () => move(row));
     });
-    root.addEventListener('pointerleave', () => { glass.style.opacity = '0'; }, {once:true});
+    if (!root.dataset.hoverBound) {
+      root.dataset.hoverBound = 'true';
+      const hide = () => { const current = root.querySelector(':scope > .hierarchy-hover-glass'); if (current) current.style.opacity = '0'; };
+      root.addEventListener('pointerleave', hide);
+      root.addEventListener('focusout', event => { if (!root.contains(event.relatedTarget)) hide(); });
+    }
   }
 
   function render() {
@@ -556,8 +558,7 @@ const TimelineSearchEnhanced = (() => {
 
     if (noIntent) {
       buildIndex();
-      const parts = Object.entries(TYPE_LABELS).map(([kind,label])=>`${cachedCounts[kind] || 0} ${label.toLowerCase()}`);
-      summary.textContent = `Індекс: ${parts.join(' · ')}`;
+      summary.textContent = 'Моменти, сцени, епізоди, арки, персонажі та місця';
       results.innerHTML = '<div class="search-empty-enhanced"><p>Шукай за назвою, описом, персонажем, місцем або просто сформулюй запит.</p></div>';
       more.hidden = true;
       return;
@@ -572,12 +573,6 @@ const TimelineSearchEnhanced = (() => {
       : '<div class="search-empty-enhanced"><p>Нічого не знайдено. Спробуй коротший запит або очисти частину фільтрів.</p><button class="search-chip" data-enhanced-search-reset>Очистити</button></div>';
     more.hidden = result.total <= limit;
     syncHoverGlass();
-  }
-
-  function scheduleRender() {
-    if (scheduled) return;
-    scheduled = true;
-    setTimeout(() => { scheduled = false; render(); }, 0);
   }
 
   function reset() {
@@ -596,15 +591,10 @@ const TimelineSearchEnhanced = (() => {
   function navigate(doc, trigger) {
     if (!doc) return;
     if (doc.kind === 'moment' && typeof navigateEvent === 'function') return navigateEvent(doc.id);
-    if (doc.kind === 'scene') {
-      if (doc.firstEventId && typeof navigateEvent === 'function') navigateEvent(doc.firstEventId);
-      if (typeof readScene === 'function') return readScene(doc.id, document.getElementById('searchButton') || trigger);
-      return;
-    }
+    if (doc.kind === 'scene' && typeof navigateScene === 'function') return navigateScene(doc.id);
     if ((doc.kind === 'episode' || doc.kind === 'arc') && typeof navigateStory === 'function') return navigateStory(doc.kind, doc.id);
     if (doc.kind === 'person') {
       if (typeof closePanels === 'function') closePanels();
-      if (typeof setFocus === 'function') setFocus(doc.id);
       if (typeof openProfile === 'function') openProfile(doc.id, document.getElementById('searchButton') || trigger);
       return;
     }
@@ -615,14 +605,6 @@ const TimelineSearchEnhanced = (() => {
     const results = document.getElementById('searchResults');
     const panel = document.getElementById('searchPanel');
     if (!results || !panel) return;
-
-    if (window.MutationObserver) {
-      const observer = new window.MutationObserver(() => {
-        if (results.querySelector('[data-search-kind],.search-empty-enhanced')) return;
-        scheduleRender();
-      });
-      observer.observe(results, {childList:true});
-    }
 
     document.querySelectorAll('[data-search-type]').forEach(button => button.addEventListener('click', () => {
       activeType = button.dataset.searchType || 'all';
@@ -653,13 +635,6 @@ const TimelineSearchEnhanced = (() => {
       if (!button) return;
       const doc = buildIndex().find(item => item.kind === button.dataset.searchKind && item.id === button.dataset.searchId);
       navigate(doc, button);
-    });
-    panel.addEventListener('toggle', event => { if (event.newState === 'open') scheduleRender(); });
-    document.getElementById('searchButton')?.addEventListener('click', scheduleRender);
-    document.getElementById('continuity')?.addEventListener('change', () => {
-      cachedKey = '';
-      document.getElementById('searchPerson')?.removeAttribute('data-search-options-key');
-      scheduleRender();
     });
   }
 
