@@ -5,5 +5,5 @@
 #timeline .line-label.is-context-muted { opacity: .14; }
 #timeline .line-label.is-character-hover-muted { opacity: .08; }
 #timeline .line-label.is-character-hover-active { opacity: 1; }
-/* A focused character has one straight lane; guests enter only at its nodes. */
+/* A focused character has one gently curved, continuous lane; guests enter only at its nodes. */
 .focus-guest-entry { pointer-events: none; fill: none; stroke-linecap: round; stroke-width: 1.8; }

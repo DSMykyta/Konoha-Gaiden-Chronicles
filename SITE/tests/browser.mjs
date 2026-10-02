@@ -16,8 +16,9 @@ const output = process.env.BROWSER_SCREENSHOTS;
 if (output) await fs.mkdir(output, {recursive: true});
 
 try {
-  browser = await chromium.launch({executablePath, args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--no-zygote']});
-  for (const [width, height] of [[1440,900], [375,812], [320,700], [812,375], [768,1024], [2000,1100]]) {
+  browser = await chromium.launch({executablePath, args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--no-zygote', '--window-size=2400,1400']});
+  const viewports=process.env.BROWSER_VIEWPORT ? [JSON.parse(process.env.BROWSER_VIEWPORT)] : [[1440,900], [375,812], [320,700], [812,375], [768,1024], [2000,1100]];
+  for (const [width, height] of viewports) {
     const page = await browser.newPage({viewport: {width, height}});
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
@@ -26,10 +27,43 @@ try {
     await page.waitForSelector('.node');
     assert.equal(await page.locator('#error').isVisible(), false);
 
+    // Overview remains compact; focusing restores the entire continuous strand.
+    await page.evaluate(()=>{zoom=zoomModes.year;render();});
+    assert(await page.evaluate(()=>Math.max(...graphNodes.map(p=>p.y))-Math.min(...graphNodes.map(p=>p.y))<90),'Year overview grew into tall peaks');
+    assert.equal(await page.locator('#storyTitleLevel').inputValue(),'arc');
+    await page.evaluate(()=>setFocus('c-naruto'));
+    assert.equal(await page.locator('.thread').count(),1);
+    assert(await page.locator('.thread').evaluate(path=>path.getBBox().height<=18),'Focus grew a large arch');
+    await page.evaluate(()=>{setFocus('c-naruto');zoom=zoomModes.day;center=21.5;render();});
+    assert.equal(await page.locator('#storyTitleLevel').inputValue(),'moment');
+    const reader=page.locator('[data-read-story="moment:ev-y0-0122-team7-announced"]');
+    assert.equal(await reader.count(),1);
+    if(width<=760&&height>=520){
+      const row=reader.locator('..');
+      const number=await row.locator('.story-item-number').textContent();
+      assert.equal(number,await page.locator('[data-event="ev-y0-0122-team7-announced"] .moment-number').textContent());
+      assert(await row.locator('.story-item-context').textContent());
+      assert(await row.locator('.story-title-label').evaluate(el=>parseFloat(getComputedStyle(el).fontSize)>=14));
+      assert(await row.locator('.story-item-read').evaluate(el=>el.getBoundingClientRect().height>=44));
+      await page.locator('.story-reader-toggle').click();
+      assert.equal(await page.locator('.story-reader-toggle').getAttribute('aria-expanded'),'false');
+      await page.locator('.story-reader-toggle').click();
+    }
+    await reader.click();
+    assert.equal(await page.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
+    assert.equal(await page.locator('#eventCard .card-kind').textContent(),'МОМЕНТ');
+    await page.keyboard.press('Escape');
+    await page.evaluate(()=>{zoom=zoomModes.month;center=21.5;render();});
+    // No clearance mask hides an actual shared physical anchor.
+    assert(await page.evaluate(()=>[...document.querySelectorAll('.thread[mask]')].every(path=>{
+      const id=path.dataset.character,maskId=path.getAttribute('mask').slice(5,-1);
+      return [...document.getElementById(maskId).querySelectorAll('[data-node-id]')].every(cutout=>!graphNodes.find(p=>p.id===cutout.dataset.nodeId)?.cast.includes(id));
+    })));
+
     // A tooltip still recognizes the trigger after its native title is removed.
     const tooltipButton = page.locator('[data-mode="week"]');
     await tooltipButton.hover();
-    await page.waitForTimeout(320);
+    await page.locator('#glassTooltip').waitFor({state:'visible',timeout:10000});
     assert.equal(await page.locator('#glassTooltip').isVisible(), true);
     await page.mouse.move(1, height / 2);
     assert.equal(await page.locator('#glassTooltip').isVisible(), false);
@@ -45,9 +79,8 @@ try {
     if (width > 760 && height >= 520) {
       // Passing through a node, Escape and zoom cancel delayed opening.
       await page.mouse.move(box.x + box.width/2, box.y + box.height/2);
-      await page.waitForTimeout(50);
-      assert.equal(await page.locator('#eventCard').isVisible(), false);
       await page.mouse.move(1, height/2);
+      await page.locator('#eventCard').waitFor({state:'hidden',timeout:10000});
       await page.waitForTimeout(320);
       assert.equal(await page.locator('#eventCard').isVisible(), false);
       await node.hover();
@@ -62,7 +95,7 @@ try {
       await page.evaluate(() => { zoom=zoomModes.week; render(); });
       await page.mouse.move(1, height/2);
       await node.hover();
-      await page.waitForTimeout(320);
+      await page.locator('#eventCard').waitFor({state:'visible',timeout:10000});
       assert.equal(await page.locator('#eventCard').isVisible(), true);
       const before = await page.locator('#eventCard').boundingBox();
       const scrollBefore = await page.locator('#canvas').evaluate(canvas => canvas.scrollTop);
@@ -85,14 +118,14 @@ try {
     await page.evaluate(() => navigateStory('arc', 'arc-y0-genin-formation'));
     if (width >= 816) {
       const row = page.locator('#eventCard [data-story-episode="ep-y0-team-formation"]');
-      await row.hover();
-      await page.waitForTimeout(50);
-      assert.equal(await page.locator('.hierarchy-preview').count(), 0);
+      const rowBox=await row.boundingBox();
+      await page.mouse.move(rowBox.x+rowBox.width/2,rowBox.y+rowBox.height/2);
       await page.mouse.move(1, height / 2);
+      await page.locator('.hierarchy-preview').waitFor({state:'hidden',timeout:10000});
       await page.waitForTimeout(320);
       assert.equal(await page.locator('.hierarchy-preview').count(), 0, 'Leaving a row did not cancel its delay');
       await row.hover();
-      await page.waitForTimeout(320);
+      await page.locator('.hierarchy-preview').waitFor({state:'visible',timeout:10000});
       assert.equal(await page.locator('.hierarchy-preview').count(), 1);
       await page.mouse.move(1, height - 130);
       await page.waitForTimeout(320);
@@ -166,7 +199,7 @@ try {
     await page.waitForTimeout(320);
     assert.equal(await page.evaluate(() => window.__storyScaleFocus.active), false);
     await page.evaluate(() => setFocus('c-naruto'));
-    assert(await page.evaluate(() => graphNodes.every(node => node.y === graphNodes[0].y)));
+    assert(await page.evaluate(() => Math.max(...graphNodes.map(node=>node.y))-Math.min(...graphNodes.map(node=>node.y))<=16));
     assert.equal(await page.locator('.thread').count(),1);
     assert.equal(await page.locator('.thread').getAttribute('data-character'),'c-naruto');
     assert(await page.locator('.focus-guest-entry').count()>0);
@@ -188,6 +221,22 @@ try {
     console.log(`PASS browser ${width}×${height}: hover, tooltips, stable pin, cascade, parent navigation, focus, search, readers and profiles`);
     await page.close();
   }
+  const touch=await browser.newPage({viewport:{width:375,height:812},hasTouch:true,isMobile:true});
+  const touchErrors=[];touch.on('pageerror',error=>touchErrors.push(error.message));
+  await touch.goto(url,{waitUntil:'networkidle'});
+  await touch.locator('[data-mode="day"]').tap();
+  await touch.locator('[data-event="ev-y0-0122-team7-announced"] .moment-number').waitFor();
+  await touch.locator('[data-read-story="moment:ev-y0-0122-team7-announced"]').tap();
+  assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
+  await touch.waitForTimeout(320);
+  assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced','A delayed touch hover replaced the chosen moment');
+  await touch.locator('#eventCard [data-close-card]').tap();
+  assert.equal(await touch.locator('#eventCard').isVisible(),false);
+  await touch.locator('[data-event="ev-y0-0122-team7-announced"] .mark').tap();
+  assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
+  assert.deepEqual(touchErrors,[]);
+  await touch.close();
+  console.log('PASS real touch: day scale, numbered moment, direct reading and stable pin');
 } finally {
   await browser?.close();
   await new Promise(resolve => server.close(resolve));

@@ -175,7 +175,7 @@ const HierarchyPreview = (() => {
         const viewport = document.documentElement.clientWidth || window.innerWidth;
         if (viewport < TimelineInteractions.PANEL_WIDTH * 2 + TimelineInteractions.PANEL_GAP + 24) return;
         uiTimers.defer(`hierarchy-open:${depth}`, TimelineInteractions.OPEN_DELAY, () => {
-          if (hoverTargets.get(depth) === trigger && trigger.isConnected && parentSurface.isConnected) open(kind, id, parentSurface, trigger, depth);
+          if (hoverTargets.get(depth) === trigger && trigger.isConnected && parentSurface.isConnected && TimelineInteractions.hovered(trigger)) open(kind, id, parentSurface, trigger, depth);
         });
       });
       trigger.addEventListener('pointerleave', event => {

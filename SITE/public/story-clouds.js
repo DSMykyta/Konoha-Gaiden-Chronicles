@@ -118,10 +118,9 @@ const StoryClouds = {
  },
  create(canvas){
   const context=canvas?.getContext?.('2d');if(!context)return {update(){},scroll(){},refresh(){},setPaused(){}};
-  const motion=window.matchMedia('(prefers-reduced-motion: reduce)'),contrast=window.matchMedia('(prefers-contrast: more)'),transparency=window.matchMedia('(prefers-reduced-transparency: reduce)');
-  let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,paused:false},frame=null,last=0,phase=0;
+  const contrast=window.matchMedia('(prefers-contrast: more)'),transparency=window.matchMedia('(prefers-reduced-transparency: reduce)');
+  let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,paused:false};
   const geometry=new Map();
-  const stop=()=>{if(frame!==null)cancelAnimationFrame(frame);frame=null;};
   const draw=()=>{
    const dpr=Math.min(window.devicePixelRatio||1,2),width=Math.round(state.width*dpr),height=Math.round(state.height*dpr);
    if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
@@ -132,10 +131,10 @@ const StoryClouds = {
      const minY=Math.min(...part.map(n=>n.y))-radius*2.4,maxY=Math.max(...part.map(n=>n.y))+radius*2.4;
      if(maxY<state.scrollTop||minY>state.scrollTop+state.height)continue;
      let shape=geometry.get(part);
-     if(!shape||shape.phase!==phase){
-      const contours=StoryClouds.contours(part,foreign,radius,phase,group.kind==='moment'?6:8,group.kind),path=new Path2D();
+     if(!shape){
+      const contours=StoryClouds.contours(part,foreign,radius,0,group.kind==='moment'?6:8,group.kind),path=new Path2D();
       for(const loop of contours){const last=loop.at(-1),first=loop[0];path.moveTo((last.x+first.x)/2,(last.y+first.y)/2);loop.forEach((p,i)=>{const next=loop[(i+1)%loop.length];path.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);});path.closePath();}
-      shape={path,phase};geometry.set(part,shape);
+      shape={path};geometry.set(part,shape);
      }
      const path=shape.path;
      const gradient=context.createLinearGradient(0,minY,0,maxY);gradient.addColorStop(0,colors.top);gradient.addColorStop(1,colors.bottom);
@@ -146,15 +145,13 @@ const StoryClouds = {
    }
    context.globalAlpha=1;
   };
-  const animate=time=>{
-   frame=null;if(document.visibilityState==='hidden'||motion.matches||transparency.matches||state.paused||!state.groups.length)return;
-   if(time-last>=100){phase=time/14000;draw();last=performance.now();}frame=requestAnimationFrame(animate);
-  };
-  const resume=()=>{stop();if(document.visibilityState==='hidden')return;draw();last=performance.now();if(!motion.matches&&!transparency.matches&&!state.paused&&state.groups.length)frame=requestAnimationFrame(animate);};
-  for(const preference of [motion,contrast,transparency])preference.addEventListener?.('change',resume);
+  // Geometry is static between user actions. Rebuilding contours on a decorative
+  // animation loop competes with pointer input, especially on large canvases.
+  const resume=()=>{if(document.visibilityState!=='hidden')draw();};
+  for(const preference of [contrast,transparency])preference.addEventListener?.('change',resume);
   document.addEventListener('visibilitychange',resume);
   return {
-   update(next){if(next.groups&&next.groups!==state.groups)geometry.clear();state={...state,...next};if(motion.matches||transparency.matches)phase=0;resume();},
+   update(next){if(next.groups&&next.groups!==state.groups)geometry.clear();state={...state,...next};resume();},
    scroll(scrollTop){state.scrollTop=scrollTop;draw();},refresh(){draw();},
    setPaused(paused){if(state.paused===paused)return;state.paused=paused;resume();}
   };

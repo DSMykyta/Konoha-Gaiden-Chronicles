@@ -83,6 +83,14 @@ const TimelineCore = {
       if(prior.length){const total=prior.reduce((s,[,w])=>s+w,0);y.set(n.id,prior.reduce((s,[m,w])=>s+y.get(m.id)*w,0)/total+(this.seed(n.id+'lane')-.5)*.035);}
       else y.set(n.id,(this.seed(n.id+'lane')-.5)*1.35);
     }
+    // Build time-neighbor pairs once. Far-away nodes never repel one another,
+    // so checking every pair again on each relaxation pass only blocks input.
+    const neighbors=[];
+    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
+      const a=nodes[i],b=nodes[j],time=Math.abs(a.day-b.day);if(time>1.15)continue;
+      const shared=(a.layoutCast||[]).some(id=>(b.layoutCast||[]).includes(id)),linked=edges.get(a.id).has(b.id);
+      neighbors.push({a,b,time,wanted:shared||linked?.12:.34,factor:shared||linked?.018:.045});
+    }
     // One-dimensional force relaxation. Connected story streams attract; unrelated
     // scenes that occupy the same time window repel, so branches split and can later
     // converge again when their casts meet.
@@ -91,12 +99,10 @@ const TimelineCore = {
       for(const n of nodes){
         for(const [otherId,w] of edges.get(n.id)){if(n.id>otherId)continue;const d=(y.get(otherId)-y.get(n.id))*.018*Math.min(6,w);delta.set(n.id,delta.get(n.id)+d);delta.set(otherId,delta.get(otherId)-d);}
       }
-      for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
-        const a=nodes[i],b=nodes[j],time=Math.abs(a.day-b.day);if(time>1.15)continue;
-        const shared=(a.layoutCast||[]).some(id=>(b.layoutCast||[]).includes(id)),linked=edges.get(a.id).has(b.id);
-        const wanted=shared||linked?.12:.34,dy=y.get(b.id)-y.get(a.id),distance=Math.abs(dy);
+      for(const {a,b,time,wanted,factor} of neighbors){
+        const dy=y.get(b.id)-y.get(a.id),distance=Math.abs(dy);
         if(distance>=wanted)continue;
-        const direction=distance>.008?Math.sign(dy):(this.seed(a.id+'|'+b.id)<.5?-1:1),strength=(wanted-distance)*(shared||linked?.018:.045)*(1-time/1.2);
+        const direction=distance>.008?Math.sign(dy):(this.seed(a.id+'|'+b.id)<.5?-1:1),strength=(wanted-distance)*factor*(1-time/1.2);
         delta.set(a.id,delta.get(a.id)-direction*strength);delta.set(b.id,delta.get(b.id)+direction*strength);
       }
       for(const n of nodes)y.set(n.id,Math.max(-1,Math.min(1,y.get(n.id)+delta.get(n.id))));
@@ -122,22 +128,42 @@ const TimelineCore = {
     for(const n of nodes){const normalized=(y.get(n.id)-(lo+hi)/2)/span*1.7;out.set(n.id,middle+Math.max(-.92,Math.min(.92,normalized))*amplitude);}
     return out;
   },
+  lifetimes(anchors,{idleDays=14,pixelsPerDay=24,maxBridge=480}={}) {
+    const runs=[];
+    for(const anchor of anchors){
+      const previous=runs.at(-1)?.at(-1),gap=previous?anchor.day-previous.day:0;
+      const inactive=previous?(anchor.activityFrom??anchor.calendarDay??anchor.day)-(previous.activityTo??previous.calendarDay??previous.day):0;
+      if(!previous||(gap>0&&(inactive>idleDays||gap*pixelsPerDay>maxBridge)))runs.push([]);
+      runs.at(-1).push(anchor);
+    }
+    return runs;
+  },
+  slopes(points,axis='day') {
+    const spans=points.slice(1).map((p,i)=>p[axis]-points[i][axis]),secants=spans.map((span,i)=>span>0?(points[i+1].y-points[i].y)/span:0);
+    return points.map((p,i)=>{
+      if(p.flat)return 0;
+      if(!i)return secants[0]||0;
+      if(i===points.length-1)return secants.at(-1)||0;
+      const before=secants[i-1],after=secants[i];
+      if(spans[i-1]<=0||spans[i]<=0||before*after<=0)return 0;
+      const a=2*spans[i]+spans[i-1],b=spans[i]+2*spans[i-1];
+      return (a+b)/(a/before+b/after);
+    });
+  },
   strand(anchors,id,middle,amplitude,lead=1,pixelsPerDay=24) {
     if(!anchors.length)return [];
-    // Fade into the first recorded scene, then connect scenes directly. Organic
-    // wandering is based on visible horizontal room: close nodes stay clean,
-    // while long spans get a broad, low-frequency drift instead of a sharp hump.
-    const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y+(this.seed(id+'start')-.5)*amplitude*.65,id:'start'},...anchors.map(p=>({...p,node:true})),{day:Math.min(365,last.day+lead),y:last.y+(this.seed(id+'end')-.5)*amplitude*.65,id:'end'}],points=[];
+    // Recorded nodes determine the curve. Keep decorative drift small and bounded
+    // regardless of the distance between appearances or the current zoom.
+    const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y,flat:true,id:'start'},...anchors.map(p=>({...p,node:true})),{day:Math.min(365,last.day+lead),y:last.y,flat:true,id:'end'}],points=[];
     for(let i=0;i<ends.length-1;i++){
       const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
       if(gap<1e-8)continue;
       const pixelGap=gap*Math.max(1,pixelsPerDay),wander=Math.max(0,Math.min(1,(pixelGap-90)/260));
-      if(!wander)continue;
-      const controls=Math.max(1,Math.ceil(pixelGap/180)-1);
-      const primary=(this.seed(id+':'+a.id+':'+b.id+':drift')-.5)*amplitude*.48*wander;
-      const secondary=(this.seed(id+':'+a.id+':'+b.id+':wave')-.5)*amplitude*.18*wander;
+      if(!wander||!a.node||!b.node)continue;
+      const controls=3;
+      const primary=(this.seed(id+':'+a.id+':'+b.id+':drift')-.5)*Math.min(12,amplitude*.12)*wander;
       for(let j=1;j<=controls;j++){
-        const t=j/(controls+1),envelope=Math.sin(Math.PI*t),offset=envelope*(primary+secondary*Math.sin(Math.PI*2*t));
+        const t=j/(controls+1),offset=Math.sin(Math.PI*t)**2*primary;
         points.push({day:a.day+gap*t,y:a.y+(b.y-a.y)*t+offset});
       }
     }
@@ -147,9 +173,9 @@ const TimelineCore = {
   },
   curveY(points,day) {
     if(day<=points[0].day)return points[0].y;if(day>=points.at(-1).day)return points.at(-1).y;
-    const slope=i=>{if(points[i].node||points[i].flat)return 0;const a=points[Math.max(0,i-1)],b=points[Math.min(points.length-1,i+1)];return b.day===a.day?0:(b.y-a.y)/(b.day-a.day);};
+    const slopes=this.slopes(points);
     const i=Math.max(0,points.findIndex(p=>p.day>=day)-1),a=points[i],b=points[i+1]||a,span=b.day-a.day;if(!span)return a.y;
-    const t=Math.max(0,Math.min(1,(day-a.day)/span));return (2*t**3-3*t*t+1)*a.y+(t**3-2*t*t+t)*span*slope(i)+(-2*t**3+3*t*t)*b.y+(t**3-t*t)*span*slope(i+1);
+    const t=Math.max(0,Math.min(1,(day-a.day)/span));return (2*t**3-3*t*t+1)*a.y+(t**3-2*t*t+t)*span*slopes[i]+(-2*t**3+3*t*t)*b.y+(t**3-t*t)*span*slopes[i+1];
   },
   avoid(points,nodes,id,clearance) {
     const route=[...points];

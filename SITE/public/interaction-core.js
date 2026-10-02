@@ -9,6 +9,12 @@ const TimelineInteractions = {
   PANEL_GAP: 12,
   GUTTER: 12,
 
+  hovered(element) {
+    // A queued preview also checks the browser's current hit state. Pointer-leave
+    // can arrive late while a layout or scroll replaces the surface under it.
+    return element.matches(':hover');
+  },
+
   scheduler(clock = globalThis) {
     const jobs = new Map();
     const cancel = key => {

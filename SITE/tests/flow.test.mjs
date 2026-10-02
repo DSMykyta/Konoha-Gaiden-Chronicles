@@ -19,7 +19,7 @@ test('scene display_rank is a stable fallback and accepted before still wins',()
 test('a strand starts near its first scene, curves between scenes and ends near its last record',()=>{
  const anchors=[{id:'scene-one',day:20,y:110},{id:'scene-two',day:35,y:220},{id:'scene-three',day:40,y:110}],route=core.strand(anchors,'character',180,80,.25);
  assert.equal(route[0].day,19.75);assert.equal(route.at(-1).day,40.25);
- for(const a of anchors){assert.equal(core.curveY(route,a.day),a.y);const derivative=(core.curveY(route,a.day+1e-7)-core.curveY(route,a.day-1e-7))/2e-7;assert(Math.abs(derivative)<.001);}
+ for(const a of anchors){assert.equal(core.curveY(route,a.day),a.y);const left=(a.y-core.curveY(route,a.day-1e-7))/1e-7,right=(core.curveY(route,a.day+1e-7)-a.y)/1e-7;assert(Math.abs(left-right)<.001);}
  assert(core.curveY(route,27)>110);assert(core.curveY(route,27)<220);
  assert.equal(core.strand([],'not-introduced',180,80).length,0);
 });
@@ -62,4 +62,34 @@ test('a short viewport extends the canvas instead of stacking scene markers',()=
  assert(separated.some(n=>n.y>190));
  for(let i=0;i<separated.length;i++)for(const b of separated.slice(i+1))assert(Math.abs(separated[i].y-b.y)>=24);
  assert(separated.every(n=>n.x===100&&n.day===21));
+});
+
+test('inactive strands fade between appearances even across a compressed calendar gap',()=>{
+ const anchors=[{day:10,calendarDay:10},{day:11,calendarDay:60},{day:12,calendarDay:61}];
+ const runs=core.lifetimes(anchors,{pixelsPerDay:10});
+ assert.deepEqual(Array.from(runs,run=>Array.from(run,a=>a.calendarDay)),[[10],[60,61]]);
+ const aggregate=[{day:10,activityFrom:10,activityTo:59},{day:11,activityFrom:60,activityTo:61}];
+ assert.equal(core.lifetimes(aggregate,{pixelsPerDay:10}).length,1);
+});
+
+test('zoom separates distant appearances while preserving equal-time physical anchors',()=>{
+ const anchors=[{day:10,y:10},{day:10,y:20},{day:20,y:30}];
+ assert.equal(core.lifetimes(anchors,{pixelsPerDay:20}).length,1);
+ const runs=core.lifetimes(anchors,{pixelsPerDay:100});
+ assert.equal(runs.length,2);assert.equal(runs[0].length,2);
+});
+
+test('shape-preserving slopes pass smoothly through anchors without overshoot',()=>{
+ const points=[{day:0,y:0,node:true},{day:1,y:8,node:true},{day:10,y:10,node:true},{day:11,y:30,node:true}];
+ assert(core.slopes(points)[1]>0);
+ for(let i=1;i<points.length;i++)for(let t=0;t<=1;t+=.05){
+  const y=core.curveY(points,points[i-1].day+(points[i].day-points[i-1].day)*t);
+  assert(y>=points[i-1].y-1e-8&&y<=points[i].y+1e-8);
+ }
+});
+
+test('long spans have bounded drift and a bounded number of controls',()=>{
+ const route=core.strand([{id:'a',day:10,y:100},{id:'b',day:300,y:100}],'one',100,150,1,1000);
+ assert(route.length<=7);
+ assert(route.every(point=>Math.abs(point.y-100)<=6));
 });

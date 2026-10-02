@@ -2,7 +2,7 @@
 
 const StoryTitleScale = (() => {
 
-  const LEVEL_LABELS = {moment: 'Момент', scene: 'Сцена', episode: 'Епізод'};
+  const LEVEL_LABELS = {moment: 'Момент', scene: 'Сцена', episode: 'Епізод', arc: 'Арка'};
   const LEVELS = Object.keys(LEVEL_LABELS);
 
   window.__storyScaleFocus = {
@@ -24,10 +24,12 @@ const StoryTitleScale = (() => {
   let scaleRoot = null;
   let scaleTrack = null;
   let levelSelect = null;
+  let lastSemanticLevel = null;
+  let readerSummary = null;
 
   function currentSemanticLevel() {
     const level = document.querySelector('.timeline-key [data-level][aria-current="true"]')?.dataset.level;
-    return LEVELS.includes(level) ? level : 'episode';
+    return LEVELS.includes(level) ? level : 'arc';
   }
 
   function eventVisible(event) {
@@ -51,7 +53,7 @@ const StoryTitleScale = (() => {
       for (const node of moments) {
         const events = (node.group || []).filter(eventVisible);
         if (!events.length || node.day === null) continue;
-        items.push({key:`moment:${node.id}`,kind:'moment',id:node.id,title:node.title,day:node.day,events});
+        items.push({key:`moment:${node.id}`,kind:'moment',id:node.id,title:node.title,day:node.day,context:sceneMap?.get(events[0].scene_id)?.title||'',events});
       }
     } else if (level === 'scene') {
       for (const scene of scenes) {
@@ -67,7 +69,7 @@ const StoryTitleScale = (() => {
           events
         });
       }
-    } else {
+    } else if(level==='episode') {
       const buckets = new Map();
       for (const scene of scenes) {
         const meta = sceneMap?.get(scene.id);
@@ -90,6 +92,11 @@ const StoryTitleScale = (() => {
           day:(Math.min(...days)+Math.max(...days))/2,
           events
         });
+      }
+    } else {
+      for(const node of semanticNodes('arc',scenes)){
+        const events=(node.group||[]).filter(eventVisible);
+        if(events.length)items.push({key:`arc:${node.rawId}`,kind:'arc',id:node.rawId,title:node.title,day:node.day,events});
       }
     }
     return items;
@@ -130,7 +137,24 @@ const StoryTitleScale = (() => {
 
     scaleTrack = document.createElement('div');
     scaleTrack.className = 'story-title-track';
-    scaleRoot.append(levelSelect, scaleTrack);
+    scaleTrack.id = 'storyTitleTrack';
+    readerSummary = document.createElement('span');
+    readerSummary.className = 'story-reader-summary';
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'story-reader-toggle';
+    toggle.textContent = 'Згорнути';
+    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-controls','storyTitleTrack');
+    toggle.addEventListener('click',()=>{
+      const collapsed=scaleRoot.classList.toggle('is-collapsed');
+      document.documentElement.classList.toggle('story-reader-collapsed',collapsed);
+      toggle.setAttribute('aria-expanded',String(!collapsed));
+      toggle.textContent=collapsed?'Події':'Згорнути';
+      if(collapsed)scaleTrack.inert=true;else scaleTrack.inert=false;
+      schedule();
+    });
+    scaleRoot.append(levelSelect,readerSummary,toggle,scaleTrack);
     document.body.append(scaleRoot);
   }
 
@@ -232,7 +256,7 @@ const StoryTitleScale = (() => {
     scaleRoot?.classList.toggle('is-fixed', fixed);
     scaleRoot?.querySelectorAll('.story-title-label').forEach(label => {
       label.classList.toggle('is-active', label.dataset.storyKey === item.key);
-      scopeVisibility(label, fixed && label.dataset.storyKey !== item.key);
+      scopeVisibility(label, false);
     });
     updateFocusBar();
     cloudRenderer?.refresh();
@@ -306,11 +330,17 @@ const StoryTitleScale = (() => {
 
   function renderScale() {
     ensureScale();
-    if (!scaleLevel) scaleLevel = currentSemanticLevel();
+    scaleTrack.inert=window.innerWidth<=760&&window.innerHeight>=520&&scaleRoot.classList.contains('is-collapsed');
+    const semantic=currentSemanticLevel();
+    if(!fixedKey&&semantic!==lastSemanticLevel){scaleLevel=semantic;lastSemanticLevel=semantic;hoverKey=null;clearStoryFocus();}
+    if (!scaleLevel) scaleLevel = semantic;
     if (!LEVELS.includes(scaleLevel)) scaleLevel = 'episode';
     levelSelect.value = scaleLevel;
 
     const items = layoutItems(buildItems(scaleLevel));
+    const nodes=typeof graphNodes==='undefined'?[]:graphNodes;
+    const numbers=new Map(nodes.filter(node=>node.number).map(node=>[node.id,node.number]));
+    readerSummary.textContent=items.length?`${items.length} ${{moment:'моментів',scene:'сцен',episode:'епізодів',arc:'арок'}[scaleLevel]}`:'Немає подій';
     currentItems = new Map(items.map(item => [item.key,item]));
     const previous = new Map([...scaleTrack.children].map(slot => [slot.dataset.key, slot]));
     previous.forEach((slot, key) => { if (!currentItems.has(key)) { slot.remove(); previous.delete(key); } });
@@ -326,16 +356,32 @@ const StoryTitleScale = (() => {
         button.type = 'button';
         button.className = 'story-title-label';
         button.dataset.storyKey = item.key;
-        button.textContent = item.title;
-        button.dataset.tooltip = item.title;
         button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);
+        const number=document.createElement('span');number.className='story-item-number';number.setAttribute('aria-hidden','true');
+        const text=document.createElement('span');text.className='story-item-copy';
+        const title=document.createElement('span');title.className='story-item-title';
+        const context=document.createElement('span');context.className='story-item-context';
+        text.append(title,context);button.append(number,text);
         bindLabel(button, item.key);
-        slot.append(button);
+        const read=document.createElement('button');read.type='button';read.className='story-item-read';read.textContent='Читати';read.dataset.readStory=item.key;
+        read.addEventListener('click',()=>{
+          const current=currentItems.get(item.key);if(!current)return;
+          StoryTitleScale.clear();
+          if(current.kind==='moment')navigateEvent(current.id);
+          else if(current.kind==='scene')navigateScene(current.id);
+          else navigateStory(current.kind,current.id);
+        });
+        slot.append(button,read);
       }
       if (slot !== cursor) scaleTrack.insertBefore(slot, cursor);
       cursor = slot.nextSibling;
       const button=slot.querySelector('button');
-      if(button.textContent!==item.title){button.textContent=item.title;button.dataset.tooltip=item.title;button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);}
+      const title=button.querySelector('.story-item-title'),context=button.querySelector('.story-item-context'),number=button.querySelector('.story-item-number');
+      title.textContent=item.title;
+      context.textContent=[dateText(item.day,true),item.context].filter(Boolean).join(' · ');
+      number.textContent=numbers.get(item.id)||'';number.hidden=!numbers.has(item.id);
+      button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);
+      slot.querySelector('.story-item-read').setAttribute('aria-label',`Читати: ${item.title}`);
     }
     previous.forEach(slot => slot.remove());
 
@@ -352,11 +398,13 @@ const StoryTitleScale = (() => {
   }
 
   const MIN_VIEW_DAYS = {
+    arc: 7,
     episode: 2.5,
     scene: 1,
     moment: .65
   };
   const PADDING = {
+    arc: 1.3,
     episode: 1.4,
     scene: 1.25,
     moment: 1
@@ -366,6 +414,8 @@ const StoryTitleScale = (() => {
   function chronologyPositions(kind, id) {
     if (typeof orderedScenes !== 'function') return [];
     const scenes = orderedScenes().filter(scene => scene.day !== null);
+
+    if(kind==='arc')return scenes.filter(scene=>episodeMap?.get(sceneMap?.get(scene.id)?.episode_id)?.arc_id===id).map(scene=>scene.position).filter(Number.isFinite);
 
     if (kind === 'episode') {
       return scenes
