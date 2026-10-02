@@ -5,7 +5,10 @@
   "outputDirectory": "public",
   "installCommand": "npm ci",
   "git": {
-    "deploymentEnabled": false
+    "deploymentEnabled": {
+      "*": false,
+      "main": true
+    }
   },
   "headers": [
     {

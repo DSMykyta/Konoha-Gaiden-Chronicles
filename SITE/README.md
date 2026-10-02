@@ -27,7 +27,7 @@ The build reads the current authoritative YAML under `KONOHA_GAIDEN_ARCS_ZIGRANE
 
 For local builds, use Node 22+, `npm ci`, then `CHRONOLOGY_SOURCE_ROOT=/absolute/path/to/source npm run build`. The source files are never edited by the build.
 
-`public/data.json` is generated at deployment. It is a snapshot of that source revision, not a live editor or an automatic scheduled refresh. Automatic Git deployments are disabled in `vercel.json`; publishing a commit requires an explicit deployment of that revision.
+`public/data.json` is generated at deployment. It is a snapshot of that source revision, not a live editor or an automatic scheduled refresh. The connected Vercel project publishes `main` automatically. `vercel.json` keeps other branches disabled with a wildcard rule and enables only `main`, so approved chronology fixes reach the production site.
 
 ## Лінії, профілі та фото
 
