@@ -8,8 +8,8 @@
   <title>Коноха · Хронологія</title>
   <link rel="stylesheet" href="style.css?v=20261002-stable-readers-1">
   <link rel="stylesheet" href="profile-dossier.css?v=20261002-a4-sheet-1">
-  <link rel="stylesheet" href="controls.css?v=20261002-stable-readers-1">
-  <link rel="stylesheet" href="panels.css?v=20261002-stable-readers-1">
+  <link rel="stylesheet" href="controls.css?v=20261002-search-1">
+  <link rel="stylesheet" href="panels.css?v=20261002-search-1">
   <link rel="stylesheet" href="focus.css?v=20261002-stable-readers-1">
   <link rel="stylesheet" href="story-labels.css?v=20261002-stable-readers-1">
   <link rel="stylesheet" href="map-titles.css?v=20261002-stable-readers-1">
@@ -22,6 +22,7 @@
   <script defer src="hierarchy-preview.js?v=20261002-stable-readers-1"></script>
   <script defer src="profile-techniques.js?v=20261002-stable-readers-1"></script>
   <script defer src="app.js?v=20261002-stable-readers-1"></script>
+  <script defer src="search-enhanced.js?v=20261002-search-1"></script>
 </head>
 <body>
   <header class="masthead">
@@ -35,7 +36,7 @@
     <div class="header-actions">
     <nav class="tools" aria-label="Навігація хронології">
       <button id="linesButton" aria-label="Лінії персонажів" aria-expanded="false" aria-controls="linesPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></svg><span id="linesCount">Лінії</span></button>
-      <button id="searchButton" aria-label="Знайти подію" aria-expanded="false" aria-controls="searchPanel" aria-keyshortcuts="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Пошук</span><kbd aria-hidden="true">/</kbd></button>
+      <button id="searchButton" aria-label="Знайти у хронології" aria-expanded="false" aria-controls="searchPanel" aria-keyshortcuts="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Пошук</span><kbd aria-hidden="true">/</kbd></button>
     </nav>
     <button class="period" id="periodButton" aria-label="Обрати період та історичну лінію" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Рік 0</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
     </div>
@@ -64,11 +65,42 @@
   </section>
 
   <section id="searchPanel" class="panel left-panel" popover="auto" aria-labelledby="searchTitle" hidden>
-    <div class="panel-heading"><div><h2 id="searchTitle">Знайти подію</h2><p>Шукай за назвою або текстом.</p></div><button class="close" data-close="searchPanel" aria-label="Закрити пошук">×</button></div>
-    <label class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span class="sr-only">Назва або текст події</span><input id="eventSearch" placeholder="Наприклад, екзамен" type="search" autocomplete="off" autofocus></label>
-    <p id="searchSummary" class="search-summary" role="status" aria-live="polite"></p>
-    <div id="searchResults"></div>
-    <button id="moreResults" class="secondary-button" hidden>Показати ще</button>
+    <div class="card-top search-panel-header">
+      <div class="story-panel-meta">
+        <div class="search-panel-heading"><span class="card-kind">ПОШУК</span><h2 id="searchTitle">Хронологія</h2><p>Назви, описи, персонажі, місця й структура історії.</p></div>
+        <div class="card-top-actions"><button class="close" data-close="searchPanel" aria-label="Закрити пошук">×</button></div>
+      </div>
+    </div>
+    <div class="preview-scroll search-panel-scroll">
+      <label class="field search-query-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span class="sr-only">Пошук у хронології</span><input id="eventSearch" placeholder="Наприклад: сцени з Райдо" type="search" autocomplete="off" autofocus></label>
+      <div class="search-type-filters" role="group" aria-label="Тип результату">
+        <button class="search-chip" data-search-type="all" aria-pressed="true">Усе</button>
+        <button class="search-chip" data-search-type="moment" aria-pressed="false">Моменти</button>
+        <button class="search-chip" data-search-type="scene" aria-pressed="false">Сцени</button>
+        <button class="search-chip" data-search-type="episode" aria-pressed="false">Епізоди</button>
+        <button class="search-chip" data-search-type="arc" aria-pressed="false">Арки</button>
+        <button class="search-chip" data-search-type="person" aria-pressed="false">Персонажі</button>
+        <button class="search-chip" data-search-type="location" aria-pressed="false">Місця</button>
+      </div>
+      <div id="searchSuggestions" class="search-suggestions" aria-label="Приклади пошуку">
+        <button class="search-chip" data-search-suggestion="сцени з Райдо">Сцени з Райдо</button>
+        <button class="search-chip" data-search-suggestion="усі події 1 серпня">Події 1 серпня</button>
+        <button class="search-chip" data-search-suggestion="що було перед вторгненням">Перед вторгненням</button>
+      </div>
+      <details class="disclosure search-filters">
+        <summary>Фільтри</summary>
+        <div class="search-filter-grid">
+          <label class="search-filter-control"><span>Персонаж</span><select id="searchPerson"><option value="">Усі персонажі</option></select></label>
+          <label class="search-filter-control"><span>Дата</span><input id="searchDate" placeholder="22.01 або 1 серпня" inputmode="text" autocomplete="off"></label>
+          <label class="search-filter-control"><span>Арка</span><select id="searchArc"><option value="">Усі арки</option></select></label>
+          <label class="search-filter-control"><span>Джерело</span><select id="searchSource"><option value="">Усі джерела</option></select></label>
+        </div>
+        <div class="search-filter-actions"><button id="clearSearchFilters" class="search-chip" type="button">Очистити</button></div>
+      </details>
+      <p id="searchSummary" class="search-summary" role="status" aria-live="polite"></p>
+      <div id="searchResults" class="story-children search-results"></div>
+      <button id="moreResults" class="secondary-button" hidden>Показати ще</button>
+    </div>
   </section>
 
   <section id="periodPanel" class="panel right-panel" popover="auto" aria-labelledby="periodTitle" hidden>
