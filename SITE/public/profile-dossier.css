@@ -32,9 +32,6 @@
   backdrop-filter: blur(6px) saturate(.8);
 }
 
-/* The old pseudo-sheet was viewport-fixed, which made the paper stay behind while
-   only its contents scrolled. The paper is now made from the two real content
-   blocks below, so it moves through the viewport as one document. */
 #profileDialog.profile-dialog::before {
   content: none;
 }
@@ -104,7 +101,6 @@
   letter-spacing: -.025em;
 }
 
-/* Closing is interface chrome, not part of the printed sheet. */
 #profileDialog #closeProfile {
   display: grid;
   place-items: center;
@@ -131,7 +127,6 @@
   background: rgba(23, 25, 29, .78);
 }
 
-/* Age/version controls remain out of the document until their visual language is defined. */
 #profileDialog #profileTabs,
 #profileDialog .profile-actions {
   display: none !important;
@@ -153,12 +148,14 @@
   clear: both;
 }
 
+/* ID/dossier portrait: chest-up, neutral light background, 3:4. Full-body art does
+   not read as an identification photo and becomes too small on an A4 dossier. */
 #profileDialog .profile-visual {
   position: static;
   float: left;
-  width: 34%;
-  max-width: 58mm;
-  margin: 0 10mm 7mm 0;
+  width: 31%;
+  max-width: 51mm;
+  margin: 0 9mm 6mm 0;
 }
 
 #profileDialog .profile-image {
@@ -166,14 +163,17 @@
   width: 100%;
   aspect-ratio: 3 / 4;
   max-height: none;
-  padding: 2mm;
-  object-fit: contain;
-  object-position: center top;
-  border: 1px solid #a9aaa7;
+  padding: 0;
+  object-fit: cover;
+  object-position: center 18%;
+  border: 1px solid #b9bbb8;
   border-radius: 0;
-  background: #f2f2ef;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
-  filter: saturate(.94) contrast(.99);
+  background: #f4f4f2;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 4px #d4d5d2,
+    0 4px 10px rgba(0, 0, 0, .1);
+  filter: saturate(.96) contrast(.99);
 }
 
 #profileDialog .profile-image.profile-image-empty {
@@ -181,7 +181,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 72mm;
+  min-height: 68mm;
   padding: 0;
   background:
     linear-gradient(135deg, transparent 49.7%, rgba(0, 0, 0, .055) 50%, transparent 50.3%),
@@ -202,12 +202,12 @@
 }
 
 #profileDialog .profile-age {
-  margin: 2.5mm 0 0;
+  margin: 3.5mm 0 0;
   padding: 2.5mm 0 0;
   border-top: 1px solid var(--rule);
   color: var(--ink-soft);
-  text-align: left;
-  font: 700 10px/1.4 Manrope, sans-serif;
+  text-align: center;
+  font: 700 9px/1.4 Manrope, sans-serif;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
@@ -230,24 +230,27 @@
   font-size: 14px;
 }
 
+/* Facts read like lines on a dossier, not form controls/cards. */
 #profileDialog .profile-facts {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 7mm;
   margin: 0 0 7mm;
-  padding: 4mm 0;
+  padding: 3mm 0;
   border-top: 1px solid #7d8083;
   border-bottom: 1px solid #7d8083;
 }
 
 #profileDialog .profile-facts > div {
   display: grid;
-  grid-template-columns: minmax(30mm, .9fr) minmax(0, 1.25fr);
+  grid-template-columns: minmax(28mm, .82fr) minmax(0, 1.25fr);
   gap: 4mm;
   align-items: baseline;
-  min-height: 9mm;
-  padding: 2.2mm 0;
-  border-bottom: 1px dotted #b7b9b6;
+  min-height: 8mm;
+  padding: 1.8mm 0;
+  border-bottom: 1px dotted #c4c6c3;
+  background: transparent;
+  box-shadow: none;
 }
 
 #profileDialog .profile-facts > div:nth-last-child(-n + 2) {
@@ -256,7 +259,7 @@
 
 #profileDialog .profile-facts dt {
   color: var(--ink-soft);
-  font: 700 9px/1.4 Manrope, sans-serif;
+  font: 700 8.5px/1.4 Manrope, sans-serif;
   letter-spacing: .055em;
   text-transform: uppercase;
 }
@@ -264,7 +267,7 @@
 #profileDialog .profile-facts dd {
   margin: 0;
   color: var(--ink);
-  font: 600 12px/1.45 Manrope, sans-serif;
+  font: 600 11.5px/1.45 Manrope, sans-serif;
 }
 
 #profileDialog .profile-section {
@@ -277,7 +280,7 @@
   padding: 0 0 2mm;
   border-bottom: 1px solid var(--rule);
   color: var(--ink);
-  font: 800 10px/1.4 Manrope, sans-serif;
+  font: 800 9.5px/1.4 Manrope, sans-serif;
   letter-spacing: .13em;
   text-transform: uppercase;
 }
@@ -306,6 +309,8 @@
   gap: 5mm;
   padding: 2.4mm 0;
   border-bottom: 1px dotted #b7b9b6;
+  background: transparent;
+  box-shadow: none;
 }
 
 #profileDialog .profile-entry strong {
@@ -320,7 +325,6 @@
   line-height: 1.55;
 }
 
-/* Techniques look like neutral archive/index cards instead of yellow note cards. */
 #profileDialog .profile-entry-list.technique-card-track {
   display: flex;
   gap: 5mm;
@@ -384,9 +388,7 @@
   text-transform: uppercase;
 }
 
-#profileDialog .technique-card-index {
-  font-variant-numeric: tabular-nums;
-}
+#profileDialog .technique-card-index { font-variant-numeric: tabular-nums; }
 
 #profileDialog .technique-card-rank {
   display: inline-flex;
@@ -485,23 +487,15 @@
   padding-top: 2mm;
 }
 
-#profileDialog .empty {
-  color: var(--ink-soft);
-}
+#profileDialog .empty { color: var(--ink-soft); }
 
 @media (max-width: 760px) {
-  #profileDialog.profile-dialog {
-    padding: 10px 0 34px;
-  }
+  #profileDialog.profile-dialog { padding: 10px 0 34px; }
 
   #profileDialog.profile-dialog > .profile-heading,
-  #profileDialog.profile-dialog > #profileContent {
-    width: calc(100vw - 20px);
-  }
+  #profileDialog.profile-dialog > #profileContent { width: calc(100vw - 20px); }
 
-  #profileDialog .profile-heading {
-    padding: 28px 24px 16px;
-  }
+  #profileDialog .profile-heading { padding: 28px 24px 16px; }
 
   #profileDialog #profileContent {
     min-height: calc((100vw - 20px) * 1.4142 - 118px);
@@ -514,28 +508,22 @@
     margin-top: 8px;
   }
 
-  #profileDialog .profile-heading h2 {
-    padding-right: 0;
-  }
+  #profileDialog .profile-heading h2 { padding-right: 0; }
 
   #profileDialog .profile-visual {
-    width: 38%;
-    max-width: 190px;
+    width: 36%;
+    max-width: 170px;
     margin: 0 22px 20px 0;
   }
 
-  #profileDialog .profile-facts {
-    grid-template-columns: 1fr;
-  }
+  #profileDialog .profile-facts { grid-template-columns: 1fr; }
 
   #profileDialog .profile-facts > div,
   #profileDialog .profile-entry:not(.technique-card) {
     grid-template-columns: minmax(110px, .85fr) minmax(0, 1.4fr);
   }
 
-  #profileDialog .profile-facts > div:nth-last-child(2) {
-    border-bottom-color: #b7b9b6;
-  }
+  #profileDialog .profile-facts > div:nth-last-child(2) { border-bottom-color: #b7b9b6; }
 
   #profileDialog .profile-entry.technique-card {
     flex-basis: min(74mm, 82vw);
@@ -554,12 +542,8 @@
 
   #profileDialog .profile-visual {
     float: none;
-    width: min(58%, 190px);
+    width: min(54%, 170px);
     margin: 0 auto 24px;
-  }
-
-  #profileDialog .profile-age {
-    text-align: center;
   }
 
   #profileDialog .profile-facts > div,
@@ -575,11 +559,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #profileDialog .profile-entry.technique-card {
-    transition: none;
-  }
-
-  #profileDialog .profile-entry-list.technique-card-track {
-    scroll-behavior: auto;
-  }
+  #profileDialog .profile-entry.technique-card { transition: none; }
+  #profileDialog .profile-entry-list.technique-card-track { scroll-behavior: auto; }
 }
