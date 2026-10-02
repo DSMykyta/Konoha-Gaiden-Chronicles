@@ -1,0 +1,12 @@
+.cloud-label { cursor: pointer; }
+.time-axis-line { stroke: #bdc5d0; stroke-width: .8; }
+.cloud-label-hit { fill: transparent; stroke: none; }
+.cloud-label-guide { stroke: #87909d; stroke-width: .7; opacity: .55; pointer-events: none; }
+.cloud-label-copy { fill: #3e4855; font: 560 13px Manrope, sans-serif; paint-order: stroke; stroke: #f7f8fa; stroke-width: 4px; stroke-linejoin: round; }
+.cloud-label-kind { fill: #747e8b; font-size: 10px; font-weight: 500; stroke-width: 3px; }
+.cloud-label:hover .cloud-label-copy, .cloud-label:focus-visible .cloud-label-copy { fill: #1c2633; }
+.cloud-label:focus-visible .cloud-label-hit { stroke: #3f80cf; stroke-width: 1; stroke-dasharray: 3 3; }
+@media (prefers-contrast: more) {
+  .cloud-label-copy, .cloud-label-kind { fill: #202b3a; stroke: #fff; }
+  .cloud-label-guide { stroke: #4a5360; opacity: .9; }
+}

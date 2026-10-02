@@ -37,30 +37,38 @@ const StoryClouds = {
  // Kept as a small public helper for tests/compatibility. A story group is now
  // intentionally one continuous visual region instead of distance-split islands.
  parts(points){return points.length?[points.slice()]:[];},
- labels(groups,nodes,width,top){
-  const labels=[],overlap=(a,b)=>Math.max(0,Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y));
-  const wrap=(text,limit)=>{
-   const words=text.split(/\s+/),lines=[];let line='';
+ labels(groups,nodes,width,top,bottom=Infinity,previous=new Map(),maxLines=2){
+  const labels=[],margin=16,labelWidth=width<600?144:188;
+  const overlaps=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
+  const wrap=text=>{
+   const limit=Math.floor(labelWidth/6.9),words=String(text).split(/\s+/),lines=[];let line='';
    for(const word of words){if(line&&line.length+word.length+1>limit){lines.push(line);line=word;}else line+=(line?' ':'')+word;}
-   if(line)lines.push(line);
-   return lines.length>2?[lines[0],lines[1].slice(0,limit-1)+'…']:lines;
+   if(line)lines.push(line);if(lines.length<=maxLines)return lines;return [...lines.slice(0,maxLines-1),lines[maxLines-1].slice(0,limit-1)+'…'];
   };
-  const visible=groups.filter(g=>g.kind!=='moment').sort((a,b)=>b.nodes.length-a.nodes.length||(a.kind==='scene'?-1:1));
-  for(const group of visible){
-   const part=group.parts[0];if(!part?.length)continue;
-   const xs=part.map(n=>n.x),ys=part.map(n=>n.y),middle=xs.reduce((a,b)=>a+b,0)/xs.length,labelWidth=width<600?Math.min(160,(width-44)/2):214,lines=wrap(group.title,Math.floor(labelWidth/6.2)),height=18+lines.length*17;
-   const positions=[],minY=Math.min(...ys),maxY=Math.max(...ys),middleY=(minY+maxY)/2;
-   const xPositions=[middle-labelWidth/2,Math.min(...xs)-labelWidth-24,Math.max(...xs)+24,16,width-labelWidth-16];
-   for(let y=top;y<=Math.max(maxY+240,top+visible.length*34);y+=14)for(const x of xPositions){
-    const p={x:Math.max(16,Math.min(width-labelWidth-16,x)),y,width:labelWidth,height};
-    if(nodes.some(n=>{const radius=n.kind==='moment'?9:n.kind==='scene'?13:18;return overlap(p,{x:n.x-radius,y:n.y-radius,width:radius*2,height:radius*2});}))continue;
-    if(labels.some(l=>overlap(p,{...l,x:l.x-6,y:l.y-9,width:l.width+12,height:l.height+18})))continue;
-    positions.push(p);
+  for(const group of groups){
+   if(!group.nodes.length)continue;
+   const lines=wrap(group.title),height=16+lines.length*17,own=group.nodes,old=previous.get(group.key);
+   const middleX=own.reduce((sum,node)=>sum+node.x,0)/own.length;
+   const anchor=own.find(node=>node.id===old?.anchorId)||own.slice().sort((a,b)=>Math.abs(a.x-middleX)-Math.abs(b.x-middleX)||a.id.localeCompare(b.id))[0];
+   const minY=Math.min(...own.map(node=>node.y)),maxY=Math.max(...own.map(node=>node.y));
+   const offsets=[...(old?.anchorId===anchor.id?[old]:[]),
+    {dx:-labelWidth/2,dy:minY-anchor.y-height-22},
+    {dx:-labelWidth/2,dy:maxY-anchor.y+24},
+    {dx:26,dy:-height/2},{dx:-labelWidth-26,dy:-height/2},
+    {dx:26,dy:-height-26},{dx:-labelWidth-26,dy:26}];
+   let position=null;
+   for(const offset of offsets){
+    const candidate={x:Math.max(margin,Math.min(width-margin-labelWidth,anchor.x+offset.dx)),y:anchor.y+offset.dy,width:labelWidth,height};
+    if(candidate.y<top||candidate.y+height>bottom)continue;
+    if(nodes.some(node=>overlaps(candidate,{x:node.x-22,y:node.y-22,width:44,height:44})))continue;
+    if(labels.some(label=>overlaps(candidate,{x:label.x-8,y:label.y-8,width:label.width+16,height:label.height+16})))continue;
+    position=candidate;break;
    }
-   const score=p=>Math.min(...part.map(n=>Math.hypot(Math.max(p.x-n.x,0,n.x-p.x-p.width),Math.max(p.y-n.y,0,n.y-p.y-p.height))))+Math.abs(p.x+labelWidth/2-middle)*.1+Math.abs(p.y+height/2-middleY)*.05;
-   const position=positions.sort((a,b)=>score(a)-score(b))[0]||{x:16,y:Math.max(top,...labels.map(l=>l.y+l.height))+20,width:labelWidth,height};
-   const anchor=part.reduce((nearest,n)=>Math.hypot(n.x-(position.x+labelWidth/2),n.y-(position.y+height/2))<Math.hypot(nearest.x-(position.x+labelWidth/2),nearest.y-(position.y+height/2))?n:nearest,part[0]);
-   labels.push({...position,anchor,key:group.key,kind:group.kind,id:group.id,parentId:group.parentId,title:group.title,parentTitle:group.parentTitle,lines,count:group.nodes.length});
+   // Dense overviews may omit a title. Never move a mark, grow the canvas or
+   // send a title into a detached column merely to fit every label.
+   if(!position)continue;
+   previous.set(group.key,{anchorId:anchor.id,dx:position.x-anchor.x,dy:position.y-anchor.y});
+   labels.push({...position,anchor,key:group.key,kind:group.kind,id:group.id,title:group.title,lines});
   }
   return labels;
  },

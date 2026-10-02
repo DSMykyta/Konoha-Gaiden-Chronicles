@@ -31,6 +31,39 @@ const TimelineCore = {
     return result.sort((a,b)=>(a.position??Infinity)-(b.position??Infinity));
   },
   seed(id) { let value=2166136261;for(const c of id){value=Math.imul(value^c.charCodeAt(0),16777619);}return (value>>>0)/4294967296; },
+  timeAxis(scenes,breaks=[],spacing=.85) {
+    // A dense calendar day gets more space, once for the whole chronology.
+    // Selection, opening a reader, panning and viewport size never change it.
+    const counts=new Map();
+    for(const scene of scenes)if(Number.isFinite(scene.day))counts.set(Math.floor(scene.day),(counts.get(Math.floor(scene.day))||0)+1);
+    const widths=Array.from({length:365},(_,day)=>1+Math.max(0,(counts.get(day)||0)-1)*spacing);
+    const prefix=[0];for(const width of widths)prefix.push(prefix.at(-1)+width);
+    const weighted=day=>{const whole=Math.max(0,Math.min(364,Math.floor(day)));return prefix[whole]+(day-whole)*widths[whole];};
+    let removed=0;
+    const gaps=breaks.map(gap=>{const size=weighted(gap.to)-weighted(gap.from),axis=weighted(gap.from)-removed;removed+=size;return {...gap,axis,size};});
+    const dayToAxis=day=>{let value=weighted(day);for(const gap of gaps){if(day>=gap.to)value-=gap.size;else if(day>gap.from){value-=weighted(day)-weighted(gap.from);break;}else break;}return value;};
+    const axisToDay=(axis,side='after')=>{
+      let value=axis;
+      for(const gap of gaps){if(axis<gap.axis)break;if(Math.abs(axis-gap.axis)<1e-7)return side==='before'?gap.from:gap.to;value+=gap.size;}
+      let lo=0,hi=365;while(lo<hi){const mid=Math.ceil((lo+hi)/2);if(prefix[mid]<=value)lo=mid;else hi=mid-1;}
+      const day=Math.min(364,lo);return day+(value-prefix[day])/widths[day];
+    };
+    return {widths,dayToAxis,axisToDay,breaks:gaps,length:dayToAxis(365)};
+  },
+  momentPositions(scenes) {
+    // Siblings occupy their scene's interval. They cannot spill into the next
+    // sequential scene; explicitly aligned scenes retain the shared interval.
+    const days=new Map(),positions=new Map();
+    for(const scene of scenes){if(!Number.isFinite(scene.position))continue;if(!days.has(scene.day))days.set(scene.day,[]);days.get(scene.day).push(scene);}
+    for(const [day,list] of days){
+      const slots=[...new Set(list.map(scene=>scene.position))].sort((a,b)=>a-b);
+      for(const scene of list){
+        const index=slots.indexOf(scene.position),left=index?(slots[index-1]+scene.position)/2:day+.02,right=index<slots.length-1?(scene.position+slots[index+1])/2:day+.98;
+        scene.group.forEach((event,i)=>positions.set(event.id,scene.group.length===1?scene.position:left+(right-left)*(i+.5)/scene.group.length));
+      }
+    }
+    return positions;
+  },
   separateNodes(nodes,top,bottom,clearance=46) {
     // Time/X stays exact. Separate overlapping hit areas vertically, and use the
     // resulting anchors for both the marks and their character strands.
@@ -68,6 +101,14 @@ const TimelineCore = {
       list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
       for(let i=1;i<list.length;i++){const a=list[i-1],b=list[i],distance=Math.max(.05,b.day-a.day),w=2.8/Math.sqrt(1+distance*.18);connect(a.id,b.id,w);}
     }
+    // The displayed parent adds local grouping without imposing a row or box.
+    // Character strands still determine continuity between different groups.
+    const byGroup=new Map();
+    for(const node of nodes){if(!node.layoutGroup)continue;if(!byGroup.has(node.layoutGroup))byGroup.set(node.layoutGroup,[]);byGroup.get(node.layoutGroup).push(node);}
+    for(const list of byGroup.values()){
+      list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+      for(let i=1;i<list.length;i++)connect(list[i-1].id,list[i].id,3.6);
+    }
     // Explicit chronology and cross-scene observations add extra gravity without
     // changing X/time. Accepted observations/intersections are strongest.
     for(const r of relations){
@@ -85,17 +126,32 @@ const TimelineCore = {
     }
     // Build time-neighbor pairs once. Far-away nodes never repel one another,
     // so checking every pair again on each relaxation pass only blocks input.
-    const neighbors=[];
+    const neighbors=[],groupNeighbors=new Map();
     for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
       const a=nodes[i],b=nodes[j],time=Math.abs(a.day-b.day);if(time>1.15)continue;
       const shared=(a.layoutCast||[]).some(id=>(b.layoutCast||[]).includes(id)),linked=edges.get(a.id).has(b.id);
-      neighbors.push({a,b,time,wanted:shared||linked?.12:.34,factor:shared||linked?.018:.045});
+      const separateGroups=a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup;
+      if(separateGroups){
+        const [one,two]=[a.layoutGroup,b.layoutGroup].sort(),key=one+'|'+two,previous=groupNeighbors.get(key);
+        if(!previous||time<previous.time)groupNeighbors.set(key,{one,two,time});
+      }else neighbors.push({a,b,time,wanted:shared||linked?.12:.34,factor:shared||linked?.018:.045});
     }
     // One-dimensional force relaxation. Connected story streams attract; unrelated
     // scenes that occupy the same time window repel, so branches split and can later
     // converge again when their casts meet.
     for(let pass=0;pass<72;pass++){
       const delta=new Map(nodes.map(n=>[n.id,0]));
+      const centers=new Map();
+      for(const [id,members] of byGroup){
+        const center=members.reduce((sum,node)=>sum+y.get(node.id),0)/members.length;centers.set(id,center);
+        for(const node of members)delta.set(node.id,delta.get(node.id)+(center-y.get(node.id))*.1);
+      }
+      for(const {one,two,time} of groupNeighbors.values()){
+        const dy=centers.get(two)-centers.get(one),distance=Math.abs(dy);if(distance>=.52)continue;
+        const direction=distance>.008?Math.sign(dy):(this.seed(one+'|'+two)<.5?-1:1),strength=(.52-distance)*.055*(1-time/1.2);
+        for(const node of byGroup.get(one))delta.set(node.id,delta.get(node.id)-direction*strength);
+        for(const node of byGroup.get(two))delta.set(node.id,delta.get(node.id)+direction*strength);
+      }
       for(const n of nodes){
         for(const [otherId,w] of edges.get(n.id)){if(n.id>otherId)continue;const d=(y.get(otherId)-y.get(n.id))*.018*Math.min(6,w);delta.set(n.id,delta.get(n.id)+d);delta.set(otherId,delta.get(otherId)-d);}
       }
@@ -113,7 +169,7 @@ const TimelineCore = {
     for(let pass=0;pass<4;pass++){
       for(let i=0;i<sorted.length;i++)for(let j=i+1;j<sorted.length;j++){
         const a=sorted[i],b=sorted[j];
-        if(a.calendarDay!==b.calendarDay||!a.locationId||a.locationId!==b.locationId)continue;
+        if(a.calendarDay!==b.calendarDay||!a.locationId||a.locationId!==b.locationId||(a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup))continue;
         const ac=a.layoutCast||[],bc=b.layoutCast||[];if(!ac.length||!bc.length)continue;
         const shared=ac.filter(id=>bc.includes(id)).length,overlap=shared/Math.min(ac.length,bc.length);
         if(shared<3||overlap<.55)continue;
@@ -150,11 +206,11 @@ const TimelineCore = {
       return (a+b)/(a/before+b/after);
     });
   },
-  strand(anchors,id,middle,amplitude,lead=1,pixelsPerDay=24) {
+  strand(anchors,id,middle,amplitude,lead=1,pixelsPerDay=24,axisLength=365) {
     if(!anchors.length)return [];
     // Recorded nodes determine the curve. Keep decorative drift small and bounded
     // regardless of the distance between appearances or the current zoom.
-    const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y,flat:true,id:'start'},...anchors.map(p=>({...p,node:true})),{day:Math.min(365,last.day+lead),y:last.y,flat:true,id:'end'}],points=[];
+    const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y,flat:true,id:'start'},...anchors.map(p=>({...p,node:true})),{day:Math.min(axisLength,last.day+lead),y:last.y,flat:true,id:'end'}],points=[];
     for(let i=0;i<ends.length-1;i++){
       const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
       if(gap<1e-8)continue;

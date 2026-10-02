@@ -50,3 +50,21 @@ test('all moments of one scene are bridged into one continuous organic cloud',()
  const before=JSON.stringify(own),animated=clouds.contours(own,[],48,Math.PI/2,8,'scene');
  assert.notEqual(JSON.stringify(animated),JSON.stringify(contours));assert.equal(JSON.stringify(own),before);
 });
+
+test('cloud titles preserve anchors, stay near their group and reuse their placement',()=>{
+ const points=[{id:'a',kind:'moment',x:130,y:220},{id:'b',kind:'moment',x:190,y:230}],before=structuredClone(points),cache=new Map();
+ const groups=[{key:'scene:a',id:'a',kind:'scene',title:'Зустріч у класі',nodes:points}];
+ const first=clouds.labels(groups,points,375,150,550,cache),again=clouds.labels(groups,points,375,150,550,cache);
+ assert.equal(first.length,1);assert.deepEqual(points,before);
+ assert.deepEqual(JSON.parse(JSON.stringify(again)),JSON.parse(JSON.stringify(first)));
+ const label=first[0];assert(label.y>=150&&label.y+label.height<=550);assert(label.x>=16&&label.x+label.width<=359);
+ assert(Math.abs(label.y-label.anchor.y)<120);
+});
+
+test('overfull title placement never moves nodes or extends the map with detached labels',()=>{
+ const points=Array.from({length:12},(_,i)=>({id:'p'+i,kind:'scene',x:160,y:200+i*20})),before=structuredClone(points);
+ const groups=points.map(point=>({key:point.id,id:point.id,kind:'scene',title:'Назва послідовної сцени',nodes:[point]}));
+ const labels=clouds.labels(groups,points,320,160,460);
+ assert.deepEqual(points,before);assert(labels.length<groups.length);
+ assert(labels.every(label=>label.y>=160&&label.y+label.height<=460));
+});

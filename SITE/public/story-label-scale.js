@@ -33,7 +33,7 @@ const StoryTitleScale = (() => {
   }
 
   function eventVisible(event) {
-    if (!event||typeof mapAllows==='function'&&!mapAllows(event)) return false;
+    if (!event) return false;
     if (typeof focusedCharacter !== 'undefined' && focusedCharacter) return event.tracks?.includes(focusedCharacter);
     if (typeof selected === 'undefined' || !(selected instanceof Set)) return true;
     return (event.tracks || []).some(id => selected.has(id));
@@ -94,7 +94,7 @@ const StoryTitleScale = (() => {
         });
       }
     } else {
-      for(const node of graphNodes.some(node=>node.kind==='arc')&&displayLevel==='arc'?graphNodes.filter(node=>node.kind==='arc'):semanticNodes('arc',scenes)){
+      for(const node of semanticNodes('arc',scenes)){
         const events=(node.group||[]).filter(eventVisible);
         if(events.length)items.push({key:`arc:${node.rawId}`,kind:'arc',id:node.rawId,title:node.title,day:node.day,events});
       }
@@ -143,8 +143,11 @@ const StoryTitleScale = (() => {
     const toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'story-reader-toggle';
-    toggle.textContent = 'Згорнути';
-    toggle.setAttribute('aria-expanded','true');
+    const collapsed=document.documentElement.classList.contains('story-reader-collapsed');
+    scaleRoot.classList.toggle('is-collapsed',collapsed);
+    toggle.textContent = collapsed?'Події':'Згорнути';
+    toggle.setAttribute('aria-expanded',String(!collapsed));
+    scaleTrack.inert=collapsed;
     toggle.setAttribute('aria-controls','storyTitleTrack');
     toggle.addEventListener('click',()=>{
       const collapsed=scaleRoot.classList.toggle('is-collapsed');
@@ -154,11 +157,6 @@ const StoryTitleScale = (() => {
       if(collapsed)scaleTrack.inert=true;else scaleTrack.inert=false;
       schedule();
     });
-    const initiallyCollapsed=document.documentElement.classList.contains('story-reader-collapsed');
-    scaleRoot.classList.toggle('is-collapsed',initiallyCollapsed);
-    toggle.setAttribute('aria-expanded',String(!initiallyCollapsed));
-    toggle.textContent=initiallyCollapsed?'Події':'Згорнути';
-    scaleTrack.inert=initiallyCollapsed;
     scaleRoot.append(levelSelect,readerSummary,toggle,scaleTrack);
     document.body.append(scaleRoot);
   }
