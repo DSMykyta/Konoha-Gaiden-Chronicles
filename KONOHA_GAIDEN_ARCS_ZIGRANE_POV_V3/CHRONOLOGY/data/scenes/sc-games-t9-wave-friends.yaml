@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-wave-friends
 episode_id: ep-games-t9-wave-reunion
-display_rank: 1900
+display_rank: 30100
 continuity_id: main
 title: Кіта, Рен і Сора зустрічають Наруто після Країни Хвиль
 location_id: loc-ichiraku
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-wave-friends-1
   display_rank: 100
   title: Кіта, Рен і Сора зустрічають Наруто після Країни Хвиль
-  text: 'Трійка приходить до шпиталю після повернення Команди 7, але всередину їх не допускають. Згодом вони зустрічаються з Наруто в Ічіраку. Він їсть пораненою після місії рукою обережніше та повертається до загибелі Хаку й Забузи. Друзі не перетворюють розмову на змагання подвигами: для них це перша близька зустріч із наслідками справжнього бою.'
+  text: Після повернення Команди 7 друзі не можуть потрапити до Наруто в шпиталь і зустрічають його згодом в Ічіраку. Права рука Наруто перебинтована, тому він їсть лівою. Між порціями він згадує Хаку, його крижані дзеркала та загибель обох шинобі на мосту. Кіба тримає його за руку, Акамару кладе морду на коліно, а Аяме відвертається до котлів. Кіта, Рен і Сора слухають друга, який повернувся з першого справжнього бою.
   origin: P
   extent: interval
   involvement:
@@ -37,6 +37,15 @@ events:
   - entity_id: c-naruto
     role: focus
     mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-akamaru
+    role: focus
+    mode: physical
+  - entity_id: c-ayame
+    role: focus
+    mode: physical
   evidence_ids: &id001
   - evd-games-team-9-05
   - evd-games-part-i-placement
@@ -44,29 +53,50 @@ events:
   - team-9
 relations: []
 presence:
-- id: pr-games-t9-wave-friends-c-kita
+- id: pr-audit-games-t9-wave-friends-c-kita
   entity_id: c-kita
   from: sc-games-t9-wave-friends.start
   to: sc-games-t9-wave-friends.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-wave-friends-c-ren
+- id: pr-audit-games-t9-wave-friends-c-ren
   entity_id: c-ren
   from: sc-games-t9-wave-friends.start
   to: sc-games-t9-wave-friends.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-wave-friends-c-sora
+- id: pr-audit-games-t9-wave-friends-c-sora
   entity_id: c-sora
   from: sc-games-t9-wave-friends.start
   to: sc-games-t9-wave-friends.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-wave-friends-c-naruto
+- id: pr-audit-games-t9-wave-friends-c-naruto
   entity_id: c-naruto
+  from: sc-games-t9-wave-friends.start
+  to: sc-games-t9-wave-friends.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-wave-friends-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-wave-friends.start
+  to: sc-games-t9-wave-friends.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-wave-friends-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-wave-friends.start
+  to: sc-games-t9-wave-friends.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-wave-friends-c-ayame
+  entity_id: c-ayame
   from: sc-games-t9-wave-friends.start
   to: sc-games-t9-wave-friends.end
   basis: source

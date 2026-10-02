@@ -1,0 +1,104 @@
+schema_version: 1
+id: sc-games-t9-nobari-assignment
+episode_id: ep-games-t9-nobari-medical-mission
+display_rank: 50400
+continuity_id: main
+title: Нобарі отримує медичний D-ранг із Командою 9
+location_id: loc-mission-assignment-room
+day_part: noon
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-assignment-1
+  display_rank: 100
+  title: Нобарі отримує медичний D-ранг із Командою 9
+  text: 'Після тренування Куренай приводить трійку до розподільчої. Нобарі чекає у формі джоніна із сувоєм: вона має супроводити Команду 9 на медичний D-ранг. Асума пояснює, що в сусідньому поселенні стабільним пораненим бракує допомоги місцевих лікарів. Для Кіти це перше завдання з матір’ю як польовим керівником. Команда готується й вирушає з нею до воріт.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-audit-games-t9-nobari-assignment-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-assignment-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-assignment-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-assignment-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-assignment-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-assignment-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-assignment-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-team9-client
 episode_id: ep-games-kakashi-team9-start
-display_rank: 9500
+display_rank: 170300
 continuity_id: main
 title: Какаші захищає професійний статус команди перед чиновником
 location_id: loc-konoha-gate
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-team9-client-1
   display_rank: 100
   title: Какаші захищає професійний статус команди перед чиновником
-  text: 'На воротах замовник сумнівається в трьох підлітках, яким доручили його супровід. Какаші припиняє зневажливу оцінку й задає робочу формацію: Рен попереду, Сора поруч із клієнтом, Кіта позаду та в розвідці. Наставник не замінює їм Райдо, але бере відповідальність за спини учнів під час маршруту.'
+  text: 'Після перевірки на полігоні команда приходить до північних воріт. Чиновник зневажливо оцінює молодий ескорт. Какаші припиняє його заперечення та офіційно передає Сорі координацію замовника й темпу: Рен іде попереду, Кіта страхує тил, а сам капітан тримає верхній периметр. Трійка виходить у своїй звичній формації.'
   origin: P
   extent: interval
   involvement:
@@ -40,7 +40,7 @@ events:
   - entity_id: c-escort-official
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
   focus_teams:
@@ -52,33 +52,43 @@ presence:
   from: sc-games-kakashi-team9-client.start
   to: sc-games-kakashi-team9-client.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-client-c-kita
   entity_id: c-kita
   from: sc-games-kakashi-team9-client.start
   to: sc-games-kakashi-team9-client.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-client-c-ren
   entity_id: c-ren
   from: sc-games-kakashi-team9-client.start
   to: sc-games-kakashi-team9-client.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-client-c-sora
   entity_id: c-sora
   from: sc-games-kakashi-team9-client.start
   to: sc-games-kakashi-team9-client.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-client-c-escort-official
   entity_id: c-escort-official
   from: sc-games-kakashi-team9-client.start
   to: sc-games-kakashi-team9-client.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted

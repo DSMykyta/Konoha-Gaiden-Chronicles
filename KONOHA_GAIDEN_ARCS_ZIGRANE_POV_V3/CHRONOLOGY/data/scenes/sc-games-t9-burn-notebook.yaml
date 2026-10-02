@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-t9-burn-notebook
 episode_id: ep-games-t9-fire
-display_rank: 1400
+display_rank: 20700
 continuity_id: main
-title: Нобарі помічає приховані опіки Кіти
+title: Після опіків Нобарі передає Кіті медичний конспект
 location_id: loc-kita-home
 day_part: evening
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-burn-notebook-1
   display_rank: 100
-  title: Нобарі помічає приховані опіки Кіти
-  text: 'Нобарі бачить травми, які Кіта приховував після самостійних нічних спроб. Старий конспект знову стає опорою для розбору чакри й лікування. Наступного дня команда повертається до звичайних медичних вправ під наглядом: учням потрібно стабільно керувати тонким шаром, перш ніж повторювати небезпечні ефекти.'
+  title: Після опіків Нобарі передає Кіті медичний конспект
+  text: 'Нобарі помічає мокру пов’язку й приховані опіки на руках Кіти. Він зізнається, що кілька вечорів повторював вогняну вправу без нагляду. Нобарі знову дістає той самий конспект, який показувала після перевірки Райдо, і цього разу передає його синові: тепер він має уважно читати про тканини та контроль чакри. Вона забороняє продовжувати небезпечні самостійні спроби.'
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-nobari
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-04
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-t9-burn-notebook.start
   to: sc-games-t9-burn-notebook.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-burn-notebook-c-nobari
   entity_id: c-nobari
   from: sc-games-t9-burn-notebook.start
   to: sc-games-t9-burn-notebook.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
   review: accepted

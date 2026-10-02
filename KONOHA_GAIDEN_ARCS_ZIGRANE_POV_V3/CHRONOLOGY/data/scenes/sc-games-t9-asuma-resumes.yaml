@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-t9-asuma-resumes
+episode_id: ep-games-t9-new-burns
+display_rank: 80800
+continuity_id: main
+title: Кіта повертається на заняття після лікування рук
+location_id: loc-training-ground-10
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-09-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-asuma-resumes-1
+  display_rank: 100
+  title: Кіта повертається на заняття після лікування рук
+  text: Після призначеної перерви Кіта знову тренується з Асумою вже без пов’язок. Вправи закінчуються спокійним відпочинком під деревом. Кіта помічає, що наставник заснув, і будить його, щоб прибрати сигарету з одягу. Згодом приходить Куренай. Особисті уроки тривають після повернення Анко, як вони й погодили.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-asuma-resumes-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-asuma-resumes.start
+  to: sc-games-t9-asuma-resumes.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-asuma-resumes-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-asuma-resumes.start
+  to: sc-games-t9-asuma-resumes.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-asuma-resumes-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-t9-asuma-resumes.start
+  to: sc-games-t9-asuma-resumes.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

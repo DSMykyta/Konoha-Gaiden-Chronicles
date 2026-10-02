@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-squirrel-blink
 episode_id: ep-games-t9-first-blink
-display_rank: 1700
+display_rank: 21100
 continuity_id: main
 title: Кіта лікує білку й уперше блінкає під час вправи
-location_id: loc-konoha-training-field
+location_id: loc-training-ground-10
 day_part: afternoon
 placement:
   anchor_id: ta-games-0-05-21
@@ -28,45 +28,53 @@ events:
   - entity_id: c-kita
     role: focus
     mode: physical
-  - entity_id: c-ren
-    role: focus
-    mode: physical
-  - entity_id: c-sora
-    role: focus
-    mode: physical
   - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: focus
+    mode: physical
+  - entity_id: c-shikamaru
+    role: focus
+    mode: physical
+  - entity_id: c-choji
     role: focus
     mode: physical
   evidence_ids: &id001
   - evd-games-team-9-04
   - evd-games-part-i-placement
-  focus_teams:
-  - team-9
 relations: []
 presence:
-- id: pr-games-t9-squirrel-blink-c-kita
+- id: pr-audit-games-t9-squirrel-blink-c-kita
   entity_id: c-kita
   from: sc-games-t9-squirrel-blink.start
   to: sc-games-t9-squirrel-blink.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-squirrel-blink-c-ren
-  entity_id: c-ren
-  from: sc-games-t9-squirrel-blink.start
-  to: sc-games-t9-squirrel-blink.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-squirrel-blink-c-sora
-  entity_id: c-sora
-  from: sc-games-t9-squirrel-blink.start
-  to: sc-games-t9-squirrel-blink.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-squirrel-blink-c-asuma
+- id: pr-audit-games-t9-squirrel-blink-c-asuma
   entity_id: c-asuma
+  from: sc-games-t9-squirrel-blink.start
+  to: sc-games-t9-squirrel-blink.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-squirrel-blink-c-ino
+  entity_id: c-ino
+  from: sc-games-t9-squirrel-blink.start
+  to: sc-games-t9-squirrel-blink.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-squirrel-blink-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-games-t9-squirrel-blink.start
+  to: sc-games-t9-squirrel-blink.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-squirrel-blink-c-choji
+  entity_id: c-choji
   from: sc-games-t9-squirrel-blink.start
   to: sc-games-t9-squirrel-blink.end
   basis: source

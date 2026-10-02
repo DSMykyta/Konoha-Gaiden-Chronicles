@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-t9-farm-swap
 episode_id: ep-games-t9-touno-start
-display_rank: 3900
+display_rank: 70400
 continuity_id: main
-title: Кіта вперше підміняє людину під час постановочного нападу
+title: Кіта зриває постановочну засідку підміною нападника
 location_id: loc-team9-farm-route
 day_part: afternoon
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-farm-swap-1
   display_rank: 100
-  title: Кіта вперше підміняє людину під час постановочного нападу
-  text: Доставка трьох важких пакунків на ферму переривається постановочним нападом. Тоуно спостерігає, коли озброєний нападник заходить надто близько. Кіта підміняє його на дистанції близько семи метрів і падає з дерева. Сора розцінює ситуацію як небезпечну зраду довіри. Рен несе Кіту додому; Нобарі та Іщін допомагають трійці пережити наслідки вправи.
+  title: Кіта зриває постановочну засідку підміною нападника
+  text: 'Після доставки трьох важких пакунків команда повертається фермерським маршрутом. Тоуно без попередження влаштовує засідку. Коли один нападник заходить Рену за спину, Кіта міняється з ним місцями: нападник опиняється високо й далеко від команди та травмується при падінні. Сора відлякує другого кунаєм. Після виснажливого повернення Рен мусить нести Кіту; довіра до такого способу перевірки зруйнована.'
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-touno
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-09
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-farm-swap.start
   to: sc-games-t9-farm-swap.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-farm-swap-c-ren
   entity_id: c-ren
   from: sc-games-t9-farm-swap.start
   to: sc-games-t9-farm-swap.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-farm-swap-c-sora
   entity_id: c-sora
   from: sc-games-t9-farm-swap.start
   to: sc-games-t9-farm-swap.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-farm-swap-c-touno
   entity_id: c-touno
   from: sc-games-t9-farm-swap.start
   to: sc-games-t9-farm-swap.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted

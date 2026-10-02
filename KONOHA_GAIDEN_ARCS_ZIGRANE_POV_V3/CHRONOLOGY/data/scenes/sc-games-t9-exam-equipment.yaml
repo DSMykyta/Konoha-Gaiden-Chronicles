@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-exam-equipment
 episode_id: ep-games-t9-preexam-check
-display_rank: 2300
+display_rank: 30500
 continuity_id: main
 title: Команда 9 готує спорядження перед іспитом
 location_id: loc-training-ground-9

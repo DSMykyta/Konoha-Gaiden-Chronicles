@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-t9-tanigawa-nobari
+episode_id: ep-games-t9-tanigawa-home
+display_rank: 90300
+continuity_id: main
+title: Нобарі зустрічає Кіту й Рена після важкої місії
+location_id: loc-kita-home
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-tanigawa-nobari-1
+  display_rank: 100
+  title: Нобарі зустрічає Кіту й Рена після важкої місії
+  text: Кіта й Рен повертаються до Нобарі в одязі з чужою кров’ю. Рен боїться налякати її; Кіта просить дозволу заночувати в друга. Нобарі бачить їхній стан, приносить рушники й пропонує спочатку відмитися, а форму бере замочити. Вона допомагає хлопцям перейти від дороги до домашнього догляду, хоча сама тремтить від побаченого.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-tanigawa-nobari-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-tanigawa-nobari.start
+  to: sc-games-t9-tanigawa-nobari.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-tanigawa-nobari-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-tanigawa-nobari.start
+  to: sc-games-t9-tanigawa-nobari.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-tanigawa-nobari-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-tanigawa-nobari.start
+  to: sc-games-t9-tanigawa-nobari.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

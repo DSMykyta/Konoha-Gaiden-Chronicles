@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-shikaku-advice
+episode_id: ep-games-kakashi-after-archive
+display_rank: 121400
+continuity_id: main
+title: Шікаку радить Какаші почати з нейтральної зустрічі
+location_id: loc-nara-residence
+day_part: night
+placement:
+  anchor_id: ta-games-0-04-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-shikaku-advice-1
+  display_rank: 100
+  title: Шікаку радить Какаші почати з нейтральної зустрічі
+  text: Какаші приходить до будинку Шікаку, і за партією в шьоґі розповідає про Юміко та невдалі спроби заговорити з нею. Шікаку радить зустріч у звичайному місці, де буде й знайома їй Сакура. Какаші бере цю пораду до уваги. Після місії Іви він використає звичайний D-ранг навпроти будинку учениці, щоб спробувати поговорити з Юміко.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-shikaku
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-kakashi-shikaku-advice-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-shikaku-advice.start
+  to: sc-games-kakashi-shikaku-advice.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-shikaku-advice-c-shikaku
+  entity_id: c-shikaku
+  from: sc-games-kakashi-shikaku-advice.start
+  to: sc-games-kakashi-shikaku-advice.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

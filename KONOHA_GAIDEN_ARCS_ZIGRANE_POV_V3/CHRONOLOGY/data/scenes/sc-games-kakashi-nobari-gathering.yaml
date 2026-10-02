@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-nobari-gathering
 episode_id: ep-games-kakashi-overwork
-display_rank: 10200
+display_rank: 180500
 continuity_id: main
 title: Друзі збираються в Нобарі й говорять про закритий наказ Команди 9
 location_id: loc-kita-home
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-nobari-gathering-1
   display_rank: 100
   title: Друзі збираються в Нобарі й говорять про закритий наказ Команди 9
-  text: Друзі приходять до Нобарі й повертаються до того, що трійку відправили на невідомий маршрут без відкритого пояснення. Райдо та Асума не мають потрібних відомостей, а Нобарі залишається чекати без звісток від сина. Вони обговорюють, як змусити адміністрацію відповідати за власні рішення. Розмова не відкриває їм маршрут і не означає, що команду вже знайшли.
+  text: Куренай забирає Какаші з квартири на зустріч у Нобарі, де вже сидять Райдо й Асума. Нобарі не знаходить у відкритих реєстрах маршрут Команди 9 та переказує розмову з Юмеко Ямано про зникле фінансування. Какаші пропонує використати перевірку бюджету Нобу як формальний привід для втручання Цунаде. Дорослі складають план тиску на адміністрацію, проте місця перебування трійки досі не знають.
   origin: P
   extent: interval
   involvement:
@@ -40,7 +40,7 @@ events:
   - entity_id: c-asuma
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-07
   - evd-games-part-i-placement
 relations: []
@@ -50,33 +50,43 @@ presence:
   from: sc-games-kakashi-nobari-gathering.start
   to: sc-games-kakashi-nobari-gathering.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-nobari-gathering-c-kurenai
   entity_id: c-kurenai
   from: sc-games-kakashi-nobari-gathering.start
   to: sc-games-kakashi-nobari-gathering.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-nobari-gathering-c-nobari
   entity_id: c-nobari
   from: sc-games-kakashi-nobari-gathering.start
   to: sc-games-kakashi-nobari-gathering.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-nobari-gathering-c-raido
   entity_id: c-raido
   from: sc-games-kakashi-nobari-gathering.start
   to: sc-games-kakashi-nobari-gathering.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-nobari-gathering-c-asuma
   entity_id: c-asuma
   from: sc-games-kakashi-nobari-gathering.start
   to: sc-games-kakashi-nobari-gathering.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted

@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-kakashi-valley-report
 episode_id: ep-games-kakashi-valley-consequences
-display_rank: 9900
+display_rank: 180100
 continuity_id: main
 title: Какаші звітує Цунаде після повернення Наруто
 location_id: loc-hokage-office
 day_part: evening
 placement:
-  anchor_id: ta-games-0-09-24
+  anchor_id: ta-games-0-09-25
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-valley-report-1
   display_rank: 100
   title: Какаші звітує Цунаде після повернення Наруто
-  text: 'Після доставки Наруто до шпиталю Какаші передає Цунаде результат погоні. Саске не повернуто, учасники загону поранені, а звичний склад Команди 7 більше не може працювати як раніше. Наставник має відділити особисту провину від конкретних наступних рішень: лікування, розшуку та захисту живих учнів.'
+  text: 'Після доставки Наруто до шпиталю Какаші доповідає Цунаде, що Саске пішов після бою в Долині Завершення. Вони обговорюють стан учнів та наступні призначення: Сакура просить медичного навчання, Наруто має продовжити підготовку з Джирайєю, а Какаші повертається до регулярних бойових місій. Він здає письмовий рапорт про невдалу погоню.'
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-tsunade
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-07
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-kakashi-valley-report.start
   to: sc-games-kakashi-valley-report.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-valley-report-c-tsunade
   entity_id: c-tsunade
   from: sc-games-kakashi-valley-report.start
   to: sc-games-kakashi-valley-report.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted

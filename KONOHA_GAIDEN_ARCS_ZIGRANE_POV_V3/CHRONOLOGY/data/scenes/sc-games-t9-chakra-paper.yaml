@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-chakra-paper
 episode_id: ep-games-t9-asuma-anchor
-display_rank: 4500
+display_rank: 71300
 continuity_id: main
 title: Кіта визначає вітер і вогонь на чакровому папері
-location_id: loc-konoha-training-field
+location_id: loc-training-ground-10
 day_part: afternoon
 placement:
   anchor_id: ta-games-0-08-29
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-chakra-paper-1
   display_rank: 100
   title: Кіта визначає вітер і вогонь на чакровому папері
-  text: Перевірка чакровим папером показує вітер і вогонь. Асума пояснює власний шлях, згадує Храм Вогню й Чіріку та допомагає Кіті спрямувати вітер через клинок. Особиста прихильність учня залишається поряд із професійним навчанням, але не замінює безпечних меж. Новий результат треба утримувати й повторювати, перш ніж переносити в бій.
+  text: 'На особистому занятті Асума розповідає Кіті про навчання в Храмі Вогню й про Чіріку, який навчив його вітряних лез. На прохання учня він дає чакровий папір: той одночасно розривається й згорає. Асума визначає дві природи, вітер і вогонь, та ставить наступне завдання — провести вітер уздовж клинка. Після спарингу він повідомляє Куренай про результат, але ще не звітує Хокаґе.'
   origin: P
   extent: interval
   involvement:
@@ -31,20 +31,30 @@ events:
   - entity_id: c-asuma
     role: focus
     mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
   evidence_ids: &id001
   - evd-games-team-9-09
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-t9-chakra-paper-c-kita
+- id: pr-audit-games-t9-chakra-paper-c-kita
   entity_id: c-kita
   from: sc-games-t9-chakra-paper.start
   to: sc-games-t9-chakra-paper.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-chakra-paper-c-asuma
+- id: pr-audit-games-t9-chakra-paper-c-asuma
   entity_id: c-asuma
+  from: sc-games-t9-chakra-paper.start
+  to: sc-games-t9-chakra-paper.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-chakra-paper-c-kurenai
+  entity_id: c-kurenai
   from: sc-games-t9-chakra-paper.start
   to: sc-games-t9-chakra-paper.end
   basis: source

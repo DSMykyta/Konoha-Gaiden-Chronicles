@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-team9-return
 episode_id: ep-games-kakashi-team9-road
-display_rank: 9800
+display_rank: 170600
 continuity_id: main
 title: Команда 9 завершує ескорт і швидко повертається з Какаші
 location_id: loc-team9-escort-route
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-team9-return-1
   display_rank: 100
   title: Команда 9 завершує ескорт і швидко повертається з Какаші
-  text: На зворотному шляху Какаші бачить, як трійка чергує блінки, розвідку та підхоплення напарника. Після завершення супроводу швидкість зростає без цивільного вантажу. На привалі вони зберігають звичні спільні побутові правила. Какаші повертається з повагою до команди, яку спочатку оцінював через чужі розповіді та власну зверхність.
+  text: Після ночівлі група повертається до Конохи без чиновника й рухається значно швидше. Кіта оглядає маршрут після блінків у повітря, а Рен підхоплює його на падінні. На привалі вони діляться рисом із Какаші. З розмови капітан дізнається, що Кіта й Сора бережуть вагу для можливого відступу на плечах Рена, а не через встановлений ними ліміт техніки. Повернувшись, трійка готує звіт про ескорт.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-kakashi-team9-return.start
   to: sc-games-kakashi-team9-return.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-return-c-kita
   entity_id: c-kita
   from: sc-games-kakashi-team9-return.start
   to: sc-games-kakashi-team9-return.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-return-c-ren
   entity_id: c-ren
   from: sc-games-kakashi-team9-return.start
   to: sc-games-kakashi-team9-return.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-return-c-sora
   entity_id: c-sora
   from: sc-games-kakashi-team9-return.start
   to: sc-games-kakashi-team9-return.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted

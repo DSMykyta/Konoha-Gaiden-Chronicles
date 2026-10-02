@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-bottle-lost
+episode_id: ep-games-t9-asuma-anchor
+display_rank: 71200
+continuity_id: main
+title: Нобарі випадково випиває збережену Кітою воду
+location_id: loc-kita-home
+day_part: evening
+placement:
+  anchor_id: ta-games-0-08-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-bottle-lost-1
+  display_rank: 100
+  title: Нобарі випадково випиває збережену Кітою воду
+  text: 'Після прибирання Кіта не знаходить пляшку на полиці. Нобарі пояснює, що випила воду, і пропонує іншу з холодильника. Для Кіти це не рівноцінна заміна: він зберігав подаровану Асумою річ як пам’ять про заняття. Він не може пояснити матері всю вагу цієї втрати й замикається в кімнаті.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-bottle-lost-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-bottle-lost.start
+  to: sc-games-t9-bottle-lost.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-bottle-lost-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-bottle-lost.start
+  to: sc-games-t9-bottle-lost.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

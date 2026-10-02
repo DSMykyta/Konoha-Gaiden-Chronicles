@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-b4-snake
 episode_id: ep-games-t9-anko-back
-display_rank: 4700
+display_rank: 80300
 continuity_id: main
 title: Команда 9 випробовує Б-4 у вправі зі зміями
-location_id: loc-training-ground-9
+location_id: loc-training-ground-4
 day_part: afternoon
 placement:
   anchor_id: ta-games-0-09-07
@@ -37,7 +37,7 @@ events:
   - entity_id: c-anko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-10
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-b4-snake.start
   to: sc-games-t9-b4-snake.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-b4-snake-c-ren
   entity_id: c-ren
   from: sc-games-t9-b4-snake.start
   to: sc-games-t9-b4-snake.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-b4-snake-c-sora
   entity_id: c-sora
   from: sc-games-t9-b4-snake.start
   to: sc-games-t9-b4-snake.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-b4-snake-c-anko
   entity_id: c-anko
   from: sc-games-t9-b4-snake.start
   to: sc-games-t9-b4-snake.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted

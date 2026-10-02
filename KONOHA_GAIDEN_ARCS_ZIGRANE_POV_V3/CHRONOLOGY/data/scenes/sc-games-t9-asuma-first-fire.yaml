@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-asuma-first-fire
+episode_id: ep-games-t9-fire
+display_rank: 20500
+continuity_id: main
+title: Кіта утримує залишковий вогонь під наглядом Асуми
+location_id: loc-training-ground-10
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-asuma-first-fire-1
+  display_rank: 100
+  title: Кіта утримує залишковий вогонь під наглядом Асуми
+  text: На особистому занятті Асума показує залишковий вогонь і дає Кіті спробувати відвести його від поверхні долоні. Кіта на мить утримує полум’я окремо від шкіри, а потім відпускає потік. Асума пояснює різницю між створенням вогню й тонким контролем залишкової чакри. Цей короткий успіх надихає Кіту повторювати прийом, хоча без нагляду він ще не може робити це безпечно.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-asuma-first-fire-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-asuma-first-fire.start
+  to: sc-games-t9-asuma-first-fire.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-asuma-first-fire-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-asuma-first-fire.start
+  to: sc-games-t9-asuma-first-fire.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

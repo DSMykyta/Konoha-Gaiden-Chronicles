@@ -57,9 +57,7 @@ events:
   - V10-000023
   - V10-000024
   title: Наруто вимагає складнішої місії
-  text: Після серії D-рангів Наруто протестує проти побутових завдань і вимагає складнішої роботи. Ірука нагадує, що недосвідчені
-    геніни починають із простих D-рангових місій і поступово набираються досвіду; Наруто все одно наполягає на складнішому
-    завданні.
+  text: Після серії D-рангів Наруто протестує проти побутових завдань і вимагає складнішої роботи. Ірука нагадує, що недосвідчені геніни починають із простих D-рангових місій і поступово набираються досвіду; Наруто все одно наполягає на складнішому завданні.
   origin: M
   extent: interval
   display_rank: 100
@@ -92,8 +90,7 @@ events:
   - evd-narutopedia-ep6-audit
 - id: ev-y0-0315-hiruzen-explains-ranks
   title: Хірузен пояснює ранги місій
-  text: Хірузен пояснює Наруто, що вищий ранг означає складніше завдання та більший ризик. Наруто наполягає, що хоче справжньої
-    місії.
+  text: Хірузен пояснює Наруто, що вищий ранг означає складніше завдання та більший ризик. Наруто наполягає, що хоче справжньої місії.
   origin: A
   extent: interval
   display_rank: 150
@@ -125,8 +122,7 @@ events:
   - V10-000023
   - V10-000024
   title: Хірузен доручає Команді 7 супровід Тадзуни
-  text: 'Хірузен призначає Команді 7 C-рангову місію: супроводити мостобудівника Тадзуну до Країни Хвиль. Тадзуна сумнівається,
-    чи можуть діти належно його захистити.'
+  text: 'Хірузен призначає Команді 7 C-рангову місію: супроводити мостобудівника Тадзуну до Країни Хвиль. Тадзуна сумнівається, чи можуть діти належно його захистити. Райдо й Команда 9, які щойно здали роботу зі східного складу, стають свідками доручення.'
   origin: M
   extent: interval
   display_rank: 200
@@ -152,6 +148,18 @@ events:
   - entity_id: c-iruka
     role: participant
     mode: physical
+  - entity_id: c-raido
+    role: background
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-ren
+    role: background
+    mode: physical
+  - entity_id: c-sora
+    role: background
+    mode: physical
   focus_teams:
   - team-7
   evidence_ids:
@@ -161,6 +169,7 @@ events:
   - evd-anime-land-waves
   - evd-novel-land-waves
   - evd-narutopedia-ep6-audit
+  - evd-games-team-9-02-5
 relations:
 - id: rel-0315-demand-before-assignment
   kind: before
@@ -268,3 +277,36 @@ presence:
   evidence_ids:
   - evd-narutopedia-ep6-audit
   review: accepted
+- id: pr-logic-waves-witness-c-raido
+  entity_id: c-raido
+  from: ev-y0-0315-hiruzen-assigns-tazuna.start
+  to: ev-y0-0315-hiruzen-assigns-tazuna.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-02-5
+  review: accepted
+- id: pr-logic-waves-witness-c-kita
+  entity_id: c-kita
+  from: ev-y0-0315-hiruzen-assigns-tazuna.start
+  to: ev-y0-0315-hiruzen-assigns-tazuna.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-02-5
+  review: accepted
+- id: pr-logic-waves-witness-c-ren
+  entity_id: c-ren
+  from: ev-y0-0315-hiruzen-assigns-tazuna.start
+  to: ev-y0-0315-hiruzen-assigns-tazuna.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-02-5
+  review: accepted
+- id: pr-logic-waves-witness-c-sora
+  entity_id: c-sora
+  from: ev-y0-0315-hiruzen-assigns-tazuna.start
+  to: ev-y0-0315-hiruzen-assigns-tazuna.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-02-5
+  review: accepted
+day_part: noon

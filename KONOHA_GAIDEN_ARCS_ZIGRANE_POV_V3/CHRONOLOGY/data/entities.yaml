@@ -2352,9 +2352,10 @@ entities:
     - Іщін
   - id: c-touno
     kind: person
-    name: Тоуно
+    name: Тоуно Ібікі
     aliases:
     - Тоуно
+    - Тоуно Ібікі
   - id: c-morita
     kind: person
     name: Моріта
@@ -2485,6 +2486,72 @@ entities:
     aliases:
     - Банк Конохи
     parent_id: loc-konohagakure
+  - id: loc-training-ground-4
+    kind: location
+    name: Тренувальне поле 4
+    aliases:
+    - Тренувальне поле 4
+    parent_id: loc-konohagakure
+  - id: loc-training-ground-10
+    kind: location
+    name: Тренувальне поле 10
+    aliases:
+    - Тренувальне поле 10
+    parent_id: loc-konohagakure
+  - id: loc-team9-medical-post
+    kind: location
+    name: Тимчасовий шпиталь у поселенні
+    aliases:
+    - Тимчасовий шпиталь у поселенні
+    parent_id: loc-land-of-fire
+  - id: loc-team9-weeding-site
+    kind: location
+    name: Ділянка D-рангового прополювання
+    aliases:
+    - Ділянка D-рангового прополювання
+    parent_id: loc-konohagakure
+  - id: loc-base2-riverbank
+    kind: location
+    name: Берег річки біля Бази 2
+    aliases:
+    - Берег річки біля Бази 2
+    parent_id: loc-land-of-fire
+  - id: loc-base18-riverbank
+    kind: location
+    name: Берег річки біля Бази 18
+    aliases:
+    - Берег річки біля Бази 18
+    parent_id: loc-land-of-fire
+  - id: loc-long-mission-settlement
+    kind: location
+    name: Поселення на прихованому маршруті Команди 9
+    aliases:
+    - Поселення на прихованому маршруті Команди 9
+    parent_id: loc-land-of-fire
+  - id: loc-training-ground-3
+    kind: location
+    name: Тренувальне поле 3
+    aliases:
+    - Тренувальне поле 3
+    parent_id: loc-konohagakure
+  - id: loc-training-ground-7
+    kind: location
+    name: Тренувальне поле 7
+    aliases:
+    - Тренувальне поле 7
+    parent_id: loc-konohagakure
+  - id: loc-nara-residence
+    kind: location
+    name: Будинок Шікаку Нара
+    aliases:
+    - Будинок Шікаку Нара
+    parent_id: loc-konohagakure
+  - id: loc-yumiko-balcony
+    kind: location
+    name: Балкон квартири Юміко
+    aliases:
+    - Балкон квартири Юміко
+    parent_id: loc-sakura-neighborhood
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

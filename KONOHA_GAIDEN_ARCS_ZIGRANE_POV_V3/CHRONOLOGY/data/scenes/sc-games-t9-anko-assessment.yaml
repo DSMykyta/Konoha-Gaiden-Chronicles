@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-anko-assessment
 episode_id: ep-games-t9-anko-new-command
-display_rank: 3000
+display_rank: 50200
 continuity_id: main
 title: Анко перевіряє витривалість Команди 9
-location_id: loc-training-ground-9
+location_id: loc-training-ground-4
 day_part: morning
 placement:
   anchor_id: ta-games-0-08-06
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-anko-assessment-1
   display_rank: 100
   title: Анко перевіряє витривалість Команди 9
-  text: Анко задає фізичну перевірку, у якій Рен переносить обох напарників протягом десяти кіл. Команда утримує замкнену трикутну взаємодію й пристосовує рух до навантаження. Новий наставник бачить не трьох незалежних учнів, а зв’язану систему. Жорсткий темп не стирає їхніх правил, але змушує ще виразніше покладатися одне на одного.
+  text: Анко починає перевірку з десяти кіл. Коли Кіта й Сора втрачають темп, Рен підхоплює їх і завершує біг разом із ними. Після відпочинку трійка показує зброю, короткі переміщення й спаринги. Анко навмисно розділяє учнів, але вони відновлюють спільну взаємодію. Вона фіксує, що команда вже реагує як одне ціле й сприймає розділення як загрозу.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-anko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-07
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-anko-assessment-c-ren
   entity_id: c-ren
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-anko-assessment-c-sora
   entity_id: c-sora
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-anko-assessment-c-anko
   entity_id: c-anko
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted

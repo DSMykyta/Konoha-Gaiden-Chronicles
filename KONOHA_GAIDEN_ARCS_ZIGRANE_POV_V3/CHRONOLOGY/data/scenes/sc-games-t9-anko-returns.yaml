@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-anko-returns
 episode_id: ep-games-t9-anko-back
-display_rank: 4600
+display_rank: 80100
 continuity_id: main
 title: Анко повертається до Команди 9 й читає звіт Тоуно
-location_id: loc-training-ground-9
+location_id: loc-training-ground-4
 day_part: morning
 placement:
   anchor_id: ta-games-0-09-06
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-anko-returns-1
   display_rank: 100
   title: Анко повертається до Команди 9 й читає звіт Тоуно
-  text: Після лікування Анко знову бере щоденне керівництво. Вона читає звіт Тоуно та оцінює зміни, які відбулися за її відсутності. Сора не зберігає запропоновану спільну фотографію, але трійка не відмовляється від нового етапу роботи. Анко дозволяє продовжувати корисні додаткові заняття з Асумою й Куренай.
+  text: Після трьох тижнів лікування Анко повертається до трійки й читає рапорти про роботу з Тоуно, його відмову та тимчасові місії з іншими командами. На спільному фото Сора наполягає, щоб залишитися з блокнотом у руках; Анко приймає знімок. Учні показують нові прийоми й підміну людей. Анко бачить результати додаткових занять і дозволяє Кіті продовжувати уроки Асуми, а команді — корисну роботу з Куренай.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-anko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-10
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-anko-returns.start
   to: sc-games-t9-anko-returns.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-anko-returns-c-ren
   entity_id: c-ren
   from: sc-games-t9-anko-returns.start
   to: sc-games-t9-anko-returns.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-anko-returns-c-sora
   entity_id: c-sora
   from: sc-games-t9-anko-returns.start
   to: sc-games-t9-anko-returns.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-anko-returns-c-anko
   entity_id: c-anko
   from: sc-games-t9-anko-returns.start
   to: sc-games-t9-anko-returns.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted

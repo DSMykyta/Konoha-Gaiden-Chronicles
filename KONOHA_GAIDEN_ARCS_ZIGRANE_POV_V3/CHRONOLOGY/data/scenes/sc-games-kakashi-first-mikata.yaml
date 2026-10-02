@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-kakashi-first-mikata
 episode_id: ep-games-kakashi-park-name
-display_rank: 6700
+display_rank: 120600
 continuity_id: main
-title: Какаші вперше знайомиться з Мікатою у Відділі допитів
+title: Какаші забирає звіт про допит кур’єра Іви
 location_id: loc-intelligence-division
 day_part: morning
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-first-mikata-1
   display_rank: 100
-  title: Какаші вперше знайомиться з Мікатою у Відділі допитів
-  text: 'У Відділі розвідки та допитів Какаші вперше бачить Мікату за роботою. Манера спеціаліста різко відрізняється від звичного прямого командування, але його місце у службовій системі зрозуміле. Знайомство відбувається до спільного архівного розслідування й майбутнього конвою Команди 7: вони ще не працювали разом над цими справами.'
+  title: Какаші забирає звіт про допит кур’єра Іви
+  text: Какаші приходить до Відділу розвідки та допитів по звіт щодо затриманого кур’єра Іви. Ібікі працює разом із Мікатою, якого Какаші вже знає, хоча вони давно не перетиналися. Какаші отримує потрібні відомості й спостерігає за його манерою роботи. Цей кур’єр належить до окремої справи, що передує майбутньому розслідуванню витоку з архіву.
   origin: P
   extent: interval
   involvement:
@@ -31,20 +31,30 @@ events:
   - entity_id: c-mikata
     role: focus
     mode: physical
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
   evidence_ids: &id001
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-kakashi-first-mikata-c-kakashi
+- id: pr-audit-games-kakashi-first-mikata-c-kakashi
   entity_id: c-kakashi
   from: sc-games-kakashi-first-mikata.start
   to: sc-games-kakashi-first-mikata.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-first-mikata-c-mikata
+- id: pr-audit-games-kakashi-first-mikata-c-mikata
   entity_id: c-mikata
+  from: sc-games-kakashi-first-mikata.start
+  to: sc-games-kakashi-first-mikata.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-first-mikata-c-ibiki
+  entity_id: c-ibiki
   from: sc-games-kakashi-first-mikata.start
   to: sc-games-kakashi-first-mikata.end
   basis: source

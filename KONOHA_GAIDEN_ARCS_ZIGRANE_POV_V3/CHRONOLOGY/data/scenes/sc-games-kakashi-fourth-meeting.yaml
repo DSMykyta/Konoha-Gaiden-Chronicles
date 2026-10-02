@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-fourth-meeting
 episode_id: ep-games-kakashi-first-meetings
-display_rank: 6600
+display_rank: 120500
 continuity_id: main
 title: Какаші й Асума змінюють маршрут після нової зустрічі з Юміко
 location_id: loc-konohagakure
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-fourth-meeting-1
   display_rank: 100
   title: Какаші й Асума змінюють маршрут після нової зустрічі з Юміко
-  text: Після тренування Какаші й Асума натрапляють на Юміко. Чергова випадковість уже виглядає для неї надто помітною. Чоловіки змінюють маршрут, щоб не посилювати незручність і не створювати враження переслідування. Какаші починає бачити, що звичайна мирна зустріч потребує іншої уважності, ніж контроль невідомої людини на місії.
+  text: 'Після тренування Асума помічає Юміко попереду на вулиці й пропонує Какаші підійти, перепросити та нарешті спитати її ім’я. Какаші відмовляється наближатися: жінка й так кілька разів ніяковіла при його появі. Вони з Асумою продовжують свій маршрут. Чергова нагода заговорити з нею минає без знайомства.'
   origin: P
   extent: interval
   involvement:
@@ -34,7 +34,7 @@ events:
   - entity_id: c-yumiko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
@@ -44,19 +44,25 @@ presence:
   from: sc-games-kakashi-fourth-meeting.start
   to: sc-games-kakashi-fourth-meeting.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-fourth-meeting-c-asuma
   entity_id: c-asuma
   from: sc-games-kakashi-fourth-meeting.start
   to: sc-games-kakashi-fourth-meeting.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-fourth-meeting-c-yumiko
   entity_id: c-yumiko
   from: sc-games-kakashi-fourth-meeting.start
   to: sc-games-kakashi-fourth-meeting.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted

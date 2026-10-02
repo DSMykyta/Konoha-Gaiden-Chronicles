@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-naruto-ramen
 episode_id: ep-games-t9-first-blink
-display_rank: 1600
+display_rank: 21000
 continuity_id: main
 title: Наруто підтримує Кіту в Ічіраку
 location_id: loc-ichiraku
@@ -21,11 +21,17 @@ events:
 - id: ev-games-t9-naruto-ramen-1
   display_rank: 100
   title: Наруто підтримує Кіту в Ічіраку
-  text: 'У розмові в Ічіраку Кіта повертається до відчуття, що стоїть осторонь інших. Наруто говорить із ним прямо й без формальних оцінок: місце в команді та селищі визначають не чужі насмішки. Коротка зустріч підтримує Кіту перед наступною вправою й продовжує їхнє знайомство після повернення Команди 7.'
+  text: В Ічіраку Кіта зізнається, що почувається осторонь інших і не впевнений у власному місці. Наруто відповідає прямо й підтримує його без оцінок за силою чи чужими насмішками. Рен погоджується з другом, а Сора занотовує почуте. Розмова допомагає Кіті повернутися до команди перед наступними заняттями.
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
     role: focus
     mode: physical
   - entity_id: c-naruto
@@ -34,16 +40,32 @@ events:
   evidence_ids: &id001
   - evd-games-team-9-04
   - evd-games-part-i-placement
+  focus_teams:
+  - team-9
 relations: []
 presence:
-- id: pr-games-t9-naruto-ramen-c-kita
+- id: pr-audit-games-t9-naruto-ramen-c-kita
   entity_id: c-kita
   from: sc-games-t9-naruto-ramen.start
   to: sc-games-t9-naruto-ramen.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-naruto-ramen-c-naruto
+- id: pr-audit-games-t9-naruto-ramen-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-naruto-ramen.start
+  to: sc-games-t9-naruto-ramen.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-naruto-ramen-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-naruto-ramen.start
+  to: sc-games-t9-naruto-ramen.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-naruto-ramen-c-naruto
   entity_id: c-naruto
   from: sc-games-t9-naruto-ramen.start
   to: sc-games-t9-naruto-ramen.end

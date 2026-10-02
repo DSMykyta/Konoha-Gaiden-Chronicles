@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-loaned-blades
+episode_id: ep-games-t9-first-weapons
+display_rank: 10400
+continuity_id: main
+title: Райдо дає Команді 9 пробні чакропровідні клинки
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-01-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-loaned-blades-1
+  display_rank: 100
+  title: Райдо дає Команді 9 пробні чакропровідні клинки
+  text: На наступних заняттях Райдо позичає учням чакропровідні клинки. Рен вкладає в зброю забагато чакри, тоді як Кіта й Сора краще утримують тонкий потік. Наставник пояснює, що інструмент допомагає відчути напрямок і дозування, але не замінює контроль. Команда ще працює з позиченою зброєю, перш ніж отримати власну від Іщіна.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-audit-games-t9-loaned-blades-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-loaned-blades.start
+  to: sc-games-t9-loaned-blades.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-loaned-blades-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-loaned-blades.start
+  to: sc-games-t9-loaned-blades.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-loaned-blades-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-loaned-blades.start
+  to: sc-games-t9-loaned-blades.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-loaned-blades-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-loaned-blades.start
+  to: sc-games-t9-loaned-blades.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

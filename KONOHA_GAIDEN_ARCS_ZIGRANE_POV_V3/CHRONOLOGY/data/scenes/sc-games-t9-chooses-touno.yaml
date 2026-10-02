@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-chooses-touno
 episode_id: ep-games-t9-touno-start
-display_rank: 3700
+display_rank: 70100
 continuity_id: main
-title: Команда 9 погоджується працювати з Тоуно
-location_id: loc-mission-assignment-room
+title: Тоуно Ібікі починає працювати з Командою 9
+location_id: loc-training-ground-4
 day_part: morning
 placement:
   anchor_id: ta-games-0-08-17
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-chooses-touno-1
   display_rank: 100
-  title: Команда 9 погоджується працювати з Тоуно
-  text: Щоб зберегти склад і оплачувані завдання під час лікування Анко, трійка погоджується на тимчасового наставника Тоуно. Він приходить із паперами та секундоміром і вимірює витрати чакри на стрибки Кіти. Доступна кількість блінків залежить від ресурсу, відстані й навантаження; Тоуно не оголошує довільне число незмінною властивістю техніки.
+  title: Тоуно Ібікі починає працювати з Командою 9
+  text: О сьомій ранку до трійки приходить чунін Тоуно Ібікі з паперами й секундоміром. Він уточнює, що не є Моріно Ібікі, й знайомиться з профілями учнів. Тоуно має вести їхні D-ранги на час лікування Анко. Команда зберігає свій склад і графік, але ще не знає, як новий наставник працюватиме з їхніми особистими прийомами.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-touno
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-09
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-chooses-touno.start
   to: sc-games-t9-chooses-touno.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-chooses-touno-c-ren
   entity_id: c-ren
   from: sc-games-t9-chooses-touno.start
   to: sc-games-t9-chooses-touno.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-chooses-touno-c-sora
   entity_id: c-sora
   from: sc-games-t9-chooses-touno.start
   to: sc-games-t9-chooses-touno.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-chooses-touno-c-touno
   entity_id: c-touno
   from: sc-games-t9-chooses-touno.start
   to: sc-games-t9-chooses-touno.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted

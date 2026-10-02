@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-t9-rain-scroll
 episode_id: ep-games-t9-death-forest
-display_rank: 2500
+display_rank: 40100
 continuity_id: main
-title: Команда 9 відбиває напад Дощу й перевіряє здобутий сувій
+title: Команда 9 викрадає сувій у команди Дощу
 location_id: loc-forest-death
 day_part: afternoon
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-rain-scroll-1
   display_rank: 100
-  title: Команда 9 відбиває напад Дощу й перевіряє здобутий сувій
-  text: 'Трійка входить у Ліс Смерті з небесним сувоєм. Перша сутичка з нападниками Дощу дає ще один сувій того самого типу. Перемога не закриває завдання: потрібна пара Небо й Земля. Команда мусить продовжити пошук, зберігаючи свої ресурси та здатність рухатися разом.'
+  title: Команда 9 викрадає сувій у команди Дощу
+  text: 'Команда 9 знаходить шинобі Дощу, які вже виснажені попереднім боєм. Сора відволікає їх рикошетами кунаїв, Рен створює приманку, а Кіта переміщується до сувою й забирає його. Трійка відходить, уникаючи затяжної сутички. Здобич виявляється ще одним небесним сувоєм: для проходження етапу їм досі потрібен земний.'
   origin: P
   extent: interval
   involvement:
@@ -34,7 +34,7 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-06
   - evd-games-part-i-placement
   focus_teams:
@@ -46,19 +46,25 @@ presence:
   from: sc-games-t9-rain-scroll.start
   to: sc-games-t9-rain-scroll.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-rain-scroll-c-ren
   entity_id: c-ren
   from: sc-games-t9-rain-scroll.start
   to: sc-games-t9-rain-scroll.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-rain-scroll-c-sora
   entity_id: c-sora
   from: sc-games-t9-rain-scroll.start
   to: sc-games-t9-rain-scroll.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
   review: accepted

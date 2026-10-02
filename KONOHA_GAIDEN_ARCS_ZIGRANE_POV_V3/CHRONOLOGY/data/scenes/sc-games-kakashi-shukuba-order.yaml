@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-shukuba-order
 episode_id: ep-games-kakashi-shukuba-contact
-display_rank: 7800
+display_rank: 150200
 continuity_id: main
 title: Команда 7 виходить до Шукуби під цивільним прикриттям
 location_id: loc-konoha-gate
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-shukuba-order-1
   display_rank: 100
   title: Команда 7 виходить до Шукуби під цивільним прикриттям
-  text: Команда 7 вирушає за розвідданими до Шукуби без звичних зовнішніх ознак бойового загону. Какаші закриває обличчя медичною маскою та приховує око під пов’язкою; учні підтримують цивільний вигляд групи. Дорогою він бачить Юміко й обмежується коротким привітанням. Завдання полягає в безпечній передачі даних, а не в відкритому бою.
+  text: Команда 7 виходить із Конохи в цивільному одязі зі схованою зброєю. Какаші прикриває обличчя медичною маскою, а око — пов’язкою. Біля воріт він помічає Юміко й коротко вітається, після чого продовжує шлях разом з учнями. Група прямує до контакту в Шукубі, зберігаючи вигляд звичайних мандрівників.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-sakura
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
 relations: []
@@ -47,26 +47,34 @@ presence:
   from: sc-games-kakashi-shukuba-order.start
   to: sc-games-kakashi-shukuba-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-shukuba-order-c-naruto
   entity_id: c-naruto
   from: sc-games-kakashi-shukuba-order.start
   to: sc-games-kakashi-shukuba-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-shukuba-order-c-sasuke
   entity_id: c-sasuke
   from: sc-games-kakashi-shukuba-order.start
   to: sc-games-kakashi-shukuba-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-shukuba-order-c-sakura
   entity_id: c-sakura
   from: sc-games-kakashi-shukuba-order.start
   to: sc-games-kakashi-shukuba-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted

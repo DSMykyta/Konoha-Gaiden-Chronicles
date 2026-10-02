@@ -2355,3 +2355,123 @@ anchors:
     - evd-games-part-i-placement
     review: accepted
     reason: Ескорт завершується вранці 22.09, до бою на даху та відходу Саске.
+  - id: ta-games-0-01-28
+    date:
+      year: 0
+      month: 1
+      day: 28
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-05-11
+    date:
+      year: 0
+      month: 5
+      day: 11
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-08-12
+    date:
+      year: 0
+      month: 8
+      day: 12
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-08-13
+    date:
+      year: 0
+      month: 8
+      day: 13
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-08-20
+    date:
+      year: 0
+      month: 8
+      day: 20
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-08-28
+    date:
+      year: 0
+      month: 8
+      day: 28
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-09-14
+    date:
+      year: 0
+      month: 9
+      day: 14
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-09-28
+    date:
+      year: 0
+      month: 9
+      day: 28
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-04-15
+    date:
+      year: 0
+      month: 4
+      day: 15
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
+  - id: ta-games-0-09-25
+    date:
+      year: 0
+      month: 9
+      day: 25
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.

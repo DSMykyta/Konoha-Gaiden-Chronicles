@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-wind-three-seconds
 episode_id: ep-games-t9-new-burns
-display_rank: 4800
+display_rank: 80400
 continuity_id: main
 title: Кіта утримує спрямований вітер і отримує нову пляшку
-location_id: loc-konoha-training-field
+location_id: loc-training-ground-10
 day_part: afternoon
 placement:
   anchor_id: ta-games-0-09-10
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-wind-three-seconds-1
   display_rank: 100
   title: Кіта утримує спрямований вітер і отримує нову пляшку
-  text: 'Після марного очікування на порожньому полі Кіта знову займається з Асумою у погоджений день. Спрямований вітер тримається близько трьох секунд. Наприкінці Асума дає другу пляшку води. Кіта не сприймає цей предмет як будь-яку заміну попереднього: новий зв’язок потрібно встановити окремо.'
+  text: Після марного очікування на порожньому полі Кіта знову приходить до Асуми в погоджений день. Асума веде чакру вздовж його передпліччя й допомагає відчути спрямований вітер; Кіта утримує його приблизно три секунди. Наприкінці вони п’ють воду, і Асума віддає учневі пляшку. Кіта зберігає її як нову пам’ятку про заняття.
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-asuma
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-10
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-t9-wind-three-seconds.start
   to: sc-games-t9-wind-three-seconds.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-wind-three-seconds-c-asuma
   entity_id: c-asuma
   from: sc-games-t9-wind-three-seconds.start
   to: sc-games-t9-wind-three-seconds.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted

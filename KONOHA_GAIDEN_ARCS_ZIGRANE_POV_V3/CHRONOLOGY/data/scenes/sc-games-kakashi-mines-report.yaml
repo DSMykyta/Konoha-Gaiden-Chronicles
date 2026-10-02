@@ -1,11 +1,11 @@
 schema_version: 1
 id: sc-games-kakashi-mines-report
 episode_id: ep-games-kakashi-mines-return
-display_rank: 9100
+display_rank: 160600
 continuity_id: main
-title: Какаші звітує Хірузену про обвал шахт
-location_id: loc-hokage-office
-day_part: noon
+title: Какаші готує звіт про диверсію та призначає ранкову доповідь
+location_id: loc-kakashi-home
+day_part: afternoon
 placement:
   anchor_id: ta-games-0-05-24
   day_offset: 0
@@ -20,18 +20,12 @@ review:
 events:
 - id: ev-games-kakashi-mines-report-1
   display_rank: 100
-  title: Какаші звітує Хірузену про обвал шахт
-  text: Какаші здає негайний усний звіт і готує письмовий рапорт. Шахти зруйновано, група повернулася, а прикриття має пояснити те, що бачили найманці, без згадки про Коноху. Ціна операції включає виснаження Мікати, якого відправили на відновлення.
+  title: Какаші готує звіт про диверсію та призначає ранкову доповідь
+  text: Після повернення Какаші збирає письмові звіти групи про приховану диверсію. До вечора потрібно зафіксувати проникнення під виглядом Дайкі, обвал шахт, перенесення пам’яті та повернення виснаженого Мікати. Доповідь у Хокаґе призначено на восьму наступного ранку. Підготовка документів завершує службову частину дня перед зустріччю з колегами.
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kakashi
-    role: focus
-    mode: physical
-  - entity_id: c-hiruzen
-    role: focus
-    mode: physical
-  - entity_id: c-tenzo
     role: focus
     mode: physical
   evidence_ids: &id001
@@ -39,22 +33,8 @@ events:
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-kakashi-mines-report-c-kakashi
+- id: pr-audit-games-kakashi-mines-report-c-kakashi
   entity_id: c-kakashi
-  from: sc-games-kakashi-mines-report.start
-  to: sc-games-kakashi-mines-report.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-kakashi-mines-report-c-hiruzen
-  entity_id: c-hiruzen
-  from: sc-games-kakashi-mines-report.start
-  to: sc-games-kakashi-mines-report.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-kakashi-mines-report-c-tenzo
-  entity_id: c-tenzo
   from: sc-games-kakashi-mines-report.start
   to: sc-games-kakashi-mines-report.end
   basis: source

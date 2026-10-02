@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-touno-measures
+episode_id: ep-games-t9-touno-start
+display_rank: 70300
+continuity_id: main
+title: Тоуно вимірює витрати чакри на блінк Кіти
+location_id: loc-training-ground-4
+day_part: morning
+placement:
+  anchor_id: ta-games-0-08-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-touno-measures-1
+  display_rank: 100
+  title: Тоуно вимірює витрати чакри на блінк Кіти
+  text: На четвертий день роботи Тоуно проводить вимірювання переміщень Кіти. Сора записує відстань, навантаження, серії й відновлення. Панічний вихід виявляється дорожчим за контрольований; наступний стрибок залежить від решти чакри й умов, а не від незмінного ліміту. Тоуно задає режим вправ, спираючись на отримані показники.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-touno
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-audit-games-t9-touno-measures-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-touno-measures.start
+  to: sc-games-t9-touno-measures.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-touno-measures-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-touno-measures.start
+  to: sc-games-t9-touno-measures.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-touno-measures-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-touno-measures.start
+  to: sc-games-t9-touno-measures.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-touno-measures-c-touno
+  entity_id: c-touno
+  from: sc-games-t9-touno-measures.start
+  to: sc-games-t9-touno-measures.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

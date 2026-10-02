@@ -1,0 +1,84 @@
+schema_version: 1
+id: sc-games-t9-first-payment
+episode_id: ep-games-t9-first-work
+display_rank: 10900
+continuity_id: main
+title: Команда 9 отримує першу платню
+location_id: loc-mission-assignment-room
+day_part: evening
+placement:
+  anchor_id: ta-games-0-02-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-first-payment-1
+  display_rank: 100
+  title: Команда 9 отримує першу платню
+  text: 'Після здачі складського D-рангу Райдо приводить учнів до канцелярії. Нобарі оформлює виплату й говорить із Кітою про витрати на спорядження. Перша зароблена сума виявляється невеликою: її потрібно співвіднести з ціною рукавичок та інших потрібних речей. Трійка виходить із резиденції з власними грошима й домовляється про їжу.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-02-4
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-audit-games-t9-first-payment-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-first-payment.start
+  to: sc-games-t9-first-payment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-first-payment-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-first-payment.start
+  to: sc-games-t9-first-payment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-first-payment-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-first-payment.start
+  to: sc-games-t9-first-payment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-first-payment-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-first-payment.start
+  to: sc-games-t9-first-payment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-first-payment-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-first-payment.start
+  to: sc-games-t9-first-payment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-team9-ambush
 episode_id: ep-games-kakashi-team9-road
-display_rank: 9600
+display_rank: 170400
 continuity_id: main
 title: Команда 9 відбиває дорожню засідку й зберігає клієнта
 location_id: loc-team9-escort-route
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-team9-ambush-1
   display_rank: 100
   title: Команда 9 відбиває дорожню засідку й зберігає клієнта
-  text: 'На дорозі команда виявляє засідку й закриває перший контакт за кілька секунд. Трійка зберігає замовника, роззброює нападників, надає допомогу та відновлює формацію майже без втручання Какаші. Він переходить від бажання показати перевагу до уважного спостереження: їхній спосіб працює й витримує реальну загрозу.'
+  text: Під час засідки Кіта блінкає в кущі й поривом вітру виносить нападника під удар сокир Рена в чохлах. Сора зупиняє іншого кунаєм, а Какаші страхує коня та клієнта й перевіряє двох утікачів. Кіта стабілізує поранених; трійка роззброює та зв’язує затриманих. Какаші посилає Паккуна до міської варти по віз і медика, після чого Сора відновлює марш.
   origin: P
   extent: interval
   involvement:
@@ -40,7 +40,7 @@ events:
   - entity_id: c-escort-official
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
   focus_teams:
@@ -52,33 +52,43 @@ presence:
   from: sc-games-kakashi-team9-ambush.start
   to: sc-games-kakashi-team9-ambush.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ambush-c-kita
   entity_id: c-kita
   from: sc-games-kakashi-team9-ambush.start
   to: sc-games-kakashi-team9-ambush.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ambush-c-ren
   entity_id: c-ren
   from: sc-games-kakashi-team9-ambush.start
   to: sc-games-kakashi-team9-ambush.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ambush-c-sora
   entity_id: c-sora
   from: sc-games-kakashi-team9-ambush.start
   to: sc-games-kakashi-team9-ambush.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ambush-c-escort-official
   entity_id: c-escort-official
   from: sc-games-kakashi-team9-ambush.start
   to: sc-games-kakashi-team9-ambush.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted

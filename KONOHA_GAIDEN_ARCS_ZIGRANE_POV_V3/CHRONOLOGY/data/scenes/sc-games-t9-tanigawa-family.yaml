@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-t9-tanigawa-family
 episode_id: ep-games-t9-tanigawa-home
-display_rank: 5400
+display_rank: 90400
 continuity_id: main
-title: Нобарі й Іщін підтримують команду після Танігави
+title: Іщін приймає Кіту й Рена після Таніґави
 location_id: loc-isshin-home
-day_part: evening
+day_part: night
 placement:
-  anchor_id: ta-games-0-09-19
+  anchor_id: ta-games-0-09-18
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-tanigawa-family-1
   display_rank: 100
-  title: Нобарі й Іщін підтримують команду після Танігави
-  text: Після повернення трійка проходить звичайний домашній догляд і збирається на вечерю в Іщіна. Розмова про вагу Кіти й Сори та можливість Рена переносити обох повертає їх до конкретної турботи про команду. Вночі хлопці обговорюють поранення знайомого Котецу й обіцяють захищати одне одного. Сора окремо йде стежити за поверненням Анко до службового звіту.
+  title: Іщін приймає Кіту й Рена після Таніґави
+  text: Після повернення й миття вдома в Нобарі Кіта та Рен приходять ночувати до Іщіна. Батько годує їх і розпитує про вагу, яку Рен несе на місіях; хлопці пояснюють, як команда враховує це в своїх планах. Уночі Рен зізнається Кіті, що боїться і завданих знайомим ран, і можливої нездатності захистити друзів наступного разу. Вони обіцяють не губити й прикривати одне одного.
   origin: P
   extent: interval
   involvement:
@@ -31,51 +31,29 @@ events:
   - entity_id: c-ren
     role: focus
     mode: physical
-  - entity_id: c-sora
-    role: focus
-    mode: physical
-  - entity_id: c-nobari
-    role: focus
-    mode: physical
   - entity_id: c-isshin
     role: focus
     mode: physical
   evidence_ids: &id001
   - evd-games-team-9-11
   - evd-games-part-i-placement
-  focus_teams:
-  - team-9
 relations: []
 presence:
-- id: pr-games-t9-tanigawa-family-c-kita
+- id: pr-audit-games-t9-tanigawa-family-c-kita
   entity_id: c-kita
   from: sc-games-t9-tanigawa-family.start
   to: sc-games-t9-tanigawa-family.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-tanigawa-family-c-ren
+- id: pr-audit-games-t9-tanigawa-family-c-ren
   entity_id: c-ren
   from: sc-games-t9-tanigawa-family.start
   to: sc-games-t9-tanigawa-family.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-tanigawa-family-c-sora
-  entity_id: c-sora
-  from: sc-games-t9-tanigawa-family.start
-  to: sc-games-t9-tanigawa-family.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-tanigawa-family-c-nobari
-  entity_id: c-nobari
-  from: sc-games-t9-tanigawa-family.start
-  to: sc-games-t9-tanigawa-family.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-tanigawa-family-c-isshin
+- id: pr-audit-games-t9-tanigawa-family-c-isshin
   entity_id: c-isshin
   from: sc-games-t9-tanigawa-family.start
   to: sc-games-t9-tanigawa-family.end

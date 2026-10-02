@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-games-kakashi-friends-after-name
+episode_id: ep-games-kakashi-after-archive
+display_rank: 121100
+continuity_id: main
+title: Какаші обговорює з друзями невдале знайомство з Юміко
+location_id: loc-konoha-izakaya
+day_part: evening
+placement:
+  anchor_id: ta-games-0-04-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-friends-after-name-1
+  display_rank: 100
+  title: Какаші обговорює з друзями невдале знайомство з Юміко
+  text: Увечері Какаші розповідає Райдо, Асумі та Куренай, що Сакура нарешті назвала йому ім’я працівниці архіву. Він переказує, як її відпустили після операції та що учениця сказала їй раніше. Друзі пропонують способи заговорити з Юміко. Какаші вирішує шукати нагоду для звичайної розмови, але наступні дні не знаходить її у знайомих місцях.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-kakashi-friends-after-name-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-friends-after-name.start
+  to: sc-games-kakashi-friends-after-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-friends-after-name-c-raido
+  entity_id: c-raido
+  from: sc-games-kakashi-friends-after-name.start
+  to: sc-games-kakashi-friends-after-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-friends-after-name-c-asuma
+  entity_id: c-asuma
+  from: sc-games-kakashi-friends-after-name.start
+  to: sc-games-kakashi-friends-after-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-friends-after-name-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-kakashi-friends-after-name.start
+  to: sc-games-kakashi-friends-after-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

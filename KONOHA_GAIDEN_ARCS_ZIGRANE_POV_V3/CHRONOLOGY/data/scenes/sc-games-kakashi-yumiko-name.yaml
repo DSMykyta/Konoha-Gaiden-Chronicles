@@ -1,11 +1,11 @@
 schema_version: 1
 id: sc-games-kakashi-yumiko-name
 episode_id: ep-games-kakashi-after-archive
-display_rank: 7100
+display_rank: 121000
 continuity_id: main
 title: Сакура називає Какаші ім’я Юміко
-location_id: loc-konoha-training-field
-day_part: morning
+location_id: loc-training-ground-7
+day_part: noon
 placement:
   anchor_id: ta-games-0-04-25
   day_offset: 0
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-yumiko-name-1
   display_rank: 100
   title: Сакура називає Какаші ім’я Юміко
-  text: Після операції в цивільному архіві Сакура називає ім’я Юміко й повертається до їхньої попередньої розмови. Какаші вже бачив жінку наляканою серед працівниць, яких не затримали. Ім’я робить його увагу особистішою, але не дає права користуватися архівною справою для приватного зближення. Звичайне тренування Команди 7 продовжується.
+  text: Після тренування Команди 7 Сакура називає Какаші ім’я Юміко й пояснює, що вони сусідки. Вона також зізнається, що Юміко розпитувала її про наставника після перших двох зустрічей, а її власні слова про запізнення, книжку та дивний погляд могли налякати жінку. Какаші тепер пов’язує її реакції з цією розмовою та недавнім затриманням працівниць архіву.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-sasuke
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
@@ -47,26 +47,34 @@ presence:
   from: sc-games-kakashi-yumiko-name.start
   to: sc-games-kakashi-yumiko-name.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-yumiko-name-c-sakura
   entity_id: c-sakura
   from: sc-games-kakashi-yumiko-name.start
   to: sc-games-kakashi-yumiko-name.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-yumiko-name-c-naruto
   entity_id: c-naruto
   from: sc-games-kakashi-yumiko-name.start
   to: sc-games-kakashi-yumiko-name.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-yumiko-name-c-sasuke
   entity_id: c-sasuke
   from: sc-games-kakashi-yumiko-name.start
   to: sc-games-kakashi-yumiko-name.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted

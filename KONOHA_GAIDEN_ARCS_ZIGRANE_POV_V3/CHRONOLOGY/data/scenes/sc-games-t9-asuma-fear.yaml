@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-t9-asuma-fear
 episode_id: ep-games-t9-asuma-anchor
-display_rank: 4300
+display_rank: 70900
 continuity_id: main
 title: Асума вчить Кіту рахувати ресурс і приймати страх
-location_id: loc-konoha-training-field
+location_id: loc-training-ground-10
 day_part: afternoon
 placement:
-  anchor_id: ta-games-0-08-24
+  anchor_id: ta-games-0-08-25
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-asuma-fear-1
   display_rank: 100
   title: Асума вчить Кіту рахувати ресурс і приймати страх
-  text: Асума розбирає з Кітою не лише техніку, а й страх перед помилкою. Обережність потрібна, щоб розуміти ризик, а не соромитися самого відчуття. Вони повертаються до опіків і керування чакрою. Асума добровільно дає долоню для контрольованої перевірки, а Кіта працює з лікуванням. Заняття формує довіру без дозволу повторювати небезпечні самостійні спроби.
+  text: Після відмови від понаднормового D-рангу Кіта приходить на погоджене особисте заняття. Асума говорить із ним про страх помилки й про те, як рахувати власний ресурс. Він добровільно дає долоню для короткої вогняної перевірки; Кіта потім пробує лікувати опік, але ще не може повністю відновити шкіру. Наприкінці Асума дає йому пляшку води. Урок поєднує практику з підтримкою після важкого тижня.
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-asuma
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-09
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-t9-asuma-fear.start
   to: sc-games-t9-asuma-fear.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-asuma-fear-c-asuma
   entity_id: c-asuma
   from: sc-games-t9-asuma-fear.start
   to: sc-games-t9-asuma-fear.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted

@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-t9-fence-d-rank
 episode_id: ep-games-t9-fence-check
-display_rank: 3300
+display_rank: 60100
 continuity_id: main
 title: Команда 9 знаходить три пошкодження огорожі Лісу Смерті
 location_id: loc-forest-death
 day_part: morning
 placement:
-  anchor_id: ta-games-0-08-15
+  anchor_id: ta-games-0-08-12
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -37,7 +37,7 @@ events:
   - entity_id: c-anko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-08
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-fence-d-rank.start
   to: sc-games-t9-fence-d-rank.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-fence-d-rank-c-ren
   entity_id: c-ren
   from: sc-games-t9-fence-d-rank.start
   to: sc-games-t9-fence-d-rank.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-fence-d-rank-c-sora
   entity_id: c-sora
   from: sc-games-t9-fence-d-rank.start
   to: sc-games-t9-fence-d-rank.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-fence-d-rank-c-anko
   entity_id: c-anko
   from: sc-games-t9-fence-d-rank.start
   to: sc-games-t9-fence-d-rank.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
   review: accepted

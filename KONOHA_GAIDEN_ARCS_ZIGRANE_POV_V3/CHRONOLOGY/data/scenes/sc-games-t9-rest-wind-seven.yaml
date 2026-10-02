@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-rest-wind-seven
 episode_id: ep-games-t9-new-burns
-display_rank: 5100
+display_rank: 80900
 continuity_id: main
 title: Кіта повертається до обережної вправи з вітром
 location_id: loc-kita-home
@@ -21,14 +21,11 @@ events:
 - id: ev-games-t9-rest-wind-seven-1
   display_rank: 100
   title: Кіта повертається до обережної вправи з вітром
-  text: 'Після перерви Кіта утримує вітер довше — приблизно сім секунд. Він уважніше зберігає прив’язаний предмет і домовляється з Нобарі про межі прибирання його речей. Побутова розмова важлива для практики: випадкове використання або заміна предмета може зруйнувати те, що він намагається втримати.'
+  text: Увечері після відновленого заняття Кіта повторює вправу від ліктя до пальців і утримує спрямований вітер приблизно сім секунд. Він зберігає пляшку після уроку й інші дорогі йому речі окремо від звичайних запасів. Замість нової вогняної спроби Кіта повертається до короткої вправи, яку задав Асума.
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kita
-    role: focus
-    mode: physical
-  - entity_id: c-nobari
     role: focus
     mode: physical
   evidence_ids: &id001
@@ -36,15 +33,8 @@ events:
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-t9-rest-wind-seven-c-kita
+- id: pr-audit-games-t9-rest-wind-seven-c-kita
   entity_id: c-kita
-  from: sc-games-t9-rest-wind-seven.start
-  to: sc-games-t9-rest-wind-seven.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-rest-wind-seven-c-nobari
-  entity_id: c-nobari
   from: sc-games-t9-rest-wind-seven.start
   to: sc-games-t9-rest-wind-seven.end
   basis: source

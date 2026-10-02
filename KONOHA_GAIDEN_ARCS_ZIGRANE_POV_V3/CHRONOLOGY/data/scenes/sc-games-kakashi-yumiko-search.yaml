@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-yumiko-search
 episode_id: ep-games-kakashi-after-archive
-display_rank: 7200
+display_rank: 121200
 continuity_id: main
 title: Какаші починає безрезультатно шукати Юміко у звичних місцях
 location_id: loc-konohagakure
@@ -21,14 +21,14 @@ events:
 - id: ev-games-kakashi-yumiko-search-1
   display_rank: 100
   title: Какаші починає безрезультатно шукати Юміко у звичних місцях
-  text: Какаші повертається до міських місць, де раніше випадково зустрічав Юміко. Пошук не дає результату протягом трьох днів. Відсутність жінки змушує його помітити, наскільки увага вже стала очікуванням. Він не читає її особову справу та не перетворює цивільну відсутність на службове розслідування.
+  text: 'Какаші починає шукати Юміко там, де раніше випадково зустрічав її: у забігайлівці, біля крамниці та в міських кварталах. Він спостерігає за вулицями з дахів, але протягом трьох днів так і не бачить її. Відсутність жінки дедалі більше непокоїть його; він ще не знає, що вона поїхала до батьків.'
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kakashi
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
@@ -38,5 +38,7 @@ presence:
   from: sc-games-kakashi-yumiko-search.start
   to: sc-games-kakashi-yumiko-search.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted

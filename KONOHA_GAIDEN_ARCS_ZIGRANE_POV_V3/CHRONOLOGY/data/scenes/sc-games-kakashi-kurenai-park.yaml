@@ -1,11 +1,11 @@
 schema_version: 1
 id: sc-games-kakashi-kurenai-park
 episode_id: ep-games-kakashi-garden-yumiko
-display_rank: 7500
+display_rank: 130200
 continuity_id: main
 title: Какаші говорить із Куренай у парку
 location_id: loc-konoha-park
-day_part: afternoon
+day_part: evening
 placement:
   anchor_id: ta-games-0-05-10
   day_offset: 0
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-kurenai-park-1
   display_rank: 100
   title: Какаші говорить із Куренай у парку
-  text: Між тренуваннями та побутовими місіями Какаші зустрічає Куренай у парку. Розмова повертає його до власної поведінки й невпевненості в мирному знайомстві. Він може бути точним командиром на складному маршруті й водночас не знати, як не налякати людину за звичайним столом. Підтримка колеги не дає готової відповіді замість його власного рішення.
+  text: Увечері Какаші зустрічає Куренай у парку. Вони обговорюють чутку, начебто Асума є батьком Кіти; Какаші не вважає плітку доказом спорідненості. Розмова переходить до Юміко. Він визнає, що хоче не просто перепросити за незручні зустрічі, а поговорити з нею, хоча досі не розуміє, як це зробити.
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-kurenai
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-02
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-kakashi-kurenai-park.start
   to: sc-games-kakashi-kurenai-park.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-kurenai-park-c-kurenai
   entity_id: c-kurenai
   from: sc-games-kakashi-kurenai-park.start
   to: sc-games-kakashi-kurenai-park.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
   review: accepted

@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-t9-nobari-field
 episode_id: ep-games-t9-nobari-medical-mission
-display_rank: 3200
+display_rank: 50500
 continuity_id: main
 title: Нобарі веде Команду 9 на медичну місію
-location_id: loc-konoha-outskirts
-day_part: morning
+location_id: loc-team9-medical-post
+day_part: afternoon
 placement:
-  anchor_id: ta-games-0-08-08
+  anchor_id: ta-games-0-08-07
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-nobari-field-1
   display_rank: 100
   title: Нобарі веде Команду 9 на медичну місію
-  text: Після довгої перерви Нобарі виходить у поле з трійкою. На медичному D-ранзі Сора використовує гендзюцу для послаблення болю, Кіта працює з ранами й несподівано впливає на стару рубцеву тканину, а Рен бере на себе санітарну та фізичну частину роботи. Місія показує користь їхніх різних здібностей без бойового завдання.
+  text: 'У складі, перетвореному на шпиталь, Нобарі розподіляє роботу. Сора короткими циклами послаблює біль гендзюцу, Кіта під наглядом матері стягує краї вже оброблених ран, Рен носить воду, перев’язки й поранених. Після виснажливої зміни лікар показує Нобарі нову шкіру на плечі й щоці пацієнта: після роботи Кіти очікуваного грубого рубця немає. Сам Кіта вже спить від виснаження й не чує цього висновку.'
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-nobari
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-07
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-nobari-field-c-ren
   entity_id: c-ren
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-nobari-field-c-sora
   entity_id: c-sora
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-nobari-field-c-nobari
   entity_id: c-nobari
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
   review: accepted

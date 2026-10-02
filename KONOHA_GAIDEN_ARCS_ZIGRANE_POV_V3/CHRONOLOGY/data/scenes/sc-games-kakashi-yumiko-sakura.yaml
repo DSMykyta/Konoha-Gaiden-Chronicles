@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-kakashi-yumiko-sakura
 episode_id: ep-games-kakashi-park-name
-display_rank: 6800
+display_rank: 120700
 continuity_id: main
-title: Какаші дізнається, що Юміко живе поруч із Сакурою
+title: Сакура розповідає Какаші про працівницю цивільного архіву
 location_id: loc-sakura-neighborhood
 day_part: evening
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-yumiko-sakura-1
   display_rank: 100
-  title: Какаші дізнається, що Юміко живе поруч із Сакурою
-  text: Увечері Какаші бачить Юміко разом із Сакурою. З’ясовується, що вони сусідки й мають звичайний цивільний зв’язок. Він отримує побутове пояснення знайомого обличчя, але не використовує учнівську розмову як доручення стежити за жінкою. Її життя залишається поза його командною відповідальністю.
+  title: Сакура розповідає Какаші про працівницю цивільного архіву
+  text: Какаші помічає Сакуру в товаристві жінки зі своїх недавніх випадкових зустрічей. Коли та йде, він питає ученицю про знайому. Сакура пояснює, що жінка працює помічницею в цивільному архіві й заходить до тієї самої забігайлівки. Її імені та того, що вони із Сакурою сусідки, Какаші цього вечора ще не дізнається.
   origin: P
   extent: interval
   involvement:
@@ -31,30 +31,20 @@ events:
   - entity_id: c-sakura
     role: focus
     mode: physical
-  - entity_id: c-yumiko
-    role: focus
-    mode: physical
   evidence_ids: &id001
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-kakashi-yumiko-sakura-c-kakashi
+- id: pr-audit-games-kakashi-yumiko-sakura-c-kakashi
   entity_id: c-kakashi
   from: sc-games-kakashi-yumiko-sakura.start
   to: sc-games-kakashi-yumiko-sakura.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-yumiko-sakura-c-sakura
+- id: pr-audit-games-kakashi-yumiko-sakura-c-sakura
   entity_id: c-sakura
-  from: sc-games-kakashi-yumiko-sakura.start
-  to: sc-games-kakashi-yumiko-sakura.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-kakashi-yumiko-sakura-c-yumiko
-  entity_id: c-yumiko
   from: sc-games-kakashi-yumiko-sakura.start
   to: sc-games-kakashi-yumiko-sakura.end
   basis: source

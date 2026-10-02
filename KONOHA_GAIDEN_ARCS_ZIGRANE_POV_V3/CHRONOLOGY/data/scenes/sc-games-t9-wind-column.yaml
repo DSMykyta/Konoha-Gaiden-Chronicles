@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-wind-column
 episode_id: ep-games-t9-new-burns
-display_rank: 4900
+display_rank: 80500
 continuity_id: main
 title: Райдо зупиняє вправу після несподіваного розрізу стовпа
-location_id: loc-training-ground-9
+location_id: loc-training-ground-4
 day_part: morning
 placement:
   anchor_id: ta-games-0-09-12
@@ -31,7 +31,7 @@ events:
   - entity_id: c-raido
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-10
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-t9-wind-column.start
   to: sc-games-t9-wind-column.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-wind-column-c-raido
   entity_id: c-raido
   from: sc-games-t9-wind-column.start
   to: sc-games-t9-wind-column.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted

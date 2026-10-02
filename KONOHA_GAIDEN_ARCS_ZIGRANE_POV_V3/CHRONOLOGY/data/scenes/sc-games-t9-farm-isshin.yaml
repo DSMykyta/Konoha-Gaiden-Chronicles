@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-farm-isshin
+episode_id: ep-games-t9-touno-start
+display_rank: 70600
+continuity_id: main
+title: Рен розповідає Іщіну про постановочний напад
+location_id: loc-isshin-forge
+day_part: night
+placement:
+  anchor_id: ta-games-0-08-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-farm-isshin-1
+  display_rank: 100
+  title: Рен розповідає Іщіну про постановочний напад
+  text: У кузні Рен переказує Іщіну доставку, важке повернення й раптову засідку Тоуно. Батько слухає про небезпеку для сина та про те, як команда прикрила одне одного. Він обіймає Рена й дає йому побути вдома без нових вимог. Розмова завершує день після місії, а не стає новою видачею зброї.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-isshin
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-farm-isshin-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-farm-isshin.start
+  to: sc-games-t9-farm-isshin.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-farm-isshin-c-isshin
+  entity_id: c-isshin
+  from: sc-games-t9-farm-isshin.start
+  to: sc-games-t9-farm-isshin.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-t9-base18-destroyed
 episode_id: ep-games-t9-base18-after
-display_rank: 6200
+display_rank: 110300
 continuity_id: main
-title: Команда 9 спалює комплекс і продовжує прихований маршрут
+title: Команда 9 спалює Базу 18
 location_id: loc-oto-base18
-day_part: morning
+day_part: afternoon
 placement:
-  anchor_id: ta-games-0-12-16
+  anchor_id: ta-games-0-12-15
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-base18-destroyed-1
   display_rank: 100
-  title: Команда 9 спалює комплекс і продовжує прихований маршрут
-  text: Після вилучення матеріалів команда спалює лабораторний комплекс. У наступному поселенні вони миються й змінюють одяг, щоб не нести видимих слідів операції. На подальшій дорозі трійка повертається до звичних ігор із тінню та переслідуванням. Побутові рухи допомагають триматися разом, але не скасовують того, що сталося з полоненими.
+  title: Команда 9 спалює Базу 18
+  text: 'Після вилучення свитків, зброї, грошей, медикаментів і їжі Кіта спалює весь комплекс Бази 18: центральний сектор, ходи, лабораторію та склад. Рен із торбою слив дивиться на вогонь і осідання землі. Коли лишається дим, команда відходить до річки. Матеріали дослідів забрано, а полонені й персонал не пережили операцію.'
   origin: P
   extent: interval
   involvement:
@@ -34,7 +34,7 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-13
   - evd-games-part-i-placement
   focus_teams:
@@ -46,19 +46,25 @@ presence:
   from: sc-games-t9-base18-destroyed.start
   to: sc-games-t9-base18-destroyed.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-base18-destroyed-c-ren
   entity_id: c-ren
   from: sc-games-t9-base18-destroyed.start
   to: sc-games-t9-base18-destroyed.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-base18-destroyed-c-sora
   entity_id: c-sora
   from: sc-games-t9-base18-destroyed.start
   to: sc-games-t9-base18-destroyed.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted

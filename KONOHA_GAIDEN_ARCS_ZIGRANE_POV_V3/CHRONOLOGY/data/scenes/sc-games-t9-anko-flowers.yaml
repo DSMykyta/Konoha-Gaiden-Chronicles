@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-t9-anko-flowers
 episode_id: ep-games-t9-touno-start
-display_rank: 4000
+display_rank: 70700
 continuity_id: main
-title: Команда 9 приносить Анко квіти й звітує про Тоуно
+title: Кіта провідує Анко й розповідає про Тоуно
 location_id: loc-konoha-hospital
 day_part: afternoon
 placement:
@@ -20,18 +20,12 @@ review:
 events:
 - id: ev-games-t9-anko-flowers-1
   display_rank: 100
-  title: Команда 9 приносить Анко квіти й звітує про Тоуно
-  text: Трійка приходить до Анко в шпиталь із квітами. Наставниця вимагає звіту про роботу тимчасового керівника, а учні повертаються до постановочного нападу й першої підміни людини. Відвідини не закінчують лікування Анко. Вони дають команді місце, де можна назвати те, що сталося, перед своїм постійним командиром.
+  title: Кіта провідує Анко й розповідає про Тоуно
+  text: Кіта приходить до Анко в шпиталь із квітами. Він розповідає про роботу з Тоуно, важкий фермерський маршрут і постановочну засідку, під час якої підмінив нападника. Анко розпитує його про нового наставника й бачить, наскільки виснажений учень. Вона залишається на лікуванні; ця розмова ще не повертає її до щоденного керівництва командою.
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kita
-    role: focus
-    mode: physical
-  - entity_id: c-ren
-    role: focus
-    mode: physical
-  - entity_id: c-sora
     role: focus
     mode: physical
   - entity_id: c-anko
@@ -40,32 +34,16 @@ events:
   evidence_ids: &id001
   - evd-games-team-9-09
   - evd-games-part-i-placement
-  focus_teams:
-  - team-9
 relations: []
 presence:
-- id: pr-games-t9-anko-flowers-c-kita
+- id: pr-audit-games-t9-anko-flowers-c-kita
   entity_id: c-kita
   from: sc-games-t9-anko-flowers.start
   to: sc-games-t9-anko-flowers.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-anko-flowers-c-ren
-  entity_id: c-ren
-  from: sc-games-t9-anko-flowers.start
-  to: sc-games-t9-anko-flowers.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-anko-flowers-c-sora
-  entity_id: c-sora
-  from: sc-games-t9-anko-flowers.start
-  to: sc-games-t9-anko-flowers.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-anko-flowers-c-anko
+- id: pr-audit-games-t9-anko-flowers-c-anko
   entity_id: c-anko
   from: sc-games-t9-anko-flowers.start
   to: sc-games-t9-anko-flowers.end

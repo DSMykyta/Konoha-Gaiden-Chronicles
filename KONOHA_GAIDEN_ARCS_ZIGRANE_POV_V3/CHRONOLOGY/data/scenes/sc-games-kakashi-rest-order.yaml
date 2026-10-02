@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-rest-order
+episode_id: ep-games-kakashi-overwork
+display_rank: 180300
+continuity_id: main
+title: Цунаде відсторонює Какаші від бойових місій на тиждень
+location_id: loc-hokage-office
+day_part: noon
+placement:
+  anchor_id: ta-games-0-10-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-rest-order-1
+  display_rank: 100
+  title: Цунаде відсторонює Какаші від бойових місій на тиждень
+  text: Після серії бойових виходів Цунаде переглядає звіти Какаші й відмовляє йому в наступному завданні. Вона наказує тиждень відпочинку та дає направлення до банку Ямано, який оформлює рахунки для виплат за місії. Какаші мусить особисто пройти перевірку й підписати документи. Пошук нової роботи змінюється звичайною адміністративною справою.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-tsunade
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-kakashi-rest-order-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-rest-order.start
+  to: sc-games-kakashi-rest-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-rest-order-c-tsunade
+  entity_id: c-tsunade
+  from: sc-games-kakashi-rest-order.start
+  to: sc-games-kakashi-rest-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-t9-farm-home
+episode_id: ep-games-t9-touno-start
+display_rank: 70500
+continuity_id: main
+title: Рен приносить виснаженого Кіту додому
+location_id: loc-kita-home
+day_part: evening
+placement:
+  anchor_id: ta-games-0-08-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-farm-home-1
+  display_rank: 100
+  title: Рен приносить виснаженого Кіту додому
+  text: Після фермерського маршруту Рен приносить Кіту до Нобарі. Кіта майже спить від виснаження й не може докладно пояснити, що сталося. Нобарі приймає його, дає Рену їжу й намагається розібратися в стані сина. Рен лишає напарника вдома й іде до батька зі своїми речами.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-farm-home-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-farm-home.start
+  to: sc-games-t9-farm-home.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-farm-home-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-farm-home.start
+  to: sc-games-t9-farm-home.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-farm-home-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-farm-home.start
+  to: sc-games-t9-farm-home.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

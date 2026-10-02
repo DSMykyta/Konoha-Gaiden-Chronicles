@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-kakashi-garden
 episode_id: ep-games-kakashi-garden-yumiko
-display_rank: 7400
+display_rank: 130100
 continuity_id: main
-title: Команда 7 працює навпроти будинку Сакури
+title: Команда 7 прибирає подвір’я навпроти будинку Сакури
 location_id: loc-sakura-neighborhood
 day_part: afternoon
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-garden-1
   display_rank: 100
-  title: Команда 7 працює навпроти будинку Сакури
-  text: 'Какаші бере D-рангову роботу навпроти будинку Сакури. Команда займається звичайним прибиранням і садовими справами протягом дня. Юміко не з’являється: вона поїхала до батьків. Особисте очікування наставника не створює окремої події для жінки й не скасовує оплачуваного завдання учнів.'
+  title: Команда 7 прибирає подвір’я навпроти будинку Сакури
+  text: 'Какаші бере D-ранг № 412: прибрати подвір’я пана Хіґураші та винести старі меблі. Адреса лежить навпроти будинку Сакури й балкона Юміко. Учні працюють увесь день, а наставник чекає нагоди побачити жінку. Сакура зрештою пояснює, що Юміко поїхала до батьків; її відсутність у місті не була відповіддю на поведінку Какаші.'
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-sakura
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-02
   - evd-games-part-i-placement
 relations: []
@@ -47,26 +47,34 @@ presence:
   from: sc-games-kakashi-garden.start
   to: sc-games-kakashi-garden.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-garden-c-naruto
   entity_id: c-naruto
   from: sc-games-kakashi-garden.start
   to: sc-games-kakashi-garden.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-garden-c-sasuke
   entity_id: c-sasuke
   from: sc-games-kakashi-garden.start
   to: sc-games-kakashi-garden.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-garden-c-sakura
   entity_id: c-sakura
   from: sc-games-kakashi-garden.start
   to: sc-games-kakashi-garden.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
   review: accepted

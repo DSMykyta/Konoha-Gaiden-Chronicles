@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-shukuba-debrief
 episode_id: ep-games-kakashi-shukuba-contact
-display_rank: 8000
+display_rank: 150400
 continuity_id: main
 title: Хірузен приймає звіт Команди 7 після Шукуби
 location_id: loc-hokage-office
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-shukuba-debrief-1
   display_rank: 100
   title: Хірузен приймає звіт Команди 7 після Шукуби
-  text: Після нічного повернення Команда 7 здає розвіддані та витрати місії. Хірузен закриває завдання й дає учням три дні відпочинку. Отриманий сувій переходить до службового розбору. Коротка місія завершена, але її інформація ще має визначити, чи потрібна Конохі наступна прихована операція.
+  text: Після повернення з Шукуби Команда 7 здає Хірузену сувій із розвідданими. Какаші пояснює, як забезпечив закриту передачу та зберіг прикриття агента, і подає чек на витрати. Дані передають до Відділу розвідки та допитів для розшифрування. Вийшовши з резиденції, саме Какаші звільняє учнів від тренувань на три дні.
   origin: P
   extent: interval
   involvement:
@@ -40,7 +40,7 @@ events:
   - entity_id: c-hiruzen
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
 relations: []
@@ -50,33 +50,43 @@ presence:
   from: sc-games-kakashi-shukuba-debrief.start
   to: sc-games-kakashi-shukuba-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-shukuba-debrief-c-naruto
   entity_id: c-naruto
   from: sc-games-kakashi-shukuba-debrief.start
   to: sc-games-kakashi-shukuba-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-shukuba-debrief-c-sasuke
   entity_id: c-sasuke
   from: sc-games-kakashi-shukuba-debrief.start
   to: sc-games-kakashi-shukuba-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-shukuba-debrief-c-sakura
   entity_id: c-sakura
   from: sc-games-kakashi-shukuba-debrief.start
   to: sc-games-kakashi-shukuba-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-shukuba-debrief-c-hiruzen
   entity_id: c-hiruzen
   from: sc-games-kakashi-shukuba-debrief.start
   to: sc-games-kakashi-shukuba-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
   review: accepted

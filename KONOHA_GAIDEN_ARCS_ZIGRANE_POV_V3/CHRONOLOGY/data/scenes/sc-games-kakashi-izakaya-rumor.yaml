@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-izakaya-rumor
 episode_id: ep-games-kakashi-return-lunch
-display_rank: 7700
+display_rank: 140200
 continuity_id: main
 title: Какаші проводить вечір із колегами після обіду з Юміко
 location_id: loc-konoha-izakaya
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-izakaya-rumor-1
   display_rank: 100
   title: Какаші проводить вечір із колегами після обіду з Юміко
-  text: Вечірня розмова колег переходить між особистими справами та чутками про родини й наставників. Какаші гостріше відчуває різницю між чужими жартами й тим, що він сам хотів би отримати від знайомства з Юміко. Зовнішня розслабленість не прибирає його потреби все контролювати й страху перед звичайною близькістю.
+  text: Увечері Нобарі розповідає колегам, що бачила, як Какаші ховав спорядження перед обідом із Юміко. Асума, Куренай, Райдо, Ґенма та Ґай підхоплюють жарти про знайомство. Какаші визнає, що показав жінці обличчя й поговорив із нею. Звичайний обід швидко перетворюється у розповідях друзів на привід пожартувати про майбутнє весілля.
   origin: P
   extent: interval
   involvement:
@@ -40,41 +40,61 @@ events:
   - entity_id: c-nobari
     role: focus
     mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-might-guy
+    role: focus
+    mode: physical
   evidence_ids: &id001
   - evd-games-kakashi-gaiden-03
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-kakashi-izakaya-rumor-c-kakashi
+- id: pr-audit-games-kakashi-izakaya-rumor-c-kakashi
   entity_id: c-kakashi
   from: sc-games-kakashi-izakaya-rumor.start
   to: sc-games-kakashi-izakaya-rumor.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-izakaya-rumor-c-asuma
+- id: pr-audit-games-kakashi-izakaya-rumor-c-asuma
   entity_id: c-asuma
   from: sc-games-kakashi-izakaya-rumor.start
   to: sc-games-kakashi-izakaya-rumor.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-izakaya-rumor-c-kurenai
+- id: pr-audit-games-kakashi-izakaya-rumor-c-kurenai
   entity_id: c-kurenai
   from: sc-games-kakashi-izakaya-rumor.start
   to: sc-games-kakashi-izakaya-rumor.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-izakaya-rumor-c-genma
+- id: pr-audit-games-kakashi-izakaya-rumor-c-genma
   entity_id: c-genma
   from: sc-games-kakashi-izakaya-rumor.start
   to: sc-games-kakashi-izakaya-rumor.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-izakaya-rumor-c-nobari
+- id: pr-audit-games-kakashi-izakaya-rumor-c-nobari
   entity_id: c-nobari
+  from: sc-games-kakashi-izakaya-rumor.start
+  to: sc-games-kakashi-izakaya-rumor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-izakaya-rumor-c-raido
+  entity_id: c-raido
+  from: sc-games-kakashi-izakaya-rumor.start
+  to: sc-games-kakashi-izakaya-rumor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-izakaya-rumor-c-might-guy
+  entity_id: c-might-guy
   from: sc-games-kakashi-izakaya-rumor.start
   to: sc-games-kakashi-izakaya-rumor.end
   basis: source

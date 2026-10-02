@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-kakashi-forced-rest
 episode_id: ep-games-kakashi-overwork
-display_rank: 10100
+display_rank: 180400
 continuity_id: main
-title: Після бойового виснаження Какаші отримує тиждень відсторонення
+title: Какаші несподівано зустрічає Юміко в банку
 location_id: loc-konoha-bank
 day_part: afternoon
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-forced-rest-1
   display_rank: 100
-  title: Після бойового виснаження Какаші отримує тиждень відсторонення
-  text: Після періоду напруженої бойової роботи Какаші приходить оформити платню в банк. Там він знову стикається з Юміко, яка працює з документами. Її страх і його власний виснажений стан повертають незавершену проблему знайомства. Службове відсторонення залишає йому тиждень без звичного способу приглушити думки наступною місією.
+  title: Какаші несподівано зустрічає Юміко в банку
+  text: Какаші приходить у банк оформити рахунок за направленням Цунаде. У кабінеті 104 він бачить Юміко й спочатку приймає її за працівницю відділення. Коли повертається справжня клерк, з’ясовується, що Юміко лише завершила власні документи. Вона поспішно виходить повз Какаші, а він оформлює рахунок, підписує угоду та повертається додому.
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-yumiko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-07
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-kakashi-forced-rest.start
   to: sc-games-kakashi-forced-rest.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-forced-rest-c-yumiko
   entity_id: c-yumiko
   from: sc-games-kakashi-forced-rest.start
   to: sc-games-kakashi-forced-rest.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
   review: accepted

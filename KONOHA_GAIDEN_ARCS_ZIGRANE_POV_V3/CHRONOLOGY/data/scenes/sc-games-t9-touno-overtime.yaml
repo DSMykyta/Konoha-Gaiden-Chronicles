@@ -1,11 +1,11 @@
 schema_version: 1
 id: sc-games-t9-touno-overtime
 episode_id: ep-games-t9-touno-end
-display_rank: 4100
+display_rank: 70800
 continuity_id: main
-title: Сора зупиняє неузгоджене продовження роботи Тоуно
-location_id: loc-training-ground-9
-day_part: afternoon
+title: Команда 9 відмовляється від неузгодженої роботи Тоуно
+location_id: loc-team9-weeding-site
+day_part: noon
 placement:
   anchor_id: ta-games-0-08-25
   day_offset: 0
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-touno-overtime-1
   display_rank: 100
-  title: Сора зупиняє неузгоджене продовження роботи Тоуно
-  text: Тоуно намагається продовжити заняття понад оголошений час. Сора посилається на пункт 4.12 та припиняє роботу трійки, не погоджуючись на зміну правил без попередження. Команда йде разом. Конфлікт стосується довіри й зрозумілих меж командування, а не небажання взагалі тренуватися.
+  title: Команда 9 відмовляється від неузгодженої роботи Тоуно
+  text: Після ранкового прополювання Тоуно вимагає ще одне завдання понад оголошений час. Кіта першим відмовляється й іде, бо має погоджене заняття з Асумою. Сора посилається на пункт 4.12 про заздалегідь визначений графік, а Рен підтримує напарників. Трійка залишає місце роботи разом. Тоуно не може замінити попередню домовленість новою вимогою без їхньої згоди.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-touno
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-09
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-t9-touno-overtime.start
   to: sc-games-t9-touno-overtime.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-touno-overtime-c-ren
   entity_id: c-ren
   from: sc-games-t9-touno-overtime.start
   to: sc-games-t9-touno-overtime.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-touno-overtime-c-sora
   entity_id: c-sora
   from: sc-games-t9-touno-overtime.start
   to: sc-games-t9-touno-overtime.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-touno-overtime-c-touno
   entity_id: c-touno
   from: sc-games-t9-touno-overtime.start
   to: sc-games-t9-touno-overtime.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
   review: accepted

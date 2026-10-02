@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-games-t9-burn-treatment
+episode_id: ep-games-t9-new-burns
+display_rank: 80700
+continuity_id: main
+title: Кіту лікують у шпиталі після повторних опіків
+location_id: loc-konoha-hospital
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-14
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-burn-treatment-1
+  display_rank: 100
+  title: Кіту лікують у шпиталі після повторних опіків
+  text: У шпиталі Кіті діагностують опіки другого ступеня обох рук, накладають мазь, пов’язки й професійне медичне лікування. Рен і Кіба з Акамару супроводжують його. Медсестра забороняє два дні знімати чи мочити пов’язки та тренувати руками. Подальші заняття мають дочекатися цієї перерви.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-akamaru
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-burn-treatment-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-burn-treatment.start
+  to: sc-games-t9-burn-treatment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-burn-treatment-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-burn-treatment.start
+  to: sc-games-t9-burn-treatment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-burn-treatment-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-burn-treatment.start
+  to: sc-games-t9-burn-treatment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-burn-treatment-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-burn-treatment.start
+  to: sc-games-t9-burn-treatment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

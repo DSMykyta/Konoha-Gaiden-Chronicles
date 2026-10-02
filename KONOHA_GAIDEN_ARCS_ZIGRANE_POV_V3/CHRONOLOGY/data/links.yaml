@@ -3603,671 +3603,1809 @@ links:
   evidence_ids:
   - evd-archive-chain-placement
   - evd-archive-audit-bridge
-- id: lnk-games-arc-games-t9-first-skills-1
+- id: lnk-logic-after-field9-1
+  kind: before
+  a: sc-y0-0123-team9-field9
+  b: sc-games-t9-kiba-food
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-1
+- id: lnk-logic-after-field9-2
   kind: before
   a: sc-games-t9-kiba-food
   b: sc-games-t9-nobari-notebook
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-first-skills-2
-  kind: before
-  a: sc-games-t9-nobari-notebook
-  b: sc-games-t9-puppets
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-first-skills-3
+  - evd-games-team-9-02-1
+- id: lnk-logic-first-tools-1
   kind: before
   a: sc-games-t9-puppets
-  b: sc-games-t9-isshin-weapons
-  basis: editorial
+  b: sc-games-t9-loaned-blades
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-first-skills-4
+  - evd-games-team-9-02-2
+- id: lnk-logic-first-tools-2
+  kind: before
+  a: sc-games-t9-loaned-blades
+  b: sc-games-t9-isshin-weapons
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-2
+- id: lnk-logic-first-tools-3
   kind: before
   a: sc-games-t9-isshin-weapons
   b: sc-games-t9-first-medical
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-first-skills-5
-  kind: before
-  a: sc-games-t9-first-medical
-  b: sc-games-t9-team-roles
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-first-skills-6
-  kind: before
-  a: sc-games-t9-team-roles
-  b: sc-games-t9-first-warehouse
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-first-skills-7
-  kind: before
-  a: sc-games-t9-first-warehouse
-  b: sc-games-t9-second-warehouse
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-1
-  kind: before
-  a: sc-games-t9-kokuto
-  b: sc-games-t9-kunai-thread
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-2
-  kind: before
-  a: sc-games-t9-kunai-thread
-  b: sc-games-t9-oto-delivery
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-3
-  kind: before
-  a: sc-games-t9-oto-delivery
-  b: sc-games-t9-asuma-tickets
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-4
+  - evd-games-team-9-02-2
+- id: lnk-logic-burn-recovery-1
   kind: before
   a: sc-games-t9-asuma-tickets
   b: sc-games-t9-burn-attempt
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-5
+  - evd-games-team-9-04
+- id: lnk-logic-burn-recovery-2
   kind: before
   a: sc-games-t9-burn-attempt
   b: sc-games-t9-burn-notebook
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-6
+  - evd-games-team-9-04
+- id: lnk-logic-burn-recovery-3
   kind: before
   a: sc-games-t9-burn-notebook
-  b: sc-games-t9-raido-absence
-  basis: editorial
+  b: sc-games-t9-regular-medical
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-7
+  - evd-games-team-9-04
+- id: lnk-logic-first-fire-1
   kind: before
-  a: sc-games-t9-raido-absence
-  b: sc-games-t9-naruto-ramen
-  basis: editorial
+  a: sc-games-t9-asuma-tickets
+  b: sc-games-t9-asuma-first-fire
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-8
+  - evd-games-team-9-04
+- id: lnk-logic-first-fire-2
   kind: before
-  a: sc-games-t9-naruto-ramen
-  b: sc-games-t9-squirrel-blink
-  basis: editorial
+  a: sc-games-t9-asuma-first-fire
+  b: sc-games-t9-burn-attempt
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-thread-blink-9
+  - evd-games-team-9-04
+- id: lnk-logic-touno-end-1
   kind: before
-  a: sc-games-t9-squirrel-blink
-  b: sc-games-t9-raido-blink
-  basis: editorial
+  a: sc-games-t9-touno-overtime
+  b: sc-games-t9-asuma-fear
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-preexam-1
+  - evd-games-team-9-09
+- id: lnk-logic-touno-end-2
   kind: before
-  a: sc-games-t9-wave-friends
-  b: sc-games-t9-ren-sensor
-  basis: editorial
+  a: sc-games-t9-asuma-fear
+  b: sc-games-t9-touno-resigns
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-preexam-2
+  - evd-games-team-9-09
+- id: lnk-logic-first-pay-1
   kind: before
-  a: sc-games-t9-ren-sensor
-  b: sc-games-t9-kakashi-substitute
-  basis: editorial
+  a: sc-games-t9-first-warehouse
+  b: sc-games-t9-first-payment
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-preexam-3
+  - evd-games-team-9-02-4
+- id: lnk-logic-waves-witness-1
   kind: before
-  a: sc-games-t9-kakashi-substitute
-  b: sc-games-t9-sora-anko
-  basis: editorial
+  a: sc-games-t9-second-warehouse
+  b: sc-y0-0315-tazuna-assignment
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-preexam-4
+  - evd-games-team-9-02-5
+- id: lnk-logic-waves-witness-2
   kind: before
-  a: sc-games-t9-sora-anko
-  b: sc-games-t9-exam-equipment
-  basis: editorial
+  a: sc-y0-0315-tazuna-assignment
+  b: sc-y0-0315-team7-departs-konoha
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-chunin-2
-  kind: before
-  a: sc-games-t9-rain-scroll
-  b: sc-games-t9-earth-scroll
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-chunin-3
-  kind: before
-  a: sc-games-t9-earth-scroll
-  b: sc-games-t9-missing-scrolls
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-chunin-4
-  kind: before
-  a: sc-games-t9-missing-scrolls
-  b: sc-games-t9-exam-failure
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-transfer-1
-  kind: before
-  a: sc-games-t9-anko-order
-  b: sc-games-t9-anko-assessment
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-transfer-2
+  - evd-games-team-9-02-5
+- id: lnk-logic-medical-mission-1
   kind: before
   a: sc-games-t9-anko-assessment
   b: sc-games-t9-kurenai-cover
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-transfer-3
+  - evd-games-team-9-07
+- id: lnk-logic-medical-mission-2
   kind: before
   a: sc-games-t9-kurenai-cover
+  b: sc-games-t9-nobari-assignment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+- id: lnk-logic-medical-mission-3
+  kind: before
+  a: sc-games-t9-nobari-assignment
   b: sc-games-t9-nobari-field
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-death-forest-fence-1
+  - evd-games-team-9-07
+- id: lnk-logic-medical-mission-4
   kind: before
-  a: sc-games-t9-fence-d-rank
-  b: sc-games-t9-vertical-150
-  basis: editorial
+  a: sc-games-t9-nobari-field
+  b: sc-games-t9-nobari-debrief
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-death-forest-fence-2
-  kind: before
-  a: sc-games-t9-vertical-150
-  b: sc-games-t9-b4-drill
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-death-forest-fence-3
-  kind: before
-  a: sc-games-t9-b4-drill
-  b: sc-games-t9-anko-hospital-news
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-1
+  - evd-games-team-9-07
+- id: lnk-logic-touno-first-week-1
   kind: before
   a: sc-games-t9-chooses-touno
   b: sc-games-t9-touno-d-ranks
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-2
+  - evd-games-team-9-09
+- id: lnk-logic-touno-first-week-2
   kind: before
   a: sc-games-t9-touno-d-ranks
-  b: sc-games-t9-farm-swap
-  basis: editorial
+  b: sc-games-t9-touno-measures
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-3
+  - evd-games-team-9-09
+- id: lnk-logic-touno-first-week-3
+  kind: before
+  a: sc-games-t9-touno-measures
+  b: sc-games-t9-farm-swap
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+- id: lnk-logic-touno-first-week-4
   kind: before
   a: sc-games-t9-farm-swap
-  b: sc-games-t9-anko-flowers
-  basis: editorial
+  b: sc-games-t9-farm-home
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-4
+  - evd-games-team-9-09
+- id: lnk-logic-touno-first-week-5
   kind: before
-  a: sc-games-t9-anko-flowers
-  b: sc-games-t9-asuma-fear
-  basis: editorial
+  a: sc-games-t9-farm-home
+  b: sc-games-t9-farm-isshin
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-5
+  - evd-games-team-9-09
+- id: lnk-logic-touno-first-week-6
+  kind: before
+  a: sc-games-t9-farm-isshin
+  b: sc-games-t9-anko-flowers
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+- id: lnk-logic-first-bottle-1
   kind: before
   a: sc-games-t9-asuma-fear
-  b: sc-games-t9-touno-overtime
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-6
-  kind: before
-  a: sc-games-t9-touno-overtime
-  b: sc-games-t9-touno-resigns
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-7
-  kind: before
-  a: sc-games-t9-touno-resigns
   b: sc-games-t9-first-bottle
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-touno-asuma-8
+  - evd-games-team-9-09
+- id: lnk-logic-first-bottle-2
   kind: before
   a: sc-games-t9-first-bottle
-  b: sc-games-t9-chakra-paper
-  basis: editorial
+  b: sc-games-t9-bottle-lost
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-return-1
+  - evd-games-team-9-09
+- id: lnk-logic-first-bottle-3
+  kind: before
+  a: sc-games-t9-bottle-lost
+  b: sc-games-t9-chakra-paper
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+- id: lnk-logic-skill-knowledge-1
+  kind: before
+  a: sc-games-t9-chakra-paper
+  b: sc-games-t9-anko-returns
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-2
   kind: before
   a: sc-games-t9-anko-returns
-  b: sc-games-t9-b4-snake
-  basis: editorial
+  b: sc-games-t9-anko-capabilities-report
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-return-2
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-3
+  kind: before
+  a: sc-games-t9-anko-capabilities-report
+  b: sc-games-t9-b4-snake
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-4
   kind: before
   a: sc-games-t9-b4-snake
   b: sc-games-t9-wind-three-seconds
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-return-3
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-5
   kind: before
   a: sc-games-t9-wind-three-seconds
   b: sc-games-t9-wind-column
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-return-4
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-6
   kind: before
   a: sc-games-t9-wind-column
   b: sc-games-t9-hinata-chakra-burn
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-anko-return-5
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-7
   kind: before
   a: sc-games-t9-hinata-chakra-burn
-  b: sc-games-t9-rest-wind-seven
-  basis: editorial
+  b: sc-games-t9-burn-treatment
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-tanigawa-1
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-8
   kind: before
-  a: sc-games-t9-tanigawa-order
-  b: sc-games-t9-tanigawa-injuries
-  basis: editorial
+  a: sc-games-t9-burn-treatment
+  b: sc-games-t9-asuma-resumes
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-tanigawa-2
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-skill-knowledge-9
+  kind: before
+  a: sc-games-t9-asuma-resumes
+  b: sc-games-t9-rest-wind-seven
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-team-9-10
+- id: lnk-logic-tanigawa-home-1
   kind: before
   a: sc-games-t9-tanigawa-injuries
-  b: sc-games-t9-tanigawa-family
-  basis: editorial
+  b: sc-games-t9-tanigawa-nobari
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-long-base2-1
+  - evd-games-team-9-11
+- id: lnk-logic-tanigawa-home-2
+  kind: before
+  a: sc-games-t9-tanigawa-nobari
+  b: sc-games-t9-tanigawa-family
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-11
+- id: lnk-logic-long-mission-1
   kind: before
   a: sc-games-t9-sealed-order
-  b: sc-games-t9-base2-scout
-  basis: editorial
+  b: sc-games-t9-base2-watch
+  basis: source
   review: accepted
   evidence_ids:
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-long-base2-2
+- id: lnk-logic-long-mission-2
+  kind: before
+  a: sc-games-t9-base2-watch
+  b: sc-games-t9-base2-scout
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-long-mission-3
   kind: before
   a: sc-games-t9-base2-scout
   b: sc-games-t9-base2-prisoner
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-long-base2-3
+- id: lnk-logic-long-mission-4
   kind: before
   a: sc-games-t9-base2-prisoner
-  b: sc-games-t9-base2-road-rest
-  basis: editorial
+  b: sc-games-t9-base2-cleanup
+  basis: source
   review: accepted
   evidence_ids:
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-long-base18-1
+- id: lnk-logic-long-mission-5
+  kind: before
+  a: sc-games-t9-base2-cleanup
+  b: sc-games-t9-base2-road-rest
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-long-mission-6
+  kind: before
+  a: sc-games-t9-base2-road-rest
+  b: sc-games-t9-base18-entry
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-base18-1
   kind: before
   a: sc-games-t9-base18-entry
   b: sc-games-t9-base18-captives
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-long-base18-2
+  - evd-games-team-9-13
+- id: lnk-logic-base18-2
   kind: before
   a: sc-games-t9-base18-captives
-  b: sc-games-t9-base18-plums
-  basis: editorial
+  b: sc-games-t9-base18-destroyed
+  basis: source
   review: accepted
   evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-t9-long-base18-3
+  - evd-games-team-9-13
+- id: lnk-logic-base18-3
+  kind: before
+  a: sc-games-t9-base18-destroyed
+  b: sc-games-t9-base18-plums
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-13
+- id: lnk-logic-base18-4
   kind: before
   a: sc-games-t9-base18-plums
-  b: sc-games-t9-base18-destroyed
-  basis: editorial
+  b: sc-games-t9-base18-settlement
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-team-9-13
+- id: lnk-games-t9-first-skills-1
+  kind: before
+  a: sc-games-t9-kiba-food
+  b: sc-games-t9-nobari-notebook
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-1
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-1
+- id: lnk-games-t9-first-skills-2
+  kind: before
+  a: sc-games-t9-nobari-notebook
+  b: sc-games-t9-puppets
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-part-i-placement
+  - evd-games-team-9-02-2
+- id: lnk-games-t9-first-skills-3
+  kind: before
+  a: sc-games-t9-puppets
+  b: sc-games-t9-loaned-blades
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
+- id: lnk-games-t9-first-skills-4
+  kind: before
+  a: sc-games-t9-loaned-blades
+  b: sc-games-t9-isshin-weapons
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
+- id: lnk-games-t9-first-skills-5
+  kind: before
+  a: sc-games-t9-isshin-weapons
+  b: sc-games-t9-first-medical
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+- id: lnk-games-t9-first-skills-6
+  kind: before
+  a: sc-games-t9-first-medical
+  b: sc-games-t9-team-roles
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-2
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+  - evd-games-part-i-placement
+- id: lnk-games-t9-first-skills-7
+  kind: before
+  a: sc-games-t9-team-roles
+  b: sc-games-t9-first-warehouse
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-2
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+  - evd-games-part-i-placement
+- id: lnk-games-t9-first-skills-8
+  kind: before
+  a: sc-games-t9-first-warehouse
+  b: sc-games-t9-first-payment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-4
+  - evd-games-part-i-placement
+- id: lnk-games-t9-first-skills-9
+  kind: before
+  a: sc-games-t9-first-payment
+  b: sc-games-t9-second-warehouse
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-02-4
+  - evd-games-part-i-placement
+  - evd-games-team-9-02-5
+- id: lnk-games-t9-thread-blink-1
+  kind: before
+  a: sc-games-t9-kokuto
+  b: sc-games-t9-kunai-thread
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-2
+  kind: before
+  a: sc-games-t9-kunai-thread
+  b: sc-games-t9-oto-delivery
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-3
+  kind: before
+  a: sc-games-t9-oto-delivery
+  b: sc-games-t9-asuma-tickets
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-4
+  kind: before
+  a: sc-games-t9-asuma-tickets
+  b: sc-games-t9-asuma-first-fire
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-5
+  kind: before
+  a: sc-games-t9-asuma-first-fire
+  b: sc-games-t9-burn-attempt
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-6
+  kind: before
+  a: sc-games-t9-burn-attempt
+  b: sc-games-t9-burn-notebook
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-7
+  kind: before
+  a: sc-games-t9-burn-notebook
+  b: sc-games-t9-regular-medical
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-8
+  kind: before
+  a: sc-games-t9-regular-medical
+  b: sc-games-t9-raido-absence
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-9
+  kind: before
+  a: sc-games-t9-raido-absence
+  b: sc-games-t9-naruto-ramen
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-10
+  kind: before
+  a: sc-games-t9-naruto-ramen
+  b: sc-games-t9-squirrel-blink
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-thread-blink-11
+  kind: before
+  a: sc-games-t9-squirrel-blink
+  b: sc-games-t9-raido-blink
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+- id: lnk-games-t9-preexam-1
+  kind: before
+  a: sc-games-t9-wave-friends
+  b: sc-games-t9-ren-sensor
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+- id: lnk-games-t9-preexam-2
+  kind: before
+  a: sc-games-t9-ren-sensor
+  b: sc-games-t9-kakashi-substitute
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+- id: lnk-games-t9-preexam-3
+  kind: before
+  a: sc-games-t9-kakashi-substitute
+  b: sc-games-t9-sora-anko
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+- id: lnk-games-t9-preexam-4
+  kind: before
+  a: sc-games-t9-sora-anko
+  b: sc-games-t9-exam-equipment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+- id: lnk-games-t9-chunin-1
+  kind: before
+  a: sc-games-t9-rain-scroll
+  b: sc-games-t9-earth-scroll
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
+- id: lnk-games-t9-chunin-2
+  kind: before
+  a: sc-games-t9-earth-scroll
+  b: sc-games-t9-missing-scrolls
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
+- id: lnk-games-t9-chunin-3
+  kind: before
+  a: sc-games-t9-missing-scrolls
+  b: sc-games-t9-exam-failure
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-transfer-1
+  kind: before
+  a: sc-games-t9-anko-order
+  b: sc-games-t9-anko-assessment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-transfer-2
+  kind: before
+  a: sc-games-t9-anko-assessment
+  b: sc-games-t9-kurenai-cover
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-transfer-3
+  kind: before
+  a: sc-games-t9-kurenai-cover
+  b: sc-games-t9-nobari-assignment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-transfer-4
+  kind: before
+  a: sc-games-t9-nobari-assignment
+  b: sc-games-t9-nobari-field
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-transfer-5
+  kind: before
+  a: sc-games-t9-nobari-field
+  b: sc-games-t9-nobari-debrief
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+- id: lnk-games-t9-death-forest-fence-1
+  kind: before
+  a: sc-games-t9-fence-d-rank
+  b: sc-games-t9-vertical-150
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
+- id: lnk-games-t9-death-forest-fence-2
+  kind: before
+  a: sc-games-t9-vertical-150
+  b: sc-games-t9-b4-drill
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
+- id: lnk-games-t9-death-forest-fence-3
+  kind: before
+  a: sc-games-t9-b4-drill
+  b: sc-games-t9-anko-hospital-news
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
+  - evd-games-team-9-09
+- id: lnk-games-t9-touno-asuma-1
+  kind: before
+  a: sc-games-t9-chooses-touno
+  b: sc-games-t9-touno-d-ranks
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-2
+  kind: before
+  a: sc-games-t9-touno-d-ranks
+  b: sc-games-t9-touno-measures
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-3
+  kind: before
+  a: sc-games-t9-touno-measures
+  b: sc-games-t9-farm-swap
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-4
+  kind: before
+  a: sc-games-t9-farm-swap
+  b: sc-games-t9-farm-home
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-5
+  kind: before
+  a: sc-games-t9-farm-home
+  b: sc-games-t9-farm-isshin
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-6
+  kind: before
+  a: sc-games-t9-farm-isshin
+  b: sc-games-t9-anko-flowers
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-7
+  kind: before
+  a: sc-games-t9-anko-flowers
+  b: sc-games-t9-touno-overtime
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-8
+  kind: before
+  a: sc-games-t9-touno-overtime
+  b: sc-games-t9-asuma-fear
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-9
+  kind: before
+  a: sc-games-t9-asuma-fear
+  b: sc-games-t9-first-bottle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-10
+  kind: before
+  a: sc-games-t9-first-bottle
+  b: sc-games-t9-touno-resigns
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-11
+  kind: before
+  a: sc-games-t9-touno-resigns
+  b: sc-games-t9-bottle-lost
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-touno-asuma-12
+  kind: before
+  a: sc-games-t9-bottle-lost
+  b: sc-games-t9-chakra-paper
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-1
+  kind: before
+  a: sc-games-t9-anko-returns
+  b: sc-games-t9-anko-capabilities-report
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-2
+  kind: before
+  a: sc-games-t9-anko-capabilities-report
+  b: sc-games-t9-b4-snake
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-3
+  kind: before
+  a: sc-games-t9-b4-snake
+  b: sc-games-t9-wind-three-seconds
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-4
+  kind: before
+  a: sc-games-t9-wind-three-seconds
+  b: sc-games-t9-wind-column
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-5
+  kind: before
+  a: sc-games-t9-wind-column
+  b: sc-games-t9-hinata-chakra-burn
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-6
+  kind: before
+  a: sc-games-t9-hinata-chakra-burn
+  b: sc-games-t9-burn-treatment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-7
+  kind: before
+  a: sc-games-t9-burn-treatment
+  b: sc-games-t9-asuma-resumes
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-anko-return-8
+  kind: before
+  a: sc-games-t9-asuma-resumes
+  b: sc-games-t9-rest-wind-seven
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+- id: lnk-games-t9-tanigawa-1
+  kind: before
+  a: sc-games-t9-tanigawa-order
+  b: sc-games-t9-tanigawa-injuries
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
+- id: lnk-games-t9-tanigawa-2
+  kind: before
+  a: sc-games-t9-tanigawa-injuries
+  b: sc-games-t9-tanigawa-nobari
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
+- id: lnk-games-t9-tanigawa-3
+  kind: before
+  a: sc-games-t9-tanigawa-nobari
+  b: sc-games-t9-tanigawa-family
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base2-1
+  kind: before
+  a: sc-games-t9-sealed-order
+  b: sc-games-t9-base2-watch
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+- id: lnk-games-t9-long-base2-2
+  kind: before
+  a: sc-games-t9-base2-watch
+  b: sc-games-t9-base2-scout
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base2-3
+  kind: before
+  a: sc-games-t9-base2-scout
+  b: sc-games-t9-base2-prisoner
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base2-4
+  kind: before
+  a: sc-games-t9-base2-prisoner
+  b: sc-games-t9-base2-cleanup
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base2-5
+  kind: before
+  a: sc-games-t9-base2-cleanup
+  b: sc-games-t9-base2-road-rest
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base18-1
+  kind: before
+  a: sc-games-t9-base18-entry
+  b: sc-games-t9-base18-captives
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base18-2
+  kind: before
+  a: sc-games-t9-base18-captives
+  b: sc-games-t9-base18-destroyed
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base18-3
+  kind: before
+  a: sc-games-t9-base18-destroyed
+  b: sc-games-t9-base18-plums
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
+- id: lnk-games-t9-long-base18-4
+  kind: before
+  a: sc-games-t9-base18-plums
+  b: sc-games-t9-base18-settlement
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
+- id: lnk-games-kakashi-yumiko-first-1
   kind: before
   a: sc-games-kakashi-yumiko-lunch
   b: sc-games-kakashi-yumiko-izakaya
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-2
+- id: lnk-games-kakashi-yumiko-first-2
   kind: before
   a: sc-games-kakashi-yumiko-izakaya
-  b: sc-games-kakashi-salmon
-  basis: editorial
+  b: sc-games-kakashi-yumiko-asks-sakura
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-3
+- id: lnk-games-kakashi-yumiko-first-3
+  kind: before
+  a: sc-games-kakashi-yumiko-asks-sakura
+  b: sc-games-kakashi-salmon
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+- id: lnk-games-kakashi-yumiko-first-4
   kind: before
   a: sc-games-kakashi-salmon
   b: sc-games-kakashi-fourth-meeting
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-4
+- id: lnk-games-kakashi-yumiko-first-5
   kind: before
   a: sc-games-kakashi-fourth-meeting
   b: sc-games-kakashi-first-mikata
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-5
+- id: lnk-games-kakashi-yumiko-first-6
   kind: before
   a: sc-games-kakashi-first-mikata
   b: sc-games-kakashi-yumiko-sakura
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-6
+- id: lnk-games-kakashi-yumiko-first-7
   kind: before
   a: sc-games-kakashi-yumiko-sakura
   b: sc-games-kakashi-park-refund
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-7
+- id: lnk-games-kakashi-yumiko-first-8
   kind: before
   a: sc-games-kakashi-park-refund
   b: sc-games-kakashi-friends-yumiko
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-8
+- id: lnk-games-kakashi-yumiko-first-9
   kind: before
   a: sc-games-kakashi-friends-yumiko
   b: sc-games-kakashi-yumiko-name
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-9
+- id: lnk-games-kakashi-yumiko-first-10
   kind: before
   a: sc-games-kakashi-yumiko-name
-  b: sc-games-kakashi-yumiko-search
-  basis: editorial
+  b: sc-games-kakashi-friends-after-name
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-first-10
+- id: lnk-games-kakashi-yumiko-first-11
+  kind: before
+  a: sc-games-kakashi-friends-after-name
+  b: sc-games-kakashi-yumiko-search
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+- id: lnk-games-kakashi-yumiko-first-12
   kind: before
   a: sc-games-kakashi-yumiko-search
   b: sc-games-kakashi-yumiko-balcony
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-after-iwa-1
+- id: lnk-games-kakashi-yumiko-first-13
+  kind: before
+  a: sc-games-kakashi-yumiko-balcony
+  b: sc-games-kakashi-shikaku-advice
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+- id: lnk-games-kakashi-after-iwa-1
   kind: before
   a: sc-games-kakashi-garden
   b: sc-games-kakashi-kurenai-park
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-02
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-yumiko-return-1
+- id: lnk-games-kakashi-yumiko-return-1
   kind: before
   a: sc-games-kakashi-yumiko-returns
   b: sc-games-kakashi-izakaya-rumor
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-03
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-shukuba-1
+- id: lnk-games-kakashi-shukuba-1
+  kind: before
+  a: sc-games-kakashi-shukuba-briefing
+  b: sc-games-kakashi-shukuba-order
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-kakashi-gaiden-03
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-04
+- id: lnk-games-kakashi-shukuba-2
   kind: before
   a: sc-games-kakashi-shukuba-order
   b: sc-games-kakashi-shukuba-transfer
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-shukuba-2
+- id: lnk-games-kakashi-shukuba-3
   kind: before
   a: sc-games-kakashi-shukuba-transfer
   b: sc-games-kakashi-shukuba-debrief
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-shukuba-3
+- id: lnk-games-kakashi-shukuba-4
   kind: before
   a: sc-games-kakashi-shukuba-debrief
   b: sc-games-kakashi-pakkun-wait
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-shukuba-4
+- id: lnk-games-kakashi-shukuba-5
   kind: before
   a: sc-games-kakashi-pakkun-wait
   b: sc-games-kakashi-takumi-brother
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-shukuba-5
+- id: lnk-games-kakashi-shukuba-6
   kind: before
   a: sc-games-kakashi-takumi-brother
-  b: sc-games-kakashi-weapons-archive-lead
-  basis: editorial
-  review: accepted
-  evidence_ids:
-  - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-shukuba-6
-  kind: before
-  a: sc-games-kakashi-weapons-archive-lead
   b: sc-games-kakashi-skips-eatery
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-shukuba-7
+- id: lnk-games-kakashi-shukuba-7
   kind: before
   a: sc-games-kakashi-skips-eatery
-  b: sc-games-kakashi-mines-order
-  basis: editorial
+  b: sc-games-kakashi-weapons-archive-lead
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-iwa-mines-1
+- id: lnk-games-kakashi-shukuba-8
+  kind: before
+  a: sc-games-kakashi-weapons-archive-lead
+  b: sc-games-kakashi-mines-order
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+- id: lnk-games-kakashi-iwa-mines-1
   kind: before
   a: sc-games-kakashi-mines-depart
   b: sc-games-kakashi-daiki-cover
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-05
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-iwa-mines-2
+- id: lnk-games-kakashi-iwa-mines-2
   kind: before
   a: sc-games-kakashi-daiki-cover
   b: sc-games-kakashi-daiki-fight
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-05
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-iwa-mines-3
+- id: lnk-games-kakashi-iwa-mines-3
   kind: before
   a: sc-games-kakashi-daiki-fight
   b: sc-games-kakashi-mines-memory
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-05
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-iwa-mines-4
+- id: lnk-games-kakashi-iwa-mines-4
   kind: before
   a: sc-games-kakashi-mines-memory
   b: sc-games-kakashi-mines-return
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-05
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-iwa-mines-5
+- id: lnk-games-kakashi-iwa-mines-5
   kind: before
   a: sc-games-kakashi-mines-return
   b: sc-games-kakashi-mines-report
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-05
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-iwa-mines-6
+- id: lnk-games-kakashi-iwa-mines-6
   kind: before
   a: sc-games-kakashi-mines-report
   b: sc-games-kakashi-mines-izakaya
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-05
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-team9-escort-1
+- id: lnk-games-kakashi-team9-escort-1
   kind: before
   a: sc-games-kakashi-team9-assigned
   b: sc-games-kakashi-team9-ninken
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-team9-escort-2
+- id: lnk-games-kakashi-team9-escort-2
   kind: before
   a: sc-games-kakashi-team9-ninken
   b: sc-games-kakashi-team9-client
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-team9-escort-3
+- id: lnk-games-kakashi-team9-escort-3
   kind: before
   a: sc-games-kakashi-team9-client
   b: sc-games-kakashi-team9-ambush
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-team9-escort-4
+- id: lnk-games-kakashi-team9-escort-4
   kind: before
   a: sc-games-kakashi-team9-ambush
   b: sc-games-kakashi-team9-inn
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-team9-escort-5
+- id: lnk-games-kakashi-team9-escort-5
   kind: before
   a: sc-games-kakashi-team9-inn
   b: sc-games-kakashi-team9-return
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-after-valley-1
+- id: lnk-games-kakashi-after-valley-1
   kind: before
   a: sc-games-kakashi-valley-report
   b: sc-games-kakashi-rain-balcony
-  basis: editorial
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-07
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-after-valley-2
+- id: lnk-games-kakashi-after-valley-2
   kind: before
   a: sc-games-kakashi-rain-balcony
-  b: sc-games-kakashi-forced-rest
-  basis: editorial
+  b: sc-games-kakashi-rest-order
+  basis: source
   review: accepted
   evidence_ids:
+  - evd-games-kakashi-gaiden-07
   - evd-games-part-i-placement
-- id: lnk-games-arc-games-kakashi-after-valley-3
+- id: lnk-games-kakashi-after-valley-3
+  kind: before
+  a: sc-games-kakashi-rest-order
+  b: sc-games-kakashi-forced-rest
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
+- id: lnk-games-kakashi-after-valley-4
   kind: before
   a: sc-games-kakashi-forced-rest
   b: sc-games-kakashi-nobari-gathering
-  basis: editorial
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
+- id: lnk-logic-notebook-learning-1
+  kind: before
+  a: sc-y0-0123-team9-field9
+  b: sc-games-t9-kiba-food
+  basis: logical
   review: accepted
   evidence_ids:
   - evd-games-part-i-placement
-
+- id: lnk-logic-notebook-learning-2
+  kind: before
+  a: sc-games-t9-kiba-food
+  b: sc-games-t9-nobari-notebook
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-notebook-learning-3
+  kind: before
+  a: sc-games-t9-nobari-notebook
+  b: sc-games-t9-first-medical
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-notebook-learning-4
+  kind: before
+  a: sc-games-t9-first-medical
+  b: sc-games-t9-burn-attempt
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-notebook-learning-5
+  kind: before
+  a: sc-games-t9-burn-attempt
+  b: sc-games-t9-burn-notebook
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-notebook-learning-6
+  kind: before
+  a: sc-games-t9-burn-notebook
+  b: sc-games-t9-regular-medical
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-notebook-learning-7
+  kind: before
+  a: sc-games-t9-regular-medical
+  b: sc-games-t9-squirrel-blink
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-mission-promotion-1
+  kind: before
+  a: sc-games-t9-first-payment
+  b: sc-games-t9-second-warehouse
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-mission-promotion-2
+  kind: before
+  a: sc-games-t9-second-warehouse
+  b: sc-y0-0315-tazuna-assignment
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-sora-anko-practice-1
+  kind: before
+  a: sc-games-t9-sora-anko
+  b: sc-games-t9-anko-order
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-sora-anko-practice-2
+  kind: before
+  a: sc-games-t9-anko-order
+  b: sc-games-t9-b4-drill
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-sora-anko-practice-3
+  kind: before
+  a: sc-games-t9-b4-drill
+  b: sc-games-t9-farm-swap
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-sora-anko-practice-4
+  kind: before
+  a: sc-games-t9-farm-swap
+  b: sc-games-t9-anko-returns
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-sora-anko-practice-5
+  kind: before
+  a: sc-games-t9-anko-returns
+  b: sc-games-t9-b4-snake
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-sora-anko-practice-6
+  kind: before
+  a: sc-games-t9-b4-snake
+  b: sc-games-t9-tanigawa-order
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-kita-capabilities-1
+  kind: before
+  a: sc-games-t9-squirrel-blink
+  b: sc-games-t9-raido-blink
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-kita-capabilities-2
+  kind: before
+  a: sc-games-t9-raido-blink
+  b: sc-games-t9-kakashi-substitute
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-kita-capabilities-3
+  kind: before
+  a: sc-games-t9-kakashi-substitute
+  b: sc-games-t9-vertical-150
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-kita-capabilities-4
+  kind: before
+  a: sc-games-t9-vertical-150
+  b: sc-games-t9-b4-drill
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-kita-capabilities-5
+  kind: before
+  a: sc-games-t9-b4-drill
+  b: sc-games-t9-touno-measures
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-kita-capabilities-6
+  kind: before
+  a: sc-games-t9-touno-measures
+  b: sc-games-t9-farm-swap
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-1
+  kind: before
+  a: sc-games-t9-chakra-paper
+  b: sc-games-t9-anko-capabilities-report
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-2
+  kind: before
+  a: sc-games-t9-anko-capabilities-report
+  b: sc-games-t9-wind-three-seconds
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-3
+  kind: before
+  a: sc-games-t9-wind-three-seconds
+  b: sc-games-t9-wind-column
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-4
+  kind: before
+  a: sc-games-t9-wind-column
+  b: sc-games-t9-hinata-chakra-burn
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-5
+  kind: before
+  a: sc-games-t9-hinata-chakra-burn
+  b: sc-games-t9-burn-treatment
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-6
+  kind: before
+  a: sc-games-t9-burn-treatment
+  b: sc-games-t9-asuma-resumes
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-7
+  kind: before
+  a: sc-games-t9-asuma-resumes
+  b: sc-games-t9-rest-wind-seven
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-dual-nature-report-8
+  kind: before
+  a: sc-games-t9-rest-wind-seven
+  b: sc-games-t9-tanigawa-order
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-1
+  kind: before
+  a: sc-games-t9-kakashi-substitute
+  b: sc-games-t9-tanigawa-family
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-2
+  kind: before
+  a: sc-games-t9-tanigawa-family
+  b: sc-games-kakashi-team9-assigned
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-3
+  kind: before
+  a: sc-games-kakashi-team9-assigned
+  b: sc-games-kakashi-team9-return
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-4
+  kind: before
+  a: sc-games-kakashi-team9-return
+  b: sc-y0-0922-hospital-rooftop-duel
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-5
+  kind: before
+  a: sc-y0-0922-hospital-rooftop-duel
+  b: sc-y0-0922-kakashi-talks-to-sasuke
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-6
+  kind: before
+  a: sc-y0-0922-kakashi-talks-to-sasuke
+  b: sc-y0-0925-kakashi-finds-naruto
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-7
+  kind: before
+  a: sc-y0-0925-kakashi-finds-naruto
+  b: sc-games-kakashi-valley-report
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-8
+  kind: before
+  a: sc-games-kakashi-valley-report
+  b: sc-games-t9-sealed-order
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-9
+  kind: before
+  a: sc-games-t9-sealed-order
+  b: sc-games-kakashi-rain-balcony
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-escort-known-team-10
+  kind: before
+  a: sc-games-kakashi-rain-balcony
+  b: sc-games-kakashi-rest-order
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-1
+  kind: before
+  a: sc-games-kakashi-yumiko-asks-sakura
+  b: sc-games-kakashi-yumiko-sakura
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-2
+  kind: before
+  a: sc-games-kakashi-yumiko-sakura
+  b: sc-games-kakashi-yumiko-name
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-3
+  kind: before
+  a: sc-games-kakashi-yumiko-name
+  b: sc-games-kakashi-shikaku-advice
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-4
+  kind: before
+  a: sc-games-kakashi-shikaku-advice
+  b: sc-games-kakashi-garden
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-5
+  kind: before
+  a: sc-games-kakashi-garden
+  b: sc-games-kakashi-yumiko-returns
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-6
+  kind: before
+  a: sc-games-kakashi-yumiko-returns
+  b: sc-games-kakashi-pakkun-wait
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-7
+  kind: before
+  a: sc-games-kakashi-pakkun-wait
+  b: sc-games-kakashi-skips-eatery
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-yumiko-knowledge-8
+  kind: before
+  a: sc-games-kakashi-skips-eatery
+  b: sc-games-kakashi-forced-rest
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-1
+  kind: before
+  a: sc-games-kakashi-yumiko-returns
+  b: sc-games-kakashi-shukuba-briefing
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-2
+  kind: before
+  a: sc-games-kakashi-shukuba-briefing
+  b: sc-games-kakashi-shukuba-transfer
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-3
+  kind: before
+  a: sc-games-kakashi-shukuba-transfer
+  b: sc-games-kakashi-weapons-archive-lead
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-4
+  kind: before
+  a: sc-games-kakashi-weapons-archive-lead
+  b: sc-games-kakashi-mines-order
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-5
+  kind: before
+  a: sc-games-kakashi-mines-order
+  b: sc-games-kakashi-mines-depart
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-6
+  kind: before
+  a: sc-games-kakashi-mines-depart
+  b: sc-games-kakashi-daiki-fight
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-7
+  kind: before
+  a: sc-games-kakashi-daiki-fight
+  b: sc-games-kakashi-mines-memory
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
+- id: lnk-logic-shukuba-operation-8
+  kind: before
+  a: sc-games-kakashi-mines-memory
+  b: sc-games-kakashi-mines-return
+  basis: logical
+  review: accepted
+  evidence_ids:
+  - evd-games-part-i-placement
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence
   of relation means unknown order, not simultaneity.

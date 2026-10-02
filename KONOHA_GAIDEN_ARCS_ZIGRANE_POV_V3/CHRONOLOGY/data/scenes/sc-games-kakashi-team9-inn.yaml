@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-team9-inn
 episode_id: ep-games-kakashi-team9-road
-display_rank: 9700
+display_rank: 170500
 continuity_id: main
 title: Какаші спостерігає за побутовою взаємодією трійки на нічлігу
 location_id: loc-team9-road-inn
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-team9-inn-1
   display_rank: 100
   title: Какаші спостерігає за побутовою взаємодією трійки на нічлігу
-  text: Після виконання першої частини супроводу група ночує в рьокані. Рен бере більше їжі відповідно до навантаження, а Сора й Кіта легко ділять порції та простір. Какаші бачить сталі домовленості, які підтримують фізичний баланс і спокій команди. Вони не потребують постійного командирського пояснення кожної дрібної дії.
+  text: Команда передає чиновника та документи в адміністративній будівлі прикордонного міста й отримує акт виконання. Какаші знімає дві кімнати в рьокані та вирішує повертатися вранці. За вечерею Сора й Кіта віддають Ренові частину своїх великих порцій. Капітан спостерігає за звичним побутом трійки й поступово переглядає попередню оцінку їхньої замкненості.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
   focus_teams:
@@ -49,26 +49,34 @@ presence:
   from: sc-games-kakashi-team9-inn.start
   to: sc-games-kakashi-team9-inn.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-inn-c-kita
   entity_id: c-kita
   from: sc-games-kakashi-team9-inn.start
   to: sc-games-kakashi-team9-inn.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-inn-c-ren
   entity_id: c-ren
   from: sc-games-kakashi-team9-inn.start
   to: sc-games-kakashi-team9-inn.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-inn-c-sora
   entity_id: c-sora
   from: sc-games-kakashi-team9-inn.start
   to: sc-games-kakashi-team9-inn.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted

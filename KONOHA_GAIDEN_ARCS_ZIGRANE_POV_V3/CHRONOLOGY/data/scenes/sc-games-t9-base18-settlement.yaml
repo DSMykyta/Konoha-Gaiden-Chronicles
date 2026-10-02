@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-base18-settlement
+episode_id: ep-games-t9-base18-after
+display_rank: 110500
+continuity_id: main
+title: Команда 9 миється й купує одяг після Бази 18
+location_id: loc-long-mission-settlement
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-12-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base18-settlement-1
+  display_rank: 100
+  title: Команда 9 миється й купує одяг після Бази 18
+  text: У наступному поселенні трійка знаходить лазню та крамницю. Рен купує нову майку, Сора — сорочку й кунай, Кіта після вмовлянь міняє пошкоджену куртку. Вийшовши з поселення, вони бачать місцевих дітей, які граються з тінями, й продовжують цю гру на дорозі. Команда йде до наступних точок із документів Сори; повернення до Конохи ще не відбувається.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-audit-games-t9-base18-settlement-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base18-settlement.start
+  to: sc-games-t9-base18-settlement.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-base18-settlement-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base18-settlement.start
+  to: sc-games-t9-base18-settlement.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-base18-settlement-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-base18-settlement.start
+  to: sc-games-t9-base18-settlement.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

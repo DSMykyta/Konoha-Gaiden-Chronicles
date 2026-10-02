@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-tanigawa-order
 episode_id: ep-games-t9-tanigawa-mission
-display_rank: 5200
+display_rank: 90100
 continuity_id: main
 title: Команда 9 виходить на доставку медикаментів у Танігаву
-location_id: loc-mission-assignment-room
+location_id: loc-training-ground-4
 day_part: morning
 placement:
   anchor_id: ta-games-0-09-18
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-tanigawa-order-1
   display_rank: 100
   title: Команда 9 виходить на доставку медикаментів у Танігаву
-  text: Команда отримує C-ранговий супровід медикаментів замовника Моріти до Танігави. Вантаж і службові правила задають звичайну мету маршруту. Анко готує приховану перевірку за участю Ґенми, Котецу й Ізумо. Учні не знають, що майбутній контакт постановочний, і готуються захищати вантаж як від реальної загрози.
+  text: 'Анко приносить на поле C-ранг: супроводити торговця Моріту з медикаментами до Таніґави. Команда запечатує вантаж у сувій, щоб не тягнути весь віз. Руки Кіти ще тремтять після недавніх опіків, тому Анко доручає Сорі наступного разу малювати печать. Учні виходять із замовником, не знаючи про підготовлену наставницею перевірку на зворотному шляху.'
   origin: P
   extent: interval
   involvement:
@@ -40,7 +40,7 @@ events:
   - entity_id: c-morita
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-11
   - evd-games-part-i-placement
   focus_teams:
@@ -52,33 +52,43 @@ presence:
   from: sc-games-t9-tanigawa-order.start
   to: sc-games-t9-tanigawa-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-tanigawa-order-c-ren
   entity_id: c-ren
   from: sc-games-t9-tanigawa-order.start
   to: sc-games-t9-tanigawa-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-tanigawa-order-c-sora
   entity_id: c-sora
   from: sc-games-t9-tanigawa-order.start
   to: sc-games-t9-tanigawa-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-tanigawa-order-c-anko
   entity_id: c-anko
   from: sc-games-t9-tanigawa-order.start
   to: sc-games-t9-tanigawa-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-tanigawa-order-c-morita
   entity_id: c-morita
   from: sc-games-t9-tanigawa-order.start
   to: sc-games-t9-tanigawa-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-11
+  - evd-games-part-i-placement
   review: accepted

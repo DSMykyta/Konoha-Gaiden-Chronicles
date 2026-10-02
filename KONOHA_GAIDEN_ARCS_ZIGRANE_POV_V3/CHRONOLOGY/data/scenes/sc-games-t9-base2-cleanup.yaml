@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-base2-cleanup
+episode_id: ep-games-t9-base2-first
+display_rank: 100500
+continuity_id: main
+title: Команда 9 спалює тіла й запечатує записи Бази 2
+location_id: loc-base2-riverbank
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-09-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base2-cleanup-1
+  display_rank: 100
+  title: Команда 9 спалює тіла й запечатує записи Бази 2
+  text: Після операції Кіта й Рен переносять тіла з Бази 2 до річки та спалюють їх. Кіта накриває одне з них зібраними квітами. Вони залишають ферму цілою, щоб не привертати уваги пожежою будинку, й повертаються до Сори, яка лишилася прибрати сліди та зібрати записи.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-base2-cleanup-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base2-cleanup.start
+  to: sc-games-t9-base2-cleanup.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-base2-cleanup-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base2-cleanup.start
+  to: sc-games-t9-base2-cleanup.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

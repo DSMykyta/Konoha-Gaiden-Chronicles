@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-games-kakashi-shukuba-briefing
+episode_id: ep-games-kakashi-shukuba-contact
+display_rank: 150100
+continuity_id: main
+title: Хірузен доручає Команді 7 забрати розвіддані в Шукубі
+location_id: loc-hokage-office
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-13
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-shukuba-briefing-1
+  display_rank: 100
+  title: Хірузен доручає Команді 7 забрати розвіддані в Шукубі
+  text: 'Команда 7 отримує C-рангове завдання з ризиком переходу в B: забрати носій інформації у агента в Шукубі. Через найманців і шпигунів у місті Хірузен наказує йти в цивільному одязі, сховати зброю та прибрати ознаки шинобі. Какаші відповідає за маскування, зв’язок і відхід. Група має вийти за годину.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-03
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-kakashi-shukuba-briefing-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-games-kakashi-shukuba-briefing.start
+  to: sc-games-kakashi-shukuba-briefing.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-shukuba-briefing-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-shukuba-briefing.start
+  to: sc-games-kakashi-shukuba-briefing.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-shukuba-briefing-c-naruto
+  entity_id: c-naruto
+  from: sc-games-kakashi-shukuba-briefing.start
+  to: sc-games-kakashi-shukuba-briefing.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-shukuba-briefing-c-sasuke
+  entity_id: c-sasuke
+  from: sc-games-kakashi-shukuba-briefing.start
+  to: sc-games-kakashi-shukuba-briefing.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-shukuba-briefing-c-sakura
+  entity_id: c-sakura
+  from: sc-games-kakashi-shukuba-briefing.start
+  to: sc-games-kakashi-shukuba-briefing.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-kakashi-friends-yumiko
 episode_id: ep-games-kakashi-park-name
-display_rank: 7000
+display_rank: 120900
 continuity_id: main
 title: Какаші говорить із друзями про зустрічі з Юміко
 location_id: loc-konoha-izakaya
 day_part: evening
 placement:
-  anchor_id: ta-games-0-04-16
+  anchor_id: ta-games-0-04-15
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-friends-yumiko-1
   display_rank: 100
   title: Какаші говорить із друзями про зустрічі з Юміко
-  text: Після повернення з Країни Хвиль Какаші збирається в ізакаї з Нобарі, Райдо, Асумою та Куренай. Розмова про Юміко виявляє різницю між його спостережливістю й умінням говорити з цивільною людиною. Друзі бачать інтерес, який він намагається пояснювати випадковістю.
+  text: 'Після повернення з Країни Хвиль Какаші збирається в ізакаї з Нобарі, Райдо, Асумою та Куренай. Він переказує випадкові зустрічі з незнайомою працівницею архіву: забігайлівку, залишений кошик і невдалу розмову в парку. Друзі бачать у цьому особистий інтерес. Какаші ще не знає її імені й ухиляється від їхніх жартів та порад.'
   origin: P
   extent: interval
   involvement:
@@ -40,7 +40,7 @@ events:
   - entity_id: c-kurenai
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
@@ -50,33 +50,43 @@ presence:
   from: sc-games-kakashi-friends-yumiko.start
   to: sc-games-kakashi-friends-yumiko.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-friends-yumiko-c-nobari
   entity_id: c-nobari
   from: sc-games-kakashi-friends-yumiko.start
   to: sc-games-kakashi-friends-yumiko.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-friends-yumiko-c-raido
   entity_id: c-raido
   from: sc-games-kakashi-friends-yumiko.start
   to: sc-games-kakashi-friends-yumiko.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-friends-yumiko-c-asuma
   entity_id: c-asuma
   from: sc-games-kakashi-friends-yumiko.start
   to: sc-games-kakashi-friends-yumiko.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-friends-yumiko-c-kurenai
   entity_id: c-kurenai
   from: sc-games-kakashi-friends-yumiko.start
   to: sc-games-kakashi-friends-yumiko.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted

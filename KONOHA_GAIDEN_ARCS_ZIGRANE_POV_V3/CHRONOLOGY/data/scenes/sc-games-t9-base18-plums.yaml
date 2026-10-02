@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-base18-plums
 episode_id: ep-games-t9-base18-after
-display_rank: 6100
+display_rank: 110400
 continuity_id: main
-title: Рен і Кіта примиряються після конфлікту на складі
-location_id: loc-oto-base18
+title: Рен ділиться сливами з Кітою після сварки
+location_id: loc-base18-riverbank
 day_part: evening
 placement:
   anchor_id: ta-games-0-12-15
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-base18-plums-1
   display_rank: 100
-  title: Рен і Кіта примиряються після конфлікту на складі
-  text: Під час збору матеріалів і припасів на складі Кіта й Рен сваряться. Перший плід, який Кіта віддає напарникові, стає простим жестом повернення до їхньої звичної взаємодії. Вони ділять сливи й продовжують працювати разом. Лабораторні результати та документи при цьому залишаються окремим тяжким вантажем місії.
+  title: Рен ділиться сливами з Кітою після сварки
+  text: На складі Сора знаходить сливи, про які Рен говорив увесь довгий маршрут. Він свариться з Кітою, який скуштував першим, і не розмовляє з ним під час збору припасів. Після спалення комплексу трійка сідає біля річки. Рен сам простягає Кіті сливу й посуває торбу так, щоб усі могли брати. За звичними жартами вони знову повертаються до спільної розмови.
   origin: P
   extent: interval
   involvement:
@@ -34,7 +34,7 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-13
   - evd-games-part-i-placement
   focus_teams:
@@ -46,19 +46,25 @@ presence:
   from: sc-games-t9-base18-plums.start
   to: sc-games-t9-base18-plums.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-base18-plums-c-ren
   entity_id: c-ren
   from: sc-games-t9-base18-plums.start
   to: sc-games-t9-base18-plums.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-base18-plums-c-sora
   entity_id: c-sora
   from: sc-games-t9-base18-plums.start
   to: sc-games-t9-base18-plums.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted

@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-t9-puppets
 episode_id: ep-games-t9-first-weapons
-display_rank: 300
+display_rank: 10300
 continuity_id: main
-title: Райдо перевіряє команду на тренувальних ляльках
+title: Команда 9 вчиться керувати механічними ляльками
 location_id: loc-training-ground-9
 day_part: morning
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-puppets-1
   display_rank: 100
-  title: Райдо перевіряє команду на тренувальних ляльках
-  text: На полігоні команда працює з тренувальними ляльками. Рен ламає свою мішень і сприймає невдачу гостріше, ніж того вимагає сама вправа. Райдо розбирає різницю між силою, точністю й керованим рухом. Учні отримують можливість пробувати чакропровідну зброю, але позичені клинки ще не стають їхнім остаточним спорядженням.
+  title: Команда 9 вчиться керувати механічними ляльками
+  text: 'Райдо приносить навчальні механічні ляльки й задає вправи на точні рухи пальців. Кіта добре відчуває тонке керування, Сора уважно перевіряє механізм, а Рен ламає державний інвентар надмірним зусиллям. Райдо зупиняє його: силу потрібно дозувати, а пошкоджене майно доведеться врахувати. Вправа показує різницю між грубою потужністю й точністю.'
   origin: P
   extent: interval
   involvement:
@@ -37,12 +37,8 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
-  - evd-games-team-9-02-1
+  evidence_ids:
   - evd-games-team-9-02-2
-  - evd-games-team-9-02-3
-  - evd-games-team-9-02-4
-  - evd-games-team-9-02-5
   - evd-games-part-i-placement
   focus_teams:
   - team-9
@@ -53,26 +49,34 @@ presence:
   from: sc-games-t9-puppets.start
   to: sc-games-t9-puppets.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-puppets-c-kita
   entity_id: c-kita
   from: sc-games-t9-puppets.start
   to: sc-games-t9-puppets.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-puppets-c-ren
   entity_id: c-ren
   from: sc-games-t9-puppets.start
   to: sc-games-t9-puppets.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-puppets-c-sora
   entity_id: c-sora
   from: sc-games-t9-puppets.start
   to: sc-games-t9-puppets.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted

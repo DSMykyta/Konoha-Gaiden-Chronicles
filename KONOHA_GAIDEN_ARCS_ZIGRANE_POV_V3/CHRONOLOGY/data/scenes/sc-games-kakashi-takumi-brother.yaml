@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-kakashi-takumi-brother
 episode_id: ep-games-kakashi-shukuba-leads
-display_rank: 8200
+display_rank: 150600
 continuity_id: main
 title: Какаші зустрічає молодшого брата загиблого Такумі
-location_id: loc-konohagakure
+location_id: loc-kakashi-home
 day_part: evening
 placement:
   anchor_id: ta-games-0-05-15
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-takumi-brother-1
   display_rank: 100
   title: Какаші зустрічає молодшого брата загиблого Такумі
-  text: 'Після невдалого очікування Какаші зустрічає молодшого брата Такумі. Хлопець дякує за повернення тіла загиблого шинобі. Для Какаші це нагадування про ту частину його роботи, яку цивільні родини переживають без бойової дистанції. Смерть Такумі не стає новою місією цього дня: зустріч повертає до вже пережитої втрати.'
+  text: Дорогою додому після очікування з Паккуном Какаші зустрічає біля своєї квартири молодшого брата Такумі. Хлопець дякує за повернення тіла загиблого й показує його кунай із гравіюванням. Какаші пояснює, що Такумі загинув, рятуючи двох людей. Ця розмова повертає його від невдалого побачення до втрати, яку родина загиблого переживає щодня.
   origin: P
   extent: interval
   involvement:
@@ -31,20 +31,30 @@ events:
   - entity_id: c-takumi-brother
     role: focus
     mode: physical
+  - entity_id: c-pakkun
+    role: focus
+    mode: physical
   evidence_ids: &id001
   - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-kakashi-takumi-brother-c-kakashi
+- id: pr-audit-games-kakashi-takumi-brother-c-kakashi
   entity_id: c-kakashi
   from: sc-games-kakashi-takumi-brother.start
   to: sc-games-kakashi-takumi-brother.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-takumi-brother-c-takumi-brother
+- id: pr-audit-games-kakashi-takumi-brother-c-takumi-brother
   entity_id: c-takumi-brother
+  from: sc-games-kakashi-takumi-brother.start
+  to: sc-games-kakashi-takumi-brother.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-takumi-brother-c-pakkun
+  entity_id: c-pakkun
   from: sc-games-kakashi-takumi-brother.start
   to: sc-games-kakashi-takumi-brother.end
   basis: source

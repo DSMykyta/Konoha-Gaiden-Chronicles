@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-kurenai-cover
 episode_id: ep-games-t9-nobari-medical-mission
-display_rank: 3100
+display_rank: 50300
 continuity_id: main
 title: Куренай бере Команду 9 на заняття Команди 8
 location_id: loc-training-ground-8
@@ -40,6 +40,9 @@ events:
   - entity_id: c-kiba
     role: focus
     mode: physical
+  - entity_id: c-akamaru
+    role: focus
+    mode: physical
   - entity_id: c-hinata
     role: focus
     mode: physical
@@ -53,49 +56,56 @@ events:
   - team-9
 relations: []
 presence:
-- id: pr-games-t9-kurenai-cover-c-kita
+- id: pr-audit-games-t9-kurenai-cover-c-kita
   entity_id: c-kita
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-kurenai-cover-c-ren
+- id: pr-audit-games-t9-kurenai-cover-c-ren
   entity_id: c-ren
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-kurenai-cover-c-sora
+- id: pr-audit-games-t9-kurenai-cover-c-sora
   entity_id: c-sora
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-kurenai-cover-c-kurenai
+- id: pr-audit-games-t9-kurenai-cover-c-kurenai
   entity_id: c-kurenai
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-kurenai-cover-c-kiba
+- id: pr-audit-games-t9-kurenai-cover-c-kiba
   entity_id: c-kiba
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-kurenai-cover-c-hinata
+- id: pr-audit-games-t9-kurenai-cover-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-kurenai-cover-c-hinata
   entity_id: c-hinata
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-kurenai-cover-c-shino
+- id: pr-audit-games-t9-kurenai-cover-c-shino
   entity_id: c-shino
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end

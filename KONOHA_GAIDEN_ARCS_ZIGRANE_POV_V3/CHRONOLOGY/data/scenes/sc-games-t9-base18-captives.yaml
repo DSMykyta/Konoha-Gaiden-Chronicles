@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-base18-captives
 episode_id: ep-games-t9-base18-entry
-display_rank: 6000
+display_rank: 110200
 continuity_id: main
 title: На Базі 18 Команда 9 знищує полонених і проводить дослід
 location_id: loc-oto-base18
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-base18-captives-1
   display_rank: 100
   title: На Базі 18 Команда 9 знищує полонених і проводить дослід
-  text: 'Полоненим створюють враження, ніби їх зібрали для звільнення, але Кіта вбиває їх. Рен відбирає десять сильніших для лабораторії, а Сора ліквідовує персонал. Спроба активації Проклятої Печатки закінчується загибеллю піддослідних після короткого перетворення та виснаження чакри. Це не операція порятунку: команда сама бере участь у масовій загибелі людей.'
+  text: Кіта виводить полонених із камер до зали під обіцянку безпеки, а Рен відбирає десятьох для лабораторії. Після цього Кіта вбиває людей у залі. Сора, яка вже знищила персонал лабораторії, проводить досліди з міткою за участю обох хлопців. Активація випалює чакросистему; Кіта вбиває піддослідного, який намагається втекти, а Сора — тих, хто лишився. Порятунку полонених не відбувається.
   origin: P
   extent: interval
   involvement:
@@ -34,7 +34,7 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-13
   - evd-games-part-i-placement
   focus_teams:
@@ -46,19 +46,25 @@ presence:
   from: sc-games-t9-base18-captives.start
   to: sc-games-t9-base18-captives.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-base18-captives-c-ren
   entity_id: c-ren
   from: sc-games-t9-base18-captives.start
   to: sc-games-t9-base18-captives.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-base18-captives-c-sora
   entity_id: c-sora
   from: sc-games-t9-base18-captives.start
   to: sc-games-t9-base18-captives.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
   review: accepted

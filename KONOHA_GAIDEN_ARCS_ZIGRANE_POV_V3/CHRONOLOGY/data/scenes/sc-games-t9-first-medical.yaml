@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-first-medical
 episode_id: ep-games-t9-first-weapons
-display_rank: 500
+display_rank: 10600
 continuity_id: main
 title: Команда пробує перші медичні вправи
 location_id: loc-training-ground-9

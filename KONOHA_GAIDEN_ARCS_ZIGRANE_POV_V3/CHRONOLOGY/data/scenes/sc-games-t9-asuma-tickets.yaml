@@ -1,11 +1,11 @@
 schema_version: 1
 id: sc-games-t9-asuma-tickets
 episode_id: ep-games-t9-fire
-display_rank: 1200
+display_rank: 20400
 continuity_id: main
-title: Сора передає квитки на виставку, а Асума показує вогняну чакру
-location_id: loc-konoha-training-field
-day_part: afternoon
+title: Сора передає Райдо квитки на виставку Юмеко
+location_id: loc-training-ground-9
+day_part: morning
 placement:
   anchor_id: ta-games-0-05-03
   day_offset: 0
@@ -20,24 +20,21 @@ review:
 events:
 - id: ev-games-t9-asuma-tickets-1
   display_rank: 100
-  title: Сора передає квитки на виставку, а Асума показує вогняну чакру
-  text: Сора передає Райдо два квитки на виставку Юмеко. На додатковому занятті Асума показує, як залишкову чакру можна утримати у вогні, не обпаливши власну шкіру. Кіта спостерігає за точним контролем і хоче повторити прийом. Для нього ця демонстрація стає причиною наступних спроб, а не доказом, що він уже володіє вогнем.
+  title: Сора передає Райдо квитки на виставку Юмеко
+  text: На ранковому тренуванні Сора віддає Райдо два квитки на виставку Юмеко. Квітка на квитках нагадує йому Сорині малюнки, і він приймає запрошення. Рен і Кіта слухають коротку розмову поруч. Після спільного заняття Кіта має окремо прийти на погоджений урок до Асуми.
   origin: P
   extent: interval
   involvement:
-  - entity_id: c-sora
-    role: focus
-    mode: physical
   - entity_id: c-raido
-    role: focus
-    mode: physical
-  - entity_id: c-asuma
     role: focus
     mode: physical
   - entity_id: c-kita
     role: focus
     mode: physical
   - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
     role: focus
     mode: physical
   evidence_ids: &id001
@@ -47,36 +44,29 @@ events:
   - team-9
 relations: []
 presence:
-- id: pr-games-t9-asuma-tickets-c-sora
-  entity_id: c-sora
-  from: sc-games-t9-asuma-tickets.start
-  to: sc-games-t9-asuma-tickets.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-asuma-tickets-c-raido
+- id: pr-audit-games-t9-asuma-tickets-c-raido
   entity_id: c-raido
   from: sc-games-t9-asuma-tickets.start
   to: sc-games-t9-asuma-tickets.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-asuma-tickets-c-asuma
-  entity_id: c-asuma
-  from: sc-games-t9-asuma-tickets.start
-  to: sc-games-t9-asuma-tickets.end
-  basis: source
-  evidence_ids: *id001
-  review: accepted
-- id: pr-games-t9-asuma-tickets-c-kita
+- id: pr-audit-games-t9-asuma-tickets-c-kita
   entity_id: c-kita
   from: sc-games-t9-asuma-tickets.start
   to: sc-games-t9-asuma-tickets.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-asuma-tickets-c-ren
+- id: pr-audit-games-t9-asuma-tickets-c-ren
   entity_id: c-ren
+  from: sc-games-t9-asuma-tickets.start
+  to: sc-games-t9-asuma-tickets.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-asuma-tickets-c-sora
+  entity_id: c-sora
   from: sc-games-t9-asuma-tickets.start
   to: sc-games-t9-asuma-tickets.end
   basis: source

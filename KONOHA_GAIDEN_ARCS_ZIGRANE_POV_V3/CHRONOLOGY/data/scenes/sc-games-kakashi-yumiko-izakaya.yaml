@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-kakashi-yumiko-izakaya
 episode_id: ep-games-kakashi-first-meetings
-display_rank: 6400
+display_rank: 120200
 continuity_id: main
 title: Какаші знову бачить Юміко в ізакаї
 location_id: loc-konoha-izakaya
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-yumiko-izakaya-1
   display_rank: 100
   title: Какаші знову бачить Юміко в ізакаї
-  text: Увечері Какаші сидить із Асумою та Куренай в ізакаї й знову помічає ту саму жінку. Куренай бачить, як його увага перестає належати книжці, й доброзичливо піддражнює друга. Какаші не має готового пояснення свого інтересу. Розмова повертається до справ колег, але випадкове обличчя вже залишається в його пам’яті.
+  text: Увечері Какаші сидить із Асумою, Куренай та Райдо в ізакаї. Юміко приходить туди зі своїми подругами. Куренай помічає, що Какаші стежить за тією самою жінкою, яку бачив за обідом, і піддражнює його. Він заперечує особливий інтерес, хоча знову відволікається від звичної книжки на сусідній столик.
   origin: P
   extent: interval
   involvement:
@@ -34,6 +34,9 @@ events:
   - entity_id: c-kurenai
     role: focus
     mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
   - entity_id: c-yumiko
     role: focus
     mode: physical
@@ -42,28 +45,35 @@ events:
   - evd-games-part-i-placement
 relations: []
 presence:
-- id: pr-games-kakashi-yumiko-izakaya-c-kakashi
+- id: pr-audit-games-kakashi-yumiko-izakaya-c-kakashi
   entity_id: c-kakashi
   from: sc-games-kakashi-yumiko-izakaya.start
   to: sc-games-kakashi-yumiko-izakaya.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-yumiko-izakaya-c-asuma
+- id: pr-audit-games-kakashi-yumiko-izakaya-c-asuma
   entity_id: c-asuma
   from: sc-games-kakashi-yumiko-izakaya.start
   to: sc-games-kakashi-yumiko-izakaya.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-yumiko-izakaya-c-kurenai
+- id: pr-audit-games-kakashi-yumiko-izakaya-c-kurenai
   entity_id: c-kurenai
   from: sc-games-kakashi-yumiko-izakaya.start
   to: sc-games-kakashi-yumiko-izakaya.end
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-yumiko-izakaya-c-yumiko
+- id: pr-audit-games-kakashi-yumiko-izakaya-c-raido
+  entity_id: c-raido
+  from: sc-games-kakashi-yumiko-izakaya.start
+  to: sc-games-kakashi-yumiko-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-kakashi-yumiko-izakaya-c-yumiko
   entity_id: c-yumiko
   from: sc-games-kakashi-yumiko-izakaya.start
   to: sc-games-kakashi-yumiko-izakaya.end

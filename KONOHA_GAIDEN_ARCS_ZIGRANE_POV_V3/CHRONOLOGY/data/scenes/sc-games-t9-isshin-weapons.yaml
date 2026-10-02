@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-t9-isshin-weapons
 episode_id: ep-games-t9-first-weapons
-display_rank: 400
+display_rank: 10500
 continuity_id: main
-title: Іщін підбирає першу зброю Команді 9
-location_id: loc-isshin-forge
+title: Іщін приносить Команді 9 власну зброю
+location_id: loc-training-ground-9
 day_part: afternoon
 placement:
   anchor_id: ta-games-0-02-02
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-isshin-weapons-1
   display_rank: 100
-  title: Іщін підбирає першу зброю Команді 9
-  text: 'Іщін готує для Рена парні сокири, для Сори — ніж під ліву руку, а для Кіти — легкий прямий клинок із порожнистою конструкцією. Вибір спирається на хват, рух і особливості кожного учня. Райдо не змушує трьох битися однаково: нова зброя має підтримати їхні відмінності та дати основу для подальших спільних вправ.'
+  title: Іщін приносить Команді 9 власну зброю
+  text: Іщін приходить на тренувальне поле з трьома пакунками. Рен отримує пару коротких сокир, Сора — ніж під ліву руку, Кіта — легкий порожнистий прямий меч. Коваль врахував їхні руки й манеру рухатися. Райдо перевіряє баланс і пояснює, як доглядати за зброєю; після проб із позиченими клинками трійка може будувати прийоми зі своїми інструментами.
   origin: P
   extent: interval
   involvement:
@@ -40,12 +40,8 @@ events:
   - entity_id: c-isshin
     role: focus
     mode: physical
-  evidence_ids: &id001
-  - evd-games-team-9-02-1
+  evidence_ids:
   - evd-games-team-9-02-2
-  - evd-games-team-9-02-3
-  - evd-games-team-9-02-4
-  - evd-games-team-9-02-5
   - evd-games-part-i-placement
   focus_teams:
   - team-9
@@ -56,33 +52,43 @@ presence:
   from: sc-games-t9-isshin-weapons.start
   to: sc-games-t9-isshin-weapons.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-isshin-weapons-c-kita
   entity_id: c-kita
   from: sc-games-t9-isshin-weapons.start
   to: sc-games-t9-isshin-weapons.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-isshin-weapons-c-ren
   entity_id: c-ren
   from: sc-games-t9-isshin-weapons.start
   to: sc-games-t9-isshin-weapons.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-isshin-weapons-c-sora
   entity_id: c-sora
   from: sc-games-t9-isshin-weapons.start
   to: sc-games-t9-isshin-weapons.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-isshin-weapons-c-isshin
   entity_id: c-isshin
   from: sc-games-t9-isshin-weapons.start
   to: sc-games-t9-isshin-weapons.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-2
+  - evd-games-part-i-placement
   review: accepted

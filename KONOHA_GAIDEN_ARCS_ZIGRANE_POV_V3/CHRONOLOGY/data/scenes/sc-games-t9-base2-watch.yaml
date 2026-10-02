@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-base2-watch
+episode_id: ep-games-t9-base2-first
+display_rank: 100200
+continuity_id: main
+title: Команда 9 стежить за фермою перед входом на Базу 2
+location_id: loc-oto-base2
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base2-watch-1
+  display_rank: 100
+  title: Команда 9 стежить за фермою перед входом на Базу 2
+  text: Трійка спостерігає за двома будинками з узлісся. З меншого виходять двоє, з більшого — лише жінка; її рухи насторожують Сору. Команда лишається в мокрій траві до ночі, їсть холодний рис і не розпалює вогню. Сора продовжує варту, поки Кіта й Рен відпочивають. Рішення входити вони приймуть на світанку після додаткової перевірки.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-audit-games-t9-base2-watch-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base2-watch.start
+  to: sc-games-t9-base2-watch.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-base2-watch-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base2-watch.start
+  to: sc-games-t9-base2-watch.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-base2-watch-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-base2-watch.start
+  to: sc-games-t9-base2-watch.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

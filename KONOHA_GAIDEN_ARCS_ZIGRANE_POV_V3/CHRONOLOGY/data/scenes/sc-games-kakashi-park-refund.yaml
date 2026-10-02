@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-kakashi-park-refund
 episode_id: ep-games-kakashi-park-name
-display_rank: 6900
+display_rank: 120800
 continuity_id: main
-title: Какаші повертає Юміко гроші за забуту покупку
+title: Какаші залишає Юміко гроші за забрані продукти
 location_id: loc-konoha-park
 day_part: afternoon
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-park-refund-1
   display_rank: 100
-  title: Какаші повертає Юміко гроші за забуту покупку
-  text: У парку Какаші повертає гроші за лосось, який забрав після її втечі з крамниці. Він намагається закрити конкретну незручність, не залишивши жінці відчуття боргу перед шинобі. Розмова ще не стає близьким знайомством. Для нього важливо знайти спосіб бути поруч без звичних службових важелів.
+  title: Какаші залишає Юміко гроші за забрані продукти
+  text: 'Побачивши Юміко в парку, Какаші кладе біля неї тисячу рьо за продукти, які забрав після її втечі з крамниці. Його спроба заговорити знову виходить незграбною: коротке пояснення та жарти не роблять жінку спокійнішою. Він залишає гроші й відходить, так і не спитавши її імені.'
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-yumiko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-kakashi-park-refund.start
   to: sc-games-kakashi-park-refund.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-park-refund-c-yumiko
   entity_id: c-yumiko
   from: sc-games-kakashi-park-refund.start
   to: sc-games-kakashi-park-refund.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted

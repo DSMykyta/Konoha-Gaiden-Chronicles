@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-t9-b4-drill
 episode_id: ep-games-t9-b4-design
-display_rank: 3500
+display_rank: 60300
 continuity_id: main
 title: Команда 9 складає схему Б-4 з підміною і прихованим виходом
-location_id: loc-training-ground-9
+location_id: loc-training-ground-4
 day_part: morning
 placement:
-  anchor_id: ta-games-0-08-16
+  anchor_id: ta-games-0-08-13
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-b4-drill-1
   display_rank: 100
   title: Команда 9 складає схему Б-4 з підміною і прихованим виходом
-  text: 'Трійка поєднує свої ролі: Кіта стає приманкою, підміна відкриває удар Рена, а Сора приховує відхід і справжній напрямок завершення. Схему Б-4 потрібно повторювати, щоб її темп не залежав від здогадки кожного окремо. Пізніше звістка про госпіталізацію Анко змінює звичайний порядок їхньої роботи.'
+  text: 'Без Анко трійка складає нову схему Б-4: Кіта стає приманкою, міняється місцями з Реном, а Рен продовжує підготовлений удар. Сора приховує справжній напрямок атаки й вихід із контакту. Команда перевіряє, чи може узгодити підміну з рухом напарника, і занотовує схему для наступних повторень.'
   origin: P
   extent: interval
   involvement:
@@ -34,7 +34,7 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-08
   - evd-games-part-i-placement
   focus_teams:
@@ -46,19 +46,25 @@ presence:
   from: sc-games-t9-b4-drill.start
   to: sc-games-t9-b4-drill.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-b4-drill-c-ren
   entity_id: c-ren
   from: sc-games-t9-b4-drill.start
   to: sc-games-t9-b4-drill.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-b4-drill-c-sora
   entity_id: c-sora
   from: sc-games-t9-b4-drill.start
   to: sc-games-t9-b4-drill.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
   review: accepted

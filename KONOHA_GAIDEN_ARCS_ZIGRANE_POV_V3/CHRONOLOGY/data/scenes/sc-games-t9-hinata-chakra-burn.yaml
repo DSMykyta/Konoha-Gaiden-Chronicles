@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-hinata-chakra-burn
 episode_id: ep-games-t9-new-burns
-display_rank: 5000
+display_rank: 80600
 continuity_id: main
 title: Хіната допомагає побачити чакру під час нових опіків Кіти
 location_id: loc-training-ground-8
@@ -21,7 +21,7 @@ events:
 - id: ev-games-t9-hinata-chakra-burn-1
   display_rank: 100
   title: Хіната допомагає побачити чакру під час нових опіків Кіти
-  text: 'Кіта знову намагається створити віддалений вогонь і обпалює руки. Куренай залучає Хінату: Б’якуґан бачить чакру і в долонях, і біля стовпа, але між ними немає звичного сполучного каналу. Спостереження не завершує пояснення техніки. Після огляду Кіта отримує два дні без практики, щоб не поглибити травми.'
+  text: Кіта пробує підпалити стовп без вогняної кулі й обпалює власні долоні. Куренай охолоджує руки й просить Хінату простежити повторну слабку спробу Б’якуґаном. Хіната бачить чакру в долонях та на стовпі без видимого каналу між ними; чакра на цілі зникає, і руки знову спалахують. Куренай припиняє вправу й веде Кіту до шпиталю. Механізм лишається нез’ясованим.
   origin: P
   extent: interval
   involvement:
@@ -34,7 +34,7 @@ events:
   - entity_id: c-hinata
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-10
   - evd-games-part-i-placement
 relations: []
@@ -44,19 +44,25 @@ presence:
   from: sc-games-t9-hinata-chakra-burn.start
   to: sc-games-t9-hinata-chakra-burn.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-hinata-chakra-burn-c-kurenai
   entity_id: c-kurenai
   from: sc-games-t9-hinata-chakra-burn.start
   to: sc-games-t9-hinata-chakra-burn.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-hinata-chakra-burn-c-hinata
   entity_id: c-hinata
   from: sc-games-t9-hinata-chakra-burn.start
   to: sc-games-t9-hinata-chakra-burn.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
   review: accepted

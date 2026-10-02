@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-regular-medical
+episode_id: ep-games-t9-fire
+display_rank: 20800
+continuity_id: main
+title: Райдо починає регулярні медичні вправи Команди 9
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-regular-medical-1
+  display_rank: 100
+  title: Райдо починає регулярні медичні вправи Команди 9
+  text: Наступного ранку Кіта приносить Райдо конспект Нобарі. Наставник дозволяє залишити записи для навчання, але забороняє вогняні спроби без учителя. Кіта, Рен і Сора повертаються до тонкого медичного шару чакри; відтепер вправи стають регулярними. Руки Кіти ще болять, і він не може просто прибрати власні опіки новою технікою.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-audit-games-t9-regular-medical-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-regular-medical.start
+  to: sc-games-t9-regular-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-regular-medical-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-regular-medical.start
+  to: sc-games-t9-regular-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-regular-medical-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-regular-medical.start
+  to: sc-games-t9-regular-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-regular-medical-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-regular-medical.start
+  to: sc-games-t9-regular-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

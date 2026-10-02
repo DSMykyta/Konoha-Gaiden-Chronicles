@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-games-t9-nobari-debrief
+episode_id: ep-games-t9-nobari-medical-mission
+display_rank: 50600
+continuity_id: main
+title: Нобарі розповідає джонінам про медичну місію
+location_id: loc-konoha-izakaya
+day_part: night
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-debrief-1
+  display_rank: 100
+  title: Нобарі розповідає джонінам про медичну місію
+  text: Після повернення Нобарі приходить до ізакаї й розповідає Куренай, Асумі та Райдо про роботу дітей у тимчасовому шпиталі. Вона дізнається про висоту неконтрольованого блінка на полі Асуми й лякається ризику, якого раніше не знала. Райдо вже знайомий із переміщеннями Кіти; він просить показати журнал Сори, щоб стежити за розвитком техніки після зміни наставника.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-nobari-debrief-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-nobari-debrief.start
+  to: sc-games-t9-nobari-debrief.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-debrief-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-t9-nobari-debrief.start
+  to: sc-games-t9-nobari-debrief.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-debrief-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-nobari-debrief.start
+  to: sc-games-t9-nobari-debrief.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-nobari-debrief-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-nobari-debrief.start
+  to: sc-games-t9-nobari-debrief.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

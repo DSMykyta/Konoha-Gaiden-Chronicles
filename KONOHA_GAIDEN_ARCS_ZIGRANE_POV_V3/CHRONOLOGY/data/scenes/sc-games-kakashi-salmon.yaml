@@ -1,11 +1,11 @@
 schema_version: 1
 id: sc-games-kakashi-salmon
 episode_id: ep-games-kakashi-first-meetings
-display_rank: 6500
+display_rank: 120400
 continuity_id: main
-title: Какаші забирає забутий Юміко лосось і продукти
+title: Какаші купує залишені Юміко продукти
 location_id: loc-konoha-grocery
-day_part: morning
+day_part: evening
 placement:
   anchor_id: ta-games-0-02-21
   day_offset: 0
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-salmon-1
   display_rank: 100
-  title: Какаші забирає забутий Юміко лосось і продукти
-  text: Юміко знову ніяковіє при зустрічі з Какаші в продуктовій крамниці й вибігає, залишивши вже оплачену покупку. Какаші забирає лосось та кошик, не дозволяючи продавцеві перетворити її розгубленість на привід для зневаги. Забуті продукти створюють конкретну причину для майбутньої розмови, а не службовий привід розшукувати жінку.
+  title: Какаші купує залишені Юміко продукти
+  text: У продуктовій крамниці Юміко знову бачить Какаші й поспішно вибігає, залишивши вибрані продукти. Він оплачує лосось та решту кошика й забирає покупку собі на вечерю. Його байдужий на вигляд жарт лише додає незручності зустрічі. Пізніше Какаші спробує компенсувати Юміко те, що вона пішла без свого обіду.
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-yumiko
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-01
   - evd-games-part-i-placement
 relations: []
@@ -41,12 +41,16 @@ presence:
   from: sc-games-kakashi-salmon.start
   to: sc-games-kakashi-salmon.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-salmon-c-yumiko
   entity_id: c-yumiko
   from: sc-games-kakashi-salmon.start
   to: sc-games-kakashi-salmon.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
   review: accepted

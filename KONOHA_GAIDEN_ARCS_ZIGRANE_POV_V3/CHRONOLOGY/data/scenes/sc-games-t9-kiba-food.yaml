@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-t9-kiba-food
 episode_id: ep-games-t9-home-notes
-display_rank: 100
+display_rank: 10100
 continuity_id: main
-title: Кіта знайомиться з Кібою після перевірки Райдо
+title: Кіба чекає Кіту після перевірки Райдо
 location_id: loc-konohagakure
 day_part: afternoon
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-t9-kiba-food-1
   display_rank: 100
-  title: Кіта знайомиться з Кібою після перевірки Райдо
-  text: На стежці від дев’ятого поля Кіту чекає Кіба. Кіба приносить два пакунки рисових кульок і відразу віддає один другові. Вони обговорюють Куренай, Рена, Сору та перевірку Райдо. Кіба переказує, що його мати бачила Наміаші на чергуваннях у резиденції й вважає надійним охоронцем. Акамару лиже рукавичку Кіти, і хлопець ховає долоню в кишеню.
+  title: Кіба чекає Кіту після перевірки Райдо
+  text: 'Після перевірки на дев’ятому полі Кіта зустрічає свого друга Кібу з Акамару. Кіба приніс дві порції рисових кульок і віддає одну Кіті. Вони обговорюють уже проведені перевірки своїх команд: суворість Райдо, поведінку Рена й спостереження Сори. Кіба запрошує подивитися на денне тренування Команди 8, але Кіта відмовляється й іде додому.'
   origin: P
   extent: interval
   involvement:
@@ -34,12 +34,8 @@ events:
   - entity_id: c-akamaru
     role: participant
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-02-1
-  - evd-games-team-9-02-2
-  - evd-games-team-9-02-3
-  - evd-games-team-9-02-4
-  - evd-games-team-9-02-5
   - evd-games-part-i-placement
 relations: []
 presence:
@@ -48,19 +44,25 @@ presence:
   from: sc-games-t9-kiba-food.start
   to: sc-games-t9-kiba-food.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-kiba-food-c-kiba
   entity_id: c-kiba
   from: sc-games-t9-kiba-food.start
   to: sc-games-t9-kiba-food.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-kiba-food-c-akamaru
   entity_id: c-akamaru
   from: sc-games-t9-kiba-food.start
   to: sc-games-t9-kiba-food.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-part-i-placement
   review: accepted

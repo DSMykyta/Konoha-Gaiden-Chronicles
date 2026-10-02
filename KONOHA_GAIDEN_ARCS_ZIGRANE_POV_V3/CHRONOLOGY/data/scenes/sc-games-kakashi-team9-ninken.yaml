@@ -1,10 +1,10 @@
 schema_version: 1
 id: sc-games-kakashi-team9-ninken
 episode_id: ep-games-kakashi-team9-start
-display_rank: 9400
+display_rank: 170200
 continuity_id: main
 title: Какаші перевіряє Команду 9 з нінкенами
-location_id: loc-konoha-training-field
+location_id: loc-training-ground-3
 day_part: morning
 placement:
   anchor_id: ta-games-0-09-21
@@ -21,7 +21,7 @@ events:
 - id: ev-games-kakashi-team9-ninken-1
   display_rank: 100
   title: Какаші перевіряє Команду 9 з нінкенами
-  text: Какаші бачить точну координацію Сори, Рена та Кіти й викликає нінкенів для перевірки. Його недоречна зверхня манера викликає різку тишу замість очікуваної реакції. Він розуміє, що трійка не потребує його жалю або знецінення попередніх наставників. Перед справжнім маршрутом йому доводиться прийняти їхні власні правила взаємодії.
+  text: На третьому полігоні Какаші викликає нінкенів і перевіряє координацію Команди 9. Трійка використовує вже відпрацьовані комбінації, сенсорику Рена та блінки Кіти. Недоречний жарт Какаші про матір Рена різко обриває розмову; хлопець відходить, а Сора зупиняє зверхні пояснення капітана. Перед виходом Какаші мусить визнати, що невдало прочитав їхні стосунки й підготовку.
   origin: P
   extent: interval
   involvement:
@@ -40,7 +40,7 @@ events:
   - entity_id: c-pakkun
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-kakashi-gaiden-06
   - evd-games-part-i-placement
   focus_teams:
@@ -52,33 +52,43 @@ presence:
   from: sc-games-kakashi-team9-ninken.start
   to: sc-games-kakashi-team9-ninken.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ninken-c-kita
   entity_id: c-kita
   from: sc-games-kakashi-team9-ninken.start
   to: sc-games-kakashi-team9-ninken.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ninken-c-ren
   entity_id: c-ren
   from: sc-games-kakashi-team9-ninken.start
   to: sc-games-kakashi-team9-ninken.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ninken-c-sora
   entity_id: c-sora
   from: sc-games-kakashi-team9-ninken.start
   to: sc-games-kakashi-team9-ninken.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-kakashi-team9-ninken-c-pakkun
   entity_id: c-pakkun
   from: sc-games-kakashi-team9-ninken.start
   to: sc-games-kakashi-team9-ninken.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
   review: accepted

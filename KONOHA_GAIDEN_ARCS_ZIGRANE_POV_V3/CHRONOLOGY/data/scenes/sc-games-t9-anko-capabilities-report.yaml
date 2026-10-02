@@ -1,0 +1,92 @@
+schema_version: 1
+id: sc-games-t9-anko-capabilities-report
+episode_id: ep-games-t9-anko-back
+display_rank: 80200
+continuity_id: main
+title: Джоніни звітують Цунаде про розвиток Команди 9
+location_id: loc-hokage-office
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-anko-capabilities-report-1
+  display_rank: 100
+  title: Джоніни звітують Цунаде про розвиток Команди 9
+  text: Увечері Анко, Куренай, Асума, Какаші та Ірука збираються в кабінеті Цунаде. Анко повідомляє про підміни живих людей і зміни трійки за час лікування. Асума додає результат чакрового паперу — вітер і вогонь у Кіти. Наставники зіставляють ці спостереження з роботою учнів поруч з іншими командами. Цунаде отримує службовий звіт, якого раніше їй ще не передавали.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-tsunade
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-audit-games-t9-anko-capabilities-report-c-tsunade
+  entity_id: c-tsunade
+  from: sc-games-t9-anko-capabilities-report.start
+  to: sc-games-t9-anko-capabilities-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-anko-capabilities-report-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-anko-capabilities-report.start
+  to: sc-games-t9-anko-capabilities-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-anko-capabilities-report-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-t9-anko-capabilities-report.start
+  to: sc-games-t9-anko-capabilities-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-anko-capabilities-report-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-anko-capabilities-report.start
+  to: sc-games-t9-anko-capabilities-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-anko-capabilities-report-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-t9-anko-capabilities-report.start
+  to: sc-games-t9-anko-capabilities-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-audit-games-t9-anko-capabilities-report-c-iruka
+  entity_id: c-iruka
+  from: sc-games-t9-anko-capabilities-report.start
+  to: sc-games-t9-anko-capabilities-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

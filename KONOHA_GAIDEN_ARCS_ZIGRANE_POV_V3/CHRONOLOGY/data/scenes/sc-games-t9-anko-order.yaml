@@ -1,7 +1,7 @@
 schema_version: 1
 id: sc-games-t9-anko-order
 episode_id: ep-games-t9-anko-new-command
-display_rank: 2900
+display_rank: 50100
 continuity_id: main
 title: Адміністрація передає Команду 9 Анко за запечатаним наказом
 location_id: loc-mission-assignment-room
