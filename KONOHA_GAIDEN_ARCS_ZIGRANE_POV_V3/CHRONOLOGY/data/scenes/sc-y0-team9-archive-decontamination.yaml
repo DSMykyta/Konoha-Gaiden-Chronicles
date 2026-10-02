@@ -1,0 +1,106 @@
+schema_version: 1
+id: sc-y0-team9-archive-decontamination
+episode_id: ep-y0-team9-archive-aftercare
+display_rank: 400
+continuity_id: main
+title: Медичний бокс архівного карантину
+location_id: loc-archive-medical-checkpoint
+day_part: noon
+placement:
+  anchor_id: ta-team9-archive3b
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-team9-undergoes-decontamination
+  title: Команда 9 проходить знезараження після архіву
+  text: 'Медики відводять команду до тимчасового карантинного боксу та розділяють огляд за ширмами. Одяг, взуття й спорядження забирають на дезінфекцію: небезпечний пил міг осісти на тканині й шкірі навіть без відкриття коробок. Райдо сам виконує приписи й заспокоює Рена, який хвилюється, що вони вже встигли вдихнути забруднення. Після огляду команда отримує змінний медичний одяг і чекає дозволу на вихід. Райдо обіймає учнів і обіцяє данго; Сора присувається ближче до решти. Коли перевірка закінчується, їм повертають знезаражені речі та спорядження й відпускають із боксу.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-archive-medic-1
+    role: participant
+    mode: physical
+  - entity_id: c-archive-medic-2
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-hidden-materials
+  focus_teams:
+  - team-9
+  display_rank: 100
+relations: []
+presence:
+- id: pr-team9-archive-decontamination-raido
+  entity_id: c-raido
+  from: sc-y0-team9-archive-decontamination.start
+  to: sc-y0-team9-archive-decontamination.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive-decontamination-kita
+  entity_id: c-kita
+  from: sc-y0-team9-archive-decontamination.start
+  to: sc-y0-team9-archive-decontamination.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive-decontamination-ren
+  entity_id: c-ren
+  from: sc-y0-team9-archive-decontamination.start
+  to: sc-y0-team9-archive-decontamination.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive-decontamination-sora
+  entity_id: c-sora
+  from: sc-y0-team9-archive-decontamination.start
+  to: sc-y0-team9-archive-decontamination.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive-decontamination-archive-medic-1
+  entity_id: c-archive-medic-1
+  from: sc-y0-team9-archive-decontamination.start
+  to: sc-y0-team9-archive-decontamination.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive-decontamination-archive-medic-2
+  entity_id: c-archive-medic-2
+  from: sc-y0-team9-archive-decontamination.start
+  to: sc-y0-team9-archive-decontamination.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-hidden-materials
+  review: accepted

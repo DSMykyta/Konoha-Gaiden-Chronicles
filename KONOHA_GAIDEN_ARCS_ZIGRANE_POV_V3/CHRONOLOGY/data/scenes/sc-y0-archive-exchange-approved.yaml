@@ -1,0 +1,59 @@
+schema_version: 1
+id: sc-y0-archive-exchange-approved
+episode_id: ep-y0-archive-exchange-decision
+display_rank: 2400
+continuity_id: main
+title: Погодження прикордонного обміну
+location_id: loc-hokage-office
+day_part: afternoon
+placement:
+  anchor_id: ta-archive-exchange-approved
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-konoha-and-iwa-confirm-exchange
+  title: Коноха й Іва погоджують обмін шпигуна
+  text: 'Надходить остаточне підтвердження угоди з Івою: полоненого передадуть на північному кордоні Країни Вогню, а представники Країни Землі віддадуть погоджений запечатаний сувій. Хірузен затверджує службовий протокол, Ібікі передає підготовку полоненого його куратору Мікаті. Чоловік залишається ізольованим у чакроподавлюючих кайданках. Наступного ранку Команда 7 отримає офіційне доручення на конвой; учні ще не знають, як саме цього шпигуна знайшли й допитали.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  - evd-archive-chain-placement
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-exchange-approved-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-archive-exchange-approved.start
+  to: sc-y0-archive-exchange-approved.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-archive-exchange-approved-ibiki
+  entity_id: c-ibiki
+  from: sc-y0-archive-exchange-approved.start
+  to: sc-y0-archive-exchange-approved.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  - evd-archive-chain-placement
+  review: accepted

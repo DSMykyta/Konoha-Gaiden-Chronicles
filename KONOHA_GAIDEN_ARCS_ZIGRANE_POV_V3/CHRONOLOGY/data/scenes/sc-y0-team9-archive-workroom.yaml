@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-y0-team9-archive-workroom
+episode_id: ep-y0-team9-archive-order
+display_rank: 200
+continuity_id: main
+title: Облік у технічному архіві
+location_id: loc-archive-technical-room
+day_part: morning
+placement:
+  anchor_id: ta-team9-archive3b
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-team9-sorts-technical-archive
+  title: Команда 9 звіряє коробки й переносить стелажі
+  text: Райдо й Рен пересувають важкі дубові стелажі, звільняючи проходи між рядами. Кіта маркує тридцять коробок і звіряє дати та номери партій із реєстраційним списком, а Сора веде записи й вчитується навіть у старі господарські накладні. Райдо пояснює, що тут зберігають звіти про ремонти, списання зброї та постачання, які переносять униз, щоб звільнити верхні рівні. Після зсуву меблів відкривається доступ до прилеглого сектора 3-Б, якого немає в їхньому робочому наряді.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-archive-discovery
+  focus_teams:
+  - team-9
+  display_rank: 100
+relations: []
+presence:
+- id: pr-team9-archive-workroom-raido
+  entity_id: c-raido
+  from: sc-y0-team9-archive-workroom.start
+  to: sc-y0-team9-archive-workroom.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-archive-discovery
+  review: accepted
+- id: pr-team9-archive-workroom-kita
+  entity_id: c-kita
+  from: sc-y0-team9-archive-workroom.start
+  to: sc-y0-team9-archive-workroom.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-archive-discovery
+  review: accepted
+- id: pr-team9-archive-workroom-ren
+  entity_id: c-ren
+  from: sc-y0-team9-archive-workroom.start
+  to: sc-y0-team9-archive-workroom.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-archive-discovery
+  review: accepted
+- id: pr-team9-archive-workroom-sora
+  entity_id: c-sora
+  from: sc-y0-team9-archive-workroom.start
+  to: sc-y0-team9-archive-workroom.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-archive-discovery
+  review: accepted

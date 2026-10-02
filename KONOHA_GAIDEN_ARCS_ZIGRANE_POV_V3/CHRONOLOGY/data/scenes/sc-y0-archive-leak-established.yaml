@@ -1,0 +1,56 @@
+schema_version: 1
+id: sc-y0-archive-leak-established
+episode_id: ep-y0-archive-audit
+display_rank: 1100
+continuity_id: main
+title: Висновок про джерело витоку
+location_id: loc-archive-audit-room
+day_part: afternoon
+placement:
+  anchor_id: ta-archive-leak-confirmed
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-intelligence-confirms-civil-registry-leak
+  title: Розвідка встановлює витік із цивільного реєстру
+  text: 'Після звірки архівних доступів і походження прихованих документів Ібікі отримує підтвердження: назовні передають дані про родоводи, генетичні лінії та приховані медичні показники родин шинобі. Шпитальний канал перевірено окремо й виключено; джерело знаходиться в Головному архіві цивільної реєстрації. Для відкритого обшуку відомостей ще недостатньо: у корпусі працюють цивільні, а винні можуть знищити докази. Ібікі готує для Хірузена матеріали на приховану операцію.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  - entity_id: c-archive-auditor
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-audit-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-leak-established-ibiki
+  entity_id: c-ibiki
+  from: sc-y0-archive-leak-established.start
+  to: sc-y0-archive-leak-established.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-archive-leak-established-archive-auditor
+  entity_id: c-archive-auditor
+  from: sc-y0-archive-leak-established.start
+  to: sc-y0-archive-leak-established.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-audit-bridge
+  review: accepted

@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-y0-archive-illegal-transfer
+episode_id: ep-y0-archive-undercover
+display_rank: 1400
+continuity_id: main
+title: Спостереження за передачею документів
+location_id: loc-archive-civil-transfer-office
+day_part: afternoon
+placement:
+  anchor_id: ta-archive-transfer-photographed
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-mikata-records-transfer-to-iwa-contact
+  title: Міката фіксує передачу сувою зв’язковому Іви
+  text: 'За кілька робочих змін Міката складає списки матеріалів і графік підозрілих зустрічей. Під час однієї з передач він фотографує старшу архівістку, яка віддає запечатаний сувій зв’язковому з Країни Землі. Спостереження залишається прихованим: зв’язкового поки не затримують, щоб не зірвати одночасну ізоляцію джерела витоку й не дати знищити архівні докази. Фотографії разом із документальними списками стають підставою для санкції Хокаґе.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-archive-chief-clerk
+    role: focus
+    mode: physical
+  - entity_id: c-iwa-prisoner
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-illegal-transfer-mikata
+  entity_id: c-mikata
+  from: sc-y0-archive-illegal-transfer.start
+  to: sc-y0-archive-illegal-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-illegal-transfer-archive-chief-clerk
+  entity_id: c-archive-chief-clerk
+  from: sc-y0-archive-illegal-transfer.start
+  to: sc-y0-archive-illegal-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-illegal-transfer-iwa-prisoner
+  entity_id: c-iwa-prisoner
+  from: sc-y0-archive-illegal-transfer.start
+  to: sc-y0-archive-illegal-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted

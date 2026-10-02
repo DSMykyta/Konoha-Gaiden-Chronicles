@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-y0-team9-archive-order
+episode_id: ep-y0-team9-archive-order
+display_rank: 100
+continuity_id: main
+title: Доручення в розподільчій
+location_id: loc-mission-assignment-room
+day_part: afternoon
+placement:
+  anchor_id: ta-team9-archive-order
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-team9-receives-archive-order
+  title: Команда 9 отримує роботу в архівному корпусі
+  text: 'Після складів, доставок і кількох тижнів роботи з Райдо команда отримує D-рангове доручення на об’єкті з обмеженим доступом. Потрібно звірити реєстраційні списки, промаркувати коробки за роками та допомогти перенести частину технічного архіву. Райдо нагадує, що доступ до корпусу дали з огляду на його звіт про учнів: наступного ранку вони працюватимуть з обліком під його наглядом, а не досліджуватимуть закриті матеріали.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-after-waves-departure
+  - evd-archive-chain-placement
+  focus_teams:
+  - team-9
+  display_rank: 100
+relations: []
+presence:
+- id: pr-team9-archive-order-raido
+  entity_id: c-raido
+  from: sc-y0-team9-archive-order.start
+  to: sc-y0-team9-archive-order.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-after-waves-departure
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-team9-archive-order-kita
+  entity_id: c-kita
+  from: sc-y0-team9-archive-order.start
+  to: sc-y0-team9-archive-order.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-after-waves-departure
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-team9-archive-order-ren
+  entity_id: c-ren
+  from: sc-y0-team9-archive-order.start
+  to: sc-y0-team9-archive-order.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-after-waves-departure
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-team9-archive-order-sora
+  entity_id: c-sora
+  from: sc-y0-team9-archive-order.start
+  to: sc-y0-team9-archive-order.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-work
+  - evd-team9-after-waves-departure
+  - evd-archive-chain-placement
+  review: accepted

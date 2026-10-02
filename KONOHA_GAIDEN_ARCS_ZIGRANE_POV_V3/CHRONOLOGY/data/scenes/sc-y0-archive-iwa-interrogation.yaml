@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-y0-archive-iwa-interrogation
+episode_id: ep-y0-archive-iwa-interrogation
+display_rank: 2100
+continuity_id: main
+title: Допит зв’язкового з Країни Землі
+location_id: loc-intelligence-lower-interrogation
+day_part: afternoon
+placement:
+  anchor_id: ta-archive-iwa-interrogation
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-mikata-interrogates-iwa-contact
+  title: Міката допитує зв’язкового Іви
+  text: 'Міката працює зі шпигуном, якого взяли на передачі архівних документів. Його метод зосереджений на психологічному зламі: полонений поступово втрачає впевненість, здатність чинити спротив і опору на власну роль ворожого оперативника. Ібікі контролює отримання та перевірку потрібних Конохі відомостей. Видимих каліцтв для цього не завдають, але наслідки допиту залишаються глибокими: саме в такому покірному й наляканому стані чоловіка згодом побачить Команда 7.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-iwa-prisoner
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-iwa-psychological-method
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-iwa-interrogation-mikata
+  entity_id: c-mikata
+  from: sc-y0-archive-iwa-interrogation.start
+  to: sc-y0-archive-iwa-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-iwa-psychological-method
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-iwa-interrogation-iwa-prisoner
+  entity_id: c-iwa-prisoner
+  from: sc-y0-archive-iwa-interrogation.start
+  to: sc-y0-archive-iwa-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-iwa-psychological-method
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-iwa-interrogation-ibiki
+  entity_id: c-ibiki
+  from: sc-y0-archive-iwa-interrogation.start
+  to: sc-y0-archive-iwa-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-iwa-psychological-method
+  - evd-archive-operation-bridge
+  review: accepted

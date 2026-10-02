@@ -1,0 +1,111 @@
+schema_version: 1
+id: sc-y0-archive-prisoner-transfer
+episode_id: ep-y0-archive-iwa-interrogation
+display_rank: 1900
+continuity_id: main
+title: Передання затриманих у Відділі допитів
+location_id: loc-intelligence-upper-corridor
+day_part: afternoon
+placement:
+  anchor_id: ta-archive-arrests
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-archive-detainees-delivered-to-ibiki
+  title: Оперативники передають затриманих Ібікі
+  text: 'Вилучені документи та затриманих доставляють із архіву до Відділу розвідки та допитів. Ібікі приймає справу старшої архівістки й зв’язкового Іви, звіряє матеріали операції та розділяє їхню подальшу обробку. Шпигуна залишають у тимчасовому утриманні, а роботу з ним отримує Міката. Генінів до цієї частини справи не залучають: зв’язкового спочатку потрібно допитати й лише потім вирішувати його подальшу долю.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-archive-chief-clerk
+    role: participant
+    mode: physical
+  - entity_id: c-iwa-prisoner
+    role: participant
+    mode: physical
+  - entity_id: c-archive-guard-1
+    role: participant
+    mode: physical
+  - entity_id: c-archive-guard-2
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-prisoner-transfer-ibiki
+  entity_id: c-ibiki
+  from: sc-y0-archive-prisoner-transfer.start
+  to: sc-y0-archive-prisoner-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-prisoner-transfer-mikata
+  entity_id: c-mikata
+  from: sc-y0-archive-prisoner-transfer.start
+  to: sc-y0-archive-prisoner-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-prisoner-transfer-archive-chief-clerk
+  entity_id: c-archive-chief-clerk
+  from: sc-y0-archive-prisoner-transfer.start
+  to: sc-y0-archive-prisoner-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-prisoner-transfer-iwa-prisoner
+  entity_id: c-iwa-prisoner
+  from: sc-y0-archive-prisoner-transfer.start
+  to: sc-y0-archive-prisoner-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-prisoner-transfer-archive-guard-1
+  entity_id: c-archive-guard-1
+  from: sc-y0-archive-prisoner-transfer.start
+  to: sc-y0-archive-prisoner-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-prisoner-transfer-archive-guard-2
+  entity_id: c-archive-guard-2
+  from: sc-y0-archive-prisoner-transfer.start
+  to: sc-y0-archive-prisoner-transfer.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted

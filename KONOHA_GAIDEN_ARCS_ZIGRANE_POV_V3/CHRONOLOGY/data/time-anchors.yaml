@@ -1284,5 +1284,174 @@ anchors:
     basis: editorial
     evidence_ids:
     - evd-iwa-prisoner-placement
+    - evd-archive-chain-placement
     review: accepted
-    reason: Робоча дата 05–06.05 у вільному проміжку після повернення Команди 7 з Країни Хвиль і квітневих місій та до іспиту 24.06. Місія йде після архіву Команди 9 та розслідування Какаші; їхні сцени й конкретні дати залишено для наступної правки користувача.
+    reason: Робоча дата 05–06.05 після завершення архівної операції 24.04, допиту 25–26.04 та дипломатичного підтвердження 04.05. Сюжетна передумова — знахідка Команди 9 у секторі 3-Б 12.04 й безперервна службова перевірка, яка починається того ж дня.
+  - id: ta-team9-archive-order
+    date:
+      year: 0
+      month: 4
+      day: 11
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Доручення на архів видане окремо від другого складу та місії до Країни Хвиль. Наступного ранку команда починає облікові роботи.
+  - id: ta-team9-archive3b
+    date:
+      year: 0
+      month: 4
+      day: 12
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Архівна знахідка відбувається наприкінці відсутності Команди 7 у Країні Хвиль. Перевірка починається того ж дня, після зупинення списання; Какаші ще не бере в ній участі.
+  - id: ta-archive-lab
+    date:
+      year: 0
+      month: 4
+      day: 13
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Карантинні фахівці перевіряють вилучене наступного дня після знахідки; висновок про захищену схованку не відомий генінам.
+  - id: ta-archive-register-audit
+    date:
+      year: 0
+      month: 4
+      day: 14
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Після лабораторного висновку адміністративну звірку розширюють на журнали руху та доступів усього архівного корпусу.
+  - id: ta-archive-leak-confirmed
+    date:
+      year: 0
+      month: 4
+      day: 16
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Два робочі дні звірки відділяють виявлені порушення обліку від підтвердженого витоку цивільних реєстраційних даних.
+  - id: ta-archive-operation-briefing
+    date:
+      year: 0
+      month: 4
+      day: 17
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Хірузен підключає Какаші після повернення 13.04 та окремих місій Команди 7 14–15.04. Початкова перевірка архіву тим часом не зупинялася.
+  - id: ta-archive-infiltration
+    date:
+      year: 0
+      month: 4
+      day: 18
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Міката починає цивільне прикриття після доручення Хірузена; Какаші виконує зовнішню частину операції.
+  - id: ta-archive-transfer-photographed
+    date:
+      year: 0
+      month: 4
+      day: 22
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Кілька робочих змін потрібні для збору списків, графіка зустрічей і фотографій фактичної передачі сувою.
+  - id: ta-archive-arrest-warrant
+    date:
+      year: 0
+      month: 4
+      day: 23
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Після фото передачі Міката доповідає Хірузену й отримує санкцію на затримання.
+  - id: ta-archive-arrests
+    date:
+      year: 0
+      month: 4
+      day: 24
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: 'Операція виконується наступного дня після санкції: периметр, затримання, відокремлення співучасниць, передання полонених і підсумковий звіт.'
+  - id: ta-archive-iwa-interrogation
+    date:
+      year: 0
+      month: 4
+      day: 25
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Міката працює з живим шпигуном після затримання; допит проводиться окремо від конвою генінів.
+  - id: ta-archive-interrogation-report
+    date:
+      year: 0
+      month: 4
+      day: 26
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Ібікі завершує зведення даних і передає Хірузену результати допиту наступного дня.
+  - id: ta-archive-exchange-talks
+    date:
+      year: 0
+      month: 4
+      day: 27
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Після завершення допиту відкривають дипломатичний канал; полонений залишається під вартою до погодження обміну.
+  - id: ta-archive-exchange-approved
+    date:
+      year: 0
+      month: 5
+      day: 4
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-archive-chain-placement
+    review: accepted
+    reason: Фінальне погодження місця та порядку обміну передує вже внесеному дорученню Команді 7 на 05.05.

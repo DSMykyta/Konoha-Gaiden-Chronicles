@@ -1,0 +1,99 @@
+schema_version: 1
+id: sc-y0-team9-archive-dango
+episode_id: ep-y0-team9-archive-aftercare
+display_rank: 700
+continuity_id: main
+title: Данго після архіву
+location_id: loc-dango-shop
+day_part: afternoon
+placement:
+  anchor_id: ta-team9-archive3b
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-team9-shares-archive-day-with-mentors
+  title: Команда 9 розповідає наставникам про архівний день
+  text: 'Райдо замовляє тацю данго, і команда намагається позбутися присмаку медичних пігулок після карантину. До столу підходять Асума й Куренай. Рен одразу розповідає про небезпечну знахідку та знезараження, Сора важко зітхає через його галасливість, а Кіта ховає збентеження за чашкою чаю. Райдо підтверджує, що вони працювали в архівному корпусі, і по суті оцінює результат: Сора зупинила незаконне списання, Рен утримав важкий стелаж, Кіта виконав потрібне маркування. Асума й Куренай слухають уже як наставники команди, яка впоралася з непередбаченою ситуацією.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-kurenai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  focus_teams:
+  - team-9
+  display_rank: 100
+relations: []
+presence:
+- id: pr-team9-archive-dango-raido
+  entity_id: c-raido
+  from: sc-y0-team9-archive-dango.start
+  to: sc-y0-team9-archive-dango.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dango-kita
+  entity_id: c-kita
+  from: sc-y0-team9-archive-dango.start
+  to: sc-y0-team9-archive-dango.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dango-ren
+  entity_id: c-ren
+  from: sc-y0-team9-archive-dango.start
+  to: sc-y0-team9-archive-dango.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dango-sora
+  entity_id: c-sora
+  from: sc-y0-team9-archive-dango.start
+  to: sc-y0-team9-archive-dango.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dango-asuma
+  entity_id: c-asuma
+  from: sc-y0-team9-archive-dango.start
+  to: sc-y0-team9-archive-dango.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dango-kurenai
+  entity_id: c-kurenai
+  from: sc-y0-team9-archive-dango.start
+  to: sc-y0-team9-archive-dango.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted

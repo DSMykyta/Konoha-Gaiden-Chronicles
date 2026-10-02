@@ -3369,6 +3369,240 @@ links:
   review: accepted
   evidence_ids:
   - evd-iwa-prisoner-mission
+- id: lnk-archive-chain-1
+  kind: before
+  a: sc-y0-0315-team7-departs-konoha
+  b: sc-y0-team9-archive-order
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-2
+  kind: before
+  a: ev-y0-sora-stops-archive-disposal
+  b: sc-y0-archive-disposal-freeze
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-3
+  kind: before
+  a: sc-y0-0415-condor-escort
+  b: sc-y0-archive-hokage-briefing
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-4
+  kind: before
+  a: sc-y0-archive-exchange-approved
+  b: sc-y0-iwa-escort-order
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-5
+  kind: before
+  a: sc-y0-team9-archive-order
+  b: sc-y0-team9-archive-workroom
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-6
+  kind: before
+  a: sc-y0-team9-archive-workroom
+  b: sc-y0-team9-archive3b-discovery
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-7
+  kind: before
+  a: sc-y0-team9-archive3b-discovery
+  b: sc-y0-team9-archive-decontamination
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-8
+  kind: before
+  a: sc-y0-team9-archive-decontamination
+  b: sc-y0-team9-archive-dismissal
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-9
+  kind: before
+  a: sc-y0-team9-archive-dismissal
+  b: sc-y0-team9-archive-street
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-10
+  kind: before
+  a: sc-y0-team9-archive-street
+  b: sc-y0-team9-archive-dango
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-11
+  kind: before
+  a: sc-y0-archive-disposal-freeze
+  b: sc-y0-archive-cache-laboratory
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-12
+  kind: before
+  a: sc-y0-archive-cache-laboratory
+  b: sc-y0-archive-register-audit
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-13
+  kind: before
+  a: sc-y0-archive-register-audit
+  b: sc-y0-archive-leak-established
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-14
+  kind: before
+  a: sc-y0-archive-leak-established
+  b: sc-y0-archive-hokage-briefing
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-15
+  kind: before
+  a: sc-y0-archive-hokage-briefing
+  b: sc-y0-archive-mikata-infiltration
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-16
+  kind: before
+  a: sc-y0-archive-mikata-infiltration
+  b: sc-y0-archive-illegal-transfer
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-17
+  kind: before
+  a: sc-y0-archive-illegal-transfer
+  b: sc-y0-archive-arrest-warrant
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-18
+  kind: before
+  a: sc-y0-archive-arrest-warrant
+  b: sc-y0-archive-perimeter
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-19
+  kind: before
+  a: sc-y0-archive-perimeter
+  b: sc-y0-archive-chief-and-iwa-arrest
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-20
+  kind: before
+  a: sc-y0-archive-chief-and-iwa-arrest
+  b: sc-y0-archive-staff-screening
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-21
+  kind: before
+  a: sc-y0-archive-staff-screening
+  b: sc-y0-archive-prisoner-transfer
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-22
+  kind: before
+  a: sc-y0-archive-prisoner-transfer
+  b: sc-y0-archive-operation-report
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-23
+  kind: before
+  a: sc-y0-archive-operation-report
+  b: sc-y0-archive-iwa-interrogation
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-24
+  kind: before
+  a: sc-y0-archive-iwa-interrogation
+  b: sc-y0-archive-interrogation-report
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-25
+  kind: before
+  a: sc-y0-archive-interrogation-report
+  b: sc-y0-archive-exchange-talks
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
+- id: lnk-archive-chain-26
+  kind: before
+  a: sc-y0-archive-exchange-talks
+  b: sc-y0-archive-exchange-approved
+  basis: editorial
+  review: accepted
+  evidence_ids:
+  - evd-archive-chain-placement
+  - evd-archive-audit-bridge
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence
   of relation means unknown order, not simultaneity.

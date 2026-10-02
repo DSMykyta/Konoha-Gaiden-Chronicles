@@ -1,0 +1,68 @@
+schema_version: 1
+id: sc-y0-archive-disposal-freeze
+episode_id: ep-y0-archive-audit
+display_rank: 800
+continuity_id: main
+title: Оформлення карантинної знахідки
+location_id: loc-archive-administration
+day_part: evening
+placement:
+  anchor_id: ta-team9-archive3b
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-archive-administration-opens-audit
+  title: Адміністрація архіву зупиняє списання й відкриває перевірку
+  text: 'Після виходу Команди 9 адміністраторка фіксує чотири знайдені одиниці вантажу, стару бірку на п’ять і слід до коридору вивезення. Сектор 3-Б опечатують, рух майна на списання заморожують, а накладні та журнал доступу вилучають для звірки. Госпітальна група забезпечує карантин, поки інспектор перевірки бере під контроль облік знахідки. Розбіжність не списують на давню помилку: потрібно встановити, що було винесено та хто мав доступ до схованки.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-archive-administrator
+    role: focus
+    mode: physical
+  - entity_id: c-archive-auditor
+    role: focus
+    mode: physical
+  - entity_id: c-archive-technical-archivist
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-audit-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-disposal-freeze-archive-administrator
+  entity_id: c-archive-administrator
+  from: sc-y0-archive-disposal-freeze.start
+  to: sc-y0-archive-disposal-freeze.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-archive-disposal-freeze-archive-auditor
+  entity_id: c-archive-auditor
+  from: sc-y0-archive-disposal-freeze.start
+  to: sc-y0-archive-disposal-freeze.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-archive-disposal-freeze-archive-technical-archivist
+  entity_id: c-archive-technical-archivist
+  from: sc-y0-archive-disposal-freeze.start
+  to: sc-y0-archive-disposal-freeze.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-audit-bridge
+  review: accepted

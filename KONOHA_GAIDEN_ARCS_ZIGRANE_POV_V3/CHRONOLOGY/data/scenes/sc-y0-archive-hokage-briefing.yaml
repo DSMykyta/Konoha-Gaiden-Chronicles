@@ -1,0 +1,68 @@
+schema_version: 1
+id: sc-y0-archive-hokage-briefing
+episode_id: ep-y0-archive-undercover
+display_rank: 1200
+continuity_id: main
+title: Доручення Хірузена
+location_id: loc-hokage-office
+day_part: morning
+placement:
+  anchor_id: ta-archive-operation-briefing
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-hiruzen-assigns-archive-investigation
+  title: Хірузен доручає Какаші й Мікаті справу архівного витоку
+  text: 'Хірузен передає Какаші матеріали перевірки й пояснює, що крадуть закриті родинні та медичні дані. Шпиталь уже перевірений, тому шукати джерело потрібно в цивільному реєстраційному архіві. Відкритий рейд дасть винним час знищити документи й поставить під підозру десятки непричетних працівників. Какаші отримує зовнішнє керівництво: логістику, перехоплення та силове забезпечення майбутнього затримання. До кабінету приєднується Міката; він має зайти в архів під виглядом нового цивільного співробітника й зібрати докази зсередини.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-chain-placement
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-hokage-briefing-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-archive-hokage-briefing.start
+  to: sc-y0-archive-hokage-briefing.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-archive-hokage-briefing-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-archive-hokage-briefing.start
+  to: sc-y0-archive-hokage-briefing.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-archive-hokage-briefing-mikata
+  entity_id: c-mikata
+  from: sc-y0-archive-hokage-briefing.start
+  to: sc-y0-archive-hokage-briefing.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-chain-placement
+  review: accepted

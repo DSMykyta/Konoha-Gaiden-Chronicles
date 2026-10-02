@@ -1,0 +1,56 @@
+schema_version: 1
+id: sc-y0-archive-operation-report
+episode_id: ep-y0-archive-arrests
+display_rank: 2000
+continuity_id: main
+title: Підсумковий звіт Какаші
+location_id: loc-hokage-office
+day_part: evening
+placement:
+  anchor_id: ta-archive-arrests
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-kakashi-reports-archive-channel-closed
+  title: Какаші звітує про перекриття каналу витоку
+  text: 'Какаші передає Хірузену результат зовнішньої операції: джерело витоку та зв’язкового Іви взято, двох співучасниць ізольовано, а непричетних працівниць відпущено. Вилучені матеріали й затримані вже у Відділі розвідки та допитів. Доступ до закритих фондів залишається обмеженим, доки адміністрація виправляє виявлені порушення обліку. Силову частину справи завершено; отримання відомостей від шпигуна переходить до Ібікі та Мікати.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-operation-report-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-archive-operation-report.start
+  to: sc-y0-archive-operation-report.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-operation-report-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-archive-operation-report.start
+  to: sc-y0-archive-operation-report.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-operation-bridge
+  review: accepted

@@ -2176,6 +2176,175 @@ entities:
     aliases:
     - Нижній рівень Відділу допитів
     parent_id: loc-intelligence-division
+  - id: c-archive-administrator
+    kind: person
+    name: Адміністраторка архівного корпусу
+    aliases:
+    - Адміністраторка архіву
+  - id: c-archive-technical-archivist
+    kind: person
+    name: Архіваріус технічного сектора
+    aliases:
+    - Архіваріус сектора 3-Б
+  - id: c-archive-medic-1
+    kind: person
+    name: Медик карантинної групи — перший
+    aliases:
+    - Медик архівного карантину
+  - id: c-archive-medic-2
+    kind: person
+    name: Медик карантинної групи — другий
+    aliases:
+    - Медик архівного карантину
+  - id: c-archive-auditor
+    kind: person
+    name: Інспектор архівної перевірки
+    aliases:
+    - Інспектор архіву
+  - id: c-archive-chief-clerk
+    kind: person
+    name: Старша архівістка цивільного реєстру
+    aliases:
+    - Старша архівістка
+    - Начальниця архівісток
+  - id: c-archive-accomplice-1
+    kind: person
+    name: Архівістка-співучасниця — перша
+    aliases:
+    - Співучасниця архівного витоку
+  - id: c-archive-accomplice-2
+    kind: person
+    name: Архівістка-співучасниця — друга
+    aliases:
+    - Співучасниця архівного витоку
+  - id: c-yumiko
+    kind: person
+    name: Юміко
+    aliases:
+    - Юміко — працівниця цивільного архіву
+  - id: c-archive-clerk-1
+    kind: person
+    name: Непричетна архівістка — перша
+    aliases:
+    - Працівниця цивільного архіву
+  - id: c-archive-clerk-2
+    kind: person
+    name: Непричетна архівістка — друга
+    aliases:
+    - Працівниця цивільного архіву
+  - id: c-archive-clerk-3
+    kind: person
+    name: Непричетна архівістка — третя
+    aliases:
+    - Працівниця цивільного архіву
+  - id: c-archive-guard-1
+    kind: person
+    name: Чунін архівної операції — перший
+    aliases:
+    - Охоронець архівної операції
+  - id: c-archive-guard-2
+    kind: person
+    name: Чунін архівної операції — другий
+    aliases:
+    - Охоронець архівної операції
+  - id: loc-mission-assignment-room
+    kind: location
+    name: Розподільча місій
+    aliases:
+    - Канцелярія розподілу місій
+    parent_id: loc-hokage-residence
+  - id: loc-hokage-office
+    kind: location
+    name: Кабінет Хокаґе
+    aliases:
+    - Кабінет Хокаґе
+    parent_id: loc-hokage-residence
+  - id: loc-archive-corps
+    kind: location
+    name: Архівний корпус Конохи
+    aliases:
+    - Архівний корпус
+    - Архів Конохи
+    parent_id: loc-hokage-residence
+  - id: loc-archive-technical-room
+    kind: location
+    name: Робочий зал технічного архіву
+    aliases:
+    - Робочий зал технічного архіву
+    parent_id: loc-archive-corps
+  - id: loc-archive-sector-3b
+    kind: location
+    name: Сектор 3-Б архіву
+    aliases:
+    - Сектор 3-Б
+    - Архів, сектор 3-Б
+    parent_id: loc-archive-corps
+  - id: loc-archive-medical-checkpoint
+    kind: location
+    name: Карантинний бокс архівного корпусу
+    aliases:
+    - Медичний бокс архіву
+    parent_id: loc-archive-corps
+  - id: loc-archive-gate
+    kind: location
+    name: Вихід із внутрішнього двору архіву
+    aliases:
+    - Вихід із внутрішнього двору архіву
+    parent_id: loc-archive-corps
+  - id: loc-konoha-archive-street
+    kind: location
+    name: Торгова вулиця біля архівного корпусу
+    aliases:
+    - Торгова вулиця біля архівного корпусу
+    parent_id: loc-konohagakure
+  - id: loc-archive-administration
+    kind: location
+    name: Адміністрація архівного корпусу
+    aliases:
+    - Адміністрація архівного корпусу
+    parent_id: loc-archive-corps
+  - id: loc-archive-audit-room
+    kind: location
+    name: Кімната архівної перевірки
+    aliases:
+    - Кімната архівної перевірки
+    parent_id: loc-archive-administration
+  - id: loc-hospital-quarantine-lab
+    kind: location
+    name: Карантинна лабораторія шпиталю
+    aliases:
+    - Карантинна лабораторія шпиталю
+    parent_id: loc-konoha-hospital
+  - id: loc-archive-civil-registry
+    kind: location
+    name: Головний архів цивільної реєстрації
+    aliases:
+    - Цивільний реєстраційний архів
+    parent_id: loc-archive-corps
+  - id: loc-archive-civil-workroom
+    kind: location
+    name: Робочий зал цивільного реєстру
+    aliases:
+    - Робочий зал цивільного реєстру
+    parent_id: loc-archive-civil-registry
+  - id: loc-archive-civil-transfer-office
+    kind: location
+    name: Кабінет старшої архівістки
+    aliases:
+    - Кабінет старшої архівістки
+    parent_id: loc-archive-civil-registry
+  - id: loc-archive-civil-corridor
+    kind: location
+    name: Коридор цивільного реєстру
+    aliases:
+    - Коридор цивільного реєстру
+    parent_id: loc-archive-civil-registry
+  - id: loc-archive-courtyard
+    kind: location
+    name: Внутрішній двір архівного корпусу
+    aliases:
+    - Внутрішній двір архівного корпусу
+    parent_id: loc-archive-corps
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

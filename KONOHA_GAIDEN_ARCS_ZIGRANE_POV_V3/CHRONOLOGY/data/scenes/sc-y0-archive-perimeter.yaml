@@ -1,0 +1,68 @@
+schema_version: 1
+id: sc-y0-archive-perimeter
+episode_id: ep-y0-archive-arrests
+display_rank: 1600
+continuity_id: main
+title: Периметр архівного корпусу
+location_id: loc-archive-courtyard
+day_part: morning
+placement:
+  anchor_id: ta-archive-arrests
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-kakashi-closes-archive-perimeter
+  title: Какаші перекриває виходи з архівного корпусу
+  text: За затвердженим ордером Какаші організовує охорону виходів і контроль зовнішнього периметра. Чуніни займають потрібні проходи, поки внутрішня група готується до затримання. Обмеження мають перекрити втечу зв’язкового та винесення документів, а не перетворити весь цивільний персонал на полонених. Після узгодження дій Какаші дає оперативникам можливість одночасно ізолювати підозрюваних і зберегти доказову базу.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-archive-guard-1
+    role: participant
+    mode: physical
+  - entity_id: c-archive-guard-2
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-perimeter-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-archive-perimeter.start
+  to: sc-y0-archive-perimeter.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-perimeter-archive-guard-1
+  entity_id: c-archive-guard-1
+  from: sc-y0-archive-perimeter.start
+  to: sc-y0-archive-perimeter.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-perimeter-archive-guard-2
+  entity_id: c-archive-guard-2
+  from: sc-y0-archive-perimeter.start
+  to: sc-y0-archive-perimeter.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-operation-bridge
+  review: accepted

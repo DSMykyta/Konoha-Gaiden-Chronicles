@@ -1178,6 +1178,25 @@ sources:
     title: Какаші Ґайден — Полонений Іви та дорога до кордону
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 02 [Полонений Іви та дорога до кордону].txt
     revision: e14dfd2ce7e9b14ef1bfce4159d3630b5f02580d
+  - id: src-team9-archive3b
+    type: project_roleplay
+    title: Команда 9 — Архів, сектор 3-Б
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 03 [Архів, сектор 3-Б].txt
+    revision: b2575174f168af9f58491f8ea1f68685db586be2
+  - id: src-team9-second-warehouse
+    type: project_roleplay
+    title: Команда 9 — Другий склад і розподільча
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.5 [Другий склад і розподільча].txt
+    revision: b2575174f168af9f58491f8ea1f68685db586be2
+  - id: src-kakashi-gaiden-archive-case
+    type: project_roleplay
+    title: 'Какаші Ґайден — Юміко: перші зустрічі та справа архіву'
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 01 [Юміко — перші зустрічі та справа архіву].txt
+    revision: b2575174f168af9f58491f8ea1f68685db586be2
+  - id: src-archive-chain-placement
+    type: project_decision
+    title: Узгодження архівного ланцюга до місії Іви
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/ARCHIVE_CHAIN_UA.md
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4148,6 +4167,76 @@ evidence:
     review: accepted
   - id: evd-iwa-prisoner-placement
     source_id: src-kakashi-gaiden-iwa-prisoner
-    locator: 'Редакторське розміщення за дорученням користувача 02.10.2026: після історії архіву Команди 9 й розслідування Какаші, до іспиту на чуніна. Дві попередні історії поки не переносити й не змінювати.'
+    locator: 'Редакторське розміщення за дорученням користувача 02.10.2026: місія 05–06.05 йде після внесених арок «Архів, сектор 3-Б» (11–12.04) та «Справа архіву» (12.04–04.05), до іспиту на чуніна. Попереднє очікування дослідження скасоване автором; причинні переходи й дати описані в ARCHIVE_CHAIN_UA.md.'
+    basis: editorial
+    review: accepted
+  - id: evd-team9-archive-work
+    source_id: src-team9-archive3b
+    locator: 'Рядки 5–19: попередні тижні роботи з Райдо; D-ранг на об’єкті з обмеженим доступом; облік коробок і пересування стелажів.'
+    basis: source
+    review: accepted
+  - id: evd-team9-archive-discovery
+    source_id: src-team9-archive3b
+    locator: 'Рядки 21–107: карантинна знахідка; чотири коробки за біркою на п’ять одиниць; слід у пилу до списання; наказ зупинити вивезення. Походження забруднення адаптоване за окремим авторським рішенням.'
+    basis: source
+    review: accepted
+  - id: evd-team9-archive-aftercare
+    source_id: src-team9-archive3b
+    locator: 'Рядки 110–223: вихід із сектора, знезараження, повернення речей, наказ адміністраторки, пояснення Райдо й данго з Асумою та Куренай. Медичні процедури перенесено без інтимних подробиць.'
+    basis: source
+    review: accepted
+  - id: evd-team9-after-waves-departure
+    source_id: src-team9-second-warehouse
+    locator: 'Рядки 31–39: після другого складу Команда 9 присутня при отриманні Командою 7 місії до Країни Хвиль; це попередня робота, а не доручення на архів.'
+    basis: source
+    review: accepted
+  - id: evd-archive-case-briefing
+    source_id: src-kakashi-gaiden-archive-case
+    locator: 'Рядки 296–309: витік родоводів, генетичних ліній та медичних даних; шпиталь перевірений; Какаші керує зовнішньою операцією, Міката працює всередині під цивільним прикриттям. Хокаґе адаптовано з Цунаде на Хірузена.'
+    basis: source
+    review: accepted
+  - id: evd-archive-case-evidence
+    source_id: src-kakashi-gaiden-archive-case
+    locator: 'Рядки 313–326: фото старшої архівістки, яка передає сувій зв’язковому з Країни Землі; списки матеріалів; графік зустрічей; ордер і наказ закрити периметр.'
+    basis: source
+    review: accepted
+  - id: evd-archive-case-staff
+    source_id: src-kakashi-gaiden-archive-case
+    locator: 'Рядки 330–350: Какаші виявляє двох старших співучасниць; охоронці відводять їх; чотири інші архівістки, серед яких Юміко, повертаються до роботи.'
+    basis: source
+    review: accepted
+  - id: evd-archive-case-result
+    source_id: src-kakashi-gaiden-archive-case
+    locator: 'Рядок 366: канал витоку перекрито, крота передано Ібікі.'
+    basis: source
+    review: accepted
+  - id: evd-archive-iwa-prisoner-identity
+    source_id: src-kakashi-gaiden-iwa-prisoner
+    locator: 'Рядок 39: шпигуна з Країни Землі взяли на передачі архівних документів, допитали та вирішили використати для погодженого обміну. Це той самий c-iwa-prisoner, якого Команда 7 конвоює 05.05.'
+    basis: source
+    review: accepted
+  - id: evd-archive-iwa-psychological-method
+    source_id: src-kakashi-gaiden-iwa-prisoner
+    locator: 'Рядок 138 і пояснення Какаші в нічному таборі: Міката зламав полоненого психологічно; для допиту й обміну не знадобилося каліцтв.'
+    basis: source
+    review: accepted
+  - id: evd-archive-hidden-materials
+    source_id: src-archive-chain-placement
+    locator: 'Авторська правка 02.10.2026: у 3-Б заховані викрадені матеріали, навмисно забруднені для захисту схованки; Райдо не повідомляє це учням; знезараження залишається реальним. Розкриття причини винесено в лабораторну перевірку 13.04.'
+    basis: editorial
+    review: accepted
+  - id: evd-archive-audit-bridge
+    source_id: src-archive-chain-placement
+    locator: 'Обраний за дорученням автора причинний міст: зупинене списання → перевірка 3-Б → викрадені матеріали → звірка журналів архівного корпусу → витік із цивільного реєстру. Діти не стають слідчими й не отримують секретних результатів.'
+    basis: editorial
+    review: accepted
+  - id: evd-archive-chain-placement
+    source_id: src-archive-chain-placement
+    locator: 'Робочі дати року 0: доручення 11.04; архів 12.04; перевірка 12–16.04; операція Какаші й Мікати 17–24.04; допит 25–26.04; переговори з 27.04; підтвердження обміну 04.05. Країна Хвиль 15.03–13.04 та місії 14–15.04 збережені.'
+    basis: editorial
+    review: accepted
+  - id: evd-archive-operation-bridge
+    source_id: src-archive-chain-placement
+    locator: 'Оперативні зв’язки, необхідні для переходу між джерелами: затримання старшої архівістки та живого зв’язкового Іви під перекритим периметром; передання затриманих Ібікі; звіт Хірузену; дипломатична підготовка обміну. Деталі виконання додано в межах доручення автора.'
     basis: editorial
     review: accepted

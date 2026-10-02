@@ -1,0 +1,88 @@
+schema_version: 1
+id: sc-y0-team9-archive-dismissal
+episode_id: ep-y0-team9-archive-aftercare
+display_rank: 500
+continuity_id: main
+title: Вихід із двору архівного корпусу
+location_id: loc-archive-gate
+day_part: afternoon
+placement:
+  anchor_id: ta-team9-archive3b
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-administrator-dismisses-team9
+  title: Адміністраторка усуває Команду 9 від архівної справи
+  text: 'Біля виходу з внутрішнього двору команду чекає адміністраторка. Вона сухо наказує учням: вони нічого не бачили й нічого не знають. Її погляд затримується на Сориному блокноті, після чого жінка повертається до корпусу, не даючи пояснень. Для дітей це виглядає як спроба приховати їхню знахідку; доступу до результатів перевірки вони не отримують.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-archive-administrator
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: background
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-ren
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  focus_teams:
+  - team-9
+  display_rank: 100
+relations: []
+presence:
+- id: pr-team9-archive-dismissal-archive-administrator
+  entity_id: c-archive-administrator
+  from: sc-y0-team9-archive-dismissal.start
+  to: sc-y0-team9-archive-dismissal.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dismissal-sora
+  entity_id: c-sora
+  from: sc-y0-team9-archive-dismissal.start
+  to: sc-y0-team9-archive-dismissal.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dismissal-raido
+  entity_id: c-raido
+  from: sc-y0-team9-archive-dismissal.start
+  to: sc-y0-team9-archive-dismissal.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dismissal-kita
+  entity_id: c-kita
+  from: sc-y0-team9-archive-dismissal.start
+  to: sc-y0-team9-archive-dismissal.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted
+- id: pr-team9-archive-dismissal-ren
+  entity_id: c-ren
+  from: sc-y0-team9-archive-dismissal.start
+  to: sc-y0-team9-archive-dismissal.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  review: accepted

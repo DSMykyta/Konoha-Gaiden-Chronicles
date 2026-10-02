@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-y0-archive-register-audit
+episode_id: ep-y0-archive-audit
+display_rank: 1000
+continuity_id: main
+title: Звірка журналів архівного корпусу
+location_id: loc-archive-audit-room
+day_part: afternoon
+placement:
+  anchor_id: ta-archive-register-audit
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-audit-traces-hidden-records-through-archive
+  title: Перевірка пов’язує схованку з порушеннями архівного доступу
+  text: Інспектор зіставляє приховані матеріали з описами фондів, накладними на списання та записами про доступ до закритих документів. Стара бірка не пояснює актуальні матеріали у схованці, а журнали містять розходження між дозволеними операціями й фактичним рухом паперів. Перевірку розширюють з технічного сектора на інші частини архівного корпусу. Сліди ведуть до родинних метрик і медичних відомостей, які зберігають у цивільному реєстрі, тому до справи підключають Відділ розвідки та допитів.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-archive-auditor
+    role: focus
+    mode: physical
+  - entity_id: c-archive-administrator
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-audit-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-register-audit-archive-auditor
+  entity_id: c-archive-auditor
+  from: sc-y0-archive-register-audit.start
+  to: sc-y0-archive-register-audit.end
+  basis: editorial
+  evidence_ids:
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-archive-register-audit-archive-administrator
+  entity_id: c-archive-administrator
+  from: sc-y0-archive-register-audit.start
+  to: sc-y0-archive-register-audit.end
+  basis: editorial
+  evidence_ids:
+  - evd-archive-audit-bridge
+  review: accepted

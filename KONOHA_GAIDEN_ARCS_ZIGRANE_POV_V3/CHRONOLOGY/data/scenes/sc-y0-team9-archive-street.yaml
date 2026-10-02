@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-y0-team9-archive-street
+episode_id: ep-y0-team9-archive-aftercare
+display_rank: 600
+continuity_id: main
+title: Дорога від архіву
+location_id: loc-konoha-archive-street
+day_part: afternoon
+placement:
+  anchor_id: ta-team9-archive3b
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-raido-explains-archive-dismissal
+  title: Райдо пояснює учням наказ мовчати
+  text: За поворотом Сора запитує, чи не погрожували їм як свідкам порушення. Райдо пояснює, що серйозна архівна перевірка означає окремі рапорти, комісію та офіційні допити; адміністрації простіше прибрати генінів із подальшого оформлення справи. Він не оголошує знахідку безпечною й не повертає дітей до сектора, але відділяє бюрократичне поводження з командою від загрози їхньому життю. Подальшою перевіркою займуться фахівці, а їхня робота на сьогодні завершена.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: participant
+    mode: physical
+  - entity_id: c-ren
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-audit-bridge
+  focus_teams:
+  - team-9
+  display_rank: 100
+relations: []
+presence:
+- id: pr-team9-archive-street-raido
+  entity_id: c-raido
+  from: sc-y0-team9-archive-street.start
+  to: sc-y0-team9-archive-street.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-team9-archive-street-sora
+  entity_id: c-sora
+  from: sc-y0-team9-archive-street.start
+  to: sc-y0-team9-archive-street.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-team9-archive-street-kita
+  entity_id: c-kita
+  from: sc-y0-team9-archive-street.start
+  to: sc-y0-team9-archive-street.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-team9-archive-street-ren
+  entity_id: c-ren
+  from: sc-y0-team9-archive-street.start
+  to: sc-y0-team9-archive-street.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-aftercare
+  - evd-archive-audit-bridge
+  review: accepted

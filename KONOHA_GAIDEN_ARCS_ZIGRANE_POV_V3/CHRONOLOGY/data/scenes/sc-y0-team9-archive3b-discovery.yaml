@@ -1,0 +1,162 @@
+schema_version: 1
+id: sc-y0-team9-archive3b-discovery
+episode_id: ep-y0-team9-archive-discovery
+display_rank: 300
+continuity_id: main
+title: Схованка в секторі 3-Б
+location_id: loc-archive-sector-3b
+day_part: morning
+placement:
+  anchor_id: ta-team9-archive3b
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-team9-finds-archive-cache
+  title: Команда 9 виявляє небезпечну схованку в секторі 3-Б
+  text: За старим стелажем команда знаходить потемнілу коробку з медичним маркуванням К-12 — року нападу Дев’ятихвостого. Райдо оглядає ремінець і плями на кришці, накладає карантинний талісман і наказує не відкривати вміст. Кіта позначає біологічну небезпеку, Сора записує місце знахідки, а Рен ліхтариком перевіряє нішу, не торкаючись підозрілих речей. Після обережного розвантаження стелажа вони бачать ще три коробки з бірками евакуаційного медичного вантажу. Райдо опечатує їх і через архіваріуса викликає госпітальну групу. Учні бачать реальну карантинну загрозу; що саме ховається під старим маркуванням, ще має встановити перевірка.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-archive-technical-archivist
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-hidden-materials
+  focus_teams:
+  - team-9
+  display_rank: 100
+- id: ev-y0-sora-stops-archive-disposal
+  title: Сора виявляє нестачу вантажу й зупиняє списання
+  text: 'Адміністраторка приходить із двома медиками й наказує припинити роботи в 3-Б. Сора показує їй дерев’яну бірку: у старому записі значаться п’ять одиниць тимчасового медичного вантажу, а перед ними лише чотири. Архіваріус запевняє, що ряд роками не чіпали. Тим часом із сусіднього коридору чути колеса візка з майном на списання, і Сора помічає в пилу смугу, що тягнеться від схованки саме туди. Адміністраторка негайно зупиняє вивезення. Райдо забирає учнів із сектора: подальша перевірка вантажу та обліку вже виходить за межі їхнього D-рангу.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-archive-administrator
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: participant
+    mode: physical
+  - entity_id: c-archive-technical-archivist
+    role: participant
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-ren
+    role: background
+    mode: physical
+  - entity_id: c-archive-medic-1
+    role: background
+    mode: physical
+  - entity_id: c-archive-medic-2
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-team9-archive-discovery
+  focus_teams:
+  - team-9
+  display_rank: 200
+relations:
+- id: rel-team9-archive3b-discovery-1
+  kind: before
+  a: ev-y0-team9-finds-archive-cache
+  b: ev-y0-sora-stops-archive-disposal
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-hidden-materials
+presence:
+- id: pr-team9-archive3b-discovery-raido
+  entity_id: c-raido
+  from: sc-y0-team9-archive3b-discovery.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive3b-discovery-kita
+  entity_id: c-kita
+  from: sc-y0-team9-archive3b-discovery.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive3b-discovery-ren
+  entity_id: c-ren
+  from: sc-y0-team9-archive3b-discovery.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive3b-discovery-sora
+  entity_id: c-sora
+  from: sc-y0-team9-archive3b-discovery.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive3b-discovery-archive-technical-archivist
+  entity_id: c-archive-technical-archivist
+  from: sc-y0-team9-archive3b-discovery.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  - evd-archive-hidden-materials
+  review: accepted
+- id: pr-team9-archive3b-discovery-archive-administrator
+  entity_id: c-archive-administrator
+  from: ev-y0-sora-stops-archive-disposal.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  review: accepted
+- id: pr-team9-archive3b-discovery-archive-medic-1
+  entity_id: c-archive-medic-1
+  from: ev-y0-sora-stops-archive-disposal.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  review: accepted
+- id: pr-team9-archive3b-discovery-archive-medic-2
+  entity_id: c-archive-medic-2
+  from: ev-y0-sora-stops-archive-disposal.start
+  to: sc-y0-team9-archive3b-discovery.end
+  basis: source
+  evidence_ids:
+  - evd-team9-archive-discovery
+  review: accepted

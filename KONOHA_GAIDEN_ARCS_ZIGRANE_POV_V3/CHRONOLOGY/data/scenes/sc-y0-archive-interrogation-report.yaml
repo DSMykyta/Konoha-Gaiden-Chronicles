@@ -1,0 +1,56 @@
+schema_version: 1
+id: sc-y0-archive-interrogation-report
+episode_id: ep-y0-archive-iwa-interrogation
+display_rank: 2200
+continuity_id: main
+title: Звіт Ібікі Хірузену
+location_id: loc-hokage-office
+day_part: afternoon
+placement:
+  anchor_id: ta-archive-interrogation-report
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-ibiki-delivers-iwa-interrogation-results
+  title: Ібікі передає Хірузену результати допиту Івівця
+  text: Ібікі зводить перевірені відомості з допиту зв’язкового та передає Хірузену службовий звіт. Коноха отримала потрібні дані про ворожого посередника й архівний канал, тому подальше утримання полоненого вже не потрібне для продовження цієї операції. Шпигун живий і залишається під охороною; рішення про його долю переходить зі слідчої процедури до політичного й дипломатичного рівня.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-interrogation-report-ibiki
+  entity_id: c-ibiki
+  from: sc-y0-archive-interrogation-report.start
+  to: sc-y0-archive-interrogation-report.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-interrogation-report-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-archive-interrogation-report.start
+  to: sc-y0-archive-interrogation-report.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted

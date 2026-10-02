@@ -1,0 +1,59 @@
+schema_version: 1
+id: sc-y0-archive-mikata-infiltration
+episode_id: ep-y0-archive-undercover
+display_rank: 1300
+continuity_id: main
+title: Початок роботи під прикриттям
+location_id: loc-archive-civil-workroom
+day_part: morning
+placement:
+  anchor_id: ta-archive-infiltration
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-mikata-enters-civil-archive-undercover
+  title: Міката починає працювати в архіві під цивільним прикриттям
+  text: Міката входить до цивільного реєстру як новий працівник і вбудовується у звичну обробку документів. Під прикриттям повсякденної роботи він перевіряє, які фонди відкривають, хто має доступ до закритих медичних карток і як оформлюють передачу матеріалів за межі сектора. Його увага сходиться на старшій архівістці, через яку проходять потрібні пакети. Какаші забезпечує зовнішню частину операції, поки всередині Міката збирає підтвердження й не дає підозрюваній помітити перевірку.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-archive-chief-clerk
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-case-evidence
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-mikata-infiltration-mikata
+  entity_id: c-mikata
+  from: sc-y0-archive-mikata-infiltration.start
+  to: sc-y0-archive-mikata-infiltration.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-case-evidence
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-mikata-infiltration-archive-chief-clerk
+  entity_id: c-archive-chief-clerk
+  from: sc-y0-archive-mikata-infiltration.start
+  to: sc-y0-archive-mikata-infiltration.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-briefing
+  - evd-archive-case-evidence
+  - evd-archive-operation-bridge
+  review: accepted

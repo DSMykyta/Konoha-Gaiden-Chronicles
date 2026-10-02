@@ -1,0 +1,68 @@
+schema_version: 1
+id: sc-y0-archive-arrest-warrant
+episode_id: ep-y0-archive-arrests
+display_rank: 1500
+continuity_id: main
+title: Санкція на архівну операцію
+location_id: loc-hokage-office
+day_part: morning
+placement:
+  anchor_id: ta-archive-arrest-warrant
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-hiruzen-authorizes-archive-arrests
+  title: Хірузен санкціонує затримання після доповіді Мікати
+  text: 'Міката подає Хірузену зібрану справу: фотографії передачі сувою, перелік виведених матеріалів і графік зустрічей. Какаші ознайомлюється з доказами присутності зв’язкового Іви та участі старшої працівниці архіву. Хірузен підписує ордер і затверджує операцію Відділу розвідки та допитів. Какаші має перекрити зовнішній периметр так, щоб під час затримання ніхто не залишив будівлю; Міката забезпечить роботу всередині.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-chain-placement
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-arrest-warrant-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-archive-arrest-warrant.start
+  to: sc-y0-archive-arrest-warrant.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-archive-arrest-warrant-mikata
+  entity_id: c-mikata
+  from: sc-y0-archive-arrest-warrant.start
+  to: sc-y0-archive-arrest-warrant.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-chain-placement
+  review: accepted
+- id: pr-archive-arrest-warrant-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-archive-arrest-warrant.start
+  to: sc-y0-archive-arrest-warrant.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-evidence
+  - evd-archive-chain-placement
+  review: accepted

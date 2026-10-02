@@ -1,0 +1,98 @@
+schema_version: 1
+id: sc-y0-archive-chief-and-iwa-arrest
+episode_id: ep-y0-archive-arrests
+display_rank: 1700
+continuity_id: main
+title: Затримання в цивільному реєстрі
+location_id: loc-archive-civil-transfer-office
+day_part: morning
+placement:
+  anchor_id: ta-archive-arrests
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-archive-chief-and-iwa-contact-arrested
+  title: Міката затримує старшу архівістку та зв’язкового Іви
+  text: Коли старша архівістка та зв’язковий знову сходяться для передачі документів, Міката й чуніни ізолюють їх у межах перекритого корпусу. Сувій і пов’язані матеріали вилучають як докази; сховати папери або піти через зовнішні виходи вже неможливо. Зв’язкового беруть живим і встановлюють його роль у отриманні закритих даних. Старшу архівістку затримують як джерело витоку, а решту працівниць відводять для окремої перевірки участі.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-archive-chief-clerk
+    role: focus
+    mode: physical
+  - entity_id: c-iwa-prisoner
+    role: focus
+    mode: physical
+  - entity_id: c-archive-guard-1
+    role: participant
+    mode: physical
+  - entity_id: c-archive-guard-2
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-chief-and-iwa-arrest-mikata
+  entity_id: c-mikata
+  from: sc-y0-archive-chief-and-iwa-arrest.start
+  to: sc-y0-archive-chief-and-iwa-arrest.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-chief-and-iwa-arrest-archive-chief-clerk
+  entity_id: c-archive-chief-clerk
+  from: sc-y0-archive-chief-and-iwa-arrest.start
+  to: sc-y0-archive-chief-and-iwa-arrest.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-chief-and-iwa-arrest-iwa-prisoner
+  entity_id: c-iwa-prisoner
+  from: sc-y0-archive-chief-and-iwa-arrest.start
+  to: sc-y0-archive-chief-and-iwa-arrest.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-chief-and-iwa-arrest-archive-guard-1
+  entity_id: c-archive-guard-1
+  from: sc-y0-archive-chief-and-iwa-arrest.start
+  to: sc-y0-archive-chief-and-iwa-arrest.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-chief-and-iwa-arrest-archive-guard-2
+  entity_id: c-archive-guard-2
+  from: sc-y0-archive-chief-and-iwa-arrest.start
+  to: sc-y0-archive-chief-and-iwa-arrest.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-result
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted

@@ -1,0 +1,56 @@
+schema_version: 1
+id: sc-y0-archive-exchange-talks
+episode_id: ep-y0-archive-exchange-decision
+display_rank: 2300
+continuity_id: main
+title: Початок переговорів про полоненого
+location_id: loc-hokage-office
+day_part: morning
+placement:
+  anchor_id: ta-archive-exchange-talks
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-konoha-opens-iwa-exchange-talks
+  title: Коноха пропонує Іві обмін полоненого
+  text: Після завершення допиту Рада відмовляється від страти шпигуна й погоджується використати його в обміні. Хірузен відкриває дипломатичний канал із Країною Землі, а Ібікі залишає чоловіка ізольованим під вартою до підтвердження домовленості. Перемовини визначають зустрічний предмет передачі, прикордонну точку й безпечний порядок конвоювання. Архівна операція вже завершена; нова мета — передати живого полоненого в межах угоди.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-exchange-talks-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-archive-exchange-talks.start
+  to: sc-y0-archive-exchange-talks.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted
+- id: pr-archive-exchange-talks-ibiki
+  entity_id: c-ibiki
+  from: sc-y0-archive-exchange-talks.start
+  to: sc-y0-archive-exchange-talks.end
+  basis: source
+  evidence_ids:
+  - evd-archive-iwa-prisoner-identity
+  - evd-archive-operation-bridge
+  review: accepted

@@ -1,0 +1,68 @@
+schema_version: 1
+id: sc-y0-archive-cache-laboratory
+episode_id: ep-y0-archive-audit
+display_rank: 900
+continuity_id: main
+title: Перевірка вантажу в карантинній лабораторії
+location_id: loc-hospital-quarantine-lab
+day_part: morning
+placement:
+  anchor_id: ta-archive-lab
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-specialists-identify-protected-stolen-materials
+  title: Фахівці знаходять викрадені матеріали під небезпечним забрудненням
+  text: У захищеній лабораторії коробки перевіряють окремо від старих медичних бірок. Серед вмісту виявляють приховані пакети закритих архівних матеріалів; їхні ознаки обліку не відповідають вантажу часів евакуації К-12. Небезпечне забруднення було використане навмисно, щоб захистити схованку від стороннього втручання, тому проведене для Команди 9 знезараження було необхідним. Медики передають інспектору висновок і безпечні для звірки відомості про документи. Походження схованки стає предметом службового розслідування, а не новим дорученням генінам.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-archive-medic-1
+    role: focus
+    mode: physical
+  - entity_id: c-archive-auditor
+    role: focus
+    mode: physical
+  - entity_id: c-archive-medic-2
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-hidden-materials
+  - evd-archive-audit-bridge
+  display_rank: 100
+relations: []
+presence:
+- id: pr-archive-cache-laboratory-archive-medic-1
+  entity_id: c-archive-medic-1
+  from: sc-y0-archive-cache-laboratory.start
+  to: sc-y0-archive-cache-laboratory.end
+  basis: editorial
+  evidence_ids:
+  - evd-archive-hidden-materials
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-archive-cache-laboratory-archive-auditor
+  entity_id: c-archive-auditor
+  from: sc-y0-archive-cache-laboratory.start
+  to: sc-y0-archive-cache-laboratory.end
+  basis: editorial
+  evidence_ids:
+  - evd-archive-hidden-materials
+  - evd-archive-audit-bridge
+  review: accepted
+- id: pr-archive-cache-laboratory-archive-medic-2
+  entity_id: c-archive-medic-2
+  from: sc-y0-archive-cache-laboratory.start
+  to: sc-y0-archive-cache-laboratory.end
+  basis: editorial
+  evidence_ids:
+  - evd-archive-hidden-materials
+  - evd-archive-audit-bridge
+  review: accepted

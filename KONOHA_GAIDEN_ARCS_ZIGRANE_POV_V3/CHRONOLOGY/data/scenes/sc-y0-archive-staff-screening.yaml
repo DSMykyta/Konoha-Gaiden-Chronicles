@@ -1,0 +1,162 @@
+schema_version: 1
+id: sc-y0-archive-staff-screening
+episode_id: ep-y0-archive-arrests
+display_rank: 1800
+continuity_id: main
+title: Перевірка архівісток у коридорі
+location_id: loc-archive-civil-corridor
+day_part: noon
+placement:
+  anchor_id: ta-archive-arrests
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-kakashi-identifies-archive-accomplices
+  title: Какаші відокремлює двох співучасниць архівного витоку
+  text: 'Після затримання старшої архівістки Какаші отримує особові справи шістьох працівниць, яких охорона залишила в коридорі. Дві старші жінки реагують на його появу значно гостріше за решту: вони знали про позастатутні передачі документів. Хатаке прямо констатує їхню обізнаність, і обидві перестають приховувати свою причетність. Він наказує чунінам відвести їх у різні камери й оформити як співучасниць, відділяючи їх від працівниць, на яких доказів немає.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-archive-accomplice-1
+    role: focus
+    mode: physical
+  - entity_id: c-archive-accomplice-2
+    role: focus
+    mode: physical
+  - entity_id: c-archive-guard-1
+    role: participant
+    mode: physical
+  - entity_id: c-archive-guard-2
+    role: participant
+    mode: physical
+  - entity_id: c-yumiko
+    role: background
+    mode: physical
+  - entity_id: c-archive-clerk-1
+    role: background
+    mode: physical
+  - entity_id: c-archive-clerk-2
+    role: background
+    mode: physical
+  - entity_id: c-archive-clerk-3
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-staff
+  display_rank: 100
+- id: ev-y0-kakashi-releases-uninvolved-archivists
+  title: Какаші відпускає непричетних архівісток
+  text: Після того як охоронці відводять двох співучасниць, у коридорі залишаються четверо жінок, серед них Юміко. Вони чекають нового затримання, але Какаші припиняє перевірку й дозволяє їм повернутися до робочих місць. Доступ до закритого сектора тимчасово обмежено до розпорядження Хокаґе. Юміко, так само налякана ситуацією, швидко вклоняється й іде за колегами. Какаші не використовує її особову справу для приватного знайомства та здає документи назад до адміністрації.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-yumiko
+    role: participant
+    mode: physical
+  - entity_id: c-archive-clerk-1
+    role: participant
+    mode: physical
+  - entity_id: c-archive-clerk-2
+    role: participant
+    mode: physical
+  - entity_id: c-archive-clerk-3
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-archive-case-staff
+  display_rank: 200
+relations:
+- id: rel-archive-staff-screening-1
+  kind: before
+  a: ev-y0-kakashi-identifies-archive-accomplices
+  b: ev-y0-kakashi-releases-uninvolved-archivists
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-archive-case-staff
+presence:
+- id: pr-archive-staff-screening-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-archive-staff-screening.start
+  to: sc-y0-archive-staff-screening.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-archive-accomplice-1
+  entity_id: c-archive-accomplice-1
+  from: sc-y0-archive-staff-screening.start
+  to: ev-y0-kakashi-identifies-archive-accomplices.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-archive-accomplice-2
+  entity_id: c-archive-accomplice-2
+  from: sc-y0-archive-staff-screening.start
+  to: ev-y0-kakashi-identifies-archive-accomplices.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-archive-guard-1
+  entity_id: c-archive-guard-1
+  from: sc-y0-archive-staff-screening.start
+  to: ev-y0-kakashi-identifies-archive-accomplices.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-archive-guard-2
+  entity_id: c-archive-guard-2
+  from: sc-y0-archive-staff-screening.start
+  to: ev-y0-kakashi-identifies-archive-accomplices.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-yumiko
+  entity_id: c-yumiko
+  from: sc-y0-archive-staff-screening.start
+  to: sc-y0-archive-staff-screening.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-archive-clerk-1
+  entity_id: c-archive-clerk-1
+  from: sc-y0-archive-staff-screening.start
+  to: sc-y0-archive-staff-screening.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-archive-clerk-2
+  entity_id: c-archive-clerk-2
+  from: sc-y0-archive-staff-screening.start
+  to: sc-y0-archive-staff-screening.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
+- id: pr-archive-staff-screening-archive-clerk-3
+  entity_id: c-archive-clerk-3
+  from: sc-y0-archive-staff-screening.start
+  to: sc-y0-archive-staff-screening.end
+  basis: source
+  evidence_ids:
+  - evd-archive-case-staff
+  review: accepted
