@@ -128,12 +128,14 @@ try {
       await page.locator('.hierarchy-preview').waitFor({state:'visible',timeout:10000});
       assert.equal(await page.locator('.hierarchy-preview').count(), 1);
       await page.mouse.move(1, height - 130);
+      await page.locator('.hierarchy-preview').waitFor({state:'hidden',timeout:10000});
       await page.waitForTimeout(320);
       assert.equal(await page.locator('.hierarchy-preview').count(), 0, 'An unpinned child stuck open');
       assert.equal(await page.locator('#eventCard').isVisible(), true, 'Leaving a child closed its pinned parent');
     }
     await page.locator('#eventCard [data-story-episode="ep-y0-team-formation"]').click();
     await page.locator('[data-hierarchy-depth="0"] [data-story-scene="sc-y0-0122-academy-announcements"]').click();
+    const episodeScroll=await page.locator('[data-hierarchy-depth="0"] .preview-scroll').evaluate(element=>element.scrollTop);
     await page.locator('[data-hierarchy-depth="1"] [data-scene-preview="ev-y0-0122-team7-announced"]').click();
     assert.equal(await page.locator('.hierarchy-preview').count(), 3);
     const activeParentRows = await page.locator('.is-preview-active').count();
@@ -142,11 +144,18 @@ try {
     const bounds = await panels.evaluateAll(elements => elements.filter(element => getComputedStyle(element).visibility !== 'hidden').map(element => {
       const rect = element.getBoundingClientRect(); return {left: rect.left, right: rect.right, top: rect.top, bottom: rect.bottom};
     }));
+    if(width<=760)assert.equal(bounds.length,1,'Phone shows overlapping reading levels');
+    if(width>=1240)assert(bounds.length>=3,'Desktop lost neighboring episode, scene and moment panels');
     for (const rect of bounds) {
       assert(rect.left >= 11 && rect.right <= width - 11, 'Cascade is outside the viewport');
       assert(rect.top >= 0 && rect.bottom <= height, 'Cascade controls are clipped vertically');
     }
     const detail = page.locator('[data-hierarchy-depth="2"]');
+    for(const [depth,label] of [[0,'До арки'],[1,'До епізоду'],[2,'До сцени']]){
+      const back=page.locator(`[data-hierarchy-depth="${depth}"] [data-back-hierarchy]`);
+      assert((await back.textContent()).includes(label));
+      assert(await back.evaluate(element=>element.getBoundingClientRect().height>=44));
+    }
     const headerBefore = await detail.locator('.story-panel-header').boundingBox();
     await detail.locator('.preview-scroll').evaluate(element => { element.scrollTop = element.scrollHeight; });
     assert.deepEqual(await detail.locator('.story-panel-header').boundingBox(), headerBefore, 'Preview header scrolled');
@@ -163,13 +172,23 @@ try {
       await page.setViewportSize({width,height});
       await page.waitForTimeout(80);
     }
-    await page.keyboard.press('Escape');
+    await detail.locator('[data-back-hierarchy]').click();
     assert.equal(await page.locator('.hierarchy-preview').count(), 2);
-    await page.locator('[data-hierarchy-depth="1"] [data-close-hierarchy]').click();
+    assert.equal(await page.locator('[data-hierarchy-depth="1"]').evaluate(element=>element.inert),false);
+    await page.locator('[data-hierarchy-depth="1"] [data-back-hierarchy]').click();
     assert.equal(await page.locator('.hierarchy-preview').count(), 1);
-    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('[data-hierarchy-depth="0"] .preview-scroll').evaluate(element=>element.scrollTop),episodeScroll);
+    await page.locator('[data-hierarchy-depth="0"] [data-back-hierarchy]').click();
     assert.equal(await page.locator('.hierarchy-preview').count(), 0);
     assert.equal(await page.locator('#eventCard').isVisible(), true);
+    await page.locator('#eventCard [data-story-episode="ep-y0-team-formation"]').click();
+    await page.locator('[data-hierarchy-depth="0"] [data-close-hierarchy]').click();
+    assert.equal(await page.locator('.hierarchy-preview').count(),0);
+    assert.equal(await page.locator('#eventCard').isVisible(),false,'Close left a parent reader open');
+    await page.evaluate(()=>navigateStory('arc','arc-y0-genin-formation'));
+    await page.locator('#eventCard [data-story-episode="ep-y0-team-formation"]').click();
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('.hierarchy-preview').count(),0);
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#eventCard').isVisible(), false);
 
@@ -234,9 +253,28 @@ try {
   assert.equal(await touch.locator('#eventCard').isVisible(),false);
   await touch.locator('[data-event="ev-y0-0122-team7-announced"] .mark').tap();
   assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
+  await touch.locator('#eventCard [data-parent-kind="scene"]').tap();
+  assert.equal(await touch.locator('#eventCard .card-kind').textContent(),'СЦЕНА');
+  await touch.locator('#eventCard [data-parent-kind="episode"]').tap();
+  assert.equal(await touch.locator('#eventCard .card-kind').textContent(),'ЕПІЗОД');
+  await touch.locator('#eventCard [data-parent-kind="arc"]').tap();
+  await touch.locator('#eventCard [data-story-episode="ep-y0-team-formation"]').tap();
+  await touch.locator('[data-hierarchy-depth="0"] [data-story-scene="sc-y0-0122-academy-announcements"]').tap();
+  await touch.locator('[data-hierarchy-depth="1"] [data-scene-preview="ev-y0-0122-team7-announced"]').tap();
+  await touch.locator('[data-hierarchy-depth="2"] [data-back-hierarchy]').tap();
+  assert.equal(await touch.locator('[data-hierarchy-depth="1"]').evaluate(element=>element.inert),false);
+  await touch.setViewportSize({width:812,height:375});
+  await touch.locator('[data-hierarchy-depth="1"] [data-back-hierarchy]').tap();
+  await touch.setViewportSize({width:375,height:812});
+  await touch.locator('[data-hierarchy-depth="0"] [data-back-hierarchy]').tap();
+  assert.equal(await touch.locator('.hierarchy-preview').count(),0);
+  assert.equal(await touch.locator('#eventCard').evaluate(element=>element.inert),false);
+  await touch.locator('#eventCard [data-story-episode="ep-y0-team-formation"]').tap();
+  await touch.locator('[data-hierarchy-depth="0"] [data-close-hierarchy]').tap();
+  assert.equal(await touch.locator('#eventCard').isVisible(),false);
   assert.deepEqual(touchErrors,[]);
   await touch.close();
-  console.log('PASS real touch: day scale, numbered moment, direct reading and stable pin');
+  console.log('PASS real touch: direct reading, upward navigation, cascade return, phone rotation and close');
 } finally {
   await browser?.close();
   await new Promise(resolve => server.close(resolve));

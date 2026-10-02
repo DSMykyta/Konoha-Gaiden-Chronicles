@@ -53,7 +53,7 @@ async function check(width,height){
  if(width>=600){const other=canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
  assert.equal(doc.querySelectorAll('.scene-context,.card-open-scene').length,0);run("readScene('sc-y0-0122-academy-announcements',$('cardContent'))");assert(!doc.getElementById('sceneDialog').hidden);assert.equal(doc.querySelectorAll('[data-scene-action]').length,classroomCount);assert(!doc.getElementById('sceneContent').textContent.includes('Асума, Куренай і Райдо чекають'));
  click('[data-scene-event="ev-y0-0122-team7-announced"]');await sleep();assert(doc.getElementById('sceneDialog').hidden);assert.equal(run('focusId'),'ev-y0-0122-team7-announced');assert.equal(run('pinnedNodeId'),'ev-y0-0122-team7-announced');assert.equal(doc.querySelector('.card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
- assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Назад');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Далі');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
+ assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Попередній момент');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Наступний момент');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
  click('[data-parent-kind="scene"]');assert.equal(doc.querySelector('.card-kind').textContent,'СЦЕНА');run("readScene('sc-y0-0122-academy-announcements',$('cardContent'))");click('#closeScene');assert(doc.getElementById('sceneDialog').hidden);
 
  // At month scale the classroom assignment sequence is one episode; the one-scene/one-moment jōnin episode still collapses to its moment.
@@ -62,6 +62,23 @@ async function check(width,height){
  run('center=22.5;render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('.card-kind').textContent,'ЕПІЗОД');
 
  run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');assert(arcNode);assert(arcNode.classList.contains('arc-node'));assert(arcNode.querySelector('ellipse.mark'));click('[data-event="arc:arc-y0-genin-formation"]');assert.equal(doc.querySelector('.card-kind').textContent,'АРКА');
+ // Drill-down has a named upward path at every depth and restores parent content/scroll.
+ assert.equal(doc.querySelector('#eventCard .story-parent-button'),null);
+ click('#eventCard [data-story-episode="ep-y0-team-formation"]');
+ const episodePanel=doc.querySelector('[data-hierarchy-depth="0"]');
+ assert(episodePanel.querySelector('[data-back-hierarchy]').textContent.includes('До арки'));
+ episodePanel.querySelector('.preview-scroll').scrollTop=37;
+ click('[data-hierarchy-depth="0"] [data-story-scene="sc-y0-0122-academy-announcements"]');
+ assert(doc.querySelector('[data-hierarchy-depth="1"] [data-back-hierarchy]').textContent.includes('До епізоду'));
+ click('[data-hierarchy-depth="1"] [data-scene-preview="ev-y0-0122-team7-announced"]');
+ assert(doc.querySelector('[data-hierarchy-depth="2"] [data-back-hierarchy]').textContent.includes('До сцени'));
+ click('[data-hierarchy-depth="2"] [data-back-hierarchy]');assert.equal(run('HierarchyPreview.size'),2);
+ click('[data-hierarchy-depth="1"] [data-back-hierarchy]');assert.equal(run('HierarchyPreview.size'),1);
+ assert.equal(doc.querySelector('[data-hierarchy-depth="0"]'),episodePanel);assert.equal(episodePanel.querySelector('.preview-scroll').scrollTop,37);
+ click('[data-hierarchy-depth="0"] [data-back-hierarchy]');assert.equal(run('HierarchyPreview.size'),0);assert(!doc.getElementById('eventCard').inert);
+ click('#eventCard [data-story-episode="ep-y0-team-formation"]');click('[data-hierarchy-depth="0"] [data-close-hierarchy]');
+ assert(doc.getElementById('eventCard').hidden);assert.equal(run('HierarchyPreview.size'),0);assert.equal(run('pinnedNodeId'),null);
+ run("navigateStory('arc','arc-y0-genin-formation')");
  // Refresh updates every hierarchy level and clears obsolete child previews.
  click('#eventCard [data-story-episode="ep-y0-team-formation"]');assert.equal(run('HierarchyPreview.size'),1);
  const arc=snapshot.arcs.find(arc=>arc.id==='arc-y0-genin-formation');arc.title='Оновлена арка';snapshot.revision='test-story-update';version=snapshot.revision;await run('refreshData()');

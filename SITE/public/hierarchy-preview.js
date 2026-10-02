@@ -42,10 +42,11 @@ const HierarchyPreview = (() => {
     const surfaces = [root, ...cascade.map(entry => entry.panel)];
     const width = document.documentElement.clientWidth || window.innerWidth || $('canvas').clientWidth;
     const viewportHeight = window.innerHeight || $('canvas').clientHeight;
-    const minTop = Math.min(readingBounds().top, Math.max(12, viewportHeight - 92));
-    const bottom = Math.max(minTop + 80, viewportHeight - 116);
-    const height = Math.min(cardPlacement.height, bottom - minTop);
-    const top = Math.max(minTop, Math.min(cardPlacement.top, bottom - height));
+    const short = viewportHeight < 520;
+    const minTop = short ? 12 : Math.min(readingBounds().top, Math.max(12, viewportHeight - 92));
+    const bottom = short ? viewportHeight - 12 : Math.max(minTop + 80, viewportHeight - 116);
+    const height = short ? bottom - minTop : Math.min(cardPlacement.height, bottom - minTop);
+    const top = short ? minTop : Math.max(minTop, Math.min(cardPlacement.top, bottom - height));
     const slots = TimelineInteractions.panelLayout(surfaces.length, width, cardPlacement.left, top, top + height);
     surfaces.forEach((surface, index) => {
       const slot = slots[index];
@@ -59,8 +60,6 @@ const HierarchyPreview = (() => {
       if (slot.obscured) surface.setAttribute('aria-hidden', 'true');
       else surface.removeAttribute('aria-hidden');
     });
-    const parent = root.querySelector('.card-parent-level-button');
-    if (parent) parent.hidden = cascade.length > 0;
     tooltipController?.refresh();
   }
 
@@ -109,7 +108,7 @@ const HierarchyPreview = (() => {
     const point = kind === 'episode' ? storyPoint(kind, id) : null;
     const group = event ? [event] : scene ? sceneEvents(id) : point?.group;
     if (!group?.length) return null;
-    const header = `<div class="story-panel-header">${cardMetaLine(kind, range(group), group.some(event => event.day !== null))}<button class="close" data-close-hierarchy aria-label="Закрити перегляд" data-tooltip="Закрити">×</button></div>`;
+    const header = storyPanelHeader(kind, range(group), group.some(event => event.day !== null), id, '', true);
     const body = event ? eventDetailsHtml(event, 'data-hierarchy-event') : scene ? sceneCardBody(scene, group) : storyCardBody(point);
     return { header, body };
   }
@@ -151,13 +150,14 @@ const HierarchyPreview = (() => {
     panel.addEventListener('click', event => {
       const button = event.target.closest('button');
       if (!button) return;
-      if (button.hasAttribute('data-close-hierarchy')) closeFrom(depth, true);
+      if (button.hasAttribute('data-back-hierarchy')) { pin(depth); closeFrom(depth, true); }
+      else if (button.hasAttribute('data-close-hierarchy')) closeCard(true);
       else if (button.dataset.eventFocusCharacter) setFocus(button.dataset.eventFocusCharacter);
       else if (button.dataset.hierarchyEvent) navigateEvent(button.dataset.hierarchyEvent);
     });
     if (pinned) pin(depth);
     layout();
-    if (pinned && document.documentElement.dataset.input === 'keyboard') panel.querySelector('[data-close-hierarchy]').focus({ preventScroll: true });
+    if (pinned && document.documentElement.dataset.input === 'keyboard') panel.querySelector('[data-back-hierarchy],[data-close-hierarchy]').focus({ preventScroll: true });
   }
 
   function bind(root, parentSurface = $('eventCard'), depth = 0) {

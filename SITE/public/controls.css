@@ -1,5 +1,5 @@
 /* Compact icon controls: one component, 32px control / 16px glyph. */
-:is(.close,.card-arrow,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) {
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) {
   display: grid;
   place-items: center;
   flex: 0 0 32px;
@@ -22,18 +22,18 @@
   transform: none;
   transition: background .14s ease,border-color .14s ease,box-shadow .14s ease,color .14s ease,opacity .14s ease;
 }
-:is(.close,.card-arrow,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) svg {
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) svg {
   width: 16px;
   height: 16px;
 }
-:is(.close,.card-arrow,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):hover {
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):hover {
   border-color: #fff;
   background: linear-gradient(145deg,rgba(255,255,255,.94),rgba(225,234,245,.54));
   box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(125,143,166,.14), 0 5px 15px rgba(42,54,70,.14);
   color: var(--text);
   transform: none;
 }
-:is(.close,.card-arrow,.profile-arrow,.card-parent-level-button,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):active {
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,#focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,#characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):active {
   background: linear-gradient(145deg,rgba(229,237,246,.55),rgba(255,255,255,.76));
   box-shadow: inset 0 2px 4px rgba(54,67,84,.12),0 1px 4px rgba(42,54,70,.06);
   transform: none;

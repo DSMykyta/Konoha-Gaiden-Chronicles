@@ -14,15 +14,16 @@
 .card-top {
   flex: none;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
   min-height: 49px;
   margin: 0;
   padding: 8px 14px;
   border-bottom: 1px solid #d9dfe799;
   background: rgba(248,250,252,.94);
 }
+.story-panel-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .story-panel-header .card-meta-line,
 .card-top .card-meta-line {
   min-height: 32px;
@@ -138,15 +139,42 @@
   .hierarchy-hover-glass { transition: opacity 80ms linear; }
 }
 
-/* Parent navigation belongs to the panel header, never outside the card. */
-.card-parent-level-button {
-  position: static;
-  inset: auto;
+/* The same explicit upward path stays visible on every reading surface. */
+.story-parent-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
   margin: 0;
-  opacity: 1;
+  padding: 4px 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text);
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.4;
   transform: none;
 }
-.card-parent-level-button[hidden] { display: none; }
+.story-parent-button svg { flex: none; width: 18px; height: 18px; }
+.story-parent-label { display: grid; gap: 2px; min-width: 0; font-weight: 600; }
+.story-parent-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); font-size: 11px; font-weight: 400; }
+.story-parent-button:not(:disabled):hover { background: rgba(102,116,134,.06); transform: none; }
+@media (max-width: 760px), (max-height: 520px) {
+  :is(#eventCard,.hierarchy-preview) :is(.close,.card-arrow) {
+    flex-basis: 44px;
+    width: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    height: 44px;
+    min-height: 44px;
+    max-height: 44px;
+  }
+  .story-parent-button { font-size: 14px; }
+  .story-parent-title { font-size: 12px; }
+}
 
 /* One restrained scrollbar treatment across reading surfaces. */
 :where(.event-card,.event-preview,.panel,.profile-dialog,.scene-dialog,.character-events-dialog,#cardScroll,.preview-scroll,.technique-card-track) {

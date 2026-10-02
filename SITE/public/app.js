@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261002-readable-map-1';
+const UI_VERSION='20261002-parent-navigation-1';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,cardPlacement=null,cardSelection=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -239,7 +239,7 @@ function setCardContent(html){
 }
 function rememberCardFocus(){
  const active=document.activeElement;
- if(!active||$('eventCard').contains(active))return;
+ if(!active||active.closest('.story-panel'))return;
  const panel=active.closest('.panel');cardReturnFocus=panel?$(panel.id.replace('Panel','Button')):active;
 }
 function focusReadingCard(){
@@ -424,14 +424,22 @@ function positionCard(point){
  $('eventCard').hidden=false;HierarchyPreview.layout();
 }
 function bindCard(){HierarchyPreview.bind($('cardContent'));}
-function parentControl(kind,id){
+function storyParent(kind,id){
  let target=null;
- if(kind==='moment'&&id)target={kind:'scene',id};
+ if(kind==='moment'){const scene=eventMap.get(id)?.scene_id;if(scene)target={kind:'scene',id:scene};}
  if(kind==='scene'){const episode=sceneMap.get(id)?.episode_id;if(episode)target={kind:'episode',id:episode};}
  if(kind==='episode'){const arc=episodeMap.get(id)?.arc_id;if(arc)target={kind:'arc',id:arc};}
- if(!target)return '';
+ if(!target)return null;
+ const meta=({scene:sceneMap,episode:episodeMap,arc:arcMap})[target.kind].get(target.id);
+ return meta?{...target,title:meta.title}:null;
+}
+function parentControl(kind,id,hierarchy=false){
+ const target=storyParent(kind,id);if(!target)return '';
  const label={scene:'До сцени',episode:'До епізоду',arc:'До арки'}[target.kind];
- return `<button class="card-parent-level-button" data-parent-kind="${target.kind}" data-parent-id="${esc(target.id)}" aria-label="${label}" data-tooltip="${label}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 7-6 5 6 5M10 12h7"/></svg></button>`;
+ return `<button class="story-parent-button" ${hierarchy?'data-back-hierarchy':`data-parent-kind="${target.kind}" data-parent-id="${esc(target.id)}"`} aria-label="${esc(label+': '+target.title)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span class="story-parent-label"><span>${label}</span><span class="story-parent-title">${esc(target.title)}</span></span></button>`;
+}
+function storyPanelHeader(kind,dateOrRange,hasYear,id,actions='',hierarchy=false){
+ return `<div class="${hierarchy?'story-panel-header':'card-top'}">${parentControl(kind,id,hierarchy)}<div class="story-panel-meta">${cardMetaLine(kind,dateOrRange,hasYear)}<div class="card-top-actions">${actions}<button class="close" ${hierarchy?'data-close-hierarchy':'data-close-card'} aria-label="Закрити читання" data-tooltip="Закрити читання">×</button></div></div></div>`;
 }
 function storyPoint(kind,id){
  const meta=(kind==='arc'?arcMap:episodeMap).get(id);if(!meta)return null;
@@ -449,11 +457,11 @@ function navigateStory(kind,id){
 }
 function cardKindLabel(kind){return ({moment:'МОМЕНТ',scene:'СЦЕНА',episode:'ЕПІЗОД',arc:'АРКА'})[kind]||String(kind||'').toUpperCase();}
 function cardMetaLine(kind,dateOrRange,hasYear=true){return `<span class="card-meta-line"><strong class="card-kind">${esc(cardKindLabel(kind))}</strong><span aria-hidden="true"> · </span><span>${esc(dateOrRange)}</span>${hasYear?'<span aria-hidden="true"> · </span><span>Рік 0</span>':''}</span>`;}
-function cardTop(day,navigation,kind='moment',openSceneId=null){
+function cardTop(day,navigation,kind='moment',id=null){
  const navKind=kind==='scene'?'scene':'event';
  const arrow=(direction,label)=>`<button class="card-arrow" data-step-${navKind}="${direction}" aria-label="${label}" title="${label}" ${navigation[direction<0?'previous':'next']?'':'disabled'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${direction<0?'m14 6-6 6 6 6':'m10 6 6 6-6 6'}"/></svg></button>`;
- const openScene=parentControl(kind,openSceneId);
- return `<div class="card-top">${cardMetaLine(kind,day===null?'Без установленої дати':dateText(day,true),day!==null)}<div class="card-top-actions">${openScene}<nav class="card-arrows" aria-label="Перехід між ${kind==='scene'?'сценами':'моментами'}">${arrow(-1,'Назад')}${arrow(1,'Далі')}</nav><button class="close" data-close-card aria-label="Закрити" title="Закрити">×</button></div></div>`;
+ const actions=`<nav class="card-arrows" aria-label="Перехід між ${kind==='scene'?'сценами':'моментами'}">${arrow(-1,kind==='scene'?'Попередня сцена':'Попередній момент')}${arrow(1,kind==='scene'?'Наступна сцена':'Наступний момент')}</nav>`;
+ return storyPanelHeader(kind,day===null?'Без установленої дати':dateText(day,true),day!==null,id,actions);
 }
 function sceneNavigation(id){const allowed=new Set(navigationEvents().map(e=>e.id)),list=orderedScenes().filter(s=>s.group.some(e=>allowed.has(e.id))),i=list.findIndex(s=>s.id===id);return {previous:list[i-1]||null,next:list[i+1]||null};}
 function stepScene(direction){const id=sceneMap.has(focusId)?focusId:eventMap.get(focusId)?.scene_id,target=sceneNavigation(id)[direction<0?'previous':'next'];if(target)navigateScene(target.id);}
@@ -491,7 +499,7 @@ function storyCardBody(point){
 function showStoryGroup(point){
  const days=point.group.map(e=>e.day).filter(Number.isFinite),start=days.length?Math.min(...days):null,end=days.length?Math.max(...days):null,range=start===null?'Без установленої дати':start===end?dateText(start,true):`${dateText(start,true)} — ${dateText(end,true)}`;
  cardSelection={kind:point.kind,id:point.rawId,events:point.group};
- setCardContent(`<div class="card-top">${cardMetaLine(point.kind,range,start!==null)}<div class="card-top-actions">${parentControl(point.kind,point.rawId)}<button class="close" data-close-card aria-label="Закрити" data-tooltip="Закрити">×</button></div></div>${storyCardBody(point)}`);bindCard();
+ setCardContent(`${storyPanelHeader(point.kind,range,start!==null,point.rawId)}${storyCardBody(point)}`);bindCard();
 }
 function eventSupplementHtml(e,relationAttribute){
  const scene=sceneMap.get(e.scene_id);
@@ -508,7 +516,7 @@ function eventDetailsHtml(e,relationAttribute='data-card-event',showDetails=fals
 }
 function showEvent(e){
  cardSelection={kind:'moment',id:e.id,events:[e]};const navigation=nav();
- setCardContent(`${cardTop(e.day,navigation,'moment',e.scene_id)}${eventDetailsHtml(e,'data-card-event')}`);
+ setCardContent(`${cardTop(e.day,navigation,'moment',e.id)}${eventDetailsHtml(e,'data-card-event')}`);
  bindCard();
 }
 function prepareNavigation(e){
