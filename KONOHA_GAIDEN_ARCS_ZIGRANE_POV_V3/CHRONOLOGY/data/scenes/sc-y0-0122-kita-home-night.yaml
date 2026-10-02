@@ -48,6 +48,21 @@ events:
         mode: "physical"
     evidence_ids:
       - "evd-kita-home-night"
+  - id: "ev-y0-0122-nobari-gives-kita-gloves"
+    title: "Нобарі дає Кіті рукавички"
+    text: "Це відбувається після розмови про нову команду, перед тим як Кіта лягає спати."
+    origin: "P"
+    extent: "interval"
+    display_rank: 250
+    involvement:
+      - entity_id: "c-nobari"
+        role: "focus"
+        mode: "physical"
+      - entity_id: "c-kita"
+        role: "focus"
+        mode: "physical"
+    evidence_ids:
+      - "evd-kita-home-night"
   - id: "ev-y0-0122-kita-cries"
     title: "Кіта плаче перед сном"
     text: "Кіта лягає спати, тихо плаче в подушку й засинає, поки з кухні чути шурхіт сторінок."
@@ -69,9 +84,17 @@ relations:
     review: "accepted"
     evidence_ids:
       - "evd-kita-home-night"
-  - id: "rel-0122-home-talk-before-cry"
+  - id: "rel-0122-home-talk-before-gloves"
     kind: "before"
     a: "ev-y0-0122-kita-talks-with-mother"
+    b: "ev-y0-0122-nobari-gives-kita-gloves"
+    basis: "source"
+    review: "accepted"
+    evidence_ids:
+      - "evd-kita-home-night"
+  - id: "rel-0122-home-gloves-before-cry"
+    kind: "before"
+    a: "ev-y0-0122-nobari-gives-kita-gloves"
     b: "ev-y0-0122-kita-cries"
     basis: "source"
     review: "accepted"
