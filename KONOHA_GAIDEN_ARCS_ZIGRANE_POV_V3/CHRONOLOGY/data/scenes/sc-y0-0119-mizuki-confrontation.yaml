@@ -20,7 +20,7 @@ events:
 - id: ev-y0-0119-iruka-finds-naruto
   legacy_ids:
   - V10-000002
-  title: Ірука знаходить Наруто із сувоєм
+  title: Ірука знаходить схованку Наруто
   text: Ірука знаходить Наруто із сувоєм. Наруто переказує обіцянку Мідзукі, і Ірука розуміє обман.
   origin: M
   extent: interval
@@ -37,8 +37,8 @@ events:
   - evd-manga-ch1-prologue
   - evd-narutopedia-ch1-opening
 - id: ev-y0-0119-mizuki-kunai-attack
-  title: Мідзукі ранить Іруку кунаями
-  text: Мідзукі кидає кунаї в Іруку й ранить його.
+  title: Мідзукі атакує Іруку кунаями
+  text: Мідзукі кидає в Іруку серію кунаїв і ранить його, перериваючи розмову з Наруто.
   origin: M
   extent: interval
   display_rank: 125
@@ -147,8 +147,8 @@ events:
     mode: physical
   evidence_ids: *id001
 - id: ev-y0-0119-naruto-flees-mizuki
-  title: Наруто тікає в ліс із сувоєм
-  text: Наруто тікає від Іруки й Мідзукі в ліс.
+  title: Наруто зникає в лісі після слів Мідзукі
+  text: Після розкриття таємниці Наруто забирає сувій і тікає глибше в ліс, залишаючи Іруку та Мідзукі позаду.
   origin: M
   extent: interval
   display_rank: 400

@@ -3,7 +3,7 @@ id: sc-y0-0119-scroll-training
 episode_id: ep-y0-scroll-theft
 display_rank: 300
 continuity_id: main
-title: Наруто вивчає техніку із сувою
+title: Наруто тренується із Сувоєм Печатей у лісі
 location_id: loc-konoha-woods
 placement:
   anchor_id: ta-y0-0119
@@ -18,8 +18,8 @@ review:
   text: accepted
 events:
 - id: ev-y0-0119-naruto-studies-scroll
-  title: Наруто вивчає техніку із Сувою Печатей
-  text: Наруто відкриває сувій і вивчає Техніку Множинних Тіньових Клонів.
+  title: Наруто обирає Техніку Множинних Тіньових Клонів
+  text: Переховуючись у лісі, Наруто відкриває Сувій Печатей і зосереджується на вивченні Техніки Множинних Тіньових Клонів.
   origin: M
   extent: interval
   display_rank: 100

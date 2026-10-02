@@ -3,7 +3,7 @@ id: sc-y0-0119-mizuki-alerts-iruka
 episode_id: ep-y0-hokage-scroll-response
 display_rank: 50
 continuity_id: main
-title: Мідзукі повідомляє Іруці про викрадення
+title: Мідзукі приносить Іруці звістку про сувій
 location_id: null
 placement:
   anchor_id: ta-y0-0119
@@ -18,8 +18,8 @@ review:
   text: accepted
 events:
 - id: ev-y0-0119-mizuki-alerts-iruka
-  title: Мідзукі повідомляє Іруці про викрадений сувій
-  text: Мідзукі повідомляє Іруці, що Наруто викрав Сувій Печатей.
+  title: Ірука дізнається про крадіжку
+  text: Мідзукі знаходить Іруку після викрадення й повідомляє, що Наруто забрав із резиденції Сувій Печатей.
   origin: M
   extent: interval
   display_rank: 100
