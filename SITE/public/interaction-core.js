@@ -44,40 +44,43 @@ const TimelineInteractions = {
   cardLayout(viewportWidth, x, y, top, bottom) {
     const { PANEL_WIDTH: preferred, GUTTER: gutter } = this;
     const width = Math.min(preferred, viewportWidth - gutter * 2);
-    let height = Math.min(420, Math.max(80, bottom - top));
-    let left = gutter, cardTop = top;
     const clamp = (value, min, max) => Math.max(min, Math.min(value, max));
-    if (viewportWidth > 760 && bottom - top >= 180) {
-      const gap = 18, right = viewportWidth - x - gap - gutter, leftRoom = x - gap - gutter;
-      if (Math.max(right, leftRoom) >= width) {
-        left = right >= leftRoom ? x + gap : x - gap - width;
-        cardTop = clamp(y - height / 2, top, bottom - height);
-      } else {
-        // A tablet may have room vertically, even when neither side fits.
-        const above = y - top - gap, below = bottom - y - gap;
-        height = Math.min(height, Math.max(80, above, below));
-        left = clamp(x - width / 2, gutter, viewportWidth - width - gutter);
-        cardTop = clamp(above >= below ? y - gap - height : y + gap, top, bottom - height);
-      }
-    }
+    // Reserve a shelf for the separate parent control. Keep the reading surface
+    // above its point so the mark and the strand remain directly accessible.
+    const minTop = Math.min(top + 52, bottom - 80), gap = 18;
+    const above = y - gap - minTop, below = bottom - y - gap;
+    const useAbove = above >= 120 || above >= below;
+    const room = useAbove ? above : below;
+    const height = Math.min(420, Math.max(80, room), bottom - minTop);
+    const left = clamp(x - width / 2, gutter, viewportWidth - width - gutter);
+    const cardTop = clamp(useAbove ? y - gap - height : y + gap, minTop, bottom - height);
     return { left, top: cardTop, width, height };
   },
 
   panelLayout(count, viewportWidth, anchorLeft, top, bottom) {
     const { PANEL_WIDTH: preferred, PANEL_GAP: gap, GUTTER: gutter } = this;
     const width = Math.min(preferred, Math.max(1, viewportWidth - gutter * 2));
-    const capacity = Math.max(1, Math.floor((viewportWidth - gutter * 2 + gap) / (width + gap)));
-    const visible = Math.min(count, capacity);
-    const total = visible * width + (visible - 1) * gap;
-    const left = Math.max(gutter, Math.min(anchorLeft, viewportWidth - gutter - total));
-    const first = count - visible;
-    return Array.from({ length: count }, (_, index) => ({
-      left: left + Math.max(0, index - first) * (width + gap),
-      top,
-      width,
-      height: Math.max(80, bottom - top),
-      obscured: index < first
-    }));
+    const clampLeft = value => Math.max(gutter, Math.min(value, viewportWidth - gutter - width));
+    const slots = [];
+    for (let index = 0; index < count; index++) {
+      let left = clampLeft(anchorLeft);
+      if (index) {
+        const parent = slots[index - 1];
+        const candidates = [...new Set(slots.flatMap(slot => [slot.left + width + gap, slot.left - width - gap]))]
+          .filter(value => value >= gutter && value + width <= viewportWidth - gutter)
+          .sort((a, b) => Math.abs(a - parent.left) - Math.abs(b - parent.left) || b - a);
+        const free = candidates.find(value => slots.every(slot => slot.obscured || value + width + gap <= slot.left || value >= slot.left + width + gap));
+        if (free !== undefined) left = free;
+        else {
+          // Only a click may cover a parent. Hover inspects these slots before
+          // opening, and never moves or removes the row under the pointer.
+          left = parent.left;
+          for (const slot of slots) if (slot.left === left) slot.obscured = true;
+        }
+      }
+      slots.push({ left, top, width, height: Math.max(80, bottom - top), obscured: false });
+    }
+    return slots;
   },
 
   tooltips(doc, timers) {

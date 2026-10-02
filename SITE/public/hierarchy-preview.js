@@ -43,7 +43,7 @@ const HierarchyPreview = (() => {
     const width = document.documentElement.clientWidth || window.innerWidth || $('canvas').clientWidth;
     const viewportHeight = window.innerHeight || $('canvas').clientHeight;
     const short = viewportHeight < 520;
-    const minTop = short ? 12 : Math.min(readingBounds().top, Math.max(12, viewportHeight - 92));
+    const minTop = short ? 64 : Math.min(readingBounds().top + 52, Math.max(64, viewportHeight - 92));
     const bottom = short ? viewportHeight - 12 : Math.max(minTop + 80, viewportHeight - 116);
     const height = short ? bottom - minTop : Math.min(cardPlacement.height, bottom - minTop);
     const top = short ? minTop : Math.max(minTop, Math.min(cardPlacement.top, bottom - height));
@@ -59,6 +59,8 @@ const HierarchyPreview = (() => {
       surface.inert = slot.obscured;
       if (slot.obscured) surface.setAttribute('aria-hidden', 'true');
       else surface.removeAttribute('aria-hidden');
+      surface.style.setProperty('--parent-label-width', `${Math.min(310, width - slot.left - 12)}px`);
+      if (index) surface.querySelector('.cascade-back').hidden = !slots[index - 1].obscured;
     });
     tooltipController?.refresh();
   }
@@ -131,6 +133,11 @@ const HierarchyPreview = (() => {
     }
     const rendered = html(kind, id);
     if (!rendered) return;
+    if (!pinned) {
+      const width = document.documentElement.clientWidth || window.innerWidth || $('canvas').clientWidth;
+      const slots = TimelineInteractions.panelLayout(depth + 2, width, cardPlacement.left, 0, 100);
+      if (slots.slice(0, -1).some(slot => slot.obscured)) return;
+    }
     closeFrom(depth);
     const panel = document.createElement('aside');
     panel.className = 'event-preview hierarchy-preview story-panel';
@@ -138,7 +145,7 @@ const HierarchyPreview = (() => {
     if (depth === 0 && kind === 'moment') panel.id = 'eventPreview';
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-label', `Опис ${kind === 'moment' ? 'моменту' : kind === 'scene' ? 'сцени' : 'епізоду'}`);
-    panel.innerHTML = `<div class="hierarchy-preview-content">${rendered.header}<div class="preview-scroll">${rendered.body}</div></div>`;
+    panel.innerHTML = `<button class="cascade-back" data-back-hierarchy aria-label="Повернутися до попереднього вікна" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><div class="hierarchy-preview-content">${rendered.header}<div class="preview-scroll">${rendered.body}</div></div>`;
     document.body.append(panel);
     cascade.push({ panel, trigger, parentSurface, kind, id, pinned: false });
     trigger?.classList.add('is-preview-active');
@@ -157,7 +164,7 @@ const HierarchyPreview = (() => {
     });
     if (pinned) pin(depth);
     layout();
-    if (pinned && document.documentElement.dataset.input === 'keyboard') panel.querySelector('[data-back-hierarchy],[data-close-hierarchy]').focus({ preventScroll: true });
+    if (pinned && document.documentElement.dataset.input === 'keyboard') panel.querySelector('[data-back-hierarchy]:not([hidden]),[data-close-hierarchy]').focus({ preventScroll: true });
   }
 
   function bind(root, parentSurface = $('eventCard'), depth = 0) {

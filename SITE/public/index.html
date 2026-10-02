@@ -6,22 +6,22 @@
   <meta name="theme-color" content="#f5f6f8">
   <meta name="description" content="Хронологія Конохи: стеж за персонажами, досліджуй події та читай сцени Naruto.">
   <title>Коноха · Хронологія</title>
-  <link rel="stylesheet" href="style.css?v=20261002-elastic-clouds-3">
-  <link rel="stylesheet" href="profile-dossier.css?v=20261002-elastic-clouds-3">
-  <link rel="stylesheet" href="controls.css?v=20261002-elastic-clouds-3">
-  <link rel="stylesheet" href="panels.css?v=20261002-elastic-clouds-3">
-  <link rel="stylesheet" href="focus.css?v=20261002-elastic-clouds-3">
-  <link rel="stylesheet" href="story-labels.css?v=20261002-elastic-clouds-3">
-  <link rel="stylesheet" href="map-titles.css?v=20261002-elastic-clouds-3">
-  <script defer src="relations.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="timeline-core.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="interaction-core.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="story-clouds.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="selection-focus.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="story-label-scale.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="hierarchy-preview.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="profile-techniques.js?v=20261002-elastic-clouds-3"></script>
-  <script defer src="app.js?v=20261002-elastic-clouds-3"></script>
+  <link rel="stylesheet" href="style.css?v=20261002-stable-readers-1">
+  <link rel="stylesheet" href="profile-dossier.css?v=20261002-stable-readers-1">
+  <link rel="stylesheet" href="controls.css?v=20261002-stable-readers-1">
+  <link rel="stylesheet" href="panels.css?v=20261002-stable-readers-1">
+  <link rel="stylesheet" href="focus.css?v=20261002-stable-readers-1">
+  <link rel="stylesheet" href="story-labels.css?v=20261002-stable-readers-1">
+  <link rel="stylesheet" href="map-titles.css?v=20261002-stable-readers-1">
+  <script defer src="relations.js?v=20261002-stable-readers-1"></script>
+  <script defer src="timeline-core.js?v=20261002-stable-readers-1"></script>
+  <script defer src="interaction-core.js?v=20261002-stable-readers-1"></script>
+  <script defer src="story-clouds.js?v=20261002-stable-readers-1"></script>
+  <script defer src="selection-focus.js?v=20261002-stable-readers-1"></script>
+  <script defer src="story-label-scale.js?v=20261002-stable-readers-1"></script>
+  <script defer src="hierarchy-preview.js?v=20261002-stable-readers-1"></script>
+  <script defer src="profile-techniques.js?v=20261002-stable-readers-1"></script>
+  <script defer src="app.js?v=20261002-stable-readers-1"></script>
 </head>
 <body>
   <header class="masthead">
@@ -83,7 +83,7 @@
   <div id="focusBar" class="focus-bar" aria-label="Події обраного персонажа" hidden><button id="focusPrevious" aria-label="Попередня подія персонажа">‹</button><button id="focusName" aria-label="Відкрити профіль персонажа"></button><span id="focusPosition"></span><button id="focusNext" aria-label="Наступна подія персонажа">›</button><button id="clearFocus" aria-label="Зняти фокус">×</button></div>
 
 
-  <section id="eventCard" class="event-card" role="dialog" aria-label="Подія" hidden><div id="cardContent"><div id="cardHeader"></div><div id="cardScroll"></div></div></section>
+  <section id="eventCard" class="event-card" role="dialog" aria-label="Подія" hidden><div id="cardParent"></div><div id="cardContent"><div id="cardHeader"></div><div id="cardScroll"></div></div></section>
   <dialog id="profileDialog" class="profile-dialog" aria-labelledby="profileTitle" hidden>
     <div class="profile-heading"><div><small>Досьє персонажа</small><h2 id="profileTitle"></h2></div><button id="closeProfile" class="close" aria-label="Закрити профіль">×</button></div>
     <div id="profileTabs" class="profile-tabs" role="tablist" aria-label="Вік персонажа"></div>

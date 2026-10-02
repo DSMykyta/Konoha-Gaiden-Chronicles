@@ -1,8 +1,8 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261002-elastic-clouds-3';
+const UI_VERSION='20261002-stable-readers-1';
 const uiTimers=TimelineInteractions.scheduler();
-let tooltipController=null,hoveredNodeId=null,cardPlacement=null,cardSelection=null;
+let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
 const lengths=[31,28,31,30,31,30,31,31,30,31,30,31],starts=lengths.map((_,i)=>lengths.slice(0,i).reduce((a,b)=>a+b,0));
 const palette=['#3f80cf','#cb833e','#7462bc','#ba6487','#358b96','#7d9953','#b89442','#6687b5','#ab7cba','#67877d','#b97a73','#8b91a1'];
@@ -145,7 +145,7 @@ function makeTimeScale(lo,hi,pad,plot,dated){
   hidden:day=>chronologyBreaks(dated).some(b=>day>b.from&&day<b.to)
  };
 }
-function svg(tag,attrs,parent=$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
+function svg(tag,attrs,parent=drawingTarget||$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
 function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);}
 let hoverCard=false,pinnedNodeId=null,cardReturnFocus=null,graphClouds=[],graphLabels=[],cloudRenderer=null;
 const cloudLabelLayouts=new Map();
@@ -158,7 +158,7 @@ function paintNodes(){
  const p=graphNodes.find(p=>p.id===focusId);
  document.querySelectorAll('.node').forEach(g=>{g.classList.toggle('is-open',g.dataset.event===focusId);g.classList.toggle('is-pinned',g.dataset.event===pinnedNodeId);});
  document.querySelectorAll('.node-hit').forEach(hit=>hit.classList.toggle('is-pinned',hit.dataset.nodeId===pinnedNodeId));
- document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!p&&!member);});
+ document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!pinnedNodeId&&!!p&&!member);});
  SelectionFocus.update();
 }
 function pinOpenCard(){
@@ -180,18 +180,19 @@ function openNode(p,pin=false){
 function nodeHover(event){
  const target=event.target.closest?.('.node,.node-hit');if(!target||!canHover(event))return;
  const id=target.dataset.event||target.dataset.nodeId,previous=event.relatedTarget?.closest?.('.node,.node-hit');
- if(previous&&(previous.dataset.event||previous.dataset.nodeId)===id)return;
+ hoveredNodeTarget=target;
+ if(previous&&(previous.dataset.event||previous.dataset.nodeId)===id&&hoveredNodeId===id)return;
  cancelHoverClose();if(pinnedNodeId)return;
  hoveredNodeId=id;
- uiTimers.defer('node-open',TimelineInteractions.OPEN_DELAY,()=>{
-  if(hoveredNodeId===id&&target.isConnected&&!pinnedNodeId&&TimelineInteractions.hovered(target))openNode(graphNodes.find(p=>p.id===id));
+ uiTimers.defer('node-open',hoverCard?0:TimelineInteractions.OPEN_DELAY,()=>{
+  if(hoveredNodeId===id&&hoveredNodeTarget?.isConnected&&!pinnedNodeId&&TimelineInteractions.hovered(hoveredNodeTarget))openNode(graphNodes.find(p=>p.id===id));
  });
 }
 function nodeLeave(event){
  const target=event.target.closest?.('.node,.node-hit');if(!target)return;
  const id=target.dataset.event||target.dataset.nodeId,next=event.relatedTarget?.closest?.('.node,.node-hit');
  if(next&&(next.dataset.event||next.dataset.nodeId)===id)return;
- if(hoveredNodeId===id){hoveredNodeId=null;uiTimers.cancel('node-open');}
+ if(hoveredNodeId===id){hoveredNodeId=null;hoveredNodeTarget=null;uiTimers.cancel('node-open');}
  deferHoverClose();
 }
 function headerBottom(){return document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||(($('canvas').clientWidth||1000)<480?144:($('canvas').clientWidth||1000)<=1240?118:64);}
@@ -208,6 +209,7 @@ function setCardContent(html){
  HierarchyPreview.clear();const container=$('cardContent'),oldScroll=$('cardScroll'),scrollTop=container.dataset.contentKey===contentKey?oldScroll.scrollTop:0;
  const source=document.createElement('div');source.innerHTML=html;
  const header=source.querySelector('.card-top');$('cardHeader').replaceChildren(...(header?[header]:[]));
+ $('cardParent').innerHTML=cardSelection?parentControl(cardSelection.kind,cardSelection.id):'';
  $('cardScroll').replaceChildren(...source.childNodes);$('cardScroll').scrollTop=scrollTop;container.dataset.contentKey=contentKey;
  $('eventCard').hidden=false;$('eventCard').classList.add('story-panel');tooltipController?.refresh();
 }
@@ -266,13 +268,14 @@ function smoothPath(points){
 function render(){
  if(!data)return;
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
- const canvas=$('canvas'),timeline=$('timeline'),axis=$('timeAxis'),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
+ const canvas=$('canvas'),timeline=$('timeline'),axisElement=$('timeAxis'),axis=document.createDocumentFragment(),frame=document.createDocumentFragment(),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
+ drawingTarget=frame;
  const chrome=headerBottom();document.documentElement.style.setProperty('--legend-top',(chrome+4)+'px');document.documentElement.style.setProperty('--panel-top',(chrome+12)+'px');document.documentElement.style.setProperty('--focus-top',(chrome+44)+'px');
  const allEvents=datedEvents(),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  let h=viewport;
  const phoneReader=w<=760&&viewport>=520,readerHeight=phoneReader?(document.documentElement.classList.contains('story-reader-collapsed')?56:Math.min(viewport*.34,264)):76;
  const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=phoneReader?(headerBottom()+44+viewport-readerHeight-56)/2:viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-readerHeight-144)*.25,24,150)*(.08+.92*spread),level=semanticLevel();
- axis.style.width=w+'px';axis.setAttribute('viewBox',`0 0 ${w} 40`);
+ axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
  const baseNodes=semanticNodes(level,allScenes).filter(p=>p.day!==null).map(p=>({...p,x:px(p.day)})),owner=semanticOwner(baseNodes),layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}:${readerHeight}`;
  if(!layoutCache.has(layoutKey)){
@@ -287,7 +290,7 @@ function render(){
   layoutCache.set(layoutKey,new Map(separated.map(p=>[p.id,p.y])));
  }
  const nodeY=layoutCache.get(layoutKey);
- let globalNodes=baseNodes.map(p=>({...p,y:focusedCharacter&&p.group.some(e=>e.tracks.includes(focusedCharacter))?mid+clamp(((nodeY.get(p.id)??mid)-mid)*.045,-8,8):nodeY.get(p.id)??mid}));
+ let globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
  const linked=(p,id)=>p.cast.includes(id)||(id===focusedCharacter&&p.group.some(e=>e.tracks.includes(id)));
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(e=>focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e));});
  const numbered=phoneReader&&level==='moment';
@@ -297,12 +300,11 @@ function render(){
  graphClouds=StoryClouds.groups(graphNodes,level,sceneMap,episodeMap);
  h=Math.max(viewport,...graphNodes.map(p=>p.y+156));
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
- timeline.replaceChildren();axis.replaceChildren();$('linesCount').textContent=`Лінії · ${selected.size}`;
+ $('linesCount').textContent=`Лінії · ${selected.size}`;
  // Alternating calendar days, including empty days. Long empty spans are omitted
  // after retaining one calendar week on each side of the nearest events.
  if(timeScale.dayPx>=2)for(let day=Math.floor(loDay);day<Math.ceil(hiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=lo&&a<hi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
  if(!cloudRenderer)cloudRenderer=StoryClouds.create($('storyClouds'));
- cloudRenderer.update({groups:graphClouds,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,paused:reading});
  const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(centerDay,true)} · Рік 0`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))} · Рік 0`;$('periodLabel').textContent=label;
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
  document.querySelectorAll('[data-level]').forEach(e=>e.setAttribute('aria-current',String(e.dataset.level===level)));
@@ -327,8 +329,8 @@ function render(){
   if(focusedCharacter&&id!==focusedCharacter)return;
   const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
   if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
-  const lifetimes=focusedCharacter===id?[anchors]:TimelineCore.lifetimes(anchors,{pixelsPerDay,maxBridge:Math.min(480,plot*.6)});
-  const runs=lifetimes.filter(run=>run[0].day-lead<=hi&&run.at(-1).day+lead>=lo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,focusedCharacter?30:amplitude,lead,pixelsPerDay,axisLength()));
+  const lifetimes=TimelineCore.lifetimes(anchors,{pixelsPerDay,maxBridge:Math.min(480,plot*.6)});
+  const runs=lifetimes.filter(run=>run[0].day-lead<=hi&&run.at(-1).day+lead>=lo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
   if(!routes.length)return;
   const coordinates=routes.map(route=>route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
   const foreign=graphNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<(p.kind==='arc'?arcRadius:19)+7));
@@ -391,6 +393,9 @@ function render(){
    if(p.number){const number=svg('text',{class:'moment-number',x:p.x,y:p.y+3.5,'text-anchor':'middle','aria-hidden':'true'},g);number.textContent=p.number;}
   }
  });
+ drawingTarget=null;
+ timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
+ cloudRenderer.update({groups:graphClouds,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
   $('emptyTitle').textContent=selected.size?'У цьому періоді немає подій':'Обери лінії персонажів';
@@ -452,13 +457,13 @@ function storyParent(kind,id){
  const meta=({scene:sceneMap,episode:episodeMap,arc:arcMap})[target.kind].get(target.id);
  return meta?{...target,title:meta.title}:null;
 }
-function parentControl(kind,id,hierarchy=false){
+function parentControl(kind,id){
  const target=storyParent(kind,id);if(!target)return '';
  const label={scene:'До сцени',episode:'До епізоду',arc:'До арки'}[target.kind];
- return `<button class="story-parent-button" ${hierarchy?'data-back-hierarchy':`data-parent-kind="${target.kind}" data-parent-id="${esc(target.id)}"`} aria-label="${esc(label+': '+target.title)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span class="story-parent-label"><span>${label}</span><span class="story-parent-title">${esc(target.title)}</span></span></button>`;
+ return `<button class="story-parent-button" data-parent-kind="${target.kind}" data-parent-id="${esc(target.id)}" aria-label="${esc(label+': '+target.title)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg><span class="story-parent-label"><span>${label}</span><span class="story-parent-title">${esc(target.title)}</span></span></button>`;
 }
 function storyPanelHeader(kind,dateOrRange,hasYear,id,actions='',hierarchy=false){
- return `<div class="${hierarchy?'story-panel-header':'card-top'}">${parentControl(kind,id,hierarchy)}<div class="story-panel-meta">${cardMetaLine(kind,dateOrRange,hasYear)}<div class="card-top-actions">${actions}<button class="close" ${hierarchy?'data-close-hierarchy':'data-close-card'} aria-label="Закрити читання" data-tooltip="Закрити читання">×</button></div></div></div>`;
+ return `<div class="${hierarchy?'story-panel-header':'card-top'}"><div class="story-panel-meta">${cardMetaLine(kind,dateOrRange,hasYear)}<div class="card-top-actions">${actions}<button class="close" ${hierarchy?'data-close-hierarchy':'data-close-card'} aria-label="Закрити читання" data-tooltip="Закрити читання">×</button></div></div></div>`;
 }
 function storyPoint(kind,id){
  const registry=kind==='arc'?arcMap:episodeMap;id=registry.has(id)?id:[...registry.values()].find(item=>item.redirect_ids?.includes(id))?.id;const meta=registry.get(id);if(!meta)return null;
@@ -678,7 +683,7 @@ async function refreshData(){
  }catch{}finally{refreshing=false;}
 }
 function ensureInterface(){
- const required=['canvas','timeline','storyClouds','periodLabel','emptyAction','searchSummary','characterEventPrevious','characterEventNext','characterEventPosition','cardHeader','cardScroll'];
+ const required=['canvas','timeline','storyClouds','periodLabel','emptyAction','searchSummary','characterEventPrevious','characterEventNext','characterEventPosition','cardParent','cardHeader','cardScroll'];
  if(required.every(id=>$(id)))return true;
  if(window.location.href&&window.location.protocol!=='file:'&&window.location.replace){
   const url=new URL(window.location.href);
@@ -731,7 +736,7 @@ async function init(){
   if(!e.target.closest('.event-card,.event-preview,.node,.node-hit,.cloud-label,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.scene-dialog,.time-controls,.panel,.tools,.period'))closeCard();
  });
  tooltipController=TimelineInteractions.tooltips(document,uiTimers);SelectionFocus.bind();
- $('cardContent').addEventListener('click',e=>{
+ $('eventCard').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.hasAttribute('data-close-card'))closeCard(true);
   else if(b.dataset.parentKind){if(b.dataset.parentKind==='scene')navigateScene(b.dataset.parentId);else navigateStory(b.dataset.parentKind,b.dataset.parentId);}

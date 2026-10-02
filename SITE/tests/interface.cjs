@@ -21,8 +21,9 @@ async function check(width,height){
  doc.getElementById('characterSearch').value='Наруто';doc.getElementById('characterSearch').dispatchEvent(new window.Event('input'));click('#deselectAll');await sleep();assert.equal(run('selected.size'),0);assert.equal(canvas.querySelectorAll('.node').length,0);click('#selectAll');await sleep();assert.equal(run('selected.size'),count);doc.getElementById('characterSearch').value='';doc.getElementById('characterSearch').dispatchEvent(new window.Event('input'));
  // Native profile modal, age-specific content and keyboard tabs.
  click('[data-profile="c-naruto"]');assert(!doc.getElementById('profileDialog').hidden);assert(doc.getElementById('profileDialog').hasAttribute('open'));assert(doc.querySelectorAll('[role="tab"]').length>=1);assert(doc.querySelector('.profile-layout'));assert(doc.querySelector('.profile-visual'));assert(doc.querySelector('.profile-details'));const firstProfileTab=doc.querySelector('[data-profile-version]');click('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]');assert(doc.querySelector('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]').getAttribute('aria-selected')==='true');assert(doc.getElementById('profileContent').textContent.includes('У хронології'));const narutoProfileText=doc.getElementById('profileContent').textContent;for(const heading of ['Зовнішність','Риси характеру','Цілі','Здібності','Стосунки','Спорядження'])assert(narutoProfileText.includes(heading),'Missing Naruto profile section: '+heading);assert(doc.querySelector('.profile-image'));click('#closeProfile');assert(doc.getElementById('profileDialog').hidden);
- // Focus preserves selection but draws one gently curved lane and only local guests.
- click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);assert(run("graphNodes.every(p=>p.group.some(e=>e.tracks.includes('c-raido')))"));assert.equal(canvas.querySelectorAll('.thread').length,1);assert.equal(canvas.querySelector('.thread').dataset.character,'c-raido');assert(canvas.querySelector('.focus-guest-entry'));assert(run('Math.max(...graphNodes.map(node=>node.y))-Math.min(...graphNodes.map(node=>node.y))<=16'));
+ // Focus preserves the original node coordinates and curves, with local guests.
+ const unfocusedY=new Map(run('graphNodes.map(node=>[node.id,node.y])'));
+ click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);assert(run("graphNodes.every(p=>p.group.some(e=>e.tracks.includes('c-raido')))"));assert(canvas.querySelectorAll('.thread').length>0);assert([...canvas.querySelectorAll('.thread')].every(path=>path.dataset.character==='c-raido'));assert(canvas.querySelector('.focus-guest-entry'));for(const point of run('graphNodes'))assert.equal(point.y,unfocusedY.get(point.id),'Focus flattened a story curve');
  run("navigateEvent('ev-y0-0624-jonin-nominate-teams')");await sleep();assert(doc.querySelector('#cardContent h2').textContent.includes('Райдо'));const current=run('anchorEvent');click('#focusNext');await sleep();const next=run('anchorEvent');assert.notEqual(next,current);assert(run('eventMap.get(anchorEvent).tracks.includes(focusedCharacter)'));click('#focusPrevious');await sleep();assert.equal(run('anchorEvent'),current);
  // A visual screenshot may exist above the title; candidates stay hidden.
  snapshot.media=[{id:'fixture',event_id:current,status:'candidate',src:'media/test.png',alt:'Fixture',locator:'test',source_id:'src-anime-20-23'}];snapshot.revision='test-update';version=snapshot.revision;await run('refreshData()');assert.equal(run('data.revision'),'test-update');assert.equal(run('selected.size'),count);assert.equal(run('focusedCharacter'),'c-raido');assert.equal(doc.querySelectorAll('.event-gallery').length,0);
@@ -62,16 +63,16 @@ async function check(width,height){
  run('center=dayToAxis(22.5);render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('.card-kind').textContent,'ЕПІЗОД');
 
  run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');assert(arcNode);assert(arcNode.classList.contains('arc-node'));assert(arcNode.querySelector('ellipse.mark'));click('[data-event="arc:arc-y0-genin-formation"]');assert.equal(doc.querySelector('.card-kind').textContent,'АРКА');
- // Drill-down has a named upward path at every depth and restores parent content/scroll.
+ // Cascades have no redundant parent bar and restore parent content/scroll.
  assert.equal(doc.querySelector('#eventCard .story-parent-button'),null);
  click('#eventCard [data-story-episode="ep-y0-team-formation"]');
  const episodePanel=doc.querySelector('[data-hierarchy-depth="0"]');
- assert(episodePanel.querySelector('[data-back-hierarchy]').textContent.includes('До арки'));
+ assert(!episodePanel.querySelector('.story-parent-button'));assert(!episodePanel.querySelector('.story-panel-header [data-back-hierarchy]'));
  episodePanel.querySelector('.preview-scroll').scrollTop=37;
  click('[data-hierarchy-depth="0"] [data-story-scene="sc-y0-0122-academy-announcements"]');
- assert(doc.querySelector('[data-hierarchy-depth="1"] [data-back-hierarchy]').textContent.includes('До епізоду'));
+ assert(!doc.querySelector('[data-hierarchy-depth="1"] .story-parent-button'));
  click('[data-hierarchy-depth="1"] [data-scene-preview="ev-y0-0122-team7-announced"]');
- assert(doc.querySelector('[data-hierarchy-depth="2"] [data-back-hierarchy]').textContent.includes('До сцени'));
+ assert(!doc.querySelector('[data-hierarchy-depth="2"] .story-parent-button'));
  click('[data-hierarchy-depth="2"] [data-back-hierarchy]');assert.equal(run('HierarchyPreview.size'),2);
  click('[data-hierarchy-depth="1"] [data-back-hierarchy]');assert.equal(run('HierarchyPreview.size'),1);
  assert.equal(doc.querySelector('[data-hierarchy-depth="0"]'),episodePanel);assert.equal(episodePanel.querySelector('.preview-scroll').scrollTop,37);
@@ -93,8 +94,27 @@ async function check(width,height){
  sceneNode.dataset.testHovered='true';const hover=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hover,'pointerType',{value:width>=600?'mouse':'touch'});sceneNode.querySelector('.scene-count').dispatchEvent(hover);
  assert(doc.getElementById('eventCard').hidden,'Hover must wait before opening');await new Promise(r=>setTimeout(r,280));
  assert.equal(doc.getElementById('eventCard').hidden,width<=760||height<520);
- if(width>760&&height>=520){assert.equal(doc.querySelectorAll('.scene-actions .scene-action-title').length,classroomCount);assert(sceneNode.classList.contains('is-open'));assert.equal(run('pinnedNodeId'),null);assert(doc.querySelector('.thread[data-character="c-naruto"]').classList.contains('is-scene-member'));assert(doc.querySelector('.thread[data-character="c-raido"]').classList.contains('is-scene-muted'));sceneNode.dispatchEvent(new window.Event('pointerout',{bubbles:true}));doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerenter'));await new Promise(r=>setTimeout(r,350));assert(!doc.getElementById('eventCard').hidden);doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerleave'));await new Promise(r=>setTimeout(r,350));assert(doc.getElementById('eventCard').hidden);}
+ if(width>760&&height>=520){assert.equal(doc.querySelectorAll('.scene-actions .scene-action-title').length,classroomCount);assert(sceneNode.classList.contains('is-open'));assert.equal(run('pinnedNodeId'),null);assert(doc.querySelector('.thread[data-character="c-naruto"]').classList.contains('is-scene-member'));assert(!doc.querySelector('.thread[data-character="c-raido"]').classList.contains('is-scene-muted'),'Hover hid unrelated strands');sceneNode.dispatchEvent(new window.Event('pointerout',{bubbles:true}));doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerenter'));await new Promise(r=>setTimeout(r,350));assert(!doc.getElementById('eventCard').hidden);doc.getElementById('eventCard').dispatchEvent(new window.Event('pointerleave'));await new Promise(r=>setTimeout(r,350));assert(doc.getElementById('eventCard').hidden);}
  else{sceneNode.dispatchEvent(new window.Event('click',{bubbles:true}));assert(!doc.getElementById('eventCard').hidden);}
+
+ // The transparent hit area and visible mark are one logical hover target.
+ if(width>760&&height>=520){
+  run('closeCard()');
+  const hit=canvas.querySelector('.node-hit[data-node-id="sc-y0-0122-academy-announcements"]');
+  const mark=canvas.querySelector('[data-event="sc-y0-0122-academy-announcements"]');
+  hit.dataset.testHovered='true';
+  const enterHit=new window.Event('pointerover',{bubbles:true});Object.defineProperty(enterHit,'pointerType',{value:'mouse'});hit.dispatchEvent(enterHit);
+  hit.dataset.testHovered='false';mark.dataset.testHovered='true';
+  const leaveHit=new window.Event('pointerout',{bubbles:true});Object.defineProperty(leaveHit,'relatedTarget',{value:mark});hit.dispatchEvent(leaveHit);
+  const enterMark=new window.Event('pointerover',{bubbles:true});Object.defineProperties(enterMark,{pointerType:{value:'mouse'},relatedTarget:{value:hit}});mark.dispatchEvent(enterMark);
+  await new Promise(resolve=>setTimeout(resolve,280));
+  assert(!doc.getElementById('eventCard').hidden,'Moving from the hit area to the mark lost hover');
+  assert.equal(doc.getElementById('cardContent').querySelector('.story-parent-button'),null);
+  assert(doc.getElementById('cardParent').querySelector('[data-parent-kind="episode"]'));
+  assert.equal(mark,canvas.querySelector('[data-event="sc-y0-0122-academy-announcements"]'),'Hover rebuilt the map');
+  run('closeCard()');
+ }
+
  // Characters not yet introduced do not draw unrelated lanes through early scenes.
  assert(!canvas.querySelector('.thread[data-character="c-genma"]'));assert(canvas.querySelector('.thread[data-character="c-naruto"]'));assert(parseFloat(canvas.style.height)>=height);
  // After hit-area separation, every physical cast member still reaches the mark
