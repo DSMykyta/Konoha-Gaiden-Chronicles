@@ -420,7 +420,3083 @@ sources:
     locator_status: "episode_known_timestamp_pending"
   - id: "src-anime-194"
     type: "anime_filler"
-    title: "Naruto ani…27934 tokens truncated…cepted"
+    title: "Naruto anime — episode 194"
+    locator_status: "episode_known_timestamp_pending"
+  - id: "src-anime-195-196"
+    type: "anime_filler"
+    title: "Naruto anime — episodes 195–196"
+    locator_status: "episode_range_known_timestamps_pending"
+  - id: "src-movie-crescent-moon"
+    type: "movie"
+    title: "Naruto the Movie: Guardians of the Crescent Moon Kingdom"
+    locator_status: "movie_known_timestamp_pending"
+  - id: "src-anime-197-201"
+    type: "anime_filler"
+    title: "Naruto anime — episodes 197–201"
+    locator_status: "episode_range_known_timestamps_pending"
+  - id: "src-game-clash-revolution-2"
+    type: "game"
+    title: "Naruto: Clash of Ninja Revolution 2"
+    locator_status: "game_story_reference_pending"
+  - id: "src-anime-202"
+    type: "anime_meta"
+    title: "Naruto anime — episode 202 recap special"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-anime-203-207"
+    type: "anime_filler"
+    title: "Naruto anime — episodes 203–207"
+    locator_status: "episode_range_known_timestamps_pending"
+  - id: "src-anime-208"
+    type: "anime_filler"
+    title: "Naruto anime — episode 208"
+    locator_status: "episode_known_timestamp_pending"
+  - id: "src-anime-209-212"
+    type: "anime_filler"
+    title: "Naruto anime — episodes 209–212"
+    locator_status: "episode_range_known_timestamps_pending"
+  - id: "src-game-ninja-destiny-2-eu"
+    type: "game"
+    title: "Naruto: Ninja Destiny 2 — European Version"
+    locator_status: "game_story_reference_pending"
+  - id: "src-anime-213-215"
+    type: "anime_filler"
+    title: "Naruto anime — episodes 213–215"
+    locator_status: "episode_range_known_timestamps_pending"
+
+  - id: "src-anime-55"
+    type: "anime"
+    title: "Naruto anime — episode 55"
+    locator_status: "episode_known_timestamp_pending"
+  - id: "src-anime-111"
+    type: "anime"
+    title: "Naruto anime — episode 111"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-manga-ch172"
+    type: "manga"
+    title: "Naruto manga — chapter 172"
+    locator_status: "chapter_known_pages_pending"
+  - id: "src-anime-98"
+    type: "anime"
+    title: "Naruto anime — episode 98"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-manga-ch139"
+    type: "manga"
+    title: "Naruto manga — chapter 139"
+    locator_status: "chapter_known_pages_pending"
+  - id: "src-manga-ch174"
+    type: "manga"
+    title: "Naruto manga — chapter 174"
+    locator_status: "chapter_known_pages_pending"
+  - id: "src-manga-ch238-departure"
+    type: "manga"
+    title: "Naruto manga — chapter 238, Departure"
+    locator_status: "chapter_known_pages_pending"
+  - id: "src-anime-220"
+    type: "anime"
+    title: "Naruto anime — episode 220"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-shippuden-170"
+    type: "anime_retrospective"
+    title: "Naruto Shippūden — episode 170"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-anime-107"
+    type: "anime"
+    title: "Naruto anime — episode 107"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-anime-100"
+    type: "anime"
+    title: "Naruto anime — episode 100"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-manga-ch144"
+    type: "manga"
+    title: "Naruto manga — chapter 144, Pursuers"
+    locator_status: "chapter_known_pages_pending"
+  - id: "src-anime-83"
+    type: "anime"
+    title: "Naruto anime — episode 83"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: "src-anime-216"
+    type: "anime"
+    title: "Naruto anime — episode 216"
+    locator_status: "episode_known_timestamp_pending"
+
+  - id: src-narutopedia-ep1-opening
+    type: reference
+    title: 'Narutopedia — Enter: Naruto Uzumaki!'
+    url: https://naruto.fandom.com/wiki/Enter:_Naruto_Uzumaki!
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ch1-opening
+    type: reference
+    title: Narutopedia — Naruto Uzumaki!! (chapter 1)
+    url: https://naruto.fandom.com/wiki/Naruto_Uzumaki!!_(chapter_1)
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep1-differences
+    type: reference
+    title: Narutopedia — Anime-Manga Differences, opening
+    url: https://naruto.fandom.com/wiki/Anime-Manga_Differences
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-iruka-opening
+    type: reference
+    title: Narutopedia — Iruka Umino, Prologue
+    url: https://naruto.fandom.com/wiki/Iruka_Umino
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep2-opening
+    type: reference
+    title: Narutopedia — My Name is Konohamaru!
+    url: https://naruto.fandom.com/wiki/My_Name_is_Konohamaru!
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ch2-opening
+    type: reference
+    title: Narutopedia — Konohamaru!!
+    url: https://naruto.fandom.com/wiki/Konohamaru!!
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-genzo-opening
+    type: reference
+    title: Narutopedia — Genzō
+    url: https://naruto.fandom.com/wiki/Genz%C5%8D
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep4-audit
+    type: reference
+    title: 'Narutopedia — Pass or Fail: Survival Test'
+    url: https://naruto.fandom.com/wiki/Pass_or_Fail%3A_Survival_Test
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep5-audit
+    type: reference
+    title: Narutopedia — You Failed! Kakashi's Final Decision
+    url: https://naruto.fandom.com/wiki/You_Failed%21_Kakashi%27s_Final_Decision
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-ep6-audit
+    type: reference
+    title: Narutopedia — A Dangerous Mission! Journey to the Land of Waves!
+    url: https://naruto.fandom.com/wiki/A_Dangerous_Mission%21_Journey_to_the_Land_of_Waves%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ch9-audit
+    type: reference
+    title: Narutopedia — The Worst Client
+    url: https://naruto.fandom.com/wiki/The_Worst_Client
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ch11-audit
+    type: reference
+    title: Narutopedia — Disembarking…!!
+    url: https://naruto.fandom.com/wiki/Disembarking%E2%80%A6%21%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep7-audit
+    type: reference
+    title: Narutopedia — The Assassin of the Mist!
+    url: https://naruto.fandom.com/wiki/The_Assassin_of_the_Mist%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep8-audit
+    type: reference
+    title: Narutopedia — The Oath of Pain
+    url: https://naruto.fandom.com/wiki/The_Oath_of_Pain
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep9-audit
+    type: reference
+    title: 'Narutopedia — Kakashi: Sharingan Warrior!'
+    url: https://naruto.fandom.com/wiki/Kakashi%3A_Sharingan_Warrior%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep10-audit
+    type: reference
+    title: Narutopedia — The Forest of Chakra
+    url: https://naruto.fandom.com/wiki/The_Forest_of_Chakra
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep11-audit
+    type: reference
+    title: Narutopedia — The Land Where a Hero Once Lived
+    url: https://naruto.fandom.com/wiki/The_Land_Where_a_Hero_Once_Lived
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep12-audit
+    type: reference
+    title: Narutopedia — Battle on the Bridge! Zabuza Returns!
+    url: https://naruto.fandom.com/wiki/Battle_on_the_Bridge%21_Zabuza_Returns%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep13-audit
+    type: reference
+    title: 'Narutopedia — Haku''s Secret Jutsu: Demonic Mirroring Ice Crystals'
+    url: https://naruto.fandom.com/wiki/Haku%27s_Secret_Jutsu%3A_Demonic_Mirroring_Ice_Crystals
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-waraji-wave-audit
+    type: reference
+    title: "Narutopedia \u2014 Waraji"
+    url: https://naruto.fandom.com/wiki/Waraji
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep14-audit
+    type: reference
+    title: Narutopedia — The Number One Hyperactive, Knucklehead Ninja Joins the Fight!
+    url: https://naruto.fandom.com/wiki/The_Number_One_Hyperactive%2C_Knucklehead_Ninja_Joins_the_Fight%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep15-audit
+    type: reference
+    title: 'Narutopedia — Zero Visibility: The Sharingan Shatters'
+    url: https://naruto.fandom.com/wiki/Zero_Visibility%3A_The_Sharingan_Shatters
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep16-audit
+    type: reference
+    title: Narutopedia — The Broken Seal
+    url: https://naruto.fandom.com/wiki/The_Broken_Seal
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep17-audit
+    type: reference
+    title: 'Narutopedia — White Past: Hidden Ambition'
+    url: https://naruto.fandom.com/wiki/White_Past%3A_Hidden_Ambition
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep18-audit
+    type: reference
+    title: Narutopedia — The Weapons Known as Shinobi
+    url: https://naruto.fandom.com/wiki/The_Weapons_Known_as_Shinobi
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-wave-arc-audit
+    type: reference
+    title: Narutopedia — Prologue — Land of Waves
+    url: https://naruto.fandom.com/wiki/Prologue_%E2%80%94_Land_of_Waves
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep19-audit
+    type: reference
+    title: Narutopedia — The Demon in the Snow
+    url: https://naruto.fandom.com/wiki/The_Demon_in_the_Snow
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep20-audit
+    type: reference
+    title: 'Narutopedia — A New Chapter Begins: The Chūnin Exam!'
+    url: https://naruto.fandom.com/wiki/A_New_Chapter_Begins%3A_The_Ch%C5%ABnin_Exam%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep21-audit
+    type: reference
+    title: 'Narutopedia — Identify Yourself: Powerful New Rivals'
+    url: https://naruto.fandom.com/wiki/Identify_Yourself%3A_Powerful_New_Rivals
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-entry-screen-cast
+    type: reference
+    title: "Narutopedia \u2014 Kotetsu Hagane, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Kotetsu_Hagane
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep22-audit
+    type: reference
+    title: 'Narutopedia — Chūnin Challenge: Rock Lee vs. Sasuke!'
+    url: https://naruto.fandom.com/wiki/Ch%C5%ABnin_Challenge%3A_Rock_Lee_vs._Sasuke%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep23-audit
+    type: reference
+    title: Narutopedia — Genin Takedown! All Nine Rookies Face Off!
+    url: https://naruto.fandom.com/wiki/Genin_Takedown%21_All_Nine_Rookies_Face_Off%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep24-audit
+    type: reference
+    title: 'Narutopedia — Start Your Engines: The Chūnin Exam Begins!'
+    url: https://naruto.fandom.com/wiki/Start_Your_Engines%3A_The_Ch%C5%ABnin_Exam_Begins%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep25-audit
+    type: reference
+    title: 'Narutopedia — The Tenth Question: All or Nothing!'
+    url: https://naruto.fandom.com/wiki/The_Tenth_Question%3A_All_or_Nothing%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep26-audit
+    type: reference
+    title: 'Narutopedia — Special Report: Live from the Forest of Death!'
+    url: https://naruto.fandom.com/wiki/Special_Report%3A_Live_from_the_Forest_of_Death%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep27-audit
+    type: reference
+    title: 'Narutopedia — The Chūnin Exam Stage 2: The Forest of Death'
+    url: https://naruto.fandom.com/wiki/The_Ch%C5%ABnin_Exam_Stage_2%3A_The_Forest_of_Death
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-team8-trap
+    type: reference
+    title: "Narutopedia \u2014 Shino Aburame, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Shino_Aburame
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-oboro-first-attack
+    type: reference
+    title: "Narutopedia \u2014 Oboro, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Oboro
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep28-audit
+    type: reference
+    title: 'Narutopedia — Eat or be Eaten: Panic in the Forest'
+    url: https://naruto.fandom.com/wiki/Eat_or_be_Eaten%3A_Panic_in_the_Forest
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep29-audit
+    type: reference
+    title: 'Narutopedia — Naruto''s Counterattack: Never Give In!'
+    url: https://naruto.fandom.com/wiki/Naruto%27s_Counterattack%3A_Never_Give_In%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep30-audit
+    type: reference
+    title: 'Narutopedia — The Sharingan Revived: Dragon-Flame Jutsu!'
+    url: https://naruto.fandom.com/wiki/The_Sharingan_Revived%3A_Dragon-Flame_Jutsu%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep31-audit
+    type: reference
+    title: 'Narutopedia — Bushy Brow''s Pledge: Undying Love and Protection!'
+    url: https://naruto.fandom.com/wiki/Bushy_Brow%27s_Pledge%3A_Undying_Love_and_Protection%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-neji-forest-scout
+    type: reference
+    title: "Narutopedia \u2014 Neji Hy\u016Bga, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Neji_Hy%C5%ABga
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep32-audit
+    type: reference
+    title: Narutopedia — Sakura Blossoms!
+    url: https://naruto.fandom.com/wiki/Sakura_Blossoms%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep33-audit
+    type: reference
+    title: 'Narutopedia — Battle Formation: Ino–Shika–Chō!!'
+    url: https://naruto.fandom.com/wiki/Battle_Formation%3A_Ino%E2%80%93Shika%E2%80%93Ch%C5%8D%21%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-shikamaru-forest-formation
+    type: reference
+    title: "Narutopedia \u2014 Shikamaru Nara, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Shikamaru_Nara
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-team-dosu-forest-fight
+    type: reference
+    title: "Narutopedia \u2014 Team Dosu, Ch\u016Bnin Exams"
+    url: https://naruto.fandom.com/wiki/Team_Dosu
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep34-audit
+    type: reference
+    title: 'Narutopedia — Akamaru Trembles: Gaara''s Cruel Strength!'
+    url: https://naruto.fandom.com/wiki/Akamaru_Trembles%3A_Gaara%27s_Cruel_Strength%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-shigure-forest-battle
+    type: reference
+    title: Narutopedia — Shigure
+    url: https://naruto.fandom.com/wiki/Shigure
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-team-shigure-cast
+    type: reference
+    title: Narutopedia — Team Shigure
+    url: https://naruto.fandom.com/wiki/Team_Shigure
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-anko-forest-sequence
+    type: reference
+    title: Narutopedia — Anko Mitarashi, Chūnin Exams
+    url: https://naruto.fandom.com/wiki/Anko_Mitarashi
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep35-audit
+    type: reference
+    title: 'Narutopedia — The Scroll''s Secret: No Peeking Allowed'
+    url: https://naruto.fandom.com/wiki/The_Scroll%27s_Secret%3A_No_Peeking_Allowed
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-shibire-forest-failure
+    type: reference
+    title: "Narutopedia \u2014 Team Shibire"
+    url: https://naruto.fandom.com/wiki/Team_Shibire
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep36-audit
+    type: reference
+    title: 'Narutopedia — Clone vs. Clone: Mine are Better Than Yours!'
+    url: https://naruto.fandom.com/wiki/Clone_vs._Clone%3A_Mine_are_Better_Than_Yours%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-chapter63-forest-exit
+    type: reference
+    title: Narutopedia — One More Face, chapter 63
+    url: https://naruto.fandom.com/wiki/One_More_Face
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-narutopedia-team-oboro-cast
+    type: reference
+    title: Narutopedia — Team Oboro
+    url: https://naruto.fandom.com/wiki/Team_Oboro
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep37-audit
+    type: reference
+    title: 'Narutopedia — Surviving the Cut: The Rookie 9 Together Again!'
+    url: https://naruto.fandom.com/wiki/Surviving_the_Cut%3A_The_Rookie_9_Together_Again%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep38-audit
+    type: reference
+    title: 'Narutopedia — Narrowing the Field: Sudden Death Elimination!'
+    url: https://naruto.fandom.com/wiki/Narrowing_the_Field%3A_Sudden_Death_Elimination%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep39-audit
+    type: reference
+    title: 'Narutopedia — Bushy Brow''s Jealousy: Lions Barrage Unleashed!'
+    url: https://naruto.fandom.com/wiki/Bushy_Brow%27s_Jealousy%3A_Lions_Barrage_Unleashed%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep40-audit
+    type: reference
+    title: 'Narutopedia — Kakashi and Orochimaru: Face-to-Face!'
+    url: https://naruto.fandom.com/wiki/Kakashi_and_Orochimaru%3A_Face-to-Face%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep40-crosscheck-188
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://naruto.fandom.com/wiki/Ch%C5%ABnin_Exams_%28Arc%29
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep41-audit
+    type: reference
+    title: 'Narutopedia — Kunoichi Rumble: The Rivals Get Serious!'
+    url: https://naruto.fandom.com/wiki/Kunoichi_Rumble%3A_The_Rivals_Get_Serious%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep42-audit
+    type: reference
+    title: 'Narutopedia — The Ultimate Battle: Cha!'
+    url: https://naruto.fandom.com/wiki/The_Ultimate_Battle%3A_Cha%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep43-audit
+    type: reference
+    title: Narutopedia — Killer Kunoichi and a Shaky Shikamaru
+    url: https://naruto.fandom.com/wiki/Killer_Kunoichi_and_a_Shaky_Shikamaru
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep44-audit
+    type: reference
+    title: Narutopedia — Akamaru Unleashed! Who's Top Dog Now?
+    url: https://naruto.fandom.com/wiki/Akamaru_Unleashed%21_Who%27s_Top_Dog_Now%3F
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep45-audit
+    type: reference
+    title: Narutopedia — Surprise Attack! Naruto's Secret Weapon!
+    url: https://naruto.fandom.com/wiki/Surprise_Attack%21_Naruto%27s_Secret_Weapon%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep46-audit
+    type: reference
+    title: 'Narutopedia — Byakugan Battle: Hinata Grows Bold!'
+    url: https://naruto.fandom.com/wiki/Byakugan_Battle%3A_Hinata_Grows_Bold%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep47-audit
+    type: reference
+    title: Narutopedia — A Failure Stands Tall!
+    url: https://naruto.fandom.com/wiki/A_Failure_Stands_Tall%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep47-crosscheck-196
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://naruto.fandom.com/wiki/Kurenai_Y%C5%ABhi
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep48-audit
+    type: reference
+    title: 'Narutopedia — Gaara vs. Rock Lee: The Power of Youth Explodes!'
+    url: https://naruto.fandom.com/wiki/Gaara_vs._Rock_Lee%3A_The_Power_of_Youth_Explodes%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep49-audit
+    type: reference
+    title: 'Narutopedia — Lee''s Hidden Strength: Forbidden Secret Jutsu!'
+    url: https://naruto.fandom.com/wiki/Lee%27s_Hidden_Strength%3A_Forbidden_Secret_Jutsu%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep50-audit
+    type: reference
+    title: 'Narutopedia — The Fifth Gate: A Splendid Ninja is Born'
+    url: https://naruto.fandom.com/wiki/The_Fifth_Gate%3A_A_Splendid_Ninja_is_Born
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep50-crosscheck-200
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://naruto.fandom.com/fr/wiki/Mitate
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep51-audit
+    type: reference
+    title: 'Narutopedia — A Shadow in Darkness: Danger Approaches Sasuke'
+    url: https://naruto.fandom.com/wiki/A_Shadow_in_Darkness%3A_Danger_Approaches_Sasuke
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep52-audit
+    type: reference
+    title: 'Narutopedia — Ebisu Returns: Naruto''s Toughest Training Yet!'
+    url: https://naruto.fandom.com/wiki/Ebisu_Returns%3A_Naruto%27s_Toughest_Training_Yet%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep53-audit
+    type: reference
+    title: 'Narutopedia — Long Time No See: Jiraiya Returns!'
+    url: https://naruto.fandom.com/wiki/Long_Time_No_See%3A_Jiraiya_Returns%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep54-audit
+    type: reference
+    title: 'Narutopedia — The Summoning Technique: Wisdom of the Toad Sage!'
+    url: https://naruto.fandom.com/wiki/The_Summoning_Technique%3A_Wisdom_of_the_Toad_Sage%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep55-audit
+    type: reference
+    title: Narutopedia — A Feeling of Yearning, a Flower Full of Hope
+    url: https://naruto.fandom.com/wiki/A_Feeling_of_Yearning%2C_a_Flower_Full_of_Hope
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-recap-ep55-cast-crosscheck
+    type: reference
+    title: "Recap Avalanche \u2014 Episode 55 factual crosscheck"
+    url: https://recapavalanche.blogspot.com/2009/01/episode-55-feeling-of-yearning-flower.html
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep56-audit
+    type: reference
+    title: 'Narutopedia — Live or Die: Risk it All to Win it All!'
+    url: https://naruto.fandom.com/wiki/Live_or_Die%3A_Risk_it_All_to_Win_it_All%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep57-audit
+    type: reference
+    title: Narutopedia — He Flies! He Jumps! He Lurks! Chief Toad Appears!
+    url: https://naruto.fandom.com/wiki/He_Flies%21_He_Jumps%21_He_Lurks%21_Chief_Toad_Appears%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep57-crosscheck-209
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://www.animefamily.com/Naruto/Nar/Nar57.htm
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep58-audit
+    type: reference
+    title: 'Narutopedia — Hospital Besieged: The Evil Hand Revealed!'
+    url: https://naruto.fandom.com/wiki/Hospital_Besieged%3A_The_Evil_Hand_Revealed%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep59-audit
+    type: reference
+    title: 'Narutopedia — The Final Rounds: Rush to the Battle Arena!'
+    url: https://naruto.fandom.com/wiki/The_Final_Rounds%3A_Rush_to_the_Battle_Arena%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep60-audit
+    type: reference
+    title: Narutopedia — Byakugan vs. Shadow Clone Technique!
+    url: https://naruto.fandom.com/wiki/Byakugan_vs._Shadow_Clone_Technique%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep61-audit
+    type: reference
+    title: 'Narutopedia — Ultimate Defence: Zero Blind Spot!'
+    url: https://naruto.fandom.com/wiki/Ultimate_Defence%3A_Zero_Blind_Spot%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep62-audit
+    type: reference
+    title: Narutopedia — A Failure's True Power
+    url: https://naruto.fandom.com/wiki/A_Failure%27s_True_Power
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep63-audit
+    type: reference
+    title: 'Narutopedia — Hit it or Quit it: The Final Rounds Get Complicated!'
+    url: https://naruto.fandom.com/wiki/Hit_it_or_Quit_it%3A_The_Final_Rounds_Get_Complicated%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep64-audit
+    type: reference
+    title: 'Narutopedia — Zero Motivation: The Guy with Cloud Envy!'
+    url: https://naruto.fandom.com/wiki/Zero_Motivation%3A_The_Guy_with_Cloud_Envy%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep64-crosscheck-217
+    type: reference
+    title: "Narutopedia \u2014 factual crosscheck"
+    url: https://www.leafninja.com/volume-12.php
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep65-audit
+    type: reference
+    title: Narutopedia — Dancing Leaf, Squirming Sand
+    url: https://naruto.fandom.com/wiki/Dancing_Leaf%2C_Squirming_Sand
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep66-audit
+    type: reference
+    title: 'Narutopedia — Bushy Brow''s Jutsu: Sasuke Style!'
+    url: https://naruto.fandom.com/wiki/Bushy_Brow%27s_Jutsu%3A_Sasuke_Style%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep67-audit
+    type: reference
+    title: Narutopedia — Late for the Show, but Ready to Go! The Ultimate Secret Technique is Born!
+    url: https://naruto.fandom.com/wiki/Late_for_the_Show%2C_but_Ready_to_Go%21_The_Ultimate_Secret_Technique_is_Born%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+
+  - id: src-narutopedia-ep68-audit
+    type: reference
+    title: Narutopedia — Zero Hour! The Konoha Crush Begins!
+    url: https://naruto.fandom.com/wiki/Zero_Hour%21_The_Konoha_Crush_Begins%21
+    accessed: '2026-10-01'
+    locator_status: secondary_synopsis_checked
+  - id: src-kakashi-gaiden-iwa-prisoner
+    type: project_roleplay
+    title: Какаші Ґайден — Полонений Іви та дорога до кордону
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 02 [Полонений Іви та дорога до кордону].txt
+    revision: e14dfd2ce7e9b14ef1bfce4159d3630b5f02580d
+  - id: src-team9-archive3b
+    type: project_roleplay
+    title: Команда 9 — Архів, сектор 3-Б
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 03 [Архів, сектор 3-Б].txt
+    revision: b2575174f168af9f58491f8ea1f68685db586be2
+  - id: src-team9-second-warehouse
+    type: project_roleplay
+    title: Команда 9 — Другий склад і розподільча
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.5 [Другий склад і розподільча].txt
+    revision: b2575174f168af9f58491f8ea1f68685db586be2
+  - id: src-kakashi-gaiden-archive-case
+    type: project_roleplay
+    title: 'Какаші Ґайден — Юміко: перші зустрічі та справа архіву'
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 01 [Юміко — перші зустрічі та справа архіву].txt
+    revision: b2575174f168af9f58491f8ea1f68685db586be2
+  - id: src-archive-chain-placement
+    type: project_decision
+    title: Узгодження архівного ланцюга до місії Іви
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/ARCHIVE_CHAIN_UA.md
+  - id: src-games-team-9-02-1
+    type: project_roleplay
+    title: arc 02.1 [Кіба і конспект Нобарі]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.1 [Кіба і конспект Нобарі].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-02-2
+    type: project_roleplay
+    title: arc 02.2 [Перші тренування і зброя Іщіна]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.2 [Перші тренування і зброя Іщіна].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-02-3
+    type: project_roleplay
+    title: arc 02.3 [Командні ролі і тактика Сори]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.3 [Командні ролі і тактика Сори].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-02-4
+    type: project_roleplay
+    title: arc 02.4 [Перший D-ранг — склад]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.4 [Перший D-ранг — склад].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-04
+    type: project_roleplay
+    title: arc 04 [Чакронитка і перший блінк]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 04 [Чакронитка і перший блінк].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-05
+    type: project_roleplay
+    title: arc 05 [Передіспитові тижні]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 05 [Передіспитові тижні].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-06
+    type: project_roleplay
+    title: arc 06 [Чунінський іспит]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 06 [Чунінський іспит].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-07
+    type: project_roleplay
+    title: arc 07 [Передача Анко і місія Нобарі]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-08
+    type: project_roleplay
+    title: arc 08 [Огорожа Лісу Смерті]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 08 [Огорожа Лісу Смерті].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-09
+    type: project_roleplay
+    title: arc 09 [Тоуно, Асума і перша пляшка]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-10
+    type: project_roleplay
+    title: arc 10 [Повернення Анко, змії і сигарета]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-11
+    type: project_roleplay
+    title: arc 11 [Танігава — перша кров]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-12
+    type: project_roleplay
+    title: arc 12 [Довга місія — База 2]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 12 [Довга місія — База 2].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-team-9-13
+    type: project_roleplay
+    title: arc 13 [Довга місія — База 18]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 13 [Довга місія — База 18].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-kakashi-gaiden-03
+    type: project_roleplay
+    title: arc 03 [Повернення Юміко]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 03 [Повернення Юміко].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-kakashi-gaiden-04
+    type: project_roleplay
+    title: arc 04 [Шукуба та бордельне прикриття]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 04 [Шукуба та бордельне прикриття].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-kakashi-gaiden-05
+    type: project_roleplay
+    title: arc 05 [Шахти Іви та обвал]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 05 [Шахти Іви та обвал].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-kakashi-gaiden-06
+    type: project_roleplay
+    title: arc 06 [Команда 9 — ескорт]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 06 [Команда 9 — ескорт].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-kakashi-gaiden-07
+    type: project_roleplay
+    title: arc 07 [Саске — погоня і Долина Завершення]
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 07 [Саске — погоня і Долина Завершення].txt
+    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+  - id: src-games-part-i-placement
+    type: project_note
+    title: Ігрові історії першої частини — узгоджений порядок
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/GAMES_PART_I_CHRONOLOGY_UA.md
+evidence:
+  - id: "evd-team9-announcement"
+    source_id: "src-team9-arc01"
+    locator: "fragment beginning «…Команда Дев’ять. Хаяші Кіта. Тецу Рен. Ямано Сора.»"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-classroom-wait"
+    source_id: "src-team9-arc01"
+    locator: "fragment beginning «Після списків клас порідшав не одразу.»"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-raido-question"
+    source_id: "src-team9-arc01"
+    locator: "dialogue «— Дев’ята?» / Sakura: «— Сьома.»"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-departure"
+    source_id: "src-team9-arc01"
+    locator: "dialogue «— Команда Дев’ять?» … «— За мною.» and departure from Academy"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-dango-scene"
+    source_id: "src-team9-arc01"
+    locator: "scene after Team 9 leaves Academy and reaches dango shop"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-field8-assignment"
+    source_id: "src-team9-arc01"
+    locator: "Raido: «Завтра о сьомій ранку чекаю вас на восьмому тренувальному полігоні.»"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-kita-home-night"
+    source_id: "src-team9-arc01"
+    locator: "home scene after dango shop; mother returns late evening; Kita cries before sleep"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-manga-team7-formation"
+    source_id: "src-manga-ch3"
+    locator: "chapter 3; exact pages pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-team8-10-departures"
+    source_id: "src-anime-ep3"
+    locator: "episode 3; exact timestamps pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-project-class-cast-13"
+    source_id: "src-project-decisions"
+    locator: "user-defined classroom cast model: 13 people during announcements"
+    basis: "project_decision"
+    review: "accepted"
+  - id: "evd-project-0118-class-cast"
+    source_id: "src-project-decisions"
+    locator: "user decision: the full Academy class, including Kita, Ren and Sora, is present when Iruka returns Naruto and orders the class to repeat the Transformation Technique"
+    basis: "project_decision"
+    review: "accepted"
+  - id: "evd-project-jonin-identities"
+    source_id: "src-project-decisions"
+    locator: "three jōnin outside Academy identified as Asuma, Kurenai and Raido"
+    basis: "project_decision"
+    review: "accepted"
+  - id: "evd-project-team8-10-before-raido"
+    source_id: "src-project-decisions"
+    locator: "Teams 8 and 10 have left before Raido addresses the remaining students"
+    basis: "project_decision"
+    review: "accepted"
+  - id: "evd-project-0122-rooftop-before-kita-home"
+    source_id: "src-project-decisions"
+    locator: "user decision: Team 7's rooftop introduction with Kakashi occurs earlier on 22 January than Kita's evening home scene"
+    basis: "project_decision"
+    review: "accepted"
+  - id: "evd-project-raido-team9-chunin-nomination"
+    source_id: "src-project-decisions"
+    locator: "Raido attends the Hokage's Chūnin Exam meeting, is present for Hiruzen's announcement and Iruka's objection, and nominates Team 9 alongside Kakashi, Kurenai and Asuma"
+    basis: "project_decision"
+    review: "accepted"
+  - id: "evd-project-team9-written-signal"
+    source_id: "src-project-decisions"
+    locator: "user decision 2026-09-30: during the written Chūnin Exam, Sora encodes the answers with pencil movements/signals; Kita and Ren read her signal system and copy the answers"
+    basis: "project_decision"
+    review: "accepted"
+  - id: "evd-v10-24sep"
+    source_id: "src-v10-import"
+    locator: "legacy rows V10-000122 through V10-000122-O"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-sasuke-recovery"
+    source_id: "src-manga-sasuke-recovery"
+    locator: "Sasuke Recovery arc; exact chapters/pages pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-118-134"
+    source_id: "src-anime-118-134"
+    locator: "episodes 118–134; exact timestamps pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-22jan-retro"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000008; Shippūden episodes 179, 360–361 retrospective"
+    basis: "imported"
+    review: "pending"
+  - id: "evd-v10-000001"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000001"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000002"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000002"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000003"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000003"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000004"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000004"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-ch1-prologue"
+    source_id: "src-manga-ch1"
+    locator: "chapter 1; exact pages pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-manga-ch2-konohamaru"
+    source_id: "src-manga-ch2"
+    locator: "chapter 2; exact pages pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-bell-test"
+    source_id: "src-v10-import"
+    locator: "legacy rows V10-000010 through V10-000010-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-bell-test"
+    source_id: "src-manga-bell-test"
+    locator: "Team 7 bell-test chapters; exact chapter/page range pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-kakashi-pretest"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000011"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-shippuden-361-pretest"
+    source_id: "src-shippuden-361"
+    locator: "episode 361 retrospective; exact timestamp pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-team9-field8-arrival"
+    source_id: "src-team9-arc01"
+    locator: "morning after dango: Team 9 reaches Training Ground 8; Kurenai and Team 8 are already there"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-field8-observation"
+    source_id: "src-team9-arc01"
+    locator: "Team 9 sits at the field edge and observes Team 8 for about one hour"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-sora-reveals-raido"
+    source_id: "src-team9-arc01"
+    locator: "Sora throws a stone toward the mossy stump; camouflage drops and reveals Raido"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-ravine"
+    source_id: "src-team9-arc01"
+    locator: "ravine test immediately after the observation test; Team 9 crosses using rope and kunai"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-catacombs"
+    source_id: "src-team9-arc01"
+    locator: "catacomb test after ravine; Sora holds rope endpoints while Kita and Ren scout branches; chalk marks organize routes"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-field9-combat"
+    source_id: "src-team9-arc01"
+    locator: "Training Ground 9 combat evaluation after catacombs; Raido assesses Ren, Sora and Kita"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-ichiraku-evening"
+    source_id: "src-team9-arc01"
+    locator: "evening Ichiraku scene with Kita, Naruto, Kiba and Akamaru discussing their first day"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-team9-hokage-reports-evening"
+    source_id: "src-team9-arc01"
+    locator: "evening Hokage Residence corridor: Nobari meets Asuma and Kurenai; Kakashi and Raido arrive to file reports"
+    basis: "source"
+    review: "accepted"
+  - id: "evd-v10-000013"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000013"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000013"
+    source_id: "src-ova-red-clover"
+    locator: "OVA «Find the Four-Leaf Red Clover!»; after episode 5"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000014"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000014"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000014"
+    source_id: "src-shippuden-189"
+    locator: "episode 189 retrospective; reconstructed early-genin window"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000015"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000015"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000015"
+    source_id: "src-shippuden-193"
+    locator: "episode 193 retrospective; reconstructed early-genin window"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000016"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000016"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000016"
+    source_id: "src-shippuden-194"
+    locator: "episode 194 retrospective; reconstructed early-genin window"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000017"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000017"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000017"
+    source_id: "src-shippuden-195"
+    locator: "episode 195 retrospective; reconstructed early-genin window"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000018"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000018"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000018"
+    source_id: "src-shippuden-239"
+    locator: "episode 239 retrospective; reconstructed early-genin window"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000019"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000019"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000019"
+    source_id: "src-game-konoha-ninpocho"
+    locator: "Konoha Ninpōchō; reconstructed pre-Land-of-Waves window"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000020"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000020"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000020"
+    source_id: "src-game-konoha-ninpocho"
+    locator: "Konoha Ninpōchō"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000021"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000021"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000021"
+    source_id: "src-game-konoha-ninpocho"
+    locator: "Konoha Ninpōchō"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000022"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000022"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000022"
+    source_id: "src-game-konoha-ninpocho"
+    locator: "Konoha Ninpōchō"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000023"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000023"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000024"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000024"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000025"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000025"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000025-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000025-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000025-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000025-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000026"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000026"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000027"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000027"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000028"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000028"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000029"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000029"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000030"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000030"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000031"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000031"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000032"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000032"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000033"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000033"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000034"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000034"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-land-waves"
+    source_id: "src-manga-land-waves"
+    locator: "manga chapters 9–33; exact page locators pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-land-waves"
+    source_id: "src-anime-land-waves"
+    locator: "anime episodes 6–19; exact timestamps pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-novel-land-waves"
+    source_id: "src-novel-innocent-heart-demonic-blood"
+    locator: "novelization of the Land of Waves mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-180-wave-return"
+    source_id: "src-shippuden-180"
+    locator: "episode 180 retrospective after the bridge farewell; exact timestamp pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000035"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000035"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-shippuden-258-post-waves"
+    source_id: "src-shippuden-258"
+    locator: "episode 258 retrospective after Team 7 returns from the Land of Waves; exact timestamp pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000036"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000036"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000036"
+    source_id: "src-ova-cross-roads"
+    locator: "OVA «Naruto: The Cross Roads»; reconstructed post-Waves placement"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000037"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000037"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000037"
+    source_id: "src-shippuden-181"
+    locator: "episode 181 retrospective; reconstructed window between Land of Waves and Chūnin Exams"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000038"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000038"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-source-000038"
+    source_id: "src-shippuden-312"
+    locator: "episode 312 retrospective; reconstructed early-genin window"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000039"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000039"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000039-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000039-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000039-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000039-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000039-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000039-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000039-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000039-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000039-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000039-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-chunin-intro"
+    source_id: "src-manga-chunin-intro"
+    locator: "Chūnin Exams introduction chapters; exact chapter/page mapping pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-20-23"
+    source_id: "src-anime-20-23"
+    locator: "episodes 20–23; exact timestamps pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000040"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000040"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000040-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000040-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000040-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000040-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000040-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000040-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000040-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000040-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000040-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000040-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000040-G"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000040-G"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000041"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000041"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000042"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000042"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000042-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000042-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000042-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000042-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000042-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000042-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000042-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000042-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000042-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000042-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-chunin-stage1-forest"
+    source_id: "src-manga-chunin-stage1-forest"
+    locator: "written exam and Forest of Death chapters; exact page mapping pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-24-30"
+    source_id: "src-anime-24-30"
+    locator: "episodes 24–30; exact timestamps pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-26-report"
+    source_id: "src-anime-26-report"
+    locator: "episode 26 framing report by Konohamaru, Moegi and Udon"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000043"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000043"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000044"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000044"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000045"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000045"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000045-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000045-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000045-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000045-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000045-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000045-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000045-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000045-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-G"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-G"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-H"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-H"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-I"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-I"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-J"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-J"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-K"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-K"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-L"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-L"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000046-M"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000046-M"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-chunin-prelims"
+    source_id: "src-manga-chunin-prelims"
+    locator: "Forest of Death completion and preliminary matches; exact page mapping pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-31-50"
+    source_id: "src-anime-31-50"
+    locator: "episodes 31–50; exact timestamps pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-manga-ch482-karin"
+    source_id: "src-manga-ch482"
+    locator: "chapter 482 flashback: Sasuke rescues Karin during the Chūnin Exams"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000047"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000047"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000048"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000048"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000049"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000049"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000049-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000049-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000049-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000049-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000050"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000050"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000051"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000051"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000051-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000051-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000052"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000052"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000053"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000053"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-ch88-97"
+    source_id: "src-manga-ch88-97"
+    locator: "chapters 88–97; exact page mapping pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-307-308"
+    source_id: "src-shippuden-307-308"
+    locator: "episodes 307–308 retrospective around Hayate's last mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-390"
+    source_id: "src-shippuden-390"
+    locator: "episode 390 retrospective: Hanabi visits injured Hinata"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-52-54"
+    source_id: "src-anime-52-54"
+    locator: "episodes 52–54; Jiraiya takes over Naruto's training"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-258-sasuke-training"
+    source_id: "src-shippuden-258"
+    locator: "episode 258 retrospective after preliminaries: Sasuke asks Kakashi to train him; lightning affinity and Chidori setup"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000054"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000054"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000055"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000055"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000056"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000056"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000057"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000057"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000058"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000058"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000059"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000059"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000060"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000060"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000061"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000061"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000062"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000062"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-konoha-crush-prelude"
+    source_id: "src-manga-konoha-crush-prelude"
+    locator: "Konoha Crush prelude; exact chapter/page mapping pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-54-60"
+    source_id: "src-anime-54-60"
+    locator: "episodes 54–60; training and final preparation"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-67-68"
+    source_id: "src-anime-67-68"
+    locator: "episodes 67–68; anime expansion of Rasa ambush and invasion planning"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-170-171"
+    source_id: "src-shippuden-170-171"
+    locator: "episodes 170–171 retrospective: Honegami Field"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-259"
+    source_id: "src-shippuden-259"
+    locator: "episode 259 retrospective: Sasuke practices Chidori before finals"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000063"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000063"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000064"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000064"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000064-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000064-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000064-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000064-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000064-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000064-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000064-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000064-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000065"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000065"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000065-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000065-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000065-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000065-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000065-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000065-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000065-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000065-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000065-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000065-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000066"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000066"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000067"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000067"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000068"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000068"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000069"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000069"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000070"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000070"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000071"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000071"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-finals-konoha-crush"
+    source_id: "src-manga-finals-konoha-crush"
+    locator: "Chūnin Finals and Konoha Crush chapters; exact page mapping pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-finals-konoha-crush"
+    source_id: "src-anime-finals-konoha-crush"
+    locator: "anime adaptation of finals and invasion; exact episodes/timestamps pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-192"
+    source_id: "src-shippuden-192"
+    locator: "episode 192 retrospective: Hinata kidnapping during invasion"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-239-konoha-crush"
+    source_id: "src-shippuden-239"
+    locator: "episode 239 retrospective: adult Ino–Shika–Chō rescue Kosuke during attack"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000072"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000072"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000072-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000072-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000072-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000072-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000073"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000073"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000074"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000074"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000075"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000075"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000076"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000076"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-post-crush-search"
+    source_id: "src-manga-post-crush-search"
+    locator: "post-Konoha Crush through chapters 144–148; exact page mapping pending"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-237"
+    source_id: "src-shippuden-237"
+    locator: "episode 237 retrospective: Guy encourages Tenten after Chūnin Exams"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000069-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000069-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000069-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000069-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000073-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000073-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000073-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000073-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000073-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000073-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000073-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000073-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000076-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000076-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000076-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000076-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000076-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000076-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000076-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000076-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000077"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000077"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000078"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000078"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000079"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000079"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000079-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000079-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000079-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000079-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000079-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000079-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000079-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000079-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000080"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000080"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000081"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000081"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082-G"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082-G"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000082-H"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000082-H"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000083"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000083"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000083-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000083-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000083-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000083-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000083-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000083-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000083-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000083-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000083-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000083-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000084"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000084"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000085"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000085"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-97"
+    source_id: "src-anime-97"
+    locator: "episode 97; hot-springs debt incident"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-99"
+    source_id: "src-anime-99"
+    locator: "episode 99; Konohamaru resists Tsunade's inauguration"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000086"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000086"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000087"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000087"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000088"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000088"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-101"
+    source_id: "src-anime-101"
+    locator: "episode 101"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-469"
+    source_id: "src-shippuden-469"
+    locator: "episode 469 retrospective; internally contradictory with main continuity"
+    basis: "source"
+    review: "pending"
+  - id: "evd-movie-land-of-snow"
+    source_id: "src-movie-land-of-snow"
+    locator: "movie; project placement after episode 101"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000089"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000089"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000090"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000090"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000091"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000091"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000092"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000092"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000093"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000093"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000094"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000094"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000095"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000095"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000096"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000096"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000097"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000097"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-102-106"
+    source_id: "src-anime-102-106"
+    locator: "episodes 102–106; Land of Tea escort/race mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-ova-waterfall"
+    source_id: "src-ova-waterfall"
+    locator: "OVA; Team 7 mission to Takigakure"
+    basis: "source"
+    review: "pending"
+  - id: "evd-novel-waterfall"
+    source_id: "src-novel-waterfall"
+    locator: "novel; alternate prose version of the Waterfall mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000098"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000098"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000099"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000099"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000100"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000100"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000101"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000101"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000102"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000102"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000103"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000103"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000104"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000104"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000105"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000105"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-ova-sports-festival"
+    source_id: "src-ova-sports-festival"
+    locator: "OVA; gag continuity"
+    basis: "source"
+    review: "pending"
+  - id: "evd-game-ultimate-ninja-2"
+    source_id: "src-game-ultimate-ninja-2"
+    locator: "original game story arc"
+    basis: "source"
+    review: "pending"
+  - id: "evd-ova-genie-three-wishes"
+    source_id: "src-ova-genie-three-wishes"
+    locator: "OVA; gag continuity"
+    basis: "source"
+    review: "pending"
+  - id: "evd-ova-jonin-vs-genin"
+    source_id: "src-ova-jonin-vs-genin"
+    locator: "OVA tournament"
+    basis: "source"
+    review: "pending"
+  - id: "evd-game-ultimate-ninja-3"
+    source_id: "src-game-ultimate-ninja-3"
+    locator: "game expansion of the same tournament event"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000106"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000106"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000107"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000107"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000108"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000108"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000109"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000109"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-shippuden-182"
+    source_id: "src-shippuden-182"
+    locator: "episode 182 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-183"
+    source_id: "src-shippuden-183"
+    locator: "episode 183 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-184"
+    source_id: "src-shippuden-184"
+    locator: "episode 184 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-186"
+    source_id: "src-shippuden-186"
+    locator: "episode 186 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000110"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000110"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000111"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000111"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000112"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000112"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000113"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000113"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000114"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000114"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000115"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000115"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000116"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000116"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-shippuden-190"
+    source_id: "src-shippuden-190"
+    locator: "episode 190 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-191"
+    source_id: "src-shippuden-191"
+    locator: "episode 191 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-196"
+    source_id: "src-shippuden-196"
+    locator: "episode 196 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-306"
+    source_id: "src-shippuden-306"
+    locator: "episode 306 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-shippuden-309-310"
+    source_id: "src-shippuden-309-310"
+    locator: "episodes 309–310 retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000117"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000117"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000117-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000117-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000118"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000118"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000119"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000119"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000118-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000118-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000118-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000118-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000118-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000118-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000120"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000120"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000121"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000121"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000121-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000121-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000121-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000121-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000121-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000121-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000121-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000121-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000121-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000121-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000121-G"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000121-G"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-G"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-G"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-H"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-H"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-I"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-I"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-J"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-J"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-K"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-K"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-L"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-L"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-M"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-M"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-N"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-N"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000122-O"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000122-O"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000123"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000123"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000123-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000123-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000123-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000123-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000123-D"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000123-D"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000123-E"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000123-E"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000123-F"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000123-F"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000124"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000124"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-manga-ch238"
+    source_id: "src-manga-sasuke-recovery"
+    locator: "chapter 238; Sasuke reaches Orochimaru after the retrieval mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000125"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000125"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000126"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000126"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000126-B"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000126-B"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000126-C"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000126-C"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000127"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000127"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-136-140"
+    source_id: "src-anime-136-140"
+    locator: "episodes 136–140; Rice Fields investigation"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000128"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000128"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-141"
+    source_id: "src-anime-141"
+    locator: "episode 141; Arashi finale and Sakura asking Tsunade to train her"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000129"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000129"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-shippuden-236"
+    source_id: "src-shippuden-236"
+    locator: "episode 236; Team 8 retrospective after the failed Sasuke Retrieval mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000130"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000130"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000131"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000131"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000132"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000132"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000133"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000133"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-142-147"
+    source_id: "src-anime-142-147"
+    locator: "episodes 142–147; Mizuki Tracking Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000134"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000134"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000135"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000135"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000136"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000136"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000137"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000137"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000138"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000138"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-shippuden-185"
+    source_id: "src-shippuden-185"
+    locator: "episode 185; Animal District retrospective"
+    basis: "source"
+    review: "pending"
+  - id: "evd-movie-gelel"
+    source_id: "src-movie-gelel"
+    locator: "Legend of the Stone of Gelel; full film"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-148-151"
+    source_id: "src-anime-148-151"
+    locator: "episodes 148–151; Bikōchū Search Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000139"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000139"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000140"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000140"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000141"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000141"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000142"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000142"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000143"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000143"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000144"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000144"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000145"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000145"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000146"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000146"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000147"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000147"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-152-157"
+    source_id: "src-anime-152-157"
+    locator: "episodes 152–157; Kurosuki Family Removal Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-official-naruto-birthday"
+    source_id: "src-official-naruto-birthday"
+    locator: "Naruto Uzumaki profile; birthday October 10"
+    basis: "source"
+    review: "pending"
+  - id: "evd-game-uzumaki-chronicles"
+    source_id: "src-game-uzumaki-chronicles"
+    locator: "Uzumaki Chronicles / Uzumaki Ninden; regional story variants"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000148"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000148"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000149"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000149"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000150"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000150"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000151"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000151"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-158"
+    source_id: "src-anime-158"
+    locator: "episode 158; Academy Student Lead Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-159-160"
+    source_id: "src-anime-159-160"
+    locator: "episodes 159–160; Gosunkugi Capture Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-161"
+    source_id: "src-anime-161"
+    locator: "episode 161; Mondai and Potcha infiltration"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000152"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000152"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000153"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000153"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000154"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000154"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000155"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000155"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000156"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000156"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000157"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000157"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-162-167"
+    source_id: "src-anime-162-167"
+    locator: "episodes 162–167; Cursed Warrior Extermination Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-game-path-ninja-2"
+    source_id: "src-game-path-ninja-2"
+    locator: "Path of the Ninja 2; Five Mirrors and Spirit Beast storyline"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000158"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000158"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000159"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000159"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000160"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000160"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000161"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000161"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000162"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000162"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000163"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000163"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-166-167"
+    source_id: "src-anime-166-167"
+    locator: "episodes 166–167; Cursed Warrior finale"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-168"
+    source_id: "src-anime-168"
+    locator: "episode 168; cooking-nin and Ayame"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-169-173"
+    source_id: "src-anime-169-173"
+    locator: "episodes 169–173; Kaima Capture Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000164"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000164"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000165"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000165"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000166"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000166"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-174"
+    source_id: "src-anime-174"
+    locator: "episode 174; Kunihisa escort"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-175-176"
+    source_id: "src-anime-175-176"
+    locator: "episodes 175–176; Buried Gold Excavation Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000167"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000167"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000168"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000168"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000169"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000169"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000170"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000170"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000171"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000171"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-game-uzumaki-chronicles-2"
+    source_id: "src-game-uzumaki-chronicles-2"
+    locator: "Uzumaki Chronicles 2; Shirogane Clan and Spirit Orbs plot"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-177"
+    source_id: "src-anime-177"
+    locator: "episode 177; courier manuscript mix-up"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-178"
+    source_id: "src-anime-178"
+    locator: "episode 178; Star Guard Mission opening"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000172"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000172"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000173"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000173"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000174"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000174"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-179-183"
+    source_id: "src-anime-179-183"
+    locator: "episodes 179–183; Star Guard Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000175"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000175"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000176"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000176"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000177"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000177"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-184"
+    source_id: "src-anime-184"
+    locator: "episode 184; Akamaru Monitoring Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-185"
+    source_id: "src-anime-185"
+    locator: "episode 185; Onbaa incident"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-186"
+    source_id: "src-anime-186"
+    locator: "episode 186; Funeral Proxy Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000178"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000178"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000179"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000179"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000180"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000180"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000181"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000181"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000182"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000182"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000183"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000183"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000184"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000184"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000185"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000185"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-187-191"
+    source_id: "src-anime-187-191"
+    locator: "episodes 187–191; Land of Greens coup d’état"
+    basis: "source"
+    review: "pending"
+  - id: "evd-game-phantom-fortress"
+    source_id: "src-game-phantom-fortress"
+    locator: "Mugen Castle story and Hidden Mugen Castle route"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-192"
+    source_id: "src-anime-192"
+    locator: "episode 192; Princess Fuku matchmaking mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000186"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000186"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000187"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000187"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000188"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000188"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000189"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000189"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000190"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000190"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000191"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000191"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000192"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000192"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000193"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000193"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000194"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000194"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000195"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000195"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000196"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000196"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000197"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000197"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000198"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000198"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-anime-193"
+    source_id: "src-anime-193"
+    locator: "episode 193; Lee's dojo and Nanafushi infiltration"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-194"
+    source_id: "src-anime-194"
+    locator: "episode 194; Haunted Castle investigation"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-195-196"
+    source_id: "src-anime-195-196"
+    locator: "episodes 195–196; Ryūdōin Brothers revenge"
+    basis: "source"
+    review: "pending"
+  - id: "evd-movie-crescent-moon"
+    source_id: "src-movie-crescent-moon"
+    locator: "Guardians of the Crescent Moon Kingdom; escort, coup and restoration"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-197-201"
+    source_id: "src-anime-197-201"
+    locator: "episodes 197–201; Konoha Plans Recapture Mission"
+    basis: "source"
+    review: "pending"
+  - id: "evd-game-clash-revolution-2"
+    source_id: "src-game-clash-revolution-2"
+    locator: "Clash of Ninja Revolution 2; Towa/Komachi investigation and Kagura/Bando plot"
+    basis: "source"
+    review: "pending"
+  - id: "evd-anime-202"
+    source_id: "src-anime-202"
+    locator: "episode 202; Top 5 Battles recap special"
+    basis: "source"
+    review: "pending"
+  - id: "evd-v10-000199"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000199"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000200"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000200"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000201"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000201"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000202"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000202"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000203"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000203"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000204"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000204"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000205"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000205"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000206"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000206"
+    basis: "imported"
+    review: "accepted"
+  - id: "evd-v10-000207"
+    source_id: "src-v10-import"
+    locator: "legacy row V10-000207"
+    basis: "imported"
+    review: "accepted"
   - id: "evd-v10-000208"
     source_id: "src-v10-import"
     locator: "legacy row V10-000208"
