@@ -3,7 +3,7 @@ id: sc-y0-0118-hokage-monument
 episode_id: ep-y0-naruto-monument
 display_rank: 100
 continuity_id: main
-title: Витівка Наруто на Монументі Хокаґе
+title: Витівка на Монументі Хокаґе
 location_id: loc-hokage-monument
 placement:
   anchor_id: ta-y0-0118
@@ -20,8 +20,8 @@ events:
 - id: ev-y0-0118-naruto-paints-monument
   legacy_ids:
   - V10-000001
-  title: Наруто розмальовує Монумент Хокаґе
-  text: Наруто розмальовує обличчя Хокаґе на монументі.
+  title: Наруто розмальовує обличчя Хокаґе
+  text: Наруто залишає малюнки на кам’яних обличчях Хокаґе, перетворюючи Монумент на демонстративну витівку перед селом.
   origin: M
   extent: interval
   display_rank: 100
@@ -33,8 +33,8 @@ events:
   - evd-v10-000001
   - evd-manga-ch1-prologue
 - id: ev-y0-0118-hiruzen-inspects-graffiti
-  title: Хірузен оглядає розмальований Монумент
-  text: Хірузен приходить оглянути витівку Наруто на Монументі Хокаґе.
+  title: Хірузен оцінює наслідки витівки
+  text: Третій Хокаґе приходить до Монумента після вчинку Наруто й бачить, що обличчя попередніх Хокаґе вкриті його малюнками.
   origin: M
   extent: interval
   display_rank: 150
