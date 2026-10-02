@@ -34,11 +34,12 @@ try {
     await page.evaluate(()=>setFocus('c-naruto'));
     assert.equal(await page.locator('.thread').count(),1);
     assert(await page.locator('.thread').evaluate(path=>path.getBBox().height<=18),'Focus grew a large arch');
-    await page.evaluate(()=>{setFocus('c-naruto');zoom=zoomModes.day;center=21.5;render();});
+    await page.evaluate(()=>{setFocus('c-naruto');navigateEvent('ev-y0-0122-team7-announced');closeCard();});
     assert.equal(await page.locator('#storyTitleLevel').inputValue(),'moment');
     const reader=page.locator('[data-read-story="moment:ev-y0-0122-team7-announced"]');
     assert.equal(await reader.count(),1);
     if(width<=760&&height>=520){
+      if(await page.locator('.story-reader-toggle').getAttribute('aria-expanded')==='false')await page.locator('.story-reader-toggle').click();
       const row=reader.locator('..');
       const number=await row.locator('.story-item-number').textContent();
       assert.equal(number,await page.locator('[data-event="ev-y0-0122-team7-announced"] .moment-number').textContent());
@@ -73,8 +74,9 @@ try {
     await page.mouse.move(1, height / 2);
     assert.equal(await page.locator('#glassTooltip').isVisible(), false);
 
-    await page.evaluate(() => { closeCard(); zoom=zoomModes.week; center=21.5; render(); });
+    await page.evaluate(() => { closeCard(); expandMap('episode','ep-y0-team-formation');zoom=zoomModes.week;center=21.5;render(); });
     const node = page.locator('[data-event="sc-y0-0122-academy-announcements"] .mark');
+    await node.waitFor({state:'visible'});
     const box = await node.boundingBox();
     if (width > 760 && height >= 520) {
       // Passing through a node, Escape and zoom cancel delayed opening.
@@ -208,7 +210,7 @@ try {
     await page.locator('#searchResults [data-search-event]').first().click();
     assert.equal(await page.locator('#eventCard').isVisible(), true);
     await page.keyboard.press('Escape');
-    await page.evaluate(() => { zoom=zoomModes.week; center=21.5; render(); });
+    await page.evaluate(() => { mapScope=null;zoom=zoomModes.week;center=21.5;render(); });
     await page.locator('#storyTitleLevel').selectOption('scene');
     await page.locator('.story-title-label[data-story-key="scene:sc-y0-0122-academy-announcements"]').click();
     assert.equal(await page.evaluate(() => window.__storyScaleFocus.mode), 'fixed');
@@ -243,7 +245,8 @@ try {
   const touch=await browser.newPage({viewport:{width:375,height:812},hasTouch:true,isMobile:true});
   const touchErrors=[];touch.on('pageerror',error=>touchErrors.push(error.message));
   await touch.goto(url,{waitUntil:'networkidle'});
-  await touch.locator('[data-mode="day"]').tap();
+  await touch.evaluate(()=>{expandMap('scene','sc-y0-0122-academy-announcements');zoom=zoomModes.day;center=21.5;render();});
+  if(await touch.locator('.story-reader-toggle').getAttribute('aria-expanded')==='false')await touch.locator('.story-reader-toggle').tap();
   await touch.locator('[data-event="ev-y0-0122-team7-announced"] .moment-number').waitFor();
   await touch.locator('[data-read-story="moment:ev-y0-0122-team7-announced"]').tap();
   assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');

@@ -28,14 +28,9 @@ arcs:
   continuity_id: main
   period_id: part-i
   kind: project
-  title: 'Команда 9: перший день'
-  description: 'Сюжетна арка «Команда 9: перший день». Самостійні паралельні лінії оформлено окремими епізодами.'
-- id: arc-y0-team9-raido-evaluation
-  continuity_id: main
-  period_id: part-i
-  kind: project
-  title: 'Команда 9: перевірка Райдо'
-  description: 'Сюжетна арка «Команда 9: перевірка Райдо». Самостійні паралельні лінії оформлено окремими епізодами.'
+  title: Становлення Команди 9
+  redirect_ids: [arc-y0-team9-raido-evaluation]
+  description: Знайомство Кіти, Рена й Сори з Райдо, вечір після першого дня та випробування команди наступного дня.
 - id: arc-y0-first-tests-aftermath
   continuity_id: main
   period_id: part-i

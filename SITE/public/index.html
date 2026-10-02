@@ -6,21 +6,23 @@
   <meta name="theme-color" content="#f5f6f8">
   <meta name="description" content="Хронологія Конохи: стеж за персонажами, досліджуй події та читай сцени Naruto.">
   <title>Коноха · Хронологія</title>
-  <link rel="stylesheet" href="style.css?v=20261002-parent-navigation-1">
-  <link rel="stylesheet" href="profile-dossier.css?v=20261002-parent-navigation-1">
-  <link rel="stylesheet" href="controls.css?v=20261002-parent-navigation-1">
-  <link rel="stylesheet" href="panels.css?v=20261002-parent-navigation-1">
-  <link rel="stylesheet" href="focus.css?v=20261002-parent-navigation-1">
-  <link rel="stylesheet" href="story-labels.css?v=20261002-parent-navigation-1">
-  <script defer src="relations.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="timeline-core.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="interaction-core.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="story-clouds.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="selection-focus.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="story-label-scale.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="hierarchy-preview.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="profile-techniques.js?v=20261002-parent-navigation-1"></script>
-  <script defer src="app.js?v=20261002-parent-navigation-1"></script>
+  <link rel="stylesheet" href="style.css?v=20261002-story-regions-1">
+  <link rel="stylesheet" href="profile-dossier.css?v=20261002-story-regions-1">
+  <link rel="stylesheet" href="controls.css?v=20261002-story-regions-1">
+  <link rel="stylesheet" href="panels.css?v=20261002-story-regions-1">
+  <link rel="stylesheet" href="focus.css?v=20261002-story-regions-1">
+  <link rel="stylesheet" href="story-labels.css?v=20261002-story-regions-1">
+  <link rel="stylesheet" href="story-map.css?v=20261002-story-regions-1">
+  <script defer src="relations.js?v=20261002-story-regions-1"></script>
+  <script defer src="timeline-core.js?v=20261002-story-regions-1"></script>
+  <script defer src="interaction-core.js?v=20261002-story-regions-1"></script>
+  <script defer src="story-clouds.js?v=20261002-story-regions-1"></script>
+  <script defer src="selection-focus.js?v=20261002-story-regions-1"></script>
+  <script defer src="story-label-scale.js?v=20261002-story-regions-1"></script>
+  <script defer src="hierarchy-preview.js?v=20261002-story-regions-1"></script>
+  <script defer src="profile-techniques.js?v=20261002-story-regions-1"></script>
+  <script defer src="story-layout.js?v=20261002-story-regions-1"></script>
+  <script defer src="app.js?v=20261002-story-regions-1"></script>
 </head>
 <body>
   <header class="masthead">
@@ -51,6 +53,7 @@
     <span data-level="episode"><i class="key-mark key-episode" aria-hidden="true"></i>Епізод</span>
     <span data-level="arc"><i class="key-mark key-arc" aria-hidden="true"></i>Арка</span>
   </div>
+  <nav id="mapContext" class="map-context" aria-label="Область мапи"><button id="mapUp" hidden></button><p id="mapScopeTitle" class="scope-title"></p><p id="mapDetailHint"></p></nav>
   <div id="timelineEmpty" class="timeline-empty" role="status" hidden><h2 id="emptyTitle">Обери лінії персонажів</h2><p id="emptyDescription">Їхні події з’являться на хронології.</p><button id="emptyAction" class="primary-button">Обрати всіх</button></div>
   <svg id="timeAxis" class="time-axis" aria-hidden="true"></svg>
 
@@ -75,7 +78,7 @@
     <form id="dateForm"><label for="dateInput">Перейти до дня · Рік 0</label><div class="date-field"><input id="dateInput" placeholder="22.01" inputmode="decimal" autocomplete="off" aria-describedby="dateError" autofocus><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form>
     <label class="select-label" for="continuity">Історична лінія</label>
     <select id="continuity"><option value="main">Основна історія</option></select>
-    <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо або жест двома пальцями змінює масштаб. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
+    <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Назви на мапі пояснюють кожний вузол. Хмарки з назвами містять свої сцени та моменти. Кнопка «Розгорнути на мапі» у картці відкриває дітей; кнопка над полотном повертає до ширшої історії. Щільні ділянки спочатку показують батьківський рівень. Річний огляд групує історії в названі календарні періоди. Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо або жест двома пальцями змінює масштаб. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
     <div class="source-footer"><a id="sourceLink" target="_blank" rel="noopener">Дані в репозиторії <span aria-hidden="true">↗</span></a><small id="revision"></small></div>
   </section>
 

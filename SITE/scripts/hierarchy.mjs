@@ -36,4 +36,12 @@ export function validateHierarchy({arcs,episodes,scenes,periods}) {
  }
  for(const e of episodes)if(!episodeMembers.has(e.id))throw new Error(`Empty episode: ${e.id}`);
  for(const a of arcs)if(!arcMembers.has(a.id))throw new Error(`Empty arc: ${a.id}`);
+ const redirects=new Set();
+ for(const item of [...arcs,...episodes]){
+  if(item.redirect_ids!==undefined&&!Array.isArray(item.redirect_ids))throw new Error(`Invalid redirect_ids: ${item.id}`);
+  for(const id of item.redirect_ids||[]){
+   if(typeof id!=='string'||!id||allIds.has(id)||redirects.has(id))throw new Error(`Ambiguous story redirect: ${id}`);
+   redirects.add(id);
+  }
+ }
 }

@@ -31,9 +31,9 @@ episodes:
 - id: ep-y0-team-formation
   continuity_id: main
   arc_id: arc-y0-genin-formation
-  title: Розподіл у класі Академії
-  description: 'Одна сюжетна лінія: Розподіл у класі Академії. Сцени: Випадковий поцілунок Наруто й Саске; Оголошення команд
-    у класі Академії; Очікування наставників у класі.'
+  title: День розподілу в Академії
+  redirect_ids: [ep-y0-naruto-impersonation, ep-y0-sakura-searches-sasuke]
+  description: Випадковий поцілунок, оголошення команд, обідня перерва Сакури й Наруто та повернення до класу для зустрічі з наставниками.
 - id: ep-y0-jonin-outside-academy
   continuity_id: main
   arc_id: arc-y0-genin-formation
@@ -52,13 +52,9 @@ episodes:
 - id: ep-y0-team9-introduction
   continuity_id: main
   arc_id: arc-y0-team9-first-day
-  title: Перша розмова Команди 9
-  description: 'Одна сюжетна лінія: Перша розмова Команди 9. Сцени: Знайомство Команди 9 в крамниці данґо.'
-- id: ep-y0-kita-home-after-formation
-  continuity_id: main
-  arc_id: arc-y0-team9-first-day
-  title: Кіта вдома після розподілу
-  description: 'Одна сюжетна лінія: Кіта вдома після розподілу. Сцени: Кіта вдома після першого дня Команди 9.'
+  title: Перший день Команди 9
+  redirect_ids: [ep-y0-kita-home-after-formation]
+  description: Перша розмова з Райдо в крамниці данґо та вечір Кіти вдома після знайомства з командою.
 - id: ep-y0-kakashi-pretest
   continuity_id: main
   arc_id: arc-y0-genin-formation
@@ -76,7 +72,7 @@ episodes:
   description: 'Одна сюжетна лінія: Ірука перевіряє Какаші. Сцени: Ірука перевіряє історію випробувань Какаші.'
 - id: ep-y0-raido-evaluation
   continuity_id: main
-  arc_id: arc-y0-team9-raido-evaluation
+  arc_id: arc-y0-team9-first-day
   title: Перевірка Райдо — Команда 9
   description: 'Одна сюжетна лінія: Перевірка Райдо — Команда 9. Сцени: Команда 9 спостерігає за Командою 8; Бойова оцінка
     Команди 9 на Полі 9; Переправа Команди 9 через яр; Команда 9 проходить катакомби.'
@@ -114,16 +110,6 @@ episodes:
   arc_id: arc-y0-scroll-of-seals
   title: Хірузен організовує пошук сувою
   description: Повідомлення про викрадення, організація пошуку та його скасування після перемоги Наруто.
-- id: ep-y0-naruto-impersonation
-  continuity_id: main
-  arc_id: arc-y0-genin-formation
-  title: Наруто підміняє Саске
-  description: 'Одна сюжетна лінія: Наруто підміняє Саске. Сцени: Наруто підміняє Саске перед Сакурою.'
-- id: ep-y0-sakura-searches-sasuke
-  continuity_id: main
-  arc_id: arc-y0-genin-formation
-  title: Сакура шукає Саске
-  description: 'Одна сюжетна лінія: Сакура шукає Саске. Сцени: Сакура шукає Саске під час перерви.'
 - id: ep-y0-team10-first-lunch
   continuity_id: main
   arc_id: arc-y0-genin-formation
