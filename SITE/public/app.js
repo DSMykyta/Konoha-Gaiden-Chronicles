@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261002-elastic-clouds-2';
+const UI_VERSION='20261002-elastic-clouds-3';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,cardPlacement=null,cardSelection=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -419,7 +419,7 @@ function drawMapTitles(level,width,top,bottom){
   const group=svg('g',{class:'cloud-label',role:'button',tabindex:0,'data-title-kind':label.kind,'data-title-id':label.id,'aria-haspopup':'dialog','aria-label':`${kindNames[label.kind]}: ${label.title}`},layer);
   const title=svg('title',{},group);title.textContent=label.title;
   const startX=clamp(label.anchor.x,label.x,label.x+label.width),startY=clamp(label.anchor.y,label.y,label.y+label.height),distance=Math.hypot(label.anchor.x-startX,label.anchor.y-startY),ratio=Math.max(0,(distance-14)/Math.max(1,distance));
-  svg('line',{x1:startX,y1:startY,x2:startX+(label.anchor.x-startX)*ratio,y2:startY+(label.anchor.y-startY)*ratio,class:'cloud-label-guide'},group);
+  svg('line',{x1:startX,y1:startY,x2:startX+(label.anchor.x-startX)*ratio,y2:startY+(label.anchor.y-startY)*ratio,class:'cloud-label-guide','aria-hidden':'true'},layer);
   svg('rect',{x:label.x-4,y:label.y-4,width:label.width+8,height:Math.max(44,label.height+8),class:'cloud-label-hit'},group);
   const text=svg('text',{x:label.x,y:label.y+10,class:'cloud-label-copy'},group);
   const kind=svg('tspan',{x:label.x,class:'cloud-label-kind'},text);kind.textContent=kindNames[label.kind];
