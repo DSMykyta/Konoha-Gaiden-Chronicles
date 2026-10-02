@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-pakkun-wait
+episode_id: ep-games-kakashi-shukuba-leads
+display_rank: 8100
+continuity_id: main
+title: Какаші чекає Юміко з Паккуном, але вона не приходить
+location_id: loc-kakashi-eatery
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-05-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-pakkun-wait-1
+  display_rank: 100
+  title: Какаші чекає Юміко з Паккуном, але вона не приходить
+  text: Какаші викликає Паккуна й чекає Юміко біля забігайлівки до вечора. Її відсутність не дає йому відповіді, яку він уже встиг собі уявити. Пошуковий пес поруч не стає приводом відстежувати її без згоди. Очікування завершується звичайним порожнім днем, після якого Какаші мусить переглянути власні припущення.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-pakkun
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-pakkun-wait-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-pakkun-wait.start
+  to: sc-games-kakashi-pakkun-wait.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-pakkun-wait-c-pakkun
+  entity_id: c-pakkun
+  from: sc-games-kakashi-pakkun-wait.start
+  to: sc-games-kakashi-pakkun-wait.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

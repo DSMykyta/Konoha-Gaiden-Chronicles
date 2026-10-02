@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-anko-flowers
+episode_id: ep-games-t9-touno-start
+display_rank: 4000
+continuity_id: main
+title: Команда 9 приносить Анко квіти й звітує про Тоуно
+location_id: loc-konoha-hospital
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-22
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-anko-flowers-1
+  display_rank: 100
+  title: Команда 9 приносить Анко квіти й звітує про Тоуно
+  text: Трійка приходить до Анко в шпиталь із квітами. Наставниця вимагає звіту про роботу тимчасового керівника, а учні повертаються до постановочного нападу й першої підміни людини. Відвідини не закінчують лікування Анко. Вони дають команді місце, де можна назвати те, що сталося, перед своїм постійним командиром.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-anko-flowers-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-anko-flowers.start
+  to: sc-games-t9-anko-flowers.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-flowers-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-anko-flowers.start
+  to: sc-games-t9-anko-flowers.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-flowers-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-anko-flowers.start
+  to: sc-games-t9-anko-flowers.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-flowers-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-anko-flowers.start
+  to: sc-games-t9-anko-flowers.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-games-kakashi-rain-balcony
+episode_id: ep-games-kakashi-valley-consequences
+display_rank: 10000
+continuity_id: main
+title: Какаші стоїть під дощем навпроти темного балкона Юміко
+location_id: loc-sakura-neighborhood
+day_part: night
+placement:
+  anchor_id: ta-games-0-09-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-rain-balcony-1
+  display_rank: 100
+  title: Какаші стоїть під дощем навпроти темного балкона Юміко
+  text: Після звіту й нових службових рішень Какаші приходить до дерева навпроти зачиненого балкона Юміко. Він не будить її та не вимагає розмови. Знання, що за склом існує мирне життя, лишається для нього короткою опорою серед провалу погоні й тривоги за учнів. Команда 9 цього дня вже пішла за запечатаним наказом.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-rain-balcony-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-rain-balcony.start
+  to: sc-games-kakashi-rain-balcony.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

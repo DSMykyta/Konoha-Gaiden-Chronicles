@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-base18-plums
+episode_id: ep-games-t9-base18-after
+display_rank: 6100
+continuity_id: main
+title: Рен і Кіта примиряються після конфлікту на складі
+location_id: loc-oto-base18
+day_part: evening
+placement:
+  anchor_id: ta-games-0-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base18-plums-1
+  display_rank: 100
+  title: Рен і Кіта примиряються після конфлікту на складі
+  text: Під час збору матеріалів і припасів на складі Кіта й Рен сваряться. Перший плід, який Кіта віддає напарникові, стає простим жестом повернення до їхньої звичної взаємодії. Вони ділять сливи й продовжують працювати разом. Лабораторні результати та документи при цьому залишаються окремим тяжким вантажем місії.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-base18-plums-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base18-plums.start
+  to: sc-games-t9-base18-plums.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base18-plums-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base18-plums.start
+  to: sc-games-t9-base18-plums.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base18-plums-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-base18-plums.start
+  to: sc-games-t9-base18-plums.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

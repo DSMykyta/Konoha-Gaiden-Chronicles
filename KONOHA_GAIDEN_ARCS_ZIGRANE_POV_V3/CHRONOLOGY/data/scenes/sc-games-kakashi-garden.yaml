@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-games-kakashi-garden
+episode_id: ep-games-kakashi-garden-yumiko
+display_rank: 7400
+continuity_id: main
+title: Команда 7 працює навпроти будинку Сакури
+location_id: loc-sakura-neighborhood
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-05-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-garden-1
+  display_rank: 100
+  title: Команда 7 працює навпроти будинку Сакури
+  text: 'Какаші бере D-рангову роботу навпроти будинку Сакури. Команда займається звичайним прибиранням і садовими справами протягом дня. Юміко не з’являється: вона поїхала до батьків. Особисте очікування наставника не створює окремої події для жінки й не скасовує оплачуваного завдання учнів.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-garden-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-garden.start
+  to: sc-games-kakashi-garden.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-garden-c-naruto
+  entity_id: c-naruto
+  from: sc-games-kakashi-garden.start
+  to: sc-games-kakashi-garden.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-garden-c-sasuke
+  entity_id: c-sasuke
+  from: sc-games-kakashi-garden.start
+  to: sc-games-kakashi-garden.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-garden-c-sakura
+  entity_id: c-sakura
+  from: sc-games-kakashi-garden.start
+  to: sc-games-kakashi-garden.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

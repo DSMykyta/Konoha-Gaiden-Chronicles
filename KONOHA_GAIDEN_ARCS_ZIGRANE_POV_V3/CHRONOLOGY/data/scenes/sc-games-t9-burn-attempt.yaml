@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-burn-attempt
+episode_id: ep-games-t9-fire
+display_rank: 1300
+continuity_id: main
+title: Райдо зупиняє небезпечну вогняну спробу Кіти
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-burn-attempt-1
+  display_rank: 100
+  title: Райдо зупиняє небезпечну вогняну спробу Кіти
+  text: Кіта пробує запалити чакру так, як бачив у Асуми. Перша спроба в присутності Райдо обпалює шкіру, і наставник одразу зупиняє вправу. Кіта не приймає межу як остаточну й потім ще кілька ночей практикується приховано. Накопичені опіки показують, що рівний медичний контроль не гарантує безпечного перетворення стихії.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-burn-attempt-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-burn-attempt.start
+  to: sc-games-t9-burn-attempt.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-burn-attempt-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-burn-attempt.start
+  to: sc-games-t9-burn-attempt.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

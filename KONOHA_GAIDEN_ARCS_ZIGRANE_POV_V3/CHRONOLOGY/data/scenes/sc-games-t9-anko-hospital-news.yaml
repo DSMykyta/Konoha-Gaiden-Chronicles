@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-anko-hospital-news
+episode_id: ep-games-t9-b4-design
+display_rank: 3600
+continuity_id: main
+title: Команда 9 дізнається про тривале лікування Анко
+location_id: loc-konoha-hospital
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-anko-hospital-news-1
+  display_rank: 100
+  title: Команда 9 дізнається про тривале лікування Анко
+  text: Анко потрапляє до шпиталю й щонайменше на три тижні вибуває з польової роботи. Трійка ще не може просто замінити наставницю самостійним командуванням. Адміністрація має забезпечити тимчасову роботу й платню; команді пропонують варіанти, серед яких новий керівник, очікування без звичних місій або розподіл учнів.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-anko-hospital-news-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-anko-hospital-news.start
+  to: sc-games-t9-anko-hospital-news.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-hospital-news-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-anko-hospital-news.start
+  to: sc-games-t9-anko-hospital-news.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-hospital-news-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-anko-hospital-news.start
+  to: sc-games-t9-anko-hospital-news.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-hospital-news-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-anko-hospital-news.start
+  to: sc-games-t9-anko-hospital-news.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

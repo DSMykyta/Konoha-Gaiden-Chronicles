@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-sora-anko
+episode_id: ep-games-t9-preexam-check
+display_rank: 2200
+continuity_id: main
+title: Анко вчить Сору приховувати справжню атаку серед ілюзій
+location_id: loc-konoha-training-field
+day_part: morning
+placement:
+  anchor_id: ta-games-0-06-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-sora-anko-1
+  display_rank: 100
+  title: Анко вчить Сору приховувати справжню атаку серед ілюзій
+  text: На окремому занятті Сора працює з Анко над поєднанням ілюзій, отрути та справжнього леза. Потрібно сховати реальний напрямок атаки серед багатьох хибних рухів. Ці додаткові уроки не змінюють складу команди й не забирають у Райдо відповідальності за її місії. Сора отримує інструмент для вже звичної ролі координаторки.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-sora-anko-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-sora-anko.start
+  to: sc-games-t9-sora-anko.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-sora-anko-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-sora-anko.start
+  to: sc-games-t9-sora-anko.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

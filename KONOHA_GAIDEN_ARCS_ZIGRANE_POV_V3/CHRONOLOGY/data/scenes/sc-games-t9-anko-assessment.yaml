@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-anko-assessment
+episode_id: ep-games-t9-anko-new-command
+display_rank: 3000
+continuity_id: main
+title: Анко перевіряє витривалість Команди 9
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-08-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-anko-assessment-1
+  display_rank: 100
+  title: Анко перевіряє витривалість Команди 9
+  text: Анко задає фізичну перевірку, у якій Рен переносить обох напарників протягом десяти кіл. Команда утримує замкнену трикутну взаємодію й пристосовує рух до навантаження. Новий наставник бачить не трьох незалежних учнів, а зв’язану систему. Жорсткий темп не стирає їхніх правил, але змушує ще виразніше покладатися одне на одного.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-anko-assessment-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-anko-assessment.start
+  to: sc-games-t9-anko-assessment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-assessment-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-anko-assessment.start
+  to: sc-games-t9-anko-assessment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-assessment-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-anko-assessment.start
+  to: sc-games-t9-anko-assessment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-assessment-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-anko-assessment.start
+  to: sc-games-t9-anko-assessment.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

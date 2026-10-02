@@ -1455,3 +1455,903 @@ anchors:
     - evd-archive-chain-placement
     review: accepted
     reason: Фінальне погодження місця та порядку обміну передує вже внесеному дорученню Команді 7 на 05.05.
+  - id: ta-games-0-01-23
+    date:
+      year: 0
+      month: 1
+      day: 23
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-01-25
+    date:
+      year: 0
+      month: 1
+      day: 25
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-02-02
+    date:
+      year: 0
+      month: 2
+      day: 2
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-02-05
+    date:
+      year: 0
+      month: 2
+      day: 5
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-02-08
+    date:
+      year: 0
+      month: 2
+      day: 8
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-02-15
+    date:
+      year: 0
+      month: 2
+      day: 15
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-02-20
+    date:
+      year: 0
+      month: 2
+      day: 20
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-02-21
+    date:
+      year: 0
+      month: 2
+      day: 21
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-02-24
+    date:
+      year: 0
+      month: 2
+      day: 24
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-03-03
+    date:
+      year: 0
+      month: 3
+      day: 3
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-03-06
+    date:
+      year: 0
+      month: 3
+      day: 6
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-03-15
+    date:
+      year: 0
+      month: 3
+      day: 15
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-04-13
+    date:
+      year: 0
+      month: 4
+      day: 13
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-04-16
+    date:
+      year: 0
+      month: 4
+      day: 16
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-04-18
+    date:
+      year: 0
+      month: 4
+      day: 18
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-04-25
+    date:
+      year: 0
+      month: 4
+      day: 25
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-04-26
+    date:
+      year: 0
+      month: 4
+      day: 26
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-04-28
+    date:
+      year: 0
+      month: 4
+      day: 28
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-02
+    date:
+      year: 0
+      month: 5
+      day: 2
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-03
+    date:
+      year: 0
+      month: 5
+      day: 3
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-07
+    date:
+      year: 0
+      month: 5
+      day: 7
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-10
+    date:
+      year: 0
+      month: 5
+      day: 10
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-12
+    date:
+      year: 0
+      month: 5
+      day: 12
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-13
+    date:
+      year: 0
+      month: 5
+      day: 13
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-14
+    date:
+      year: 0
+      month: 5
+      day: 14
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-15
+    date:
+      year: 0
+      month: 5
+      day: 15
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-17
+    date:
+      year: 0
+      month: 5
+      day: 17
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-20
+    date:
+      year: 0
+      month: 5
+      day: 20
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-21
+    date:
+      year: 0
+      month: 5
+      day: 21
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-22
+    date:
+      year: 0
+      month: 5
+      day: 22
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-23
+    date:
+      year: 0
+      month: 5
+      day: 23
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-24
+    date:
+      year: 0
+      month: 5
+      day: 24
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-27
+    date:
+      year: 0
+      month: 5
+      day: 27
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-05-29
+    date:
+      year: 0
+      month: 5
+      day: 29
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-06-08
+    date:
+      year: 0
+      month: 6
+      day: 8
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-06-30
+    date:
+      year: 0
+      month: 6
+      day: 30
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-07-01
+    date:
+      year: 0
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-07-02
+    date:
+      year: 0
+      month: 7
+      day: 2
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-07-03
+    date:
+      year: 0
+      month: 7
+      day: 3
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-07-05
+    date:
+      year: 0
+      month: 7
+      day: 5
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-07-06
+    date:
+      year: 0
+      month: 7
+      day: 6
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-05
+    date:
+      year: 0
+      month: 8
+      day: 5
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-06
+    date:
+      year: 0
+      month: 8
+      day: 6
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-07
+    date:
+      year: 0
+      month: 8
+      day: 7
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-08
+    date:
+      year: 0
+      month: 8
+      day: 8
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-15
+    date:
+      year: 0
+      month: 8
+      day: 15
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-16
+    date:
+      year: 0
+      month: 8
+      day: 16
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-17
+    date:
+      year: 0
+      month: 8
+      day: 17
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-19
+    date:
+      year: 0
+      month: 8
+      day: 19
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-21
+    date:
+      year: 0
+      month: 8
+      day: 21
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-22
+    date:
+      year: 0
+      month: 8
+      day: 22
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-24
+    date:
+      year: 0
+      month: 8
+      day: 24
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-25
+    date:
+      year: 0
+      month: 8
+      day: 25
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-26
+    date:
+      year: 0
+      month: 8
+      day: 26
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-27
+    date:
+      year: 0
+      month: 8
+      day: 27
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-08-29
+    date:
+      year: 0
+      month: 8
+      day: 29
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-06
+    date:
+      year: 0
+      month: 9
+      day: 6
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-07
+    date:
+      year: 0
+      month: 9
+      day: 7
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-10
+    date:
+      year: 0
+      month: 9
+      day: 10
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-12
+    date:
+      year: 0
+      month: 9
+      day: 12
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-13
+    date:
+      year: 0
+      month: 9
+      day: 13
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-16
+    date:
+      year: 0
+      month: 9
+      day: 16
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-18
+    date:
+      year: 0
+      month: 9
+      day: 18
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-19
+    date:
+      year: 0
+      month: 9
+      day: 19
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-22
+    date:
+      year: 0
+      month: 9
+      day: 22
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-23
+    date:
+      year: 0
+      month: 9
+      day: 23
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-24
+    date:
+      year: 0
+      month: 9
+      day: 24
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-26
+    date:
+      year: 0
+      month: 9
+      day: 26
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-29
+    date:
+      year: 0
+      month: 9
+      day: 29
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-30
+    date:
+      year: 0
+      month: 9
+      day: 30
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-10-11
+    date:
+      year: 0
+      month: 10
+      day: 11
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-12-15
+    date:
+      year: 0
+      month: 12
+      day: 15
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-12-16
+    date:
+      year: 0
+      month: 12
+      day: 16
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
+  - id: ta-games-0-09-20
+    date:
+      year: 0
+      month: 9
+      day: 20
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Ескорт завершується вранці 22.09, до бою на даху та відходу Саске.
+  - id: ta-games-0-09-21
+    date:
+      year: 0
+      month: 9
+      day: 21
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-games-part-i-placement
+    review: accepted
+    reason: Ескорт завершується вранці 22.09, до бою на даху та відходу Саске.

@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-games-kakashi-daiki-cover
+episode_id: ep-games-kakashi-mines-infiltration
+display_rank: 8700
+continuity_id: main
+title: Міката входить у табір у подобі патрульного Дайкі
+location_id: loc-iwa-mercenary-mines
+day_part: night
+placement:
+  anchor_id: ta-games-0-05-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-daiki-cover-1
+  display_rank: 100
+  title: Міката входить у табір у подобі патрульного Дайкі
+  text: Міката відтворює зовнішність і відбиток чакри місцевого патрульного Дайкі. Справжнього найманця знешкоджують і ховають неподалік. Під прикриттям Міката проходить перші сигнальні бар’єри та не вмикає їх знову. Какаші спостерігає зверху, поки Тензо й Ґенма готують підземну частину диверсії.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-tenzo
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  - entity_id: c-daiki
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-05
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-daiki-cover-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-daiki-cover.start
+  to: sc-games-kakashi-daiki-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-daiki-cover-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-daiki-cover.start
+  to: sc-games-kakashi-daiki-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-daiki-cover-c-tenzo
+  entity_id: c-tenzo
+  from: sc-games-kakashi-daiki-cover.start
+  to: sc-games-kakashi-daiki-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-daiki-cover-c-genma
+  entity_id: c-genma
+  from: sc-games-kakashi-daiki-cover.start
+  to: sc-games-kakashi-daiki-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-daiki-cover-c-daiki
+  entity_id: c-daiki
+  from: sc-games-kakashi-daiki-cover.start
+  to: sc-games-kakashi-daiki-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

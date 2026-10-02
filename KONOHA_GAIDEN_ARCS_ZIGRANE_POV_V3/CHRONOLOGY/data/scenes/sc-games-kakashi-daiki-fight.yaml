@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-games-kakashi-daiki-fight
+episode_id: ep-games-kakashi-mines-collapse
+display_rank: 8800
+continuity_id: main
+title: Міката відволікає варту постановочною бійкою
+location_id: loc-iwa-mercenary-mines
+day_part: dawn
+placement:
+  anchor_id: ta-games-0-05-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-daiki-fight-1
+  display_rank: 100
+  title: Міката відволікає варту постановочною бійкою
+  text: У подобі Дайкі Міката розігрує п’яну ревниву сварку, перекидає стіл і стягує увагу варти на себе. Охорона залишає вхід до шахти, щоб зупинити хаос. Какаші впізнає задум і дає підземній групі сигнал починати. Зовнішня грубість поведінки маскує точно узгоджений момент для Мокутону Тензо.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-tenzo
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-05
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-daiki-fight-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-daiki-fight.start
+  to: sc-games-kakashi-daiki-fight.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-daiki-fight-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-daiki-fight.start
+  to: sc-games-kakashi-daiki-fight.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-daiki-fight-c-tenzo
+  entity_id: c-tenzo
+  from: sc-games-kakashi-daiki-fight.start
+  to: sc-games-kakashi-daiki-fight.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-daiki-fight-c-genma
+  entity_id: c-genma
+  from: sc-games-kakashi-daiki-fight.start
+  to: sc-games-kakashi-daiki-fight.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

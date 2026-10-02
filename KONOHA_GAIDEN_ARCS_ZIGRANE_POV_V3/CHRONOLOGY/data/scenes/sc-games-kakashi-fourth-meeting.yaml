@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-kakashi-fourth-meeting
+episode_id: ep-games-kakashi-first-meetings
+display_rank: 6600
+continuity_id: main
+title: Какаші й Асума змінюють маршрут після нової зустрічі з Юміко
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-02-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-fourth-meeting-1
+  display_rank: 100
+  title: Какаші й Асума змінюють маршрут після нової зустрічі з Юміко
+  text: Після тренування Какаші й Асума натрапляють на Юміко. Чергова випадковість уже виглядає для неї надто помітною. Чоловіки змінюють маршрут, щоб не посилювати незручність і не створювати враження переслідування. Какаші починає бачити, що звичайна мирна зустріч потребує іншої уважності, ніж контроль невідомої людини на місії.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-yumiko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-fourth-meeting-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-fourth-meeting.start
+  to: sc-games-kakashi-fourth-meeting.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-fourth-meeting-c-asuma
+  entity_id: c-asuma
+  from: sc-games-kakashi-fourth-meeting.start
+  to: sc-games-kakashi-fourth-meeting.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-fourth-meeting-c-yumiko
+  entity_id: c-yumiko
+  from: sc-games-kakashi-fourth-meeting.start
+  to: sc-games-kakashi-fourth-meeting.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -2345,6 +2345,146 @@ entities:
     aliases:
     - Внутрішній двір архівного корпусу
     parent_id: loc-archive-corps
+  - id: c-isshin
+    kind: person
+    name: Іщін
+    aliases:
+    - Іщін
+  - id: c-touno
+    kind: person
+    name: Тоуно
+    aliases:
+    - Тоуно
+  - id: c-morita
+    kind: person
+    name: Моріта
+    aliases:
+    - Моріта
+  - id: c-escort-official
+    kind: person
+    name: Чиновник — замовник ескорту Команди 9
+    aliases:
+    - Чиновник — замовник ескорту Команди 9
+  - id: c-takumi-brother
+    kind: person
+    name: Брат Такумі
+    aliases:
+    - Брат Такумі
+  - id: c-daiki
+    kind: person
+    name: Дайкі
+    aliases:
+    - Дайкі
+  - id: loc-isshin-forge
+    kind: location
+    name: Кузня Іщіна
+    aliases:
+    - Кузня Іщіна
+    parent_id: loc-konohagakure
+  - id: loc-isshin-home
+    kind: location
+    name: Дім Іщіна
+    aliases:
+    - Дім Іщіна
+    parent_id: loc-konohagakure
+  - id: loc-team9-warehouse
+    kind: location
+    name: Склади D-рангових місій Команди 9
+    aliases:
+    - Склади D-рангових місій Команди 9
+    parent_id: loc-konohagakure
+  - id: loc-chunin-exam-room
+    kind: location
+    name: Аудиторія письмового іспиту
+    aliases:
+    - Аудиторія письмового іспиту
+    parent_id: loc-academy-front
+  - id: loc-team9-farm-route
+    kind: location
+    name: Фермерський маршрут Команди 9
+    aliases:
+    - Фермерський маршрут Команди 9
+    parent_id: loc-land-of-fire
+  - id: loc-tanigawa-route
+    kind: location
+    name: Дорога до Таніґави
+    aliases:
+    - Дорога до Таніґави
+    parent_id: loc-land-of-fire
+  - id: loc-oto-base2
+    kind: location
+    name: База 2 мережі Орочімару
+    aliases:
+    - База 2 мережі Орочімару
+  - id: loc-oto-base18
+    kind: location
+    name: База 18 мережі Орочімару
+    aliases:
+    - База 18 мережі Орочімару
+  - id: loc-kakashi-eatery
+    kind: location
+    name: Забігайлівка перших зустрічей Какаші й Юміко
+    aliases:
+    - Забігайлівка перших зустрічей Какаші й Юміко
+    parent_id: loc-konohagakure
+  - id: loc-konoha-izakaya
+    kind: location
+    name: Ізакая джонінів
+    aliases:
+    - Ізакая джонінів
+    parent_id: loc-konohagakure
+  - id: loc-konoha-grocery
+    kind: location
+    name: Крамниця продуктів Конохи
+    aliases:
+    - Крамниця продуктів Конохи
+    parent_id: loc-konohagakure
+  - id: loc-sakura-neighborhood
+    kind: location
+    name: Квартал Сакури та Юміко
+    aliases:
+    - Квартал Сакури та Юміко
+    parent_id: loc-konohagakure
+  - id: loc-konoha-park
+    kind: location
+    name: Парк Конохи
+    aliases:
+    - Парк Конохи
+    parent_id: loc-konohagakure
+  - id: loc-kakashi-home
+    kind: location
+    name: Квартира Какаші
+    aliases:
+    - Квартира Какаші
+    parent_id: loc-konohagakure
+  - id: loc-shukuba-contact-room
+    kind: location
+    name: Кімната оперативного контакту в Шукубі
+    aliases:
+    - Кімната оперативного контакту в Шукубі
+  - id: loc-iwa-mercenary-mines
+    kind: location
+    name: Шахти найманців Іви біля кордону Країни Трави
+    aliases:
+    - Шахти найманців Іви біля кордону Країни Трави
+  - id: loc-team9-escort-route
+    kind: location
+    name: Маршрут ескорту Команди 9 з Какаші
+    aliases:
+    - Маршрут ескорту Команди 9 з Какаші
+    parent_id: loc-land-of-fire
+  - id: loc-team9-road-inn
+    kind: location
+    name: Рьокан на маршруті ескорту
+    aliases:
+    - Рьокан на маршруті ескорту
+    parent_id: loc-land-of-fire
+  - id: loc-konoha-bank
+    kind: location
+    name: Банк Конохи
+    aliases:
+    - Банк Конохи
+    parent_id: loc-konohagakure
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

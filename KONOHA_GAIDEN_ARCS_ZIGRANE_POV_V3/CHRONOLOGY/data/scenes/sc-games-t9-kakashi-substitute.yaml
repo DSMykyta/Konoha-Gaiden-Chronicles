@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-kakashi-substitute
+episode_id: ep-games-t9-preexam-check
+display_rank: 2100
+continuity_id: main
+title: Какаші перевіряє команду замість відсутнього Райдо
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-kakashi-substitute-1
+  display_rank: 100
+  title: Какаші перевіряє команду замість відсутнього Райдо
+  text: Одноденна заміна Райдо дає Какаші можливість побачити трійку зблизька. Він оцінює геометрію рішень Сори, роботу Рена з сокирами та швидку взаємодію учнів. Вправа з реакцією на книжку показує темп, у якому вони вже вміють діяти.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-kakashi-substitute-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-kakashi-substitute.start
+  to: sc-games-t9-kakashi-substitute.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kakashi-substitute-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-kakashi-substitute.start
+  to: sc-games-t9-kakashi-substitute.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kakashi-substitute-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-kakashi-substitute.start
+  to: sc-games-t9-kakashi-substitute.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kakashi-substitute-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-t9-kakashi-substitute.start
+  to: sc-games-t9-kakashi-substitute.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

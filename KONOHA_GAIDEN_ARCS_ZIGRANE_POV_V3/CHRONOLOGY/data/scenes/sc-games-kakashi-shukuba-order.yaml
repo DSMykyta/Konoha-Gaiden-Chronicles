@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-games-kakashi-shukuba-order
+episode_id: ep-games-kakashi-shukuba-contact
+display_rank: 7800
+continuity_id: main
+title: Команда 7 виходить до Шукуби під цивільним прикриттям
+location_id: loc-konoha-gate
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-13
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-shukuba-order-1
+  display_rank: 100
+  title: Команда 7 виходить до Шукуби під цивільним прикриттям
+  text: Команда 7 вирушає за розвідданими до Шукуби без звичних зовнішніх ознак бойового загону. Какаші закриває обличчя медичною маскою та приховує око під пов’язкою; учні підтримують цивільний вигляд групи. Дорогою він бачить Юміко й обмежується коротким привітанням. Завдання полягає в безпечній передачі даних, а не в відкритому бою.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-shukuba-order-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-shukuba-order.start
+  to: sc-games-kakashi-shukuba-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-shukuba-order-c-naruto
+  entity_id: c-naruto
+  from: sc-games-kakashi-shukuba-order.start
+  to: sc-games-kakashi-shukuba-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-shukuba-order-c-sasuke
+  entity_id: c-sasuke
+  from: sc-games-kakashi-shukuba-order.start
+  to: sc-games-kakashi-shukuba-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-shukuba-order-c-sakura
+  entity_id: c-sakura
+  from: sc-games-kakashi-shukuba-order.start
+  to: sc-games-kakashi-shukuba-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

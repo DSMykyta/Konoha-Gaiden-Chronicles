@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-kokuto
+episode_id: ep-games-t9-thread
+display_rank: 900
+continuity_id: main
+title: Райдо вводить основи роботи з кокуто
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-04-13
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-kokuto-1
+  display_rank: 100
+  title: Райдо вводить основи роботи з кокуто
+  text: 'Команда повертається до регулярних вправ після сектора 3-Б. Райдо розбирає стійки, хват і базові рухи з кокуто. Кіта, Рен і Сора відпрацьовують їх під свої види зброї. Побутові місії продовжуються паралельно: новий технічний прийом ще не звільняє учнів від дисципліни та повторення.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-kokuto-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-kokuto.start
+  to: sc-games-t9-kokuto.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kokuto-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-kokuto.start
+  to: sc-games-t9-kokuto.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kokuto-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-kokuto.start
+  to: sc-games-t9-kokuto.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kokuto-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-kokuto.start
+  to: sc-games-t9-kokuto.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

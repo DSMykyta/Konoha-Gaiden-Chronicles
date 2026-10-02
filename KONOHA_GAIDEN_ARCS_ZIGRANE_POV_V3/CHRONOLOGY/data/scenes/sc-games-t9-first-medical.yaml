@@ -1,0 +1,78 @@
+schema_version: 1
+id: sc-games-t9-first-medical
+episode_id: ep-games-t9-first-weapons
+display_rank: 500
+continuity_id: main
+title: Команда пробує перші медичні вправи
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-02-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-first-medical-1
+  display_rank: 100
+  title: Команда пробує перші медичні вправи
+  text: Перші вправи з допомоги показують різний рівень тонкого контролю. Рен упевненіше працює з механічною першою допомогою, у Сори виходить зелена плівка чакри, а Кіта утримує ще тонший і рівніший шар. Райдо приймає це як початок практики.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-2
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-first-medical-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-first-medical.start
+  to: sc-games-t9-first-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-first-medical-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-first-medical.start
+  to: sc-games-t9-first-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-first-medical-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-first-medical.start
+  to: sc-games-t9-first-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-first-medical-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-first-medical.start
+  to: sc-games-t9-first-medical.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

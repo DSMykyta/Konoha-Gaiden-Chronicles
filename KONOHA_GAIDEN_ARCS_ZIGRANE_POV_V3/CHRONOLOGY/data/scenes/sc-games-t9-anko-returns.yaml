@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-anko-returns
+episode_id: ep-games-t9-anko-back
+display_rank: 4600
+continuity_id: main
+title: Анко повертається до Команди 9 й читає звіт Тоуно
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-09-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-anko-returns-1
+  display_rank: 100
+  title: Анко повертається до Команди 9 й читає звіт Тоуно
+  text: Після лікування Анко знову бере щоденне керівництво. Вона читає звіт Тоуно та оцінює зміни, які відбулися за її відсутності. Сора не зберігає запропоновану спільну фотографію, але трійка не відмовляється від нового етапу роботи. Анко дозволяє продовжувати корисні додаткові заняття з Асумою й Куренай.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-anko-returns-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-anko-returns.start
+  to: sc-games-t9-anko-returns.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-returns-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-anko-returns.start
+  to: sc-games-t9-anko-returns.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-returns-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-anko-returns.start
+  to: sc-games-t9-anko-returns.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-returns-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-anko-returns.start
+  to: sc-games-t9-anko-returns.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

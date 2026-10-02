@@ -1,0 +1,104 @@
+schema_version: 1
+id: sc-games-t9-kurenai-cover
+episode_id: ep-games-t9-nobari-medical-mission
+display_rank: 3100
+continuity_id: main
+title: Куренай бере Команду 9 на заняття Команди 8
+location_id: loc-training-ground-8
+day_part: morning
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-kurenai-cover-1
+  display_rank: 100
+  title: Куренай бере Команду 9 на заняття Команди 8
+  text: За відсутності Анко трійка займається поруч із Командою 8. Куренай спостерігає за окремою програмою Сори та проводить спільну практику. Учні отримують підтримку, не втрачаючи свого складу. Звичайна їжа й робота поруч з іншою командою відділяють службову відсутність наставниці від відчуття, ніби їх зовсім залишили без допомоги.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-hinata
+    role: focus
+    mode: physical
+  - entity_id: c-shino
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-kurenai-cover-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kurenai-cover-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kurenai-cover-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kurenai-cover-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kurenai-cover-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kurenai-cover-c-hinata
+  entity_id: c-hinata
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kurenai-cover-c-shino
+  entity_id: c-shino
+  from: sc-games-t9-kurenai-cover.start
+  to: sc-games-t9-kurenai-cover.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

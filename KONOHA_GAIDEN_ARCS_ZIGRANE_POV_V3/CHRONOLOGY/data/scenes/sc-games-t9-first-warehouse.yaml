@@ -1,0 +1,78 @@
+schema_version: 1
+id: sc-games-t9-first-warehouse
+episode_id: ep-games-t9-first-work
+display_rank: 700
+continuity_id: main
+title: Команда 9 виконує першу оплачувану роботу на складі
+location_id: loc-team9-warehouse
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-02-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-first-warehouse-1
+  display_rank: 100
+  title: Команда 9 виконує першу оплачувану роботу на складі
+  text: 'Перший D-ранг виявляється складською роботою: потрібно переносити й упорядковувати вантаж, не створюючи зайвих пошкоджень. Райдо працює разом з учнями й стежить за темпом та безпекою. Після здачі завдання команда отримує першу платню. Зустріч із Нобарі біля резиденції повертає Кіту до звичайних домашніх турбот; грошей на бажане спорядження ще бракує.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-2
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-first-warehouse-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-first-warehouse.start
+  to: sc-games-t9-first-warehouse.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-first-warehouse-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-first-warehouse.start
+  to: sc-games-t9-first-warehouse.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-first-warehouse-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-first-warehouse.start
+  to: sc-games-t9-first-warehouse.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-first-warehouse-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-first-warehouse.start
+  to: sc-games-t9-first-warehouse.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

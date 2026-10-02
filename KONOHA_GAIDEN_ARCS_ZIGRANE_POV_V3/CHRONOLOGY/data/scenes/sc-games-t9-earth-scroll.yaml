@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-earth-scroll
+episode_id: ep-games-t9-death-forest
+display_rank: 2600
+continuity_id: main
+title: Команда 9 здобуває земний сувій у засідці
+location_id: loc-forest-death
+day_part: morning
+placement:
+  anchor_id: ta-games-0-07-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-earth-scroll-1
+  display_rank: 100
+  title: Команда 9 здобуває земний сувій у засідці
+  text: Трійка використовує мотузкову засідку проти пораненої команди Трави й здобуває земний сувій. Рен бере на себе фізичне навантаження та переносить напарників, коли цього потребує маршрут. Потрібна пара тепер у них, але її ще необхідно зберегти до центральної вежі. Бойовий успіх не завершує етап автоматично.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-earth-scroll-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-earth-scroll.start
+  to: sc-games-t9-earth-scroll.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-earth-scroll-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-earth-scroll.start
+  to: sc-games-t9-earth-scroll.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-earth-scroll-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-earth-scroll.start
+  to: sc-games-t9-earth-scroll.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

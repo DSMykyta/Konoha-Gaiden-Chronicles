@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-naruto-ramen
+episode_id: ep-games-t9-first-blink
+display_rank: 1600
+continuity_id: main
+title: Наруто підтримує Кіту в Ічіраку
+location_id: loc-ichiraku
+day_part: evening
+placement:
+  anchor_id: ta-games-0-05-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-naruto-ramen-1
+  display_rank: 100
+  title: Наруто підтримує Кіту в Ічіраку
+  text: 'У розмові в Ічіраку Кіта повертається до відчуття, що стоїть осторонь інших. Наруто говорить із ним прямо й без формальних оцінок: місце в команді та селищі визначають не чужі насмішки. Коротка зустріч підтримує Кіту перед наступною вправою й продовжує їхнє знайомство після повернення Команди 7.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-naruto-ramen-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-naruto-ramen.start
+  to: sc-games-t9-naruto-ramen.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-naruto-ramen-c-naruto
+  entity_id: c-naruto
+  from: sc-games-t9-naruto-ramen.start
+  to: sc-games-t9-naruto-ramen.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-games-kakashi-izakaya-rumor
+episode_id: ep-games-kakashi-return-lunch
+display_rank: 7700
+continuity_id: main
+title: Какаші проводить вечір із колегами після обіду з Юміко
+location_id: loc-konoha-izakaya
+day_part: evening
+placement:
+  anchor_id: ta-games-0-05-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-izakaya-rumor-1
+  display_rank: 100
+  title: Какаші проводить вечір із колегами після обіду з Юміко
+  text: Вечірня розмова колег переходить між особистими справами та чутками про родини й наставників. Какаші гостріше відчуває різницю між чужими жартами й тим, що він сам хотів би отримати від знайомства з Юміко. Зовнішня розслабленість не прибирає його потреби все контролювати й страху перед звичайною близькістю.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-03
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-izakaya-rumor-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-izakaya-rumor.start
+  to: sc-games-kakashi-izakaya-rumor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-izakaya-rumor-c-asuma
+  entity_id: c-asuma
+  from: sc-games-kakashi-izakaya-rumor.start
+  to: sc-games-kakashi-izakaya-rumor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-izakaya-rumor-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-kakashi-izakaya-rumor.start
+  to: sc-games-kakashi-izakaya-rumor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-izakaya-rumor-c-genma
+  entity_id: c-genma
+  from: sc-games-kakashi-izakaya-rumor.start
+  to: sc-games-kakashi-izakaya-rumor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-izakaya-rumor-c-nobari
+  entity_id: c-nobari
+  from: sc-games-kakashi-izakaya-rumor.start
+  to: sc-games-kakashi-izakaya-rumor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-farm-swap
+episode_id: ep-games-t9-touno-start
+display_rank: 3900
+continuity_id: main
+title: Кіта вперше підміняє людину під час постановочного нападу
+location_id: loc-team9-farm-route
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-farm-swap-1
+  display_rank: 100
+  title: Кіта вперше підміняє людину під час постановочного нападу
+  text: Доставка трьох важких пакунків на ферму переривається постановочним нападом. Тоуно спостерігає, коли озброєний нападник заходить надто близько. Кіта підміняє його на дистанції близько семи метрів і падає з дерева. Сора розцінює ситуацію як небезпечну зраду довіри. Рен несе Кіту додому; Нобарі та Іщін допомагають трійці пережити наслідки вправи.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-touno
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-farm-swap-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-farm-swap.start
+  to: sc-games-t9-farm-swap.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-farm-swap-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-farm-swap.start
+  to: sc-games-t9-farm-swap.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-farm-swap-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-farm-swap.start
+  to: sc-games-t9-farm-swap.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-farm-swap-c-touno
+  entity_id: c-touno
+  from: sc-games-t9-farm-swap.start
+  to: sc-games-t9-farm-swap.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

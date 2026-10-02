@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-wave-friends
+episode_id: ep-games-t9-wave-reunion
+display_rank: 1900
+continuity_id: main
+title: Кіта, Рен і Сора зустрічають Наруто після Країни Хвиль
+location_id: loc-ichiraku
+day_part: evening
+placement:
+  anchor_id: ta-games-0-04-13
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-wave-friends-1
+  display_rank: 100
+  title: Кіта, Рен і Сора зустрічають Наруто після Країни Хвиль
+  text: 'Трійка приходить до шпиталю після повернення Команди 7, але всередину їх не допускають. Згодом вони зустрічаються з Наруто в Ічіраку. Він їсть пораненою після місії рукою обережніше та повертається до загибелі Хаку й Забузи. Друзі не перетворюють розмову на змагання подвигами: для них це перша близька зустріч із наслідками справжнього бою.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-wave-friends-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-wave-friends.start
+  to: sc-games-t9-wave-friends.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-wave-friends-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-wave-friends.start
+  to: sc-games-t9-wave-friends.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-wave-friends-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-wave-friends.start
+  to: sc-games-t9-wave-friends.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-wave-friends-c-naruto
+  entity_id: c-naruto
+  from: sc-games-t9-wave-friends.start
+  to: sc-games-t9-wave-friends.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

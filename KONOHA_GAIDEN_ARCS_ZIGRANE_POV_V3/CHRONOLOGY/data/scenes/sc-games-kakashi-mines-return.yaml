@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-kakashi-mines-return
+episode_id: ep-games-kakashi-mines-return
+display_rank: 9000
+continuity_id: main
+title: Ґенма доставляє виснаженого Мікату на відновлення
+location_id: loc-intelligence-division
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-mines-return-1
+  display_rank: 100
+  title: Ґенма доставляє виснаженого Мікату на відновлення
+  text: На відході Міката втрачає залишок сил після тривалого перетворення та роботи з пам’яттю. Ґенма переносить його до Конохи. За наказом Какаші агента передають у медичне крило Відділу допитів для ізоляції та відновлення чакри. Зовнішні жарти не скасовують реального виснаження, з яким він повернувся.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-05
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-mines-return-c-genma
+  entity_id: c-genma
+  from: sc-games-kakashi-mines-return.start
+  to: sc-games-kakashi-mines-return.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-return-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-mines-return.start
+  to: sc-games-kakashi-mines-return.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-return-c-ibiki
+  entity_id: c-ibiki
+  from: sc-games-kakashi-mines-return.start
+  to: sc-games-kakashi-mines-return.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

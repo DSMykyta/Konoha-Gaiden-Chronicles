@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-missing-scrolls
+episode_id: ep-games-t9-death-forest
+display_rank: 2700
+continuity_id: main
+title: Біля вежі Команда 9 виявляє зникнення сувоїв
+location_id: loc-forest-death-tower
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-07-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-missing-scrolls-1
+  display_rank: 100
+  title: Біля вежі Команда 9 виявляє зникнення сувоїв
+  text: У місці, де команда мала тримати сувої, виявляється порожній пакунок. Видимого сліду крадіжки немає, і трійка не може встановити, хто й коли його забрав. Рен звинувачує себе та б’є себе; Сора зупиняє цей зрив і повертає розмову до маршруту. Команда починає відтворювати пройдений шлях, замість того щоб удавати, ніби доказ виконання ще при ній.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-06
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-missing-scrolls-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-missing-scrolls.start
+  to: sc-games-t9-missing-scrolls.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-missing-scrolls-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-missing-scrolls.start
+  to: sc-games-t9-missing-scrolls.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-missing-scrolls-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-missing-scrolls.start
+  to: sc-games-t9-missing-scrolls.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

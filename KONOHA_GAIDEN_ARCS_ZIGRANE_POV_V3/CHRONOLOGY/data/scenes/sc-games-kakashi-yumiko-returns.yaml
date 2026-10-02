@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-yumiko-returns
+episode_id: ep-games-kakashi-return-lunch
+display_rank: 7600
+continuity_id: main
+title: Юміко повертається й обідає з Какаші
+location_id: loc-kakashi-eatery
+day_part: noon
+placement:
+  anchor_id: ta-games-0-05-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-yumiko-returns-1
+  display_rank: 100
+  title: Юміко повертається й обідає з Какаші
+  text: Після поїздки до батьків Юміко знову приходить у забігайлівку. Какаші зустрічається з нею за обідом і називає вівторок та п’ятницю своїми звичними днями. Побутова домовленість ще не є обіцянкою приходити для нього. Обоє отримують можливість продовжити знайомство без службового приводу чи забутого кошика.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-yumiko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-03
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-yumiko-returns-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-yumiko-returns.start
+  to: sc-games-kakashi-yumiko-returns.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-yumiko-returns-c-yumiko
+  entity_id: c-yumiko
+  from: sc-games-kakashi-yumiko-returns.start
+  to: sc-games-kakashi-yumiko-returns.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

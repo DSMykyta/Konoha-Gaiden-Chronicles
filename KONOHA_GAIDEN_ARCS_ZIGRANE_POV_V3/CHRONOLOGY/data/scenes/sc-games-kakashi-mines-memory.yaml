@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-games-kakashi-mines-memory
+episode_id: ep-games-kakashi-mines-collapse
+display_rank: 8900
+continuity_id: main
+title: Група обвалює шахти й приховує підміну Дайкі
+location_id: loc-iwa-mercenary-mines
+day_part: dawn
+placement:
+  anchor_id: ta-games-0-05-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-mines-memory-1
+  display_rank: 100
+  title: Група обвалює шахти й приховує підміну Дайкі
+  text: 'Тензо руйнує основу шахт так, щоб це виглядало як природний зсув. Міката виходить із табору та переносить зліпок пережитого прикриття в пам’ять справжнього Дайкі. Какаші залишає найманця в правдоподібному місці після п’яної сварки й падіння. Група ховає біологічні сліди перетворення та відходить: участь Конохи має залишитися невидимою.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-tenzo
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: focus
+    mode: physical
+  - entity_id: c-daiki
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-05
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-mines-memory-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-mines-memory.start
+  to: sc-games-kakashi-mines-memory.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-memory-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-mines-memory.start
+  to: sc-games-kakashi-mines-memory.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-memory-c-tenzo
+  entity_id: c-tenzo
+  from: sc-games-kakashi-mines-memory.start
+  to: sc-games-kakashi-mines-memory.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-memory-c-genma
+  entity_id: c-genma
+  from: sc-games-kakashi-mines-memory.start
+  to: sc-games-kakashi-mines-memory.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-memory-c-daiki
+  entity_id: c-daiki
+  from: sc-games-kakashi-mines-memory.start
+  to: sc-games-kakashi-mines-memory.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

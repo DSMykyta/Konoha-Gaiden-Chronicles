@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-squirrel-blink
+episode_id: ep-games-t9-first-blink
+display_rank: 1700
+continuity_id: main
+title: Кіта лікує білку й уперше блінкає під час вправи
+location_id: loc-konoha-training-field
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-05-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-squirrel-blink-1
+  display_rank: 100
+  title: Кіта лікує білку й уперше блінкає під час вправи
+  text: 'Кіта закриває рану пораненої білки тонкою медичною плівкою. Під час наступної гри з ловінням птаха він несподівано переміщується високо над землею. Асума встигає підхопити його. Стрибок ще некерований: команда бачить результат, але не має готової схеми, яка пояснює всі умови просторового зсуву.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-squirrel-blink-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-squirrel-blink.start
+  to: sc-games-t9-squirrel-blink.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-squirrel-blink-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-squirrel-blink.start
+  to: sc-games-t9-squirrel-blink.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-squirrel-blink-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-squirrel-blink.start
+  to: sc-games-t9-squirrel-blink.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-squirrel-blink-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-squirrel-blink.start
+  to: sc-games-t9-squirrel-blink.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

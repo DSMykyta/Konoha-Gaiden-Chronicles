@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-base2-prisoner
+episode_id: ep-games-t9-base2-first
+display_rank: 5700
+continuity_id: main
+title: Сора виявляє полоненого з триточковою Проклятою Печаткою
+location_id: loc-oto-base2
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-09-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base2-prisoner-1
+  display_rank: 100
+  title: Сора виявляє полоненого з триточковою Проклятою Печаткою
+  text: У лабораторії команда знаходить прикутого хворого полоненого. Сора помічає три точки знака й пов’язує їх із Печаткою, яку бачила в Анко, але не отримує готового пояснення дослідів. Полоненого не евакуюють живим із бази. Документи запечатують, тіла й сліди знищують; Кіта переживає наслідки, а Рен намагається втримати напарника після завершення роботи.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-base2-prisoner-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base2-prisoner.start
+  to: sc-games-t9-base2-prisoner.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base2-prisoner-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base2-prisoner.start
+  to: sc-games-t9-base2-prisoner.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base2-prisoner-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-base2-prisoner.start
+  to: sc-games-t9-base2-prisoner.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-touno-overtime
+episode_id: ep-games-t9-touno-end
+display_rank: 4100
+continuity_id: main
+title: Сора зупиняє неузгоджене продовження роботи Тоуно
+location_id: loc-training-ground-9
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-touno-overtime-1
+  display_rank: 100
+  title: Сора зупиняє неузгоджене продовження роботи Тоуно
+  text: Тоуно намагається продовжити заняття понад оголошений час. Сора посилається на пункт 4.12 та припиняє роботу трійки, не погоджуючись на зміну правил без попередження. Команда йде разом. Конфлікт стосується довіри й зрозумілих меж командування, а не небажання взагалі тренуватися.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-touno
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-touno-overtime-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-touno-overtime.start
+  to: sc-games-t9-touno-overtime.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-touno-overtime-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-touno-overtime.start
+  to: sc-games-t9-touno-overtime.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-touno-overtime-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-touno-overtime.start
+  to: sc-games-t9-touno-overtime.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-touno-overtime-c-touno
+  entity_id: c-touno
+  from: sc-games-t9-touno-overtime.start
+  to: sc-games-t9-touno-overtime.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

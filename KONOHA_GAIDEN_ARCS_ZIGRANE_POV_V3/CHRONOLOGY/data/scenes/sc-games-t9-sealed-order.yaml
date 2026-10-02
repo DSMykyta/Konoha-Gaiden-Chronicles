@@ -1,0 +1,113 @@
+schema_version: 1
+id: sc-games-t9-sealed-order
+episode_id: ep-games-t9-sealed-departure
+display_rank: 5500
+continuity_id: main
+title: Команда 9 вирушає за запечатаним наказом радників
+location_id: loc-hokage-office
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-sealed-order-1
+  display_rank: 100
+  title: Команда 9 вирушає за запечатаним наказом радників
+  text: Через два дні після Долини Завершення Хомура та Кохару передають запечатаний наказ. Цунаде не може відкрити його повністю й не знає всього маршруту. Кіта, Рен і Сора виходять із Конохи без свого щоденного наставника, зберігаючи звичний клин і власні домовленості. Звичайне очікування наступного короткого D-рангу змінюється тривалою місією без відкритого зв’язку з родинами.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-tsunade
+    role: focus
+    mode: physical
+  - entity_id: c-homura
+    role: focus
+    mode: physical
+  - entity_id: c-koharu
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-sealed-order-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-sealed-order.start
+  to: sc-games-t9-sealed-order.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+  review: accepted
+- id: pr-games-t9-sealed-order-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-sealed-order.start
+  to: sc-games-t9-sealed-order.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+  review: accepted
+- id: pr-games-t9-sealed-order-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-sealed-order.start
+  to: sc-games-t9-sealed-order.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+  review: accepted
+- id: pr-games-t9-sealed-order-c-tsunade
+  entity_id: c-tsunade
+  from: sc-games-t9-sealed-order.start
+  to: sc-games-t9-sealed-order.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+  review: accepted
+- id: pr-games-t9-sealed-order-c-homura
+  entity_id: c-homura
+  from: sc-games-t9-sealed-order.start
+  to: sc-games-t9-sealed-order.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+  review: accepted
+- id: pr-games-t9-sealed-order-c-koharu
+  entity_id: c-koharu
+  from: sc-games-t9-sealed-order.start
+  to: sc-games-t9-sealed-order.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  - evd-games-kakashi-gaiden-07
+  review: accepted

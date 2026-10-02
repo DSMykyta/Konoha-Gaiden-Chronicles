@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-b4-drill
+episode_id: ep-games-t9-b4-design
+display_rank: 3500
+continuity_id: main
+title: Команда 9 складає схему Б-4 з підміною і прихованим виходом
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-08-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-b4-drill-1
+  display_rank: 100
+  title: Команда 9 складає схему Б-4 з підміною і прихованим виходом
+  text: 'Трійка поєднує свої ролі: Кіта стає приманкою, підміна відкриває удар Рена, а Сора приховує відхід і справжній напрямок завершення. Схему Б-4 потрібно повторювати, щоб її темп не залежав від здогадки кожного окремо. Пізніше звістка про госпіталізацію Анко змінює звичайний порядок їхньої роботи.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-08
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-b4-drill-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-b4-drill.start
+  to: sc-games-t9-b4-drill.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-b4-drill-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-b4-drill.start
+  to: sc-games-t9-b4-drill.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-b4-drill-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-b4-drill.start
+  to: sc-games-t9-b4-drill.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

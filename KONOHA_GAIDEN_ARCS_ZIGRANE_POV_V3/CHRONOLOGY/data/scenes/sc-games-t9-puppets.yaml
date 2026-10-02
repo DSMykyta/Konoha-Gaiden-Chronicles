@@ -1,0 +1,78 @@
+schema_version: 1
+id: sc-games-t9-puppets
+episode_id: ep-games-t9-first-weapons
+display_rank: 300
+continuity_id: main
+title: Райдо перевіряє команду на тренувальних ляльках
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-01-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-puppets-1
+  display_rank: 100
+  title: Райдо перевіряє команду на тренувальних ляльках
+  text: На полігоні команда працює з тренувальними ляльками. Рен ламає свою мішень і сприймає невдачу гостріше, ніж того вимагає сама вправа. Райдо розбирає різницю між силою, точністю й керованим рухом. Учні отримують можливість пробувати чакропровідну зброю, але позичені клинки ще не стають їхнім остаточним спорядженням.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-2
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-puppets-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-puppets.start
+  to: sc-games-t9-puppets.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-puppets-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-puppets.start
+  to: sc-games-t9-puppets.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-puppets-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-puppets.start
+  to: sc-games-t9-puppets.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-puppets-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-puppets.start
+  to: sc-games-t9-puppets.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

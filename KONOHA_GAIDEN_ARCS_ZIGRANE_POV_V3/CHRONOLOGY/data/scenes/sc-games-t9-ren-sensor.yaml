@@ -1,0 +1,94 @@
+schema_version: 1
+id: sc-games-t9-ren-sensor
+episode_id: ep-games-t9-preexam-check
+display_rank: 2000
+continuity_id: main
+title: Рен виявляє сенсорне чуття в грі із зав’язаними очима
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-27
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-ren-sensor-1
+  display_rank: 100
+  title: Рен виявляє сенсорне чуття в грі із зав’язаними очима
+  text: 'Під час гри із зав’язаними очима Рен відстежує Кібу й Акамару. Тихий блінк Кіти та прихований крок Сори допомагають відділити це сприйняття від звичайного слуху. Рен уперше отримує ясний доказ власної здібності, яку раніше не міг назвати. Радість пов’язана не лише з користю для бою: він перестає бачити себе найповільнішим у трійці.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-akamaru
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-05
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-ren-sensor-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-ren-sensor.start
+  to: sc-games-t9-ren-sensor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-ren-sensor-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-ren-sensor.start
+  to: sc-games-t9-ren-sensor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-ren-sensor-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-ren-sensor.start
+  to: sc-games-t9-ren-sensor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-ren-sensor-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-ren-sensor.start
+  to: sc-games-t9-ren-sensor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-ren-sensor-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-ren-sensor.start
+  to: sc-games-t9-ren-sensor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-ren-sensor-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-ren-sensor.start
+  to: sc-games-t9-ren-sensor.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

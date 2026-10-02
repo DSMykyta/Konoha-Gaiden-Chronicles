@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-team9-assigned
+episode_id: ep-games-kakashi-team9-start
+display_rank: 9300
+continuity_id: main
+title: Какаші отримує тимчасове командування Командою 9 на ескорт
+location_id: loc-hokage-office
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-09-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-team9-assigned-1
+  display_rank: 100
+  title: Какаші отримує тимчасове командування Командою 9 на ескорт
+  text: 'Какаші просить завдання, яке змусить його зосередитися на роботі. Цунаде дає короткий супровід чиновника з документами й тимчасово підпорядковує йому Команду 9. Це не друга передача від Райдо: Анко вже є постійною наставницею трійки. Перед виходом Какаші має перевірити їхній темп і спосіб зв’язку.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-tsunade
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-team9-assigned-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-team9-assigned.start
+  to: sc-games-kakashi-team9-assigned.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-assigned-c-tsunade
+  entity_id: c-tsunade
+  from: sc-games-kakashi-team9-assigned.start
+  to: sc-games-kakashi-team9-assigned.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

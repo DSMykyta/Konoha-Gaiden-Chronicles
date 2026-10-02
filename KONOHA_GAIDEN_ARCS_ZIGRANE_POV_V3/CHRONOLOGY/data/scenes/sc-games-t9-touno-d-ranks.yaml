@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-touno-d-ranks
+episode_id: ep-games-t9-touno-start
+display_rank: 3800
+continuity_id: main
+title: Команда 9 продовжує звичайні D-ранги з Тоуно
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-19
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-touno-d-ranks-1
+  display_rank: 100
+  title: Команда 9 продовжує звичайні D-ранги з Тоуно
+  text: 'Під тимчасовим керівництвом команда виконує побутові доручення: прополювання, перенесення меблів і роботу з рибним складом. Учні тримають спільний темп, поки Тоуно оцінює їх через звітність та виміри. Ця рутина зберігає дохід і практику, але ще не дає того взаємного розуміння, яке вони мали з Райдо.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-touno
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-touno-d-ranks-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-touno-d-ranks.start
+  to: sc-games-t9-touno-d-ranks.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-touno-d-ranks-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-touno-d-ranks.start
+  to: sc-games-t9-touno-d-ranks.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-touno-d-ranks-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-touno-d-ranks.start
+  to: sc-games-t9-touno-d-ranks.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-touno-d-ranks-c-touno
+  entity_id: c-touno
+  from: sc-games-t9-touno-d-ranks.start
+  to: sc-games-t9-touno-d-ranks.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

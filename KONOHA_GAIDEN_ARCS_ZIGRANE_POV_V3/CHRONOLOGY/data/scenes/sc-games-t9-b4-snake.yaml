@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-t9-b4-snake
+episode_id: ep-games-t9-anko-back
+display_rank: 4700
+continuity_id: main
+title: Команда 9 випробовує Б-4 у вправі зі зміями
+location_id: loc-training-ground-9
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-09-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-b4-snake-1
+  display_rank: 100
+  title: Команда 9 випробовує Б-4 у вправі зі зміями
+  text: У вправі з переслідуванням змій трійка застосовує підміну й приховану атаку. Б-4 дістає Анко в руку та кисть; наставниця визнає результат, а не вимагає, щоб учні повторили її власний стиль. Під час роботи вони бачать її Прокляту Печатку. Побачений знак ще не дає їм знання про походження чи всі властивості прокляття.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-b4-snake-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-b4-snake.start
+  to: sc-games-t9-b4-snake.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-b4-snake-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-b4-snake.start
+  to: sc-games-t9-b4-snake.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-b4-snake-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-b4-snake.start
+  to: sc-games-t9-b4-snake.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-b4-snake-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-b4-snake.start
+  to: sc-games-t9-b4-snake.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

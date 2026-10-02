@@ -1,0 +1,104 @@
+schema_version: 1
+id: sc-games-t9-raido-absence
+episode_id: ep-games-t9-first-blink
+display_rank: 1500
+continuity_id: main
+title: Команда 9 працює без Райдо поруч із Командою 10
+location_id: loc-konoha-training-field
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-raido-absence-1
+  display_rank: 100
+  title: Команда 9 працює без Райдо поруч із Командою 10
+  text: Райдо на кілька днів відправляють на інше завдання. Учні продовжують свої доручення й отримують дозволену підтримку на полігоні Команди 10. Тимчасова відсутність не означає передачу наставництва Асумі. Для трійки це можливість перевірити свої домовленості без постійної присутності Райдо.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: focus
+    mode: physical
+  - entity_id: c-shikamaru
+    role: focus
+    mode: physical
+  - entity_id: c-choji
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-raido-absence-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-raido-absence.start
+  to: sc-games-t9-raido-absence.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-raido-absence-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-raido-absence.start
+  to: sc-games-t9-raido-absence.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-raido-absence-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-raido-absence.start
+  to: sc-games-t9-raido-absence.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-raido-absence-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-raido-absence.start
+  to: sc-games-t9-raido-absence.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-raido-absence-c-ino
+  entity_id: c-ino
+  from: sc-games-t9-raido-absence.start
+  to: sc-games-t9-raido-absence.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-raido-absence-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-games-t9-raido-absence.start
+  to: sc-games-t9-raido-absence.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-raido-absence-c-choji
+  entity_id: c-choji
+  from: sc-games-t9-raido-absence.start
+  to: sc-games-t9-raido-absence.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

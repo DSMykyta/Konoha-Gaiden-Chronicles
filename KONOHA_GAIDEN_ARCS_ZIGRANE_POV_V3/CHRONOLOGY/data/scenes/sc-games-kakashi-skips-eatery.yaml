@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-games-kakashi-skips-eatery
+episode_id: ep-games-kakashi-shukuba-leads
+display_rank: 8400
+continuity_id: main
+title: Какаші свідомо пропускає звичні дні в забігайлівці
+location_id: loc-kakashi-home
+day_part: evening
+placement:
+  anchor_id: ta-games-0-05-22
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-skips-eatery-1
+  display_rank: 100
+  title: Какаші свідомо пропускає звичні дні в забігайлівці
+  text: Після зустрічі з братом Такумі Какаші вирішує не приходити до забігайлівки у свої звичні дні. Він намагається відступити від очікування Юміко, а не створити для неї нову незручну сцену. Патрулі та звичайні завдання заповнюють паузу, але внутрішнє питання про можливість мирного життя залишається.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-skips-eatery-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-skips-eatery.start
+  to: sc-games-kakashi-skips-eatery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-kakashi-mines-order
+episode_id: ep-games-kakashi-iwa-mines-brief
+display_rank: 8500
+continuity_id: main
+title: Хірузен доручає Какаші приховано зруйнувати шахти найманців Іви
+location_id: loc-hokage-office
+day_part: morning
+placement:
+  anchor_id: ta-games-0-05-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-mines-order-1
+  display_rank: 100
+  title: Хірузен доручає Какаші приховано зруйнувати шахти найманців Іви
+  text: 'На основі розвідданих Коноха встановлює місце перебування найманців Іви в покинутих шахтах біля кордону Трави. Відкритий удар може стати приводом до війни. Хірузен доручає Какаші провести диверсію без видимих ознак участі селища: обвал має виглядати як зсув ґрунту та внутрішній хаос табору. Ібікі залучає Мікату до прихованої частини операції.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-mines-order-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-games-kakashi-mines-order.start
+  to: sc-games-kakashi-mines-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-order-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-mines-order.start
+  to: sc-games-kakashi-mines-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-order-c-ibiki
+  entity_id: c-ibiki
+  from: sc-games-kakashi-mines-order.start
+  to: sc-games-kakashi-mines-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-games-kakashi-shukuba-transfer
+episode_id: ep-games-kakashi-shukuba-contact
+display_rank: 7900
+continuity_id: main
+title: Какаші отримує від Мікати сувій у Шукубі
+location_id: loc-shukuba-contact-room
+day_part: evening
+placement:
+  anchor_id: ta-games-0-05-13
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-shukuba-transfer-1
+  display_rank: 100
+  title: Какаші отримує від Мікати сувій у Шукубі
+  text: У закритій точці зустрічі Какаші знаходить Мікату під глибоким цивільним прикриттям. Саске впізнає знайомий відбиток чакри й розуміє, що перед ними службовий контакт. Наставник отримує сувій зі звітом, обмежує втручання учнів і витримує потрібний для прикриття час перед виходом. Зовнішня роль Мікати не змінює мети передачі.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-shukuba-transfer-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-shukuba-transfer.start
+  to: sc-games-kakashi-shukuba-transfer.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-shukuba-transfer-c-naruto
+  entity_id: c-naruto
+  from: sc-games-kakashi-shukuba-transfer.start
+  to: sc-games-kakashi-shukuba-transfer.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-shukuba-transfer-c-sasuke
+  entity_id: c-sasuke
+  from: sc-games-kakashi-shukuba-transfer.start
+  to: sc-games-kakashi-shukuba-transfer.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-shukuba-transfer-c-sakura
+  entity_id: c-sakura
+  from: sc-games-kakashi-shukuba-transfer.start
+  to: sc-games-kakashi-shukuba-transfer.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-shukuba-transfer-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-shukuba-transfer.start
+  to: sc-games-kakashi-shukuba-transfer.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

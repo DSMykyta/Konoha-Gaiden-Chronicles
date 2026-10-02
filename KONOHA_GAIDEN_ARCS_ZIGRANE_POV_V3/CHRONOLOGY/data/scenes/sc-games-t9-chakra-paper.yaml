@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-chakra-paper
+episode_id: ep-games-t9-asuma-anchor
+display_rank: 4500
+continuity_id: main
+title: Кіта визначає вітер і вогонь на чакровому папері
+location_id: loc-konoha-training-field
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-chakra-paper-1
+  display_rank: 100
+  title: Кіта визначає вітер і вогонь на чакровому папері
+  text: Перевірка чакровим папером показує вітер і вогонь. Асума пояснює власний шлях, згадує Храм Вогню й Чіріку та допомагає Кіті спрямувати вітер через клинок. Особиста прихильність учня залишається поряд із професійним навчанням, але не замінює безпечних меж. Новий результат треба утримувати й повторювати, перш ніж переносити в бій.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-chakra-paper-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-chakra-paper.start
+  to: sc-games-t9-chakra-paper.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-chakra-paper-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-chakra-paper.start
+  to: sc-games-t9-chakra-paper.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

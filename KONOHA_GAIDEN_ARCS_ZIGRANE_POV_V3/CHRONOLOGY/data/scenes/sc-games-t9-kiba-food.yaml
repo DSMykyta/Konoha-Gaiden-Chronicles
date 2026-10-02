@@ -1,0 +1,66 @@
+schema_version: 1
+id: sc-games-t9-kiba-food
+episode_id: ep-games-t9-home-notes
+display_rank: 100
+continuity_id: main
+title: Кіта знайомиться з Кібою після перевірки Райдо
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-01-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-kiba-food-1
+  display_rank: 100
+  title: Кіта знайомиться з Кібою після перевірки Райдо
+  text: На стежці від дев’ятого поля Кіту чекає Кіба. Кіба приносить два пакунки рисових кульок і відразу віддає один другові. Вони обговорюють Куренай, Рена, Сору та перевірку Райдо. Кіба переказує, що його мати бачила Наміаші на чергуваннях у резиденції й вважає надійним охоронцем. Акамару лиже рукавичку Кіти, і хлопець ховає долоню в кишеню.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-2
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-kiba-food-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-kiba-food.start
+  to: sc-games-t9-kiba-food.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kiba-food-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-kiba-food.start
+  to: sc-games-t9-kiba-food.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kiba-food-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-kiba-food.start
+  to: sc-games-t9-kiba-food.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

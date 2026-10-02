@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-yumiko-balcony
+episode_id: ep-games-kakashi-after-archive
+display_rank: 7300
+continuity_id: main
+title: Какаші бачить темний балкон Юміко й говорить із Шікаку
+location_id: loc-sakura-neighborhood
+day_part: evening
+placement:
+  anchor_id: ta-games-0-04-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-yumiko-balcony-1
+  display_rank: 100
+  title: Какаші бачить темний балкон Юміко й говорить із Шікаку
+  text: На третій день Какаші приходить до балкона Юміко й не знаходить простого способу встановити контакт. Розмова з Шікаку повертає його до різниці між рішучістю шинобі та тиском на цивільну людину. Какаші має дати їй можливість власного вибору, а не підмінити знайомство ідеально організованим перехопленням.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-shikaku
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-yumiko-balcony-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-yumiko-balcony.start
+  to: sc-games-kakashi-yumiko-balcony.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-yumiko-balcony-c-shikaku
+  entity_id: c-shikaku
+  from: sc-games-kakashi-yumiko-balcony.start
+  to: sc-games-kakashi-yumiko-balcony.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

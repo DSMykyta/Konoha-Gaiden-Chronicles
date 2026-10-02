@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-games-kakashi-team9-inn
+episode_id: ep-games-kakashi-team9-road
+display_rank: 9700
+continuity_id: main
+title: Какаші спостерігає за побутовою взаємодією трійки на нічлігу
+location_id: loc-team9-road-inn
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-team9-inn-1
+  display_rank: 100
+  title: Какаші спостерігає за побутовою взаємодією трійки на нічлігу
+  text: Після виконання першої частини супроводу група ночує в рьокані. Рен бере більше їжі відповідно до навантаження, а Сора й Кіта легко ділять порції та простір. Какаші бачить сталі домовленості, які підтримують фізичний баланс і спокій команди. Вони не потребують постійного командирського пояснення кожної дрібної дії.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-kakashi-team9-inn-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-team9-inn.start
+  to: sc-games-kakashi-team9-inn.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-inn-c-kita
+  entity_id: c-kita
+  from: sc-games-kakashi-team9-inn.start
+  to: sc-games-kakashi-team9-inn.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-inn-c-ren
+  entity_id: c-ren
+  from: sc-games-kakashi-team9-inn.start
+  to: sc-games-kakashi-team9-inn.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-inn-c-sora
+  entity_id: c-sora
+  from: sc-games-kakashi-team9-inn.start
+  to: sc-games-kakashi-team9-inn.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

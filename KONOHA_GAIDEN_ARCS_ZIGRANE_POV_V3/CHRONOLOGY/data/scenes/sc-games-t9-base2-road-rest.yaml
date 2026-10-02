@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-base2-road-rest
+episode_id: ep-games-t9-base2-first
+display_rank: 5800
+continuity_id: main
+title: Команда 9 повертає зовнішній спокій після зачистки
+location_id: loc-land-of-fire
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base2-road-rest-1
+  display_rank: 100
+  title: Команда 9 повертає зовнішній спокій після зачистки
+  text: Після знищення слідів трійка миється, приводить речі до звичайного вигляду й продовжує маршрут. Зовнішня тиша не означає, що побачене в лабораторії вже осмислено. Рен підтримує Кіту, а Сора зберігає службові матеріали окремо від розмов. Вони продовжують діяти як команда, хоча тепер несуть досвід реальної загибелі людей.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-base2-road-rest-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base2-road-rest.start
+  to: sc-games-t9-base2-road-rest.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base2-road-rest-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base2-road-rest.start
+  to: sc-games-t9-base2-road-rest.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base2-road-rest-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-base2-road-rest.start
+  to: sc-games-t9-base2-road-rest.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

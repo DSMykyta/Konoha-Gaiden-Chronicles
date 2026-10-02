@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-first-bottle
+episode_id: ep-games-t9-asuma-anchor
+display_rank: 4400
+continuity_id: main
+title: Кіта прив’язує просторову вправу до пляшки води
+location_id: loc-konoha-training-field
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-27
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-first-bottle-1
+  display_rank: 100
+  title: Кіта прив’язує просторову вправу до пляшки води
+  text: У практиці з’являється пляшка води як предмет, до якого можна прив’язати дію. Удома Нобарі випадково випиває її вміст; проста заміна на іншу пляшку не відновлює попередній зв’язок. Кіта бачить, що значення має конкретний предмет та встановлена взаємодія, а не сама побутова назва речі.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-09
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-first-bottle-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-first-bottle.start
+  to: sc-games-t9-first-bottle.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-first-bottle-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-first-bottle.start
+  to: sc-games-t9-first-bottle.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

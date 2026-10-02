@@ -1,0 +1,56 @@
+schema_version: 1
+id: sc-games-t9-nobari-notebook
+episode_id: ep-games-t9-home-notes
+display_rank: 200
+continuity_id: main
+title: Нобарі дає Кіті старий медичний конспект
+location_id: loc-kita-home
+day_part: evening
+placement:
+  anchor_id: ta-games-0-01-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-notebook-1
+  display_rank: 100
+  title: Нобарі дає Кіті старий медичний конспект
+  text: 'Удома Кіта отримує старі медичні записи Нобарі й пробує тонко спрямувати чакру на листок фікуса. Рівний розріз з’являється без грубого зусилля. Це домашня спроба та матеріал для подальшої роботи, а не завершене медичне навчання: Кіта ще має навчитися розуміти межі й наслідки власного контролю.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-02-1
+  - evd-games-team-9-02-2
+  - evd-games-team-9-02-3
+  - evd-games-team-9-02-4
+  - evd-games-team-9-02-5
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-nobari-notebook-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-nobari-notebook.start
+  to: sc-games-t9-nobari-notebook.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-nobari-notebook-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-nobari-notebook.start
+  to: sc-games-t9-nobari-notebook.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

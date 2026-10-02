@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-takumi-brother
+episode_id: ep-games-kakashi-shukuba-leads
+display_rank: 8200
+continuity_id: main
+title: Какаші зустрічає молодшого брата загиблого Такумі
+location_id: loc-konohagakure
+day_part: evening
+placement:
+  anchor_id: ta-games-0-05-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-takumi-brother-1
+  display_rank: 100
+  title: Какаші зустрічає молодшого брата загиблого Такумі
+  text: 'Після невдалого очікування Какаші зустрічає молодшого брата Такумі. Хлопець дякує за повернення тіла загиблого шинобі. Для Какаші це нагадування про ту частину його роботи, яку цивільні родини переживають без бойової дистанції. Смерть Такумі не стає новою місією цього дня: зустріч повертає до вже пережитої втрати.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-takumi-brother
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-takumi-brother-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-takumi-brother.start
+  to: sc-games-kakashi-takumi-brother.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-takumi-brother-c-takumi-brother
+  entity_id: c-takumi-brother
+  from: sc-games-kakashi-takumi-brother.start
+  to: sc-games-kakashi-takumi-brother.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

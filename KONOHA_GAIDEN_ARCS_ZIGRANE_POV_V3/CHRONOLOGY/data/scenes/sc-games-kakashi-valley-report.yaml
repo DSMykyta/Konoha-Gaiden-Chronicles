@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-valley-report
+episode_id: ep-games-kakashi-valley-consequences
+display_rank: 9900
+continuity_id: main
+title: Какаші звітує Цунаде після повернення Наруто
+location_id: loc-hokage-office
+day_part: evening
+placement:
+  anchor_id: ta-games-0-09-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-valley-report-1
+  display_rank: 100
+  title: Какаші звітує Цунаде після повернення Наруто
+  text: 'Після доставки Наруто до шпиталю Какаші передає Цунаде результат погоні. Саске не повернуто, учасники загону поранені, а звичний склад Команди 7 більше не може працювати як раніше. Наставник має відділити особисту провину від конкретних наступних рішень: лікування, розшуку та захисту живих учнів.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-tsunade
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-07
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-valley-report-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-valley-report.start
+  to: sc-games-kakashi-valley-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-valley-report-c-tsunade
+  entity_id: c-tsunade
+  from: sc-games-kakashi-valley-report.start
+  to: sc-games-kakashi-valley-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

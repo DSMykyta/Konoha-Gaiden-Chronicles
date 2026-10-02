@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-kunai-thread
+episode_id: ep-games-t9-thread
+display_rank: 1000
+continuity_id: main
+title: Кіта показує Райдо керування кунаєм через нитку
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-04-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-kunai-thread-1
+  display_rank: 100
+  title: Кіта показує Райдо керування кунаєм через нитку
+  text: Кіта зізнається, що спрямовував кунай чакрою й боявся, ніби це нечесна заміна нормальної навички. Райдо пояснює різницю між звичайною чакрониткою та коротким ривком без видимого з’єднання. Він дозволяє розвивати контроль, але вимагає перевіряти межі, а не сприймати перший успіх як готову універсальну техніку.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-kunai-thread-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-kunai-thread.start
+  to: sc-games-t9-kunai-thread.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-kunai-thread-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-kunai-thread.start
+  to: sc-games-t9-kunai-thread.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

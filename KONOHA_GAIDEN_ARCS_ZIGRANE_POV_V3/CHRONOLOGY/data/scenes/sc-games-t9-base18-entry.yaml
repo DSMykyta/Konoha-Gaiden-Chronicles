@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-base18-entry
+episode_id: ep-games-t9-base18-entry
+display_rank: 5900
+continuity_id: main
+title: Команда 9 проникає на Базу 18
+location_id: loc-oto-base18
+day_part: morning
+placement:
+  anchor_id: ta-games-0-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base18-entry-1
+  display_rank: 100
+  title: Команда 9 проникає на Базу 18
+  text: На третьому місяці місії команда виходить до центрального комплексу з лабораторією та складом. Кіта й Рен усувають охорону, включно з бійцем із наґінатою; підміна не залишає йому можливості провести звичайний двобій. Сора бере внутрішній напрямок. Після попередньої бази трійка вже очікує дослідів над людьми, але ще не знає їхнього масштабу.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-13
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-base18-entry-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base18-entry.start
+  to: sc-games-t9-base18-entry.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base18-entry-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base18-entry.start
+  to: sc-games-t9-base18-entry.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base18-entry-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-base18-entry.start
+  to: sc-games-t9-base18-entry.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

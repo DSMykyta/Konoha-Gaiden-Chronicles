@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-first-mikata
+episode_id: ep-games-kakashi-park-name
+display_rank: 6700
+continuity_id: main
+title: Какаші вперше знайомиться з Мікатою у Відділі допитів
+location_id: loc-intelligence-division
+day_part: morning
+placement:
+  anchor_id: ta-games-0-03-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-first-mikata-1
+  display_rank: 100
+  title: Какаші вперше знайомиться з Мікатою у Відділі допитів
+  text: 'У Відділі розвідки та допитів Какаші вперше бачить Мікату за роботою. Манера спеціаліста різко відрізняється від звичного прямого командування, але його місце у службовій системі зрозуміле. Знайомство відбувається до спільного архівного розслідування й майбутнього конвою Команди 7: вони ще не працювали разом над цими справами.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-first-mikata-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-first-mikata.start
+  to: sc-games-kakashi-first-mikata.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-first-mikata-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-first-mikata.start
+  to: sc-games-kakashi-first-mikata.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

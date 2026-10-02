@@ -1,0 +1,84 @@
+schema_version: 1
+id: sc-games-kakashi-team9-client
+episode_id: ep-games-kakashi-team9-start
+display_rank: 9500
+continuity_id: main
+title: Какаші захищає професійний статус команди перед чиновником
+location_id: loc-konoha-gate
+day_part: morning
+placement:
+  anchor_id: ta-games-0-09-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-team9-client-1
+  display_rank: 100
+  title: Какаші захищає професійний статус команди перед чиновником
+  text: 'На воротах замовник сумнівається в трьох підлітках, яким доручили його супровід. Какаші припиняє зневажливу оцінку й задає робочу формацію: Рен попереду, Сора поруч із клієнтом, Кіта позаду та в розвідці. Наставник не замінює їм Райдо, але бере відповідальність за спини учнів під час маршруту.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-escort-official
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-kakashi-team9-client-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-team9-client.start
+  to: sc-games-kakashi-team9-client.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-client-c-kita
+  entity_id: c-kita
+  from: sc-games-kakashi-team9-client.start
+  to: sc-games-kakashi-team9-client.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-client-c-ren
+  entity_id: c-ren
+  from: sc-games-kakashi-team9-client.start
+  to: sc-games-kakashi-team9-client.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-client-c-sora
+  entity_id: c-sora
+  from: sc-games-kakashi-team9-client.start
+  to: sc-games-kakashi-team9-client.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-client-c-escort-official
+  entity_id: c-escort-official
+  from: sc-games-kakashi-team9-client.start
+  to: sc-games-kakashi-team9-client.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

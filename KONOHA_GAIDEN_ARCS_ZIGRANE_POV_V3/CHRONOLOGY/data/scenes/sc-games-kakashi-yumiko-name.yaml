@@ -1,0 +1,72 @@
+schema_version: 1
+id: sc-games-kakashi-yumiko-name
+episode_id: ep-games-kakashi-after-archive
+display_rank: 7100
+continuity_id: main
+title: Сакура називає Какаші ім’я Юміко
+location_id: loc-konoha-training-field
+day_part: morning
+placement:
+  anchor_id: ta-games-0-04-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-yumiko-name-1
+  display_rank: 100
+  title: Сакура називає Какаші ім’я Юміко
+  text: Після операції в цивільному архіві Сакура називає ім’я Юміко й повертається до їхньої попередньої розмови. Какаші вже бачив жінку наляканою серед працівниць, яких не затримали. Ім’я робить його увагу особистішою, але не дає права користуватися архівною справою для приватного зближення. Звичайне тренування Команди 7 продовжується.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-yumiko-name-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-yumiko-name.start
+  to: sc-games-kakashi-yumiko-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-yumiko-name-c-sakura
+  entity_id: c-sakura
+  from: sc-games-kakashi-yumiko-name.start
+  to: sc-games-kakashi-yumiko-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-yumiko-name-c-naruto
+  entity_id: c-naruto
+  from: sc-games-kakashi-yumiko-name.start
+  to: sc-games-kakashi-yumiko-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-yumiko-name-c-sasuke
+  entity_id: c-sasuke
+  from: sc-games-kakashi-yumiko-name.start
+  to: sc-games-kakashi-yumiko-name.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

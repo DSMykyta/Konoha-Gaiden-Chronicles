@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-games-t9-base2-scout
+episode_id: ep-games-t9-base2-first
+display_rank: 5600
+continuity_id: main
+title: Команда 9 розвідує дві будівлі Бази 2
+location_id: loc-oto-base2
+day_part: morning
+placement:
+  anchor_id: ta-games-0-09-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-base2-scout-1
+  display_rank: 100
+  title: Команда 9 розвідує дві будівлі Бази 2
+  text: 'На підході до двох будівель Рен помилково відчуває лише двох малих охоронців замість чотирьох. Трійка діє за своєю схемою: Кіта й Рен беруть зовнішню частину, Сора — більшу будівлю. Контакт закінчується загибеллю охоронців, озброєних людей усередині та беззбройного дослідника. Перший результат уже не схожий на постановочну засідку: загиблих неможливо повернути медичною вправою.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-12
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-base2-scout-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-base2-scout.start
+  to: sc-games-t9-base2-scout.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base2-scout-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-base2-scout.start
+  to: sc-games-t9-base2-scout.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-base2-scout-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-base2-scout.start
+  to: sc-games-t9-base2-scout.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

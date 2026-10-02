@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-t9-wind-column
+episode_id: ep-games-t9-new-burns
+display_rank: 4900
+continuity_id: main
+title: Райдо зупиняє вправу після несподіваного розрізу стовпа
+location_id: loc-training-ground-9
+day_part: morning
+placement:
+  anchor_id: ta-games-0-09-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-wind-column-1
+  display_rank: 100
+  title: Райдо зупиняє вправу після несподіваного розрізу стовпа
+  text: Під час показу вітряного клинка Кіта несподівано розрізає стовп. Райдо не робить із цього приводу негайний дозвіл на сильніші атаки. Він забороняє повторювати прийом, доки вони не зрозуміють, що саме сталося й наскільки керований результат. Велика сила тут стає питанням контролю та відповідальності.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-10
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-t9-wind-column-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-wind-column.start
+  to: sc-games-t9-wind-column.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-wind-column-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-wind-column.start
+  to: sc-games-t9-wind-column.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

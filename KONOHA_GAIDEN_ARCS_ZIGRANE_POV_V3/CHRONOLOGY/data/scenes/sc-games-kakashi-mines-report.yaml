@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-kakashi-mines-report
+episode_id: ep-games-kakashi-mines-return
+display_rank: 9100
+continuity_id: main
+title: Какаші звітує Хірузену про обвал шахт
+location_id: loc-hokage-office
+day_part: noon
+placement:
+  anchor_id: ta-games-0-05-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-mines-report-1
+  display_rank: 100
+  title: Какаші звітує Хірузену про обвал шахт
+  text: Какаші здає негайний усний звіт і готує письмовий рапорт. Шахти зруйновано, група повернулася, а прикриття має пояснити те, що бачили найманці, без згадки про Коноху. Ціна операції включає виснаження Мікати, якого відправили на відновлення.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: focus
+    mode: physical
+  - entity_id: c-tenzo
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-05
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-mines-report-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-mines-report.start
+  to: sc-games-kakashi-mines-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-report-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-games-kakashi-mines-report.start
+  to: sc-games-kakashi-mines-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-report-c-tenzo
+  entity_id: c-tenzo
+  from: sc-games-kakashi-mines-report.start
+  to: sc-games-kakashi-mines-report.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

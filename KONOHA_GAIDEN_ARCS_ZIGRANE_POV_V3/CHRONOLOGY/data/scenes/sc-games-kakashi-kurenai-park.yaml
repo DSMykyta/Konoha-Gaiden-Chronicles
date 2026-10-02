@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-kurenai-park
+episode_id: ep-games-kakashi-garden-yumiko
+display_rank: 7500
+continuity_id: main
+title: Какаші говорить із Куренай у парку
+location_id: loc-konoha-park
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-05-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-kurenai-park-1
+  display_rank: 100
+  title: Какаші говорить із Куренай у парку
+  text: Між тренуваннями та побутовими місіями Какаші зустрічає Куренай у парку. Розмова повертає його до власної поведінки й невпевненості в мирному знайомстві. Він може бути точним командиром на складному маршруті й водночас не знати, як не налякати людину за звичайним столом. Підтримка колеги не дає готової відповіді замість його власного рішення.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-02
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-kurenai-park-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-kurenai-park.start
+  to: sc-games-kakashi-kurenai-park.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-kurenai-park-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-kakashi-kurenai-park.start
+  to: sc-games-kakashi-kurenai-park.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

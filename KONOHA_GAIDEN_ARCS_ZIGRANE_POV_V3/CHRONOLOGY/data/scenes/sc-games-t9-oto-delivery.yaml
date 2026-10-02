@@ -1,0 +1,114 @@
+schema_version: 1
+id: sc-games-t9-oto-delivery
+episode_id: ep-games-t9-thread
+display_rank: 1100
+continuity_id: main
+title: Команди 9 і 10 доставляють документи на пости
+location_id: loc-konoha-outskirts
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-05-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-oto-delivery-1
+  display_rank: 100
+  title: Команди 9 і 10 доставляють документи на пости
+  text: Спільна доставка документів веде Команди 9 і 10 через три пости. Дорогою вони зустрічають майбутніх учасників іспиту зі Звуку; звичайний службовий маршрут дає учням відчути присутність інших селищ. Після роботи Асума призначає додаткову вправу на наступний день. Командування Командою 9 при цьому залишається в Райдо.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: focus
+    mode: physical
+  - entity_id: c-shikamaru
+    role: focus
+    mode: physical
+  - entity_id: c-choji
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-04
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-oto-delivery-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-oto-delivery-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-oto-delivery-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-oto-delivery-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-oto-delivery-c-asuma
+  entity_id: c-asuma
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-oto-delivery-c-ino
+  entity_id: c-ino
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-oto-delivery-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-oto-delivery-c-choji
+  entity_id: c-choji
+  from: sc-games-t9-oto-delivery.start
+  to: sc-games-t9-oto-delivery.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

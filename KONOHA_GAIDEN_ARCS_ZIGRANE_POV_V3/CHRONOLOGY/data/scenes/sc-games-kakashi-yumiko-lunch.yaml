@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-games-kakashi-yumiko-lunch
+episode_id: ep-games-kakashi-first-meetings
+display_rank: 6300
+continuity_id: main
+title: Какаші вперше помічає Юміко за обідом
+location_id: loc-kakashi-eatery
+day_part: noon
+placement:
+  anchor_id: ta-games-0-02-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-yumiko-lunch-1
+  display_rank: 100
+  title: Какаші вперше помічає Юміко за обідом
+  text: За обідом у забігайлівці Какаші помічає незнайому цивільну жінку. Юміко ніяковіє через його форму, уважний погляд і книжку. Він прибирає томик та зменшує напругу, не перетворюючи її реакцію на допит. Її звичайна побутова незграбність привертає його увагу саме тим, що не належить до світу бойових завдань.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-yumiko
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-01
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-yumiko-lunch-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-yumiko-lunch.start
+  to: sc-games-kakashi-yumiko-lunch.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-yumiko-lunch-c-yumiko
+  entity_id: c-yumiko
+  from: sc-games-kakashi-yumiko-lunch.start
+  to: sc-games-kakashi-yumiko-lunch.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

@@ -1,0 +1,104 @@
+schema_version: 1
+id: sc-games-t9-anko-order
+episode_id: ep-games-t9-anko-new-command
+display_rank: 2900
+continuity_id: main
+title: Адміністрація передає Команду 9 Анко за запечатаним наказом
+location_id: loc-mission-assignment-room
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-anko-order-1
+  display_rank: 100
+  title: Адміністрація передає Команду 9 Анко за запечатаним наказом
+  text: Після похорону Хірузена адміністрація виконує залишене ним запечатане розпорядження. Команду 9 передають від Райдо до Анко. Для учнів це зміна реального щоденного командира, а не чергова тимчасова заміна на полігоні. Райдо повертається до своїх службових обов’язків; трійка мусить пристосувати вже сформовану взаємодію до іншої манери керівництва.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-homura
+    role: focus
+    mode: physical
+  - entity_id: c-koharu
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-team-9-07
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-t9-anko-order-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-order-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-order-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-order-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-order-c-anko
+  entity_id: c-anko
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-order-c-homura
+  entity_id: c-homura
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-t9-anko-order-c-koharu
+  entity_id: c-koharu
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

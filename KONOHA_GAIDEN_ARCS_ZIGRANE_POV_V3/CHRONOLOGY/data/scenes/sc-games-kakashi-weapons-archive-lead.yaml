@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-games-kakashi-weapons-archive-lead
+episode_id: ep-games-kakashi-shukuba-leads
+display_rank: 8300
+continuity_id: main
+title: Какаші, Ібікі та Міката знаходять слід прихованого постачання
+location_id: loc-intelligence-division
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-05-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-weapons-archive-lead-1
+  display_rank: 100
+  title: Какаші, Ібікі та Міката знаходять слід прихованого постачання
+  text: Розшифрований сувій містить схему руху чакропровідної сталі та вибухових печаток через приватні столичні фонди. Вантаж виходить із Країни Вогню й повертається під виглядом будівельних матеріалів, тоді як офіційні закупівлі виглядають чистими. Міката вказує на старі цивільні дозволи та логістичні записи. Какаші пропонує тихий адміністративний привід для перевірки.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-04
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-weapons-archive-lead-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-weapons-archive-lead.start
+  to: sc-games-kakashi-weapons-archive-lead.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-weapons-archive-lead-c-ibiki
+  entity_id: c-ibiki
+  from: sc-games-kakashi-weapons-archive-lead.start
+  to: sc-games-kakashi-weapons-archive-lead.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-weapons-archive-lead-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-weapons-archive-lead.start
+  to: sc-games-kakashi-weapons-archive-lead.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

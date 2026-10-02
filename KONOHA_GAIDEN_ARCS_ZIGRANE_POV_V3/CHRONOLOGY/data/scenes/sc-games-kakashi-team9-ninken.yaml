@@ -1,0 +1,84 @@
+schema_version: 1
+id: sc-games-kakashi-team9-ninken
+episode_id: ep-games-kakashi-team9-start
+display_rank: 9400
+continuity_id: main
+title: Какаші перевіряє Команду 9 з нінкенами
+location_id: loc-konoha-training-field
+day_part: morning
+placement:
+  anchor_id: ta-games-0-09-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-team9-ninken-1
+  display_rank: 100
+  title: Какаші перевіряє Команду 9 з нінкенами
+  text: Какаші бачить точну координацію Сори, Рена та Кіти й викликає нінкенів для перевірки. Його недоречна зверхня манера викликає різку тишу замість очікуваної реакції. Він розуміє, що трійка не потребує його жалю або знецінення попередніх наставників. Перед справжнім маршрутом йому доводиться прийняти їхні власні правила взаємодії.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-pakkun
+    role: focus
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-06
+  - evd-games-part-i-placement
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-games-kakashi-team9-ninken-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-team9-ninken.start
+  to: sc-games-kakashi-team9-ninken.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-ninken-c-kita
+  entity_id: c-kita
+  from: sc-games-kakashi-team9-ninken.start
+  to: sc-games-kakashi-team9-ninken.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-ninken-c-ren
+  entity_id: c-ren
+  from: sc-games-kakashi-team9-ninken.start
+  to: sc-games-kakashi-team9-ninken.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-ninken-c-sora
+  entity_id: c-sora
+  from: sc-games-kakashi-team9-ninken.start
+  to: sc-games-kakashi-team9-ninken.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-team9-ninken-c-pakkun
+  entity_id: c-pakkun
+  from: sc-games-kakashi-team9-ninken.start
+  to: sc-games-kakashi-team9-ninken.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

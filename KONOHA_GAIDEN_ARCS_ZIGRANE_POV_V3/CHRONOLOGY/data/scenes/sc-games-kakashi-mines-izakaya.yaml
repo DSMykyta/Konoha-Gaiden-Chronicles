@@ -1,0 +1,162 @@
+schema_version: 1
+id: sc-games-kakashi-mines-izakaya
+episode_id: ep-games-kakashi-mines-return
+display_rank: 9200
+continuity_id: main
+title: Какаші оплачує спільний вечір після шахт
+location_id: loc-konoha-izakaya
+day_part: evening
+placement:
+  anchor_id: ta-games-0-05-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-kakashi-mines-izakaya-1
+  display_rank: 100
+  title: Какаші оплачує спільний вечір після шахт
+  text: Після завершення звітів колеги збираються в ізакаї за рахунок Какаші. Напруження прихованого виходу змінюється звичними жартами й розмовою людей, які бачили одне одного в небезпечній роботі. Вечір відділяє виконану диверсію від наступних завдань і знову повертає Какаші до його незавершених особистих питань.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-genma
+    role: participant
+    mode: physical
+  - entity_id: c-tenzo
+    role: participant
+    mode: physical
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-kurenai
+    role: participant
+    mode: physical
+  - entity_id: c-raido
+    role: participant
+    mode: physical
+  - entity_id: c-nobari
+    role: participant
+    mode: physical
+  - entity_id: c-anko
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-ebisu
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-games-kakashi-gaiden-05
+  - evd-games-part-i-placement
+relations: []
+presence:
+- id: pr-games-kakashi-mines-izakaya-c-kakashi
+  entity_id: c-kakashi
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-mikata
+  entity_id: c-mikata
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-genma
+  entity_id: c-genma
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-tenzo
+  entity_id: c-tenzo
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-asuma
+  entity_id: c-asuma
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-raido
+  entity_id: c-raido
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-nobari
+  entity_id: c-nobari
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-anko
+  entity_id: c-anko
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-aoba
+  entity_id: c-aoba
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-iruka
+  entity_id: c-iruka
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-might-guy
+  entity_id: c-might-guy
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted
+- id: pr-games-kakashi-mines-izakaya-c-ebisu
+  entity_id: c-ebisu
+  from: sc-games-kakashi-mines-izakaya.start
+  to: sc-games-kakashi-mines-izakaya.end
+  basis: source
+  evidence_ids: *id001
+  review: accepted

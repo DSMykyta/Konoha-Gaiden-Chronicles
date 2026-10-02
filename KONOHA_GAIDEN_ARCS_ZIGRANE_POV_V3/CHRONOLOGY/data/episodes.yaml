@@ -1779,3 +1779,198 @@ episodes:
   arc_id: arc-y0-archive-leak
   title: Рішення про обмін
   description: Після завершення допиту Коноха залишає шпигуна під вартою та відкриває переговори з Івою. Умови обміну, прикордонну точку й порядок передачі погоджують окремо від слідчої операції. Після дипломатичного підтвердження полоненого готують до конвою Команди 7.
+- id: ep-games-t9-home-notes
+  continuity_id: main
+  arc_id: arc-games-t9-first-skills
+  title: Після перевірки Райдо
+  description: Перші знайомства за межами команди й домашня робота Кіти доповнюють навчання на полігоні.
+- id: ep-games-t9-first-weapons
+  continuity_id: main
+  arc_id: arc-games-t9-first-skills
+  title: Своя зброя
+  description: Пробні вправи показують різні сильні сторони учнів. Іщін підбирає їм зброю, з якою можна будувати власні прийоми.
+- id: ep-games-t9-first-work
+  continuity_id: main
+  arc_id: arc-games-t9-first-skills
+  title: Командні ролі та D-ранги
+  description: Сора починає узгоджувати рух трійки, поки Райдо зберігає відповідальність за рішення на місії. Оплачувана робота перевіряє дисципліну без бойової загрози.
+- id: ep-games-t9-thread
+  continuity_id: main
+  arc_id: arc-games-t9-thread-blink
+  title: Клинок і нитка
+  description: Райдо відділяє корисний тонкий контроль від небезпечних спроб обійти звичайну практику.
+- id: ep-games-t9-fire
+  continuity_id: main
+  arc_id: arc-games-t9-thread-blink
+  title: Залишкова чакра і опіки
+  description: Демонстрація Асуми надихає Кіту на самостійні спроби. Приховані травми змушують повернутися до обережної практики та допомоги Нобарі.
+- id: ep-games-t9-first-blink
+  continuity_id: main
+  arc_id: arc-games-t9-thread-blink
+  title: Перший просторовий зсув
+  description: Відсутність Райдо дає учням досвід роботи поруч з іншими командами. Випадковий стрибок Кіти переводять у контрольовану коротку вправу.
+- id: ep-games-t9-wave-reunion
+  continuity_id: main
+  arc_id: arc-games-t9-preexam
+  title: Після Країни Хвиль
+  description: Друзі зустрічаються після повернення Команди 7 й бачать, як перша складна місія змінила Наруто.
+- id: ep-games-t9-preexam-check
+  continuity_id: main
+  arc_id: arc-games-t9-preexam
+  title: Особисті прийоми й перевірка Какаші
+  description: Рен упізнає рух без зору, Сора працює над приховуванням справжньої атаки, а тимчасова перевірка Какаші оцінює вже сформовану координацію.
+- id: ep-games-t9-death-forest
+  continuity_id: main
+  arc_id: arc-games-t9-chunin
+  title: П’ять днів у Лісі Смерті
+  description: Команда знаходить потрібний сувій, але вже біля завершення маршруту виявляє порожній сховок і не встигає виправити втрату.
+- id: ep-games-t9-anko-new-command
+  continuity_id: main
+  arc_id: arc-games-t9-anko-transfer
+  title: Новий командир
+  description: Райдо більше не керує щоденною роботою трійки. Анко перевіряє її витривалість і вже сформовані звички.
+- id: ep-games-t9-nobari-medical-mission
+  continuity_id: main
+  arc_id: arc-games-t9-anko-transfer
+  title: Медична робота за межами селища
+  description: Коли Анко зникає у службових справах, Куренай допомагає команді зберегти заняття, а Нобарі веде її на медичний D-ранг.
+- id: ep-games-t9-fence-check
+  continuity_id: main
+  arc_id: arc-games-t9-death-forest-fence
+  title: Тридцять позначок огорожі
+  description: Звичайний D-ранг виявляє тріщину, людську кров і слід кігтів. Анко обмежує роботу учнів і йде перевіряти внутрішній сектор сама.
+- id: ep-games-t9-b4-design
+  continuity_id: main
+  arc_id: arc-games-t9-death-forest-fence
+  title: Схема Б-4
+  description: Вертикальні стрибки й перша узгоджена підміна стають основою командної атаки. Поранення Анко перериває її звичайний нагляд.
+- id: ep-games-t9-touno-start
+  continuity_id: main
+  arc_id: arc-games-t9-touno-asuma
+  title: Тимчасовий наставник
+  description: Команда обирає Тоуно й продовжує D-ранги. Його вимірювання показують реальні витрати блінку, але довіра ще не сформована.
+- id: ep-games-t9-touno-end
+  continuity_id: main
+  arc_id: arc-games-t9-touno-asuma
+  title: Межі співпраці
+  description: Неоголошене продовження роботи завершує довіру до тимчасового наставника. Команда залишається разом і користується дозволеною підтримкою інших загонів.
+- id: ep-games-t9-asuma-anchor
+  continuity_id: main
+  arc_id: arc-games-t9-touno-asuma
+  title: Асума і контроль ресурсу
+  description: Особистий страх, стихії чакри та прив’язаний предмет стають темою регулярних занять Кіти з Асумою.
+- id: ep-games-t9-anko-back
+  continuity_id: main
+  arc_id: arc-games-t9-anko-return
+  title: Після трьох тижнів лікування
+  description: Анко приймає звіти про тимчасову роботу й дозволяє зберегти корисні заняття з Асумою та Куренай.
+- id: ep-games-t9-new-burns
+  continuity_id: main
+  arc_id: arc-games-t9-anko-return
+  title: Вітер, клинок і віддалений вогонь
+  description: Успіх із вітром спонукає Кіту знову перевірити межі. Райдо та Куренай зупиняють небезпечні напрямки й допомагають побачити реальний рух чакри.
+- id: ep-games-t9-tanigawa-mission
+  continuity_id: main
+  arc_id: arc-games-t9-tanigawa
+  title: Постановочний напад
+  description: Анко планує перевірку на C-ранзі, але команда реагує раніше за очікуваний сигнал і травмує нападників.
+- id: ep-games-t9-tanigawa-home
+  continuity_id: main
+  arc_id: arc-games-t9-tanigawa
+  title: Після першої крові
+  description: Дорослі допомагають трійці пережити повернення, а хлопці намагаються зрозуміти, що зробили зі знайомими людьми.
+- id: ep-games-t9-sealed-departure
+  continuity_id: main
+  arc_id: arc-games-t9-long-base2
+  title: Запечатаний маршрут
+  description: Радники передають наказ, до якого Цунаде не має повного доступу. Команда йде разом, а її родини залишаються без відомостей про маршрут.
+- id: ep-games-t9-base2-first
+  continuity_id: main
+  arc_id: arc-games-t9-long-base2
+  title: Перша База 2
+  description: Сенсорна помилка й лабораторна знахідка показують межі інформації, з якою трійка входить у бойову роботу.
+- id: ep-games-t9-base18-entry
+  continuity_id: main
+  arc_id: arc-games-t9-long-base18
+  title: Центральний комплекс
+  description: Трійка входить у лабораторну мережу й стикається з масштабом дослідів, якого не було видно на першій базі.
+- id: ep-games-t9-base18-after
+  continuity_id: main
+  arc_id: arc-games-t9-long-base18
+  title: Після лабораторії
+  description: Збережені матеріали й знищення комплексу не прибирають конфлікту всередині трійки. Звичайна їжа допомагає їм знову говорити одне з одним.
+- id: ep-games-kakashi-first-meetings
+  continuity_id: main
+  arc_id: arc-games-kakashi-yumiko-first
+  title: Випадкові зустрічі
+  description: Обід, вечір із колегами та забуті продукти створюють знайомство, в якому жоден із двох ще не почувається впевнено.
+- id: ep-games-kakashi-park-name
+  continuity_id: main
+  arc_id: arc-games-kakashi-yumiko-first
+  title: Парк і сусідка Сакури
+  description: Какаші знайомиться з Мікатою як колегою, дізнається про зв’язок Юміко із Сакурою та намагається повернути гроші без прихованого тиску.
+- id: ep-games-kakashi-after-archive
+  continuity_id: main
+  arc_id: arc-games-kakashi-yumiko-first
+  title: Після службової зустрічі
+  description: Юміко опиняється серед непричетних працівниць архіву. Після її звільнення Какаші має розібрати власні почуття, не підмінюючи їх службовим пошуком.
+- id: ep-games-kakashi-garden-yumiko
+  continuity_id: main
+  arc_id: arc-games-kakashi-after-iwa
+  title: Звичайний D-ранг
+  description: Учні працюють у саду, поки наставник мусить відділити власну цікавість від їхнього завдання.
+- id: ep-games-kakashi-return-lunch
+  continuity_id: main
+  arc_id: arc-games-kakashi-yumiko-return
+  title: Обід після відсутності
+  description: Зустріч відновлює контакт, а розмова з колегами показує, як багато Какаші вже вкладає в його продовження.
+- id: ep-games-kakashi-shukuba-contact
+  continuity_id: main
+  arc_id: arc-games-kakashi-shukuba
+  title: Цивільний маршрут
+  description: Наставник маскує бойовий склад групи, щоб провести коротку передачу інформації й вийти без зайвих підозр.
+- id: ep-games-kakashi-shukuba-leads
+  continuity_id: main
+  arc_id: arc-games-kakashi-shukuba
+  title: Очікування і новий архівний слід
+  description: Юміко не приходить у погоджений Какаші день. Тим часом розбір сувою відкриває інший канал постачання, який не слід змішувати з уже закритим витоком цивільного реєстру.
+- id: ep-games-kakashi-iwa-mines-brief
+  continuity_id: main
+  arc_id: arc-games-kakashi-shukuba
+  title: Прихована диверсія
+  description: Інформація з Шукуби веде до найманців у шахтах біля кордону Трави. Хірузен обирає операцію, яка має приховати участь Конохи.
+- id: ep-games-kakashi-mines-infiltration
+  continuity_id: main
+  arc_id: arc-games-kakashi-iwa-mines
+  title: Без видимих слідів
+  description: Група входить на ворожу територію з розділеними ролями. Міката відтворює місцевого патрульного, щоб пройти сигнальні бар’єри.
+- id: ep-games-kakashi-mines-collapse
+  continuity_id: main
+  arc_id: arc-games-kakashi-iwa-mines
+  title: Хаос і обвал
+  description: Постановочна п’яна бійка збирає увагу варти на Мікаті. Поки основа шахт руйнується, група прибирає сліди підміни.
+- id: ep-games-kakashi-mines-return
+  continuity_id: main
+  arc_id: arc-games-kakashi-iwa-mines
+  title: Повернення й відновлення
+  description: Прихована робота виснажує Мікату. Група повертається, здає звіт і завершує службову ізоляцію перед спільним вечором.
+- id: ep-games-kakashi-team9-start
+  continuity_id: main
+  arc_id: arc-games-kakashi-team9-escort
+  title: Перед виходом
+  description: Тимчасовий командир перевіряє координацію трійки й мусить виправити власне перше враження.
+- id: ep-games-kakashi-team9-road
+  continuity_id: main
+  arc_id: arc-games-kakashi-team9-escort
+  title: Справжній контакт
+  description: Засідка й спільна дорога показують, що звички трійки виникли з взаємної підтримки, а не лише із суворої муштри.
+- id: ep-games-kakashi-valley-consequences
+  continuity_id: main
+  arc_id: arc-games-kakashi-after-valley
+  title: Після повернення Наруто
+  description: Шпиталь і звіт уже не можуть повернути колишній склад Команди 7. Какаші залишається з власною відповідальністю за тих, хто живий.
+- id: ep-games-kakashi-overwork
+  continuity_id: main
+  arc_id: arc-games-kakashi-after-valley
+  title: Виснаження і підтримка друзів
+  description: Намагаючись сховатися в бойовій роботі, Какаші доводить себе до необхідності відсторонення. Друзі говорять про те, що адміністрація не пояснює родинам.
