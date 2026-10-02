@@ -34,8 +34,8 @@ events:
   - evd-narutopedia-ep2-opening
   - evd-narutopedia-ch2-opening
 - id: ev-y0-0121-naruto-accepts-pupil
-  title: Наруто погоджується навчати Конохамару
-  text: Конохамару просить навчати його; Наруто погоджується.
+  title: Наруто погоджується взяти Конохамару в учні
+  text: Конохамару просить навчити його прийомів Наруто; той приймає роль наставника й починає тренування.
   origin: M
   extent: interval
   display_rank: 200
@@ -48,8 +48,8 @@ events:
     mode: physical
   evidence_ids: *id001
 - id: ev-y0-0121-konohamaru-practises-transformation
-  title: Конохамару вчиться Перетворенню
-  text: Наруто навчає Конохамару Техніки Перетворення.
+  title: Перші спроби Конохамару з Перетворенням
+  text: Наруто показує принцип Техніки Перетворення, а Конохамару відпрацьовує її, намагаючись повторити прийом наставника.
   origin: M
   extent: interval
   display_rank: 300

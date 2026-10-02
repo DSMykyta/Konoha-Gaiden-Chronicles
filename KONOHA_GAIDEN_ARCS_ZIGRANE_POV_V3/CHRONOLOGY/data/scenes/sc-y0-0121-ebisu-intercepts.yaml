@@ -3,7 +3,7 @@ id: sc-y0-0121-ebisu-intercepts
 episode_id: ep-y0-konohamaru
 display_rank: 300
 continuity_id: main
-title: Ебісу втручається; Наруто й Конохамару стають суперниками
+title: Сутичка з Ебісу
 location_id: loc-konohagakure
 placement:
   anchor_id: ta-y0-0121
@@ -78,8 +78,8 @@ events:
 - id: ev-y0-0121-naruto-teaches-konohamaru
   legacy_ids:
   - V10-000004
-  title: Наруто говорить Конохамару, що короткого шляху до Хокаґе немає
-  text: Наруто говорить Конохамару, що короткого шляху до титулу Хокаґе немає; вони стають суперниками.
+  title: Наруто відкидає «короткий шлях» до Хокаґе
+  text: Після поразки Ебісу Наруто пояснює Конохамару, що одного трюку недостатньо, щоб стати Хокаґе; відтепер вони вважають одне одного суперниками.
   origin: M
   extent: interval
   display_rank: 400

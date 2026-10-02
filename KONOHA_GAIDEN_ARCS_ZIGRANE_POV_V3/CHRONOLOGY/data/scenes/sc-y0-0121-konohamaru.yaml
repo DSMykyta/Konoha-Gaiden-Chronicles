@@ -88,8 +88,8 @@ events:
     mode: physical
   evidence_ids: *id001
 - id: ev-y0-0121-naruto-leaves-hokage
-  title: Наруто залишає резиденцію Хокаґе
-  text: Наруто йде з резиденції після зустрічі з Конохамару.
+  title: Наруто завершує суперечку й іде
+  text: Після сварки з Конохамару Наруто залишає резиденцію Хокаґе, а хлопець згодом вирішує йти за ним.
   origin: A
   extent: interval
   display_rank: 300
