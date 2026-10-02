@@ -43,13 +43,28 @@ const SelectionFocus = (() => {
     document.querySelectorAll('#timeline mask [data-node-id]').forEach(element => {
       element.classList.toggle('is-line-focus-hidden', !!focusedCharacter && !focusedNodes.has(element.dataset.nodeId));
     });
-    document.querySelectorAll('#timeline .thread,#timeline .thread-hit,#timeline .line-label').forEach(element => {
+    document.querySelectorAll('#timeline .thread,#timeline .thread-hit,#timeline .thread-focus-continuous,#timeline .thread-focus-hit,#timeline .line-label').forEach(element => {
       const id = element.dataset.character || labels.get(element.textContent.trim());
       const connected = (element.dataset.companions || '').split(' ').includes(focusedCharacter);
-      visibility(element, !!focusedCharacter && id !== focusedCharacter && !connected);
+      const continuous=element.matches('.thread-focus-continuous,.thread-focus-hit'),hit=element.matches('.thread-hit,.thread-focus-hit'),label=element.classList.contains('line-label');
+      const primary=!!focusedCharacter&&id===focusedCharacter;
+      const hidden=continuous?!primary:!!focusedCharacter&&(primary&&!label||!primary&&(!connected||hit||label));
+      visibility(element, hidden);
       element.classList.toggle('is-line-focus-main', !!focusedCharacter && id === focusedCharacter);
       element.classList.toggle('is-line-focus-related', !!focusedCharacter && id !== focusedCharacter && connected);
-      if (element.classList.contains('thread-hit')) element.setAttribute('aria-pressed', String(id === focusedCharacter));
+      if (hit) element.setAttribute('aria-pressed', String(id === focusedCharacter));
+      if(element.classList.contains('thread')){
+        if(focusedCharacter&&connected&&!primary){
+          if(element.dataset.focusPaintCharacter!==focusedCharacter){
+            const shared=JSON.parse(element.dataset.sharedAnchors||'[]').filter(anchor=>anchor.cast.includes(focusedCharacter)).map(anchor=>anchor.x);
+            const gradient=document.getElementById(element.dataset.focusGradient),stops=TimelineCore.focusStops(Number(element.dataset.routeStart),Number(element.dataset.routeEnd),shared,150,Number(element.dataset.activeStart),Number(element.dataset.activeEnd));
+            gradient?.replaceChildren();
+            for(const stop of stops)svg('stop',{offset:stop.offset,'stop-color':color(id),'stop-opacity':stop.opacity},gradient);
+            element.dataset.focusPaintCharacter=focusedCharacter;
+          }
+          element.setAttribute('stroke',`url(#${element.dataset.focusGradient})`);
+        }else if(element.dataset.restStroke)element.setAttribute('stroke',element.dataset.restStroke);
+      }
       element.classList.toggle('is-context-muted', active && !!id && !characters.has(id));
       element.classList.toggle('is-character-hover-muted', !!hovered && id !== hovered);
       element.classList.toggle('is-character-hover-active', !!hovered && id === hovered);
@@ -65,7 +80,7 @@ const SelectionFocus = (() => {
   }
 
   function bind() {
-    const trigger = node => node?.closest?.('.person[data-event-focus-character],.character-name[data-focus-character],.thread-hit[data-character],.line-label[data-character]');
+    const trigger = node => node?.closest?.('.person[data-event-focus-character],.character-name[data-focus-character],.thread-hit[data-character],.thread-focus-hit[data-character],.line-label[data-character]');
     document.addEventListener('pointerover', event => {
       const next = trigger(event.target);
       if (!next || !canHover(event) || next === hoverTrigger) return;
@@ -79,7 +94,7 @@ const SelectionFocus = (() => {
     });
     document.addEventListener('focusin', event => {
       const next = trigger(event.target);
-      if (!next || !next.matches('.thread-hit,.line-label')) return;
+      if (!next || !next.matches('.thread-hit,.thread-focus-hit,.line-label')) return;
       hoverTrigger = next;
       update();
     });

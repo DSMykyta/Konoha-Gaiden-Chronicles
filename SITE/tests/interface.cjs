@@ -34,8 +34,8 @@ async function check(width,height){
  click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);
  assert.deepEqual([...canvas.querySelectorAll('.node')],originalNodes,'Focus replaced nodes');assert.deepEqual([...canvas.querySelectorAll('.thread')],originalStrands,'Focus replaced strands');
  assert.deepEqual(originalStrands.map(path=>path.getAttribute('d')),originalCurves,'Focus changed curves or gaps');
- assert(canvas.querySelector('.thread[data-character="c-raido"].is-line-focus-main'));assert.equal(canvas.querySelector('.focus-guest-entry'),null);
- for(const path of originalStrands){const connected=path.dataset.character==='c-raido'||path.dataset.companions.split(' ').includes('c-raido');assert.equal(path.classList.contains('is-line-focus-hidden'),!connected);}
+ const continuous=canvas.querySelector('.thread-focus-continuous[data-character="c-raido"].is-line-focus-main');assert(continuous);assert(!continuous.classList.contains('is-line-focus-hidden'));assert.equal(canvas.querySelector('.focus-guest-entry'),null);
+ for(const path of originalStrands){const own=path.dataset.character==='c-raido',connected=path.dataset.companions.split(' ').includes('c-raido');assert.equal(path.classList.contains('is-line-focus-hidden'),own||!connected);if(!own&&connected){assert.equal(path.getAttribute('stroke'),'url(#'+path.dataset.focusGradient+')');const stops=[...doc.getElementById(path.dataset.focusGradient).children];assert(stops.some(stop=>Number(stop.getAttribute('stop-opacity'))===0));assert(stops.some(stop=>Number(stop.getAttribute('stop-opacity'))>0));}}
  const focusedNodes=new Set(run('graphNodes.filter(node=>node.cast.includes("c-raido")).map(node=>node.id)'));
  for(const cutout of canvas.querySelectorAll('mask [data-node-id]'))assert.equal(cutout.classList.contains('is-line-focus-hidden'),!focusedNodes.has(cutout.dataset.nodeId),'A hidden node left a false gap in a line');
  for(const point of run('graphNodes'))assert.equal(point.y,unfocusedY.get(point.id),'Focus flattened a story curve');
@@ -44,6 +44,18 @@ async function check(width,height){
  snapshot.media=[{id:'fixture',event_id:current,status:'candidate',src:'media/test.png',alt:'Fixture',locator:'test',source_id:'src-anime-20-23'}];snapshot.revision='test-update';version=snapshot.revision;await run('refreshData()');assert.equal(run('data.revision'),'test-update');assert.equal(run('selected.size'),count);assert.equal(run('focusedCharacter'),'c-raido');assert.equal(doc.querySelectorAll('.event-gallery').length,0);
  snapshot.media[0].status='published';snapshot.revision='test-published';version=snapshot.revision;await run('refreshData()');assert.equal(doc.querySelectorAll('.event-gallery img').length,1);assert(doc.getElementById('cardContent').innerHTML.indexOf('event-gallery')<doc.getElementById('cardContent').innerHTML.indexOf('<h2>'));
  click('#clearFocus');await sleep();assert.equal(run('focusedCharacter'),null);assert(doc.getElementById('focusBar').hidden);assert.equal(canvas.querySelectorAll('mask .is-line-focus-hidden').length,0);
+ for(const path of canvas.querySelectorAll('.thread'))assert.equal(path.getAttribute('stroke'),path.dataset.restStroke,'Clearing focus changed the ordinary strand paint');
+ assert([...canvas.querySelectorAll('.thread-focus-continuous')].every(path=>path.classList.contains('is-line-focus-hidden')));
+ // A focused character spans its absences and the calendar hatch, while the
+ // normal runs remain separate and return unchanged when the focus closes.
+ run('zoom=zoomModes.year;center=axisLength()/2;render()');
+ const soraRuns=[...canvas.querySelectorAll('.thread[data-character="c-sora"]')],soraD=soraRuns.map(path=>path.getAttribute('d'));
+ assert(soraRuns.length>1);run('setFocus("c-sora")');
+ const soraContinuous=canvas.querySelector('.thread-focus-continuous[data-character="c-sora"]');assert(!soraContinuous.classList.contains('is-line-focus-hidden'));assert(Number(soraContinuous.dataset.runCount)>1);
+ const allMainStops=[...doc.getElementById('strand-continuous-c-sora').children].map(stop=>Number(stop.getAttribute('stop-opacity')));assert.deepEqual(allMainStops,[0,1,1,0]);
+ assert.equal(canvas.querySelectorAll('.thread-focus-continuous.is-line-focus-main').length,1);assert.deepEqual(soraRuns.map(path=>path.getAttribute('d')),soraD);
+ const calendarGap=canvas.querySelector('.time-break');if(calendarGap)assert(calendarGap.compareDocumentPosition(soraContinuous)&4,'The calendar hatch covered the focused line');
+ run('setFocus("c-sora")');assert.deepEqual(soraRuns.map(path=>path.getAttribute('d')),soraD);
  // First/last event buttons are disabled, and card movement respects selection.
  click('[data-team="team-8"]');await sleep();assert.equal(run('selected.size'),4);run("navigateEvent(orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&relevant(e))[0].id)");assert(doc.querySelector('[data-step-event="-1"]').disabled);click('[data-step-event="1"]');await sleep();assert(run('relevant(eventMap.get(anchorEvent))'));
 

@@ -196,6 +196,16 @@ const TimelineCore = {
     }
     return runs;
   },
+  focusStops(start,end,centers,radius,activeStart=start,activeEnd=end) {
+    const span=Math.max(.001,end-start),reach=Math.max(1,radius),positions=new Set([start,end,activeStart,activeEnd]);
+    for(const center of centers)for(const step of [-1,-.875,-.75,-.5,-.25,0,.25,.5,.75,.875,1])positions.add(Math.max(start,Math.min(end,center+step*reach)));
+    const smooth=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);};
+    return [...positions].filter(x=>x>=start&&x<=end).sort((a,b)=>a-b).map(x=>{
+      const local=Math.max(0,...centers.map(center=>smooth(1-Math.abs(x-center)/reach)));
+      const entry=activeStart>start?smooth((x-start)/(activeStart-start)):1,exit=activeEnd<end?smooth((end-x)/(end-activeEnd)):1;
+      return {offset:(x-start)/span,opacity:local*entry*exit};
+    });
+  },
   slopes(points,axis='day') {
     const spans=points.slice(1).map((p,i)=>p[axis]-points[i][axis]),secants=spans.map((span,i)=>span>0?(points[i+1].y-points[i].y)/span:0);
     return points.map((p,i)=>{

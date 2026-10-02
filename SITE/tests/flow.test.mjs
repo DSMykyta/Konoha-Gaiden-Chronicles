@@ -109,3 +109,18 @@ test('strands converge smoothly before a node and leave along its tangent',()=>{
   assert(Math.abs(core.curveY(route,anchor.day+.01)-anchor.y)<.05);
  }
 });
+
+test('focus reveals companions only near shared nodes, with smooth fade ramps',()=>{
+ const stops=core.focusStops(0,600,[150,450],100,30,570),opacity=x=>stops.find(stop=>Math.abs(stop.offset-x/600)<1e-8)?.opacity;
+ assert.equal(opacity(0),0);assert.equal(opacity(150),1);assert.equal(opacity(450),1);assert.equal(opacity(600),0);
+ assert.equal(opacity(250),0);assert.equal(opacity(350),0);assert(opacity(62.5)<.05);assert(opacity(75)>opacity(62.5));assert(opacity(100)<opacity(125));
+ assert(stops.every(stop=>stop.offset>=0&&stop.offset<=1&&stop.opacity>=0&&stop.opacity<=1));
+ assert(core.focusStops(0,100,[],30).every(stop=>stop.opacity===0));
+});
+
+test('the continuous focus strand keeps existing curves and bridges only absences',()=>{
+ const anchors=[{id:'a',day:10,calendarDay:10,y:100},{id:'b',day:15,calendarDay:15,y:170},{id:'c',day:60,calendarDay:90,y:90},{id:'d',day:65,calendarDay:95,y:130}];
+ const runs=core.lifetimes(anchors),continuous=core.strand(anchors,'one',150,80,1,20,100);assert.equal(runs.length,2);
+ for(const run of runs){const ordinary=core.strand(run,'one',150,80,1,20,100);for(let day=run[0].day;day<=run.at(-1).day;day+=.2)assert(Math.abs(core.curveY(continuous,day)-core.curveY(ordinary,day))<1e-8);}
+ assert(continuous.some(point=>point.day>15&&point.day<60));assert(anchors.every(anchor=>continuous.some(point=>point.id===anchor.id&&point.y===anchor.y)));
+});
