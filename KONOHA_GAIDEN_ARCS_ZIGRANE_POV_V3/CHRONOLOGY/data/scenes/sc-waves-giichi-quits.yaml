@@ -16,7 +16,7 @@ events:
   id: ev-waves-giichi-quits
   display_rank: 100
   title: Ґіічі відмовляється будувати міст
-  text: Ґіічі звільняється й закликає Тадзуну припинити будівництво через загрозу Ґато.
+  text: Побоюючись погроз Ґато, Ґіічі звільняється й закликає Тадзуну також припинити будівництво.
   involvement:
   - entity_id: c-giichi
     role: focus
@@ -46,6 +46,6 @@ presence:
   - evd-narutopedia-ep11-audit
 episode_id: ep-y0-waves-bridge-workers
 display_rank: 100
-title: Ґіічі відмовляється будувати міст
+title: Будівництво мосту під тиском Ґато
 location_id: loc-great-naruto-bridge
 placement: null

@@ -3,7 +3,7 @@ id: sc-prewaves-tora-capture
 episode_id: ep-y0-tora-retrieval
 display_rank: 100
 continuity_id: main
-title: Команда 7 ловить Тору
+title: Пошук Тори
 location_id: null
 placement: null
 state: active
@@ -17,7 +17,7 @@ review:
 events:
 - id: ev-prewaves-tora-capture
   title: Команда 7 ловить загублену Тору
-  text: Команда 7 знаходить і ловить загублену кішку Тору для дружини даймьо Країни Вогню.
+  text: Пошуки завершуються, коли Команда 7 знаходить кішку й затримує її, щоб повернути пані Шіджімі, дружині даймьо Країни Вогню.
   origin: M
   extent: interval
   display_rank: 100
