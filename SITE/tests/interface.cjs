@@ -36,12 +36,14 @@ async function check(width,height){
  assert.deepEqual(originalStrands.map(path=>path.getAttribute('d')),originalCurves,'Focus changed curves or gaps');
  assert(canvas.querySelector('.thread[data-character="c-raido"].is-line-focus-main'));assert.equal(canvas.querySelector('.focus-guest-entry'),null);
  for(const path of originalStrands){const connected=path.dataset.character==='c-raido'||path.dataset.companions.split(' ').includes('c-raido');assert.equal(path.classList.contains('is-line-focus-hidden'),!connected);}
+ const focusedNodes=new Set(run('graphNodes.filter(node=>node.cast.includes("c-raido")).map(node=>node.id)'));
+ for(const cutout of canvas.querySelectorAll('mask [data-node-id]'))assert.equal(cutout.classList.contains('is-line-focus-hidden'),!focusedNodes.has(cutout.dataset.nodeId),'A hidden node left a false gap in a line');
  for(const point of run('graphNodes'))assert.equal(point.y,unfocusedY.get(point.id),'Focus flattened a story curve');
  run("navigateEvent('ev-y0-0624-jonin-nominate-teams')");await sleep();assert(doc.querySelector('#cardContent h2').textContent.includes('Райдо'));const current=run('anchorEvent');click('#focusNext');await sleep();const next=run('anchorEvent');assert.notEqual(next,current);assert(run('eventMap.get(anchorEvent).tracks.includes(focusedCharacter)'));click('#focusPrevious');await sleep();assert.equal(run('anchorEvent'),current);
  // A visual screenshot may exist above the title; candidates stay hidden.
  snapshot.media=[{id:'fixture',event_id:current,status:'candidate',src:'media/test.png',alt:'Fixture',locator:'test',source_id:'src-anime-20-23'}];snapshot.revision='test-update';version=snapshot.revision;await run('refreshData()');assert.equal(run('data.revision'),'test-update');assert.equal(run('selected.size'),count);assert.equal(run('focusedCharacter'),'c-raido');assert.equal(doc.querySelectorAll('.event-gallery').length,0);
  snapshot.media[0].status='published';snapshot.revision='test-published';version=snapshot.revision;await run('refreshData()');assert.equal(doc.querySelectorAll('.event-gallery img').length,1);assert(doc.getElementById('cardContent').innerHTML.indexOf('event-gallery')<doc.getElementById('cardContent').innerHTML.indexOf('<h2>'));
- click('#clearFocus');await sleep();assert.equal(run('focusedCharacter'),null);assert(doc.getElementById('focusBar').hidden);
+ click('#clearFocus');await sleep();assert.equal(run('focusedCharacter'),null);assert(doc.getElementById('focusBar').hidden);assert.equal(canvas.querySelectorAll('mask .is-line-focus-hidden').length,0);
  // First/last event buttons are disabled, and card movement respects selection.
  click('[data-team="team-8"]');await sleep();assert.equal(run('selected.size'),4);run("navigateEvent(orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&relevant(e))[0].id)");assert(doc.querySelector('[data-step-event="-1"]').disabled);click('[data-step-event="1"]');await sleep();assert(run('relevant(eventMap.get(anchorEvent))'));
 

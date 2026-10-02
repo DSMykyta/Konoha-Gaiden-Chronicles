@@ -38,6 +38,11 @@ const SelectionFocus = (() => {
       visibility(element, !!focusedCharacter && !focusedNodes.has(id));
       element.classList.toggle('is-context-muted', hasRelated && !related.has(id));
     });
+    // A hidden foreign mark must not leave a hole in another character's line.
+    // Toggle its mask only; all recorded curves and activity runs stay intact.
+    document.querySelectorAll('#timeline mask [data-node-id]').forEach(element => {
+      element.classList.toggle('is-line-focus-hidden', !!focusedCharacter && !focusedNodes.has(element.dataset.nodeId));
+    });
     document.querySelectorAll('#timeline .thread,#timeline .thread-hit,#timeline .line-label').forEach(element => {
       const id = element.dataset.character || labels.get(element.textContent.trim());
       const connected = (element.dataset.companions || '').split(' ').includes(focusedCharacter);
