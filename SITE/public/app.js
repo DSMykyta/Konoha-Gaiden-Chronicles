@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261002-stable-readers-1';
+const UI_VERSION='20261002-stable-readers-2';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -434,13 +434,19 @@ function drawMapTitles(level,width,top,bottom){
 function openMapTitle(kind,id){
  const node=graphNodes.find(node=>node.kind===kind&&(node.rawId||node.id)===id);
  if(node){openNode(node,true);return;}
- const label=graphLabels.find(label=>label.kind===kind&&label.id===id);if(!label)return;
- if(kind==='scene'){
+ let point;
+ if(kind==='moment'){
+  const event=eventMap.get(id);if(!event)return;
+  point={id,kind,title:event.title,group:[event],cast:(event.physical?.length?event.physical:event.tracks).filter(id=>selected.has(id))};
+ }else if(kind==='scene'){
   const scene=sceneMap.get(id),group=sceneEvents(id);if(!scene||!group.length)return;
-  openNode({id,kind,title:scene.title,scene,group,cast:sceneCast(scene,group),x:label.anchor.x,y:label.anchor.y},true);
- }else{
-  const point=storyPoint(kind,id);if(point)openNode({...point,x:label.anchor.x,y:label.anchor.y},true);
- }
+  point={id,kind,title:scene.title,scene,group,cast:sceneCast(scene,group)};
+ }else point=storyPoint(kind,id);
+ if(!point)return;
+ const members=new Set(point.group.map(event=>event.id));
+ const anchor=graphLabels.find(label=>label.kind===kind&&label.id===id)?.anchor||graphNodes.find(node=>node.group.some(event=>members.has(event.id)));
+ const canvas=$('canvas');
+ openNode({...point,x:anchor?.x??canvas.clientWidth/2,y:anchor?.y??canvas.scrollTop+canvas.clientHeight*.7},true);
 }
 function positionCard(point){
  const canvas=$('canvas'),w=canvas.clientWidth||1000,h=canvas.clientHeight||700,bounds=readingBounds();

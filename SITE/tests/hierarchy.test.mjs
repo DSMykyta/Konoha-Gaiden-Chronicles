@@ -47,7 +47,8 @@ test('school day and first day of Team 9 retain scenes and old entry IDs',()=>{
  const first=data.episodes.find(e=>e.id==='ep-y0-team9-introduction');
  assert.deepEqual(first.scene_ids,['sc-y0-0122-dango-shop','sc-y0-0122-kita-home-night']);
  assert(first.redirect_ids.includes('ep-y0-kita-home-after-formation'));
- assert.equal(data.events.filter(e=>first.scene_ids.includes(e.scene_id)).length,6);
+ const moments=new Set(data.events.filter(e=>first.scene_ids.includes(e.scene_id)).map(e=>e.id));
+ for(const id of ['ev-y0-0122-dango-sharing','ev-y0-0122-dango-introductions','ev-y0-0122-raido-assigns-field8','ev-y0-0122-nobari-returns','ev-y0-0122-kita-talks-with-mother','ev-y0-0122-nobari-gives-kita-gloves','ev-y0-0122-kita-cries'])assert(moments.has(id),'Missing first-day moment '+id);
  const arc=data.arcs.find(a=>a.id==='arc-y0-team9-first-day');
  assert(arc.episode_ids.includes('ep-y0-raido-evaluation'));
  assert(arc.redirect_ids.includes('arc-y0-team9-raido-evaluation'));

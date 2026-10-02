@@ -318,16 +318,8 @@ const StoryTitleScale = (() => {
       const item = current(); if (!item) return;
       event.preventDefault();
       event.stopPropagation();
-      hoverKey = null;
-      if (fixedKey === item.key) {
-        StoryTitleScale.clear();
-        return;
-      }
-      if (typeof closeCard === 'function' && document.getElementById('eventCard') && !document.getElementById('eventCard').hidden) closeCard();
-      fixedKey = item.key;
-      hoverSuspended = false;
-      focusItem(item,'fixed');
-      focusViewport(item.kind, item.id);
+      StoryTitleScale.clear();
+      openMapTitle(item.kind, item.id);
     });
   }
 
@@ -359,6 +351,7 @@ const StoryTitleScale = (() => {
         button.type = 'button';
         button.className = 'story-title-label';
         button.dataset.storyKey = item.key;
+        button.setAttribute('aria-haspopup','dialog');
         button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);
         const number=document.createElement('span');number.className='story-item-number';number.setAttribute('aria-hidden','true');
         const text=document.createElement('span');text.className='story-item-copy';
@@ -366,15 +359,7 @@ const StoryTitleScale = (() => {
         const context=document.createElement('span');context.className='story-item-context';
         text.append(title,context);button.append(number,text);
         bindLabel(button, item.key);
-        const read=document.createElement('button');read.type='button';read.className='story-item-read';read.textContent='Читати';read.dataset.readStory=item.key;
-        read.addEventListener('click',()=>{
-          const current=currentItems.get(item.key);if(!current)return;
-          StoryTitleScale.clear();
-          if(current.kind==='moment')navigateEvent(current.id);
-          else if(current.kind==='scene')navigateScene(current.id);
-          else navigateStory(current.kind,current.id);
-        });
-        slot.append(button,read);
+        slot.append(button);
       }
       if (slot !== cursor) scaleTrack.insertBefore(slot, cursor);
       cursor = slot.nextSibling;
@@ -384,7 +369,6 @@ const StoryTitleScale = (() => {
       context.textContent=[dateText(item.day,true),item.context].filter(Boolean).join(' · ');
       number.textContent=numbers.get(item.id)||'';number.hidden=!numbers.has(item.id);
       button.setAttribute('aria-label',`${LEVEL_LABELS[item.kind]}: ${item.title}`);
-      slot.querySelector('.story-item-read').setAttribute('aria-label',`Читати: ${item.title}`);
     }
     previous.forEach(slot => slot.remove());
 

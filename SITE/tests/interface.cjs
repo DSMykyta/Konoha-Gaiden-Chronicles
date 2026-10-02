@@ -38,7 +38,7 @@ async function check(width,height){
  // Singleton containers collapse visually without changing the underlying hierarchy.
  run('selected=new Set(selectable().map(e=>e.id));navigateEvent("ev-y0-0122-team7-announced");closeCard()');
  assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
- click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('.card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('.card-meta-line').textContent.includes('Рік 0'));run('closeCard()');
+ click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('Рік 0'));run('closeCard()');
 
  run('zoom=zoomModes.week;center=dayToAxis(21.5);render()');assert.equal(run('semanticLevel()'),'scene');
  // The classroom remains a scene because it groups multiple moments. The one-moment exterior scene collapses to its moment.
@@ -49,20 +49,20 @@ async function check(width,height){
  const exterior=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert.equal(exterior.kind,'moment');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
  // Every line physically present in a scene meets its common hub exactly.
  for(const id of hub.cast){const paths=[...canvas.querySelectorAll('.thread[data-character="'+id+'"]')];assert(paths.some(path=>path.getAttribute('d').includes(hub.x.toFixed(2)+','+hub.y.toFixed(2))),id+' does not reach scene hub');}
- click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');assert.equal(doc.querySelector('.card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
+ click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
  // Hovering another node cannot replace a clicked/pinned card.
  if(width>=600){const other=canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
  assert.equal(doc.querySelectorAll('.scene-context,.card-open-scene').length,0);run("readScene('sc-y0-0122-academy-announcements',$('cardContent'))");assert(!doc.getElementById('sceneDialog').hidden);assert.equal(doc.querySelectorAll('[data-scene-action]').length,classroomCount);assert(!doc.getElementById('sceneContent').textContent.includes('Асума, Куренай і Райдо чекають'));
- click('[data-scene-event="ev-y0-0122-team7-announced"]');await sleep();assert(doc.getElementById('sceneDialog').hidden);assert.equal(run('focusId'),'ev-y0-0122-team7-announced');assert.equal(run('pinnedNodeId'),'ev-y0-0122-team7-announced');assert.equal(doc.querySelector('.card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
+ click('[data-scene-event="ev-y0-0122-team7-announced"]');await sleep();assert(doc.getElementById('sceneDialog').hidden);assert.equal(run('focusId'),'ev-y0-0122-team7-announced');assert.equal(run('pinnedNodeId'),'ev-y0-0122-team7-announced');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
  assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Попередній момент');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Наступний момент');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
- click('[data-parent-kind="scene"]');assert.equal(doc.querySelector('.card-kind').textContent,'СЦЕНА');run("readScene('sc-y0-0122-academy-announcements',$('cardContent'))");click('#closeScene');assert(doc.getElementById('sceneDialog').hidden);
+ click('[data-parent-kind="scene"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');run("readScene('sc-y0-0122-academy-announcements',$('cardContent'))");click('#closeScene');assert(doc.getElementById('sceneDialog').hidden);
 
  // At month scale the classroom assignment sequence is one episode; the one-scene/one-moment jōnin episode still collapses to its moment.
  run('closeCard();zoom=zoomModes.month;center=dayToAxis(21.5);render()');assert.equal(run('semanticLevel()'),'episode');
  const formationEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-team-formation")');const joninCollapsed=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert(formationEpisode);assert(joninCollapsed);assert.equal(formationEpisode.kind,'episode');assert.equal(formationEpisode.childCount,5);assert.deepEqual(Array.from(formationEpisode.sourceSceneIds),['sc-y0-0122-accidental-kiss','sc-y0-0122-academy-announcements','sc-y0-0122-sakura-searches-sasuke','sc-y0-0122-naruto-impersonates-sasuke','sc-y0-0122-academy-waiting']);assert.equal(joninCollapsed.kind,'moment');
- run('center=dayToAxis(22.5);render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('.card-kind').textContent,'ЕПІЗОД');
+ run('center=dayToAxis(22.5);render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'ЕПІЗОД');
 
- run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');assert(arcNode);assert(arcNode.classList.contains('arc-node'));assert(arcNode.querySelector('ellipse.mark'));click('[data-event="arc:arc-y0-genin-formation"]');assert.equal(doc.querySelector('.card-kind').textContent,'АРКА');
+ run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');assert(arcNode);assert(arcNode.classList.contains('arc-node'));assert(arcNode.querySelector('ellipse.mark'));click('[data-event="arc:arc-y0-genin-formation"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'АРКА');
  // Cascades have no redundant parent bar and restore parent content/scroll.
  assert.equal(doc.querySelector('#eventCard .story-parent-button'),null);
  click('#eventCard [data-story-episode="ep-y0-team-formation"]');
@@ -84,7 +84,7 @@ async function check(width,height){
  click('#eventCard [data-story-episode="ep-y0-team-formation"]');assert.equal(run('HierarchyPreview.size'),1);
  const arc=snapshot.arcs.find(arc=>arc.id==='arc-y0-genin-formation');arc.title='Оновлена арка';snapshot.revision='test-story-update';version=snapshot.revision;await run('refreshData()');
  assert.equal(doc.querySelector('#cardContent h2').textContent,arc.title);assert.equal(run('HierarchyPreview.size'),0);assert.equal(run('pinnedNodeId'),'arc:arc-y0-genin-formation');
- run("navigateScene('sc-y0-0122-academy-exterior-jonin')");snapshot.revision='test-singleton-refresh';version=snapshot.revision;await run('refreshData()');assert(!doc.getElementById('eventCard').hidden);assert.equal(doc.querySelector('.card-kind').textContent,'СЦЕНА');assert.equal(run('cardSelection.id'),'sc-y0-0122-academy-exterior-jonin');
+ run("navigateScene('sc-y0-0122-academy-exterior-jonin')");snapshot.revision='test-singleton-refresh';version=snapshot.revision;await run('refreshData()');assert(!doc.getElementById('eventCard').hidden);assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(run('cardSelection.id'),'sc-y0-0122-academy-exterior-jonin');
  const beforeRemoval=structuredClone(snapshot);run("navigateScene('sc-y0-0122-academy-announcements')");snapshot.events=snapshot.events.filter(event=>event.scene_id!=='sc-y0-0122-academy-announcements');snapshot.revision='test-remove-scene';version=snapshot.revision;await run('refreshData()');assert(doc.getElementById('eventCard').hidden);assert.equal(run('pinnedNodeId'),null);
  snapshot=beforeRemoval;snapshot.revision='test-restore-scene';version=snapshot.revision;await run('refreshData()');
  run('closeCard()');
@@ -133,6 +133,19 @@ async function check(width,height){
  assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),geometry);
  assert.equal(run('JSON.stringify([zoom,center])'),view);
  run('closeCard();render()');assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),geometry);
+ // The bottom scale opens every reading level in place, including a moment
+ // represented by its parent on the map. Each title is its only button.
+ for(const [kind,id] of [['moment','ev-y0-0122-team7-announced'],['scene','sc-y0-0122-academy-announcements'],['episode','ep-y0-team-formation'],['arc','arc-y0-genin-formation']]){
+  const level=doc.getElementById('storyTitleLevel');level.value=kind;level.dispatchEvent(new window.Event('change'));
+  const title=doc.querySelector('[data-story-key="'+kind+':'+id+'"]');assert(title,'Missing bottom title '+kind);
+  assert.equal(title.parentElement.querySelectorAll('button').length,1);assert.equal(doc.querySelectorAll('[data-read-story]').length,0);
+  click('[data-story-key="'+kind+':'+id+'"]');
+  assert.equal(run('cardSelection.kind'),kind);assert.equal(run('cardSelection.id'),id);
+  assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),geometry,'Bottom reading moved nodes');
+  assert.equal(run('JSON.stringify([zoom,center])'),view,'Bottom reading changed the time scale');
+  assert.equal(run('window.__storyScaleFocus.active'),false);assert.equal(doc.querySelectorAll('.is-story-scale-fixed-hidden').length,0);
+  run('closeCard()');
+ }
  const yBefore=run('new Map(graphNodes.map(node=>[node.id,node.y]))');
  run('center+=.02;render()');for(const node of run('graphNodes'))if(yBefore.has(node.id))assert.equal(node.y,yBefore.get(node.id));
  assert(doc.querySelector('#timeAxis .time-axis-line'));assert(doc.querySelector('#timeAxis text'));

@@ -57,11 +57,11 @@
 }
 .story-title-label {
   position: absolute;
-  inset: 4px 60px 4px 0;
+  inset: 4px 0;
   display: flex;
   align-items: center;
   gap: 8px;
-  width: calc(100% - 60px);
+  width: 100%;
   height: 68px;
   min-width: 0;
   padding: 7px 8px;
@@ -92,8 +92,6 @@
 .story-item-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
 .story-item-context { display: block; margin-top: 4px; font-size: 10px; font-weight: 450; color: #68717c; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .story-item-number { display: none; flex: 0 0 24px; width: 24px; height: 24px; align-items: center; justify-content: center; border: 1px solid #a1a7ae; border-radius: 50%; background: white; font-size: 11px; color: #3f4854; }
-.story-item-read { position: absolute; right: 0; top: 16px; min-width: 58px; min-height: 44px; padding: 0 4px; color: #3f4854; font-size: 11px; pointer-events: auto; }
-.story-item-read:hover, .story-item-read:focus-visible { background: #fff; }
 .story-reader-summary, .story-reader-toggle { display: none; }
 .moment-number { fill: #444d58; font-family: inherit; font-size: 10px; font-weight: 650; pointer-events: none; }
 .moment-node .mark { fill: var(--surface,#f5f6f8); }
@@ -114,11 +112,10 @@
   .story-reader-toggle { display: block; position: absolute; right: 8px; top: 6px; min-height: 44px; padding: 0 10px; font-size: 12px; color: #444d58; }
   .story-title-track { inset: 54px 0 env(safe-area-inset-bottom); display: block; overflow-x: hidden; overflow-y: auto; scroll-snap-type: none; padding: 0 12px; scrollbar-width: thin; }
   .story-title-slot { width: 100%; min-width: 0; height: auto; min-height: 76px; border-top: 1px solid #e3e6ea; }
-  .story-title-label { position: relative; inset: auto; width: calc(100% - 64px); height: auto; min-height: 76px; padding: 10px 4px; color: #343c46; font-size: 14px; line-height: 1.4; }
+  .story-title-label { position: relative; inset: auto; width: 100%; height: auto; min-height: 76px; padding: 10px 4px; color: #343c46; font-size: 14px; line-height: 1.4; }
   .story-item-title { display: block; overflow: visible; }
   .story-item-context { white-space: normal; font-size: 11px; line-height: 1.35; }
   .story-item-number:not([hidden]) { display: flex; }
-  .story-item-read { top: 16px; right: 0; font-size: 12px; }
   .story-title-scale.is-collapsed .story-title-track { visibility: hidden; }
   .story-title-scale.is-fixed .story-title-label:not(.is-active) { opacity: .35; pointer-events: auto; }
 }

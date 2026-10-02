@@ -337,7 +337,7 @@ const TimelineSearchEnhanced = (() => {
   function cleanQuery(raw, parsedDate, source) {
     let working = String(raw ?? '');
     if (parsedDate?.match) working = working.replace(parsedDate.match, ' ');
-    const relation = working.match(/(?:що\s+було\s+)?\b(перед|після)\s+(.+)/i);
+    const relation = working.match(/(?:^|[^\p{L}\p{N}])(?:що\s+було\s+)?(перед|після)\s+(.+)/iu);
     if (relation) working = relation[2];
     const sourceWords = source ? SOURCE_WORDS[source] || [] : [];
     return tokens(working)
@@ -348,7 +348,7 @@ const TimelineSearchEnhanced = (() => {
   function parseIntent(raw) {
     const parsedDate = parseDate(raw);
     const source = inferSource(raw);
-    const relationMatch = String(raw ?? '').match(/(?:що\s+було\s+)?\b(перед|після)\s+(.+)/i);
+    const relationMatch = String(raw ?? '').match(/(?:^|[^\p{L}\p{N}])(?:що\s+було\s+)?(перед|після)\s+(.+)/iu);
     return {
       type: inferType(raw),
       date: parsedDate?.day ?? null,
