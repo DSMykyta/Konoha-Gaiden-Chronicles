@@ -1,0 +1,122 @@
+schema_version: 1
+id: sc-y0-iwa-mikata-office
+episode_id: ep-y0-iwa-snake-in-cave
+display_rank: 200
+continuity_id: main
+title: Кабінет Мікати
+location_id: loc-mikata-office
+day_part: morning
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-meet-mikata
+  title: Команда 7 знайомиться з Мікатою
+  text: Команда приходить до кабінету куратора полоненого. Діти одразу відчувають сильний дискомфорт від спокійної, але психологічно тиснучої манери Мікати. Наруто відволікається на яскраво-рожеве гумове жабеня серед похмурого службового кабінету, Сакура інстинктивно тримається ближче до Какаші, а Саске насторожується й закривається.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+- id: ev-y0-iwa-root-warning
+  title: Міката таємно попереджає Какаші
+  text: 'Під виглядом демонстративно фамільярної поведінки Міката наближається до Какаші, непомітно передає йому ключ від камери й пошепки повідомляє про можливу спробу Кореня перехопити полоненого. Какаші не реагує зовні, але відразу перебудовує оцінку місії: замість мирного конвою він починає готувати команду до можливої засідки.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-mikata
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: background
+    mode: physical
+  - entity_id: c-sakura
+    role: background
+    mode: physical
+  - entity_id: c-sasuke
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 200
+relations:
+- id: rel-iwa-mikata-office-1
+  kind: before
+  a: ev-y0-iwa-meet-mikata
+  b: ev-y0-iwa-root-warning
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+presence:
+- id: pr-iwa-mikata-office-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-mikata-office.start
+  to: sc-y0-iwa-mikata-office.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-mikata-office-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-mikata-office.start
+  to: sc-y0-iwa-mikata-office.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-mikata-office-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-mikata-office.start
+  to: sc-y0-iwa-mikata-office.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-mikata-office-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-mikata-office.start
+  to: sc-y0-iwa-mikata-office.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-mikata-office-mikata
+  entity_id: c-mikata
+  from: sc-y0-iwa-mikata-office.start
+  to: sc-y0-iwa-mikata-office.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

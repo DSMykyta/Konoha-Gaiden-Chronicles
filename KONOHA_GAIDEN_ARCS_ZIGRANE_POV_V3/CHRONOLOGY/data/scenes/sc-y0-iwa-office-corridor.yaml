@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-y0-iwa-office-corridor
+episode_id: ep-y0-iwa-snake-in-cave
+display_rank: 300
+continuity_id: main
+title: Коридор біля кабінету Мікати
+location_id: loc-intelligence-upper-corridor
+day_part: morning
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-children-react
+  title: Діти реагують на поведінку Мікати
+  text: Наруто, Сакура й Саске приголомшені тим, як Міката поводився з їхнім наставником. Уже в коридорі напруга проривається короткою суперечкою між дітьми, тоді як Какаші їх майже не слухає — його увага повністю переходить на можливу загрозу під час конвою.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+relations: []
+presence:
+- id: pr-iwa-office-corridor-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-office-corridor.start
+  to: sc-y0-iwa-office-corridor.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-office-corridor-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-office-corridor.start
+  to: sc-y0-iwa-office-corridor.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-office-corridor-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-office-corridor.start
+  to: sc-y0-iwa-office-corridor.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-office-corridor-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-office-corridor.start
+  to: sc-y0-iwa-office-corridor.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

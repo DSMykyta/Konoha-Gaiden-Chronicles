@@ -1,0 +1,88 @@
+schema_version: 1
+id: sc-y0-iwa-holding-cell
+episode_id: ep-y0-iwa-snake-in-cave
+display_rank: 400
+continuity_id: main
+title: Камера тимчасового утримання
+location_id: loc-intelligence-holding-cell
+day_part: morning
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-take-prisoner
+  title: Команда 7 забирає полоненого Іви
+  text: 'Какаші відчиняє камеру, і команда вперше бачить полоненого після допиту. На його тілі немає видимих слідів катувань, але чоловік явно психологічно зламаний: він лякається самого відкриття дверей, не намагається чинити опір або оцінювати можливість втечі й покірно виконує накази. Команда забирає його з камери та вирушає з Конохи.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-iwa-prisoner
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+relations: []
+presence:
+- id: pr-iwa-holding-cell-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-holding-cell.start
+  to: sc-y0-iwa-holding-cell.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-holding-cell-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-holding-cell.start
+  to: sc-y0-iwa-holding-cell.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-holding-cell-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-holding-cell.start
+  to: sc-y0-iwa-holding-cell.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-holding-cell-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-holding-cell.start
+  to: sc-y0-iwa-holding-cell.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-holding-cell-iwa-prisoner
+  entity_id: c-iwa-prisoner
+  from: sc-y0-iwa-holding-cell.start
+  to: sc-y0-iwa-holding-cell.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

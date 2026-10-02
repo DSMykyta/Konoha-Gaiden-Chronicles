@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-y0-iwa-ibiki-interrogation
+episode_id: ep-y0-iwa-return-from-border
+display_rank: 1100
+continuity_id: main
+title: Нижній рівень Відділу допитів
+location_id: loc-intelligence-lower-interrogation
+day_part: afternoon
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 1
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-see-ibiki
+  title: Команда 7 бачить роботу Ібікі
+  text: 'Дорогою до Ібікі команда опиняється біля кімнати допиту саме тоді, коли відчиняються двері. Геніни випадково бачать наслідки жорсткого фізичного допиту й самого Ібікі за роботою. Побачене матеріалізує те, про що Какаші розповідав їм біля багаття: тепер вони на власні очі бачать інший спосіб добування інформації, відмінний від методів Мікати.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki-interrogation-prisoner
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+- id: ev-y0-iwa-ibiki-receives-scroll
+  title: Ібікі приймає сувій Іви
+  text: Какаші передає Ібікі запечатаний сувій, отриманий під час обміну. Ібікі оглядає його й направляє на перевірку до лабораторії, після чого повертається до роботи. Команда залишає підземний сектор, завершуючи останню службову процедуру цієї місії.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-ibiki
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: background
+    mode: physical
+  - entity_id: c-sakura
+    role: background
+    mode: physical
+  - entity_id: c-sasuke
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 200
+relations:
+- id: rel-iwa-ibiki-interrogation-1
+  kind: before
+  a: ev-y0-iwa-see-ibiki
+  b: ev-y0-iwa-ibiki-receives-scroll
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+presence:
+- id: pr-iwa-ibiki-interrogation-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-ibiki-interrogation.start
+  to: sc-y0-iwa-ibiki-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ibiki-interrogation-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-ibiki-interrogation.start
+  to: sc-y0-iwa-ibiki-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ibiki-interrogation-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-ibiki-interrogation.start
+  to: sc-y0-iwa-ibiki-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ibiki-interrogation-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-ibiki-interrogation.start
+  to: sc-y0-iwa-ibiki-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ibiki-interrogation-ibiki
+  entity_id: c-ibiki
+  from: sc-y0-iwa-ibiki-interrogation.start
+  to: sc-y0-iwa-ibiki-interrogation.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ibiki-interrogation-ibiki-interrogation-prisoner
+  entity_id: c-ibiki-interrogation-prisoner
+  from: sc-y0-iwa-ibiki-interrogation.start
+  to: ev-y0-iwa-see-ibiki.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

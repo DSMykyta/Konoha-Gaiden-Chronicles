@@ -1,0 +1,88 @@
+schema_version: 1
+id: sc-y0-iwa-escort-order
+episode_id: ep-y0-iwa-snake-in-cave
+display_rank: 100
+continuity_id: main
+title: Отримання доручення
+location_id: loc-hokage-residence
+day_part: morning
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-escort-assigned
+  title: Команда 7 отримує місію супроводу
+  text: У канцелярії Команді 7 доручають доставити полоненого шпигуна Іви до північного кордону Країни Вогню та передати його представникам Країни Землі в межах погодженого обміну. Полонений уже допитаний, ізольований і закутий у чакроподавлюючі кайданки. Місія офіційно вважається малоризиковою; Какаші наказує команді підготуватися до негайного виходу й дводенного переходу.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+relations: []
+presence:
+- id: pr-iwa-escort-order-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-escort-order.start
+  to: sc-y0-iwa-escort-order.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-escort-order-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-escort-order.start
+  to: sc-y0-iwa-escort-order.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-escort-order-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-escort-order.start
+  to: sc-y0-iwa-escort-order.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-escort-order-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-escort-order.start
+  to: sc-y0-iwa-escort-order.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-escort-order-hiruzen
+  entity_id: c-hiruzen
+  from: sc-y0-iwa-escort-order.start
+  to: sc-y0-iwa-escort-order.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

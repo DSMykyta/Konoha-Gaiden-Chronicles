@@ -1,0 +1,88 @@
+schema_version: 1
+id: sc-y0-iwa-ravine-rest
+episode_id: ep-y0-iwa-road-to-border
+display_rank: 600
+continuity_id: main
+title: Привал у яру
+location_id: loc-fire-north-ravine
+day_part: afternoon
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-sasuke-feeds-prisoner
+  title: Саске годує закутого полоненого
+  text: На короткому привалі Какаші наказує Саске нагодувати полоненого, який через кайданки не може нормально їсти сам. Шинобі Іви покірно приймає кожну ложку й щоразу тихо дякує. Для Саске та інших дітей ця поведінка стає ще одним доказом того, що перед ними вже не впевнений ворожий оперативник, а людина, психологічно зламана під час допиту.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  - entity_id: c-iwa-prisoner
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: background
+    mode: physical
+  - entity_id: c-sakura
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+relations: []
+presence:
+- id: pr-iwa-ravine-rest-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-ravine-rest.start
+  to: sc-y0-iwa-ravine-rest.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ravine-rest-iwa-prisoner
+  entity_id: c-iwa-prisoner
+  from: sc-y0-iwa-ravine-rest.start
+  to: sc-y0-iwa-ravine-rest.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ravine-rest-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-ravine-rest.start
+  to: sc-y0-iwa-ravine-rest.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ravine-rest-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-ravine-rest.start
+  to: sc-y0-iwa-ravine-rest.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-ravine-rest-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-ravine-rest.start
+  to: sc-y0-iwa-ravine-rest.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

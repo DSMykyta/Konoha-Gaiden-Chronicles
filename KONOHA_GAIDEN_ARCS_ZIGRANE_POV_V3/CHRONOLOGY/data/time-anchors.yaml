@@ -1274,3 +1274,15 @@ anchors:
     evidence_ids: ["evd-v10-000214", "evd-anime-216-baki-suna-council"]
     review: "accepted"
     reason: "Working project date inherited from v10 for Naruto episode 216."
+  - id: ta-iwa-prisoner-mission
+    date:
+      year: 0
+      month: 5
+      day: 5
+    precision: day
+    placement_status: working
+    basis: editorial
+    evidence_ids:
+    - evd-iwa-prisoner-placement
+    review: accepted
+    reason: Робоча дата 05–06.05 у вільному проміжку після повернення Команди 7 з Країни Хвиль і квітневих місій та до іспиту 24.06. Місія йде після архіву Команди 9 та розслідування Какаші; їхні сцени й конкретні дати залишено для наступної правки користувача.

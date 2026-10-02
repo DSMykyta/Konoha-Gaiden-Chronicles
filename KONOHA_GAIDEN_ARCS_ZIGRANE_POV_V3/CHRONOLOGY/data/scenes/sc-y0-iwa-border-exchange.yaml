@@ -1,0 +1,110 @@
+schema_version: 1
+id: sc-y0-iwa-border-exchange
+episode_id: ep-y0-iwa-road-to-border
+display_rank: 700
+continuity_id: main
+title: Північний кордон
+location_id: loc-fire-north-exchange-point
+day_part: night
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-exchange
+  title: Команда 7 проводить обмін із шинобі Іви
+  text: Уночі команда доходить до погодженої точки на північному кордоні й зустрічає двох шинобі Іви. Какаші передає їм полоненого й ключ від кайданок, натомість отримує запечатаний сувій. Представники Іви бачать стан свого шпигуна, але обмін проходить без розмов і без конфлікту. Очікуваного нападу Кореня не стається. Після завершення процедури Какаші відводить команду на кілька кілометрів від кордону для ночівлі.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-iwa-prisoner
+    role: participant
+    mode: physical
+  - entity_id: c-iwa-exchange-shinobi-1
+    role: participant
+    mode: physical
+  - entity_id: c-iwa-exchange-shinobi-2
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: background
+    mode: physical
+  - entity_id: c-sakura
+    role: background
+    mode: physical
+  - entity_id: c-sasuke
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+relations: []
+presence:
+- id: pr-iwa-border-exchange-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-border-exchange.start
+  to: sc-y0-iwa-border-exchange.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-exchange-iwa-prisoner
+  entity_id: c-iwa-prisoner
+  from: sc-y0-iwa-border-exchange.start
+  to: sc-y0-iwa-border-exchange.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-exchange-iwa-exchange-shinobi-1
+  entity_id: c-iwa-exchange-shinobi-1
+  from: sc-y0-iwa-border-exchange.start
+  to: sc-y0-iwa-border-exchange.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-exchange-iwa-exchange-shinobi-2
+  entity_id: c-iwa-exchange-shinobi-2
+  from: sc-y0-iwa-border-exchange.start
+  to: sc-y0-iwa-border-exchange.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-exchange-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-border-exchange.start
+  to: sc-y0-iwa-border-exchange.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-exchange-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-border-exchange.start
+  to: sc-y0-iwa-border-exchange.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-exchange-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-border-exchange.start
+  to: sc-y0-iwa-border-exchange.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

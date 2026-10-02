@@ -3289,6 +3289,86 @@ links:
   kind: before
   a: sc-y0-0706-iruka-team7-tower-message
   b: sc-y0-0706-preliminaries-announced
+- id: lnk-iwa-mission-1
+  kind: before
+  a: sc-y0-iwa-escort-order
+  b: sc-y0-iwa-mikata-office
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-2
+  kind: before
+  a: sc-y0-iwa-mikata-office
+  b: sc-y0-iwa-office-corridor
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-3
+  kind: before
+  a: sc-y0-iwa-office-corridor
+  b: sc-y0-iwa-holding-cell
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-4
+  kind: before
+  a: sc-y0-iwa-holding-cell
+  b: sc-y0-iwa-forest-convoy
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-5
+  kind: before
+  a: sc-y0-iwa-forest-convoy
+  b: sc-y0-iwa-ravine-rest
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-6
+  kind: before
+  a: sc-y0-iwa-ravine-rest
+  b: sc-y0-iwa-border-exchange
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-7
+  kind: before
+  a: sc-y0-iwa-border-exchange
+  b: sc-y0-iwa-border-camp
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-8
+  kind: before
+  a: sc-y0-iwa-border-camp
+  b: sc-y0-iwa-return-konoha
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-9
+  kind: before
+  a: sc-y0-iwa-return-konoha
+  b: sc-y0-iwa-office-return
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+- id: lnk-iwa-mission-10
+  kind: before
+  a: sc-y0-iwa-office-return
+  b: sc-y0-iwa-ibiki-interrogation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence
   of relation means unknown order, not simultaneity.

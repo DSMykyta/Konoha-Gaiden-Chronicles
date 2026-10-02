@@ -1173,7 +1173,11 @@ sources:
     url: https://naruto.fandom.com/wiki/Zero_Hour%21_The_Konoha_Crush_Begins%21
     accessed: '2026-10-01'
     locator_status: secondary_synopsis_checked
-
+  - id: src-kakashi-gaiden-iwa-prisoner
+    type: project_roleplay
+    title: Какаші Ґайден — Полонений Іви та дорога до кордону
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 02 [Полонений Іви та дорога до кордону].txt
+    revision: e14dfd2ce7e9b14ef1bfce4159d3630b5f02580d
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4136,4 +4140,14 @@ evidence:
     source_id: src-narutopedia-ep68-audit
     locator: Episode 68, Synopsis; factual comparison only; exact timestamps not inspected
     basis: source
+    review: accepted
+  - id: evd-iwa-prisoner-mission
+    source_id: src-kakashi-gaiden-iwa-prisoner
+    locator: 'Місія супроводу: доручення; кабінет Мікати; камера; лісовий конвой; привал; обмін; нічний табір; повернення; Анко; Ібікі. Суміжні особисті лінії й наступні місії виключено.'
+    basis: source
+    review: accepted
+  - id: evd-iwa-prisoner-placement
+    source_id: src-kakashi-gaiden-iwa-prisoner
+    locator: 'Редакторське розміщення за дорученням користувача 02.10.2026: після історії архіву Команди 9 й розслідування Какаші, до іспиту на чуніна. Дві попередні історії поки не переносити й не змінювати.'
+    basis: editorial
     review: accepted

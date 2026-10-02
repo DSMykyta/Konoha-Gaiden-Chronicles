@@ -1,0 +1,88 @@
+schema_version: 1
+id: sc-y0-iwa-office-return
+episode_id: ep-y0-iwa-return-from-border
+display_rank: 1000
+continuity_id: main
+title: Кабінет Мікати після повернення
+location_id: loc-mikata-office
+day_part: afternoon
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 1
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-anko-directs-team
+  title: Анко направляє Команду 7 до Ібікі
+  text: Команда повертається до кабінету Мікати із сувоєм Іви, але замість нього знаходить Анко. Вона спочатку дозволяє собі грубий коментар про відсутнього Мікату й лише потім помічає трьох генінів за спиною Какаші. Анко повідомляє, що Міката працює під прикриттям і не повернеться найближчим часом, тому прийняти сувій може Ібікі на нижньому рівні Відділу.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: background
+    mode: physical
+  - entity_id: c-sakura
+    role: background
+    mode: physical
+  - entity_id: c-sasuke
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+relations: []
+presence:
+- id: pr-iwa-office-return-anko
+  entity_id: c-anko
+  from: sc-y0-iwa-office-return.start
+  to: sc-y0-iwa-office-return.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-office-return-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-office-return.start
+  to: sc-y0-iwa-office-return.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-office-return-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-office-return.start
+  to: sc-y0-iwa-office-return.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-office-return-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-office-return.start
+  to: sc-y0-iwa-office-return.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-office-return-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-office-return.start
+  to: sc-y0-iwa-office-return.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

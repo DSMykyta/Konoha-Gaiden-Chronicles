@@ -2096,7 +2096,86 @@ entities:
     name: Kikyō Castle
     aliases: [Замок Кікьо]
     parent_id: loc-konohagakure
-
+  - id: c-mikata
+    kind: person
+    name: Міката
+    aliases:
+    - Міката
+  - id: c-iwa-prisoner
+    kind: person
+    name: Полонений шпигун Іви
+    aliases:
+    - Шпигун Іви
+    - Полонений Іви
+  - id: c-iwa-exchange-shinobi-1
+    kind: person
+    name: Перший шинобі Іви на обміні
+    aliases:
+    - Шинобі Іви на обміні
+  - id: c-iwa-exchange-shinobi-2
+    kind: person
+    name: Другий шинобі Іви на обміні
+    aliases:
+    - Шинобі Іви на обміні
+  - id: c-ibiki-interrogation-prisoner
+    kind: person
+    name: Полонений на допиті Ібікі
+    aliases:
+    - Полонений у кімнаті допиту
+  - id: loc-intelligence-division
+    kind: location
+    name: Відділ розвідки та допитів
+    aliases:
+    - Відділ розвідки та допитів
+    parent_id: loc-konohagakure
+  - id: loc-mikata-office
+    kind: location
+    name: Кабінет Мікати
+    aliases:
+    - Кабінет Мікати
+    parent_id: loc-intelligence-division
+  - id: loc-intelligence-upper-corridor
+    kind: location
+    name: Коридор біля кабінету Мікати
+    aliases:
+    - Коридор біля кабінету Мікати
+    parent_id: loc-intelligence-division
+  - id: loc-intelligence-holding-cell
+    kind: location
+    name: Камера тимчасового утримання
+    aliases:
+    - Камера тимчасового утримання
+    parent_id: loc-intelligence-division
+  - id: loc-fire-north-forest-route
+    kind: location
+    name: Лісова дорога до північного кордону
+    aliases:
+    - Лісова дорога до північного кордону
+    parent_id: loc-land-of-fire
+  - id: loc-fire-north-ravine
+    kind: location
+    name: Яр на шляху до північного кордону
+    aliases:
+    - Яр на шляху до північного кордону
+    parent_id: loc-land-of-fire
+  - id: loc-fire-north-exchange-point
+    kind: location
+    name: Місце обміну на північному кордоні
+    aliases:
+    - Місце обміну на північному кордоні
+    parent_id: loc-land-of-fire
+  - id: loc-fire-north-camp
+    kind: location
+    name: Нічний табір біля північного кордону
+    aliases:
+    - Нічний табір біля північного кордону
+    parent_id: loc-land-of-fire
+  - id: loc-intelligence-lower-interrogation
+    kind: location
+    name: Нижній рівень Відділу допитів
+    aliases:
+    - Нижній рівень Відділу допитів
+    parent_id: loc-intelligence-division
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

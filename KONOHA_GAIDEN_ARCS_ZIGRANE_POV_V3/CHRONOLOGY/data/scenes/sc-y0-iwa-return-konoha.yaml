@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-y0-iwa-return-konoha
+episode_id: ep-y0-iwa-return-from-border
+display_rank: 900
+continuity_id: main
+title: Повернення до Конохи
+location_id: loc-konoha-gate
+day_part: morning
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 1
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-return
+  title: Команда 7 повертається після обміну
+  text: Вранці Какаші знімає табір, і команда швидко повертається до Конохи вже без полоненого. Основне завдання виконано, але отриманий від Іви запечатаний сувій ще потребує перевірки Відділом розвідки та допитів перед передачею далі.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+relations: []
+presence:
+- id: pr-iwa-return-konoha-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-return-konoha.start
+  to: sc-y0-iwa-return-konoha.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-return-konoha-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-return-konoha.start
+  to: sc-y0-iwa-return-konoha.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-return-konoha-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-return-konoha.start
+  to: sc-y0-iwa-return-konoha.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-return-konoha-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-return-konoha.start
+  to: sc-y0-iwa-return-konoha.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted

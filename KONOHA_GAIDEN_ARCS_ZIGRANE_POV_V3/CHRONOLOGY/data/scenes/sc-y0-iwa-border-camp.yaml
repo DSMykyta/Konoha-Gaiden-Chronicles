@@ -1,0 +1,108 @@
+schema_version: 1
+id: sc-y0-iwa-border-camp
+episode_id: ep-y0-iwa-after-exchange
+display_rank: 800
+continuity_id: main
+title: Табір біля кордону
+location_id: loc-fire-north-camp
+day_part: night
+placement:
+  anchor_id: ta-iwa-prisoner-mission
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-iwa-discuss-prisoner
+  title: Команда обговорює долю полоненого
+  text: 'Біля багаття Наруто, Сакура й Саске повертаються до поведінки переданого Іві шпигуна. Какаші пояснює, що у Відділі розвідки та допитів використовують різні способи зламу: фізичний тиск, техніки роботи зі свідомістю та психологічні методи Мікати. Він прямо пов''язує поведінку полоненого з роботою Мікати й пояснює дітям, чому людина може бути фізично неушкодженою, але фактично втратити здатність чинити опір.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: focus
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 100
+- id: ev-y0-iwa-naruto-asks-mentor
+  title: Наруто звертається до Какаші як до дорослого наставника
+  text: Пізніше, коли Саске й Сакура вже сплять, Наруто залишається з Какаші на нічній варті й ставить йому особисті питання про дорослішання та власне тіло. Какаші відповідає спокійно й без насмішок, фактично вперше дозволяючи Наруто звертатися до нього не лише як до командира, а і як до старшого чоловіка, якому можна поставити незручне особисте питання.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: background
+    mode: physical
+  - entity_id: c-sakura
+    role: background
+    mode: physical
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  display_rank: 200
+relations:
+- id: rel-iwa-border-camp-1
+  kind: before
+  a: ev-y0-iwa-discuss-prisoner
+  b: ev-y0-iwa-naruto-asks-mentor
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+presence:
+- id: pr-iwa-border-camp-kakashi
+  entity_id: c-kakashi
+  from: sc-y0-iwa-border-camp.start
+  to: sc-y0-iwa-border-camp.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-camp-naruto
+  entity_id: c-naruto
+  from: sc-y0-iwa-border-camp.start
+  to: sc-y0-iwa-border-camp.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-camp-sakura
+  entity_id: c-sakura
+  from: sc-y0-iwa-border-camp.start
+  to: sc-y0-iwa-border-camp.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
+- id: pr-iwa-border-camp-sasuke
+  entity_id: c-sasuke
+  from: sc-y0-iwa-border-camp.start
+  to: sc-y0-iwa-border-camp.end
+  basis: source
+  evidence_ids:
+  - evd-iwa-prisoner-mission
+  review: accepted
