@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261002-elastic-clouds-1';
+const UI_VERSION='20261002-elastic-clouds-2';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,cardPlacement=null,cardSelection=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -112,7 +112,7 @@ function axisToDay(value,side='after'){return chronologyAxis().axisToDay(value,s
 function axisLength(){return data?dayToAxis(365):365;}
 function clampAxisCenter(value,z=zoom){
  const total=axisLength(),half=total/(2*z);
- return total<=half*2?total/2:clamp(value,half,total-half);
+ return total<=half*2?clamp(value,0,total):clamp(value,half,total-half);
 }
 function range(){
  const total=axisLength(),half=total/(2*zoom);
@@ -228,7 +228,7 @@ function closeCard(restoreFocus=false){
 }
 function setZoom(value,pivot=center){
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
- const old=zoom;zoom=clamp(value,1,730);center=clampAxisCenter(pivot+(center-pivot)*old/zoom);tooltipController?.hide();schedule();
+ const old=zoom,view=range(),from=arguments.length>1?(view[0]+view[1])/2:center;zoom=clamp(value,1,730);center=clampAxisCenter(pivot+(from-pivot)*old/zoom);tooltipController?.hide();schedule();
 }
 function closePanels(except){
  for(const id of ['linesPanel','searchPanel','periodPanel'])if(id!==except){

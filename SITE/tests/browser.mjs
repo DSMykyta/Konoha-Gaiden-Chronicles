@@ -218,6 +218,10 @@ try {
     assert.equal(await page.locator('#timelineEmpty').isVisible(),false);
     await page.evaluate(()=>closeCard());
 
+    await page.locator('[data-mode="week"]').click();
+    await page.locator('.timeline-key [data-level="scene"][aria-current="true"]').waitFor({state:'visible'});
+    assert(await page.evaluate(()=>axisToDay(center)<31),'Returning from the January arc jumped to another month');
+
     // Search, fixed story concentration, single-character focus and profiles.
     await page.keyboard.press('/');
     await page.locator('#eventSearch').fill('Команда 7');

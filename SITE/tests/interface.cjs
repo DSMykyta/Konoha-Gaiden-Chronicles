@@ -121,6 +121,11 @@ async function check(width,height){
  const arcGeometry=run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))');run('closeCard();render()');assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),arcGeometry);
  run("navigateStory('episode',[...episodeMap.values()].find(episode=>episode.arc_id==='arc-y0-scroll-of-seals').id)");click('#eventCard [data-parent-kind="arc"]');
  assert.equal(doc.querySelector('#cardContent h2').textContent,'Наруто і Сувій Печатей');assert(run("graphNodes.some(node=>node.rawId==='arc-y0-scroll-of-seals')"));assert(canvas.querySelector('.thread'));assert(doc.getElementById('timelineEmpty').hidden);run('closeCard()');
+ // Fitting the year must remember the story date for the next detail view.
+ run('setZoom(zoomModes.week)');await sleep();assert(run('axisToDay(center)<31'),'Year-to-week zoom jumped away from the January story');assert(run('graphNodes.length>0'));
+ run('zoom=zoomModes.week;center=dayToAxis(21.5);render();setZoom(zoomModes.year)');await sleep();run('setZoom(zoomModes.week)');await sleep();assert(Math.abs(run('axisToDay(center)')-21.5)<1e-8);
+ // An explicit wheel pivot uses the visible year center, not the remembered date.
+ run('zoom=zoomModes.year;center=dayToAxis(21.5);render()');const pivot=run('dayToAxis(73.5)'),fraction=run('dayToAxis(73.5)/axisLength()');run('setZoom(zoomModes.month,'+pivot+')');await sleep();const bounds=run('range()');assert(Math.abs((pivot-bounds[0])/(bounds[1]-bounds[0])-fraction)<1e-8);
  const moments=run("semanticNodes('moment',orderedScenes())");
  for(const scene of run('orderedScenes()')){if(scene.day===null)continue;const members=moments.filter(node=>node.scene?.id===scene.id);assert(members.every(node=>node.day>scene.day&&node.day<scene.day+1));}
  console.log('PASS',width,height,'all/none, names, focus, event navigation, day backgrounds, age tabs, gallery, live refresh');
