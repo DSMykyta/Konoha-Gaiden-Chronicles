@@ -1,6 +1,118 @@
 schema_version: 1
 periods:
+  - id: "warring-states"
+    label: "Кланові війни"
+    order: 100
+    calendar_status: "unplaced"
+    description: "Доба до системи прихованих селищ: війни кланів Сенджу, Учіха та інших шинобі-кланів."
+
+  - id: "village-founding"
+    label: "Заснування селищ"
+    order: 200
+    calendar_status: "unplaced"
+    description: "Створення Конохи й поширення системи прихованих селищ."
+
+  - id: "first-shinobi-war"
+    label: "Перша війна шинобі"
+    order: 300
+    calendar_status: "unplaced"
+    description: "Перша світова війна нової системи прихованих селищ."
+
+  - id: "first-postwar-peace"
+    label: "Двадцятирічний мир"
+    order: 400
+    calendar_status: "unplaced"
+    description: "Міжвоєнний період після Першої світової війни шинобі й до початку Другої."
+
+  - id: "second-shinobi-war"
+    label: "Друга війна шинобі"
+    order: 500
+    calendar_status: "unplaced"
+    description: "Доба Другої світової війни шинобі, молодих Джираї, Цунаде й Орочімару та війни в Аме."
+
+  - id: "sannin-interwar"
+    label: "Міжвоєння Саннінів"
+    order: 600
+    calendar_status: "unplaced"
+    description: "Період після Другої війни й до Третьої: молоді Мінато, Кушина, Сакумо та формування нового покоління."
+
+  - id: "third-shinobi-war"
+    label: "Третя війна шинобі"
+    order: 700
+    calendar_status: "unplaced"
+    description: "Третя світова війна шинобі; Команда Мінато, Какаші, Обіто, Рін і події Каннабі."
+
+  - id: "fourth-hokage"
+    label: "Епоха Четвертого Хокаґе"
+    order: 800
+    calendar_status: "unplaced"
+    description: "Короткий післявоєнний період правління Мінато до нападу Дев’ятихвостого."
+
+  - id: "nine-tails-crisis"
+    label: "Криза Дев’ятихвостого"
+    order: 900
+    calendar_status: "unplaced"
+    description: "Народження Наруто, напад Курами на Коноху, загибель Мінато й Кушини та повернення Хірузена до влади."
+
+  - id: "post-nine-tails"
+    label: "Після Дев’ятихвостого"
+    order: 1000
+    calendar_status: "unplaced"
+    description: "Відбудова Конохи після нападу Курами та дитинство покоління Наруто до загострення кризи Учіха."
+
+  - id: "uchiha-crisis"
+    label: "Криза Учіха"
+    order: 1100
+    calendar_status: "unplaced"
+    description: "Ізоляція клану Учіха, Шисуї та Ітачі, підготовка перевороту й різанина клану."
+
+  - id: "pre-naruto"
+    label: "Перед Naruto"
+    order: 1200
+    calendar_status: "unplaced"
+    description: "Період після загибелі клану Учіха й до випуску покоління Наруто з Академії."
+
   - id: "part-i"
-    label: "Part I"
+    label: "Naruto"
+    legacy_label: "Part I"
+    order: 1300
+    calendar_status: "placed"
     from_year: 0
     to_year: 0
+    description: "Від початку історії Наруто й формування команд до його відходу на тренування з Джираєю."
+
+  - id: "timeskip"
+    label: "Таймскіп"
+    order: 1400
+    calendar_status: "unplaced"
+    description: "Період між відходом Наруто з Джираєю та його поверненням до Конохи."
+
+  - id: "shippuden"
+    label: "Shippūden"
+    order: 1500
+    calendar_status: "unplaced"
+    description: "Від повернення Наруто до завершення Четвертої світової війни шинобі та фінальної битви Наруто й Саске."
+
+  - id: "post-fourth-war"
+    label: "Після Четвертої війни"
+    order: 1600
+    calendar_status: "unplaced"
+    description: "Післявоєнний період за Шостого Хокаґе: Hiden-історії, The Last і перехід до нового миру."
+
+  - id: "seventh-hokage"
+    label: "Епоха Сьомого Хокаґе"
+    order: 1700
+    calendar_status: "unplaced"
+    description: "Період правління Наруто як Сьомого Хокаґе до домінування основного конфлікту покоління Боруто."
+
+  - id: "boruto"
+    label: "Boruto"
+    order: 1800
+    calendar_status: "unplaced"
+    description: "Активна доба покоління Боруто: Академія, Кара, Кавакі та Ооцуцукі."
+
+  - id: "two-blue-vortex"
+    label: "Two Blue Vortex"
+    order: 1900
+    calendar_status: "unplaced"
+    description: "Період після другого великого таймскіпу історії Боруто."
