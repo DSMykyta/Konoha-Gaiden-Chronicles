@@ -4,6 +4,7 @@
   "buildCommand": "npm run check && npm test",
   "outputDirectory": "public",
   "installCommand": "npm ci",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
   "git": {
     "deploymentEnabled": {
       "*": false,
