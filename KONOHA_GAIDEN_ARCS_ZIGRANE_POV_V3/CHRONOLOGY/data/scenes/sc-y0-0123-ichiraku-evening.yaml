@@ -3,7 +3,7 @@ id: "sc-y0-0123-ichiraku-evening"
 episode_id: ep-y0-students-after-tests
 display_rank: 100
 continuity_id: "main"
-title: "Кіта, Наруто й Кіба обговорюють перший день"
+title: "Кіта й Кіба зустрічають Наруто в Ічіраку"
 location_id: "loc-ichiraku"
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}
 day_part: "evening"
@@ -11,12 +11,24 @@ state: "active"
 presence_coverage: "complete"
 review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
 events:
-  - id: "ev-y0-0123-ichiraku-compare-tests"
-    title: "Наруто й Кіба порівнюють свої випробування з днем Кіти"
-    text: "За раменом Наруто розповідає про тест із дзвіночками, Кіба — про вистежування Команди 8, а Кіта пояснює тест Райдо на спостереження."
+  - id: "ev-y0-0123-ichiraku-meet-naruto"
+    title: "Зустріч із Наруто"
+    text: "Кіта й Кіба приходять до Ічіраку разом з Акамару й там несподівано зустрічають Наруто, який теж прийшов вечеряти після першого дня зі своєю командою. Вони сідають разом, і розмова швидко переходить до того, як у кожного пройшла перевірка наставника."
     origin: "P"
     extent: "interval"
     display_rank: 100
+    involvement:
+      - {entity_id: "c-kita", role: "focus", mode: "physical"}
+      - {entity_id: "c-kiba", role: "focus", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
+    evidence_ids: ["evd-team9-ichiraku-evening"]
+  - id: "ev-y0-0123-ichiraku-compare-tests"
+    title: "Розмова про випробування"
+    text: "За раменом Наруто розповідає про тест Какаші з дзвіночками, Кіба — про день Команди 8 і вправи Куренай на вистежування, а Кіта переказує випробування Райдо: спостереження за Командою 8, яр, катакомби й бій на Полі 9. Кіта зізнається, що під час бою зірвався й тепер Райдо ще не сказав, чи залишить їх своєю командою."
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
     involvement:
       - {entity_id: "c-kita", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "focus", mode: "physical"}
@@ -24,11 +36,11 @@ events:
       - {entity_id: "c-akamaru", role: "participant", mode: "physical"}
     evidence_ids: ["evd-team9-ichiraku-evening"]
   - id: "ev-y0-0123-kiba-reveals-kurenai-saw-raido"
-    title: "Кіба розповідає, що Куренай одразу помітила Райдо"
-    text: "Кіба пояснює Кіті, що Куренай побачила замаскованого Райдо від початку й наказала Команді 8 не реагувати на нього та Команду 9."
+    title: "Куренай помітила Райдо"
+    text: "Коли Кіта згадує перший тест, Кіба пояснює, що Куренай побачила замаскованого Райдо від самого початку й наказала Команді 8 не реагувати на нього та Команду 9. Для Кіти це стає ще одним підтвердженням того, наскільки досвідченішими за них є їхні наставники."
     origin: "P"
     extent: "interval"
-    display_rank: 200
+    display_rank: 300
     involvement:
       - {entity_id: "c-kiba", role: "focus", mode: "physical"}
       - {entity_id: "c-kita", role: "focus", mode: "physical"}
@@ -36,6 +48,7 @@ events:
       - {entity_id: "c-raido", role: "mentioned", mode: "remote"}
     evidence_ids: ["evd-team9-ichiraku-evening"]
 relations:
+  - {id: "rel-0123-ichiraku-meet-before-tests", kind: "before", a: "ev-y0-0123-ichiraku-meet-naruto", b: "ev-y0-0123-ichiraku-compare-tests", basis: "project_decision", review: "accepted"}
   - {id: "rel-0123-ichiraku-tests-before-reveal", kind: "before", a: "ev-y0-0123-ichiraku-compare-tests", b: "ev-y0-0123-kiba-reveals-kurenai-saw-raido", basis: "source", review: "accepted", evidence_ids: ["evd-team9-ichiraku-evening"]}
 presence:
   - {id: "pr-0123-ichiraku-kita", entity_id: "c-kita", from: "sc-y0-0123-ichiraku-evening.start", to: "sc-y0-0123-ichiraku-evening.end", basis: "source", evidence_ids: ["evd-team9-ichiraku-evening"], review: "accepted"}
