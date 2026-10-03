@@ -1,13 +1,13 @@
 schema_version: 1
 id: sc-games-t9-kiba-food
 episode_id: ep-y0-students-after-tests
-display_rank: 10100
+display_rank: 50
 continuity_id: main
-title: Кіба чекає Кіту після перевірки Райдо
+title: Кіта зустрічає Кібу біля кварталу Інузука
 location_id: loc-konohagakure
-day_part: afternoon
+day_part: evening
 placement:
-  anchor_id: ta-games-0-01-23
+  anchor_id: ta-y0-0123
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -20,8 +20,21 @@ review:
 events:
 - id: ev-games-t9-kiba-food-1
   display_rank: 100
-  title: Кіба чекає Кіту після перевірки Райдо
-  text: 'Після перевірки на дев’ятому полі Кіта зустрічає свого друга Кібу з Акамару. Кіба приніс дві порції рисових кульок і віддає одну Кіті. Вони обговорюють уже проведені перевірки своїх команд: суворість Райдо, поведінку Рена й спостереження Сори. Кіба запрошує подивитися на денне тренування Команди 8, але Кіта відмовляється. Після розмови вони розходяться, а Кіба повертається до денного тренування своєї команди.'
+  title: Кіта блукає Конохою
+  text: 'Після випробування на Полі 9 Кіта не поспішає додому. Його не відпускає провал у бою й слова Райдо про те, що він ще подумає, чи брати Команду 9. Кіта без мети ходить вулицями Конохи, дедалі більше віддаляючись від тренувальних полів, поки день переходить у вечір.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-part-i-placement
+- id: ev-games-t9-kiba-returns-home
+  display_rank: 200
+  title: Кіба повертається додому
+  text: 'Сам не помітивши як, Кіта доходить до вулиць біля кварталу клану Інузука. Там він бачить Кібу й Акамару, які саме повертаються після дня зі своєю командою. Кіба помічає Кіту, перекидається з ним кількома словами й швидко забігає додому; за кілька хвилин знову виходить до нього.'
   origin: P
   extent: interval
   involvement:
@@ -37,32 +50,60 @@ events:
   evidence_ids:
   - evd-games-team-9-02-1
   - evd-games-part-i-placement
-relations: []
+- id: ev-games-t9-kita-kiba-to-dinner
+  display_rank: 300
+  title: Кіта й Кіба йдуть вечеряти
+  text: 'Кіта й Кіба вирішують піти поїсти разом. Кіта все ще пригнічений після перевірки Райдо, а Кіба не розпитує його посеред вулиці й переводить розмову на вечерю. Разом з Акамару вони прямують до Ічіраку.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-02-1
+  - evd-games-part-i-placement
+relations:
+- id: rel-games-t9-kita-wanders-before-kiba-return
+  kind: before
+  a: ev-games-t9-kiba-food-1
+  b: ev-games-t9-kiba-returns-home
+  basis: project_decision
+  review: accepted
+- id: rel-games-t9-kiba-return-before-dinner
+  kind: before
+  a: ev-games-t9-kiba-returns-home
+  b: ev-games-t9-kita-kiba-to-dinner
+  basis: project_decision
+  review: accepted
 presence:
 - id: pr-games-t9-kiba-food-c-kita
   entity_id: c-kita
   from: sc-games-t9-kiba-food.start
   to: sc-games-t9-kiba-food.end
-  basis: source
+  basis: project_decision
   evidence_ids:
   - evd-games-team-9-02-1
-  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-kiba-food-c-kiba
   entity_id: c-kiba
-  from: sc-games-t9-kiba-food.start
+  from: ev-games-t9-kiba-returns-home.start
   to: sc-games-t9-kiba-food.end
-  basis: source
+  basis: project_decision
   evidence_ids:
   - evd-games-team-9-02-1
-  - evd-games-part-i-placement
   review: accepted
 - id: pr-games-t9-kiba-food-c-akamaru
   entity_id: c-akamaru
-  from: sc-games-t9-kiba-food.start
+  from: ev-games-t9-kiba-returns-home.start
   to: sc-games-t9-kiba-food.end
-  basis: source
+  basis: project_decision
   evidence_ids:
   - evd-games-team-9-02-1
-  - evd-games-part-i-placement
   review: accepted
