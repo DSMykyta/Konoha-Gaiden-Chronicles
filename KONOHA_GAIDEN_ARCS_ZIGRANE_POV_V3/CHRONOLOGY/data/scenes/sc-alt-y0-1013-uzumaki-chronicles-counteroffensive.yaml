@@ -4,7 +4,7 @@ episode_id: ep-alt-y0-1013-uzumaki-chronicles-counteroffensive
 display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles"
 title: "Наруто збирає союзників проти схеми Орочімару"
-placement: {anchor_id: ta-autumn-reconciled-61-1024, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1109, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

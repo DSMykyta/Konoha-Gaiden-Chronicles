@@ -15,7 +15,7 @@ test('positive founding years preserve the January team formation day and event 
  assert.deepEqual(formation.date,{year:61,month:1,day:22});
  assert.equal(dayInYear(formation.date,0,calendar,lengths),21);
  assert.equal(dayInYear({year:61,month:12,day:31},0,calendar,lengths),364);
- assert(anchors.filter(a=>a.date&&!a.id.startsWith('ta-autumn-reconciled-')).every(a=>a.date.year===61));
+ assert(anchors.filter(a=>a.date&&!a.id.startsWith('ta-autumn-reconciled-')&&!a.id.startsWith('ta-period-reviewed-')).every(a=>a.date.year===61));
  assert(anchors.some(a=>a.id.startsWith('ta-autumn-reconciled-62-')&&a.date.year===62));
  const built=JSON.parse(fs.readFileSync('public/data.json','utf8'));
  const event=built.events.find(e=>e.id==='ev-y0-0122-team7-announced');

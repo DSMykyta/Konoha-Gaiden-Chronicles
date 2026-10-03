@@ -5,7 +5,9 @@ display_rank: 100
 continuity_id: alt-game-clash-revolution-2
 title: Масове ґенджюцу в Конохі
 location_id: loc-konohagakure
-placement: {anchor_id: ta-autumn-reconciled-61-1217, day_offset: 0}
+placement:
+  anchor_id: ta-period-reviewed-62-0418
+  day_offset: 0
 state: active
 presence_coverage: partial
 review:
@@ -19,8 +21,8 @@ events:
   legacy_ids:
   - V10-000195
   title: Змова переходить у масове ґенджюцу всередині Конохи
-  text: Повернувшись до Конохи, союзники бачать, що сильніша форма ґенджюцу змушує шинобі нападати один на одного; розслідування
-    розділяється між пошуком бар'єрів і Каґури.
+  text: Повернувшись до Конохи, союзники бачать, що сильніша форма ґенджюцу змушує шинобі нападати один на одного;
+    розслідування розділяється між пошуком бар'єрів і Каґури.
   origin: G
   extent: interval
   display_rank: 300

@@ -1,29 +1,68 @@
 schema_version: 1
-id: "sc-y0-1216-iruka-naruto-last-ramen"
+id: sc-y0-1216-iruka-naruto-last-ramen
 episode_id: ep-y0-naruto-iruka-farewell
 display_rank: 100
-continuity_id: "main"
-title: "Останній рамен Наруто з Ірукою перед відбуттям"
-location_id: "loc-ichiraku"
-placement: {anchor_id: ta-autumn-reconciled-62-0114, day_offset: 0}
-state: "active"
-presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Останній рамен Наруто з Ірукою перед відбуттям
+location_id: loc-ichiraku
+placement:
+  anchor_id: ta-period-reviewed-62-0530
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1216-iruka-naruto-last-ramen"
-    legacy_ids: ["V10-000222-G"]
-    title: "Наруто востаннє їсть рамен з Ірукою"
-    text: "Перед довгою тренувальною подорожжю Наруто востаннє їсть рамен разом з Ірукою. Джирая приходить повідомити, що час вирушати; Наруто прощається й залишає рахунок Іруці, після чого йде готуватися до відбуття."
-    origin: "M"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-iruka", role: "focus", mode: "physical"}
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-jiraiya", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000222-G", "evd-manga-ch238-iruka-departure", "evd-anime-220-iruka-departure"]
+- id: ev-y0-1216-iruka-naruto-last-ramen
+  legacy_ids:
+  - V10-000222-G
+  title: Наруто востаннє їсть рамен з Ірукою
+  text: Перед довгою тренувальною подорожжю Наруто востаннє їсть рамен разом з Ірукою. Джирая приходить повідомити,
+    що час вирушати; Наруто прощається й залишає рахунок Іруці, після чого йде готуватися до відбуття.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-iruka
+    role: focus
+    mode: physical
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000222-G
+  - evd-manga-ch238-iruka-departure
+  - evd-anime-220-iruka-departure
 relations: []
 presence:
-  - {id: "pr-1216-last-ramen-iruka", entity_id: "c-iruka", from: "sc-y0-1216-iruka-naruto-last-ramen.start", to: "sc-y0-1216-iruka-naruto-last-ramen.end", basis: "source", evidence_ids: ["evd-manga-ch238-iruka-departure"], review: "accepted"}
-  - {id: "pr-1216-last-ramen-naruto", entity_id: "c-naruto", from: "sc-y0-1216-iruka-naruto-last-ramen.start", to: "sc-y0-1216-iruka-naruto-last-ramen.end", basis: "source", evidence_ids: ["evd-manga-ch238-iruka-departure"], review: "accepted"}
-  - {id: "pr-1216-last-ramen-jiraiya", entity_id: "c-jiraiya", from: "ev-y0-1216-iruka-naruto-last-ramen.start", to: "ev-y0-1216-iruka-naruto-last-ramen.end", basis: "source", evidence_ids: ["evd-manga-ch238-iruka-departure"], review: "accepted"}
+- id: pr-1216-last-ramen-iruka
+  entity_id: c-iruka
+  from: sc-y0-1216-iruka-naruto-last-ramen.start
+  to: sc-y0-1216-iruka-naruto-last-ramen.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch238-iruka-departure
+  review: accepted
+- id: pr-1216-last-ramen-naruto
+  entity_id: c-naruto
+  from: sc-y0-1216-iruka-naruto-last-ramen.start
+  to: sc-y0-1216-iruka-naruto-last-ramen.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch238-iruka-departure
+  review: accepted
+- id: pr-1216-last-ramen-jiraiya
+  entity_id: c-jiraiya
+  from: ev-y0-1216-iruka-naruto-last-ramen.start
+  to: ev-y0-1216-iruka-naruto-last-ramen.end
+  basis: source
+  evidence_ids:
+  - evd-manga-ch238-iruka-departure
+  review: accepted

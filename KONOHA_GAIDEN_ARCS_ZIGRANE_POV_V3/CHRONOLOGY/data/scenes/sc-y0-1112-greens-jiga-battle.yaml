@@ -5,7 +5,8 @@ display_rank: 100
 continuity_id: main
 title: Харуна тікає, а Хіната ламає контроль Джіґи над магнетизмом
 location_id: loc-land-of-greens
-placement: {anchor_id: ta-autumn-reconciled-61-1202, day_offset: 0}
+day_part: afternoon
+placement: {anchor_id: ta-period-reviewed-62-0206, day_offset: 0}
 state: active
 presence_coverage: partial
 review:

@@ -2637,6 +2637,16 @@ entities:
     name: Лісова галявина поблизу Конохи
     aliases:
     - Лісова галявина поблизу Конохи
+  - id: loc-moon-escort-route
+    kind: location
+    name: Шлях супроводу Мічіру та Хікару
+    aliases: []
+
+  - id: loc-land-of-mountain-streams
+    kind: location
+    name: Країна Гірських Потоків
+    aliases: []
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

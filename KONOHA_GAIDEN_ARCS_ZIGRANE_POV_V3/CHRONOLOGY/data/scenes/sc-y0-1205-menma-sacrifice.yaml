@@ -1,63 +1,126 @@
 schema_version: 1
-id: "sc-y0-1205-menma-sacrifice"
+id: sc-y0-1205-menma-sacrifice
 episode_id: ep-y0-menma-memory
 display_rank: 300
-continuity_id: "main"
-title: "Менма відмовляється від банди й гине, рятуючи селище"
-location_id: "loc-land-of-rice-fields"
-placement: {anchor_id: ta-autumn-reconciled-62-0103, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Менма відмовляється від банди й гине, рятуючи селище
+location_id: loc-land-of-rice-fields
+placement:
+  anchor_id: ta-period-reviewed-62-0516
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1205-menma-revealed-bandit"
-    legacy_ids: ["V10-000213"]
-    title: "Відкривається, що Менма був членом банди нападників"
-    text: "Під час нового нападу ватажок називає Менму зрадником; повернені спогади підтверджують його минуле в банді, але також те, що він уже намагався зменшувати шкоду для жертв."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-menma-amnesiac", role: "revealed_member", mode: "physical"}
-      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
-    evidence_ids: ["evd-v10-000213", "evd-anime-213-215"]
-  - id: "ev-y0-1205-menma-sides-with-village"
-    legacy_ids: ["V10-000213"]
-    title: "Менма переходить на бік захисників селища"
-    text: "Менма відмовляється повернутися до банди й використовує свої здібності, зокрема музику, щоб підтримати Наруто та мешканців під час бою."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-menma-amnesiac", role: "defender", mode: "physical"}
-      - {entity_id: "c-naruto", role: "ally", mode: "physical"}
-      - {entity_id: "c-neji", role: "ally", mode: "physical"}
-      - {entity_id: "c-tenten", role: "ally", mode: "physical"}
-    evidence_ids: ["evd-v10-000213", "evd-anime-213-215"]
-  - id: "ev-y0-1205-menma-sacrifices-himself"
-    legacy_ids: ["V10-000213"]
-    title: "Менма жертвує собою, щоб відвести руйнування від людей"
-    text: "Коли банда намагається знищити селище обвалом, Менма підриває тунель так, щоб зупинити катастрофу ціною власного життя."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-menma-amnesiac", role: "self_sacrifice", mode: "physical"}
-      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
-    evidence_ids: ["evd-v10-000213", "evd-anime-213-215"]
-  - id: "ev-y0-1205-naruto-keeps-menma-ocarina"
-    legacy_ids: ["V10-000213"]
-    title: "Наруто зберігає окарину Менми"
-    text: "Після загибелі Менми Наруто зберігає його окарину як пам'ять про вибір, зроблений ним наприкінці життя."
-    origin: "F"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-naruto", role: "keeper", mode: "physical"}
-      - {entity_id: "c-menma-amnesiac", role: "deceased", mode: "remote"}
-    evidence_ids: ["evd-v10-000213", "evd-anime-213-215"]
+- id: ev-y0-1205-menma-revealed-bandit
+  legacy_ids:
+  - V10-000213
+  title: Відкривається, що Менма був членом банди нападників
+  text: Під час нового нападу ватажок називає Менму зрадником; повернені спогади підтверджують його минуле в банді,
+    але також те, що він уже намагався зменшувати шкоду для жертв.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-menma-amnesiac
+    role: revealed_member
+    mode: physical
+  - entity_id: c-naruto
+    role: witness
+    mode: physical
+  evidence_ids:
+  - evd-v10-000213
+  - evd-anime-213-215
+- id: ev-y0-1205-menma-sides-with-village
+  legacy_ids:
+  - V10-000213
+  title: Менма переходить на бік захисників селища
+  text: Менма відмовляється повернутися до банди й використовує свої здібності, зокрема музику, щоб підтримати Наруто
+    та мешканців під час бою.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-menma-amnesiac
+    role: defender
+    mode: physical
+  - entity_id: c-naruto
+    role: ally
+    mode: physical
+  - entity_id: c-neji
+    role: ally
+    mode: physical
+  - entity_id: c-tenten
+    role: ally
+    mode: physical
+  evidence_ids:
+  - evd-v10-000213
+  - evd-anime-213-215
+- id: ev-y0-1205-menma-sacrifices-himself
+  legacy_ids:
+  - V10-000213
+  title: Менма жертвує собою, щоб відвести руйнування від людей
+  text: Коли банда намагається знищити селище обвалом, Менма підриває тунель так, щоб зупинити катастрофу ціною
+    власного життя.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-menma-amnesiac
+    role: self_sacrifice
+    mode: physical
+  - entity_id: c-naruto
+    role: witness
+    mode: physical
+  evidence_ids:
+  - evd-v10-000213
+  - evd-anime-213-215
+- id: ev-y0-1205-naruto-keeps-menma-ocarina
+  legacy_ids:
+  - V10-000213
+  title: Наруто зберігає окарину Менми
+  text: Після загибелі Менми Наруто зберігає його окарину як пам'ять про вибір, зроблений ним наприкінці життя.
+  origin: F
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: keeper
+    mode: physical
+  - entity_id: c-menma-amnesiac
+    role: deceased
+    mode: remote
+  evidence_ids:
+  - evd-v10-000213
+  - evd-anime-213-215
 relations:
-  - {id: "rel-1205-menma-1", kind: "before", a: "ev-y0-1205-menma-revealed-bandit", b: "ev-y0-1205-menma-sides-with-village", basis: "source", review: "accepted", evidence_ids: ["evd-anime-213-215"]}
-  - {id: "rel-1205-menma-2", kind: "before", a: "ev-y0-1205-menma-sides-with-village", b: "ev-y0-1205-menma-sacrifices-himself", basis: "source", review: "accepted", evidence_ids: ["evd-anime-213-215"]}
-  - {id: "rel-1205-menma-3", kind: "before", a: "ev-y0-1205-menma-sacrifices-himself", b: "ev-y0-1205-naruto-keeps-menma-ocarina", basis: "source", review: "accepted", evidence_ids: ["evd-anime-213-215"]}
+- id: rel-1205-menma-1
+  kind: before
+  a: ev-y0-1205-menma-revealed-bandit
+  b: ev-y0-1205-menma-sides-with-village
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
+- id: rel-1205-menma-2
+  kind: before
+  a: ev-y0-1205-menma-sides-with-village
+  b: ev-y0-1205-menma-sacrifices-himself
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
+- id: rel-1205-menma-3
+  kind: before
+  a: ev-y0-1205-menma-sacrifices-himself
+  b: ev-y0-1205-naruto-keeps-menma-ocarina
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
 presence: []

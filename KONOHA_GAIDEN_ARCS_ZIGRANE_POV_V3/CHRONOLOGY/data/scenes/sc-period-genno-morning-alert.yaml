@@ -1,0 +1,44 @@
+schema_version: 1
+id: sc-period-genno-morning-alert
+episode_id: ep-y0-genno-investigation
+display_rank: 150
+continuity_id: main
+title: Ранкова тривога та початок пошуку Ґенно
+location_id: loc-konohagakure
+day_part: morning
+placement:
+  anchor_id: ta-period-reviewed-62-0309
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: working
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1119-tsunade-super-s-alert
+  legacy_ids:
+  - V10-000191
+  title: Цунаде оголошує надзвичайний режим найвищої небезпеки
+  text: Через ризик нападу на село Цунаде запроваджує надзвичайний режим і залучає одинадцятьох молодих шинобі до
+    пошуку загрози.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-tsunade
+    role: commander
+    mode: physical
+  - entity_id: c-naruto
+    role: investigator
+    mode: physical
+  - entity_id: c-shikamaru
+    role: investigator
+    mode: physical
+  evidence_ids:
+  - evd-v10-000191
+  - evd-anime-197-201
+relations: []
+presence: []

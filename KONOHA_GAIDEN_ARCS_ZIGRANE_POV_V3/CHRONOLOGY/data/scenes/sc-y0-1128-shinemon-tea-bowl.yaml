@@ -1,50 +1,93 @@
 schema_version: 1
-id: "sc-y0-1128-shinemon-tea-bowl"
+id: sc-y0-1128-shinemon-tea-bowl
 episode_id: ep-y0-shinemon-bowl
 display_rank: 100
-continuity_id: "main"
-title: "Наруто й Кіба охороняють Шінемона та його коштовну чашу"
-placement: {anchor_id: ta-autumn-reconciled-61-1224, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Наруто й Кіба охороняють Шінемона та його коштовну чашу
+placement:
+  anchor_id: ta-period-reviewed-62-0427
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1128-naruto-kiba-guard-shinemon"
-    legacy_ids: ["V10-000203"]
-    title: "Наруто й Кіба отримують завдання охороняти Шінемона та чайну чашу"
-    text: "Наруто й Кіба вирушають до майстра Шінемона, щоб захищати його коштовну чайну чашу від можливих переслідувачів."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "guard", mode: "physical"}
-      - {entity_id: "c-kiba", role: "guard", mode: "physical"}
-      - {entity_id: "c-shinemon", role: "client", mode: "physical"}
-    evidence_ids: ["evd-v10-000203", "evd-anime-208"]
-  - id: "ev-y0-1128-shinemon-values-bowl-over-guards"
-    legacy_ids: ["V10-000203"]
-    title: "Шінемон неодноразово ставить чашу вище за безпеку охоронців"
-    text: "Під час дороги поведінка Шінемона показує, що він цінує артефакт більше, ніж Наруто й Кібу, і змушує їх ризикувати заради чаші."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-shinemon", role: "client", mode: "physical"}
-      - {entity_id: "c-naruto", role: "guard", mode: "physical"}
-      - {entity_id: "c-kiba", role: "guard", mode: "physical"}
-    evidence_ids: ["evd-v10-000203", "evd-anime-208"]
-  - id: "ev-y0-1128-thieves-attack-tea-bowl"
-    legacy_ids: ["V10-000203"]
-    title: "Злодії атакують групу заради чаші"
-    text: "Банда злодіїв намагається викрасти чашу, і місія переходить від незручного супроводу до реальної загрози життю."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-naruto", role: "defender", mode: "physical"}
-      - {entity_id: "c-kiba", role: "defender", mode: "physical"}
-      - {entity_id: "c-shinemon", role: "protected", mode: "physical"}
-    evidence_ids: ["evd-v10-000203", "evd-anime-208"]
+- id: ev-y0-1128-naruto-kiba-guard-shinemon
+  legacy_ids:
+  - V10-000203
+  title: Наруто й Кіба отримують завдання охороняти Шінемона та чайну чашу
+  text: Наруто й Кіба вирушають до майстра Шінемона, щоб захищати його коштовну чайну чашу від можливих переслідувачів.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: guard
+    mode: physical
+  - entity_id: c-kiba
+    role: guard
+    mode: physical
+  - entity_id: c-shinemon
+    role: client
+    mode: physical
+  evidence_ids:
+  - evd-v10-000203
+  - evd-anime-208
+- id: ev-y0-1128-shinemon-values-bowl-over-guards
+  legacy_ids:
+  - V10-000203
+  title: Шінемон неодноразово ставить чашу вище за безпеку охоронців
+  text: Під час дороги поведінка Шінемона показує, що він цінує артефакт більше, ніж Наруто й Кібу, і змушує їх
+    ризикувати заради чаші.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-shinemon
+    role: client
+    mode: physical
+  - entity_id: c-naruto
+    role: guard
+    mode: physical
+  - entity_id: c-kiba
+    role: guard
+    mode: physical
+  evidence_ids:
+  - evd-v10-000203
+  - evd-anime-208
+- id: ev-y0-1128-thieves-attack-tea-bowl
+  legacy_ids:
+  - V10-000203
+  title: Злодії атакують групу заради чаші
+  text: Банда злодіїв намагається викрасти чашу, і місія переходить від незручного супроводу до реальної загрози
+    життю.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: defender
+    mode: physical
+  - entity_id: c-kiba
+    role: defender
+    mode: physical
+  - entity_id: c-shinemon
+    role: protected
+    mode: physical
+  evidence_ids:
+  - evd-v10-000203
+  - evd-anime-208
 relations:
-  - {id: "rel-1128-shinemon-1", kind: "before", a: "ev-y0-1128-naruto-kiba-guard-shinemon", b: "ev-y0-1128-thieves-attack-tea-bowl", basis: "source", review: "accepted", evidence_ids: ["evd-anime-208"]}
+- id: rel-1128-shinemon-1
+  kind: before
+  a: ev-y0-1128-naruto-kiba-guard-shinemon
+  b: ev-y0-1128-thieves-attack-tea-bowl
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-208
 presence: []

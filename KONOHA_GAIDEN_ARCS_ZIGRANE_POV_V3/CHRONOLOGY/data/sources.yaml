@@ -1364,6 +1364,11 @@ sources:
     title: Узгодження фізичних учасників після Мандрівних артистів
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/AUTUMN_PLACEMENT_UA.md
     date: '2026-10-03'
+  - id: src-post-sasuke-calendar-review
+    type: project_decision
+    title: Повний перегляд післясасківського періоду
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/POST_SASUKE_SCHEDULE_UA.md
+    date: "2026-10-03"
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4571,5 +4576,11 @@ evidence:
     source_id: src-autumn-cast-reconciliation
     locator: Учасники, безперервність Мідзукі, госпіталізація Куренай, почергові місії
       та межа 15.01 року 62
+    basis: project_decision
+    review: accepted
+
+  - id: evd-post-sasuke-calendar-review
+    source_id: src-post-sasuke-calendar-review
+    locator: Серії 142–220, субтитри, фільм Країна Місяця; відносні переходи, дорога, лікування та окремо позначені робочі оцінки
     basis: project_decision
     review: accepted

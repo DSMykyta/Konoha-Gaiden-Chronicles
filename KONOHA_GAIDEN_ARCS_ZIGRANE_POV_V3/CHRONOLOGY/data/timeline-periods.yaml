@@ -171,7 +171,7 @@ periods:
   calendar_basis: project_reconstruction
   legacy_label: Таймскіп
   from_year: 62
-  boundary_date: {year: 62, month: 1, day: 15}
+  boundary_date: {year: 62, month: 5, day: 31}
   calendar_era: after_founding
   to_year: 64
 - id: shippuden

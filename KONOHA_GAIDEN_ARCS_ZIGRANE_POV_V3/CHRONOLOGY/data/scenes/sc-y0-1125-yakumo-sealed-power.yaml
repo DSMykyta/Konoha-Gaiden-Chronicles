@@ -1,64 +1,124 @@
 schema_version: 1
-id: "sc-y0-1125-yakumo-sealed-power"
+id: sc-y0-1125-yakumo-sealed-power
 episode_id: ep-y0-kurenai-yakumo-past
 display_rank: 200
-continuity_id: "main"
-title: "Минуле Якумо й обіцянка Куренай Хірузену виходять на поверхню"
-location_id: "loc-yakumo-villa"
-placement: {anchor_id: ta-autumn-reconciled-61-1221, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Минуле Якумо й обіцянка Куренай Хірузену виходять на поверхню
+location_id: loc-yakumo-villa
+day_part: morning
+placement:
+  anchor_id: ta-period-reviewed-62-0423
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1125-kurenai-confirms-sealed-yakumo"
-    legacy_ids: ["V10-000200"]
-    title: "Куренай підтверджує, що запечатала силу Якумо"
-    text: "Куренай визнає Наруто, що раніше запечатала надзвичайно небезпечну силу своєї учениці Якумо."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-kurenai", role: "source", mode: "physical"}
-      - {entity_id: "c-yakumo-kurama", role: "subject", mode: "remote"}
-      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
-    evidence_ids: ["evd-v10-000200", "evd-anime-203-207"]
-  - id: "ev-y0-1125-kurama-clan-attacks-villa"
-    legacy_ids: ["V10-000200"]
-    title: "Члени клану Курама атакують віллу Якумо"
-    text: "Шинобі клану Курама оточують віллу й намагаються повернути Якумо; Куренай вступає з ними в бій ґенджюцу, захищаючи колишню ученицю."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "group-kurama-clan", role: "attacker", mode: "physical"}
-      - {entity_id: "c-kurenai", role: "protector", mode: "physical"}
-      - {entity_id: "c-yakumo-kurama", role: "protected", mode: "physical"}
-      - {entity_id: "c-unkai-kurama", role: "clan_member", mode: "physical"}
-    evidence_ids: ["evd-v10-000200", "evd-anime-203-207"]
-  - id: "ev-y0-1125-hiruzen-promise-revealed"
-    legacy_ids: ["V10-000200"]
-    title: "Відкривається обіцянка Куренай Третьому Хокаґе"
-    text: "Стає відомо, що Куренай діяла в межах рішення, пов'язаного з Хірузеном: стримати небезпечну силу Якумо й водночас захищати її."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-kurenai", role: "promised_protector", mode: "physical"}
-      - {entity_id: "c-hiruzen", role: "past_hokage", mode: "remote"}
-      - {entity_id: "c-yakumo-kurama", role: "protected", mode: "physical"}
-    evidence_ids: ["evd-v10-000200", "evd-anime-203-207"]
-  - id: "ev-y0-1125-yakumo-blames-kurenai-parents"
-    legacy_ids: ["V10-000200"]
-    title: "Якумо підозрює Куренай у смерті своїх батьків"
-    text: "Через уривки пам'яті та недовіру Якумо переконана, що Куренай причетна до пожежі, у якій загинули її батьки."
-    origin: "F"
-    extent: "interval"
-    display_rank: 400
-    involvement:
-      - {entity_id: "c-yakumo-kurama", role: "accuser", mode: "physical"}
-      - {entity_id: "c-kurenai", role: "accused", mode: "physical"}
-    evidence_ids: ["evd-v10-000200", "evd-anime-203-207"]
+- id: ev-y0-1125-kurenai-confirms-sealed-yakumo
+  legacy_ids:
+  - V10-000200
+  title: Куренай підтверджує, що запечатала силу Якумо
+  text: Куренай визнає Наруто, що раніше запечатала надзвичайно небезпечну силу своєї учениці Якумо.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kurenai
+    role: source
+    mode: physical
+  - entity_id: c-yakumo-kurama
+    role: subject
+    mode: remote
+  - entity_id: c-naruto
+    role: recipient
+    mode: physical
+  evidence_ids:
+  - evd-v10-000200
+  - evd-anime-203-207
+- id: ev-y0-1125-kurama-clan-attacks-villa
+  legacy_ids:
+  - V10-000200
+  title: Члени клану Курама атакують віллу Якумо
+  text: Шинобі клану Курама оточують віллу й намагаються повернути Якумо; Куренай вступає з ними в бій ґенджюцу,
+    захищаючи колишню ученицю.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: group-kurama-clan
+    role: attacker
+    mode: physical
+  - entity_id: c-kurenai
+    role: protector
+    mode: physical
+  - entity_id: c-yakumo-kurama
+    role: protected
+    mode: physical
+  - entity_id: c-unkai-kurama
+    role: clan_member
+    mode: physical
+  evidence_ids:
+  - evd-v10-000200
+  - evd-anime-203-207
+- id: ev-y0-1125-hiruzen-promise-revealed
+  legacy_ids:
+  - V10-000200
+  title: Відкривається обіцянка Куренай Третьому Хокаґе
+  text: 'Стає відомо, що Куренай діяла в межах рішення, пов''язаного з Хірузеном: стримати небезпечну силу Якумо
+    й водночас захищати її.'
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-kurenai
+    role: promised_protector
+    mode: physical
+  - entity_id: c-hiruzen
+    role: past_hokage
+    mode: remote
+  - entity_id: c-yakumo-kurama
+    role: protected
+    mode: physical
+  evidence_ids:
+  - evd-v10-000200
+  - evd-anime-203-207
+- id: ev-y0-1125-yakumo-blames-kurenai-parents
+  legacy_ids:
+  - V10-000200
+  title: Якумо підозрює Куренай у смерті своїх батьків
+  text: Через уривки пам'яті та недовіру Якумо переконана, що Куренай причетна до пожежі, у якій загинули її батьки.
+  origin: F
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-yakumo-kurama
+    role: accuser
+    mode: physical
+  - entity_id: c-kurenai
+    role: accused
+    mode: physical
+  evidence_ids:
+  - evd-v10-000200
+  - evd-anime-203-207
 relations:
-  - {id: "rel-1125-yakumo-1", kind: "before", a: "ev-y0-1125-kurenai-confirms-sealed-yakumo", b: "ev-y0-1125-kurama-clan-attacks-villa", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
-  - {id: "rel-1125-yakumo-2", kind: "before", a: "ev-y0-1125-kurama-clan-attacks-villa", b: "ev-y0-1125-yakumo-blames-kurenai-parents", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
+- id: rel-1125-yakumo-1
+  kind: before
+  a: ev-y0-1125-kurenai-confirms-sealed-yakumo
+  b: ev-y0-1125-kurama-clan-attacks-villa
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-203-207
+- id: rel-1125-yakumo-2
+  kind: before
+  a: ev-y0-1125-kurama-clan-attacks-villa
+  b: ev-y0-1125-yakumo-blames-kurenai-parents
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-203-207
 presence: []

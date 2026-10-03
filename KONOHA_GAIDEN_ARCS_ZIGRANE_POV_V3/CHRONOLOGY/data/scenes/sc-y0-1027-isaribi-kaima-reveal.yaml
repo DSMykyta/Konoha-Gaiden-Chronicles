@@ -5,7 +5,8 @@ display_rank: 300
 continuity_id: "main"
 title: "Команда з'ясовує, що кайма — це Ісарібі"
 location_id: "loc-land-sea-coast"
-placement: {anchor_id: ta-autumn-reconciled-61-1110, day_offset: 0}
+day_part: evening
+placement: {anchor_id: ta-period-reviewed-61-1210, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

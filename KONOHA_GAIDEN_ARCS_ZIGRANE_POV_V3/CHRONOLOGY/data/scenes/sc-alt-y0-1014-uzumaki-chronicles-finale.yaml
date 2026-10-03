@@ -4,7 +4,7 @@ episode_id: ep-alt-y0-1014-uzumaki-chronicles-finale
 display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles"
 title: "Наруто зриває фінальний план Орочімару в гілці Uzumaki Chronicles"
-placement: {anchor_id: ta-autumn-reconciled-61-1025, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1112, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

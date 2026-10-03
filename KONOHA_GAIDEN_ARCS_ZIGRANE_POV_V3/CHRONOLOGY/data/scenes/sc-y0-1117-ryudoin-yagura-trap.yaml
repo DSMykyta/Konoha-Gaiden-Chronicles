@@ -1,53 +1,69 @@
 schema_version: 1
-id: "sc-y0-1117-ryudoin-yagura-trap"
+id: sc-y0-1117-ryudoin-yagura-trap
 episode_id: ep-y0-ryudoin-revenge
 display_rank: 100
-continuity_id: "main"
-title: "Ґеншо Рюдоін під виглядом Яґури входить у довіру до Ґая"
-location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-61-1207, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "working", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Огляд Лі та прикриття Яґури в Конохі
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-period-reviewed-62-0302
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: working
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1117-lee-ordered-rest"
-    legacy_ids: ["V10-000188"]
-    title: "Цунаде наказує Лі відпочивати після медичного огляду"
-    text: "Огляд показує пошкодження в мережі чакри Лі; Цунаде наказує йому припинити тренування та відпочити."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-lee", role: "patient", mode: "physical"}
-      - {entity_id: "c-tsunade", role: "medic", mode: "physical"}
-    evidence_ids: ["evd-v10-000188", "evd-anime-195-196"]
-  - id: "ev-y0-1117-gensho-poses-yagura"
-    legacy_ids: ["V10-000188"]
-    title: "Ґеншо Рюдоін видає себе за Яґуру"
-    text: "Старший із братів Рюдоін Ґеншо діє під ім'ям Яґура, демонструє здібності перед Ґаєм і домагається дозволу супроводжувати його."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-gensho-ryudoin", role: "impostor", mode: "physical"}
-      - {entity_id: "c-might-guy", role: "target", mode: "physical"}
-      - {entity_id: "c-lee", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000188", "evd-anime-195-196"]
-  - id: "ev-y0-1117-ryudoin-lures-guy"
-    legacy_ids: ["V10-000188"]
-    title: "Брати Рюдоін заманюють Ґая в пастку"
-    text: "Ґеншо разом із братами Джако й Роккаку використовує прикриття «Яґури», щоб підвести Ґая до підготовленої помсти за смерть їхнього батька Аґіри."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-gensho-ryudoin", role: "leader", mode: "physical"}
-      - {entity_id: "c-jako-ryudoin", role: "conspirator", mode: "physical"}
-      - {entity_id: "c-rokkaku-ryudoin", role: "conspirator", mode: "physical"}
-      - {entity_id: "c-might-guy", role: "target", mode: "physical"}
-      - {entity_id: "c-agira-ryudoin", role: "motive_subject", mode: "remote"}
-    evidence_ids: ["evd-v10-000188", "evd-anime-195-196"]
+- id: ev-y0-1117-lee-ordered-rest
+  legacy_ids:
+  - V10-000188
+  title: Цунаде наказує Лі відпочивати після медичного огляду
+  text: Огляд показує пошкодження в мережі чакри Лі; Цунаде наказує йому припинити тренування та відпочити.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-lee
+    role: patient
+    mode: physical
+  - entity_id: c-tsunade
+    role: medic
+    mode: physical
+  evidence_ids:
+  - evd-v10-000188
+  - evd-anime-195-196
+- id: ev-y0-1117-gensho-poses-yagura
+  legacy_ids:
+  - V10-000188
+  title: Ґеншо Рюдоін видає себе за Яґуру
+  text: Старший із братів Рюдоін Ґеншо діє під ім'ям Яґура, демонструє здібності перед Ґаєм і домагається дозволу
+    супроводжувати його.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-gensho-ryudoin
+    role: impostor
+    mode: physical
+  - entity_id: c-might-guy
+    role: target
+    mode: physical
+  - entity_id: c-lee
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000188
+  - evd-anime-195-196
 relations:
-  - {id: "rel-1117-ryudoin-1", kind: "before", a: "ev-y0-1117-lee-ordered-rest", b: "ev-y0-1117-gensho-poses-yagura", basis: "source", review: "accepted", evidence_ids: ["evd-anime-195-196"]}
-  - {id: "rel-1117-ryudoin-2", kind: "before", a: "ev-y0-1117-gensho-poses-yagura", b: "ev-y0-1117-ryudoin-lures-guy", basis: "source", review: "accepted", evidence_ids: ["evd-anime-195-196"]}
+- id: rel-1117-ryudoin-1
+  kind: before
+  a: ev-y0-1117-lee-ordered-rest
+  b: ev-y0-1117-gensho-poses-yagura
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-195-196
 presence: []

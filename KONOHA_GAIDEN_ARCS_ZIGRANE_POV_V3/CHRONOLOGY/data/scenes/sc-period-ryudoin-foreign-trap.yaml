@@ -1,0 +1,50 @@
+schema_version: 1
+id: sc-period-ryudoin-foreign-trap
+episode_id: ep-y0-ryudoin-revenge
+display_rank: 150
+continuity_id: main
+title: Ґай потрапляє в пастку братів Рюдоін
+location_id: loc-land-of-mountain-streams
+placement:
+  anchor_id: ta-period-reviewed-62-0304
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: working
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1117-ryudoin-lures-guy
+  legacy_ids:
+  - V10-000188
+  title: Брати Рюдоін заманюють Ґая в пастку
+  text: Ґеншо разом із братами Джако й Роккаку використовує прикриття «Яґури», щоб підвести Ґая до підготовленої
+    помсти за смерть їхнього батька Аґіри.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-gensho-ryudoin
+    role: leader
+    mode: physical
+  - entity_id: c-jako-ryudoin
+    role: conspirator
+    mode: physical
+  - entity_id: c-rokkaku-ryudoin
+    role: conspirator
+    mode: physical
+  - entity_id: c-might-guy
+    role: target
+    mode: physical
+  - entity_id: c-agira-ryudoin
+    role: motive_subject
+    mode: remote
+  evidence_ids:
+  - evd-v10-000188
+  - evd-anime-195-196
+relations: []
+presence: []
+day_part: afternoon

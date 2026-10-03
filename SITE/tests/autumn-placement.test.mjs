@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import YAML from 'yaml';
 const data=JSON.parse(fs.readFileSync(new URL('../public/data.json',import.meta.url),'utf8'));
 const root=path.resolve(import.meta.dirname,'../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY');
-const plan=JSON.parse(fs.readFileSync(path.join(root,'autumn-placement.json'),'utf8'));
+const plan=JSON.parse(fs.readFileSync(path.join(root,'period-placement.json'),'utf8'));
 const participants=s=>new Set(s.events.flatMap(e=>e.involvement.filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id)));
 const scenes=data.scenes.filter(s=>s.state==='active'&&s.day!==null);
 const scene=id=>scenes.find(s=>s.id===id);
@@ -35,7 +35,7 @@ test('no other dated story borrows the same physical participant on a reserved m
 
 test('Mizuki’s continuous fight finishes before the next mission and Bikochu follows his defeat',()=>{
  const mizuki=scenes.filter(s=>s.arc_id==='arc-y0-mizuki-return');
- assert.equal(new Set(mizuki.map(s=>s.day)).size,1);assert.equal(mizuki[0].day,279);
+ assert.equal(new Set(mizuki.map(s=>s.day)).size,1);assert.equal(mizuki[0].day,281);
  assert(mizuki.every(s=>s.day>scene('sc-time-slip-136-departure').day));
  const hospital=scene('sc-y0-1006-kurenai-hospital-bikochu-plan');
  const approval=scene('sc-y0-1006-tsunade-approves-bikochu');
@@ -47,9 +47,9 @@ test('Mizuki’s continuous fight finishes before the next mission and Bikochu f
  assert.equal(scene('sc-y0-1008-hinata-protects-team').day,search.day+1);
 });
 
-test('Kurenai’s social evening follows the hospital phase and preserves Kakashi’s linked day',()=>{
+test('Kurenai’s social evening precedes her injury and preserves Kakashi’s linked day',()=>{
  const hospital=scene('sc-y0-1006-kurenai-hospital-bikochu-plan');
- const evening=scene('sc-games-kakashi-nobari-gathering');assert(evening.day>hospital.day);
+ const evening=scene('sc-games-kakashi-nobari-gathering');assert(evening.day<hospital.day);
  assert.equal(evening.day,plan.kurenai_social_day);
  for(const id of ['sc-games-kakashi-rest-order','sc-games-kakashi-forced-rest'])assert.equal(scene(id).day,evening.day);
  assert.deepEqual([scene('sc-y0-1010-naruto-thirteenth-birthday').date.year,scene('sc-y0-1010-naruto-thirteenth-birthday').date.month,scene('sc-y0-1010-naruto-thirteenth-birthday').date.day],[61,10,10]);
@@ -67,8 +67,8 @@ test('the calendar crosses into positive year 62 before its within-year epoch tr
  assert.equal(data.calendar.view_start_year,61);assert.equal(data.calendar.view_end_year,62);
  assert.equal(data.calendar.view_days,730);
  const last=scene('sc-y0-1216-iruka-naruto-last-ramen');assert.equal(last.day,plan.last_ramen_day);
- assert.deepEqual([last.date.year,last.date.month,last.date.day],[62,1,14]);
- assert.deepEqual(data.periods.find(p=>p.id==='timeskip').boundary_date,{year:62,month:1,day:15});
+ assert.deepEqual([last.date.year,last.date.month,last.date.day],[62,5,30]);
+ assert.deepEqual(data.periods.find(p=>p.id==='timeskip').boundary_date,{year:62,month:5,day:31});
  const anchors=YAML.parse(fs.readFileSync(path.join(root,'data/time-anchors.yaml'),'utf8')).anchors;
  assert(anchors.filter(a=>a.date).every(a=>Number.isInteger(a.date.year)&&a.date.year>0));
  assert(anchors.filter(a=>a.id.startsWith('ta-autumn-reconciled')).every(a=>a.placement_status==='working'&&a.evidence_ids.includes('evd-autumn-cast-reconciliation')));

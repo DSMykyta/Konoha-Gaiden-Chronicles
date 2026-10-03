@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто, Хіната й Чоджі беруть під охорону караван із Країни Овочів"
 location_id: "loc-land-of-greens"
-placement: {anchor_id: ta-autumn-reconciled-61-1130, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-62-0205, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

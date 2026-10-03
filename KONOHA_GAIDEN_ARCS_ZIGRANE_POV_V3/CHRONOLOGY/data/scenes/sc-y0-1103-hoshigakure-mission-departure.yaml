@@ -5,7 +5,8 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто приєднується до місії з охорони Зірки Хошіґакуре"
 location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-61-1120, day_offset: 0}
+day_part: morning
+placement: {anchor_id: ta-period-reviewed-62-0106, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

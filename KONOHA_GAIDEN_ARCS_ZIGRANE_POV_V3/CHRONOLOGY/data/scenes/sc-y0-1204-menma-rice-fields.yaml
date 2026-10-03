@@ -1,54 +1,109 @@
 schema_version: 1
-id: "sc-y0-1204-menma-rice-fields"
+id: sc-y0-1204-menma-rice-fields
 episode_id: ep-y0-menma-memory
 display_rank: 200
-continuity_id: "main"
-title: "Пошук пам'яті Менми приводить групу до Країни Рисових Полів"
-location_id: "loc-land-of-rice-fields"
-placement: {anchor_id: ta-autumn-reconciled-62-0102, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Пошук пам'яті Менми приводить групу до Країни Рисових Полів
+location_id: loc-land-of-rice-fields
+placement:
+  anchor_id: ta-period-reviewed-62-0515
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1204-menma-jutsu-links-sound"
-    legacy_ids: ["V10-000212"]
-    title: "Техніка Менми вказує на зв'язок із Країною Рисових Полів і Звуком"
-    text: "Після того як Менма використовує техніку, рятуючи Наруто, Цунаде припускає зв'язок із шинобі Звуку й відправляє групу перевірити його походження."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-menma-amnesiac", role: "subject", mode: "physical"}
-      - {entity_id: "c-naruto", role: "protected", mode: "physical"}
-      - {entity_id: "c-tsunade", role: "analyst", mode: "remote"}
-    evidence_ids: ["evd-v10-000212", "evd-anime-213-215"]
-  - id: "ev-y0-1204-naruto-neji-tenten-investigate-menma"
-    legacy_ids: ["V10-000212"]
-    title: "Наруто, Неджи й Тентен розходяться в оцінці Менми"
-    text: "У Країні Рисових Полів Наруто прагне допомогти Менмі повернути пам'ять, тоді як Неджи й Тентен мають також установити його справжню особу та знайти нападників."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-naruto", role: "advocate", mode: "physical"}
-      - {entity_id: "c-neji", role: "investigator", mode: "physical"}
-      - {entity_id: "c-tenten", role: "investigator", mode: "physical"}
-      - {entity_id: "c-menma-amnesiac", role: "subject", mode: "physical"}
-    evidence_ids: ["evd-v10-000212", "evd-anime-213-215"]
-  - id: "ev-y0-1204-villagers-recognize-menma"
-    legacy_ids: ["V10-000212"]
-    title: "Мешканці впізнають Менму як члена банди"
-    text: "У селищі люди впізнають у Менмі одного з нападників і відмовляються вважати втрату пам'яті достатньою підставою для довіри."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-menma-amnesiac", role: "accused", mode: "physical"}
-      - {entity_id: "c-naruto", role: "defender", mode: "physical"}
-      - {entity_id: "c-neji", role: "observer", mode: "physical"}
-      - {entity_id: "c-tenten", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000212", "evd-anime-213-215"]
+- id: ev-y0-1204-menma-jutsu-links-sound
+  legacy_ids:
+  - V10-000212
+  title: Техніка Менми вказує на зв'язок із Країною Рисових Полів і Звуком
+  text: Після того як Менма використовує техніку, рятуючи Наруто, Цунаде припускає зв'язок із шинобі Звуку й відправляє
+    групу перевірити його походження.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-menma-amnesiac
+    role: subject
+    mode: physical
+  - entity_id: c-naruto
+    role: protected
+    mode: physical
+  - entity_id: c-tsunade
+    role: analyst
+    mode: remote
+  evidence_ids:
+  - evd-v10-000212
+  - evd-anime-213-215
+- id: ev-y0-1204-naruto-neji-tenten-investigate-menma
+  legacy_ids:
+  - V10-000212
+  title: Наруто, Неджи й Тентен розходяться в оцінці Менми
+  text: У Країні Рисових Полів Наруто прагне допомогти Менмі повернути пам'ять, тоді як Неджи й Тентен мають також
+    установити його справжню особу та знайти нападників.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: advocate
+    mode: physical
+  - entity_id: c-neji
+    role: investigator
+    mode: physical
+  - entity_id: c-tenten
+    role: investigator
+    mode: physical
+  - entity_id: c-menma-amnesiac
+    role: subject
+    mode: physical
+  evidence_ids:
+  - evd-v10-000212
+  - evd-anime-213-215
+- id: ev-y0-1204-villagers-recognize-menma
+  legacy_ids:
+  - V10-000212
+  title: Мешканці впізнають Менму як члена банди
+  text: У селищі люди впізнають у Менмі одного з нападників і відмовляються вважати втрату пам'яті достатньою підставою
+    для довіри.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-menma-amnesiac
+    role: accused
+    mode: physical
+  - entity_id: c-naruto
+    role: defender
+    mode: physical
+  - entity_id: c-neji
+    role: observer
+    mode: physical
+  - entity_id: c-tenten
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000212
+  - evd-anime-213-215
 relations:
-  - {id: "rel-1204-menma-1", kind: "before", a: "ev-y0-1204-menma-jutsu-links-sound", b: "ev-y0-1204-naruto-neji-tenten-investigate-menma", basis: "source", review: "accepted", evidence_ids: ["evd-anime-213-215"]}
-  - {id: "rel-1204-menma-2", kind: "before", a: "ev-y0-1204-naruto-neji-tenten-investigate-menma", b: "ev-y0-1204-villagers-recognize-menma", basis: "source", review: "accepted", evidence_ids: ["evd-anime-213-215"]}
+- id: rel-1204-menma-1
+  kind: before
+  a: ev-y0-1204-menma-jutsu-links-sound
+  b: ev-y0-1204-naruto-neji-tenten-investigate-menma
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
+- id: rel-1204-menma-2
+  kind: before
+  a: ev-y0-1204-naruto-neji-tenten-investigate-menma
+  b: ev-y0-1204-villagers-recognize-menma
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
 presence: []

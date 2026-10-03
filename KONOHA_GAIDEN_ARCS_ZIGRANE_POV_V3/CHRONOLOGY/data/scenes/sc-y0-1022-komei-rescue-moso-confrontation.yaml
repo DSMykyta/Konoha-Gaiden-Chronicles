@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто рятує Комея й група переходить до відкритого протистояння з Мосо"
 location_id: "loc-land-of-birds"
-placement: {anchor_id: ta-autumn-reconciled-61-1105, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1129, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

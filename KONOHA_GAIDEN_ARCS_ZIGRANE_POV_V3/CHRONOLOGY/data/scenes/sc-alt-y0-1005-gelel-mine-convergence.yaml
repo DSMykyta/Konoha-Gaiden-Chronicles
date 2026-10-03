@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-movie-gelel"
 title: "Сторони сходяться біля руїн і копальні Ґелеля"
 location_id: "loc-gelel-ruins"
-placement: {anchor_id: ta-autumn-reconciled-61-1010, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1031, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

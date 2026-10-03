@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто, Кіба й Хіната вирушають ловити Ґосункуґі"
 location_id: "loc-land-of-fire"
-placement: {anchor_id: ta-autumn-reconciled-61-1028, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1118, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

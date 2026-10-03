@@ -5,7 +5,9 @@ display_rank: 100
 continuity_id: alt-game-clash-revolution-2
 title: Това й Комачі розслідують сліди нукенінів
 location_id: loc-konohagakure
-placement: {anchor_id: ta-autumn-reconciled-61-1216, day_offset: 0}
+placement:
+  anchor_id: ta-period-reviewed-62-0417
+  day_offset: 0
 state: active
 presence_coverage: partial
 review:
@@ -19,8 +21,8 @@ events:
   legacy_ids:
   - V10-000193
   title: АНБУ Това й Комачі переслідують двох нукенінів
-  text: В альтернативній історії Clash of Ninja Revolution 2 Това й Комачі стикаються з двома нукенінами, а після їхньої втечі
-    продовжують розслідування.
+  text: В альтернативній історії Clash of Ninja Revolution 2 Това й Комачі стикаються з двома нукенінами, а після
+    їхньої втечі продовжують розслідування.
   origin: G
   extent: interval
   display_rank: 100
@@ -38,8 +40,8 @@ events:
   legacy_ids:
   - V10-000193
   title: АНБУ знаходять село, мешканці якого винищили одне одного
-  text: Сліди втікачів приводять Това й Комачі до знищеного поселення; вони роблять висновок, що людей примусили напасти одне
-    на одного, й доповідають Конохі.
+  text: Сліди втікачів приводять Това й Комачі до знищеного поселення; вони роблять висновок, що людей примусили
+    напасти одне на одного, й доповідають Конохі.
   origin: G
   extent: interval
   display_rank: 200

@@ -5,7 +5,8 @@ display_rank: 200
 continuity_id: "main"
 title: "Шіно отруюють речовиною, що викликає неконтрольований сміх"
 location_id: "loc-kagetsu-estate"
-placement: {anchor_id: ta-autumn-reconciled-61-1126, day_offset: 0}
+day_part: evening
+placement: {anchor_id: ta-period-reviewed-62-0125, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

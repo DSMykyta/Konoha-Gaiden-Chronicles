@@ -1,0 +1,50 @@
+schema_version: 1
+id: sc-period-moon-departure
+episode_id: ep-alt-moon-restoration
+display_rank: 300
+continuity_id: alt-movie-crescent-moon
+title: Команда прощається з Країною Місяця
+location_id: loc-land-of-moon
+state: active
+presence_coverage: partial
+review:
+  time: working
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-period-moon-departure
+  title: Команда прощається з Країною Місяця
+  text: Після перебування в королівстві команда вирушає додому. Наруто й Хікару прощаються; Мічіру приймає відповідальність
+    за країну.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-michiru-tsuki
+    role: participant
+    mode: physical
+  - entity_id: c-hikaru-tsuki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-movie-crescent-moon
+  - evd-post-sasuke-calendar-review
+relations: []
+presence: []
+placement:
+  anchor_id: ta-period-reviewed-62-0411
+  day_offset: 0

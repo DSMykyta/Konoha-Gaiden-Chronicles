@@ -1,25 +1,40 @@
 schema_version: 1
-id: "sc-alt-y0-1201-ninja-destiny2eu-start"
+id: sc-alt-y0-1201-ninja-destiny2eu-start
 episode_id: ep-alt-y0-1201-ninja-destiny2eu-start
 display_rank: 100
-continuity_id: "alt-game-ninja-destiny-2-eu"
-title: "Європейська версія Ninja Destiny 2 починає окрему пост-сасківську історію"
-location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-61-1229, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "approximate", cast: "partial", location: "accepted", origin: "accepted", text: "partial"}
+continuity_id: alt-game-ninja-destiny-2-eu
+title: Європейська версія Ninja Destiny 2 починає окрему пост-сасківську історію
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-period-reviewed-62-0505
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: partial
 events:
-  - id: "ev-alt-y0-1201-nd2eu-naruto-after-sasuke-defeat"
-    legacy_ids: ["V10-000207"]
-    title: "Наруто переживає поразку після невдалого повернення Саске"
-    text: "В окремій європейській ігровій лінії історія починається після поразки Наруто від Саске; він повертається до тренувань із шинобі Конохи."
-    origin: "G"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "past_opponent", mode: "remote"}
-    evidence_ids: ["evd-v10-000207", "evd-game-ninja-destiny-2-eu"]
+- id: ev-alt-y0-1201-nd2eu-naruto-after-sasuke-defeat
+  legacy_ids:
+  - V10-000207
+  title: Наруто переживає поразку після невдалого повернення Саске
+  text: В окремій європейській ігровій лінії історія починається після поразки Наруто від Саске; він повертається
+    до тренувань із шинобі Конохи.
+  origin: G
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-sasuke
+    role: past_opponent
+    mode: remote
+  evidence_ids:
+  - evd-v10-000207
+  - evd-game-ninja-destiny-2-eu
 relations: []
 presence: []

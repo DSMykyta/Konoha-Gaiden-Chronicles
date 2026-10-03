@@ -4,14 +4,16 @@ episode_id: ep-alt-y0-1118-crescent-moon-movie
 display_rank: 100
 continuity_id: alt-movie-crescent-moon
 title: Супровід Мічіру й Хікару
-location_id: loc-land-of-moon
-placement: {anchor_id: ta-autumn-reconciled-61-1209, day_offset: 0}
+location_id: loc-moon-escort-route
+placement:
+  anchor_id: ta-period-reviewed-62-0323
+  day_offset: 0
 state: active
 presence_coverage: partial
 review:
   time: approximate
   cast: partial
-  location: accepted
+  location: partial
   origin: accepted
   text: accepted
 events:
@@ -19,8 +21,8 @@ events:
   legacy_ids:
   - V10-000190
   title: Наруто, Сакура, Лі й Какаші супроводжують Мічіру та Хікару
-  text: В альтернативній кінолінії Какаші, Наруто, Сакура й Лі охороняють спадкоємця Країни Місяця Мічіру та його сина Хікару
-    на шляху додому.
+  text: В альтернативній кінолінії Какаші, Наруто, Сакура й Лі охороняють спадкоємця Країни Місяця Мічіру та його
+    сина Хікару на шляху додому.
   origin: V
   extent: interval
   display_rank: 100

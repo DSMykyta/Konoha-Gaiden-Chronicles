@@ -1,51 +1,102 @@
 schema_version: 1
-id: "sc-y0-1130-gantetsu-bewildering-forest"
+id: sc-y0-1130-gantetsu-bewildering-forest
 episode_id: ep-y0-gantetsu-forest
 display_rank: 100
-continuity_id: "main"
-title: "Наруто, Тодорокі й Ґантецу губляться в Лісі Заблудження"
-placement: {anchor_id: ta-autumn-reconciled-61-1226, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Наруто, Тодорокі й Ґантецу губляться в Лісі Заблудження
+day_part: night
+placement:
+  anchor_id: ta-period-reviewed-62-0430
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1130-naruto-gantetsu-todoroki-separated"
-    legacy_ids: ["V10-000205"]
-    title: "Наруто, Ґантецу й Тодорокі відділяються від основного загону"
-    text: "Після атаки Шінобадзу Наруто, Ґантецу й Тодорокі опиняються окремо від Сакури, Лі та решти супроводу."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-gantetsu", role: "participant", mode: "physical"}
-      - {entity_id: "c-todoroki", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000205", "evd-anime-209-212"]
-  - id: "ev-y0-1130-trio-enters-bewildering-forest"
-    legacy_ids: ["V10-000205"]
-    title: "Трійця входить у лабіринтний ліс"
-    text: "Тодорокі пропонує зрізати шлях до столиці через ліс, але місцевість спотворює орієнтацію й перетворює рух на лабіринт."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-todoroki", role: "route_proposer", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-gantetsu", role: "guide", mode: "physical"}
-    evidence_ids: ["evd-v10-000205", "evd-anime-209-212"]
-  - id: "ev-y0-1130-gantetsu-knows-secret-marks"
-    legacy_ids: ["V10-000205"]
-    title: "Ґантецу орієнтується за прихованими знаками"
-    text: "Ґантецу демонструє знання таємних позначок у лісі, що поступово відкриває його давні зв'язки з цим маршрутом і людьми, яких він тут захищав."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-gantetsu", role: "guide", mode: "physical"}
-      - {entity_id: "c-naruto", role: "observer", mode: "physical"}
-      - {entity_id: "c-todoroki", role: "observer", mode: "physical"}
-    evidence_ids: ["evd-v10-000205", "evd-anime-209-212"]
+- id: ev-y0-1130-naruto-gantetsu-todoroki-separated
+  legacy_ids:
+  - V10-000205
+  title: Наруто, Ґантецу й Тодорокі відділяються від основного загону
+  text: Після атаки Шінобадзу Наруто, Ґантецу й Тодорокі опиняються окремо від Сакури, Лі та решти супроводу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-gantetsu
+    role: participant
+    mode: physical
+  - entity_id: c-todoroki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000205
+  - evd-anime-209-212
+- id: ev-y0-1130-trio-enters-bewildering-forest
+  legacy_ids:
+  - V10-000205
+  title: Трійця входить у лабіринтний ліс
+  text: Тодорокі пропонує зрізати шлях до столиці через ліс, але місцевість спотворює орієнтацію й перетворює рух
+    на лабіринт.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-todoroki
+    role: route_proposer
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-gantetsu
+    role: guide
+    mode: physical
+  evidence_ids:
+  - evd-v10-000205
+  - evd-anime-209-212
+- id: ev-y0-1130-gantetsu-knows-secret-marks
+  legacy_ids:
+  - V10-000205
+  title: Ґантецу орієнтується за прихованими знаками
+  text: Ґантецу демонструє знання таємних позначок у лісі, що поступово відкриває його давні зв'язки з цим маршрутом
+    і людьми, яких він тут захищав.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-gantetsu
+    role: guide
+    mode: physical
+  - entity_id: c-naruto
+    role: observer
+    mode: physical
+  - entity_id: c-todoroki
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-v10-000205
+  - evd-anime-209-212
 relations:
-  - {id: "rel-1130-gantetsu-1", kind: "before", a: "ev-y0-1130-naruto-gantetsu-todoroki-separated", b: "ev-y0-1130-trio-enters-bewildering-forest", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
-  - {id: "rel-1130-gantetsu-2", kind: "before", a: "ev-y0-1130-trio-enters-bewildering-forest", b: "ev-y0-1130-gantetsu-knows-secret-marks", basis: "source", review: "accepted", evidence_ids: ["evd-anime-209-212"]}
+- id: rel-1130-gantetsu-1
+  kind: before
+  a: ev-y0-1130-naruto-gantetsu-todoroki-separated
+  b: ev-y0-1130-trio-enters-bewildering-forest
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-209-212
+- id: rel-1130-gantetsu-2
+  kind: before
+  a: ev-y0-1130-trio-enters-bewildering-forest
+  b: ev-y0-1130-gantetsu-knows-secret-marks
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-209-212
 presence: []

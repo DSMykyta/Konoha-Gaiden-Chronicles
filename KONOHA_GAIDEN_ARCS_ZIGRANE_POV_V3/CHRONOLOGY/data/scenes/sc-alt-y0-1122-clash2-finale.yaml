@@ -5,7 +5,9 @@ display_rank: 100
 continuity_id: alt-game-clash-revolution-2
 title: Цунаде перемагає Каґуру
 location_id: loc-konohagakure
-placement: {anchor_id: ta-autumn-reconciled-61-1218, day_offset: 0}
+placement:
+  anchor_id: ta-period-reviewed-62-0419
+  day_offset: 0
 state: active
 presence_coverage: partial
 review:
@@ -19,8 +21,8 @@ events:
   legacy_ids:
   - V10-000197
   title: Цунаде перемагає Каґуру
-  text: Після того як Какаші й Сакура стримують Каґуру, Цунаде приходить до сховку й перемагає колишню АНБУ; Каґура визнає
-    власну помилку та залишає поле бою.
+  text: Після того як Какаші й Сакура стримують Каґуру, Цунаде приходить до сховку й перемагає колишню АНБУ; Каґура
+    визнає власну помилку та залишає поле бою.
   origin: G
   extent: interval
   display_rank: 300

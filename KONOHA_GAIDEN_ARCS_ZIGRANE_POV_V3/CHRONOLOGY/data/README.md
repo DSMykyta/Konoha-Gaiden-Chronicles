@@ -38,3 +38,5 @@ Hierarchy is **moment → scene → episode → arc**. The source stores only ch
 An episode follows one narrative line. Independent parallel actions are separate episodes even on the same day. A change of setting creates a scene; one coherent goal may span several scenes. Author arcs coexist with canonical arcs in `main`; source continuities remain separate. Calendar-shooting stories belong to the timeskip era, which must be configured before their dates can be published.
 
 Validation: `python validate_timeline.py` from `CHRONOLOGY/`. Site validation: `npm --prefix SITE test` from repository root. Validators check references and continuity; editorial review is still needed to decide whether a narrative line is coherent.
+
+`mission-windows.yaml` — чинні робочі резерви дороги, участі й відновлення після відходу Саске; збірка перевіряє їх проти фізичної присутності в усіх активних датованих сценах. Підстави — `../POST_SASUKE_SCHEDULE_UA.md`.

@@ -1,0 +1,38 @@
+schema_version: 1
+id: sc-period-genno-lunch
+episode_id: ep-y0-genno-investigation
+display_rank: 50
+continuity_id: main
+title: Наруто обідає з Ґенно перед його зникненням
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-period-reviewed-62-0308
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: working
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-period-genno-lunch
+  title: Наруто обідає з Ґенно перед його зникненням
+  text: Наруто їсть рамен разом із теслею Ґенно, якого знає з попередніх зустрічей. Уночі Ґенно краде креслення
+    й удає власну загибель.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-genno
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-anime-197-201
+relations: []
+presence: []

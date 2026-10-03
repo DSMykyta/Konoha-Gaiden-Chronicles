@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто й Котецу не можуть схопити Кондора"
 location_id: "loc-zeroth-training-ground"
-placement: {anchor_id: ta-autumn-reconciled-61-1011, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1104, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

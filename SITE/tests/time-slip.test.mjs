@@ -65,10 +65,10 @@ test('continuations and the exit from the past respect causality without repeati
 test('conflicting autumn missions move while independent Team 8 scenes and the birthday stay fixed',()=>{
  for(const [id,month,date] of [
   ['sc-y0-0930-team8-hot-springs-training',9,30],
-  ['sc-y0-1001-mizuki-prison-break',10,7],
-  ['sc-y0-1004-powered-mizuki-battle',10,7],
-  ['sc-y0-1005-animal-district-four-warriors',10,11],
-  ['sc-y0-1006-tsunade-approves-bikochu',10,13],
+  ['sc-y0-1001-mizuki-prison-break',10,9],
+  ['sc-y0-1004-powered-mizuki-battle',10,9],
+  ['sc-y0-1005-animal-district-four-warriors',11,4],
+  ['sc-y0-1006-tsunade-approves-bikochu',10,12],
   ['sc-y0-1010-naruto-thirteenth-birthday',10,10],
  ]){const s=data.scenes.find(s=>s.id===id);assert.deepEqual([s.date.year,s.date.month,s.date.day],[61,month,date],id);}
 });

@@ -5,7 +5,7 @@ display_rank: 300
 continuity_id: "main"
 title: "Цунаде розбирає небезпечне рішення Наруто після повернення"
 location_id: "loc-hokage-residence"
-placement: {anchor_id: ta-autumn-reconciled-61-1026, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1115, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

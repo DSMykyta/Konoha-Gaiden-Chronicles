@@ -5,7 +5,9 @@ display_rank: 200
 continuity_id: alt-game-clash-revolution-2
 title: Порятунок Сакури й викриття Каґури
 location_id: null
-placement: {anchor_id: ta-autumn-reconciled-61-1217, day_offset: 0}
+placement:
+  anchor_id: ta-period-reviewed-62-0418
+  day_offset: 0
 state: active
 presence_coverage: partial
 review:
@@ -40,7 +42,8 @@ events:
   legacy_ids:
   - V10-000195
   title: Какаші впізнає колишню АНБУ Каґуру
-  text: Під час сутички з Каґури збивають маску; Какаші впізнає колишню АНБУ, а поруч із нею діє торговець зброєю Бандо.
+  text: Під час сутички з Каґури збивають маску; Какаші впізнає колишню АНБУ, а поруч із нею діє торговець зброєю
+    Бандо.
   origin: G
   extent: interval
   display_rank: 200

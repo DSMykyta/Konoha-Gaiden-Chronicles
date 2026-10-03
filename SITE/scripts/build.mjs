@@ -5,6 +5,7 @@ import YAML from 'yaml';
 import {loadEnrichment} from './enrichment.mjs';
 import {validateHierarchy} from './hierarchy.mjs';
 import {validateCalendar,dayInYear} from './calendar.mjs';
+import {validateMissionWindows} from './mission-windows.mjs';
 const project=path.resolve(import.meta.dirname,'..');
 const relative='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data';
 // Vercel builds current repository data. There is no browser GitHub token or write endpoint.
@@ -45,6 +46,7 @@ const episodeViews=episodes.map(episode=>{const members=scenes.filter(s=>s.episo
 const arcViews=arcs.map(arc=>{const members=episodeViews.filter(e=>e.arc_id===arc.id),dated=members.flatMap(e=>[e.day_start,e.day_end]).filter(d=>d!==null);return {...arc,source_continuity_id:arc.continuity_id||'main',continuity_id:'main',episode_ids:members.map(e=>e.id),day_start:dated.length?Math.min(...dated):null,day_end:dated.length?Math.max(...dated):null};});
 if(new Set(events.map(e=>e.id)).size!==events.length)throw new Error('Duplicate event IDs');
 const known=new Set(entities.entities.map(e=>e.id));for(const e of events)for(const id of e.tracks)if(!known.has(id))throw new Error('Unknown entity '+id);
+validateMissionWindows(read('mission-windows.yaml'),scenes,entities.entities);
 let revision=process.env.VERCEL_GIT_COMMIT_SHA;try{revision=execFileSync('git',['-C',source,'rev-parse','HEAD'],{encoding:'utf8'}).trim();}catch{if(!revision)throw new Error('Source revision is required');}
 const sources=read('sources.yaml');
 const enrichment=loadEnrichment({source,relative,project,entities:entities.entities,events,sourceIds:new Set(sources.sources.map(s=>s.id))});

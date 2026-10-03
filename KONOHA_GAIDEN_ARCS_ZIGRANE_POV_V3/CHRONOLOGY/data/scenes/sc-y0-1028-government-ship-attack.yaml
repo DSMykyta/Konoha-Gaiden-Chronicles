@@ -5,7 +5,8 @@ display_rank: 100
 continuity_id: "main"
 title: "Амачі атакує урядовий флот Країни Моря"
 location_id: "loc-land-sea-government-ship"
-placement: {anchor_id: ta-autumn-reconciled-61-1111, day_offset: 0}
+day_part: morning
+placement: {anchor_id: ta-period-reviewed-61-1211, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

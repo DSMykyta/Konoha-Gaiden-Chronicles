@@ -3713,3 +3713,1383 @@ anchors:
     review: accepted
     reason: 'Узгоджена робоча дата: спільні учасники завершують попередню місію до наступної. Внутрішні переходи й
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
+
+  - id: ta-period-reviewed-61-0927
+    date:
+      year: 61
+      month: 9
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1009
+    date:
+      year: 61
+      month: 10
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1011
+    date:
+      year: 61
+      month: 10
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1012
+    date:
+      year: 61
+      month: 10
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1013
+    date:
+      year: 61
+      month: 10
+      day: 13
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1014
+    date:
+      year: 61
+      month: 10
+      day: 14
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1015
+    date:
+      year: 61
+      month: 10
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1019
+    date:
+      year: 61
+      month: 10
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1021
+    date:
+      year: 61
+      month: 10
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1022
+    date:
+      year: 61
+      month: 10
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1023
+    date:
+      year: 61
+      month: 10
+      day: 23
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1024
+    date:
+      year: 61
+      month: 10
+      day: 24
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1029
+    date:
+      year: 61
+      month: 10
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1030
+    date:
+      year: 61
+      month: 10
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1031
+    date:
+      year: 61
+      month: 10
+      day: 31
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1104
+    date:
+      year: 61
+      month: 11
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1106
+    date:
+      year: 61
+      month: 11
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1109
+    date:
+      year: 61
+      month: 11
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1112
+    date:
+      year: 61
+      month: 11
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1115
+    date:
+      year: 61
+      month: 11
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1118
+    date:
+      year: 61
+      month: 11
+      day: 18
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1119
+    date:
+      year: 61
+      month: 11
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1122
+    date:
+      year: 61
+      month: 11
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1126
+    date:
+      year: 61
+      month: 11
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1127
+    date:
+      year: 61
+      month: 11
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1128
+    date:
+      year: 61
+      month: 11
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1129
+    date:
+      year: 61
+      month: 11
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1130
+    date:
+      year: 61
+      month: 11
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1204
+    date:
+      year: 61
+      month: 12
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1205
+    date:
+      year: 61
+      month: 12
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1207
+    date:
+      year: 61
+      month: 12
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1209
+    date:
+      year: 61
+      month: 12
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1210
+    date:
+      year: 61
+      month: 12
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1211
+    date:
+      year: 61
+      month: 12
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1216
+    date:
+      year: 61
+      month: 12
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1218
+    date:
+      year: 61
+      month: 12
+      day: 18
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1219
+    date:
+      year: 61
+      month: 12
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1220
+    date:
+      year: 61
+      month: 12
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1222
+    date:
+      year: 61
+      month: 12
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1225
+    date:
+      year: 61
+      month: 12
+      day: 25
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-61-1228
+    date:
+      year: 61
+      month: 12
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0102
+    date:
+      year: 62
+      month: 1
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0103
+    date:
+      year: 62
+      month: 1
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0106
+    date:
+      year: 62
+      month: 1
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0108
+    date:
+      year: 62
+      month: 1
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0109
+    date:
+      year: 62
+      month: 1
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0110
+    date:
+      year: 62
+      month: 1
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0111
+    date:
+      year: 62
+      month: 1
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0112
+    date:
+      year: 62
+      month: 1
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0116
+    date:
+      year: 62
+      month: 1
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0117
+    date:
+      year: 62
+      month: 1
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0119
+    date:
+      year: 62
+      month: 1
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0121
+    date:
+      year: 62
+      month: 1
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0122
+    date:
+      year: 62
+      month: 1
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0125
+    date:
+      year: 62
+      month: 1
+      day: 25
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0126
+    date:
+      year: 62
+      month: 1
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0129
+    date:
+      year: 62
+      month: 1
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0130
+    date:
+      year: 62
+      month: 1
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0131
+    date:
+      year: 62
+      month: 1
+      day: 31
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0205
+    date:
+      year: 62
+      month: 2
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0206
+    date:
+      year: 62
+      month: 2
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0207
+    date:
+      year: 62
+      month: 2
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0208
+    date:
+      year: 62
+      month: 2
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0214
+    date:
+      year: 62
+      month: 2
+      day: 14
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0224
+    date:
+      year: 62
+      month: 2
+      day: 24
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0227
+    date:
+      year: 62
+      month: 2
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0302
+    date:
+      year: 62
+      month: 3
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0304
+    date:
+      year: 62
+      month: 3
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0308
+    date:
+      year: 62
+      month: 3
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0309
+    date:
+      year: 62
+      month: 3
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0310
+    date:
+      year: 62
+      month: 3
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0313
+    date:
+      year: 62
+      month: 3
+      day: 13
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0316
+    date:
+      year: 62
+      month: 3
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0319
+    date:
+      year: 62
+      month: 3
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0323
+    date:
+      year: 62
+      month: 3
+      day: 23
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0326
+    date:
+      year: 62
+      month: 3
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0327
+    date:
+      year: 62
+      month: 3
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0328
+    date:
+      year: 62
+      month: 3
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0416
+    date:
+      year: 62
+      month: 4
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0417
+    date:
+      year: 62
+      month: 4
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0418
+    date:
+      year: 62
+      month: 4
+      day: 18
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0421
+    date:
+      year: 62
+      month: 4
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0422
+    date:
+      year: 62
+      month: 4
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0426
+    date:
+      year: 62
+      month: 4
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0429
+    date:
+      year: 62
+      month: 4
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0430
+    date:
+      year: 62
+      month: 4
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0504
+    date:
+      year: 62
+      month: 5
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0507
+    date:
+      year: 62
+      month: 5
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0510
+    date:
+      year: 62
+      month: 5
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0512
+    date:
+      year: 62
+      month: 5
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0514
+    date:
+      year: 62
+      month: 5
+      day: 14
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0515
+    date:
+      year: 62
+      month: 5
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0521
+    date:
+      year: 62
+      month: 5
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0529
+    date:
+      year: 62
+      month: 5
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: Ознаки серій, час дороги й відновлення описано в POST_SASUKE_SCHEDULE_UA.md та period-placement.json;
+      абсолютна дата умовна.
+
+  - id: ta-period-reviewed-62-0101
+    date:
+      year: 62
+      month: 1
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0411
+    date:
+      year: 62
+      month: 4
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0419
+    date:
+      year: 62
+      month: 4
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0423
+    date:
+      year: 62
+      month: 4
+      day: 23
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0427
+    date:
+      year: 62
+      month: 4
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0501
+    date:
+      year: 62
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0505
+    date:
+      year: 62
+      month: 5
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0508
+    date:
+      year: 62
+      month: 5
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0511
+    date:
+      year: 62
+      month: 5
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0513
+    date:
+      year: 62
+      month: 5
+      day: 13
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0516
+    date:
+      year: 62
+      month: 5
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0522
+    date:
+      year: 62
+      month: 5
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-period-reviewed-62-0530
+    date:
+      year: 62
+      month: 5
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_decision
+    evidence_ids:
+    - evd-post-sasuke-calendar-review
+    review: accepted
+    reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.

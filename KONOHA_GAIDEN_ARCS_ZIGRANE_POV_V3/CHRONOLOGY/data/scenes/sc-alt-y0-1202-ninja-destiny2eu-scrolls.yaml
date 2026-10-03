@@ -1,24 +1,37 @@
 schema_version: 1
-id: "sc-alt-y0-1202-ninja-destiny2eu-scrolls"
+id: sc-alt-y0-1202-ninja-destiny2eu-scrolls
 episode_id: ep-alt-y0-1202-ninja-destiny2eu-scrolls
 display_rank: 100
-continuity_id: "alt-game-ninja-destiny-2-eu"
-title: "Наруто проходить окрему ігрову серію тренувань і сутичок"
-location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-61-1230, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "approximate", cast: "partial", location: "partial", origin: "accepted", text: "partial"}
+continuity_id: alt-game-ninja-destiny-2-eu
+title: Наруто проходить окрему ігрову серію тренувань і сутичок
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-period-reviewed-62-0508
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: approximate
+  cast: partial
+  location: partial
+  origin: accepted
+  text: partial
 events:
-  - id: "ev-alt-y0-1202-nd2eu-scroll-battles"
-    legacy_ids: ["V10-000209"]
-    title: "Наруто збирає сюжетні сувої й тренується через серію боїв"
-    text: "У старому v10 середина європейської ігрової історії зафіксована як пошук сувоїв і серія сюжетних поєдинків; ця послідовність зберігається лише в альтернативній гілці й не використовується як канонічна дата."
-    origin: "G"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
-    evidence_ids: ["evd-v10-000209", "evd-game-ninja-destiny-2-eu"]
+- id: ev-alt-y0-1202-nd2eu-scroll-battles
+  legacy_ids:
+  - V10-000209
+  title: Наруто збирає сюжетні сувої й тренується через серію боїв
+  text: У старому v10 середина європейської ігрової історії зафіксована як пошук сувоїв і серія сюжетних поєдинків;
+    ця послідовність зберігається лише в альтернативній гілці й не використовується як канонічна дата.
+  origin: G
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-v10-000209
+  - evd-game-ninja-destiny-2-eu
 relations: []
 presence: []

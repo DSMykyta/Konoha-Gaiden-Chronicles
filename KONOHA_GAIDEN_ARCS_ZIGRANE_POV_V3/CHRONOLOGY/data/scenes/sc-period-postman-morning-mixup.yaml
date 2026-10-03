@@ -1,0 +1,47 @@
+schema_version: 1
+id: sc-period-postman-morning-mixup
+episode_id: ep-y0-postman-chase
+display_rank: 150
+continuity_id: main
+title: Ранкова плутанина з рукописом
+location_id: loc-hot-springs-town
+placement:
+  anchor_id: ta-period-reviewed-62-0102
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-1102-manuscript-swapped-with-peace-treaty
+  legacy_ids:
+  - V10-000168
+  title: Конверт із рукописом міняється місцями з мирною угодою
+  text: Наступного ранку Наруто передає конверт кур’єру. Через плутанину Наруто й Джирая отримують мирну угоду Країн
+    Кігтів та Іклів, а рукопис прямує до даймьо Іклів замість неї.
+  origin: F
+  extent: instant
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: cause
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-fang-daimyo
+    role: recipient
+    mode: remote
+  - entity_id: c-claw-daimyo
+    role: sender
+    mode: remote
+  evidence_ids:
+  - evd-v10-000168
+  - evd-anime-177
+relations: []
+presence: []
+day_part: morning

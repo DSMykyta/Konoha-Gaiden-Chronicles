@@ -6,7 +6,7 @@ continuity_id: "main"
 title: "Бікоочу запам'ятовує запах Наруто замість Саске"
 location_id: "loc-bikocho-habitat"
 day_part: morning
-placement: {anchor_id: ta-autumn-reconciled-61-1016, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1015, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

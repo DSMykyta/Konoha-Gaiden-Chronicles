@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Дитинча онба чіпляється до Наруто"
 location_id: "loc-land-of-fire"
-placement: {anchor_id: ta-autumn-reconciled-61-1125, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-62-0119, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Мондай і Потча входять до Конохи під виглядом Ґая та Лі"
 location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-61-1030, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1122, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

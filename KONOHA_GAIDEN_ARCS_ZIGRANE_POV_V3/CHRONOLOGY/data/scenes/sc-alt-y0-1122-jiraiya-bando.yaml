@@ -5,7 +5,9 @@ display_rank: 100
 continuity_id: alt-game-clash-revolution-2
 title: Джирая перемагає Бандо
 location_id: null
-placement: {anchor_id: ta-autumn-reconciled-61-1218, day_offset: 0}
+placement:
+  anchor_id: ta-period-reviewed-62-0419
+  day_offset: 0
 state: active
 presence_coverage: partial
 review:
@@ -19,8 +21,8 @@ events:
   legacy_ids:
   - V10-000197
   title: Джирая перемагає Бандо й руйнує один із бар'єрів
-  text: Джирая знаходить Бандо на стадіоні, перемагає торговця зброєю й змушує його зняти бар'єр, що підтримував атаку на
-    Коноху; Това бере Бандо під варту.
+  text: Джирая знаходить Бандо на стадіоні, перемагає торговця зброєю й змушує його зняти бар'єр, що підтримував
+    атаку на Коноху; Това бере Бандо під варту.
   origin: G
   extent: interval
   display_rank: 100

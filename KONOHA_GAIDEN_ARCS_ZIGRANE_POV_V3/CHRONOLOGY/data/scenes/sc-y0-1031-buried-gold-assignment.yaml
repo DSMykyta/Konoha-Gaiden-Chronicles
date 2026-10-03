@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Цунаде дає Наруто, Кібі й Хінаті останній шанс як команді"
 location_id: "loc-hokage-residence"
-placement: {anchor_id: ta-autumn-reconciled-61-1114, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1218, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

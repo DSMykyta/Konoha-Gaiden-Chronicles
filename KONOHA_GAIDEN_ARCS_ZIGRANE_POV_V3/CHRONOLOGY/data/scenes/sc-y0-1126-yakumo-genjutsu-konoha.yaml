@@ -1,54 +1,105 @@
 schema_version: 1
-id: "sc-y0-1126-yakumo-genjutsu-konoha"
+id: sc-y0-1126-yakumo-genjutsu-konoha
 episode_id: ep-y0-yakumo-illusion
 display_rank: 100
-continuity_id: "main"
-title: "Ґенджюцу Якумо накриває Коноху і видає ілюзію за реальність"
-location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-61-1222, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Ґенджюцу Якумо накриває Коноху і видає ілюзію за реальність
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-period-reviewed-62-0423
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1126-team-sees-konoha-ruins"
-    legacy_ids: ["V10-000201"]
-    title: "Група повертається до Конохи й бачить село зруйнованим"
-    text: "Повертаючись із пораненими Куренай та Якумо, група бачить Коноху в руїнах і спершу сприймає побачене як реальну катастрофу."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "witness", mode: "physical"}
-      - {entity_id: "c-kurenai", role: "injured", mode: "physical"}
-      - {entity_id: "c-yakumo-kurama", role: "injured", mode: "physical"}
-      - {entity_id: "c-kiba", role: "witness", mode: "physical"}
-      - {entity_id: "c-hinata", role: "witness", mode: "physical"}
-      - {entity_id: "c-shino", role: "witness", mode: "physical"}
-    evidence_ids: ["evd-v10-000201", "evd-anime-203-207"]
-  - id: "ev-y0-1126-shino-detects-genjutsu"
-    legacy_ids: ["V10-000201"]
-    title: "Шіно розуміє, що руїни Конохи не є реальними"
-    text: "Рух комах Шіно суперечить видимій картині, і Команда 8 доходить висновку, що село перебуває всередині надзвичайно повного ґенджюцу."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-shino", role: "discoverer", mode: "physical"}
-      - {entity_id: "c-kiba", role: "participant", mode: "physical"}
-      - {entity_id: "c-hinata", role: "participant", mode: "physical"}
-    evidence_ids: ["evd-v10-000201", "evd-anime-203-207"]
-  - id: "ev-y0-1126-unkai-explains-yakumo-genjutsu"
-    legacy_ids: ["V10-000201"]
-    title: "Ункай пояснює Наруто масштаб сили Якумо"
-    text: "Ункай з'являється перед Наруто й пояснює, що Якумо здатна занурювати людей у ґенджюцу, настільки повне, що наслідки сприймаються тілом як справжні."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-unkai-kurama", role: "source", mode: "physical"}
-      - {entity_id: "c-naruto", role: "recipient", mode: "physical"}
-      - {entity_id: "c-yakumo-kurama", role: "subject", mode: "remote"}
-    evidence_ids: ["evd-v10-000201", "evd-anime-203-207"]
+- id: ev-y0-1126-team-sees-konoha-ruins
+  legacy_ids:
+  - V10-000201
+  title: Група повертається до Конохи й бачить село зруйнованим
+  text: Повертаючись із пораненими Куренай та Якумо, група бачить Коноху в руїнах і спершу сприймає побачене як
+    реальну катастрофу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: witness
+    mode: physical
+  - entity_id: c-kurenai
+    role: injured
+    mode: physical
+  - entity_id: c-yakumo-kurama
+    role: injured
+    mode: physical
+  - entity_id: c-kiba
+    role: witness
+    mode: physical
+  - entity_id: c-hinata
+    role: witness
+    mode: physical
+  - entity_id: c-shino
+    role: witness
+    mode: physical
+  evidence_ids:
+  - evd-v10-000201
+  - evd-anime-203-207
+- id: ev-y0-1126-shino-detects-genjutsu
+  legacy_ids:
+  - V10-000201
+  title: Шіно розуміє, що руїни Конохи не є реальними
+  text: Рух комах Шіно суперечить видимій картині, і Команда 8 доходить висновку, що село перебуває всередині надзвичайно
+    повного ґенджюцу.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-shino
+    role: discoverer
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-v10-000201
+  - evd-anime-203-207
+- id: ev-y0-1126-unkai-explains-yakumo-genjutsu
+  legacy_ids:
+  - V10-000201
+  title: Ункай пояснює Наруто масштаб сили Якумо
+  text: Ункай з'являється перед Наруто й пояснює, що Якумо здатна занурювати людей у ґенджюцу, настільки повне,
+    що наслідки сприймаються тілом як справжні.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-unkai-kurama
+    role: source
+    mode: physical
+  - entity_id: c-naruto
+    role: recipient
+    mode: physical
+  - entity_id: c-yakumo-kurama
+    role: subject
+    mode: remote
+  evidence_ids:
+  - evd-v10-000201
+  - evd-anime-203-207
 relations:
-  - {id: "rel-1126-yakumo-1", kind: "before", a: "ev-y0-1126-team-sees-konoha-ruins", b: "ev-y0-1126-shino-detects-genjutsu", basis: "source", review: "accepted", evidence_ids: ["evd-anime-203-207"]}
+- id: rel-1126-yakumo-1
+  kind: before
+  a: ev-y0-1126-team-sees-konoha-ruins
+  b: ev-y0-1126-shino-detects-genjutsu
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-203-207
 presence: []

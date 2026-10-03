@@ -5,7 +5,8 @@ display_rank: 100
 continuity_id: "main"
 title: "Ранмару повертається до урвища й оживляє Райґу"
 location_id: "loc-katabami-cliff"
-placement: {anchor_id: ta-autumn-reconciled-61-1020, day_offset: 0}
+day_part: afternoon
+placement: {anchor_id: ta-period-reviewed-61-1023, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

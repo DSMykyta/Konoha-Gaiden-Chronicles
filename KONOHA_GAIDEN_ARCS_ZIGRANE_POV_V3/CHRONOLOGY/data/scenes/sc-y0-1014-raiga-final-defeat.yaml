@@ -5,7 +5,8 @@ display_rank: 200
 continuity_id: "main"
 title: "Ранмару відмовляється від Райґи, а Наруто завершує бій"
 location_id: "loc-lightning-pass"
-placement: {anchor_id: ta-autumn-reconciled-61-1022, day_offset: 0}
+day_part: afternoon
+placement: {anchor_id: ta-period-reviewed-61-1023, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

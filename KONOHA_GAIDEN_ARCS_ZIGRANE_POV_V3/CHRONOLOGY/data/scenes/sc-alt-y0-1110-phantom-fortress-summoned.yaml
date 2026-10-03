@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-game-phantom-fortress"
 title: "Муґенджо з'являється біля Конохи й починає висмоктувати життєву силу"
 location_id: "loc-mugen-castle"
-placement: {anchor_id: ta-autumn-reconciled-61-1127, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-62-0129, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

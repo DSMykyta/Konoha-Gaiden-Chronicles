@@ -1,50 +1,96 @@
 schema_version: 1
-id: "sc-y0-1203-menma-found"
+id: sc-y0-1203-menma-found
 episode_id: ep-y0-menma-memory
 display_rank: 100
-continuity_id: "main"
-title: "Наруто знаходить юнака без пам'яті й називає його Менмою"
-location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-62-0101, day_offset: 0}
-state: "active"
-presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}
+continuity_id: main
+title: Наруто знаходить юнака без пам'яті й називає його Менмою
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-period-reviewed-62-0513
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
 events:
-  - id: "ev-y0-1203-naruto-finds-amnesiac-youth"
-    legacy_ids: ["V10-000210"]
-    title: "Наруто знаходить пораненого юнака без пам'яті"
-    text: "Під час збору бамбукових пагонів Наруто знаходить пораненого хлопця, який не пам'ятає ані свого імені, ані минулого, і приводить його до Конохи."
-    origin: "F"
-    extent: "interval"
-    display_rank: 100
-    involvement:
-      - {entity_id: "c-naruto", role: "rescuer", mode: "physical"}
-      - {entity_id: "c-menma-amnesiac", role: "rescued", mode: "physical"}
-    evidence_ids: ["evd-v10-000210", "evd-anime-213-215"]
-  - id: "ev-y0-1203-tsunade-warns-unknown-youth"
-    legacy_ids: ["V10-000210"]
-    title: "Цунаде заперечує проти невідомого чужинця в селі"
-    text: "Цунаде вважає небезпечним залишати в Конохі людину невідомого походження, але Наруто особисто поручається за хлопця."
-    origin: "F"
-    extent: "interval"
-    display_rank: 200
-    involvement:
-      - {entity_id: "c-tsunade", role: "authority", mode: "physical"}
-      - {entity_id: "c-naruto", role: "guarantor", mode: "physical"}
-      - {entity_id: "c-menma-amnesiac", role: "subject", mode: "physical"}
-    evidence_ids: ["evd-v10-000210", "evd-anime-213-215"]
-  - id: "ev-y0-1203-naruto-names-menma"
-    legacy_ids: ["V10-000210"]
-    title: "Наруто дає юнакові ім'я Менма"
-    text: "Не маючи справжнього імені хлопця, Наруто називає його Менмою; Менма тимчасово оселяється разом із ним."
-    origin: "F"
-    extent: "interval"
-    display_rank: 300
-    involvement:
-      - {entity_id: "c-naruto", role: "namer", mode: "physical"}
-      - {entity_id: "c-menma-amnesiac", role: "named", mode: "physical"}
-    evidence_ids: ["evd-v10-000210", "evd-anime-213-215"]
+- id: ev-y0-1203-naruto-finds-amnesiac-youth
+  legacy_ids:
+  - V10-000210
+  title: Наруто знаходить пораненого юнака без пам'яті
+  text: Під час збору бамбукових пагонів Наруто знаходить пораненого хлопця, який не пам'ятає ані свого імені, ані
+    минулого, і приводить його до Конохи.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: rescuer
+    mode: physical
+  - entity_id: c-menma-amnesiac
+    role: rescued
+    mode: physical
+  evidence_ids:
+  - evd-v10-000210
+  - evd-anime-213-215
+- id: ev-y0-1203-tsunade-warns-unknown-youth
+  legacy_ids:
+  - V10-000210
+  title: Цунаде заперечує проти невідомого чужинця в селі
+  text: Цунаде вважає небезпечним залишати в Конохі людину невідомого походження, але Наруто особисто поручається
+    за хлопця.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-tsunade
+    role: authority
+    mode: physical
+  - entity_id: c-naruto
+    role: guarantor
+    mode: physical
+  - entity_id: c-menma-amnesiac
+    role: subject
+    mode: physical
+  evidence_ids:
+  - evd-v10-000210
+  - evd-anime-213-215
+- id: ev-y0-1203-naruto-names-menma
+  legacy_ids:
+  - V10-000210
+  title: Наруто дає юнакові ім'я Менма
+  text: Не маючи справжнього імені хлопця, Наруто називає його Менмою; Менма тимчасово оселяється разом із ним.
+  origin: F
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: namer
+    mode: physical
+  - entity_id: c-menma-amnesiac
+    role: named
+    mode: physical
+  evidence_ids:
+  - evd-v10-000210
+  - evd-anime-213-215
 relations:
-  - {id: "rel-1203-menma-1", kind: "before", a: "ev-y0-1203-naruto-finds-amnesiac-youth", b: "ev-y0-1203-tsunade-warns-unknown-youth", basis: "source", review: "accepted", evidence_ids: ["evd-anime-213-215"]}
-  - {id: "rel-1203-menma-2", kind: "before", a: "ev-y0-1203-tsunade-warns-unknown-youth", b: "ev-y0-1203-naruto-names-menma", basis: "source", review: "accepted", evidence_ids: ["evd-anime-213-215"]}
+- id: rel-1203-menma-1
+  kind: before
+  a: ev-y0-1203-naruto-finds-amnesiac-youth
+  b: ev-y0-1203-tsunade-warns-unknown-youth
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
+- id: rel-1203-menma-2
+  kind: before
+  a: ev-y0-1203-tsunade-warns-unknown-youth
+  b: ev-y0-1203-naruto-names-menma
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-anime-213-215
 presence: []

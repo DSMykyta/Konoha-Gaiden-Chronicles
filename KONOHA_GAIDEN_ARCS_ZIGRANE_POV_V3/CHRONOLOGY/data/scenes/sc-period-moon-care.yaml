@@ -1,0 +1,50 @@
+schema_version: 1
+id: sc-period-moon-care
+episode_id: ep-alt-moon-restoration
+display_rank: 200
+continuity_id: alt-movie-crescent-moon
+title: Какаші потребує близько двох тижнів догляду
+location_id: loc-land-of-moon
+state: active
+presence_coverage: partial
+review:
+  time: working
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-period-moon-care
+  title: Какаші потребує близько двох тижнів догляду
+  text: Після бою Какаші пояснює, що приблизно два тижні потребуватиме інтенсивного догляду. Мічіру дозволяє команді
+    залишитися в королівстві на цей час.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-michiru-tsuki
+    role: participant
+    mode: physical
+  - entity_id: c-hikaru-tsuki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-movie-crescent-moon
+  - evd-post-sasuke-calendar-review
+relations: []
+presence: []
+placement:
+  anchor_id: ta-period-reviewed-62-0328
+  day_offset: 0

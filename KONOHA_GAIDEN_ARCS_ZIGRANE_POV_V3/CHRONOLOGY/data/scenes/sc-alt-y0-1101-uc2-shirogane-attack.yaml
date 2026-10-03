@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-game-uzumaki-chronicles-2"
 title: "Маріонетки Шіроґане атакують Коноху за останньою Сферою Духу"
 location_id: "loc-konohagakure"
-placement: {anchor_id: ta-autumn-reconciled-61-1116, day_offset: 0}
+placement: {anchor_id: ta-period-reviewed-61-1222, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
