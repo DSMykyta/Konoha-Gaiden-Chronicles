@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "main"
 title: "Наруто й союзники розбивають Хокі та Ватарі"
 location_id: "loc-moso-house"
-placement: {anchor_id: "ta-y0-1023", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1106, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

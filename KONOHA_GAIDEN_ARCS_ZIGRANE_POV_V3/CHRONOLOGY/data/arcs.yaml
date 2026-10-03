@@ -685,3 +685,13 @@ arcs:
   description: Какаші повертає пораненого Наруто й переживає провал погоні. Службова робота та особиста втеча від Юміко приводять його до виснаження, а розмова у Нобарі знову ставить питання про зниклу Команду 9.
   period_id: part-i
   kind: project
+- id: arc-time-slip-performers
+  continuity_id: main
+  title: Мандрівні артисти
+  description: Двоє прибульців під прикриттям мандрівних артистів захищають молодого Наруто від Урашікі, приховують
+    своє походження й повертаються у власну епоху.
+  period_id: part-i
+  kind: adaptation
+  source_arc: Time Slip / Back in Time
+  source_episode_range: Boruto 128–136
+  included_episode_range: 'Boruto 129–136: лише перебування в минулому'

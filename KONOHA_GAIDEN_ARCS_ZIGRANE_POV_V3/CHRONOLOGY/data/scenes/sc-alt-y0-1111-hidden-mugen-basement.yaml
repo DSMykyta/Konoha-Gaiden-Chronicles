@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-game-phantom-fortress"
 title: "Джирая веде приховану гілку через підземні поверхи Муґенджо"
 location_id: "loc-mugen-castle"
-placement: {anchor_id: "ta-alt-y0-1110-phantom", day_offset: 1}
+placement: {anchor_id: ta-autumn-reconciled-61-1128, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

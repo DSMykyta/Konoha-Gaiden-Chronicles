@@ -1,0 +1,138 @@
+schema_version: 1
+id: sc-time-slip-134-toad-stomach
+episode_id: ep-time-slip-134
+display_rank: 400
+continuity_id: main
+title: Кислотна пастка Джираї
+location_id: loc-time-slip-toad-stomach
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-134-toad-trap
+  title: Джирая замикає ворога в шлунку жаби
+  text: Джирая заманює Урашікі у внутрішній простір жаби. Наруто атакує масою тіньових клонів, змушуючи ворога повторювати
+    ухилення.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-134-past
+- id: ev-time-slip-134-acid-accumulation
+  title: Перемотування збільшує дію кислоти
+  text: Кожна повторна спроба подовжує вплив кислотних випарів на Урашікі. Джирая обертає його часову перевагу проти
+    нього самого.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-134-past
+relations:
+- id: rel-ev-time-slip-134-acid-accumulation
+  kind: before
+  a: ev-time-slip-134-toad-trap
+  b: ev-time-slip-134-acid-accumulation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+presence:
+- id: pr-ev-time-slip-134-toad-trap-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-134-toad-trap.start
+  to: ev-time-slip-134-toad-trap.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-toad-trap-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-134-toad-trap.start
+  to: ev-time-slip-134-toad-trap.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-toad-trap-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-134-toad-trap.start
+  to: ev-time-slip-134-toad-trap.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-toad-trap-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-134-toad-trap.start
+  to: ev-time-slip-134-toad-trap.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-acid-accumulation-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-134-acid-accumulation.start
+  to: ev-time-slip-134-acid-accumulation.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-acid-accumulation-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-134-acid-accumulation.start
+  to: ev-time-slip-134-acid-accumulation.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-acid-accumulation-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-134-acid-accumulation.start
+  to: ev-time-slip-134-acid-accumulation.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-acid-accumulation-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-134-acid-accumulation.start
+  to: ev-time-slip-134-acid-accumulation.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

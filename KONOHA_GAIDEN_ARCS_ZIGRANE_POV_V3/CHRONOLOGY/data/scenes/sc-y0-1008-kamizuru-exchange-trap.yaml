@@ -5,7 +5,8 @@ display_rank: 100
 continuity_id: "main"
 title: "Спроба обміну перетворюється на пастку Камізуру"
 location_id: "loc-bikocho-habitat"
-placement: {anchor_id: "ta-y0-1008", day_offset: 0}
+day_part: unknown
+placement: {anchor_id: ta-autumn-reconciled-61-1016, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

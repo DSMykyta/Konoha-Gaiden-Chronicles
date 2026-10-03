@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто знаходить юнака без пам'яті й називає його Менмою"
 location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-y0-1203-menma", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-62-0101, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

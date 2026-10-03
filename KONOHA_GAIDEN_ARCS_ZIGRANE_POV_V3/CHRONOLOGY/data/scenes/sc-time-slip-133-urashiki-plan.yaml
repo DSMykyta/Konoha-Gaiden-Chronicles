@@ -1,0 +1,99 @@
+schema_version: 1
+id: sc-time-slip-133-urashiki-plan
+episode_id: ep-time-slip-133
+display_rank: 300
+continuity_id: main
+title: Джирая й мандрівник оцінюють здібності ворога
+location_id: loc-konoha-training-field
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-133-enemy-information
+  title: Відомості про просторово-часові техніки
+  text: Мандрівник розповідає Джираї про небезпечні здібності Урашікі. Звичні атаки не працюють проти ворога, який
+    уникає їх завчасно.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-boruto-133-past
+- id: ev-time-slip-133-chakra-shortage
+  title: Обмеження дорослого мандрівника
+  text: Мандрівник попереджає, що його чакра ще не відновилася. Джирая враховує це, готуючи план захисту Наруто.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-133-past
+relations:
+- id: rel-ev-time-slip-133-chakra-shortage
+  kind: before
+  a: ev-time-slip-133-enemy-information
+  b: ev-time-slip-133-chakra-shortage
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+presence:
+- id: pr-ev-time-slip-133-enemy-information-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-133-enemy-information.start
+  to: ev-time-slip-133-enemy-information.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-enemy-information-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-133-enemy-information.start
+  to: ev-time-slip-133-enemy-information.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-chakra-shortage-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-133-chakra-shortage.start
+  to: ev-time-slip-133-chakra-shortage.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-chakra-shortage-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-133-chakra-shortage.start
+  to: ev-time-slip-133-chakra-shortage.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

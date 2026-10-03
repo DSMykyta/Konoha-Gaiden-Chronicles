@@ -1,0 +1,218 @@
+schema_version: 1
+id: sc-time-slip-135-village-help
+episode_id: ep-time-slip-135
+display_rank: 200
+continuity_id: main
+title: Геніни Конохи вирушають на допомогу
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-135-shikamaru-believes
+  title: Шікамару серйозно сприймає попередження
+  text: Конохамару намагається переконати генінів, що Наруто загрожує небезпека. Шікамару вирішує діяти, а не відмахуватися
+    від розповіді.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-135-past
+- id: ev-time-slip-135-help-party
+  title: Загін поспішає до місця бою
+  text: Іно–Шіка–Чо, Кіба з Акамару та Шіно вирушають на допомогу. Після втрати Саске вони не хочуть дозволити зникнути
+    ще одному товаришеві.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-135-past
+relations:
+- id: rel-ev-time-slip-135-help-party
+  kind: before
+  a: ev-time-slip-135-shikamaru-believes
+  b: ev-time-slip-135-help-party
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+presence:
+- id: pr-ev-time-slip-135-shikamaru-believes-c-konohamaru
+  entity_id: c-konohamaru
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-moegi
+  entity_id: c-moegi
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-udon
+  entity_id: c-udon
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-shikamaru
+  entity_id: c-shikamaru
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-ino
+  entity_id: c-ino
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-choji
+  entity_id: c-choji
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-kiba
+  entity_id: c-kiba
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-akamaru
+  entity_id: c-akamaru
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-shikamaru-believes-c-shino
+  entity_id: c-shino
+  mode: physical
+  from: ev-time-slip-135-shikamaru-believes.start
+  to: ev-time-slip-135-shikamaru-believes.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-help-party-c-shikamaru
+  entity_id: c-shikamaru
+  mode: physical
+  from: ev-time-slip-135-help-party.start
+  to: ev-time-slip-135-help-party.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-help-party-c-ino
+  entity_id: c-ino
+  mode: physical
+  from: ev-time-slip-135-help-party.start
+  to: ev-time-slip-135-help-party.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-help-party-c-choji
+  entity_id: c-choji
+  mode: physical
+  from: ev-time-slip-135-help-party.start
+  to: ev-time-slip-135-help-party.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-help-party-c-kiba
+  entity_id: c-kiba
+  mode: physical
+  from: ev-time-slip-135-help-party.start
+  to: ev-time-slip-135-help-party.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-help-party-c-akamaru
+  entity_id: c-akamaru
+  mode: physical
+  from: ev-time-slip-135-help-party.start
+  to: ev-time-slip-135-help-party.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-help-party-c-shino
+  entity_id: c-shino
+  mode: physical
+  from: ev-time-slip-135-help-party.start
+  to: ev-time-slip-135-help-party.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

@@ -45,9 +45,15 @@ test('school day and first day of Team 9 retain scenes and old entry IDs',()=>{
  assert.equal(ep.scene_ids.length,5);
  for(const id of ['sc-y0-0122-naruto-impersonates-sasuke','sc-y0-0122-sakura-searches-sasuke'])assert(ep.scene_ids.includes(id));
  const first=data.episodes.find(e=>e.id==='ep-y0-team9-introduction');
- assert.deepEqual(first.scene_ids,['sc-y0-0122-dango-shop','sc-y0-0122-kita-home-night']);
+ assert.deepEqual(first.scene_ids,['sc-y0-0122-dango-shop']);
  assert(first.redirect_ids.includes('ep-y0-kita-home-after-formation'));
- const moments=new Set(data.events.filter(e=>first.scene_ids.includes(e.scene_id)).map(e=>e.id));
+ // The source moved the home scene to the night after Raido's tests. Its stable
+ // y0-0122 ID still survives, but it no longer belongs to the introduction.
+ const aftermath=data.episodes.find(e=>e.id==='ep-y0-students-after-tests');
+ assert(aftermath.scene_ids.includes('sc-y0-0122-kita-home-night'));
+ const home=data.scenes.find(s=>s.id==='sc-y0-0122-kita-home-night');
+ assert.equal(home.date.month,1);assert.equal(home.date.day,23);
+ const moments=new Set(data.events.filter(e=>[...first.scene_ids,...aftermath.scene_ids].includes(e.scene_id)).map(e=>e.id));
  for(const id of ['ev-y0-0122-dango-sharing','ev-y0-0122-dango-introductions','ev-y0-0122-raido-assigns-field8','ev-y0-0122-nobari-returns','ev-y0-0122-kita-talks-with-mother','ev-y0-0122-nobari-gives-kita-gloves','ev-y0-0122-kita-cries'])assert(moments.has(id),'Missing first-day moment '+id);
  const arc=data.arcs.find(a=>a.id==='arc-y0-team9-first-day');
  assert(arc.episode_ids.includes('ep-y0-raido-evaluation'));

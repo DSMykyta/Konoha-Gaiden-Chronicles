@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-time-slip-130-breakfast
+episode_id: ep-time-slip-130
+display_rank: 100
+continuity_id: main
+title: Сніданок у квартирі Наруто
+location_id: loc-naruto-apartment
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1001
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-130-breakfast
+  title: Боруто змінює звичний сніданок
+  text: Наруто знову готує рамен. Боруто дістає продукти з холодильника, щоб урізноманітнити їжу, а мандрівник спостерігає
+    за ними здалеку.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical_hidden
+  evidence_ids: &id001
+  - evd-boruto-130-past
+relations: []
+presence:
+- id: pr-ev-time-slip-130-breakfast-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-breakfast.start
+  to: ev-time-slip-130-breakfast.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-breakfast-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-breakfast.start
+  to: ev-time-slip-130-breakfast.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-breakfast-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical_hidden
+  from: ev-time-slip-130-breakfast.start
+  to: ev-time-slip-130-breakfast.end
+  basis: source
+  review: partial
+  evidence_ids: *id001

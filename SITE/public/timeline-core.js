@@ -31,24 +31,24 @@ const TimelineCore = {
     return result.sort((a,b)=>(a.position??Infinity)-(b.position??Infinity));
   },
   seed(id) { let value=2166136261;for(const c of id){value=Math.imul(value^c.charCodeAt(0),16777619);}return (value>>>0)/4294967296; },
-  timeAxis(scenes,breaks=[],spacing=.85) {
+  timeAxis(scenes,breaks=[],spacing=.85,days=365) {
     // A dense calendar day gets more space, once for the whole chronology.
     // Selection, opening a reader, panning and viewport size never change it.
     const counts=new Map();
     for(const scene of scenes)if(Number.isFinite(scene.day))counts.set(Math.floor(scene.day),(counts.get(Math.floor(scene.day))||0)+1);
-    const widths=Array.from({length:365},(_,day)=>1+Math.max(0,(counts.get(day)||0)-1)*spacing);
+    const widths=Array.from({length:days},(_,day)=>1+Math.max(0,(counts.get(day)||0)-1)*spacing);
     const prefix=[0];for(const width of widths)prefix.push(prefix.at(-1)+width);
-    const weighted=day=>{const whole=Math.max(0,Math.min(364,Math.floor(day)));return prefix[whole]+(day-whole)*widths[whole];};
+    const weighted=day=>{const whole=Math.max(0,Math.min(days-1,Math.floor(day)));return prefix[whole]+(day-whole)*widths[whole];};
     let removed=0;
     const gaps=breaks.map(gap=>{const size=weighted(gap.to)-weighted(gap.from),axis=weighted(gap.from)-removed;removed+=size;return {...gap,axis,size};});
     const dayToAxis=day=>{let value=weighted(day);for(const gap of gaps){if(day>=gap.to)value-=gap.size;else if(day>gap.from){value-=weighted(day)-weighted(gap.from);break;}else break;}return value;};
     const axisToDay=(axis,side='after')=>{
       let value=axis;
       for(const gap of gaps){if(axis<gap.axis)break;if(Math.abs(axis-gap.axis)<1e-7)return side==='before'?gap.from:gap.to;value+=gap.size;}
-      let lo=0,hi=365;while(lo<hi){const mid=Math.ceil((lo+hi)/2);if(prefix[mid]<=value)lo=mid;else hi=mid-1;}
-      const day=Math.min(364,lo);return day+(value-prefix[day])/widths[day];
+      let lo=0,hi=days;while(lo<hi){const mid=Math.ceil((lo+hi)/2);if(prefix[mid]<=value)lo=mid;else hi=mid-1;}
+      const day=Math.min(days-1,lo);return day+(value-prefix[day])/widths[day];
     };
-    return {widths,dayToAxis,axisToDay,breaks:gaps,length:dayToAxis(365)};
+    return {widths,dayToAxis,axisToDay,breaks:gaps,length:dayToAxis(days)};
   },
   momentPositions(scenes) {
     // Siblings occupy their scene's interval. They cannot spill into the next

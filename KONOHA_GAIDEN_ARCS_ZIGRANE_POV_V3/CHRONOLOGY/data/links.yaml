@@ -5406,6 +5406,303 @@ links:
   review: accepted
   evidence_ids:
   - evd-games-part-i-placement
+- id: lnk-time-slip-01
+  kind: before
+  a: sc-time-slip-129-arrival
+  b: sc-time-slip-129-street-encounter
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: lnk-time-slip-02
+  kind: before
+  a: sc-time-slip-129-street-encounter
+  b: sc-time-slip-129-cover-story
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: lnk-time-slip-03
+  kind: before
+  a: sc-time-slip-129-cover-story
+  b: sc-time-slip-129-sakura-after-questioning
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: lnk-time-slip-04
+  kind: before
+  a: sc-time-slip-129-sakura-after-questioning
+  b: sc-time-slip-129-naruto-home
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: lnk-time-slip-05
+  kind: before
+  a: sc-time-slip-130-breakfast
+  b: sc-time-slip-130-village-walk
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: lnk-time-slip-06
+  kind: before
+  a: sc-time-slip-130-village-walk
+  b: sc-time-slip-130-bathhouse
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: lnk-time-slip-07
+  kind: before
+  a: sc-time-slip-130-bathhouse
+  b: sc-time-slip-130-night-report
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: lnk-time-slip-08
+  kind: before
+  a: sc-time-slip-130-night-report
+  b: sc-time-slip-130-urashiki-arrival
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: lnk-time-slip-09
+  kind: before
+  a: sc-time-slip-131-first-attack
+  b: sc-time-slip-131-seal-violation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+- id: lnk-time-slip-10
+  kind: before
+  a: sc-time-slip-131-seal-violation
+  b: sc-time-slip-131-nine-tails-cloak
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+- id: lnk-time-slip-11
+  kind: before
+  a: sc-time-slip-131-nine-tails-cloak
+  b: sc-time-slip-131-after-first-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+- id: lnk-time-slip-12
+  kind: before
+  a: sc-time-slip-132-combined-training
+  b: sc-time-slip-132-hyuga-observation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+- id: lnk-time-slip-13
+  kind: before
+  a: sc-time-slip-132-hyuga-observation
+  b: sc-time-slip-132-neji-advice
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+- id: lnk-time-slip-14
+  kind: before
+  a: sc-time-slip-133-ichiraku-conversation
+  b: sc-time-slip-133-training-letter
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+- id: lnk-time-slip-15
+  kind: before
+  a: sc-time-slip-133-training-letter
+  b: sc-time-slip-133-yakiniku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+- id: lnk-time-slip-16
+  kind: before
+  a: sc-time-slip-133-yakiniku
+  b: sc-time-slip-133-second-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+- id: lnk-time-slip-17
+  kind: before
+  a: sc-time-slip-134-retreat
+  b: sc-time-slip-134-time-reversal-discovery
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+- id: lnk-time-slip-18
+  kind: before
+  a: sc-time-slip-134-time-reversal-discovery
+  b: sc-time-slip-134-toad-stomach
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+- id: lnk-time-slip-19
+  kind: before
+  a: sc-time-slip-134-toad-stomach
+  b: sc-time-slip-134-first-knockout
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+- id: lnk-time-slip-20
+  kind: before
+  a: sc-time-slip-135-transformation
+  b: sc-time-slip-135-final-battle
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+- id: lnk-time-slip-21
+  kind: before
+  a: sc-time-slip-136-hospital
+  b: sc-time-slip-136-hospital-roof
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+- id: lnk-time-slip-22
+  kind: before
+  a: sc-time-slip-136-hospital-roof
+  b: sc-time-slip-136-farewell
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+- id: lnk-time-slip-23
+  kind: before
+  a: sc-time-slip-136-farewell
+  b: sc-time-slip-136-memory-erasure
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+- id: lnk-time-slip-24
+  kind: before
+  a: sc-time-slip-129-naruto-home
+  b: sc-time-slip-130-breakfast
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: lnk-time-slip-25
+  kind: before
+  a: sc-time-slip-130-urashiki-arrival
+  b: sc-time-slip-131-first-attack
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: lnk-time-slip-26
+  kind: before
+  a: sc-time-slip-131-after-first-attack
+  b: sc-time-slip-132-combined-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+- id: lnk-time-slip-27
+  kind: before
+  a: sc-time-slip-132-jiraiya-question
+  b: sc-time-slip-133-identity-agreement
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+- id: lnk-time-slip-28
+  kind: before
+  a: sc-time-slip-133-second-attack
+  b: sc-time-slip-134-retreat
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+- id: lnk-time-slip-29
+  kind: before
+  a: sc-time-slip-134-first-knockout
+  b: sc-time-slip-135-transformation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+- id: lnk-time-slip-30
+  kind: before
+  a: sc-time-slip-135-final-battle
+  b: sc-time-slip-136-hospital
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+- id: lnk-time-slip-31
+  kind: before
+  a: ev-time-slip-136-sharingan-erasure
+  b: ev-time-slip-136-past-exit
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+- id: lnk-time-slip-32
+  kind: before
+  a: ev-time-slip-136-past-exit
+  b: ev-time-slip-136-hyuga-find
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+- id: lnk-time-slip-33
+  kind: before
+  a: ev-time-slip-132-lost-letter
+  b: ev-time-slip-133-blurred-names
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+- id: lnk-time-slip-34
+  kind: before
+  a: sc-time-slip-134-sakura-treatment
+  b: sc-time-slip-135-traveler-recovers
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+- id: lnk-time-slip-35
+  kind: before
+  a: sc-time-slip-135-traveler-recovers
+  b: ev-time-slip-135-combined-technique
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+- id: lnk-time-slip-36
+  kind: before
+  a: ev-time-slip-135-warning-run
+  b: sc-time-slip-135-village-help
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+- id: lnk-time-slip-37
+  kind: before
+  a: sc-y0-0925-sasuke-reaches-orochimaru
+  b: sc-time-slip-129-arrival
+  basis: project_decision
+  review: accepted
+  evidence_ids:
+  - evd-time-slip-working-placement
+
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence
   of relation means unknown order, not simultaneity.

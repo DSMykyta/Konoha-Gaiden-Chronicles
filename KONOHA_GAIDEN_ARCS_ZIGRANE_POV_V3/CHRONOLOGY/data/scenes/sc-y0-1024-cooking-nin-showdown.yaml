@@ -5,7 +5,7 @@ display_rank: 300
 continuity_id: "main"
 title: "Теучі й команда перемагають ніндзя-кухарів у кулінарному поєдинку"
 location_id: "loc-cooking-nin-kitchen"
-placement: {anchor_id: "ta-y0-1024", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1107, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

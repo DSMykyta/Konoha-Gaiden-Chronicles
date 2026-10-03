@@ -1,0 +1,154 @@
+schema_version: 1
+id: sc-time-slip-133-training-letter
+episode_id: ep-time-slip-133
+display_rank: 400
+continuity_id: main
+title: Тренування й питання Сакури про запис
+location_id: loc-konoha-training-field
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-133-better-sync
+  title: Синхронізація поліпшується
+  text: Наруто пропонує вправу концентрації чакри. Після розмови з Неджи Боруто краще узгоджує свій потік із напарником.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-133-past
+- id: ev-time-slip-133-blurred-names
+  title: Сакура показує розмитий папірець
+  text: Сакура приносить знайдений запис. Серед уцілілих слів видно імена Саске й Саради, що посилює її підозри.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-133-past
+- id: ev-time-slip-133-other-sasuke
+  title: Боруто відводить підозру
+  text: Боруто припускає, що в записі йдеться про іншу людину на ім’я Саске. Сакура вирішує звернутися безпосередньо
+    до дорослого мандрівника.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-133-past
+relations:
+- id: rel-ev-time-slip-133-blurred-names
+  kind: before
+  a: ev-time-slip-133-better-sync
+  b: ev-time-slip-133-blurred-names
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+- id: rel-ev-time-slip-133-other-sasuke
+  kind: before
+  a: ev-time-slip-133-blurred-names
+  b: ev-time-slip-133-other-sasuke
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+presence:
+- id: pr-ev-time-slip-133-better-sync-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-better-sync.start
+  to: ev-time-slip-133-better-sync.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-better-sync-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-better-sync.start
+  to: ev-time-slip-133-better-sync.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-blurred-names-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-133-blurred-names.start
+  to: ev-time-slip-133-blurred-names.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-blurred-names-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-blurred-names.start
+  to: ev-time-slip-133-blurred-names.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-blurred-names-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-blurred-names.start
+  to: ev-time-slip-133-blurred-names.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-other-sasuke-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-133-other-sasuke.start
+  to: ev-time-slip-133-other-sasuke.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-133-other-sasuke-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-other-sasuke.start
+  to: ev-time-slip-133-other-sasuke.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-133-other-sasuke-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-other-sasuke.start
+  to: ev-time-slip-133-other-sasuke.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

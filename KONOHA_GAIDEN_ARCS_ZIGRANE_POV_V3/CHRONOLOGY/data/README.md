@@ -8,6 +8,10 @@ This directory is the authoritative structured chronology source defined by `../
 - `arcs.yaml` — story arcs, continuity, era (`period_id`), editorial type (`kind`).
 - `episodes.yaml` — coherent narrative lines, each referencing one arc.
 - `timeline-periods.yaml` — configured calendar eras.
+
+Calendar years count from Konoha's founding (year 1); the active dataset is year 61. Historical ranges are explicitly marked as project reconstruction. Dates before the founding use `era: before_founding` with positive year numbers. See `../CALENDAR_UA.md` for sources, uncertainty, same-year era boundaries and the migration from legacy year 0.
+
+`../TIME_SLIP_UA.md` records the «Мандрівні артисти» arc, separate traveller profiles and past-only source scope. `../AUTUMN_PLACEMENT_UA.md` documents resolved participant conflicts and the subsequent mission schedule into January of year 62. All these dates are project working dates.
 - `scenes/` — scenes, events, physical presence intervals, local temporal relations.
 - `links.yaml` — relations across scenes.
 - `redirects.yaml` — legacy v10 ID migration/redirect information.

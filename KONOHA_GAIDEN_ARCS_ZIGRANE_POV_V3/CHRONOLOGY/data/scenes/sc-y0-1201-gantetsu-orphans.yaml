@@ -4,9 +4,7 @@ episode_id: ep-y0-gantetsu-orphans
 display_rank: 100
 continuity_id: main
 title: Діти просять Сакуру й Лі повернути Ґантецу
-placement:
-  anchor_id: ta-y0-1201-gantetsu
-  day_offset: 0
+placement: {anchor_id: ta-autumn-reconciled-61-1227, day_offset: 0}
 state: active
 presence_coverage: partial
 review:

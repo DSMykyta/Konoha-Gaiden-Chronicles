@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "main"
 title: "Розслідування Ґенно повертає загрозу всередину Конохи"
 location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-y0-1120-genno", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1213, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "working", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

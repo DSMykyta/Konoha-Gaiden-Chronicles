@@ -1,0 +1,41 @@
+schema_version: 2
+entity_id: c-unnamed-travelling-performer
+display:
+  name: Невідомий мандрівний артист
+  short_name: Мандрівний артист
+identity:
+  species: human
+  sex: male
+  temporal_origin: future
+states:
+- id: traveler-time-slip-past
+  label: Перебування в минулому
+  period_id: part-i
+  from: ev-time-slip-129-arrival.start
+  to: ev-time-slip-136-past-exit.end
+  image: null
+  summary: Дорослий прибулець, який представляє себе й Боруто мандрівними артистами. Імені мешканцям Конохи не називає;
+    захищає Наруто, співпрацює з Джираєю та приховує своє походження.
+  facts:
+    set:
+      cover:
+        label: Прикриття
+        value: мандрівний артист
+      name:
+        label: Представився як
+        value: ім’я не назване
+      stay:
+        label: Перебування в Конохі
+        value: 30 вересня — 6 жовтня 61 року; робочі дати
+  relationships:
+    upsert:
+      c-boruto:
+        label: супутник у подорожі
+      c-naruto:
+        label: захищає від Урашікі
+      c-jiraiya:
+        label: союзник у захисті Наруто
+  sections: []
+truth:
+  representation_of: c-sasuke
+  identity_status: concealed_in_past

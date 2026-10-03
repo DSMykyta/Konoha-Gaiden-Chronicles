@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто, Чоджі й Юріношін зупиняють Руйґу"
 location_id: "loc-land-of-greens"
-placement: {anchor_id: "ta-y0-1111-greens", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1201, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

@@ -1974,3 +1974,59 @@ episodes:
   arc_id: arc-games-kakashi-after-valley
   title: Виснаження і підтримка друзів
   description: Після серії бойових завдань Цунаде наказує Какаші відпочити. У банку він несподівано бачить Юміко, а ввечері друзі у Нобарі шукають адміністративний спосіб отримати відомості про Команду 9.
+- id: ep-time-slip-129
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Село Прихованого Листа
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 129
+  source_scope: past_only
+- id: ep-time-slip-130
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Геніни, збір!
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 130
+  source_scope: past_only
+- id: ep-time-slip-131
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Сила Дев’ятихвостого
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 131
+  source_scope: past_only
+- id: ep-time-slip-132
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Завдання Джираї
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 132
+  source_scope: past_only
+- id: ep-time-slip-133
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Село без Саске
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 133
+  source_scope: past_only
+- id: ep-time-slip-134
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Сила бачити майбутнє
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 134
+  source_scope: past_only
+- id: ep-time-slip-135
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Остання битва, Урашікі
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 135
+  source_scope: past_only
+- id: ep-time-slip-136
+  continuity_id: main
+  arc_id: arc-time-slip-performers
+  title: Крізь час! — перебування в минулому
+  source_series: 'Boruto: Naruto Next Generations'
+  source_episode: 136
+  source_scope: past_only

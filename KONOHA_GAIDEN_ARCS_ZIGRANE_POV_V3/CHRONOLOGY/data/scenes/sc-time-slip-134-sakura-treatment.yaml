@@ -1,0 +1,82 @@
+schema_version: 1
+id: sc-time-slip-134-sakura-treatment
+episode_id: ep-time-slip-134
+display_rank: 200
+continuity_id: main
+title: Сакура лікує непритомного мандрівника
+location_id: loc-time-slip-riverbank
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-134-river-survival
+  title: Урашікі вибирається з річки
+  text: Урашікі переживає падіння й виходить із води. Він продовжує шукати свою ціль і її захисників.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-134-past
+- id: ev-time-slip-134-sakura-rescue
+  title: Сакура знаходить пораненого
+  text: Сакура знаходить непритомного мандрівника, переносить його в безпечніше місце й починає лікувати, не знаючи
+    його справжньої особи.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-134-past
+relations:
+- id: rel-ev-time-slip-134-sakura-rescue
+  kind: before
+  a: ev-time-slip-134-river-survival
+  b: ev-time-slip-134-sakura-rescue
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+presence:
+- id: pr-ev-time-slip-134-river-survival-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-134-river-survival.start
+  to: ev-time-slip-134-river-survival.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-sakura-rescue-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-134-sakura-rescue.start
+  to: ev-time-slip-134-sakura-rescue.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-sakura-rescue-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-134-sakura-rescue.start
+  to: ev-time-slip-134-sakura-rescue.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

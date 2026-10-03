@@ -1,0 +1,125 @@
+schema_version: 1
+id: sc-time-slip-134-retreat
+episode_id: ep-time-slip-134
+display_rank: 100
+continuity_id: main
+title: Мандрівник прикриває відступ хлопців
+location_id: loc-time-slip-ravine
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-134-evacuation
+  title: Джирая відводить Наруто й Боруто
+  text: Атаки хлопців не влучають в Урашікі. Мандрівник наказує Боруто забрати Наруто, а Джирая допомагає їм відійти.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-134-past
+- id: ev-time-slip-134-river-fall
+  title: Мандрівник падає з ворогом у річку
+  text: Щоб розірвати переслідування, мандрівник хапає Урашікі й разом із ним зривається зі скелі у воду.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-134-past
+relations:
+- id: rel-ev-time-slip-134-river-fall
+  kind: before
+  a: ev-time-slip-134-evacuation
+  b: ev-time-slip-134-river-fall
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+presence:
+- id: pr-ev-time-slip-134-evacuation-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-134-evacuation.start
+  to: ev-time-slip-134-evacuation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-evacuation-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-134-evacuation.start
+  to: ev-time-slip-134-evacuation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-evacuation-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-134-evacuation.start
+  to: ev-time-slip-134-evacuation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-evacuation-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-134-evacuation.start
+  to: ev-time-slip-134-evacuation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-evacuation-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-134-evacuation.start
+  to: ev-time-slip-134-evacuation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-river-fall-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-134-river-fall.start
+  to: ev-time-slip-134-river-fall.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-river-fall-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-134-river-fall.start
+  to: ev-time-slip-134-river-fall.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261002-soft-focus-5';
+const UI_VERSION='20261003-era-heading';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -12,8 +12,37 @@ const zoomModes={year:1,month:12,week:365/7,day:365};
 function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorEvent=null,graphNodes=[],raf=null,searchLimit=30;
-function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,364);const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m};}
-function dateText(day,long=false){const a=date(day);return a?(long?`${a.d} ${gen[a.m]}`:`${String(a.d).padStart(2,'0')}.${String(a.m+1).padStart(2,'0')}`):'Без установленої дати';}
+function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,(data?.calendar.view_days||365)-1);const year=(data?.calendar.view_start_year??data?.calendar.current_year??61)+Math.floor(day/365);day%=365;const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m,year};}
+function dateText(day,long=false){const a=date(day);return a?(long?`${a.d} ${gen[a.m]}${data.calendar.view_days>365?' '+a.year:''}`:`${String(a.d).padStart(2,'0')}.${String(a.m+1).padStart(2,'0')}${data.calendar.view_days>365?'.'+a.year:''}`):'Без установленої дати';}
+function yearText(day=null){return `Рік ${day===null?data.calendar.current_year:date(day).year} Конохи`;}
+function currentEra(){return data.periods.find(p=>p.calendar_era==='after_founding'&&p.from_year<=data.calendar.current_year&&(p.to_year===undefined||p.to_year>=data.calendar.current_year));}
+function eraRange(era){
+ const suffix=era.calendar_era==='before_founding'?'до заснування Конохи':'Конохи',from=era.from_year,to=era.to_year;
+ if(from===undefined)return `до заснування Конохи`;
+ const range=to===undefined?`${from}+`:from===to?`${from}`:`${from}–${to}`;
+ return `${era.calendar_status==='placed'?'':'≈ '}${range} ${suffix}`;
+}
+function renderCalendar(){
+ $('dateInputLabel').textContent=`Перейти до дня · ${yearText()}`;
+ $('eraList').innerHTML=[...data.periods].sort((a,b)=>a.order-b.order).map(era=>`<li${era.id===currentEra()?.id?' aria-current="true"':''}><span>${esc(era.label)}</span><small>${esc(eraRange(era))}</small></li>`).join('');
+}
+let eraSegments=[],eraHeadingNodes=new Map();
+function renderEraHeading(leftDay,px){
+ const heading=$('eraHeading'),track=$('eraHeadingTrack'),left=($('canvas').clientWidth||1000)<=760?12:20;
+ const stageWidth=heading.clientWidth||Math.min(600,($('canvas').clientWidth||1000)-left*2);
+ const current=eraSegments.findLast(p=>p.start<=leftDay);
+ if(!current){heading.hidden=true;return;}heading.hidden=false;
+ const labelFor=era=>{
+  if(!eraHeadingNodes.has(era.id)){const label=document.createElement('span');label.className='era-heading-label';label.textContent=era.label;label.dataset.era=era.id;track.append(label);eraHeadingNodes.set(era.id,label);}
+  return eraHeadingNodes.get(era.id);
+ };
+ const label=labelFor(current),width=label.getBoundingClientRect().width||current.label.length*8;
+ const rows=TimelineEraHeading.layout(eraSegments,leftDay,day=>px(day)-px(leftDay),width,stageWidth,window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+ const visible=new Set(rows.map(row=>row.id));
+ for(const [id,node] of eraHeadingNodes)if(!visible.has(id)){node.remove();eraHeadingNodes.delete(id);}
+ for(const row of rows)labelFor(row).style.transform=`translate3d(${row.x}px,0,0)`;
+ heading.setAttribute('aria-label',current.label);heading.dataset.era=current.id;
+}
 function name(id){const e=entityMap.get(id);return e?.aliases?.find(a=>/[А-Яа-яІіЇїЄєҐґ]/.test(a))||e?.name||id||'Місце не встановлено';}
 function fullName(id){return TimelineCore.fullName(entityMap.get(id),profileMap?.get(id));}
 function selectable(){return TimelineCore.selectable(data.entities,events());}
@@ -105,11 +134,11 @@ function chronologyBreaks(dated=datedEvents()){
  if(dated===datedEvents())cachedBreaks=breaks;
  return breaks;
 }
-function chronologyAxis(){events();return cachedAxis??=TimelineCore.timeAxis(orderedScenes(),chronologyBreaks());}
+function chronologyAxis(){events();return cachedAxis??=TimelineCore.timeAxis(orderedScenes(),chronologyBreaks(),.85,data.calendar.view_days||365);}
 function axisBreaks(){return chronologyAxis().breaks;}
 function dayToAxis(day){return chronologyAxis().dayToAxis(day);}
 function axisToDay(value,side='after'){return chronologyAxis().axisToDay(value,side);}
-function axisLength(){return data?dayToAxis(365):365;}
+function axisLength(){return data?chronologyAxis().length:365;}
 function clampAxisCenter(value,z=zoom){
  const total=axisLength(),half=total/(2*z);
  return total<=half*2?clamp(value,0,total):clamp(value,half,total-half);
@@ -305,13 +334,14 @@ function render(){
  // after retaining one calendar week on each side of the nearest events.
  if(timeScale.dayPx>=2)for(let day=Math.floor(loDay);day<Math.ceil(hiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=lo&&a<hi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
  if(!cloudRenderer)cloudRenderer=StoryClouds.create($('storyClouds'));
- const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),label=overview?'Рік 0':activeMode==='day'?`${dateText(centerDay,true)} · Рік 0`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))} · Рік 0`;$('periodLabel').textContent=label;
+ const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),yearLabel=yearText(centerDay),label=overview?(data.calendar.view_days>365?`${data.calendar.view_start_year}–${data.calendar.view_end_year} роки Конохи`:yearLabel):activeMode==='day'?`${dateText(centerDay,true)} · ${yearLabel}`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;$('periodLabel').textContent=label;
+ renderEraHeading(loDay,px);
+ $('dateInputLabel').textContent=`Перейти до дня · ${yearLabel}`;
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
- document.querySelectorAll('[data-level]').forEach(e=>e.setAttribute('aria-current',String(e.dataset.level===level)));
  $('previous').disabled=lo<=.001;$('next').disabled=hi>=axisLength()-.001;
  $('zoomOut').disabled=zoom<=1;$('zoomIn').disabled=zoom>=730;
  svg('line',{x1:pad,x2:w-pad,y1:5,y2:5,class:'time-axis-line'},axis);
- const ticks=zoom<8?starts.map((day,index)=>({day,text:months[index].slice(0,3)})):Array.from({length:Math.max(0,Math.ceil(hiDay)-Math.floor(loDay))},(_,index)=>({day:Math.floor(loDay)+index,text:dateText(Math.floor(loDay)+index)}));
+ const ticks=zoom<8?Array.from({length:Math.ceil((data.calendar.view_days||365)/365)},(_,year)=>starts.map((day,index)=>({day:year*365+day,text:index===0?`Січ ${data.calendar.view_start_year+year}`:months[index].slice(0,3)}))).flat():Array.from({length:Math.max(0,Math.ceil(hiDay)-Math.floor(loDay))},(_,index)=>({day:Math.floor(loDay)+index,text:dateText(Math.floor(loDay)+index)}));
  const visibleTicks=ticks.filter(tick=>zoom<8?dayToAxis(tick.day)>=lo&&dayToAxis(tick.day)<hi&&!timeScale.hidden(tick.day):px(tick.day+1)>pad&&px(tick.day)<w-pad&&!timeScale.hidden(tick.day+.5));
  let lastTick=-Infinity;
  visibleTicks.forEach(tick=>{
@@ -493,7 +523,7 @@ function navigateStory(kind,id){
  if(node)positionCard(node);else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.6});focusReadingCard();
 }
 function cardKindLabel(kind){return ({moment:'МОМЕНТ',scene:'СЦЕНА',episode:'ЕПІЗОД',arc:'АРКА'})[kind]||String(kind||'').toUpperCase();}
-function cardMetaLine(kind,dateOrRange,hasYear=true){return `<span class="card-meta-line"><strong class="card-kind">${esc(cardKindLabel(kind))}</strong><span aria-hidden="true"> · </span><span>${esc(dateOrRange)}</span>${hasYear?'<span aria-hidden="true"> · </span><span>Рік 0</span>':''}</span>`;}
+function cardMetaLine(kind,dateOrRange,hasYear=true){return `<span class="card-meta-line"><strong class="card-kind">${esc(cardKindLabel(kind))}</strong><span aria-hidden="true"> · </span><span>${esc(dateOrRange)}</span>${hasYear&&data.calendar.view_days<=365?`<span aria-hidden="true"> · </span><span>${esc(yearText())}</span>`:''}</span>`;}
 function cardTop(day,navigation,kind='moment',id=null){
  const navKind=kind==='scene'?'scene':'event';
  const arrow=(direction,label)=>`<button class="card-arrow" data-step-${navKind}="${direction}" aria-label="${label}" title="${label}" ${navigation[direction<0?'previous':'next']?'':'disabled'}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${direction<0?'m14 6-6 6 6 6':'m10 6 6 6-6 6'}"/></svg></button>`;
@@ -598,7 +628,7 @@ function renderCharacterEvents(preservePosition=false){
  const list=characterTimelineEvents(id),dated=list.filter(e=>e.day!==null);
  $('characterEventsTitle').textContent=fullName(id);
  $('characterEventsMeta').textContent=`${list.length} подій${dated.length?` · ${dateText(dated[0].day)} — ${dateText(dated.at(-1).day)}`:''}`;
- track.innerHTML=list.length?list.map((e,index)=>`<article class="character-event-card" data-character-event="${esc(e.id)}"><div class="character-event-top"><span class="card-date">${esc(dateText(e.day,true))}${e.day!==null?' · Рік 0':''}</span><span class="character-event-index">${index+1} / ${list.length}</span></div>${eventDetailsHtml(e,'data-character-timeline-event',true)}</article>`).join(''):'<p class="empty">Подій персонажа не знайдено.</p>';
+ track.innerHTML=list.length?list.map((e,index)=>`<article class="character-event-card" data-character-event="${esc(e.id)}"><div class="character-event-top"><span class="card-date">${esc(dateText(e.day,true))}${e.day!==null&&data.calendar.view_days<=365?' · '+esc(yearText(e.day)):''}</span><span class="character-event-index">${index+1} / ${list.length}</span></div>${eventDetailsHtml(e,'data-character-timeline-event',true)}</article>`).join(''):'<p class="empty">Подій персонажа не знайдено.</p>';
  track.querySelectorAll('[data-character-timeline-event]').forEach(b=>b.addEventListener('click',()=>{closeCharacterEvents();closeProfile();navigateEvent(b.dataset.characterTimelineEvent);}));
  track.querySelectorAll('[data-event-focus-character]').forEach(b=>b.addEventListener('click',()=>{const target=b.dataset.eventFocusCharacter;closeCharacterEvents();closeProfile();if(focusedCharacter!==target)setFocus(target);}));
  if(preservePosition){const cards=[...track.querySelectorAll('.character-event-card')],index=Math.max(0,cards.findIndex(card=>card.dataset.characterEvent===oldEvent));track.scrollLeft=index*characterReaderStep();if(cards[index])cards[index].scrollTop=oldScroll;updateCharacterReader();}
@@ -669,11 +699,14 @@ function renderProfile(){
  ProfileTechniques.decorate();
 }
 function ingest(next,initial=false){
- const calendarCenter=data?axisToDay(center):center,wasAll=data&&selectable().every(e=>selected.has(e.id));
+ const nextBase=next.calendar.view_start_year??next.calendar.current_year,oldBase=data?.calendar.view_start_year??data?.calendar.current_year;
+ const calendarCenter=data?axisToDay(center)+(oldBase-nextBase)*365:center+(next.calendar.current_year-nextBase)*365,wasAll=data&&selectable().every(e=>selected.has(e.id));
  data=next;entityMap=new Map(data.entities.map(e=>[e.id,e]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
  if(initial||wasAll)selected=new Set(selectable().map(e=>e.id));else selected=new Set([...selected].filter(id=>entityMap.has(id)));if(focusedCharacter&&!entityMap.has(focusedCharacter))focusedCharacter=null;if(anchorEvent&&!eventMap.has(anchorEvent))closeCard();
  center=clampAxisCenter(dayToAxis(calendarCenter));
  $('revision').textContent=`Дані: ${data.revision.slice(0,8)}`;$('sourceLink').href=`https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/tree/${data.revision}/${data.base}`;
+ renderCalendar();
+ eraSegments=TimelineEraHeading.segments(data.periods,data.calendar);eraHeadingNodes.clear();$('eraHeadingTrack').replaceChildren();
 }
 let refreshing=false;
 function refreshOpenCard(){
@@ -726,7 +759,7 @@ async function init(){
  $('characterEventPrevious').addEventListener('click',()=>moveCharacterReader(-1));
  $('characterEventNext').addEventListener('click',()=>moveCharacterReader(1));
  $('characterEventsTrack').addEventListener('scroll',updateCharacterReader,{passive:true});
- $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дійсну дату у форматі 22.01.';$('dateError').hidden=false;$('dateInput').setAttribute('aria-invalid','true');return;}$('dateError').hidden=true;$('dateInput').removeAttribute('aria-invalid');zoom=365;center=clampAxisCenter(dayToAxis(starts[+m[2]-1]+(+m[1]-1)+.5));closePanels();closeCard();schedule();});
+ $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дійсну дату у форматі 22.01.';$('dateError').hidden=false;$('dateInput').setAttribute('aria-invalid','true');return;}$('dateError').hidden=true;$('dateInput').removeAttribute('aria-invalid');const yearOffset=Math.floor(axisToDay(center)/365)*365;zoom=365;center=clampAxisCenter(dayToAxis(yearOffset+starts[+m[2]-1]+(+m[1]-1)+.5));closePanels();closeCard();schedule();});
  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setZoom(zoomModes[b.dataset.mode])));$('zoomIn').addEventListener('click',()=>setZoom(zoom*2));$('zoomOut').addEventListener('click',()=>setZoom(zoom/2));$('fit').addEventListener('click',()=>setZoom(zoomModes.year));
  for(const [id,s] of [['previous',-1],['next',1]])$(id).addEventListener('click',()=>{closeCard();const mode=currentZoomMode(),preset=zoomModes[mode],isPreset=Math.abs(Math.log(zoom/preset))<.03,step=isPreset?365/preset:axisLength()/zoom*.7;center=clampAxisCenter(isPreset?dayToAxis(axisToDay(center)+s*step):center+s*step);schedule();});
  document.addEventListener('keydown',e=>{

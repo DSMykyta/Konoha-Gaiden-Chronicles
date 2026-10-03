@@ -5,7 +5,8 @@ display_rank: 100
 continuity_id: "main"
 title: "Мідзукі тікає з в'язниці разом із Фуджіном і Райджіном"
 location_id: "loc-konoha-correctional-facility"
-placement: {anchor_id: "ta-y0-1001", day_offset: 0}
+day_part: afternoon
+placement: {anchor_id: ta-autumn-reconciled-61-1007, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

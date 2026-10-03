@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-game-ninja-destiny-2-eu"
 title: "Європейська версія Ninja Destiny 2 починає окрему пост-сасківську історію"
 location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-alt-y0-1201-nd2eu", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1229, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "approximate", cast: "partial", location: "accepted", origin: "accepted", text: "partial"}

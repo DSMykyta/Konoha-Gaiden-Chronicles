@@ -1,0 +1,231 @@
+schema_version: 1
+id: sc-time-slip-131-nine-tails-cloak
+episode_id: ep-time-slip-131
+display_rank: 300
+continuity_id: main
+title: Боруто стикається із силою Дев’ятихвостого
+location_id: loc-time-slip-ravine
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1002
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-131-pursuit-arrives
+  title: Переслідувачі наздоганяють Наруто
+  text: Боруто, мандрівник та Джирая знаходять викрадача. Наруто вже охоплений покривом чакри Дев’ятихвостого.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-131-past
+- id: ev-time-slip-131-boruto-wounded
+  title: Наруто ранить Боруто
+  text: Боруто намагається докликатися до Наруто й на мить отримує відповідь. Чакра знову бере гору, і Наруто атакує
+    його.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-131-past
+- id: ev-time-slip-131-suppression
+  title: Джирая придушує витік чакри
+  text: Джирая застосовує печать, щоб зупинити Наруто. Урашікі відступає через просторово-часовий портал.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-131-past
+relations:
+- id: rel-ev-time-slip-131-boruto-wounded
+  kind: before
+  a: ev-time-slip-131-pursuit-arrives
+  b: ev-time-slip-131-boruto-wounded
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+- id: rel-ev-time-slip-131-suppression
+  kind: before
+  a: ev-time-slip-131-boruto-wounded
+  b: ev-time-slip-131-suppression
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+presence:
+- id: pr-ev-time-slip-131-pursuit-arrives-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-pursuit-arrives.start
+  to: ev-time-slip-131-pursuit-arrives.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-pursuit-arrives-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-131-pursuit-arrives.start
+  to: ev-time-slip-131-pursuit-arrives.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-pursuit-arrives-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-pursuit-arrives.start
+  to: ev-time-slip-131-pursuit-arrives.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-pursuit-arrives-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-pursuit-arrives.start
+  to: ev-time-slip-131-pursuit-arrives.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-pursuit-arrives-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-131-pursuit-arrives.start
+  to: ev-time-slip-131-pursuit-arrives.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-boruto-wounded-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-boruto-wounded.start
+  to: ev-time-slip-131-boruto-wounded.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-boruto-wounded-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-boruto-wounded.start
+  to: ev-time-slip-131-boruto-wounded.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-boruto-wounded-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-131-boruto-wounded.start
+  to: ev-time-slip-131-boruto-wounded.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-boruto-wounded-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-boruto-wounded.start
+  to: ev-time-slip-131-boruto-wounded.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-boruto-wounded-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-131-boruto-wounded.start
+  to: ev-time-slip-131-boruto-wounded.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-suppression-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-suppression.start
+  to: ev-time-slip-131-suppression.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-131-suppression-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-suppression.start
+  to: ev-time-slip-131-suppression.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-131-suppression-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-suppression.start
+  to: ev-time-slip-131-suppression.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-131-suppression-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-131-suppression.start
+  to: ev-time-slip-131-suppression.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-131-suppression-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-131-suppression.start
+  to: ev-time-slip-131-suppression.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

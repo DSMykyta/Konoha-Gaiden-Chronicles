@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "alt-game-phantom-fortress"
 title: "Джерело Муґенджо знищене, і Примарний замок руйнується"
 location_id: "loc-mugen-castle"
-placement: {anchor_id: "ta-alt-y0-1110-phantom", day_offset: 2}
+placement: {anchor_id: ta-autumn-reconciled-61-1129, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "approximate", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

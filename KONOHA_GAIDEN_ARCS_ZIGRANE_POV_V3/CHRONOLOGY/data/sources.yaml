@@ -1296,6 +1296,74 @@ sources:
     type: project_note
     title: Ігрові історії першої частини — узгоджений порядок
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/GAMES_PART_I_CHRONOLOGY_UA.md
+  - id: src-boruto-129-vtt
+    type: anime_transcript
+    title: Boruto — серія 129, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 129.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-boruto-130-vtt
+    type: anime_transcript
+    title: Boruto — серія 130, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 130.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-boruto-131-vtt
+    type: anime_transcript
+    title: Boruto — серія 131, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 131.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-boruto-132-vtt
+    type: anime_transcript
+    title: Boruto — серія 132, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 132.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-boruto-133-vtt
+    type: anime_transcript
+    title: Boruto — серія 133, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 133.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-boruto-134-vtt
+    type: anime_transcript
+    title: Boruto — серія 134, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 134.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-boruto-135-vtt
+    type: anime_transcript
+    title: Boruto — серія 135, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 135.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-boruto-136-vtt
+    type: anime_transcript
+    title: Boruto — серія 136, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
+      - 136.vtt
+    locator_status: episode_known_scene_timestamps_partial
+  - id: src-time-slip-placement
+    type: project_decision
+    title: Мандрівні артисти — робочі дати й окремі профілі прибульців
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/TIME_SLIP_UA.md
+    date: '2026-10-03'
+  - id: src-boruto-129-official
+    type: official_episode_summary
+    title: The Village Hidden in the Leaves — Boruto 129
+    url: https://naruto-official.com/en/anime/boruto/list/01_1073
+    accessed: '2026-10-03'
+  - id: src-boruto-136-narutopedia
+    type: wiki_episode_summary
+    title: Crossing Time! — Boruto 136
+    url: https://naruto.fandom.com/wiki/Crossing_Time!
+    accessed: '2026-10-03'
+  - id: src-autumn-cast-reconciliation
+    type: project_decision
+    title: Узгодження фізичних учасників після Мандрівних артистів
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/AUTUMN_PLACEMENT_UA.md
+    date: '2026-10-03'
 evidence:
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
@@ -4453,4 +4521,55 @@ evidence:
     source_id: src-games-part-i-placement
     locator: Робочі дати року 0, межа 16.12; порядок, адміністративні заміни та рознесення паралельних гілок.
     basis: editorial
+    review: accepted
+  - id: evd-boruto-129-past
+    source_id: src-boruto-129-vtt
+    locator: Серія 129; сцени основної серії; без заставок, повторів і анонсу
+    basis: source
+    review: partial
+  - id: evd-boruto-130-past
+    source_id: src-boruto-130-vtt
+    locator: Серія 130; сцени основної серії; без заставок, повторів і анонсу
+    basis: source
+    review: partial
+  - id: evd-boruto-131-past
+    source_id: src-boruto-131-vtt
+    locator: Серія 131; сцени основної серії; без заставок, повторів і анонсу
+    basis: source
+    review: partial
+  - id: evd-boruto-132-past
+    source_id: src-boruto-132-vtt
+    locator: Серія 132; сцени основної серії; без заставок, повторів і анонсу
+    basis: source
+    review: partial
+  - id: evd-boruto-133-past
+    source_id: src-boruto-133-vtt
+    locator: Серія 133; сцени основної серії; без заставок, повторів і анонсу
+    basis: source
+    review: partial
+  - id: evd-boruto-134-past
+    source_id: src-boruto-134-vtt
+    locator: Серія 134; сцени основної серії; без заставок, повторів і анонсу
+    basis: source
+    review: partial
+  - id: evd-boruto-135-past
+    source_id: src-boruto-135-vtt
+    locator: Серія 135; сцени основної серії; без заставок, повторів і анонсу
+    basis: source
+    review: partial
+  - id: evd-boruto-136-past
+    source_id: src-boruto-136-vtt
+    locator: Серія 136; сцени до виходу з минулого, приблизно 00:00–12:25; не включає повернення в майбутнє
+    basis: source
+    review: partial
+  - id: evd-time-slip-working-placement
+    source_id: src-time-slip-placement
+    locator: 30.09–06.10 року 61; відносні маркери в серіях 129, 130, 136
+    basis: project_decision
+    review: accepted
+  - id: evd-autumn-cast-reconciliation
+    source_id: src-autumn-cast-reconciliation
+    locator: Учасники, безперервність Мідзукі, госпіталізація Куренай, почергові місії
+      та межа 15.01 року 62
+    basis: project_decision
     review: accepted

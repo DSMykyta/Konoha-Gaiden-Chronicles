@@ -1,0 +1,401 @@
+schema_version: 1
+id: sc-time-slip-130-bathhouse
+episode_id: ep-time-slip-130
+display_rank: 300
+continuity_id: main
+title: Геніни прибирають лазню
+location_id: loc-time-slip-bathhouse
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1001
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-130-assembly
+  title: Наказ прибрати наслідки витівки Джираї
+  text: Шікамару збирає генінів біля лазні для роботи за наказом Цунаде. Боруто опиняється серед молодих знайомих
+    своєї родини.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-130-past
+- id: ev-time-slip-130-cleanup
+  title: Прибирання перетворюється на хаос
+  text: Наруто використовує клонів, Кіба з Акамару й Лі галасують, а Чоджі випадково збиває хлопців. Працівник лазні
+    впізнає Наруто після вчорашньої пригоди.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-130-past
+- id: ev-time-slip-130-deserter-talk
+  title: Згадка про втечу Саске
+  text: Під час роботи геніни говорять про недавню втечу Саске. Наруто й Сакура замовкають, а Боруто помічає їхню
+    реакцію.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id003
+  - evd-boruto-130-past
+relations:
+- id: rel-ev-time-slip-130-cleanup
+  kind: before
+  a: ev-time-slip-130-assembly
+  b: ev-time-slip-130-cleanup
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: rel-ev-time-slip-130-deserter-talk
+  kind: before
+  a: ev-time-slip-130-cleanup
+  b: ev-time-slip-130-deserter-talk
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+presence:
+- id: pr-ev-time-slip-130-assembly-c-shikamaru
+  entity_id: c-shikamaru
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-ino
+  entity_id: c-ino
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-choji
+  entity_id: c-choji
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-hinata
+  entity_id: c-hinata
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-kiba
+  entity_id: c-kiba
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-akamaru
+  entity_id: c-akamaru
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-shino
+  entity_id: c-shino
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-assembly-c-lee
+  entity_id: c-lee
+  mode: physical
+  from: ev-time-slip-130-assembly.start
+  to: ev-time-slip-130-assembly.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-cleanup-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-cleanup.start
+  to: ev-time-slip-130-cleanup.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-cleanup-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-cleanup.start
+  to: ev-time-slip-130-cleanup.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-cleanup-c-choji
+  entity_id: c-choji
+  mode: physical
+  from: ev-time-slip-130-cleanup.start
+  to: ev-time-slip-130-cleanup.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-cleanup-c-kiba
+  entity_id: c-kiba
+  mode: physical
+  from: ev-time-slip-130-cleanup.start
+  to: ev-time-slip-130-cleanup.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-cleanup-c-akamaru
+  entity_id: c-akamaru
+  mode: physical
+  from: ev-time-slip-130-cleanup.start
+  to: ev-time-slip-130-cleanup.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-cleanup-c-lee
+  entity_id: c-lee
+  mode: physical
+  from: ev-time-slip-130-cleanup.start
+  to: ev-time-slip-130-cleanup.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-deserter-talk-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-shikamaru
+  entity_id: c-shikamaru
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-ino
+  entity_id: c-ino
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-choji
+  entity_id: c-choji
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-hinata
+  entity_id: c-hinata
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-kiba
+  entity_id: c-kiba
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-akamaru
+  entity_id: c-akamaru
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-shino
+  entity_id: c-shino
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-deserter-talk-c-lee
+  entity_id: c-lee
+  mode: physical
+  from: ev-time-slip-130-deserter-talk.start
+  to: ev-time-slip-130-deserter-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

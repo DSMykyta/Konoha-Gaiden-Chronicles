@@ -1,0 +1,211 @@
+schema_version: 1
+id: sc-time-slip-133-second-attack
+episode_id: ep-time-slip-133
+display_rank: 600
+continuity_id: main
+title: Другий напад Урашікі
+location_id: loc-konoha-training-field
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-133-second-ambush
+  title: Урашікі перериває тренування
+  text: Урашікі знову знаходить Наруто й Боруто та застосовує техніки Вогню й Блискавки з викраденою раніше чакрою
+    мандрівника.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-133-past
+- id: ev-time-slip-133-defenders-return
+  title: Джирая й мандрівник вступають у бій
+  text: Дорослі захисники приєднуються до хлопців, але Урашікі випереджає їхні атаки й користується перевагою над
+    спільною тактикою.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-133-past
+- id: ev-time-slip-133-black-rod
+  title: Урашікі ранить Джираю
+  text: Урашікі пробиває Джираю чорним стрижнем і заявляє, що бачить майбутнє. Бій продовжується в наступній серії
+    без календарного розриву.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-133-past
+relations:
+- id: rel-ev-time-slip-133-defenders-return
+  kind: before
+  a: ev-time-slip-133-second-ambush
+  b: ev-time-slip-133-defenders-return
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+- id: rel-ev-time-slip-133-black-rod
+  kind: before
+  a: ev-time-slip-133-defenders-return
+  b: ev-time-slip-133-black-rod
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+presence:
+- id: pr-ev-time-slip-133-second-ambush-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-133-second-ambush.start
+  to: ev-time-slip-133-second-ambush.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-second-ambush-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-second-ambush.start
+  to: ev-time-slip-133-second-ambush.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-second-ambush-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-second-ambush.start
+  to: ev-time-slip-133-second-ambush.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-defenders-return-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-133-defenders-return.start
+  to: ev-time-slip-133-defenders-return.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-defenders-return-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-133-defenders-return.start
+  to: ev-time-slip-133-defenders-return.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-defenders-return-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-defenders-return.start
+  to: ev-time-slip-133-defenders-return.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-defenders-return-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-defenders-return.start
+  to: ev-time-slip-133-defenders-return.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-defenders-return-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-133-defenders-return.start
+  to: ev-time-slip-133-defenders-return.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-black-rod-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-133-black-rod.start
+  to: ev-time-slip-133-black-rod.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-133-black-rod-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-133-black-rod.start
+  to: ev-time-slip-133-black-rod.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-133-black-rod-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-133-black-rod.start
+  to: ev-time-slip-133-black-rod.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-133-black-rod-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-black-rod.start
+  to: ev-time-slip-133-black-rod.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-133-black-rod-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-black-rod.start
+  to: ev-time-slip-133-black-rod.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

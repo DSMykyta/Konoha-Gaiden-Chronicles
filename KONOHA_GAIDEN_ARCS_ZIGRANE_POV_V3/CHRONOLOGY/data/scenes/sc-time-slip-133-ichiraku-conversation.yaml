@@ -1,0 +1,138 @@
+schema_version: 1
+id: sc-time-slip-133-ichiraku-conversation
+episode_id: ep-time-slip-133
+display_rank: 200
+continuity_id: main
+title: Наруто пояснює, чому хоче повернути Саске
+location_id: loc-ichiraku
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-133-reconciliation
+  title: Хлопці відновлюють довіру
+  text: Боруто знаходить Наруто в Ічіраку. Після непорозуміння на тренуванні вони знову можуть спокійно розмовляти.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-133-past
+- id: ev-time-slip-133-clan-and-orochimaru
+  title: Наруто розповідає про відхід друга
+  text: На питання Боруто Наруто говорить про загибель клану Учіха, пошук сили й відхід Саске до Орочімару.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-133-past
+- id: ev-time-slip-133-brother-bond
+  title: Наруто називає Саске близьким до брата
+  text: Наруто пояснює, що команда дала йому зв’язок, схожий на братній. Він обіцяє стати сильнішим і повернути
+    друга в село.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id003
+  - evd-boruto-133-past
+relations:
+- id: rel-ev-time-slip-133-clan-and-orochimaru
+  kind: before
+  a: ev-time-slip-133-reconciliation
+  b: ev-time-slip-133-clan-and-orochimaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+- id: rel-ev-time-slip-133-brother-bond
+  kind: before
+  a: ev-time-slip-133-clan-and-orochimaru
+  b: ev-time-slip-133-brother-bond
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-133-past
+presence:
+- id: pr-ev-time-slip-133-reconciliation-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-reconciliation.start
+  to: ev-time-slip-133-reconciliation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-reconciliation-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-reconciliation.start
+  to: ev-time-slip-133-reconciliation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-clan-and-orochimaru-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-clan-and-orochimaru.start
+  to: ev-time-slip-133-clan-and-orochimaru.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-clan-and-orochimaru-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-clan-and-orochimaru.start
+  to: ev-time-slip-133-clan-and-orochimaru.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-133-brother-bond-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-brother-bond.start
+  to: ev-time-slip-133-brother-bond.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-133-brother-bond-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-brother-bond.start
+  to: ev-time-slip-133-brother-bond.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

@@ -1,0 +1,116 @@
+schema_version: 1
+id: sc-time-slip-131-after-first-attack
+episode_id: ep-time-slip-131
+display_rank: 400
+continuity_id: main
+title: Джирая готує хлопців до наступного нападу
+location_id: loc-konoha-training-field
+day_part: evening
+placement:
+  anchor_id: ta-time-slip-1002
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-131-bandage
+  title: Допомога пораненому Боруто
+  text: Джирая перев’язує Боруто й пояснює, як через Дев’ятихвостого жителі села ставилися до Наруто. Боруто вперше
+    бачить наслідки цього дитинства зблизька.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-131-past
+- id: ev-time-slip-131-training-plan
+  title: План спільного тренування
+  text: Джирая вирішує готувати Наруто й Боруто разом перед наступною зустріччю з ворогом. Схожість їхньої чакри
+    дає йому ідею спільної техніки.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-131-past
+relations:
+- id: rel-ev-time-slip-131-training-plan
+  kind: before
+  a: ev-time-slip-131-bandage
+  b: ev-time-slip-131-training-plan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+presence:
+- id: pr-ev-time-slip-131-bandage-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-bandage.start
+  to: ev-time-slip-131-bandage.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-bandage-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-bandage.start
+  to: ev-time-slip-131-bandage.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-training-plan-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-training-plan.start
+  to: ev-time-slip-131-training-plan.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-training-plan-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-training-plan.start
+  to: ev-time-slip-131-training-plan.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-training-plan-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-training-plan.start
+  to: ev-time-slip-131-training-plan.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-training-plan-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-131-training-plan.start
+  to: ev-time-slip-131-training-plan.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

@@ -6,13 +6,14 @@ import YAML from 'yaml';
 const root=path.resolve('../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data');
 const load=file=>YAML.parse(fs.readFileSync(path.join(root,file),'utf8'));
 const anchors=new Map(load('time-anchors.yaml').anchors.map(a=>[a.id,a.date]));
+const activeYear=load('timeline-periods.yaml').calendar.current_year;
 const allScenes=fs.readdirSync(path.join(root,'scenes')).filter(f=>f.endsWith('.yaml')).map(f=>load('scenes/'+f));
 const scenes=allScenes.filter(s=>s.id.startsWith('sc-games-'));
 const byId=new Map(allScenes.map(s=>[s.id,s]));
 const scene=key=>scenes.find(s=>s.id==='sc-games-'+key);
 const months=[31,28,31,30,31,30,31,31,30,31,30,31];
 const absoluteDay=s=>{const a=anchors.get(s.placement?.anchor_id);return a? a.year*365+months.slice(0,a.month-1).reduce((a,b)=>a+b,0)+a.day-1+(s.placement.day_offset||0):null;};
-const date=s=>{const a=anchors.get(s.placement.anchor_id);return a.year*10000+a.month*100+a.day;};
+const date=s=>{const a=anchors.get(s.placement.anchor_id);return (a.year-activeYear)*10000+a.month*100+a.day;};
 const cast=s=>s.events.flatMap(e=>e.involvement.map(i=>i.entity_id));
 const physical=s=>s.events.flatMap(e=>e.involvement.filter(i=>i.mode==='physical').map(i=>i.entity_id));
 const text=s=>s.events.map(e=>e.text).join(' ');
@@ -22,7 +23,7 @@ const linked=(a,b)=>links.some(l=>l.a===a.id&&l.b===b.id&&l.kind==='before');
 test('imported games stop at Part I and respect the Hokage transitions',()=>{
  assert(scenes.length>=123);
  for(const s of scenes){
-  const d=date(s);assert(d<=1216&&anchors.get(s.placement.anchor_id).year===0,s.id);
+  const d=date(s);assert(d<=1216&&anchors.get(s.placement.anchor_id).year===activeYear,s.id);
   assert(!(cast(s).includes('c-hiruzen')&&d>801),s.id+' Hiruzen after his death');
   assert(!(cast(s).includes('c-tsunade')&&d<902),s.id+' Tsunade before returning');
   assert(s.events.every(e=>e.text.length>90&&e.origin==='P'));
@@ -61,10 +62,11 @@ test('all audited before links agree with days, day parts and reader order',()=>
 
 test('Kiba is an existing friend and the notebook is only handed over after burns',()=>{
  const evaluation=byId.get('sc-y0-0123-team9-field9'),friend=scene('t9-kiba-food');
- assert(linked(evaluation,friend));assert.equal(evaluation.day_part,'noon');assert.equal(friend.day_part,'afternoon');
+ assert(linked(evaluation,friend));assert.equal(evaluation.day_part,'noon');assert.equal(friend.day_part,'evening');
  assert(physical(friend).includes('c-akamaru'));
  assert(!/знайомиться|початок дружби|перше знайомство/.test(friend.title));
  const shown=scene('t9-nobari-notebook'),burn=scene('t9-burn-attempt'),given=scene('t9-burn-notebook'),regular=scene('t9-regular-medical');
+ assert.equal(shown.day_part,'night');assert(linked(friend,shown));
  assert.match(shown.title,/показує/);assert.match(given.title,/передає|віддає/);
  assert(absoluteDay(shown)<absoluteDay(burn));assert(linked(burn,given));assert(linked(given,regular));
  assert.match(text(shown),/прибирає|повертає|шаф/);

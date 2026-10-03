@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Якумо дізнається правду про Ідо й звільняється від неконтрольованої сили"
 location_id: "loc-yakumo-villa"
-placement: {anchor_id: "ta-y0-1127-yakumo", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1223, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

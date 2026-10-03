@@ -1,0 +1,187 @@
+schema_version: 1
+id: sc-time-slip-129-street-encounter
+episode_id: ep-time-slip-129
+display_rank: 200
+continuity_id: main
+title: Наруто, бінокль і втеча Джираї
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-0930
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-129-avoid-sakura
+  title: Мандрівник уникає Сакури
+  text: 'Побачивши молоду Сакуру, дорослий супутник відтягує Боруто й наполягає не звертатися до неї: вона може
+    впізнати зайве.'
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-129-past
+- id: ev-time-slip-129-naruto-collision
+  title: Боруто стикається з Наруто
+  text: Боруто випадково збиває молодого Наруто й ледве стримує звертання, яке видало б їхнє споріднення.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-129-past
+- id: ev-time-slip-129-binoculars
+  title: Джирая залишає хлопцям бінокль
+  text: Джирая тікає після підглядання й підставляє Наруто та Боруто своїм біноклем. Ситуація привертає увагу Цунаде.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-129-past
+relations:
+- id: rel-ev-time-slip-129-naruto-collision
+  kind: before
+  a: ev-time-slip-129-avoid-sakura
+  b: ev-time-slip-129-naruto-collision
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: rel-ev-time-slip-129-binoculars
+  kind: before
+  a: ev-time-slip-129-naruto-collision
+  b: ev-time-slip-129-binoculars
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+presence:
+- id: pr-ev-time-slip-129-avoid-sakura-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-avoid-sakura.start
+  to: ev-time-slip-129-avoid-sakura.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-avoid-sakura-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-avoid-sakura.start
+  to: ev-time-slip-129-avoid-sakura.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-avoid-sakura-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-129-avoid-sakura.start
+  to: ev-time-slip-129-avoid-sakura.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-naruto-collision-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-naruto-collision.start
+  to: ev-time-slip-129-naruto-collision.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-naruto-collision-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-naruto-collision.start
+  to: ev-time-slip-129-naruto-collision.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-naruto-collision-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-naruto-collision.start
+  to: ev-time-slip-129-naruto-collision.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-binoculars-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-129-binoculars.start
+  to: ev-time-slip-129-binoculars.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-binoculars-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-binoculars.start
+  to: ev-time-slip-129-binoculars.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-binoculars-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-binoculars.start
+  to: ev-time-slip-129-binoculars.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-binoculars-c-tsunade
+  entity_id: c-tsunade
+  mode: physical
+  from: ev-time-slip-129-binoculars.start
+  to: ev-time-slip-129-binoculars.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-binoculars-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-binoculars.start
+  to: ev-time-slip-129-binoculars.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

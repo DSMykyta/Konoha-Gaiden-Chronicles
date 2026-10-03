@@ -1,0 +1,126 @@
+schema_version: 1
+id: sc-time-slip-135-transformation
+episode_id: ep-time-slip-135
+display_rank: 100
+continuity_id: main
+title: Урашікі переходить у посилену форму
+location_id: loc-time-slip-ravine
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-135-transformation
+  title: Урашікі поглинає чакру й власні очі
+  text: Підвівшись після удару, Урашікі поглинає накопичену чакру та власний Ріннеґан. Його тіло переходить у посилену
+    форму.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-135-past
+- id: ev-time-slip-135-warning-run
+  title: Конохамару біжить по допомогу
+  text: Конохамару, Моегі й Удон вирушають у село, щоб повідомити старшим генінам про небезпеку для Наруто.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-135-past
+relations:
+- id: rel-ev-time-slip-135-warning-run
+  kind: before
+  a: ev-time-slip-135-transformation
+  b: ev-time-slip-135-warning-run
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+presence:
+- id: pr-ev-time-slip-135-transformation-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-135-transformation.start
+  to: ev-time-slip-135-transformation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-transformation-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-135-transformation.start
+  to: ev-time-slip-135-transformation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-transformation-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-135-transformation.start
+  to: ev-time-slip-135-transformation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-transformation-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-135-transformation.start
+  to: ev-time-slip-135-transformation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-warning-run-c-konohamaru
+  entity_id: c-konohamaru
+  mode: physical
+  from: ev-time-slip-135-warning-run.start
+  to: ev-time-slip-135-warning-run.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-warning-run-c-moegi
+  entity_id: c-moegi
+  mode: physical
+  from: ev-time-slip-135-warning-run.start
+  to: ev-time-slip-135-warning-run.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-warning-run-c-udon
+  entity_id: c-udon
+  mode: physical
+  from: ev-time-slip-135-warning-run.start
+  to: ev-time-slip-135-warning-run.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

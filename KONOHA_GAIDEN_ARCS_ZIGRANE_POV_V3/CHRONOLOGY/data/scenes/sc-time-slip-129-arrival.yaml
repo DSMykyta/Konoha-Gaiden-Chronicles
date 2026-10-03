@@ -1,0 +1,209 @@
+schema_version: 1
+id: sc-time-slip-129-arrival
+episode_id: ep-time-slip-129
+display_rank: 100
+continuity_id: main
+title: Двоє прибульців у старій Конохі
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-0930
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-129-arrival
+  title: Вихід із часового переходу
+  text: Боруто й його дорослий супутник опиняються в старій Конохі. За будівлями та Скелею Хокаґе Боруто розуміє,
+    що це інша епоха.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: artifact-karasuki
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-129-past
+- id: ev-time-slip-129-epoch
+  title: Karasuki визначає час прибуття
+  text: Karasuki називає час приходу П’ятої Хокаґе до влади й пояснює, що відокремлений Урашікі прибуде за кілька
+    днів.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: artifact-karasuki
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-129-past
+- id: ev-time-slip-129-warning
+  title: Заборона змінювати минуле
+  text: Karasuki попереджає про наслідки втручання. Мандрівник наказує Боруто приховувати походження й уникати зайвих
+    контактів зі знайомими.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: artifact-karasuki
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-129-past
+- id: ev-time-slip-129-disguise
+  title: Одяг для прикриття
+  text: Прибульці змінюють одяг, щоб не вирізнятися серед мешканців старої Конохи, й вирушають шукати Наруто.
+  origin: A
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id004
+  - evd-boruto-129-past
+relations:
+- id: rel-ev-time-slip-129-epoch
+  kind: before
+  a: ev-time-slip-129-arrival
+  b: ev-time-slip-129-epoch
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: rel-ev-time-slip-129-warning
+  kind: before
+  a: ev-time-slip-129-epoch
+  b: ev-time-slip-129-warning
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: rel-ev-time-slip-129-disguise
+  kind: before
+  a: ev-time-slip-129-warning
+  b: ev-time-slip-129-disguise
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+presence:
+- id: pr-ev-time-slip-129-arrival-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-arrival.start
+  to: ev-time-slip-129-arrival.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-arrival-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-arrival.start
+  to: ev-time-slip-129-arrival.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-arrival-artifact-karasuki
+  entity_id: artifact-karasuki
+  mode: physical
+  from: ev-time-slip-129-arrival.start
+  to: ev-time-slip-129-arrival.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-epoch-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-epoch.start
+  to: ev-time-slip-129-epoch.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-epoch-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-epoch.start
+  to: ev-time-slip-129-epoch.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-epoch-artifact-karasuki
+  entity_id: artifact-karasuki
+  mode: physical
+  from: ev-time-slip-129-epoch.start
+  to: ev-time-slip-129-epoch.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-warning-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-warning.start
+  to: ev-time-slip-129-warning.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-warning-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-warning.start
+  to: ev-time-slip-129-warning.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-warning-artifact-karasuki
+  entity_id: artifact-karasuki
+  mode: physical
+  from: ev-time-slip-129-warning.start
+  to: ev-time-slip-129-warning.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-disguise-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-disguise.start
+  to: ev-time-slip-129-disguise.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-129-disguise-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-disguise.start
+  to: ev-time-slip-129-disguise.end
+  basis: source
+  review: partial
+  evidence_ids: *id004

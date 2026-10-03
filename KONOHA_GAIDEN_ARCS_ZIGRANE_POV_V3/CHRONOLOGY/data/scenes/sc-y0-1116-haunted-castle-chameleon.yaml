@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Наруто, Кіба й Хіната розкривають природу «проклятого замку»"
 location_id: "loc-haunted-castle"
-placement: {anchor_id: "ta-y0-1116-haunted-castle", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1206, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "working", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

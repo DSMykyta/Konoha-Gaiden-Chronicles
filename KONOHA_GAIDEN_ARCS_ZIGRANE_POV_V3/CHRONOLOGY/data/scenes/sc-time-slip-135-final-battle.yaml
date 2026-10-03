@@ -1,0 +1,304 @@
+schema_version: 1
+id: sc-time-slip-135-final-battle
+episode_id: ep-time-slip-135
+display_rank: 400
+continuity_id: main
+title: Спільна атака долає Урашікі
+location_id: loc-time-slip-ravine
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-135-provocation
+  title: Урашікі провокує вивільнення чакри
+  text: Ворог тисне на Наруто, намагаючись дістати чакру Дев’ятихвостого. Джирая приймає удар, призначений хлопцеві.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-135-past
+- id: ev-time-slip-135-boruto-approaches
+  title: Боруто проходить крізь атаки Наруто
+  text: Наруто знову охоплює чакра Дев’ятихвостого. Боруто долає страх, наближається до нього й відновлює контакт.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-135-past
+- id: ev-time-slip-135-combined-technique
+  title: Тренування перетворюється на спільну техніку
+  text: Хлопці узгоджують чакру та створюють спільну атаку. Джирая відволікає Урашікі Расенґаном, а мандрівник атакує
+    Кіріном.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-135-past
+- id: ev-time-slip-135-victory
+  title: Урашікі остаточно переможений
+  text: Спільна атака Наруто й Боруто пробиває ворога. Покрив Дев’ятихвостого відступає, і хлопці непритомніють
+    від виснаження.
+  origin: A
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id004
+  - evd-boruto-135-past
+relations:
+- id: rel-ev-time-slip-135-boruto-approaches
+  kind: before
+  a: ev-time-slip-135-provocation
+  b: ev-time-slip-135-boruto-approaches
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+- id: rel-ev-time-slip-135-combined-technique
+  kind: before
+  a: ev-time-slip-135-boruto-approaches
+  b: ev-time-slip-135-combined-technique
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+- id: rel-ev-time-slip-135-victory
+  kind: before
+  a: ev-time-slip-135-combined-technique
+  b: ev-time-slip-135-victory
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+presence:
+- id: pr-ev-time-slip-135-provocation-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-135-provocation.start
+  to: ev-time-slip-135-provocation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-provocation-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-135-provocation.start
+  to: ev-time-slip-135-provocation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-provocation-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-135-provocation.start
+  to: ev-time-slip-135-provocation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-provocation-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-135-provocation.start
+  to: ev-time-slip-135-provocation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-provocation-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-135-provocation.start
+  to: ev-time-slip-135-provocation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-boruto-approaches-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-135-boruto-approaches.start
+  to: ev-time-slip-135-boruto-approaches.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-boruto-approaches-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-135-boruto-approaches.start
+  to: ev-time-slip-135-boruto-approaches.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-boruto-approaches-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-135-boruto-approaches.start
+  to: ev-time-slip-135-boruto-approaches.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-boruto-approaches-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-135-boruto-approaches.start
+  to: ev-time-slip-135-boruto-approaches.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-boruto-approaches-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-135-boruto-approaches.start
+  to: ev-time-slip-135-boruto-approaches.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-135-combined-technique-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-135-combined-technique.start
+  to: ev-time-slip-135-combined-technique.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-135-combined-technique-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-135-combined-technique.start
+  to: ev-time-slip-135-combined-technique.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-135-combined-technique-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-135-combined-technique.start
+  to: ev-time-slip-135-combined-technique.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-135-combined-technique-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-135-combined-technique.start
+  to: ev-time-slip-135-combined-technique.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-135-combined-technique-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-135-combined-technique.start
+  to: ev-time-slip-135-combined-technique.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-135-victory-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-135-victory.start
+  to: ev-time-slip-135-victory.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-135-victory-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-135-victory.start
+  to: ev-time-slip-135-victory.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-135-victory-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-135-victory.start
+  to: ev-time-slip-135-victory.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-135-victory-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-135-victory.start
+  to: ev-time-slip-135-victory.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-135-victory-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-135-victory.start
+  to: ev-time-slip-135-victory.end
+  basis: source
+  review: partial
+  evidence_ids: *id004

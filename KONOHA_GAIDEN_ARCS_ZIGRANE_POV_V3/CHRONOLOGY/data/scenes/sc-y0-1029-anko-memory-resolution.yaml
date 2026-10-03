@@ -5,9 +5,7 @@ display_rank: 200
 continuity_id: main
 title: Анко остаточно відновлює пам’ять
 location_id: loc-land-of-sea
-placement:
-  anchor_id: ta-y0-1029
-  day_offset: 0
+placement: {anchor_id: ta-autumn-reconciled-61-1112, day_offset: 0}
 state: active
 presence_coverage: partial
 review:

@@ -5,7 +5,7 @@ display_rank: 10200
 continuity_id: main
 title: Нобарі показує Кіті старий медичний конспект
 location_id: loc-kita-home
-day_part: afternoon
+day_part: night
 placement:
   anchor_id: ta-games-0-01-23
   day_offset: 0

@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-time-slip-136-hyuga-discovery
+episode_id: ep-time-slip-136
+display_rank: 600
+continuity_id: main
+title: Хіната й Неджи знаходять Наруто та Джираю
+location_id: loc-time-slip-departure-clearing
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1006
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-136-hyuga-find
+  title: Хіната й Неджи знаходять непритомних
+  text: Після ґендзюцу Наруто й Джирая лишаються непритомними в лісі. Хіната й Неджи знаходять їх після відходу
+    прибульців.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-136-past
+relations: []
+presence:
+- id: pr-ev-time-slip-136-hyuga-find-c-hinata
+  entity_id: c-hinata
+  mode: physical
+  from: ev-time-slip-136-hyuga-find.start
+  to: ev-time-slip-136-hyuga-find.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-hyuga-find-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-136-hyuga-find.start
+  to: ev-time-slip-136-hyuga-find.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-hyuga-find-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-136-hyuga-find.start
+  to: ev-time-slip-136-hyuga-find.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-hyuga-find-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-136-hyuga-find.start
+  to: ev-time-slip-136-hyuga-find.end
+  basis: source
+  review: partial
+  evidence_ids: *id001

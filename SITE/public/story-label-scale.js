@@ -28,7 +28,7 @@ const StoryTitleScale = (() => {
   let readerSummary = null;
 
   function currentSemanticLevel() {
-    const level = document.querySelector('.timeline-key [data-level][aria-current="true"]')?.dataset.level;
+    const level = typeof semanticLevel === 'function' ? semanticLevel() : 'arc';
     return LEVELS.includes(level) ? level : 'arc';
   }
 

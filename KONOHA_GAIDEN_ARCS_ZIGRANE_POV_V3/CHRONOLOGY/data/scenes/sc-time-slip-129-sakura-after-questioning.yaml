@@ -1,0 +1,126 @@
+schema_version: 1
+id: sc-time-slip-129-sakura-after-questioning
+episode_id: ep-time-slip-129
+display_rank: 400
+continuity_id: main
+title: Сакура зустрічає прибульця під наглядом Наруто
+location_id: loc-konohagakure
+day_part: evening
+placement:
+  anchor_id: ta-time-slip-0930
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-129-sakura-meeting
+  title: Наруто знайомить Боруто із Сакурою
+  text: Після допиту Наруто зустрічає Сакуру, яка вже знає про наказ Цунаде. Дорослий мандрівник тримається на відстані.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical_hidden
+  evidence_ids: &id001
+  - evd-boruto-129-past
+- id: ev-time-slip-129-overnight-plan
+  title: Боруто лишається з Наруто
+  text: Наруто не може відпустити гостя через доручений нагляд. Боруто погоджується провести з ним вечір і заночувати
+    в його квартирі.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-129-past
+relations:
+- id: rel-ev-time-slip-129-overnight-plan
+  kind: before
+  a: ev-time-slip-129-sakura-meeting
+  b: ev-time-slip-129-overnight-plan
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+presence:
+- id: pr-ev-time-slip-129-sakura-meeting-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-sakura-meeting.start
+  to: ev-time-slip-129-sakura-meeting.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-sakura-meeting-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-sakura-meeting.start
+  to: ev-time-slip-129-sakura-meeting.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-sakura-meeting-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-129-sakura-meeting.start
+  to: ev-time-slip-129-sakura-meeting.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-sakura-meeting-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical_hidden
+  from: ev-time-slip-129-sakura-meeting.start
+  to: ev-time-slip-129-sakura-meeting.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-overnight-plan-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-overnight-plan.start
+  to: ev-time-slip-129-overnight-plan.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-overnight-plan-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-overnight-plan.start
+  to: ev-time-slip-129-overnight-plan.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-overnight-plan-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-129-overnight-plan.start
+  to: ev-time-slip-129-overnight-plan.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

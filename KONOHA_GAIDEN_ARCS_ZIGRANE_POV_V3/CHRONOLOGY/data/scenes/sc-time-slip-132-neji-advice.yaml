@@ -1,0 +1,99 @@
+schema_version: 1
+id: sc-time-slip-132-neji-advice
+episode_id: ep-time-slip-132
+display_rank: 300
+continuity_id: main
+title: Неджи радить Боруто довіритися Наруто
+location_id: loc-time-slip-village-bridge
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1003
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-132-fear-confession
+  title: Боруто розповідає про свій страх
+  text: Боруто зізнається Неджи, що боїться сили всередині Наруто. Неджи радить не ставитися до нього з жалем.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-boruto-132-past
+- id: ev-time-slip-132-neji-change
+  title: Наруто вже змінив долю Неджи
+  text: Неджи розповідає, як Наруто зруйнував його переконання про незмінність долі. Боруто вирішує повернутися
+    до тренування й довіритися напарникові.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-132-past
+relations:
+- id: rel-ev-time-slip-132-neji-change
+  kind: before
+  a: ev-time-slip-132-fear-confession
+  b: ev-time-slip-132-neji-change
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+presence:
+- id: pr-ev-time-slip-132-fear-confession-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-fear-confession.start
+  to: ev-time-slip-132-fear-confession.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-fear-confession-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-132-fear-confession.start
+  to: ev-time-slip-132-fear-confession.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-neji-change-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-neji-change.start
+  to: ev-time-slip-132-neji-change.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-132-neji-change-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-132-neji-change.start
+  to: ev-time-slip-132-neji-change.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

@@ -1,0 +1,99 @@
+schema_version: 1
+id: sc-time-slip-131-seal-violation
+episode_id: ep-time-slip-131
+display_rank: 200
+continuity_id: main
+title: Урашікі намагається зламати печать
+location_id: loc-time-slip-ravine
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1002
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-131-seal-intrusion
+  title: Спроба дістатися Дев’ятихвостого
+  text: Урашікі втручається в печать і наближається до внутрішнього простору Наруто. Захист відкидає його й обпалює
+    руку.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-boruto-131-past
+- id: ev-time-slip-131-chakra-leak
+  title: Чакра виходить з-під контролю
+  text: Урашікі забирає частину чакри, але його втручання спричиняє неконтрольований витік сили Дев’ятихвостого.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-131-past
+relations:
+- id: rel-ev-time-slip-131-chakra-leak
+  kind: before
+  a: ev-time-slip-131-seal-intrusion
+  b: ev-time-slip-131-chakra-leak
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+presence:
+- id: pr-ev-time-slip-131-seal-intrusion-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-131-seal-intrusion.start
+  to: ev-time-slip-131-seal-intrusion.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-seal-intrusion-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-seal-intrusion.start
+  to: ev-time-slip-131-seal-intrusion.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-chakra-leak-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-131-chakra-leak.start
+  to: ev-time-slip-131-chakra-leak.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-chakra-leak-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-chakra-leak.start
+  to: ev-time-slip-131-chakra-leak.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

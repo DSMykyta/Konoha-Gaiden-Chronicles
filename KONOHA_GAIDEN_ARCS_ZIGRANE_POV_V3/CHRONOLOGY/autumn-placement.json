@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "working_calendar": true,
+  "reason": "Resolve physical participant conflicts after Time Slip; dates reconstructed",
+  "arcs": [
+    {
+      "arc_id": "arc-y0-mizuki-return",
+      "title": "Повернення Мідзукі",
+      "old_start": 273,
+      "old_end": 276,
+      "start": 279,
+      "end": 279,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-alt-movie-gelel",
+      "title": "Камінь Ґелеля",
+      "old_start": 277,
+      "old_end": 277,
+      "start": 280,
+      "end": 282,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-animal-district",
+      "title": "Нульова ділянка й ніндзя-тварини",
+      "old_start": 277,
+      "old_end": 277,
+      "start": 283,
+      "end": 283,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-bikochu-search",
+      "title": "Пошук бікоочу",
+      "old_start": 278,
+      "old_end": 280,
+      "start": 284,
+      "end": 288,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-raiga-ranmaru",
+      "title": "Райґа й Ранмару",
+      "old_start": 282,
+      "old_end": 286,
+      "start": 290,
+      "end": 294,
+      "gap_before": 1
+    },
+    {
+      "arc_id": "arc-alt-game-uzumaki-chronicles",
+      "title": "Uzumaki Chronicles",
+      "old_start": 284,
+      "old_end": 286,
+      "start": 295,
+      "end": 297,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-academy-survival",
+      "title": "Наруто веде учнів Академії",
+      "old_start": 287,
+      "old_end": 287,
+      "start": 298,
+      "end": 298,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-gosunkugi",
+      "title": "Погоня за Ґосункуґі",
+      "old_start": 289,
+      "old_end": 290,
+      "start": 300,
+      "end": 301,
+      "gap_before": 1
+    },
+    {
+      "arc_id": "arc-y0-guy-lee-impostors",
+      "title": "Самозванці Ґай і Лі",
+      "old_start": 291,
+      "old_end": 291,
+      "start": 302,
+      "end": 302,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-alt-game-path-ninja-2",
+      "title": "Path of the Ninja 2",
+      "old_start": 292,
+      "old_end": 294,
+      "start": 303,
+      "end": 305,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-land-of-birds",
+      "title": "Проклятий Воїн Країни Птахів",
+      "old_start": 292,
+      "old_end": 295,
+      "start": 306,
+      "end": 309,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-ayame-rescue",
+      "title": "Порятунок Аяме",
+      "old_start": 296,
+      "old_end": 296,
+      "start": 310,
+      "end": 310,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-kaima-sea",
+      "title": "Кайма Країни Моря",
+      "old_start": 298,
+      "old_end": 301,
+      "start": 312,
+      "end": 315,
+      "gap_before": 1
+    },
+    {
+      "arc_id": "arc-y0-kunihisa",
+      "title": "Куніхіса й життя шинобі",
+      "old_start": 302,
+      "old_end": 302,
+      "start": 316,
+      "end": 316,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-buried-gold",
+      "title": "Скарб і двійники Кедоїн",
+      "old_start": 303,
+      "old_end": 304,
+      "start": 317,
+      "end": 318,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-alt-game-uzumaki-chronicles-2",
+      "title": "Uzumaki Chronicles 2",
+      "old_start": 304,
+      "old_end": 306,
+      "start": 319,
+      "end": 321,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-postman",
+      "title": "Рукопис Джираї й листоноші",
+      "old_start": 305,
+      "old_end": 305,
+      "start": 322,
+      "end": 322,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-hoshigakure",
+      "title": "Зірка Хошіґакуре",
+      "old_start": 306,
+      "old_end": 309,
+      "start": 323,
+      "end": 326,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-akamaru-infection",
+      "title": "Хвороба Акамару",
+      "old_start": 310,
+      "old_end": 310,
+      "start": 327,
+      "end": 327,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-onba",
+      "title": "Наруто й Онбу",
+      "old_start": 311,
+      "old_end": 311,
+      "start": 328,
+      "end": 328,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-kagetsu-funeral",
+      "title": "Постановний похорон Каґецу",
+      "old_start": 312,
+      "old_end": 312,
+      "start": 329,
+      "end": 329,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-alt-game-phantom-fortress",
+      "title": "Примарний замок Муґенджо",
+      "old_start": 313,
+      "old_end": 315,
+      "start": 330,
+      "end": 332,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-land-of-greens",
+      "title": "Харуна й Країна Овочів",
+      "old_start": 313,
+      "old_end": 316,
+      "start": 333,
+      "end": 336,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-fuku-matchmaking",
+      "title": "Сватання Фуку",
+      "old_start": 317,
+      "old_end": 317,
+      "start": 337,
+      "end": 337,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-lee-dojo",
+      "title": "Доджьо Рока Лі",
+      "old_start": 318,
+      "old_end": 318,
+      "start": 338,
+      "end": 338,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-haunted-castle",
+      "title": "Проклятий замок",
+      "old_start": 319,
+      "old_end": 319,
+      "start": 339,
+      "end": 339,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-ryudoin",
+      "title": "Помста братів Рюдоін",
+      "old_start": 320,
+      "old_end": 321,
+      "start": 340,
+      "end": 341,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-alt-movie-crescent-moon",
+      "title": "Країна Місяця",
+      "old_start": 321,
+      "old_end": 321,
+      "start": 342,
+      "end": 344,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-genno",
+      "title": "Пастки Ґенно",
+      "old_start": 322,
+      "old_end": 325,
+      "start": 345,
+      "end": 348,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-alt-game-clash-revolution-2",
+      "title": "Clash of Ninja Revolution 2",
+      "old_start": 323,
+      "old_end": 325,
+      "start": 349,
+      "end": 351,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-yakumo-kurenai",
+      "title": "Якумо й Куренай",
+      "old_start": 327,
+      "old_end": 330,
+      "start": 353,
+      "end": 356,
+      "gap_before": 1
+    },
+    {
+      "arc_id": "arc-y0-shinemon-bowl",
+      "title": "Коштовна чаша Шінемона",
+      "old_start": 331,
+      "old_end": 331,
+      "start": 357,
+      "end": 357,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-gantetsu",
+      "title": "Ґантецу й сироти",
+      "old_start": 332,
+      "old_end": 335,
+      "start": 358,
+      "end": 361,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-alt-game-ninja-destiny-2-eu",
+      "title": "Ninja Destiny 2: європейська гілка",
+      "old_start": 334,
+      "old_end": 336,
+      "start": 362,
+      "end": 364,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-menma",
+      "title": "Наруто й Менма",
+      "old_start": 336,
+      "old_end": 338,
+      "start": 365,
+      "end": 367,
+      "gap_before": 0
+    },
+    {
+      "arc_id": "arc-y0-matsuri-rescue",
+      "title": "Порятунок Мацурі",
+      "start": 369,
+      "end": 369
+    }
+  ],
+  "kurenai_social_day": 289,
+  "last_ramen_day": 378
+}

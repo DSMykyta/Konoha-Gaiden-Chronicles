@@ -6,22 +6,23 @@
   <meta name="theme-color" content="#f5f6f8">
   <meta name="description" content="Хронологія Конохи: стеж за персонажами, досліджуй події та читай сцени Naruto.">
   <title>Коноха · Хронологія</title>
-  <link rel="stylesheet" href="style.css?v=20261002-soft-focus-5">
+  <link rel="stylesheet" href="style.css?v=20261003-era-heading">
   <link rel="stylesheet" href="profile-dossier.css?v=20261002-dossier-actions-2">
-  <link rel="stylesheet" href="controls.css?v=20261002-soft-focus-5">
-  <link rel="stylesheet" href="panels.css?v=20261002-soft-focus-5">
-  <link rel="stylesheet" href="focus.css?v=20261002-soft-focus-5">
-  <link rel="stylesheet" href="story-labels.css?v=20261002-soft-focus-5">
-  <link rel="stylesheet" href="map-titles.css?v=20261002-soft-focus-5">
-  <script defer src="relations.js?v=20261002-soft-focus-5"></script>
-  <script defer src="timeline-core.js?v=20261002-soft-focus-5"></script>
-  <script defer src="interaction-core.js?v=20261002-soft-focus-5"></script>
-  <script defer src="story-clouds.js?v=20261002-soft-focus-5"></script>
-  <script defer src="selection-focus.js?v=20261002-soft-focus-5"></script>
-  <script defer src="story-label-scale.js?v=20261002-soft-focus-5"></script>
-  <script defer src="hierarchy-preview.js?v=20261002-soft-focus-5"></script>
-  <script defer src="profile-techniques.js?v=20261002-soft-focus-5"></script>
-  <script defer src="app.js?v=20261002-soft-focus-5"></script>
+  <link rel="stylesheet" href="controls.css?v=20261003-konoha-calendar">
+  <link rel="stylesheet" href="panels.css?v=20261003-konoha-calendar">
+  <link rel="stylesheet" href="focus.css?v=20261003-konoha-calendar">
+  <link rel="stylesheet" href="story-labels.css?v=20261003-konoha-calendar">
+  <link rel="stylesheet" href="map-titles.css?v=20261003-konoha-calendar">
+  <script defer src="relations.js?v=20261003-konoha-calendar"></script>
+  <script defer src="timeline-core.js?v=20261003-era-heading"></script>
+  <script defer src="interaction-core.js?v=20261003-konoha-calendar"></script>
+  <script defer src="story-clouds.js?v=20261003-konoha-calendar"></script>
+  <script defer src="selection-focus.js?v=20261003-konoha-calendar"></script>
+  <script defer src="story-label-scale.js?v=20261003-era-heading"></script>
+  <script defer src="hierarchy-preview.js?v=20261003-konoha-calendar"></script>
+  <script defer src="profile-techniques.js?v=20261003-konoha-calendar"></script>
+  <script defer src="era-heading.js?v=20261003-era-heading"></script>
+  <script defer src="app.js?v=20261003-era-heading"></script>
   <script defer src="search-enhanced.js?v=20261002-search-3"></script>
 </head>
 <body>
@@ -38,7 +39,7 @@
       <button id="linesButton" aria-label="Лінії персонажів" aria-expanded="false" aria-controls="linesPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></svg><span id="linesCount">Лінії</span></button>
       <button id="searchButton" aria-label="Знайти у хронології" aria-expanded="false" aria-controls="searchPanel" aria-keyshortcuts="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Пошук</span><kbd aria-hidden="true">/</kbd></button>
     </nav>
-    <button class="period" id="periodButton" aria-label="Обрати період та історичну лінію" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Рік 0</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
+    <button class="period" id="periodButton" aria-label="Обрати період та історичну лінію" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Хронологія Конохи</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
     </div>
   </header>
 
@@ -47,12 +48,7 @@
     <svg id="timeline" aria-label="Полотно ліній персонажів"></svg>
   </main>
   <p id="canvasHelp" class="canvas-hint">Перетягни полотно · натисни на подію, щоб читати</p>
-  <div class="timeline-key" aria-label="Позначення подій">
-    <span data-level="moment"><i class="key-mark key-moment" aria-hidden="true"></i>Момент</span>
-    <span data-level="scene"><i class="key-mark key-scene" aria-hidden="true"></i>Сцена</span>
-    <span data-level="episode"><i class="key-mark key-episode" aria-hidden="true"></i>Епізод</span>
-    <span data-level="arc"><i class="key-mark key-arc" aria-hidden="true"></i>Арка</span>
-  </div>
+  <div id="eraHeading" class="era-heading" role="heading" aria-level="2" aria-label="Епоха хронології"><div id="eraHeadingTrack" class="era-heading-track" aria-hidden="true"></div></div>
   <div id="timelineEmpty" class="timeline-empty" role="status" hidden><h2 id="emptyTitle">Обери лінії персонажів</h2><p id="emptyDescription">Їхні події з’являться на хронології.</p><button id="emptyAction" class="primary-button">Обрати всіх</button></div>
   <svg id="timeAxis" class="time-axis" aria-hidden="true"></svg>
 
@@ -105,7 +101,8 @@
 
   <section id="periodPanel" class="panel right-panel" popover="auto" aria-labelledby="periodTitle" hidden>
     <div class="panel-heading"><h2 id="periodTitle">Період та історія</h2><button class="close" data-close="periodPanel" aria-label="Закрити період">×</button></div>
-    <form id="dateForm"><label for="dateInput">Перейти до дня · Рік 0</label><div class="date-field"><input id="dateInput" placeholder="22.01" inputmode="decimal" autocomplete="off" aria-describedby="dateError" autofocus><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form>
+    <form id="dateForm"><label id="dateInputLabel" for="dateInput">Перейти до дня</label><div class="date-field"><input id="dateInput" placeholder="22.01" inputmode="decimal" autocomplete="off" aria-describedby="dateError" autofocus><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form>
+    <details class="disclosure"><summary>Епохи світу</summary><p>Роки відраховано від заснування Конохи: рік заснування — перший. Межі з ≈ є приблизною реконструкцією.</p><ol id="eraList" class="era-list"></ol></details>
     <label class="select-label" for="continuity">Історична лінія</label>
     <select id="continuity"><option value="main">Основна історія</option></select>
     <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо або жест двома пальцями змінює масштаб. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>

@@ -20,6 +20,13 @@ test('expanded dates retain both sides of compressed gaps and round trip after t
  for(const day of [21.7,73.5,96.4,192.5,200.5,365])assert(Math.abs(axis.axisToDay(axis.dayToAxis(day))-day)<1e-8);
 });
 
+test('multi-year time axes preserve year boundaries through dense and compressed days',()=>{
+ const axis=core.timeAxis([{day:21},{day:21},{day:365},{day:365},{day:400}],[{from:100,to:350,omitted:250}],.85,730);
+ for(const day of [0,21.5,364.9,365,365.8,400,729.9,730])assert(Math.abs(axis.axisToDay(axis.dayToAxis(day))-day)<1e-8);
+ assert.equal(axis.length,axis.dayToAxis(730));
+ assert(axis.dayToAxis(366)-axis.dayToAxis(365)>1);
+});
+
 test('all moments of a sequential scene precede the next scene without interleaving',()=>{
  const scenes=[{id:'a',day:21,position:21.2,group:Array.from({length:20},(_,i)=>({id:'a'+i}))},{id:'b',day:21,position:21.3,group:[{id:'b0'},{id:'b1'}]},{id:'observer',day:21,position:21.3,group:[{id:'o'}]},{id:'c',day:21,position:21.7,group:[{id:'c'}]}];
  const positions=core.momentPositions(scenes),a=scenes[0].group.map(event=>positions.get(event.id)),b=scenes[1].group.map(event=>positions.get(event.id));

@@ -1,0 +1,216 @@
+schema_version: 1
+id: sc-time-slip-132-combined-training
+episode_id: ep-time-slip-132
+display_rank: 100
+continuity_id: main
+title: Джирая вчить хлопців синхронізувати чакру
+location_id: loc-konoha-training-field
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1003
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-132-trust-explanation
+  title: Боруто пояснює легенду секретною місією
+  text: Наруто дорікає гостеві за брехню про артистів. Боруто посилається на секретну місію, і Наруто погоджується
+    йому довіряти.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-132-past
+- id: ev-time-slip-132-chakra-task
+  title: Завдання створити спільне ніндзюцу
+  text: Джирая помічає близькість їхньої чакри й ставить завдання поєднати її силу та потік. Боруто розуміє принцип
+    синхронізації.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-132-past
+- id: ev-time-slip-132-ball-exercise
+  title: Расенґан як основа вправи
+  text: Дізнавшись, що Боруто знає Расенґан, Джирая використовує гумову кулю для тренування узгодженого потоку чакри.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-132-past
+- id: ev-time-slip-132-fear-stops-training
+  title: Страх Боруто зриває вправу
+  text: Боруто мимоволі уникає дотику після вчорашнього нападу. Наруто помічає це, і спільне тренування припиняється.
+  origin: A
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id004
+  - evd-boruto-132-past
+relations:
+- id: rel-ev-time-slip-132-chakra-task
+  kind: before
+  a: ev-time-slip-132-trust-explanation
+  b: ev-time-slip-132-chakra-task
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+- id: rel-ev-time-slip-132-ball-exercise
+  kind: before
+  a: ev-time-slip-132-chakra-task
+  b: ev-time-slip-132-ball-exercise
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+- id: rel-ev-time-slip-132-fear-stops-training
+  kind: before
+  a: ev-time-slip-132-ball-exercise
+  b: ev-time-slip-132-fear-stops-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+presence:
+- id: pr-ev-time-slip-132-trust-explanation-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-132-trust-explanation.start
+  to: ev-time-slip-132-trust-explanation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-trust-explanation-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-trust-explanation.start
+  to: ev-time-slip-132-trust-explanation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-trust-explanation-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-132-trust-explanation.start
+  to: ev-time-slip-132-trust-explanation.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-chakra-task-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-132-chakra-task.start
+  to: ev-time-slip-132-chakra-task.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-132-chakra-task-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-132-chakra-task.start
+  to: ev-time-slip-132-chakra-task.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-132-chakra-task-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-chakra-task.start
+  to: ev-time-slip-132-chakra-task.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-132-ball-exercise-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-132-ball-exercise.start
+  to: ev-time-slip-132-ball-exercise.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-132-ball-exercise-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-132-ball-exercise.start
+  to: ev-time-slip-132-ball-exercise.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-132-ball-exercise-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-ball-exercise.start
+  to: ev-time-slip-132-ball-exercise.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-132-fear-stops-training-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-132-fear-stops-training.start
+  to: ev-time-slip-132-fear-stops-training.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-132-fear-stops-training-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-fear-stops-training.start
+  to: ev-time-slip-132-fear-stops-training.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-132-fear-stops-training-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-132-fear-stops-training.start
+  to: ev-time-slip-132-fear-stops-training.end
+  basis: source
+  review: partial
+  evidence_ids: *id004

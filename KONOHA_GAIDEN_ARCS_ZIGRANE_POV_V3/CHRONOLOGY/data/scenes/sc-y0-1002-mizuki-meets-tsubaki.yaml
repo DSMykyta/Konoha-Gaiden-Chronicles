@@ -5,7 +5,8 @@ display_rank: 100
 continuity_id: "main"
 title: "Цубакі просить Мідзукі зупинитися"
 location_id: "loc-land-of-fire"
-placement: {anchor_id: "ta-y0-1002", day_offset: 0}
+day_part: afternoon
+placement: {anchor_id: ta-autumn-reconciled-61-1007, day_offset: 0}
 state: "active"
 presence_coverage: "complete"
 review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}

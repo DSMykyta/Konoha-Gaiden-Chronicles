@@ -1,0 +1,116 @@
+schema_version: 1
+id: sc-time-slip-136-farewell
+episode_id: ep-time-slip-136
+display_rank: 300
+continuity_id: main
+title: Наруто прощається з Боруто
+location_id: loc-time-slip-departure-clearing
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1006
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-136-karasuki-ready
+  title: Karasuki знову готовий до переходу
+  text: Karasuki виходить із панцира й повідомляє, що може повернути прибульців у їхній час. Боруто ховає його,
+    коли підходить Наруто.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: artifact-karasuki
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-136-past
+- id: ev-time-slip-136-ichiraku-gift
+  title: Прощальний подарунок Наруто
+  text: Наруто приносить Боруто подарунок від Ічіраку й просить відкрити пізніше. Боруто приймає його, приховуючи
+    правду про подорож.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-136-past
+relations:
+- id: rel-ev-time-slip-136-ichiraku-gift
+  kind: before
+  a: ev-time-slip-136-karasuki-ready
+  b: ev-time-slip-136-ichiraku-gift
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+presence:
+- id: pr-ev-time-slip-136-karasuki-ready-artifact-karasuki
+  entity_id: artifact-karasuki
+  mode: physical
+  from: ev-time-slip-136-karasuki-ready.start
+  to: ev-time-slip-136-karasuki-ready.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-karasuki-ready-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-136-karasuki-ready.start
+  to: ev-time-slip-136-karasuki-ready.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-karasuki-ready-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-136-karasuki-ready.start
+  to: ev-time-slip-136-karasuki-ready.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-ichiraku-gift-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-136-ichiraku-gift.start
+  to: ev-time-slip-136-ichiraku-gift.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-136-ichiraku-gift-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-136-ichiraku-gift.start
+  to: ev-time-slip-136-ichiraku-gift.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-136-ichiraku-gift-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-136-ichiraku-gift.start
+  to: ev-time-slip-136-ichiraku-gift.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

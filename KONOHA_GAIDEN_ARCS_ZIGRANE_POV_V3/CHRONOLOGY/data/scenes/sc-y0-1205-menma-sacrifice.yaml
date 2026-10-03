@@ -5,7 +5,7 @@ display_rank: 300
 continuity_id: "main"
 title: "Менма відмовляється від банди й гине, рятуючи селище"
 location_id: "loc-land-of-rice-fields"
-placement: {anchor_id: "ta-y0-1205-menma", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-62-0103, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

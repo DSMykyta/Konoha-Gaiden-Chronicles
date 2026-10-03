@@ -1,0 +1,238 @@
+schema_version: 1
+id: sc-time-slip-136-hospital-roof
+episode_id: ep-time-slip-136
+display_rank: 200
+continuity_id: main
+title: На даху лікарні вирішують піти завтра
+location_id: loc-time-slip-hospital-roof
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1005
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-136-roof-thanks
+  title: Джирая дякує за захист Наруто
+  text: Джирая й Боруто знаходять мандрівника на даху лікарні. Джирая дякує йому за допомогу в захисті хлопця.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-136-past
+- id: ev-time-slip-136-tomorrow
+  title: Прибульці домовляються повернутися завтра
+  text: Боруто й мандрівник вирішують повернутися у свій час наступного дня. Це завершує їхнє перебування після
+    відновлення Karasuki.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-136-past
+- id: ev-time-slip-136-sakura-question
+  title: Сакура повертається до питання про запис
+  text: Сакура показує розмитий папірець і питає про ім’я Саске та знайомство з нею. Джирая пояснює запис легендою
+    про шанувальників його книжок, а мандрівник підтримує її.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-136-past
+- id: ev-time-slip-136-departure-news
+  title: Наруто дізнається про від’їзд
+  text: Наруто приходить на дах і дізнається, що Боруто з дорослим супутником завтра залишають село.
+  origin: A
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id004
+  - evd-boruto-136-past
+relations:
+- id: rel-ev-time-slip-136-tomorrow
+  kind: before
+  a: ev-time-slip-136-roof-thanks
+  b: ev-time-slip-136-tomorrow
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+- id: rel-ev-time-slip-136-sakura-question
+  kind: before
+  a: ev-time-slip-136-tomorrow
+  b: ev-time-slip-136-sakura-question
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+- id: rel-ev-time-slip-136-departure-news
+  kind: before
+  a: ev-time-slip-136-sakura-question
+  b: ev-time-slip-136-departure-news
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-136-past
+presence:
+- id: pr-ev-time-slip-136-roof-thanks-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-136-roof-thanks.start
+  to: ev-time-slip-136-roof-thanks.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-roof-thanks-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-136-roof-thanks.start
+  to: ev-time-slip-136-roof-thanks.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-roof-thanks-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-136-roof-thanks.start
+  to: ev-time-slip-136-roof-thanks.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-tomorrow-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-136-tomorrow.start
+  to: ev-time-slip-136-tomorrow.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-136-tomorrow-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-136-tomorrow.start
+  to: ev-time-slip-136-tomorrow.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-136-tomorrow-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-136-tomorrow.start
+  to: ev-time-slip-136-tomorrow.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-136-sakura-question-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-136-sakura-question.start
+  to: ev-time-slip-136-sakura-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-136-sakura-question-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-136-sakura-question.start
+  to: ev-time-slip-136-sakura-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-136-sakura-question-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-136-sakura-question.start
+  to: ev-time-slip-136-sakura-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-136-sakura-question-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-136-sakura-question.start
+  to: ev-time-slip-136-sakura-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-136-departure-news-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-136-departure-news.start
+  to: ev-time-slip-136-departure-news.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-136-departure-news-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-136-departure-news.start
+  to: ev-time-slip-136-departure-news.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-136-departure-news-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-136-departure-news.start
+  to: ev-time-slip-136-departure-news.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-136-departure-news-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-136-departure-news.start
+  to: ev-time-slip-136-departure-news.end
+  basis: source
+  review: partial
+  evidence_ids: *id004

@@ -8,8 +8,8 @@ profiles:
       - id: naruto-12
         label: "12 років"
         age: 12
-        from_year: 0
-        to_year: 0
+        from_year: 61
+        to_year: 61
         period_id: "part-i"
         image: null
         image_alt: "Наруто Узумакі у віці 12 років, повний зріст"
@@ -108,8 +108,8 @@ profiles:
       - id: sora-12
         label: "12 років"
         age: 12
-        from_year: 0
-        to_year: 0
+        from_year: 61
+        to_year: 61
         period_id: "part-i"
         image: null
         image_alt: "Сора Ямано у віці 12 років, повний зріст"

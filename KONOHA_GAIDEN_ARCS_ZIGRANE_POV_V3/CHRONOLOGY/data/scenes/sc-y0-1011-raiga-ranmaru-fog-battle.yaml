@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "main"
 title: "Ранмару нівелює перевагу Б'якуґана в бою з Райґою"
 location_id: "loc-katabami-cliff"
-placement: {anchor_id: "ta-y0-1011-kurosuki", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1019, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

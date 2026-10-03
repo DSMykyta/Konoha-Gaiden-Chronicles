@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-time-slip-136-departure
+episode_id: ep-time-slip-136
+display_rank: 500
+continuity_id: main
+title: Боруто й мандрівник залишають минуле
+location_id: loc-time-slip-departure-clearing
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1006
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-136-past-exit
+  title: Вхід у часовий перехід
+  text: Боруто й дорослий супутник вирушають назад разом із Karasuki. Їхня присутність у старій Конохі завершується
+    на цьому переході.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: artifact-karasuki
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-136-past
+relations: []
+presence:
+- id: pr-ev-time-slip-136-past-exit-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-136-past-exit.start
+  to: ev-time-slip-136-past-exit.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-past-exit-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-136-past-exit.start
+  to: ev-time-slip-136-past-exit.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-136-past-exit-artifact-karasuki
+  entity_id: artifact-karasuki
+  mode: physical
+  from: ev-time-slip-136-past-exit.start
+  to: ev-time-slip-136-past-exit.end
+  basis: source
+  review: partial
+  evidence_ids: *id001

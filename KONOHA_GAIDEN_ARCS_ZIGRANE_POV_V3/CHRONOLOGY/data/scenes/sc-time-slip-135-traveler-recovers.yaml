@@ -1,0 +1,81 @@
+schema_version: 1
+id: sc-time-slip-135-traveler-recovers
+episode_id: ep-time-slip-135
+display_rank: 300
+continuity_id: main
+title: Лікування Сакури дозволяє мандрівникові повернутися
+location_id: loc-time-slip-riverbank
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-135-recovery
+  title: Мандрівник приходить до тями
+  text: Лікування Сакури допомагає пораненому мандрівникові опритомніти. Вона витрачає останні сили й непритомніє.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-135-past
+- id: ev-time-slip-135-return-to-fight
+  title: Мандрівник залишає берег
+  text: Після порятунку мандрівник повертається до Наруто, Боруто та Джираї, щоб допомогти завершити бій.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-135-past
+relations:
+- id: rel-ev-time-slip-135-return-to-fight
+  kind: before
+  a: ev-time-slip-135-recovery
+  b: ev-time-slip-135-return-to-fight
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-135-past
+presence:
+- id: pr-ev-time-slip-135-recovery-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-135-recovery.start
+  to: ev-time-slip-135-recovery.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-recovery-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-135-recovery.start
+  to: ev-time-slip-135-recovery.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-135-return-to-fight-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-135-return-to-fight.start
+  to: ev-time-slip-135-return-to-fight.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

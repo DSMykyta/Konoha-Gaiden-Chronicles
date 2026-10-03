@@ -12,6 +12,13 @@ async function check(width,height){
  const click=q=>{const el=doc.querySelector(q);assert(el,'Missing '+q);el.dispatchEvent(new window.Event('click',{bubbles:true}));};
  const run=s=>vm.runInContext(s,ctx);
  assert(doc.getElementById('error').hidden,doc.getElementById('error').textContent);
+ assert(/\b61\b/.test(doc.getElementById('periodLabel').textContent),doc.getElementById('periodLabel').textContent);
+ assert.equal(doc.querySelectorAll('#eraList li').length,original.periods.length);
+ assert.equal(doc.querySelector('#eraList [aria-current="true"] span').textContent,'Епоха нових команд');
+ assert(!/Naruto|Boruto|Наруто|Боруто/.test(doc.getElementById('eraList').textContent));
+ assert.equal(doc.querySelector('.timeline-key'),null);
+ assert.equal(doc.getElementById('eraHeading').getAttribute('aria-label'),'Епоха нових команд');
+ assert.equal(doc.querySelector('#eraHeadingTrack [data-era="part-i"]').textContent,'Епоха нових команд');
  assert(doc.getElementById('eventCard').hidden);assert(doc.getElementById('profileDialog').hidden);assert(doc.getElementById('focusBar').hidden);
  const count=run('selectable().length');assert.equal(doc.querySelectorAll('.character input:checked').length,count);assert(count>6);
  assert(canvas.querySelectorAll('.day-band').length);for(const band of canvas.querySelectorAll('.day-band'))assert.equal(Number(band.getAttribute('data-day'))%2,1);
@@ -21,6 +28,16 @@ async function check(width,height){
  doc.getElementById('characterSearch').value='Наруто';doc.getElementById('characterSearch').dispatchEvent(new window.Event('input'));click('#deselectAll');await sleep();assert.equal(run('selected.size'),0);assert.equal(canvas.querySelectorAll('.node').length,0);click('#selectAll');await sleep();assert.equal(run('selected.size'),count);doc.getElementById('characterSearch').value='';doc.getElementById('characterSearch').dispatchEvent(new window.Event('input'));
  // Native profile modal, age-specific content and keyboard tabs.
  click('[data-profile="c-naruto"]');assert(!doc.getElementById('profileDialog').hidden);assert(doc.getElementById('profileDialog').hasAttribute('open'));assert(doc.querySelectorAll('[role="tab"]').length>=1);assert(doc.querySelector('.profile-layout'));assert(doc.querySelector('.profile-visual'));assert(doc.querySelector('.profile-details'));const firstProfileTab=doc.querySelector('[data-profile-version]');click('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]');assert(doc.querySelector('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]').getAttribute('aria-selected')==='true');assert(doc.getElementById('profileContent').textContent.includes('У хронології'));const narutoProfileText=doc.getElementById('profileContent').textContent;for(const heading of ['Зовнішність','Риси характеру','Цілі','Здібності','Стосунки','Спорядження'])assert(narutoProfileText.includes(heading),'Missing Naruto profile section: '+heading);assert(doc.querySelector('.profile-image'));click('#closeProfile');assert(doc.getElementById('profileDialog').hidden);
+ // Separate traveller profiles expose the in-world cover without naming Sasuke.
+ click('[data-profile="c-unnamed-travelling-performer"]');
+ assert.equal(doc.getElementById('profileTitle').textContent,'Невідомий мандрівний артист');
+ assert(!/Саске|Sasuke/.test(doc.getElementById('profileContent').textContent));
+ assert(doc.getElementById('profileContent').textContent.includes('ім’я не назване'));
+ click('#closeProfile');
+ click('[data-profile="c-boruto"]');
+ assert.equal(doc.getElementById('profileTitle').textContent,'Боруто Узумакі');
+ assert(doc.getElementById('profileContent').textContent.includes('справжнє ім’я'));
+ click('#closeProfile');
  // Focus preserves the original node coordinates and curves, with local guests.
  const unfocusedY=new Map(run('graphNodes.map(node=>[node.id,node.y])'));
  const originalNodes=[...canvas.querySelectorAll('.node')],originalStrands=[...canvas.querySelectorAll('.thread')],originalCurves=originalStrands.map(path=>path.getAttribute('d'));
@@ -65,7 +82,7 @@ async function check(width,height){
  // Singleton containers collapse visually without changing the underlying hierarchy.
  run('selected=new Set(selectable().map(e=>e.id));navigateEvent("ev-y0-0122-team7-announced");closeCard()');
  assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
- click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('Рік 0'));run('closeCard()');
+ click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('22 січня 61'));run('closeCard()');
 
  run('zoom=zoomModes.week;center=dayToAxis(21.5);render()');assert.equal(run('semanticLevel()'),'scene');
  // The classroom remains a scene because it groups multiple moments. The one-moment exterior scene collapses to its moment.
@@ -153,7 +170,9 @@ async function check(width,height){
  }
  // Reading a title changes neither the map topology nor the view; redraw and
  // small pans keep Y anchors fixed. Going from an episode to its arc keeps lines.
- run('closeCard();zoom=zoomModes.week;center=dayToAxis(21.5);render()');
+ // Limit this interaction fixture to Team 7 so unrelated new scenes cannot
+ // legitimately crowd every cloud label out of the short landscape viewport.
+ run('closeCard();selected=new Set(teams["team-7"]);zoom=zoomModes.week;center=dayToAxis(21.5);render()');
  const geometry=run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),view=run('JSON.stringify([zoom,center])');
  assert(canvas.querySelector('.cloud-label'),'The map has no readable group name');
  click('.cloud-label');assert(!doc.getElementById('eventCard').hidden);
@@ -212,6 +231,29 @@ async function check(width,height){
  const filtered=run('TimelineSearchEnhanced.searchDocs("").items');assert(filtered.length>0);assert(filtered.every(item=>item.kind==='moment'&&item.personIds.includes('c-raido')));
  doc.getElementById('searchDate').value='31.02';doc.getElementById('searchDate').dispatchEvent(new window.Event('input'));assert(doc.getElementById('searchSummary').textContent.includes('Дата не розпізнана'));assert.equal(doc.querySelector('[data-search-kind]'),null);
  click('#clearSearchFilters');fillQuery('какаш');searchType('person');assert(doc.querySelector('[data-search-kind="person"][data-search-id="c-kakashi"]'));click('#clearSearchFilters');run('closePanels()');
- console.log('PASS',width,height,'all/none, names, focus, event navigation, day backgrounds, age tabs, gallery, live refresh');
+ // Exercise the actual DOM renderer with a second populated year, in both
+ // directions. This fixture changes the view metadata, not repository scenes.
+ run('closeCard();closePanels();const multi=JSON.parse(JSON.stringify(data));multi.calendar.view_end_year=62;multi.calendar.view_days=730;ingest(multi);');
+ window.matchMedia=()=>({matches:false});
+ const eraBoundary=run('TimelineEraHeading.segments(data.periods,data.calendar).find(p=>p.id==="timeskip").start');
+ const beforeEra=eraBoundary-15;
+ run(`renderEraHeading(${beforeEra},day=>10*(day-${beforeEra}))`);
+ assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,2);
+ assert.match(doc.querySelector('#eraHeadingTrack [data-era="part-i"]').style.transform,/-/);
+ assert(doc.querySelector('#eraHeadingTrack [data-era="timeskip"]'));
+ run('renderEraHeading(365,day=>10*(day-365))');
+ assert.equal(doc.getElementById('eraHeading').dataset.era,'part-i');
+ run(`renderEraHeading(${eraBoundary},day=>10*(day-${eraBoundary}))`);
+ assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
+ assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,1);
+ assert.equal(doc.querySelector('#eraHeadingTrack span').style.transform,'translate3d(0px,0,0)');
+ assert.equal(run('date(365).year'),62);assert.equal(run('date(365).d'),1);
+ run(`renderEraHeading(${beforeEra},day=>10*(day-${beforeEra}))`);
+ assert.equal(doc.getElementById('eraHeading').dataset.era,'part-i');
+ window.matchMedia=()=>({matches:true});
+ run(`renderEraHeading(${eraBoundary-1},day=>10*(day-${eraBoundary-1}))`);
+ assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,1);
+ assert.equal(doc.querySelector('#eraHeadingTrack span').style.transform,'translate3d(0px,0,0)');
+ console.log('PASS',width,height,'all/none, names, focus, event navigation, day backgrounds, age tabs, gallery, live refresh, reversible epoch heading');
 }
 (async()=>{await check(1440,900);await check(375,760);await check(812,375)})().catch(e=>{console.error(e);process.exitCode=1});

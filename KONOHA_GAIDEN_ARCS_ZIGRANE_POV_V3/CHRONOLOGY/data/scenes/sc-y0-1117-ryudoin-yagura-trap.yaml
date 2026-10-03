@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Ґеншо Рюдоін під виглядом Яґури входить у довіру до Ґая"
 location_id: "loc-konohagakure"
-placement: {anchor_id: "ta-y0-1117-ryudoin", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1207, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "working", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

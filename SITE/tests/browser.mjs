@@ -256,7 +256,7 @@ try {
     await page.evaluate(()=>closeCard());
 
     await page.locator('[data-mode="week"]').click();
-    await page.locator('.timeline-key [data-level="scene"][aria-current="true"]').waitFor({state:'visible'});
+    await page.waitForFunction(()=>semanticLevel()==='scene');
     assert(await page.evaluate(()=>axisToDay(center)<31),'Returning from the January arc jumped to another month');
 
     // Search, reading from a bottom title, single-character focus and profiles.

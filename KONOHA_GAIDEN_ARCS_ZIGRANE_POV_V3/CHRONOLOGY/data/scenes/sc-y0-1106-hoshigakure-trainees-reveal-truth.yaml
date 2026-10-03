@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "main"
 title: "Учні Хошіґакуре відкрито показують, що Зірка руйнує їхні тіла"
 location_id: "loc-hoshigakure"
-placement: {anchor_id: "ta-y0-1106", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1123, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

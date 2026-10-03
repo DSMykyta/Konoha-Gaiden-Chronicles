@@ -1,0 +1,234 @@
+schema_version: 1
+id: sc-time-slip-129-cover-story
+episode_id: ep-time-slip-129
+display_rank: 300
+continuity_id: main
+title: Легенда про мандрівних артистів
+location_id: loc-konohagakure
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-0930
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-129-performers
+  title: Мандрівник представляє їх артистами
+  text: На вимогу Цунаде незнайомець пояснює, що вони мандрівні артисти й використовують просте ніндзюцу у виставах.
+    Власного імені він не називає.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-129-past
+- id: ev-time-slip-129-security
+  title: Цунаде пояснює посилений контроль
+  text: Цунаде говорить про напад на село та недавню втечу геніна. Незнайомих людей тепер перевіряють особливо ретельно.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-129-past
+- id: ev-time-slip-129-supervision
+  title: Наруто отримує обов’язок нагляду
+  text: Цунаде доручає Джираї та Наруто наглядати за прибульцями. Джирая швидко перекладає щоденний клопіт на Наруто.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-129-past
+relations:
+- id: rel-ev-time-slip-129-security
+  kind: before
+  a: ev-time-slip-129-performers
+  b: ev-time-slip-129-security
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: rel-ev-time-slip-129-supervision
+  kind: before
+  a: ev-time-slip-129-security
+  b: ev-time-slip-129-supervision
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+presence:
+- id: pr-ev-time-slip-129-performers-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-performers.start
+  to: ev-time-slip-129-performers.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-performers-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-performers.start
+  to: ev-time-slip-129-performers.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-performers-c-tsunade
+  entity_id: c-tsunade
+  mode: physical
+  from: ev-time-slip-129-performers.start
+  to: ev-time-slip-129-performers.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-performers-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-performers.start
+  to: ev-time-slip-129-performers.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-performers-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-129-performers.start
+  to: ev-time-slip-129-performers.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-security-c-tsunade
+  entity_id: c-tsunade
+  mode: physical
+  from: ev-time-slip-129-security.start
+  to: ev-time-slip-129-security.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-security-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-security.start
+  to: ev-time-slip-129-security.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-security-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-security.start
+  to: ev-time-slip-129-security.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-security-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-security.start
+  to: ev-time-slip-129-security.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-security-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-129-security.start
+  to: ev-time-slip-129-security.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-supervision-c-tsunade
+  entity_id: c-tsunade
+  mode: physical
+  from: ev-time-slip-129-supervision.start
+  to: ev-time-slip-129-supervision.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-supervision-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-129-supervision.start
+  to: ev-time-slip-129-supervision.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-supervision-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-supervision.start
+  to: ev-time-slip-129-supervision.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-supervision-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-supervision.start
+  to: ev-time-slip-129-supervision.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-supervision-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-129-supervision.start
+  to: ev-time-slip-129-supervision.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

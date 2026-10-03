@@ -73,7 +73,31 @@ for path in sorted((DATA/"scenes").glob("*.yaml")):
 # Source hierarchy: every scene has one episode and every episode one arc.
 arcs=load(DATA/"arcs.yaml").get("arcs",[])
 episodes=load(DATA/"episodes.yaml").get("episodes",[])
-periods=load(DATA/"timeline-periods.yaml").get("periods",[])
+period_doc=load(DATA/"timeline-periods.yaml")
+periods=period_doc.get("periods",[])
+calendar=period_doc.get("calendar",{})
+def positive_year(value):
+    return type(value) is int and value > 0
+if calendar.get("epoch_year")!=1 or not positive_year(calendar.get("current_year")):
+    errors.append("invalid founding calendar")
+for key in ("id","current_year","days_per_year"):
+    if anchors.get("calendar",{}).get(key)!=calendar.get(key): errors.append(f"calendar registries disagree: {key}")
+for period in periods:
+    if not period.get("label") or period.get("calendar_era") not in {"before_founding","after_founding"}: errors.append(f"{period.get('id')}: invalid era metadata")
+    for key in ("from_year","to_year"):
+        if key in period and not positive_year(period[key]): errors.append(f"{period.get('id')}: invalid era year")
+    if "boundary_date" in period:
+        boundary=period["boundary_date"]; month=boundary.get("month"); day=boundary.get("day")
+        lengths=[31,28,31,30,31,30,31,31,30,31,30,31]
+        if not positive_year(boundary.get("year")) or boundary.get("year")!=period.get("from_year") or type(month) is not int or not 1<=month<=12 or type(day) is not int or not 1<=day<=lengths[month-1]:
+            errors.append(f"{period.get('id')}: invalid era boundary date")
+    if all(positive_year(period.get(key)) for key in ("from_year","to_year")):
+        direction=-1 if period.get("calendar_era")=="before_founding" else 1
+        if direction*period["from_year"]>direction*period["to_year"]: errors.append(f"{period.get('id')}: reversed era range")
+for anchor in anchors.get("anchors",[]):
+    date=anchor.get("date")
+    if date and (not positive_year(date.get("year")) or date.get("era","after_founding") not in {"before_founding","after_founding"}):
+        errors.append(f"{anchor['id']}: invalid calendar date year")
 def registry(items,label):
     result={}
     for item in items:

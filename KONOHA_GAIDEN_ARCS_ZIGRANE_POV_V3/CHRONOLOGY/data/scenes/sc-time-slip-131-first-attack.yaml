@@ -1,0 +1,219 @@
+schema_version: 1
+id: sc-time-slip-131-first-attack
+episode_id: ep-time-slip-131
+display_rank: 100
+continuity_id: main
+title: Урашікі викрадає Наруто
+location_id: loc-konoha-training-field
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1002
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-131-hook-seal
+  title: Печать блокує видобування чакри
+  text: Урашікі намагається забрати чакру Дев’ятихвостого, але печать Наруто заважає. Мандрівник вступає в бій,
+    а Джирая прибуває до місця нападу.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-boruto-131-past
+- id: ev-time-slip-131-abduction
+  title: Викрадення замість видобування чакри
+  text: Урашікі захоплює самого Наруто й залишає Боруто, мандрівника та Джираю замкненими кам’яною технікою.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-131-past
+- id: ev-time-slip-131-escape
+  title: Джирая звільняє переслідувачів
+  text: Мандрівник пояснює, що ворог полює на Дев’ятихвостого, й допускає зв’язок з Акацукі. Джирая руйнує перешкоду,
+    щоб наздогнати викрадача.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: mentioned
+    mode: remote
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  evidence_ids: &id003
+  - evd-boruto-131-past
+relations:
+- id: rel-ev-time-slip-131-abduction
+  kind: before
+  a: ev-time-slip-131-hook-seal
+  b: ev-time-slip-131-abduction
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+- id: rel-ev-time-slip-131-escape
+  kind: before
+  a: ev-time-slip-131-abduction
+  b: ev-time-slip-131-escape
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-131-past
+presence:
+- id: pr-ev-time-slip-131-hook-seal-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-131-hook-seal.start
+  to: ev-time-slip-131-hook-seal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-hook-seal-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-hook-seal.start
+  to: ev-time-slip-131-hook-seal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-hook-seal-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-131-hook-seal.start
+  to: ev-time-slip-131-hook-seal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-hook-seal-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-hook-seal.start
+  to: ev-time-slip-131-hook-seal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-hook-seal-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-hook-seal.start
+  to: ev-time-slip-131-hook-seal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-131-abduction-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-131-abduction.start
+  to: ev-time-slip-131-abduction.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-abduction-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-131-abduction.start
+  to: ev-time-slip-131-abduction.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-abduction-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-abduction.start
+  to: ev-time-slip-131-abduction.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-abduction-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-131-abduction.start
+  to: ev-time-slip-131-abduction.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-abduction-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-abduction.start
+  to: ev-time-slip-131-abduction.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-131-escape-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-131-escape.start
+  to: ev-time-slip-131-escape.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-131-escape-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-131-escape.start
+  to: ev-time-slip-131-escape.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-131-escape-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-131-escape.start
+  to: ev-time-slip-131-escape.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

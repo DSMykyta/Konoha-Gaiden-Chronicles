@@ -78,14 +78,11 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 .period { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; padding: 0 11px; border: 1px solid #ffffffd9; background: #ffffff66; font-size: 12px; font-variant-numeric: tabular-nums; }
 #periodLabel { white-space: nowrap; }
 .canvas-hint { position: fixed; z-index: var(--z-axis); top: var(--legend-top,80px); right: 20px; margin: 6px 0 0; color: var(--muted); font-size: 11px; pointer-events: none; }
-.timeline-key { position: fixed; z-index: var(--z-axis); top: var(--legend-top,76px); left: 20px; display: flex; align-items: center; gap: 17px; pointer-events: none; }
-.timeline-key > span { display: flex; align-items: center; gap: 7px; min-height: 28px; color: var(--muted); font-size: 11px; }
-.timeline-key > span[aria-current="true"] { color: var(--text); font-weight: 700; }
-.key-mark { display: block; width: 8px; height: 8px; border-radius: 50%; flex: none; }
-.key-moment { border: 1px solid #8a929c; background: var(--surface); }
-.key-scene { width: 11px; height: 11px; background: #747b85; }
-.key-episode { width: 13px; height: 13px; background: #4c535e; }
-.key-arc { width: 21px; height: 12px; border-radius: 50%; background: #242932; }
+.era-heading { position: fixed; z-index: var(--z-axis); top: var(--legend-top,76px); left: 20px; width: min(600px,calc(100vw - 350px)); height: 32px; overflow: hidden; pointer-events: none; }
+.era-heading-track { position: relative; height: 100%; }
+.era-heading-label { position: absolute; top: 0; left: 0; display: block; padding-block: 4px; white-space: nowrap; color: var(--text); font-size: 16px; font-weight: 600; line-height: 24px; transform: translate3d(0,0,0); }
+@media (max-width: 760px) { .era-heading { left: 12px; width: calc(100vw - 24px); } .era-heading-label { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { .era-heading-label { animation: none; transition: none; transform: none; } }
 
 /* The graph has no decorative motion. Shapes retain their meaning on hover. */
 #canvas { isolation: isolate; position: fixed; inset: 0; overflow-y: auto; overscroll-behavior: none; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
@@ -329,8 +326,6 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
   .time-controls .modes { flex: 1; justify-content: center; gap: 0; }
   .modes button { flex: 1; padding: 0 6px; font-size: 11px; }
   .zoom-tools { display: none; }
-  .timeline-key { left: 12px; right: 12px; justify-content: center; gap: 14px; }
-  .timeline-key > span { gap: 6px; font-size: 10px; }
   .panel, .left-panel, .right-panel { top: var(--panel-top,120px); left: 12px; right: auto; width: calc(100vw - 24px); max-height: calc(100dvh - var(--panel-top,120px) - 16px - env(safe-area-inset-bottom)); padding: 16px; }
   .panel-heading { top: 0; }
   #characterList { max-height: 42dvh; }
@@ -397,3 +392,7 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
   .time-controls { background: #edf0f4; border-color: #b3bcc9; }
   .modes button[aria-pressed="true"] { background: #ffffff; }
 }
+.era-list { list-style: none; padding: 0; margin: 12px 0; }
+.era-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 7px 0; border-bottom: 1px solid #e5e7eb; }
+.era-list small { color: #596574; text-align: right; flex-shrink: 0; }
+.era-list [aria-current="true"] { font-weight: 600; }

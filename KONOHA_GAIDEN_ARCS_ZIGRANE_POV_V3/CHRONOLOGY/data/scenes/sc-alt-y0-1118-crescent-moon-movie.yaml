@@ -5,9 +5,7 @@ display_rank: 100
 continuity_id: alt-movie-crescent-moon
 title: Супровід Мічіру й Хікару
 location_id: loc-land-of-moon
-placement:
-  anchor_id: ta-alt-y0-1118-crescent-moon
-  day_offset: 0
+placement: {anchor_id: ta-autumn-reconciled-61-1209, day_offset: 0}
 state: active
 presence_coverage: partial
 review:

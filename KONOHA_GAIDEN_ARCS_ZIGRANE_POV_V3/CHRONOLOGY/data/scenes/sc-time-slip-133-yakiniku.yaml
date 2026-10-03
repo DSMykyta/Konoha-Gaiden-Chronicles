@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-time-slip-133-yakiniku
+episode_id: ep-time-slip-133
+display_rank: 500
+continuity_id: main
+title: Хлопці їдять з Іно–Шіка–Чо
+location_id: loc-yakiniku-q
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-133-team10-meal
+  title: Зустріч після місії Команди 10
+  text: Наруто й Боруто приєднуються до Іно, Шікамару та Чоджі за їжею. Боруто проводить час із молодими друзями
+    батька перед поверненням до вправ.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-133-past
+relations: []
+presence:
+- id: pr-ev-time-slip-133-team10-meal-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-133-team10-meal.start
+  to: ev-time-slip-133-team10-meal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-team10-meal-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-133-team10-meal.start
+  to: ev-time-slip-133-team10-meal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-team10-meal-c-ino
+  entity_id: c-ino
+  mode: physical
+  from: ev-time-slip-133-team10-meal.start
+  to: ev-time-slip-133-team10-meal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-team10-meal-c-shikamaru
+  entity_id: c-shikamaru
+  mode: physical
+  from: ev-time-slip-133-team10-meal.start
+  to: ev-time-slip-133-team10-meal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-133-team10-meal-c-choji
+  entity_id: c-choji
+  mode: physical
+  from: ev-time-slip-133-team10-meal.start
+  to: ev-time-slip-133-team10-meal.end
+  basis: source
+  review: partial
+  evidence_ids: *id001

@@ -1,0 +1,285 @@
+schema_version: 1
+id: sc-time-slip-130-village-walk
+episode_id: ep-time-slip-130
+display_rank: 200
+continuity_id: main
+title: Боруто знайомиться з молодими генінами
+location_id: loc-konohagakure
+day_part: morning
+placement:
+  anchor_id: ta-time-slip-1001
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-130-missing-teammate
+  title: Саске немає в Конохі
+  text: Боруто просить познайомити його з Командою 7. Наруто ухиляється від розмови про Саске й дає зрозуміти, що
+    того зараз немає в селі.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-boruto-130-past
+- id: ev-time-slip-130-konohamaru
+  title: Молодий Конохамару називає свою мрію
+  text: Конохамару представляється суперником Наруто й майбутнім Хокаґе. Боруто впізнає в хлопчику свого майбутнього
+    наставника.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-130-past
+- id: ev-time-slip-130-hyuga-lee
+  title: Зустріч із Хінатою, Неджи й Лі
+  text: Після Сакури та Хінати до розмови долучаються Неджи й Рок Лі. Неджи передає наказ Цунаде зібрати доступних
+    генінів.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-130-past
+- id: ev-time-slip-130-railway
+  title: Ідея залізниці для Ереки
+  text: Під час прогулянки Боруто згадує поїзд. Ерекі Камінарімон зацікавлюється можливістю такого транспорту.
+  origin: A
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-ereki
+    role: participant
+    mode: physical
+  evidence_ids: &id004
+  - evd-boruto-130-past
+- id: ev-time-slip-130-hokage-rock
+  title: Обличчя П’ятої ще немає на скелі
+  text: Боруто питає про відсутній монумент Цунаде. Наруто пояснює, що вона стала Хокаґе недавно, й обіцяє колись
+    побачити там власне обличчя.
+  origin: A
+  extent: interval
+  display_rank: 500
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: mentioned
+    mode: remote
+  evidence_ids: &id005
+  - evd-boruto-130-past
+relations:
+- id: rel-ev-time-slip-130-konohamaru
+  kind: before
+  a: ev-time-slip-130-missing-teammate
+  b: ev-time-slip-130-konohamaru
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: rel-ev-time-slip-130-hyuga-lee
+  kind: before
+  a: ev-time-slip-130-konohamaru
+  b: ev-time-slip-130-hyuga-lee
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: rel-ev-time-slip-130-railway
+  kind: before
+  a: ev-time-slip-130-hyuga-lee
+  b: ev-time-slip-130-railway
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+- id: rel-ev-time-slip-130-hokage-rock
+  kind: before
+  a: ev-time-slip-130-railway
+  b: ev-time-slip-130-hokage-rock
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+presence:
+- id: pr-ev-time-slip-130-missing-teammate-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-missing-teammate.start
+  to: ev-time-slip-130-missing-teammate.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-missing-teammate-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-missing-teammate.start
+  to: ev-time-slip-130-missing-teammate.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-konohamaru-c-konohamaru
+  entity_id: c-konohamaru
+  mode: physical
+  from: ev-time-slip-130-konohamaru.start
+  to: ev-time-slip-130-konohamaru.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-konohamaru-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-konohamaru.start
+  to: ev-time-slip-130-konohamaru.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-konohamaru-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-konohamaru.start
+  to: ev-time-slip-130-konohamaru.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-hyuga-lee-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-hyuga-lee.start
+  to: ev-time-slip-130-hyuga-lee.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-hyuga-lee-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-hyuga-lee.start
+  to: ev-time-slip-130-hyuga-lee.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-hyuga-lee-c-sakura
+  entity_id: c-sakura
+  mode: physical
+  from: ev-time-slip-130-hyuga-lee.start
+  to: ev-time-slip-130-hyuga-lee.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-hyuga-lee-c-hinata
+  entity_id: c-hinata
+  mode: physical
+  from: ev-time-slip-130-hyuga-lee.start
+  to: ev-time-slip-130-hyuga-lee.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-hyuga-lee-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-130-hyuga-lee.start
+  to: ev-time-slip-130-hyuga-lee.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-hyuga-lee-c-lee
+  entity_id: c-lee
+  mode: physical
+  from: ev-time-slip-130-hyuga-lee.start
+  to: ev-time-slip-130-hyuga-lee.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-130-railway-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-railway.start
+  to: ev-time-slip-130-railway.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-130-railway-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-railway.start
+  to: ev-time-slip-130-railway.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-130-railway-c-ereki
+  entity_id: c-ereki
+  mode: physical
+  from: ev-time-slip-130-railway.start
+  to: ev-time-slip-130-railway.end
+  basis: source
+  review: partial
+  evidence_ids: *id004
+- id: pr-ev-time-slip-130-hokage-rock-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-130-hokage-rock.start
+  to: ev-time-slip-130-hokage-rock.end
+  basis: source
+  review: partial
+  evidence_ids: *id005
+- id: pr-ev-time-slip-130-hokage-rock-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-hokage-rock.start
+  to: ev-time-slip-130-hokage-rock.end
+  basis: source
+  review: partial
+  evidence_ids: *id005

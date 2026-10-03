@@ -2552,6 +2552,91 @@ entities:
     aliases:
     - Балкон квартири Юміко
     parent_id: loc-sakura-neighborhood
+  - id: c-boruto
+    kind: person
+    name: Boruto Uzumaki
+    aliases:
+    - Боруто
+    - Боруто Узумакі
+    temporal_origin: future
+  - id: c-unnamed-travelling-performer
+    kind: person
+    name: Невідомий мандрівний артист
+    aliases:
+    - Мандрівний артист
+    - Невідомий мандрівний артист
+    temporal_origin: future
+    representation_of: c-sasuke
+    identity_status: not_publicly_named
+  - id: c-urashiki
+    kind: person
+    name: Urashiki Otsutsuki
+    aliases:
+    - Урашікі
+    - Урашікі Ооцуцукі
+    temporal_origin: future
+  - id: artifact-karasuki
+    kind: artifact
+    name: Karasuki
+    aliases:
+    - Karasuki
+    - Карасукі
+  - id: c-ereki
+    kind: person
+    name: Ereki Kaminarimon
+    aliases:
+    - Ерекі
+    - Ерекі Камінарімон
+  - id: loc-naruto-apartment
+    kind: location
+    name: Квартира Наруто
+    aliases:
+    - Квартира Наруто
+    parent_id: loc-konohagakure
+  - id: loc-time-slip-bathhouse
+    kind: location
+    name: Лазня Конохи
+    aliases:
+    - Лазня Конохи
+    parent_id: loc-konohagakure
+  - id: loc-time-slip-ravine
+    kind: location
+    name: Ущелина поблизу Конохи
+    aliases:
+    - Ущелина поблизу Конохи
+  - id: loc-time-slip-riverbank
+    kind: location
+    name: Берег річки поблизу Конохи
+    aliases:
+    - Берег річки поблизу Конохи
+  - id: loc-time-slip-village-bridge
+    kind: location
+    name: Міст у Конохі
+    aliases:
+    - Міст у Конохі
+    parent_id: loc-konohagakure
+  - id: loc-yakiniku-q
+    kind: location
+    name: Якінiку Q
+    aliases:
+    - Якінiку Q
+    parent_id: loc-konohagakure
+  - id: loc-time-slip-toad-stomach
+    kind: location
+    name: Внутрішній простір призваної жаби
+    aliases:
+    - Внутрішній простір призваної жаби
+  - id: loc-time-slip-hospital-roof
+    kind: location
+    name: Дах лікарні Конохи
+    aliases:
+    - Дах лікарні Конохи
+    parent_id: loc-konoha-hospital
+  - id: loc-time-slip-departure-clearing
+    kind: location
+    name: Лісова галявина поблизу Конохи
+    aliases:
+    - Лісова галявина поблизу Конохи
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

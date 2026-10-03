@@ -4,7 +4,7 @@ episode_id: ep-y0-gantetsu-finale
 display_rank: 100
 continuity_id: "main"
 title: "Шура зазнає поразки, Акіо врятовано, а Тодорокі відмовляється від помсти"
-placement: {anchor_id: "ta-y0-1202-gantetsu", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1228, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

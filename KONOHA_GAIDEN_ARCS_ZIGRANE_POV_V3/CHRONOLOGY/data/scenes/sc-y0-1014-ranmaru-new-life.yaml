@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Ранмару лишається з Саншо й Караші"
 location_id: "loc-curry-of-life-shop"
-placement: {anchor_id: "ta-y0-1014-kurosuki", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1022, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

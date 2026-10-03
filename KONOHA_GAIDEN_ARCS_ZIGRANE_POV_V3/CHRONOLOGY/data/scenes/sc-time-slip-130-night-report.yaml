@@ -1,0 +1,110 @@
+schema_version: 1
+id: sc-time-slip-130-night-report
+episode_id: ep-time-slip-130
+display_rank: 400
+continuity_id: main
+title: Боруто розпитує супутника про минуле
+location_id: loc-konohagakure
+day_part: night
+placement:
+  anchor_id: ta-time-slip-1001
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-130-waiting
+  title: Урашікі ще не прибув
+  text: Боруто повідомляє супутникові, що ворог досі не з’явився. Karasuki ще не готовий перенести їх назад.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: artifact-karasuki
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: mentioned
+    mode: remote
+  evidence_ids: &id001
+  - evd-boruto-130-past
+- id: ev-time-slip-130-past-question
+  title: Боруто розуміє, хто втік із села
+  text: Боруто зіставляє розмови генінів і пробує розпитати мандрівника про втечу Саске. Той припиняє розмову й
+    нагадує про заборону змінювати минуле.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-130-past
+relations:
+- id: rel-ev-time-slip-130-past-question
+  kind: before
+  a: ev-time-slip-130-waiting
+  b: ev-time-slip-130-past-question
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-130-past
+presence:
+- id: pr-ev-time-slip-130-waiting-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-waiting.start
+  to: ev-time-slip-130-waiting.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-waiting-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-130-waiting.start
+  to: ev-time-slip-130-waiting.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-waiting-artifact-karasuki
+  entity_id: artifact-karasuki
+  mode: physical
+  from: ev-time-slip-130-waiting.start
+  to: ev-time-slip-130-waiting.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-130-past-question-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-130-past-question.start
+  to: ev-time-slip-130-past-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-130-past-question-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-130-past-question.start
+  to: ev-time-slip-130-past-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

@@ -1,0 +1,38 @@
+schema_version: 2
+entity_id: c-boruto
+display:
+  name: Боруто Узумакі
+  short_name: Боруто
+identity:
+  species: human
+  sex: male
+  temporal_origin: future
+states:
+- id: boruto-time-slip-past
+  label: Перебування в минулому
+  period_id: part-i
+  from: ev-time-slip-129-arrival.start
+  to: ev-time-slip-136-past-exit.end
+  image: null
+  summary: Хлопець, який прибув до старої Конохи разом із дорослим мандрівником. Називає Наруто своє справжнє ім’я,
+    але приховує походження; навчається з ним у Джираї та допомагає захиститися від Урашікі.
+  facts:
+    set:
+      cover:
+        label: Прикриття
+        value: мандрівний артист
+      name:
+        label: Представився як
+        value: Боруто
+      stay:
+        label: Перебування в Конохі
+        value: 30 вересня — 6 жовтня 61 року; робочі дати
+  relationships:
+    upsert:
+      c-unnamed-travelling-performer:
+        label: супутник у подорожі
+      c-naruto:
+        label: спільне тренування та захист від Урашікі
+      c-jiraiya:
+        label: наставник під час спільного тренування
+  sections: []

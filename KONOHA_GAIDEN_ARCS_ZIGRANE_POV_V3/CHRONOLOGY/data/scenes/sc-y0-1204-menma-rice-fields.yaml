@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "main"
 title: "Пошук пам'яті Менми приводить групу до Країни Рисових Полів"
 location_id: "loc-land-of-rice-fields"
-placement: {anchor_id: "ta-y0-1204-menma", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-62-0102, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

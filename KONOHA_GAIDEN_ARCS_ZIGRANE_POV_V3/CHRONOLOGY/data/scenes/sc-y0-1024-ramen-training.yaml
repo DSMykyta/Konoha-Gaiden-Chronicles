@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "main"
 title: "Наруто, Сакура й Чоджі допомагають Теучі створити нову локшину"
 location_id: "loc-ichiraku"
-placement: {anchor_id: "ta-y0-1024", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1107, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

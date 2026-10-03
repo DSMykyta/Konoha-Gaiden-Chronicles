@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "main"
 title: "Карі Життя повертає бійців до бою на Блискавичному перевалі"
 location_id: "loc-lightning-pass"
-placement: {anchor_id: "ta-y0-1013-kurosuki", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1021, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

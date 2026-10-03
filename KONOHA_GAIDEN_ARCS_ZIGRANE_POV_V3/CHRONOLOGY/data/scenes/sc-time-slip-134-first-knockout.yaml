@@ -1,0 +1,170 @@
+schema_version: 1
+id: sc-time-slip-134-first-knockout
+episode_id: ep-time-slip-134
+display_rank: 500
+continuity_id: main
+title: Расенґан збиває Урашікі
+location_id: loc-time-slip-ravine
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1004
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-134-rasengan-hit
+  title: Боруто прискорює атаку Наруто
+  text: Джирая припиняє призов. Боруто допомагає Наруто наблизитися, і Расенґан влучає в ослабленого Урашікі.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-134-past
+- id: ev-time-slip-134-children-witness
+  title: Діти бачать наслідки бою
+  text: Конохамару, Моегі та Удон спостерігають за місцем сутички. Урашікі починає приходити до тями, тож перемога
+    ще не остаточна.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  - entity_id: c-urashiki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-134-past
+relations:
+- id: rel-ev-time-slip-134-children-witness
+  kind: before
+  a: ev-time-slip-134-rasengan-hit
+  b: ev-time-slip-134-children-witness
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-134-past
+presence:
+- id: pr-ev-time-slip-134-rasengan-hit-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-134-rasengan-hit.start
+  to: ev-time-slip-134-rasengan-hit.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-rasengan-hit-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-134-rasengan-hit.start
+  to: ev-time-slip-134-rasengan-hit.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-rasengan-hit-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-134-rasengan-hit.start
+  to: ev-time-slip-134-rasengan-hit.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-rasengan-hit-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-134-rasengan-hit.start
+  to: ev-time-slip-134-rasengan-hit.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-134-children-witness-c-konohamaru
+  entity_id: c-konohamaru
+  mode: physical
+  from: ev-time-slip-134-children-witness.start
+  to: ev-time-slip-134-children-witness.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-children-witness-c-moegi
+  entity_id: c-moegi
+  mode: physical
+  from: ev-time-slip-134-children-witness.start
+  to: ev-time-slip-134-children-witness.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-children-witness-c-udon
+  entity_id: c-udon
+  mode: physical
+  from: ev-time-slip-134-children-witness.start
+  to: ev-time-slip-134-children-witness.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-children-witness-c-urashiki
+  entity_id: c-urashiki
+  mode: physical
+  from: ev-time-slip-134-children-witness.start
+  to: ev-time-slip-134-children-witness.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-children-witness-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-134-children-witness.start
+  to: ev-time-slip-134-children-witness.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-children-witness-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-134-children-witness.start
+  to: ev-time-slip-134-children-witness.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-134-children-witness-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-134-children-witness.start
+  to: ev-time-slip-134-children-witness.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

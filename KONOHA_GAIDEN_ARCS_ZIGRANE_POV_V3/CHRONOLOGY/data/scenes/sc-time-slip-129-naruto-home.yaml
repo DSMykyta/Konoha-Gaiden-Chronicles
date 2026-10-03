@@ -1,0 +1,132 @@
+schema_version: 1
+id: sc-time-slip-129-naruto-home
+episode_id: ep-time-slip-129
+display_rank: 500
+continuity_id: main
+title: Боруто ночує в Наруто
+location_id: loc-naruto-apartment
+day_part: night
+placement:
+  anchor_id: ta-time-slip-0930
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-129-real-name
+  title: Боруто називає справжнє ім’я
+  text: 'Коли Наруто питає, як звати гостя, той відповідає: Боруто. Вигаданого імені він не бере.'
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-129-past
+- id: ev-time-slip-129-ramen
+  title: Рамен у маленькій квартирі
+  text: Наруто пригощає Боруто раменом. Гість упізнає звички батька й бачить, наскільки самотньо той жив у дитинстві.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-129-past
+- id: ev-time-slip-129-family-talk
+  title: Нічна розмова про родину
+  text: Наруто розпитує Боруто про сім’ю. Боруто говорить про свого батька, приховуючи, що розмовляє з його молодою
+    версією.
+  origin: A
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  evidence_ids: &id003
+  - evd-boruto-129-past
+relations:
+- id: rel-ev-time-slip-129-ramen
+  kind: before
+  a: ev-time-slip-129-real-name
+  b: ev-time-slip-129-ramen
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+- id: rel-ev-time-slip-129-family-talk
+  kind: before
+  a: ev-time-slip-129-ramen
+  b: ev-time-slip-129-family-talk
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-129-past
+presence:
+- id: pr-ev-time-slip-129-real-name-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-real-name.start
+  to: ev-time-slip-129-real-name.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-real-name-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-real-name.start
+  to: ev-time-slip-129-real-name.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-129-ramen-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-ramen.start
+  to: ev-time-slip-129-ramen.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-ramen-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-ramen.start
+  to: ev-time-slip-129-ramen.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-129-family-talk-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-129-family-talk.start
+  to: ev-time-slip-129-family-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003
+- id: pr-ev-time-slip-129-family-talk-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-129-family-talk.start
+  to: ev-time-slip-129-family-talk.end
+  basis: source
+  review: partial
+  evidence_ids: *id003

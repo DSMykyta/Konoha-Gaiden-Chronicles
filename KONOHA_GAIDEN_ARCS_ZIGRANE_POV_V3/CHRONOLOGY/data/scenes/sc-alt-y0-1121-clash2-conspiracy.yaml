@@ -5,9 +5,7 @@ display_rank: 100
 continuity_id: alt-game-clash-revolution-2
 title: Масове ґенджюцу в Конохі
 location_id: loc-konohagakure
-placement:
-  anchor_id: ta-alt-y0-1121-clash2
-  day_offset: 0
+placement: {anchor_id: ta-autumn-reconciled-61-1217, day_offset: 0}
 state: active
 presence_coverage: partial
 review:

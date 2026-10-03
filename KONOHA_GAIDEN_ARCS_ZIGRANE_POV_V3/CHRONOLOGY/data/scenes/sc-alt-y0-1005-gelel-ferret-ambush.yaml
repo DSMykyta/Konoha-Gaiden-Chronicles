@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-movie-gelel"
 title: "Місія з повернення Неруґуї переростає в бій із Темуджином"
 location_id: "loc-gelel-coast"
-placement: {anchor_id: "ta-y0-1005", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1008, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "partial", origin: "accepted", text: "accepted"}

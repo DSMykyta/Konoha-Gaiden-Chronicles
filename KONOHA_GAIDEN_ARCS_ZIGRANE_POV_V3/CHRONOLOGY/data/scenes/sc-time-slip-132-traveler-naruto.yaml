@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-time-slip-132-traveler-naruto
+episode_id: ep-time-slip-132
+display_rank: 400
+continuity_id: main
+title: Мандрівник говорить із Наруто про вірність другу
+location_id: loc-konoha-training-field
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1003
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-132-food-errand
+  title: Мандрівник приносить їжу
+  text: Джирая посилає дорослого супутника до хлопців із їжею. Той знаходить пригніченого Наруто, який переживає
+    через поранення Боруто.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-132-past
+- id: ev-time-slip-132-friend-story
+  title: Історія про друга, якого повернули
+  text: Не називаючи себе, мандрівник розповідає про людину, яку друг роками не залишав і зрештою повернув. Наруто
+    зміцнюється в намірі повернути Саске.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  evidence_ids: &id002
+  - evd-boruto-132-past
+relations:
+- id: rel-ev-time-slip-132-friend-story
+  kind: before
+  a: ev-time-slip-132-food-errand
+  b: ev-time-slip-132-friend-story
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+presence:
+- id: pr-ev-time-slip-132-food-errand-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-132-food-errand.start
+  to: ev-time-slip-132-food-errand.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-food-errand-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-132-food-errand.start
+  to: ev-time-slip-132-food-errand.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-friend-story-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-132-friend-story.start
+  to: ev-time-slip-132-friend-story.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-132-friend-story-c-naruto
+  entity_id: c-naruto
+  mode: physical
+  from: ev-time-slip-132-friend-story.start
+  to: ev-time-slip-132-friend-story.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

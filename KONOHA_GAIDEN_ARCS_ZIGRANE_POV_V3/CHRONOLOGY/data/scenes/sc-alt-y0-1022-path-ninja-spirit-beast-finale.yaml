@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-game-path-ninja-2"
 title: "Група намагається запечатати Духовного Звіра й перемагає його"
 location_id: "loc-valley-of-evil"
-placement: {anchor_id: "ta-alt-y0-1020-path-ninja-2", day_offset: 2}
+placement: {anchor_id: ta-autumn-reconciled-61-1102, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

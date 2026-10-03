@@ -1,0 +1,104 @@
+schema_version: 1
+id: sc-time-slip-132-hyuga-observation
+episode_id: ep-time-slip-132
+display_rank: 200
+continuity_id: main
+title: Боруто бачить тренування Х’юґа
+location_id: loc-hyuga-compound
+day_part: afternoon
+placement:
+  anchor_id: ta-time-slip-1003
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-132-hyuga-training
+  title: Хіната й Неджи тренуються
+  text: Боруто спостерігає за молодою Хінатою та Неджи. Неджи помічає його Б’якуґаном і виходить до гостя.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-132-past
+- id: ev-time-slip-132-hyuga-family
+  title: Розмова про стосунки Х’юґа
+  text: Боруто питає Неджи про Хінату. Неджи пояснює їхні стосунки й помічає, що за цікавістю хлопця стоїть інше
+    хвилювання.
+  origin: A
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-boruto
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  evidence_ids: &id002
+  - evd-boruto-132-past
+relations:
+- id: rel-ev-time-slip-132-hyuga-family
+  kind: before
+  a: ev-time-slip-132-hyuga-training
+  b: ev-time-slip-132-hyuga-family
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-boruto-132-past
+presence:
+- id: pr-ev-time-slip-132-hyuga-training-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-hyuga-training.start
+  to: ev-time-slip-132-hyuga-training.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-hyuga-training-c-hinata
+  entity_id: c-hinata
+  mode: physical
+  from: ev-time-slip-132-hyuga-training.start
+  to: ev-time-slip-132-hyuga-training.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-hyuga-training-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-132-hyuga-training.start
+  to: ev-time-slip-132-hyuga-training.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-hyuga-family-c-boruto
+  entity_id: c-boruto
+  mode: physical
+  from: ev-time-slip-132-hyuga-family.start
+  to: ev-time-slip-132-hyuga-family.end
+  basis: source
+  review: partial
+  evidence_ids: *id002
+- id: pr-ev-time-slip-132-hyuga-family-c-neji
+  entity_id: c-neji
+  mode: physical
+  from: ev-time-slip-132-hyuga-family.start
+  to: ev-time-slip-132-hyuga-family.end
+  basis: source
+  review: partial
+  evidence_ids: *id002

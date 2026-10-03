@@ -5,7 +5,7 @@ display_rank: 200
 continuity_id: "main"
 title: "Нацухі востаннє намагається забрати Зірку й гине"
 location_id: "loc-star-temple"
-placement: {anchor_id: "ta-y0-1105", day_offset: 0}
+placement: {anchor_id: ta-autumn-reconciled-61-1122, day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}

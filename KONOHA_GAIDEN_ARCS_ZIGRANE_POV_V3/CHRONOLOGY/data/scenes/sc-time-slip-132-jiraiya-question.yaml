@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-time-slip-132-jiraiya-question
+episode_id: ep-time-slip-132
+display_rank: 600
+continuity_id: main
+title: Джирая перевіряє здогад про незнайомця
+location_id: loc-konohagakure
+day_part: evening
+placement:
+  anchor_id: ta-time-slip-1003
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-time-slip-132-identity-question
+  title: Джирая питає про Саске Учіху
+  text: Після власних спостережень Джирая прямо питає мандрівника, чи не є той Саске Учіхою. Питання не стає публічним
+    представленням прибульця.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-unnamed-travelling-performer
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-boruto-132-past
+relations: []
+presence:
+- id: pr-ev-time-slip-132-identity-question-c-jiraiya
+  entity_id: c-jiraiya
+  mode: physical
+  from: ev-time-slip-132-identity-question.start
+  to: ev-time-slip-132-identity-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id001
+- id: pr-ev-time-slip-132-identity-question-c-unnamed-travelling-performer
+  entity_id: c-unnamed-travelling-performer
+  mode: physical
+  from: ev-time-slip-132-identity-question.start
+  to: ev-time-slip-132-identity-question.end
+  basis: source
+  review: partial
+  evidence_ids: *id001

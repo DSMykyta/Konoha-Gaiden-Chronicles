@@ -1,118 +1,244 @@
 schema_version: 1
+calendar:
+  id: konoha-founding
+  label: Літочислення Конохи
+  epoch: Заснування Конохи
+  epoch_year: 1
+  current_year: 61
+  days_per_year: 365
+  year_numbering: positive-era-pair
+  eras:
+    before_founding: до заснування Конохи
+    after_founding: Конохи
+  status: project_reconstruction
+  basis: Заснування Конохи приблизно за 60 років до початку першої частини; рік заснування прийнято за 1. Номери років і межі епох — реконструкція
+    проєкту, а не канонічне літочислення.
+  legacy_year_zero: 61
+  references:
+  - title: Rin no Sho
+    locator: Профіль Першого Хокаґе, с. 116–117
+    claim: Заснування Конохи приблизно 60 років тому
+    access: Неофіційний англійський переклад; приблизна опора
+    url: https://uploads.strikinglycdn.com/files/38792541-fc7f-4238-bbd7-a44192ab8235/naruto_databook_1_english.pdf
+  - title: 'Naruto Official: About'
+    claim: Напад Дев’ятихвостого за 12 років до початку першої частини
+    url: https://naruto-official.com/en/about
+  - title: 'Naruto Official: Minato Column 1'
+    claim: Каннабі під час Третьої війни; правління Мінато й напад Курами пізніше
+    url: https://naruto-official.com/en/news/01_1517
+  - title: 'Narutopedia: First Shinobi World War'
+    locator: Посилання на Kai no Sho, с. 112–115
+    claim: Близько двадцяти років миру між Першою і Другою війнами
+    url: https://naruto.fandom.com/wiki/First_Shinobi_World_War
+  - title: 'Naruto Official: Two Blue Vortex Vol. 1'
+    claim: Три роки після зміни спогадів
+    url: https://naruto-official.com/en/news/01_1700
 periods:
-  - id: "warring-states"
-    label: "Кланові війни"
-    order: 100
-    calendar_status: "unplaced"
-    description: "Доба до системи прихованих селищ: війни кланів Сенджу, Учіха та інших шинобі-кланів."
-
-  - id: "village-founding"
-    label: "Заснування селищ"
-    order: 200
-    calendar_status: "unplaced"
-    description: "Створення Конохи й поширення системи прихованих селищ."
-
-  - id: "first-shinobi-war"
-    label: "Перша війна шинобі"
-    order: 300
-    calendar_status: "unplaced"
-    description: "Перша світова війна нової системи прихованих селищ."
-
-  - id: "first-postwar-peace"
-    label: "Двадцятирічний мир"
-    order: 400
-    calendar_status: "unplaced"
-    description: "Міжвоєнний період після Першої світової війни шинобі й до початку Другої."
-
-  - id: "second-shinobi-war"
-    label: "Друга війна шинобі"
-    order: 500
-    calendar_status: "unplaced"
-    description: "Доба Другої світової війни шинобі, молодих Джираї, Цунаде й Орочімару та війни в Аме."
-
-  - id: "sannin-interwar"
-    label: "Міжвоєння Саннінів"
-    order: 600
-    calendar_status: "unplaced"
-    description: "Період після Другої війни й до Третьої: молоді Мінато, Кушина, Сакумо та формування нового покоління."
-
-  - id: "third-shinobi-war"
-    label: "Третя війна шинобі"
-    order: 700
-    calendar_status: "unplaced"
-    description: "Третя світова війна шинобі; Команда Мінато, Какаші, Обіто, Рін і події Каннабі."
-
-  - id: "fourth-hokage"
-    label: "Епоха Четвертого Хокаґе"
-    order: 800
-    calendar_status: "unplaced"
-    description: "Короткий післявоєнний період правління Мінато до нападу Дев’ятихвостого."
-
-  - id: "nine-tails-crisis"
-    label: "Криза Дев’ятихвостого"
-    order: 900
-    calendar_status: "unplaced"
-    description: "Народження Наруто, напад Курами на Коноху, загибель Мінато й Кушини та повернення Хірузена до влади."
-
-  - id: "post-nine-tails"
-    label: "Після Дев’ятихвостого"
-    order: 1000
-    calendar_status: "unplaced"
-    description: "Відбудова Конохи після нападу Курами та дитинство покоління Наруто до загострення кризи Учіха."
-
-  - id: "uchiha-crisis"
-    label: "Криза Учіха"
-    order: 1100
-    calendar_status: "unplaced"
-    description: "Ізоляція клану Учіха, Шисуї та Ітачі, підготовка перевороту й різанина клану."
-
-  - id: "pre-naruto"
-    label: "Перед Naruto"
-    order: 1200
-    calendar_status: "unplaced"
-    description: "Період після загибелі клану Учіха й до випуску покоління Наруто з Академії."
-
-  - id: "part-i"
-    label: "Naruto"
-    legacy_label: "Part I"
-    order: 1300
-    calendar_status: "placed"
-    from_year: 0
-    to_year: 0
-    description: "Від початку історії Наруто й формування команд до його відходу на тренування з Джираєю."
-
-  - id: "timeskip"
-    label: "Таймскіп"
-    order: 1400
-    calendar_status: "unplaced"
-    description: "Період між відходом Наруто з Джираєю та його поверненням до Конохи."
-
-  - id: "shippuden"
-    label: "Shippūden"
-    order: 1500
-    calendar_status: "unplaced"
-    description: "Від повернення Наруто до завершення Четвертої світової війни шинобі та фінальної битви Наруто й Саске."
-
-  - id: "post-fourth-war"
-    label: "Після Четвертої війни"
-    order: 1600
-    calendar_status: "unplaced"
-    description: "Післявоєнний період за Шостого Хокаґе: Hiden-історії, The Last і перехід до нового миру."
-
-  - id: "seventh-hokage"
-    label: "Епоха Сьомого Хокаґе"
-    order: 1700
-    calendar_status: "unplaced"
-    description: "Період правління Наруто як Сьомого Хокаґе до домінування основного конфлікту покоління Боруто."
-
-  - id: "boruto"
-    label: "Boruto"
-    order: 1800
-    calendar_status: "unplaced"
-    description: "Активна доба покоління Боруто: Академія, Кара, Кавакі та Ооцуцукі."
-
-  - id: "two-blue-vortex"
-    label: "Two Blue Vortex"
-    order: 1900
-    calendar_status: "unplaced"
-    description: "Період після другого великого таймскіпу історії Боруто."
+- id: warring-states
+  label: Кланові війни
+  order: 100
+  calendar_status: open_start
+  description: Клани воюють до створення системи прихованих селищ; початок доби не датований.
+  calendar_basis: project_reconstruction
+  calendar_era: before_founding
+  to_year: 1
+- id: village-founding
+  label: Заснування прихованих селищ
+  order: 200
+  calendar_status: estimated
+  description: Союз Сенджу й Учіха, заснування Конохи, перший саміт Каґе та поширення системи селищ.
+  calendar_basis: project_reconstruction
+  legacy_label: Заснування селищ
+  from_year: 1
+  calendar_era: after_founding
+  to_year: 10
+- id: first-shinobi-war
+  label: Перша світова війна шинобі
+  order: 300
+  calendar_status: estimated
+  description: Перша глобальна війна селищ; загибель Тобірами й перехід влади до Хірузена. Межі реконструйовано.
+  calendar_basis: project_reconstruction
+  legacy_label: Перша війна шинобі
+  from_year: 11
+  calendar_era: after_founding
+  to_year: 14
+- id: first-postwar-peace
+  label: Перше міжвоєння
+  order: 400
+  calendar_status: estimated
+  description: Відновлення країн після Першої війни; приблизно двадцять років до Другої.
+  calendar_basis: project_reconstruction
+  legacy_label: Двадцятирічний мир
+  from_year: 15
+  calendar_era: after_founding
+  to_year: 34
+- id: second-shinobi-war
+  label: Друга світова війна шинобі
+  order: 500
+  calendar_status: estimated
+  description: Війна великих країн, бої в Аме, становлення Саннінів і втрати воєнного покоління.
+  calendar_basis: project_reconstruction
+  legacy_label: Друга війна шинобі
+  from_year: 35
+  calendar_era: after_founding
+  to_year: 39
+- id: sannin-interwar
+  label: Друге міжвоєння
+  order: 600
+  calendar_status: estimated
+  description: 'Після Другої війни: діяльність Саннінів, становлення молодих команд і загострення міждержавних конфліктів.'
+  calendar_basis: project_reconstruction
+  legacy_label: Міжвоєння Саннінів
+  from_year: 40
+  calendar_era: after_founding
+  to_year: 42
+- id: third-shinobi-war
+  label: Третя світова війна шинобі
+  order: 700
+  calendar_status: estimated
+  description: Війна Конохи й Іви, Команда Мінато, юні Какаші, Обіто й Рін, місія біля мосту Каннабі.
+  calendar_basis: project_reconstruction
+  legacy_label: Третя війна шинобі
+  from_year: 43
+  calendar_era: after_founding
+  to_year: 47
+- id: fourth-hokage
+  label: Правління Четвертого Хокаґе
+  order: 800
+  calendar_status: estimated
+  description: Після Третьої війни Мінато стає Хокаґе; період закінчується нападом Дев’ятихвостого.
+  calendar_basis: project_reconstruction
+  legacy_label: Епоха Четвертого Хокаґе
+  from_year: 48
+  calendar_era: after_founding
+  to_year: 49
+- id: nine-tails-crisis
+  label: Напад Дев’ятихвостого
+  order: 900
+  calendar_status: estimated
+  description: Напад Обіто й Курами 10 жовтня, загибель Мінато й Кушини, повернення Хірузена до влади.
+  calendar_basis: project_reconstruction
+  legacy_label: Криза Дев’ятихвостого
+  from_year: 49
+  calendar_era: after_founding
+  to_year: 49
+- id: post-nine-tails
+  label: Відбудова Конохи
+  order: 1000
+  calendar_status: estimated
+  description: Відновлення після нападу; повторне правління Хірузена й наростання недовіри до Учіха.
+  calendar_basis: project_reconstruction
+  legacy_label: Після Дев’ятихвостого
+  from_year: 49
+  calendar_era: after_founding
+  to_year: 53
+- id: uchiha-crisis
+  label: Криза клану Учіха
+  order: 1100
+  calendar_status: estimated
+  description: Загострення конфлікту клану й адміністрації, Шисуї та Ітачі, підготовка перевороту й знищення клану. Ізоляція почалася раніше,
+    після нападу Курами.
+  calendar_basis: project_reconstruction
+  legacy_label: Криза Учіха
+  from_year: 54
+  calendar_era: after_founding
+  to_year: 56
+- id: pre-naruto
+  label: Покоління Академії
+  order: 1200
+  calendar_status: estimated
+  description: Після знищення клану Учіха молоде покоління навчається в Академії; дорослі шинобі несуть службу й готуються стати наставниками.
+  calendar_basis: project_reconstruction
+  legacy_label: Перед Naruto
+  from_year: 56
+  calendar_era: after_founding
+  to_year: 60
+- id: part-i
+  label: Епоха нових команд
+  legacy_label: Naruto
+  order: 1300
+  calendar_status: placed
+  from_year: 61
+  to_year: 62
+  description: Випуск Академії, формування нових команд, їхні місії й міжнародні іспити; вторгнення в Коноху й перехід влади до П’ятої Хокаґе.
+  calendar_basis: project_reconstruction
+  calendar_era: after_founding
+- id: timeskip
+  label: Доба П’ятої Хокаґе
+  order: 1400
+  calendar_status: estimated
+  description: 'Наступні роки правління Цунаде: перебудова команд, нові ранги, тренування, місії й підготовка Акацукі до активних операцій.'
+  calendar_basis: project_reconstruction
+  legacy_label: Таймскіп
+  from_year: 62
+  boundary_date: {year: 62, month: 1, day: 15}
+  calendar_era: after_founding
+  to_year: 64
+- id: shippuden
+  label: Епоха Акацукі
+  order: 1500
+  calendar_status: estimated
+  description: Від активного полювання на хвостатих до нападу Пейна, саміту Каґе й оголошення Четвертої війни.
+  calendar_basis: project_reconstruction
+  legacy_label: Shippūden
+  from_year: 64
+  calendar_era: after_founding
+  to_year: 66
+- id: fourth-shinobi-war
+  label: Четверта світова війна шинобі
+  order: 1550
+  calendar_status: estimated
+  calendar_basis: project_reconstruction
+  calendar_era: after_founding
+  from_year: 66
+  to_year: 66
+  description: Альянс шинобі проти Акацукі, війна з Десятихвостим, Нескінченне Цукуйомі й завершення глобального конфлікту.
+- id: post-fourth-war
+  label: Післявоєнна відбудова
+  order: 1600
+  calendar_status: estimated
+  description: Відновлення після Четвертої війни, Шостий Хокаґе, Hiden-історії, місячна криза й формування нового миру.
+  calendar_basis: project_reconstruction
+  legacy_label: Після Четвертої війни
+  from_year: 66
+  calendar_era: after_founding
+  to_year: 75
+- id: seventh-hokage
+  label: Правління Сьомого Хокаґе
+  order: 1700
+  calendar_status: estimated
+  description: Подальше зміцнення міжселищного миру, зростання міст і технологій, навчання нового покоління.
+  calendar_basis: project_reconstruction
+  legacy_label: Епоха Сьомого Хокаґе
+  from_year: 76
+  calendar_era: after_founding
+  to_year: 78
+- id: boruto
+  label: Епоха ніндзя-технологій
+  order: 1800
+  calendar_status: estimated
+  description: Нове покоління команд, наукові ніндзя-інструменти, Кара, Кавакі та нові напади Ооцуцукі.
+  calendar_basis: project_reconstruction
+  legacy_label: Boruto
+  from_year: 79
+  calendar_era: after_founding
+  to_year: 81
+- id: altered-history
+  label: Доба підміненої історії
+  order: 1850
+  calendar_status: estimated
+  calendar_basis: project_reconstruction
+  calendar_era: after_founding
+  from_year: 81
+  to_year: 83
+  description: Після зміни спогадів силою Ейди світ живе з підміненою історією; Сьомий Хокаґе відсутній, Шікамару очолює Коноху. Три роки до повернення
+    вигнанця.
+- id: two-blue-vortex
+  label: Криза Божественних дерев
+  order: 1900
+  calendar_status: open_end
+  description: Після трирічного проміжку виникають самосвідомі Божественні дерева; остаточна межа епохи ще відкрита.
+  calendar_basis: project_reconstruction
+  legacy_label: Two Blue Vortex
+  from_year: 84
+  calendar_era: after_founding
