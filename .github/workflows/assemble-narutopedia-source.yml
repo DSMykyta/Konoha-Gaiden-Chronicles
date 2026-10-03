@@ -20,9 +20,9 @@ jobs:
         run: |
           set -euo pipefail
           BASE='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/narutopedia'
-          TMP="$BASE/.import/narutopedia_synopses_COMPLETE.json.gz.b64"
           OUT="$BASE/narutopedia_synopses_COMPLETE.json"
-          base64 -d "$TMP" | gzip -dc > "$OUT"
+          cat "$BASE/.import"/part-* > /tmp/narutopedia.b64
+          base64 -d /tmp/narutopedia.b64 | gzip -dc > "$OUT"
           python - <<'PY'
           import json
           p='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/narutopedia/narutopedia_synopses_COMPLETE.json'
