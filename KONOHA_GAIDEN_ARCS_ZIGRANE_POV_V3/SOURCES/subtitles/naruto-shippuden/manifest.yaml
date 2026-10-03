@@ -1,0 +1,15 @@
+series: Naruto Shippuden
+release_year: 2007
+episodes:
+  from: 1
+  to: 500
+filename_pattern: "%03d.srt"
+primary_reference:
+  name: Narutopedia
+  purpose: episode synopsis and canon cross-check
+subtitle_reference_candidates:
+  - name: Crunchyroll
+    purpose: official streaming subtitles where available
+  - name: SubDL
+    purpose: third-party subtitle index; verify rights before adding files
+status: structure-ready
