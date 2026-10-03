@@ -1,0 +1,50 @@
+name: Assemble Narutopedia source
+
+on:
+  push:
+    paths:
+      - 'KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/narutopedia/.import/trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Assemble and validate source
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/narutopedia'
+          TMP="$BASE/.import/narutopedia_synopses_COMPLETE.json.gz.b64"
+          OUT="$BASE/narutopedia_synopses_COMPLETE.json"
+          base64 -d "$TMP" | gzip -dc > "$OUT"
+          python - <<'PY'
+          import json
+          p='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/narutopedia/narutopedia_synopses_COMPLETE.json'
+          with open(p, encoding='utf-8') as f:
+              d=json.load(f)
+          assert len(d.get('naruto', [])) == 220
+          assert len(d.get('shippuden', [])) == 500
+          assert d.get('stats', {}).get('total_synopsis_found') == 720
+          assert d.get('stats', {}).get('failures') == []
+          print('Validated 720/720 episodes')
+          PY
+          rm -rf "$BASE/.import"
+      - name: Commit assembled source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/narutopedia
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+            exit 0
+          fi
+          git commit -m 'Add complete Narutopedia episode synopses source'
+          git push
