@@ -3,16 +3,16 @@ id: "sc-y0-0122-kita-home-night"
 episode_id: ep-y0-team9-introduction
 display_rank: 600
 continuity_id: "main"
-title: "Кіта вдома після першого дня Команди 9"
+title: "Кіта вдома після випробувань Райдо"
 location_id: "loc-kita-home"
 placement:
-  anchor_id: "ta-team-formation"
+  anchor_id: "ta-y0-0123"
   day_offset: 0
-day_part: "evening"
+day_part: "night"
 state: "active"
 presence_coverage: "complete"
 review:
-  time: "accepted"
+  time: "partial"
   cast: "accepted"
   location: "accepted"
   origin: "accepted"
@@ -20,7 +20,7 @@ review:
 events:
   - id: "ev-y0-0122-nobari-returns"
     title: "Нобарі повертається пізно ввечері"
-    text: "Мати Кіти повертається додому з паперами після роботи в адміністрації Хокаґе."
+    text: "Нобарі повертається додому після вечірнього оформлення звітів у резиденції Хокаґе."
     origin: "P"
     extent: "interval"
     display_rank: 100
@@ -34,8 +34,8 @@ events:
     evidence_ids:
       - "evd-kita-home-night"
   - id: "ev-y0-0122-kita-talks-with-mother"
-    title: "Кіта говорить із матір’ю про нову команду"
-    text: "Кіта називає Райдо своїм сенсеєм; Нобарі згадує Райдо, Асума й Куренай та їхнє спільне минуле."
+    title: "Кіта говорить із матір’ю про випробування"
+    text: "Кіта розповідає Нобарі про випробування Райдо, Команду 9 і те, як минув день; Нобарі згадує Райдо, Асуму й Куренай та їхнє спільне минуле."
     origin: "P"
     extent: "interval"
     display_rank: 200
@@ -50,7 +50,7 @@ events:
       - "evd-kita-home-night"
   - id: "ev-y0-0122-nobari-gives-kita-gloves"
     title: "Нобарі дає Кіті рукавички"
-    text: "Це відбувається після розмови про нову команду, перед тим як Кіта лягає спати."
+    text: "Після розмови Нобарі дає Кіті старі рукавички перед тим, як він лягає спати."
     origin: "P"
     extent: "interval"
     display_rank: 250

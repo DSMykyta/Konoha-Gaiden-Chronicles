@@ -16,7 +16,8 @@ This directory is the authoritative structured chronology source defined by `../
 The flat `Naruto_Timeline_Year_0_v10.tsv` is no longer the authoritative editable model. Its frozen migration snapshot is kept under `../archive/`.
 
 Current benchmark migration:
-- 22.01: team announcements, classroom waiting, Team 7 rooftop, Team 9 dango, Kita home.
+- 22.01: team announcements, classroom waiting, Team 7 rooftop, Team 9 dango.
+- 23.01: Team 7 and Team 9 tests; Kiba meets Kita after Raido's evaluation; evening Ichiraku; mentor reports; Kita's home scene closes the day.
 - 24.09: Kiba/Sakon/Ukon branch, Shikamaru/Tayuya branch, Kimimaro branch, Orochimaru body-transfer scene, Valley of the End.
 
 Unknown cross-branch order is intentionally not invented. `display_rank` controls presentation only.
