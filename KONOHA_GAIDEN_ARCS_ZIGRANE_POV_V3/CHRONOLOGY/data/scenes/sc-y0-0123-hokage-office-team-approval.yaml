@@ -1,0 +1,209 @@
+schema_version: 1
+id: "sc-y0-0123-hokage-office-team-approval"
+episode_id: ep-y0-team-reports
+display_rank: 200
+continuity_id: "main"
+title: "Хірузен затверджує чотири команди"
+location_id: "loc-hokage-office"
+placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+day_part: "evening"
+state: "active"
+presence_coverage: "complete"
+review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+events:
+  - id: "ev-y0-0123-hiruzen-four-mentors-remain"
+    title: "Лишилися четверо"
+    text: |-
+      У кабінеті Хокаґе пахне тютюном, старим папером і свіжим чорнилом. На краю столу перед Хірузеном лежить невеликий стос звітів, а поруч — уже відкладені повідомлення від інших джонінів-наставників. Какаші, Куренай, Райдо й Асума стоять перед столом півколом; після довгого дня ніхто не намагається виглядати бадьорішим, ніж є.
+
+      Хірузен неквапливо випускає дим із люльки й торкається пальцями відкладених паперів.
+
+      — Решта вже здали відмови, — каже він. — Їхні команди повернуться до Академії.
+
+      Він переводить погляд на чотири теки, що залишилися перед ним.
+
+      — Отже, лишилися ви.
+
+      Першою він підтягує до себе теку з номером Сім. Какаші відриває погляд від вікна ще до того, як Хірузен устигне назвати його ім’я.
+    origin: "P"
+    extent: "interval"
+    display_rank: 100
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+  - id: "ev-y0-0123-kakashi-accepts-team7"
+    title: "Какаші бере Команду 7"
+    text: |-
+      — Склали, — каже Какаші.
+
+      Рука Хірузена, що вже лягла на край теки, на мить завмирає. Він підводить очі на Какаші поверх клубка диму.
+
+      — Усі троє?
+
+      — Усі.
+
+      Це коротке слово зависає в кабінеті трохи довше, ніж мало б. Хірузен добре пам’ятає попередні роки й однакові короткі рапорти Какаші: не готові, не пройшли, повернути до Академії. Тепер же Какаші говорить без звичної байдужої паузи.
+
+      — Коли довелося вибирати між формальною ціллю випробування і товаришами, вони вибрали товаришів, — продовжує він. — Не одразу. І не красиво. Але зрештою зрозуміли, що поодинці програють ще до початку справжньої місії. Я беру Сьому.
+
+      У кутиках очей Хірузена з’являються тонкі зморшки. Він нічого не коментує одразу, лише ставить коротку позначку в звіті.
+
+      — Отже, цього разу ти знайшов те, що шукав.
+
+      Какаші ледь знизує плечем. Хірузен не наполягає й підсуває до себе наступну теку.
+    origin: "P"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+  - id: "ev-y0-0123-kurenai-accepts-team8"
+    title: "Куренай бере Команду 8"
+    text: |-
+      На обкладинці наступного звіту стоїть номер Вісім.
+
+      — Склали, — каже Куренай. Вона на секунду всміхається сама до себе. — Якщо чесно, я досі трохи не вірю власним очам.
+
+      Хірузен піднімає брову.
+
+      — Це добре чи погано?
+
+      — Добре. Вони різні настільки, що мали б заважати одне одному. А вийшло навпаки. Шіно думає наперед, Кіба тягне їх у рух, Хіната бачить те, чого двоє інших не помічають. На вистежуванні вони почали підлаштовуватися один під одного ще до того, як я встигла це вимагати. І коли на полі з’явилася зайва команда з замаскованим джоніном, вони виконали наказ і не дали себе відволікти.
+
+      Краєм ока Куренай дивиться на Райдо. Той лише важко видихає через ніс.
+
+      — Беру Восьму, — закінчує вона вже без усмішки. — Без сумнівів.
+
+      Хірузен ставить другу позначку. Наступна тека лежить просто під його долонею — номер Дев’ять.
+    origin: "P"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kurenai", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+  - id: "ev-y0-0123-raido-accepts-team9"
+    title: "Райдо бере Команду 9"
+    text: |-
+      Райдо дивиться на теку ще до того, як Хірузен відкриває її.
+
+      — Випробування склали, — каже він. — Коли треба було думати, працювали як одне. Не тягнули ковдру на себе, не намагалися геройствувати. На переправі й у катакомбах самі розподілили ролі. На спостереженні теж швидко зрозуміли, що від них потрібно.
+
+      Він замовкає, ніби наступна частина звіту важить більше за попередню.
+
+      — Але команда дуже слабка. Рен преться вперед і віддає рівновагу після першого ж серйозного удару. Сора точна, але їй бракує сили, щоб зупинити противника. Кіта має чакру й техніку, але під тиском може просто перестати діяти. У справжньому бою кожен із них зараз має спосіб померти за кілька секунд.
+
+      Хірузен повільно перегортає одну сторінку. Потім повертає її назад. Його пальці залишаються на верхньому куті звіту Команди 9.
+
+      — Випробування вони склали, — повторює він.
+
+      Райдо мовчить.
+
+      Хірузен не тягнеться до останньої теки. Дим від люльки тонкою смугою піднімається між ними. Десь за зачиненими дверима проходить черговий, і його кроки стихають у коридорі. Райдо опускає погляд на три прізвища внизу сторінки, потім знову дивиться на Хокаґе.
+
+      — Тож ти береш команду? — питає Хірузен тим самим спокійним голосом.
+
+      Ще кілька секунд Райдо нічого не відповідає. Щелепа в нього ледь напружується.
+
+      — Так, — нарешті каже він. — Беру.
+
+      Тільки тоді Хірузен прибирає руку зі звіту, ставить третю позначку й відкладає теку до двох попередніх.
+    origin: "P"
+    extent: "interval"
+    display_rank: 400
+    involvement:
+      - {entity_id: "c-raido", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+  - id: "ev-y0-0123-asuma-accepts-team10"
+    title: "Асума бере Команду 10"
+    text: |-
+      — Ну, з моєю все простіше, — озивається Асума, ніби навмисне розрізаючи тишу. — Десяту беру, звісно.
+
+      Хірузен кладе перед собою останню теку.
+
+      — І яке випробування ти їм дав?
+
+      Асума на мить затримує сигарету зубами.
+
+      — Я зводив їх на якінику.
+
+      Куренай повільно повертає до нього голову. Відкрите око Какаші відривається від стелі. Райдо просто дивиться на Асуму так, ніби чекає другої половини речення.
+
+      Її немає.
+
+      — Це було випробування? — уточнює Хірузен.
+
+      — Не зовсім.
+
+      Куренай тихо видихає щось середнє між сміхом і стогоном. Асума піднімає долоню, не даючи їй почати.
+
+      — Це Іно-Шіка-Чо. Їхні родини відточували цю зв’язку поколіннями. Мені було важливіше побачити, чи саме ці троє можуть сидіти за одним столом, слухати одне одного й не пересваритися раніше, ніж отримають першу місію. Можуть. Решту я перевірю на роботі.
+
+      Хірузен дивиться на нього поверх останньої теки. Кілька секунд у кабінеті знову тихо.
+
+      — Сподіваюся, хоча б рахунок оплатив ти.
+
+      — Звісно.
+
+      Какаші прикриває око, Куренай нарешті дозволяє собі всміхнутися, а Райдо хитає головою. Хірузен ставить четверту позначку.
+    origin: "P"
+    extent: "interval"
+    display_rank: 500
+    involvement:
+      - {entity_id: "c-asuma", role: "focus", mode: "physical"}
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+  - id: "ev-y0-0123-hiruzen-approves-four-teams"
+    title: "Хірузен затверджує команди"
+    text: |-
+      Чотири теки лежать тепер окремим рівним стосом. Хірузен дивиться на них, а потім по черзі на кожного з наставників.
+
+      — Від цього вечора вони вже не просто випускники Академії, — каже він. — Вони ваші геніни. Ви сьогодні вирішили, що готові взяти за них відповідальність. Пам’ятайте про це тоді, коли вони почнуть робити речі, яких ви від них не чекали.
+
+      Він бере люльку зі столу, але не поспішає затягуватися.
+
+      — Не намагайтеся зробити з них молодші копії себе. Навчіть їх думати, поки є час подумати; діяти, коли часу вже немає; і повертатися з місії разом. Решту вони навчаться самі — якщо ви дасте їм можливість дожити до цього.
+
+      Хірузен ставить печатку на останньому аркуші й закриває теку.
+
+      — Завтра почнете з D-рангів. Вільні.
+
+      Асума вже повертається до дверей, коли голос Хірузена наздоганяє його:
+
+      — І, Асума. Вечеря місією не вважається.
+
+      На мить навіть Райдо посміхається краєм рота. Потім двері за чотирма джонінами зачиняються, а Хірузен залишається перед чотирма новими записами в реєстрі команд Конохи.
+    origin: "P"
+    extent: "interval"
+    display_rank: 600
+    involvement:
+      - {entity_id: "c-hiruzen", role: "focus", mode: "physical"}
+      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
+      - {entity_id: "c-kurenai", role: "participant", mode: "physical"}
+      - {entity_id: "c-raido", role: "participant", mode: "physical"}
+      - {entity_id: "c-asuma", role: "participant", mode: "physical"}
+relations:
+  - {id: "rel-0123-office-four-before-kakashi", kind: "before", a: "ev-y0-0123-hiruzen-four-mentors-remain", b: "ev-y0-0123-kakashi-accepts-team7", basis: "project_decision", review: "accepted"}
+  - {id: "rel-0123-office-kakashi-before-kurenai", kind: "before", a: "ev-y0-0123-kakashi-accepts-team7", b: "ev-y0-0123-kurenai-accepts-team8", basis: "project_decision", review: "accepted"}
+  - {id: "rel-0123-office-kurenai-before-raido", kind: "before", a: "ev-y0-0123-kurenai-accepts-team8", b: "ev-y0-0123-raido-accepts-team9", basis: "project_decision", review: "accepted"}
+  - {id: "rel-0123-office-raido-before-asuma", kind: "before", a: "ev-y0-0123-raido-accepts-team9", b: "ev-y0-0123-asuma-accepts-team10", basis: "project_decision", review: "accepted"}
+  - {id: "rel-0123-office-asuma-before-approval", kind: "before", a: "ev-y0-0123-asuma-accepts-team10", b: "ev-y0-0123-hiruzen-approves-four-teams", basis: "project_decision", review: "accepted"}
+presence:
+  - {id: "pr-0123-office-hiruzen", entity_id: "c-hiruzen", from: "sc-y0-0123-hokage-office-team-approval.start", to: "sc-y0-0123-hokage-office-team-approval.end", basis: "project_decision", review: "accepted"}
+  - {id: "pr-0123-office-kakashi", entity_id: "c-kakashi", from: "sc-y0-0123-hokage-office-team-approval.start", to: "sc-y0-0123-hokage-office-team-approval.end", basis: "project_decision", review: "accepted"}
+  - {id: "pr-0123-office-kurenai", entity_id: "c-kurenai", from: "sc-y0-0123-hokage-office-team-approval.start", to: "sc-y0-0123-hokage-office-team-approval.end", basis: "project_decision", review: "accepted"}
+  - {id: "pr-0123-office-raido", entity_id: "c-raido", from: "sc-y0-0123-hokage-office-team-approval.start", to: "sc-y0-0123-hokage-office-team-approval.end", basis: "project_decision", review: "accepted"}
+  - {id: "pr-0123-office-asuma", entity_id: "c-asuma", from: "sc-y0-0123-hokage-office-team-approval.start", to: "sc-y0-0123-hokage-office-team-approval.end", basis: "project_decision", review: "accepted"}
