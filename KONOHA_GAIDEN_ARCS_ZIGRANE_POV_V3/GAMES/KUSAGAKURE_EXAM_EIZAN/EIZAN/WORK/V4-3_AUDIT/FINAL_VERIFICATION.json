@@ -1,0 +1,19 @@
+{
+  "gate_37_accepted": true,
+  "report_37_sha256": "7ffc01a9753e5bbd4eab8b6499d710cf3a40f9c973db1da21f3ac11f1e15bf63",
+  "report_37_root_read": "Full lines 1–70,71–135,136–190; earlier truncated display not counted",
+  "verdict_37": "Текст стабільний; невиконаних необхідних правок не встановлено",
+  "final_sha256": "ae537ae6954ae2a1b367a2853e6b5cf5eabecab0547dc86fc8768610916b23ed",
+  "final_characters": 69869,
+  "essay_quotes_exact": true,
+  "essay_quote_count": 16,
+  "prose_changes_after_37": false,
+  "source_v42_sha256": "e91951849cd1ee608cef944ea5b6e9e9ba27fe98e324f1289b9d3d9a173bd36a",
+  "accepted_unknowns": [
+    "Дві пари та результати невстановлених боїв",
+    "Ранг Ейзана після іспиту",
+    "Подальший стан Асахі",
+    "Повний склад голосів у бамбуці й особа, що взяла печерний сувій"
+  ],
+  "verification_stage": "pre-publication"
+}

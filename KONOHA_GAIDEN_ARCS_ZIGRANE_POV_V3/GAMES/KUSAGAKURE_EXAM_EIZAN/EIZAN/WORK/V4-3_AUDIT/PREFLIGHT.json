@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "check": "Immutable V4.2 source",
+      "passed": true
+    },
+    {
+      "check": "Five distinct arc headings",
+      "passed": true
+    },
+    {
+      "check": "Sayo first named in clinic",
+      "passed": true
+    },
+    {
+      "check": "No Shurh name in final prose",
+      "passed": true
+    },
+    {
+      "check": "No submerged-log cache",
+      "passed": true
+    },
+    {
+      "check": "Pollen seal inside envelope",
+      "passed": true
+    },
+    {
+      "check": "Ambiguous flower phrase removed",
+      "passed": true
+    },
+    {
+      "check": "Snake hint preserved",
+      "passed": true
+    },
+    {
+      "check": "Foreign gate beside flowers",
+      "passed": true
+    },
+    {
+      "check": "No invented unnamed match pairings",
+      "passed": true
+    },
+    {
+      "check": "Only established promotion is explicit",
+      "passed": true
+    },
+    {
+      "check": "Typography consistent",
+      "passed": true
+    },
+    {
+      "check": "No repeated trailing separators",
+      "passed": true
+    }
+  ],
+  "arcs": [
+    {
+      "file": "arc 01 [Кабан і Академія]_STORY_V4-3_FINAL.txt",
+      "characters": 11768,
+      "words": 1915,
+      "sha256": "aa6af5a23423aa404a3f5239e33557460f8455f34483f69b55156944aa179a3b"
+    },
+    {
+      "file": "arc 02 [Брама сорок сьома]_STORY_V4-3_FINAL.txt",
+      "characters": 21552,
+      "words": 3448,
+      "sha256": "fed696e3220e2a6294a87db74682c28b3570ce66dd14350338900e4b1d9ebf01"
+    },
+    {
+      "file": "arc 03 [Сім днів до арени]_STORY_V4-3_FINAL.txt",
+      "characters": 3511,
+      "words": 575,
+      "sha256": "e319199ce4ae850352007a789843d5512d4e0149134b12eaf27b3039b9d1a83f"
+    },
+    {
+      "file": "arc 04 [Тиждень підготовки]_STORY_V4-3_FINAL.txt",
+      "characters": 12932,
+      "words": 2139,
+      "sha256": "b95a678ca8da1dca242837e2653cd096994deec487b408f7828683522fb63aa3"
+    },
+    {
+      "file": "arc 05 [Фінал екзамену]_STORY_V4-3_FINAL.txt",
+      "characters": 20098,
+      "words": 3210,
+      "sha256": "6e3f694d67a3e1cac3ef7619f6b29a0a4612f2c843efb30954719d84ae7b0907"
+    }
+  ],
+  "passed": true
+}

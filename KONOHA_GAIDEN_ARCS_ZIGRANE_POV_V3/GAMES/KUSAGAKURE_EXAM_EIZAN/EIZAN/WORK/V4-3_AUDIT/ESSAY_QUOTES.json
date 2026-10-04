@@ -1,0 +1,147 @@
+[
+  {
+    "id": "E01",
+    "quote": "Спіймав!",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      221
+    ]
+  },
+  {
+    "id": "E02",
+    "quote": "Я лишив їх там, де вони не лізли під ноги, і сам пішов по сліду",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      223
+    ]
+  },
+  {
+    "id": "E03",
+    "quote": "Не журися. Пастки — моя робота. Ще б я свого не взяв. Тобі з ними важче",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      257
+    ]
+  },
+  {
+    "id": "E04",
+    "quote": "Я не заслужив",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      962
+    ]
+  },
+  {
+    "id": "E05",
+    "quote": "Свічки зараз догорять",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      966
+    ]
+  },
+  {
+    "id": "E06",
+    "quote": "На нас.",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1008
+    ]
+  },
+  {
+    "id": "E07",
+    "quote": "Моя колишня?",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1038
+    ]
+  },
+  {
+    "id": "E08",
+    "quote": "Посилення підняло все разом",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1301
+    ]
+  },
+  {
+    "id": "E09",
+    "quote": "Іноді встигав.",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1299
+    ]
+  },
+  {
+    "id": "E10",
+    "quote": "Рахувати я перестав.",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1460
+    ]
+  },
+  {
+    "id": "E11",
+    "quote": "Кінь заверещав мені просто над вухом.",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1544
+    ]
+  },
+  {
+    "id": "E12",
+    "quote": "Поріз.",
+    "exact": true,
+    "occurrences": 2,
+    "lines": [
+      1183,
+      1193
+    ]
+  },
+  {
+    "id": "E13",
+    "quote": "Я не Горо",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1317
+    ]
+  },
+  {
+    "id": "E14",
+    "quote": "Невже тільки десять хвилин?",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1564
+    ]
+  },
+  {
+    "id": "E15",
+    "quote": "Від цього. Щоб ти мав більше часу після контакту",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1688
+    ]
+  },
+  {
+    "id": "E16",
+    "quote": "Горо розгорнув зім’яту програмку, розгладив її на коліні й посунувся, залишаючи Шігуре місце між нами",
+    "exact": true,
+    "occurrences": 1,
+    "lines": [
+      1722
+    ]
+  }
+]
