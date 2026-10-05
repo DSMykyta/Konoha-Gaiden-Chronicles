@@ -4,17 +4,17 @@
   "chapters": [
     {
       "number": 1,
-      "status": "BASELINE_ONLY_NOT_V3",
+      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
       "path": "CHAPTERS/01.md"
     },
     {
       "number": 2,
-      "status": "BASELINE_ONLY_NOT_V3",
+      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
       "path": "CHAPTERS/02.md"
     },
     {
       "number": 3,
-      "status": "BASELINE_ONLY_NOT_V3",
+      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
       "path": "CHAPTERS/03.md"
     },
     {
@@ -49,5 +49,5 @@
     }
   ],
   "reconciliation": "IN_PROGRESS",
-  "draft": "NOT_STARTED"
+  "draft": "CHAPTERS_01_03_WRITTEN"
 }
