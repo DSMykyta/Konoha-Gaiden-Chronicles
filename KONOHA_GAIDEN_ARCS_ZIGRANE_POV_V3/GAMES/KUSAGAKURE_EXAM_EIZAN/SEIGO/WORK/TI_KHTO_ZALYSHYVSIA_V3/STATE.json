@@ -1,0 +1,53 @@
+{
+  "source_blob": "f5b16c3669d9f3db86ab32d458125751503975f3",
+  "inputs_checkpoint": "0edc08fffcc85af17e23e060f0792b45d5fd853c",
+  "chapters": [
+    {
+      "number": 1,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/01.md"
+    },
+    {
+      "number": 2,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/02.md"
+    },
+    {
+      "number": 3,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/03.md"
+    },
+    {
+      "number": 4,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/04.md"
+    },
+    {
+      "number": 5,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/05.md"
+    },
+    {
+      "number": 6,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/06.md"
+    },
+    {
+      "number": 7,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/07.md"
+    },
+    {
+      "number": 8,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/08.md"
+    },
+    {
+      "number": 9,
+      "status": "BASELINE_ONLY_NOT_V3",
+      "path": "CHAPTERS/09.md"
+    }
+  ],
+  "reconciliation": "IN_PROGRESS",
+  "draft": "NOT_STARTED"
+}
