@@ -44,10 +44,10 @@
     },
     {
       "number": 9,
-      "status": "BASELINE_ONLY_NOT_V3",
+      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
       "path": "CHAPTERS/09.md"
     }
   ],
   "reconciliation": "SOURCE_READINGS_COMPLETE_PENDING_ROOT_INTEGRATION",
-  "draft": "CHAPTERS_01_08_WRITTEN"
+  "draft": "CHAPTERS_01_09_WRITTEN"
 }
