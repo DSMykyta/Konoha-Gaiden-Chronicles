@@ -1,0 +1,120 @@
+name: Create Eizan V4.4
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/create-eizan-v44.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  create-v44:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create corrected V4.4
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path('KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN')
+          src = root / 'ARCS/TOY_KHTO_POMYLIAVSIA_V4-3_FINAL.txt'
+          dst = root / 'ARCS/TOY_KHTO_POMYLIAVSIA_V4-4.txt'
+
+          text = src.read_text(encoding='utf-8')
+          marker = 'Після короткої перерви диктор знову попросив уваги.'
+          if text.count(marker) != 1:
+              raise SystemExit(f'Expected exactly one ending marker, found {text.count(marker)}')
+
+          prefix = text[:text.index(marker)]
+          ending = '''Після короткої перерви диктор знову попросив уваги. Третій етап оголосили завершеним. Рішення щодо рангів мали ухвалити після окремого розгляду записів і висновків наставників. Кандидатам їх повідомлять пізніше.
+
+Горо розгорнув зім’яту програмку, ніби там могла бути відповідь.
+
+— І все?
+
+Шігуре забрала в нього пляшку й закрутила кришку.
+
+— На сьогодні — все.
+
+Люди вже виходили з трибун. На полі робітники знімали тимчасові позначки, а біля лож комісії складали папери в окремі папки. Я підвівся. Ребра відразу нагадали про себе.
+
+— Спершу до медика, — сказала Шігуре.
+
+— Я вже був.
+
+— І ще раз будеш.
+
+Горо склав програмку навпіл і прибрав у кишеню. Ми пішли до нижнього проходу разом.
+
+За тиждень після боїв нас викликали до військової канцелярії. Крім нас, прийшли ще дві місцеві команди. Дев’ятеро генінів зайняли стільці перед столом; наставники лишилися ближче до дверей.
+
+Шігуре все ще носила пов’язку на руці. Коли вона сідала, Горо підсунув їй стілець. Я влаштувався поруч.
+
+Сейґо дочекався, поки в кімнаті перестануть рухати стільці.
+
+— Комісія завершила розгляд. Шігуре, підійди.
+
+Вона подивилася на нас і підвелася.
+
+На столі перед Сейґо лежав один документ. Він узяв його, коли Шігуре підійшла.
+
+— Тобі присвоєно ранг чуніна. Рішення набуває чинності з указаної дати. Документи отримаєш у кадровому відділі після цієї зустрічі.
+
+Горо схопився з місця й вигукнув так голосно, що черговий відчинив двері. Наставник неголосно назвав його ім’я. Горо сів, усе ще усміхаючись.
+
+Шігуре дивилася на документ.
+
+— Мене відразу переведуть?
+
+— Призначення окреме. Його погодиш із наставником і польовим управлінням. Сьогодні отримуєш ранг.
+
+Вона подякувала, взяла документ обома руками й повернулася до нас.
+
+Горо вже нахилився до неї.
+
+— Чунін Шігуре. Звикай.
+
+— Дай спочатку сісти.
+
+Я відсунувся з другого боку. Шігуре сіла між нами, тримаючи документ на колінах.
+
+Сейґо перейшов до дальших вказівок.
+'''
+
+          dst.write_text(prefix + ending, encoding='utf-8')
+
+          index = root / '00_INDEX.md'
+          index_text = index.read_text(encoding='utf-8')
+          old = 'Активна редакція: **STORY V4.3 FINAL**. П’ять арок від першого етапу до оголошення підвищення Шігуре.'
+          new = 'Активна зведена редакція: **V4.4**. П’ять арок від першого етапу до оголошення підвищення Шігуре.'
+          if old in index_text:
+              index_text = index_text.replace(old, new, 1)
+          old_link = '- [Повний текст V4.3](ARCS/KUSAGAKURE_EXAM_EIZAN_ARCS_01-05_STORY_V4-3_FINAL.txt).'
+          new_link = '- [Повний текст V4.4](ARCS/TOY_KHTO_POMYLIAVSIA_V4-4.txt).'
+          if old_link in index_text:
+              index_text = index_text.replace(old_link, new_link, 1)
+          note = '\nV4.4 зберігає попередній текст без змін до завершення п’ятого бою. Післяматчеву розв’язку узгоджено з чинною лінією Сейґо: рішення щодо рангів розглядають окремо, а підвищення Шігуре оголошують через тиждень у канцелярії.\n'
+          if note.strip() not in index_text:
+              index_text = index_text.rstrip() + '\n' + note
+          index.write_text(index_text, encoding='utf-8')
+          PY
+
+      - name: Remove temporary workflow
+        run: rm .github/workflows/create-eizan-v44.yml
+
+      - name: Commit V4.4
+        run: |
+          git config user.name "ChatGPT"
+          git config user.email "chatgpt@users.noreply.github.com"
+          git add KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/TOY_KHTO_POMYLIAVSIA_V4-4.txt
+          git add KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/00_INDEX.md
+          git add .github/workflows/create-eizan-v44.yml
+          git commit -m "Create Eizan V4.4 with corrected ending"
+          git push
