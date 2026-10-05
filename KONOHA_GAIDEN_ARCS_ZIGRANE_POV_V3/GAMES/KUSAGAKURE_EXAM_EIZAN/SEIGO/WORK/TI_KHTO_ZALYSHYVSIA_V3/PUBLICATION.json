@@ -1,0 +1,16 @@
+{
+  "status": "VERIFIED",
+  "repository": "DSMykyta/Konoha-Gaiden-Chronicles",
+  "branch": "main",
+  "story_publication_commit": "a9a509061f5719b3ff1c0fe2e57deeb9e3204760",
+  "tree_sha": "c5ddfcd53aa93b07d3a2b4aa653e87f0c8d0037a",
+  "story_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/SEIGO/STORIES/SEIGO_TI_KHTO_ZALYSHYVSIA_V3.md",
+  "story_git_blob": "9975f7d8d4aa5abf685979cd3eb6b78e9bfa71a1",
+  "story_sha256": "fb13a15233475fe2e183a2b364003de1ac0da6a0831d95c4acf4d5fc85be0c6e",
+  "input_files_byte_verified": 9,
+  "baseline_blobs_preserved": 2363,
+  "intentional_existing_file_change": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/SEIGO/STORIES/README.md",
+  "v1_v2_eizan_unchanged": true,
+  "force_used": false,
+  "note": "The publication commit identifies the exact story version; subsequent commits may add verification records."
+}
