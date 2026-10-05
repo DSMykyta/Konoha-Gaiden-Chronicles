@@ -1,0 +1,21 @@
+{
+  "status": "inputs_reviewed_scene_pending",
+  "input_commit": "5841fc738912b8109bd5177af6eb003be7a88719",
+  "input_tree": "d2880a06e8510aa0d4e42ce93201ae4317fcba6b",
+  "author_library_file_id": "libfile_b4552aa1fcb081918a1bffb48cd1756e",
+  "author_library_version": 0,
+  "author_sha256": "c19b376a36a1506de5c551eb90d95340aada6399b926efb02ee95f72ad641bc8",
+  "published_baseline_commit": "a9a509061f5719b3ff1c0fe2e57deeb9e3204760",
+  "published_baseline_sha256": "fb13a15233475fe2e183a2b364003de1ac0da6a0831d95c4acf4d5fc85be0c6e",
+  "decisions": [
+    "Use author-edited full copy and retain newer manual chapter 6 changes.",
+    "Move tea conversation to Thursday after operational escort results and existing hall summons.",
+    "Seigo walks to the previously established small hall; no hall description.",
+    "Two figures in black uniforms and white masks bearing three-stroke Kusa emblem across entire masks; short and stocky; no inferred identities.",
+    "Yasushi apologizes for intrusion, thanks Seigo for festival and asks about practical help already provided.",
+    "Keep no request, condition, fee or disclosure of seal research; no hidden motive stated.",
+    "Spill tea from the open tea packet; Yasushi retains his cup for the requested sip.",
+    "Title appears only in the written invitation."
+  ],
+  "next_step": "Write revised chapter 6; keep escort agreement approved before deadline; assemble all nine chapters; targeted continuity and prose check; publish."
+}
