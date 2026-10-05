@@ -4,52 +4,55 @@
   "chapters": [
     {
       "number": 1,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/01.md"
     },
     {
       "number": 2,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/02.md"
     },
     {
       "number": 3,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/03.md"
     },
     {
       "number": 4,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/04.md"
     },
     {
       "number": 5,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/05.md"
     },
     {
       "number": 6,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/06.md"
     },
     {
       "number": 7,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/07.md"
     },
     {
       "number": 8,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/08.md"
     },
     {
       "number": 9,
-      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
+      "status": "V3_REVISED_AND_REVIEWED",
       "path": "CHAPTERS/09.md"
     }
   ],
   "reconciliation": "COMPLETE_INTEGRATED",
-  "draft": "CHAPTERS_01_09_REVISED_AFTER_COMPLETE_READINGS",
+  "draft": "FINAL_V3_PUBLISHED",
   "final_review_input_sha256": "393023eff8f3c010ca60425ede36176ea814f888065f5b963f791b1ff81d306b",
-  "current_novel_sha256": "fb13a15233475fe2e183a2b364003de1ac0da6a0831d95c4acf4d5fc85be0c6e"
+  "current_novel_sha256": "fb13a15233475fe2e183a2b364003de1ac0da6a0831d95c4acf4d5fc85be0c6e",
+  "publication_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/SEIGO/STORIES/SEIGO_TI_KHTO_ZALYSHYVSIA_V3.md",
+  "final_review": "COMPLETE_TWO_FULL_READINGS_AND_TARGETED_REPAIR_CHECKS",
+  "ongoing_work": false
 }
