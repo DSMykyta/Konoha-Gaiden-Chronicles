@@ -1,0 +1,74 @@
+{
+  "created_utc": "2026-10-05",
+  "base_commit": "8c1aa2589996368cef669864850ff4a4bac53996",
+  "base_tree": "155dac875b341e45d64fa0a632bc469bd0a9de0c",
+  "source_novel_blob": "f5b16c3669d9f3db86ab32d458125751503975f3",
+  "source_novel_sha256": "e23c296d69da869a9b4a39e4c083702773bfc88f4abaa94ca70b7111a34cb4c2",
+  "input_count": 9,
+  "files": [
+    {
+      "original_name": "essay-kimi-2_8.md",
+      "path": "INPUTS/ESSAY_KIMI.md",
+      "bytes": 29679,
+      "sha256": "662bb213e084996b4ae6526fe7c6ee195202a8a3cd7631da1346e8f383705ade",
+      "git_blob": "c5fb96753b2dfb6fb010e6207368df0d75b262d5"
+    },
+    {
+      "original_name": "review-after-ai-reed-my(5).md",
+      "path": "INPUTS/AUTHOR_NOTES.md",
+      "bytes": 11928,
+      "sha256": "f2638b41cc039d75aa99a19f3a994cb8ff84ba25bece70814b198667332e9b93",
+      "git_blob": "0602be80770db55efbc957c1286368e6b09db5ac"
+    },
+    {
+      "original_name": "review-GPT-5_6-sol(3).md",
+      "path": "INPUTS/AUDITS_SOLO_GPT.md",
+      "bytes": 464423,
+      "sha256": "f30ba67ae4e9b3c68d33af1e7b1f8cd5837910dec105ebbcba40ffd3474b130b",
+      "git_blob": "eca3e045297745dc6637dc8f2d81c3f41a52dd82"
+    },
+    {
+      "original_name": "review-GPT-5_6-sol-34report1.md",
+      "path": "INPUTS/ARBITRATION_34_A.md",
+      "bytes": 16197,
+      "sha256": "177bd09971d8ded7ca9da50b408ead9b36eae78dc8f7642383dfff11cd1c0102",
+      "git_blob": "dcf6b473cec1f886d4015e30f8d29ae58f0fce39"
+    },
+    {
+      "original_name": "review-GPT-5_6-sol-34report2.md",
+      "path": "INPUTS/ARBITRATION_34_B.md",
+      "bytes": 33704,
+      "sha256": "2de1076d55ceabb9317978cd335c7614777630faca2b052da8d50d18a7dbfd61",
+      "git_blob": "b91c3530db4d5e6696300ffe21f0e55c2ff6aa34"
+    },
+    {
+      "original_name": "review-GPT-5_6-sol-report.md",
+      "path": "INPUTS/ARBITRATION_30_33_GPT.md",
+      "bytes": 114584,
+      "sha256": "4eab7a714a57510085d19f752b1988e3de1192a7ff21597f439b4892a3a2d54a",
+      "git_blob": "d8321072ebaf6a45aa7fac37679490d5a8798ddd"
+    },
+    {
+      "original_name": "search-report.md",
+      "path": "INPUTS/DONOR_SEARCH.md",
+      "bytes": 27471,
+      "sha256": "ea5734baf02b303b952ff087f7cb789508657dd7cea003f6e505b28b1974def1",
+      "git_blob": "976c04c69edbb0af90c38a37a7d6d5aec2df0b65"
+    },
+    {
+      "original_name": "essay-gemeni-3_8-deep-research-report.md",
+      "path": "INPUTS/ESSAY_GEMINI.md",
+      "bytes": 39975,
+      "sha256": "ea9f9673e1787d29e6394f6e946f459d9b4e828c98b0e41eabca4a0e306cb4a1",
+      "git_blob": "e73368a0598ded9663dbadd08ff8d8708e628137"
+    },
+    {
+      "original_name": "essay-gpt-5_6-deep-research-report.md",
+      "path": "INPUTS/ESSAY_GPT.md",
+      "bytes": 76875,
+      "sha256": "c7b0b91448513634cd0ca900893cf70144eba6882773ea0ba86744d112aef4f1",
+      "git_blob": "efb43b7a34648f86f868cc3115ff448651ad3a88"
+    }
+  ],
+  "raw_bytes_preserved": true
+}
