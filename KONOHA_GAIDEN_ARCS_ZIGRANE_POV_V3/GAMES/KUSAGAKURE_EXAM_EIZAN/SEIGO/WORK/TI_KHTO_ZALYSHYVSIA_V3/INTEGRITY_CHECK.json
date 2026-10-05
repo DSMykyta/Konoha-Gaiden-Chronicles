@@ -1,0 +1,66 @@
+{
+  "novel_sha256": "fb13a15233475fe2e183a2b364003de1ac0da6a0831d95c4acf4d5fc85be0c6e",
+  "novel_git_blob": "9975f7d8d4aa5abf685979cd3eb6b78e9bfa71a1",
+  "chapters": 9,
+  "words": 14949,
+  "bytes": 169278,
+  "input_files_verified": 9,
+  "inputs": [
+    {
+      "path": "INPUTS/ESSAY_KIMI.md",
+      "sha256": "662bb213e084996b4ae6526fe7c6ee195202a8a3cd7631da1346e8f383705ade",
+      "bytes": 29679,
+      "git_blob": "c5fb96753b2dfb6fb010e6207368df0d75b262d5"
+    },
+    {
+      "path": "INPUTS/AUTHOR_NOTES.md",
+      "sha256": "f2638b41cc039d75aa99a19f3a994cb8ff84ba25bece70814b198667332e9b93",
+      "bytes": 11928,
+      "git_blob": "0602be80770db55efbc957c1286368e6b09db5ac"
+    },
+    {
+      "path": "INPUTS/AUDITS_SOLO_GPT.md",
+      "sha256": "f30ba67ae4e9b3c68d33af1e7b1f8cd5837910dec105ebbcba40ffd3474b130b",
+      "bytes": 464423,
+      "git_blob": "eca3e045297745dc6637dc8f2d81c3f41a52dd82"
+    },
+    {
+      "path": "INPUTS/ARBITRATION_34_A.md",
+      "sha256": "177bd09971d8ded7ca9da50b408ead9b36eae78dc8f7642383dfff11cd1c0102",
+      "bytes": 16197,
+      "git_blob": "dcf6b473cec1f886d4015e30f8d29ae58f0fce39"
+    },
+    {
+      "path": "INPUTS/ARBITRATION_34_B.md",
+      "sha256": "2de1076d55ceabb9317978cd335c7614777630faca2b052da8d50d18a7dbfd61",
+      "bytes": 33704,
+      "git_blob": "b91c3530db4d5e6696300ffe21f0e55c2ff6aa34"
+    },
+    {
+      "path": "INPUTS/ARBITRATION_30_33_GPT.md",
+      "sha256": "4eab7a714a57510085d19f752b1988e3de1192a7ff21597f439b4892a3a2d54a",
+      "bytes": 114584,
+      "git_blob": "d8321072ebaf6a45aa7fac37679490d5a8798ddd"
+    },
+    {
+      "path": "INPUTS/DONOR_SEARCH.md",
+      "sha256": "ea5734baf02b303b952ff087f7cb789508657dd7cea003f6e505b28b1974def1",
+      "bytes": 27471,
+      "git_blob": "976c04c69edbb0af90c38a37a7d6d5aec2df0b65"
+    },
+    {
+      "path": "INPUTS/ESSAY_GEMINI.md",
+      "sha256": "ea9f9673e1787d29e6394f6e946f459d9b4e828c98b0e41eabca4a0e306cb4a1",
+      "bytes": 39975,
+      "git_blob": "e73368a0598ded9663dbadd08ff8d8708e628137"
+    },
+    {
+      "path": "INPUTS/ESSAY_GPT.md",
+      "sha256": "c7b0b91448513634cd0ca900893cf70144eba6882773ea0ba86744d112aef4f1",
+      "bytes": 76875,
+      "git_blob": "efb43b7a34648f86f868cc3115ff448651ad3a88"
+    }
+  ],
+  "base_v2_byte_exact": true,
+  "chapter_assembly_matches": true
+}

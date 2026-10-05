@@ -48,6 +48,8 @@
       "path": "CHAPTERS/09.md"
     }
   ],
-  "reconciliation": "SOURCE_READINGS_COMPLETE_PENDING_ROOT_INTEGRATION",
-  "draft": "CHAPTERS_01_09_WRITTEN"
+  "reconciliation": "COMPLETE_INTEGRATED",
+  "draft": "CHAPTERS_01_09_REVISED_AFTER_COMPLETE_READINGS",
+  "final_review_input_sha256": "393023eff8f3c010ca60425ede36176ea814f888065f5b963f791b1ff81d306b",
+  "current_novel_sha256": "fb13a15233475fe2e183a2b364003de1ac0da6a0831d95c4acf4d5fc85be0c6e"
 }
