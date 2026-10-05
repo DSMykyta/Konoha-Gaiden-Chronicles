@@ -19,17 +19,17 @@
     },
     {
       "number": 4,
-      "status": "BASELINE_ONLY_NOT_V3",
+      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
       "path": "CHAPTERS/04.md"
     },
     {
       "number": 5,
-      "status": "BASELINE_ONLY_NOT_V3",
+      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
       "path": "CHAPTERS/05.md"
     },
     {
       "number": 6,
-      "status": "BASELINE_ONLY_NOT_V3",
+      "status": "V3_DRAFT_SAVED_PENDING_FINAL_REVIEW",
       "path": "CHAPTERS/06.md"
     },
     {
@@ -48,6 +48,6 @@
       "path": "CHAPTERS/09.md"
     }
   ],
-  "reconciliation": "IN_PROGRESS",
-  "draft": "CHAPTERS_01_03_WRITTEN"
+  "reconciliation": "SOURCE_READINGS_COMPLETE_PENDING_ROOT_INTEGRATION",
+  "draft": "CHAPTERS_01_06_WRITTEN"
 }
