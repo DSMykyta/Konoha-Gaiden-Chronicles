@@ -4,32 +4,32 @@
   "chapters": [
     {
       "number": 1,
-      "status": "V3_REVISED_AND_REVIEWED",
+      "status": "AUTHOR_EDITS_AND_TARGETED_REVISION_REVIEWED",
       "path": "CHAPTERS/01.md"
     },
     {
       "number": 2,
-      "status": "V3_REVISED_AND_REVIEWED",
+      "status": "AUTHOR_EDITS_AND_TARGETED_REVISION_REVIEWED",
       "path": "CHAPTERS/02.md"
     },
     {
       "number": 3,
-      "status": "V3_REVISED_AND_REVIEWED",
+      "status": "AUTHOR_EDITS_AND_TARGETED_REVISION_REVIEWED",
       "path": "CHAPTERS/03.md"
     },
     {
       "number": 4,
-      "status": "V3_REVISED_AND_REVIEWED",
+      "status": "AUTHOR_EDITS_AND_TARGETED_REVISION_REVIEWED",
       "path": "CHAPTERS/04.md"
     },
     {
       "number": 5,
-      "status": "V3_REVISED_AND_REVIEWED",
+      "status": "AUTHOR_EDITS_AND_TARGETED_REVISION_REVIEWED",
       "path": "CHAPTERS/05.md"
     },
     {
       "number": 6,
-      "status": "V3_REVISED_AND_REVIEWED",
+      "status": "AUTHOR_EDITS_AND_TARGETED_REVISION_REVIEWED",
       "path": "CHAPTERS/06.md"
     },
     {
@@ -49,11 +49,21 @@
     }
   ],
   "reconciliation": "COMPLETE_INTEGRATED",
-  "draft": "FINAL_V3_PUBLISHED",
+  "draft": "FINAL_V3_PUBLISHED_WITH_AUTHOR_AND_TEA_REVISION",
   "final_review_input_sha256": "393023eff8f3c010ca60425ede36176ea814f888065f5b963f791b1ff81d306b",
-  "current_novel_sha256": "fb13a15233475fe2e183a2b364003de1ac0da6a0831d95c4acf4d5fc85be0c6e",
+  "current_novel_sha256": "26483c0e13c34f2118f5c2120d16db8617609cea2b310c027fc04bf56cd1f1d1",
   "publication_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/SEIGO/STORIES/SEIGO_TI_KHTO_ZALYSHYVSIA_V3.md",
-  "final_review": "COMPLETE_TWO_FULL_READINGS_AND_TARGETED_REPAIR_CHECKS",
+  "final_review": "PREVIOUS_FULL_READINGS_PLUS_TARGETED_AUTHOR_AND_TEA_REVISION_CHECK",
   "ongoing_work": false,
-  "story_publication_commit": "a9a509061f5719b3ff1c0fe2e57deeb9e3204760"
+  "story_publication_commit": "b4f0d4feb87a9657682cdec353f5e3933c65952a",
+  "previous_story_publication_commit": "a9a509061f5719b3ff1c0fe2e57deeb9e3204760",
+  "current_novel_blob": "9ab888b98da7ec1fc963f7ede54bdb42a6a986ef",
+  "latest_revision": {
+    "status": "COMPLETE",
+    "input_commit": "5841fc738912b8109bd5177af6eb003be7a88719",
+    "input_checkpoint_commit": "6d57c1d51ca789f959e89fd754da15baf6d20dcf",
+    "report": "../TI_KHTO_ZALYSHYVSIA_V3_TEA_REVISION/REVIEW.md",
+    "review_scope": "Author small edits, complete revised chapter 6, causal transitions, physical staging, attribution and StoryScope."
+  },
+  "scene_excerpt": "CHAPTERS/06.1.md; exact excerpt included once in chapter 6"
 }

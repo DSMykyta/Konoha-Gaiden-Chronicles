@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "ongoing_work": false,
+  "input_checkpoint_commit": "6d57c1d51ca789f959e89fd754da15baf6d20dcf",
+  "story_publication_commit": "b4f0d4feb87a9657682cdec353f5e3933c65952a",
+  "current_novel_sha256": "26483c0e13c34f2118f5c2120d16db8617609cea2b310c027fc04bf56cd1f1d1",
+  "current_novel_blob": "9ab888b98da7ec1fc963f7ede54bdb42a6a986ef",
+  "review": "REVIEW.md",
+  "integrity": "INTEGRITY_CHECK.json",
+  "receipt": "PUBLICATION.json",
+  "input_author_copy": "INPUT_AUTHOR_V3.md",
+  "input_git_chapter_6": "INPUT_GIT_06.md",
+  "resume": "../TI_KHTO_ZALYSHYVSIA_V3/RESUME.md"
+}
