@@ -1,0 +1,28 @@
+name: Fix Eizan V4.4
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/fix-eizan-v44.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply corrections
+        run: python3 .github/scripts/fix_eizan_v44.py
+      - name: Commit corrections
+        run: |
+          git config user.name "ChatGPT"
+          git config user.email "chatgpt@users.noreply.github.com"
+          git add KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/TOY_KHTO_POMYLIAVSIA_V4-4.txt
+          git commit -m "Correct Eizan V4.4 ending continuity"
+          git push
