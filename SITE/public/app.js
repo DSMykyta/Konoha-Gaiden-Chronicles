@@ -349,7 +349,7 @@ function render(){
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
  graphNodes.forEach((node,index)=>{node.number=numbered?index+1:null;});
  const reading=readingActive();
- graphClouds=StoryClouds.groups(graphNodes,level,sceneMap,episodeMap);
+ graphClouds=StoryClouds.groups(globalNodes.filter(p=>p.group.some(relevant)),level,sceneMap,episodeMap,arcMap);
  h=Math.max(viewport,...graphNodes.map(p=>p.y+156));
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
  $('linesCount').textContent=`Лінії · ${selected.size}`;
@@ -473,7 +473,7 @@ function mapTitleGroups(level){
   return [...groups.values()];
  }
  const titles=graphNodes.map(node=>({key:node.id,kind:node.kind,id:node.rawId||node.id,title:node.title,nodes:[node]}));
- if(level==='scene')titles.unshift(...graphClouds.filter(group=>group.kind==='episode'&&Math.max(...group.nodes.map(node=>node.x))-Math.min(...group.nodes.map(node=>node.x))>100));
+ if(level==='scene')titles.unshift(...graphClouds.filter(group=>group.kind==='episode'&&group.nodes.some(node=>node.x>=0&&node.x<=($('canvas').clientWidth||1000))).map(group=>({...group,nodes:group.nodes.filter(node=>node.x>=-90&&node.x<=($('canvas').clientWidth||1000)+90)})).filter(group=>group.nodes.length>1));
  return titles;
 }
 function drawMapTitles(level,width,top,bottom){

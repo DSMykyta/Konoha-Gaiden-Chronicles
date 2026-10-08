@@ -3,18 +3,19 @@ const StoryClouds = {
  hash(value){let hash=2166136261;for(const char of String(value||'')){hash^=char.charCodeAt(0);hash=Math.imul(hash,16777619);}return hash>>>0;},
  palette(kind,key){
   const base=this.hash(key)%360,shift=kind==='episode'?52:kind==='scene'?18:0,hue=(base+shift)%360;
+  if(kind==='arc')return {top:`hsla(${hue},34%,91%,.37)`,bottom:`hsla(${hue},32%,94%,.24)`,stroke:`hsla(${hue},25%,69%,.22)`,alpha:.40};
   if(kind==='episode')return {top:`hsla(${hue},55%,92%,.76)`,bottom:`hsla(${hue},50%,94%,.48)`,stroke:`hsla(${hue},28%,68%,.38)`,alpha:.54};
   if(kind==='scene')return {top:`hsla(${hue},62%,89%,.82)`,bottom:`hsla(${hue},55%,92%,.58)`,stroke:`hsla(${hue},32%,64%,.44)`,alpha:.68};
   return {top:`hsla(${hue},72%,86%,.92)`,bottom:`hsla(${hue},64%,89%,.78)`,stroke:`hsla(${hue},38%,60%,.52)`,alpha:.84};
  },
- groups(nodes,level,sceneMap,episodeMap){
+ groups(nodes,level,sceneMap,episodeMap,arcMap=new Map()){
   if(level==='arc')return [];
-  const buckets=new Map(),rank={episode:0,scene:1,moment:2};
+  const buckets=new Map(),rank={arc:-1,episode:0,scene:1,moment:2};
   const add=(kind,id,node,parentId=null)=>{
    if(!id)return;
    const key=kind+':'+id;
    if(!buckets.has(key)){
-    const meta=kind==='scene'?sceneMap.get(id):kind==='episode'?episodeMap.get(id):null;
+    const meta=kind==='scene'?sceneMap.get(id):kind==='episode'?episodeMap.get(id):kind==='arc'?arcMap.get(id):null;
     const episodeId=kind==='scene'?(meta?.episode_id||parentId):kind==='episode'?id:parentId;
     buckets.set(key,{key,kind,id,momentIds:new Set(),sceneIds:new Set(),parentId:kind==='scene'?episodeId:null,title:meta?.title||node.title,parentTitle:episodeMap.get(episodeId)?.title||'',nodes:[]});
    }
@@ -27,10 +28,14 @@ const StoryClouds = {
    const episodeId=episodeIds[0]||null;
 
    if(level==='moment'||level==='scene')add('scene',sceneId,node,episodeId);
-   for(const id of episodeIds)add('episode',id,node);
+   if(level==='moment'||level==='scene')for(const id of episodeIds)add('episode',id,node);
+   if(level==='moment'||level==='scene'||level==='episode'){
+    const arcIds=[...new Set(episodeIds.map(id=>episodeMap.get(id)?.arc_id).filter(Boolean))];
+    for(const id of arcIds)add('arc',id,node);
+   }
   }
   return [...buckets.values()]
-   .filter(group=>group.kind==='episode'?group.sceneIds.size>1:group.momentIds.size>1)
+   .filter(group=>group.kind==='arc'?group.nodes.length>1:group.kind==='episode'?group.sceneIds.size>1:group.momentIds.size>1)
    .sort((a,b)=>rank[a.kind]-rank[b.kind]||a.key.localeCompare(b.key))
    .map(group=>({...group,parts:group.nodes.length?[group.nodes]:[]}));
  },
@@ -72,20 +77,25 @@ const StoryClouds = {
   }
   return labels;
  },
- bridgePoints(points,radius,kind){
+ bridgePoints(points,radius,kind,minX=-Infinity,maxX=Infinity){
   if(kind==='moment'||points.length<2)return [];
-  const ordered=points.slice().sort((a,b)=>a.x-b.x||a.y-b.y),bridges=[],spacing=kind==='episode'?radius*.72:radius*.62;
+  const ordered=points.slice().sort((a,b)=>a.x-b.x||a.y-b.y),bridges=[],spacing=kind==='arc'?radius*.80:kind==='episode'?radius*.72:radius*.62;
   for(let i=1;i<ordered.length;i++){
-   const a=ordered[i-1],b=ordered[i],distance=Math.hypot(b.x-a.x,b.y-a.y),steps=Math.max(0,Math.ceil(distance/spacing)-1),seed=this.hash(a.id+'>'+b.id);
-   for(let step=1;step<=steps;step++){
+   const a=ordered[i-1],b=ordered[i],dx=b.x-a.x,distance=Math.hypot(dx,b.y-a.y);
+   if(b.x<minX||a.x>maxX)continue;
+   const steps=Math.max(0,Math.ceil(distance/spacing)-1),seed=this.hash(a.id+'>'+b.id);
+   if(!steps)continue;
+   const first=dx>0?Math.max(1,Math.ceil((minX-a.x)/dx*(steps+1))):1;
+   const last=dx>0?Math.min(steps,Math.floor((maxX-a.x)/dx*(steps+1))):steps;
+   for(let step=first;step<=last;step++){
     const t=step/(steps+1),curve=Math.sin(Math.PI*t)*Math.sin((seed%628)/100)*Math.min(radius*.12,distance*.035);
-    bridges.push({id:`${a.id}>${b.id}:${step}`,x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t+curve});
+    bridges.push({id:`${a.id}>${b.id}:${step}`,x:a.x+dx*t,y:a.y+(b.y-a.y)*t+curve});
    }
   }
   return bridges;
  },
- influences(points,radius,phase=0,kind='moment'){
-  const balls=[],anchors=[...points,...this.bridgePoints(points,radius,kind)];
+ influences(points,radius,phase=0,kind='moment',extra=null){
+  const balls=[],anchors=[...points,...(extra??this.bridgePoints(points,radius,kind))];
   for(const point of anchors){
    let seed=0;for(const char of point.id)seed=(seed*31+char.charCodeAt(0))>>>0;
    const angle=seed%628/100,breath=Math.sin(phase+angle)*(kind==='moment'?1.2:1.6),bridge=String(point.id).includes('>');
@@ -102,10 +112,11 @@ const StoryClouds = {
   for(const node of foreign){const d=((x-node.x)**2+(y-node.y)**2)/400;if(d<1)value=Math.min(value,d*.62);}
   return value;
  },
- contours(points,foreign=[],radius=34,phase=0,step=8,kind='moment'){
-  if(!points.length)return [];
-  const padding=radius*2.4,left=Math.floor((Math.min(...points.map(p=>p.x))-padding)/step)*step,top=Math.floor((Math.min(...points.map(p=>p.y))-padding)/step)*step,right=Math.ceil((Math.max(...points.map(p=>p.x))+padding)/step)*step,bottom=Math.ceil((Math.max(...points.map(p=>p.y))+padding)/step)*step;
-  const columns=Math.round((right-left)/step)+1,rows=Math.round((bottom-top)/step)+1,values=new Float32Array(columns*rows),balls=this.influences(points,radius,phase,kind),masks=foreign.filter(n=>n.x>=left-20&&n.x<=right+20&&n.y>=top-20&&n.y<=bottom+20);
+ contours(points,foreign=[],radius=34,phase=0,step=8,kind='moment',extra=null){
+  const footprint=extra?[...points,...extra]:points;
+  if(!footprint.length)return [];
+  const padding=radius*2.4,left=Math.floor((Math.min(...footprint.map(p=>p.x))-padding)/step)*step,top=Math.floor((Math.min(...footprint.map(p=>p.y))-padding)/step)*step,right=Math.ceil((Math.max(...footprint.map(p=>p.x))+padding)/step)*step,bottom=Math.ceil((Math.max(...footprint.map(p=>p.y))+padding)/step)*step;
+  const columns=Math.round((right-left)/step)+1,rows=Math.round((bottom-top)/step)+1,values=new Float32Array(columns*rows),balls=this.influences(points,radius,phase,kind,extra),masks=foreign.filter(n=>n.x>=left-20&&n.x<=right+20&&n.y>=top-20&&n.y<=bottom+20);
   for(let y=0;y<rows;y++)for(let x=0;x<columns;x++)values[y*columns+x]=this.field(left+x*step,top+y*step,balls,masks);
   const threshold=.62,segments=[],cases=[[],[[3,0]],[[0,1]],[[3,1]],[[1,2]],[[3,0],[1,2]],[[0,2]],[[3,2]],[[2,3]],[[0,2]],[[0,1],[2,3]],[[1,2]],[[1,3]],[[0,1]],[[3,0]],[]];
   for(let y=0;y<rows-1;y++)for(let x=0;x<columns-1;x++){
@@ -127,41 +138,67 @@ const StoryClouds = {
  create(canvas){
   const context=canvas?.getContext?.('2d');if(!context)return {update(){},scroll(){},refresh(){},setPaused(){}};
   const contrast=window.matchMedia('(prefers-contrast: more)'),transparency=window.matchMedia('(prefers-reduced-transparency: reduce)');
-  let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,paused:false};
-  const geometry=new Map();
+  let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,paused:false},frame=null;
+  // Content/zoom/layout changes alter outlines; panning and vertical scrolling
+  // never add/remove members. Cache contours, not merely the previous paint.
+  const geometry=new Map(),capacity=180;
   const draw=()=>{
    const dpr=Math.min(window.devicePixelRatio||1,2),width=Math.round(state.width*dpr),height=Math.round(state.height*dpr);
    if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
-   context.setTransform(dpr,0,0,dpr,0,-state.scrollTop*dpr);context.clearRect(0,state.scrollTop,state.width,state.height);
+   context.setTransform(dpr,0,0,dpr,0,-state.scrollTop*dpr);
+   context.clearRect(0,state.scrollTop,state.width,state.height);
    for(const group of state.groups){
-    const own=new Set(group.nodes.map(n=>n.id)),foreign=group.kind==='moment'?state.nodes.filter(n=>!own.has(n.id)):[],radius=group.kind==='episode'?70:group.kind==='scene'?48:25,colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.key),group.kind,group.key),group.kind,group.key);
+    const radius=group.kind==='arc'?92:group.kind==='episode'?70:group.kind==='scene'?48:25;
+    const margin=radius*3.8,own=new Set(group.nodes.map(n=>n.id));
+    const colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.key),group.kind,group.key),group.kind,group.key);
+    // The group contains ALL its nodes, including those offscreen. Clip only
+    // contour computation after grouping, so a fourth offscreen moment cannot
+    // suddenly create a new cloud as the viewport crosses it.
     for(const part of group.parts){
-     const minY=Math.min(...part.map(n=>n.y))-radius*2.4,maxY=Math.max(...part.map(n=>n.y))+radius*2.4;
+     if(!part.length)continue;
+     const minAllX=Math.min(...part.map(n=>n.x)),maxAllX=Math.max(...part.map(n=>n.x));
+     if(maxAllX < -margin||minAllX>state.width+margin)continue;
+     const near=part.filter(n=>n.x>=-margin&&n.x<=state.width+margin);
+     const extra=StoryClouds.bridgePoints(part,radius,group.kind,-margin,state.width+margin);
+     const active=[...near,...extra];
+     if(!active.length)continue;
+     const minY=Math.min(...active.map(n=>n.y))-radius*2.4,maxY=Math.max(...active.map(n=>n.y))+radius*2.4;
      if(maxY<state.scrollTop||minY>state.scrollTop+state.height)continue;
-     let shape=geometry.get(part);
+     const signature=group.key+'|'+active.map(n=>n.id+':'+n.x.toFixed(1)+','+n.y.toFixed(1)).join('|');
+     let shape=geometry.get(signature);
      if(!shape){
-      const contours=StoryClouds.contours(part,foreign,radius,0,group.kind==='moment'?6:8,group.kind),path=new Path2D();
+      const foreign=group.kind==='scene'?state.nodes.filter(n=>!own.has(n.id)&&n.x>=-margin&&n.x<=state.width+margin&&n.y>=minY-20&&n.y<=maxY+20):[];
+      const contours=StoryClouds.contours(near,foreign,radius,0,group.kind==='arc'?10:group.kind==='episode'?9:6,group.kind,extra);
+      const path=new Path2D();
       for(const loop of contours){const last=loop.at(-1),first=loop[0];path.moveTo((last.x+first.x)/2,(last.y+first.y)/2);loop.forEach((p,i)=>{const next=loop[(i+1)%loop.length];path.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);});path.closePath();}
-      shape={path};geometry.set(part,shape);
+      shape={path};geometry.set(signature,shape);
+      if(geometry.size>capacity)geometry.delete(geometry.keys().next().value);
      }
-     const path=shape.path;
-     const gradient=context.createLinearGradient(0,minY,0,maxY);gradient.addColorStop(0,colors.top);gradient.addColorStop(1,colors.bottom);
-     context.globalAlpha=colors.alpha;context.fillStyle=contrast.matches?'rgba(222,224,228,.82)':gradient;context.fill(path,'evenodd');
-     context.strokeStyle=contrast.matches?'#858b94':colors.stroke;context.lineWidth=group.kind==='moment'?.8:1;context.stroke(path);
-     context.save();context.translate(0,-1);context.globalAlpha=group.kind==='moment'?.55:.4;context.strokeStyle='rgba(255,255,255,.9)';context.stroke(path);context.restore();
+     const path=shape.path,gradient=context.createLinearGradient(0,minY,0,maxY);
+     gradient.addColorStop(0,colors.top);gradient.addColorStop(1,colors.bottom);
+     context.globalAlpha=colors.alpha;
+     context.fillStyle=contrast.matches?'rgba(222,224,228,.82)':gradient;
+     context.fill(path,'evenodd');
+     context.strokeStyle=contrast.matches?'#858b94':colors.stroke;
+     context.lineWidth=group.kind==='arc'?.7:group.kind==='moment'?.8:1;context.stroke(path);
     }
    }
    context.globalAlpha=1;
   };
-  // Geometry is static between user actions. Rebuilding contours on a decorative
-  // animation loop competes with pointer input, especially on large canvases.
   const resume=()=>{if(document.visibilityState!=='hidden')draw();};
-  for(const preference of [contrast,transparency])preference.addEventListener?.('change',resume);
-  document.addEventListener('visibilitychange',resume);
+  const frameDraw=()=>{
+   if(frame!==null)return;
+   frame=requestAnimationFrame(()=>{frame=null;resume();});
+  };
+  for(const preference of [contrast,transparency])preference.addEventListener?.('change',frameDraw);
+  document.addEventListener('visibilitychange',frameDraw);
   return {
-   update(next){if(next.groups&&next.groups!==state.groups)geometry.clear();state={...state,...next};resume();},
-   scroll(scrollTop){state.scrollTop=scrollTop;draw();},refresh(){draw();},
-   setPaused(paused){if(state.paused===paused)return;state.paused=paused;resume();}
+   update(next){state={...state,...next};if(frame!==null){cancelAnimationFrame(frame);frame=null;}resume();},
+   // A scroll event now schedules at most one canvas blit per animation frame.
+   // Cached Path2D geometry is reused, without re-running marching squares.
+   scroll(scrollTop){if(state.scrollTop===scrollTop)return;state.scrollTop=scrollTop;frameDraw();},
+   refresh(){frameDraw();},
+   setPaused(paused){state.paused=paused;}
   };
  }
 };
