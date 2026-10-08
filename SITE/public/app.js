@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261008-contents';
+const UI_VERSION='20261008-wheel-pan';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -11,7 +11,7 @@ const origins={M:'Манґа',A:'Аніме',F:'Філер',P:'Історія п
 const zoomModes={year:1,month:12,week:365/7,day:365};
 function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorEvent=null,graphNodes=[],raf=null,searchLimit=30;
+let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorEvent=null,graphNodes=[],raf=null,paintedCenter=21.5,wheelPreview=false,searchLimit=30;
 function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,(data?.calendar.view_days||365)-1);const year=(data?.calendar.view_start_year??data?.calendar.current_year??61)+Math.floor(day/365);day%=365;const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m,year};}
 function dateText(day,long=false){const a=date(day);return a?(long?`${a.d} ${gen[a.m]}${data.calendar.view_days>365?' '+a.year:''}`:`${String(a.d).padStart(2,'0')}.${String(a.m+1).padStart(2,'0')}${data.calendar.view_days>365?'.'+a.year:''}`):'Без установленої дати';}
 function yearText(day=null){return `Рік ${day===null?data.calendar.current_year:date(day).year} Конохи`;}
@@ -46,14 +46,15 @@ function renderEraHeading(leftDay,px){
 function name(id){const e=entityMap.get(id);return e?.aliases?.find(a=>/[А-Яа-яІіЇїЄєҐґ]/.test(a))||e?.name||id||'Місце не встановлено';}
 function fullName(id){return TimelineCore.fullName(entityMap.get(id),profileMap?.get(id));}
 function selectable(){return TimelineCore.selectable(data.entities,events());}
-function color(id){return palette[[...entityMap.keys()].indexOf(id)%palette.length]||'#8797ac';}
+function color(id){return characterColors.get(id)||'#8797ac';}
 let cachedData=null,cachedContinuity=null,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
-const layoutCache=new Map(),baseLayoutCache=new Map();
+const layoutCache=new Map(),baseLayoutCache=new Map(),semanticNodeCache=new Map();
+let characterColors=new Map();
 function events(){
  if(cachedData!==data||cachedContinuity!==continuity){
   cachedData=data;cachedContinuity=continuity;
   cachedEvents=data.events.filter(e=>e.continuity===continuity&&e.scene_state!=='inactive');
-  cachedDated=cachedEvents.filter(e=>e.day!==null);cachedScenes=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();
+  cachedDated=cachedEvents.filter(e=>e.day!==null);cachedScenes=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();semanticNodeCache.clear();
  }
  return cachedEvents;
 }
@@ -175,7 +176,14 @@ function makeTimeScale(lo,hi,pad,plot,dated){
  };
 }
 function svg(tag,attrs,parent=drawingTarget||$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
-function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);}
+function previewPan(dx){
+ const transform=Math.abs(dx)>.01?'translate3d('+dx+'px,0,0)':'';
+ for(const id of ['timeline','timeAxis','storyClouds'])$(id).style.transform=transform;
+}
+function schedule(){
+ if(wheelPreview||raf!==null)return;
+ raf=requestAnimationFrame(()=>{raf=null;render();});
+}
 let hoverCard=false,pinnedNodeId=null,cardReturnFocus=null,graphClouds=[],graphLabels=[],cloudRenderer=null;
 const cloudLabelLayouts=new Map();
 function readingActive(){return !!pinnedNodeId&&!$('eventCard').hidden||['sceneDialog','profileDialog','characterEventsDialog'].some(id=>!$(id).hidden);}
@@ -258,8 +266,12 @@ function closeCard(restoreFocus=false){
  cardReturnFocus=null;
 }
 function setZoom(value,pivot=center){
+ if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');previewPan(0);}
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
- const old=zoom,view=range(),from=arguments.length>1?(view[0]+view[1])/2:center;zoom=clamp(value,1,730);center=clampAxisCenter(pivot+(from-pivot)*old/zoom);tooltipController?.hide();schedule();
+ const old=zoom,previousCenter=center,view=range(),from=arguments.length>1?(view[0]+view[1])/2:center;
+ zoom=clamp(value,1,730);center=clampAxisCenter(pivot+(from-pivot)*old/zoom);
+ if(old===zoom&&Math.abs(center-previousCenter)<1e-7)return;
+ tooltipController?.hide();schedule();
 }
 function closePanels(except){
  for(const id of ['linesPanel','contentsPanel','searchPanel','periodPanel'])if(id!==except){
@@ -296,6 +308,8 @@ function smoothPath(points){
 }
 function render(){
  if(!data)return;
+ if(raf!==null){cancelAnimationFrame(raf);raf=null;}
+ uiTimers.cancel('wheel-commit');wheelPreview=false;previewPan(0);
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
  const canvas=$('canvas'),timeline=$('timeline'),axisElement=$('timeAxis'),axis=document.createDocumentFragment(),frame=document.createDocumentFragment(),w=canvas.clientWidth||timeline.clientWidth||1000,viewport=canvas.clientHeight||700,pad=w<600?22:48,[lo,hi]=range(),plot=w-2*pad;
  drawingTarget=frame;
@@ -306,7 +320,14 @@ function render(){
  const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-readerHeight-144)*.25,24,150)*(.08+.92*spread),level=semanticLevel();
  axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
- const baseNodes=semanticNodes(level,allScenes).filter(p=>p.day!==null).map(p=>({...p,x:px(p.day)})),owner=semanticOwner(baseNodes),layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}:${readerHeight}`;
+ // Grouping depends on source data and semantic level, not pan position.
+ if(!semanticNodeCache.has(level)){
+  const nodes=semanticNodes(level,allScenes).filter(p=>p.day!==null);
+  semanticNodeCache.set(level,{nodes,owner:semanticOwner(nodes)});
+ }
+ const semantic=semanticNodeCache.get(level);
+ const baseNodes=semantic.nodes.map(p=>({...p,x:px(p.day),cast:p.layoutCast.filter(id=>selected.has(id))})),
+ owner=semantic.owner,layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}:${readerHeight}`;
  if(!layoutCache.has(layoutKey)){
   if(layoutCache.size>=8)layoutCache.clear();
   const baseKey=level;
@@ -441,6 +462,7 @@ function render(){
  }
  if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else HierarchyPreview.layout();}
  paintNodes();updateFocusBar();tooltipController?.refresh();
+ paintedCenter=center;
 }
 function mapTitleGroups(level){
  if(level==='moment'){
@@ -701,7 +723,7 @@ function renderProfile(){
 function ingest(next,initial=false){
  const nextBase=next.calendar.view_start_year??next.calendar.current_year,oldBase=data?.calendar.view_start_year??data?.calendar.current_year;
  const calendarCenter=data?axisToDay(center)+(oldBase-nextBase)*365:center+(next.calendar.current_year-nextBase)*365,wasAll=data&&selectable().every(e=>selected.has(e.id));
- data=next;entityMap=new Map(data.entities.map(e=>[e.id,e]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
+ data=next;entityMap=new Map(data.entities.map(e=>[e.id,e]));characterColors=new Map(data.entities.map((e,i)=>[e.id,palette[i%palette.length]]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
  if(initial||wasAll)selected=new Set(selectable().map(e=>e.id));else selected=new Set([...selected].filter(id=>entityMap.has(id)));if(focusedCharacter&&!entityMap.has(focusedCharacter))focusedCharacter=null;if(anchorEvent&&!eventMap.has(anchorEvent))closeCard();
  center=clampAxisCenter(dayToAxis(calendarCenter));
  $('revision').textContent=`Дані: ${data.revision.slice(0,8)}`;$('sourceLink').href=`https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/tree/${data.revision}/${data.base}`;
@@ -797,10 +819,27 @@ async function init(){
  canvas.addEventListener('pointerover',nodeHover);canvas.addEventListener('pointerout',nodeLeave);
  canvas.addEventListener('click',e=>{const title=e.target.closest('.cloud-label');if(title){openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node,.node-hit');if(target)openNode(graphNodes.find(p=>p.id===(target.dataset.event||target.dataset.nodeId)),true);});
  canvas.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const title=e.target.closest('.cloud-label');if(title){e.preventDefault();openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node');if(target){e.preventDefault();openNode(graphNodes.find(p=>p.id===target.dataset.event),true);}});
- canvas.addEventListener('wheel',e=>{e.preventDefault();const box=canvas.getBoundingClientRect(),pad=box.width<600?22:48,t=clamp((e.clientX-box.left-pad)/(box.width-pad*2),0,1),[lo,hi]=range();setZoom(zoom*Math.exp(-clamp(e.deltaY,-100,100)*.007),lo+t*(hi-lo));},{passive:false});
- canvas.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.line-label'))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);if(touches.size===1){drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};canvas.classList.add('dragging');}else if(touches.size===2){const a=[...touches.values()];pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom};drag=null;}});
- canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);const pad=canvas.clientWidth<600?22:48;center=clampAxisCenter(drag.center-(e.clientX-drag.x)/Math.max(1,canvas.clientWidth-pad*2)*axisLength()/zoom);schedule();}});
- const end=e=>{touches.delete(e.pointerId);drag=null;pinch=null;canvas.classList.remove('dragging');};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);new ResizeObserver(schedule).observe($('canvas'));
+ // Wheel/trackpad now navigates through time; scale belongs to the visible
+ // year/month/week/day and +/- controls. No SVG rebuild per wheel event.
+ $('canvas').addEventListener('wheel',e=>{
+  if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
+  e.preventDefault();
+  const w=$('canvas').clientWidth||1000,pad=w<600?22:48,plot=Math.max(1,w-pad*2);
+  const dominant=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
+  const delta=dominant*(e.deltaMode===1?16:e.deltaMode===2?plot:1);
+  if(!delta||!data)return;
+  const span=axisLength()/zoom;
+  const next=clampAxisCenter(center+delta*span/plot);
+  if(Math.abs(next-center)<1e-7)return;
+  center=next;
+  if(raf!==null){cancelAnimationFrame(raf);raf=null;}
+  wheelPreview=true;
+  previewPan((paintedCenter-center)*plot/span);
+  uiTimers.defer('wheel-commit',160,()=>{wheelPreview=false;if(!drag)schedule();});
+ },{passive:false});
+ canvas.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.line-label'))return;if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');}touches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);if(touches.size===1){drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};canvas.classList.add('dragging');}else if(touches.size===2){const previousDrag=drag;previewPan(0);if(previousDrag?.moved)schedule();const a=[...touches.values()];pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom};drag=null;}});
+ canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);const pad=canvas.clientWidth<600?22:48;center=clampAxisCenter(drag.center-(e.clientX-drag.x)/Math.max(1,canvas.clientWidth-pad*2)*axisLength()/zoom);drag.moved=drag.moved||Math.abs(center-drag.center)>1e-7;previewPan((paintedCenter-center)*Math.max(1,canvas.clientWidth-pad*2)*zoom/axisLength());}});
+ const end=e=>{const moved=!!drag?.moved;touches.delete(e.pointerId);drag=null;pinch=null;canvas.classList.remove('dragging');if(moved||Math.abs(paintedCenter-center)>1e-7)schedule();else previewPan(0);};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);new ResizeObserver(schedule).observe($('canvas'));
  $('canvas').addEventListener('scroll',()=>{tooltipController?.hide();cloudRenderer?.scroll($('canvas').scrollTop);const p=graphNodes.find(p=>p.id===focusId);if(p&&!$('eventCard').hidden)positionCard(p);},{passive:true});
  $('focusPrevious').addEventListener('click',()=>stepEvent(-1));$('focusNext').addEventListener('click',()=>stepEvent(1));$('focusName').addEventListener('click',()=>openProfile(focusedCharacter,$('focusName')));$('clearFocus').addEventListener('click',()=>setFocus(focusedCharacter));
  $('eventCard').addEventListener('pointerenter',HierarchyPreview.keep);$('eventCard').addEventListener('pointerleave',e=>HierarchyPreview.leave(e,0));
