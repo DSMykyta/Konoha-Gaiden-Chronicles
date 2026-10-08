@@ -179,18 +179,26 @@ async function check(width,height){
  assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),geometry);
  assert.equal(run('JSON.stringify([zoom,center])'),view);
  run('closeCard();render()');assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),geometry);
- // The bottom scale opens every reading level in place, including a moment
- // represented by its parent on the map. Each title is its only button.
- for(const [kind,id] of [['moment','ev-y0-0122-team7-announced'],['scene','sc-y0-0122-academy-announcements'],['episode','ep-y0-team-formation'],['arc','arc-y0-genin-formation']]){
-  const level=doc.getElementById('storyTitleLevel');level.value=kind;level.dispatchEvent(new window.Event('change'));
-  const title=doc.querySelector('[data-story-key="'+kind+':'+id+'"]');assert(title,'Missing bottom title '+kind);
-  assert.equal(title.parentElement.querySelectorAll('button').length,1);assert.equal(doc.querySelectorAll('[data-read-story]').length,0);
-  click('[data-story-key="'+kind+':'+id+'"]');
-  assert.equal(run('cardSelection.kind'),kind);assert.equal(run('cardSelection.id'),id);
-  assert.equal(run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),geometry,'Bottom reading moved nodes');
-  assert.equal(run('JSON.stringify([zoom,center])'),view,'Bottom reading changed the time scale');
-  assert.equal(run('window.__storyScaleFocus.active'),false);assert.equal(doc.querySelectorAll('.is-story-scale-fixed-hidden').length,0);
-  run('closeCard()');
+ // Contents replaces the bottom strip, retaining all four reading levels.
+ assert.equal(doc.getElementById('storyTitleScale'),null);
+ assert.equal(doc.getElementById('storyTitleLevel'),null);
+ const contents=doc.getElementById('contentsTree');
+ const branches=[['arc','arc-y0-genin-formation'],['episode','ep-y0-team-formation'],['scene','sc-y0-0122-academy-announcements']];
+ for(const [kind,id] of [['arc','arc-y0-genin-formation'],['episode','ep-y0-team-formation'],['scene','sc-y0-0122-academy-announcements'],['moment','ev-y0-0122-team7-announced']]){
+   click('#contentsButton');
+   assert(!doc.getElementById('contentsPanel').hidden);
+   for(const [k,pid] of branches){
+     if(k===kind)break;
+     const detail=contents.querySelector('details[data-contents-key="'+k+':'+pid+'"]');
+     assert(detail,'Missing contents parent '+k+':'+pid);
+     if(!detail.open){detail.open=true;detail.dispatchEvent(new window.Event('toggle'));}
+   }
+   const btn=contents.querySelector('[data-contents-kind="'+kind+'"][data-contents-id="'+id+'"]');
+   assert(btn,'Missing contents reader '+kind+':'+id);
+   btn.dispatchEvent(new window.Event('click',{bubbles:true}));
+   assert.equal(run('cardSelection.kind'),kind);
+   assert.equal(run('cardSelection.id'),id);
+   run('closeCard()');
  }
  const yBefore=run('new Map(graphNodes.map(node=>[node.id,node.y]))');
  run('center+=.02;render()');for(const node of run('graphNodes'))if(yBefore.has(node.id))assert.equal(node.y,yBefore.get(node.id));

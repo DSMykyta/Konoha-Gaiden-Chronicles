@@ -1,0 +1,90 @@
+'use strict';
+/* Chronological story contents, separate from the time axis and map. */
+const ChronologyContents = (() => {
+  const LABEL={arc:'Арка',episode:'Епізод',scene:'Сцена',moment:'Момент',group:'Розділ'};
+  const html = text => String(text??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const position = value => Number.isFinite(value)?value:Infinity;
+  const order = (a,b) => position(a.start)-position(b.start)||a.title.localeCompare(b.title,'uk');
+  let roots=[],visible=new Map(),expanded=new Set(),initialized=false;
+
+  function buildTree(scenes,sceneMap,episodeMap,arcMap) {
+    const arcs=new Map(),episodes=new Map();
+    const make=(kind,id,title,start=Infinity)=>({kind,id,title,start,end:start,children:[]});
+    for(const scene of scenes){
+      if(!scene.group?.length)continue;
+      const sm=sceneMap.get(scene.id),em=episodeMap.get(sm?.episode_id),am=arcMap.get(em?.arc_id);
+      const ak=am?.id||'misc';
+      if(!arcs.has(ak))arcs.set(ak,make(am?'arc':'group',ak,am?.title||'Інші сцени'));
+      const ek=ak+'/'+(em?.id||scene.id);
+      if(!episodes.has(ek)){
+        const ep=make(em?'episode':'group',em?.id||'misc:'+scene.id,em?.title||'Окрема сцена');
+        episodes.set(ek,ep);arcs.get(ak).children.push(ep);
+      }
+      const day=Number.isFinite(scene.position)?scene.position:position(scene.day);
+      const sn=make('scene',scene.id,sm?.title||scene.group[0]?.scene_title||scene.id,day);
+      sn.children=scene.group.map(e=>make('moment',e.id,e.title,day));
+      episodes.get(ek).children.push(sn);
+    }
+    const finalize=n=>{
+      n.children.forEach(finalize);n.children.sort(order);
+      if(n.children.length){n.start=Math.min(...n.children.map(c=>position(c.start)));n.end=Math.max(...n.children.map(c=>Number.isFinite(c.end)?c.end:-Infinity));}
+      return n;
+    };
+    return [...arcs.values()].map(finalize).sort(order);
+  }
+  const key=n=>n.kind+':'+n.id;
+  function span(n){
+    if(!Number.isFinite(n.start))return 'Дата невідома';
+    const from=dateText(n.start,true),to=dateText(n.end,true);
+    return from===to?from:from+' — '+to;
+  }
+  function filter(n,q,matched=false){
+    if(!q)return n;
+    const own=n.title.toLocaleLowerCase('uk').includes(q);
+    const children=n.children.map(c=>filter(c,q,matched||own)).filter(Boolean);
+    return own||matched||children.length?{...n,children}:null;
+  }
+  function draw(n,depth=0,force=false) {
+    const k=key(n),opened=n.children.length&&(force||expanded.has(k));
+    const label='<span class="contents-copy"><span class="contents-name">'+html(n.title)+'</span><small>'+LABEL[n.kind]+' · '+html(span(n))+'</small></span>';
+    const read=n.kind==='group'?'':'<button type="button" class="contents-read" data-contents-kind="'+html(n.kind)+'" data-contents-id="'+html(n.id)+'" aria-label="Читати: '+html(n.title)+'">Читати</button>';
+    if(!n.children.length)return '<div class="contents-entry contents-leaf" data-depth="'+depth+'"><div class="contents-leaf-label">'+label+'</div>'+read+'</div>';
+    return '<div class="contents-entry" data-depth="'+depth+'"><details class="contents-branch" data-contents-key="'+html(k)+'" '+(opened?'open':'')+'><summary>'+label+'<span class="contents-count">'+n.children.length+'</span></summary><div class="contents-children">'+(opened?n.children.map(c=>draw(c,depth+1,force)).join(''):'')+'</div></details>'+read+'</div>';
+  }
+  function render(){
+    const panel=document.getElementById('contentsPanel');
+    if(!initialized||!panel||panel.hidden)return;
+    roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap);
+    const q=document.getElementById('contentsQuery').value.trim().toLocaleLowerCase('uk');
+    const filtered=roots.map(n=>filter(n,q)).filter(Boolean);
+    visible=new Map();
+    const visit=n=>{visible.set(key(n),n);n.children.forEach(visit);};
+    filtered.forEach(visit);
+    document.getElementById('contentsSummary').textContent=q?'Знайдено розділів: '+filtered.length:roots.length+' арок і розділів · за початком подій';
+    document.getElementById('contentsTree').innerHTML=filtered.length?filtered.map(n=>draw(n,0,!!q)).join(''):'<p class="contents-empty">Збігів немає. Спробуй іншу назву.</p>';
+  }
+  function init(){
+    if(initialized)return;initialized=true;
+    const panel=document.getElementById('contentsPanel'),tree=document.getElementById('contentsTree');
+    document.getElementById('contentsQuery').addEventListener('input',render);
+    tree.addEventListener('toggle',e=>{
+      const element=e.target;
+      if(!element.matches?.('details[data-contents-key]'))return;
+      const k=element.dataset.contentsKey;
+      if(!element.open){expanded.delete(k);return;}
+      expanded.add(k);
+      const n=visible.get(k),target=element.querySelector('.contents-children');
+      if(n&&target&&!target.childElementCount)target.innerHTML=n.children.map(c=>draw(c,Number(element.parentElement.dataset.depth)+1)).join('');
+    },true);
+    tree.addEventListener('click',e=>{
+      const b=e.target.closest?.('[data-contents-kind]');if(!b)return;
+      const kind=b.dataset.contentsKind,id=b.dataset.contentsId;
+      closePanels();
+      if(kind==='arc'||kind==='episode')navigateStory(kind,id);
+      else if(kind==='scene')navigateScene(id);
+      else if(kind==='moment')navigateEvent(id);
+    });
+    panel.addEventListener('toggle',e=>{if(e.newState==='open')render();});
+  }
+  return {init,render,buildTree};
+})();

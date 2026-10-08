@@ -30,29 +30,20 @@ try {
     // Overview remains compact; focus preserves the original story geometry.
     await page.evaluate(()=>{zoom=zoomModes.year;render();});
     assert(await page.evaluate(()=>Math.max(...graphNodes.map(p=>p.y))-Math.min(...graphNodes.map(p=>p.y))<90),'Year overview grew into tall peaks');
-    assert.equal(await page.locator('#storyTitleLevel').inputValue(),'arc');
+    assert.equal(await page.locator('#contentsButton').count(),1);
+    assert.equal(await page.locator('#storyTitleScale').count(),0);
     const overviewCoordinates=await page.locator('.node .mark').evaluateAll(elements=>Object.fromEntries(elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')])));
     await page.evaluate(()=>setFocus('c-naruto'));
     assert(await page.locator('.thread').count()>0);
     const focusedCoordinates=await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')]));
     for(const [id,y] of focusedCoordinates)assert.equal(y,overviewCoordinates[id],'Focus flattened the story geometry');
     await page.evaluate(()=>{setFocus('c-naruto');navigateEvent("ev-y0-0122-team7-announced");closeCard();});
-    assert.equal(await page.locator('#storyTitleLevel').inputValue(),'moment');
-    const reader=page.locator('.story-title-label[data-story-key="moment:ev-y0-0122-team7-announced"]');
+    await page.locator('#contentsButton').click();
+    await page.locator('details[data-contents-key="arc:arc-y0-genin-formation"] > summary').click();
+    await page.locator('details[data-contents-key="episode:ep-y0-team-formation"] > summary').click();
+    await page.locator('details[data-contents-key="scene:sc-y0-0122-academy-announcements"] > summary').click();
+    const reader=page.locator('[data-contents-kind="moment"][data-contents-id="ev-y0-0122-team7-announced"]');
     assert.equal(await reader.count(),1);
-    assert.equal(await page.locator('.story-item-read').count(),0);
-    if(width<=760&&height>=520){
-      if(await page.locator('.story-reader-toggle').getAttribute('aria-expanded')==='false')await page.locator('.story-reader-toggle').click();
-      const row=reader.locator('..');
-      const number=await row.locator('.story-item-number').textContent();
-      assert.equal(number,await page.locator('[data-event="ev-y0-0122-team7-announced"] .moment-number').textContent());
-      assert(await row.locator('.story-item-context').textContent());
-      assert(await row.locator('.story-title-label').evaluate(el=>parseFloat(getComputedStyle(el).fontSize)>=14));
-      assert(await reader.evaluate(el=>el.getBoundingClientRect().height>=44));
-      await page.locator('.story-reader-toggle').click();
-      assert.equal(await page.locator('.story-reader-toggle').getAttribute('aria-expanded'),'false');
-      await page.locator('.story-reader-toggle').click();
-    }
     await reader.click();
     assert.equal(await page.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
     assert.equal(await page.locator('#eventCard .card-kind').textContent(),'МОМЕНТ');
@@ -259,25 +250,21 @@ try {
     await page.waitForFunction(()=>semanticLevel()==='scene');
     assert(await page.evaluate(()=>axisToDay(center)<31),'Returning from the January arc jumped to another month');
 
-    // Search, reading from a bottom title, single-character focus and profiles.
+    // Search and navigation from the Contents popover.
     await page.keyboard.press('/');
     await page.locator('#eventSearch').fill('Команда 7');
     await page.locator('#searchResults [data-search-kind="moment"]').first().click();
-    assert.equal(await page.locator('#eventCard').isVisible(), true);
+    assert.equal(await page.locator('#eventCard').isVisible(),true);
     await page.keyboard.press('Escape');
-    await page.evaluate(() => { zoom=zoomModes.week; center=dayToAxis(21.5); render(); });
-    await page.locator('#storyTitleLevel').selectOption('scene');
-    const bottomMap=await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cx'),element.getAttribute('cy')]));
-    const bottomView=await page.evaluate(()=>[zoom,center]);
-    await page.locator('.story-title-label[data-story-key="scene:sc-y0-0122-academy-announcements"]').click();
+    await page.locator('#contentsButton').click();
+    await page.locator('details[data-contents-key="arc:arc-y0-genin-formation"] > summary').click();
+    await page.locator('details[data-contents-key="episode:ep-y0-team-formation"] > summary').click();
+    await page.locator('[data-contents-kind="scene"][data-contents-id="sc-y0-0122-academy-announcements"]').click();
     assert.equal(await page.evaluate(()=>cardSelection.id),'sc-y0-0122-academy-announcements');
-    assert.equal(await page.evaluate(() => window.__storyScaleFocus.active),false);
-    assert.equal(await page.locator('.is-story-scale-fixed-hidden').count(),0);
-    assert.deepEqual(await page.evaluate(()=>[zoom,center]),bottomView,'Bottom reading changed the time scale');
-    assert.deepEqual(await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cx'),element.getAttribute('cy')])),bottomMap,'Bottom reading moved the map');
+    assert.equal(await page.locator('#contentsPanel').isVisible(),false);
     await page.keyboard.press('Escape');
     await page.waitForTimeout(320);
-    assert.equal(await page.evaluate(() => window.__storyScaleFocus.active), false);
+    assert.equal(await page.evaluate(()=>window.__storyScaleFocus.active),false);
     const sceneCoordinates=await page.locator('.node .mark').evaluateAll(elements=>Object.fromEntries(elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')])));
     const focusCurves=await page.locator('.thread').evaluateAll(elements=>elements.map(element=>element.getAttribute('d')));
     await page.evaluate(() => setFocus('c-naruto'));
@@ -309,9 +296,12 @@ try {
   await touch.goto(url,{waitUntil:'networkidle'});
   await touch.locator('[data-mode="day"]').tap();
   await touch.locator('[data-event="ev-y0-0122-team7-announced"] .moment-number').waitFor();
-  if(await touch.locator('.story-reader-toggle').getAttribute('aria-expanded')==='false')await touch.locator('.story-reader-toggle').tap();
-  await touch.locator('.story-title-label[data-story-key="moment:ev-y0-0122-team7-announced"]').tap();
-  assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
+  await touch.locator('#contentsButton').tap();
+   await touch.locator('details[data-contents-key="arc:arc-y0-genin-formation"] > summary').tap();
+   await touch.locator('details[data-contents-key="episode:ep-y0-team-formation"] > summary').tap();
+   await touch.locator('details[data-contents-key="scene:sc-y0-0122-academy-announcements"] > summary').tap();
+   await touch.locator('[data-contents-kind="moment"][data-contents-id="ev-y0-0122-team7-announced"]').tap();
+   assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
   await touch.waitForTimeout(320);
   assert.equal(await touch.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced','A delayed touch hover replaced the chosen moment');
   await touch.locator('#eventCard [data-close-card]').tap();

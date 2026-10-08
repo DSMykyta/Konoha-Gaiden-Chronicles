@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261003-era-heading';
+const UI_VERSION='20261008-contents';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -262,7 +262,7 @@ function setZoom(value,pivot=center){
  const old=zoom,view=range(),from=arguments.length>1?(view[0]+view[1])/2:center;zoom=clamp(value,1,730);center=clampAxisCenter(pivot+(from-pivot)*old/zoom);tooltipController?.hide();schedule();
 }
 function closePanels(except){
- for(const id of ['linesPanel','searchPanel','periodPanel'])if(id!==except){
+ for(const id of ['linesPanel','contentsPanel','searchPanel','periodPanel'])if(id!==except){
   const panel=$(id);
   if(panel.hidePopover&&!panel.hidden)panel.hidePopover();
   panel.hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');
@@ -302,8 +302,8 @@ function render(){
  const chrome=headerBottom();document.documentElement.style.setProperty('--legend-top',(chrome+4)+'px');document.documentElement.style.setProperty('--panel-top',(chrome+12)+'px');document.documentElement.style.setProperty('--focus-top',(chrome+44)+'px');
  const allEvents=datedEvents(),ids=[...selected].sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  let h=viewport;
- const phoneReader=w<=760&&viewport>=520,readerHeight=phoneReader?(document.documentElement.classList.contains('story-reader-collapsed')?56:Math.min(viewport*.34,264)):76;
- const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=phoneReader?(headerBottom()+44+viewport-readerHeight-56)/2:viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-readerHeight-144)*.25,24,150)*(.08+.92*spread),level=semanticLevel();
+ const readerHeight=0;
+ const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-readerHeight-144)*.25,24,150)*(.08+.92*spread),level=semanticLevel();
  axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
  const baseNodes=semanticNodes(level,allScenes).filter(p=>p.day!==null).map(p=>({...p,x:px(p.day)})),owner=semanticOwner(baseNodes),layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}:${readerHeight}`;
@@ -440,7 +440,7 @@ function render(){
   $('emptyAction').textContent=selected.size?'До найближчої події':'Обрати всіх';
  }
  if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else HierarchyPreview.layout();}
- paintNodes();updateFocusBar();StoryTitleScale.update();tooltipController?.refresh();
+ paintNodes();updateFocusBar();tooltipController?.refresh();
 }
 function mapTitleGroups(level){
  if(level==='moment'){
@@ -724,7 +724,7 @@ async function refreshData(){
   const v=await fetch(`version.json?t=${Date.now()}`,{cache:'no-store'});if(!v.ok)return;
   const version=await v.json();if(version.revision===data.revision)return;
   const response=await fetch(`data.json?v=${encodeURIComponent(version.revision)}`,{cache:'no-store'});if(!response.ok)return;
-  ingest(await response.json());renderCharacters();search();refreshOpenCard();
+  ingest(await response.json());renderCharacters();search();ChronologyContents.render();refreshOpenCard();
   if(profileEntity)renderProfile();if(sceneId)renderScene();
   if(characterEventsEntity){if(entityMap.has(characterEventsEntity))renderCharacterEvents(true);else closeCharacterEvents();}
   render();
@@ -740,10 +740,10 @@ function ensureInterface(){
  throw new Error('Сторінка і скрипти мають різні версії. Онови репозиторій і перезавантаж сторінку через Ctrl + F5.');
 }
 async function init(){
- try{if(!ensureInterface())return;document.documentElement.classList.toggle('story-reader-collapsed',($('canvas').clientWidth||window.innerWidth||1000)<=760);const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);$('status').hidden=true;
+ try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);ChronologyContents.init();$('status').hidden=true;
  const names={'alt-shippuden-469':'Альтернатива · обличчя Какаші','alt-movie-land-of-snow':'Альтернатива · Країна Снігу'};[...new Set(data.events.map(e=>e.continuity))].filter(c=>c!=='main').forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=names[c]||c;$('continuity').append(o);});
- for(const id of ['lines','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>{closePanels();}));
- for(const id of ['linesPanel','searchPanel','periodPanel'])$(id).addEventListener('toggle',e=>{
+ for(const id of ['lines','contents','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();if(id==='contents')ChronologyContents.render();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>{closePanels();}));
+ for(const id of ['linesPanel','contentsPanel','searchPanel','periodPanel'])$(id).addEventListener('toggle',e=>{
   if(e.newState==='closed'&&!$(id).matches?.(':popover-open')){$(id).hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');}
  });
  $('emptyAction').addEventListener('click',()=>{
@@ -753,7 +753,7 @@ async function init(){
  });
  $('characterSearch').addEventListener('input',renderCharacters);$('selectAll').addEventListener('click',()=>{selected=new Set(selectable().map(e=>e.id));selectionChanged();});$('deselectAll').addEventListener('click',()=>{selected.clear();selectionChanged();});document.querySelectorAll('[data-team]').forEach(b=>b.addEventListener('click',()=>{selected=new Set(teams[b.dataset.team]);focusedCharacter=null;selectionChanged();}));
  $('eventSearch').addEventListener('input',()=>{searchLimit=30;search();});$('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
- $('continuity').addEventListener('change',()=>{const calendarCenter=axisToDay(center);continuity=$('continuity').value;center=clampAxisCenter(dayToAxis(calendarCenter));focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();});
+ $('continuity').addEventListener('change',()=>{const calendarCenter=axisToDay(center);continuity=$('continuity').value;center=clampAxisCenter(dayToAxis(calendarCenter));focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();ChronologyContents.render();});
  $('closeCharacterEvents').addEventListener('click',closeCharacterEvents);
  $('characterEventsDialog').addEventListener('cancel',e=>{e.preventDefault();closeCharacterEvents();});
  $('characterEventPrevious').addEventListener('click',()=>moveCharacterReader(-1));
@@ -770,7 +770,7 @@ async function init(){
    if(!$('characterEventsDialog').hidden){e.preventDefault();closeCharacterEvents();return;}
    if(!$('profileDialog').hidden){e.preventDefault();closeProfile();return;}
    if(HierarchyPreview.escape()){e.preventDefault();return;}
-   const openPanel=['linesPanel','searchPanel','periodPanel'].find(id=>!$(id).hidden);
+   const openPanel=['linesPanel','contentsPanel','searchPanel','periodPanel'].find(id=>!$(id).hidden);
    if(openPanel){e.preventDefault();closePanels();$(openPanel.replace('Panel','Button')).focus();return;}
    if(!$('eventCard').hidden){closeCard(true);return;}
    if(StoryTitleScale.escape()){e.preventDefault();return;}
