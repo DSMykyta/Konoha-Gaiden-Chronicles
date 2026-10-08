@@ -4,7 +4,7 @@ const ChronologyContents = (() => {
   const LABEL={arc:'Арка',episode:'Епізод',scene:'Сцена',moment:'Момент',group:'Розділ'};
   const html = text => String(text??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const position = value => Number.isFinite(value)?value:Infinity;
-  const order = (a,b) => position(a.start)-position(b.start)||a.title.localeCompare(b.title,'uk');
+  const order = (a,b) => position(a.start)-position(b.start)||(a.kind==='moment'&&b.kind==='moment'?(a.sourceIndex??Infinity)-(b.sourceIndex??Infinity):0)||a.title.localeCompare(b.title,'uk');
   let roots=[],visible=new Map(),expanded=new Set(),initialized=false;
 
   function buildTree(scenes,sceneMap,episodeMap,arcMap,momentPositions=null) {
@@ -22,7 +22,7 @@ const ChronologyContents = (() => {
       }
       const day=Number.isFinite(scene.position)?scene.position:position(scene.day);
       const sn=make('scene',scene.id,sm?.title||scene.group[0]?.scene_title||scene.id,day);
-      sn.children=scene.group.map((e,i)=>make('moment',e.id,e.title,momentPositions?.get(e.id)??day+(i+1)*1e-7));
+      sn.children=scene.group.map((e,i)=>({...make('moment',e.id,e.title,momentPositions?.get(e.id)??day),sourceIndex:i}));
       episodes.get(ek).children.push(sn);
     }
     const finalize=n=>{
