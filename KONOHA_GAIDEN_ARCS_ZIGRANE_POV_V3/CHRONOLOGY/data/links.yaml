@@ -1,5 +1,69 @@
 schema_version: 1
 links:
+- id: lnk-waves-11-giichi-before-market
+  kind: before
+  a: sc-waves-giichi-quits
+  b: sc-waves-sakura-market
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+- id: lnk-waves-11-market-before-kaiza
+  kind: before
+  a: sc-waves-sakura-market
+  b: sc-y0-0322-kaiza-dinner
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep11-audit
+- id: lnk-waves-12-home-worry-before-haku
+  kind: before
+  a: sc-waves-home-morning-concern
+  b: ev-y0-0328-naruto-meets-haku-herbs
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep12-audit
+- id: lnk-waves-13-home-rescue-before-naruto-arrives
+  kind: before
+  a: ev-y0-0330-naruto-rescues-inari-tsunami
+  b: ev-y0-0330-naruto-arrives-with-shuriken
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep13-audit
+- id: lnk-waves-18-rescue-before-inari-appeal
+  kind: before
+  a: ev-y0-0330-naruto-rescues-inari-tsunami
+  b: ev-y0-0330-inari-asks-villagers
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: lnk-waves-18-appeal-before-inari-departs
+  kind: before
+  a: sc-y0-0330-inari-asks-villagers
+  b: sc-y0-0330-inari-leaves-home
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep18-audit
+- id: lnk-waves-18-inari-departs-before-bridge-arrival
+  kind: before
+  a: ev-y0-0330-inari-finds-supporters
+  b: ev-y0-0330-villagers-drive-off-mercenaries
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep19-audit
+- id: lnk-waves-13-departure-before-bridge
+  kind: before
+  a: sc-y0-0329-group-leaves-with-tazuna
+  b: ev-y0-0330-zabuza-haku-attack-bridge
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-narutopedia-ep13-audit
 - id: lnk-0122-breakfast-before-konohamaru
   kind: before
   a: sc-y0-0122-naruto-breakfast

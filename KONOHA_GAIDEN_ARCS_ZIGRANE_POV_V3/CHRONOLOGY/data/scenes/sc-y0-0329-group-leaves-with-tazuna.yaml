@@ -5,10 +5,11 @@ display_rank: 100
 continuity_id: "main"
 title: "Какаші, Саске й Сакура виходять із Тадзуною"
 location_id: "loc-tazuna-home"
-placement: {anchor_id: "ta-y0-0329", day_offset: 0}
+placement: {anchor_id: "ta-y0-0330", day_offset: 0}
+day_part: morning
 state: "active"
 presence_coverage: "complete"
-review: {time: "accepted", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
+review: {time: "partial", cast: "accepted", location: "accepted", origin: "accepted", text: "accepted"}
 events:
   - id: "ev-y0-0329-group-leaves-naruto-resting"
     legacy_ids: ["V10-000030"]
