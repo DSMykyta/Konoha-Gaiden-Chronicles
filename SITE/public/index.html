@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f5f6f8">
   <meta name="description" content="Хронологія Конохи: стеж за персонажами, досліджуй події та читай сцени Naruto.">
   <title>Коноха · Хронологія</title>
-  <link rel="stylesheet" href="style.css?v=20261003-era-heading">
+  <link rel="stylesheet" href="style.css?v=20261008-four-layer-v1">
   <link rel="stylesheet" href="profile-dossier.css?v=20261002-dossier-actions-2">
   <link rel="stylesheet" href="abilities-archive.css?v=20261008-tickets">
   <link rel="stylesheet" href="controls.css?v=20261003-konoha-calendar">
@@ -26,9 +26,9 @@
   <script defer src="profile-techniques.js?v=20261008-tickets"></script>
   <script defer src="abilities-archive.js?v=20261008-tickets"></script>
   <script defer src="era-heading.js?v=20261003-era-heading"></script>
-  <script defer src="story-layers.js?v=20261008-three-provenance-layers"></script>
-  <script defer src="app.js?v=20261008-gesture-cache"></script>
-  <script defer src="search-enhanced.js?v=20261002-search-3"></script>
+  <script defer src="story-layers.js?v=20261008-four-layer-v1"></script>
+  <script defer src="app.js?v=20261008-four-layer-v1"></script>
+  <script defer src="search-enhanced.js?v=20261008-four-layer-v1"></script>
 </head>
 <body>
   <header class="masthead">
@@ -46,6 +46,7 @@
       <button id="abilitiesButton" aria-label="Картотека здібностей" aria-expanded="false" aria-controls="abilityArchiveDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 5v14M11 9h6M11 13h6M11 17h4"/></svg><span>Здібності</span></button>
       <button id="searchButton" aria-label="Знайти у хронології" aria-expanded="false" aria-controls="searchPanel" aria-keyshortcuts="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Пошук</span><kbd aria-hidden="true">/</kbd></button>
     </nav>
+    <button id="layersButton" type="button" class="story-layers-open" aria-label="Увімкнути або вимкнути шари" aria-controls="periodPanel"><span>Шари · 4/4</span></button>
     <button class="period" id="periodButton" aria-label="Обрати період та історичну лінію" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Хронологія Конохи</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
     </div>
   </header>
@@ -115,6 +116,14 @@
     <div class="panel-heading"><h2 id="periodTitle">Період та історія</h2><button class="close" data-close="periodPanel" aria-label="Закрити період">×</button></div>
     <form id="dateForm"><label id="dateInputLabel" for="dateInput">Перейти до дня</label><div class="date-field"><input id="dateInput" placeholder="22.01" inputmode="decimal" autocomplete="off" aria-describedby="dateError" autofocus><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form>
     <details class="disclosure"><summary>Епохи світу</summary><p>Роки відраховано від заснування Конохи: рік заснування — перший. Межі з ≈ є приблизною реконструкцією.</p><ol id="eraList" class="era-list"></ol></details>
+    <fieldset id="storyLayers" class="story-layers-fieldset" aria-label="Шари хронології">
+      <legend>Шари історії</legend>
+      <p class="story-layers-intro">Зніми галочку, щоб прибрати відповідні моменти, сцени й арки.</p>
+      <label><input type="checkbox" value="canon" checked><span><strong>Канон</strong><small>Основна історія Naruto</small></span></label>
+      <label><input type="checkbox" value="filler" checked><span><strong>Філери</strong><small>Оригінальні історії аніме</small></span></label>
+      <label><input type="checkbox" value="sources" checked><span><strong>Додаткові джерела</strong><small>Фільми, OVA, новели й інші твори</small></span></label>
+      <label><input type="checkbox" value="project" checked><span><strong>Мої розширення</strong><small>Усі авторські арки та ігри</small></span></label>
+    </fieldset>
     <label class="select-label" for="continuity">Історична лінія</label>
     <select id="continuity"><option value="main">Основна історія</option></select>
     <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо або жест двома пальцями змінює масштаб. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
