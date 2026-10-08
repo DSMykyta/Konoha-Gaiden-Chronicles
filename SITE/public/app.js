@@ -838,11 +838,67 @@ async function init(){
   if(raf!==null){cancelAnimationFrame(raf);raf=null;}
   wheelPreview=true;
   previewPan((paintedCenter-center)*plot/span);
-  uiTimers.defer('wheel-commit',160,()=>{wheelPreview=false;if(!drag)schedule();});
+  uiTimers.defer('wheel-commit',380,()=>{wheelPreview=false;if(!drag&&!pinch)schedule();});
  },{passive:false});
- canvas.addEventListener('pointerdown',e=>{if(e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.line-label'))return;if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');}touches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture(e.pointerId);if(touches.size===1){drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};canvas.classList.add('dragging');}else if(touches.size===2){const previousDrag=drag;previewPan(0);if(previousDrag?.moved)schedule();const a=[...touches.values()];pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),zoom};drag=null;}});
- canvas.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch&&touches.size===2){const a=[...touches.values()];setZoom(pinch.zoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));}else if(drag){$('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);const pad=canvas.clientWidth<600?22:48;center=clampAxisCenter(drag.center-(e.clientX-drag.x)/Math.max(1,canvas.clientWidth-pad*2)*axisLength()/zoom);drag.moved=drag.moved||Math.abs(center-drag.center)>1e-7;previewPan((paintedCenter-center)*Math.max(1,canvas.clientWidth-pad*2)*zoom/axisLength());}});
- const end=e=>{const moved=!!drag?.moved;touches.delete(e.pointerId);drag=null;pinch=null;canvas.classList.remove('dragging');if(moved||Math.abs(paintedCenter-center)>1e-7)schedule();else previewPan(0);};canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);new ResizeObserver(schedule).observe($('canvas'));
+ canvas.addEventListener('pointerdown',e=>{
+   if(e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.line-label'))return;
+   if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');}
+   touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
+   canvas.setPointerCapture(e.pointerId);
+   if(touches.size===1){
+    drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};
+    canvas.classList.add('dragging');
+   }else if(touches.size===2){
+    const points=[...touches.values()],mid=(points[0].x+points[1].x)/2-canvas.getBoundingClientRect().left;
+    const width=canvas.clientWidth||1000,pad=width<600?22:48;
+    const pivot=center+(mid-width/2)/Math.max(1,width-pad*2)*axisLength()/zoom;
+    // Pan is compositor-only, and pinch is compositor-only too. Full SVG
+    // reconstruction is postponed until BOTH fingers release.
+    if(drag?.moved)render();
+    previewPan(0);
+    pinch={distance:Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y),
+     zoom,pivot,mid,targetZoom:zoom};
+    drag=null;canvas.classList.remove('dragging');
+   }
+  });
+  canvas.addEventListener('pointermove',e=>{
+   if(!touches.has(e.pointerId))return;
+   touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
+   if(pinch&&touches.size===2){
+    const points=[...touches.values()],distance=Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y);
+    pinch.targetZoom=clamp(pinch.zoom*distance/Math.max(1,pinch.distance),1,730);
+    const ratio=pinch.targetZoom/pinch.zoom;
+    const transform='scaleX('+ratio+')';
+    for(const id of ['timeline','timeAxis','storyClouds']){
+     const element=$(id);
+     element.style.transformOrigin=pinch.mid+'px center';
+     element.style.transform=transform;
+    }
+   }else if(drag){
+    $('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);
+    const pad=canvas.clientWidth<600?22:48;
+    center=clampAxisCenter(drag.center-(e.clientX-drag.x)/Math.max(1,canvas.clientWidth-pad*2)*axisLength()/zoom);
+    drag.moved=drag.moved||Math.abs(center-drag.center)>1e-7;
+    previewPan((paintedCenter-center)*Math.max(1,canvas.clientWidth-pad*2)*zoom/axisLength());
+   }
+  });
+  const end=e=>{
+   touches.delete(e.pointerId);
+   if(pinch){
+    if(touches.size<2){
+     const {targetZoom,pivot}=pinch;pinch=null;drag=null;
+     for(const id of ['timeline','timeAxis','storyClouds'])$(id).style.transformOrigin='';
+     previewPan(0);
+     setZoom(targetZoom,pivot); // exactly one final layout after the gesture
+    }
+    return;
+   }
+   const moved=!!drag?.moved;drag=null;canvas.classList.remove('dragging');
+   if(moved||Math.abs(paintedCenter-center)>1e-7)schedule();else previewPan(0);
+  };
+  canvas.addEventListener('pointerup',end);
+  canvas.addEventListener('pointercancel',end);
+  new ResizeObserver(schedule).observe($('canvas'));
  $('canvas').addEventListener('scroll',()=>{tooltipController?.hide();cloudRenderer?.scroll($('canvas').scrollTop);const p=graphNodes.find(p=>p.id===focusId);if(p&&!$('eventCard').hidden)positionCard(p);},{passive:true});
  $('focusPrevious').addEventListener('click',()=>stepEvent(-1));$('focusNext').addEventListener('click',()=>stepEvent(1));$('focusName').addEventListener('click',()=>openProfile(focusedCharacter,$('focusName')));$('clearFocus').addEventListener('click',()=>setFocus(focusedCharacter));
  $('eventCard').addEventListener('pointerenter',HierarchyPreview.keep);$('eventCard').addEventListener('pointerleave',e=>HierarchyPreview.leave(e,0));
