@@ -185,7 +185,7 @@ const TimelineSearchEnhanced = (() => {
 
   function buildIndex() {
     if (typeof data === 'undefined' || !data) return [];
-    const key = `${data.revision || 'unknown'}|${typeof continuity === 'undefined' ? 'main' : continuity}`;
+    const key = `${data.revision || 'unknown'}|${typeof continuity === 'undefined' ? 'main' : continuity}|${StoryLayers.mask(storyLayers)}`;
     if (key === cachedKey) return cachedDocs;
 
     const activeEvents = typeof events === 'function' ? events() : (data.events || []).filter(event => !continuity || event.continuity === continuity);
@@ -216,7 +216,7 @@ const TimelineSearchEnhanced = (() => {
         scene?.title, episode?.title, arc?.title
       ];
       const doc = makeDoc({
-        kind: 'moment', id: event.id, title: event.title, body: event.text, context,
+        kind: 'moment', id: event.id, title: event.title, body: StoryLayers.compose(event.text,storyLayers), context,
         day: event.day, days: [event.day], personIds: people, locationId,
         arcIds: arc?.id ? [arc.id] : [], origins: eventOrigins(event), keywords,
         firstEventId: event.id, order: eventOrder.get(event.id) ?? Number.MAX_SAFE_INTEGER
@@ -233,7 +233,7 @@ const TimelineSearchEnhanced = (() => {
       const locationId = scene.location_id || group.map(event => event.location_id).find(Boolean) || null;
       const doc = makeDoc({
         kind: 'scene', id: sceneId, title: scene.title || group[0]?.scene_title || sceneId,
-        body: group.map(event => `${event.title} ${event.text || ''}`).join(' '),
+        body: group.map(event => `${event.title} ${StoryLayers.compose(event.text,storyLayers)}`).join(' '),
         context: [arc?.title, episode?.title].filter(Boolean).join(' › '),
         days: group.map(event => event.day), personIds: people, locationId,
         arcIds: arc?.id ? [arc.id] : [], origins: unique(group.flatMap(eventOrigins)),
