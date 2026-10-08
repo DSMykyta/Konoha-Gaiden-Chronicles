@@ -5,6 +5,8 @@
 const TimelineInteractions = {
   OPEN_DELAY: 260,
   CLOSE_DELAY: 240,
+  AIM_DELAY: 420,
+  AIM_PADDING: 14,
   PANEL_WIDTH: 390,
   PANEL_GAP: 12,
   GUTTER: 12,
@@ -13,6 +15,20 @@ const TimelineInteractions = {
     // A queued preview also checks the browser's current hit state. Pointer-leave
     // can arrive late while a layout or scroll replaces the surface under it.
     return element.matches(':hover');
+  },
+
+  // Protect the diagonal path from an active row to its adjacent child panel.
+  // Movement away from the panel or outside this wedge is an intentional switch.
+  inHoverCorridor(from, to, rect, padding = this.AIM_PADDING) {
+    if (!from || !to || !rect ||
+        ![from.x, from.y, to.x, to.y, rect.left, rect.right, rect.top, rect.bottom].every(Number.isFinite)) return false;
+    const edge = from.x < rect.left ? rect.left : from.x > rect.right ? rect.right : null;
+    if (edge === null) return false;
+    const progress = (to.x - from.x) / (edge - from.x);
+    if (progress <= 0 || progress > 1) return false;
+    const upper = from.y + (rect.top - padding - from.y) * progress;
+    const lower = from.y + (rect.bottom + padding - from.y) * progress;
+    return to.y >= upper && to.y <= lower;
   },
 
   scheduler(clock = globalThis) {
