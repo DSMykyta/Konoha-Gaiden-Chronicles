@@ -108,3 +108,36 @@ test('real Kita home scene has four moment marks in one uninterrupted scene and 
  assert.equal(groups.find(group=>group.key==='scene:'+id)?.nodes.length,4);
  assert.equal(groups.find(group=>group.key==='arc:'+em.get(scene.episode_id).arc_id)?.nodes.length,4);
 });
+
+
+test('story-local cloud geometry survives horizontal panning without marching-squares rebuild',()=>{
+ const queue=[];let paints=0,builds=0;
+ const context={
+  setTransform(){},clearRect(){paints++;},save(){},restore(){},translate(){},fill(){},stroke(){},
+  createLinearGradient(){return {addColorStop(){}};}
+ };
+ class TestPath {moveTo(){} lineTo(){} quadraticCurveTo(){} closePath(){}}
+ const rendererClouds=vm.runInNewContext(source+';StoryClouds',{
+  window:{devicePixelRatio:1,matchMedia:()=>({matches:false,addEventListener(){}})},
+  document:{visibilityState:'visible',addEventListener(){}},
+  Path2D:TestPath,
+  StoryTitleScale:{palette:value=>value},SelectionFocus:{palette:value=>value},
+  requestAnimationFrame:cb=>{queue.push(cb);return queue.length;},cancelAnimationFrame:()=>{}
+ });
+ const contours=rendererClouds.contours.bind(rendererClouds);
+ rendererClouds.contours=(...args)=>{builds++;return contours(...args);};
+ const canvas={width:0,height:0,getContext:()=>context},renderer=rendererClouds.create(canvas);
+ const payload=shift=>{
+  const points=[100,180,260,340].map((x,i)=>({id:'scene-moment-'+i,x:x+shift,y:220}));
+  return {groups:[{key:'scene:kita-home',kind:'scene',nodes:points,parts:[points]}],nodes:points,width:600,height:500,scrollTop:0};
+ };
+ renderer.update(payload(0));
+ assert.equal(builds,1);
+ renderer.update(payload(75));
+ assert.equal(builds,1,'moving the same cloud must translate cached Path2D, not rebuild it');
+ renderer.scroll(10);renderer.scroll(20);renderer.scroll(30);
+ assert.equal(queue.length,1,'three scroll events must schedule one paint');
+ queue.shift()();
+ assert.equal(paints,3);
+ assert.equal(builds,1,'vertical scroll may repaint but must not recalculate geometry');
+});
