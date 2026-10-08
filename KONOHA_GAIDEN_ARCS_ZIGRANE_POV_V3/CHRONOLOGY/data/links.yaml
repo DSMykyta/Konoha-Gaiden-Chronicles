@@ -8,14 +8,6 @@ links:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep21-audit
-- id: lnk-ep21-proctors-review-before-lee-duel
-  kind: before
-  a: sc-y0-0701-exam-entrance-guards-afterward
-  b: sc-y0-0624-lee-challenges-sasuke
-  basis: source
-  review: partial
-  evidence_ids:
-  - evd-narutopedia-ep21-audit
 - id: lnk-waves-13-bridge-attack-before-home-rescue
   kind: before
   a: ev-y0-0330-zabuza-haku-attack-bridge
