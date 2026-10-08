@@ -17,7 +17,15 @@ review:
   origin: accepted
   text: accepted
 description: >-
-  Хірузен повідомляє зібраним наставникам, що за сім днів почнеться іспит на чуніна. Какаші, Асума й Куренай висувають свої команди; в проєктній інтеграції Райдо також заявляє Команду 9. Ірука заперечує через малий досвід нещодавніх випускників. Какаші наполягає, що рішення тепер належить наставникам, а не їхньому колишньому вчителеві, і Хірузен приймає рекомендації.
+  Хірузен повідомляє наставникам, що за сім днів почнеться іспит на чуніна.
+  Перед ним виступають Какаші, Куренай і Асума: кожен рекомендує свою
+  команду — 7, 8 і 10 відповідно. Ірука заперечує проти висунення
+  дев’яти недавніх випускників Академії. Какаші пояснює, що вони вже
+  не учні Іруки, а шинобі під його командуванням; Хірузен погоджується.
+description_project: >-
+  У версії Конохи з Командою 9 на цій самій нараді Райдо окремо
+  висуває Кіту, Рена й Сору. Це проєктне доповнення до канонічної
+  сцени, а не подія з манґи чи аніме.
 events:
 - id: ev-y0-0624-hiruzen-announces-chunin-exam
   legacy_ids:
@@ -40,9 +48,6 @@ events:
   - entity_id: c-kurenai
     role: participant
     mode: physical
-  - entity_id: c-raido
-    role: participant
-    mode: physical
   - entity_id: c-genma
     role: participant
     mode: physical
@@ -50,7 +55,6 @@ events:
   - evd-v10-000039-D
   - evd-manga-chunin-intro
   - evd-anime-20-23
-  - evd-project-raido-team9-chunin-nomination
   - evd-narutopedia-ep20-audit
 - id: ev-y0-0624-genma-asks-about-daimyo
   title: Ґенма уточнює, чи повідомлені даймьо
@@ -71,8 +75,8 @@ events:
 - id: ev-y0-0624-jonin-nominate-teams
   legacy_ids:
   - V10-000039-E
-  title: Какаші, Куренай, Асума та Райдо висувають свої команди
-  text: Какаші, Куренай, Асума та Райдо висувають Команди 7, 8, 9 і 10 на іспит на чуніна.
+  title: Какаші, Куренай і Асума висувають дев’ятьох генінів
+  text: Какаші висуває Команду 7, Куренай — Команду 8, Асума — Команду 10: разом дев’ятьох генінів. Хірузен приймає їхні рекомендації.
   origin: M
   extent: interval
   display_rank: 200
@@ -86,9 +90,6 @@ events:
   - entity_id: c-asuma
     role: focus
     mode: physical
-  - entity_id: c-raido
-    role: focus
-    mode: physical
   - entity_id: c-genma
     role: participant
     mode: physical
@@ -98,12 +99,32 @@ events:
   focus_teams:
   - team-7
   - team-8
-  - team-9
   - team-10
   evidence_ids:
   - evd-v10-000039-E
   - evd-manga-chunin-intro
   - evd-anime-20-23
+- id: ev-y0-0624-raido-nominates-team9
+  title: Райдо висуває Кіту, Рена й Сору на іспит
+  text: >-
+    У проєктній історії Райдо Наміаші приєднується до висунення
+    молодих команд: він рекомендує на іспит на чуніна
+    Кіту Хаяші, Рена та Сору. Канонічні дев’ять кандидатів
+    залишаються кандидатами незалежно від цього доповнення.
+  layer: team9
+  origin: P
+  extent: interval
+  display_rank: 250
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  focus_teams:
+  - team-9
+  evidence_ids:
   - evd-project-raido-team9-chunin-nomination
 - id: ev-y0-0624-iruka-objects-to-nominations
   legacy_ids:
@@ -131,9 +152,6 @@ events:
   - entity_id: c-asuma
     role: participant
     mode: physical
-  - entity_id: c-raido
-    role: participant
-    mode: physical
   - entity_id: c-genma
     role: participant
     mode: physical
@@ -141,7 +159,6 @@ events:
   - evd-v10-000039-E
   - evd-manga-chunin-intro
   - evd-anime-20-23
-  - evd-project-raido-team9-chunin-nomination
 - id: ev-y0-0624-iruka-requests-second-exam-messenger
   title: Ірука просить стати посланцем другого етапу
   text: Після суперечки Ірука відступає від заперечень, але просить дозволити йому бути посланцем наприкінці другого етапу
