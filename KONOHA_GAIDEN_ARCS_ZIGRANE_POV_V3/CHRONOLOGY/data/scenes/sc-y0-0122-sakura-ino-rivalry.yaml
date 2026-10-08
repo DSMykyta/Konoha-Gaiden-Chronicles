@@ -10,6 +10,7 @@ location_id: loc-konohagakure
 placement:
   anchor_id: ta-team-formation
   day_offset: 0
+layer: filler
 state: active
 presence_coverage: complete
 review:

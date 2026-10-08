@@ -6,6 +6,7 @@ continuity_id: "main"
 title: "Какаші готується до випробування Команди 7"
 location_id: null
 placement: {anchor_id: "ta-y0-0123", day_offset: 0}
+layer: filler
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "unknown", origin: "accepted", text: "accepted"}
