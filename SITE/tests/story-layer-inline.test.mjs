@@ -23,7 +23,7 @@ test('broken or nested conditional blocks fail rather than leak',()=>{
 });
 test('anime origin A is ambiguous until source comparison',()=>{
  assert.equal(layers.classify({origin:'A'}),null);
- assert.equal(layers.classify({origin:'M'}),'naruto');
+ assert.equal(layers.classify({origin:'M'}),'canon');
  assert.equal(layers.classify({origin:'P'}),'project');
  assert.equal(layers.classify({origin:'F'}),'filler');
  assert.equal(layers.classify({origin:'A',layer:'naruto'}),'canon');
