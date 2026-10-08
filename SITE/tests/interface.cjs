@@ -82,6 +82,14 @@ async function check(width,height){
  // Singleton containers collapse visually without changing the underlying hierarchy.
  run('selected=new Set(selectable().map(e=>e.id));navigateEvent("ev-y0-0122-team7-announced");closeCard()');
  assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
+  // Different Academy scenes remain separate nodes on the exact same world-time X
+  // when Kita observes the three jōnin waiting beyond the classroom window.
+  const kitaMoment=run('graphNodes.find(p=>p.id==="ev-y0-0122-kita-sees-jonin")');
+  const joninMoment=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');
+  assert(kitaMoment&&joninMoment,'Academy observation nodes must both be visible');
+  assert.equal(kitaMoment.x,joninMoment.x,'Observed independent branches must have matching X');
+  assert.notEqual(kitaMoment.y,joninMoment.y,'Two distinct observed moments must not overlap vertically');
+
  click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('22 січня 61'));run('closeCard()');
 
  run('zoom=zoomModes.week;center=dayToAxis(21.5);render()');assert.equal(run('semanticLevel()'),'scene');
