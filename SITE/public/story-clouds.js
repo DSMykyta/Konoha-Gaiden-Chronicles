@@ -149,7 +149,7 @@ const StoryClouds = {
    context.clearRect(0,state.scrollTop,state.width,state.height);
    for(const group of state.groups){
     const radius=group.kind==='arc'?92:group.kind==='episode'?70:group.kind==='scene'?48:25;
-    const margin=radius*3.8,own=new Set(group.nodes.map(n=>n.id));
+    const margin=radius*3.8;
     const colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.key),group.kind,group.key),group.kind,group.key);
     // The group contains ALL its nodes, including those offscreen. Clip only
     // contour computation after grouping, so a fourth offscreen moment cannot
@@ -195,8 +195,10 @@ const StoryClouds = {
      const signature=group.key+'|'+active.map(n=>n.id+':'+n.x.toFixed(1)+','+n.y.toFixed(1)).join('|');
      let shape=geometry.get(signature);
      if(!shape){
-      const foreign=group.kind==='scene'?state.nodes.filter(n=>!own.has(n.id)&&n.x>=-margin&&n.x<=state.width+margin&&n.y>=minY-20&&n.y<=maxY+20):[];
-      const contours=StoryClouds.contours(near,foreign,radius,0,group.kind==='arc'?10:group.kind==='episode'?9:6,group.kind,extra);
+      // Cloud membership is a property of the story, not of which other
+      // branches are currently visible or selected. Do not carve away the
+      // shape around neighboring foreign nodes: that made edges jump on pan.
+      const contours=StoryClouds.contours(near,[],radius,0,group.kind==='arc'?10:group.kind==='episode'?9:6,group.kind,extra);
       const path=new Path2D();
       for(const loop of contours){const last=loop.at(-1),first=loop[0];path.moveTo((last.x+first.x)/2,(last.y+first.y)/2);loop.forEach((p,i)=>{const next=loop[(i+1)%loop.length];path.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);});path.closePath();}
       shape={path};geometry.set(signature,shape);
