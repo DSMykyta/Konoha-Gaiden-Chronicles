@@ -74,7 +74,7 @@ async function check(width,height){
  const calendarGap=canvas.querySelector('.time-break');if(calendarGap)assert(calendarGap.compareDocumentPosition(soraContinuous)&4,'The calendar hatch covered the focused line');
  run('setFocus("c-sora")');assert.deepEqual(soraRuns.map(path=>path.getAttribute('d')),soraD);
  // First/last event buttons are disabled, and card movement respects selection.
- click('[data-team="team-8"]');await sleep();assert.equal(run('selected.size'),4);run("navigateEvent(orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&relevant(e))[0].id)");assert(doc.querySelector('[data-step-event="-1"]').disabled);click('[data-step-event="1"]');await sleep();assert(run('relevant(eventMap.get(anchorEvent))'));
+ click('[data-team="team-8"]');await sleep();assert.equal(run('selected.size'),4);run("navigateEvent(chronologicalMoments().filter(relevant)[0].id)");assert(doc.querySelector('[data-step-event="-1"]').disabled);click('[data-step-event="1"]');await sleep();assert(run('relevant(eventMap.get(anchorEvent))'));
 
  // Chosen lines persist at month and week scales.
  click('[data-team="team-7"]');run('zoom=16;center=160;render()');assert.equal(run('selected.size'),4);assert([...canvas.querySelectorAll('.thread')].every(path=>run('selected.has("'+path.dataset.character+'")')));run('zoom=32;render()');assert.equal(run('selected.size'),4);assert([...canvas.querySelectorAll('.thread')].every(path=>run('selected.has("'+path.dataset.character+'")')));
