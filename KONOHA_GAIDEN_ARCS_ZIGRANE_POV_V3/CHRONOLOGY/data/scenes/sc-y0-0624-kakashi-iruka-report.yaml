@@ -9,6 +9,8 @@ placement: {anchor_id: "ta-y0-0624", day_offset: 0}
 state: "active"
 presence_coverage: "complete"
 review: {time: "partial", cast: "accepted", location: "unknown", origin: "accepted", text: "accepted"}
+description: >-
+  Після місії Ірука зупиняє Какаші й розпитує, як справи в Команди 7. Особливо його непокоїть Наруто, якого він майже не бачив останнім часом. Какаші пояснює, що Саске й Наруто стали сильнішими, хоч їхнє суперництво часто заважає злагодженості; це трохи заспокоює Іруку.
 events:
   - id: "ev-y0-0624-iruka-asks-kakashi-about-naruto"
     title: "Какаші звітує Іруці про розвиток Наруто"

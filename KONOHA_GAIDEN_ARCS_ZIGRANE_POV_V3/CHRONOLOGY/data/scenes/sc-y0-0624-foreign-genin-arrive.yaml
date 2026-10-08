@@ -9,6 +9,8 @@ placement: {anchor_id: "ta-y0-0624", day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+description: >-
+  Перед іспитом у Коноху прибувають молоді шинобі із сусідніх селищ. Серед прибулих — Ґаара, Темарі й Канкуро із Суни. На вулицях з’являються незнайомі протектори та суперники, із якими випускникам Академії доведеться змагатися за звання чуніна.
 events:
   - id: "ev-y0-0624-foreign-genin-arrive"
     legacy_ids: ["V10-000039"]
