@@ -158,60 +158,59 @@ const StoryClouds = {
      if(!part.length)continue;
      const minAllX=Math.min(...part.map(n=>n.x)),maxAllX=Math.max(...part.map(n=>n.x));
      if(maxAllX < -margin||minAllX>state.width+margin)continue;
-     // Parent clouds and long scenes can span months and thousands of pixels.
-     // The marching-squares field was O(canvas area * influence count) on
-     // EVERY pan commit. Use a stable smooth tube in O(member count) instead.
-     if(group.kind==='arc'||group.kind==='episode'||part.length>14||maxAllX-minAllX>state.width*1.8){
-      const sorted=part.slice().sort((a,b)=>a.x-b.x||a.y-b.y);
-      const inView=sorted.some(p=>p.x>=-margin&&p.x<=state.width+margin)||
-       (minAllX<0&&maxAllX>state.width);
-      if(!inView)continue;
-      const minY=Math.min(...sorted.map(p=>p.y))-radius*1.5,maxY=Math.max(...sorted.map(p=>p.y))+radius*1.5;
-      if(maxY<state.scrollTop||minY>state.scrollTop+state.height)continue;
-      const path=new Path2D(),first=sorted[0];
-      path.moveTo(first.x,first.y);
-      if(sorted.length===1)path.lineTo(first.x+.01,first.y);
-      for(let i=1;i<sorted.length;i++){
-       const a=sorted[i-1],b=sorted[i],mx=(a.x+b.x)/2,my=(a.y+b.y)/2;
-       path.quadraticCurveTo(a.x,a.y,mx,my);
-       if(i===sorted.length-1)path.quadraticCurveTo(b.x,b.y,b.x,b.y);
-      }
-      const gradient=context.createLinearGradient(0,minY,0,maxY);
-      gradient.addColorStop(0,colors.top);gradient.addColorStop(1,colors.bottom);
-      context.save();context.lineCap='round';context.lineJoin='round';context.globalAlpha=colors.alpha;
-      context.strokeStyle=contrast.matches?'#858b94':colors.stroke;
-      context.lineWidth=2*radius+2;context.stroke(path);
-      context.strokeStyle=contrast.matches?'rgba(222,224,228,.82)':gradient;
-      context.lineWidth=2*radius;context.stroke(path);
-      context.restore();
-      continue;
-     }
-     const near=part.filter(n=>n.x>=-margin&&n.x<=state.width+margin);
-     const extra=StoryClouds.bridgePoints(part,radius,group.kind,-margin,state.width+margin);
-     const active=[...near,...extra];
-     if(!active.length)continue;
-     const minY=Math.min(...active.map(n=>n.y))-radius*2.4,maxY=Math.max(...active.map(n=>n.y))+radius*2.4;
+     const ribbon=group.kind==='arc'||group.kind==='episode'||part.length>14||maxAllX-minAllX>state.width*1.8;
+     const minY=Math.min(...part.map(n=>n.y))-radius*(ribbon?1.5:2.4);
+     const maxY=Math.max(...part.map(n=>n.y))+radius*(ribbon?1.5:2.4);
      if(maxY<state.scrollTop||minY>state.scrollTop+state.height)continue;
-     const signature=group.key+'|'+active.map(n=>n.id+':'+n.x.toFixed(1)+','+n.y.toFixed(1)).join('|');
+     // Shape-space is relative to the FIRST WORLD X, not the viewport.
+     // Panning translates this same cached Path2D. The full 4-point scene
+     // outline cannot be replaced by a 3-point outline at the right edge.
+     const local=part.map(n=>({...n,x:n.x-minAllX}));
+     const signature=group.key+'|'+(ribbon?'ribbon':'organic')+'|'+radius+'|'+local.map(n=>n.id+':'+n.x.toFixed(2)+','+n.y.toFixed(1)).join('|');
      let shape=geometry.get(signature);
      if(!shape){
-      // Cloud membership is a property of the story, not of which other
-      // branches are currently visible or selected. Do not carve away the
-      // shape around neighboring foreign nodes: that made edges jump on pan.
-      const contours=StoryClouds.contours(near,[],radius,0,group.kind==='arc'?10:group.kind==='episode'?9:6,group.kind,extra);
       const path=new Path2D();
-      for(const loop of contours){const last=loop.at(-1),first=loop[0];path.moveTo((last.x+first.x)/2,(last.y+first.y)/2);loop.forEach((p,i)=>{const next=loop[(i+1)%loop.length];path.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);});path.closePath();}
+      if(ribbon){
+       // Smooth O(N) envelope for arcs, episodes and long scenes.
+       const sorted=local.slice().sort((a,b)=>a.x-b.x||a.y-b.y),first=sorted[0];
+       path.moveTo(first.x,first.y);
+       if(sorted.length===1)path.lineTo(first.x+.01,first.y);
+       for(let i=1;i<sorted.length;i++){
+        const a=sorted[i-1],b=sorted[i],mx=(a.x+b.x)/2,my=(a.y+b.y)/2;
+        path.quadraticCurveTo(a.x,a.y,mx,my);
+        if(i===sorted.length-1)path.quadraticCurveTo(b.x,b.y,b.x,b.y);
+       }
+      }else{
+       // Compact scenes use a detailed contour ONCE per zoom/layout, not
+       // once per pan. Other branches must not cut holes in this geometry.
+       const contours=StoryClouds.contours(local,[],radius,0,6,group.kind);
+       for(const loop of contours){
+        const last=loop.at(-1),first=loop[0];
+        path.moveTo((last.x+first.x)/2,(last.y+first.y)/2);
+        loop.forEach((p,i)=>{const next=loop[(i+1)%loop.length];path.quadraticCurveTo(p.x,p.y,(p.x+next.x)/2,(p.y+next.y)/2);});
+        path.closePath();
+       }
+      }
       shape={path};geometry.set(signature,shape);
       if(geometry.size>capacity)geometry.delete(geometry.keys().next().value);
      }
      const path=shape.path,gradient=context.createLinearGradient(0,minY,0,maxY);
      gradient.addColorStop(0,colors.top);gradient.addColorStop(1,colors.bottom);
+     context.save();context.translate(minAllX,0);
      context.globalAlpha=colors.alpha;
-     context.fillStyle=contrast.matches?'rgba(222,224,228,.82)':gradient;
-     context.fill(path,'evenodd');
-     context.strokeStyle=contrast.matches?'#858b94':colors.stroke;
-     context.lineWidth=group.kind==='arc'?.7:group.kind==='moment'?.8:1;context.stroke(path);
-    }
+     if(ribbon){
+      context.lineCap='round';context.lineJoin='round';
+      context.strokeStyle=contrast.matches?'#858b94':colors.stroke;
+      context.lineWidth=2*radius+2;context.stroke(path);
+      context.strokeStyle=contrast.matches?'rgba(222,224,228,.82)':gradient;
+      context.lineWidth=2*radius;context.stroke(path);
+     }else{
+      context.fillStyle=contrast.matches?'rgba(222,224,228,.82)':gradient;
+      context.fill(path,'evenodd');
+      context.strokeStyle=contrast.matches?'#858b94':colors.stroke;
+      context.lineWidth=1;context.stroke(path);
+     }
+     context.restore();}
    }
    context.globalAlpha=1;
   };
