@@ -44,7 +44,7 @@ const ProfileTechniques = (() => {
 
   function openCard(id, trigger) {
     if (typeof AbilityArchive === 'undefined') return;
-    if (typeof closeProfile === 'function' && document.getElementById('profileDialog')?.open) closeProfile();
+    if (typeof closeProfile === 'function' && !document.getElementById('profileDialog')?.hidden) closeProfile();
     AbilityArchive.open(id, trigger);
   }
 
