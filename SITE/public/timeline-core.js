@@ -96,7 +96,7 @@ const TimelineCore = {
         if(relation.kind!=='observes'&&relation.kind!=='same_span')continue;
         const a=byEvent.has(relation.a)?relation.a:byScene.get(relation.a)?.group.length===1?byScene.get(relation.a).group[0].id:null;
         const b=byEvent.has(relation.b)?relation.b:byScene.get(relation.b)?.group.length===1?byScene.get(relation.b).group[0].id:null;
-        if(a&&b&&owner.get(a)!==owner.get(b)){join(a,b);hasRelations=true;}
+        if(a&&b&&(relation.kind==='same_span'||owner.get(a)!==owner.get(b))){join(a,b);hasRelations=true;}
       }
       const groups=new Map();
       for(const event of eventList){
