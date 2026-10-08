@@ -4,6 +4,8 @@ episode_id: ep-y0-naruto-monument
 display_rank: 100
 continuity_id: main
 title: Витівка на Монументі Хокаґе
+description: >-
+  Наруто спотворює обличчя попередніх Хокаґе, викликаючи обурення мешканців. Витівка приносить йому увагу лише на мить і запускає погоню, яка поверне хлопця до Іруки.
 location_id: loc-hokage-monument
 placement:
   anchor_id: ta-y0-0118

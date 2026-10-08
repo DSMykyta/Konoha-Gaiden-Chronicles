@@ -4,6 +4,8 @@ episode_id: ep-y0-graduation-failure
 display_rank: 100
 continuity_id: "main"
 title: "Випускний іспит Наруто"
+description: >-
+  Наруто виходить на випускний іспит із Техніки Клонування, але його спроба не відповідає вимогам. Ірука змушений відмовити в протекторі, хоча бачить, як багато це для учня означає.
 location_id: "loc-academy-classroom"
 placement: {anchor_id: "ta-y0-0119", day_offset: 0}
 state: "active"

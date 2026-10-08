@@ -4,6 +4,8 @@ episode_id: ep-y0-team7-introduction
 display_rank: 500
 continuity_id: main
 title: Знайомство Команди 7 з Какаші
+description: >-
+  На даху Какаші просить трійку назвати мрії та вподобання. У відповідях проявляються різні мотивації майбутніх товаришів: амбіція Наруто, захоплення Сакури й помста Саске. Після цієї розмови Какаші оголошує випробування на виживання.
 location_id: loc-team7-rooftop
 placement:
   anchor_id: ta-team-formation

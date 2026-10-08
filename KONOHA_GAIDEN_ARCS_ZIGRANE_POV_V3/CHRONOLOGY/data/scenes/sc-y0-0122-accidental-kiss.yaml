@@ -4,6 +4,8 @@ episode_id: ep-y0-team-formation
 display_rank: 100
 continuity_id: "main"
 title: "Випадковий поцілунок Наруто й Саске"
+description: >-
+  У переповненому класі Сакура й Іно змагаються за увагу Саске, а Наруто намагається кинути виклик його байдужості. Випадковий поштовх призводить до незручного поцілунку, який налаштовує частину однокласників проти Наруто ще до оголошення команд.
 location_id: "loc-academy-classroom"
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
 state: "active"

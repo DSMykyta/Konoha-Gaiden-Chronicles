@@ -4,6 +4,8 @@ episode_id: ep-y0-konohamaru
 display_rank: 200
 continuity_id: main
 title: Наруто навчає Конохамару
+description: >-
+  Конохамару незграбно стежить за Наруто, домагаючись уроків. Від вправ із Перетворенням їхня розмова переходить до справжньої причини прагнення стати Хокаґе: хлопчик хоче, щоб його помічали не лише як онука Третього.
 location_id: loc-konohagakure
 placement:
   anchor_id: ta-y0-0121
