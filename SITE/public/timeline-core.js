@@ -179,6 +179,35 @@ const TimelineCore = {
       .sort((a,b)=>moments.get(a.id)-moments.get(b.id)||a.id.localeCompare(b.id));
     return {scenes,moments,orderedMoments};
   },
+  auditTime(world,relations=[]) {
+    // Diagnostics, not extra time coordinates. Flag known contradictions
+    // instead of quietly treating source conflicts as an arbitrary list order.
+    const issues=[],ref=new Map(),epsilon=1e-10;
+    for(const scene of world.scenes){
+      if(!Number.isFinite(scene.spanStart))continue;
+      ref.set(scene.id,{start:scene.spanStart,end:scene.spanEnd});
+      for(const event of scene.group){
+        const x=world.moments.get(event.id);
+        if(Number.isFinite(x))ref.set(event.id,{start:x,end:x});
+      }
+    }
+    for(const link of relations){
+      if(link.review!=='accepted')continue;
+      const a=ref.get(link.a),b=ref.get(link.b);
+      if(!a||!b)continue;
+      const id=link.id||link.a+' -> '+link.b;
+      if(link.kind==='before'&&a.end>=b.start-epsilon)
+        issues.push({id,kind:'before_conflict',a:link.a,b:link.b,
+          note:'Accepted before relation conflicts with projected world order'});
+      else if(link.kind==='same_span'&&(Math.abs(a.start-b.start)>epsilon||Math.abs(a.end-b.end)>epsilon))
+        issues.push({id,kind:'same_span_conflict',a:link.a,b:link.b,
+          note:'Accepted same_span relation lacks coincident endpoints'});
+      else if(link.kind==='observes'&&Math.abs(a.start-b.start)>epsilon&&a.start===a.end&&b.start===b.end)
+        issues.push({id,kind:'observation_conflict',a:link.a,b:link.b,
+          note:'Accepted observation anchors are not synchronized'});
+    }
+    return issues;
+  },
   separateNodes(nodes,top,bottom,clearance=46) {
     // Time/X stays exact. Separate overlapping hit areas vertically, and use the
     // resulting anchors for both the marks and their character strands.
