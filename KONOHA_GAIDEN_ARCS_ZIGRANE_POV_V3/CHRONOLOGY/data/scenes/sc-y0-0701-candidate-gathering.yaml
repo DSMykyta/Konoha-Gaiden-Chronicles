@@ -17,14 +17,20 @@ review:
   origin: accepted
   text: accepted
 description: >-
-  На порозі письмового етапу Команди 7, 8 і 10 зустрічаються із іншими кандидатами; Команда 9 перебуває в тій самій залі. Кабуто знайомить новачків із суперниками через картки з інформацією. Наруто голосно обіцяє перемогти всіх, після чого команда Звуку нападає на Кабуто; Ібікі з екзаменаторами припиняє сутичку й починає іспит.
+  На порозі письмового етапу Команди 7, 8 і 10 зустрічаються
+  з іншими кандидатами. Кабуто знайомить новачків із суперниками
+  через картки з інформацією. Наруто голосно обіцяє перемогти всіх;
+  після цього команда Звуку атакує Кабуто, а Ібікі припиняє сутичку
+  й починає іспит.
+description_project: >-
+  Кіта, Рен і Сора з Команди 9 перебувають серед тих самих кандидатів.
+  Вони проходитимуть письмовий етап одночасно з іншими генінами.
 events:
 - id: ev-y0-0701-rookie-teams-meet
   legacy_ids:
   - V10-000040
   title: Команди 7, 8 і 10 зустрічаються перед іспитом
-  text: У залі Команда 7 зустрічає Команди 8 і 10; дев’ятеро колишніх однокласників розмовляють перед першим етапом. Серед
-    кандидатів також перебуває Команда 9 — Кіта, Рен і Сора.
+  text: У залі Команда 7 зустрічає Команди 8 і 10; дев’ятеро колишніх однокласників розмовляють перед першим етапом.
   origin: M
   extent: interval
   display_rank: 100
@@ -59,15 +65,6 @@ events:
   - entity_id: c-choji
     role: participant
     mode: physical
-  - entity_id: c-kita
-    role: background
-    mode: physical
-  - entity_id: c-ren
-    role: background
-    mode: physical
-  - entity_id: c-sora
-    role: background
-    mode: physical
   focus_teams:
   - team-7
   - team-8
@@ -77,6 +74,29 @@ events:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
   - evd-narutopedia-ep23-audit
+- id: ev-y0-0701-team9-joins-chunin-candidates
+  title: Кіта, Рен і Сора чекають серед кандидатів на перший етап
+  text: >-
+    Команда 9 перебуває в загальній екзаменаційній залі разом
+    з іншими генінами. Кіта, Рен і Сора готуються проходити
+    письмовий іспит Ібікі у той самий день, що й Команди 7, 8 і 10.
+  origin: P
+  layer: team9
+  extent: interval
+  display_rank: 150
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  focus_teams:
+  - team-9
+  evidence_ids:
   - evd-project-team9-candidate-hall
 - id: ev-y0-0701-kabuto-shows-ninja-info-cards
   legacy_ids:
