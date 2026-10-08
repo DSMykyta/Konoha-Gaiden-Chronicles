@@ -561,9 +561,18 @@ function navigateScene(id){
  if(e.day!==null){zoom=zoomModes.week;const point=orderedScenes().find(point=>point.id===id);center=clampAxisCenter(dayToAxis(point?.position??e.day+.5));}
  focusId=group.length===1?e.id:id;pinnedNodeId=focusId;anchorEvent=null;showSceneCard(sceneMap.get(id),group);$('eventCard').hidden=false;render();revealReadingNode();focusReadingCard();
 }
+function narrativeHtml(item){
+  // The default site is an integrated continuity: both factual Naruto
+  // summary and explicitly labeled project additions must remain readable.
+  // Each is a separate paragraph so later layer toggles can control them
+  // without ever rewriting the original description.
+  return [item?.description,item?.description_project]
+   .filter(Boolean)
+   .map((text,index)=>`<p class="event-text${index?' story-project-addendum':''}">${esc(text)}</p>`).join('');
+}
 function sceneCardBody(scene,group){
  const cast=sceneCast(scene,group);
- return `<h2>${esc(scene.title)}</h2>${scene.description?`<p class="event-text">${esc(scene.description)}</p>`:''}${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" data-tooltip="Зосередитися на лінії">${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></li>`).join('')}</ol>`;
+ return `<h2>${esc(scene.title)}</h2>${narrativeHtml(scene)}${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" data-tooltip="Зосередитися на лінії">${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></li>`).join('')}</ol>`;
 }
 function showSceneCard(scene,group){
  cardSelection={kind:'scene',id:scene.id,events:group};setCardContent(`${cardTop(group[0].day,sceneNavigation(scene.id),'scene',scene.id)}${sceneCardBody(scene,group)}`);bindCard();
@@ -577,7 +586,7 @@ function closeScene(){const dialog=$('sceneDialog');if(dialog.hidden)return;if(d
 function renderScene(){
  const scene=sceneMap.get(sceneId);if(!scene){closeScene();return;}const group=sceneEvents(sceneId),cast=sceneCast(scene,group);
  $('sceneTitle').textContent=scene.title;$('sceneMeta').textContent=`${dateText(scene.day,true)} · ${name(scene.location_id)} · ${actionCount(group.length)}`;
- $('sceneContent').innerHTML=`${scene.description?`<p class="event-text">${esc(scene.description)}</p>`:''}${cast.length?`<div class="people scene-cast">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-scene-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(fullName(id))}" title="Зосередитися на лінії">${esc(fullName(id))}</button>`).join('')}</div>`:''}<ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(e.text)}</p></li>`).join('')}</ol>`;
+ $('sceneContent').innerHTML=`${narrativeHtml(scene)}${cast.length?`<div class="people scene-cast">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-scene-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(fullName(id))}" title="Зосередитися на лінії">${esc(fullName(id))}</button>`).join('')}</div>`:''}<ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(e.text)}</p></li>`).join('')}</ol>`;
  $('sceneContent').querySelectorAll('[data-scene-event]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneEvent;closeScene();navigateEvent(id);}));
  $('sceneContent').querySelectorAll('[data-scene-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneFocusCharacter;closeScene();if(focusedCharacter!==id)setFocus(id);}));
 }
@@ -585,7 +594,7 @@ function storyCardBody(point){
  const children=point.kind==='arc'
   ?(point.sourceEpisodeIds||[]).map(id=>{const episode=episodeMap.get(id);return episode?{id,title:episode.title}:null;}).filter(Boolean)
   :(point.sourceSceneIds||[]).map(id=>{const scene=sceneMap.get(id);return scene&&sceneEvents(id).length?{id,title:scene.title}:null;}).filter(Boolean);
- return `<h2>${esc(point.title)}</h2>${point.story?.description?`<p class="event-text">${esc(point.story.description)}</p>`:''}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong></button>`).join('')}</div>`;
+ return `<h2>${esc(point.title)}</h2>${narrativeHtml(point.story)}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong></button>`).join('')}</div>`;
 }
 function showStoryGroup(point){
  const days=point.group.map(e=>e.day).filter(Number.isFinite),start=days.length?Math.min(...days):null,end=days.length?Math.max(...days):null,range=start===null?'Без установленої дати':start===end?dateText(start,true):`${dateText(start,true)} — ${dateText(end,true)}`;
