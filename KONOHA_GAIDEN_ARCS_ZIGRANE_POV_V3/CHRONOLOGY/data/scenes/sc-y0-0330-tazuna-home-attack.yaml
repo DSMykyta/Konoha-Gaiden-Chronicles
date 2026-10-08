@@ -4,6 +4,8 @@ episode_id: ep-y0-tazuna-home-defense
 display_rank: 100
 continuity_id: main
 title: Напад людей Ґато на дім Тадзуни
+description: >-
+  Найманці Ґато приходять по родину Тадзуни, поки захисники стримують Забузу й Хаку на мосту. Загроза Цунамі та Інарі перетворює боротьбу проти Ґато з далекої справи будівельників на особистий вибір родини.
 location_id: loc-tazuna-home
 placement:
   anchor_id: ta-y0-0330

@@ -36,6 +36,8 @@ presence:
 episode_id: ep-y0-inari-rallies-villagers
 display_rank: 100
 title: Інарі звертається до мешканців
+description: >-
+  Інарі обходить домівки мешканців і просить їх допомогти захистити міст. Він бачить, що страх перед Ґато нікуди не зник, але вперше готовий діяти навіть без обіцянки підтримки дорослих.
 location_id: null
 placement:
   anchor_id: ta-y0-0330

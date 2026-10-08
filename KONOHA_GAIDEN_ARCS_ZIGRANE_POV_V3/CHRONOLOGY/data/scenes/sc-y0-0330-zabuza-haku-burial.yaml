@@ -4,6 +4,8 @@ episode_id: ep-y0-waves-farewell
 display_rank: 100
 continuity_id: main
 title: Поховання Забузи й Хаку
+description: >-
+  Після останньої сутички Забузу й Хаку ховають поруч. Для Наруто та інших учасників місії поховання стає нагадуванням, що за образом безжальних найманців стояли прив’язаність, втрати та власні рішення.
 location_id: loc-wave-burial-hill
 placement:
   anchor_id: ta-y0-0330

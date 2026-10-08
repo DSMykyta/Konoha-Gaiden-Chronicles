@@ -157,6 +157,8 @@ presence:
 episode_id: ep-y0-waves-team-briefing
 display_rank: 200
 title: Розмова про Кайзу після вечері
+description: >-
+  За вечерею в родині Тадзуни спливає історія Кайзи, який колись став для Інарі уособленням мужності. Жорстока розправа Ґато над ним пояснює страх хлопця та небажання мешканців вірити в перемогу.
 location_id: loc-tazuna-home
 placement:
   anchor_id: ta-y0-0322
