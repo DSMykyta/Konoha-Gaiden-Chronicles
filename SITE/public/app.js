@@ -835,8 +835,8 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  });
  document.addEventListener('pointerdown',e=>{
   document.documentElement.dataset.input='pointer';uiTimers.cancel('node-open');hoveredNodeId=null;
-  if(!e.target.closest('.panel,.tools,.period,.scene-dialog'))closePanels();
-  if(!e.target.closest('.event-card,.event-preview,.node,.node-hit,.cloud-label,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.scene-dialog,.time-controls,.panel,.tools,.period'))closeCard();
+  if(!e.target.closest('.panel,.tools,.period,.story-layers-open,.scene-dialog'))closePanels();
+  if(!e.target.closest('.event-card,.event-preview,.node,.node-hit,.cloud-label,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.scene-dialog,.time-controls,.panel,.tools,.period,.story-layers-open'))closeCard();
  });
  tooltipController=TimelineInteractions.tooltips(document,uiTimers);SelectionFocus.bind();
  $('eventCard').addEventListener('click',e=>{
