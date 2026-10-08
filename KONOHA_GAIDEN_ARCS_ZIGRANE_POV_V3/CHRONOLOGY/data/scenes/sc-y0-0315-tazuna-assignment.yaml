@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: main
 title: Команда 7 отримує місію супроводу Тадзуни
 description: >-
-  Повернувши кішку Тору, Наруто протестує проти низки буденних D-рангових завдань. Хірузен пояснює ризики вищих рангів і призначає Команді 7 охорону мостобудівника Тадзуни. Райдо й Команда 9 стають свідками нового доручення, перш ніж дві сюжетні лінії знову розійдуться.
+  Повернувши кішку Тору, Наруто протестує проти низки буденних D-рангових завдань. Хірузен пояснює ризики вищих рангів і призначає Команді 7 охорону мостобудівника Тадзуни. [[project|Райдо, Кіта, Рен і Сора стають свідками нового доручення.]]
 location_id: loc-hokage-residence
 placement:
   anchor_id: ta-y0-0315
@@ -124,7 +124,7 @@ events:
   - V10-000023
   - V10-000024
   title: Хірузен доручає Команді 7 супровід Тадзуни
-  text: 'Хірузен призначає Команді 7 C-рангову місію: супроводити мостобудівника Тадзуну до Країни Хвиль. Тадзуна сумнівається, чи можуть діти належно його захистити. Райдо й Команда 9, які щойно здали роботу зі східного складу, стають свідками доручення.'
+  text: 'Хірузен призначає Команді 7 C-рангову місію: супроводити мостобудівника Тадзуну до Країни Хвиль. Тадзуна сумнівається, чи можуть діти належно його захистити.'
   origin: M
   extent: interval
   display_rank: 200
@@ -150,18 +150,6 @@ events:
   - entity_id: c-iruka
     role: participant
     mode: physical
-  - entity_id: c-raido
-    role: background
-    mode: physical
-  - entity_id: c-kita
-    role: background
-    mode: physical
-  - entity_id: c-ren
-    role: background
-    mode: physical
-  - entity_id: c-sora
-    role: background
-    mode: physical
   focus_teams:
   - team-7
   evidence_ids:
@@ -171,8 +159,31 @@ events:
   - evd-anime-land-waves
   - evd-novel-land-waves
   - evd-narutopedia-ep6-audit
-  - evd-games-team-9-02-5
+- id: ev-y0-0315-team9-witnesses-tazuna-mission
+  title: Райдо та Команда 9 бачать призначення місії Тадзуні
+  text: >-
+    Після доручення зі східного складу Райдо, Кіта, Рен
+    і Сора присутні в резиденції Хокаґе та чують,
+    як Хірузен призначає Команді 7 місію супроводу Тадзуни.
+  layer: project
+  origin: P
+  extent: interval
+  display_rank: 210
+  involvement:
+  - {entity_id: c-raido, role: participant, mode: physical}
+  - {entity_id: c-kita, role: focus, mode: physical}
+  - {entity_id: c-ren, role: participant, mode: physical}
+  - {entity_id: c-sora, role: participant, mode: physical}
+  focus_teams: [team-9]
+  evidence_ids: [evd-games-team-9-02-5]
 relations:
+- id: rel-0315-team9-witnesses-canon-assignment
+  kind: same_span
+  a: ev-y0-0315-hiruzen-assigns-tazuna
+  b: ev-y0-0315-team9-witnesses-tazuna-mission
+  basis: source
+  review: accepted
+  evidence_ids: [evd-games-team-9-02-5]
 - id: rel-0315-demand-before-assignment
   kind: before
   a: ev-y0-0315-naruto-demands-harder-mission
