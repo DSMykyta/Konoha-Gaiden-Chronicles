@@ -6,10 +6,7 @@
   "installCommand": "npm ci",
   "ignoreCommand": "git diff --quiet HEAD^ HEAD ./",
   "git": {
-    "deploymentEnabled": {
-      "*": false,
-      "main": true
-    }
+    "deploymentEnabled": false
   },
   "headers": [
     {
