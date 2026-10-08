@@ -26,7 +26,7 @@ Current benchmark migration:
 
 The Chunin Exam is one shared arc: Team 9's written exam takes place on 01.07 in Ibiki's common scene, and its 02–06.07 Forest of Death episode runs in parallel with the other teams. Its former standalone arc ID redirects to `arc-y0-chunin-exams`; no dates or events were duplicated.
 
-Unknown cross-branch order is intentionally not invented. `display_rank` controls presentation only.
+Unknown cross-branch order is intentionally not invented. `display_rank` controls presentation only. The method for synchronizing global moment coordinates across independent stories, including the Academy observation and Land of Waves examples, is documented in [`TIMELINE_SYNCHRONIZATION_UA.md`](../TIMELINE_SYNCHRONIZATION_UA.md).
 
 Migration discipline:
 - `imported-v10.yaml` preserves every legacy record verbatim inside `data/`.
