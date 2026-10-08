@@ -7,7 +7,7 @@ const ChronologyContents = (() => {
   const order = (a,b) => position(a.start)-position(b.start)||a.title.localeCompare(b.title,'uk');
   let roots=[],visible=new Map(),expanded=new Set(),initialized=false;
 
-  function buildTree(scenes,sceneMap,episodeMap,arcMap) {
+  function buildTree(scenes,sceneMap,episodeMap,arcMap,momentPositions=null) {
     const arcs=new Map(),episodes=new Map();
     const make=(kind,id,title,start=Infinity)=>({kind,id,title,start,end:start,children:[]});
     for(const scene of scenes){
@@ -22,7 +22,7 @@ const ChronologyContents = (() => {
       }
       const day=Number.isFinite(scene.position)?scene.position:position(scene.day);
       const sn=make('scene',scene.id,sm?.title||scene.group[0]?.scene_title||scene.id,day);
-      sn.children=scene.group.map(e=>make('moment',e.id,e.title,day));
+      sn.children=scene.group.map((e,i)=>make('moment',e.id,e.title,momentPositions?.get(e.id)??day+(i+1)*1e-7));
       episodes.get(ek).children.push(sn);
     }
     const finalize=n=>{
@@ -54,7 +54,7 @@ const ChronologyContents = (() => {
   function render(){
     const panel=document.getElementById('contentsPanel');
     if(!initialized||!panel||panel.hidden)return;
-    roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap);
+    roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap,TimelineCore.momentPositions(orderedScenes(),chronologyRelations()));
     const q=document.getElementById('contentsQuery').value.trim().toLocaleLowerCase('uk');
     const filtered=roots.map(n=>filter(n,q)).filter(Boolean);
     visible=new Map();

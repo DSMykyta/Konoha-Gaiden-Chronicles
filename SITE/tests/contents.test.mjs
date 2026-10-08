@@ -30,3 +30,11 @@ test('scenes without an episode remain findable in an alternate-structure group'
   assert.equal(tree[0].children[0].children[0].id,'solo');
   assert.equal(tree[0].children[0].children[0].children[0].id,'event');
 });
+
+
+test('moments inside a scene retain source rank rather than alphabetical order',()=>{
+ const scenes=[{id:'s',position:10.4,group:[{id:'first',title:'Я — перший'},{id:'second',title:'А — другий'}]}];
+ const sm=new Map([['s',{title:'Scene',episode_id:'e'}]]),em=new Map([['e',{id:'e',title:'Episode',arc_id:'a'}]]),am=new Map([['a',{id:'a',title:'Arc'}]]);
+ const leaves=contents.buildTree(scenes,sm,em,am)[0].children[0].children[0].children;
+ assert.deepEqual(leaves.map(x=>x.id),['first','second']);
+});

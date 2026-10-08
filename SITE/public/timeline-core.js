@@ -8,10 +8,15 @@ const TimelineCore = {
     for(const e of this.ordered(events)){if(!grouped.has(e.scene_id))grouped.set(e.scene_id,[]);grouped.get(e.scene_id).push(e);}
     const days=new Map();
     for(const [id,group] of grouped){const day=group[0].day;if(!days.has(day))days.set(day,[]);days.get(day).push({id,group,day,dayPart:meta.get(id)?.day_part||null,displayRank:meta.get(id)?.display_rank??null});}
-    const owner=new Map(events.map(e=>[e.id,e.scene_id])),result=[],dayPartRank={dawn:10,morning:20,noon:30,midday:30,afternoon:40,evening:50};
+    const owner=new Map(events.map(e=>[e.id,e.scene_id])),result=[],dayPartRank={dawn:10,morning:20,noon:30,midday:30,afternoon:40,evening:50,night:60,late_night:70};
     for(const [day,list] of days){
       const ids=new Set(list.map(s=>s.id)),edges=new Map(list.map(s=>[s.id,new Set()])),incoming=new Map(list.map(s=>[s.id,0])),soft=[];
-      for(const r of relations){if(r.kind!=='before')continue;const a=owner.get(r.a)||r.a,b=owner.get(r.b)||r.b;if(a===b||!ids.has(a)||!ids.has(b))continue;if(r.review==='accepted'){if(edges.get(a).has(b))continue;edges.get(a).add(b);incoming.set(b,incoming.get(b)+1);}else soft.push([a,b]);}
+      for(const r of relations){if(r.kind!=='before')continue;const a=owner.get(r.a)||r.a,b=owner.get(r.b)||r.b;if(a===b||!ids.has(a)||!ids.has(b))continue;
+      // Only an end-of-scene -> start-of-scene event link can order
+      // both entire scenes. An intermediate event can be interleaved.
+      if(owner.has(r.a)&&grouped.get(a)?.at(-1)?.id!==r.a)continue;
+      if(owner.has(r.b)&&grouped.get(b)?.[0]?.id!==r.b)continue;
+      if(r.review==='accepted'){if(edges.get(a).has(b))continue;edges.get(a).add(b);incoming.set(b,incoming.get(b)+1);}else soft.push([a,b]);}
       const remaining=[...list],sorted=[];
       while(remaining.length){
         const candidates=remaining.filter(s=>incoming.get(s.id)===0);
@@ -50,17 +55,54 @@ const TimelineCore = {
     };
     return {widths,dayToAxis,axisToDay,breaks:gaps,length:dayToAxis(days)};
   },
-  momentPositions(scenes) {
-    // Siblings occupy their scene's interval. They cannot spill into the next
-    // sequential scene; explicitly aligned scenes retain the shared interval.
-    const days=new Map(),positions=new Map();
-    for(const scene of scenes){if(!Number.isFinite(scene.position))continue;if(!days.has(scene.day))days.set(scene.day,[]);days.get(scene.day).push(scene);}
+  momentPositions(scenes, relations=[]) {
+    // An event in a separate story branch can fall between two moments
+    // of a longer scene. Never move the entire long scene to satisfy it.
+    const days=new Map(),positions=new Map(),owner=new Map(),byId=new Map();
+    for(const scene of scenes){
+      if(!Number.isFinite(scene.position))continue;
+      if(!days.has(scene.day))days.set(scene.day,[]);
+      days.get(scene.day).push(scene);
+      for(const event of scene.group){owner.set(event.id,scene.id);byId.set(event.id,event);}
+    }
     for(const [day,list] of days){
-      const slots=[...new Set(list.map(scene=>scene.position))].sort((a,b)=>a-b);
-      for(const scene of list){
-        const index=slots.indexOf(scene.position),left=index?(slots[index-1]+scene.position)/2:day+.02,right=index<slots.length-1?(scene.position+slots[index+1])/2:day+.98;
-        scene.group.forEach((event,i)=>positions.set(event.id,scene.group.length===1?scene.position:left+(right-left)*(i+.5)/scene.group.length));
+      const source=[...list].sort((a,b)=>a.position-b.position||a.id.localeCompare(b.id));
+      const events=source.flatMap(s=>s.group),ids=new Set(events.map(e=>e.id));
+      const edges=new Map(events.map(e=>[e.id,new Set()]));
+      const incoming=new Map(events.map(e=>[e.id,0]));
+      const connect=(a,b)=>{if(!a||!b||a===b||!ids.has(a)||!ids.has(b)||edges.get(a).has(b))return;edges.get(a).add(b);incoming.set(b,incoming.get(b)+1);};
+      for(const scene of source)for(let i=1;i<scene.group.length;i++)connect(scene.group[i-1].id,scene.group[i].id);
+      const sceneMap=new Map(source.map(s=>[s.id,s]));
+      let cross=false;
+      for(const r of relations){
+        if(r.kind!=='before'||r.review!=='accepted')continue;
+        const a=byId.has(r.a)?r.a:sceneMap.get(r.a)?.group.at(-1)?.id;
+        const b=byId.has(r.b)?r.b:sceneMap.get(r.b)?.group[0]?.id;
+        if(!a||!b||!ids.has(a)||!ids.has(b))continue;
+        if(owner.get(a)!==owner.get(b))cross=true;
+        connect(a,b);
       }
+      if(!cross){
+        const slots=[...new Set(source.map(s=>s.position))].sort((a,b)=>a-b);
+        for(const scene of source){
+          const index=slots.indexOf(scene.position),left=index?(slots[index-1]+scene.position)/2:day+.02,right=index<slots.length-1?(scene.position+slots[index+1])/2:day+.98;
+          scene.group.forEach((e,i)=>positions.set(e.id,scene.group.length===1?scene.position:left+(right-left)*(i+.5)/scene.group.length));
+        }
+        continue;
+      }
+      const preferred=new Map(events.map((e,i)=>[e.id,i])),remaining=new Set(ids),sorted=[];
+      while(remaining.size){
+        const ready=[...remaining].filter(id=>incoming.get(id)===0);
+        if(!ready.length){
+          // Keep deterministic order if imported constraints contradict.
+          sorted.push(...[...remaining].sort((a,b)=>preferred.get(a)-preferred.get(b)));
+          break;
+        }
+        ready.sort((a,b)=>preferred.get(a)-preferred.get(b));
+        const id=ready[0];remaining.delete(id);sorted.push(id);
+        for(const next of edges.get(id))incoming.set(next,incoming.get(next)-1);
+      }
+      sorted.forEach((id,i)=>positions.set(id,day+.02+.96*(i+.5)/sorted.length));
     }
     return positions;
   },
@@ -255,7 +297,7 @@ const TimelineCore = {
     return route;
   },
   navigation(events, currentId, day,relations=[]) {
-    const dated=events.filter(e=>e.day!==null),list=relations.length?this.scenes(dated,relations).flatMap(s=>s.group):this.ordered(dated);
+    const dated=events.filter(e=>e.day!==null),scenes=this.scenes(dated,relations),positions=this.momentPositions(scenes,relations),list=scenes.flatMap(s=>s.group).sort((a,b)=>(positions.get(a.id)??Infinity)-(positions.get(b.id)??Infinity));
     const index=list.findIndex(e=>e.id===currentId);
     if(index>=0)return {previous:list[index-1]||null,next:list[index+1]||null,index,total:list.length};
     const nextIndex=list.findIndex(e=>e.day>=day);

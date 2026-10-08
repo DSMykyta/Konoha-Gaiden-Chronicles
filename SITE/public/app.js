@@ -78,7 +78,7 @@ function semanticNodes(level,allScenes){
  const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
  const collapseScene=(s,episodeId=null)=>s.group.length===1?makeMoment(s,s.group[0],s.position,episodeId||sceneMap.get(s.id)?.episode_id||null):makeScene(s,episodeId||sceneMap.get(s.id)?.episode_id||null);
  if(level==='moment'){
-  const positions=TimelineCore.momentPositions(allScenes);
+  const positions=TimelineCore.momentPositions(allScenes,chronologyRelations());
   return allScenes.flatMap(scene=>scene.group.map(event=>makeMoment(scene,event,positions.get(event.id))));
  }
  if(level==='scene')return allScenes.map(s=>collapseScene(s));
@@ -117,7 +117,8 @@ function semanticOwner(nodes){
  }
  return owner;
 }
-function nav(){const allowed=new Set(navigationEvents().map(e=>e.id)),list=orderedScenes().flatMap(s=>s.group).filter(e=>e.day!==null&&allowed.has(e.id)),i=list.findIndex(e=>e.id===anchorEvent),currentDay=axisToDay(center),next=list.findIndex(e=>e.day>=Math.floor(currentDay));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
+function chronologicalMoments(){const scenes=orderedScenes(),positions=TimelineCore.momentPositions(scenes,chronologyRelations());return scenes.flatMap(s=>s.group).filter(e=>e.day!==null).sort((a,b)=>(positions.get(a.id)??Infinity)-(positions.get(b.id)??Infinity));}
+function nav(){const allowed=new Set(navigationEvents().map(e=>e.id)),list=chronologicalMoments().filter(e=>allowed.has(e.id)),i=list.findIndex(e=>e.id===anchorEvent),currentDay=axisToDay(center),next=list.findIndex(e=>e.day>=Math.floor(currentDay));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
 function stepEvent(direction){const target=nav()[direction<0?'previous':'next'];if(target)navigateEvent(target.id);}
 function setFocus(id){StoryTitleScale.clear();const needsLine=!selected.has(id);focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();renderCharacters();if(needsLine&&focusedCharacter)render();else{SelectionFocus.update();updateFocusBar();}}
 function updateFocusBar(){const bar=$('focusBar');bar.hidden=!focusedCharacter;if(!focusedCharacter)return;const n=nav();$('focusName').textContent=fullName(focusedCharacter);$('focusPosition').textContent=n.index>=0?`${n.index+1} / ${n.total}`:`${n.total} подій`;$('focusPrevious').disabled=!n.previous;$('focusNext').disabled=!n.next;}
@@ -632,7 +633,7 @@ function search(){
 function openProfile(id,trigger){if(!entityMap.has(id))return;uiTimers.cancel('node-open');HierarchyPreview.dismissTransient();if(hoverCard)closeCard();tooltipController?.hide();profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}dialog.scrollTop=0;syncReadingState();$('closeProfile').focus({preventScroll:true});}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;syncReadingState();profileReturnFocus?.focus();profileReturnFocus=null;}
 function characterTimelineEvents(id){
- return orderedScenes().flatMap(s=>s.group).filter(e=>e.tracks.includes(id));
+ return chronologicalMoments().filter(e=>e.tracks.includes(id));
 }
 function openCharacterEvents(id,trigger){
  if(!entityMap.has(id))return;
