@@ -1,0 +1,46 @@
+schema_version: 1
+id: sc-y0-0701-exam-entrance-guards-afterward
+episode_id: ep-y0-chunin-entrance-screen
+display_rank: 200
+continuity_id: main
+title: Ізумо й Котецу обговорюють кандидатів після проходу Команди 7
+description: >-
+  Коли Команда 7 проходить реєстраційний заслін і зникає з коридору,
+  Ізумо й Котецу знімають маскування та визнають, що нові кандидати
+  вміють розпізнавати обман. Їхня розмова відбувається без Наруто,
+  Саске, Сакури та Рока Лі й не належить до сцени поєдинку Лі із Саске.
+location_id: null
+placement: {anchor_id: ta-y0-0701, day_offset: 0}
+state: active
+presence_coverage: complete
+review: {time: partial, cast: accepted, location: partial, origin: accepted, text: accepted}
+events:
+- id: ev-y0-0701-exam-guards-review-candidates
+  title: Ізумо й Котецу скидають маскування
+  text: >-
+    Після відходу Команди 7 перевіряльники повертають звичайний
+    вигляд та оцінюють генінів, які розпізнали гендзюцу з поверхом
+    і змогли пройти їхній заслін до реєстрації.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - {entity_id: c-izumo, role: focus, mode: physical}
+  - {entity_id: c-kotetsu, role: focus, mode: physical}
+  evidence_ids: [evd-narutopedia-ep21-audit, evd-narutopedia-entry-screen-cast]
+relations: []
+presence:
+- id: pr-0701-entry-guards-izumo
+  entity_id: c-izumo
+  from: sc-y0-0701-exam-entrance-guards-afterward.start
+  to: sc-y0-0701-exam-entrance-guards-afterward.end
+  basis: source
+  review: accepted
+  evidence_ids: [evd-narutopedia-ep21-audit]
+- id: pr-0701-entry-guards-kotetsu
+  entity_id: c-kotetsu
+  from: sc-y0-0701-exam-entrance-guards-afterward.start
+  to: sc-y0-0701-exam-entrance-guards-afterward.end
+  basis: source
+  review: accepted
+  evidence_ids: [evd-narutopedia-ep21-audit]

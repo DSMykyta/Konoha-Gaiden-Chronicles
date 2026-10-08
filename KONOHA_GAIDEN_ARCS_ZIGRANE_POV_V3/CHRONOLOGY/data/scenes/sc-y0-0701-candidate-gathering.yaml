@@ -16,6 +16,8 @@ review:
   location: accepted
   origin: accepted
   text: accepted
+description: >-
+  На порозі письмового етапу Команди 7, 8 і 10 зустрічаються із іншими кандидатами; Команда 9 перебуває в тій самій залі. Кабуто знайомить новачків із суперниками через картки з інформацією. Наруто голосно обіцяє перемогти всіх, після чого команда Звуку нападає на Кабуто; Ібікі з екзаменаторами припиняє сутичку й починає іспит.
 events:
 - id: ev-y0-0701-rookie-teams-meet
   legacy_ids:
@@ -81,7 +83,7 @@ events:
   - V10-000040
   title: Кабуто показує картки з інформацією про суперників
   text: Кабуто просить новачків не привертати уваги решти кандидатів і пояснює іспит. На прохання Саске він показує картки
-    Ґаари й Рока Лі та попереджає, що села надсилають сильних генінів. Наруто голосно заявляє, що нікому не програє.
+    Ґаари й Рока Лі та попереджає, що села надсилають сильних генінів.
   origin: M
   extent: interval
   display_rank: 200
@@ -124,6 +126,22 @@ events:
   - evd-manga-chunin-stage1-forest
   - evd-anime-24-30
   - evd-narutopedia-ep23-audit
+- id: ev-y0-0701-naruto-defies-candidates
+  title: Наруто кидає виклик усім кандидатам
+  text: >-
+    Після розповіді Кабуто про небезпечних суперників Наруто,
+    замість злякатися, підвищує голос і заявляє всім присутнім,
+    що не програє нікому. Його слова привертають увагу
+    незнайомих генінів і викликають невдоволення Сакури.
+  origin: M
+  extent: interval
+  display_rank: 250
+  involvement:
+  - {entity_id: c-naruto, role: focus, mode: physical}
+  - {entity_id: c-sakura, role: participant, mode: physical}
+  - {entity_id: c-sasuke, role: participant, mode: physical}
+  - {entity_id: c-kabuto, role: participant, mode: physical}
+  evidence_ids: [evd-narutopedia-ep23-audit, evd-manga-chunin-stage1-forest]
 - id: ev-y0-0701-sound-team-attacks-kabuto
   legacy_ids:
   - V10-000040
@@ -192,17 +210,23 @@ relations:
   a: ev-y0-0701-rookie-teams-meet
   b: ev-y0-0701-kabuto-shows-ninja-info-cards
   basis: imported
-  review: pending
+  review: accepted
   evidence_ids:
   - evd-v10-000040
-- id: rel-0701-gathering-2
+- id: rel-0701-gathering-kabuto-before-naruto
   kind: before
   a: ev-y0-0701-kabuto-shows-ninja-info-cards
+  b: ev-y0-0701-naruto-defies-candidates
+  basis: source
+  review: accepted
+  evidence_ids: [evd-narutopedia-ep23-audit]
+- id: rel-0701-gathering-naruto-before-sound
+  kind: before
+  a: ev-y0-0701-naruto-defies-candidates
   b: ev-y0-0701-sound-team-attacks-kabuto
-  basis: imported
-  review: pending
-  evidence_ids:
-  - evd-v10-000040
+  basis: source
+  review: accepted
+  evidence_ids: [evd-narutopedia-ep23-audit]
 - id: rel-0701-gathering-3
   kind: before
   a: ev-y0-0701-sound-team-attacks-kabuto

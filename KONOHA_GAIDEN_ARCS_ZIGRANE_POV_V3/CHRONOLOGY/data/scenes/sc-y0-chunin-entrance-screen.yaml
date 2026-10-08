@@ -9,46 +9,96 @@ review:
   location: unknown
   origin: accepted
   text: accepted
+description: >-
+  Ізумо й Котецу не пускають кандидатів до нібито екзаменаційної зали, приховавши гендзюцу справжній поверх. Команда 7 помічає обман; після спроби Саске пройти крізь заставу Рок Лі перериває бій і звертається до Сакури. Коли Команда 7 відходить, перевіряльники лишаються в коридорі й обговорюють кандидатів окремо.
 events:
-- origin: A
+- id: ev-y0-chunin-entrance-screen
+  origin: A
   extent: interval
-  focus_teams: []
-  id: ev-y0-chunin-entrance-screen
   display_rank: 100
-  title: Рок Лі зупиняє сутичку біля реєстрації
-  text: Ізумо й Котецу, замасковані під генінів, не пропускають кандидатів та відмовляють їх від іспиту. Команда Ґая спершу
-    вдає безпорадність. Команда 7 розпізнає гендзюцу, що приховує справжній поверх. Саске й Котецу переходять до ударів, але
-    Рок Лі зупиняє обох. Лі пропонує Сакурі зустрічатися й отримує відмову. Коли Команда 7 іде далі, перевіряльники знімають
-    маскування й відзначають здібності кандидатів.
+  title: Ізумо й Котецу перекривають вхід до зали
+  text: >-
+    Двоє ніндзя, які видають себе за генінів, проганяють молодших кандидатів
+    біля нібито входу до екзаменаційної зали, попереджаючи, що іспит може
+    коштувати життя. Неджі, Тентен і Рок Лі спочатку не розкривають
+    підступу й зображають безпорадність.
   involvement:
-  - entity_id: c-lee
-    role: focus
-    mode: physical
-  - entity_id: c-sasuke
-    role: participant
-    mode: physical
-  - entity_id: c-naruto
-    role: participant
-    mode: physical
-  - entity_id: c-sakura
-    role: participant
-    mode: physical
-  - entity_id: c-izumo
-    role: participant
-    mode: physical
-  - entity_id: c-kotetsu
-    role: participant
-    mode: physical
-  - entity_id: c-neji
-    role: participant
-    mode: physical
-  - entity_id: c-tenten
-    role: participant
-    mode: physical
-  evidence_ids:
-  - evd-narutopedia-ep21-audit
-  - evd-narutopedia-entry-screen-cast
-relations: []
+  - {entity_id: c-izumo, role: focus, mode: physical}
+  - {entity_id: c-kotetsu, role: focus, mode: physical}
+  - {entity_id: c-lee, role: participant, mode: physical}
+  - {entity_id: c-neji, role: participant, mode: physical}
+  - {entity_id: c-tenten, role: participant, mode: physical}
+  evidence_ids: [evd-narutopedia-ep21-audit, evd-narutopedia-entry-screen-cast]
+- id: ev-y0-0701-team7-sees-entrance-illusion
+  origin: A
+  extent: interval
+  display_rank: 150
+  title: Команда 7 розпізнає підміну поверху
+  text: >-
+    Наруто, Саске й Сакура підходять до входу. Вони бачать, що напис
+    з номером поверху створений гендзюцу, й розуміють: перевіряльники
+    приховують справжнє місце реєстрації. Саске відкрито викриває обман.
+  involvement:
+  - {entity_id: c-naruto, role: participant, mode: physical}
+  - {entity_id: c-sasuke, role: focus, mode: physical}
+  - {entity_id: c-sakura, role: participant, mode: physical}
+  - {entity_id: c-izumo, role: participant, mode: physical}
+  - {entity_id: c-kotetsu, role: participant, mode: physical}
+  evidence_ids: [evd-narutopedia-ep21-audit]
+- id: ev-y0-0701-rock-lee-intercepts-gate-fight
+  origin: A
+  extent: interval
+  display_rank: 200
+  title: Рок Лі зупиняє зіткнення Саске з перевіряльником
+  text: >-
+    Саске й один із замаскованих ніндзя переходять від суперечки
+    до ударів. Рок Лі миттєво опиняється між ними й перехоплює
+    обидва удари, демонструючи швидкість, якої не очікував Саске.
+  involvement:
+  - {entity_id: c-lee, role: focus, mode: physical}
+  - {entity_id: c-sasuke, role: participant, mode: physical}
+  - {entity_id: c-kotetsu, role: participant, mode: physical}
+  - {entity_id: c-naruto, role: observer, mode: physical}
+  - {entity_id: c-sakura, role: observer, mode: physical}
+  evidence_ids: [evd-narutopedia-ep21-audit]
+- id: ev-y0-0701-lee-approaches-sakura
+  origin: A
+  extent: interval
+  display_rank: 250
+  title: Лі освідчується Сакурі й отримує відмову
+  text: >-
+    Після короткої сутички Рок Лі звертається до Сакури та пропонує
+    їй зустрічатися. Та відмовляє. Команда 7 іде на справжній поверх
+    реєстрації, а Лі незабаром зацікавиться поєдинком із Саске.
+  involvement:
+  - {entity_id: c-lee, role: focus, mode: physical}
+  - {entity_id: c-sakura, role: focus, mode: physical}
+  - {entity_id: c-naruto, role: participant, mode: physical}
+  - {entity_id: c-sasuke, role: participant, mode: physical}
+  evidence_ids: [evd-narutopedia-ep21-audit]
+
+relations:
+- id: rel-entrance-illusion-after-guards
+  kind: before
+  a: ev-y0-chunin-entrance-screen
+  b: ev-y0-0701-team7-sees-entrance-illusion
+  basis: source
+  review: accepted
+  evidence_ids: [evd-narutopedia-ep21-audit]
+- id: rel-entrance-lee-after-illusion
+  kind: before
+  a: ev-y0-0701-team7-sees-entrance-illusion
+  b: ev-y0-0701-rock-lee-intercepts-gate-fight
+  basis: source
+  review: accepted
+  evidence_ids: [evd-narutopedia-ep21-audit]
+- id: rel-entrance-sakura-after-lee
+  kind: before
+  a: ev-y0-0701-rock-lee-intercepts-gate-fight
+  b: ev-y0-0701-lee-approaches-sakura
+  basis: source
+  review: accepted
+  evidence_ids: [evd-narutopedia-ep21-audit]
 presence:
 - id: pr-audit-21-y0-chunin-entrance-screen-c-lee
   entity_id: c-lee
