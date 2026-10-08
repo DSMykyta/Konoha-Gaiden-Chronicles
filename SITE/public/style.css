@@ -396,3 +396,15 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 .era-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 7px 0; border-bottom: 1px solid #e5e7eb; }
 .era-list small { color: #596574; text-align: right; flex-shrink: 0; }
 .era-list [aria-current="true"] { font-weight: 600; }
+
+/* Source layers: only on explicit checkbox changes, never during panning. */
+.story-layers-open{min-height:36px;padding:5px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);font-size:12px;white-space:nowrap;color:inherit}
+.story-layers-open:hover,.story-layers-open:focus-visible{border-color:var(--accent)}
+.story-layers-fieldset{border:1px solid var(--border);border-radius:10px;padding:8px 12px;margin:16px 0;background:var(--surface)}
+.story-layers-fieldset legend{font-size:13px;font-weight:650;padding:0 6px}
+.story-layers-fieldset .story-layers-intro{font-size:12px;color:var(--muted);line-height:1.5;margin:4px 0 8px}
+.story-layers-fieldset label{display:flex;align-items:center;gap:12px;padding:9px 3px;cursor:pointer;border-top:1px solid var(--border)}
+.story-layers-fieldset input{width:18px;height:18px;flex:none;accent-color:var(--accent);cursor:pointer}
+.story-layers-fieldset label span{display:flex;flex-direction:column;gap:2px}
+.story-layers-fieldset label strong{font-size:13px;font-weight:600}
+.story-layers-fieldset label small{font-size:11px;color:var(--muted)}
