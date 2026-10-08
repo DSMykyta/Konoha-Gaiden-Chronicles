@@ -68,3 +68,28 @@ test('overfull title placement never moves nodes or extends the map with detache
  assert.deepEqual(points,before);assert(labels.length<groups.length);
  assert(labels.every(label=>label.y>=160&&label.y+label.height<=460));
 });
+
+
+test('a scene and its arc retain all nodes even when the viewport displays only three of four',()=>{
+ const localScenes=new Map([['kita-home',{id:'kita-home',episode_id:'kita-home-episode',title:'Кіта вдома'}]]);
+ const localEpisodes=new Map([['kita-home-episode',{id:'kita-home-episode',arc_id:'new-teams',title:'Після випробування'}]]);
+ const localArcs=new Map([['new-teams',{id:'new-teams',title:'Епоха нових команд'}]]);
+ const complete=[0,1,2,3].map(i=>({id:'home-'+i,x:200+i*90,y:220,kind:'moment',scene:localScenes.get('kita-home'),group:[{id:'home-'+i}],sourceSceneIds:['kita-home'],sourceEpisodeIds:['kita-home-episode']}));
+ const groups=clouds.groups(complete,'moment',localScenes,localEpisodes,localArcs);
+ const scene=groups.find(g=>g.key==='scene:kita-home'),arc=groups.find(g=>g.key==='arc:new-teams');
+ assert(scene&&arc);
+ assert.equal(scene.nodes.length,4);
+ assert.equal(arc.nodes.length,4);
+ assert.deepEqual(Array.from(scene.nodes,n=>n.id),['home-0','home-1','home-2','home-3']);
+ assert(clouds.groups(complete,'arc',localScenes,localEpisodes,localArcs).length===0);
+ // A client must pass GLOBAL nodes, not its current clipped graphNodes.
+ const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
+ assert.match(app,/StoryClouds\.groups\(globalNodes\.filter/);
+});
+
+test('clip distant cloud bridges without generating offscreen samples',()=>{
+ const points=[{id:'first',x:0,y:200},{id:'last',x:100000,y:200}];
+ const clipped=clouds.bridgePoints(points,48,'scene',48000,48500);
+ assert(clipped.length>0&&clipped.length<22);
+ assert(clipped.every(point=>point.x>=48000&&point.x<=48500));
+});

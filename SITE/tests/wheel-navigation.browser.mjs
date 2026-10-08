@@ -32,9 +32,18 @@ assert(after.mutations>0,'commit after pause should update data/labels');
   assert.equal(after.transform,'','preview transform must reset');
   assert.equal(after.zoom,before.zoom);
   await page.mouse.wheel(0,-150);
-  await page.waitForTimeout(340);
+  await page.waitForTimeout(450);
   const reversed=await page.evaluate(()=>({center,zoom}));
   assert(Math.abs(reversed.center-before.center)<0.001,'reverse scroll should restore current date');
+  // A succession of wheel movements must NOT rebuild the SVG at each pause.
+  // The last movement starts the quiet-period timer anew.
+  await page.evaluate(()=>window.__timelineMutations=0);
+  for(let pulse=0;pulse<3;pulse++){await page.mouse.wheel(0,24);await page.waitForTimeout(185);}
+  const burst=await page.evaluate(()=>window.__timelineMutations);
+  assert.equal(burst,0,'short wheel pauses must not rebuild clouds and SVG between pulses');
+  await page.waitForTimeout(550);
+  const settled=await page.evaluate(()=>window.__timelineMutations);
+  assert(settled>0,'one final rebuild after wheel gesture has ended');
   await page.evaluate(()=>{zoom=1;center=clampAxisCenter(center);render()});
   await page.waitForTimeout(200);
   await page.evaluate(()=>window.__timelineMutations=0);
