@@ -8,6 +8,7 @@
   <title>Коноха · Хронологія</title>
   <link rel="stylesheet" href="style.css?v=20261003-era-heading">
   <link rel="stylesheet" href="profile-dossier.css?v=20261002-dossier-actions-2">
+  <link rel="stylesheet" href="abilities-archive.css?v=20261008-tickets">
   <link rel="stylesheet" href="controls.css?v=20261003-konoha-calendar">
   <link rel="stylesheet" href="panels.css?v=20261003-konoha-calendar">
   <link rel="stylesheet" href="focus.css?v=20261003-konoha-calendar">
@@ -22,9 +23,10 @@
   <script defer src="story-label-scale.js?v=20261003-era-heading"></script>
   <script defer src="hierarchy-preview.js?v=20261008-hover-intent"></script>
   <script defer src="contents-panel.js?v=20261008-contents"></script>
-  <script defer src="profile-techniques.js?v=20261003-konoha-calendar"></script>
+  <script defer src="profile-techniques.js?v=20261008-tickets"></script>
+  <script defer src="abilities-archive.js?v=20261008-tickets"></script>
   <script defer src="era-heading.js?v=20261003-era-heading"></script>
-  <script defer src="app.js?v=20261008-wheel-pan"></script>
+  <script defer src="app.js?v=20261008-tickets"></script>
   <script defer src="search-enhanced.js?v=20261002-search-3"></script>
 </head>
 <body>
@@ -40,6 +42,7 @@
     <nav class="tools" aria-label="Навігація хронології">
       <button id="linesButton" aria-label="Лінії персонажів" aria-expanded="false" aria-controls="linesPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v6M16 9v6M10 15v6"/></svg><span id="linesCount">Лінії</span></button>
       <button id="contentsButton" aria-label="Зміст історії" aria-expanded="false" aria-controls="contentsPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h6M14 5h6M4 12h6M14 12h6M4 19h6M14 19h6M12 3v18"/></svg><span>Зміст</span></button>
+      <button id="abilitiesButton" aria-label="Картотека здібностей" aria-expanded="false" aria-controls="abilityArchiveDialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 5v14M11 9h6M11 13h6M11 17h4"/></svg><span>Здібності</span></button>
       <button id="searchButton" aria-label="Знайти у хронології" aria-expanded="false" aria-controls="searchPanel" aria-keyshortcuts="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Пошук</span><kbd aria-hidden="true">/</kbd></button>
     </nav>
     <button class="period" id="periodButton" aria-label="Обрати період та історичну лінію" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Хронологія Конохи</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
@@ -125,6 +128,24 @@
     <div class="profile-heading"><div><small>Досьє персонажа</small><h2 id="profileTitle"></h2></div><button id="closeProfile" class="close" aria-label="Закрити профіль">×</button></div>
     <div id="profileTabs" class="profile-tabs" role="tablist" aria-label="Вік персонажа"></div>
     <div id="profileContent" role="tabpanel" tabindex="0"></div>
+  </dialog>
+  <dialog id="abilityArchiveDialog" aria-labelledby="abilityArchiveTitle" hidden>
+    <header class="archive-heading"><div><small>KG / TECHNIQUE FILE · ЧИТАЛЬНА ЗАЛА</small><h2 id="abilityArchiveTitle">Картотека здібностей</h2></div><button id="closeAbilityArchive" type="button" aria-label="Закрити картотеку">×</button></header>
+    <div class="archive-layout">
+      <aside class="archive-index" aria-label="Алфавітний покажчик">
+        <div class="archive-filters">
+          <label for="abilityQuery">ПОШУК<input id="abilityQuery" type="search" placeholder="Назва або опис" autocomplete="off"></label>
+          <label for="abilityKind">ТИП ТЕХНІКИ<select id="abilityKind"><option value="">Усі типи</option></select></label>
+        </div>
+        <p id="abilityCount" role="status" aria-live="polite">Картотека завантажується…</p>
+        <div id="abilityList" class="archive-index-list" aria-label="Список здібностей"></div>
+      </aside>
+      <section class="archive-reader" aria-label="Картка вибраної здібності">
+        <p class="archive-reader-label">ЗАПИС ІЗ КАРТОТЕКИ · ОРИГІНАЛ</p>
+        <div id="abilityDetail"></div>
+        <nav class="archive-pager" aria-label="Перегортання карток"><button id="abilityPrevious" type="button">← Попередня</button><output id="abilityPosition">0 / 0</output><button id="abilityNext" type="button">Наступна →</button></nav>
+      </section>
+    </div>
   </dialog>
   <dialog id="characterEventsDialog" class="character-events-dialog" aria-labelledby="characterEventsTitle" hidden>
     <header class="character-events-heading"><div><small>Події персонажа</small><h2 id="characterEventsTitle"></h2><p id="characterEventsMeta"></p></div><nav class="reader-navigation" aria-label="Перегляд подій"><button id="characterEventPrevious" aria-label="Попередня картка">‹</button><output id="characterEventPosition">1 / 1</output><button id="characterEventNext" aria-label="Наступна картка">›</button></nav><button id="closeCharacterEvents" class="close" aria-label="Закрити перегляд подій">×</button></header>
