@@ -56,53 +56,98 @@ const TimelineCore = {
     return {widths,dayToAxis,axisToDay,breaks:gaps,length:dayToAxis(days)};
   },
   momentPositions(scenes, relations=[]) {
-    // An event in a separate story branch can fall between two moments
-    // of a longer scene. Never move the entire long scene to satisfy it.
-    const days=new Map(),positions=new Map(),owner=new Map(),byId=new Map();
+    // All story branches share ONE calendar-day time coordinate. Narrative
+    // parents affect grouping and visual lanes, never the temporal axis.
+    // Only reviewed relations are constraints; display_rank is a tie-breaker.
+    const days=new Map(),positions=new Map(),owner=new Map();
     for(const scene of scenes){
       if(!Number.isFinite(scene.position))continue;
       if(!days.has(scene.day))days.set(scene.day,[]);
       days.get(scene.day).push(scene);
-      for(const event of scene.group){owner.set(event.id,scene.id);byId.set(event.id,event);}
+      for(const event of scene.group)owner.set(event.id,scene.id);
     }
     for(const [day,list] of days){
-      const source=[...list].sort((a,b)=>a.position-b.position||a.id.localeCompare(b.id));
-      const events=source.flatMap(s=>s.group),ids=new Set(events.map(e=>e.id));
-      const edges=new Map(events.map(e=>[e.id,new Set()]));
-      const incoming=new Map(events.map(e=>[e.id,0]));
-      const connect=(a,b)=>{if(!a||!b||a===b||!ids.has(a)||!ids.has(b)||edges.get(a).has(b))return;edges.get(a).add(b);incoming.set(b,incoming.get(b)+1);};
-      for(const scene of source)for(let i=1;i<scene.group.length;i++)connect(scene.group[i-1].id,scene.group[i].id);
-      const sceneMap=new Map(source.map(s=>[s.id,s]));
-      let cross=false;
-      for(const r of relations){
-        if(r.kind!=='before'||r.review!=='accepted')continue;
-        const a=byId.has(r.a)?r.a:sceneMap.get(r.a)?.group.at(-1)?.id;
-        const b=byId.has(r.b)?r.b:sceneMap.get(r.b)?.group[0]?.id;
-        if(!a||!b||!ids.has(a)||!ids.has(b))continue;
-        if(owner.get(a)!==owner.get(b))cross=true;
-        connect(a,b);
+      const orderedScenes=[...list].sort((a,b)=>a.position-b.position||a.id.localeCompare(b.id));
+      const eventList=orderedScenes.flatMap(scene=>scene.group);
+      const byEvent=new Map(eventList.map(e=>[e.id,e]));
+      const byScene=new Map(orderedScenes.map(scene=>[scene.id,scene]));
+      const fallback=new Map(eventList.map((e,i)=>[e.id,i]));
+      const same=new Map(eventList.map(e=>[e.id,e.id]));
+      const find=id=>{let root=id;while(same.get(root)!==root)root=same.get(root);while(id!==root){const next=same.get(id);same.set(id,root);id=next;}return root;};
+      const join=(a,b)=>{
+        if(!byEvent.has(a)||!byEvent.has(b))return;
+        const ra=find(a),rb=find(b);
+        if(ra!==rb)same.set(rb,ra);
+      };
+      const boundary=(ref,side)=>{
+        if(byEvent.has(ref))return [ref];
+        const scene=byScene.get(ref);
+        if(!scene)return [];
+        // A scene-level BEFORE means its entire span is before the target,
+        // not that a single middle event is the boundary.
+        return scene.group.map(e=>e.id);
+      };
+      let hasRelations=false;
+      // True alignment: a witnessed event and a single representative moment
+      // of the observed scene occupy the same X, with distinct nodes and casts.
+      // INTERSECTS is weaker: sharing an interval does NOT prove equal times.
+      for(const relation of relations){
+        if(relation.review!=='accepted')continue;
+        if(relation.kind!=='observes'&&relation.kind!=='same_span')continue;
+        const a=byEvent.has(relation.a)?relation.a:byScene.get(relation.a)?.group.length===1?byScene.get(relation.a).group[0].id:null;
+        const b=byEvent.has(relation.b)?relation.b:byScene.get(relation.b)?.group.length===1?byScene.get(relation.b).group[0].id:null;
+        if(a&&b&&owner.get(a)!==owner.get(b)){join(a,b);hasRelations=true;}
       }
-      if(!cross){
-        const slots=[...new Set(source.map(s=>s.position))].sort((a,b)=>a-b);
-        for(const scene of source){
-          const index=slots.indexOf(scene.position),left=index?(slots[index-1]+scene.position)/2:day+.02,right=index<slots.length-1?(scene.position+slots[index+1])/2:day+.98;
-          scene.group.forEach((e,i)=>positions.set(e.id,scene.group.length===1?scene.position:left+(right-left)*(i+.5)/scene.group.length));
+      const groups=new Map();
+      for(const event of eventList){
+        const root=find(event.id);
+        if(!groups.has(root))groups.set(root,[]);
+        groups.get(root).push(event.id);
+      }
+      const edges=new Map([...groups.keys()].map(id=>[id,new Set()]));
+      const incoming=new Map([...groups.keys()].map(id=>[id,0]));
+      const add=(a,b)=>{
+        const from=find(a),to=find(b);
+        if(from===to||edges.get(from).has(to))return;
+        edges.get(from).add(to);incoming.set(to,incoming.get(to)+1);
+      };
+      for(const relation of relations){
+        if(relation.kind!=='before'||relation.review!=='accepted')continue;
+        const sources=boundary(relation.a,'end'),targets=boundary(relation.b,'start');
+        if(!sources.length||!targets.length)continue;
+        if(sources.some(a=>targets.some(b=>owner.get(a)!==owner.get(b))))hasRelations=true;
+        for(const a of sources)for(const b of targets)add(a,b);
+      }
+      if(!hasRelations){
+        // Preserve compact per-scene spacing for days with no synchronisation
+        // or cross-branch ordering; local ranks remain presentation hints.
+        const slots=[...new Set(orderedScenes.map(s=>s.position))].sort((a,b)=>a-b);
+        for(const scene of orderedScenes){
+          const index=slots.indexOf(scene.position);
+          const left=index?(slots[index-1]+scene.position)/2:day+.02;
+          const right=index<slots.length-1?(scene.position+slots[index+1])/2:day+.98;
+          scene.group.forEach((event,i)=>positions.set(event.id,scene.group.length===1?scene.position:left+(right-left)*(i+.5)/scene.group.length));
         }
         continue;
       }
-      const preferred=new Map(events.map((e,i)=>[e.id,i])),remaining=new Set(ids),sorted=[];
+      const priority=id=>Math.min(...groups.get(id).map(eid=>fallback.get(eid)));
+      const remaining=new Set(groups.keys()),ordered=[];
       while(remaining.size){
         const ready=[...remaining].filter(id=>incoming.get(id)===0);
         if(!ready.length){
-          // Keep deterministic order if imported constraints contradict.
-          sorted.push(...[...remaining].sort((a,b)=>preferred.get(a)-preferred.get(b)));
+          // A cycle is an inconsistent source constraint. Do not hang the UI;
+          // retain deterministic presentation while audit tests flag cycles.
+          ordered.push(...[...remaining].sort((a,b)=>priority(a)-priority(b)));
           break;
         }
-        ready.sort((a,b)=>preferred.get(a)-preferred.get(b));
-        const id=ready[0];remaining.delete(id);sorted.push(id);
+        ready.sort((a,b)=>priority(a)-priority(b));
+        const id=ready[0];remaining.delete(id);ordered.push(id);
         for(const next of edges.get(id))incoming.set(next,incoming.get(next)-1);
       }
-      sorted.forEach((id,i)=>positions.set(id,day+.02+.96*(i+.5)/sorted.length));
+      ordered.forEach((root,i)=>{
+        const x=day+.02+.96*(i+.5)/ordered.length;
+        for(const id of groups.get(root))positions.set(id,x);
+      });
     }
     return positions;
   },
