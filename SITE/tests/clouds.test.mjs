@@ -93,3 +93,18 @@ test('clip distant cloud bridges without generating offscreen samples',()=>{
  assert(clipped.length>0&&clipped.length<22);
  assert(clipped.every(point=>point.x>=48000&&point.x<=48500));
 });
+
+
+test('real Kita home scene has four moment marks in one uninterrupted scene and arc cloud',()=>{
+ const data=JSON.parse(fs.readFileSync(new URL('../public/data.json',import.meta.url),'utf8'));
+ const id='sc-y0-0122-kita-home-night',scene=data.scenes.find(s=>s.id===id);
+ assert(scene,'Kita home scene is absent');
+ const moments=data.events.filter(event=>event.scene_id===id&&event.scene_state==='active');
+ assert.equal(moments.length,4);
+ const em=new Map(data.episodes.map(ep=>[ep.id,ep])),am=new Map(data.arcs.map(arc=>[arc.id,arc]));
+ const sm=new Map([[id,scene]]);
+ const projected=moments.map((event,i)=>({id:event.id,kind:'moment',x:75+i*80,y:220,scene,group:[event],sourceSceneIds:[id],sourceEpisodeIds:[scene.episode_id]}));
+ const groups=clouds.groups(projected,'moment',sm,em,am);
+ assert.equal(groups.find(group=>group.key==='scene:'+id)?.nodes.length,4);
+ assert.equal(groups.find(group=>group.key==='arc:'+em.get(scene.episode_id).arc_id)?.nodes.length,4);
+});
