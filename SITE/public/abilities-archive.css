@@ -1,0 +1,264 @@
+/* Index-card archive: carbon ink, ivory stock, perforated tear-off stub.
+   Shared by profile dossiers and the standalone archive dialog. */
+.archive-ticket {
+  --ticket-ink: #292b27;
+  --ticket-line: #a5a69d;
+  position: relative;
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr);
+  width: 100%;
+  min-width: 0;
+  color: var(--ticket-ink);
+  border: 1px solid #a9aba4;
+  border-radius: 1px;
+  background: #f2f0e7;
+  box-shadow: 0 9px 26px #0002;
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+}
+.archive-ticket::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
+  background: repeating-linear-gradient(0deg, transparent 0 2px, #7e7b6b18 3px 4px);
+}
+.archive-ticket[role="button"] { cursor: pointer; }
+.archive-ticket[role="button"]:hover,
+.archive-ticket[role="button"]:focus-visible { box-shadow: 0 14px 28px #0003; }
+.ticket-stub {
+  position: relative;
+  min-width: 0;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border-right: 1px solid var(--ticket-line);
+  background: #e9e7dd;
+  font: 9px/1.2 "Courier New", monospace;
+}
+.ticket-stub span { display: block; width: 100%; padding: 1px 4px; border-bottom: 1px solid #c2c1b5; }
+.ticket-stub::after {
+  content: "";
+  position: absolute;
+  top: 77px;
+  bottom: 12px;
+  left: 10px;
+  width: 12px;
+  opacity: .85;
+  background: radial-gradient(circle at center, #575a53 0 4px, transparent 4.5px) top center / 12px 27px repeat-y;
+}
+.ticket-paper { display: flex; flex-direction: column; min-width: 0; }
+.ticket-head {
+  display: grid;
+  grid-template-columns: 32px minmax(0,1fr) auto;
+  align-items: center;
+  min-height: 56px;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--ticket-ink);
+}
+.ticket-seal {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid #5c5d56;
+  border-radius: 50%;
+  color: var(--ticket-ink);
+  font: 16px/1 serif;
+}
+.ticket-series { font: 700 13px/1.25 "Courier New", monospace; letter-spacing: .04em; overflow-wrap: anywhere; }
+.ticket-number { font: 700 14px/1 "Courier New", monospace; white-space: nowrap; }
+.ticket-metadata { display: grid; grid-template-columns: 1fr .65fr 1.35fr; border-bottom: 1px solid var(--ticket-line); }
+.ticket-metadata > div { padding: 9px 14px; min-width: 0; }
+.ticket-metadata > div + div { border-left: 1px solid var(--ticket-line); }
+.ticket-metadata small, .ticket-caption {
+  display: block;
+  margin-bottom: 5px;
+  color: #676960;
+  font: 700 10px/1.2 "Courier New", monospace;
+  letter-spacing: .08em;
+}
+.ticket-metadata strong {
+  display: block;
+  color: var(--ticket-ink);
+  font: 700 12px/1.3 "Courier New", monospace;
+  overflow-wrap: anywhere;
+}
+.ticket-content { padding: 20px 20px 22px; min-height: 138px; }
+.archive-ticket .technique-card-name {
+  margin: 0;
+  color: var(--ticket-ink);
+  font: 700 clamp(18px,2vw,24px)/1.24 "Courier New", monospace;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+}
+.archive-ticket .technique-card-romanized {
+  margin: 6px 0 0;
+  color: #61645d;
+  font: 12px/1.45 "Courier New", monospace;
+  overflow-wrap: anywhere;
+}
+.ticket-tags { margin: 11px 0 0; color: #50524b; font: 11px/1.5 "Courier New", monospace; text-transform: uppercase; }
+.ticket-summary { margin: 15px 0 0; color: var(--ticket-ink); font: 13px/1.55 "Courier New", monospace; }
+.ticket-facts { margin: 16px 0 0; padding: 0; border-top: 1px solid var(--ticket-line); }
+.ticket-facts > div { display: grid; grid-template-columns: 96px minmax(0,1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid #c9c8bb; }
+.ticket-facts dt { color: #62645c; font: 700 11px/1.45 "Courier New", monospace; text-transform: uppercase; }
+.ticket-facts dd { margin: 0; color: var(--ticket-ink); font: 12px/1.5 "Courier New", monospace; overflow-wrap: anywhere; }
+.ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding: 9px 16px;
+  border-top: 1px solid var(--ticket-ink);
+  color: #5a5d54;
+  font: 700 10px/1.4 "Courier New", monospace;
+  letter-spacing: .03em;
+}
+.ticket-stamp { border: 1px solid #7d8077; border-radius: 50%; padding: 6px 7px; transform: rotate(-8deg); white-space: nowrap; }
+
+/* Small tickets in A4 character dossiers remain horizontally browsable. */
+#profileDialog .profile-entry-list.technique-card-track { gap: 14px; }
+#profileDialog .profile-entry.archive-ticket {
+  display: grid;
+  grid-template-columns: 27px minmax(0,1fr);
+  flex: 0 0 min(118mm,85vw);
+  width: min(118mm,85vw);
+  min-height: 275px;
+  height: auto;
+  gap: 0;
+  padding: 0;
+  background: #f2f0e7;
+  border: 1px solid #a9aba4;
+  border-radius: 1px;
+  scroll-snap-align: start;
+}
+#profileDialog .archive-ticket .ticket-head { padding: 9px 12px; gap: 7px; }
+#profileDialog .archive-ticket .ticket-metadata > div { padding: 8px 9px; }
+#profileDialog .archive-ticket .ticket-content { padding: 15px 14px 18px; }
+#profileDialog .archive-ticket .technique-card-name { font: 700 18px/1.25 "Courier New",monospace; }
+#profileDialog .archive-ticket .technique-card-romanized { font: 11px/1.45 "Courier New",monospace; }
+#profileDialog .archive-ticket .ticket-summary { font: 12px/1.5 "Courier New",monospace; color: #30322e; }
+#profileDialog .archive-ticket .ticket-facts dt,
+#profileDialog .archive-ticket .ticket-facts dd { font: 11px/1.45 "Courier New",monospace; }
+#profileDialog .archive-ticket .ticket-facts dt { font-weight: 700; }
+#profileDialog .archive-ticket .ticket-paper strong,
+#profileDialog .archive-ticket .ticket-paper span { color: var(--ticket-ink); }
+
+/* A dark drawer presents an indexed stack and the selected full-size ticket. */
+#abilityArchiveDialog {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: min(1140px,calc(100vw - 40px));
+  height: min(760px,calc(100dvh - 44px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #686b64;
+  border-radius: 3px;
+  color: #e3e1d8;
+  background: #202320;
+  box-shadow: 0 24px 80px #0009;
+  font-family: "Courier New",Courier,monospace;
+}
+#abilityArchiveDialog::backdrop { background: #101411c9; backdrop-filter: blur(5px); }
+.archive-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 21px 26px 18px;
+  border-bottom: 1px solid #4d514b;
+}
+.archive-heading small { color: #b3b7ad; font: 10px/1.3 "Courier New",monospace; letter-spacing: .16em; }
+.archive-heading h2 { margin: 6px 0 0; color: #f4f0e6; font: 700 clamp(20px,3vw,31px)/1.1 "Courier New",monospace; }
+#closeAbilityArchive { flex: none; width: 38px; height: 38px; border: 1px solid #878a81; border-radius: 0; color: #f4f0e6; font-size: 23px; }
+#closeAbilityArchive:hover { background: #444940; }
+.archive-layout { display: grid; grid-template-columns: minmax(250px,300px) minmax(0,1fr); height: calc(100% - 92px); min-height: 0; }
+.archive-index { display: flex; flex-direction: column; min-height: 0; border-right: 1px solid #54584f; background: #292d29; }
+.archive-filters { display: grid; gap: 12px; padding: 20px 18px 14px; border-bottom: 1px solid #52564f; }
+.archive-filters label { display: grid; gap: 5px; color: #b6b9b0; font: 700 10px/1.3 "Courier New",monospace; letter-spacing: .06em; }
+.archive-filters input, .archive-filters select {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 11px;
+  border: 1px solid #7c8176;
+  border-radius: 0;
+  color: #f8f3e9;
+  background: #222622;
+  font: 12px/1.3 "Courier New",monospace;
+}
+.archive-filters input::placeholder { color: #a5a99f; }
+.archive-filters option { background: #292d29; }
+#abilityCount { margin: 0; padding: 13px 18px; border-bottom: 1px solid #52564f; color: #bfc3b8; font-size: 11px; }
+.archive-index-list { min-height: 0; overflow: auto; scrollbar-color: #7d8177 transparent; }
+.archive-index-item {
+  display: grid;
+  grid-template-columns: 26px minmax(0,1fr) 18px;
+  align-items: start;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 15px;
+  border-bottom: 1px solid #4b5049;
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  color: #e6e8df;
+  text-align: left;
+  font-family: "Courier New",monospace;
+}
+.archive-index-item:hover { background: #3d433c; }
+.archive-index-item[aria-current="true"] { border-left-color: #e5dfcf; background: #434940; }
+.archive-index-no { color: #a3a99d; font-size: 11px; }
+.archive-index-name { font: 700 12px/1.35 "Courier New",monospace; overflow-wrap: anywhere; }
+.archive-index-name small { display: block; margin-top: 7px; color: #b4b9ae; font: 11px/1.2 "Courier New",monospace; }
+.archive-index-arrow { font-size: 15px; }
+.archive-reader { display: flex; flex-direction: column; min-width: 0; min-height: 0; overflow: auto; background: #1c1e1b; }
+.archive-reader-label { margin: 24px 30px 13px; color: #bbbfb2; font: 700 10px/1.3 "Courier New",monospace; letter-spacing: .14em; }
+#abilityDetail { margin: 0 30px; }
+#abilityDetail .archive-ticket { max-width: 720px; margin: 0 auto; }
+#abilityDetail .ticket-content { min-height: 190px; }
+.archive-pager { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: auto; padding: 20px; }
+.archive-pager button { min-height: 42px; padding: 8px 13px; border: 1px solid #787e73; border-radius: 0; color: #eee9db; font: 12px/1.2 "Courier New",monospace; }
+.archive-pager button:not(:disabled):hover { background: #40463d; }
+.archive-pager output { color: #e6e4da; font: 13px "Courier New",monospace; }
+.archive-no-results { padding: 20px; color: #e9e6d8; font: 13px/1.5 "Courier New",monospace; }
+@media (max-width: 760px) {
+  #abilityArchiveDialog { width: calc(100vw - 16px); height: calc(100dvh - 16px); }
+  .archive-heading { padding: 13px 15px; }
+  .archive-layout { height: calc(100% - 74px); grid-template-columns: 1fr; grid-template-rows: auto minmax(0,1fr); }
+  .archive-index { border-right: 0; border-bottom: 1px solid #54584f; }
+  .archive-filters { grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 12px; }
+  #abilityCount { padding: 5px 12px; }
+  .archive-index-list { display: flex; flex-shrink: 0; overflow-x: auto; overflow-y: hidden; max-height: 80px; }
+  .archive-index-item { width: 175px; flex: 0 0 175px; border-left-width: 0; border-bottom: 3px solid transparent; padding: 9px; }
+  .archive-index-item[aria-current="true"] { border-bottom-color: #e5dfcf; }
+  .archive-reader-label { margin: 13px 12px 10px; }
+  #abilityDetail { margin: 0 10px; }
+  .archive-ticket { grid-template-columns: 23px minmax(0,1fr); }
+  .ticket-stub::after { left: 5px; }
+  .ticket-head { grid-template-columns: 26px minmax(0,1fr) auto; min-height: 50px; padding: 8px; gap: 6px; }
+  .ticket-seal { width: 25px; height: 25px; }
+  .ticket-series { font-size: 10px; }
+  .ticket-number { font-size: 11px; }
+  .ticket-metadata > div { padding: 7px; }
+  .ticket-metadata strong { font-size: 10px; }
+  .ticket-content { padding: 13px 10px; }
+  .ticket-facts > div { grid-template-columns: 1fr; gap: 2px; }
+  .archive-pager { padding: 12px; }
+}
+@media (max-width: 480px) {
+  .archive-heading h2 { font-size: 21px; }
+  .archive-filters input, .archive-filters select { font-size: 12px; padding-inline: 6px; }
+  #profileDialog .profile-entry.archive-ticket { flex-basis: min(112mm,84vw); width: min(112mm,84vw); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .archive-ticket[role="button"] { transition: none; }
+}

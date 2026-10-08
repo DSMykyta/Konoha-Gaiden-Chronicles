@@ -29,6 +29,12 @@ For local builds, use Node 22+, `npm ci`, then `CHRONOLOGY_SOURCE_ROOT=/absolute
 
 `public/data.json` is generated at deployment. It is a snapshot of that source revision, not a live editor or an automatic scheduled refresh. The connected Vercel project publishes `main` automatically. `vercel.json` keeps other branches disabled with a wildcard rule and enables only `main`, so approved chronology fixes reach the production site.
 
+## Картотека здібностей
+
+Кнопка **Здібності** у верхній панелі відкриває доступ до всіх записів реєстру `CHRONOLOGY/data/abilities.yaml`. Ліворуч розташовано індекс із пошуком за назвою, описом та ID і фільтром за типом. Праворуч — повна картка у стилі архівного талона: моноширинний друк, реєстраційний номер, лінії формуляра й перфорований корінець. Є кнопки наступного/попереднього запису, навігація клавіатурою та мобільний режим.
+
+Картки здібностей усередині досьє персонажів використовують той самий шаблон. Натискання на картку відкриває відповідний запис у картотеці. Пряме посилання на існуючий запис: `/?ability=abl-rasengan`. Відсутні поля не вигадуються: дані, статуси й відомості з профілів залишаються такими, як у вихідних YAML. Це інтерфейс перегляду; він не записує зміни до реєстру.
+
 ## Лінії, профілі та фото
 
 Усі персонажі обрані початково. Натискання на лінію вмикає одну суцільну, злегка вигнуту сюжетну лінію; інші учасники мають лише короткі входи біля її вузлів. Стрілки ведуть до попередньої/наступної події персонажа. Фото і вікові профілі зберігаються в CHRONOLOGY/data. [Формат і механізм додавання для моделі](docs/MEDIA_AND_PROFILES.md).

@@ -21,13 +21,33 @@ async function check(width,height){
  assert.equal(doc.querySelector('#eraHeadingTrack [data-era="part-i"]').textContent,'Епоха нових команд');
  assert(doc.getElementById('eventCard').hidden);assert(doc.getElementById('profileDialog').hidden);assert(doc.getElementById('focusBar').hidden);
  const count=run('selectable().length');assert.equal(doc.querySelectorAll('.character input:checked').length,count);assert(count>6);
+ // Ability archive is accessible without opening a character profile.
+ const archiveDialog=doc.getElementById('abilityArchiveDialog');
+ click('#abilitiesButton');
+ assert(!archiveDialog.hidden,'Archive did not open from the header');
+ assert.equal(doc.querySelectorAll('#abilityList [data-archive-ability]').length,original.abilities.length);
+ assert(doc.querySelector('#abilityDetail .archive-ticket'),'No selected paper ticket');
+ const archiveQuery=doc.getElementById('abilityQuery');
+ archiveQuery.value=original.abilities[0].id;
+ archiveQuery.dispatchEvent(new window.Event('input'));
+ assert.equal(doc.querySelectorAll('#abilityList [data-archive-ability]').length,1,'ID search should find a single card');
+ assert.equal(doc.querySelector('#abilityDetail [data-ability]').dataset.ability,original.abilities[0].id);
+ archiveQuery.value='no-such-technique-ever';
+ archiveQuery.dispatchEvent(new window.Event('input'));
+ assert.equal(doc.querySelectorAll('#abilityList [data-archive-ability]').length,0);
+ assert(doc.getElementById('abilityDetail').textContent.includes('Виберіть'));
+ archiveQuery.value='';
+ archiveQuery.dispatchEvent(new window.Event('input'));
+ click('#closeAbilityArchive');
+ assert(archiveDialog.hidden);
+
  assert(canvas.querySelectorAll('.day-band').length);for(const band of canvas.querySelectorAll('.day-band'))assert.equal(Number(band.getAttribute('data-day'))%2,1);
  for(const path of canvas.querySelectorAll('.thread')){assert(path.getAttribute('d').includes(' C'));assert(!path.getAttribute('d').includes('NaN'));assert(!path.getAttribute('d').includes('L'));}
  assert(doc.querySelector('[data-focus-character="c-naruto"]').textContent==='Наруто Узумакі');
  // Mass selection affects the complete roster, even while filtered.
  doc.getElementById('characterSearch').value='Наруто';doc.getElementById('characterSearch').dispatchEvent(new window.Event('input'));click('#deselectAll');await sleep();assert.equal(run('selected.size'),0);assert.equal(canvas.querySelectorAll('.node').length,0);click('#selectAll');await sleep();assert.equal(run('selected.size'),count);doc.getElementById('characterSearch').value='';doc.getElementById('characterSearch').dispatchEvent(new window.Event('input'));
  // Native profile modal, age-specific content and keyboard tabs.
- click('[data-profile="c-naruto"]');assert(!doc.getElementById('profileDialog').hidden);assert(doc.getElementById('profileDialog').hasAttribute('open'));assert(doc.querySelectorAll('[role="tab"]').length>=1);assert(doc.querySelector('.profile-layout'));assert(doc.querySelector('.profile-visual'));assert(doc.querySelector('.profile-details'));const firstProfileTab=doc.querySelector('[data-profile-version]');click('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]');assert(doc.querySelector('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]').getAttribute('aria-selected')==='true');assert(doc.getElementById('profileContent').textContent.includes('У хронології'));const narutoProfileText=doc.getElementById('profileContent').textContent;for(const heading of ['Зовнішність','Риси характеру','Цілі','Здібності','Стосунки','Спорядження'])assert(narutoProfileText.includes(heading),'Missing Naruto profile section: '+heading);assert(doc.querySelector('.profile-image'));click('#closeProfile');assert(doc.getElementById('profileDialog').hidden);
+ click('[data-profile="c-naruto"]');assert(!doc.getElementById('profileDialog').hidden);assert(doc.getElementById('profileDialog').hasAttribute('open'));assert(doc.querySelectorAll('[role="tab"]').length>=1);assert(doc.querySelector('.profile-layout'));assert(doc.querySelector('.profile-visual'));assert(doc.querySelector('.profile-details'));const firstProfileTab=doc.querySelector('[data-profile-version]');click('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]');assert(doc.querySelector('[data-profile-version="'+firstProfileTab.dataset.profileVersion+'"]').getAttribute('aria-selected')==='true');assert(doc.getElementById('profileContent').textContent.includes('У хронології'));const narutoProfileText=doc.getElementById('profileContent').textContent;for(const heading of ['Зовнішність','Риси характеру','Цілі','Здібності','Стосунки','Спорядження'])assert(narutoProfileText.includes(heading),'Missing Naruto profile section: '+heading);assert(doc.querySelector('.profile-image'));const abilityLink=doc.querySelector('#profileDialog [data-open-ability]');assert(abilityLink,'No linked technique ticket in Naruto dossier');const linkedAbilityId=abilityLink.dataset.openAbility;click('#profileDialog [data-open-ability]');assert(doc.getElementById('profileDialog').hidden,'Opening an ability should close the dossier');assert(!archiveDialog.hidden,'Technique card did not open the archive');assert.equal(doc.querySelector('#abilityDetail [data-ability]').dataset.ability,linkedAbilityId);click('#closeAbilityArchive');click('#closeProfile');assert(doc.getElementById('profileDialog').hidden);
  // Separate traveller profiles expose the in-world cover without naming Sasuke.
  click('[data-profile="c-unnamed-travelling-performer"]');
  assert.equal(doc.getElementById('profileTitle').textContent,'Невідомий мандрівний артист');
