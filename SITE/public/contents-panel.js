@@ -6,6 +6,16 @@ const ChronologyContents = (() => {
   const position = value => Number.isFinite(value)?value:Infinity;
   const order = (a,b) => position(a.start)-position(b.start)||(a.kind==='moment'&&b.kind==='moment'?(a.sourceIndex??Infinity)-(b.sourceIndex??Infinity):0)||a.title.localeCompare(b.title,'uk');
   let roots=[],visible=new Map(),expanded=new Set(),initialized=false;
+  const SEARCH_IDLE_MS=180;
+  let queryTimer=null,composing=false;
+  function cancelQueryTimer(){if(queryTimer!==null)clearTimeout(queryTimer);queryTimer=null;}
+  function scheduleQuery(){
+    if(composing)return;
+    cancelQueryTimer();
+    const query=document.getElementById('contentsQuery');
+    if(!query?.value.trim()){render();return;}
+    queryTimer=setTimeout(()=>{queryTimer=null;render();},SEARCH_IDLE_MS);
+  }
 
   function buildTree(scenes,sceneMap,episodeMap,arcMap,momentPositions=null) {
     const arcs=new Map(),episodes=new Map();
@@ -52,6 +62,7 @@ const ChronologyContents = (() => {
     return '<div class="contents-entry" data-depth="'+depth+'"><details class="contents-branch" data-contents-key="'+html(k)+'" '+(opened?'open':'')+'><summary>'+label+'<span class="contents-count">'+n.children.length+'</span></summary><div class="contents-children">'+(opened?n.children.map(c=>draw(c,depth+1,force)).join(''):'')+'</div></details>'+read+'</div>';
   }
   function render(){
+    cancelQueryTimer();
     const panel=document.getElementById('contentsPanel');
     if(!initialized||!panel||panel.hidden)return;
     roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap,worldChronology().moments);
@@ -66,7 +77,13 @@ const ChronologyContents = (() => {
   function init(){
     if(initialized)return;initialized=true;
     const panel=document.getElementById('contentsPanel'),tree=document.getElementById('contentsTree');
-    document.getElementById('contentsQuery').addEventListener('input',render);
+    const query=document.getElementById('contentsQuery');
+    query.addEventListener('input',scheduleQuery);
+    query.addEventListener('compositionstart',()=>{composing=true;cancelQueryTimer();});
+    query.addEventListener('compositionend',()=>{composing=false;scheduleQuery();});
+    query.addEventListener('keydown',event=>{
+      if(event.key==='Enter'&&!event.isComposing&&!composing){event.preventDefault();render();}
+    });
     tree.addEventListener('click',e=>{
       const summary=e.target.closest?.('summary');
       if(!summary || !tree.contains(summary))return;
@@ -88,7 +105,7 @@ const ChronologyContents = (() => {
       else if(kind==='scene')navigateScene(id);
       else if(kind==='moment')navigateEvent(id);
     });
-    panel.addEventListener('toggle',e=>{if(e.newState==='open')render();});
+    panel.addEventListener('toggle',e=>{if(e.newState==='open')render();else cancelQueryTimer();});
   }
   return {init,render,buildTree};
 })();

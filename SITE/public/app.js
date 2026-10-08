@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261008-tickets';
+const UI_VERSION='20261008-search-debounce';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -806,7 +806,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   if(nearest)navigateEvent(nearest.id);
  });
  $('characterSearch').addEventListener('input',renderCharacters);$('selectAll').addEventListener('click',()=>{selected=new Set(selectable().map(e=>e.id));selectionChanged();});$('deselectAll').addEventListener('click',()=>{selected.clear();selectionChanged();});document.querySelectorAll('[data-team]').forEach(b=>b.addEventListener('click',()=>{selected=new Set(teams[b.dataset.team]);focusedCharacter=null;selectionChanged();}));
- $('eventSearch').addEventListener('input',()=>{searchLimit=30;search();});$('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
+ if(!window.TimelineSearchEnhanced)$('eventSearch').addEventListener('input',()=>{searchLimit=30;search();});$('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
  $('continuity').addEventListener('change',()=>{const calendarCenter=axisToDay(center);continuity=$('continuity').value;center=clampAxisCenter(dayToAxis(calendarCenter));focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();ChronologyContents.render();});
  $('closeCharacterEvents').addEventListener('click',closeCharacterEvents);
  $('characterEventsDialog').addEventListener('cancel',e=>{e.preventDefault();closeCharacterEvents();});

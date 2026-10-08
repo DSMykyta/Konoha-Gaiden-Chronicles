@@ -37,6 +37,27 @@ const TimelineSearchEnhanced = (() => {
   let activeType = 'all';
   let cachedKey = '';
   let cachedDocs = [];
+  const SEARCH_IDLE_MS = 180;
+  let pendingSearch = null;
+  let composingQuery = false;
+
+  function cancelPendingSearch() {
+    if (pendingSearch !== null) clearTimeout(pendingSearch);
+    pendingSearch = null;
+  }
+
+  function searchAfterTyping() {
+    if (typeof searchLimit !== 'undefined') searchLimit = 30;
+    if (composingQuery) return;
+    cancelPendingSearch();
+    const input = document.getElementById('eventSearch');
+    // Clearing a search is a deliberate action, not an unfinished word.
+    if (!input || !input.value.trim()) { render(); return; }
+    pendingSearch = setTimeout(() => {
+      pendingSearch = null;
+      render();
+    }, SEARCH_IDLE_MS);
+  }
 
   function normalize(value) {
     return String(value ?? '')
@@ -542,6 +563,7 @@ const TimelineSearchEnhanced = (() => {
   }
 
   function render() {
+    cancelPendingSearch();
     if (typeof data === 'undefined' || !data) return;
     const input = document.getElementById('eventSearch');
     const results = document.getElementById('searchResults');
@@ -605,6 +627,22 @@ const TimelineSearchEnhanced = (() => {
     const results = document.getElementById('searchResults');
     const panel = document.getElementById('searchPanel');
     if (!results || !panel) return;
+    const query = document.getElementById('eventSearch');
+    query?.addEventListener('input', searchAfterTyping);
+    query?.addEventListener('compositionstart', () => {
+      composingQuery = true;
+      cancelPendingSearch();
+    });
+    query?.addEventListener('compositionend', () => {
+      composingQuery = false;
+      searchAfterTyping();
+    });
+    query?.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' || event.isComposing || composingQuery) return;
+      event.preventDefault();
+      if (typeof searchLimit !== 'undefined') searchLimit = 30;
+      render();
+    });
 
     document.querySelectorAll('[data-search-type]').forEach(button => button.addEventListener('click', () => {
       activeType = button.dataset.searchType || 'all';
@@ -617,7 +655,11 @@ const TimelineSearchEnhanced = (() => {
     });
     document.getElementById('searchDate')?.addEventListener('input', () => {
       if (typeof searchLimit !== 'undefined') searchLimit = 30;
-      render();
+      cancelPendingSearch();
+      pendingSearch = setTimeout(render, SEARCH_IDLE_MS);
+    });
+    document.getElementById('searchDate')?.addEventListener('keydown', event => {
+      if (event.key === 'Enter' && !event.isComposing) { event.preventDefault(); render(); }
     });
     document.getElementById('clearSearchFilters')?.addEventListener('click', reset);
     document.getElementById('searchSuggestions')?.addEventListener('click', event => {
