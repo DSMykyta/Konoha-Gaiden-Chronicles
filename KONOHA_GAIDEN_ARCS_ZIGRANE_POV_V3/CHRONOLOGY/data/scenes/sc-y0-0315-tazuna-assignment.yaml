@@ -292,33 +292,33 @@ presence:
   review: accepted
 - id: pr-logic-waves-witness-c-raido
   entity_id: c-raido
-  from: ev-y0-0315-hiruzen-assigns-tazuna.start
-  to: ev-y0-0315-hiruzen-assigns-tazuna.end
-  basis: source
+  from: ev-y0-0315-team9-witnesses-tazuna-mission.start
+  to: ev-y0-0315-team9-witnesses-tazuna-mission.end
+  basis: project_decision
   evidence_ids:
   - evd-games-team-9-02-5
   review: accepted
 - id: pr-logic-waves-witness-c-kita
   entity_id: c-kita
-  from: ev-y0-0315-hiruzen-assigns-tazuna.start
-  to: ev-y0-0315-hiruzen-assigns-tazuna.end
-  basis: source
+  from: ev-y0-0315-team9-witnesses-tazuna-mission.start
+  to: ev-y0-0315-team9-witnesses-tazuna-mission.end
+  basis: project_decision
   evidence_ids:
   - evd-games-team-9-02-5
   review: accepted
 - id: pr-logic-waves-witness-c-ren
   entity_id: c-ren
-  from: ev-y0-0315-hiruzen-assigns-tazuna.start
-  to: ev-y0-0315-hiruzen-assigns-tazuna.end
-  basis: source
+  from: ev-y0-0315-team9-witnesses-tazuna-mission.start
+  to: ev-y0-0315-team9-witnesses-tazuna-mission.end
+  basis: project_decision
   evidence_ids:
   - evd-games-team-9-02-5
   review: accepted
 - id: pr-logic-waves-witness-c-sora
   entity_id: c-sora
-  from: ev-y0-0315-hiruzen-assigns-tazuna.start
-  to: ev-y0-0315-hiruzen-assigns-tazuna.end
-  basis: source
+  from: ev-y0-0315-team9-witnesses-tazuna-mission.start
+  to: ev-y0-0315-team9-witnesses-tazuna-mission.end
+  basis: project_decision
   evidence_ids:
   - evd-games-team-9-02-5
   review: accepted
