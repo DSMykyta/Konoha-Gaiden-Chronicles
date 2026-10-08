@@ -122,3 +122,22 @@ test('long mission includes the overnight watch, records and aftermath of Base 1
  assert.match(scene('t9-base18-plums').title,/Рен ділиться.*Кітою/);
  assert.equal(scene('t9-base18-settlement').location_id,'loc-long-mission-settlement');
 });
+
+test('Team 9 participates in the same Chunin Exam arc and dates as the other candidates',()=>{
+  const arcs=load('arcs.yaml').arcs,episodes=load('episodes.yaml').episodes;
+  const shared=arcs.find(a=>a.id==='arc-y0-chunin-exams');
+  const forest=episodes.find(ep=>ep.id==='ep-games-t9-death-forest');
+  assert(shared&&forest,'Missing common exam arc or Team 9 forest episode');
+  assert.equal(forest.arc_id,shared.id);
+  assert(shared.redirect_ids.includes('arc-games-t9-chunin'));
+  assert(!arcs.some(arc=>arc.id==='arc-games-t9-chunin'),'Do not display a second separately dated exam arc');
+  const written=byId.get('sc-y0-0701-written-exam');
+  const start=byId.get('sc-y0-0701-forest-start');
+  const end=byId.get('sc-y0-0706-team7-forest-completion');
+  assert(written.events.some(e=>e.id==='ev-y0-0701-team9-pencil-signal-system'),'Team 9 must share the actual written exam scene');
+  assert.equal(date(written),701);
+  assert.equal(absoluteDay(scene('t9-rain-scroll')),absoluteDay(start),'Team 9 enters the forest with the other teams');
+  assert.equal(absoluteDay(scene('t9-exam-failure')),absoluteDay(end),'Team 9 forest period ends on the shared fifth day');
+  for(const key of ['t9-rain-scroll','t9-earth-scroll','t9-missing-scrolls','t9-exam-failure'])
+    assert.equal(scene(key).episode_id,forest.id,'All Team 9 forest scenes remain in the shared exam arc');
+});

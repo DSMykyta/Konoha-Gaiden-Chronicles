@@ -24,6 +24,8 @@ Current benchmark migration:
 - 23.01: Team 7 and Team 9 tests; Kiba meets Kita after Raido's evaluation; evening Ichiraku; mentor reports; Kita's home scene closes the day.
 - 24.09: Kiba/Sakon/Ukon branch, Shikamaru/Tayuya branch, Kimimaro branch, Orochimaru body-transfer scene, Valley of the End.
 
+The Chunin Exam is one shared arc: Team 9's written exam takes place on 01.07 in Ibiki's common scene, and its 02–06.07 Forest of Death episode runs in parallel with the other teams. Its former standalone arc ID redirects to `arc-y0-chunin-exams`; no dates or events were duplicated.
+
 Unknown cross-branch order is intentionally not invented. `display_rank` controls presentation only.
 
 Migration discipline:
