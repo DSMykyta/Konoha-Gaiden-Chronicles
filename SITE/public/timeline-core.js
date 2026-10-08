@@ -115,7 +115,7 @@ const TimelineCore = {
         if(relation.kind!=='before'||relation.review!=='accepted')continue;
         const sources=boundary(relation.a,'end'),targets=boundary(relation.b,'start');
         if(!sources.length||!targets.length)continue;
-        if(sources.some(a=>targets.some(b=>owner.get(a)!==owner.get(b))))hasRelations=true;
+        if(sources.some(a=>targets.some(b=>owner.get(a)!==owner.get(b)||fallback.get(a)>=fallback.get(b))))hasRelations=true;
         for(const a of sources)for(const b of targets)add(a,b);
       }
       if(!hasRelations){
