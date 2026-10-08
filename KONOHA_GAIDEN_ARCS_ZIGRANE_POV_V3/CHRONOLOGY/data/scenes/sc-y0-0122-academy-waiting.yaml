@@ -4,6 +4,8 @@ episode_id: ep-y0-team-formation
 display_rank: 300
 continuity_id: "main"
 title: "Очікування наставників у класі"
+description: >-
+  Одна за одною нові команди залишають клас разом із наставниками. Райдо забирає Кіту, Рена й Сору; Наруто, Сакура та Саске залишаються самі, а невдала пастка зі стиранкою стає першою зустріччю із запізнілим Какаші.
 location_id: "loc-academy-classroom"
 placement:
   anchor_id: "ta-team-formation"

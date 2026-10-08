@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0122-sakura-ino-rivalry
+episode_id: ep-y0-team-formation
+display_rank: 30
+continuity_id: main
+title: Сакура й Іно поспішають до Академії
+description: >-
+  По дорозі на перший розподіл Сакура й Іно знову переходять від дружнього вітання до змагання. Їхнє давнє суперництво через Саске зберігається навіть після випуску й визначає поведінку обох у класі.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-team-formation
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0122-sakura-ino-race
+  title: Сакура та Іно змагаються дорогою до розподілу
+  text: >-
+    Зустрівшись дорогою до Академії, Іно кепкує з того, що Сакурі вдалося випуститися, а Сакура нагадує, що тепер обидві стали ніндзя й рівні за статусом. Вони наввипередки поспішають до класу, не припиняючи сварки, в якій відчувається їхнє суперництво за Саске.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: focus
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  evidence_ids: [evd-sub-ep3-sakura-ino]
+relations: []
+presence:
+- id: pr-y0-0122-sakura-ino-rivalry-1
+  entity_id: c-sakura
+  from: sc-y0-0122-sakura-ino-rivalry.start
+  to: sc-y0-0122-sakura-ino-rivalry.end
+  basis: source
+  evidence_ids: [evd-sub-ep3-sakura-ino]
+  review: accepted
+- id: pr-y0-0122-sakura-ino-rivalry-2
+  entity_id: c-ino
+  from: sc-y0-0122-sakura-ino-rivalry.start
+  to: sc-y0-0122-sakura-ino-rivalry.end
+  basis: source
+  evidence_ids: [evd-sub-ep3-sakura-ino]
+  review: accepted

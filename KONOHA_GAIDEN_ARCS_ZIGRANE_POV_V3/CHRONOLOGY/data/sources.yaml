@@ -1,5 +1,10 @@
 schema_version: 1
 sources:
+  - id: src-subtitle-naruto-003
+    type: anime_transcript
+    title: Naruto (2002) — серія 003, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 003.srt
+    locator_status: subtitle_timestamps_checked
   - id: "src-v10-import"
     type: "project_import"
     title: "Naruto Timeline Year 0 v10 flat import"
@@ -1370,6 +1375,26 @@ sources:
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/POST_SASUKE_SCHEDULE_UA.md
     date: "2026-10-03"
 evidence:
+  - id: evd-sub-ep3-breakfast
+    source_id: src-subtitle-naruto-003
+    locator: '00:01:52–00:02:37 — пробудження і сніданок Наруто'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep3-konohamaru
+    source_id: src-subtitle-naruto-003
+    locator: '00:03:08–00:03:42 — виклик Конохамару перед розподілом'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep3-sakura-ino
+    source_id: src-subtitle-naruto-003
+    locator: '00:04:29–00:06:02 — суперництво Сакури та Іно дорогою до Академії'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep3-headband
+    source_id: src-subtitle-naruto-003
+    locator: '00:05:09–00:05:40 — Наруто показує Шикамару протектор геніна'
+    basis: source
+    review: accepted
   - id: "evd-team9-announcement"
     source_id: "src-team9-arc01"
     locator: "fragment beginning «…Команда Дев’ять. Хаяші Кіта. Тецу Рен. Ямано Сора.»"

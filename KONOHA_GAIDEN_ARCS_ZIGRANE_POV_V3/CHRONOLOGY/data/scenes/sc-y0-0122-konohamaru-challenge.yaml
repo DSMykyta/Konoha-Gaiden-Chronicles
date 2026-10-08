@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-y0-0122-konohamaru-challenge
+episode_id: ep-y0-konohamaru
+display_rank: 20
+continuity_id: main
+title: Конохамару знову викликає Наруто
+description: >-
+  Наступного ранку Конохамару намагається продовжити суперництво з Наруто. Проте Наруто поспішає до Академії на розподіл генінів, тому їхній новий поєдинок так і не починається.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-team-formation
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0122-konohamaru-challenge
+  title: Конохамару вимагає нового поєдинку з Наруто
+  text: >-
+    Конохамару намагається несподівано атакувати Наруто й викликає його битися на рівних. Наруто відмовляється, пояснюючи, що сьогодні в нього організаційна зустріч нових генінів: суперництво не зникло, але служба шинобі вже визначає його розклад.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  evidence_ids: [evd-sub-ep3-konohamaru]
+relations: []
+presence:
+- id: pr-y0-0122-konohamaru-challenge-1
+  entity_id: c-naruto
+  from: sc-y0-0122-konohamaru-challenge.start
+  to: sc-y0-0122-konohamaru-challenge.end
+  basis: source
+  evidence_ids: [evd-sub-ep3-konohamaru]
+  review: accepted
+- id: pr-y0-0122-konohamaru-challenge-2
+  entity_id: c-konohamaru
+  from: sc-y0-0122-konohamaru-challenge.start
+  to: sc-y0-0122-konohamaru-challenge.end
+  basis: source
+  evidence_ids: [evd-sub-ep3-konohamaru]
+  review: accepted

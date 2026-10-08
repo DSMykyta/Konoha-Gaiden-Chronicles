@@ -5,13 +5,24 @@ display_rank: 100
 continuity_id: "main"
 title: "Випадковий поцілунок Наруто й Саске"
 description: >-
-  У переповненому класі Сакура й Іно змагаються за увагу Саске, а Наруто намагається кинути виклик його байдужості. Випадковий поштовх призводить до незручного поцілунку, який налаштовує частину однокласників проти Наруто ще до оголошення команд.
+  Наруто повертається у клас як генін і демонструє свій протектор, здивувавши Шикамару. У переповненому класі Сакура й Іно змагаються за увагу Саске, а Наруто намагається кинути виклик його байдужості. Випадковий поштовх призводить до незручного поцілунку, який налаштовує частину однокласників проти Наруто ще до оголошення команд.
 location_id: "loc-academy-classroom"
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
 events:
+  - id: "ev-y0-0122-naruto-shows-headband"
+    title: "Наруто показує однокласникам свій протектор геніна"
+    text: "Шикамару здивований, що Наруто після провалу все-таки прийшов на розподіл. Наруто показує свій протектор і наполягає, що теж випустився з Академії; Хіната, почувши це, тішиться за нього."
+    origin: "A"
+    extent: "interval"
+    display_rank: 50
+    involvement:
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-shikamaru", role: "participant", mode: "physical"}
+      - {entity_id: "c-hinata", role: "background", mode: "physical"}
+    evidence_ids: ["evd-sub-ep3-headband"]
   - id: "ev-y0-0122-naruto-sasuke-kiss"
     legacy_ids: ["V10-000005"]
     title: "Наруто випадково цілує Саске"
@@ -44,7 +55,10 @@ events:
       - {entity_id: "c-sakura", role: "participant", mode: "physical"}
       - {entity_id: "c-ino", role: "participant", mode: "physical"}
     evidence_ids: ["evd-manga-team7-formation"]
-relations: []
+relations:
+  - {id: "rel-0122-headband-before-kiss", kind: "before", a: "ev-y0-0122-naruto-shows-headband", b: "ev-y0-0122-naruto-sasuke-kiss", basis: "source", review: "accepted", evidence_ids: ["evd-sub-ep3-headband"]}
 presence:
+  - {id: "pr-0122-kiss-shikamaru", entity_id: "c-shikamaru", from: "ev-y0-0122-naruto-shows-headband.start", to: "ev-y0-0122-naruto-shows-headband.end", basis: "source", evidence_ids: ["evd-sub-ep3-headband"], review: "accepted"}
+  - {id: "pr-0122-kiss-hinata", entity_id: "c-hinata", from: "ev-y0-0122-naruto-shows-headband.start", to: "ev-y0-0122-naruto-shows-headband.end", basis: "source", evidence_ids: ["evd-sub-ep3-headband"], review: "accepted"}
   - {id: "pr-0122-kiss-naruto", entity_id: "c-naruto", from: "sc-y0-0122-accidental-kiss.start", to: "sc-y0-0122-accidental-kiss.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}
   - {id: "pr-0122-kiss-sasuke", entity_id: "c-sasuke", from: "sc-y0-0122-accidental-kiss.start", to: "sc-y0-0122-accidental-kiss.end", basis: "source", evidence_ids: ["evd-manga-team7-formation"], review: "pending"}

@@ -1,5 +1,26 @@
 schema_version: 1
 links:
+- id: lnk-0122-breakfast-before-konohamaru
+  kind: before
+  a: sc-y0-0122-naruto-breakfast
+  b: sc-y0-0122-konohamaru-challenge
+  basis: source
+  review: accepted
+  evidence_ids: [evd-sub-ep3-breakfast, evd-sub-ep3-konohamaru]
+- id: lnk-0122-konohamaru-before-class
+  kind: before
+  a: sc-y0-0122-konohamaru-challenge
+  b: ev-y0-0122-naruto-shows-headband
+  basis: source
+  review: accepted
+  evidence_ids: [evd-sub-ep3-konohamaru, evd-sub-ep3-headband]
+- id: lnk-0122-sakura-ino-before-kiss
+  kind: before
+  a: sc-y0-0122-sakura-ino-rivalry
+  b: ev-y0-0122-naruto-sasuke-kiss
+  basis: source
+  review: accepted
+  evidence_ids: [evd-sub-ep3-sakura-ino]
 - id: lnk-0122-kiss-before-announcements
   kind: before
   a: ev-y0-0122-naruto-sasuke-kiss

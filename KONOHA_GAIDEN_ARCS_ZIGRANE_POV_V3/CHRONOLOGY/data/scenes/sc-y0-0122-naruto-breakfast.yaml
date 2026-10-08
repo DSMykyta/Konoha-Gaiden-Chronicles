@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-y0-0122-naruto-breakfast
+episode_id: ep-y0-team-formation
+display_rank: 10
+continuity_id: main
+title: Ранок Наруто перед розподілом
+description: >-
+  Уперше збираючись до Академії як генін, Наруто прокидається і снідає у своїй квартирі. Після довгоочікуваного випуску на нього чекає нова невідомість: кому Ірука доручить працювати з ним.
+location_id: loc-naruto-apartment
+placement:
+  anchor_id: ta-team-formation
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0122-naruto-breakfast
+  title: Наруто збирається на розподіл команд
+  text: >-
+    Вранці перед розподілом Наруто прокидається та снідає сам у своїй квартирі. Отримавши протектор геніна після історії із Сувоєм Печатей, він збирається на першу зустріч із випускниками вже як повноправний шинобі.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: focus
+    mode: physical
+  evidence_ids: [evd-sub-ep3-breakfast]
+relations: []
+presence:
+- id: pr-y0-0122-naruto-breakfast-1
+  entity_id: c-naruto
+  from: sc-y0-0122-naruto-breakfast.start
+  to: sc-y0-0122-naruto-breakfast.end
+  basis: source
+  evidence_ids: [evd-sub-ep3-breakfast]
+  review: accepted

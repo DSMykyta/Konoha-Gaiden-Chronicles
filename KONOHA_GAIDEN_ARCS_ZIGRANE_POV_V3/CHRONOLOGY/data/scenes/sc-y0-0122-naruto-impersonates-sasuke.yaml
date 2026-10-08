@@ -4,6 +4,8 @@ episode_id: ep-y0-team-formation
 display_rank: 250
 continuity_id: "main"
 title: "Наруто підміняє Саске перед Сакурою"
+description: >-
+  Наруто вирішує використати перерву, щоб наблизитися до Сакури, і підміняє Саске за допомогою Перетворення. Розмова викриває байдужість Сакури до самотності Наруто, а справжній Саске різко нагадує їй про біль життя без родини.
 location_id: null
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
 state: "active"
