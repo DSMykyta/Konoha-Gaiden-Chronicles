@@ -42,7 +42,7 @@ test('all displayed source scenes are reachable through an arc',()=>{
 
 test('school day and first day of Team 9 retain scenes and old entry IDs',()=>{
  const ep=data.episodes.find(e=>e.id==='ep-y0-team-formation');
- assert.equal(ep.scene_ids.length,5);
+ assert(ep.scene_ids.length>=5,'Additional parallel classroom scenes should not remove original assignments');
  for(const id of ['sc-y0-0122-naruto-impersonates-sasuke','sc-y0-0122-sakura-searches-sasuke'])assert(ep.scene_ids.includes(id));
  const first=data.episodes.find(e=>e.id==='ep-y0-team9-introduction');
  assert.deepEqual(first.scene_ids,['sc-y0-0122-dango-shop']);

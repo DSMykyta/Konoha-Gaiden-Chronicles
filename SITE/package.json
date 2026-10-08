@@ -10,7 +10,8 @@
     "check": "node scripts/check.mjs",
     "media": "node scripts/media.mjs",
     "test": "npm run build && node tests/interface.cjs && node --test tests/*.test.mjs",
-    "test:browser": "node tests/browser.mjs"
+    "test:browser": "node tests/browser.mjs",
+    "test:wheel": "node tests/wheel-navigation.browser.mjs"
   },
   "dependencies": {
     "yaml": "2.8.1"
