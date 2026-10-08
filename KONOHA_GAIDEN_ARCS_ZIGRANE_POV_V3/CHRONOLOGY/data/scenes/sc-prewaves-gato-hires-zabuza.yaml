@@ -4,12 +4,16 @@ episode_id: ep-y0-gato-zabuza-response
 display_rank: 100
 continuity_id: main
 title: Ґато доручає Забузі усунути Тадзуну
+description: >-
+  Після невдачі Братів-Демонів Ґато вимагає від Забузи позбутися Тадзуни. Забуза береться за завдання особисто, знаючи, що мостобудівника супроводжує досвідчений джонін. Розмова відбувається окремо від загону Какаші; точні час і місце не встановлені.
 location_id: null
-placement: null
+placement:
+  anchor_id: ta-y0-0316
+  day_offset: 0
 state: active
 presence_coverage: complete
 review:
-  time: unknown
+  time: partial
   cast: accepted
   location: unknown
   origin: accepted

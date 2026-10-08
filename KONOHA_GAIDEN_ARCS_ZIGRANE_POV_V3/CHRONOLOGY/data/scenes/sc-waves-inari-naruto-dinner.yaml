@@ -4,7 +4,7 @@ continuity_id: main
 state: active
 presence_coverage: complete
 review:
-  time: unknown
+  time: partial
   cast: accepted
   location: accepted
   origin: accepted
@@ -106,5 +106,9 @@ presence:
 episode_id: ep-y0-inari-naruto-dispute
 display_rank: 100
 title: Інарі сперечається з Наруто за вечерею
+description: >-
+  Після напруженого тренування Наруто сперечається з Інарі за столом у домі Тадзуни. Хлопець не вірить, що Ґато можна перемогти, а Наруто називає його бездіяльність боягузтвом. Суперечка оголює різний досвід втрати й прагнення захистити близьких.
 location_id: loc-tazuna-home
-placement: null
+placement:
+  anchor_id: ta-y0-0329
+  day_offset: 0

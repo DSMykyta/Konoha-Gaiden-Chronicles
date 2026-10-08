@@ -4,7 +4,7 @@ continuity_id: main
 state: active
 presence_coverage: complete
 review:
-  time: unknown
+  time: partial
   cast: accepted
   location: accepted
   origin: accepted
@@ -47,5 +47,9 @@ presence:
 episode_id: ep-y0-waves-bridge-workers
 display_rank: 100
 title: Ґіічі відмовляється будувати міст
+description: >-
+  Ґіічі, наляканий погрозами Ґато, повідомляє Тадзуні, що більше не працюватиме над мостом. Це самостійна лінія мешканців Країни Хвиль: навіть за наявності охоронців будівництво може зупинитися, якщо робітники втратять віру в успіх.
 location_id: loc-great-naruto-bridge
-placement: null
+placement:
+  anchor_id: ta-y0-0322
+  day_offset: 0

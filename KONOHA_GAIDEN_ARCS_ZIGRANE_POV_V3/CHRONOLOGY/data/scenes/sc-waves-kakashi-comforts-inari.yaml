@@ -47,6 +47,10 @@ presence:
 episode_id: ep-y0-inari-naruto-dispute
 display_rank: 200
 title: Какаші говорить з Інарі після сварки
+description: >-
+  Після сварки з Наруто Какаші окремо говорить з Інарі. Він пояснює, що Наруто теж зростав без батьків і знає, що означає залишитися самотнім. Це продовження внутрішньої лінії Інарі, а не ще одна битва Команди 7.
 location_id: loc-tazuna-home
-placement: null
+placement:
+  anchor_id: ta-y0-0329
+  day_offset: 0
 day_part: night

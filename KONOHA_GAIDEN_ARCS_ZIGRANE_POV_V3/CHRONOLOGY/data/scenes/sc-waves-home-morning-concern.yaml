@@ -4,7 +4,7 @@ continuity_id: main
 state: active
 presence_coverage: complete
 review:
-  time: unknown
+  time: partial
   cast: accepted
   location: accepted
   origin: accepted
@@ -69,5 +69,9 @@ presence:
 episode_id: ep-y0-waves-morning-concern
 display_rank: 100
 title: Сакура й Цунамі непокояться через Наруто
+description: >-
+  У домі Тадзуни Сакура й Цунамі непокояться за Наруто, який не повернувся після нічного тренування. Какаші заспокоює їх, а Саске вирушає шукати товариша. Паралельно Наруто перебуває в лісі, де незабаром зустріне Хаку.
 location_id: loc-tazuna-home
-placement: null
+placement:
+  anchor_id: ta-y0-0328
+  day_offset: 0

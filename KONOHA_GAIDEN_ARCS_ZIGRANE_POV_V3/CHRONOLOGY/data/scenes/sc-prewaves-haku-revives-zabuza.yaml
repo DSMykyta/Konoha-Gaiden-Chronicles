@@ -4,7 +4,7 @@ continuity_id: main
 state: active
 presence_coverage: complete
 review:
-  time: unknown
+  time: partial
   cast: accepted
   location: unknown
   origin: accepted
@@ -48,5 +48,9 @@ presence:
 episode_id: ep-y0-zabuza-recovery
 display_rank: 100
 title: Хаку приводить Забузу до тями
+description: >-
+  Після першого бою Хаку приводить Забузу до тями. Удаване вбивство мисливцем-ніном виявляється способом врятувати напарника; Забуза відновлюється й готується до повторної сутички з Какаші. Наруто та його команда не присутні при цій розмові.
 location_id: null
-placement: null
+placement:
+  anchor_id: ta-y0-0318
+  day_offset: 0
