@@ -191,7 +191,7 @@ async function check(width,height){
      if(k===kind)break;
      const detail=contents.querySelector('details[data-contents-key="'+k+':'+pid+'"]');
      assert(detail,'Missing contents parent '+k+':'+pid);
-     if(!detail.open){detail.open=true;detail.dispatchEvent(new window.Event('toggle'));}
+     if(!detail.open)detail.querySelector('summary').dispatchEvent(new window.Event('click',{bubbles:true,cancelable:true}));
    }
    const btn=contents.querySelector('[data-contents-kind="'+kind+'"][data-contents-id="'+id+'"]');
    assert(btn,'Missing contents reader '+kind+':'+id);

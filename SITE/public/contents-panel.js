@@ -67,15 +67,19 @@ const ChronologyContents = (() => {
     if(initialized)return;initialized=true;
     const panel=document.getElementById('contentsPanel'),tree=document.getElementById('contentsTree');
     document.getElementById('contentsQuery').addEventListener('input',render);
-    tree.addEventListener('toggle',e=>{
-      const element=e.target;
-      if(!element.matches?.('details[data-contents-key]'))return;
-      const k=element.dataset.contentsKey;
-      if(!element.open){expanded.delete(k);return;}
-      expanded.add(k);
-      const n=visible.get(k),target=element.querySelector('.contents-children');
-      if(n&&target&&!target.childElementCount)target.innerHTML=n.children.map(c=>draw(c,Number(element.parentElement.dataset.depth)+1)).join('');
-    },true);
+    tree.addEventListener('click',e=>{
+      const summary=e.target.closest?.('summary');
+      if(!summary || !tree.contains(summary))return;
+      const details=summary.parentElement;
+      if(!details.matches('details[data-contents-key]'))return;
+      e.preventDefault();
+      const k=details.dataset.contentsKey;
+      if(details.open){details.open=false;expanded.delete(k);return;}
+      details.open=true;expanded.add(k);
+      const n=visible.get(k),target=details.querySelector('.contents-children');
+      if(n&&target&&!target.childElementCount)
+        target.innerHTML=n.children.map(c=>draw(c,Number(details.parentElement.dataset.depth)+1)).join('');
+    });
     tree.addEventListener('click',e=>{
       const b=e.target.closest?.('[data-contents-kind]');if(!b)return;
       const kind=b.dataset.contentsKind,id=b.dataset.contentsId;
