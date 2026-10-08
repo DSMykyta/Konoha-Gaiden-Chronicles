@@ -566,9 +566,11 @@ function narrativeHtml(item){
   // summary and explicitly labeled project additions must remain readable.
   // Each is a separate paragraph so later layer toggles can control them
   // without ever rewriting the original description.
-  return [item?.description,item?.description_project]
+  return [item?.description,item?.description_project? `[[project|${item.description_project}]]` : null]
    .filter(Boolean)
-   .map((text,index)=>`<p class="event-text${index?' story-project-addendum':''}">${esc(text)}</p>`).join('');
+   .map((text,index)=>({text:StoryLayers.compose(text),index}))
+   .filter(part=>part.text)
+   .map(({text,index})=>`<p class="event-text${index?' story-project-addendum':''}">${esc(text)}</p>`).join('');
 }
 function sceneCardBody(scene,group){
  const cast=sceneCast(scene,group);
@@ -586,7 +588,7 @@ function closeScene(){const dialog=$('sceneDialog');if(dialog.hidden)return;if(d
 function renderScene(){
  const scene=sceneMap.get(sceneId);if(!scene){closeScene();return;}const group=sceneEvents(sceneId),cast=sceneCast(scene,group);
  $('sceneTitle').textContent=scene.title;$('sceneMeta').textContent=`${dateText(scene.day,true)} · ${name(scene.location_id)} · ${actionCount(group.length)}`;
- $('sceneContent').innerHTML=`${narrativeHtml(scene)}${cast.length?`<div class="people scene-cast">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-scene-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(fullName(id))}" title="Зосередитися на лінії">${esc(fullName(id))}</button>`).join('')}</div>`:''}<ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(e.text)}</p></li>`).join('')}</ol>`;
+ $('sceneContent').innerHTML=`${narrativeHtml(scene)}${cast.length?`<div class="people scene-cast">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-scene-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(fullName(id))}" title="Зосередитися на лінії">${esc(fullName(id))}</button>`).join('')}</div>`:''}<ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(StoryLayers.compose(e.text))}</p></li>`).join('')}</ol>`;
  $('sceneContent').querySelectorAll('[data-scene-event]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneEvent;closeScene();navigateEvent(id);}));
  $('sceneContent').querySelectorAll('[data-scene-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneFocusCharacter;closeScene();if(focusedCharacter!==id)setFocus(id);}));
 }
@@ -612,7 +614,7 @@ function eventSupplementHtml(e,relationAttribute){
 }
 function eventDetailsHtml(e,relationAttribute='data-card-event',showDetails=false){
  const physical=e.involvement.filter(i=>e.physical.includes(i.entity_id)),special=e.involvement.filter(i=>modes[i.mode]),mentioned=e.involvement.filter(i=>i.role==='mentioned'||i.mode==='remote');
- return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(e.text)}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div><p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
+ return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(StoryLayers.compose(e.text))}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div><p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
 }
 function showEvent(e){
  cardSelection={kind:'moment',id:e.id,events:[e]};const navigation=nav();
@@ -633,7 +635,7 @@ function navigateEvent(id){
 }
 function search(){
  if(window.TimelineSearchEnhanced)return window.TimelineSearchEnhanced.render();
- const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+e.text).toLowerCase().includes(q));
+ const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+StoryLayers.compose(e.text)).toLowerCase().includes(q));
  $('searchSummary').textContent=q?`Знайдено: ${found.length}`:`${found.length} подій · у порядку хронології`;
  $('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}"><span>${esc(e.title)}<span class="result-context">${esc(e.scene_title)}</span></span><small>${dateText(e.day)}</small></button>`).join('')||'<div class="empty"><p>Подій не знайдено. Спробуй коротший запит.</p><button class="secondary-button" data-reset-event-search>Очистити пошук</button></div>';
  $('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));
