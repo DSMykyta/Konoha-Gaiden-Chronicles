@@ -3,6 +3,38 @@
 const HierarchyPreview = (() => {
   const cascade = [];
   const hoverTargets = new Map();
+  const pointerOrigins = new Map();
+  const lastPointer = new WeakMap();
+  const aimTargets = new Map();
+  const pointerPoint = event => Number.isFinite(event.clientX) && Number.isFinite(event.clientY)
+    ? { x: event.clientX, y: event.clientY } : null;
+
+  function cancelAim(depth) {
+    uiTimers.cancel(`hierarchy-aim:${depth}`);
+    aimTargets.delete(depth);
+  }
+
+  function aimingTowardPreview(depth, trigger, event) {
+    const active = cascade[depth];
+    return !!(active && !active.pinned && active.trigger !== trigger &&
+      active.panel.isConnected && active.parentSurface.contains(trigger) &&
+      TimelineInteractions.inHoverCorridor(pointerOrigins.get(depth), pointerPoint(event),
+        active.panel.getBoundingClientRect()));
+  }
+
+  function delayForAim(depth, trigger, kind, id, parentSurface) {
+    uiTimers.cancel(`hierarchy-open:${depth}`);
+    const target = { trigger };
+    aimTargets.set(depth, target);
+    // Let the cursor cross neighboring rows; a deliberate pause on the new row
+    // eventually opens it. Entering the current child panel cancels this job.
+    uiTimers.defer(`hierarchy-aim:${depth}`, TimelineInteractions.AIM_DELAY, () => {
+      if (aimTargets.get(depth) !== target) return;
+      aimTargets.delete(depth);
+      if (hoverTargets.get(depth) === trigger && trigger.isConnected && parentSurface.isConnected &&
+          TimelineInteractions.hovered(trigger)) open(kind, id, parentSurface, trigger, depth);
+    });
+  }
 
   function lists(root) {
     root.querySelectorAll('.story-children,.scene-actions').forEach(container => {
@@ -76,6 +108,8 @@ const HierarchyPreview = (() => {
       entry.panel.remove();
     }
     cascade.splice(depth);
+    for (const key of [...aimTargets.keys()]) if (key >= depth) cancelAim(key);
+    for (const key of [...pointerOrigins.keys()]) if (key >= depth) pointerOrigins.delete(key);
     for (const key of hoverTargets.keys()) if (key >= depth) {
       hoverTargets.delete(key);
       uiTimers.cancel(`hierarchy-open:${key}`);
@@ -148,11 +182,13 @@ const HierarchyPreview = (() => {
     panel.innerHTML = `<button class="cascade-back" data-back-hierarchy aria-label="Повернутися до попереднього вікна" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><div class="hierarchy-preview-content">${rendered.header}<div class="preview-scroll">${rendered.body}</div></div>`;
     document.body.append(panel);
     cascade.push({ panel, trigger, parentSurface, kind, id, pinned: false });
+    const origin = lastPointer.get(trigger);
+    if (origin) pointerOrigins.set(depth, origin);
     trigger?.classList.add('is-preview-active');
     trigger?.closest('.story-children,.scene-actions')?.syncHighlight?.();
     lists(panel);
     bind(panel, panel, depth + 1);
-    panel.addEventListener('pointerenter', keep);
+    panel.addEventListener('pointerenter', () => { cancelAim(depth); keep(); });
     panel.addEventListener('pointerleave', event => leave(event, depth));
     panel.addEventListener('click', event => {
       const button = event.target.closest('button');
@@ -176,17 +212,35 @@ const HierarchyPreview = (() => {
       const id = trigger.dataset.storyEpisode || trigger.dataset.storyScene || trigger.dataset.scenePreview;
       trigger.addEventListener('pointerenter', event => {
         if (!canHover(event)) return;
+        const current = pointerPoint(event);
+        if (current) {
+          lastPointer.set(trigger, current);
+          if (!cascade[depth] || cascade[depth].trigger === trigger) pointerOrigins.set(depth, current);
+        }
         keep();
         hoverTargets.set(depth, trigger);
         // Hover must leave its row usable. Compact screens drill down by click.
         const viewport = document.documentElement.clientWidth || window.innerWidth;
         if (viewport < TimelineInteractions.PANEL_WIDTH * 2 + TimelineInteractions.PANEL_GAP + 24) return;
+        if (aimingTowardPreview(depth, trigger, event)) {
+          delayForAim(depth, trigger, kind, id, parentSurface);
+          return;
+        }
+        cancelAim(depth);
         uiTimers.defer(`hierarchy-open:${depth}`, TimelineInteractions.OPEN_DELAY, () => {
           if (hoverTargets.get(depth) === trigger && trigger.isConnected && parentSurface.isConnected && TimelineInteractions.hovered(trigger)) open(kind, id, parentSurface, trigger, depth);
         });
       });
+      trigger.addEventListener('pointermove', event => {
+        if (!canHover(event)) return;
+        const current = pointerPoint(event);
+        if (!current) return;
+        lastPointer.set(trigger, current);
+        if (cascade[depth]?.trigger === trigger) pointerOrigins.set(depth, current);
+      });
       trigger.addEventListener('pointerleave', event => {
         if (hoverTargets.get(depth) === trigger) hoverTargets.delete(depth);
+        if (aimTargets.get(depth)?.trigger === trigger) cancelAim(depth);
         uiTimers.cancel(`hierarchy-open:${depth}`);
         leave(event, depth);
       });
@@ -200,10 +254,12 @@ const HierarchyPreview = (() => {
 
   return {
     bind, open, layout, keep, leave,
-    clear() { uiTimers.cancelAll('hierarchy-'); hoverTargets.clear(); closeFrom(0); },
+    clear() { uiTimers.cancelAll('hierarchy-'); hoverTargets.clear(); aimTargets.clear(); pointerOrigins.clear(); closeFrom(0); },
     closeFrom,
     escape() {
       uiTimers.cancelAll('hierarchy-open:');
+      uiTimers.cancelAll('hierarchy-aim:');
+      aimTargets.clear();
       hoverTargets.clear();
       if (!cascade.length) return false;
       closeFrom(cascade.length - 1, true);
@@ -214,6 +270,8 @@ const HierarchyPreview = (() => {
       const depth = cascade.findIndex(entry => !entry.pinned);
       if (depth >= 0) closeFrom(depth);
       uiTimers.cancelAll('hierarchy-open:');
+      uiTimers.cancelAll('hierarchy-aim:');
+      aimTargets.clear();
       hoverTargets.clear();
     }
   };

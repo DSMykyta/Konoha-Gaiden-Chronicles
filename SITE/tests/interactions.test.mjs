@@ -94,3 +94,15 @@ test('a reading surface sits above its node and leaves room for the parent butto
     assert(slot.top-52>=108);
   }
 });
+
+test('hover safe triangle protects a diagonal path toward both child-panel directions', () => {
+  const right = { left: 240, right: 620, top: 60, bottom: 330 };
+  const left = { left: 0, right: 210, top: 40, bottom: 350 };
+  assert.equal(interactions.inHoverCorridor({x:110,y:80}, {x:180,y:118}, right), true);
+  assert.equal(interactions.inHoverCorridor({x:340,y:100}, {x:270,y:130}, left), true);
+  assert.equal(interactions.inHoverCorridor({x:110,y:80}, {x:180,y:12}, right), false);
+  assert.equal(interactions.inHoverCorridor({x:340,y:100}, {x:270,y:400}, left), false);
+  assert.equal(interactions.inHoverCorridor({x:110,y:80}, {x:90,y:120}, right), false);
+  assert.equal(interactions.inHoverCorridor({x:100,y:100}, {x:120,y:120}, {left:50,right:150,top:60,bottom:250}), false);
+  assert.equal(interactions.inHoverCorridor(null, {x:120,y:120}, right), false);
+});
