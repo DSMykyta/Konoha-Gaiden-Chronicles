@@ -11,6 +11,7 @@ const origins={M:'Манґа',A:'Аніме',F:'Філер',P:'Історія п
 const zoomModes={year:1,month:12,week:365/7,day:365};
 function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+let storyLayers={...StoryLayers.ALL},layerRevision=0;
 let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorEvent=null,graphNodes=[],raf=null,paintedCenter=21.5,wheelPreview=false,searchLimit=30;
 function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,(data?.calendar.view_days||365)-1);const year=(data?.calendar.view_start_year??data?.calendar.current_year??61)+Math.floor(day/365);day%=365;const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m,year};}
 function dateText(day,long=false){const a=date(day);return a?(long?`${a.d} ${gen[a.m]}${data.calendar.view_days>365?' '+a.year:''}`:`${String(a.d).padStart(2,'0')}.${String(a.m+1).padStart(2,'0')}${data.calendar.view_days>365?'.'+a.year:''}`):'Без установленої дати';}
@@ -47,13 +48,13 @@ function name(id){const e=entityMap.get(id);return e?.aliases?.find(a=>/[А-Яа
 function fullName(id){return TimelineCore.fullName(entityMap.get(id),profileMap?.get(id));}
 function selectable(){return TimelineCore.selectable(data.entities,events());}
 function color(id){return characterColors.get(id)||'#8797ac';}
-let cachedData=null,cachedContinuity=null,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedWorld=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
+let cachedData=null,cachedContinuity=null,cachedLayerRevision=-1,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedWorld=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
 const layoutCache=new Map(),baseLayoutCache=new Map(),semanticNodeCache=new Map();
 let characterColors=new Map();
 function events(){
- if(cachedData!==data||cachedContinuity!==continuity){
-  cachedData=data;cachedContinuity=continuity;
-  cachedEvents=data.events.filter(e=>e.continuity===continuity&&e.scene_state!=='inactive');
+ if(cachedData!==data||cachedContinuity!==continuity||cachedLayerRevision!==layerRevision){
+  cachedData=data;cachedContinuity=continuity;cachedLayerRevision=layerRevision;
+  cachedEvents=StoryLayers.select(data.events.filter(e=>e.continuity===continuity&&e.scene_state!=='inactive'),storyLayers,e=>arcMap.get(e.arc_id)?.kind);
   cachedDated=cachedEvents.filter(e=>e.day!==null);cachedScenes=null;cachedWorld=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();semanticNodeCache.clear();
  }
  return cachedEvents;
@@ -61,11 +62,16 @@ function events(){
 function datedEvents(){events();return cachedDated;}
 function relevant(e){return e.tracks.some(id=>selected.has(id));}
 function sceneEvents(id){return [...chronologicalMoments().filter(e=>e.scene_id===id),...TimelineCore.ordered(events().filter(e=>e.day===null&&e.scene_id===id))];}
-function sceneCast(scene,group){return [...new Set([...(scene?.presence||[]).filter(p=>!p.mode||['physical','physical_hidden'].includes(p.mode)).map(p=>p.entity_id),...group.flatMap(e=>e.physical)])];}
+function sceneCast(scene,group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
 function actionCount(n){return `${n} ${n%100>=11&&n%100<=14?'дій':n%10===1?'дія':n%10>=2&&n%10<=4?'дії':'дій'}`;}
 function navigationEvents(){return events().filter(e=>(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))&&StoryTitleScale.allows(e));}
-function chronologyRelations(){events();return cachedRelations??= [...data.links,...data.scenes.flatMap(s=>s.relations||[])];}
-function worldChronology(){events();return cachedWorld??=TimelineCore.world(events(),chronologyRelations(),data.scenes);}
+function chronologyRelations(){
+ events();if(cachedRelations)return cachedRelations;
+ const eventIds=new Set(cachedEvents.map(e=>e.id)),sceneIds=new Set(cachedEvents.map(e=>e.scene_id));
+ return cachedRelations=[...data.links,...data.scenes.flatMap(s=>s.relations||[])]
+  .filter(link=>[link.a,link.b].every(id=>!id||eventIds.has(id)||sceneIds.has(id)));
+}
+function worldChronology(){events();return cachedWorld??=TimelineCore.world(events(),chronologyRelations(),data.scenes.filter(s=>cachedEvents.some(e=>e.scene_id===s.id)));}
 function orderedScenes(){return worldChronology().scenes;}
 function semanticLevel(){
  if(zoom>=Math.sqrt(zoomModes.day*zoomModes.week))return 'moment';
@@ -562,16 +568,11 @@ function navigateScene(id){
  focusId=group.length===1?e.id:id;pinnedNodeId=focusId;anchorEvent=null;showSceneCard(sceneMap.get(id),group);$('eventCard').hidden=false;render();revealReadingNode();focusReadingCard();
 }
 function narrativeHtml(item){
-  // The default site is an integrated continuity: both factual Naruto
-  // summary and explicitly labeled project additions must remain readable.
-  // Each is a separate paragraph so later layer toggles can control them
-  // without ever rewriting the original description.
-  return [item?.description,item?.description_project? `[[project|${item.description_project}]]` : null]
-   .filter(Boolean)
-   .map((text,index)=>({text:StoryLayers.compose(text),index}))
-   .filter(part=>part.text)
-   .map(({text,index})=>`<p class="event-text${index?' story-project-addendum':''}">${esc(text)}</p>`).join('');
+ const parts=[item?.description,item?.description_project?`[[project|${item.description_project}]]`:null].filter(Boolean);
+ return parts.map((text,i)=>({i,text:StoryLayers.compose(text,storyLayers)})).filter(p=>p.text)
+  .map(p=>`<p class="event-text${p.i?' story-project-addendum':''}">${esc(p.text)}</p>`).join('');
 }
+
 function sceneCardBody(scene,group){
  const cast=sceneCast(scene,group);
  return `<h2>${esc(scene.title)}</h2>${narrativeHtml(scene)}${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" data-tooltip="Зосередитися на лінії">${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></li>`).join('')}</ol>`;
@@ -588,7 +589,7 @@ function closeScene(){const dialog=$('sceneDialog');if(dialog.hidden)return;if(d
 function renderScene(){
  const scene=sceneMap.get(sceneId);if(!scene){closeScene();return;}const group=sceneEvents(sceneId),cast=sceneCast(scene,group);
  $('sceneTitle').textContent=scene.title;$('sceneMeta').textContent=`${dateText(scene.day,true)} · ${name(scene.location_id)} · ${actionCount(group.length)}`;
- $('sceneContent').innerHTML=`${narrativeHtml(scene)}${cast.length?`<div class="people scene-cast">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-scene-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(fullName(id))}" title="Зосередитися на лінії">${esc(fullName(id))}</button>`).join('')}</div>`:''}<ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(StoryLayers.compose(e.text))}</p></li>`).join('')}</ol>`;
+ $('sceneContent').innerHTML=`${narrativeHtml(scene)}${cast.length?`<div class="people scene-cast">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-scene-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(fullName(id))}" title="Зосередитися на лінії">${esc(fullName(id))}</button>`).join('')}</div>`:''}<ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(StoryLayers.compose(e.text,storyLayers))}</p></li>`).join('')}</ol>`;
  $('sceneContent').querySelectorAll('[data-scene-event]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneEvent;closeScene();navigateEvent(id);}));
  $('sceneContent').querySelectorAll('[data-scene-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneFocusCharacter;closeScene();if(focusedCharacter!==id)setFocus(id);}));
 }
@@ -614,7 +615,7 @@ function eventSupplementHtml(e,relationAttribute){
 }
 function eventDetailsHtml(e,relationAttribute='data-card-event',showDetails=false){
  const physical=e.involvement.filter(i=>e.physical.includes(i.entity_id)),special=e.involvement.filter(i=>modes[i.mode]),mentioned=e.involvement.filter(i=>i.role==='mentioned'||i.mode==='remote');
- return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(StoryLayers.compose(e.text))}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div><p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
+ return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(StoryLayers.compose(e.text,storyLayers))}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div><p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
 }
 function showEvent(e){
  cardSelection={kind:'moment',id:e.id,events:[e]};const navigation=nav();
@@ -622,20 +623,20 @@ function showEvent(e){
  bindCard();
 }
 function prepareNavigation(e){
- if(!e)return false;rememberCardFocus();uiTimers.cancel('node-open');hoveredNodeId=null;cancelHoverClose();HierarchyPreview.clear();hoverCard=false;
+ if(!e||!events().some(visible=>visible.id===e.id))return false;rememberCardFocus();uiTimers.cancel('node-open');hoveredNodeId=null;cancelHoverClose();HierarchyPreview.clear();hoverCard=false;
  if(!StoryTitleScale.allows(e))StoryTitleScale.clear();
  if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;
  continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();return true;
 }
 function navigateEvent(id){
- const e=eventMap.get(id);if(!prepareNavigation(e))return;
+ const e=events().find(e=>e.id===id);if(!prepareNavigation(e))return;
  if(e.day!==null){zoom=zoomModes.day;const point=semanticNodes('moment',orderedScenes()).find(point=>point.id===e.id);center=clampAxisCenter(dayToAxis(point?.day??e.day+.5));}
  pinnedNodeId=e.id;focusId=e.id;anchorEvent=e.id;showEvent(e);$('eventCard').hidden=false;render();
  const anchor=graphNodes.find(p=>p.id===e.id);if(anchor)revealReadingNode();else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();focusReadingCard();
 }
 function search(){
  if(window.TimelineSearchEnhanced)return window.TimelineSearchEnhanced.render();
- const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+StoryLayers.compose(e.text)).toLowerCase().includes(q));
+ const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+StoryLayers.compose(e.text,storyLayers)).toLowerCase().includes(q));
  $('searchSummary').textContent=q?`Знайдено: ${found.length}`:`${found.length} подій · у порядку хронології`;
  $('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}"><span>${esc(e.title)}<span class="result-context">${esc(e.scene_title)}</span></span><small>${dateText(e.day)}</small></button>`).join('')||'<div class="empty"><p>Подій не знайдено. Спробуй коротший запит.</p><button class="secondary-button" data-reset-event-search>Очистити пошук</button></div>';
  $('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));
@@ -777,7 +778,25 @@ function ensureInterface(){
 async function init(){
  try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);AbilityArchive.init();ChronologyContents.init();$('status').hidden=true;
  const names={'alt-shippuden-469':'Альтернатива · обличчя Какаші','alt-movie-land-of-snow':'Альтернатива · Країна Снігу'};[...new Set(data.events.map(e=>e.continuity))].filter(c=>c!=='main').forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=names[c]||c;$('continuity').append(o);});
- for(const id of ['lines','contents','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();if(id==='contents')ChronologyContents.render();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>{closePanels();}));
+ for(const id of ['lines','contents','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();if(id==='contents')ChronologyContents.render();});
+ $('layersButton').addEventListener('click',()=>togglePanel('periodPanel'));
+ const setLayer=(key,active)=>{
+  const date=axisToDay(center);
+  storyLayers={...storyLayers,[key]:active};
+  layerRevision++;
+  $('layersButton').querySelector('span').textContent='Шари · '+Object.values(storyLayers).filter(Boolean).length+'/4';
+  events();
+  center=clampAxisCenter(dayToAxis(date));
+  focusedCharacter=null;closeCard();renderCharacters();render();
+  search();ChronologyContents.render();
+  if(sceneId){if(sceneEvents(sceneId).length)renderScene();else closeScene();}
+  if(profileEntity)renderProfile();
+  if(characterEventsEntity)renderCharacterEvents(true);
+ };
+ $('storyLayers').querySelectorAll('input[type="checkbox"]').forEach(input=>{
+  input.addEventListener('change',()=>setLayer(input.value,input.checked));
+ });
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>{closePanels();}));
  for(const id of ['linesPanel','contentsPanel','searchPanel','periodPanel'])$(id).addEventListener('toggle',e=>{
   if(e.newState==='closed'&&!$(id).matches?.(':popover-open')){$(id).hidden=true;$(id.replace('Panel','Button')).setAttribute('aria-expanded','false');}
  });
