@@ -11,7 +11,7 @@ const StoryLayers=(()=>{
   let out='',start=0,match;
   while((match=re.exec(src))){
    const layer=normalize(match[1]);
-   if(!keys.includes(layer))throw Error('Unknown story layer '+match[1]);
+   if(match[1]==='team9'||!keys.includes(layer))throw Error('Unknown story layer '+match[1]);
    if(match[2].includes('[[')||match[2].includes(']]'))throw Error('Nested story-layer blocks');
    const active=enabled[layer]??enabled[Object.keys(aliases).find(k=>aliases[k]===layer)]??false;
    out+=src.slice(start,match.index)+(active?match[2]:'');
