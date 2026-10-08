@@ -30,7 +30,8 @@ const StoryLayers=(()=>{
   if(arcKind==='project'||event?.origin==='P')return 'project';
   if(event?.origin==='M')return 'canon';
   if(event?.origin==='F')return 'filler';
-  if(['V','N','G','O','R'].includes(event?.origin))return 'sources';
+  if(event?.origin==='R')return arcKind==='adaptation'?'filler':'sources';
+  if(['V','N','G','O'].includes(event?.origin))return 'sources';
   if(event?.origin==='A'){
    if((event.evidence_ids||[]).some(id=>id.includes('manga-')))return 'canon';
    return arcKind==='adaptation'?'filler':arcKind==='canonical'?'canon':null;

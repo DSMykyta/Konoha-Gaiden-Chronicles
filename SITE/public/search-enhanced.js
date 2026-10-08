@@ -147,8 +147,8 @@ const TimelineSearchEnhanced = (() => {
     return unique([
       ...(event?.tracks || []),
       ...(event?.physical || []),
-      ...(event?.involvement || []).map(item => item.entity_id),
-      ...(scene?.presence || []).map(item => item.entity_id)
+      ...(event?.involvement || []).filter(item=>item.role!=='mentioned').map(item=>item.entity_id),
+      
     ]).filter(id => typeof entityMap !== 'undefined' && entityMap?.get(id)?.kind === 'person');
   }
 
