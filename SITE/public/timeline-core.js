@@ -151,6 +151,34 @@ const TimelineCore = {
     }
     return positions;
   },
+  world(events,relations=[],sceneMeta=[]) {
+    // One authoritative source for X coordinates at every zoom level:
+    // solve event chronology, then derive container spans from their moments.
+    // A scene/episode/arc is a reading container, never an independent clock.
+    const seeds=this.scenes(events,relations,sceneMeta);
+    const moments=this.momentPositions(seeds,relations);
+    const owner=new Map(events.map(e=>[e.id,e.scene_id]));
+    const pin=new Map();
+    for(const r of relations){
+      if(r.kind!=='observes'||r.review!=='accepted')continue;
+      // A witnessed moment is a meaningful representative of the scene at
+      // coarse zoom, without asserting that the entire scene is instantaneous.
+      const timestamp=moments.get(r.a);
+      if(!Number.isFinite(timestamp))continue;
+      const sourceScene=owner.get(r.a),targetScene=owner.get(r.b)||r.b;
+      if(sourceScene)pin.set(sourceScene,timestamp);
+      if(targetScene)pin.set(targetScene,timestamp);
+    }
+    const scenes=seeds.map(s=>{
+      const times=s.group.map(e=>moments.get(e.id)).filter(Number.isFinite).sort((a,b)=>a-b);
+      if(!times.length)return {...s,spanStart:null,spanEnd:null};
+      const representative=pin.get(s.id)??(times.length%2?times[Math.floor(times.length/2)]:(times[times.length/2-1]+times[times.length/2])/2);
+      return {...s,position:representative,spanStart:times[0],spanEnd:times.at(-1)};
+    }).sort((a,b)=>(a.position??Infinity)-(b.position??Infinity)||a.id.localeCompare(b.id));
+    const orderedMoments=scenes.flatMap(s=>s.group).filter(e=>moments.has(e.id))
+      .sort((a,b)=>moments.get(a.id)-moments.get(b.id)||a.id.localeCompare(b.id));
+    return {scenes,moments,orderedMoments};
+  },
   separateNodes(nodes,top,bottom,clearance=46) {
     // Time/X stays exact. Separate overlapping hit areas vertically, and use the
     // resulting anchors for both the marks and their character strands.
