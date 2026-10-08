@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261008-wheel-pan';
+const UI_VERSION='20261008-tickets';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -747,14 +747,14 @@ async function refreshData(){
   const v=await fetch(`version.json?t=${Date.now()}`,{cache:'no-store'});if(!v.ok)return;
   const version=await v.json();if(version.revision===data.revision)return;
   const response=await fetch(`data.json?v=${encodeURIComponent(version.revision)}`,{cache:'no-store'});if(!response.ok)return;
-  ingest(await response.json());renderCharacters();search();ChronologyContents.render();refreshOpenCard();
+  ingest(await response.json());AbilityArchive.refresh();renderCharacters();search();ChronologyContents.render();refreshOpenCard();
   if(profileEntity)renderProfile();if(sceneId)renderScene();
   if(characterEventsEntity){if(entityMap.has(characterEventsEntity))renderCharacterEvents(true);else closeCharacterEvents();}
   render();
  }catch{}finally{refreshing=false;}
 }
 function ensureInterface(){
- const required=['canvas','timeline','storyClouds','periodLabel','emptyAction','searchSummary','characterEventPrevious','characterEventNext','characterEventPosition','cardParent','cardHeader','cardScroll'];
+ const required=['abilityArchiveDialog','abilitiesButton','abilityDetail','canvas','timeline','storyClouds','periodLabel','emptyAction','searchSummary','characterEventPrevious','characterEventNext','characterEventPosition','cardParent','cardHeader','cardScroll'];
  if(required.every(id=>$(id)))return true;
  if(window.location.href&&window.location.protocol!=='file:'&&window.location.replace){
   const url=new URL(window.location.href);
@@ -763,7 +763,7 @@ function ensureInterface(){
  throw new Error('Сторінка і скрипти мають різні версії. Онови репозиторій і перезавантаж сторінку через Ctrl + F5.');
 }
 async function init(){
- try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);ChronologyContents.init();$('status').hidden=true;
+ try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);AbilityArchive.init();ChronologyContents.init();$('status').hidden=true;
  const names={'alt-shippuden-469':'Альтернатива · обличчя Какаші','alt-movie-land-of-snow':'Альтернатива · Країна Снігу'};[...new Set(data.events.map(e=>e.continuity))].filter(c=>c!=='main').forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=names[c]||c;$('continuity').append(o);});
  for(const id of ['lines','contents','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();if(id==='contents')ChronologyContents.render();});document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>{closePanels();}));
  for(const id of ['linesPanel','contentsPanel','searchPanel','periodPanel'])$(id).addEventListener('toggle',e=>{
@@ -788,6 +788,7 @@ async function init(){
  document.addEventListener('keydown',e=>{
   document.documentElement.dataset.input='keyboard';
   if(e.key==='Escape'){
+   if(AbilityArchive.isOpen()){e.preventDefault();AbilityArchive.close();return;}
    uiTimers.cancel('node-open');hoveredNodeId=null;tooltipController?.hide();
    if(!$('sceneDialog').hidden){e.preventDefault();closeScene();return;}
    if(!$('characterEventsDialog').hidden){e.preventDefault();closeCharacterEvents();return;}
