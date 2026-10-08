@@ -39,7 +39,7 @@ const StoryLayers=(()=>{
   return null;
  }
  function select(events,state,arcKind=()=>null){
-  return events.filter(event=>{const layer=classify(event,arcKind(event));return layer===null||state[layer]===true;});
+  return events.filter(event=>{const layer=classify(event,arcKind(event));return layer===null?keys.every(key=>state[key]===true):state[layer]===true;});
  }
  return {keys,ALL,mask,normalize,compose,classify,select};
 })();

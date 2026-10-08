@@ -25,9 +25,9 @@ test('anime origin A is ambiguous until source comparison',()=>{
  assert.equal(layers.classify({origin:'A'}),null);
  assert.equal(layers.classify({origin:'M'}),'naruto');
  assert.equal(layers.classify({origin:'P'}),'project');
- assert.equal(layers.classify({origin:'F'}),'official');
- assert.equal(layers.classify({origin:'A',layer:'naruto'}),'naruto');
- assert.equal(layers.classify({origin:'A',layer:'official'}),'official');
+ assert.equal(layers.classify({origin:'F'}),'filler');
+ assert.equal(layers.classify({origin:'A',layer:'naruto'}),'canon');
+ assert.equal(layers.classify({origin:'A',layer:'official'}),'sources');
  assert.equal(layers.classify({origin:'M',layer:'team9'}),'project');
 });
 test('Naruto-only school scene excludes Kita prose without deleting Team 7',()=>{
@@ -44,4 +44,18 @@ test('the browser loads the layer parser before the main renderer',()=>{
  assert(html.indexOf('story-layers.js')>=0);assert(html.indexOf('story-layers.js')<html.indexOf('app.js?v='));
  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
  assert(app.includes('StoryLayers.compose'));
+});
+
+test('unchecked layers never leak unclassified moments into restricted views',()=>{
+ const unknown=[{id:'unknown',origin:'?'}];
+ assert.equal(layers.select(unknown,{canon:true,filler:true,sources:true,project:true}).length,1);
+ assert.equal(layers.select(unknown,{canon:true,filler:false,sources:false,project:false}).length,0);
+ assert.equal(layers.select(unknown,{canon:false,filler:false,sources:false,project:false}).length,0);
+});
+test('original manga and project overlays can be independently hidden',()=>{
+ const entries=[{id:'canon',origin:'M'},{id:'filler',origin:'F'},{id:'extra',origin:'O'},{id:'project',origin:'P'}];
+ const canonOnly=layers.select(entries,{canon:true,filler:false,sources:false,project:false});
+ assert.deepEqual(canonOnly.map(e=>e.id),['canon']);
+ const projectOnly=layers.select(entries,{canon:false,filler:false,sources:false,project:true});
+ assert.deepEqual(projectOnly.map(e=>e.id),['project']);
 });
