@@ -54,7 +54,7 @@ const ChronologyContents = (() => {
   function render(){
     const panel=document.getElementById('contentsPanel');
     if(!initialized||!panel||panel.hidden)return;
-    roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap,TimelineCore.momentPositions(orderedScenes(),chronologyRelations()));
+    roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap,worldChronology().moments);
     const q=document.getElementById('contentsQuery').value.trim().toLocaleLowerCase('uk');
     const filtered=roots.map(n=>filter(n,q)).filter(Boolean);
     visible=new Map();

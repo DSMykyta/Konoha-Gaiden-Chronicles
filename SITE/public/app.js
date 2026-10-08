@@ -47,25 +47,26 @@ function name(id){const e=entityMap.get(id);return e?.aliases?.find(a=>/[А-Яа
 function fullName(id){return TimelineCore.fullName(entityMap.get(id),profileMap?.get(id));}
 function selectable(){return TimelineCore.selectable(data.entities,events());}
 function color(id){return characterColors.get(id)||'#8797ac';}
-let cachedData=null,cachedContinuity=null,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
+let cachedData=null,cachedContinuity=null,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedWorld=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
 const layoutCache=new Map(),baseLayoutCache=new Map(),semanticNodeCache=new Map();
 let characterColors=new Map();
 function events(){
  if(cachedData!==data||cachedContinuity!==continuity){
   cachedData=data;cachedContinuity=continuity;
   cachedEvents=data.events.filter(e=>e.continuity===continuity&&e.scene_state!=='inactive');
-  cachedDated=cachedEvents.filter(e=>e.day!==null);cachedScenes=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();semanticNodeCache.clear();
+  cachedDated=cachedEvents.filter(e=>e.day!==null);cachedScenes=null;cachedWorld=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();semanticNodeCache.clear();
  }
  return cachedEvents;
 }
 function datedEvents(){events();return cachedDated;}
 function relevant(e){return e.tracks.some(id=>selected.has(id));}
-function sceneEvents(id){return TimelineCore.ordered(events().filter(e=>e.scene_id===id));}
+function sceneEvents(id){return [...chronologicalMoments().filter(e=>e.scene_id===id),...TimelineCore.ordered(events().filter(e=>e.day===null&&e.scene_id===id))];}
 function sceneCast(scene,group){return [...new Set([...(scene?.presence||[]).filter(p=>!p.mode||['physical','physical_hidden'].includes(p.mode)).map(p=>p.entity_id),...group.flatMap(e=>e.physical)])];}
 function actionCount(n){return `${n} ${n%100>=11&&n%100<=14?'дій':n%10===1?'дія':n%10>=2&&n%10<=4?'дії':'дій'}`;}
 function navigationEvents(){return events().filter(e=>(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))&&StoryTitleScale.allows(e));}
 function chronologyRelations(){events();return cachedRelations??= [...data.links,...data.scenes.flatMap(s=>s.relations||[])];}
-function orderedScenes(){events();return cachedScenes??= TimelineCore.scenes(events(),chronologyRelations(),data.scenes);}
+function worldChronology(){events();return cachedWorld??=TimelineCore.world(events(),chronologyRelations(),data.scenes);}
+function orderedScenes(){return worldChronology().scenes;}
 function semanticLevel(){
  if(zoom>=Math.sqrt(zoomModes.day*zoomModes.week))return 'moment';
  if(zoom>=Math.sqrt(zoomModes.week*zoomModes.month))return 'scene';
@@ -78,7 +79,7 @@ function semanticNodes(level,allScenes){
  const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
  const collapseScene=(s,episodeId=null)=>s.group.length===1?makeMoment(s,s.group[0],s.position,episodeId||sceneMap.get(s.id)?.episode_id||null):makeScene(s,episodeId||sceneMap.get(s.id)?.episode_id||null);
  if(level==='moment'){
-  const positions=TimelineCore.momentPositions(allScenes,chronologyRelations());
+  const positions=worldChronology().moments;
   return allScenes.flatMap(scene=>scene.group.map(event=>makeMoment(scene,event,positions.get(event.id))));
  }
  if(level==='scene')return allScenes.map(s=>collapseScene(s));
@@ -89,8 +90,8 @@ function semanticNodes(level,allScenes){
   episodeBuckets.get(episodeId).push(s);
  }
  const episodeAggregates=[...episodeBuckets].map(([id,scenes])=>{
-  const meta=episodeMap.get(id)||null,group=scenes.flatMap(s=>s.group),layoutCast=storyNodeCast(group),days=scenes.map(s=>s.position),sourceSceneIds=scenes.map(s=>s.id);
-  return {id:'episode:'+id,rawId:id,kind:'episode',title:meta?.title||sceneMap.get(scenes[0].id)?.title||id,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,calendarDay:scenes[0].day,cast:layoutCast.filter(x=>selected.has(x)),layoutCast,layoutGroup:meta?.arc_id||id,locationId:null,childCount:scenes.length,sourceSceneIds,sourceEpisodeIds:meta?[id]:[],scenes};
+  const meta=episodeMap.get(id)||null,group=scenes.flatMap(s=>s.group),layoutCast=storyNodeCast(group),days=scenes.flatMap(s=>[s.spanStart,s.spanEnd]).filter(Number.isFinite),sourceSceneIds=scenes.map(s=>s.id);
+  return {id:'episode:'+id,rawId:id,kind:'episode',title:meta?.title||sceneMap.get(scenes[0].id)?.title||id,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,spanStart:Math.min(...days),spanEnd:Math.max(...days),calendarDay:scenes[0].day,cast:layoutCast.filter(x=>selected.has(x)),layoutCast,layoutGroup:meta?.arc_id||id,locationId:null,childCount:scenes.length,sourceSceneIds,sourceEpisodeIds:meta?[id]:[],scenes};
  });
  if(level==='episode')return episodeAggregates.map(ep=>{
   if(ep.scenes.length!==1)return ep;
@@ -104,8 +105,8 @@ function semanticNodes(level,allScenes){
   arcBuckets.get(arcId).push(ep);
  }
  return [...arcBuckets].map(([id,episodes])=>{
-  const meta=arcMap.get(id)||null,group=episodes.flatMap(e=>e.group),layoutCast=storyNodeCast(group),days=episodes.map(e=>e.day);
-  return {id:'arc:'+id,rawId:id,kind:'arc',title:meta?.title||episodes[0].title,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,calendarDay:Math.floor(Math.min(...days)),cast:layoutCast.filter(x=>selected.has(x)),layoutCast,locationId:null,childCount:episodes.length,sourceSceneIds:[...new Set(episodes.flatMap(e=>e.sourceSceneIds))],sourceEpisodeIds:[...new Set(episodes.flatMap(e=>e.sourceEpisodeIds))]};
+  const meta=arcMap.get(id)||null,group=episodes.flatMap(e=>e.group),layoutCast=storyNodeCast(group),days=episodes.flatMap(e=>[e.spanStart,e.spanEnd]);
+  return {id:'arc:'+id,rawId:id,kind:'arc',title:meta?.title||episodes[0].title,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,spanStart:Math.min(...days),spanEnd:Math.max(...days),calendarDay:Math.floor(Math.min(...days)),cast:layoutCast.filter(x=>selected.has(x)),layoutCast,locationId:null,childCount:episodes.length,sourceSceneIds:[...new Set(episodes.flatMap(e=>e.sourceSceneIds))],sourceEpisodeIds:[...new Set(episodes.flatMap(e=>e.sourceEpisodeIds))]};
  });
 }
 function semanticOwner(nodes){
@@ -117,7 +118,7 @@ function semanticOwner(nodes){
  }
  return owner;
 }
-function chronologicalMoments(){const scenes=orderedScenes(),positions=TimelineCore.momentPositions(scenes,chronologyRelations());return scenes.flatMap(s=>s.group).filter(e=>e.day!==null).sort((a,b)=>(positions.get(a.id)??Infinity)-(positions.get(b.id)??Infinity));}
+function chronologicalMoments(){return worldChronology().orderedMoments;}
 function nav(){const allowed=new Set(navigationEvents().map(e=>e.id)),list=chronologicalMoments().filter(e=>allowed.has(e.id)),i=list.findIndex(e=>e.id===anchorEvent),currentDay=axisToDay(center),next=list.findIndex(e=>e.day>=Math.floor(currentDay));return {previous:i>=0?list[i-1]||null:next<0?list.at(-1)||null:list[next-1]||null,next:i>=0?list[i+1]||null:next<0?null:list[next],index:i,total:list.length};}
 function stepEvent(direction){const target=nav()[direction<0?'previous':'next'];if(target)navigateEvent(target.id);}
 function setFocus(id){StoryTitleScale.clear();const needsLine=!selected.has(id);focusedCharacter=focusedCharacter===id?null:id;if(focusedCharacter)selected.add(id);closeCard();closePanels();renderCharacters();if(needsLine&&focusedCharacter)render();else{SelectionFocus.update();updateFocusBar();}}
@@ -703,7 +704,7 @@ function mergedProfileVersion(versions,index){
 }
 function renderProfile(){
  const entity=entityMap.get(profileEntity);if(!entity){closeProfile();return;}const profile=profileMap.get(profileEntity),versions=profile?.versions?.length?profile.versions:[{id:'general',label:'Профіль'}];if(!versions.some(v=>v.id===profileVersion))profileVersion=versions[0].id;
- const versionIndex=versions.findIndex(v=>v.id===profileVersion),version=mergedProfileVersion(versions,versionIndex),associated=TimelineCore.ordered(events().filter(e=>e.tracks.includes(profileEntity))),dated=associated.filter(e=>e.day!==null),memberships=(data.memberships||[]).filter(m=>m.entity_id===profileEntity||m.person_id===profileEntity||m.member_id===profileEntity);
+ const versionIndex=versions.findIndex(v=>v.id===profileVersion),version=mergedProfileVersion(versions,versionIndex),associated=[...chronologicalMoments().filter(e=>e.tracks.includes(profileEntity)),...TimelineCore.ordered(events().filter(e=>e.day===null&&e.tracks.includes(profileEntity)))],dated=associated.filter(e=>e.day!==null),memberships=(data.memberships||[]).filter(m=>m.entity_id===profileEntity||m.person_id===profileEntity||m.member_id===profileEntity);
  $('profileTitle').textContent=fullName(profileEntity);$('profileTabs').hidden=versions.length<2;$('profileTabs').innerHTML=versions.map(v=>`<button id="tab-${esc(v.id)}" role="tab" aria-selected="${v.id===profileVersion}" aria-controls="profileContent" tabindex="${v.id===profileVersion?0:-1}" data-profile-version="${esc(v.id)}">${esc(v.label)}</button>`).join('');$('profileContent').setAttribute('aria-labelledby','tab-'+version.id);
  const paragraphs=text=>String(text||'').split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');
  const listSection=(title,items)=>items?.length?`<section class="profile-section"><h3>${esc(title)}</h3><ul class="profile-list">${items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul></section>`:'';
