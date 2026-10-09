@@ -8,8 +8,8 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const source = fs.readFileSync(path.join(here, '../public/search-enhanced.js'), 'utf8');
 
-function loadSearchApi() {
-  const context = { setTimeout, clearTimeout, console };
+function loadSearchApi(extras = {}) {
+  const context = { setTimeout, clearTimeout, console, ...extras };
   vm.createContext(context);
   vm.runInContext(`${source}\n;globalThis.SearchApi = TimelineSearchEnhanced;`, context, { filename: 'search-enhanced.js' });
   return context.SearchApi;
@@ -24,6 +24,34 @@ test('search understands numeric and Ukrainian calendar dates', () => {
   const search = loadSearchApi();
   assert.equal(search.parseDate('22.01').day, 21);
   assert.equal(search.parseDate('усі події 1 серпня').day, 212);
+  assert.equal(search.parseDate('22.01.62').day, 21);
+  assert.equal(search.parseDate('22.01.62').year, 62);
+  assert.equal(search.parseDate('1 серпня 62').year, 62);
+  assert.equal(search.parseIntent('події 22.01.62').query, '');
+});
+
+test('date searches distinguish chronology years, and yearless queries match every year', () => {
+  const data = {
+    revision: 'date-search-test',
+    calendar: { view_start_year: 61, view_end_year: 62, current_year: 61 },
+    events: [
+      { id: 'year-61', title: 'Січень 61', text: '', day: 21, continuity: 'main', origin: 'M', scene_id: 's61', involvement: [] },
+      { id: 'year-62', title: 'Січень 62', text: '', day: 386, continuity: 'main', origin: 'M', scene_id: 's62', involvement: [] },
+      { id: 'august-62', title: 'Серпень 62', text: '', day: 577, continuity: 'main', origin: 'M', scene_id: 'sa', involvement: [] }
+    ]
+  };
+  const search = loadSearchApi({
+    data, continuity: 'main',
+    storyLayers: { canon: true, filler: true, sources: true, project: true },
+    StoryLayers: { mask: () => '1111', compose: text => text },
+    document: { getElementById: () => null }
+  });
+  const ids = query => search.searchDocs(query).items.map(item => item.id).sort().join(',');
+  assert.equal(ids('22.01.61'), 'year-61');
+  assert.equal(ids('22.01.62'), 'year-62');
+  assert.equal(ids('22.01'), 'year-61,year-62');
+  assert.equal(ids('1 серпня 62'), 'august-62');
+  assert.equal(search.searchDocs('22.01.63').invalidDate, true);
 });
 
 test('search recognizes hierarchy intent from natural Ukrainian queries', () => {
