@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261008-search-debounce';
+const UI_VERSION='20261009-lines-cleanup';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -12,7 +12,7 @@ const zoomModes={year:1,month:12,week:365/7,day:365};
 function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 let storyLayers={...StoryLayers.ALL},layerRevision=0;
-let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,sceneId=null,sceneReturnFocus=null,zoom=12,center=21.5,continuity='main',focusId=null,anchorEvent=null,graphNodes=[],raf=null,paintedCenter=21.5,wheelPreview=false,searchLimit=30;
+let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,zoom=12,center=21.5,focusId=null,anchorEvent=null,graphNodes=[],raf=null,paintedCenter=21.5,wheelPreview=false,searchLimit=30;
 function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,(data?.calendar.view_days||365)-1);const year=(data?.calendar.view_start_year??data?.calendar.current_year??61)+Math.floor(day/365);day%=365;const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m,year};}
 function dateText(day,long=false){const a=date(day);return a?(long?`${a.d} ${gen[a.m]}${data.calendar.view_days>365?' '+a.year:''}`:`${String(a.d).padStart(2,'0')}.${String(a.m+1).padStart(2,'0')}${data.calendar.view_days>365?'.'+a.year:''}`):'Без установленої дати';}
 function yearText(day=null){return `Рік ${day===null?data.calendar.current_year:date(day).year} Конохи`;}
@@ -48,13 +48,13 @@ function name(id){const e=entityMap.get(id);return e?.aliases?.find(a=>/[А-Яа
 function fullName(id){return TimelineCore.fullName(entityMap.get(id),profileMap?.get(id));}
 function selectable(){return TimelineCore.selectable(data.entities,events());}
 function color(id){return characterColors.get(id)||'#8797ac';}
-let cachedData=null,cachedContinuity=null,cachedLayerRevision=-1,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedWorld=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
+let cachedData=null,cachedLayerRevision=-1,cachedEvents=[],cachedDated=[],cachedScenes=null,cachedWorld=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
 const layoutCache=new Map(),baseLayoutCache=new Map(),semanticNodeCache=new Map();
 let characterColors=new Map();
 function events(){
- if(cachedData!==data||cachedContinuity!==continuity||cachedLayerRevision!==layerRevision){
-  cachedData=data;cachedContinuity=continuity;cachedLayerRevision=layerRevision;
-  cachedEvents=StoryLayers.select(data.events.filter(e=>e.continuity===continuity&&e.scene_state!=='inactive'),storyLayers,e=>arcMap.get(e.arc_id)?.kind);
+ if(cachedData!==data||cachedLayerRevision!==layerRevision){
+  cachedData=data;cachedLayerRevision=layerRevision;
+  cachedEvents=StoryLayers.select(data.events.filter(e=>e.scene_state!=='inactive'),storyLayers,e=>arcMap.get(e.arc_id)?.kind);
   cachedDated=cachedEvents.filter(e=>e.day!==null);cachedScenes=null;cachedWorld=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();semanticNodeCache.clear();
  }
  return cachedEvents;
@@ -63,7 +63,6 @@ function datedEvents(){events();return cachedDated;}
 function relevant(e){return e.tracks.some(id=>selected.has(id));}
 function sceneEvents(id){return [...chronologicalMoments().filter(e=>e.scene_id===id),...TimelineCore.ordered(events().filter(e=>e.day===null&&e.scene_id===id))];}
 function sceneCast(scene,group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
-function actionCount(n){return `${n} ${n%100>=11&&n%100<=14?'дій':n%10===1?'дія':n%10>=2&&n%10<=4?'дії':'дій'}`;}
 function navigationEvents(){return events().filter(e=>(focusedCharacter?e.tracks.includes(focusedCharacter):relevant(e))&&StoryTitleScale.allows(e));}
 function chronologyRelations(){
  events();if(cachedRelations)return cachedRelations;
@@ -194,7 +193,7 @@ function schedule(){
 }
 let hoverCard=false,pinnedNodeId=null,cardReturnFocus=null,graphClouds=[],graphLabels=[],cloudRenderer=null;
 const cloudLabelLayouts=new Map();
-function readingActive(){return !!pinnedNodeId&&!$('eventCard').hidden||['sceneDialog','profileDialog','characterEventsDialog'].some(id=>!$(id).hidden);}
+function readingActive(){return !!pinnedNodeId&&!$('eventCard').hidden||['profileDialog','characterEventsDialog'].some(id=>!$(id).hidden);}
 function syncReadingState(){cloudRenderer?.setPaused(readingActive());}
 function cancelHoverClose(){uiTimers.cancel('card-close');}
 function deferHoverClose(){if(hoverCard&&!pinnedNodeId)uiTimers.defer('card-close',TimelineInteractions.CLOSE_DELAY,()=>{if(hoverCard&&!pinnedNodeId)closeCard();});}
@@ -584,15 +583,6 @@ function eventGallery(e){
  const photos=(data.media||[]).filter(m=>m.event_id===e.id&&m.status==='published').sort((a,b)=>(a.order||0)-(b.order||0));
  return photos.length?`<div class="event-gallery">${photos.map(m=>`<figure><img src="${esc(m.src)}" alt="${esc(m.alt)}" loading="lazy" decoding="async" width="${Number(m.width)||640}" height="${Number(m.height)||360}"><figcaption>${esc(m.caption||m.alt)}<small>${esc(m.locator)}${m.coverage==='canonical_part'?' · Канонічна частина події':''}</small></figcaption></figure>`).join('')}</div>`:'';
 }
-function readScene(id,trigger){if(!sceneMap.has(id))return;pinOpenCard();uiTimers.cancel('node-open');HierarchyPreview.dismissTransient();tooltipController?.hide();cancelHoverClose();sceneId=id;sceneReturnFocus=trigger;renderScene();const dialog=$('sceneDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}syncReadingState();$('closeScene').focus();}
-function closeScene(){const dialog=$('sceneDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;sceneId=null;syncReadingState();sceneReturnFocus?.focus();sceneReturnFocus=null;}
-function renderScene(){
- const scene=sceneMap.get(sceneId);if(!scene){closeScene();return;}const group=sceneEvents(sceneId),cast=sceneCast(scene,group);
- $('sceneTitle').textContent=scene.title;$('sceneMeta').textContent=`${dateText(scene.day,true)} · ${name(scene.location_id)} · ${actionCount(group.length)}`;
- $('sceneContent').innerHTML=`${narrativeHtml(scene)}${cast.length?`<div class="people scene-cast">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-scene-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(fullName(id))}" title="Зосередитися на лінії">${esc(fullName(id))}</button>`).join('')}</div>`:''}<ol class="scene-story">${group.map(e=>`<li data-scene-action="${esc(e.id)}">${eventGallery(e)}<h3><button data-scene-event="${esc(e.id)}">${esc(e.title)} <span aria-hidden="true">↗</span></button></h3><p>${esc(StoryLayers.compose(e.text,storyLayers))}</p></li>`).join('')}</ol>`;
- $('sceneContent').querySelectorAll('[data-scene-event]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneEvent;closeScene();navigateEvent(id);}));
- $('sceneContent').querySelectorAll('[data-scene-focus-character]').forEach(b=>b.addEventListener('click',()=>{const id=b.dataset.sceneFocusCharacter;closeScene();if(focusedCharacter!==id)setFocus(id);}));
-}
 function storyCardBody(point){
  const children=point.kind==='arc'
   ?(point.sourceEpisodeIds||[]).map(id=>{const episode=episodeMap.get(id);return episode?{id,title:episode.title}:null;}).filter(Boolean)
@@ -626,7 +616,7 @@ function prepareNavigation(e){
  if(!e||!events().some(visible=>visible.id===e.id))return false;rememberCardFocus();uiTimers.cancel('node-open');hoveredNodeId=null;cancelHoverClose();HierarchyPreview.clear();hoverCard=false;
  if(!StoryTitleScale.allows(e))StoryTitleScale.clear();
  if(focusedCharacter&&!e.tracks.includes(focusedCharacter))focusedCharacter=null;
- continuity=e.continuity;$('continuity').value=continuity;if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();return true;
+ if(!relevant(e))e.tracks.forEach(id=>selected.add(id));renderCharacters();closePanels();return true;
 }
 function navigateEvent(id){
  const e=events().find(e=>e.id===id);if(!prepareNavigation(e))return;
@@ -764,7 +754,7 @@ async function refreshData(){
   const version=await v.json();if(version.revision===data.revision)return;
   const response=await fetch(`data.json?v=${encodeURIComponent(version.revision)}`,{cache:'no-store'});if(!response.ok)return;
   ingest(await response.json());AbilityArchive.refresh();renderCharacters();search();ChronologyContents.render();refreshOpenCard();
-  if(profileEntity)renderProfile();if(sceneId)renderScene();
+  if(profileEntity)renderProfile();
   if(characterEventsEntity){if(entityMap.has(characterEventsEntity))renderCharacterEvents(true);else closeCharacterEvents();}
   render();
  }catch{}finally{refreshing=false;}
@@ -780,7 +770,6 @@ function ensureInterface(){
 }
 async function init(){
  try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);AbilityArchive.init();ChronologyContents.init();$('status').hidden=true;
- const names={'alt-shippuden-469':'Альтернатива · обличчя Какаші','alt-movie-land-of-snow':'Альтернатива · Країна Снігу'};[...new Set(data.events.map(e=>e.continuity))].filter(c=>c!=='main').forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=names[c]||c;$('continuity').append(o);});
  for(const id of ['lines','contents','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();if(id==='contents')ChronologyContents.render();});
  $('layersButton').addEventListener('click',()=>togglePanel('periodPanel'));
  const setLayer=(key,active)=>{
@@ -792,7 +781,6 @@ async function init(){
   center=clampAxisCenter(dayToAxis(date));
   focusedCharacter=null;closeCard();renderCharacters();render();
   search();ChronologyContents.render();
-  if(sceneId){if(sceneEvents(sceneId).length)renderScene();else closeScene();}
   if(profileEntity)renderProfile();
   if(characterEventsEntity)renderCharacterEvents(true);
  };
@@ -810,7 +798,6 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  });
  $('characterSearch').addEventListener('input',renderCharacters);$('selectAll').addEventListener('click',()=>{selected=new Set(selectable().map(e=>e.id));selectionChanged();});$('deselectAll').addEventListener('click',()=>{selected.clear();selectionChanged();});document.querySelectorAll('[data-team]').forEach(b=>b.addEventListener('click',()=>{selected=new Set(teams[b.dataset.team]);focusedCharacter=null;selectionChanged();}));
  $('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
- $('continuity').addEventListener('change',()=>{const calendarCenter=axisToDay(center);continuity=$('continuity').value;center=clampAxisCenter(dayToAxis(calendarCenter));focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();ChronologyContents.render();});
  $('closeCharacterEvents').addEventListener('click',closeCharacterEvents);
  $('characterEventsDialog').addEventListener('cancel',e=>{e.preventDefault();closeCharacterEvents();});
  $('characterEventPrevious').addEventListener('click',()=>moveCharacterReader(-1));
@@ -839,7 +826,6 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   if(e.key==='Escape'){
    if(AbilityArchive.isOpen()){e.preventDefault();AbilityArchive.close();return;}
    uiTimers.cancel('node-open');hoveredNodeId=null;tooltipController?.hide();
-   if(!$('sceneDialog').hidden){e.preventDefault();closeScene();return;}
    if(!$('characterEventsDialog').hidden){e.preventDefault();closeCharacterEvents();return;}
    if(!$('profileDialog').hidden){e.preventDefault();closeProfile();return;}
    if(HierarchyPreview.escape()){e.preventDefault();return;}
@@ -853,8 +839,8 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  });
  document.addEventListener('pointerdown',e=>{
   document.documentElement.dataset.input='pointer';uiTimers.cancel('node-open');hoveredNodeId=null;
-  if(!e.target.closest('.panel,.tools,.period,.story-layers-open,.scene-dialog'))closePanels();
-  if(!e.target.closest('.event-card,.event-preview,.node,.node-hit,.cloud-label,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.scene-dialog,.time-controls,.panel,.tools,.period,.story-layers-open'))closeCard();
+  if(!e.target.closest('.panel,.tools,.period,.story-layers-open'))closePanels();
+  if(!e.target.closest('.event-card,.event-preview,.node,.node-hit,.cloud-label,.thread-hit,.line-label,.focus-bar,.profile-dialog,.character-events-dialog,.time-controls,.panel,.tools,.period,.story-layers-open'))closeCard();
  });
  tooltipController=TimelineInteractions.tooltips(document,uiTimers);SelectionFocus.bind();
  $('eventCard').addEventListener('click',e=>{
@@ -952,7 +938,6 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  $('eventCard').addEventListener('pointerenter',HierarchyPreview.keep);$('eventCard').addEventListener('pointerleave',e=>HierarchyPreview.leave(e,0));
  const dismissTransient=()=>{uiTimers.cancel('node-open');hoveredNodeId=null;tooltipController?.hide();HierarchyPreview.dismissTransient();StoryTitleScale.dismissTransient();if(hoverCard)closeCard();};
  window.addEventListener('blur',dismissTransient);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')dismissTransient();});
- $('closeScene').addEventListener('click',closeScene);$('sceneDialog').addEventListener('cancel',e=>{e.preventDefault();closeScene();});
  $('closeProfile').addEventListener('click',closeProfile);$('profileDialog').addEventListener('cancel',e=>{e.preventDefault();closeProfile();});$('profileDialog').addEventListener('click',e=>{if(e.target===$('profileDialog')){const b=$('profileDialog').getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeProfile();}});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState!=='hidden')refreshData();});window.addEventListener('focus',refreshData);setInterval(refreshData,60000);
  renderCharacters();render();const params=new URLSearchParams(window.location.search);if(entityMap.has(params.get('character')))setFocus(params.get('character'));if(eventMap.has(params.get('event')))navigateEvent(params.get('event'));

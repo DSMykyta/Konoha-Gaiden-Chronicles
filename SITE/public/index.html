@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f5f6f8">
   <meta name="description" content="Хронологія Конохи: стеж за персонажами, досліджуй події та читай сцени Naruto.">
   <title>Коноха · Хронологія</title>
-  <link rel="stylesheet" href="style.css?v=20261008-four-layer-v1">
+  <link rel="stylesheet" href="style.css?v=20261009-lines-cleanup">
   <link rel="stylesheet" href="profile-dossier.css?v=20261002-dossier-actions-2">
   <link rel="stylesheet" href="abilities-archive.css?v=20261008-tickets">
   <link rel="stylesheet" href="controls.css?v=20261003-konoha-calendar">
@@ -27,7 +27,7 @@
   <script defer src="abilities-archive.js?v=20261008-tickets"></script>
   <script defer src="era-heading.js?v=20261003-era-heading"></script>
   <script defer src="story-layers.js?v=20261008-four-layer-v1"></script>
-  <script defer src="app.js?v=20261008-search-debounce"></script>
+  <script defer src="app.js?v=20261009-lines-cleanup"></script>
   <script defer src="search-enhanced.js?v=20261008-search-debounce"></script>
 </head>
 <body>
@@ -47,7 +47,7 @@
       <button id="searchButton" aria-label="Знайти у хронології" aria-expanded="false" aria-controls="searchPanel" aria-keyshortcuts="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Пошук</span><kbd aria-hidden="true">/</kbd></button>
     </nav>
     <button id="layersButton" type="button" class="story-layers-open" aria-label="Увімкнути або вимкнути шари" aria-controls="periodPanel"><span>Шари · 4/4</span></button>
-    <button class="period" id="periodButton" aria-label="Обрати період та історичну лінію" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Хронологія Конохи</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
+    <button class="period" id="periodButton" aria-label="Обрати період та шари історії" aria-expanded="false" aria-controls="periodPanel"><span id="periodLabel">Хронологія Конохи</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></button>
     </div>
   </header>
 
@@ -124,8 +124,6 @@
       <label><input type="checkbox" value="sources" checked><span><strong>Додаткові джерела</strong><small>Фільми, OVA, новели й інші твори</small></span></label>
       <label><input type="checkbox" value="project" checked><span><strong>Розширення</strong><small>Авторські історії незалежно від джерела</small></span></label>
     </fieldset>
-    <label class="select-label" for="continuity">Історична лінія</label>
-    <select id="continuity"><option value="main">Основна історія</option></select>
     <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо або жест двома пальцями змінює масштаб. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
     <div class="source-footer"><a id="sourceLink" target="_blank" rel="noopener">Дані в репозиторії <span aria-hidden="true">↗</span></a><small id="revision"></small></div>
   </section>
@@ -160,10 +158,6 @@
   <dialog id="characterEventsDialog" class="character-events-dialog" aria-labelledby="characterEventsTitle" hidden>
     <header class="character-events-heading"><div><small>Події персонажа</small><h2 id="characterEventsTitle"></h2><p id="characterEventsMeta"></p></div><nav class="reader-navigation" aria-label="Перегляд подій"><button id="characterEventPrevious" aria-label="Попередня картка">‹</button><output id="characterEventPosition">1 / 1</output><button id="characterEventNext" aria-label="Наступна картка">›</button></nav><button id="closeCharacterEvents" class="close" aria-label="Закрити перегляд подій">×</button></header>
     <div id="characterEventsTrack" class="character-events-track"></div>
-  </dialog>
-  <dialog id="sceneDialog" class="scene-dialog" aria-labelledby="sceneTitle" hidden>
-    <header class="scene-heading"><div><small>Сцена цілком</small><h2 id="sceneTitle"></h2><p id="sceneMeta"></p></div><button id="closeScene" class="close" aria-label="Закрити сцену">×</button></header>
-    <div id="sceneContent"></div>
   </dialog>
   <div id="status" class="status" role="status"><div class="loading-lines" aria-hidden="true"><i></i><i></i><i></i></div>Завантаження хронології…</div>
   <div id="error" class="error" role="alert" hidden></div>

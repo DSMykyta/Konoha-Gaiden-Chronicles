@@ -93,6 +93,14 @@ async function check(width,height){
  assert.equal(canvas.querySelectorAll('.thread-focus-continuous.is-line-focus-main').length,1);assert.deepEqual(soraRuns.map(path=>path.getAttribute('d')),soraD);
  const calendarGap=canvas.querySelector('.time-break');if(calendarGap)assert(calendarGap.compareDocumentPosition(soraContinuous)&4,'The calendar hatch covered the focused line');
  run('setFocus("c-sora")');assert.deepEqual(soraRuns.map(path=>path.getAttribute('d')),soraD);
+ // Two lines can remain selected with one active focus.
+ run('selected=new Set(["c-naruto","c-sasuke"]);focusedCharacter=null;selectionChanged()');
+ assert.equal(run('selected.size'),2);assert(canvas.querySelector('.thread[data-character="c-naruto"]'));assert(canvas.querySelector('.thread[data-character="c-sasuke"]'));
+ run('setFocus("c-naruto")');assert.equal(run('focusedCharacter'),'c-naruto');assert.equal(run('selected.size'),2);
+ run('setFocus("c-sasuke")');assert.equal(run('focusedCharacter'),'c-sasuke');assert.equal(run('selected.size'),2);
+ assert.equal(canvas.querySelectorAll('.thread-focus-continuous.is-line-focus-main').length,1);
+ run('setFocus("c-sasuke")');assert.equal(run('focusedCharacter'),null);assert.equal(run('selected.size'),2);
+ run('selected=new Set(selectable().map(e=>e.id));selectionChanged()');
  // First/last event buttons are disabled, and card movement respects selection.
  click('[data-team="team-8"]');await sleep();assert.equal(run('selected.size'),4);run("navigateEvent(chronologicalMoments().filter(relevant)[0].id)");assert(doc.querySelector('[data-step-event="-1"]').disabled);click('[data-step-event="1"]');await sleep();assert(run('relevant(eventMap.get(anchorEvent))'));
 
@@ -124,10 +132,13 @@ async function check(width,height){
  click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
  // Hovering another node cannot replace a clicked/pinned card.
  if(width>=600){const other=canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
- assert.equal(doc.querySelectorAll('.scene-context,.card-open-scene').length,0);run("readScene('sc-y0-0122-academy-announcements',$('cardContent'))");assert(!doc.getElementById('sceneDialog').hidden);assert.equal(doc.querySelectorAll('[data-scene-action]').length,classroomCount);assert(!doc.getElementById('sceneContent').textContent.includes('Асума, Куренай і Райдо чекають'));
- click('[data-scene-event="ev-y0-0122-team7-announced"]');await sleep();assert(doc.getElementById('sceneDialog').hidden);assert.equal(run('focusId'),'ev-y0-0122-team7-announced');assert.equal(run('pinnedNodeId'),'ev-y0-0122-team7-announced');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
+ assert.equal(doc.querySelectorAll('.scene-context,.card-open-scene').length,0);
+ assert.equal(doc.getElementById('sceneDialog'),null);assert.equal(doc.getElementById('continuity'),null);
+ assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);
+ run("navigateEvent('ev-y0-0122-team7-announced')");await sleep();
+ assert.equal(run('focusId'),'ev-y0-0122-team7-announced');assert.equal(run('pinnedNodeId'),'ev-y0-0122-team7-announced');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#cardContent h2').textContent.includes('Команду 7'));
  assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Попередній момент');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Наступний момент');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
- click('[data-parent-kind="scene"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');run("readScene('sc-y0-0122-academy-announcements',$('cardContent'))");click('#closeScene');assert(doc.getElementById('sceneDialog').hidden);
+ click('[data-parent-kind="scene"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);
 
  // At month scale the classroom assignment sequence is one episode; the one-scene/one-moment jōnin episode still collapses to its moment.
  run('closeCard();zoom=zoomModes.month;center=dayToAxis(21.5);render()');assert.equal(run('semanticLevel()'),'episode');
