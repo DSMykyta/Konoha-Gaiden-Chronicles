@@ -39,6 +39,10 @@ Hierarchy is **moment → scene → episode → arc**. The source stores only ch
 
 An episode follows one narrative line. Independent parallel actions are separate episodes even on the same day. A change of setting creates a scene; one coherent goal may span several scenes. Author arcs coexist with canonical arcs in `main`; source continuities remain separate. Calendar-shooting stories belong to the timeskip era, which must be configured before their dates can be published.
 
+## Шари SITE: авторство, а не формат джерела
+
+**«Розширення»** (`project`) — власні авторські історії творця Konoha Gaiden, зокрема сюжети, які він сам відіграв у іграх. Неважливо, звідки взято натхнення або в якому форматі історію створено: вирішальним є авторство самого сюжету. **«Додаткові джерела»** (`sources`) — сюжети сторонніх/офіційних ігор Naruto, новел, фільмів, OVA та інших додаткових творів, коли вони використовуються як джерело, а не є новою авторською історією. **«Канон»** (`canon`) і **«Філери»** (`filler`) — відповідно основний канон і додаткові історії аніме. Усі чотири шари ввімкнені за замовчуванням і показуються разом у спільній хронології; окремий вихідний `continuity_id` зберігається як ознака походження, а сайт відображає події через спільний `main`. Для окремих подій явне поле `layer` визначає їхній шар; за його відсутності використовується походження (`origin`) та тип арки (`kind`).
+
 Validation: `python validate_timeline.py` from `CHRONOLOGY/`. Site validation: `npm --prefix SITE test` from repository root. Validators check references and continuity; editorial review is still needed to decide whether a narrative line is coherent.
 
 `mission-windows.yaml` — чинні робочі резерви дороги, участі й відновлення після відходу Саске; збірка перевіряє їх проти фізичної присутності в усіх активних датованих сценах. Підстави — `../POST_SASUKE_SCHEDULE_UA.md`.
