@@ -21,13 +21,13 @@ The HTML versions its scripts and stylesheet together. If an older cached HTML p
 
 ## Vercel
 
-Connect `DSMykyta/Konoha-Gaiden-Chronicles`, branch `main`. Set Root Directory to `SITE`. Framework Other; the checked-in `vercel.json` specifies `npm ci`, `npm run build`, and output `public`.
+Connect `DSMykyta/Konoha-Gaiden-Chronicles`, branch `main`. Set Root Directory to `SITE`. Framework Other; the checked-in `vercel.json` specifies `npm ci`, `npm run check && npm test` (which runs the build), and output `public`.
 
 The build reads the current authoritative YAML under `KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data`. If the root-directory checkout lacks parent data, the build retrieves it from the same public repository with sparse Git. No secrets are needed. The build command deliberately runs for changes to chronology, not only UI changes. Each output records the exact source commit.
 
 For local builds, use Node 22+, `npm ci`, then `CHRONOLOGY_SOURCE_ROOT=/absolute/path/to/source npm run build`. The source files are never edited by the build.
 
-`public/data.json` is generated at deployment. It is a snapshot of that source revision, not a live editor or an automatic scheduled refresh. The connected Vercel project publishes `main` automatically. `vercel.json` keeps other branches disabled with a wildcard rule and enables only `main`, so approved chronology fixes reach the production site.
+`public/data.json` is generated only when a deployment runs. It is a snapshot of the source revision used for that build, not a live editor or an automatic scheduled refresh. Automatic Git-triggered deployments are disabled via `git.deploymentEnabled: false` in `vercel.json` to avoid exhausting the free Vercel plan's deployment allowance. Pushing commits to `main` (including chronology or UI changes) does **not** automatically update the published site. When an update is needed, start a deployment manually and verify that it uses the intended commit.
 
 ## Аудит канонічних суперечностей Naruto
 
