@@ -8,7 +8,7 @@ Accepted event-to-scene `observes` links align distinct same-day scene nodes in 
 
 ## Story layers / Шари історії
 
-All four layers are enabled by default: **Канон** (`canon`), **Філери** (`filler`), **Додаткові джерела** (`sources`), and **Розширення** (`project`). **Розширення** means the author's own original Konoha Gaiden stories, including original stories played out in games, **regardless of their source material or format**. Authorship determines this category, not whether a story originated from a game, book, anime, or another inspiration. Original/licensed Naruto game stories, novels, movies, and OVAs used as external material belong to **Додаткові джерела**, not **Розширення**, unless an individual story is the author's own creation. The enabled layers appear together on a single chronology; provenance and source-continuity metadata remain intact.
+All four layers are enabled by default: **Канон** (`canon`), **Філери** (`filler`), **Додаткові джерела** (`sources`), and **Розширення** (`project`). **Розширення** means the author's own stories regardless of their origin or format. All enabled layers are displayed together on a shared timeline; the original source and continuity metadata are preserved.
 
 ## Local launch
 
