@@ -29,6 +29,10 @@ For local builds, use Node 22+, `npm ci`, then `CHRONOLOGY_SOURCE_ROOT=/absolute
 
 `public/data.json` is generated at deployment. It is a snapshot of that source revision, not a live editor or an automatic scheduled refresh. The connected Vercel project publishes `main` automatically. `vercel.json` keeps other branches disabled with a wildcard rule and enables only `main`, so approved chronology fixes reach the production site.
 
+## Аудит канонічних суперечностей Naruto
+
+[Реєстр суперечностей Naruto й адресний аудит опублікованих записів SITE](docs/NARUTO_CANON_INCONSISTENCIES_UA.md) — 73 питання з міжнародних обговорень і перевірка їхньої застосовності до поточної хронології. У документі окремо зазначено підтверджені технічні ризики (шари, похідні дати, вікові профілі), питання для звіряння за манґою/аніме та майбутні реткони `Shippuden`. **Реєстр не є автоматичним підтвердженням усіх фанатських тверджень і не дозволяє змінювати рольові події без окремого канонічного доказу.**
+
 ## Картотека здібностей
 
 Кнопка **Здібності** у верхній панелі відкриває доступ до всіх записів реєстру `CHRONOLOGY/data/abilities.yaml`. Ліворуч розташовано індекс із пошуком за назвою, описом та ID і фільтром за типом. Праворуч — повна картка у стилі архівного талона: моноширинний друк, реєстраційний номер, лінії формуляра й перфорований корінець. Є кнопки наступного/попереднього запису, навігація клавіатурою та мобільний режим.
