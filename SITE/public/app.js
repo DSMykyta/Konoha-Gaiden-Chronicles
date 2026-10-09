@@ -816,7 +816,22 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  $('characterEventPrevious').addEventListener('click',()=>moveCharacterReader(-1));
  $('characterEventNext').addEventListener('click',()=>moveCharacterReader(1));
  $('characterEventsTrack').addEventListener('scroll',updateCharacterReader,{passive:true});
- $('dateForm').addEventListener('submit',e=>{e.preventDefault();const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})$/);if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]){$('dateError').textContent='Введи дійсну дату у форматі 22.01.';$('dateError').hidden=false;$('dateInput').setAttribute('aria-invalid','true');return;}$('dateError').hidden=true;$('dateInput').removeAttribute('aria-invalid');const yearOffset=Math.floor(axisToDay(center)/365)*365;zoom=365;center=clampAxisCenter(dayToAxis(yearOffset+starts[+m[2]-1]+(+m[1]-1)+.5));closePanels();closeCard();schedule();});
+ $('dateForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const m=$('dateInput').value.trim().match(/^(\d{1,2})[./](\d{1,2})(?:[./](\d{1,4}))?$/);
+  const firstYear=data.calendar.view_start_year??data.calendar.current_year;
+  const lastYear=data.calendar.view_end_year??firstYear;
+  const requestedYear=m?.[3]?Number(m[3]):firstYear+Math.floor(axisToDay(center)/365);
+  if(!m||+m[2]<1||+m[2]>12||+m[1]<1||+m[1]>lengths[+m[2]-1]||requestedYear<firstYear||requestedYear>lastYear){
+   $('dateError').textContent='Введи дійсну дату 22.01 або 22.01.62. Доступні роки: '+firstYear+'–'+lastYear+'.';
+   $('dateError').hidden=false;$('dateInput').setAttribute('aria-invalid','true');return;
+  }
+  $('dateError').hidden=true;$('dateInput').removeAttribute('aria-invalid');
+  const yearOffset=(requestedYear-firstYear)*365;
+  zoom=365;
+  center=clampAxisCenter(dayToAxis(yearOffset+starts[+m[2]-1]+(+m[1]-1)+.5));
+  closePanels();closeCard();schedule();
+ });
  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>setZoom(zoomModes[b.dataset.mode])));$('zoomIn').addEventListener('click',()=>setZoom(zoom*2));$('zoomOut').addEventListener('click',()=>setZoom(zoom/2));$('fit').addEventListener('click',()=>setZoom(zoomModes.year));
  for(const [id,s] of [['previous',-1],['next',1]])$(id).addEventListener('click',()=>{closeCard();const mode=currentZoomMode(),preset=zoomModes[mode],isPreset=Math.abs(Math.log(zoom/preset))<.03,step=isPreset?365/preset:axisLength()/zoom*.7;center=clampAxisCenter(isPreset?dayToAxis(axisToDay(center)+s*step):center+s*step);schedule();});
  document.addEventListener('keydown',e=>{
