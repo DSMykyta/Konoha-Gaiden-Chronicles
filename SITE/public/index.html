@@ -100,7 +100,7 @@
         <summary>Фільтри</summary>
         <div class="search-filter-grid">
           <label class="search-filter-control"><span>Персонаж</span><select id="searchPerson"><option value="">Усі персонажі</option></select></label>
-          <label class="search-filter-control"><span>Дата</span><input id="searchDate" placeholder="22.01 або 1 серпня" inputmode="text" autocomplete="off"></label>
+          <label class="search-filter-control"><span>Дата</span><input id="searchDate" placeholder="22.01.62 або 1 серпня 62" inputmode="text" autocomplete="off"></label>
           <label class="search-filter-control"><span>Арка</span><select id="searchArc"><option value="">Усі арки</option></select></label>
           <label class="search-filter-control"><span>Джерело</span><select id="searchSource"><option value="">Усі джерела</option></select></label>
         </div>
@@ -114,7 +114,7 @@
 
   <section id="periodPanel" class="panel right-panel" popover="auto" aria-labelledby="periodTitle" hidden>
     <div class="panel-heading"><h2 id="periodTitle">Період та історія</h2><button class="close" data-close="periodPanel" aria-label="Закрити період">×</button></div>
-    <form id="dateForm"><label id="dateInputLabel" for="dateInput">Перейти до дня</label><div class="date-field"><input id="dateInput" placeholder="22.01" inputmode="decimal" autocomplete="off" aria-describedby="dateError" autofocus><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form>
+    <form id="dateForm"><label id="dateInputLabel" for="dateInput">Перейти до дня</label><div class="date-field"><input id="dateInput" placeholder="22.01 або 22.01.62" inputmode="decimal" autocomplete="off" aria-describedby="dateError" autofocus><button type="submit">Перейти</button></div><p id="dateError" role="alert" hidden></p></form>
     <details class="disclosure"><summary>Епохи світу</summary><p>Роки відраховано від заснування Конохи: рік заснування — перший. Межі з ≈ є приблизною реконструкцією.</p><ol id="eraList" class="era-list"></ol></details>
     <fieldset id="storyLayers" class="story-layers-fieldset" aria-label="Шари хронології">
       <legend>Шари історії</legend>
