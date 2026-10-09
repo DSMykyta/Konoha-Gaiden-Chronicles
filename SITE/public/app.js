@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261009-lines-cleanup';
+const UI_VERSION='20261009-focus-perf';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -779,7 +779,9 @@ async function init(){
   $('layersButton').querySelector('span').textContent='Шари · '+Object.values(storyLayers).filter(Boolean).length+'/4';
   events();
   center=clampAxisCenter(dayToAxis(date));
-  focusedCharacter=null;closeCard();renderCharacters();render();
+  // Preserve the focused line while it still has events in enabled layers.
+  if(focusedCharacter&&(!selected.has(focusedCharacter)||!datedEvents().some(e=>e.tracks.includes(focusedCharacter))))focusedCharacter=null;
+  closeCard();renderCharacters();render();
   search();ChronologyContents.render();
   if(profileEntity)renderProfile();
   if(characterEventsEntity)renderCharacterEvents(true);

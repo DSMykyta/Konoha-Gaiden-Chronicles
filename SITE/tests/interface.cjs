@@ -5,7 +5,7 @@ async function check(width,height){
  const {window}=parseHTML(fs.readFileSync(project+'index.html','utf8')),doc=window.document,canvas=doc.getElementById('timeline'),outer=doc.getElementById('canvas');
  const nativeMatches=window.Element.prototype.matches;
  window.Element.prototype.matches=function(selector){return selector===':hover'?this.dataset.testHovered==='true':nativeMatches.call(this,selector);};
- Object.defineProperty(window.HTMLSelectElement.prototype,'value',{get(){return this.getAttribute('data-test-value')||this.querySelector('option')?.value||'';},set(value){this.setAttribute('data-test-value',value);},configurable:true});window.innerWidth=width;window.innerHeight=height;Object.defineProperty(doc.getElementById('continuity'),'value',{value:'main',writable:true});Object.defineProperties(canvas,{clientWidth:{value:width},clientHeight:{value:height}});Object.defineProperties(outer,{clientWidth:{value:width},clientHeight:{value:height}});outer.scrollTop=0;window.location={search:''};window.matchMedia=()=>({matches:width>=600});
+ Object.defineProperty(window.HTMLSelectElement.prototype,'value',{get(){return this.getAttribute('data-test-value')||this.querySelector('option')?.value||'';},set(value){this.setAttribute('data-test-value',value);},configurable:true});window.innerWidth=width;window.innerHeight=height;Object.defineProperties(canvas,{clientWidth:{value:width},clientHeight:{value:height}});Object.defineProperties(outer,{clientWidth:{value:width},clientHeight:{value:height}});outer.scrollTop=0;window.location={search:''};window.matchMedia=()=>({matches:width>=600});
  let snapshot=structuredClone(original),version=snapshot.revision;
  const ctx=vm.createContext({window,document:doc,console,URLSearchParams,setTimeout,clearTimeout,fetch:async url=>({ok:true,json:async()=>url.startsWith('version')?{revision:version}:structuredClone(snapshot)}),requestAnimationFrame:cb=>setTimeout(cb,0),cancelAnimationFrame:clearTimeout,setInterval:()=>0,ResizeObserver:class{observe(){}}});
  for(const file of [...doc.querySelectorAll('script[src]')].map(el=>el.getAttribute('src').split('?')[0]))vm.runInContext(fs.readFileSync(project+file,'utf8'),ctx);await sleep();
@@ -63,10 +63,14 @@ async function check(width,height){
  const originalNodes=[...canvas.querySelectorAll('.node')],originalStrands=[...canvas.querySelectorAll('.thread')],originalCurves=originalStrands.map(path=>path.getAttribute('d'));
  const raidoHit=canvas.querySelector('.thread-hit[data-character="c-raido"]');assert.equal(raidoHit.dataset.tooltip,'Райдо Наміаші');
  if(width>=600){
+  const queryAll=doc.querySelectorAll;let structuralScans=0;
+  doc.querySelectorAll=function(selector){if(selector.startsWith('#timeline mask')||selector.startsWith('#timeline .thread'))structuralScans++;return queryAll.call(this,selector);};
   const lineHover=new window.Event('pointerover',{bubbles:true});Object.defineProperty(lineHover,'pointerType',{value:'mouse'});raidoHit.dispatchEvent(lineHover);
   assert(canvas.querySelector('.thread[data-character="c-raido"].is-character-hover-active'));
   assert(canvas.querySelector('.thread[data-character="c-naruto"].is-character-hover-muted'));
   raidoHit.dispatchEvent(new window.Event('pointerout',{bubbles:true}));
+  assert.equal(structuralScans,0,'Hover should not rescan masks or strands');
+  doc.querySelectorAll=queryAll;
  }
  click('.thread-hit[data-character="c-raido"]');await sleep();assert.equal(run('focusedCharacter'),'c-raido');assert.equal(run('selected.size'),count);assert(!doc.getElementById('focusBar').hidden);
  assert.deepEqual([...canvas.querySelectorAll('.node')],originalNodes,'Focus replaced nodes');assert.deepEqual([...canvas.querySelectorAll('.thread')],originalStrands,'Focus replaced strands');
@@ -100,6 +104,20 @@ async function check(width,height){
  run('setFocus("c-sasuke")');assert.equal(run('focusedCharacter'),'c-sasuke');assert.equal(run('selected.size'),2);
  assert.equal(canvas.querySelectorAll('.thread-focus-continuous.is-line-focus-main').length,1);
  run('setFocus("c-sasuke")');assert.equal(run('focusedCharacter'),null);assert.equal(run('selected.size'),2);
+ // Enabled story layers preserve a surviving focus; an empty timeline clears it.
+ run('setFocus("c-naruto")');
+ const layerInputs=[...doc.querySelectorAll('#storyLayers input[type="checkbox"]')];
+ const flipLayer=(input,checked)=>{input.checked=checked;input.dispatchEvent(new window.Event('change',{bubbles:true}));};
+ const fillerLayer=layerInputs.find(input=>input.value==='filler');assert(fillerLayer);
+ flipLayer(fillerLayer,false);
+ assert.equal(run('focusedCharacter'),'c-naruto','Disabling filler cleared a surviving focus');
+ assert.equal(run('selected.size'),2);assert(!doc.getElementById('focusBar').hidden);
+ for(const input of layerInputs.filter(input=>input.checked))flipLayer(input,false);
+ assert.equal(run('events().length'),0);
+ assert.equal(run('focusedCharacter'),null,'Focus remained after every event was hidden');
+ assert(doc.getElementById('focusBar').hidden);
+ for(const input of layerInputs)flipLayer(input,true);
+ assert.equal(run('selected.size'),2);assert.equal(run('focusedCharacter'),null);
  run('selected=new Set(selectable().map(e=>e.id));selectionChanged()');
  // First/last event buttons are disabled, and card movement respects selection.
  click('[data-team="team-8"]');await sleep();assert.equal(run('selected.size'),4);run("navigateEvent(chronologicalMoments().filter(relevant)[0].id)");assert(doc.querySelector('[data-step-event="-1"]').disabled);click('[data-step-event="1"]');await sleep();assert(run('relevant(eventMap.get(anchorEvent))'));

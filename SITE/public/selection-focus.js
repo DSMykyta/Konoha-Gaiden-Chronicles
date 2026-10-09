@@ -3,6 +3,19 @@
 const SelectionFocus = (() => {
   let hoverTrigger = null;
   let activeCloudKeys = null;
+  let hoverElements = [], hoveredCharacter = null, lastStructure = null;
+  // Hover changes only strand classes; it never recalculates masks or gradients.
+  function updateHover(force = false) {
+    if (hoverTrigger && !hoverTrigger.isConnected) hoverTrigger = null;
+    const hovered = hoverTrigger?.dataset.eventFocusCharacter || hoverTrigger?.dataset.focusCharacter || hoverTrigger?.dataset.character || null;
+    if (!force && hovered === hoveredCharacter) return;
+    hoveredCharacter = hovered;
+    for (const element of hoverElements) {
+      const id = element.dataset.character;
+      element.classList.toggle('is-character-hover-muted', !!hovered && id !== hovered);
+      element.classList.toggle('is-character-hover-active', !!hovered && id === hovered);
+    }
+  }
 
   function visibility(element, hidden) {
     element.classList.toggle('is-line-focus-hidden', hidden);
@@ -23,14 +36,23 @@ const SelectionFocus = (() => {
 
   function update() {
     if (hoverTrigger && !hoverTrigger.isConnected) hoverTrigger = null;
-    const hovered = hoverTrigger?.dataset.eventFocusCharacter || hoverTrigger?.dataset.focusCharacter || hoverTrigger?.dataset.character;
-    const events = cardSelection?.events || [];
+    const events = pinnedNodeId ? cardSelection?.events || [] : [];
     const active = !!pinnedNodeId && events.length > 0;
+    const context = active ? events : null;
+    const timeline = document.getElementById('timeline');
+    // The SVG changes when render() replaces the timeline's first child.
+    if (lastStructure && lastStructure.focus === focusedCharacter &&
+        lastStructure.context === context && lastStructure.nodes === graphNodes &&
+        lastStructure.clouds === graphClouds && lastStructure.labels === graphLabels &&
+        lastStructure.firstChild === timeline.firstChild) {
+      updateHover();
+      return;
+    }
+    lastStructure = {focus: focusedCharacter, context, nodes: graphNodes, clouds: graphClouds, labels: graphLabels, firstChild: timeline.firstChild};
     const eventIds = new Set(events.map(event => event.id));
     const characters = new Set(events.flatMap(event => event.physical?.length ? event.physical : event.tracks || []));
     const related = new Set(graphNodes.filter(node => node.group.some(event => eventIds.has(event.id))).map(node => node.id));
     const hasRelated = active && related.size > 0;
-    const labels = new Map([...entityMap.keys()].flatMap(id => [[name(id), id], [fullName(id), id]]));
 
     const focusedNodes = new Set(graphNodes.filter(node => node.cast.includes(focusedCharacter)).map(node => node.id));
     document.querySelectorAll('#timeline .node,#timeline .node-hit').forEach(element => {
@@ -43,8 +65,9 @@ const SelectionFocus = (() => {
     document.querySelectorAll('#timeline mask [data-node-id]').forEach(element => {
       element.classList.toggle('is-line-focus-hidden', !!focusedCharacter && !focusedNodes.has(element.dataset.nodeId));
     });
-    document.querySelectorAll('#timeline .thread,#timeline .thread-hit,#timeline .thread-focus-continuous,#timeline .thread-focus-hit,#timeline .line-label').forEach(element => {
-      const id = element.dataset.character || labels.get(element.textContent.trim());
+    hoverElements = [...document.querySelectorAll('#timeline .thread,#timeline .thread-hit,#timeline .thread-focus-continuous,#timeline .thread-focus-hit,#timeline .line-label')];
+    hoverElements.forEach(element => {
+      const id = element.dataset.character;
       const connected = (element.dataset.companions || '').split(' ').includes(focusedCharacter);
       const continuous=element.matches('.thread-focus-continuous,.thread-focus-hit'),hit=element.matches('.thread-hit,.thread-focus-hit'),label=element.classList.contains('line-label');
       const primary=!!focusedCharacter&&id===focusedCharacter;
@@ -66,8 +89,6 @@ const SelectionFocus = (() => {
         }else if(element.dataset.restStroke)element.setAttribute('stroke',element.dataset.restStroke);
       }
       element.classList.toggle('is-context-muted', active && !!id && !characters.has(id));
-      element.classList.toggle('is-character-hover-muted', !!hovered && id !== hovered);
-      element.classList.toggle('is-character-hover-active', !!hovered && id === hovered);
     });
     const previousKeys = activeCloudKeys;
     document.querySelectorAll('#timeline .cloud-label,#timeline .cloud-label-guide').forEach(element => {
@@ -77,6 +98,7 @@ const SelectionFocus = (() => {
     });
     activeCloudKeys = focusedCharacter || active ? new Set(graphClouds.filter(group => group.nodes.some(node => (!focusedCharacter || focusedNodes.has(node.id)) && (!hasRelated || related.has(node.id)))).map(group => group.key)) : null;
     if (Boolean(previousKeys) !== Boolean(activeCloudKeys) || activeCloudKeys && (activeCloudKeys.size !== previousKeys.size || [...activeCloudKeys].some(key => !previousKeys.has(key)))) cloudRenderer?.refresh();
+    updateHover(true);
   }
 
   function bind() {
@@ -85,25 +107,25 @@ const SelectionFocus = (() => {
       const next = trigger(event.target);
       if (!next || !canHover(event) || next === hoverTrigger) return;
       hoverTrigger = next;
-      update();
+      updateHover();
     });
     document.addEventListener('pointerout', event => {
       if (!hoverTrigger?.contains(event.target) || hoverTrigger.contains(event.relatedTarget)) return;
       hoverTrigger = null;
-      update();
+      updateHover();
     });
     document.addEventListener('focusin', event => {
       const next = trigger(event.target);
       if (!next || !next.matches('.thread-hit,.thread-focus-hit,.line-label')) return;
       hoverTrigger = next;
-      update();
+      updateHover();
     });
     document.addEventListener('focusout', event => {
       if (!hoverTrigger?.contains(event.target)) return;
       hoverTrigger = null;
-      update();
+      updateHover();
     });
-    window.addEventListener('blur', () => { hoverTrigger = null; update(); });
+    window.addEventListener('blur', () => { hoverTrigger = null; updateHover(); });
   }
 
   return {
