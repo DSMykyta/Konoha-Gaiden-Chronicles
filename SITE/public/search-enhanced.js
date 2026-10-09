@@ -121,17 +121,17 @@ const TimelineSearchEnhanced = (() => {
 
   function parseDate(raw) {
     const text = String(raw ?? '').toLowerCase().replace(/,/g, ' ');
-    const numeric = text.match(/\b([0-3]?\d)\s*[.\/-]\s*(0?\d|1[0-2])\b/);
+    const numeric = text.match(/\b([0-3]?\d)\s*[.\/-]\s*(0?[1-9]|1[0-2])(?:\s*[.\/-]\s*(\d{1,4}))?(?![\d.\/-])/);
     if (numeric) {
       const day = Number(numeric[1]), month = Number(numeric[2]) - 1;
-      if (day >= 1 && day <= MONTH_LENGTHS[month]) return { day: MONTH_STARTS[month] + day - 1, match: numeric[0] };
+      if (day >= 1 && day <= MONTH_LENGTHS[month]) return { day: MONTH_STARTS[month] + day - 1, year: numeric[3] ? Number(numeric[3]) : null, match: numeric[0] };
     }
     for (let month = 0; month < MONTH_NAMES.length; month++) {
       const names = MONTH_NAMES[month].join('|');
-      const match = text.match(new RegExp(`(?:^|\\s)([0-3]?\\d)\\s+(?:${names})(?=\\s|$)`, 'i'));
+      const match = text.match(new RegExp(`(?:^|\\s)([0-3]?\\d)\\s+(?:${names})(?:\\s+(\\d{1,4}))?(?=\\s|$)`, 'i'));
       if (!match) continue;
       const day = Number(match[1]);
-      if (day >= 1 && day <= MONTH_LENGTHS[month]) return { day: MONTH_STARTS[month] + day - 1, match: match[0].trim() };
+      if (day >= 1 && day <= MONTH_LENGTHS[month]) return { day: MONTH_STARTS[month] + day - 1, year: match[2] ? Number(match[2]) : null, match: match[0].trim() };
     }
     return null;
   }
@@ -370,6 +370,7 @@ const TimelineSearchEnhanced = (() => {
     return {
       type: inferType(raw),
       date: parsedDate?.day ?? null,
+      dateYear: parsedDate?.year ?? null,
       source,
       relation: relationMatch ? relationMatch[1].toLowerCase() : null,
       relationText: relationMatch ? relationMatch[2] : '',
@@ -420,7 +421,12 @@ const TimelineSearchEnhanced = (() => {
     const parsedDate = dateValue ? parseDate(dateValue) : null;
     const dateInvalid = Boolean(dateValue && !parsedDate);
     const type = activeType !== 'all' ? activeType : (intent.type || 'all');
-    return { person, arc, source, date: parsedDate?.day ?? intent.date, dateInvalid, type };
+    const dateYear = parsedDate ? parsedDate.year : (intent.dateYear ?? null);
+    const calendar = typeof data !== 'undefined' ? data?.calendar : null;
+    const firstYear = calendar?.view_start_year ?? calendar?.current_year ?? 61;
+    const lastYear = calendar?.view_end_year ?? firstYear;
+    const invalidYear = dateYear !== null && (dateYear < firstYear || dateYear > lastYear);
+    return { person, arc, source, date: parsedDate?.day ?? intent.date, dateYear, dateInvalid: dateInvalid || invalidYear, type };
   }
 
   function passesFilters(doc, filters) {
@@ -428,7 +434,14 @@ const TimelineSearchEnhanced = (() => {
     if (filters.person && !doc.personIds.includes(filters.person)) return false;
     if (filters.arc && !doc.arcIds.includes(filters.arc)) return false;
     if (filters.source && !doc.origins.includes(filters.source)) return false;
-    if (Number.isFinite(filters.date) && !doc.days.includes(filters.date)) return false;
+    if (Number.isFinite(filters.date)) {
+      const calendar = typeof data !== 'undefined' ? data?.calendar : null;
+      const firstYear = calendar?.view_start_year ?? calendar?.current_year ?? 61;
+      const matches = filters.dateYear !== null
+        ? doc.days.includes((filters.dateYear - firstYear) * 365 + filters.date)
+        : doc.days.some(day => day % 365 === filters.date);
+      if (!matches) return false;
+    }
     return true;
   }
 
@@ -490,7 +503,7 @@ const TimelineSearchEnhanced = (() => {
   }
 
   function summaryText(result) {
-    if (result.invalidDate) return 'Дата не розпізнана · використовуй 22.01 або 1 серпня';
+    if (result.invalidDate) return 'Дата поза діапазоном хронології або неправильна · використовуй 22.01.62 чи 1 серпня 62';
     if (result.relationAnchor) {
       const relationWord = result.intent.relation === 'перед' ? 'Перед' : 'Після';
       return `${relationWord} «${result.relationAnchor.title}» · ${result.total} результат`;
@@ -498,7 +511,12 @@ const TimelineSearchEnhanced = (() => {
     const parts = [];
     if (result.filters.type !== 'all') parts.push(TYPE_LABELS[result.filters.type] || result.filters.type);
     if (result.filters.person && typeof entityMap !== 'undefined') parts.push(entityLabel(entityMap.get(result.filters.person)));
-    if (Number.isFinite(result.filters.date)) parts.push(typeof dateText === 'function' ? dateText(result.filters.date) : String(result.filters.date + 1));
+    if (Number.isFinite(result.filters.date)) {
+      const day = result.filters.date;
+      const month = MONTH_STARTS.findLastIndex(start => start <= day);
+      const dateLabel = String(day - MONTH_STARTS[month] + 1).padStart(2, '0') + '.' + String(month + 1).padStart(2, '0');
+      parts.push(dateLabel + (result.filters.dateYear !== null ? '.' + result.filters.dateYear : ''));
+    }
     if (result.filters.arc && typeof arcMap !== 'undefined') parts.push(arcMap.get(result.filters.arc)?.title || result.filters.arc);
     if (result.filters.source) parts.push(typeof origins !== 'undefined' ? (origins[result.filters.source] || result.filters.source) : result.filters.source);
     const count = `${result.total} ${result.total === 1 ? 'результат' : result.total >= 2 && result.total <= 4 ? 'результати' : 'результатів'}`;
