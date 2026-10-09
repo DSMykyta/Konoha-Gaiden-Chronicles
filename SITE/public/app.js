@@ -635,13 +635,16 @@ function navigateEvent(id){
  const anchor=graphNodes.find(p=>p.id===e.id);if(anchor)revealReadingNode();else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();focusReadingCard();
 }
 function search(){
- if(window.TimelineSearchEnhanced)return window.TimelineSearchEnhanced.render();
- const q=$('eventSearch').value.trim().toLowerCase(),found=orderedScenes().flatMap(s=>s.group).filter(e=>!q||(e.title+' '+StoryLayers.compose(e.text,storyLayers)).toLowerCase().includes(q));
- $('searchSummary').textContent=q?`Знайдено: ${found.length}`:`${found.length} подій · у порядку хронології`;
- $('searchResults').innerHTML=found.slice(0,searchLimit).map(e=>`<button class="result" data-search-event="${esc(e.id)}"><span>${esc(e.title)}<span class="result-context">${esc(e.scene_title)}</span></span><small>${dateText(e.day)}</small></button>`).join('')||'<div class="empty"><p>Подій не знайдено. Спробуй коротший запит.</p><button class="secondary-button" data-reset-event-search>Очистити пошук</button></div>';
- $('searchResults').querySelectorAll('[data-search-event]').forEach(b=>b.addEventListener('click',()=>navigateEvent(b.dataset.searchEvent)));
- $('searchResults').querySelector('[data-reset-event-search]')?.addEventListener('click',()=>{$('eventSearch').value='';searchLimit=30;search();$('eventSearch').focus();});
- $('moreResults').hidden=found.length<=searchLimit;
+ const summary=$('searchSummary'),results=$('searchResults'),more=$('moreResults');
+ try{
+  if(typeof window.TimelineSearchEnhanced?.render!=='function')throw new Error('Модуль розширеного пошуку не завантажився.');
+  window.TimelineSearchEnhanced.render();
+ }catch(error){
+  console.error('Помилка пошуку:',error);
+  summary.textContent='Пошук тимчасово недоступний';
+  results.innerHTML='<div class="search-empty-enhanced" role="alert"><p>Не вдалося запустити пошук. Перезавантаж сторінку. Якщо проблема повторюється, повідом про помилку.</p></div>';
+  more.hidden=true;
+ }
 }
 function openProfile(id,trigger){if(!entityMap.has(id))return;uiTimers.cancel('node-open');HierarchyPreview.dismissTransient();if(hoverCard)closeCard();tooltipController?.hide();profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}dialog.scrollTop=0;syncReadingState();$('closeProfile').focus({preventScroll:true});}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;syncReadingState();profileReturnFocus?.focus();profileReturnFocus=null;}
@@ -806,7 +809,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   if(nearest)navigateEvent(nearest.id);
  });
  $('characterSearch').addEventListener('input',renderCharacters);$('selectAll').addEventListener('click',()=>{selected=new Set(selectable().map(e=>e.id));selectionChanged();});$('deselectAll').addEventListener('click',()=>{selected.clear();selectionChanged();});document.querySelectorAll('[data-team]').forEach(b=>b.addEventListener('click',()=>{selected=new Set(teams[b.dataset.team]);focusedCharacter=null;selectionChanged();}));
- if(!window.TimelineSearchEnhanced)$('eventSearch').addEventListener('input',()=>{searchLimit=30;search();});$('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
+ $('moreResults').addEventListener('click',()=>{searchLimit+=30;search();});
  $('continuity').addEventListener('change',()=>{const calendarCenter=axisToDay(center);continuity=$('continuity').value;center=clampAxisCenter(dayToAxis(calendarCenter));focusedCharacter=null;selected=new Set(selectable().map(e=>e.id));selectionChanged();search();ChronologyContents.render();});
  $('closeCharacterEvents').addEventListener('click',closeCharacterEvents);
  $('characterEventsDialog').addEventListener('cancel',e=>{e.preventDefault();closeCharacterEvents();});
