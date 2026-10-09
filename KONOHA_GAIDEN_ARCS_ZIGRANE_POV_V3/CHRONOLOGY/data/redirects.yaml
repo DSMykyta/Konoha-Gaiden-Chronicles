@@ -1671,10 +1671,9 @@ redirects:
   - ev-y0-1010-karashi-explains-raiga-terror
   reason: Mission opening decomposed into rescue/assignment and the separate Curry of Life briefing in River Country.
 - legacy_id: V10-000140
-  status: migrated
-  replacement_ids:
-  - ev-y0-1010-naruto-turns-thirteen
-  reason: Exact October 10 birthday retained as a date/state event without inventing a celebration or location.
+  status: excluded
+  replacement_ids: []
+  reason: Reference-only birthday fact; no narrative event. Removed from timeline by author request.
 - legacy_id: V10-000141
   status: superseded
   replacement_ids:

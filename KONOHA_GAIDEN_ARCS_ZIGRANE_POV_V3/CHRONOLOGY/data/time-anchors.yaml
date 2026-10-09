@@ -717,14 +717,6 @@ anchors:
     evidence_ids: ["evd-v10-000139"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Kurosuki mission; not made exact by Naruto birthday evidence."
-  - id: "ta-y0-1010-naruto-birthday"
-    date: {year: 61, month: 10, day: 10}
-    precision: "day"
-    placement_status: "established"
-    basis: "source"
-    evidence_ids: ["evd-v10-000140", "evd-official-naruto-birthday"]
-    review: "accepted"
-    reason: "Naruto Uzumaki birthday is explicitly October 10; this anchor is intentionally separate from same-day working scene placements."
   - id: "ta-y0-1011-kurosuki"
     date: {year: 61, month: 10, day: 11}
     precision: "day"

@@ -6333,7 +6333,7 @@ records:
       SupportingSources: ""
       Review: ""
   - legacy_id: "V10-000140"
-    migration_status: "migrated"
+    migration_status: "excluded"
     replacement_ids: []
     original:
       Year: "0"

@@ -250,11 +250,6 @@ episodes:
   arc_id: arc-y0-anko-swamps
   title: Анко повертається з місії в Країні Боліт
   description: 'Одна сюжетна лінія: Анко повертається з місії в Країні Боліт. Сцени: Анко повертається з місії в Країні Боліт.'
-- id: ep-y0-naruto-birthday
-  continuity_id: main
-  arc_id: arc-y0-naruto-birthday
-  title: Наруто виповнюється 13 років
-  description: 'Одна сюжетна лінія: Наруто виповнюється 13 років. Сцени: Наруто виповнюється 13 років.'
 - id: ep-y0-fuku-matchmaking
   continuity_id: main
   arc_id: arc-y0-fuku-matchmaking

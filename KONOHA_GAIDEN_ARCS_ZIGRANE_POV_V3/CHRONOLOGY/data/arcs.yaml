@@ -166,12 +166,6 @@ arcs:
   kind: adaptation
   title: 'Анко: місія в Країні Боліт'
   description: 'Сюжетна арка «Анко: місія в Країні Боліт». Самостійні паралельні лінії оформлено окремими епізодами.'
-- id: arc-y0-naruto-birthday
-  continuity_id: main
-  period_id: part-i
-  kind: canonical
-  title: Тринадцятий день народження Наруто
-  description: Сюжетна арка «Тринадцятий день народження Наруто». Самостійні паралельні лінії оформлено окремими епізодами.
 - id: arc-y0-fuku-matchmaking
   continuity_id: main
   period_id: part-i
