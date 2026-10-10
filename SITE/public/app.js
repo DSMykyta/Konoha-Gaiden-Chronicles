@@ -493,7 +493,7 @@ function render(){
   // Actual marks already merge into scenes while zooming out; a geometric
   // collision pass must not rewrite the underlying character trajectories.
   baseLayoutCache.set(geometryKey,new Map(canonical.moments.map(p=>[
-   p.id,clamp(mid+(canonical.lanes.get(p.id)||0)*amplitude,top,bottom)
+   p.id,clamp(mid+TimelineCore.spreadLanePosition(canonical.lanes.get(p.id)||0)*amplitude,top,bottom)
   ])));
  }
  const originalY=baseLayoutCache.get(geometryKey);
