@@ -961,6 +961,11 @@ entities:
     name: "Aoi"
     aliases:
       - "Аої"
+  - id: "c-senji"
+    kind: "person"
+    name: "Senji"
+    aliases:
+      - "Сенджі"
   - id: "c-shibuki"
     kind: "person"
     name: "Shibuki"
