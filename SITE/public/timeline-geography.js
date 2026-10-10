@@ -63,7 +63,7 @@ const GeographyAtlas={
   function resolve(id){
    if(!id||!places.has(id))return {id:id||null,state:'unknown',country:null,settlement:null,path:[]};
    const p=paths.get(id);
-   const state=p.some(x=>x.spatial!=='fixed')?'unlocated':'located';
+   const state=p.some(x=>['unspecified','mobile','non_geographic'].includes(x.spatial))?'unlocated':'located';
    const country=p.find(x=>x.kind==='country')||null,settlement=p.find(x=>x.kind==='settlement')||null;
    return {id:canonical(id),state,country:state==='located'?country?.id||null:null,
     settlement:state==='located'?settlement?.id||null:null,path:p.map(x=>x.id)};
