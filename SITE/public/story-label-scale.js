@@ -456,6 +456,15 @@ const StoryTitleScale = (() => {
 
   return {
     update: renderScale,
+    // Rebuilt SVG children have no transient or fixed focus classes.
+    // Reapply the existing selection to new nodes without rebuilding the
+    // sidebar or silently changing the chosen episode.
+    restoreGraph() {
+      if (!window.__storyScaleFocus?.active) return;
+      const key=fixedKey||hoverKey, item=currentItems.get(key);
+      if (item) applyDomFocus(item,fixedKey?'fixed':'hover');
+      else clearStoryFocus();
+    },
     clear() { hoverSuspended = true; dismissedPointer = pointerPosition; fixedKey = null; hoverKey = null; clearStoryFocus(); },
     escape() { if (!fixedKey) return false; this.clear(); return true; },
     dismissTransient() { if (!fixedKey) this.clear(); },
