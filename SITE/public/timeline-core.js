@@ -337,6 +337,11 @@ const TimelineCore = {
       list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
       for(let i=1;i<list.length;i++)connect(list[i-1].id,list[i].id,3.6);
     }
+    // A single team may move through several neighboring scenes on one day.
+    // Its physical cast is a stronger continuity signal than scene IDs.
+    const groupCasts=new Map([...byGroup].map(([id,list])=>[
+      id,new Set(list.flatMap(node=>node.layoutCast||[]))
+    ]));
     // Explicit chronology and cross-scene observations add extra gravity without
     // changing X/time. Accepted observations/intersections are strongest.
     for(const r of relations){
@@ -372,6 +377,14 @@ const TimelineCore = {
       const separateGroups=a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup;
       const proximity=geography?.visualSeparation(a.locationId,b.locationId)||null;
       if(separateGroups){
+        const castA=groupCasts.get(a.layoutGroup),castB=groupCasts.get(b.layoutGroup);
+        const common=[...castA].filter(id=>castB.has(id)).length;
+        // Repeated appearances by the same moving party are one storyline.
+        // Never repel a team from its own next scene just because it entered
+        // another training ground. Confirmed different countries remain apart
+        // for geographic review.
+        const sameCrew=common>=2&&common/Math.min(castA.size,castB.size)>=.75;
+        if(sameCrew&&proximity?.grade!==4)continue;
         const [one,two]=[a.layoutGroup,b.layoutGroup].sort(),key=one+'|'+two,previous=groupNeighbors.get(key);
         if(!previous||time<previous.time)groupNeighbors.set(key,{one,two,time,
           wanted:proximity?.wanted??.52,
