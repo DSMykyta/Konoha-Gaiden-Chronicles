@@ -474,7 +474,7 @@ function render(){
  // recalculated path. Add that marker as a waypoint while keeping the
  // underlying moment coordinates intact. Every member line meets its hub.
  const routeAnchorMap=new Map(worldLineNodes.map(node=>[node.id,node]));
- for(const node of globalNodes)routeAnchorMap.set(node.id,node);
+ for(const node of globalNodes)routeAnchorMap.set(node.id,node.kind==='moment'?node:{...node,isCluster:true});
  const routeAnchorNodes=[...routeAnchorMap.values()];
  const nodesByCharacter=TimelineCore.characterAnchors(routeAnchorNodes,ids);
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
@@ -521,7 +521,7 @@ function render(){
   let geometry=strandRouteCache.get(cacheKey);
   if(!geometry){
    const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
-   const lifetimes=TimelineCore.lifetimes(anchors);
+   const lifetimes=TimelineCore.clusteredLifetimes(anchors);
    const routes=lifetimes.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
    const continuous=anchors.length?TimelineCore.strand(anchors,id,mid,amplitude,lead,pixelsPerDay,axisLength()):[];
    geometry={anchors,lifetimes,routes,continuous};
