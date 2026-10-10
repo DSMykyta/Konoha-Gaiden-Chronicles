@@ -354,6 +354,10 @@ function render(){
  const nodeY=layoutCache.get(layoutKey);
  let globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
  const linked=(p,id)=>p.cast.includes(id);
+ // Index the selected physical cast in one pass. Previously every selected
+ // character scanned every semantic node again to assemble its anchors.
+ const nodesByCharacter=new Map(ids.map(id=>[id,[]]));
+ for(const node of globalNodes)for(const id of new Set(node.cast))nodesByCharacter.get(id)?.push(node);
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
  const numbered=phoneReader&&level==='moment';
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
@@ -389,7 +393,7 @@ function render(){
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
  ids.forEach(id=>{
-  const anchors=globalNodes.filter(p=>linked(p,id)).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+  const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
   if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
   const lifetimes=TimelineCore.lifetimes(anchors);
   const runs=lifetimes.filter(run=>run[0].day-lead<=hi&&run.at(-1).day+lead>=lo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
