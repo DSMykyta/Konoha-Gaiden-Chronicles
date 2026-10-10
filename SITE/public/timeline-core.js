@@ -211,10 +211,12 @@ const TimelineCore = {
   separateNodes(nodes,top,bottom,clearance=46) {
     // Time/X stays exact. Separate overlapping hit areas vertically, and use the
     // resulting anchors for both the marks and their character strands.
-    const sorted=[...nodes].sort((a,b)=>a.x-b.x||a.id.localeCompare(b.id)),y=new Map(),placed=[];
+    const sorted=[...nodes].sort((a,b)=>a.x-b.x||a.id.localeCompare(b.id)),y=new Map();
+    // Sliding X window: nodes beyond the clearance radius can never overlap.
+    let nearby=[];
     for(const n of sorted){
+      nearby=nearby.filter(p=>n.x-p.x<clearance+4);
       const wanted=Math.max(top,Math.min(bottom,n.y));let chosen=null;
-      const nearby=placed.filter(p=>n.x-p.x<clearance+4);
       for(const spacing of [clearance,40,34,28,26]){
         const intervals=nearby.map(p=>{
           const dx=n.x-p.x,gap=spacing+(n.kind==='arc'||p.kind==='arc'?4:0);
@@ -228,7 +230,7 @@ const TimelineCore = {
       // If the viewport is too short for the local density, grow the scrollable
       // canvas rather than putting a node on top of another visible mark.
       if(chosen===null)chosen=Math.max(bottom+clearance,...nearby.map(p=>y.get(p.id)+clearance+4));
-      y.set(n.id,chosen);placed.push(n);
+      y.set(n.id,chosen);nearby.push(n);
     }
     return nodes.map(n=>({...n,y:y.get(n.id)}));
   },
@@ -271,8 +273,19 @@ const TimelineCore = {
     // Build time-neighbor pairs once. Far-away nodes never repel one another,
     // so checking every pair again on each relaxation pass only blocks input.
     const neighbors=[],groupNeighbors=new Map();
-    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
-      const a=nodes[i],b=nodes[j],time=Math.abs(a.day-b.day);if(time>1.15)continue;
+    // Enumerate only nearby days. Retain original pair order, so floating-point
+    // accumulation and lane positioning stay identical to the previous solver.
+    const indexed=nodes.map((node,index)=>({node,index})).sort((a,b)=>a.node.day-b.node.day||a.index-b.index);
+    const nearbyPairs=[];
+    for(let i=0;i<indexed.length;i++){
+      for(let j=i+1;j<indexed.length&&indexed[j].node.day-indexed[i].node.day<=1.15;j++){
+        const a=indexed[i].index,b=indexed[j].index;
+        nearbyPairs.push(a<b?[a,b]:[b,a]);
+      }
+    }
+    nearbyPairs.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+    for(const [i,j] of nearbyPairs){
+      const a=nodes[i],b=nodes[j],time=Math.abs(a.day-b.day);
       const shared=(a.layoutCast||[]).some(id=>(b.layoutCast||[]).includes(id)),linked=edges.get(a.id).has(b.id);
       const separateGroups=a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup;
       if(separateGroups){
