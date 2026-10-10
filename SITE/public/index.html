@@ -16,11 +16,12 @@
   <link rel="stylesheet" href="contents-panel.css?v=20261008-contents">
   <link rel="stylesheet" href="map-titles.css?v=20261003-konoha-calendar">
   <script defer src="relations.js?v=20261003-konoha-calendar"></script>
-  <script defer src="timeline-core.js?v=20261010-canonical-geo-r2"></script>
+  <script defer src="timeline-core.js?v=20261010-equal-days"></script>
+  <script defer src="timeline-flow.js?v=20261010-water-flow-r1"></script>
   <script defer src="timeline-geography.js?v=20261010-geo-v2"></script>
   <script defer src="timeline-pan-cache.js?v=20261010-camera"></script>
   <script defer src="interaction-core.js?v=20261008-hover-intent"></script>
-  <script defer src="story-clouds.js?v=20261010-cloud-bounds"></script>
+  <script defer src="story-clouds.js?v=20261010-water-necks-r1"></script>
   <script defer src="selection-focus.js?v=20261010-buffered-focus"></script>
   <script defer src="story-label-scale.js?v=20261010-focus-pan-r1"></script>
   <script defer src="hierarchy-preview.js?v=20261008-hover-intent"></script>
@@ -29,7 +30,7 @@
   <script defer src="abilities-archive.js?v=20261008-tickets"></script>
   <script defer src="era-heading.js?v=20261003-era-heading"></script>
   <script defer src="story-layers.js?v=20261008-four-layer-v1"></script>
-  <script defer src="app.js?v=20261010-day-labels-r1"></script>
+  <script defer src="app.js?v=20261010-water-flow-r1"></script>
   <script defer src="search-enhanced.js?v=20261010-merged-search"></script>
 </head>
 <body>
@@ -57,7 +58,7 @@
     <canvas id="storyClouds" class="cloud-layer" aria-hidden="true"></canvas>
     <svg id="timeline" aria-label="Полотно ліній персонажів"></svg>
   </main>
-  <p id="canvasHelp" class="canvas-hint">Коліщатко — рух у часі · перетягування — рух карти · масштаб — кнопками</p>
+  <p id="canvasHelp" class="canvas-hint">Коліщатко — масштаб під курсором · Shift + коліщатко або перетягування — рух у часі · два пальці — масштаб</p>
   <div id="eraHeading" class="era-heading" role="heading" aria-level="2" aria-label="Епоха хронології"><div id="eraHeadingTrack" class="era-heading-track" aria-hidden="true"></div></div>
   <div id="timelineEmpty" class="timeline-empty" role="status" hidden><h2 id="emptyTitle">Обери лінії персонажів</h2><p id="emptyDescription">Їхні події з’являться на хронології.</p><button id="emptyAction" class="primary-button">Обрати всіх</button></div>
   <svg id="timeAxis" class="time-axis" aria-hidden="true"></svg>
@@ -130,7 +131,7 @@
       <summary>Географія та невідомі місця</summary>
       <div id="geographyAudit" class="geography-audit"><p>Перевірка розташування сцен...</p></div>
     </details>
-    <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо переміщує час, а масштаб змінюється кнопками чи жестом двома пальцями. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
+    <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Коліщатко масштабує навколо курсора, Shift + коліщатко або перетягування рухає час, два пальці на телефоні змінюють масштаб. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо переміщує час, а масштаб змінюється кнопками чи жестом двома пальцями. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
     <div class="source-footer"><a id="sourceLink" target="_blank" rel="noopener">Дані в репозиторії <span aria-hidden="true">↗</span></a><small id="revision"></small></div>
   </section>
 
