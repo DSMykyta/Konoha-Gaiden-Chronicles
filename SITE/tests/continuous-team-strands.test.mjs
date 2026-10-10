@@ -55,7 +55,7 @@ test('unlocated scenes cannot be conflated as one physical location',()=>{
 });
 
 test('render uses stable source lanes rather than fictitious screen collisions',()=>{
- assert(app.includes('TimelineCore.stabilizeSequences(moments,solved)'));
+ assert(app.includes('TimelineCore.stabilizeSequences(moments,solved,geographyAtlas)'));
  assert(!app.includes('TimelineCore.separateNodes(canonical.moments'));
  assert(app.includes('canonical.lanes.get(p.id)'));
  assert(app.includes('const worldLineNodes=canonical.moments.map'));
