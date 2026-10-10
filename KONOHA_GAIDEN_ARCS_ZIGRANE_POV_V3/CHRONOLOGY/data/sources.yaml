@@ -1390,6 +1390,16 @@ sources:
     title: Naruto (2002) — серія 002, англійські субтитри
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 002.srt
     locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-004
+    type: anime_transcript
+    title: Naruto (2002) — серія 004, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 004.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-005
+    type: anime_transcript
+    title: Naruto (2002) — серія 005, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 005.srt
+    locator_status: subtitle_timestamps_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4653,5 +4663,20 @@ evidence:
   - id: evd-sub-ep2-hiruzen-fourth-wish
     source_id: src-subtitle-naruto-002
     locator: '00:14:12–00:16:23 — Хірузен розповідає про бажання Четвертого й страх мешканців'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep4-kakashi-bell-test
+    source_id: src-subtitle-naruto-004
+    locator: '00:03:10–00:20:55 — знайомство, пояснення випробування та перша фаза бою за дзвіночки'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep5-kakashi-memorial
+    source_id: src-subtitle-naruto-005
+    locator: '00:11:05–00:17:20 — Какаші пояснює командну роботу, називає загиблих близьких друзів на меморіалі, призначає другу спробу'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep5-teamwork
+    source_id: src-subtitle-naruto-005
+    locator: '00:17:18–00:21:15 — Саске і Сакура діляться їжею з Наруто; Какаші зараховує трійку'
     basis: source
     review: accepted
