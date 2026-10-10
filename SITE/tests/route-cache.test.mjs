@@ -21,7 +21,7 @@ test('character routes are computed once and reused by future virtual windows',(
   mid:400,amplitude:125,TimelineCore:core,dayToAxis:day=>day,
   axisLength:()=>365,allEvents:[],buffered:{coverLo:5,coverHi:20},observed
  };
- const evaluate=vm.runInNewContext('(function(){'+fragment+'observed.push({anchors,lifetimes,routes}); });}',env);
+ const evaluate=vm.runInNewContext('(function(){'+fragment+'observed.push({anchors,lifetimes,routes}); });})',env);
  let calls=0;
  const original=core.strand;
  core.strand=function(...args){calls++;return original.apply(this,args);};
