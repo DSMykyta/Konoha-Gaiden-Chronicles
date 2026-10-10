@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261010-site-audit';
+const UI_VERSION='20261010-buffered-camera';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -221,6 +221,7 @@ function applyBufferedPan(){
   return axis>=lo&&axis<hi;
  }).map(node=>({...node,x:node.x+camera.shift}));
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+ graphNodes.forEach((node,index)=>{node.number=panFrame.numbered?index+1:null;});
  if(panFrame.numbered){
   const numbers=new Map(graphNodes.map((node,index)=>[node.id,String(index+1)]));
   document.querySelectorAll('#timeline [data-moment-number]').forEach(element=>{
