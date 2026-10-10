@@ -101,6 +101,16 @@ try {
   });
   await page.waitForTimeout(200);
   assert((await page.evaluate(()=>window.__timelineMutations))>0,'leaving overscan must rebuild the next graph window');
+  // The new SVG window needs DOM nodes, not a second computation of every
+  // character's world-space Bézier route.
+  const pathComputations=await page.evaluate(()=>{
+    zoom=zoomModes.month;center=dayToAxis(21.5);render();
+    let calls=0;const original=TimelineCore.strand;
+    TimelineCore.strand=function(...args){calls++;return original.apply(this,args);};
+    try {center=dayToAxis(85);render();} finally {TimelineCore.strand=original;}
+    return calls;
+  });
+  assert.equal(pathComputations,0,'switching virtual windows at unchanged zoom must reuse cached character routes');
   assert.deepEqual(errors,[]);
   console.log('Buffered wheel + drag:',viewport.width+'×'+viewport.height,'passed; pan reuses SVG, buffer crossing rebuilds once');
   await page.close();
