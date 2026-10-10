@@ -379,6 +379,21 @@ function closeCard(restoreFocus=false){
  if(restoreFocus){const id=cardReturnFocus?.dataset?.event,target=id?[...document.querySelectorAll('.node')].find(n=>n.dataset.event===id):cardReturnFocus;if(target?.isConnected)target.focus({preventScroll:true});}
  cardReturnFocus=null;
 }
+function zoomAtScreen(value,screenX,knownPivot=null){
+ if(!data)return;
+ const width=$('canvas').clientWidth||1000,pad=width<600?22:48,plot=Math.max(1,width-2*pad);
+ const [lo,hi]=range(),scale=makeTimeScale(lo,hi,pad,plot,datedEvents());
+ const pointer=clamp(screenX,pad,width-pad);
+ const anchor=knownPivot??TimelineFlow.axisUnderPixel(pointer,scale,lo,hi);
+ const next=clamp(value,1,730);
+ if(Math.abs(next-zoom)<1e-9)return;
+ zoom=next;
+ center=clampAxisCenter(TimelineFlow.zoomCenter({
+  pivot:anchor,position:pointer,width,pad,total:axisLength(),nextZoom:next
+ }),next);
+ tooltipController?.hide();
+ schedule();
+}
 function setZoom(value,pivot=center){
  if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');previewPan(0);}
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
@@ -1193,25 +1208,24 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  },true);canvas.addEventListener('pointerout',nodeLeave);
  canvas.addEventListener('click',e=>{const title=e.target.closest('.cloud-label');if(title){openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node,.node-hit');if(target)openNode(graphNodes.find(p=>p.id===(target.dataset.event||target.dataset.nodeId)),true);});
  canvas.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const title=e.target.closest('.cloud-label');if(title){e.preventDefault();openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node');if(target){e.preventDefault();openNode(graphNodes.find(p=>p.id===target.dataset.event),true);}});
- // Wheel/trackpad now navigates through time; scale belongs to the visible
- // year/month/week/day and +/- controls. Commit the camera during wheel motion.
+ // Wheel zooms at the actual pointer; Shift+wheel pans. Drag still pans.
+ // Non-passive listener is required so browser page zoom does not take over.
  $('canvas').addEventListener('wheel',e=>{
   if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
   e.preventDefault();
-  const w=$('canvas').clientWidth||1000,pad=w<600?22:48,plot=Math.max(1,w-pad*2);
+  const canvas=$('canvas'),w=canvas.clientWidth||1000,pad=w<600?22:48,plot=Math.max(1,w-2*pad);
   const dominant=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
   const delta=dominant*(e.deltaMode===1?16:e.deltaMode===2?plot:1);
   if(!delta||!data)return;
-  const span=axisLength()/zoom;
-  const next=clampAxisCenter(center+delta*span/plot);
-  if(Math.abs(next-center)<1e-7)return;
-  // Moving through time must not leave an old sidebar hover attached
-  // to the newly created SVG; fixed story selection remains intact.
-  if(window.__storyScaleFocus?.mode==='hover')StoryTitleScale.dismissTransient();
-  center=next;
-  wheelPreview=true;
-  previewPan((paintedCenter-center)*plot/span);
-  schedule();
+  if(e.shiftKey&&!e.ctrlKey&&!e.metaKey){
+   const span=axisLength()/zoom;
+   center=clampAxisCenter(center+delta*span/plot);
+   schedule();
+  }else{
+   const x=e.clientX-canvas.getBoundingClientRect().left;
+   const factor=Math.exp(-clamp(delta,-500,500)*.0018);
+   zoomAtScreen(zoom*factor,x);
+  }
  },{passive:false});
  canvas.addEventListener('pointerdown',e=>{
    if(e.pointerType==='mouse'&&e.button!==0)return;
@@ -1234,13 +1248,11 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
     // A pinch takes precedence over either finger's pending click.
     for(const id of touches.keys())canvas.setPointerCapture(id);
     const points=[...touches.values()],mid=(points[0].x+points[1].x)/2-canvas.getBoundingClientRect().left;
-    const width=canvas.clientWidth||1000,pad=width<600?22:48;
-    const pivot=center+(mid-width/2)/Math.max(1,width-pad*2)*axisLength()/zoom;
-    // Preserve the compositor-only pan when a second finger starts a pinch.
-    // Rendering here would rebuild the SVG in the middle of the gesture.
-    const basePan=(paintedCenter-center)*Math.max(1,width-pad*2)*zoom/axisLength();
-    pinch={distance:Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y),
-     zoom,pivot,mid,midShift:0,basePan,targetZoom:zoom};
+    const width=canvas.clientWidth||1000,pad=width<600?22:48,plot=Math.max(1,width-2*pad);
+    const [lo,hi]=range(),scale=makeTimeScale(lo,hi,pad,plot,datedEvents());
+    const pivot=TimelineFlow.axisUnderPixel(clamp(mid,pad,width-pad),scale,lo,hi);
+    pinch={distance:Math.max(1,Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y)),
+     startZoom:zoom,pivot};
     drag=null;canvas.classList.remove('dragging');
    }
   });
@@ -1248,17 +1260,16 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
    if(!touches.has(e.pointerId))return;
    touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
    if(pinch&&touches.size===2){
-    const points=[...touches.values()],distance=Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y);
-    pinch.targetZoom=clamp(pinch.zoom*distance/Math.max(1,pinch.distance),1,730);
-    const ratio=pinch.targetZoom/pinch.zoom;
+    const points=[...touches.values()];
+    const distance=Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y);
+    const width=canvas.clientWidth||1000,pad=width<600?22:48;
     const midpoint=(points[0].x+points[1].x)/2-canvas.getBoundingClientRect().left;
-    pinch.midShift=midpoint-pinch.mid;
-    const transform='translate3d('+(pinch.basePan+pinch.midShift)+'px,0,0) scaleX('+ratio+')';
-    for(const id of ['timeline','timeAxis','storyClouds']){
-     const element=$(id);
-     element.style.transformOrigin=pinch.mid+'px center';
-     element.style.transform=transform;
-    }
+    zoom=clamp(pinch.startZoom*distance/pinch.distance,1,730);
+    center=clampAxisCenter(TimelineFlow.zoomCenter({
+     pivot:pinch.pivot,position:clamp(midpoint,pad,width-pad),
+     width,pad,total:axisLength(),nextZoom:zoom
+    }),zoom);
+    schedule();
    }else if(drag){
     const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
     if(!drag.activated){
@@ -1284,17 +1295,8 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
    if(pinch){
     ignoreDraggedClick=true;
     if(touches.size<2){
-     const {targetZoom,pivot,midShift}=pinch;pinch=null;drag=null;
-     for(const id of ['timeline','timeAxis','storyClouds'])$(id).style.transformOrigin='';
-     previewPan(0);
-     setZoom(targetZoom,pivot);
-     // Two-finger translation pans the time axis even when scale stays fixed.
-     if(midShift){
-      const width=canvas.clientWidth||1000,pad=width<600?22:48;
-      center=clampAxisCenter(center-midShift*axisLength()/Math.max(1,width-pad*2)/zoom);
-     }
-     // Commit an earlier drag or midpoint movement even if the pinch did not zoom.
-     if(Math.abs(paintedCenter-center)>1e-7)schedule();
+     pinch=null;drag=null;canvas.classList.remove('dragging');
+     schedule();
     }
     return;
    }
