@@ -2,6 +2,13 @@
 const TimelineCore = {
   ordered(events) { return [...events].sort((a,b) => (a.day ?? Infinity)-(b.day ?? Infinity) || (a.display_rank||0)-(b.display_rank||0) || a.id.localeCompare(b.id)); },
   selectable(entities, events) { const ids=new Set(events.flatMap(e=>e.tracks)); return entities.filter(e=>['person','animal'].includes(e.kind)&&ids.has(e.id)); },
+  characterAnchors(nodes,selectedIds) {
+    // One pass through semantic nodes instead of one full scan per line.
+    // Duplicate casts on a node must not duplicate that node's anchor.
+    const result=new Map([...selectedIds].map(id=>[id,[]]));
+    for(const node of nodes)for(const id of new Set(node.cast||[]))result.get(id)?.push(node);
+    return result;
+  },
   fullName(entity, profile) { return profile?.display_name || entity?.aliases?.find(a=>/^[А-ЯІЇЄҐ]/.test(a)&&a.split(/\s+/).length>1) || entity?.name || entity?.id || ''; },
   scenes(events,relations=[],sceneMeta=[]) {
     const grouped=new Map(),meta=new Map(sceneMeta.map(s=>[s.id,s]));
