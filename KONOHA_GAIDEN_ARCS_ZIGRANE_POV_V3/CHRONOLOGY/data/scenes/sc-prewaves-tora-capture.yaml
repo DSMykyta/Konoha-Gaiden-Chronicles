@@ -17,7 +17,8 @@ review:
 events:
 - id: ev-prewaves-tora-capture
   title: Команда 7 ловить загублену Тору
-  text: Команда 7 знаходить і ловить загублену кішку Тору для дружини даймьо Країни Вогню.
+  text: >-
+    Під час пошуку Тори Наруто, Саске й Сакура займають узгоджені позиції за вказівками Какаші та перехоплюють кішку. Какаші просить перевірити стрічку на її правому вусі, щоб упевнитися, що знайшли потрібну тварину. Піймавши Тору, трійка завершує D-рангове завдання й повертається доповісти Хокаґе.
   origin: M
   extent: interval
   display_rank: 100
@@ -42,6 +43,7 @@ events:
   evidence_ids:
   - evd-narutopedia-ep6-audit
   - evd-narutopedia-ch9-audit
+  - evd-sub-ep6-tora
 relations: []
 presence:
 - id: pr-prewaves-tora-capture-naruto
