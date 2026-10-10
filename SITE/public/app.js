@@ -70,7 +70,12 @@ function chronologyRelations(){
  return cachedRelations=[...data.links,...data.scenes.flatMap(s=>s.relations||[])]
   .filter(link=>[link.a,link.b].every(id=>!id||eventIds.has(id)||sceneIds.has(id)));
 }
-function worldChronology(){events();return cachedWorld??=TimelineCore.world(events(),chronologyRelations(),data.scenes.filter(s=>cachedEvents.some(e=>e.scene_id===s.id)));}
+function worldChronology(){
+ events();
+ if(cachedWorld)return cachedWorld;
+ const activeSceneIds=new Set(cachedEvents.map(event=>event.scene_id));
+ return cachedWorld=TimelineCore.world(cachedEvents,chronologyRelations(),data.scenes.filter(scene=>activeSceneIds.has(scene.id)));
+}
 function orderedScenes(){return worldChronology().scenes;}
 function semanticLevel(){
  if(zoom>=Math.sqrt(zoomModes.day*zoomModes.week))return 'moment';
