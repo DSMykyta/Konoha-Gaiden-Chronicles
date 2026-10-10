@@ -21,17 +21,28 @@ try {
   const x=viewport.width<600?35:135, y=viewport.width<600?340:680;
   await page.mouse.move(x,y);
   await page.mouse.wheel(0,150);
-  const whileScrolling=await page.evaluate(()=>({center,zoom,transform:document.getElementById('timeline').style.transform,mutations:window.__timelineMutations}));
+  const whileScrolling=await page.evaluate(()=>({center,zoom}));
   assert.equal(whileScrolling.zoom,before.zoom,'wheel must not zoom');
   assert(whileScrolling.center>before.center,'wheel down goes later in time');
-  assert.equal(whileScrolling.mutations,0,'wheel preview must not rebuild SVG');
-  assert.match(whileScrolling.transform,/translate3d/,'wheel scroll should preview on compositor');
-  const shortPanReusable=await page.evaluate(()=>{const [lo,hi]=range();return !!TimelinePanCache.reuse(panFrame,{lo,hi,width:$('canvas').clientWidth,height:$('canvas').clientHeight,zoom,breaks:axisBreaks()});});
-  await page.waitForTimeout(1050);
-  const after=await page.evaluate(()=>({center,zoom,transform:$('timeline').style.transform,viewBox:$('timeline').getAttribute('viewBox'),mutations:window.__timelineMutations}));
-  assert.equal(after.mutations===0,shortPanReusable,'the SVG rebuild policy must match camera-cache validity');
-  if(shortPanReusable)assert.notEqual(after.viewBox,before.viewBox,'a reused frame must move its viewBox');
-  assert.equal(after.transform,'','preview transform must reset');
+  // Camera movement is committed on the next animation frame, not at idle.
+  await page.waitForTimeout(125);
+  const during=await page.evaluate(()=>({
+    center,zoom,transform:$('timeline').style.transform,
+    viewBox:$('timeline').getAttribute('viewBox'),
+    mutations:window.__timelineMutations
+  }));
+  assert.equal(during.transform,'','wheel preview must be committed without waiting for idle');
+  assert(during.viewBox!==before.viewBox||during.mutations>0,
+    'the next frame must commit camera movement or rebuild the next buffer');
+  await page.waitForTimeout(550);
+  const after=await page.evaluate(()=>({
+    center,zoom,transform:$('timeline').style.transform,
+    viewBox:$('timeline').getAttribute('viewBox'),
+    mutations:window.__timelineMutations
+  }));
+  assert.equal(after.mutations,during.mutations,'idle must not cause another SVG rebuild');
+  assert.equal(after.viewBox,during.viewBox,'idle must not trigger a second camera commit');
+  assert.equal(after.transform,'');
   assert.equal(after.zoom,before.zoom);
   await page.mouse.wheel(0,-150);
   await page.waitForTimeout(450);
@@ -46,7 +57,7 @@ try {
   const burstReusable=await page.evaluate(()=>{const [lo,hi]=range();return !!TimelinePanCache.reuse(panFrame,{lo,hi,width:$('canvas').clientWidth,height:$('canvas').clientHeight,zoom,breaks:axisBreaks()});});
   await page.waitForTimeout(550);
   const settled=await page.evaluate(()=>({mutations:window.__timelineMutations,viewBox:$('timeline').getAttribute('viewBox')}));
-  assert.equal(settled.mutations===0,burstReusable,'buffered wheel gestures should rebuild only at a real cache boundary');
+  assert.equal(settled.mutations,burst,'there must be no rebuild after wheel inactivity');
   if(burstReusable)assert.notEqual(settled.viewBox,before.viewBox,'the finished gesture must move the cached camera');
   await page.evaluate(()=>{zoom=1;center=clampAxisCenter(center);render()});
   await page.waitForTimeout(200);
@@ -92,6 +103,30 @@ try {
   }));
   assert.equal(stable.mutations,0,'an ordinary tiny pan cannot replace timeline child nodes');
   assert(stable.threadSame&&stable.pathSame,'a camera move must preserve the original SVG curve object');
+  // A rapid gesture cannot outrun its virtualized content, even after
+  // repeated buffer crossings. The old idle debounce caused blank frames.
+  await page.evaluate(()=>{zoom=zoomModes.month;center=dayToAxis(95);render();window.__timelineMutations=0;});
+  const liveFrames=[];
+  for(let i=0;i<18;i++){
+    await page.mouse.wheel(0,105);
+    await page.waitForTimeout(65);
+    liveFrames.push(await page.evaluate(()=>{
+      const [lo,hi]=range();
+      return {
+        covered:!!panFrame&&lo>=panFrame.coverLo-1e-7&&hi<=panFrame.coverHi+1e-7,
+        pending:wheelPreview,
+        mutations:window.__timelineMutations,
+        center,
+        curves:$('timeline').querySelectorAll('.thread,.thread-focus-continuous').length
+      };
+    }));
+  }
+  assert(liveFrames.every(frame=>frame.covered),'camera must never outrun its prepared buffer');
+  assert(liveFrames.every(frame=>!frame.pending),'each wheel pulse must commit during the gesture');
+  assert(liveFrames.some(frame=>frame.mutations>0),'buffer transitions must render while the wheel keeps moving');
+  assert(liveFrames.every(frame=>frame.curves>0),'selected character curves must survive buffer transitions');
+  await page.evaluate(()=>{zoom=zoomModes.month;center=dayToAxis(95);render();});
+
   // Explicitly crossing the buffered interval is the one legitimate reason
   // to rebuild the virtualized SVG.
   await page.evaluate(()=>{
