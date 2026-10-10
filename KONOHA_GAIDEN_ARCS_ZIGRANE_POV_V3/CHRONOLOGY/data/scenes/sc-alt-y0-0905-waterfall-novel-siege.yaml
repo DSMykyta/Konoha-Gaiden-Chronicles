@@ -3,26 +3,52 @@ id: "sc-alt-y0-0905-waterfall-novel-siege"
 episode_id: ep-alt-waterfall-novel
 display_rank: 100
 continuity_id: "alt-waterfall-novel"
-title: "Новельна версія облоги Такіґакуре"
+title: "Сенджі намагається врятувати заручників Суїєна"
 location_id: "loc-takigakure"
 placement: {anchor_id: "ta-y0-0905", day_offset: 0}
 state: "active"
 presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "partial"}
 events:
   - id: "ev-alt-y0-0905-waterfall-novel-siege"
     legacy_ids: ["V10-000093"]
-    title: "Облога розгортається за окремою новельною послідовністю"
-    text: "Новела подає паралельну версію облоги Такіґакуре з іншим набором і порядком сцен; її події не змішуються з OVA-версією."
+    title: "Суїєн погрожує вбити захоплених мешканців"
+    text: "Захопивши мешканців Такіґакуре, Суїєн за допомогою техніки відлуння оголошує на все село свою вимогу: Шібукі має віддати Воду Героїв, інакше заручників почнуть убивати. Шібукі лякається і не наважується виступити проти колишнього наставника."
     origin: "N"
     extent: "interval"
     display_rank: 100
     involvement:
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-suien", role: "focus", mode: "physical"}
+      - {entity_id: "c-shibuki", role: "affected", mode: "physical"}
+      - {entity_id: "c-senji", role: "participant", mode: "physical"}
     focus_teams: ["team-7"]
     evidence_ids: ["evd-v10-000093", "evd-novel-waterfall"]
-relations: []
+  - id: "ev-alt-y0-0905-senji-bargains-suien"
+    title: "Сенджі пропонує Воду Героїв в обмін на заручників"
+    text: "Старий Сенджі виходить до Суїєна з пляшкою Води Героїв і вимагає звільнити жителів. Поки він відвертає увагу нападника, Наруто готує напад із засідки."
+    origin: "N"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-senji", role: "focus", mode: "physical"}
+      - {entity_id: "c-suien", role: "opponent", mode: "physical"}
+      - {entity_id: "c-naruto", role: "participant", mode: "physical_hidden"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-novel-waterfall"]
+  - id: "ev-alt-y0-0905-shibuki-exposes-naruto"
+    title: "Шібукі видає засідку, але Наруто атакує Суїєна"
+    text: "Помітивши схованого Шібукі, Суїєн кидає сюрикен у коріння дерева. Переляканий Шібукі вигукує ім'я Наруто і ненавмисно розкриває задум. Наруто все одно вступає в бій, використовує тіньових клонів і перевтілення, намагаючись заскочити значно сильнішого противника зненацька."
+    origin: "N"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-shibuki", role: "cause", mode: "physical"}
+      - {entity_id: "c-naruto", role: "focus", mode: "physical"}
+      - {entity_id: "c-suien", role: "opponent", mode: "physical"}
+      - {entity_id: "c-senji", role: "participant", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-novel-waterfall"]
+relations:
+  - {id: "rel-alt-waterfall-novel-siege-1", kind: "before", a: "ev-alt-y0-0905-waterfall-novel-siege", b: "ev-alt-y0-0905-senji-bargains-suien", basis: "source", review: "pending", evidence_ids: ["evd-novel-waterfall"]}
+  - {id: "rel-alt-waterfall-novel-siege-2", kind: "before", a: "ev-alt-y0-0905-senji-bargains-suien", b: "ev-alt-y0-0905-shibuki-exposes-naruto", basis: "source", review: "pending", evidence_ids: ["evd-novel-waterfall"]}
 presence: []
