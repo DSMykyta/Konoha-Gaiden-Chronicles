@@ -1385,6 +1385,11 @@ sources:
     url: https://naruto.fandom.com/wiki/Sasuke_and_Sakura:_Friends_or_Foes%3F
     accessed: '2026-10-10'
     locator_status: secondary_synopsis_checked
+  - id: src-subtitle-naruto-002
+    type: anime_transcript
+    title: Naruto (2002) — серія 002, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 002.srt
+    locator_status: subtitle_timestamps_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4633,5 +4638,20 @@ evidence:
   - id: evd-narutopedia-ep3-kakashi-milk
     source_id: src-narutopedia-ep3-milk
     locator: 'Episode 3, Synopsis — фінальна сцена в квартирі Наруто; підтверджено персонажів і причину болю в животі'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep2-konohamaru-training
+    source_id: src-subtitle-naruto-002
+    locator: '00:07:05–00:12:05 — Наруто приймає Конохамару як учня і тренує Перетворення'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep2-konohamaru-identity
+    source_id: src-subtitle-naruto-002
+    locator: '00:12:35–00:13:48 — Конохамару пояснює, чому хоче стати Хокаґе'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep2-hiruzen-fourth-wish
+    source_id: src-subtitle-naruto-002
+    locator: '00:14:12–00:16:23 — Хірузен розповідає про бажання Четвертого й страх мешканців'
     basis: source
     review: accepted
