@@ -488,15 +488,18 @@ function render(){
  const fineOwner=new Map();
  for(const p of fine)for(const moment of p.group)fineOwner.set(moment.id,p);
  const parents=new Map(fine.map(p=>[p.id,coarseOwner.get(p.group[0]?.id)||p]));
+ // A one-moment scene (or one-scene episode) keeps its original identity:
+ // do not paint a second ghost mark on top of the same node during fusion.
+ const unchanged=new Set(fine.filter(p=>parents.get(p.id)?.id===p.id&&parents.get(p.id)?.kind===p.kind).map(p=>p.id));
  const fineProjected=fine.map(p=>{
   const target=parents.get(p.id),fromY=parentY(p,flow.fine),toY=target===p?fromY:parentY(target,flow.coarse);
   const deltaX=px(target.day)-px(p.day),deltaY=toY-fromY;
   return {...p,x:TimelineFlow.lerp(px(p.day),px(target.day),t),y:TimelineFlow.lerp(fromY,toY,t),
-   day:TimelineFlow.lerp(p.day,target.day,t),opacity:flow.coarse?1-t:1,_role:'fine',
+   day:TimelineFlow.lerp(p.day,target.day,t),opacity:unchanged.has(p.id)?1:flow.coarse?1-t:1,_role:'fine',
    flowAngle:Math.atan2(deltaY,deltaX)*180/Math.PI,stretch:Math.sin(Math.PI*t)};
  });
  const coarseProjected=coarse.map(p=>({...p,x:px(p.day),y:parentY(p,flow.coarse),
-  opacity:t,_role:'coarse',stretch:0}));
+  opacity:unchanged.has(p.id)?0:t,_role:'coarse',stretch:0}));
  let globalNodes=[...fineProjected,...coarseProjected].filter(p=>p.opacity>.001);
  // Independently overlapping arc histories can share a screen-space hub.
  // They retain all distinct arc IDs for the reader and reverse on zoom-in.
