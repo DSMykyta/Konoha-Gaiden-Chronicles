@@ -564,8 +564,12 @@ function render(){
  const visibleFine=fineProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
  const visibleCoarse=coarseProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
  graphClouds=[
-  ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:flow.coarse?1-t:1})),
-  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:t})):[]),
+  ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({
+   ...g,opacity:g.kind==='arc'?(fineProjected.find(n=>n.id===g.nodes[0]?.id)?.opacity??1):(flow.coarse?1-t:1)
+  })),
+  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({
+   ...g,opacity:g.kind==='arc'?(coarseProjected.find(n=>n.id===g.nodes[0]?.id)?.opacity??t):t
+  })):[]),
   ...globalNodes.filter(p=>p.kind==='arc-cluster'&&p.opacity>.012).map(p=>{
    const point={id:p.id,x:p.x,y:p.y};
    return {key:p.id,kind:'arc',id:p.id,title:p.title,opacity:p.opacity,nodes:[point],parts:[[point]]};
