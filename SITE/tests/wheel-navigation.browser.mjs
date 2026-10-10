@@ -117,14 +117,20 @@ try {
         pending:wheelPreview,
         mutations:window.__timelineMutations,
         center,
-        curves:$('timeline').querySelectorAll('.thread,.thread-focus-continuous').length
+        curves:$('timeline').querySelectorAll('.thread,.thread-focus-continuous').length,
+        spanning:(()=>{
+          const [lo,hi]=range(),days=datedEvents()
+            .filter(event=>event.physical?.some(id=>selected.has(id)))
+            .map(event=>dayToAxis(event.day));
+          return days.length>1&&Math.min(...days)<hi&&Math.max(...days)>lo;
+        })()
       };
     }));
   }
   assert(liveFrames.every(frame=>frame.covered),'camera must never outrun its prepared buffer');
   assert(liveFrames.every(frame=>!frame.pending),'each wheel pulse must commit during the gesture');
   assert(liveFrames.some(frame=>frame.mutations>0),'buffer transitions must render while the wheel keeps moving');
-  assert(liveFrames.every(frame=>frame.curves>0),'selected character curves must survive buffer transitions');
+  assert(liveFrames.every(frame=>!frame.spanning||frame.curves>0),'an active selected line must survive buffer transitions');
   await page.evaluate(()=>{zoom=zoomModes.month;center=dayToAxis(95);render();});
 
   // Explicitly crossing the buffered interval is the one legitimate reason
