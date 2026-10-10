@@ -544,8 +544,13 @@ function storyPanelHeader(kind,dateOrRange,hasYear,id,actions='',hierarchy=false
 }
 function storyPoint(kind,id){
  const registry=kind==='arc'?arcMap:episodeMap;id=registry.has(id)?id:[...registry.values()].find(item=>item.redirect_ids?.includes(id))?.id;const meta=registry.get(id);if(!meta)return null;
- const episodeIds=kind==='arc'?[...episodeMap.values()].filter(ep=>ep.arc_id===id).map(ep=>ep.id):[id],members=new Set(episodeIds);
+ const availableEpisodeIds=kind==='arc'?[...episodeMap.values()].filter(ep=>ep.arc_id===id).map(ep=>ep.id):[id];
+ const members=new Set(availableEpisodeIds);
  const scenes=orderedScenes().filter(scene=>members.has(sceneMap.get(scene.id)?.episode_id));if(!scenes.length)return null;
+ // Source registries are unfiltered. A disabled story layer must never leave
+ // an empty episode in the reader, its count or its navigation controls.
+ const activeEpisodes=new Set(scenes.map(scene=>sceneMap.get(scene.id)?.episode_id));
+ const episodeIds=availableEpisodeIds.filter(episodeId=>activeEpisodes.has(episodeId));
  const group=scenes.flatMap(scene=>scene.group),positions=scenes.map(scene=>scene.position).filter(Number.isFinite),layoutCast=storyNodeCast(group);
  return {id:kind+':'+id,rawId:id,kind,title:meta.title,story:meta,group,day:positions.length?(Math.min(...positions)+Math.max(...positions))/2:null,calendarDay:scenes[0].day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,childCount:kind==='arc'?episodeIds.length:scenes.length,sourceSceneIds:scenes.map(scene=>scene.id),sourceEpisodeIds:episodeIds,scenes};
 }
