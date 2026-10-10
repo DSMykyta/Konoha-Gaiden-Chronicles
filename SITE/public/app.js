@@ -537,7 +537,7 @@ function render(){
   const sourceArc=to?.kind==='arc'?projectedCoarse.get(to.id):from?.kind==='arc'?projectedFine.get(from.id):null;
   const originalArc=to?.kind==='arc'?to:from?.kind==='arc'?from:null;
   const shift=movedArcDay.get(sourceArc?.id);
-  const shiftFactor=flow.coarse==='arc'?t:1;
+  const shiftFactor=flow.coarse==='arc'?t:0; // Fine arc marks already include their own cluster motion.
   const shiftDay=shift&&originalArc?(shift.day-originalArc.day)*shiftFactor:0;
   const shiftY=shift&&originalArc?(shift.y-parentY(originalArc,originalArc===to?flow.coarse:flow.fine))*shiftFactor:0;
   visualMoment.set(id,{day:mark.day+shiftDay,y:mark.y+shiftY});
