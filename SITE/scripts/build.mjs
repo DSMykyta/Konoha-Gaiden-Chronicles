@@ -17,7 +17,7 @@ if(!fs.existsSync(path.join(source,relative))){
 }
 const p=path.join(source,relative),repairs=[];
 function read(file){return YAML.parse(fs.readFileSync(path.join(p,file),'utf8'));}
-const entities=read('entities.yaml'),anchors=new Map(read('time-anchors.yaml').anchors.map(a=>[a.id,a])),lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
+const entities=read('entities.yaml'),geography=read('geography.yaml'),anchors=new Map(read('time-anchors.yaml').anchors.map(a=>[a.id,a])),lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
 const {calendar:calendarSource,periods}=read('timeline-periods.yaml');
 const datedYears=[...anchors.values()].filter(a=>a.date).map(a=>a.date.year);
 const firstYear=Math.min(calendarSource.current_year,...datedYears),lastYear=Math.max(calendarSource.current_year,...datedYears);
@@ -46,11 +46,25 @@ const episodeViews=episodes.map(episode=>{const members=scenes.filter(s=>s.episo
 const arcViews=arcs.map(arc=>{const members=episodeViews.filter(e=>e.arc_id===arc.id),dated=members.flatMap(e=>[e.day_start,e.day_end]).filter(d=>d!==null);return {...arc,source_continuity_id:arc.continuity_id||'main',continuity_id:'main',episode_ids:members.map(e=>e.id),day_start:dated.length?Math.min(...dated):null,day_end:dated.length?Math.max(...dated):null};});
 if(new Set(events.map(e=>e.id)).size!==events.length)throw new Error('Duplicate event IDs');
 const known=new Set(entities.entities.map(e=>e.id));for(const e of events)for(const id of e.tracks)if(!known.has(id))throw new Error('Unknown entity '+id);
+// Geographic topology is deliberately separate from storyline YAML. Unknown
+// countries are retained as review items instead of being assigned a guess.
+const locationIds=new Set(entities.entities.filter(e=>e.kind==='location').map(e=>e.id));
+const geographicIds=new Set([...locationIds,...(geography.regions||[]).map(region=>region.id)]);
+if(geographicIds.size!==locationIds.size+(geography.regions||[]).length)throw new Error('Duplicate geographic region ID');
+for(const id of Object.keys(geography.kinds||{}))if(!geographicIds.has(id))throw new Error('Unknown location kind: '+id);
+for(const [id,parent] of Object.entries(geography.parents||{}))
+ if(!geographicIds.has(id)||!geographicIds.has(parent))throw new Error('Unknown geography parent: '+id+' / '+parent);
+for(const [id,parent] of Object.entries(geography.equivalents||{}))
+ if(!locationIds.has(id)||!geographicIds.has(parent))throw new Error('Unknown equivalent location: '+id);
+for(const id of Object.keys(geography.spatial||{}))if(!locationIds.has(id))throw new Error('Unknown spatial location: '+id);
+const geographicUnknown=scenes.filter(scene=>scene.state!=='inactive'&&(!scene.location_id||!locationIds.has(scene.location_id)));
+if(geographicUnknown.length)console.warn('Geography: '+geographicUnknown.length+' scenes lack a known location; retained as unknown, not assigned a country.');
+
 validateMissionWindows(read('mission-windows.yaml'),scenes,entities.entities);
 let revision=process.env.VERCEL_GIT_COMMIT_SHA;try{revision=execFileSync('git',['-C',source,'rev-parse','HEAD'],{encoding:'utf8'}).trim();}catch{if(!revision)throw new Error('Source revision is required');}
 const sources=read('sources.yaml');
 const enrichment=loadEnrichment({source,relative,project,entities:entities.entities,events,sourceIds:new Set(sources.sources.map(s=>s.id))});
-const output={...enrichment,revision,base:relative,calendar,periods,entities:entities.entities,memberships:entities.memberships||[],arcs:arcViews,episodes:episodeViews,scenes,events,sources,links:read('links.yaml').links||[],repairs};
+const output={...enrichment,revision,base:relative,calendar,periods,entities:entities.entities,memberships:entities.memberships||[],arcs:arcViews,episodes:episodeViews,scenes,events,geography,sources,links:read('links.yaml').links||[],repairs};
 fs.writeFileSync(path.join(project,'public','data.json'),JSON.stringify(output));
 fs.writeFileSync(path.join(project,'public','version.json'),JSON.stringify({revision}));
 console.log(`Built ${arcViews.length} arcs, ${episodeViews.length} episodes, ${scenes.length} scenes and ${events.length} moments from ${revision}.`);
