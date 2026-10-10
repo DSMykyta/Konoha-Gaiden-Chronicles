@@ -443,9 +443,10 @@ const StoryTitleScale = (() => {
     const last = Math.max(...axes);
     const span = Math.max(0, last - first);
     const visibleSpan = Math.max(MIN_VIEW_DAYS[kind], span * PADDING[kind]);
-    const desiredZoom = Math.min(MAX_ZOOM, 365 / Math.max(.5, visibleSpan));
+    const zoomLimit=typeof maximumZoom==='function'?maximumZoom():MAX_ZOOM;
+    const desiredZoom = Math.min(zoomLimit, (typeof axisLength==='function'?axisLength():365) / Math.max(.5, visibleSpan));
 
-    zoom = Math.min(MAX_ZOOM, Math.max(zoom, desiredZoom));
+    zoom = Math.min(zoomLimit, Math.max(zoom, desiredZoom));
     center = clampAxisCenter((first + last) / 2, zoom);
 
     const canvas = document.getElementById('canvas');
