@@ -53,8 +53,10 @@ const TimelineFlow = {
    const centroid={x:members.reduce((s,n)=>s+n.x,0)/members.length,
     y:members.reduce((s,n)=>s+n.y,0)/members.length,
     day:members.reduce((s,n)=>s+n.day,0)/members.length};
-   const radius=Math.max(...members.map(n=>Math.hypot(n.x-centroid.x,n.y-centroid.y)));
-   const strength=this.smooth((enter-radius)/(enter-solid));
+   // Use pairwise separation, not radius to centroid: at the exact
+   // entrance distance the blending factor MUST start at zero.
+   const separation=Math.max(...members.flatMap((n,i)=>members.slice(i+1).map(m=>Math.hypot(n.x-m.x,n.y-m.y))));
+   const strength=this.smooth((enter-separation)/(enter-solid));
    if(strength<=0)continue;
    groups.push({members,centroid,strength});
   }
