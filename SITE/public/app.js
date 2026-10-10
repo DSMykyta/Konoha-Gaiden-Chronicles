@@ -617,7 +617,11 @@ function render(){
   $('emptyAction').textContent=!availableLines.length?'Змінити шари':ids.length?'До найближчої події':'Обрати всіх';
  }
  if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else HierarchyPreview.layout();}
- paintNodes();syncBufferedTabStops();updateFocusBar();tooltipController?.refresh();
+ paintNodes();
+ // SVG replacement discards StoryTitleScale's DOM classes but not its state.
+ // Restore any pinned/hovered story filter on the new elements immediately.
+ StoryTitleScale.restoreGraph();
+ syncBufferedTabStops();updateFocusBar();tooltipController?.refresh();
  paintedCenter=center;
 }
 function mapTitleGroups(level,nodes=graphNodes,bounds=null){
@@ -1033,6 +1037,9 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   const span=axisLength()/zoom;
   const next=clampAxisCenter(center+delta*span/plot);
   if(Math.abs(next-center)<1e-7)return;
+  // Moving through time must not leave an old sidebar hover attached
+  // to the newly created SVG; fixed story selection remains intact.
+  if(window.__storyScaleFocus?.mode==='hover')StoryTitleScale.dismissTransient();
   center=next;
   wheelPreview=true;
   previewPan((paintedCenter-center)*plot/span);
