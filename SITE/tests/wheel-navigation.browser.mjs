@@ -17,7 +17,7 @@ try {
     });
     window.__timelineObs.observe(document.getElementById('timeline'),{childList:true});
   });
-  const before=await page.evaluate(()=>({center,zoom}));
+  const before=await page.evaluate(()=>({center,zoom,viewBox:$('timeline').getAttribute('viewBox')}));
   const x=viewport.width<600?35:135, y=viewport.width<600?340:680;
   await page.mouse.move(x,y);
   await page.mouse.wheel(0,150);
@@ -26,9 +26,11 @@ try {
   assert(whileScrolling.center>before.center,'wheel down goes later in time');
   assert.equal(whileScrolling.mutations,0,'wheel preview must not rebuild SVG');
   assert.match(whileScrolling.transform,/translate3d/,'wheel scroll should preview on compositor');
+  const shortPanReusable=await page.evaluate(()=>{const [lo,hi]=range();return !!TimelinePanCache.reuse(panFrame,{lo,hi,width:$('canvas').clientWidth,height:$('canvas').clientHeight,zoom,breaks:axisBreaks()});});
   await page.waitForTimeout(1050);
-  const after=await page.evaluate(()=>({center,zoom,transform:document.getElementById('timeline').style.transform,mutations:window.__timelineMutations}));
-assert(after.mutations>0,'commit after pause should update data/labels');
+  const after=await page.evaluate(()=>({center,zoom,transform:$('timeline').style.transform,viewBox:$('timeline').getAttribute('viewBox'),mutations:window.__timelineMutations}));
+  assert.equal(after.mutations===0,shortPanReusable,'the SVG rebuild policy must match camera-cache validity');
+  if(shortPanReusable)assert.notEqual(after.viewBox,before.viewBox,'a reused frame must move its viewBox');
   assert.equal(after.transform,'','preview transform must reset');
   assert.equal(after.zoom,before.zoom);
   await page.mouse.wheel(0,-150);
@@ -42,8 +44,9 @@ assert(after.mutations>0,'commit after pause should update data/labels');
   const burst=await page.evaluate(()=>window.__timelineMutations);
   assert.equal(burst,0,'short wheel pauses must not rebuild clouds and SVG between pulses');
   await page.waitForTimeout(550);
-  const settled=await page.evaluate(()=>window.__timelineMutations);
-  assert(settled>0,'one final rebuild after wheel gesture has ended');
+  const settled=await page.evaluate(()=>({mutations:window.__timelineMutations,viewBox:$('timeline').getAttribute('viewBox')}));
+  assert.equal(settled.mutations,0,'short wheel bursts within overscan must not replace SVG children');
+  assert.notEqual(settled.viewBox,before.viewBox,'the finished gesture must move the cached camera');
   await page.evaluate(()=>{zoom=1;center=clampAxisCenter(center);render()});
   await page.waitForTimeout(200);
   await page.evaluate(()=>window.__timelineMutations=0);
@@ -60,11 +63,21 @@ assert(after.mutations>0,'commit after pause should update data/labels');
   const drag=await page.evaluate(()=>({center,mutations:window.__timelineMutations}));
   assert.equal(drag.mutations,0,'drag must also avoid SVG rebuilds while moving');
   await page.mouse.up();await page.waitForTimeout(280);
-  const committed=await page.evaluate(()=>({mutations:window.__timelineMutations,transform:document.getElementById('timeline').style.transform}));
-  assert(committed.mutations>0,'drag must repaint on release');
+  const committed=await page.evaluate(()=>({mutations:window.__timelineMutations,transform:$('timeline').style.transform,viewBox:$('timeline').getAttribute('viewBox')}));
+  assert.equal(committed.mutations,0,'short drag must reuse the already-built line geometry');
+  assert.notEqual(committed.viewBox,before.viewBox,'drag release must commit a camera translation');
   assert.equal(committed.transform,'');
+  // Explicitly crossing the buffered interval is the one legitimate reason
+  // to rebuild the virtualized SVG.
+  await page.evaluate(()=>{
+    const target=Math.min(axisLength(),panFrame.coverHi+(panFrame.hi-panFrame.lo)*.3);
+    center=clampAxisCenter(target);
+    window.__timelineMutations=0;schedule();
+  });
+  await page.waitForTimeout(200);
+  assert((await page.evaluate(()=>window.__timelineMutations))>0,'leaving overscan must rebuild the next graph window');
   assert.deepEqual(errors,[]);
-  console.log('Wheel + drag navigation:',viewport.width+'×'+viewport.height,'passed; no wheel zoom, no SVG rebuilding during motion');
+  console.log('Buffered wheel + drag:',viewport.width+'×'+viewport.height,'passed; pan reuses SVG, buffer crossing rebuilds once');
   await page.close();
  }
 } finally {await browser.close();server.close();}
