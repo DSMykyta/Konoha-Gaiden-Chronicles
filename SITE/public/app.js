@@ -193,6 +193,58 @@ function previewPan(dx){
  const transform=Math.abs(dx)>.01?'translate3d('+dx+'px,0,0)':'';
  for(const id of ['timeline','timeAxis','storyClouds'])$(id).style.transform=transform;
 }
+function updatePanChrome(lo,hi,shift){
+ const loDay=axisToDay(lo,'before'),hiDay=axisToDay(hi,'after'),centerDay=axisToDay(center,'after');
+ const activeMode=currentZoomMode(),overview=zoom<3,yearLabel=yearText(centerDay);
+ const label=overview?(data.calendar.view_days>365?`${data.calendar.view_start_year}–${data.calendar.view_end_year} роки Конохи`:yearLabel)
+  :activeMode==='day'?`${dateText(centerDay,true)} · ${yearLabel}`
+  :`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;
+ $('periodLabel').textContent=label;
+ $('dateInputLabel').textContent=`Перейти до дня · ${yearLabel}`;
+ renderEraHeading(loDay,day=>panFrame.scale.px(day)+shift);
+ $('previous').disabled=lo<=.001;$('next').disabled=hi>=axisLength()-.001;
+}
+
+function applyBufferedPan(){
+ if(!data||!panFrame)return false;
+ const canvas=$('canvas'),width=canvas.clientWidth||1000,height=canvas.clientHeight||700,[lo,hi]=range();
+ const camera=TimelinePanCache.reuse(panFrame,{lo,hi,width,height,zoom,breaks:axisBreaks()});
+ if(!camera)return false;
+ uiTimers.cancel('node-open');hoveredNodeId=null;hoveredNodeTarget=null;
+ if(hoverCard)closeCard();
+ previewPan(0);
+ // Move the SVG camera, never replace its path, gradient or mask nodes.
+ $('timeline').setAttribute('viewBox',`${-camera.shift} 0 ${width} ${panFrame.svgHeight}`);
+ $('timeAxis').setAttribute('viewBox',`${-camera.shift} 0 ${width} 40`);
+ graphNodes=panFrame.nodes.filter(node=>{
+  const axis=dayToAxis(node.day);
+  return axis>=lo&&axis<hi;
+ }).map(node=>({...node,x:node.x+camera.shift}));
+ graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+ if(panFrame.numbered){
+  const numbers=new Map(graphNodes.map((node,index)=>[node.id,String(index+1)]));
+  document.querySelectorAll('#timeline [data-moment-number]').forEach(element=>{
+   const number=numbers.get(element.dataset.momentNumber)||'';
+   if(element.textContent!==number)element.textContent=number;
+  });
+ }
+ cloudRenderer?.pan(camera.shift);
+ updatePanChrome(lo,hi,camera.shift);
+ $('timelineEmpty').hidden=graphNodes.length>0;
+ if(!graphNodes.length){
+  const count=panFrame.lineCount,available=panFrame.availableCount;
+  $('emptyTitle').textContent=!available?'У вибраних шарах немає ліній персонажів':count?'У цьому періоді немає подій':'Обери лінії персонажів';
+  $('emptyDescription').textContent=!available?'Зміни шари історії, щоб побачити доступних персонажів.':count?'Перейди до найближчої події обраних персонажів.':'Їхні події з’являться на хронології.';
+  $('emptyAction').textContent=!available?'Змінити шари':count?'До найближчої події':'Обрати всіх';
+ }
+ if(!$('eventCard').hidden){
+  const node=graphNodes.find(p=>p.id===focusId);
+  if(node)positionCard(node);else HierarchyPreview.layout();
+ }
+ updateFocusBar();
+ paintedCenter=center;
+ return true;
+}
 function schedule(){
  if(wheelPreview||raf!==null)return;
  raf=requestAnimationFrame(()=>{raf=null;if(!applyBufferedPan())render();});
@@ -371,7 +423,7 @@ function render(){
  graphClouds=StoryClouds.groups(globalNodes.filter(p=>p.group.some(relevant)),level,sceneMap,episodeMap,arcMap);
  h=Math.max(viewport,...renderNodes.map(p=>p.y+156));
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
- panFrame={...buffered,nodes:renderNodes,svgHeight:h,level,numbered,scale:timeScale};
+ panFrame={...buffered,nodes:renderNodes,svgHeight:h,level,numbered,scale:timeScale,lineCount:ids.length,availableCount:availableLines.length};
  $('linesCount').textContent=`Лінії · ${ids.length}`;
  // Alternating calendar days, including empty days. Long empty spans are omitted
  // after retaining one calendar week on each side of the nearest events.
