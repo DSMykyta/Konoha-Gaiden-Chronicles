@@ -360,18 +360,28 @@ const TimelineCore = {
       }
       for(const n of nodes)y.set(n.id,Math.max(-1,Math.min(1,y.get(n.id)+delta.get(n.id))));
     }
-    // Strong lane continuity: same calendar day + same physical location + a large
-    // cast overlap is one continuing story stream even if another scene branches
-    // between them. Keep those scenes on practically the same horizontal lane.
+    // Strong lane continuity: same calendar day + same physical location
+    // and substantial cast overlap. Only compare events within the SAME day:
+    // a global n² scan here made startup costly after adopting canonical
+    // moment geometry. Day groups preserve the former update order exactly.
+    const calendarBuckets=new Map();
+    for(const node of sorted){
+      if(!node.locationId)continue;
+      const day=node.calendarDay;
+      if(!calendarBuckets.has(day))calendarBuckets.set(day,[]);
+      calendarBuckets.get(day).push(node);
+    }
     for(let pass=0;pass<4;pass++){
-      for(let i=0;i<sorted.length;i++)for(let j=i+1;j<sorted.length;j++){
-        const a=sorted[i],b=sorted[j];
-        if(a.calendarDay!==b.calendarDay||!a.locationId||a.locationId!==b.locationId||(a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup))continue;
-        const ac=a.layoutCast||[],bc=b.layoutCast||[];if(!ac.length||!bc.length)continue;
-        const shared=ac.filter(id=>bc.includes(id)).length,overlap=shared/Math.min(ac.length,bc.length);
-        if(shared<3||overlap<.55)continue;
-        const mean=(y.get(a.id)+y.get(b.id))/2;
-        y.set(a.id,mean);y.set(b.id,mean);
+      for(const list of calendarBuckets.values()){
+        for(let i=0;i<list.length;i++)for(let j=i+1;j<list.length;j++){
+          const a=list[i],b=list[j];
+          if(a.locationId!==b.locationId||(a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup))continue;
+          const ac=a.layoutCast||[],bc=b.layoutCast||[];if(!ac.length||!bc.length)continue;
+          const shared=ac.filter(id=>bc.includes(id)).length,overlap=shared/Math.min(ac.length,bc.length);
+          if(shared<3||overlap<.55)continue;
+          const mean=(y.get(a.id)+y.get(b.id))/2;
+          y.set(a.id,mean);y.set(b.id,mean);
+        }
       }
     }
     // Normalize only enough to use the available vertical field; preserve relative
