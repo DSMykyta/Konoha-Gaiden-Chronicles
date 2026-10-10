@@ -366,3 +366,10 @@
 }
 
 [data-cascade-obscured="true"] { visibility: hidden; pointer-events: none; }
+
+/* Editorial geography review stays compact inside the Period popover. */
+.geography-audit {font-size:11px;line-height:1.5;color:var(--text);}
+.geography-audit p {margin:7px 0;color:var(--muted);}
+.geography-audit ol {margin:7px 0 12px;padding-left:21px;max-height:190px;overflow:auto;}
+.geography-audit li {padding:5px 0;border-bottom:1px solid rgba(90,105,124,.10);overflow-wrap:anywhere;}
+.geography-audit .text-button {display:inline;border:0;padding:2px 0;background:none;color:var(--accent,#426e9c);font:inherit;text-align:left;text-decoration:underline;cursor:pointer;}
