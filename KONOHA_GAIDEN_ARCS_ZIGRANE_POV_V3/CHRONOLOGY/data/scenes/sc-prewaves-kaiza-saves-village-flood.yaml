@@ -1,0 +1,36 @@
+schema_version: 1
+id: sc-prewaves-kaiza-saves-village-flood
+episode_id: ep-prewaves-kaiza-life
+display_rank: 100
+continuity_id: main
+title: "Кайза захищає Країну Хвиль від повені"
+description: "Коли через несправну водяну браму затоплення загрожує частині поселення, Кайза ризикує власним життям і допомагає мешканцям закрити шлюз. Інарі бачить його рішучість, а односельці починають називати рибалку героєм. Цей випадок робить Кайзу символом сміливості ще до приходу Ґато."
+location_id: loc-land-waves
+placement: null
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-kaiza-stops-flood
+  title: "Кайза допомагає закрити шлюз і рятує квартал від повені"
+  text: "Вода загрожує залити нижню частину поселення. Кайза добирається до небезпечного шлюзу, закріплює мотузку й дає мешканцям змогу спільними зусиллями перекрити потік. Інарі спостерігає за ризикованим вчинком названого батька, а люди визнають Кайзу героєм Країни Хвиль."
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kaiza
+    role: focus
+    mode: physical
+  - entity_id: c-inari
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+  - evd-narutopedia-kaiza-past
+relations: []
+presence: []
