@@ -2767,3 +2767,19 @@ memberships:
     from: "ev-y0-0122-team10-departs.start"
     basis: "project_decision"
     review: "pending"
+  - id: "c-pochi"
+    kind: "animal"
+    name: "Pochi"
+    aliases:
+      - "Почі"
+  - id: "c-akane"
+    kind: "person"
+    name: "Akane"
+    aliases:
+      - "Акане"
+  - id: "loc-kirigakure"
+    kind: "location"
+    name: "Kirigakure"
+    aliases:
+      - "Кіріґакуре"
+      - "Селище Прихованого Туману"
