@@ -12,7 +12,7 @@ test('drag suppression does not consume the next unrelated ability-card click',(
  const listeners=new Map(),opened=[];
  const track={
   dataset:{},style:{},scrollLeft:0,
-  classList:{add(){},remove(){}},
+  classList:{add(){},remove(){}},setAttribute(){},
   addEventListener:(event,callback)=>listeners.set(event,callback)
  };
  const context={openCard:id=>opened.push(id),getComputedStyle:()=>({columnGap:'0'})};
