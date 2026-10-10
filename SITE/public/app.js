@@ -31,7 +31,7 @@ function renderGeographyAudit(){
  const unknown=review.unresolved.slice(0,24).map(item=>{
   const entity=entityMap.get(item.id);
   const label=item.id==='(missing)'?'Місце не зазначено':(entity?.aliases?.[0]||entity?.name||item.id);
-  return '<li>'+esc(label)+' — '+item.unknown+' сцен'+(item.unknown===1?'а':'')+'</li>';
+  return '<li>'+esc(label)+' — '+item.unknown+' сцен'+(item.unknown===1?'а':'')+(item.sceneIds?.length?' <button class="text-button" data-geo-scene="'+esc(item.sceneIds[0])+'">Відкрити сцену</button>':'')+'</li>';
  }).join('');
  const conflicts=flags.slice(0,12).map(item=>{
   const a=eventMap.get(item.a),b=eventMap.get(item.b),where=item.countries.map(id=>geographyAtlas.places.get(id)?.name||id).join(' / ');
@@ -45,6 +45,7 @@ function renderGeographyAudit(){
   '. Одна дата в різних країнах — підстава для перевірки, не доведена помилка (клони, техніки, неточний час).</p>'+
   (conflicts?'<ol>'+conflicts+'</ol>':'');
  target.querySelectorAll('[data-geo-event]').forEach(button=>button.addEventListener('click',()=>navigateEvent(button.dataset.geoEvent)));
+ target.querySelectorAll('[data-geo-scene]').forEach(button=>button.addEventListener('click',()=>navigateScene(button.dataset.geoScene)));
 }
 function renderCalendar(){
  $('dateInputLabel').textContent=`Перейти до дня · ${yearText()}`;
