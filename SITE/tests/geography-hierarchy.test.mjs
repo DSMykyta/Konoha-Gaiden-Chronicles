@@ -23,6 +23,9 @@ test('geographic hierarchy models rooms, village, country and separate countries
  assert.equal(geography.relation('loc-konohagakure','loc-inn').scope,'unknown');
  assert.equal(geography.relation('loc-konohagakure','loc-road-fire-waves').scope,'unknown');
  assert.equal(geography.resolve('loc-inn').country,null,'unknown inns must never default to Konoha');
+ assert.equal(geography.relation('loc-iwa-mercenary-mines','loc-iwa-mercenary-mines').scope,'same_site',
+  'a known border site may be the same site without knowing its country');
+ assert.equal(geography.relation('loc-iwa-mercenary-mines','loc-konohagakure').scope,'unknown');
 });
 
 test('known separate countries push simultaneous streams farther apart',()=>{
