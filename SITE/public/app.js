@@ -242,7 +242,7 @@ function syncBufferedTabStops(shift=0){
  document.querySelectorAll('#timeline .cloud-label').forEach(element=>{
   const label=positions.get(JSON.stringify([element.dataset.titleKind,element.dataset.titleId]));
   const x=(label?.x??Infinity)+shift;
-  const active=!!label&&x+label.width>=0&&x<=width&&!element.classList.contains('is-line-focus-hidden');
+  const active=!!label&&label.opacity>=.48&&x+label.width>=0&&x<=width&&!element.classList.contains('is-line-focus-hidden');
   element.setAttribute('tabindex',active?'0':'-1');
  });
 }
@@ -693,7 +693,7 @@ function render(){
   hit.addEventListener('click',()=>setFocus(path.id));hit.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();setFocus(path.id);}});
  }
 
- drawMapTitles(level,w,headerBottom()+42,h-readerHeight-42,renderNodes,buffered);
+ drawMapTitles(flow,w,headerBottom()+42,h-readerHeight-42,renderNodes,buffered);
  // Large touch targets stay below every visible mark. A neighboring transparent
  // target can never intercept a tap directly on another node's visible center.
  const hitLayer=svg('g',{'aria-hidden':'true'});
@@ -765,21 +765,46 @@ function mapTitleGroups(level,nodes=graphNodes,bounds=null){
  }
  return titles;
 }
-function drawMapTitles(level,width,top,bottom,nodes=graphNodes,buffered=null){
- const key=`${level}:${width}:${$('canvas').clientHeight}:${document.documentElement.classList.contains('story-reader-collapsed')}`;
- if(!cloudLabelLayouts.has(key)){if(cloudLabelLayouts.size>=12)cloudLabelLayouts.clear();cloudLabelLayouts.set(key,new Map());}
+function drawMapTitles(flow,width,top,bottom,nodes=graphNodes,buffered=null){
  const bounds=buffered?{left:-buffered.leftPx,right:width+buffered.rightPx}:null;
- graphLabels=StoryClouds.labels(mapTitleGroups(level,nodes,bounds),nodes,width,top,bottom,cloudLabelLayouts.get(key),$('canvas').clientHeight<520?1:2,bounds);
- const layer=svg('g',{class:'map-titles'}),kindNames={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка','arc-cluster':'Арки'};
+ const phases=[{level:flow.fine,role:'fine',opacity:flow.coarse?1-flow.t:1}];
+ if(flow.coarse)phases.push({level:flow.coarse,role:'coarse',opacity:flow.t});
+ const labels=[];
+ for(const phase of phases){
+  if(phase.opacity<.012)continue;
+  const candidates=nodes.filter(n=>n._role===phase.role);
+  const key=`${phase.level}:${width}:${$('canvas').clientHeight}:${document.documentElement.classList.contains('story-reader-collapsed')}`;
+  if(!cloudLabelLayouts.has(key)){
+   if(cloudLabelLayouts.size>=12)cloudLabelLayouts.clear();
+   cloudLabelLayouts.set(key,new Map());
+  }
+  const groups=mapTitleGroups(phase.level,candidates,bounds);
+  labels.push(...StoryClouds.labels(groups,candidates,width,top,bottom,cloudLabelLayouts.get(key),
+   $('canvas').clientHeight<520?1:2,bounds).map(label=>({...label,opacity:phase.opacity})));
+ }
+ graphLabels=labels;
+ const layer=svg('g',{class:'map-titles'});
+ const kindNames={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка','arc-cluster':'Арки'};
  for(const label of graphLabels){
-  const group=svg('g',{class:'cloud-label',role:'button',tabindex:0,'data-title-kind':label.kind,'data-title-id':label.id,'aria-haspopup':'dialog','aria-label':`${kindNames[label.kind]}: ${label.title}`},layer);
+  const active=label.opacity>=.48;
+  const group=svg('g',{class:'cloud-label',role:'button',tabindex:active?0:-1,
+   style:`opacity:${label.opacity.toFixed(3)};pointer-events:${active?'auto':'none'}`,
+   'data-title-kind':label.kind,'data-title-id':label.id,'aria-haspopup':'dialog',
+   'aria-label':`${kindNames[label.kind]}: ${label.title}`},layer);
   const title=svg('title',{},group);title.textContent=label.title;
-  const startX=clamp(label.anchor.x,label.x,label.x+label.width),startY=clamp(label.anchor.y,label.y,label.y+label.height),distance=Math.hypot(label.anchor.x-startX,label.anchor.y-startY),ratio=Math.max(0,(distance-14)/Math.max(1,distance));
-  svg('line',{x1:startX,y1:startY,x2:startX+(label.anchor.x-startX)*ratio,y2:startY+(label.anchor.y-startY)*ratio,class:'cloud-label-guide','data-title-kind':label.kind,'data-title-id':label.id,'aria-hidden':'true'},layer);
-  svg('rect',{x:label.x-4,y:label.y-4,width:label.width+8,height:Math.max(44,label.height+8),class:'cloud-label-hit'},group);
+  const startX=clamp(label.anchor.x,label.x,label.x+label.width),startY=clamp(label.anchor.y,label.y,label.y+label.height),
+   distance=Math.hypot(label.anchor.x-startX,label.anchor.y-startY),
+   ratio=Math.max(0,(distance-14)/Math.max(1,distance));
+  svg('line',{x1:startX,y1:startY,x2:startX+(label.anchor.x-startX)*ratio,
+   y2:startY+(label.anchor.y-startY)*ratio,class:'cloud-label-guide',
+   'data-title-kind':label.kind,'data-title-id':label.id,'aria-hidden':'true'},layer);
+  svg('rect',{x:label.x-4,y:label.y-4,width:label.width+8,height:Math.max(44,label.height+8),
+   class:'cloud-label-hit'},group);
   const text=svg('text',{x:label.x,y:label.y+10,class:'cloud-label-copy'},group);
   const kind=svg('tspan',{x:label.x,class:'cloud-label-kind'},text);kind.textContent=kindNames[label.kind];
-  label.lines.forEach((line,index)=>{const span=svg('tspan',{x:label.x,dy:index?17:19},text);span.textContent=line;});
+  label.lines.forEach((line,index)=>{
+   const span=svg('tspan',{x:label.x,dy:index?17:19},text);span.textContent=line;
+  });
  }
 }
 function openMapTitle(kind,id){
