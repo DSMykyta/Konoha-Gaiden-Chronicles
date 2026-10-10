@@ -9,7 +9,11 @@ const StoryClouds = {
   return {top:`hsla(${hue},72%,86%,.92)`,bottom:`hsla(${hue},64%,89%,.78)`,stroke:`hsla(${hue},38%,60%,.52)`,alpha:.84};
  },
  groups(nodes,level,sceneMap,episodeMap,arcMap=new Map()){
-  if(level==='arc')return [];
+  if(level==='arc')return nodes.filter(n=>n.kind==='arc').map(n=>{
+   const point={id:n.id,x:n.x,y:n.y};
+   return {key:'arc:'+n.id,kind:'arc',id:n.rawId||n.id,title:n.title,
+    nodes:[point],parts:[[point]]};
+  });
   const buckets=new Map(),rank={arc:-1,episode:0,scene:1,moment:2};
   const add=(kind,id,node,parentId=null)=>{
    if(!id)return;
@@ -164,7 +168,7 @@ const StoryClouds = {
    // Preserve cached world geometry and translate only the viewport.
    context.translate(state.panX,0);
    for(const group of state.groups){
-    const radius=group.kind==='arc'?92:group.kind==='episode'?70:group.kind==='scene'?48:25;
+    const radius=group.kind==='arc'?Math.min(50,22+4*Math.log2(Math.max(1,state.zoom||1))):group.kind==='episode'?70:group.kind==='scene'?48:25;
     const margin=radius*3.8;
     const colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.key),group.kind,group.key),group.kind,group.key);
     // The group contains ALL its nodes, including those offscreen. Clip only
