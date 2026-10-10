@@ -78,6 +78,7 @@ events:
   focus_teams:
   - team-7
   evidence_ids:
+  - evd-sub-ep10-haku-recovery
   - evd-v10-000028
   - evd-manga-land-waves
 relations:
