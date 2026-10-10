@@ -71,3 +71,30 @@ test('cached camera changes SVG viewBox without touching its children',()=>{
  assert(calls.some(call=>Array.isArray(call)&&call[0]==='cloud-pan'&&call[1]===-230));
  assert(!calls.includes('svg-replaced')&&!calls.includes('axis-replaced'));
 });
+
+
+test('prefetched offscreen marks cannot steal keyboard focus',()=>{
+ const start=app.indexOf('function syncBufferedTabStops(');
+ const end=app.indexOf('function applyBufferedPan(){',start);
+ assert(start>=0&&end>start);
+ const make=id=>({
+  dataset:{event:id},
+  classList:{contains:()=>false},
+  tabindex:null,
+  setAttribute(key,value){if(key==='tabindex')this.tabindex=value;}
+ });
+ const inside=make('inside'),prefetched=make('prefetched');
+ const ctx={
+  graphNodes:[{id:'inside'}],
+  graphLabels:[],
+  document:{querySelectorAll:selector=>selector==='#timeline .node'?[inside,prefetched]:[]},
+  $:()=>({clientWidth:800})
+ };
+ vm.runInNewContext(app.slice(start,end)+';syncBufferedTabStops()',ctx);
+ assert.equal(inside.tabindex,'0');
+ assert.equal(prefetched.tabindex,'-1');
+ ctx.graphNodes=[{id:'prefetched'}]; // Camera moves without recreating the nodes.
+ vm.runInNewContext(app.slice(start,end)+';syncBufferedTabStops()',ctx);
+ assert.equal(inside.tabindex,'-1');
+ assert.equal(prefetched.tabindex,'0');
+});
