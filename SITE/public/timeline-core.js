@@ -283,9 +283,12 @@ const TimelineCore = {
       }
       for(const run of connected.values()){
         if(run.length<2)continue;
-        const average=run.reduce((sum,node)=>sum+lanes.get(node.id),0)/run.length;
-        // Retain a hint of local variation, not 40-100px oscillations.
-        for(const node of run)result.set(node.id,average+(lanes.get(node.id)-average)*.065);
+        const values=run.map(node=>lanes.get(node.id));
+        if(Math.max(...values)-Math.min(...values)<1e-10)continue;
+        const average=values.reduce((sum,y)=>sum+y,0)/values.length;
+        // Retain only a trace of local variation, not 40-100px oscillations.
+        // Keep the exact original coordinate when a crew is already flat.
+        for(const node of run)result.set(node.id,average+(lanes.get(node.id)-average)*.025);
       }
     }
     return result;
