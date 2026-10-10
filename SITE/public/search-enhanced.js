@@ -206,10 +206,10 @@ const TimelineSearchEnhanced = (() => {
 
   function buildIndex() {
     if (typeof data === 'undefined' || !data) return [];
-    const key = `${data.revision || 'unknown'}|${typeof continuity === 'undefined' ? 'main' : continuity}|${StoryLayers.mask(storyLayers)}`;
+    const key = `${data.revision || 'unknown'}|${StoryLayers.mask(storyLayers)}`;
     if (key === cachedKey) return cachedDocs;
 
-    const activeEvents = typeof events === 'function' ? events() : (data.events || []).filter(event => !continuity || event.continuity === continuity);
+    const activeEvents = typeof events === 'function' ? events() : (data.events || []).filter(event => event.scene_state !== 'inactive');
     const ordered = typeof orderedScenes === 'function' ? orderedScenes().flatMap(scene => scene.group) : activeEvents;
     const eventOrder = new Map(ordered.map((event, index) => [event.id, index]));
     const groups = new Map();
