@@ -239,7 +239,7 @@ const TimelineCore = {
     }
     return nodes.map(n=>({...n,y:y.get(n.id)}));
   },
-  stabilizeSequences(nodes,lanes) {
+  stabilizeSequences(nodes,lanes,geography=null) {
     // A scene's physical team should form a readable continuous strand.
     // The topology solver may pull successive scenes apart, but a separate
     // collision pass must never turn a co-located team into a sawtooth.
@@ -289,6 +289,66 @@ const TimelineCore = {
         // Retain only a trace of local variation, not 40-100px oscillations.
         // Keep the exact original coordinate when a crew is already flat.
         for(const node of run)result.set(node.id,average+(lanes.get(node.id)-average)*.025);
+      }
+    }
+    // A team travelling to the next training site must not jump to a wholly
+    // unrelated vertical lane. Smooth physically continuous parties across
+    // scene boundaries without ever merging independent teams or overriding a
+    // confirmed international separation. This changes only the visual Y.
+    if(geography){
+      const groups=new Map();
+      for(const node of nodes){
+        if(!node.layoutGroup||!node.locationId||!Number.isFinite(node.day))continue;
+        const day=Number.isFinite(node.calendarDay)?Math.floor(node.calendarDay):Math.floor(node.day);
+        const key=day+'|'+node.layoutGroup;
+        if(!groups.has(key))groups.set(key,{key,day,first:node.day,location:node.locationId,nodes:[],cast:new Set()});
+        const group=groups.get(key);
+        group.first=Math.min(group.first,node.day);
+        group.nodes.push(node);
+        for(const id of node.layoutCast||[])group.cast.add(id);
+      }
+      const dayGroups=new Map();
+      for(const group of groups.values()){
+        if(!dayGroups.has(group.day))dayGroups.set(group.day,[]);
+        dayGroups.get(group.day).push(group);
+      }
+      for(const list of dayGroups.values()){
+        if(list.length<2)continue;
+        list.sort((a,b)=>a.first-b.first||a.key.localeCompare(b.key));
+        const parent=list.map((_,i)=>i);
+        const find=i=>{while(parent[i]!==i){parent[i]=parent[parent[i]];i=parent[i];}return i;};
+        const union=(i,j)=>{const a=find(i),b=find(j);if(a!==b)parent[b]=a;};
+        for(let i=0;i<list.length;i++)for(let j=i+1;j<Math.min(list.length,i+61);j++){
+          const a=list[i],b=list[j];
+          if(b.first-a.first>.85)break;
+          const common=[...a.cast].filter(id=>b.cast.has(id)).length;
+          if(common<2||common/Math.max(a.cast.size,b.cast.size)<.65)continue;
+          if(geography.relation(a.location,b.location).grade===4)continue;
+          union(i,j);
+        }
+        const chains=new Map();
+        list.forEach((group,i)=>{
+          const root=find(i);
+          if(!chains.has(root))chains.set(root,[]);
+          chains.get(root).push(group);
+        });
+        for(const chain of chains.values()){
+          if(chain.length<2)continue;
+          const points=chain.flatMap(g=>g.nodes);
+          const average=points.reduce((sum,p)=>sum+result.get(p.id),0)/points.length;
+          let influence=.82;
+          for(let i=1;i<chain.length;i++){
+            const grade=geography.relation(chain[i-1].location,chain[i].location).grade;
+            // Preserve somewhat more movement for distant or unresolved
+            // sites: visual continuity never asserts geographic equivalence.
+            if(grade===3)influence=Math.min(influence,.62);
+            else if(grade===null)influence=Math.min(influence,.70);
+          }
+          for(const point of points){
+            const y=result.get(point.id);
+            result.set(point.id,y*(1-influence)+average*influence);
+          }
+        }
       }
     }
     return result;
