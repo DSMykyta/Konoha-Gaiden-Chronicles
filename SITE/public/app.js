@@ -470,7 +470,13 @@ function render(){
   y:level==='moment'?(nodeY.get(p.id)??mid+(canonical.lanes.get(p.id)||0)*amplitude):mid+(canonical.lanes.get(p.id)||0)*amplitude,
   cast:p.layoutCast.filter(id=>selected.has(id))
  }));
- const nodesByCharacter=TimelineCore.characterAnchors(worldLineNodes,ids);
+ // Clustering introduces a visible parent marker, not an independently
+ // recalculated path. Add that marker as a waypoint while keeping the
+ // underlying moment coordinates intact. Every member line meets its hub.
+ const routeAnchorMap=new Map(worldLineNodes.map(node=>[node.id,node]));
+ for(const node of globalNodes)routeAnchorMap.set(node.id,node);
+ const routeAnchorNodes=[...routeAnchorMap.values()];
+ const nodesByCharacter=TimelineCore.characterAnchors(routeAnchorNodes,ids);
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
  const renderNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=buffered.coverLo&&a<buffered.coverHi&&p.group.some(relevant);});
  const numbered=phoneReader&&level==='moment';
@@ -503,7 +509,7 @@ function render(){
   const text=svg('text',{x,y:28,'text-anchor':'middle','data-date':tick.day},axis);text.textContent=tick.text;
  });
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
- const labelPositions=[],continuityPaths=[],nodeById=new Map(worldLineNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
+ const labelPositions=[],continuityPaths=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
