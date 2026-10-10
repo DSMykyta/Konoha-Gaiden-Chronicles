@@ -91,10 +91,13 @@ const SelectionFocus = (() => {
       element.classList.toggle('is-context-muted', active && !!id && !characters.has(id));
     });
     const previousKeys = activeCloudKeys;
+    // Cloud labels can greatly outnumber visible groups. Index them once
+    // instead of walking both arrays for every label on each focus change.
+    const labelIndex = new Map(graphLabels.map(label => [JSON.stringify([label.kind,label.id]),label]));
+    const focusedGroups = new Map(graphClouds.map(group => [group.key,group.nodes.some(node => focusedNodes.has(node.id))]));
     document.querySelectorAll('#timeline .cloud-label,#timeline .cloud-label-guide').forEach(element => {
-      const label = graphLabels.find(label => label.kind === element.dataset.titleKind && label.id === element.dataset.titleId);
-      const group = graphClouds.find(group => group.key === label?.key);
-      visibility(element, !!focusedCharacter && !group?.nodes.some(node => focusedNodes.has(node.id)) && !focusedNodes.has(label?.anchor?.id));
+      const label = labelIndex.get(JSON.stringify([element.dataset.titleKind,element.dataset.titleId]));
+      visibility(element, !!focusedCharacter && !focusedGroups.get(label?.key) && !focusedNodes.has(label?.anchor?.id));
     });
     activeCloudKeys = focusedCharacter || active ? new Set(graphClouds.filter(group => group.nodes.some(node => (!focusedCharacter || focusedNodes.has(node.id)) && (!hasRelated || related.has(node.id)))).map(group => group.key)) : null;
     if (Boolean(previousKeys) !== Boolean(activeCloudKeys) || activeCloudKeys && (activeCloudKeys.size !== previousKeys.size || [...activeCloudKeys].some(key => !previousKeys.has(key)))) cloudRenderer?.refresh();
