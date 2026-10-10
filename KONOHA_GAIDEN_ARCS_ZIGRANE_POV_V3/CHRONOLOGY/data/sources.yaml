@@ -1379,6 +1379,12 @@ sources:
     title: Повний перегляд післясасківського періоду
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/POST_SASUKE_SCHEDULE_UA.md
     date: "2026-10-03"
+  - id: src-narutopedia-ep3-milk
+    type: reference
+    title: 'Narutopedia — Sasuke and Sakura: Friends or Foes?'
+    url: https://naruto.fandom.com/wiki/Sasuke_and_Sakura:_Friends_or_Foes%3F
+    accessed: '2026-10-10'
+    locator_status: secondary_synopsis_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4618,4 +4624,14 @@ evidence:
     source_id: src-post-sasuke-calendar-review
     locator: Серії 142–220, субтитри, фільм Країна Місяця; відносні переходи, дорога, лікування та окремо позначені робочі оцінки
     basis: project_decision
+    review: accepted
+  - id: evd-sub-ep3-kakashi-milk
+    source_id: src-subtitle-naruto-003
+    locator: '00:20:35–00:21:18 — Хірузен представляє Какаші Команду 7; у квартирі Наруто Какаші знаходить прострочене молоко'
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-ep3-kakashi-milk
+    source_id: src-narutopedia-ep3-milk
+    locator: 'Episode 3, Synopsis — фінальна сцена в квартирі Наруто; підтверджено персонажів і причину болю в животі'
+    basis: source
     review: accepted
