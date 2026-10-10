@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="map-titles.css?v=20261003-konoha-calendar">
   <script defer src="relations.js?v=20261003-konoha-calendar"></script>
   <script defer src="timeline-core.js?v=20261010-layout-index"></script>
+  <script defer src="timeline-geography.js?v=20261010-geo-v1"></script>
   <script defer src="timeline-pan-cache.js?v=20261010-camera"></script>
   <script defer src="interaction-core.js?v=20261008-hover-intent"></script>
   <script defer src="story-clouds.js?v=20261010-cloud-bounds"></script>
@@ -28,7 +29,7 @@
   <script defer src="abilities-archive.js?v=20261008-tickets"></script>
   <script defer src="era-heading.js?v=20261003-era-heading"></script>
   <script defer src="story-layers.js?v=20261008-four-layer-v1"></script>
-  <script defer src="app.js?v=20261010-live-wheel-r1"></script>
+  <script defer src="app.js?v=20261010-geography-v1"></script>
   <script defer src="search-enhanced.js?v=20261010-merged-search"></script>
 </head>
 <body>
@@ -125,6 +126,10 @@
       <label><input type="checkbox" value="sources" checked><span><strong>Додаткові джерела</strong><small>Фільми, OVA, новели й інші твори</small></span></label>
       <label><input type="checkbox" value="project" checked><span><strong>Розширення</strong><small>Авторські історії незалежно від джерела</small></span></label>
     </fieldset>
+    <details class="disclosure" id="geographyReview" aria-label="Перевірка географії">
+      <summary>Географія та невідомі місця</summary>
+      <div id="geographyAudit" class="geography-audit"><p>Перевірка розташування сцен...</p></div>
+    </details>
     <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо або жест двома пальцями змінює масштаб. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
     <div class="source-footer"><a id="sourceLink" target="_blank" rel="noopener">Дані в репозиторії <span aria-hidden="true">↗</span></a><small id="revision"></small></div>
   </section>
