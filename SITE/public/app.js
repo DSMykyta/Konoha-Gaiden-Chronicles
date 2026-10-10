@@ -481,7 +481,7 @@ function render(){
  if(!baseLayoutCache.has('canonical-moments')){
   const moments=getSemantic('moment').nodes;
   const solved=TimelineCore.sceneLayout(moments,chronologyRelations(),getSemantic('moment').owner,0,1,geographyAtlas);
-  baseLayoutCache.set('canonical-moments',{moments,lanes:TimelineCore.stabilizeSequences(moments,solved)});
+  baseLayoutCache.set('canonical-moments',{moments,lanes:TimelineCore.stabilizeSequences(moments,solved,geographyAtlas)});
  }
  const canonical=baseLayoutCache.get('canonical-moments');
  const geometryKey=`flow-geography:${w}:${viewport}`;
