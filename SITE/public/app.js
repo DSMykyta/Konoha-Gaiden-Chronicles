@@ -500,7 +500,7 @@ function render(){
  let globalNodes=[...fineProjected,...coarseProjected].filter(p=>p.opacity>.001);
  // Independently overlapping arc histories can share a screen-space hub.
  // They retain all distinct arc IDs for the reader and reverse on zoom-in.
- const movedArcDay=new Map();
+ const movedArcDay=new Map(),clusterBridges=[];
  if(flow.fine==='arc'||flow.coarse==='arc'){
   const arcs=globalNodes.filter(p=>p.kind==='arc'&&p.opacity>.001);
   for(const group of TimelineFlow.clusterArcs(arcs)){
@@ -516,6 +516,7 @@ function render(){
     p.day=TimelineFlow.lerp(p.day,centroid.day,strength);
     p.opacity*=1-strength;
     movedArcDay.set(p.id,{day:p.day,y:p.y});
+    clusterBridges.push({x:p.x,y:p.y,toX:centroid.x,toY:centroid.y,strength,key:p.id});
    }
    globalNodes.push({id:clusterId,kind:'arc-cluster',title:`${members.length} арки`,
     childCount:members.length,arcs:members.map(p=>({id:p.rawId||p.id,title:p.title})),
@@ -566,13 +567,13 @@ function render(){
   ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:flow.coarse?1-t:1})),
   ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:t})):[])
  ];
- const flowBridges=flow.coarse?fineProjected.flatMap(p=>{
+ const flowBridges=[...clusterBridges,...(flow.coarse?fineProjected.flatMap(p=>{
   const target=parents.get(p.id);
   if(!target||p.id===target.id)return [];
   const anchor=projectedCoarse.get(target.id);
   if(!anchor||Math.hypot(p.x-anchor.x,p.y-anchor.y)>100)return [];
   return [{x:p.x,y:p.y,toX:anchor.x,toY:anchor.y,strength:Math.sin(Math.PI*t),key:p.id}];
- }).filter(p=>p.x>=-buffered.leftPx-120&&p.x<=w+buffered.rightPx+120):[];
+ }).filter(p=>p.x>=-buffered.leftPx-120&&p.x<=w+buffered.rightPx+120):[])];
  h=Math.max(viewport,...renderNodes.map(p=>p.y+156));
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
  panFrame={...buffered,nodes:renderNodes,svgHeight:h,level,numbered,scale:timeScale,lineCount:ids.length,availableCount:availableLines.length};
