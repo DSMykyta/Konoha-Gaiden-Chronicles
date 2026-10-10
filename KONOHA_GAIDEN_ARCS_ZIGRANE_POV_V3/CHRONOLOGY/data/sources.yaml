@@ -1400,6 +1400,16 @@ sources:
     title: Naruto (2002) — серія 005, англійські субтитри
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 005.srt
     locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-006
+    type: anime_transcript
+    title: Naruto (2002) — серія 006, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 006.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-007
+    type: anime_transcript
+    title: Naruto (2002) — серія 007, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 007.srt
+    locator_status: subtitle_timestamps_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4678,5 +4688,30 @@ evidence:
   - id: evd-sub-ep5-teamwork
     source_id: src-subtitle-naruto-005
     locator: '00:17:18–00:21:15 — Саске і Сакура діляться їжею з Наруто; Какаші зараховує трійку'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep6-tora
+    source_id: src-subtitle-naruto-006
+    locator: '00:01:30–00:03:05 — Команда 7 розставляє засідку, ловить Тору і відносить до власниці'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep6-team7-departs
+    source_id: src-subtitle-naruto-006
+    locator: '00:06:38–00:09:07 — місія Тадзуни та вихід із Конохи'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep6-demon-brothers
+    source_id: src-subtitle-naruto-006
+    locator: '00:11:54–00:20:30 — засідка Братів-Демонів, підміна Какаші, отрута та клятва Наруто'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep7-crossing-gato
+    source_id: src-subtitle-naruto-007
+    locator: '00:01:46–00:08:23 — переправа в тумані, контроль Ґато й рішення продовжити супровід'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep7-rabbit-zabuza
+    source_id: src-subtitle-naruto-007
+    locator: '00:08:55–00:20:55 — білий кролик, напад Забузи, Шарінґан і техніка туману'
     basis: source
     review: accepted
