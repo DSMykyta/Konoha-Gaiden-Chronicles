@@ -101,8 +101,9 @@ const GeographyAtlas={
    for(const scene of scenes){
     const id=scene.location_id||null;
     const r=resolve(id),key=id||'(missing)';
-    const old=counts.get(key)||{id:key,scenes:0,unknown:0,country:r.country,state:r.state};
-    old.scenes++;if(r.state!=='located'||!r.country)old.unknown++;
+    const old=counts.get(key)||{id:key,scenes:0,unknown:0,country:r.country,state:r.state,sceneIds:[]};
+    old.scenes++;if(scene.id&&old.sceneIds.length<10)old.sceneIds.push(scene.id);
+    if(r.state!=='located'||!r.country)old.unknown++;
     counts.set(key,old);
    }
    for(const event of events)if(event.location_id&&!places.has(event.location_id))
