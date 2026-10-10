@@ -565,7 +565,11 @@ function render(){
  const visibleCoarse=coarseProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
  graphClouds=[
   ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:flow.coarse?1-t:1})),
-  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:t})):[])
+  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:t})):[]),
+  ...globalNodes.filter(p=>p.kind==='arc-cluster'&&p.opacity>.012).map(p=>{
+   const point={id:p.id,x:p.x,y:p.y};
+   return {key:p.id,kind:'arc',id:p.id,title:p.title,opacity:p.opacity,nodes:[point],parts:[[point]]};
+  })
  ];
  const flowBridges=[...clusterBridges,...(flow.coarse?fineProjected.flatMap(p=>{
   const target=parents.get(p.id);
@@ -753,7 +757,7 @@ function render(){
  });
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
- cloudRenderer.update({groups:graphClouds,flowBridges,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
+ cloudRenderer.update({groups:graphClouds,flowBridges,zoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
   $('emptyTitle').textContent=!availableLines.length?'У вибраних шарах немає ліній персонажів':ids.length?'У цьому періоді немає подій':'Обери лінії персонажів';
