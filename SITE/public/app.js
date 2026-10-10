@@ -325,7 +325,7 @@ function openNode(p,pin=false){
  if(focusId===p.id&&!$('eventCard').hidden){if(pin)pinOpenCard();return;}
  rememberCardFocus();closePanels();HierarchyPreview.clear();
  hoverCard=!pin;pinnedNodeId=pin?p.id:null;focusId=p.id;anchorEvent=p.kind==='moment'?p.group[0]?.id:null;
- if(p.kind==='moment')showEvent(p.group[0]);else if(p.kind==='scene')showSceneCard(p.scene,p.group);else showStoryGroup(p);
+ if(p.kind==='moment')showEvent(p.group[0]);else if(p.kind==='scene')showSceneCard(p.scene,p.group);else if(p.kind==='arc-cluster')showArcCluster(p);else showStoryGroup(p);
  positionCard(p);syncReadingState();tooltipController?.hide();paintNodes();updateFocusBar();if(pin)focusReadingCard();
 }
 function nodeHover(event){
@@ -697,23 +697,47 @@ function render(){
  // Large touch targets stay below every visible mark. A neighboring transparent
  // target can never intercept a tap directly on another node's visible center.
  const hitLayer=svg('g',{'aria-hidden':'true'});
- renderNodes.forEach(p=>{
-  const hit=svg(p.kind==='arc'?'ellipse':'circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,...(p.kind==='arc'?{rx:12+12*spread,ry:10+12*spread}:{r:22})},hitLayer);
+ renderNodes.filter(p=>p.opacity>=.48).forEach(p=>{
+  svg(p.kind==='arc'||p.kind==='arc-cluster'?'ellipse':'circle',
+   {class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,
+    ...(p.kind==='arc'||p.kind==='arc-cluster'?{rx:12+12*spread,ry:10+12*spread}:{r:22})},hitLayer);
  });
  renderNodes.forEach(p=>{
-  const kindLabel={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'}[p.kind]||'Вузол',label=`${kindLabel}: ${p.title}${p.kind==='moment'||p.kind==='arc'?'':` · ${p.childCount}`}`,g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':'')+(pinnedNodeId===p.id?' is-pinned':''),tabindex:0,role:'button','aria-label':label,'aria-haspopup':'dialog','data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):''});
-  if(p.kind==='arc'){
-   svg('ellipse',{class:'mark',cx:p.x,cy:p.y,rx:arcRadius,ry:arcRadius*.58},g);
+  const names={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка','arc-cluster':'Група арок'};
+  const kindLabel=names[p.kind]||'Вузол';
+  const label=`${kindLabel}: ${p.title}${['moment','arc','arc-cluster'].includes(p.kind)?'':` · ${p.childCount}`}`;
+  const g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':'')+(pinnedNodeId===p.id?' is-pinned':''),
+   tabindex:p.opacity>=.48?0:-1,role:'button','aria-label':label,'aria-haspopup':'dialog',
+   'data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):'',
+   style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'}`});
+  if(p.kind==='arc'||p.kind==='arc-cluster'){
+   const radius=p.kind==='arc-cluster'?Math.max(17,arcRadius):arcRadius;
+   svg('ellipse',{class:'mark',cx:p.x,cy:p.y,rx:radius,ry:radius*.62},g);
+   if(p.kind==='arc-cluster'){
+    const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);
+    count.textContent=p.childCount;
+   }
   }else{
    const radius=p.kind==='moment'?(numbered?11:5):p.kind==='scene'?9:11;
-   svg('circle',{class:'mark',cx:p.x,cy:p.y,r:radius},g);
-   if(p.kind==='scene'||p.kind==='episode'){const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);count.textContent=p.childCount>99?'99+':p.childCount;}
-   if(numbered&&p.kind==='moment'){const number=svg('text',{class:'moment-number',x:p.x,y:p.y+3.5,'text-anchor':'middle','aria-hidden':'true','data-moment-number':p.id},g);number.textContent=graphNodes.find(node=>node.id===p.id)?.number||'';}
+   const elongation=Math.max(0,p.stretch||0)*.7;
+   if(elongation>.025){
+    svg('ellipse',{class:'mark',cx:p.x,cy:p.y,rx:radius*(1+elongation),ry:radius*(1-.24*elongation),
+     transform:`rotate(${p.flowAngle||0} ${p.x} ${p.y})`},g);
+   }else svg('circle',{class:'mark',cx:p.x,cy:p.y,r:radius},g);
+   if(p.kind==='scene'||p.kind==='episode'){
+    const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);
+    count.textContent=p.childCount>99?'99+':p.childCount;
+   }
+   if(numbered&&p.kind==='moment'){
+    const number=svg('text',{class:'moment-number',x:p.x,y:p.y+3.5,'text-anchor':'middle',
+     'aria-hidden':'true','data-moment-number':p.id},g);
+    number.textContent=graphNodes.find(node=>node.id===p.id)?.number||'';
+   }
   }
  });
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
- cloudRenderer.update({groups:graphClouds,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
+ cloudRenderer.update({groups:graphClouds,flowBridges,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
   $('emptyTitle').textContent=!availableLines.length?'У вибраних шарах немає ліній персонажів':ids.length?'У цьому періоді немає подій':'Обери лінії персонажів';
@@ -746,7 +770,7 @@ function drawMapTitles(level,width,top,bottom,nodes=graphNodes,buffered=null){
  if(!cloudLabelLayouts.has(key)){if(cloudLabelLayouts.size>=12)cloudLabelLayouts.clear();cloudLabelLayouts.set(key,new Map());}
  const bounds=buffered?{left:-buffered.leftPx,right:width+buffered.rightPx}:null;
  graphLabels=StoryClouds.labels(mapTitleGroups(level,nodes,bounds),nodes,width,top,bottom,cloudLabelLayouts.get(key),$('canvas').clientHeight<520?1:2,bounds);
- const layer=svg('g',{class:'map-titles'}),kindNames={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'};
+ const layer=svg('g',{class:'map-titles'}),kindNames={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка','arc-cluster':'Арки'};
  for(const label of graphLabels){
   const group=svg('g',{class:'cloud-label',role:'button',tabindex:0,'data-title-kind':label.kind,'data-title-id':label.id,'aria-haspopup':'dialog','aria-label':`${kindNames[label.kind]}: ${label.title}`},layer);
   const title=svg('title',{},group);title.textContent=label.title;
@@ -855,6 +879,14 @@ function storyCardBody(point){
   ?(point.sourceEpisodeIds||[]).map(id=>{const episode=episodeMap.get(id);return episode?{id,title:episode.title}:null;}).filter(Boolean)
   :(point.sourceSceneIds||[]).map(id=>{const scene=sceneMap.get(id);return scene&&sceneEvents(id).length?{id,title:scene.title}:null;}).filter(Boolean);
  return `<h2>${esc(point.title)}</h2>${narrativeHtml(point.story)}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong></button>`).join('')}</div>`;
+}
+function showArcCluster(point){
+ const items=point.arcs.map(arc=>`<button class="result" data-cluster-arc="${esc(arc.id)}"><strong>${esc(arc.title)}</strong></button>`).join('');
+ cardSelection={kind:'arc-cluster',id:point.id,events:point.group};
+ const days=point.group.map(e=>e.day).filter(Number.isFinite);
+ const range=days.length?`${dateText(Math.min(...days),true)} — ${dateText(Math.max(...days),true)}`:'Без установленої дати';
+ setCardContent(`${storyPanelHeader('arc-cluster',range,!!days.length,point.id)}<h2>${point.arcs.length} арки</h2><p class="scene-location">Окремі історії, що зблизилися лише на поточному масштабі.</p><div class="story-children">${items}</div>`);
+ bindCard();
 }
 function showStoryGroup(point){
  const days=point.group.map(e=>e.day).filter(Number.isFinite),start=days.length?Math.min(...days):null,end=days.length?Math.max(...days):null,range=start===null?'Без установленої дати':start===end?dateText(start,true):`${dateText(start,true)} — ${dateText(end,true)}`;
@@ -1124,6 +1156,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   else if(b.dataset.stepScene)stepScene(+b.dataset.stepScene);
   else if(b.dataset.eventFocusCharacter){if(focusedCharacter!==b.dataset.eventFocusCharacter)setFocus(b.dataset.eventFocusCharacter);}
   else if(b.dataset.cardEvent)navigateEvent(b.dataset.cardEvent);
+  else if(b.dataset.clusterArc)navigateStory('arc',b.dataset.clusterArc);
  });
  const canvas=$('timeline'),touches=new Map();let drag=null,pinch=null,ignoreDraggedClick=false;
  canvas.addEventListener('pointerover',nodeHover);
