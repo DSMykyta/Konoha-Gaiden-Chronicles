@@ -443,25 +443,34 @@ function render(){
   semanticNodeCache.set(level,{nodes,owner:semanticOwner(nodes)});
  }
  const semantic=semanticNodeCache.get(level);
+ // Solve geography and story gravity ONCE from the original moments.
+ // Every zoom level projects those same lanes onto progressively larger
+ // semantic groups. It must not create an unrelated map of the story.
+ if(!baseLayoutCache.has('canonical-moments')){
+  const moments=level==='moment'?semantic.nodes:semanticNodes('moment',allScenes).filter(p=>p.day!==null);
+  const canonicalLanes=TimelineCore.sceneLayout(moments,chronologyRelations(),semanticOwner(moments),0,1,geographyAtlas);
+  baseLayoutCache.set('canonical-moments',{moments,lanes:canonicalLanes});
+ }
+ const canonical=baseLayoutCache.get('canonical-moments');
+ if(!baseLayoutCache.has(level))baseLayoutCache.set(level,TimelineCore.aggregateLanes(semantic.nodes,canonical.lanes));
  const baseNodes=semantic.nodes.map(p=>({...p,x:px(p.day),cast:p.layoutCast.filter(id=>selected.has(id))})),
- owner=semantic.owner,layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}:${readerHeight}`;
+ layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}:${readerHeight}`;
  if(!layoutCache.has(layoutKey)){
   if(layoutCache.size>=8)layoutCache.clear();
-  const baseKey=level;
-  if(!baseLayoutCache.has(baseKey)){
-   if(baseLayoutCache.size>=8)baseLayoutCache.clear();
-   baseLayoutCache.set(baseKey,TimelineCore.sceneLayout(baseNodes,chronologyRelations(),owner,0,1,geographyAtlas));
-  }
-  const baseY=baseLayoutCache.get(baseKey),fullTop=viewport<520?104:w<=760?headerBottom()+44:166,fullBottom=Math.max(fullTop+80,viewport-readerHeight-56),top=(mid-28)*(1-spread)+fullTop*spread,bottom=(mid+28)*(1-spread)+fullBottom*spread,compactClearance=compactRadius*2-4,clearance=compactClearance+(46-compactClearance)*spread;
+  const baseY=baseLayoutCache.get(level),fullTop=viewport<520?104:w<=760?headerBottom()+44:166,fullBottom=Math.max(fullTop+80,viewport-readerHeight-56),top=(mid-28)*(1-spread)+fullTop*spread,bottom=(mid+28)*(1-spread)+fullBottom*spread,compactClearance=compactRadius*2-4,clearance=compactClearance+(46-compactClearance)*spread;
   const separated=TimelineCore.separateNodes(baseNodes.map(p=>({...p,x:dayToAxis(p.day,allEvents)*plot/(hi-lo),y:mid+(baseY.get(p.id)||0)*amplitude})),top,bottom,clearance);
   layoutCache.set(layoutKey,new Map(separated.map(p=>[p.id,p.y])));
  }
  const nodeY=layoutCache.get(layoutKey);
  let globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
  const linked=(p,id)=>p.cast.includes(id);
- // Index the selected physical cast in one pass. Previously every selected
- // character scanned every semantic node again to assemble its anchors.
- const nodesByCharacter=TimelineCore.characterAnchors(globalNodes,ids);
+ // All four zoom modes share the SAME moment-level line anchors. Parent
+ // marks are only clusters of those moments, not new bends in the routes.
+ const worldLineNodes=canonical.moments.map(p=>({...p,
+  y:level==='moment'?(nodeY.get(p.id)??mid+(canonical.lanes.get(p.id)||0)*amplitude):mid+(canonical.lanes.get(p.id)||0)*amplitude,
+  cast:p.layoutCast.filter(id=>selected.has(id))
+ }));
+ const nodesByCharacter=TimelineCore.characterAnchors(worldLineNodes,ids);
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
  const renderNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=buffered.coverLo&&a<buffered.coverHi&&p.group.some(relevant);});
  const numbered=phoneReader&&level==='moment';
@@ -494,7 +503,7 @@ function render(){
   const text=svg('text',{x,y:28,'text-anchor':'middle','data-date':tick.day},axis);text.textContent=tick.text;
  });
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
- const labelPositions=[],continuityPaths=[],nodeById=new Map(globalNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
+ const labelPositions=[],continuityPaths=[],nodeById=new Map(worldLineNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
