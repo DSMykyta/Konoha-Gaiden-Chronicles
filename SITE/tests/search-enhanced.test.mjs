@@ -112,3 +112,24 @@ test('search uses only the enhanced module and reports load or runtime errors', 
   assert.match(elements.searchResults.innerHTML, /Не вдалося запустити пошук/);
   assert.equal(elements.moreResults.hidden, true);
 });
+
+
+test('search fallback includes enabled records from distinct source continuities', () => {
+  const data={
+    revision:'merged-search-test',
+    calendar:{view_start_year:61,view_end_year:61,current_year:61},
+    events:[
+      {id:'original',title:'Original continuity',text:'',day:21,origin:'M',continuity:'main',scene_id:'one',involvement:[]},
+      {id:'alternate',title:'Alternate continuity',text:'',day:22,origin:'P',continuity:'project',scene_id:'two',involvement:[]},
+      {id:'inactive',title:'Inactive continuity',text:'',day:23,origin:'P',continuity:'project',scene_state:'inactive',scene_id:'three',involvement:[]}
+    ]
+  };
+  const search=loadSearchApi({
+    data,
+    storyLayers:{canon:true,filler:true,sources:true,project:true},
+    StoryLayers:{mask:()=> '1111',compose:text=>text},
+    document:{getElementById:()=>null}
+  });
+  const ids=search.buildIndex().filter(doc=>doc.kind==='moment').map(doc=>doc.id);
+  assert.deepEqual(Array.from(ids),['original','alternate']);
+});
