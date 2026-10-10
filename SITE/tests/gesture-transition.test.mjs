@@ -39,7 +39,7 @@ test('drag-to-pinch gesture reuses compositor pan until release without rebuildi
   assert(!calls.some(([kind])=>kind==='render'),'second finger must not rebuild SVG');
 
   listeners.get('pointermove')(pointer(2,245,420));
-  assert.match(canvas.style.transform,/translate3d\\(.+px,0,0\\) scaleX\\(/);
+  assert.match(canvas.style.transform,/translate3d\(.+px,0,0\) scaleX\(/);
   assert.equal(state.center,priorCenter,'pinch preview must not alter committed pan center');
   assert(!calls.some(([kind])=>kind==='render'),'pinch motion must remain compositor-only');
 
