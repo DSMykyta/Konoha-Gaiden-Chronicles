@@ -239,6 +239,14 @@ const TimelineCore = {
     }
     return nodes.map(n=>({...n,y:y.get(n.id)}));
   },
+  spreadLanePosition(value,gain=1.5) {
+    // Stretch the near-zero region monotonically. Global normalization alone
+    // packs most nearby independent story lines into a narrow middle stripe.
+    // tanh preserves ordering and bounds while giving distinct concurrent
+    // streams more breathing room without allocating new fixed team rows.
+    const strength=Math.max(.01,gain);
+    return Math.tanh(value*strength)/Math.tanh(strength);
+  },
   stabilizeSequences(nodes,lanes,geography=null) {
     // A scene's physical team should form a readable continuous strand.
     // The topology solver may pull successive scenes apart, but a separate
