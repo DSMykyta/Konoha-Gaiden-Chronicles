@@ -6,7 +6,7 @@ presence_coverage: complete
 review:
   time: partial
   cast: accepted
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:
@@ -26,6 +26,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep11-giichi-market
   - evd-narutopedia-ep11-audit
 relations: []
 presence:
@@ -50,7 +51,7 @@ display_rank: 100
 title: Сакура бачить бідність Країни Хвиль
 description: >-
   Сакура супроводжує Тадзуну з ринку й на власні очі бачить зубожіння людей під владою Ґато. Спроба відібрати покупки змушує її зрозуміти, наскільки важливий міст для життя місцевих жителів. Ця сцена відбувається поза тренуванням Наруто й Саске.
-location_id: null
+location_id: loc-land-waves
 placement:
   anchor_id: ta-y0-0322
   day_offset: 0
