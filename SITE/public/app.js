@@ -452,9 +452,9 @@ function render(){
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
  ids.forEach(id=>{
   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
-  if(!anchors.length||anchors[0].day-lead>hi||anchors.at(-1).day+lead<lo)return;
+  if(!anchors.length||anchors[0].day-lead>buffered.coverHi||anchors.at(-1).day+lead<buffered.coverLo)return;
   const lifetimes=TimelineCore.lifetimes(anchors);
-  const runs=lifetimes.filter(run=>run[0].day-lead<=hi&&run.at(-1).day+lead>=lo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
+  const runs=lifetimes.filter(run=>run[0].day-lead<=buffered.coverHi&&run.at(-1).day+lead>=buffered.coverLo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
   const coordinates=routes.map(route=>route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
   const foreign=renderNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<(p.kind==='arc'?arcRadius:19)+7));
   let mask=null;
