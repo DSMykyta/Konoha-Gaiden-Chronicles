@@ -48,7 +48,7 @@ test('cached camera changes SVG viewBox without touching its children',()=>{
   scale:{px:day=>day*46}
  });
  const env={
-  data:{calendar:{view_days:365}},panFrame:frame,graphNodes:[],
+  data:{calendar:{view_days:365}},panFrame:frame,graphNodes:[],graphLabels:[],
   center:45,paintedCenter:40,zoom:12,hoverCard:false,
   TimelinePanCache:cache,uiTimers:{cancel(){}},$:(id)=>elements[id],
   document:{querySelectorAll:()=>[]},
