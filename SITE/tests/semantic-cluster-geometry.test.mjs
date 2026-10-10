@@ -14,9 +14,9 @@ test('semantic zoom uses one canonical moment map at every scale',()=>{
 });
 
 test('a scene/episode hub merges points without erasing the original strand anchors',()=>{
- const m1={id:'moment-1',day:10.1,calendarDay:10,y:115,layoutCast:['naruto'],group:[{id:'moment-1',day:10,physical:['naruto']}]};
- const m2={id:'moment-2',day:10.3,calendarDay:10,y:165,layoutCast:['naruto'],group:[{id:'moment-2',day:10,physical:['naruto']}]};
- const hub={id:'scene',day:10.2,calendarDay:10,y:140,layoutCast:['naruto'],group:[...m1.group,...m2.group]};
+ const m1={id:'moment-1',day:10.1,calendarDay:10,y:115,layoutCast:['naruto'],cast:['naruto'],group:[{id:'moment-1',day:10,physical:['naruto']}]};
+ const m2={id:'moment-2',day:10.3,calendarDay:10,y:165,layoutCast:['naruto'],cast:['naruto'],group:[{id:'moment-2',day:10,physical:['naruto']}]};
+ const hub={id:'scene',day:10.2,calendarDay:10,y:140,layoutCast:['naruto'],cast:['naruto'],group:[...m1.group,...m2.group]};
  const routeAnchorMap=new Map([m1,m2].map(node=>[node.id,node]));
  routeAnchorMap.set(hub.id,hub);
  const anchors=core.characterAnchors([...routeAnchorMap.values()],['naruto']).get('naruto')
@@ -33,7 +33,7 @@ test('a scene/episode hub merges points without erasing the original strand anch
 });
 
 test('a singleton semantic group reuses its moment identity without doubling it',()=>{
- const original={id:'moment-1',day:10.1,y:110,layoutCast:['naruto']};
+ const original={id:'moment-1',day:10.1,y:110,layoutCast:['naruto'],cast:['naruto']};
  const singleton={...original,y:115};
  const nodes=new Map([[original.id,original]]);
  nodes.set(singleton.id,singleton);
