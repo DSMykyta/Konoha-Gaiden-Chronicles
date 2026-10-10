@@ -25,6 +25,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep11-giichi-market
   - evd-narutopedia-ep11-audit
 relations: []
 presence:
