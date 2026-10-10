@@ -39,6 +39,12 @@ Hierarchy is **moment → scene → episode → arc**. The source stores only ch
 
 An episode follows one narrative line. Independent parallel actions are separate episodes even on the same day. A change of setting creates a scene; one coherent goal may span several scenes. Author arcs coexist with canonical arcs in `main`; source continuities remain separate. Calendar-shooting stories belong to the timeskip era, which must be configured before their dates can be published.
 
+## Правило опису сцен і моментів
+
+У `scene.title`, `event.title`, `event.text`, а також сюжетних `arc.description` і `episode.description` описувати **лише те, що відбувається в історії**: учасників, дії, конфлікт, результат. Фрази на кшталт «новела подає альтернативну версію», «події не змішуються з OVA», «ця гілка завершується» — **службові примітки, а не описи подій**. Вони не повинні замінювати сюжетний зміст.
+
+Формат твору позначається через `origin` (`N` для новели, `O` для OVA), підтвердження — через `evidence_ids` і `sources.yaml`, сюжетна безперервність — через `continuity_id`, тип арки — через `kind`. Якщо сюжет не перевірено, залишити `review.text: partial` або `pending`; **не** оголошувати вигаданий чи порожній опис `accepted`. Окреме походження подій не є приводом дублювати однакові сцени або об'єднувати суперечливі версії.
+
 ## Шари SITE: авторство, а не формат джерела
 
 **«Розширення»** (`project`) — власні авторські історії творця Konoha Gaiden незалежно від походження чи формату. **«Додаткові джерела»** (`sources`) — додаткові твори та матеріали Naruto. **«Канон»** (`canon`) і **«Філери»** (`filler`) — відповідно основна історія та додаткові історії аніме. Усі чотири шари ввімкнені за замовчуванням і відображаються разом на спільній часовій шкалі. Вихідний `continuity_id` зберігається для відстеження походження; явне поле `layer` визначає шар окремої події, а за його відсутності використовується `origin` та тип арки `kind`.
