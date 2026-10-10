@@ -31,6 +31,28 @@ try {
   }));
   assert.equal(after.character,before.character,'dragging a mark cannot deselect character');
   assert.equal(after.foreignVisible,0,'drag cannot reveal nodes outside focused story');
+  // The highlighted curve uses a separate transparent hit path. It must
+  // never interpret movement as another click that toggles the focus off.
+  const curveSpot=await page.evaluate(()=>{
+   for(const path of document.querySelectorAll('#timeline .thread-focus-hit.is-line-focus-main')){
+    const length=path.getTotalLength(),matrix=path.getScreenCTM();
+    if(!matrix||!length)continue;
+    for(let k=1;k<20;k++){
+     const p=path.getPointAtLength(length*k/20),screen=new DOMPoint(p.x,p.y).matrixTransform(matrix);
+     if(screen.x<25||screen.x>innerWidth-120||screen.y<135||screen.y>innerHeight-100)continue;
+     if(document.elementFromPoint(screen.x,screen.y)?.closest('.thread-focus-hit'))return {x:screen.x,y:screen.y};
+    }
+   }
+   return null;
+  });
+  if(curveSpot){
+   await page.mouse.move(curveSpot.x,curveSpot.y);await page.mouse.down();
+   await page.mouse.move(curveSpot.x+68,curveSpot.y+9,{steps:8});
+   await page.mouse.up();await page.waitForTimeout(160);
+   assert.equal(await page.evaluate(()=>focusedCharacter),before.character,
+    'dragging the highlighted stroke must not toggle character focus');
+  }
+
   await page.evaluate(()=>{
    const span=range()[1]-range()[0];
    center=clampAxisCenter(panFrame.coverHi+span*.2);schedule();
