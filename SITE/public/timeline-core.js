@@ -239,6 +239,57 @@ const TimelineCore = {
     }
     return nodes.map(n=>({...n,y:y.get(n.id)}));
   },
+  stabilizeSequences(nodes,lanes) {
+    // A scene's physical team should form a readable continuous strand.
+    // The topology solver may pull successive scenes apart, but a separate
+    // collision pass must never turn a co-located team into a sawtooth.
+    // Only moments at the SAME recorded place/day with substantially
+    // overlapping physical casts can share a stabilized lane.
+    const result=new Map(lanes),buckets=new Map();
+    for(const node of nodes){
+      if(!Number.isFinite(node.day)||!result.has(node.id)||!(node.layoutCast||[]).length)continue;
+      // Unknown locations are only comparable *within the same scene*.
+      const place=node.locationId?'place:'+node.locationId:node.layoutGroup?'scene:'+node.layoutGroup:null;
+      if(!place)continue;
+      const day=Number.isFinite(node.calendarDay)?Math.floor(node.calendarDay):Math.floor(node.day);
+      const key=day+'|'+place;
+      if(!buckets.has(key))buckets.set(key,[]);
+      buckets.get(key).push(node);
+    }
+    for(const list of buckets.values()){
+      if(list.length<2)continue;
+      list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+      const parents=list.map((_,i)=>i),find=i=>{
+        while(parents[i]!==i){parents[i]=parents[parents[i]];i=parents[i];}
+        return i;
+      };
+      const union=(i,j)=>{const a=find(i),b=find(j);if(a!==b)parents[b]=a;};
+      // Cap local neighbor checks; very large scenes should not impose a
+      // quadratic startup cost or pull unrelated teams into one lane.
+      for(let i=0;i<list.length;i++){
+        const a=list[i],castA=a.layoutCast||[];
+        for(let j=i+1;j<Math.min(list.length,i+41)&&list[j].day-a.day<=.85;j++){
+          const b=list[j],castB=b.layoutCast||[];
+          const shared=castA.filter(id=>castB.includes(id)).length;
+          const sameScene=!!a.layoutGroup&&a.layoutGroup===b.layoutGroup;
+          const sameCrew=shared>=2&&shared/Math.max(castA.length,castB.length)>=.6;
+          if((sameScene&&shared>=1)||sameCrew)union(i,j);
+        }
+      }
+      const connected=new Map();
+      for(let i=0;i<list.length;i++){
+        const root=find(i);if(!connected.has(root))connected.set(root,[]);
+        connected.get(root).push(list[i]);
+      }
+      for(const run of connected.values()){
+        if(run.length<2)continue;
+        const average=run.reduce((sum,node)=>sum+lanes.get(node.id),0)/run.length;
+        // Retain a hint of local variation, not 40-100px oscillations.
+        for(const node of run)result.set(node.id,average+(lanes.get(node.id)-average)*.065);
+      }
+    }
+    return result;
+  },
   aggregateLanes(nodes,momentLanes) {
     // The only world layout is the moment-level topology. Zoom levels merely
     // reveal larger semantic parents, whose visual anchor is the centroid of
