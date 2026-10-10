@@ -51,10 +51,11 @@ const SelectionFocus = (() => {
     lastStructure = {focus: focusedCharacter, context, nodes: graphNodes, clouds: graphClouds, labels: graphLabels, firstChild: timeline.firstChild};
     const eventIds = new Set(events.map(event => event.id));
     const characters = new Set(events.flatMap(event => event.physical?.length ? event.physical : event.tracks || []));
-    const related = new Set(graphNodes.filter(node => node.group.some(event => eventIds.has(event.id))).map(node => node.id));
+    const paintNodes = panFrame?.nodes || graphNodes;
+    const related = new Set(paintNodes.filter(node => node.group.some(event => eventIds.has(event.id))).map(node => node.id));
     const hasRelated = active && related.size > 0;
 
-    const focusedNodes = new Set(graphNodes.filter(node => node.cast.includes(focusedCharacter)).map(node => node.id));
+    const focusedNodes = new Set(paintNodes.filter(node => node.cast.includes(focusedCharacter)).map(node => node.id));
     document.querySelectorAll('#timeline .node,#timeline .node-hit').forEach(element => {
       const id = element.dataset.event || element.dataset.nodeId;
       visibility(element, !!focusedCharacter && !focusedNodes.has(id));
