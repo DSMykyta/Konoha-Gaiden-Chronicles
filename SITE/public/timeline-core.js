@@ -44,11 +44,9 @@ const TimelineCore = {
   },
   seed(id) { let value=2166136261;for(const c of id){value=Math.imul(value^c.charCodeAt(0),16777619);}return (value>>>0)/4294967296; },
   timeAxis(scenes,breaks=[],spacing=.85,days=365) {
-    // A dense calendar day gets more space, once for the whole chronology.
-    // Selection, opening a reader, panning and viewport size never change it.
-    const counts=new Map();
-    for(const scene of scenes)if(Number.isFinite(scene.day))counts.set(Math.floor(scene.day),(counts.get(Math.floor(scene.day))||0)+1);
-    const widths=Array.from({length:days},(_,day)=>1+Math.max(0,(counts.get(day)||0)-1)*spacing);
+    // Calendar days have equal duration at every zoom. Density affects only
+    // vertical placement and semantic grouping, never the X/time axis.
+    const widths=Array(days).fill(1);
     const prefix=[0];for(const width of widths)prefix.push(prefix.at(-1)+width);
     const weighted=day=>{const whole=Math.max(0,Math.min(days-1,Math.floor(day)));return prefix[whole]+(day-whole)*widths[whole];};
     let removed=0;
