@@ -337,11 +337,6 @@ const TimelineCore = {
       list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
       for(let i=1;i<list.length;i++)connect(list[i-1].id,list[i].id,3.6);
     }
-    // A single team may move through several neighboring scenes on one day.
-    // Its physical cast is a stronger continuity signal than scene IDs.
-    const groupCasts=new Map([...byGroup].map(([id,list])=>[
-      id,new Set(list.flatMap(node=>node.layoutCast||[]))
-    ]));
     // Explicit chronology and cross-scene observations add extra gravity without
     // changing X/time. Accepted observations/intersections are strongest.
     for(const r of relations){
@@ -359,7 +354,7 @@ const TimelineCore = {
     }
     // Build time-neighbor pairs once. Far-away nodes never repel one another,
     // so checking every pair again on each relaxation pass only blocks input.
-    const neighbors=[],groupNeighbors=new Map();
+    const neighbors=[],groupNeighbors=new Map(),continuingGroupPairs=new Set();
     // Enumerate only nearby days. Retain original pair order, so floating-point
     // accumulation and lane positioning stay identical to the previous solver.
     const indexed=nodes.map((node,index)=>({node,index})).sort((a,b)=>a.node.day-b.node.day||a.index-b.index);
@@ -377,15 +372,13 @@ const TimelineCore = {
       const separateGroups=a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup;
       const proximity=geography?.visualSeparation(a.locationId,b.locationId)||null;
       if(separateGroups){
-        const castA=groupCasts.get(a.layoutGroup),castB=groupCasts.get(b.layoutGroup);
-        const common=[...castA].filter(id=>castB.has(id)).length;
-        // Repeated appearances by the same moving party are one storyline.
-        // Never repel a team from its own next scene just because it entered
-        // another training ground. Confirmed different countries remain apart
-        // for geographic review.
-        const sameCrew=common>=2&&common/Math.min(castA.size,castB.size)>=.75;
-        if(sameCrew&&proximity?.grade!==4)continue;
         const [one,two]=[a.layoutGroup,b.layoutGroup].sort(),key=one+'|'+two,previous=groupNeighbors.get(key);
+        const castA=a.layoutCast||[],castB=b.layoutCast||[];
+        const common=castA.filter(id=>castB.includes(id)).length;
+        // Actual overlapping participants (not pooled group cast) prove
+        // these consecutive scenes belong to the same moving party.
+        if(common>=2&&common/Math.max(castA.length,castB.length)>=.6&&proximity?.grade!==4)
+          continuingGroupPairs.add(key);
         if(!previous||time<previous.time)groupNeighbors.set(key,{one,two,time,
           wanted:proximity?.wanted??.52,
           factor:proximity?.factor??.055});
@@ -398,6 +391,9 @@ const TimelineCore = {
           factor:geoPull?proximity.factor:(shared||linked?.018:.045)});
       }
     }
+    // Across the scene boundary the same team remains one physical strand.
+    // Unrelated groups (or confirmed different countries) still repel.
+    for(const key of continuingGroupPairs)groupNeighbors.delete(key);
     // One-dimensional force relaxation. Connected story streams attract; unrelated
     // scenes that occupy the same time window repel, so branches split and can later
     // converge again when their casts meet.
