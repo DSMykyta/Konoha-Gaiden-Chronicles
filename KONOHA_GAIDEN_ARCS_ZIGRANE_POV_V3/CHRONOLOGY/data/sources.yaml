@@ -1410,6 +1410,31 @@ sources:
     title: Naruto (2002) — серія 007, англійські субтитри
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 007.srt
     locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-008
+    type: anime_transcript
+    title: Naruto (2002) — серія 008, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 008.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-009
+    type: anime_transcript
+    title: Naruto (2002) — серія 009, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 009.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-010
+    type: anime_transcript
+    title: Naruto (2002) — серія 010, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 010.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-011
+    type: anime_transcript
+    title: Naruto (2002) — серія 011, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 011.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-narutopedia-kaiza-story
+    type: reference
+    title: 'Narutopedia — The Land Where a Hero Once Lived'
+    url: https://naruto.fandom.com/wiki/The_Land_Where_a_Hero_Once_Lived
+    locator_status: secondary_synopsis_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4713,5 +4738,45 @@ evidence:
   - id: evd-sub-ep7-rabbit-zabuza
     source_id: src-subtitle-naruto-007
     locator: '00:08:55–00:20:55 — білий кролик, напад Забузи, Шарінґан і техніка туману'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep8-zabuza-kiri-backstory
+    source_id: src-subtitle-naruto-008
+    locator: '00:15:25–00:17:50 — Какаші пояснює жорстокий випускний іспит у Кіріґакуре та вбивства, вчинені юним Забузою'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep8-teamwork
+    source_id: src-subtitle-naruto-008
+    locator: '00:06:02–00:21:30 — Водяна В’язниця, клятва Наруто, спільний задум і сюрикени'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep9-zabuza-rescue
+    source_id: src-subtitle-naruto-009
+    locator: '00:04:05–00:21:20 — Наруто звільняє Какаші, Шарінґан, удавана загибель Забузи і виснаження'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep10-haku-recovery
+    source_id: src-subtitle-naruto-010
+    locator: '00:03:30–00:07:50 — Хаку приводить Забузу до тями; Какаші розуміє, що мисливець не вбив його'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep10-tree-training
+    source_id: src-subtitle-naruto-010
+    locator: '00:08:02–00:21:30 — підготовка до повторної сутички, пояснення контролю чакри, успіх Сакури та суперництво Наруто із Саске'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep11-giichi-market
+    source_id: src-subtitle-naruto-011
+    locator: '00:02:00–00:06:48 — Ґіічі відмовляється від роботи, Сакура з Тадзуною бачать бідність і страх мешканців'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep11-kaiza-past
+    source_id: src-subtitle-naruto-011
+    locator: '00:09:10–00:20:40 — історія Кайзи: порятунок Інарі, повінь, розправа Ґато та страта'
+    basis: source
+    review: accepted
+  - id: evd-narutopedia-kaiza-past
+    source_id: src-narutopedia-kaiza-story
+    locator: 'Episode 11 Synopsis — історія вітчима Інарі Кайзи та її наслідки; часові проміжки історії не датовані точно'
     basis: source
     review: accepted
