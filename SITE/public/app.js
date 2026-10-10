@@ -50,13 +50,13 @@ function selectable(){events();return cachedSelectable;}
 function activeLineIds(){return selectable().filter(entity=>selected.has(entity.id)).map(entity=>entity.id);}
 function color(id){return characterColors.get(id)||'#8797ac';}
 let cachedData=null,cachedLayerRevision=-1,cachedEvents=[],cachedDated=[],cachedSelectable=[],cachedScenes=null,cachedWorld=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
-const layoutCache=new Map(),baseLayoutCache=new Map(),semanticNodeCache=new Map();
+const layoutCache=new Map(),baseLayoutCache=new Map(),semanticNodeCache=new Map(),strandRouteCache=new Map();
 let characterColors=new Map();
 function events(){
  if(cachedData!==data||cachedLayerRevision!==layerRevision){
   cachedData=data;cachedLayerRevision=layerRevision;
   cachedEvents=StoryLayers.select(data.events.filter(e=>e.scene_state!=='inactive'),storyLayers,e=>arcMap.get(e.arc_id)?.kind);
-  cachedDated=cachedEvents.filter(e=>e.day!==null);cachedSelectable=TimelineCore.selectable(data.entities,cachedEvents);cachedScenes=null;cachedWorld=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();semanticNodeCache.clear();
+  cachedDated=cachedEvents.filter(e=>e.day!==null);cachedSelectable=TimelineCore.selectable(data.entities,cachedEvents);cachedScenes=null;cachedWorld=null;cachedRelations=null;cachedBreaks=null;cachedAxis=null;cloudLabelLayouts.clear();layoutCache.clear();baseLayoutCache.clear();semanticNodeCache.clear();strandRouteCache.clear();panFrame=null;
  }
  return cachedEvents;
 }
@@ -451,10 +451,28 @@ function render(){
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
  ids.forEach(id=>{
-  const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+  // Character routes are history geometry. Calculate them once for this
+  // semantic level/zoom/viewport, then reuse the exact curves across pans,
+  // buffer changes and visual focus updates.
+  const cacheKey=`${layoutKey}:${id}:${lead}:${pixelsPerDay}`;
+  let geometry=strandRouteCache.get(cacheKey);
+  if(!geometry){
+   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+   const lifetimes=TimelineCore.lifetimes(anchors);
+   const routes=lifetimes.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
+   const continuous=anchors.length?TimelineCore.strand(anchors,id,mid,amplitude,lead,pixelsPerDay,axisLength()):[];
+   geometry={anchors,lifetimes,routes,continuous};
+   if(strandRouteCache.size>=256)strandRouteCache.delete(strandRouteCache.keys().next().value);
+   strandRouteCache.set(cacheKey,geometry);
+  }
+  const {anchors,lifetimes,continuous}=geometry;
   if(!anchors.length||anchors[0].day-lead>buffered.coverHi||anchors.at(-1).day+lead<buffered.coverLo)return;
-  const lifetimes=TimelineCore.lifetimes(anchors);
-  const runs=lifetimes.filter(run=>run[0].day-lead<=buffered.coverHi&&run.at(-1).day+lead>=buffered.coverLo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
+  const runs=[],routes=[];
+  lifetimes.forEach((run,index)=>{
+   if(run[0].day-lead<=buffered.coverHi&&run.at(-1).day+lead>=buffered.coverLo){
+    runs.push(run);routes.push(geometry.routes[index]);
+   }
+  });
   const coordinates=routes.map(route=>route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
   const foreign=renderNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<(p.kind==='arc'?arcRadius:19)+7));
   let mask=null;
@@ -466,7 +484,7 @@ function render(){
   }
   // Cache a continuous version of the same recorded curve. Focusing only
   // switches visibility; anchors and the curves between them never move.
-  const continuous=TimelineCore.strand(anchors,id,mid,amplitude,lead,pixelsPerDay,axisLength()),continuousGradient='strand-continuous-'+id,continuousSpan=Math.max(.001,continuous.at(-1).day-continuous[0].day);
+  const continuousGradient='strand-continuous-'+id,continuousSpan=Math.max(.001,continuous.at(-1).day-continuous[0].day);
   const continuousPaint=svg('linearGradient',{id:continuousGradient,gradientUnits:'userSpaceOnUse',x1:pxAxis(continuous[0].day),x2:pxAxis(continuous.at(-1).day),y1:0,y2:0},defs);
   for(const [offset,opacity] of [[0,0],[(anchors[0].day-continuous[0].day)/continuousSpan,1],[(anchors.at(-1).day-continuous[0].day)/continuousSpan,1],[1,0]])svg('stop',{offset,'stop-color':color(id),'stop-opacity':opacity},continuousPaint);
   continuityPaths.push({id,d:smoothPath(continuous.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),stroke:`url(#${continuousGradient})`,mask,runCount:lifetimes.length});
