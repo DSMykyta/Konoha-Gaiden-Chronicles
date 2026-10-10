@@ -6086,3 +6086,12 @@ notes:
   review: accepted
   evidence_ids:
   - evd-anime-197-201
+- id: lnk-prewaves-dranks-before-tora-capture
+  kind: before
+  a: sc-prewaves-team7-d-ranks
+  b: sc-prewaves-tora-capture
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-land-waves
+  - evd-narutopedia-ep6-audit
