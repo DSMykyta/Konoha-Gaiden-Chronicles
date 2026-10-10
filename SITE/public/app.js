@@ -103,10 +103,8 @@ function worldChronology(){
 }
 function orderedScenes(){return worldChronology().scenes;}
 function semanticLevel(){
- if(zoom>=Math.sqrt(zoomModes.day*zoomModes.week))return 'moment';
- if(zoom>=Math.sqrt(zoomModes.week*zoomModes.month))return 'scene';
- if(zoom>=Math.sqrt(zoomModes.month*zoomModes.year))return 'episode';
- return 'arc';
+ const state=TimelineFlow.state(zoom);
+ return state.coarse&&state.t>=.5?state.coarse:state.fine;
 }
 function storyNodeCast(group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
 function semanticNodes(level,allScenes){
@@ -139,10 +137,12 @@ function semanticNodes(level,allScenes){
   if(!arcBuckets.has(arcId))arcBuckets.set(arcId,[]);
   arcBuckets.get(arcId).push(ep);
  }
- return [...arcBuckets].map(([id,episodes])=>{
+ const orphanEpisodes=episodeAggregates.filter(ep=>!ep.story?.arc_id||!arcMap.has(ep.story.arc_id));
+ const arcs=[...arcBuckets].map(([id,episodes])=>{
   const meta=arcMap.get(id)||null,group=episodes.flatMap(e=>e.group),layoutCast=storyNodeCast(group),days=episodes.flatMap(e=>[e.spanStart,e.spanEnd]);
   return {id:'arc:'+id,rawId:id,kind:'arc',title:meta?.title||episodes[0].title,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,spanStart:Math.min(...days),spanEnd:Math.max(...days),calendarDay:Math.floor(Math.min(...days)),cast:layoutCast.filter(x=>selected.has(x)),layoutCast,locationId:null,childCount:episodes.length,sourceSceneIds:[...new Set(episodes.flatMap(e=>e.sourceSceneIds))],sourceEpisodeIds:[...new Set(episodes.flatMap(e=>e.sourceEpisodeIds))]};
  });
+ return [...arcs,...orphanEpisodes.map(ep=>ep.scenes.length===1?collapseScene(ep.scenes[0],ep.story?ep.rawId:null):ep)];
 }
 function semanticOwner(nodes){
  const owner={};
@@ -592,33 +592,10 @@ function render(){
   svg('line',{x1:x,x2:x,y1:0,y2:h,class:'calendar-division calendar-'+kind,'aria-hidden':'true'});
  }
  const linked=(p,id)=>p.cast.includes(id);
- // All four zoom modes share the SAME moment-level line anchors. Parent
- // marks are only clusters of those moments, not new bends in the routes.
- const worldLineNodes=canonical.moments.map(p=>({...p,
-  y:level==='moment'?(nodeY.get(p.id)??mid+(canonical.lanes.get(p.id)||0)*amplitude):mid+(canonical.lanes.get(p.id)||0)*amplitude,
-  cast:p.layoutCast.filter(id=>selected.has(id))
- }));
- // Clustering introduces a visible parent marker, not an independently
- // recalculated path. Add that marker as a waypoint while keeping the
- // underlying moment coordinates intact. Every member line meets its hub.
- const routeAnchorMap=new Map(worldLineNodes.map(node=>[node.id,node]));
- for(const node of globalNodes)routeAnchorMap.set(node.id,node.kind==='moment'?node:{...node,isCluster:true});
- const routeAnchorNodes=[...routeAnchorMap.values()];
+ // Character curves inherit the positions of the underlying source moments.
+ const routeAnchorNodes=worldLineNodes;
  const nodesByCharacter=TimelineCore.characterAnchors(routeAnchorNodes,ids);
- graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
- const renderNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=buffered.coverLo&&a<buffered.coverHi&&p.group.some(relevant);});
- const numbered=phoneReader&&level==='moment';
- graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
- graphNodes.forEach((node,index)=>{node.number=numbered?index+1:null;});
  const reading=readingActive();
- graphClouds=StoryClouds.groups(globalNodes.filter(p=>p.group.some(relevant)),level,sceneMap,episodeMap,arcMap);
- h=Math.max(viewport,...renderNodes.map(p=>p.y+156));
- timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
- panFrame={...buffered,nodes:renderNodes,svgHeight:h,level,numbered,scale:timeScale,lineCount:ids.length,availableCount:availableLines.length};
- $('linesCount').textContent=`Лінії · ${ids.length}`;
- // Alternating calendar days, including empty days. Long empty spans are omitted
- // after retaining one calendar week on each side of the nearest events.
- if(timeScale.dayPx>=2)for(let day=Math.floor(bufferLoDay);day<Math.ceil(bufferHiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=buffered.coverLo&&a<buffered.coverHi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),-buffered.leftPx,w+buffered.rightPx),y:0,width:Math.max(0,clamp(px(day+1),-buffered.leftPx,w+buffered.rightPx)-clamp(px(day),-buffered.leftPx,w+buffered.rightPx)),height:h,class:'day-band','data-day':day});}
  if(!cloudRenderer)cloudRenderer=StoryClouds.create($('storyClouds'));
  const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),yearLabel=yearText(centerDay),label=overview?(data.calendar.view_days>365?`${data.calendar.view_start_year}–${data.calendar.view_end_year} роки Конохи`:yearLabel):activeMode==='day'?`${dateText(centerDay,true)} · ${yearLabel}`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;$('periodLabel').textContent=label;
  renderEraHeading(loDay,px);
