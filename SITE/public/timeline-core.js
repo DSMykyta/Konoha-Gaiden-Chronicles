@@ -241,7 +241,7 @@ const TimelineCore = {
     }
     return nodes.map(n=>({...n,y:y.get(n.id)}));
   },
-  sceneLayout(nodes,relations=[],owner={},middle=0,amplitude=100) {
+  sceneLayout(nodes,relations=[],owner={},middle=0,amplitude=100,geography=null) {
     if(!nodes.length)return new Map();
     const byId=new Map(nodes.map(n=>[n.id,n])),edges=new Map(nodes.map(n=>[n.id,new Map()])),baseRef=ref=>typeof ref==='string'?(ref.endsWith('.start')?ref.slice(0,-6):ref.endsWith('.end')?ref.slice(0,-4):ref):ref;
     const sceneOf=ref=>{const id=baseRef(ref);return owner[id]||id;};
@@ -295,10 +295,20 @@ const TimelineCore = {
       const a=nodes[i],b=nodes[j],time=Math.abs(a.day-b.day);
       const shared=(a.layoutCast||[]).some(id=>(b.layoutCast||[]).includes(id)),linked=edges.get(a.id).has(b.id);
       const separateGroups=a.layoutGroup&&b.layoutGroup&&a.layoutGroup!==b.layoutGroup;
+      const proximity=geography?.visualSeparation(a.locationId,b.locationId)||null;
       if(separateGroups){
         const [one,two]=[a.layoutGroup,b.layoutGroup].sort(),key=one+'|'+two,previous=groupNeighbors.get(key);
-        if(!previous||time<previous.time)groupNeighbors.set(key,{one,two,time});
-      }else neighbors.push({a,b,time,wanted:shared||linked?.12:.34,factor:shared||linked?.018:.045});
+        if(!previous||time<previous.time)groupNeighbors.set(key,{one,two,time,
+          wanted:proximity?.wanted??.52,
+          factor:proximity?.factor??.055});
+      }else{
+        // Spatial distance influences vertical separation only, never the
+        // chronology. Shared cast stays together except when the source
+        // places that character in different countries the same day.
+        const geoPull=proximity&&(!shared&&!linked||proximity.grade===4);
+        neighbors.push({a,b,time,wanted:geoPull?proximity.wanted:(shared||linked?.12:.34),
+          factor:geoPull?proximity.factor:(shared||linked?.018:.045)});
+      }
     }
     // One-dimensional force relaxation. Connected story streams attract; unrelated
     // scenes that occupy the same time window repel, so branches split and can later
@@ -310,9 +320,9 @@ const TimelineCore = {
         const center=members.reduce((sum,node)=>sum+y.get(node.id),0)/members.length;centers.set(id,center);
         for(const node of members)delta.set(node.id,delta.get(node.id)+(center-y.get(node.id))*.1);
       }
-      for(const {one,two,time} of groupNeighbors.values()){
-        const dy=centers.get(two)-centers.get(one),distance=Math.abs(dy);if(distance>=.52)continue;
-        const direction=distance>.008?Math.sign(dy):(this.seed(one+'|'+two)<.5?-1:1),strength=(.52-distance)*.055*(1-time/1.2);
+      for(const {one,two,time,wanted,factor} of groupNeighbors.values()){
+        const dy=centers.get(two)-centers.get(one),distance=Math.abs(dy);if(distance>=wanted)continue;
+        const direction=distance>.008?Math.sign(dy):(this.seed(one+'|'+two)<.5?-1:1),strength=(wanted-distance)*factor*(1-time/1.2);
         for(const node of byGroup.get(one))delta.set(node.id,delta.get(node.id)-direction*strength);
         for(const node of byGroup.get(two))delta.set(node.id,delta.get(node.id)+direction*strength);
       }
