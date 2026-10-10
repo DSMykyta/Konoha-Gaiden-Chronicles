@@ -48,3 +48,40 @@ test('drag-to-pinch gesture reuses compositor pan until release without rebuildi
   assert(calls.some(([kind])=>kind==='commit'),'drag portion must still be committed');
   assert(!calls.some(([kind])=>kind==='render'),'no synchronous SVG rebuild during gesture');
 });
+
+
+test('two-finger translation pans without zooming or rebuilding the timeline', () => {
+  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
+  const begin=app.indexOf(" const canvas=$('timeline'),touches=new Map();let drag=null,pinch=null;");
+  const finish=app.indexOf("  new ResizeObserver(schedule).observe($('canvas'));",begin);
+  assert(begin>=0&&finish>begin);
+  const calls=[],listeners=new Map(),frame={scrollTop:0,clientWidth:375,addEventListener(){}};
+  const canvas={
+    clientWidth:375,style:{},classList:{add(){},remove(){}},
+    getBoundingClientRect(){return {left:0};},setPointerCapture(){},
+    addEventListener(kind,fn){listeners.set(kind,fn);}
+  };
+  const elements={canvas:frame,timeline:canvas,timeAxis:{style:{}},storyClouds:{style:{}}};
+  const state={
+    $:id=>elements[id],center:50,paintedCenter:50,zoom:12,
+    wheelPreview:false,clamp:(n,a,b)=>Math.max(a,Math.min(n,b)),
+    clampAxisCenter:n=>n,axisLength:()=>365,uiTimers:{cancel(){}},
+    nodeHover(){},nodeLeave(){},previewPan(){},
+    render:()=>calls.push('render'),setZoom:z=>calls.push('zoom:'+z),
+    schedule:()=>calls.push('commit')
+  };
+  vm.runInNewContext(app.slice(begin,finish),state);
+  const p=(pointerId,clientX)=>({pointerId,clientX,clientY:420,target:{closest(){return null;}}});
+  listeners.get('pointerdown')(p(1,90));
+  listeners.get('pointerdown')(p(2,190));
+  listeners.get('pointermove')(p(1,130));
+  listeners.get('pointermove')(p(2,230));
+  assert.match(canvas.style.transform,/scaleX\(1\)/);
+  assert.equal(state.center,50,'preview should not mutate committed center');
+  assert(!calls.includes('render'));
+  listeners.get('pointerup')(p(2,230));
+  assert(state.center<50,'moving both fingers right should move the view earlier in time');
+  assert(calls.includes('zoom:12'),'unchanged pinch distance must not change zoom');
+  assert(calls.includes('commit'),'pan without scale change must still be painted');
+  assert(!calls.includes('render'),'no synchronous SVG reconstruction is permitted');
+});
