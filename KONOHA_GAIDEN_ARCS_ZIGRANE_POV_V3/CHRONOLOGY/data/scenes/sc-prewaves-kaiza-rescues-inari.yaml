@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-prewaves-kaiza-rescues-inari
+episode_id: ep-prewaves-kaiza-life
+display_rank: 100
+continuity_id: main
+title: "Кайза рятує Інарі з води"
+description: "Під час сутички з місцевими дітьми Інарі намагається врятувати свого собаку Почі, якого кинули у воду, але сам тоне. Мандрівний рибалка Кайза витягає хлопця на берег і говорить із ним про страх та відповідальність за тих, кого любиш. Відтоді він поступово стає для Інарі близькою людиною, а згодом і названим батьком."
+location_id: loc-land-waves
+placement: null
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-kaiza-saves-inari
+  title: "Кайза витягає малого Інарі з води"
+  text: "Акане та інші діти дражнять Інарі й кидають його собаку Почі у воду. Інарі боїться плисти, однак опиняється в річці та починає тонути; Почі сам випливає. Мандрівний рибалка Кайза рятує хлопця, а пізніше пояснює, що сміливість означає не відсутність страху, а готовність захищати важливе для себе."
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kaiza
+    role: focus
+    mode: physical
+  - entity_id: c-inari
+    role: participant
+    mode: physical
+  - entity_id: c-pochi
+    role: participant
+    mode: physical
+  - entity_id: c-akane
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+  - evd-narutopedia-kaiza-past
+relations: []
+presence: []
