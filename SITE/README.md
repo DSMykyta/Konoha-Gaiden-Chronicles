@@ -10,6 +10,8 @@ Accepted event-to-scene `observes` links align distinct same-day scene nodes in 
 
 All four layers are enabled by default: **Канон** (`canon`), **Філери** (`filler`), **Додаткові джерела** (`sources`), and **Розширення** (`project`). **Розширення** means the author's own stories regardless of their origin or format. All enabled layers are displayed together on a shared timeline; the original source and continuity metadata are preserved.
 
+Картки арок та їхні лічильники показують **лише епізоди, у яких залишилися видимі події**. Вимкнені шари не створюють порожніх переходів до прихованих епізодів. Пошук використовує той самий набір активних подій, незалежно від вихідного continuity ID.
+
 ## Відкладені функції: повноекранне читання сцени
 
 **Статус: на паузі — в розробці / в роздумах.** Старий діалог «Сцена цілком» та його обробники прибрано з інтерфейсу. Ідею окремого повноекранного читання збережено для майбутнього проєктування; зараз це **не чинна функція**. Сцени та моменти читаються через звичайні картки та ієрархію змісту. Стару реалізацію не відновлювати без окремого узгодження UX.
@@ -17,6 +19,8 @@ All four layers are enabled by default: **Канон** (`canon`), **Філери
 ## Вибір ліній і фокус
 
 Галочки у «Лініях персонажів» задають **набір видимих ліній** — дві або більше можуть залишатися вибраними. Натискання на лінію чи ім'я персонажа задає **один активний фокус**, не змінюючи набір галочок. Повторне натискання прибирає фокус; вибір іншої лінії перемикає його. Старий список «Історична лінія» прибрано: він не був ні вибором персонажів, ні чотирма шарами історії. Події з різними вихідними continuity відображаються разом відповідно до шарів; їхні continuity ID лишаються в даних.
+
+Вибір персонажів зі схованих шарів зберігається, щоб після повторного ввімкнення шару лінії повернулися. Водночас лічильник «Лінії» та порожні стани рахують **лише персонажів, доступних у ввімкнених шарах**. Коли жодної лінії немає, порожній екран пропонує обрати персонажів або змінити шари замість бездіяльного переходу до події.
 
 ## Local launch
 
@@ -61,7 +65,7 @@ Cool gray surfaces, translucent glass controls, Manrope controls, and Lora readi
 
 At scene scale, episode clouds surround the visible scene anchors. At moment scale, scene clouds become prominent and episode clouds recede. The chronology uses the whole viewport without a fixed bottom title strip. A Contents button beside Lines and Search opens a separate popover with an expandable arc → episode → scene → moment tree, sorted by each group's earliest dated scene, searchable by story title, and linked directly to the appropriate reading level. Arc date ranges intentionally include preparation and aftermath when those scenes belong to the same arc. Each cloud uses authoritative IDs, never shared dates, locations, or cast. Plain names beside clouds and nodes identify their level and title. Label placement never moves marks, changes the date axis or grows the canvas. Labels that cannot fit locally remain available through the bottom title navigation. Clicking a map name opens its reader in place. Parent navigation returns to real episode/arc nodes and character strands, with no implicit scope filter or synthetic period blocks. A Canvas metaball layer computes organic contours around the existing SVG coordinates; clouds do not arrange nodes into rows or change character paths. Members of one group form a continuous organic contour; singleton containers do not add redundant clouds. Palette changes and scrolling reuse contour geometry. Contours remain still between user actions; there is no recurring geometry animation. Reading, selection, scrolling, and preference changes reuse the cached contours.
 
-Character event cards scroll vertically. Explicit previous/next controls and horizontal swiping move between cards; the wheel is not intercepted. Empty selection, empty date ranges, failed searches, and invalid dates have clear recovery actions. Calendar intervals, scene order, and base graph layouts are cached and invalidated on data or story-layer changes.
+Character event cards scroll vertically. Explicit previous/next controls and horizontal swiping move between cards; the wheel is not intercepted. Режим подій персонажа включає також події без установленої дати (після датованих), тому кількість подій у профілі збігається з читачем. Empty selection, empty date ranges, failed searches, and invalid dates have clear recovery actions. Calendar intervals, scene order, and base graph layouts are cached and invalidated on data or story-layer changes.
 
 Run `npm --prefix SITE run check` and `npm --prefix SITE test`. Interface tests cover desktop, phone, and landscape layouts, live data refresh, all semantic scales, and exact connections between physical cast strands and their displayed nodes. Cloud tests cover scene/episode ownership, unchanged coordinates, distant parts, and excluded foreign markers. The local server is checked for matching assets and uncached responses. The browser regression suite covers delayed-open cancellation, tooltips, stable pinning, all cascade levels, parent navigation, profiles, readers, search, keyboard input, reduced motion and unchanged cloud geometry at 1440×900, 375×812, 320×700, 812×375, 768×1024 and 2000×1100.
 
