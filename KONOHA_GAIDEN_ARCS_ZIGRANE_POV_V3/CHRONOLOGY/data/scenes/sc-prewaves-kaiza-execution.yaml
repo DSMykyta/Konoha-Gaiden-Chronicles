@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-prewaves-kaiza-execution
+episode_id: ep-prewaves-kaiza-life
+display_rank: 100
+continuity_id: main
+title: "Ґато прилюдно страчує Кайзу"
+description: "Після захоплення Країни Хвиль Ґато намагається зламати опір мешканців. Кайза відмовляється підкоритися; найманці схоплюють його, а Ґато наказує стратити героя перед селянами. Інарі бачить загибель названого батька й утрачає віру, що хтось здатен захистити близьких від сильніших ворогів."
+location_id: loc-land-waves
+placement: null
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-gato-executes-kaiza
+  title: "Ґато наказує стратити Кайзу на очах у Інарі"
+  text: "Кайза чинить опір Ґато, який силою підкорив Країну Хвиль. Найманці захоплюють його, а Ґато оголошує публічну страту як пересторогу для всіх, хто опиратиметься його владі. Інарі та Цунамі стають свідками загибелі Кайзи; після цього страх і безнадія поширюються серед мешканців."
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kaiza
+    role: focus
+    mode: physical
+  - entity_id: c-gato
+    role: participant
+    mode: physical
+  - entity_id: c-inari
+    role: participant
+    mode: physical
+  - entity_id: c-tsunami
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+  - evd-narutopedia-kaiza-past
+relations: []
+presence: []
