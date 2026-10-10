@@ -4,17 +4,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 const core=vm.runInNewContext(fs.readFileSync(new URL('../public/timeline-core.js',import.meta.url),'utf8')+';TimelineCore');
 
-test('dense days expand while calendar order and inverse date mapping remain exact',()=>{
+test('busy days stay as wide as quiet days, preserving exact calendar inverses',()=>{
  const scenes=Array.from({length:11},(_,i)=>({id:'s'+i,day:21})).concat({id:'next',day:22});
  const axis=core.timeAxis(scenes);
- assert(axis.dayToAxis(22)-axis.dayToAxis(21)>8);
+ assert.equal(axis.dayToAxis(22)-axis.dayToAxis(21),1);
  assert.equal(axis.dayToAxis(23)-axis.dayToAxis(22),1);
  for(const day of [0,17.5,21,21.08,21.5,21.98,22.5,187.5,364.9,365])assert(Math.abs(axis.axisToDay(axis.dayToAxis(day))-day)<1e-8);
  assert(axis.dayToAxis(21.2)<axis.dayToAxis(21.3));
  assert.equal(axis.length,axis.dayToAxis(365));
 });
 
-test('expanded dates retain both sides of compressed gaps and round trip after them',()=>{
+test('equal-width dates retain both sides of compressed gaps and round trip after them',()=>{
  const axis=core.timeAxis([{day:21},{day:21},{day:73},{day:73},{day:200}], [{from:35,to:66,omitted:31},{from:100,to:190,omitted:90}]);
  for(const gap of axis.breaks){assert.equal(axis.dayToAxis(gap.from),axis.dayToAxis(gap.to));assert.equal(axis.axisToDay(gap.axis,'before'),gap.from);assert.equal(axis.axisToDay(gap.axis),gap.to);}
  for(const day of [21.7,73.5,96.4,192.5,200.5,365])assert(Math.abs(axis.axisToDay(axis.dayToAxis(day))-day)<1e-8);
@@ -24,7 +24,7 @@ test('multi-year time axes preserve year boundaries through dense and compressed
  const axis=core.timeAxis([{day:21},{day:21},{day:365},{day:365},{day:400}],[{from:100,to:350,omitted:250}],.85,730);
  for(const day of [0,21.5,364.9,365,365.8,400,729.9,730])assert(Math.abs(axis.axisToDay(axis.dayToAxis(day))-day)<1e-8);
  assert.equal(axis.length,axis.dayToAxis(730));
- assert(axis.dayToAxis(366)-axis.dayToAxis(365)>1);
+ assert.equal(axis.dayToAxis(366)-axis.dayToAxis(365),1);
 });
 
 test('all moments of a sequential scene precede the next scene without interleaving',()=>{
