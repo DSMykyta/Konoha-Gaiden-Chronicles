@@ -39,7 +39,8 @@ events:
   - evd-narutopedia-ep2-opening
 - id: ev-y0-0121-hiruzen-explains-fear
   title: Хірузен пояснює страх селян
-  text: Хірузен пояснює Іруці, що селяни бояться Дев’ятихвостого всередині Наруто.
+  text: >-
+    Хірузен пояснює Іруці, що Четвертий Хокаґе, запечатавши Дев’ятихвостого в немовляті, хотів, аби Наруто вважали рятівником селища. Але дорослі продовжують боятися лиса й переносять свій страх на хлопця, а діти успадковують цю відразу, навіть не знаючи її причини.
   origin: A
   extent: interval
   display_rank: 200
@@ -53,7 +54,9 @@ events:
   - entity_id: c-naruto
     role: mentioned
     mode: remote
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-narutopedia-ep2-opening
+  - evd-sub-ep2-hiruzen-fourth-wish
 relations:
 - id: rel-y0-0121-iruka-hopes-for-naruto-before-y0-0121-hiruzen-explains-fear
   kind: before
