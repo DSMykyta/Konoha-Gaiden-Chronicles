@@ -39,6 +39,15 @@ Hierarchy is **moment → scene → episode → arc**. The source stores only ch
 
 An episode follows one narrative line. Independent parallel actions are separate episodes even on the same day. A change of setting creates a scene; one coherent goal may span several scenes. Author arcs coexist with canonical arcs in `main`; source continuities remain separate. Calendar-shooting stories belong to the timeskip era, which must be configured before their dates can be published.
 
+## Редакторська відповідальність та історія рішень
+
+Під час поповнення хронології за субтитрами, Narutopedia, манґою і пізнішими ретроспективами **кожне змістовне рішення має бути пояснене**, а не лише закомічене.
+
+- [`../EDITORIAL_DECISIONS_UA.md`](../EDITORIAL_DECISIONS_UA.md) — журнал редакторських змін: **було → стало → причина → першоджерело → впевненість → Git-коміт**, а також відкриті суперечності.
+- [`../SERIES_SOURCE_SYNC_PROGRESS_UA.md`](../SERIES_SOURCE_SYNC_PROGRESS_UA.md) — двостороння посерійна перевірка: що в оригіналі, що у проєкті, що додано, що не варто дублювати, що залишається на розгляді.
+- Коли пізня серія показує історичну подію, вона має відбуватися **у своєму власному сюжетному часі**. Якщо точного року немає, `placement: null` і підтверджені `before`-зв'язки кращі за вигадану дату.
+- Під час невстановлених переходів через країни, конфліктів присутності, розбіжностей датабуків і серій — **зафіксувати питання й не робити примусову поправку**. Не можна називати журналом рішень список без обґрунтувань.
+
 ## Правило опису сцен і моментів
 
 У `scene.title`, `event.title`, `event.text`, а також сюжетних `arc.description` і `episode.description` описувати **лише те, що відбувається в історії**: учасників, дії, конфлікт, результат. Фрази на кшталт «новела подає альтернативну версію», «події не змішуються з OVA», «ця гілка завершується» — **службові примітки, а не описи подій**. Вони не повинні замінювати сюжетний зміст.
