@@ -1021,8 +1021,14 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   else if(b.dataset.eventFocusCharacter){if(focusedCharacter!==b.dataset.eventFocusCharacter)setFocus(b.dataset.eventFocusCharacter);}
   else if(b.dataset.cardEvent)navigateEvent(b.dataset.cardEvent);
  });
- const canvas=$('timeline'),touches=new Map();let drag=null,pinch=null;
- canvas.addEventListener('pointerover',nodeHover);canvas.addEventListener('pointerout',nodeLeave);
+ const canvas=$('timeline'),touches=new Map();let drag=null,pinch=null,ignoreDraggedClick=false;
+ canvas.addEventListener('pointerover',nodeHover);
+ // If a drag started on an interactive strand/mark, suppress the synthetic
+ // click on release. Otherwise dragging a selected line toggles its focus.
+ canvas.addEventListener('click',e=>{
+  if(!ignoreDraggedClick||e.detail===0)return;
+  ignoreDraggedClick=false;e.preventDefault();e.stopImmediatePropagation();
+ },true);canvas.addEventListener('pointerout',nodeLeave);
  canvas.addEventListener('click',e=>{const title=e.target.closest('.cloud-label');if(title){openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node,.node-hit');if(target)openNode(graphNodes.find(p=>p.id===(target.dataset.event||target.dataset.nodeId)),true);});
  canvas.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const title=e.target.closest('.cloud-label');if(title){e.preventDefault();openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node');if(target){e.preventDefault();openNode(graphNodes.find(p=>p.id===target.dataset.event),true);}});
  // Wheel/trackpad now navigates through time; scale belongs to the visible
@@ -1046,18 +1052,25 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   schedule();
  },{passive:false});
  canvas.addEventListener('pointerdown',e=>{
-   if(e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.line-label'))return;
+   if(e.pointerType==='mouse'&&e.button!==0)return;
+   ignoreDraggedClick=false;
+   const interactive=!!e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.thread-focus-hit,.line-label');
    if(wheelPreview){
     wheelPreview=false;
     // Never let an upcoming wheel frame rebuild SVG in the middle of a pinch.
     if(raf!==null){cancelAnimationFrame(raf);raf=null;}
    }
    touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
-   canvas.setPointerCapture(e.pointerId);
+   // Let a stationary click on a node/strand reach its handler. Capture the
+   // pointer only if it moves far enough to become a real drag.
+   if(!interactive)canvas.setPointerCapture(e.pointerId);
    if(touches.size===1){
-    drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop};
-    canvas.classList.add('dragging');
+    drag={x:e.clientX,y:e.clientY,center,scroll:$('canvas').scrollTop,
+     activated:!interactive,moved:false};
+    if(!interactive)canvas.classList.add('dragging');
    }else if(touches.size===2){
+    // A pinch takes precedence over either finger's pending click.
+    for(const id of touches.keys())canvas.setPointerCapture(id);
     const points=[...touches.values()],mid=(points[0].x+points[1].x)/2-canvas.getBoundingClientRect().left;
     const width=canvas.clientWidth||1000,pad=width<600?22:48;
     const pivot=center+(mid-width/2)/Math.max(1,width-pad*2)*axisLength()/zoom;
@@ -1085,16 +1098,29 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
      element.style.transform=transform;
     }
    }else if(drag){
-    $('canvas').scrollTop=drag.scroll-(e.clientY-drag.y);
+    const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+    if(!drag.activated){
+     if(Math.hypot(dx,dy)<6)return;
+     drag.activated=true;canvas.setPointerCapture(e.pointerId);
+     canvas.classList.add('dragging');
+    }
+    if(!drag.moved&&Math.hypot(dx,dy)>=6){
+     drag.moved=true;
+     if(window.__storyScaleFocus?.mode==='hover')StoryTitleScale.dismissTransient();
+    }
+    $('canvas').scrollTop=drag.scroll-dy;
     const pad=canvas.clientWidth<600?22:48;
-    center=clampAxisCenter(drag.center-(e.clientX-drag.x)/Math.max(1,canvas.clientWidth-pad*2)*axisLength()/zoom);
-    drag.moved=drag.moved||Math.abs(center-drag.center)>1e-7;
+    center=clampAxisCenter(drag.center-dx/Math.max(1,canvas.clientWidth-pad*2)*axisLength()/zoom);
     previewPan((paintedCenter-center)*Math.max(1,canvas.clientWidth-pad*2)*zoom/axisLength());
+    // A drag must not outrun the buffer while the pointer is still down.
+    // Reuse the SVG camera each animation frame, just like wheel navigation.
+    if(drag.moved)schedule();
    }
   });
   const end=e=>{
    touches.delete(e.pointerId);
    if(pinch){
+    ignoreDraggedClick=true;
     if(touches.size<2){
      const {targetZoom,pivot,midShift}=pinch;pinch=null;drag=null;
      for(const id of ['timeline','timeAxis','storyClouds'])$(id).style.transformOrigin='';
@@ -1110,7 +1136,9 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
     }
     return;
    }
-   const moved=!!drag?.moved;drag=null;canvas.classList.remove('dragging');
+   const moved=!!drag?.moved;
+   if(moved)ignoreDraggedClick=true;
+   drag=null;canvas.classList.remove('dragging');
    if(moved||Math.abs(paintedCenter-center)>1e-7)schedule();else previewPan(0);
   };
   canvas.addEventListener('pointerup',end);
