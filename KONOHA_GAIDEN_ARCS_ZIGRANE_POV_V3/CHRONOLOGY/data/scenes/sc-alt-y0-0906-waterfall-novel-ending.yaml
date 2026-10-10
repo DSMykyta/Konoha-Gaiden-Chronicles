@@ -3,27 +3,46 @@ id: "sc-alt-y0-0906-waterfall-novel-ending"
 episode_id: ep-alt-waterfall-novel
 display_rank: 200
 continuity_id: "alt-waterfall-novel"
-title: "Новельна версія місії в Такіґакуре завершується"
+title: "Надмірна сила Води Героїв обертається проти Суїєна"
 location_id: "loc-takigakure"
 placement: {anchor_id: "ta-y0-0906", day_offset: 0}
 day_part: "night"
 state: "active"
 presence_coverage: "partial"
-review: {time: "accepted", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "partial"}
 events:
   - id: "ev-alt-y0-0906-waterfall-novel-ending"
     legacy_ids: ["V10-000096"]
-    title: "Окрема новельна розв’язка завершує ALT-гілку"
-    text: "Новельна версія місії завершується власною послідовністю подій; це альтернативна версія тієї самої місії, а не друга окрема канонічна місія."
+    title: "Шібукі протистоїть Суїєну за допомогою призваних істот"
+    text: "Під час завершального протистояння Шібукі долає страх і вступає в бій із Суїєном. Проти призваних істот нападника він застосовує власний призов, намагаючись захистити село та Воду Героїв."
     origin: "N"
     extent: "interval"
     display_rank: 100
     involvement:
-      - {entity_id: "c-kakashi", role: "participant", mode: "physical"}
-      - {entity_id: "c-naruto", role: "participant", mode: "physical"}
-      - {entity_id: "c-sasuke", role: "participant", mode: "physical"}
-      - {entity_id: "c-sakura", role: "participant", mode: "physical"}
+      - {entity_id: "c-shibuki", role: "focus", mode: "physical"}
+      - {entity_id: "c-suien", role: "opponent", mode: "physical"}
     focus_teams: ["team-7"]
     evidence_ids: ["evd-v10-000096", "evd-novel-waterfall"]
-relations: []
+  - id: "ev-alt-y0-0906-suien-overuses-hero-water"
+    title: "Суїєн втрачає контроль над силою Води Героїв"
+    text: "Суїєн випиває забагато Води Героїв. Надмірне посилення чакри спричиняє неприродне роздування його тіла; невдовзі він здувається, його відкидає в повітря, і він падає з водоспаду."
+    origin: "N"
+    extent: "interval"
+    display_rank: 200
+    involvement:
+      - {entity_id: "c-suien", role: "focus", mode: "physical"}
+    evidence_ids: ["evd-novel-waterfall"]
+  - id: "ev-alt-y0-0906-kakashi-detains-suien-allies"
+    title: "Какаші затримує трьох спільників Суїєна"
+    text: "Після нападу з'ясовується, що Кірісаме, Мурасаме та Хісаме залишилися живими. Какаші затримує трьох нукенінів із Аме, не дозволяючи їм утекти після невдалої спроби заволодіти Водою Героїв."
+    origin: "N"
+    extent: "interval"
+    display_rank: 300
+    involvement:
+      - {entity_id: "c-kakashi", role: "focus", mode: "physical"}
+    focus_teams: ["team-7"]
+    evidence_ids: ["evd-novel-waterfall"]
+relations:
+  - {id: "rel-alt-waterfall-novel-ending-1", kind: "before", a: "ev-alt-y0-0906-waterfall-novel-ending", b: "ev-alt-y0-0906-suien-overuses-hero-water", basis: "source", review: "pending", evidence_ids: ["evd-novel-waterfall"]}
+  - {id: "rel-alt-waterfall-novel-ending-2", kind: "before", a: "ev-alt-y0-0906-suien-overuses-hero-water", b: "ev-alt-y0-0906-kakashi-detains-suien-allies", basis: "source", review: "pending", evidence_ids: ["evd-novel-waterfall"]}
 presence: []
