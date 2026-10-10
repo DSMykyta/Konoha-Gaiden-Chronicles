@@ -6,11 +6,11 @@ import assert from 'node:assert/strict';
 const core=vm.runInNewContext(fs.readFileSync(new URL('../public/timeline-core.js',import.meta.url),'utf8')+';TimelineCore');
 const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
 
-test('semantic zoom uses one canonical moment map at every scale',()=>{
+test('semantic zoom projects every level from canonical moment topology',()=>{
  assert.match(app,/baseLayoutCache\.has\('canonical-moments'\)/);
- assert.match(app,/aggregateLanes\(semantic\.nodes,canonical\.lanes\)/);
+ assert.match(app,/aggregateLanes\(getSemantic\(kind\)\.nodes,originalY\)/);
  assert.match(app,/worldLineNodes=canonical\.moments\.map/);
- assert.match(app,/routeAnchorMap\.set\(node\.id,node\)/);
+ assert.match(app,/routeAnchorNodes=worldLineNodes/);
 });
 
 test('a scene/episode hub merges points without erasing the original strand anchors',()=>{
