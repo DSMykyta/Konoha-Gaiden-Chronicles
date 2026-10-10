@@ -50,8 +50,9 @@ events:
     mode: physical
   evidence_ids: *id001
 - id: ev-y0-0121-konohamaru-practises-transformation
-  title: Конохамару вчиться Перетворенню
-  text: Наруто навчає Конохамару Техніки Перетворення.
+  title: Конохамару тренує Перетворення разом із Наруто
+  text: >-
+    Наруто намагається навчити Конохамару Перетворення на прикладі різних мешканців Конохи. Перші спроби виходять незграбними, а пошуки вдалої зовнішності обертаються для обох неприємностями. Попри низку невдач Конохамару продовжує тренування, прагнучи повторити ефектну техніку Наруто.
   origin: M
   extent: interval
   display_rank: 300
@@ -62,10 +63,14 @@ events:
   - entity_id: c-konohamaru
     role: focus
     mode: physical
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-narutopedia-ep2-opening
+  - evd-narutopedia-ch2-opening
+  - evd-sub-ep2-konohamaru-training
 - id: ev-y0-0121-konohamaru-explains-goal
   title: Конохамару пояснює бажання стати Хокаґе
-  text: Конохамару хоче, щоб його визнавали особисто, а не лише онуком Хірузена.
+  text: >-
+    Конохамару зізнається Наруто, що в селищі до нього майже ніхто не звертається на ім’я: усі бачать тільки онука Третього Хокаґе. Він прагне сам стати Хокаґе, щоб його нарешті помічали й поважали як окрему людину.
   origin: M
   extent: interval
   display_rank: 400
@@ -76,7 +81,10 @@ events:
   - entity_id: c-naruto
     role: focus
     mode: physical
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-narutopedia-ep2-opening
+  - evd-narutopedia-ch2-opening
+  - evd-sub-ep2-konohamaru-identity
 relations:
 - id: rel-y0-0121-naruto-spots-konohamaru-before-y0-0121-naruto-accepts-pupil
   kind: before
