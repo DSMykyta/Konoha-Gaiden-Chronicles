@@ -139,7 +139,7 @@ const StoryClouds = {
  create(canvas){
   const context=canvas?.getContext?.('2d');if(!context)return {update(){},scroll(){},pan(){},refresh(){},setPaused(){}};
   const contrast=window.matchMedia('(prefers-contrast: more)'),transparency=window.matchMedia('(prefers-reduced-transparency: reduce)');
-  let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,panX:0,paused:false},frame=null;
+  let state={groups:[],flowBridges:[],nodes:[],width:0,height:0,scrollTop:0,panX:0,paused:false},frame=null;
   // Content/zoom/layout changes alter outlines; panning and vertical scrolling
   // never add/remove members. Cache contours, not merely the previous paint.
   const geometry=new Map(),capacity=180,preparedParts=new WeakMap();
@@ -207,7 +207,7 @@ const StoryClouds = {
      const path=shape.path,gradient=context.createLinearGradient(0,minY,0,maxY);
      gradient.addColorStop(0,colors.top);gradient.addColorStop(1,colors.bottom);
      context.save();context.translate(minAllX,0);
-     context.globalAlpha=colors.alpha;
+     context.globalAlpha=colors.alpha*(group.opacity??1);
      if(ribbon){
       context.lineCap='round';context.lineJoin='round';
       context.strokeStyle=contrast.matches?'#858b94':colors.stroke;
@@ -221,6 +221,26 @@ const StoryClouds = {
       context.lineWidth=1;context.stroke(path);
      }
      context.restore();}
+   }
+   // Narrow, tapered fluid necks form just before marks meet. They move
+   // with the actual zoom state, never on an unrelated idle animation timer.
+   for(const neck of state.flowBridges||[]){
+    const dx=neck.toX-neck.x,dy=neck.toY-neck.y,dist=Math.hypot(dx,dy);
+    if(dist<.5||dist>110||neck.strength<.02)continue;
+    const normalX=-dy/dist,normalY=dx/dist;
+    const width=Math.max(1,Math.min(14,((110-dist)/110)*13*neck.strength));
+    const tip=width*.27;
+    const path=new Path2D(),mx=(neck.x+neck.toX)*.5,my=(neck.y+neck.toY)*.5;
+    path.moveTo(neck.x+normalX*width,neck.y+normalY*width);
+    path.bezierCurveTo(mx+normalX*width*.85,my+normalY*width*.85,
+     mx+normalX*tip,my+normalY*tip,neck.toX+normalX*tip,neck.toY+normalY*tip);
+    path.lineTo(neck.toX-normalX*tip,neck.toY-normalY*tip);
+    path.bezierCurveTo(mx-normalX*tip,my-normalY*tip,
+     mx-normalX*width*.85,my-normalY*width*.85,neck.x-normalX*width,neck.y-normalY*width);
+    path.closePath();
+    context.fillStyle=contrast.matches?'rgba(100,115,140,.34)':'rgba(106,137,176,.17)';
+    context.globalAlpha=Math.min(.9,neck.strength*.85);
+    context.fill(path);
    }
    context.globalAlpha=1;
   };
