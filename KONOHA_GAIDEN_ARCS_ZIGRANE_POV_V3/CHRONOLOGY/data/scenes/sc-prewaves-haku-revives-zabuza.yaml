@@ -26,6 +26,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep10-haku-recovery
   - evd-narutopedia-ep10-audit
 relations: []
 presence:
