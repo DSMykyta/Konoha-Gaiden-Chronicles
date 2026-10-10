@@ -9,7 +9,7 @@ test('drag-to-pinch gesture reuses compositor pan until release without rebuildi
   const finish = app.indexOf("  new ResizeObserver(schedule).observe($('canvas'));", begin);
   assert(begin >= 0 && finish > begin, 'gesture controller must remain discoverable');
 
-  const listeners = new Map(), calls = [], frame = {scrollTop:0, clientWidth:375};
+  const listeners = new Map(), calls = [], frame = {scrollTop:0, clientWidth:375, addEventListener(){}};
   const canvas = {
     clientWidth:375,
     style:{},
@@ -25,7 +25,7 @@ test('drag-to-pinch gesture reuses compositor pan until release without rebuildi
     clampAxisCenter:n=>n, axisLength:()=>365,
     uiTimers:{cancel(){}}, previewPan:n=>calls.push(['preview',n]),
     render:()=>calls.push(['render']), setZoom:(z,p)=>calls.push(['zoom',z,p]),
-    schedule:()=>calls.push(['commit'])
+    schedule:()=>calls.push(['commit']), nodeHover(){}, nodeLeave(){}
   };
   const gesture=vm.runInNewContext(app.slice(begin,finish)+';({get drag(){return drag},get pinch(){return pinch}})',state);
   const pointer=(pointerId,x,y)=>({pointerId,clientX:x,clientY:y,target:{closest(){return null;}}});
