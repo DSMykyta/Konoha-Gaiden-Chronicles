@@ -486,20 +486,24 @@ function render(){
  paintNodes();updateFocusBar();tooltipController?.refresh();
  paintedCenter=center;
 }
-function mapTitleGroups(level){
+function mapTitleGroups(level,nodes=graphNodes,bounds=null){
  if(level==='moment'){
   const groups=new Map();
-  for(const node of graphNodes){const scene=node.scene;if(!scene)continue;const key='scene:'+scene.id;if(!groups.has(key))groups.set(key,{key,kind:'scene',id:scene.id,title:scene.title,nodes:[]});groups.get(key).nodes.push(node);}
+  for(const node of nodes){const scene=node.scene;if(!scene)continue;const key='scene:'+scene.id;if(!groups.has(key))groups.set(key,{key,kind:'scene',id:scene.id,title:scene.title,nodes:[]});groups.get(key).nodes.push(node);}
   return [...groups.values()];
  }
- const titles=graphNodes.map(node=>({key:node.id,kind:node.kind,id:node.rawId||node.id,title:node.title,nodes:[node]}));
- if(level==='scene')titles.unshift(...graphClouds.filter(group=>group.kind==='episode'&&group.nodes.some(node=>node.x>=0&&node.x<=($('canvas').clientWidth||1000))).map(group=>({...group,nodes:group.nodes.filter(node=>node.x>=-90&&node.x<=($('canvas').clientWidth||1000)+90)})).filter(group=>group.nodes.length>1));
+ const titles=nodes.map(node=>({key:node.id,kind:node.kind,id:node.rawId||node.id,title:node.title,nodes:[node]}));
+ if(level==='scene'){
+  const left=bounds?.left??0,right=bounds?.right??($('canvas').clientWidth||1000);
+  titles.unshift(...graphClouds.filter(group=>group.kind==='episode'&&group.nodes.some(node=>node.x>=left&&node.x<=right)).map(group=>({...group,nodes:group.nodes.filter(node=>node.x>=left-90&&node.x<=right+90)})).filter(group=>group.nodes.length>1));
+ }
  return titles;
 }
-function drawMapTitles(level,width,top,bottom){
+function drawMapTitles(level,width,top,bottom,nodes=graphNodes,buffered=null){
  const key=`${level}:${width}:${$('canvas').clientHeight}:${document.documentElement.classList.contains('story-reader-collapsed')}`;
  if(!cloudLabelLayouts.has(key)){if(cloudLabelLayouts.size>=12)cloudLabelLayouts.clear();cloudLabelLayouts.set(key,new Map());}
- graphLabels=StoryClouds.labels(mapTitleGroups(level),graphNodes,width,top,bottom,cloudLabelLayouts.get(key),$('canvas').clientHeight<520?1:2);
+ const bounds=buffered?{left:-buffered.leftPx,right:width+buffered.rightPx}:null;
+ graphLabels=StoryClouds.labels(mapTitleGroups(level,nodes,bounds),nodes,width,top,bottom,cloudLabelLayouts.get(key),$('canvas').clientHeight<520?1:2,bounds);
  const layer=svg('g',{class:'map-titles'}),kindNames={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'};
  for(const label of graphLabels){
   const group=svg('g',{class:'cloud-label',role:'button',tabindex:0,'data-title-kind':label.kind,'data-title-id':label.id,'aria-haspopup':'dialog','aria-label':`${kindNames[label.kind]}: ${label.title}`},layer);
@@ -527,7 +531,8 @@ function openMapTitle(kind,id){
  const members=new Set(point.group.map(event=>event.id));
  const anchor=graphLabels.find(label=>label.kind===kind&&label.id===id)?.anchor||graphNodes.find(node=>node.group.some(event=>members.has(event.id)));
  const canvas=$('canvas');
- openNode({...point,x:anchor?.x??canvas.clientWidth/2,y:anchor?.y??canvas.scrollTop+canvas.clientHeight*.7},true);
+ const dx=panFrame?(panFrame.lo-range()[0])*panFrame.dayPx:0;
+ openNode({...point,x:anchor?anchor.x+dx:canvas.clientWidth/2,y:anchor?.y??canvas.scrollTop+canvas.clientHeight*.7},true);
 }
 function positionCard(point){
  const canvas=$('canvas'),w=canvas.clientWidth||1000,h=canvas.clientHeight||700,bounds=readingBounds();
