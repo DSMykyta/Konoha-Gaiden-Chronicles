@@ -391,6 +391,26 @@ const TimelineCore = {
     for(const n of nodes){const normalized=(y.get(n.id)-(lo+hi)/2)/span*1.7;out.set(n.id,middle+Math.max(-.92,Math.min(.92,normalized))*amplitude);}
     return out;
   },
+  clusteredLifetimes(anchors,{idleDays=14}={}) {
+    // Parent markers are visual clusters, never evidence of an additional
+    // physical appearance. They must NOT heal an established inactivity gap.
+    const source=anchors.filter(anchor=>!anchor.isCluster);
+    const runs=this.lifetimes(source,{idleDays});
+    for(const marker of anchors.filter(anchor=>anchor.isCluster)){
+      const memberIds=new Set((marker.group||[]).map(event=>event.id));
+      let winner=-1,distance=Infinity;
+      for(let i=0;i<runs.length;i++){
+        const run=runs[i];
+        if(!run.some(anchor=>memberIds.has(anchor.id)))continue;
+        const gap=Math.min(...run.map(anchor=>Math.abs(anchor.day-marker.day)));
+        if(gap<distance){distance=gap;winner=i;}
+      }
+      // A cluster without an actual appearance is not a character anchor.
+      if(winner>=0)runs[winner].push(marker);
+    }
+    for(const run of runs)run.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+    return runs;
+  },
   lifetimes(anchors,{idleDays=14}={}) {
     const runs=[];
     for(const anchor of anchors){
