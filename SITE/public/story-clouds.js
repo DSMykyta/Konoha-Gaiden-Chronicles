@@ -142,7 +142,20 @@ const StoryClouds = {
   let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,panX:0,paused:false},frame=null;
   // Content/zoom/layout changes alter outlines; panning and vertical scrolling
   // never add/remove members. Cache contours, not merely the previous paint.
-  const geometry=new Map(),capacity=180;
+  const geometry=new Map(),capacity=180,preparedParts=new WeakMap();
+  const preparePart=(part,group,radius)=>{
+   let prepared=preparedParts.get(part);
+   if(prepared)return prepared;
+   const minAllX=Math.min(...part.map(n=>n.x)),maxAllX=Math.max(...part.map(n=>n.x));
+   const ribbon=group.kind==='arc'||group.kind==='episode'||part.length>14||maxAllX-minAllX>state.width*1.8;
+   const minY=Math.min(...part.map(n=>n.y))-radius*(ribbon?1.5:2.4);
+   const maxY=Math.max(...part.map(n=>n.y))+radius*(ribbon?1.5:2.4);
+   const local=part.map(n=>({...n,x:n.x-minAllX}));
+   const signature=group.key+'|'+(ribbon?'ribbon':'organic')+'|'+radius+'|'+local.map(n=>n.id+':'+n.x.toFixed(2)+','+n.y.toFixed(1)).join('|');
+   prepared={minAllX,maxAllX,ribbon,minY,maxY,local,signature};
+   preparedParts.set(part,prepared);
+   return prepared;
+  };
   const draw=()=>{
    const dpr=Math.min(window.devicePixelRatio||1,2),width=Math.round(state.width*dpr),height=Math.round(state.height*dpr);
    if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
@@ -159,17 +172,11 @@ const StoryClouds = {
     // suddenly create a new cloud as the viewport crosses it.
     for(const part of group.parts){
      if(!part.length)continue;
-     const minAllX=Math.min(...part.map(n=>n.x)),maxAllX=Math.max(...part.map(n=>n.x));
+     // Shape-space, bounds and cache keys are invariant during a pan.
+     // Compute them only once for each story-group part.
+     const {minAllX,maxAllX,ribbon,minY,maxY,local,signature}=preparePart(part,group,radius);
      if(maxAllX+state.panX < -margin||minAllX+state.panX>state.width+margin)continue;
-     const ribbon=group.kind==='arc'||group.kind==='episode'||part.length>14||maxAllX-minAllX>state.width*1.8;
-     const minY=Math.min(...part.map(n=>n.y))-radius*(ribbon?1.5:2.4);
-     const maxY=Math.max(...part.map(n=>n.y))+radius*(ribbon?1.5:2.4);
      if(maxY<state.scrollTop||minY>state.scrollTop+state.height)continue;
-     // Shape-space is relative to the FIRST WORLD X, not the viewport.
-     // Panning translates this same cached Path2D. The full 4-point scene
-     // outline cannot be replaced by a 3-point outline at the right edge.
-     const local=part.map(n=>({...n,x:n.x-minAllX}));
-     const signature=group.key+'|'+(ribbon?'ribbon':'organic')+'|'+radius+'|'+local.map(n=>n.id+':'+n.x.toFixed(2)+','+n.y.toFixed(1)).join('|');
      let shape=geometry.get(signature);
      if(!shape){
       const path=new Path2D();
