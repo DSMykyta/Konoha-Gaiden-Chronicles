@@ -6104,3 +6104,36 @@ notes:
   evidence_ids:
   - evd-sub-ep3-kakashi-milk
   - evd-narutopedia-ep3-kakashi-milk
+
+- id: lnk-kaiza-rescues-inari-before-flood
+  kind: before
+  a: ev-prewaves-kaiza-saves-inari
+  b: ev-prewaves-kaiza-stops-flood
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+- id: lnk-kaiza-flood-before-execution
+  kind: before
+  a: ev-prewaves-kaiza-stops-flood
+  b: ev-prewaves-gato-executes-kaiza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+- id: lnk-kaiza-execution-before-dinner-story
+  kind: before
+  a: ev-prewaves-gato-executes-kaiza
+  b: ev-y0-0322-tazuna-tells-kaiza-story
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+- id: lnk-zabuza-bloody-mist-before-first-encounter
+  kind: before
+  a: ev-prewaves-zabuza-kiri-graduation
+  b: ev-y0-0318-zabuza-attacks
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep8-zabuza-kiri-backstory
