@@ -604,7 +604,7 @@ function render(){
   const priority={day:1,week:2,month:3,year:4};
   if(!divisions.has(day)||priority[kind]>priority[divisions.get(day)])divisions.set(day,kind);
  };
- const dayWidth=Math.abs(px(Math.floor(loDay)+1)-px(Math.floor(loDay)));
+ const dayWidth=timeScale.dayPx;
  if(dayWidth>=14)for(let d=Math.max(0,Math.floor(bufferLoDay));d<=Math.min(lastCalendarDay,Math.ceil(bufferHiDay));d++)addDivision(d,d%7===0?'week':'day');
  else if(dayWidth*7>=10)for(let d=Math.ceil(Math.max(0,bufferLoDay)/7)*7;d<=bufferHiDay;d+=7)addDivision(d,'week');
  for(let year=0;year<=Math.ceil(lastCalendarDay/365);year++){
@@ -894,7 +894,7 @@ function navigateStory(kind,id){
  const node=graphNodes.find(node=>node.id===point.id)||graphNodes.find(node=>node.group.some(e=>point.group.some(member=>member.id===e.id)));
  if(node)positionCard(node);else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.6});focusReadingCard();
 }
-function cardKindLabel(kind){return ({moment:'МОМЕНТ',scene:'СЦЕНА',episode:'ЕПІЗОД',arc:'АРКА'})[kind]||String(kind||'').toUpperCase();}
+function cardKindLabel(kind){return ({moment:'МОМЕНТ',scene:'СЦЕНА',episode:'ЕПІЗОД',arc:'АРКА','arc-cluster':'АРКИ'})[kind]||String(kind||'').toUpperCase();}
 function cardMetaLine(kind,dateOrRange,hasYear=true){return `<span class="card-meta-line"><strong class="card-kind">${esc(cardKindLabel(kind))}</strong><span aria-hidden="true"> · </span><span>${esc(dateOrRange)}</span>${hasYear&&data.calendar.view_days<=365?`<span aria-hidden="true"> · </span><span>${esc(yearText())}</span>`:''}</span>`;}
 function cardTop(day,navigation,kind='moment',id=null){
  const navKind=kind==='scene'?'scene':'event';
