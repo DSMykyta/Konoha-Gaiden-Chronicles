@@ -356,8 +356,7 @@ function render(){
  const linked=(p,id)=>p.cast.includes(id);
  // Index the selected physical cast in one pass. Previously every selected
  // character scanned every semantic node again to assemble its anchors.
- const nodesByCharacter=new Map(ids.map(id=>[id,[]]));
- for(const node of globalNodes)for(const id of new Set(node.cast))nodesByCharacter.get(id)?.push(node);
+ const nodesByCharacter=TimelineCore.characterAnchors(globalNodes,ids);
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
  const numbered=phoneReader&&level==='moment';
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
