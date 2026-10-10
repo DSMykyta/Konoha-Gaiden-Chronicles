@@ -504,10 +504,10 @@ function render(){
  const visibleTicks=ticks.filter(tick=>zoom<8?dayToAxis(tick.day)>=buffered.coverLo&&dayToAxis(tick.day)<buffered.coverHi&&!timeScale.hidden(tick.day):px(tick.day+1)>pad-buffered.leftPx&&px(tick.day)<w-pad+buffered.rightPx&&!timeScale.hidden(tick.day+.5));
  let lastTick=-Infinity;
  visibleTicks.forEach(tick=>{
-  const x=zoom<8?px(tick.day):(Math.max(pad-buffered.leftPx,px(tick.day))+Math.min(w-pad+buffered.rightPx,px(tick.day+1)))/2;
+  const boundary=px(tick.day),x=boundary+6;
   if(x-lastTick<64)return;lastTick=x;
-  const boundary=px(tick.day);if(boundary>=pad-buffered.leftPx&&boundary<w-pad+buffered.rightPx)svg('line',{x1:boundary,x2:boundary,y1:5,y2:11,stroke:'#bfcbdc'},axis);
-  const text=svg('text',{x,y:28,'text-anchor':'middle','data-date':tick.day},axis);text.textContent=tick.text;
+  if(boundary>=pad-buffered.leftPx&&boundary<w-pad+buffered.rightPx)svg('line',{x1:boundary,x2:boundary,y1:5,y2:11,stroke:'#bfcbdc'},axis);
+  const text=svg('text',{x,y:28,'text-anchor':'start','data-date':tick.day},axis);text.textContent=tick.text;
  });
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
  const labelPositions=[],continuityPaths=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
