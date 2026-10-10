@@ -9,6 +9,15 @@ const palette=['#3f80cf','#cb833e','#7462bc','#ba6487','#358b96','#7d9953','#b89
 const defaults=['c-naruto','c-sasuke','c-sakura','c-kita','c-ren','c-sora'],teams={'team-7':['c-naruto','c-sasuke','c-sakura','c-kakashi'],'team-8':['c-hinata','c-kiba','c-shino','c-kurenai'],'team-9':['c-kita','c-ren','c-sora','c-raido']};
 const origins={M:'Манґа',A:'Аніме',F:'Філер',P:'Історія проєкту',R:'Ретроспектива',V:'Фільм',N:'Новела',G:'Гра',O:'Інше'},modes={internal:'внутрішній простір',memory:'спогад',manifested:'проявлення',reanimated:'Едо Тенсей'};
 const zoomModes={year:1,month:12,week:365/7,day:365};
+function scaledZoom(){return zoom*365/Math.max(1,axisLength());}
+function maximumZoom(){return Math.max(730,axisLength()*2);}
+function updateZoomPresets(){
+ const total=axisLength();
+ zoomModes.year=Math.max(1,total/365);
+ zoomModes.month=Math.max(1,total/(365/12));
+ zoomModes.week=Math.max(1,total/7);
+ zoomModes.day=Math.max(1,total);
+}
 function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 let storyLayers={...StoryLayers.ALL},layerRevision=0;
@@ -103,7 +112,7 @@ function worldChronology(){
 }
 function orderedScenes(){return worldChronology().scenes;}
 function semanticLevel(){
- const state=TimelineFlow.state(zoom);
+ const state=TimelineFlow.state(scaledZoom());
  return state.coarse&&state.t>=.5?state.coarse:state.fine;
 }
 function storyNodeCast(group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
@@ -385,7 +394,7 @@ function zoomAtScreen(value,screenX,knownPivot=null){
  const [lo,hi]=range(),scale=makeTimeScale(lo,hi,pad,plot,datedEvents());
  const pointer=clamp(screenX,pad,width-pad);
  const anchor=knownPivot??TimelineFlow.axisUnderPixel(pointer,scale,lo,hi);
- const next=clamp(value,1,730);
+ const next=clamp(value,1,maximumZoom());
  if(Math.abs(next-zoom)<1e-9)return;
  zoom=next;
  center=clampAxisCenter(TimelineFlow.zoomCenter({
@@ -398,7 +407,7 @@ function setZoom(value,pivot=center){
  if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');previewPan(0);}
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
  const old=zoom,previousCenter=center,view=range(),from=arguments.length>1?(view[0]+view[1])/2:center;
- zoom=clamp(value,1,730);center=clampAxisCenter(pivot+(from-pivot)*old/zoom);
+ zoom=clamp(value,1,maximumZoom());center=clampAxisCenter(pivot+(from-pivot)*old/zoom);
  if(old===zoom&&Math.abs(center-previousCenter)<1e-7)return;
  tooltipController?.hide();schedule();
 }
@@ -448,7 +457,7 @@ function render(){
  const allEvents=datedEvents(),availableLines=selectable(),ids=availableLines.filter(e=>selected.has(e.id)).map(e=>e.id).sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  let h=viewport;
  const phoneReader=w<=760&&viewport>=520,readerHeight=0;
- const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-144)*.25,24,150),flow=TimelineFlow.state(zoom),level=flow.t>=.5&&flow.coarse?flow.coarse:flow.fine;
+ const n=ids.length,semanticZoom=scaledZoom(),overview=semanticZoom<3,spread=clamp(Math.log(Math.max(1,semanticZoom))/Math.log(12),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-144)*.25,24,150),flow=TimelineFlow.state(semanticZoom),level=flow.t>=.5&&flow.coarse?flow.coarse:flow.fine;
  axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
  const buffered=TimelinePanCache.frame({lo,hi,maxAxis:axisLength(),width:w,height:viewport,zoom,dayPx:timeScale.dayPx,breaks:axisBreaks()});
@@ -476,7 +485,7 @@ function render(){
   baseLayoutCache.set(geometryKey,new Map(positioned.map(p=>[p.id,p.y])));
  }
  const originalY=baseLayoutCache.get(geometryKey);
- const spreadY=.08+.92*clamp(Math.log(Math.max(1,zoom))/Math.log(zoomModes.day),0,1);
+ const spreadY=.08+.92*clamp(Math.log(Math.max(1,semanticZoom))/Math.log(365),0,1);
  const parentY=(p,kind)=>{
   const key=`flow-parent:${kind}:${geometryKey}`;
   if(!baseLayoutCache.has(key))baseLayoutCache.set(key,kind==='moment'?originalY:TimelineCore.aggregateLanes(getSemantic(kind).nodes,originalY));
@@ -629,7 +638,7 @@ function render(){
  $('dateInputLabel').textContent=`Перейти до дня · ${yearLabel}`;
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
  $('previous').disabled=lo<=.001;$('next').disabled=hi>=axisLength()-.001;
- $('zoomOut').disabled=zoom<=1;$('zoomIn').disabled=zoom>=730;
+ $('zoomOut').disabled=zoom<=1;$('zoomIn').disabled=zoom>=maximumZoom();
  svg('line',{x1:pad-buffered.leftPx,x2:w-pad+buffered.rightPx,y1:5,y2:5,class:'time-axis-line'},axis);
  const ticks=zoom<8?Array.from({length:Math.ceil((data.calendar.view_days||365)/365)},(_,year)=>starts.map((day,index)=>({day:year*365+day,text:index===0?`Січ ${data.calendar.view_start_year+year}`:months[index].slice(0,3)}))).flat():Array.from({length:Math.max(0,Math.ceil(bufferHiDay)-Math.floor(bufferLoDay))},(_,index)=>({day:Math.floor(bufferLoDay)+index,text:dateText(Math.floor(bufferLoDay)+index)}));
  const visibleTicks=ticks.filter(tick=>zoom<8?dayToAxis(tick.day)>=buffered.coverLo&&dayToAxis(tick.day)<buffered.coverHi&&!timeScale.hidden(tick.day):px(tick.day+1)>pad-buffered.leftPx&&px(tick.day)<w-pad+buffered.rightPx&&!timeScale.hidden(tick.day+.5));
@@ -764,7 +773,7 @@ function render(){
  });
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
- cloudRenderer.update({groups:graphClouds,flowBridges,zoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
+ cloudRenderer.update({groups:graphClouds,flowBridges,zoom:semanticZoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
   $('emptyTitle').textContent=!availableLines.length?'У вибраних шарах немає ліній персонажів':ids.length?'У цьому періоді немає подій':'Обери лінії персонажів';
@@ -1082,10 +1091,16 @@ function renderProfile(){
  ProfileTechniques.decorate();
 }
 function ingest(next,initial=false){
+ const previousSpan=data?axisLength()/zoom:null;
  const nextBase=next.calendar.view_start_year??next.calendar.current_year,oldBase=data?.calendar.view_start_year??data?.calendar.current_year;
  const calendarCenter=data?axisToDay(center)+(oldBase-nextBase)*365:center+(next.calendar.current_year-nextBase)*365,wasAll=data&&selectable().every(e=>selected.has(e.id));
  data=next;geographyAtlas=GeographyAtlas.create(data.entities,data.geography||{});entityMap=new Map(data.entities.map(e=>[e.id,e]));characterColors=new Map(data.entities.map((e,i)=>[e.id,palette[i%palette.length]]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
  if(initial||wasAll)selected=new Set(selectable().map(e=>e.id));else selected=new Set([...selected].filter(id=>entityMap.has(id)));if(focusedCharacter&&!entityMap.has(focusedCharacter))focusedCharacter=null;if(anchorEvent&&!eventMap.has(anchorEvent))closeCard();
+ updateZoomPresets();
+ if(initial){
+  const compact=($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520;
+  zoom=compact?zoomModes.week:zoomModes.month;
+ }else if(previousSpan!==null)zoom=clamp(axisLength()/Math.max(.001,previousSpan),1,maximumZoom());
  center=clampAxisCenter(dayToAxis(calendarCenter));
  $('revision').textContent=`Дані: ${data.revision.slice(0,8)}`;$('sourceLink').href=`https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/tree/${data.revision}/${data.base}`;
  renderCalendar();
@@ -1127,11 +1142,13 @@ async function init(){
  for(const id of ['lines','contents','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();if(id==='contents')ChronologyContents.render();});
  $('layersButton').addEventListener('click',()=>togglePanel('periodPanel'));
  const setLayer=(key,active)=>{
-  const date=axisToDay(center);
+  const date=axisToDay(center),previousSpan=axisLength()/zoom;
   storyLayers={...storyLayers,[key]:active};
   layerRevision++;
   $('layersButton').querySelector('span').textContent='Шари · '+Object.values(storyLayers).filter(Boolean).length+'/4';
   events();
+  updateZoomPresets();
+  zoom=clamp(axisLength()/Math.max(.001,previousSpan),1,maximumZoom());
   center=clampAxisCenter(dayToAxis(date));
   // Preserve the focused line while it still has events in enabled layers.
   if(focusedCharacter&&(!selected.has(focusedCharacter)||!datedEvents().some(e=>e.tracks.includes(focusedCharacter))))focusedCharacter=null;
@@ -1276,7 +1293,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
     const distance=Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y);
     const width=canvas.clientWidth||1000,pad=width<600?22:48;
     const midpoint=(points[0].x+points[1].x)/2-canvas.getBoundingClientRect().left;
-    zoom=clamp(pinch.startZoom*distance/pinch.distance,1,730);
+    zoom=clamp(pinch.startZoom*distance/pinch.distance,1,maximumZoom());
     center=clampAxisCenter(TimelineFlow.zoomCenter({
      pivot:pinch.pivot,position:clamp(midpoint,pad,width-pad),
      width,pad,total:axisLength(),nextZoom:zoom
