@@ -241,6 +241,29 @@ const TimelineCore = {
     }
     return nodes.map(n=>({...n,y:y.get(n.id)}));
   },
+  aggregateLanes(nodes,momentLanes) {
+    // The only world layout is the moment-level topology. Zoom levels merely
+    // reveal larger semantic parents, whose visual anchor is the centroid of
+    // their already positioned member moments. Never solve a second map.
+    const positions=new Map();
+    for(const node of nodes){
+      const values=[],seen=new Set();
+      for(const moment of node.group||[]){
+        if(seen.has(moment.id))continue;
+        seen.add(moment.id);
+        const y=momentLanes.get(moment.id);
+        if(Number.isFinite(y))values.push(y);
+      }
+      if(!values.length){positions.set(node.id,0);continue;}
+      // A trimmed mean resists a single outlying event pulling an entire
+      // episode to another region while retaining all original scenes.
+      values.sort((a,b)=>a-b);
+      const trim=values.length>=7?Math.floor(values.length*.1):0;
+      const sample=values.slice(trim,values.length-trim);
+      positions.set(node.id,sample.reduce((sum,y)=>sum+y,0)/sample.length);
+    }
+    return positions;
+  },
   sceneLayout(nodes,relations=[],owner={},middle=0,amplitude=100,geography=null) {
     if(!nodes.length)return new Map();
     const byId=new Map(nodes.map(n=>[n.id,n])),edges=new Map(nodes.map(n=>[n.id,new Map()])),baseRef=ref=>typeof ref==='string'?(ref.endsWith('.start')?ref.slice(0,-6):ref.endsWith('.end')?ref.slice(0,-4):ref):ref;
