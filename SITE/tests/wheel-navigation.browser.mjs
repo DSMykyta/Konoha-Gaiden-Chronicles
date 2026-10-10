@@ -43,10 +43,11 @@ try {
   for(let pulse=0;pulse<3;pulse++){await page.mouse.wheel(0,24);await page.waitForTimeout(185);}
   const burst=await page.evaluate(()=>window.__timelineMutations);
   assert.equal(burst,0,'short wheel pauses must not rebuild clouds and SVG between pulses');
+  const burstReusable=await page.evaluate(()=>{const [lo,hi]=range();return !!TimelinePanCache.reuse(panFrame,{lo,hi,width:$('canvas').clientWidth,height:$('canvas').clientHeight,zoom,breaks:axisBreaks()});});
   await page.waitForTimeout(550);
   const settled=await page.evaluate(()=>({mutations:window.__timelineMutations,viewBox:$('timeline').getAttribute('viewBox')}));
-  assert.equal(settled.mutations,0,'short wheel bursts within overscan must not replace SVG children');
-  assert.notEqual(settled.viewBox,before.viewBox,'the finished gesture must move the cached camera');
+  assert.equal(settled.mutations===0,burstReusable,'buffered wheel gestures should rebuild only at a real cache boundary');
+  if(burstReusable)assert.notEqual(settled.viewBox,before.viewBox,'the finished gesture must move the cached camera');
   await page.evaluate(()=>{zoom=1;center=clampAxisCenter(center);render()});
   await page.waitForTimeout(200);
   await page.evaluate(()=>window.__timelineMutations=0);
@@ -62,11 +63,35 @@ try {
   for(let i=0;i<20;i++)await page.mouse.move(x+i*7,y);
   const drag=await page.evaluate(()=>({center,mutations:window.__timelineMutations}));
   assert.equal(drag.mutations,0,'drag must also avoid SVG rebuilds while moving');
+  const dragReusable=await page.evaluate(()=>{const [lo,hi]=range();return !!TimelinePanCache.reuse(panFrame,{lo,hi,width:$('canvas').clientWidth,height:$('canvas').clientHeight,zoom,breaks:axisBreaks()});});
   await page.mouse.up();await page.waitForTimeout(280);
   const committed=await page.evaluate(()=>({mutations:window.__timelineMutations,transform:$('timeline').style.transform,viewBox:$('timeline').getAttribute('viewBox')}));
-  assert.equal(committed.mutations,0,'short drag must reuse the already-built line geometry');
-  assert.notEqual(committed.viewBox,before.viewBox,'drag release must commit a camera translation');
+  assert.equal(committed.mutations===0,dragReusable,'drag release must apply the same buffer policy');
+  if(dragReusable)assert.notEqual(committed.viewBox,before.viewBox,'drag release must commit a camera translation');
   assert.equal(committed.transform,'');
+  // A tiny pan wholly within a stable time-break window must reuse the same
+  // path DOM nodes, not only produce a visually similar graph.
+  await page.evaluate(()=>{
+    const half=(range()[1]-range()[0])*.002;
+    const start=center;
+    let shift=half;
+    if(!TimelinePanCache.reuse(panFrame,{lo:range()[0]+shift,hi:range()[1]+shift,width:$('canvas').clientWidth,height:$('canvas').clientHeight,zoom,breaks:axisBreaks()}))shift=-half;
+    if(!TimelinePanCache.reuse(panFrame,{lo:range()[0]+shift,hi:range()[1]+shift,width:$('canvas').clientWidth,height:$('canvas').clientHeight,zoom,breaks:axisBreaks()})){
+      center=dayToAxis(21.5);render();shift=(range()[1]-range()[0])*.002;
+    }
+    window.__savedThread=$('timeline').querySelector('.thread');
+    window.__savedPath=window.__savedThread?.getAttribute('d');
+    window.__timelineMutations=0;
+    center=clampAxisCenter(center+shift);schedule();
+  });
+  await page.waitForTimeout(200);
+  const stable=await page.evaluate(()=>({
+    mutations:window.__timelineMutations,
+    threadSame:window.__savedThread?.isConnected,
+    pathSame:window.__savedThread?.getAttribute('d')===window.__savedPath
+  }));
+  assert.equal(stable.mutations,0,'an ordinary tiny pan cannot replace timeline child nodes');
+  assert(stable.threadSame&&stable.pathSame,'a camera move must preserve the original SVG curve object');
   // Explicitly crossing the buffered interval is the one legitimate reason
   // to rebuild the virtualized SVG.
   await page.evaluate(()=>{
