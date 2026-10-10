@@ -4,7 +4,15 @@
 const ProfileTechniques = (() => {
   const kindLabels = {ninjutsu:'Ніндзюцу',chakra_control:'Контроль чакри',summoning:'Призов',jinchuriki:'Джінчюрікі'};
   const kindName = kind => kindLabels[kind] || kind || 'Не визначено';
-  const registry = () => new Map((data?.abilities || []).map(ability => [ability.id, ability]));
+  let registrySource=null,registryCache=null;
+  const registry = () => {
+    const abilities=data?.abilities || [];
+    if(abilities!==registrySource){
+      registrySource=abilities;
+      registryCache=new Map(abilities.map(ability=>[ability.id,ability]));
+    }
+    return registryCache;
+  };
 
   function card(item, index, options = {}) {
     const ability = {...(registry().get(item.id) || {}), ...item};
@@ -56,6 +64,9 @@ const ProfileTechniques = (() => {
     let drag = null;
     track.addEventListener('pointerdown', event => {
       if (event.button !== 0 || event.pointerType === 'touch') return;
+      // A drag may end without emitting a click. Do not let its suppression
+      // flag swallow the next independent click on an ability card.
+      track.dataset.preventCardClick = 'false';
       drag = {id:event.pointerId, x:event.clientX, left:track.scrollLeft, moved:false};
     });
     track.addEventListener('pointermove', event => {
