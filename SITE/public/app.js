@@ -23,6 +23,29 @@ function eraRange(era){
  const range=to===undefined?`${from}+`:from===to?`${from}`:`${from}–${to}`;
  return `${era.calendar_status==='placed'?'':'≈ '}${range} ${suffix}`;
 }
+function renderGeographyAudit(){
+ const target=$('geographyAudit');
+ if(!target||!geographyAtlas)return;
+ const review=geographyAtlas.audit(events(),orderedScenes());
+ const flags=geographyAtlas.movementFlags(events());
+ const unknown=review.unresolved.slice(0,24).map(item=>{
+  const entity=entityMap.get(item.id);
+  const label=item.id==='(missing)'?'Місце не зазначено':(entity?.aliases?.[0]||entity?.name||item.id);
+  return '<li>'+esc(label)+' — '+item.unknown+' сцен'+(item.unknown===1?'а':'')+'</li>';
+ }).join('');
+ const conflicts=flags.slice(0,12).map(item=>{
+  const a=eventMap.get(item.a),b=eventMap.get(item.b),where=item.countries.map(id=>geographyAtlas.places.get(id)?.name||id).join(' / ');
+  return '<li>'+esc(name(item.character))+' · '+esc(dateText(item.day,true))+' · '+esc(where)+
+   ' <button class="text-button" data-geo-event="'+esc(item.a)+'">'+esc(a?.title||item.a)+'</button>'+
+   ' / <button class="text-button" data-geo-event="'+esc(item.b)+'">'+esc(b?.title||item.b)+'</button></li>';
+ }).join('');
+ target.innerHTML='<p>Неповна географія: '+review.unresolved.length+' різновидів місць; записи перевіряються, а не прив’язуються до вигаданих координат.</p>'+
+  (unknown?'<ol>'+unknown+'</ol>':'<p>У вибраних сценах місце визначене.</p>')+
+  '<p>Можливі неузгодженості переміщень: '+flags.length+
+  '. Одна дата в різних країнах — підстава для перевірки, не доведена помилка (клони, техніки, неточний час).</p>'+
+  (conflicts?'<ol>'+conflicts+'</ol>':'');
+ target.querySelectorAll('[data-geo-event]').forEach(button=>button.addEventListener('click',()=>navigateEvent(button.dataset.geoEvent)));
+}
 function renderCalendar(){
  $('dateInputLabel').textContent=`Перейти до дня · ${yearText()}`;
  $('eraList').innerHTML=[...data.periods].sort((a,b)=>a.order-b.order).map(era=>`<li${era.id===currentEra()?.id?' aria-current="true"':''}><span>${esc(era.label)}</span><small>${esc(eraRange(era))}</small></li>`).join('');
@@ -51,7 +74,7 @@ function activeLineIds(){return selectable().filter(entity=>selected.has(entity.
 function color(id){return characterColors.get(id)||'#8797ac';}
 let cachedData=null,cachedLayerRevision=-1,cachedEvents=[],cachedDated=[],cachedSelectable=[],cachedScenes=null,cachedWorld=null,cachedRelations=null,cachedBreaks=null,cachedAxis=null;
 const layoutCache=new Map(),baseLayoutCache=new Map(),semanticNodeCache=new Map(),strandRouteCache=new Map();
-let characterColors=new Map();
+let characterColors=new Map(),geographyAtlas=null;
 function events(){
  if(cachedData!==data||cachedLayerRevision!==layerRevision){
   cachedData=data;cachedLayerRevision=layerRevision;
@@ -427,7 +450,7 @@ function render(){
   const baseKey=level;
   if(!baseLayoutCache.has(baseKey)){
    if(baseLayoutCache.size>=8)baseLayoutCache.clear();
-   baseLayoutCache.set(baseKey,TimelineCore.sceneLayout(baseNodes,chronologyRelations(),owner,0,1));
+   baseLayoutCache.set(baseKey,TimelineCore.sceneLayout(baseNodes,chronologyRelations(),owner,0,1,geographyAtlas));
   }
   const baseY=baseLayoutCache.get(baseKey),fullTop=viewport<520?104:w<=760?headerBottom()+44:166,fullBottom=Math.max(fullTop+80,viewport-readerHeight-56),top=(mid-28)*(1-spread)+fullTop*spread,bottom=(mid+28)*(1-spread)+fullBottom*spread,compactClearance=compactRadius*2-4,clearance=compactClearance+(46-compactClearance)*spread;
   const separated=TimelineCore.separateNodes(baseNodes.map(p=>({...p,x:dayToAxis(p.day,allEvents)*plot/(hi-lo),y:mid+(baseY.get(p.id)||0)*amplitude})),top,bottom,clearance);
@@ -853,7 +876,7 @@ function renderProfile(){
 function ingest(next,initial=false){
  const nextBase=next.calendar.view_start_year??next.calendar.current_year,oldBase=data?.calendar.view_start_year??data?.calendar.current_year;
  const calendarCenter=data?axisToDay(center)+(oldBase-nextBase)*365:center+(next.calendar.current_year-nextBase)*365,wasAll=data&&selectable().every(e=>selected.has(e.id));
- data=next;entityMap=new Map(data.entities.map(e=>[e.id,e]));characterColors=new Map(data.entities.map((e,i)=>[e.id,palette[i%palette.length]]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
+ data=next;geographyAtlas=GeographyAtlas.create(data.entities,data.geography||{});entityMap=new Map(data.entities.map(e=>[e.id,e]));characterColors=new Map(data.entities.map((e,i)=>[e.id,palette[i%palette.length]]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
  if(initial||wasAll)selected=new Set(selectable().map(e=>e.id));else selected=new Set([...selected].filter(id=>entityMap.has(id)));if(focusedCharacter&&!entityMap.has(focusedCharacter))focusedCharacter=null;if(anchorEvent&&!eventMap.has(anchorEvent))closeCard();
  center=clampAxisCenter(dayToAxis(calendarCenter));
  $('revision').textContent=`Дані: ${data.revision.slice(0,8)}`;$('sourceLink').href=`https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/tree/${data.revision}/${data.base}`;
@@ -876,7 +899,7 @@ async function refreshData(){
   const v=await fetch(`version.json?t=${Date.now()}`,{cache:'no-store'});if(!v.ok)return;
   const version=await v.json();if(version.revision===data.revision)return;
   const response=await fetch(`data.json?v=${encodeURIComponent(version.revision)}`,{cache:'no-store'});if(!response.ok)return;
-  ingest(await response.json());AbilityArchive.refresh();renderCharacters();search();ChronologyContents.render();refreshOpenCard();
+  ingest(await response.json());AbilityArchive.refresh();renderCharacters();search();ChronologyContents.render();renderGeographyAudit();refreshOpenCard();
   if(profileEntity)renderProfile();
   if(characterEventsEntity){if(entityMap.has(characterEventsEntity))renderCharacterEvents(true);else closeCharacterEvents();}
   render();
@@ -904,7 +927,7 @@ async function init(){
   center=clampAxisCenter(dayToAxis(date));
   // Preserve the focused line while it still has events in enabled layers.
   if(focusedCharacter&&(!selected.has(focusedCharacter)||!datedEvents().some(e=>e.tracks.includes(focusedCharacter))))focusedCharacter=null;
-  closeCard();renderCharacters();render();
+  closeCard();renderCharacters();render();renderGeographyAudit();
   search();ChronologyContents.render();
   if(profileEntity)renderProfile();
   if(characterEventsEntity)renderCharacterEvents(true);
@@ -1077,7 +1100,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  window.addEventListener('blur',dismissTransient);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')dismissTransient();});
  $('closeProfile').addEventListener('click',closeProfile);$('profileDialog').addEventListener('cancel',e=>{e.preventDefault();closeProfile();});$('profileDialog').addEventListener('click',e=>{if(e.target===$('profileDialog')){const b=$('profileDialog').getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeProfile();}});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState!=='hidden')refreshData();});window.addEventListener('focus',refreshData);setInterval(refreshData,60000);
- renderCharacters();render();const params=new URLSearchParams(window.location.search);if(entityMap.has(params.get('character')))setFocus(params.get('character'));if(eventMap.has(params.get('event')))navigateEvent(params.get('event'));
+ renderCharacters();render();renderGeographyAudit();const params=new URLSearchParams(window.location.search);if(entityMap.has(params.get('character')))setFocus(params.get('character'));if(eventMap.has(params.get('event')))navigateEvent(params.get('event'));
  }catch(e){if($('status'))$('status').hidden=true;if($('error')){$('error').textContent=e.message;$('error').hidden=false;}console.error(e);}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
