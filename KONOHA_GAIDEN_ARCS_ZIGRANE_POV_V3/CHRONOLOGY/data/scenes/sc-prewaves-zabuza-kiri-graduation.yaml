@@ -1,0 +1,32 @@
+schema_version: 1
+id: sc-prewaves-zabuza-kiri-graduation
+episode_id: ep-prewaves-zabuza-kiri-academy
+display_rank: 100
+continuity_id: main
+title: "Юний Забуза зриває кривавий випускний іспит у Кірі"
+description: "У добу Кривавого Туману випускники Академії Кіріґакуре змушені битися між собою на смерть. Забуза, який сам ще не навчався в Академії, вбиває понад сотню кандидатів, після чого цей порядок випускних випробувань скасовують. Під час першого бою з ним Какаші пізніше розповість про цю подію Наруто, Саске й Сакурі."
+location_id: loc-kirigakure
+placement: null
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-zabuza-kiri-graduation
+  title: "Забуза вбиває понад сотню випускників Кірі"
+  text: "У часи, коли Академія Кіріґакуре змушувала майбутніх генінів смертельно битися з товаришами, юний Забуза, ще не будучи учнем, знищує понад сотню випускників. Через цю різанину селище скасовує жорстокий порядок іспиту. Це подія з минулого Забузи, про яку Какаші розповідає під час бою у Країні Хвиль; її календарний рік лишається невстановленим."
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-sub-ep8-zabuza-kiri-backstory
+relations: []
+presence: []
