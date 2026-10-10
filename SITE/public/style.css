@@ -91,6 +91,14 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 #timeline.dragging { cursor: grabbing; }
 #timeline text { font: 12px Manrope, sans-serif; fill: var(--muted); }
 #timeline .day-band { fill: var(--day-alternate); opacity: 1; pointer-events: none; }
+/* Calendar edges belong to time, not to event density. */
+#timeline .calendar-division { pointer-events: none; vector-effect: non-scaling-stroke; }
+#timeline .calendar-day { stroke: #8493a5; stroke-width: .5; opacity: .20; }
+#timeline .calendar-week { stroke: #7c8da1; stroke-width: .8; opacity: .35; }
+#timeline .calendar-month { stroke: #697b91; stroke-width: 1; opacity: .50; }
+#timeline .calendar-year { stroke: #53667f; stroke-width: 1.3; opacity: .65; }
+#timeline .arc-cluster-node .mark { fill: #3d4f66; stroke: #2c3a4c; stroke-width: 1.6; }
+
 #timeline .thread { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 #timeline .thread.is-scene-muted { opacity: .12; }
 #timeline .thread.is-scene-member { opacity: 1; stroke-width: 2.8; }
