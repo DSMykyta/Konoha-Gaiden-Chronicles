@@ -344,13 +344,14 @@ const TimelineCore = {
           if(chain.length<2)continue;
           const points=chain.flatMap(g=>g.nodes);
           const average=points.reduce((sum,p)=>sum+result.get(p.id),0)/points.length;
-          let influence=.82;
+          let influence=.90;
           for(let i=1;i<chain.length;i++){
             const grade=geography.relation(chain[i-1].location,chain[i].location).grade;
-            // Preserve somewhat more movement for distant or unresolved
-            // sites: visual continuity never asserts geographic equivalence.
-            if(grade===3)influence=Math.min(influence,.62);
-            else if(grade===null)influence=Math.min(influence,.70);
+            // Two nearby sites almost share a lane. A longer within-country
+            // journey retains a subtle drift; an unknown site's *geography*
+            // remains unknown, though a verified moving party stays together.
+            if(grade===3)influence=Math.min(influence,.80);
+            else if(grade===null)influence=Math.min(influence,.86);
           }
           for(const point of points){
             const y=result.get(point.id);
