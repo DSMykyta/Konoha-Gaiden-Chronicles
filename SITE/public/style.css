@@ -13,7 +13,7 @@
   --border: #dde1e6;
   --accent: #4b5563;
   --accent-soft: #eceff3;
-  --day-alternate: #f0f2f5;
+  --day-alternate: #e0e5ed;
   --shadow-sm: 0 1px 3px #151b2410;
   --shadow-lg: 0 18px 50px #27364c18, 0 2px 7px #27364c0a, inset 0 1px 0 #ffffff;
   --z-axis: 1;
@@ -90,7 +90,7 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 #timeline { position: relative; display: block; width: 100%; height: auto; min-height: 100%; overflow: hidden; touch-action: none; cursor: grab; }
 #timeline.dragging { cursor: grabbing; }
 #timeline text { font: 12px Manrope, sans-serif; fill: var(--muted); }
-#timeline .day-band { fill: var(--day-alternate); opacity: .34; pointer-events: none; }
+#timeline .day-band { fill: var(--day-alternate); opacity: 1; pointer-events: none; }
 #timeline .thread { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 #timeline .thread.is-scene-muted { opacity: .12; }
 #timeline .thread.is-scene-member { opacity: 1; stroke-width: 2.8; }
