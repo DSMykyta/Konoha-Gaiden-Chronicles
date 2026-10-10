@@ -1,0 +1,51 @@
+schema_version: 1
+id: sc-y0-0122-kakashi-checks-naruto-milk
+episode_id: ep-y0-kakashi-inspects-naruto-home
+display_rank: 100
+continuity_id: main
+title: Какаші знаходить прострочене молоко в квартирі Наруто
+description: >-
+  Хірузен супроводжує Какаші до помешкання Наруто й говорить про майбутню Команду 7. Какаші оглядає житло хлопця і знаходить прострочене молоко. Так стає зрозуміло, чому Наруто весь день мучився болем у животі, тоді як новий наставник усвідомлює, наскільки непростою буде робота з цими учнями.
+location_id: loc-naruto-apartment
+placement:
+  anchor_id: ta-team-formation
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-y0-0122-kakashi-discovers-spoiled-milk
+  title: Какаші з'ясовує причину нездужання Наруто
+  text: >-
+    Хірузен розповідає Какаші, що в його новій команді будуть Наруто, Саске та Сакура. У квартирі Наруто Какаші помічає молоко, термін придатності якого вже минув. Він пов'язує це з розладом шлунка Наруто й робить перший висновок про складнощі, які чекають на нього як наставника.
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: focus
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: mentioned
+    mode: remote
+  - entity_id: c-sasuke
+    role: mentioned
+    mode: remote
+  - entity_id: c-sakura
+    role: mentioned
+    mode: remote
+  focus_teams:
+  - team-7
+  evidence_ids:
+  - evd-sub-ep3-kakashi-milk
+  - evd-narutopedia-ep3-kakashi-milk
+relations: []
+presence: []
