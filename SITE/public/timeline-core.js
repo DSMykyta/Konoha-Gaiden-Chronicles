@@ -568,19 +568,28 @@ const TimelineCore = {
   },
   strand(anchors,id,middle,amplitude,lead=1,pixelsPerDay=24,axisLength=365) {
     if(!anchors.length)return [];
-    // Recorded nodes determine the curve. Keep decorative drift small and bounded
-    // regardless of the distance between appearances or the current zoom.
-    const first=anchors[0],last=anchors.at(-1),ends=[{day:Math.max(0,first.day-lead),y:first.y,flat:true,id:'start'},...anchors.map(p=>({...p,node:true,flat:true})),{day:Math.min(axisLength,last.day+lead),y:last.y,flat:true,id:'end'}],points=[];
+    // Recorded moments are exact anchors, NOT hard horizontal tangent stops.
+    // The old flat:true on every moment forced a miniature S-curve at every
+    // close pair; apparent hairpin corners appeared when many moments crowded.
+    const first=anchors[0],last=anchors.at(-1);
+    const ends=[{day:Math.max(0,first.day-lead),y:first.y,flat:true,id:'start'},
+      ...anchors.map(p=>({...p,node:true,flat:false})),
+      {day:Math.min(axisLength,last.day+lead),y:last.y,flat:true,id:'end'}],points=[];
+    // A character has a stable flow channel: do not roll new random left/right
+    // bends for every consecutive scene. Different characters sharing a hub
+    // can gently fan apart over an actual wide-enough chronological interval.
+    const channel=(this.seed(id+':stream')-.5)*2;
+    const smooth=t=>t*t*(3-2*t);
     for(let i=0;i<ends.length-1;i++){
       const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
       if(gap<1e-8)continue;
-      const pixelGap=gap*Math.max(1,pixelsPerDay),wander=Math.max(0,Math.min(1,(pixelGap-90)/260));
+      const pixelGap=gap*Math.max(1,pixelsPerDay);
+      const wander=smooth(Math.max(0,Math.min(1,(pixelGap-20)/185)));
       if(!wander||!a.node||!b.node)continue;
-      const controls=3;
-      const primary=(this.seed(id+':'+a.id+':'+b.id+':drift')-.5)*Math.min(24,amplitude*.2)*wander;
+      const controls=3,primary=channel*Math.min(12,amplitude*.14)*wander;
       for(let j=1;j<=controls;j++){
-        const t=j/(controls+1),ease=t*t*(3-2*t),offset=Math.sin(Math.PI*t)**2*primary;
-        points.push({day:a.day+gap*t,y:a.y+(b.y-a.y)*ease+offset});
+        const t=j/(controls+1),offset=Math.sin(Math.PI*t)**2*primary;
+        points.push({day:a.day+gap*t,y:a.y+(b.y-a.y)*t+offset});
       }
     }
     // Separate nodes can share a display time. Keep both physical anchors so
