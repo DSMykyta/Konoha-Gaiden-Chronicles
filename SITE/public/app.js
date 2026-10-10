@@ -265,8 +265,14 @@ function applyBufferedPan(){
  return true;
 }
 function schedule(){
- if(wheelPreview||raf!==null)return;
- raf=requestAnimationFrame(()=>{raf=null;if(!applyBufferedPan())render();});
+ // A continuous wheel gesture must not outrun the cached picture while
+ // waiting for the user to stop. Commit at most once per animation frame.
+ if(raf!==null)return;
+ raf=requestAnimationFrame(()=>{
+  raf=null;
+  wheelPreview=false;
+  if(!applyBufferedPan())render();
+ });
 }
 let hoverCard=false,pinnedNodeId=null,cardReturnFocus=null,graphClouds=[],graphLabels=[],cloudRenderer=null,panFrame=null;
 const cloudLabelLayouts=new Map();
@@ -977,7 +983,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  canvas.addEventListener('click',e=>{const title=e.target.closest('.cloud-label');if(title){openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node,.node-hit');if(target)openNode(graphNodes.find(p=>p.id===(target.dataset.event||target.dataset.nodeId)),true);});
  canvas.addEventListener('keydown',e=>{if(e.key!=='Enter'&&e.key!==' ')return;const title=e.target.closest('.cloud-label');if(title){e.preventDefault();openMapTitle(title.dataset.titleKind,title.dataset.titleId);return;}const target=e.target.closest('.node');if(target){e.preventDefault();openNode(graphNodes.find(p=>p.id===target.dataset.event),true);}});
  // Wheel/trackpad now navigates through time; scale belongs to the visible
- // year/month/week/day and +/- controls. No SVG rebuild per wheel event.
+ // year/month/week/day and +/- controls. Commit the camera during wheel motion.
  $('canvas').addEventListener('wheel',e=>{
   if(e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
   e.preventDefault();
@@ -989,14 +995,17 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   const next=clampAxisCenter(center+delta*span/plot);
   if(Math.abs(next-center)<1e-7)return;
   center=next;
-  if(raf!==null){cancelAnimationFrame(raf);raf=null;}
   wheelPreview=true;
   previewPan((paintedCenter-center)*plot/span);
-  uiTimers.defer('wheel-commit',380,()=>{wheelPreview=false;if(!drag&&!pinch)schedule();});
+  schedule();
  },{passive:false});
  canvas.addEventListener('pointerdown',e=>{
    if(e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.line-label'))return;
-   if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');}
+   if(wheelPreview){
+    wheelPreview=false;
+    // Never let an upcoming wheel frame rebuild SVG in the middle of a pinch.
+    if(raf!==null){cancelAnimationFrame(raf);raf=null;}
+   }
    touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
    canvas.setPointerCapture(e.pointerId);
    if(touches.size===1){
