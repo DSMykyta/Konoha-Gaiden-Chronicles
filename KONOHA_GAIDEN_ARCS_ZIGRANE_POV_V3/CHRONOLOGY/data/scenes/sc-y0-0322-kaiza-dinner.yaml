@@ -83,6 +83,8 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep11-kaiza-past
+  - evd-narutopedia-kaiza-past
   - evd-v10-000028
   - evd-manga-land-waves
   - evd-narutopedia-ep11-audit
