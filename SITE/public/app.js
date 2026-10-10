@@ -473,16 +473,21 @@ function render(){
  };
  if(!baseLayoutCache.has('canonical-moments')){
   const moments=getSemantic('moment').nodes;
-  baseLayoutCache.set('canonical-moments',{moments,lanes:TimelineCore.sceneLayout(moments,chronologyRelations(),getSemantic('moment').owner,0,1,geographyAtlas)});
+  const solved=TimelineCore.sceneLayout(moments,chronologyRelations(),getSemantic('moment').owner,0,1,geographyAtlas);
+  baseLayoutCache.set('canonical-moments',{moments,lanes:TimelineCore.stabilizeSequences(moments,solved)});
  }
  const canonical=baseLayoutCache.get('canonical-moments');
  const geometryKey=`flow-geography:${w}:${viewport}`;
  if(!baseLayoutCache.has(geometryKey)){
   const top=viewport<520?104:w<=760?headerBottom()+44:166,bottom=Math.max(top+80,viewport-56);
-  const positioned=TimelineCore.separateNodes(canonical.moments.map(p=>({
-   ...p,x:p.day*plot,y:mid+(canonical.lanes.get(p.id)||0)*amplitude
-  })),top,bottom,46);
-  baseLayoutCache.set(geometryKey,new Map(positioned.map(p=>[p.id,p.y])));
+  // Do NOT call separateNodes() on raw moments here. Its collision spacing
+  // was evaluated at a fictitious p.day*plot coordinate, independent of zoom:
+  // a succession of one team's moments alternated above/below its own route.
+  // Actual marks already merge into scenes while zooming out; a geometric
+  // collision pass must not rewrite the underlying character trajectories.
+  baseLayoutCache.set(geometryKey,new Map(canonical.moments.map(p=>[
+   p.id,clamp(mid+(canonical.lanes.get(p.id)||0)*amplitude,top,bottom)
+  ])));
  }
  const originalY=baseLayoutCache.get(geometryKey);
  const spreadY=.08+.92*clamp(Math.log(Math.max(1,semanticZoom))/Math.log(365),0,1);
