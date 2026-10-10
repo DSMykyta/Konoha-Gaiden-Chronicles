@@ -52,3 +52,18 @@ test('geography-aware calendar pairs keep the same coordinates after day bucketi
  const first=core.sceneLayout(sample),second=core.sceneLayout(sample);
  assert.deepEqual(Array.from(first.entries()),Array.from(second.entries()));
 });
+
+
+test('episode clustering cannot close a real hiatus between physical appearances',()=>{
+ const first={id:'event-one',day:1,calendarDay:1,activityFrom:1,activityTo:1};
+ const second={id:'event-two',day:35,calendarDay:35,activityFrom:35,activityTo:35};
+ const episode={id:'episode',isCluster:true,day:18,calendarDay:18,activityFrom:1,activityTo:35,
+  group:[{id:'event-one'},{id:'event-two'}]};
+ assert.equal(core.lifetimes([first,episode,second]).length,1,
+  'ordinary lifetime grouping would incorrectly bridge this inactivity');
+ const runs=core.clusteredLifetimes([first,episode,second]);
+ assert.equal(runs.length,2,'a summary hub must not create an unrecorded continuous presence');
+ assert(runs.flat().some(item=>item.id==='episode'),'the hub should remain visible on one real route');
+ assert(runs.some(run=>run.some(item=>item.id==='event-one')));
+ assert(runs.some(run=>run.some(item=>item.id==='event-two')));
+});
