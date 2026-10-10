@@ -6095,3 +6095,12 @@ notes:
   evidence_ids:
   - evd-manga-land-waves
   - evd-narutopedia-ep6-audit
+- id: lnk-episode3-kakashi-apartment-before-class
+  kind: before
+  a: ev-y0-0122-kakashi-discovers-spoiled-milk
+  b: ev-y0-0122-kakashi-arrives
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep3-kakashi-milk
+  - evd-narutopedia-ep3-kakashi-milk
