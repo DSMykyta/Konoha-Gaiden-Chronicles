@@ -205,6 +205,23 @@ function updatePanChrome(lo,hi,shift){
  $('previous').disabled=lo<=.001;$('next').disabled=hi>=axisLength()-.001;
 }
 
+function syncBufferedTabStops(shift=0){
+ // Prefetched nodes must not become keyboard targets until the camera
+ // actually brings them into view.
+ const visible=new Set(graphNodes.map(node=>node.id));
+ document.querySelectorAll('#timeline .node').forEach(element=>{
+  const active=visible.has(element.dataset.event)&&!element.classList.contains('is-line-focus-hidden');
+  element.setAttribute('tabindex',active?'0':'-1');
+ });
+ const width=$('canvas').clientWidth||1000;
+ const positions=new Map(graphLabels.map(label=>[JSON.stringify([label.kind,label.id]),label]));
+ document.querySelectorAll('#timeline .cloud-label').forEach(element=>{
+  const label=positions.get(JSON.stringify([element.dataset.titleKind,element.dataset.titleId]));
+  const x=(label?.x??Infinity)+shift;
+  const active=!!label&&x+label.width>=0&&x<=width&&!element.classList.contains('is-line-focus-hidden');
+  element.setAttribute('tabindex',active?'0':'-1');
+ });
+}
 function applyBufferedPan(){
  if(!data||!panFrame)return false;
  const canvas=$('canvas'),width=canvas.clientWidth||1000,height=canvas.clientHeight||700,[lo,hi]=range();
@@ -230,6 +247,7 @@ function applyBufferedPan(){
   });
  }
  cloudRenderer?.pan(camera.shift);
+ syncBufferedTabStops(camera.shift);
  updatePanChrome(lo,hi,camera.shift);
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
@@ -554,7 +572,7 @@ function render(){
   $('emptyAction').textContent=!availableLines.length?'Змінити шари':ids.length?'До найближчої події':'Обрати всіх';
  }
  if(!$('eventCard').hidden){const a=graphNodes.find(p=>p.id===focusId);if(a)positionCard(a);else HierarchyPreview.layout();}
- paintNodes();updateFocusBar();tooltipController?.refresh();
+ paintNodes();syncBufferedTabStops();updateFocusBar();tooltipController?.refresh();
  paintedCenter=center;
 }
 function mapTitleGroups(level,nodes=graphNodes,bounds=null){
