@@ -457,7 +457,14 @@ function render(){
  const allEvents=datedEvents(),availableLines=selectable(),ids=availableLines.filter(e=>selected.has(e.id)).map(e=>e.id).sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  let h=viewport;
  const phoneReader=w<=760&&viewport>=520,readerHeight=0;
- const n=ids.length,semanticZoom=scaledZoom(),overview=semanticZoom<3,spread=clamp(Math.log(Math.max(1,semanticZoom))/Math.log(12),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-144)*.25,24,150),flow=TimelineFlow.state(semanticZoom),level=flow.t>=.5&&flow.coarse?flow.coarse:flow.fine;
+ // Use the actual available vertical field. Previously a 150 px hard cap
+ // (and an extra near-zero zoom multiplier) squeezed every character into a
+ // narrow central stripe even on tall desktop screens.
+ const flowTop=viewport<520?104:w<=760?headerBottom()+44:166;
+ const flowBottom=Math.max(flowTop+80,viewport-56);
+ const mid=(flowTop+flowBottom)/2;
+ const amplitude=clamp((flowBottom-flowTop)*.47,24,360);
+ const n=ids.length,semanticZoom=scaledZoom(),overview=semanticZoom<3,spread=clamp(Math.log(Math.max(1,semanticZoom))/Math.log(12),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,flow=TimelineFlow.state(semanticZoom),level=flow.t>=.5&&flow.coarse?flow.coarse:flow.fine;
  axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
  const buffered=TimelinePanCache.frame({lo,hi,maxAxis:axisLength(),width:w,height:viewport,zoom,dayPx:timeScale.dayPx,breaks:axisBreaks()});
@@ -479,7 +486,7 @@ function render(){
  const canonical=baseLayoutCache.get('canonical-moments');
  const geometryKey=`flow-geography:${w}:${viewport}`;
  if(!baseLayoutCache.has(geometryKey)){
-  const top=viewport<520?104:w<=760?headerBottom()+44:166,bottom=Math.max(top+80,viewport-56);
+  const top=flowTop,bottom=flowBottom;
   // Do NOT call separateNodes() on raw moments here. Its collision spacing
   // was evaluated at a fictitious p.day*plot coordinate, independent of zoom:
   // a succession of one team's moments alternated above/below its own route.
@@ -490,7 +497,9 @@ function render(){
   ])));
  }
  const originalY=baseLayoutCache.get(geometryKey);
- const spreadY=.08+.92*clamp(Math.log(Math.max(1,semanticZoom))/Math.log(365),0,1);
+ // Preserve the identity of the different streams even at coarser zooms.
+ // Zoom merges semantic marks, not the vertical geography into one tight band.
+ const spreadY=.28+.72*clamp(Math.log(Math.max(1,semanticZoom))/Math.log(365),0,1);
  const parentY=(p,kind)=>{
   const key=`flow-parent:${kind}:${geometryKey}`;
   if(!baseLayoutCache.has(key))baseLayoutCache.set(key,kind==='moment'?originalY:TimelineCore.aggregateLanes(getSemantic(kind).nodes,originalY));
