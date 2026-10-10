@@ -1,0 +1,85 @@
+schema_version: 1
+# Geographic topology, not an invented latitude/longitude map.
+# Country is the largest visual region; a nested room shares the location of
+# its building/settlement. Unknown sites remain unresolved, never assigned
+# to Konoha as a fallback.
+regions:
+  - id: geo-land-wind
+    name: Країна Вітру
+    kind: country
+  - id: geo-land-waterfalls
+    name: Країна Водоспадів
+    kind: country
+  - id: geo-konoha-academy
+    name: Академія Конохи
+    kind: building
+  - id: geo-shukuba-town
+    name: Шукуба
+    kind: settlement
+
+kinds:
+  loc-land-of-fire: country
+  loc-land-waves: country
+  loc-land-of-snow: country
+  loc-land-of-tea: country
+  loc-land-of-rice-fields: country
+  loc-river-country: country
+  loc-land-of-birds: country
+  loc-land-of-sea: country
+  loc-bear-country: country
+  loc-land-of-fangs: country
+  loc-land-of-claws: country
+  loc-land-of-greens: country
+  loc-land-of-honey: country
+  loc-land-of-moon: country
+  loc-land-of-mountain-streams: country
+  loc-konohagakure: settlement
+  loc-sunagakure: settlement
+  loc-takigakure: settlement
+  loc-tanzaku: settlement
+  loc-academy-classroom: room
+  loc-academy-staff-room: room
+  loc-team7-rooftop: building
+  loc-hokage-residence: building
+  loc-hokage-office: room
+  loc-ichiraku: building
+  loc-forest-death: area
+  loc-konoha-outskirts: area
+  loc-valley-end: area
+  loc-valley-of-end: area
+
+# More precise containment may refine the canonical broad parent_id, but
+# never contradict it. Countries are editorial/canonical containment claims.
+parents:
+  geo-konoha-academy: loc-konohagakure
+  loc-konohagakure: loc-land-of-fire
+  loc-sunagakure: geo-land-wind
+  loc-takigakure: geo-land-waterfalls
+  loc-tanzaku: loc-land-of-fire
+  loc-forest-death: loc-konohagakure
+  loc-konoha-outskirts: loc-land-of-fire
+  loc-academy-classroom: geo-konoha-academy
+  loc-academy-staff-room: geo-konoha-academy
+  loc-academy-front: geo-konoha-academy
+  loc-team7-rooftop: geo-konoha-academy
+  loc-tazuna-home: loc-land-waves
+  loc-wave-forest: loc-land-waves
+  loc-time-slip-ravine: loc-konoha-outskirts
+  loc-time-slip-riverbank: loc-konoha-outskirts
+  loc-time-slip-departure-clearing: loc-konoha-outskirts
+  loc-shukuba-contact-room: geo-shukuba-town
+
+# Two editorial identifiers for the SAME landmark, not distinct places.
+equivalents:
+  loc-valley-of-end: loc-valley-end
+
+# These are not fixed coordinates. They cannot establish a country's lane
+# or automatically trigger geographic impossibility warnings.
+spatial:
+  loc-inn: unspecified
+  loc-gelel-caravan: mobile
+  loc-haido-moving-fortress: mobile
+  loc-moon-escort-route: mobile
+  loc-road-fire-waves: mobile
+  loc-time-slip-toad-stomach: non_geographic
+  loc-iwa-mercenary-mines: border_unknown
