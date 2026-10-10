@@ -888,12 +888,11 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
     const points=[...touches.values()],mid=(points[0].x+points[1].x)/2-canvas.getBoundingClientRect().left;
     const width=canvas.clientWidth||1000,pad=width<600?22:48;
     const pivot=center+(mid-width/2)/Math.max(1,width-pad*2)*axisLength()/zoom;
-    // Pan is compositor-only, and pinch is compositor-only too. Full SVG
-    // reconstruction is postponed until BOTH fingers release.
-    if(drag?.moved)render();
-    previewPan(0);
+    // Preserve the compositor-only pan when a second finger starts a pinch.
+    // Rendering here would rebuild the SVG in the middle of the gesture.
+    const basePan=(paintedCenter-center)*Math.max(1,width-pad*2)*zoom/axisLength();
     pinch={distance:Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y),
-     zoom,pivot,mid,targetZoom:zoom};
+     zoom,pivot,mid,basePan,targetZoom:zoom};
     drag=null;canvas.classList.remove('dragging');
    }
   });
@@ -904,7 +903,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
     const points=[...touches.values()],distance=Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y);
     pinch.targetZoom=clamp(pinch.zoom*distance/Math.max(1,pinch.distance),1,730);
     const ratio=pinch.targetZoom/pinch.zoom;
-    const transform='scaleX('+ratio+')';
+    const transform='translate3d('+pinch.basePan+'px,0,0) scaleX('+ratio+')';
     for(const id of ['timeline','timeAxis','storyClouds']){
      const element=$(id);
      element.style.transformOrigin=pinch.mid+'px center';
@@ -925,7 +924,9 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
      const {targetZoom,pivot}=pinch;pinch=null;drag=null;
      for(const id of ['timeline','timeAxis','storyClouds'])$(id).style.transformOrigin='';
      previewPan(0);
-     setZoom(targetZoom,pivot); // exactly one final layout after the gesture
+     setZoom(targetZoom,pivot);
+     // A pan followed by a pinch with no scale change still needs one commit.
+     if(Math.abs(paintedCenter-center)>1e-7)schedule();
     }
     return;
    }
