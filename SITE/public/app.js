@@ -930,7 +930,7 @@ function ensureInterface(){
  throw new Error('Сторінка і скрипти мають різні версії. Онови репозиторій і перезавантаж сторінку через Ctrl + F5.');
 }
 async function init(){
- try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);AbilityArchive.init();ChronologyContents.init();$('status').hidden=true;
+ try{if(!ensureInterface())return;const response=window.__TIMELINE_DATA__?{ok:true,json:async()=>window.__TIMELINE_DATA__}:await fetch(`data.json?t=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error('Не вдалося завантажити хронологію.');if(($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520)zoom=zoomModes.week;ingest(await response.json(),true);AbilityArchive.init();ChronologyContents.init();
  for(const id of ['lines','contents','search','period'])$(id+'Button').addEventListener('click',()=>{togglePanel(id+'Panel');if(id==='search')search();if(id==='contents')ChronologyContents.render();});
  $('layersButton').addEventListener('click',()=>togglePanel('periodPanel'));
  const setLayer=(key,active)=>{
@@ -1115,7 +1115,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  window.addEventListener('blur',dismissTransient);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')dismissTransient();});
  $('closeProfile').addEventListener('click',closeProfile);$('profileDialog').addEventListener('cancel',e=>{e.preventDefault();closeProfile();});$('profileDialog').addEventListener('click',e=>{if(e.target===$('profileDialog')){const b=$('profileDialog').getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeProfile();}});
  document.addEventListener('visibilitychange',()=>{if(document.visibilityState!=='hidden')refreshData();});window.addEventListener('focus',refreshData);setInterval(refreshData,60000);
- renderCharacters();render();renderGeographyAudit();const params=new URLSearchParams(window.location.search);if(entityMap.has(params.get('character')))setFocus(params.get('character'));if(eventMap.has(params.get('event')))navigateEvent(params.get('event'));
+ renderCharacters();render();renderGeographyAudit();$('status').hidden=true;const params=new URLSearchParams(window.location.search);if(entityMap.has(params.get('character')))setFocus(params.get('character'));if(eventMap.has(params.get('event')))navigateEvent(params.get('event'));
  }catch(e){if($('status'))$('status').hidden=true;if($('error')){$('error').textContent=e.message;$('error').hidden=false;}console.error(e);}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
