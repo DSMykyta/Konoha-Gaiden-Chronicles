@@ -1435,6 +1435,11 @@ sources:
     title: 'Narutopedia — The Land Where a Hero Once Lived'
     url: https://naruto.fandom.com/wiki/The_Land_Where_a_Hero_Once_Lived
     locator_status: secondary_synopsis_checked
+  - id: src-subtitle-boruto-026
+    type: anime_transcript
+    title: Boruto: Naruto Next Generations — серія 026, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 026.vtt
+    locator_status: subtitle_timestamps_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4778,5 +4783,10 @@ evidence:
   - id: evd-narutopedia-kaiza-past
     source_id: src-narutopedia-kaiza-story
     locator: 'Episode 11 Synopsis — історія вітчима Інарі Кайзи та її наслідки; часові проміжки історії не датовані точно'
+    basis: source
+    review: accepted
+  - id: evd-sub-boruto-026-bloody-mist
+    source_id: src-subtitle-boruto-026
+    locator: '00:15:43–00:16:08 — згадка старого випускного іспиту Кривавого Туману та четвертого Мідзукаґе; Забузу поіменно не названо'
     basis: source
     review: accepted
