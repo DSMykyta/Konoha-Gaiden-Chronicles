@@ -169,6 +169,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep8-teamwork
   - evd-v10-000027
   - evd-manga-land-waves
 - origin: A
@@ -199,6 +200,7 @@ events:
     role: focus
     mode: physical
   evidence_ids:
+  - evd-sub-ep8-teamwork
   - evd-narutopedia-ep8-audit
 - origin: A
   extent: interval
@@ -264,6 +266,8 @@ events:
   focus_teams:
   - team-7
   evidence_ids:
+  - evd-sub-ep8-teamwork
+  - evd-sub-ep9-zabuza-rescue
   - evd-v10-000027
   - evd-manga-land-waves
   - evd-narutopedia-ep8-audit
@@ -284,6 +288,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep9-zabuza-rescue
   - evd-v10-000027
   - evd-manga-land-waves
   - evd-narutopedia-ep9-audit
@@ -319,6 +324,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep9-zabuza-rescue
   - evd-narutopedia-ep9-audit
 - id: ev-y0-0318-haku-takes-zabuza
   legacy_ids:
@@ -339,6 +345,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep9-zabuza-rescue
   - evd-v10-000027
   - evd-manga-land-waves
   - evd-narutopedia-ep9-audit
@@ -369,6 +376,7 @@ events:
   focus_teams:
   - team-7
   evidence_ids:
+  - evd-sub-ep9-zabuza-rescue
   - evd-v10-000027
   - evd-manga-land-waves
 relations:
