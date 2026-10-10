@@ -433,37 +433,164 @@ function render(){
  const allEvents=datedEvents(),availableLines=selectable(),ids=availableLines.filter(e=>selected.has(e.id)).map(e=>e.id).sort((a,b)=>(defaults.indexOf(a)>=0?defaults.indexOf(a):99)-(defaults.indexOf(b)>=0?defaults.indexOf(b):99)||fullName(a).localeCompare(fullName(b),'uk'));
  let h=viewport;
  const phoneReader=w<=760&&viewport>=520,readerHeight=0;
- const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-readerHeight-144)*.25,24,150)*(.08+.92*spread),level=semanticLevel();
+ const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-144)*.25,24,150),flow=TimelineFlow.state(zoom),level=flow.t>=.5&&flow.coarse?flow.coarse:flow.fine;
  axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
  const buffered=TimelinePanCache.frame({lo,hi,maxAxis:axisLength(),width:w,height:viewport,zoom,dayPx:timeScale.dayPx,breaks:axisBreaks()});
  const bufferLoDay=axisToDay(buffered.coverLo,'before',allEvents),bufferHiDay=axisToDay(buffered.coverHi,'after',allEvents);
- // Grouping depends on source data and semantic level, not pan position.
- if(!semanticNodeCache.has(level)){
-  const nodes=semanticNodes(level,allScenes).filter(p=>p.day!==null);
-  semanticNodeCache.set(level,{nodes,owner:semanticOwner(nodes)});
- }
- const semantic=semanticNodeCache.get(level);
- // Solve geography and story gravity ONCE from the original moments.
- // Every zoom level projects those same lanes onto progressively larger
- // semantic groups. It must not create an unrelated map of the story.
+ // Build the complete narrative hierarchy once. Zoom must never rebuild an
+ // independent chronology or choose new geographic lanes.
+ const getSemantic=kind=>{
+  if(!semanticNodeCache.has(kind)){
+   const nodes=semanticNodes(kind,allScenes).filter(p=>Number.isFinite(p.day));
+   semanticNodeCache.set(kind,{nodes,owner:semanticOwner(nodes)});
+  }
+  return semanticNodeCache.get(kind);
+ };
  if(!baseLayoutCache.has('canonical-moments')){
-  const moments=level==='moment'?semantic.nodes:semanticNodes('moment',allScenes).filter(p=>p.day!==null);
-  const canonicalLanes=TimelineCore.sceneLayout(moments,chronologyRelations(),semanticOwner(moments),0,1,geographyAtlas);
-  baseLayoutCache.set('canonical-moments',{moments,lanes:canonicalLanes});
+  const moments=getSemantic('moment').nodes;
+  baseLayoutCache.set('canonical-moments',{moments,lanes:TimelineCore.sceneLayout(moments,chronologyRelations(),getSemantic('moment').owner,0,1,geographyAtlas)});
  }
  const canonical=baseLayoutCache.get('canonical-moments');
- if(!baseLayoutCache.has(level))baseLayoutCache.set(level,TimelineCore.aggregateLanes(semantic.nodes,canonical.lanes));
- const baseNodes=semantic.nodes.map(p=>({...p,x:px(p.day),cast:p.layoutCast.filter(id=>selected.has(id))})),
- layoutKey=`${level}:${viewport}:${w}:${zoom}:${amplitude}:${readerHeight}`;
- if(!layoutCache.has(layoutKey)){
-  if(layoutCache.size>=8)layoutCache.clear();
-  const baseY=baseLayoutCache.get(level),fullTop=viewport<520?104:w<=760?headerBottom()+44:166,fullBottom=Math.max(fullTop+80,viewport-readerHeight-56),top=(mid-28)*(1-spread)+fullTop*spread,bottom=(mid+28)*(1-spread)+fullBottom*spread,compactClearance=compactRadius*2-4,clearance=compactClearance+(46-compactClearance)*spread;
-  const separated=TimelineCore.separateNodes(baseNodes.map(p=>({...p,x:dayToAxis(p.day,allEvents)*plot/(hi-lo),y:mid+(baseY.get(p.id)||0)*amplitude})),top,bottom,clearance);
-  layoutCache.set(layoutKey,new Map(separated.map(p=>[p.id,p.y])));
+ const geometryKey=`flow-geography:${w}:${viewport}`;
+ if(!baseLayoutCache.has(geometryKey)){
+  const top=viewport<520?104:w<=760?headerBottom()+44:166,bottom=Math.max(top+80,viewport-56);
+  const positioned=TimelineCore.separateNodes(canonical.moments.map(p=>({
+   ...p,x:p.day*plot,y:mid+(canonical.lanes.get(p.id)||0)*amplitude
+  })),top,bottom,46);
+  baseLayoutCache.set(geometryKey,new Map(positioned.map(p=>[p.id,p.y])));
  }
- const nodeY=layoutCache.get(layoutKey);
- let globalNodes=baseNodes.map(p=>({...p,y:nodeY.get(p.id)??mid}));
+ const originalY=baseLayoutCache.get(geometryKey);
+ const spreadY=.08+.92*clamp(Math.log(Math.max(1,zoom))/Math.log(zoomModes.day),0,1);
+ const parentY=(p,kind)=>{
+  const key=`flow-parent:${kind}:${geometryKey}`;
+  if(!baseLayoutCache.has(key))baseLayoutCache.set(key,kind==='moment'?originalY:TimelineCore.aggregateLanes(getSemantic(kind).nodes,originalY));
+  return mid+((baseLayoutCache.get(key).get(p.id)??mid)-mid)*spreadY;
+ };
+ const fine=getSemantic(flow.fine).nodes,coarse=flow.coarse?getSemantic(flow.coarse).nodes:[],t=flow.t;
+ const coarseOwner=new Map();
+ for(const p of coarse)for(const moment of p.group)coarseOwner.set(moment.id,p);
+ const fineOwner=new Map();
+ for(const p of fine)for(const moment of p.group)fineOwner.set(moment.id,p);
+ const parents=new Map(fine.map(p=>[p.id,coarseOwner.get(p.group[0]?.id)||p]));
+ const fineProjected=fine.map(p=>{
+  const target=parents.get(p.id),fromY=parentY(p,flow.fine),toY=target===p?fromY:parentY(target,flow.coarse);
+  const deltaX=px(target.day)-px(p.day),deltaY=toY-fromY;
+  return {...p,x:TimelineFlow.lerp(px(p.day),px(target.day),t),y:TimelineFlow.lerp(fromY,toY,t),
+   day:TimelineFlow.lerp(p.day,target.day,t),opacity:flow.coarse?1-t:1,_role:'fine',
+   flowAngle:Math.atan2(deltaY,deltaX)*180/Math.PI,stretch:Math.sin(Math.PI*t)};
+ });
+ const coarseProjected=coarse.map(p=>({...p,x:px(p.day),y:parentY(p,flow.coarse),
+  opacity:t,_role:'coarse',stretch:0}));
+ let globalNodes=[...fineProjected,...coarseProjected].filter(p=>p.opacity>.001);
+ // Independently overlapping arc histories can share a screen-space hub.
+ // They retain all distinct arc IDs for the reader and reverse on zoom-in.
+ const movedArcDay=new Map();
+ if(flow.fine==='arc'||flow.coarse==='arc'){
+  const arcs=globalNodes.filter(p=>p.kind==='arc'&&p.opacity>.001);
+  for(const group of TimelineFlow.clusterArcs(arcs)){
+   const {members,centroid,strength}=group;
+   const groupOpacity=Math.min(...members.map(p=>p.opacity))*strength;
+   if(groupOpacity<.002)continue;
+   const clusterId='arc-cluster:'+members.map(p=>p.rawId||p.id).sort().join('|');
+   const groupEvents=[...new Map(members.flatMap(p=>p.group).map(e=>[e.id,e])).values()];
+   const groupCast=[...new Set(groupEvents.flatMap(e=>e.physical||[]))];
+   for(const p of members){
+    p.x=TimelineFlow.lerp(p.x,centroid.x,strength);
+    p.y=TimelineFlow.lerp(p.y,centroid.y,strength);
+    p.day=TimelineFlow.lerp(p.day,centroid.day,strength);
+    p.opacity*=1-strength;
+    movedArcDay.set(p.id,{day:p.day,y:p.y});
+   }
+   globalNodes.push({id:clusterId,kind:'arc-cluster',title:`${members.length} арки`,
+    childCount:members.length,arcs:members.map(p=>({id:p.rawId||p.id,title:p.title})),
+    group:groupEvents,layoutCast:groupCast,cast:groupCast.filter(id=>selected.has(id)),
+    sourceSceneIds:[...new Set(members.flatMap(p=>p.sourceSceneIds||[]))],
+    sourceEpisodeIds:[...new Set(members.flatMap(p=>p.sourceEpisodeIds||[]))],
+    day:centroid.day,calendarDay:members[0].calendarDay,x:centroid.x,y:centroid.y,
+    opacity:groupOpacity,_role:'cluster',stretch:0});
+  }
+ }
+ const projectedFine=new Map(fineProjected.map(p=>[p.id,p]));
+ const projectedCoarse=new Map(coarseProjected.map(p=>[p.id,p]));
+ const visualMoment=new Map();
+ for(const moment of canonical.moments){
+  const id=moment.id,from=fineOwner.get(id),to=coarseOwner.get(id);
+  const mark=projectedFine.get(from?.id);
+  if(!mark)continue;
+  // The same source moment becomes the parent mark's anchor gradually.
+  const sourceArc=to?.kind==='arc'?projectedCoarse.get(to.id):from?.kind==='arc'?projectedFine.get(from.id):null;
+  const originalArc=to?.kind==='arc'?to:from?.kind==='arc'?from:null;
+  const shift=movedArcDay.get(sourceArc?.id);
+  const shiftFactor=flow.coarse==='arc'?t:1;
+  const shiftDay=shift&&originalArc?(shift.day-originalArc.day)*shiftFactor:0;
+  const shiftY=shift&&originalArc?(shift.y-parentY(originalArc,originalArc===to?flow.coarse:flow.fine))*shiftFactor:0;
+  visualMoment.set(id,{day:mark.day+shiftDay,y:mark.y+shiftY});
+ }
+ const layoutKey=`flow:${w}:${viewport}:${zoom.toFixed(6)}`;
+ const worldLineNodes=canonical.moments.map(p=>{
+  const visual=visualMoment.get(p.id);
+  return {...p,day:visual?.day??p.day,y:visual?.y??mid,
+   cast:p.layoutCast.filter(id=>selected.has(id))};
+ });
+ // Hit targets switch at the halfway point; the marks themselves do not.
+ const visibleGlobal=globalNodes.filter(p=>p.opacity>.012&&p.group.some(relevant));
+ graphNodes=visibleGlobal.filter(p=>{
+  const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.opacity>=.48;
+ });
+ const renderNodes=visibleGlobal.filter(p=>{
+  const a=dayToAxis(p.day,allEvents);return a>=buffered.coverLo&&a<buffered.coverHi;
+ });
+ const numbered=phoneReader&&level==='moment';
+ graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+ graphNodes.forEach((node,index)=>{node.number=numbered?index+1:null;});
+ // Clouds of neighboring hierarchy levels coexist and dissolve gradually.
+ const visibleFine=fineProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
+ const visibleCoarse=coarseProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
+ graphClouds=[
+  ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:flow.coarse?1-t:1})),
+  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:t})):[])
+ ];
+ const flowBridges=flow.coarse?fineProjected.flatMap(p=>{
+  const target=parents.get(p.id);
+  if(!target||p.id===target.id)return [];
+  const anchor=projectedCoarse.get(target.id);
+  if(!anchor||Math.hypot(p.x-anchor.x,p.y-anchor.y)>100)return [];
+  return [{x:p.x,y:p.y,toX:anchor.x,toY:anchor.y,strength:Math.sin(Math.PI*t),key:p.id}];
+ }).filter(p=>p.x>=-buffered.leftPx-120&&p.x<=w+buffered.rightPx+120):[];
+ h=Math.max(viewport,...renderNodes.map(p=>p.y+156));
+ timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
+ panFrame={...buffered,nodes:renderNodes,svgHeight:h,level,numbered,scale:timeScale,lineCount:ids.length,availableCount:availableLines.length};
+ $('linesCount').textContent=`Лінії · ${ids.length}`;
+ // Date backgrounds are independent of the density of the visible scenes.
+ if(timeScale.dayPx>=2)for(let day=Math.floor(bufferLoDay);day<Math.ceil(bufferHiDay);day++){
+  const a=dayToAxis(day+.5,allEvents);
+  if(day%2===1&&a>=buffered.coverLo&&a<buffered.coverHi&&!timeScale.hidden(day+.5))
+   svg('rect',{x:clamp(px(day),-buffered.leftPx,w+buffered.rightPx),y:0,
+    width:Math.max(0,clamp(px(day+1),-buffered.leftPx,w+buffered.rightPx)-clamp(px(day),-buffered.leftPx,w+buffered.rightPx)),height:h,class:'day-band','data-day':day});
+ }
+ // Light vertical divisions at the finest readable scale. Labels in the
+ // bottom strip can be sparse, but chronological boundaries are never shifted.
+ const lastCalendarDay=data.calendar.view_days||365;
+ const divisions=new Map(),addDivision=(day,kind)=>{
+  if(day<0||day>lastCalendarDay||day<bufferLoDay-.5||day>bufferHiDay+.5||timeScale.hidden(day+.001))return;
+  const priority={day:1,week:2,month:3,year:4};
+  if(!divisions.has(day)||priority[kind]>priority[divisions.get(day)])divisions.set(day,kind);
+ };
+ const dayWidth=Math.abs(px(Math.floor(loDay)+1)-px(Math.floor(loDay)));
+ if(dayWidth>=14)for(let d=Math.max(0,Math.floor(bufferLoDay));d<=Math.min(lastCalendarDay,Math.ceil(bufferHiDay));d++)addDivision(d,d%7===0?'week':'day');
+ else if(dayWidth*7>=10)for(let d=Math.ceil(Math.max(0,bufferLoDay)/7)*7;d<=bufferHiDay;d+=7)addDivision(d,'week');
+ for(let year=0;year<=Math.ceil(lastCalendarDay/365);year++){
+  const base=year*365;
+  if(base>bufferHiDay+31)break;
+  addDivision(base,'year');
+  for(const d of starts.slice(1))addDivision(base+d,'month');
+ }
+ for(const [day,kind] of [...divisions].sort((a,b)=>a[0]-b[0])){
+  const x=px(day);
+  if(x< -buffered.leftPx-1||x>w+buffered.rightPx+1)continue;
+  svg('line',{x1:x,x2:x,y1:0,y2:h,class:'calendar-division calendar-'+kind,'aria-hidden':'true'});
+ }
  const linked=(p,id)=>p.cast.includes(id);
  // All four zoom modes share the SAME moment-level line anchors. Parent
  // marks are only clusters of those moments, not new bends in the routes.
