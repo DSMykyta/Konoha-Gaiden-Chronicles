@@ -42,8 +42,9 @@ const StoryClouds = {
  // Kept as a small public helper for tests/compatibility. A story group is now
  // intentionally one continuous visual region instead of distance-split islands.
  parts(points){return points.length?[points.slice()]:[];},
- labels(groups,nodes,width,top,bottom=Infinity,previous=new Map(),maxLines=2){
+ labels(groups,nodes,width,top,bottom=Infinity,previous=new Map(),maxLines=2,horizontalBounds=null){
   const labels=[],margin=16,labelWidth=width<600?144:188;
+  const minX=horizontalBounds?.left??0,maxX=horizontalBounds?.right??width;
   const overlaps=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
   const wrap=text=>{
    const limit=Math.floor(labelWidth/6.9),words=String(text).split(/\s+/),lines=[];let line='';
@@ -63,7 +64,7 @@ const StoryClouds = {
     {dx:26,dy:-height-26},{dx:-labelWidth-26,dy:26}];
    let position=null;
    for(const offset of offsets){
-    const candidate={x:Math.max(margin,Math.min(width-margin-labelWidth,anchor.x+offset.dx)),y:anchor.y+offset.dy,width:labelWidth,height};
+    const candidate={x:Math.max(minX+margin,Math.min(maxX-margin-labelWidth,anchor.x+offset.dx)),y:anchor.y+offset.dy,width:labelWidth,height};
     if(candidate.y<top||candidate.y+height>bottom)continue;
     if(nodes.some(node=>overlaps(candidate,{x:node.x-22,y:node.y-22,width:44,height:44})))continue;
     if(labels.some(label=>overlaps(candidate,{x:label.x-8,y:label.y-8,width:label.width+16,height:label.height+16})))continue;
@@ -136,9 +137,9 @@ const StoryClouds = {
   return loops;
  },
  create(canvas){
-  const context=canvas?.getContext?.('2d');if(!context)return {update(){},scroll(){},refresh(){},setPaused(){}};
+  const context=canvas?.getContext?.('2d');if(!context)return {update(){},scroll(){},pan(){},refresh(){},setPaused(){}};
   const contrast=window.matchMedia('(prefers-contrast: more)'),transparency=window.matchMedia('(prefers-reduced-transparency: reduce)');
-  let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,paused:false},frame=null;
+  let state={groups:[],nodes:[],width:0,height:0,scrollTop:0,panX:0,paused:false},frame=null;
   // Content/zoom/layout changes alter outlines; panning and vertical scrolling
   // never add/remove members. Cache contours, not merely the previous paint.
   const geometry=new Map(),capacity=180;
@@ -147,6 +148,8 @@ const StoryClouds = {
    if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
    context.setTransform(dpr,0,0,dpr,0,-state.scrollTop*dpr);
    context.clearRect(0,state.scrollTop,state.width,state.height);
+   // Preserve cached world geometry and translate only the viewport.
+   context.translate(state.panX,0);
    for(const group of state.groups){
     const radius=group.kind==='arc'?92:group.kind==='episode'?70:group.kind==='scene'?48:25;
     const margin=radius*3.8;
@@ -157,7 +160,7 @@ const StoryClouds = {
     for(const part of group.parts){
      if(!part.length)continue;
      const minAllX=Math.min(...part.map(n=>n.x)),maxAllX=Math.max(...part.map(n=>n.x));
-     if(maxAllX < -margin||minAllX>state.width+margin)continue;
+     if(maxAllX+state.panX < -margin||minAllX+state.panX>state.width+margin)continue;
      const ribbon=group.kind==='arc'||group.kind==='episode'||part.length>14||maxAllX-minAllX>state.width*1.8;
      const minY=Math.min(...part.map(n=>n.y))-radius*(ribbon?1.5:2.4);
      const maxY=Math.max(...part.map(n=>n.y))+radius*(ribbon?1.5:2.4);
@@ -226,6 +229,7 @@ const StoryClouds = {
    // A scroll event now schedules at most one canvas blit per animation frame.
    // Cached Path2D geometry is reused, without re-running marching squares.
    scroll(scrollTop){if(state.scrollTop===scrollTop)return;state.scrollTop=scrollTop;frameDraw();},
+   pan(panX){if(state.panX===panX)return;state.panX=panX;frameDraw();},
    refresh(){frameDraw();},
    setPaused(paused){state.paused=paused;}
   };
