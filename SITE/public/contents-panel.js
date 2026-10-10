@@ -4,7 +4,53 @@ const ChronologyContents = (() => {
   const LABEL={arc:'Арка',episode:'Епізод',scene:'Сцена',moment:'Момент',group:'Розділ'};
   const html = text => String(text??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const position = value => Number.isFinite(value)?value:Infinity;
-  const order = (a,b) => position(a.start)-position(b.start)||(a.kind==='moment'&&b.kind==='moment'?(a.sourceIndex??Infinity)-(b.sourceIndex??Infinity):0)||a.title.localeCompare(b.title,'uk');
+  // A scene may have a known narrative order but no calendar date. Keep its
+  // actual start unknown, while sorting it against accepted before-relations.
+  const order = (a,b) => position(a.orderPosition)-position(b.orderPosition)||(a.kind==='moment'&&b.kind==='moment'?(a.sourceIndex??Infinity)-(b.sourceIndex??Infinity):0)||a.title.localeCompare(b.title,'uk');
+  function relativePositions(scenes,relations=[]) {
+    const dated=new Map(),eventScene=new Map(),active=new Set();
+    for(const scene of scenes){
+      active.add(scene.id);
+      if(Number.isFinite(scene.position))dated.set(scene.id,scene.position);
+      for(const event of scene.group||[])eventScene.set(event.id,scene.id);
+    }
+    const edges=[];
+    for(const relation of relations){
+      if(relation.kind!=='before'||relation.review!=='accepted')continue;
+      const a=eventScene.get(relation.a)||relation.a,b=eventScene.get(relation.b)||relation.b;
+      if(a!==b&&active.has(a)&&active.has(b))edges.push([a,b]);
+    }
+    // Bounds propagate across undated chains without assigning any date.
+    // A tiny offset affects order in Contents only, never the timeline axis.
+    const step=0.001,upper=new Map(dated),lower=new Map(dated);
+    for(let i=0;i<scenes.length&&edges.length;i++){
+      let changed=false;
+      for(const [a,b] of edges){
+        if(!dated.has(a)&&upper.has(b)){
+          const v=upper.get(b)-step;
+          if(!upper.has(a)||v<upper.get(a)){upper.set(a,v);changed=true;}
+        }
+        if(!dated.has(b)&&lower.has(a)){
+          const v=lower.get(a)+step;
+          if(!lower.has(b)||v>lower.get(b)){lower.set(b,v);changed=true;}
+        }
+      }
+      if(!changed)break;
+    }
+    const result=new Map();
+    for(const scene of scenes){
+      if(dated.has(scene.id))continue;
+      const before=upper.get(scene.id),after=lower.get(scene.id);
+      if(before===undefined&&after===undefined)continue;
+      if(before!==undefined&&after!==undefined&&after>=before)continue;
+      result.set(scene.id,{
+        orderPosition:before!==undefined&&after!==undefined?(before+after)/2:before??after,
+        beforeBoundary:before===undefined?null:before,
+        afterBoundary:after===undefined?null:after
+      });
+    }
+    return result;
+  }
   let roots=[],visible=new Map(),expanded=new Set(),initialized=false;
   const SEARCH_IDLE_MS=180;
   let queryTimer=null,composing=false;
@@ -17,9 +63,9 @@ const ChronologyContents = (() => {
     queryTimer=setTimeout(()=>{queryTimer=null;render();},SEARCH_IDLE_MS);
   }
 
-  function buildTree(scenes,sceneMap,episodeMap,arcMap,momentPositions=null) {
-    const arcs=new Map(),episodes=new Map();
-    const make=(kind,id,title,start=Infinity)=>({kind,id,title,start,end:start,children:[]});
+  function buildTree(scenes,sceneMap,episodeMap,arcMap,momentPositions=null,relations=[]) {
+    const arcs=new Map(),episodes=new Map(),relative=relativePositions(scenes,relations);
+    const make=(kind,id,title,start=Infinity)=>({kind,id,title,start,end:start,orderPosition:start,beforeBoundary:null,afterBoundary:null,children:[]});
     for(const scene of scenes){
       if(!scene.group?.length)continue;
       const sm=sceneMap.get(scene.id),em=episodeMap.get(sm?.episode_id),am=arcMap.get(em?.arc_id);
@@ -32,19 +78,40 @@ const ChronologyContents = (() => {
       }
       const day=Number.isFinite(scene.position)?scene.position:position(scene.day);
       const sn=make('scene',scene.id,sm?.title||scene.group[0]?.scene_title||scene.id,day);
-      sn.children=scene.group.map((e,i)=>({...make('moment',e.id,e.title,momentPositions?.get(e.id)??day),sourceIndex:i}));
+      const hint=relative.get(scene.id);
+      if(!Number.isFinite(day)&&hint)Object.assign(sn,hint);
+      sn.children=scene.group.map((e,i)=>{
+        const moment=make('moment',e.id,e.title,momentPositions?.get(e.id)??day);
+        if(!Number.isFinite(day)&&hint)Object.assign(moment,hint);
+        return {...moment,sourceIndex:i};
+      });
       episodes.get(ek).children.push(sn);
     }
     const finalize=n=>{
       n.children.forEach(finalize);n.children.sort(order);
-      if(n.children.length){n.start=Math.min(...n.children.map(c=>position(c.start)));n.end=Math.max(...n.children.map(c=>Number.isFinite(c.end)?c.end:-Infinity));}
+      if(n.children.length){
+        n.start=Math.min(...n.children.map(c=>position(c.start)));
+        n.end=Math.max(...n.children.map(c=>Number.isFinite(c.end)?c.end:-Infinity));
+        n.orderPosition=Math.min(...n.children.map(c=>position(c.orderPosition)));
+        if(!Number.isFinite(n.start)){
+          const before=n.children.map(c=>c.beforeBoundary).filter(Number.isFinite);
+          const after=n.children.map(c=>c.afterBoundary).filter(Number.isFinite);
+          n.beforeBoundary=before.length?Math.min(...before):null;
+          n.afterBoundary=after.length?Math.max(...after):null;
+        }
+      }
       return n;
     };
     return [...arcs.values()].map(finalize).sort(order);
   }
   const key=n=>n.kind+':'+n.id;
   function span(n){
-    if(!Number.isFinite(n.start))return 'Дата невідома';
+    if(!Number.isFinite(n.start)){
+      if(Number.isFinite(n.beforeBoundary)&&Number.isFinite(n.afterBoundary))return 'Дата невідома · між '+dateText(n.afterBoundary,true)+' і '+dateText(n.beforeBoundary,true);
+      if(Number.isFinite(n.beforeBoundary))return 'Дата невідома · до '+dateText(n.beforeBoundary,true);
+      if(Number.isFinite(n.afterBoundary))return 'Дата невідома · після '+dateText(n.afterBoundary,true);
+      return 'Дата невідома';
+    }
     const from=dateText(n.start,true),to=dateText(n.end,true);
     return from===to?from:from+' — '+to;
   }
@@ -65,7 +132,7 @@ const ChronologyContents = (() => {
     cancelQueryTimer();
     const panel=document.getElementById('contentsPanel');
     if(!initialized||!panel||panel.hidden)return;
-    roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap,worldChronology().moments);
+    roots=buildTree(orderedScenes(),sceneMap,episodeMap,arcMap,worldChronology().moments,chronologyRelations());
     const q=document.getElementById('contentsQuery').value.trim().toLocaleLowerCase('uk');
     const filtered=roots.map(n=>filter(n,q)).filter(Boolean);
     visible=new Map();
