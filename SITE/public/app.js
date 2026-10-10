@@ -195,9 +195,9 @@ function previewPan(dx){
 }
 function schedule(){
  if(wheelPreview||raf!==null)return;
- raf=requestAnimationFrame(()=>{raf=null;render();});
+ raf=requestAnimationFrame(()=>{raf=null;if(!applyBufferedPan())render();});
 }
-let hoverCard=false,pinnedNodeId=null,cardReturnFocus=null,graphClouds=[],graphLabels=[],cloudRenderer=null;
+let hoverCard=false,pinnedNodeId=null,cardReturnFocus=null,graphClouds=[],graphLabels=[],cloudRenderer=null,panFrame=null;
 const cloudLabelLayouts=new Map();
 function readingActive(){return !!pinnedNodeId&&!$('eventCard').hidden||['profileDialog','characterEventsDialog'].some(id=>!$(id).hidden);}
 function syncReadingState(){cloudRenderer?.setPaused(readingActive());}
@@ -321,6 +321,8 @@ function smoothPath(points){
 }
 function render(){
  if(!data)return;
+ // Only structural changes or exhausted overscan rebuild the SVG paths.
+ panFrame=null;
  if(raf!==null){cancelAnimationFrame(raf);raf=null;}
  uiTimers.cancel('wheel-commit');wheelPreview=false;previewPan(0);
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
@@ -333,6 +335,8 @@ function render(){
  const n=ids.length,overview=zoom<3,spread=clamp(Math.log(zoom)/Math.log(zoomModes.month),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,mid=viewport*(viewport<520?.5:.59),amplitude=clamp((viewport-readerHeight-144)*.25,24,150)*(.08+.92*spread),level=semanticLevel();
  axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
+ const buffered=TimelinePanCache.frame({lo,hi,maxAxis:axisLength(),width:w,height:viewport,zoom,dayPx:timeScale.dayPx,breaks:axisBreaks()});
+ const bufferLoDay=axisToDay(buffered.coverLo,'before',allEvents),bufferHiDay=axisToDay(buffered.coverHi,'after',allEvents);
  // Grouping depends on source data and semantic level, not pan position.
  if(!semanticNodeCache.has(level)){
   const nodes=semanticNodes(level,allScenes).filter(p=>p.day!==null);
@@ -359,17 +363,19 @@ function render(){
  // character scanned every semantic node again to assemble its anchors.
  const nodesByCharacter=TimelineCore.characterAnchors(globalNodes,ids);
  graphNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.group.some(relevant);});
+ const renderNodes=globalNodes.filter(p=>{const a=dayToAxis(p.day,allEvents);return a>=buffered.coverLo&&a<buffered.coverHi&&p.group.some(relevant);});
  const numbered=phoneReader&&level==='moment';
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
  graphNodes.forEach((node,index)=>{node.number=numbered?index+1:null;});
  const reading=readingActive();
  graphClouds=StoryClouds.groups(globalNodes.filter(p=>p.group.some(relevant)),level,sceneMap,episodeMap,arcMap);
- h=Math.max(viewport,...graphNodes.map(p=>p.y+156));
+ h=Math.max(viewport,...renderNodes.map(p=>p.y+156));
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
+ panFrame={...buffered,nodes:renderNodes,svgHeight:h,level,numbered,scale:timeScale};
  $('linesCount').textContent=`Лінії · ${ids.length}`;
  // Alternating calendar days, including empty days. Long empty spans are omitted
  // after retaining one calendar week on each side of the nearest events.
- if(timeScale.dayPx>=2)for(let day=Math.floor(loDay);day<Math.ceil(hiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=lo&&a<hi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),0,w),y:0,width:Math.max(0,clamp(px(day+1),0,w)-clamp(px(day),0,w)),height:h,class:'day-band','data-day':day});}
+ if(timeScale.dayPx>=2)for(let day=Math.floor(bufferLoDay);day<Math.ceil(bufferHiDay);day++){const a=dayToAxis(day+.5,allEvents);if(day%2===1&&a>=buffered.coverLo&&a<buffered.coverHi&&!timeScale.hidden(day+.5))svg('rect',{x:clamp(px(day),-buffered.leftPx,w+buffered.rightPx),y:0,width:Math.max(0,clamp(px(day+1),-buffered.leftPx,w+buffered.rightPx)-clamp(px(day),-buffered.leftPx,w+buffered.rightPx)),height:h,class:'day-band','data-day':day});}
  if(!cloudRenderer)cloudRenderer=StoryClouds.create($('storyClouds'));
  const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),yearLabel=yearText(centerDay),label=overview?(data.calendar.view_days>365?`${data.calendar.view_start_year}–${data.calendar.view_end_year} роки Конохи`:yearLabel):activeMode==='day'?`${dateText(centerDay,true)} · ${yearLabel}`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;$('periodLabel').textContent=label;
  renderEraHeading(loDay,px);
@@ -377,14 +383,14 @@ function render(){
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
  $('previous').disabled=lo<=.001;$('next').disabled=hi>=axisLength()-.001;
  $('zoomOut').disabled=zoom<=1;$('zoomIn').disabled=zoom>=730;
- svg('line',{x1:pad,x2:w-pad,y1:5,y2:5,class:'time-axis-line'},axis);
- const ticks=zoom<8?Array.from({length:Math.ceil((data.calendar.view_days||365)/365)},(_,year)=>starts.map((day,index)=>({day:year*365+day,text:index===0?`Січ ${data.calendar.view_start_year+year}`:months[index].slice(0,3)}))).flat():Array.from({length:Math.max(0,Math.ceil(hiDay)-Math.floor(loDay))},(_,index)=>({day:Math.floor(loDay)+index,text:dateText(Math.floor(loDay)+index)}));
- const visibleTicks=ticks.filter(tick=>zoom<8?dayToAxis(tick.day)>=lo&&dayToAxis(tick.day)<hi&&!timeScale.hidden(tick.day):px(tick.day+1)>pad&&px(tick.day)<w-pad&&!timeScale.hidden(tick.day+.5));
+ svg('line',{x1:pad-buffered.leftPx,x2:w-pad+buffered.rightPx,y1:5,y2:5,class:'time-axis-line'},axis);
+ const ticks=zoom<8?Array.from({length:Math.ceil((data.calendar.view_days||365)/365)},(_,year)=>starts.map((day,index)=>({day:year*365+day,text:index===0?`Січ ${data.calendar.view_start_year+year}`:months[index].slice(0,3)}))).flat():Array.from({length:Math.max(0,Math.ceil(bufferHiDay)-Math.floor(bufferLoDay))},(_,index)=>({day:Math.floor(bufferLoDay)+index,text:dateText(Math.floor(bufferLoDay)+index)}));
+ const visibleTicks=ticks.filter(tick=>zoom<8?dayToAxis(tick.day)>=buffered.coverLo&&dayToAxis(tick.day)<buffered.coverHi&&!timeScale.hidden(tick.day):px(tick.day+1)>pad-buffered.leftPx&&px(tick.day)<w-pad+buffered.rightPx&&!timeScale.hidden(tick.day+.5));
  let lastTick=-Infinity;
  visibleTicks.forEach(tick=>{
-  const x=zoom<8?px(tick.day):(Math.max(pad,px(tick.day))+Math.min(w-pad,px(tick.day+1)))/2;
+  const x=zoom<8?px(tick.day):(Math.max(pad-buffered.leftPx,px(tick.day))+Math.min(w-pad+buffered.rightPx,px(tick.day+1)))/2;
   if(x-lastTick<64)return;lastTick=x;
-  const boundary=px(tick.day);if(boundary>=pad&&boundary<w-pad)svg('line',{x1:boundary,x2:boundary,y1:5,y2:11,stroke:'#bfcbdc'},axis);
+  const boundary=px(tick.day);if(boundary>=pad-buffered.leftPx&&boundary<w-pad+buffered.rightPx)svg('line',{x1:boundary,x2:boundary,y1:5,y2:11,stroke:'#bfcbdc'},axis);
   const text=svg('text',{x,y:28,'text-anchor':'middle','data-date':tick.day},axis);text.textContent=tick.text;
  });
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
@@ -398,11 +404,11 @@ function render(){
   const lifetimes=TimelineCore.lifetimes(anchors);
   const runs=lifetimes.filter(run=>run[0].day-lead<=hi&&run.at(-1).day+lead>=lo),routes=runs.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
   const coordinates=routes.map(route=>route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
-  const foreign=graphNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<(p.kind==='arc'?arcRadius:19)+7));
+  const foreign=renderNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<(p.kind==='arc'?arcRadius:19)+7));
   let mask=null;
   if(foreign.length){
-   const maskId='strand-clearance-'+id,cutout=svg('mask',{id:maskId,maskUnits:'userSpaceOnUse',x:0,y:0,width:w,height:h},defs);
-   svg('rect',{x:0,y:0,width:w,height:h,fill:'white'},cutout);
+   const maskId='strand-clearance-'+id,cutout=svg('mask',{id:maskId,maskUnits:'userSpaceOnUse',x:-buffered.leftPx-96,y:0,width:w+buffered.leftPx+buffered.rightPx+192,height:h},defs);
+   svg('rect',{x:-buffered.leftPx-96,y:0,width:w+buffered.leftPx+buffered.rightPx+192,height:h,fill:'white'},cutout);
    foreign.forEach(p=>svg('ellipse',{cx:p.x,cy:p.y,rx:p.kind==='arc'?arcRadius+3:p.kind==='moment'?(numbered?17:13):19,ry:p.kind==='arc'?arcRadius*.58+3:p.kind==='moment'?(numbered?17:13):19,fill:'url(#strand-node-halo)','data-node-id':p.id},cutout));
    mask=`url(#${maskId})`;
   }
@@ -449,14 +455,14 @@ function render(){
   hit.addEventListener('click',()=>setFocus(path.id));hit.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();setFocus(path.id);}});
  }
 
- drawMapTitles(level,w,headerBottom()+42,h-readerHeight-42);
+ drawMapTitles(level,w,headerBottom()+42,h-readerHeight-42,renderNodes,buffered);
  // Large touch targets stay below every visible mark. A neighboring transparent
  // target can never intercept a tap directly on another node's visible center.
  const hitLayer=svg('g',{'aria-hidden':'true'});
- graphNodes.forEach(p=>{
+ renderNodes.forEach(p=>{
   const hit=svg(p.kind==='arc'?'ellipse':'circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,...(p.kind==='arc'?{rx:12+12*spread,ry:10+12*spread}:{r:22})},hitLayer);
  });
- graphNodes.forEach(p=>{
+ renderNodes.forEach(p=>{
   const kindLabel={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'}[p.kind]||'Вузол',label=`${kindLabel}: ${p.title}${p.kind==='moment'||p.kind==='arc'?'':` · ${p.childCount}`}`,g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':'')+(pinnedNodeId===p.id?' is-pinned':''),tabindex:0,role:'button','aria-label':label,'aria-haspopup':'dialog','data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):''});
   if(p.kind==='arc'){
    svg('ellipse',{class:'mark',cx:p.x,cy:p.y,rx:arcRadius,ry:arcRadius*.58},g);
@@ -464,12 +470,12 @@ function render(){
    const radius=p.kind==='moment'?(numbered?11:5):p.kind==='scene'?9:11;
    svg('circle',{class:'mark',cx:p.x,cy:p.y,r:radius},g);
    if(p.kind==='scene'||p.kind==='episode'){const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);count.textContent=p.childCount>99?'99+':p.childCount;}
-   if(p.number){const number=svg('text',{class:'moment-number',x:p.x,y:p.y+3.5,'text-anchor':'middle','aria-hidden':'true'},g);number.textContent=p.number;}
+   if(numbered&&p.kind==='moment'){const number=svg('text',{class:'moment-number',x:p.x,y:p.y+3.5,'text-anchor':'middle','aria-hidden':'true','data-moment-number':p.id},g);number.textContent=graphNodes.find(node=>node.id===p.id)?.number||'';}
   }
  });
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
- cloudRenderer.update({groups:graphClouds,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,paused:reading});
+ cloudRenderer.update({groups:graphClouds,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
   $('emptyTitle').textContent=!availableLines.length?'У вибраних шарах немає ліній персонажів':ids.length?'У цьому періоді немає подій':'Обери лінії персонажів';
