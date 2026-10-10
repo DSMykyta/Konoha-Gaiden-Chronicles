@@ -649,7 +649,10 @@ function search(){
 function openProfile(id,trigger){if(!entityMap.has(id))return;uiTimers.cancel('node-open');HierarchyPreview.dismissTransient();if(hoverCard)closeCard();tooltipController?.hide();profileEntity=id;profileVersion=null;profileReturnFocus=trigger;renderProfile();const dialog=$('profileDialog');dialog.hidden=false;if(!dialog.open){if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');}dialog.scrollTop=0;syncReadingState();$('closeProfile').focus({preventScroll:true});}
 function closeProfile(){const dialog=$('profileDialog');if(dialog.hidden)return;if(dialog.close)dialog.close();else dialog.removeAttribute('open');dialog.hidden=true;profileEntity=null;syncReadingState();profileReturnFocus?.focus();profileReturnFocus=null;}
 function characterTimelineEvents(id){
- return chronologicalMoments().filter(e=>e.tracks.includes(id));
+ // The reader and profile counter must include undated records as well as
+ // moments anchored on the calendar. Keep undated entries last.
+ return [...chronologicalMoments().filter(e=>e.tracks.includes(id)),
+  ...TimelineCore.ordered(events().filter(e=>e.day===null&&e.tracks.includes(id)))];
 }
 function openCharacterEvents(id,trigger){
  if(!entityMap.has(id))return;
@@ -719,7 +722,7 @@ function mergedProfileVersion(versions,index){
 }
 function renderProfile(){
  const entity=entityMap.get(profileEntity);if(!entity){closeProfile();return;}const profile=profileMap.get(profileEntity),versions=profile?.versions?.length?profile.versions:[{id:'general',label:'Профіль'}];if(!versions.some(v=>v.id===profileVersion))profileVersion=versions[0].id;
- const versionIndex=versions.findIndex(v=>v.id===profileVersion),version=mergedProfileVersion(versions,versionIndex),associated=[...chronologicalMoments().filter(e=>e.tracks.includes(profileEntity)),...TimelineCore.ordered(events().filter(e=>e.day===null&&e.tracks.includes(profileEntity)))],dated=associated.filter(e=>e.day!==null),memberships=(data.memberships||[]).filter(m=>m.entity_id===profileEntity||m.person_id===profileEntity||m.member_id===profileEntity);
+ const versionIndex=versions.findIndex(v=>v.id===profileVersion),version=mergedProfileVersion(versions,versionIndex),associated=characterTimelineEvents(profileEntity),memberships=(data.memberships||[]).filter(m=>m.entity_id===profileEntity||m.person_id===profileEntity||m.member_id===profileEntity);
  $('profileTitle').textContent=fullName(profileEntity);$('profileTabs').hidden=versions.length<2;$('profileTabs').innerHTML=versions.map(v=>`<button id="tab-${esc(v.id)}" role="tab" aria-selected="${v.id===profileVersion}" aria-controls="profileContent" tabindex="${v.id===profileVersion?0:-1}" data-profile-version="${esc(v.id)}">${esc(v.label)}</button>`).join('');$('profileContent').setAttribute('aria-labelledby','tab-'+version.id);
  const paragraphs=text=>String(text||'').split(/\n\s*\n/).filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join('');
  const listSection=(title,items)=>items?.length?`<section class="profile-section"><h3>${esc(title)}</h3><ul class="profile-list">${items.map(item=>`<li>${esc(item)}</li>`).join('')}</ul></section>`:'';
