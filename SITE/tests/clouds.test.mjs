@@ -82,9 +82,12 @@ test('a scene and its arc retain all nodes even when the viewport displays only 
  assert.equal(arc.nodes.length,4);
  assert.deepEqual(Array.from(scene.nodes,n=>n.id),['home-0','home-1','home-2','home-3']);
  assert(clouds.groups(complete,'arc',localScenes,localEpisodes,localArcs).length===0);
- // A client must pass GLOBAL nodes, not its current clipped graphNodes.
+ // A client must pass complete semantic projected nodes, not the current
+ // clipped graphNodes. Both fine and coarse phases preserve full members.
  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
- assert.match(app,/StoryClouds\.groups\(globalNodes\.filter/);
+ assert.match(app,/const visibleFine=fineProjected\.filter/);
+ assert.match(app,/StoryClouds\.groups\(visibleFine,flow\.fine/);
+ assert.match(app,/StoryClouds\.groups\(visibleCoarse,flow\.coarse/);
 });
 
 test('clip distant cloud bridges without generating offscreen samples',()=>{
