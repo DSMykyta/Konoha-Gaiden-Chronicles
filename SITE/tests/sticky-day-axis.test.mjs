@@ -22,7 +22,7 @@ function fixture(){
  const label=make(),backing=make(),day20=make(),day21=make();
  const native=new Map([['20',day20],['21',day21]]);
  const axis={querySelector(selector){
-  const match=/^\\[data-date="(\\d+)"\\]$/.exec(selector);
+  const match=/^\[data-date="(\d+)"\]$/.exec(selector);
   return native.get(match?.[1])||null;
  }};
  const elements={stickyDayLabel:label,stickyDayBacking:backing,timeAxis:axis};
