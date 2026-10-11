@@ -1465,6 +1465,11 @@ sources:
     title: Naruto (2002) — серія 016, англійські субтитри
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 016.srt
     locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-shippuden-265
+    type: anime_transcript
+    title: Naruto Shippuden — серія 265, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 265.srt
+    locator_status: subtitle_timestamps_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4863,5 +4868,10 @@ evidence:
   - id: evd-sub-ep16-kakashi-wound
     source_id: src-subtitle-naruto-016
     locator: '00:10:00–00:14:12 — після удару Забузи поранений Какаші говорить зі Сакурою й Тадзуною; паралельно Саске захищає Наруто'
+    basis: source
+    review: accepted
+  - id: evd-sub-shippuden-265-waves-retro
+    source_id: src-subtitle-shippuden-265
+    locator: '00:05:00–00:16:55 — Какаші зустрічає повернених Едо Тенсей Забузу й Хаку; переказує зустріч Хаку з Наруто, туман і останні слова про людяність'
     basis: source
     review: accepted
