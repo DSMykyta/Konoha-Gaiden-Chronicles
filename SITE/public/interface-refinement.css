@@ -62,7 +62,15 @@
 }
 #periodButton { max-width: 240px; background: rgba(255,255,255,.82); }
 #periodLabel { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.layer-indicator {
+  flex: none;
+  color: #526272;
+  font-size: 11px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
 .story-layers-open {
+  display: none; /* The period button opens the same panel and shows active filters. */
   min-height: 40px;
   border: 0;
   background: transparent;
