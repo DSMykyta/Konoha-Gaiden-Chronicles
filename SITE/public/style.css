@@ -412,6 +412,19 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 .story-layers-fieldset label small{font-size:11px;color:var(--muted)}
 
 
+/* The connected field supplies one optical silhouette. Original SVG
+   circles remain in the DOM solely for keyboard focus, interaction, text
+   and strand refraction; never paint duplicate circular outlines. */
+#timeline.has-liquid-body .node .liquid-depth,
+#timeline.has-liquid-body .node .mark.liquid-glass-mark,
+#timeline.has-liquid-body .node .liquid-rim-highlight { opacity: 0; }
+#timeline .liquid-body-layer,
+#timeline .liquid-body-group,
+#timeline .liquid-body-drop { pointer-events: none; }
+#timeline .liquid-body-layer { isolation: isolate; }
+/* Calendar shading remains a faint coordinate aid at extreme zoom;
+   wide alternating solid slabs looked like the interface whitening. */
+#timeline .day-band { opacity: .16; }
 /* Liquid-glass timeline droplets: one optical material across all levels. */
 #timeline .liquid-depth-layer,
 #timeline .liquid-optics { pointer-events: none; }

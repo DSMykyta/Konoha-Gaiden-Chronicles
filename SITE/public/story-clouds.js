@@ -168,6 +168,9 @@ const StoryClouds = {
    // Preserve cached world geometry and translate only the viewport.
    context.translate(state.panX,0);
    for(const group of state.groups){
+    // Broad translucent ribbons layered under each other washed out arcs.
+    // Their true shapes now live in the joined SVG droplet field.
+    if(group.kind==='arc')continue;
     const radius=group.kind==='arc'?Math.min(50,22+4*Math.log2(Math.max(1,state.zoom||1))):group.kind==='episode'?70:group.kind==='scene'?48:25;
     const margin=radius*3.8;
     const colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.key),group.kind,group.key),group.kind,group.key);

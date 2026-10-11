@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261011-spatial-dock-r1';
+const UI_VERSION='20261011-connected-droplets-r1';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -365,6 +365,7 @@ function paintNodes(){
  document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!pinnedNodeId&&!!p&&!member);});
  SelectionFocus.update();
  LiquidNodes.syncNecks(document);
+ LiquidBody.visibility();
 }
 function pinOpenCard(){
  uiTimers.cancel('node-open');cancelHoverClose();hoveredNodeId=null;
@@ -888,6 +889,8 @@ function render(){
  });
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
+ // Render one continuous droplet body; circles are semantic hit targets.
+ LiquidBody.update(timeline,renderNodes,zoom);
  syncStickyDay(lo,0,timeScale,w);
  cloudRenderer.update({groups:graphClouds,flowBridges:[],zoom:semanticZoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
@@ -902,6 +905,7 @@ function render(){
  // Restore any pinned/hovered story filter on the new elements immediately.
  StoryTitleScale.restoreGraph();
  LiquidNodes.syncNecks(document);
+ LiquidBody.visibility();
  syncBufferedTabStops();updateFocusBar();tooltipController?.refresh();
  paintedCenter=center;
 }
