@@ -67,6 +67,29 @@ const LiquidNodes = {
   const c1={x:start.x+ux*gap*.43,y:start.y+uy*gap*.43},c2={x:end.x-ux*gap*.43,y:end.y-uy*gap*.43};
   return `M${point(start,nx*wA,ny*wA)} C${point(c1,nx*width,ny*width)} ${point(c2,nx*width*.84,ny*width*.84)} ${point(end,nx*wB,ny*wB)} L${point(end,-nx*wB,-ny*wB)} C${point(c2,-nx*width*.84,-ny*width*.84)} ${point(c1,-nx*width,-ny*width)} ${point(start,-nx*wA,-ny*wA)} Z`;
  },
+ // Re-sample the EXISTING smooth character curve inside one circular lens.
+ // This bends the visible strand, never its semantic anchors or chronology.
+ refract(route,node,curveY){
+  const r=this.radius(node.kind,node.numbered),pad=r*1.18;
+  if(!route?.length||node.x<route[0].day-pad||node.x>route.at(-1).day+pad)return '';
+  const samples=[],steps=Math.max(8,Math.min(22,Math.ceil(r*1.55)));
+  let intersects=false;
+  for(let i=0;i<=steps;i++){
+   const x=node.x-pad+i*(2*pad/steps);
+   if(x<route[0].day||x>route.at(-1).day)continue;
+   const y=curveY(route,x),dx=(x-node.x)/r,dy=(y-node.y)/r;
+   if(!Number.isFinite(y))continue;
+   const norm=dx*dx+dy*dy;
+   if(norm<1)intersects=true;
+   const squeeze=Math.pow(Math.max(0,1-norm/1.36),1.35);
+   // Convex lens: pronounced near the edge, almost transparent in the center.
+   const shiftX=-dx*r*.28*squeeze;
+   const shiftY=-dy*r*.28*squeeze+Math.sin(dx*Math.PI)*.7*squeeze;
+   samples.push([x+shiftX,y+shiftY]);
+  }
+  if(!intersects||samples.length<2)return '';
+  return samples.map(([x,y],i)=>(i?'L':'M')+x.toFixed(2)+','+y.toFixed(2)).join(' ');
+ },
  rim(x,y,r){
   const start=-146*Math.PI/180,end=-35*Math.PI/180;
   const point=angle=>[Number((x+Math.cos(angle)*r*.86).toFixed(3)),Number((y+Math.sin(angle)*r*.86).toFixed(3))];
