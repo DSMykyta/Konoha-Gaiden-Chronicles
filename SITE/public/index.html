@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="story-labels.css?v=20261003-konoha-calendar">
   <link rel="stylesheet" href="contents-panel.css?v=20261008-contents">
   <link rel="stylesheet" href="map-titles.css?v=20261003-konoha-calendar">
+  <link rel="stylesheet" href="interface-refinement.css?v=20261011-calm-shell-r1">
   <script defer src="relations.js?v=20261003-konoha-calendar"></script>
   <script defer src="timeline-core.js?v=20261011-spacious-rivers-r2"></script>
   <script defer src="timeline-flow.js?v=20261011-fluid-r3"></script>
@@ -36,7 +37,7 @@
 </head>
 <body>
   <header class="masthead">
-    <div class="identity"><h1>Хронологія Конохи</h1></div>
+    <div class="identity"><h1 aria-label="Хронологія Конохи"><span class="identity-full">Хронологія Конохи</span><span class="identity-short" aria-hidden="true">Коноха</span></h1></div>
   <nav class="time-controls" aria-label="Масштаб і переміщення в часі">
     <button id="previous" aria-label="Попередній період">‹</button>
     <div class="modes" aria-label="Масштаб"><button data-mode="year" aria-pressed="false" title="Рік · арки">Рік</button><button data-mode="month" aria-pressed="true" title="Місяць · епізоди">Місяць</button><button data-mode="week" aria-pressed="false" title="Тиждень · сцени">Тиждень</button><button data-mode="day" aria-pressed="false" title="День · моменти">День</button></div>
@@ -132,7 +133,7 @@
       <summary>Географія та невідомі місця</summary>
       <div id="geographyAudit" class="geography-audit"><p>Перевірка розташування сцен...</p></div>
     </details>
-    <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Коліщатко масштабує навколо курсора, Shift + коліщатко або перетягування рухає час, два пальці на телефоні змінюють масштаб. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб відкриває більше деталей. Перетягування рухає полотно в часі; колесо переміщує час, а масштаб змінюється кнопками чи жестом двома пальцями. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
+    <details class="disclosure guide"><summary>Як читати хронологію</summary><p>Кожна лінія — персонаж. Коліщатко масштабує навколо курсора, Shift + коліщатко або перетягування рухає час, два пальці на телефоні змінюють масштаб. Натисни на неї, щоб зосередитися на його подіях. Натисни на вузол, щоб зафіксувати картку; наведення показує тимчасовий перегляд.</p><dl class="guide-levels"><div><dt>Момент</dt><dd>Одна дія або факт.</dd></div><div><dt>Сцена</dt><dd>Місце й безперервна дія. Число — кількість моментів.</dd></div><div><dt>Епізод</dt><dd>Пов’язані сцени. Число — кількість сцен.</dd></div><div><dt>Арка</dt><dd>Історія з кількох епізодів.</dd></div></dl><p>Масштаб поступово розкриває арки, епізоди, сцени й моменти. Позначки дат відповідають початку дня; при великому наближенні поточна дата закріплюється ліворуч. Переплетення ліній саме по собі не означає зустріч.</p><p>Довгі проміжки без подій стиснуті й позначені розривом.</p></details>
     <div class="source-footer"><a id="sourceLink" target="_blank" rel="noopener">Дані в репозиторії <span aria-hidden="true">↗</span></a><small id="revision"></small></div>
   </section>
 
