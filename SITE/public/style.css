@@ -481,3 +481,14 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
   #timeline .node .mark.liquid-glass-mark { fill: rgba(255,255,255,.32); }
   #timeline .liquid-optics { opacity: 0; }
 }
+
+/* Node opacity is written inline for level blending, so semantic focus
+   visibility requires explicit priority over that inline value. */
+#timeline .node.is-story-scale-hover-muted:not(.is-line-focus-hidden):not(.is-story-scale-fixed-hidden) {
+  opacity: .1 !important;
+}
+#timeline .node.is-story-scale-fixed-hidden,
+#timeline .node.is-line-focus-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
