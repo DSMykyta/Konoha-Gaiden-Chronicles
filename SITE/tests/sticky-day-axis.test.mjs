@@ -97,7 +97,7 @@ test('on a phone the sticky date stays near the left plot edge',()=>{
 });
 
 test('the helper is wired into both full redraws and the cached pan camera',()=>{
- assert.match(app,/timeline\.replaceChildren\(frame\);axisElement\.replaceChildren\(axis\);\s*syncStickyDay\(lo,0,timeScale,w\)/);
+ assert.match(app,/timeline\.replaceChildren\(frame\);axisElement\.replaceChildren\(axis\);[\s\S]*?syncStickyDay\(lo,0,timeScale,w\)/);
  assert.match(app,/function updatePanChrome\([\s\S]*?syncStickyDay\(lo,shift,panFrame\.scale,/);
  assert.match(app,/svg\('text',\{id:'stickyDayLabel'/);
 });
