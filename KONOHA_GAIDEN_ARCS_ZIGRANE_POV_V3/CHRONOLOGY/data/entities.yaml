@@ -2652,6 +2652,37 @@ entities:
     name: Країна Гірських Потоків
     aliases: []
 
+  - id: "c-pochi"
+    kind: "animal"
+    name: "Pochi"
+    aliases:
+      - "Почі"
+  - id: "c-akane"
+    kind: "person"
+    name: "Akane"
+    aliases:
+      - "Акане"
+  - id: "loc-kirigakure"
+    kind: "location"
+    name: "Kirigakure"
+    aliases:
+      - "Кіріґакуре"
+      - "Селище Прихованого Туману"
+  - id: "loc-land-water"
+    kind: "location"
+    name: "Land of Water"
+    aliases:
+      - "Країна Води"
+  - id: "c-haku-father"
+    kind: "person"
+    name: "Haku's father"
+    aliases:
+      - "батько Хаку"
+  - id: "c-haku-mother"
+    kind: "person"
+    name: "Haku's mother"
+    aliases:
+      - "мати Хаку"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
@@ -2767,34 +2798,3 @@ memberships:
     from: "ev-y0-0122-team10-departs.start"
     basis: "project_decision"
     review: "pending"
-  - id: "c-pochi"
-    kind: "animal"
-    name: "Pochi"
-    aliases:
-      - "Почі"
-  - id: "c-akane"
-    kind: "person"
-    name: "Akane"
-    aliases:
-      - "Акане"
-  - id: "loc-kirigakure"
-    kind: "location"
-    name: "Kirigakure"
-    aliases:
-      - "Кіріґакуре"
-      - "Селище Прихованого Туману"
-  - id: "loc-land-water"
-    kind: "location"
-    name: "Land of Water"
-    aliases:
-      - "Країна Води"
-  - id: "c-haku-father"
-    kind: "person"
-    name: "Haku's father"
-    aliases:
-      - "батько Хаку"
-  - id: "c-haku-mother"
-    kind: "person"
-    name: "Haku's mother"
-    aliases:
-      - "мати Хаку"
