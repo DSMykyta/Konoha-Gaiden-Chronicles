@@ -16,7 +16,7 @@ events:
   id: ev-y0-0330-tsunami-tries-to-stop-inari
   display_rank: 100
   title: Цунамі намагається зупинити Інарі
-  text: Цунамі вважає Інарі надто юним для бою. Він наполягає, що захищатиме село, нагадуючи їй Кайзу.
+  text: "Цунамі не хоче, щоб Інарі сам ішов проти озброєних людей Ґато. Але хлопець згадує слова Кайзи про обов'язок захищати близьких і запевняє матір, що страх більше не вирішуватиме за нього."
   involvement:
   - entity_id: c-tsunami
     role: focus
@@ -25,6 +25,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep18-inari-sakura
   - evd-narutopedia-ep18-audit
 - origin: A
   extent: interval
@@ -32,12 +33,13 @@ events:
   id: ev-y0-0330-inari-finds-supporters
   display_rank: 200
   title: Інарі знаходить людей біля виходу
-  text: Інарі виходить до мосту й бачить натовп, що вже чекає на нього.
+  text: "Хоч Інарі вже приготувався йти на міст сам, на нього чекають мешканці, які зрештою наважилися виступити на захист мосту разом. Їхній прихід доводить, що він не один у своєму опорі Ґато."
   involvement:
   - entity_id: c-inari
     role: focus
     mode: physical
   evidence_ids:
+  - evd-sub-ep19-villagers-and-last-wish
   - evd-narutopedia-ep18-audit
 relations:
 - id: rel-audit-18-y0-0330-tsunami-tries-to-stop-inari-before-y0-0330-inari-finds-supporters
