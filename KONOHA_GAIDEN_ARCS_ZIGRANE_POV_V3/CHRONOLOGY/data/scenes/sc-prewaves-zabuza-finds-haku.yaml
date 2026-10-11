@@ -1,0 +1,35 @@
+schema_version: 1
+id: sc-prewaves-zabuza-finds-haku
+episode_id: ep-prewaves-haku-childhood
+display_rank: 100
+continuity_id: main
+title: "Забуза знаходить самотнього Хаку й бере до себе"
+description: "Осиротілий Хаку виживає на холодних вулицях Країни Води, відчуваючи, що ні для кого не має значення. Забуза помічає хлопчика і пропонує йому піти з ним, відкрито визнаючи цінність його спадкових здібностей. Хаку погоджується служити йому заради відчуття потрібності. Пізніше, коли Забуза залишає батьківщину, Хаку йде поруч."
+location_id: loc-land-water
+placement: null
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-zabuza-recruits-haku
+  title: "Забуза приймає Хаку як свого супутника"
+  text: "Після загибелі батьків Хаку живе сам на вулиці й вважає себе непотрібним. Забуза зустрічає його, не лякається кеккей-ґенкай та пропонує хлопчику приєднатися до нього. Хаку погоджується, бо вперше після трагедії відчуває, що його здібності комусь потрібні; згодом він супроводжує Забузу під час втечі з Країни Води."
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  - entity_id: c-haku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-sub-ep17-zabuza-meets-haku
+relations: []
+presence: []
