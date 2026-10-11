@@ -6137,3 +6137,51 @@ notes:
   review: accepted
   evidence_ids:
   - evd-sub-ep8-zabuza-kiri-backstory
+- id: lnk-haku-childhood-before-recruitment
+  kind: before
+  a: ev-prewaves-haku-loses-family
+  b: ev-prewaves-zabuza-recruits-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-haku-childhood
+- id: lnk-haku-recruitment-before-forest
+  kind: before
+  a: ev-prewaves-zabuza-recruits-haku
+  b: ev-y0-0328-naruto-meets-haku-herbs
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-zabuza-meets-haku
+- id: lnk-zabuza-academy-before-coup
+  kind: before
+  a: ev-prewaves-zabuza-kiri-graduation
+  b: ev-prewaves-zabuza-failed-mizukage-coup
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-coup-dogs
+- id: lnk-zabuza-coup-before-gato
+  kind: before
+  a: ev-prewaves-zabuza-failed-mizukage-coup
+  b: ev-prewaves-gato-demands-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-coup-dogs
+- id: lnk-inari-asks-before-arriving-bridge
+  kind: before
+  a: ev-y0-0330-inari-asks-villagers
+  b: ev-y0-0330-villagers-drive-off-mercenaries
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep18-inari-sakura
+- id: lnk-kaiza-tragedy-before-inari-protects-mother
+  kind: before
+  a: ev-prewaves-gato-executes-kaiza
+  b: ev-y0-0330-inari-defends-tsunami
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
