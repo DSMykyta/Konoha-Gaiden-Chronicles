@@ -404,3 +404,78 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 .story-layers-fieldset label span{display:flex;flex-direction:column;gap:2px}
 .story-layers-fieldset label strong{font-size:13px;font-weight:600}
 .story-layers-fieldset label small{font-size:11px;color:var(--muted)}
+
+
+/* Liquid-glass timeline droplets: one optical material across all levels. */
+#timeline .liquid-depth-layer,
+#timeline .liquid-optics { pointer-events: none; }
+#timeline .liquid-depth {
+  pointer-events: none;
+  stroke: rgba(178,218,243,.38);
+  stroke-width: .7;
+  vector-effect: non-scaling-stroke;
+}
+#timeline .liquid-neck {
+  pointer-events: none;
+  stroke: rgba(235,250,255,.42);
+  stroke-width: .7;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+#timeline .liquid-refracted-line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+#timeline .node .mark.liquid-glass-mark {
+  fill: url(#liquid-glass-face);
+  stroke: rgba(230,249,255,.96);
+  stroke-width: 1.45;
+  vector-effect: non-scaling-stroke;
+}
+#timeline .node .liquid-rim-highlight {
+  fill: none;
+  stroke: rgba(255,255,255,.96);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+  opacity: .94;
+}
+#timeline .node:is(:hover,:focus-visible,.is-open,.is-pinned) .mark.liquid-glass-mark {
+  stroke: #5f9fc9;
+  stroke-width: 2.35;
+  filter: drop-shadow(0 1px 3px rgba(63,125,166,.34));
+}
+#timeline .node:is(:hover,:focus-visible,.is-open,.is-pinned) .liquid-rim-highlight {
+  stroke: #fff;
+  stroke-width: 2.1;
+}
+#timeline .node .scene-count {
+  fill: #244763;
+  paint-order: stroke;
+  stroke: rgba(255,255,255,.84);
+  stroke-width: 1.9;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #timeline .node:is(:hover,:focus-visible,.is-open) .liquid-rim-highlight {
+    animation: liquid-rim-wake 850ms ease-out both;
+  }
+}
+@keyframes liquid-rim-wake {
+  0% { opacity: .35; stroke-width: .8; }
+  48% { opacity: 1; stroke-width: 2.6; }
+  100% { opacity: .94; stroke-width: 2.1; }
+}
+@media (prefers-contrast: more) {
+  #timeline .node .mark.liquid-glass-mark { stroke: #235374; stroke-width: 2; }
+  #timeline .liquid-depth { stroke: #457895; stroke-width: 1.2; }
+  #timeline .node .scene-count { fill: #172e42; stroke: #fff; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  #timeline .liquid-depth { fill: #e5f1f9; }
+  #timeline .node .mark.liquid-glass-mark { fill: rgba(255,255,255,.32); }
+  #timeline .liquid-optics { opacity: 0; }
+}
