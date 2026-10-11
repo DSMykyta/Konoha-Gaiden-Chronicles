@@ -263,6 +263,7 @@ const StoryTitleScale = (() => {
     });
     updateFocusBar();
     cloudRenderer?.refresh();
+    LiquidNodes.syncNecks(document);
   }
 
   function clearDomFocusClasses() {
@@ -272,6 +273,7 @@ const StoryTitleScale = (() => {
     });
     scaleRoot?.classList.remove('is-hovering','is-fixed');
     scaleRoot?.querySelectorAll('.story-title-label').forEach(label => { label.classList.remove('is-active'); scopeVisibility(label, false); });
+    LiquidNodes.syncNecks(document);
   }
 
   function clearStoryFocus() {
