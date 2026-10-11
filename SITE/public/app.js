@@ -9,6 +9,10 @@ const palette=['#3f80cf','#cb833e','#7462bc','#ba6487','#358b96','#7d9953','#b89
 const defaults=['c-naruto','c-sasuke','c-sakura','c-kita','c-ren','c-sora'],teams={'team-7':['c-naruto','c-sasuke','c-sakura','c-kakashi'],'team-8':['c-hinata','c-kiba','c-shino','c-kurenai'],'team-9':['c-kita','c-ren','c-sora','c-raido']};
 const origins={M:'Манґа',A:'Аніме',F:'Філер',P:'Історія проєкту',R:'Ретроспектива',V:'Фільм',N:'Новела',G:'Гра',O:'Інше'},modes={internal:'внутрішній простір',memory:'спогад',manifested:'проявлення',reanimated:'Едо Тенсей'};
 const zoomModes={year:1,month:12,week:365/7,day:365};
+// Preserve the narrative day when a full-year overview must clamp the
+// visible camera center away from that day. Explicit pointer pivots take
+// precedence, so wheel zoom still follows the cursor.
+let rememberedDetailAxis=null;
 function scaledZoom(){return zoom*365/Math.max(1,axisLength());}
 function maximumZoom(){return Math.max(730,axisLength()*2);}
 function updateZoomPresets(){
@@ -437,6 +441,7 @@ function zoomAtScreen(value,screenX,knownPivot=null){
  const anchor=knownPivot??TimelineFlow.axisUnderPixel(pointer,scale,lo,hi);
  const next=clamp(value,1,maximumZoom());
  if(Math.abs(next-zoom)<1e-9)return;
+ rememberedDetailAxis=null;
  zoom=next;
  center=clampAxisCenter(TimelineFlow.zoomCenter({
   pivot:anchor,position:pointer,width,pad,total:axisLength(),nextZoom:next
@@ -447,8 +452,17 @@ function zoomAtScreen(value,screenX,knownPivot=null){
 function setZoom(value,pivot=center){
  if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');previewPan(0);}
  uiTimers.cancel('node-open');hoveredNodeId=null;if(hoverCard)closeCard();
- const old=zoom,previousCenter=center,view=range(),from=arguments.length>1?(view[0]+view[1])/2:center;
- zoom=clamp(value,1,maximumZoom());center=clampAxisCenter(pivot+(from-pivot)*old/zoom);
+ const old=zoom,previousCenter=center,view=range(),explicitPivot=arguments.length>1;
+ const next=clamp(value,1,maximumZoom()),wasYear=old<=zoomModes.year+1e-7,isYear=next<=zoomModes.year+1e-7;
+ // Full-year fitting loses the original day because clampAxisCenter() must
+ // center a viewport spanning the entire calendar. Preserve that detail day
+ // for the next zoom preset; never reinterpret an explicit cursor pivot.
+ if(!explicitPivot&&!wasYear&&isYear)rememberedDetailAxis=center;
+ const restoring=!explicitPivot&&wasYear&&!isYear&&Number.isFinite(rememberedDetailAxis);
+ if(restoring)pivot=rememberedDetailAxis;
+ const from=explicitPivot?(view[0]+view[1])/2:restoring?rememberedDetailAxis:center;
+ zoom=next;center=clampAxisCenter(pivot+(from-pivot)*old/zoom,next);
+ if(explicitPivot||!isYear)rememberedDetailAxis=null;
  if(old===zoom&&Math.abs(center-previousCenter)<1e-7)return;
  tooltipController?.hide();schedule();
 }
@@ -996,6 +1010,8 @@ function storyPoint(kind,id){
 }
 function navigateStory(kind,id){
  const point=storyPoint(kind,id);if(!point||!prepareNavigation(point.group[0]))return;
+ // An arc opens at year scale, but the story date must remain recoverable.
+ rememberedDetailAxis=kind==='arc'&&Number.isFinite(point.day)?dayToAxis(point.day):null;
  zoom=kind==='arc'?zoomModes.year:zoomModes.month;if(point.day!==null)center=clampAxisCenter(dayToAxis(point.day));
  focusId=point.id;pinnedNodeId=point.id;anchorEvent=null;showStoryGroup(point);render();
  const node=graphNodes.find(node=>node.id===point.id)||graphNodes.find(node=>node.group.some(e=>point.group.some(member=>member.id===e.id)));
@@ -1078,7 +1094,7 @@ function prepareNavigation(e){
 }
 function navigateEvent(id){
  const e=events().find(e=>e.id===id);if(!prepareNavigation(e))return;
- if(e.day!==null){zoom=zoomModes.day;const point=semanticNodes('moment',orderedScenes()).find(point=>point.id===e.id);center=clampAxisCenter(dayToAxis(point?.day??e.day+.5));}
+ if(e.day!==null){rememberedDetailAxis=null;zoom=zoomModes.day;const point=semanticNodes('moment',orderedScenes()).find(point=>point.id===e.id);center=clampAxisCenter(dayToAxis(point?.day??e.day+.5));}
  pinnedNodeId=e.id;focusId=e.id;anchorEvent=e.id;showEvent(e);$('eventCard').hidden=false;render();
  const anchor=graphNodes.find(p=>p.id===e.id);if(anchor)revealReadingNode();else positionCard({x:($('canvas').clientWidth||1000)/2,y:($('canvas').clientHeight||700)*.7});updateFocusBar();focusReadingCard();
 }
@@ -1293,7 +1309,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
   }
   $('dateError').hidden=true;$('dateInput').removeAttribute('aria-invalid');
   const yearOffset=(requestedYear-firstYear)*365;
-  zoom=365;
+  rememberedDetailAxis=null;zoom=zoomModes.day;
   center=clampAxisCenter(dayToAxis(yearOffset+starts[+m[2]-1]+(+m[1]-1)+.5));
   closePanels();closeCard();schedule();
  });
