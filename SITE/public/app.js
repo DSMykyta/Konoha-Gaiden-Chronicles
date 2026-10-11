@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261011-liquid-glass-nodes-r2';
+const UI_VERSION='20261011-sticky-day-axis-r1';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -234,8 +234,47 @@ function updatePanChrome(lo,hi,shift){
   :`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;
  $('periodLabel').textContent=label;
  $('dateInputLabel').textContent=`Перейти до дня · ${yearLabel}`;
+ syncStickyDay(lo,shift,panFrame.scale,$('canvas').clientWidth||1000);
  renderEraHeading(loDay,day=>panFrame.scale.px(day)+shift);
  $('previous').disabled=lo<=.001;$('next').disabled=hi>=axisLength()-.001;
+}
+
+// The fixed bottom axis needs its own viewport-local date, independent of
+// buffered SVG tick positions. At deep zoom the day boundary can be many
+// screen widths away, while the date must still remain readable on the left.
+let suppressedAxisDateTick=null;
+function syncStickyDay(lo,shift,scale,width){
+ const label=$('stickyDayLabel'),backing=$('stickyDayBacking'),axis=$('timeAxis');
+ if(!label||!backing||!scale||!data)return;
+ const pad=width<600?22:48,day=Math.max(0,Math.floor(axisToDay(lo,'after')+1e-8));
+ const start=scale.px(day)+shift,next=scale.px(day+1)+shift;
+ // Keep the ordinary date-at-day-start behavior on normal scales. Once a
+ // single day fills much of the screen, pin it only after its boundary leaves.
+ const active=Number.isFinite(start)&&Number.isFinite(next)&&
+  next-start>=Math.max(160,width*.55)&&start<pad-.25;
+ if(suppressedAxisDateTick?.isConnected)suppressedAxisDateTick.classList.remove('is-sticky-suppressed');
+ suppressedAxisDateTick=null;
+ if(!active){
+  label.style.display='none';backing.style.display='none';
+  label.removeAttribute('data-sticky-day');
+  return;
+ }
+ const text=dateText(day),textWidth=Math.ceil(text.length*7.4+5);
+ // The incoming next-day tick pushes the pinned label out, instead of
+ // letting two dates overlap when the viewer crosses midnight.
+ const x=Math.min(pad+6,next-textWidth-9),worldX=x-shift;
+ label.textContent=text;
+ label.setAttribute('x',worldX);
+ label.setAttribute('data-sticky-day',String(day));
+ label.style.display='';
+ backing.setAttribute('x',worldX-5);
+ backing.setAttribute('width',textWidth+10);
+ backing.style.display='';
+ // Only hide the original label of this particular day; keep its boundary
+ // tick and every other date unchanged. On camera pans this touches at most
+ // one date node and never rebuilds the SVG.
+ const nativeTick=axis.querySelector?.('[data-date="'+day+'"]');
+ if(nativeTick){nativeTick.classList.add('is-sticky-suppressed');suppressedAxisDateTick=nativeTick;}
 }
 
 function syncBufferedTabStops(shift=0){
@@ -665,6 +704,10 @@ function render(){
   const text=svg('text',{x,y:28,'text-anchor':'start','data-date':tick.day},axis);text.textContent=tick.text;
  });
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
+ // These SVG elements stay in the axis while its viewBox moves; only their
+ // x coordinates and calendar text update when the camera pans.
+ svg('rect',{id:'stickyDayBacking',class:'sticky-day-backing',x:0,y:12,width:0,height:23,rx:3,style:'display:none'},axis);
+ svg('text',{id:'stickyDayLabel',class:'sticky-day-label',x:0,y:28,'text-anchor':'start',style:'display:none'},axis);
  const labelPositions=[],continuityPaths=[],refractedCurves=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
@@ -824,6 +867,7 @@ function render(){
  });
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
+ syncStickyDay(lo,0,timeScale,w);
  cloudRenderer.update({groups:graphClouds,flowBridges:[],zoom:semanticZoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
