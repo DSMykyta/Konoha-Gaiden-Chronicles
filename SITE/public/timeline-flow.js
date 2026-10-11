@@ -15,8 +15,9 @@ const TimelineFlow = {
   const z=Math.log(Math.max(.001,zoom)),half=.36;
   for(const boundary of this.boundaries){
    const mid=Math.log(boundary.pivot);
-   if(z>mid+half)return {fine:boundary.fine,coarse:null,t:0};
-   if(z>=mid-half)return {...boundary,t:this.smooth((mid+half-z)/(half*2))};
+   // Preserve the mathematically exact transition endpoint despite log/exp roundoff.
+   if(z>mid+half+1e-10)return {fine:boundary.fine,coarse:null,t:0};
+   if(z>=mid-half-1e-10)return {...boundary,t:this.smooth((mid+half-z)/(half*2))};
   }
   return {fine:'arc',coarse:null,t:0};
  },
