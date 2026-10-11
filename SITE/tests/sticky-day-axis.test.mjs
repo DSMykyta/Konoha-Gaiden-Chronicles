@@ -85,6 +85,17 @@ test('ordinary zoom never pins the date, including after a detail view',()=>{
  assert.equal(day20.classes.has('is-sticky-suppressed'),false);
 });
 
+test('on a phone the sticky date stays near the left plot edge',()=>{
+ const {sync,label}=fixture();
+ // Mobile viewport 375px; the normal plot begins at x=22 instead of x=48.
+ // This zoom exposes less than one calendar day at a time.
+ sync(20.4,-132,{valueOf:()=>330},375);
+ // The mock scale itself starts at desktop x=48. The sticky date is
+ // correctly positioned by the real mobile plot padding instead.
+ assert.equal(label.style.display,'');
+ assert.equal(+label.attributes.x-132,28);
+});
+
 test('the helper is wired into both full redraws and the cached pan camera',()=>{
  assert.match(app,/timeline\.replaceChildren\(frame\);axisElement\.replaceChildren\(axis\);\s*syncStickyDay\(lo,0,timeScale,w\)/);
  assert.match(app,/function updatePanChrome\([\s\S]*?syncStickyDay\(lo,shift,panFrame\.scale,/);
