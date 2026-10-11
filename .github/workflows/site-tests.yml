@@ -38,4 +38,5 @@ jobs:
       # never hides unrelated regressions.
       - name: Run remaining unit suites after integration failure
         if: failure()
-        run: node --test SITE/tests/*.test.mjs
+        working-directory: SITE
+        run: node --test tests/*.test.mjs
