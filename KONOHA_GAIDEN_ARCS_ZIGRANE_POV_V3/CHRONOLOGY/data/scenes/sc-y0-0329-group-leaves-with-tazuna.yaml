@@ -4,6 +4,8 @@ episode_id: ep-y0-bridge-final-battle
 display_rank: 100
 continuity_id: "main"
 title: "Какаші, Саске й Сакура виходять із Тадзуною"
+description: >-
+  Уранці, коли Наруто ще спить після виснажливої вправи з деревами, Какаші, Саске й Сакура ведуть Тадзуну до будівельного майданчика мосту. Вони залишають Наруто відпочити, тому під час початку другої сутички із Забузою його немає серед захисників на мосту. Це розділяє місцеперебування членів Команди 7 до їхньої наступної зустрічі.
 location_id: "loc-tazuna-home"
 placement: {anchor_id: "ta-y0-0330", day_offset: 0}
 day_part: morning
@@ -25,7 +27,7 @@ events:
       - {entity_id: "c-tazuna", role: "focus", mode: "physical"}
       - {entity_id: "c-naruto", role: "affected", mode: "remote"}
     focus_teams: ["team-7"]
-    evidence_ids: ["evd-v10-000030", "evd-manga-land-waves"]
+    evidence_ids: ["evd-v10-000030", "evd-manga-land-waves", "evd-sub-ep12-bridge-depart"]
 relations: []
 presence:
   - {id: "pr-0329-leave-kakashi", entity_id: "c-kakashi", from: "sc-y0-0329-group-leaves-with-tazuna.start", to: "sc-y0-0329-group-leaves-with-tazuna.end", basis: "imported", evidence_ids: ["evd-v10-000030"], review: "accepted"}
