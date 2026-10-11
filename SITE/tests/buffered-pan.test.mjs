@@ -38,7 +38,7 @@ test('cached camera changes SVG viewBox without touching its children',()=>{
   timeAxis:{setAttribute:(key,value)=>attributes.set('axis:'+key,value),replaceChildren:()=>calls.push('axis-replaced')},
   eventCard:{hidden:true},
   timelineEmpty:{hidden:true},
-  periodLabel:{textContent:''},dateInputLabel:{textContent:''},
+  periodLabel:{textContent:''},periodButton:{setAttribute(){}},dateInputLabel:{textContent:''},
   previous:{disabled:false},next:{disabled:false}
  };
  const frame=cache.frame({lo:30,hi:50,maxAxis:200,width:1000,height:700,zoom:12,dayPx:46,breaks:[]});
