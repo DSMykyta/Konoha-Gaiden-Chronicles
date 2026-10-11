@@ -127,7 +127,7 @@ async function check(width,height){
  // Semantic zoom: day -> moments, week -> scenes, month -> episodes, year -> arcs.
  // Singleton containers collapse visually without changing the underlying hierarchy.
  run('selected=new Set(selectable().map(e=>e.id));navigateEvent("ev-y0-0122-team7-announced");closeCard()');
- assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert(canvas.querySelector('.liquid-depth-layer'));assert(canvas.querySelector('.liquid-optics'));
+ assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert(canvas.querySelector('.liquid-depth-layer'));assert(canvas.querySelector('.moment-node .liquid-depth'),'Water lens must be attached to its interactive mark');
  assert(!canvas.querySelector('.arc-node ellipse.mark'),'Arcs must be round water droplets');assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
   // Different Academy scenes remain separate nodes on the exact same world-time X
   // when Kita observes the three jōnin waiting beyond the classroom window.
