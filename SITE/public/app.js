@@ -320,6 +320,7 @@ function paintNodes(){
  document.querySelectorAll('.node-hit').forEach(hit=>hit.classList.toggle('is-pinned',hit.dataset.nodeId===pinnedNodeId));
  document.querySelectorAll('.thread').forEach(line=>{const member=!!p&&p.cast.includes(line.dataset.character);line.classList.toggle('is-scene-member',member);line.classList.toggle('is-scene-muted',!!pinnedNodeId&&!!p&&!member);});
  SelectionFocus.update();
+ LiquidNodes.syncNecks(document);
 }
 function pinOpenCard(){
  uiTimers.cancel('node-open');cancelHoverClose();hoveredNodeId=null;
@@ -773,25 +774,15 @@ function render(){
  const depthLayer=svg('g',{class:'liquid-depth-layer','aria-hidden':'true'});
  for(const pair of liquidPairs){
   const d=LiquidNodes.neck(pair);
-  if(d)svg('path',{class:'liquid-neck',d,fill:'url(#liquid-glass-depth)',opacity:Math.min(pair.a.opacity,pair.b.opacity)*(.55+.45*pair.strength)},depthLayer);
+  if(d)svg('path',{class:'liquid-neck','data-liquid-from':pair.a.id,'data-liquid-to':pair.b.id,
+   d,fill:'url(#liquid-glass-depth)',opacity:Math.min(pair.a.opacity,pair.b.opacity)*(.55+.45*pair.strength)},depthLayer);
  }
- for(const p of renderNodes)svg('circle',{class:'liquid-depth',cx:p.x,cy:p.y,r:LiquidNodes.radius(p.kind,numbered),
-  fill:'url(#liquid-glass-depth)',opacity:p.opacity},depthLayer);
- // Local wave refraction: the original world-space strand is untouched, but
- // its image inside the lens bends toward the water's convex interior.
- const liquidClipIds=new Map();
- const optics=svg('g',{class:'liquid-optics','aria-hidden':'true'});
+ // Optical content lives inside the same semantic node group, so selecting
+ // a character or hiding a story level also hides its decorative water lens.
+ const lensCurves=new Map();
  for(const curve of refractedCurves){
-  let clipId=liquidClipIds.get(curve.node.id);
-  if(!clipId){
-   clipId='liquid-lens-'+liquidClipIds.size;
-   const clip=svg('clipPath',{id:clipId,clipPathUnits:'userSpaceOnUse'},defs);
-   svg('circle',{cx:curve.node.x,cy:curve.node.y,r:LiquidNodes.radius(curve.node.kind,numbered)-.4},clip);
-   liquidClipIds.set(curve.node.id,clipId);
-  }
-  svg('path',{class:'liquid-refracted-line',d:curve.d,stroke:curve.color,'stroke-width':2.25,
-   opacity:curve.opacity*curve.node.opacity,'clip-path':`url(#${clipId})`,
-   ...(refractedCurves.length<=90?{filter:'url(#liquid-water-warp)'}:{})},optics);
+  if(!lensCurves.has(curve.node.id))lensCurves.set(curve.node.id,[]);
+  lensCurves.get(curve.node.id).push(curve);
  }
  // Large touch targets stay below the painted mark, with no intercepting
  // decorative glass or refracted fragments.
@@ -809,6 +800,16 @@ function render(){
    'data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):'',
    style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'}`});
   const radius=LiquidNodes.radius(p.kind,numbered);
+  svg('circle',{class:'liquid-depth',cx:p.x,cy:p.y,r:radius,fill:'url(#liquid-glass-depth)','aria-hidden':'true'},g);
+  const curves=lensCurves.get(p.id)||[];
+  if(curves.length){
+   const clipId='liquid-lens-'+renderNodes.indexOf(p),clip=svg('clipPath',{id:clipId,clipPathUnits:'userSpaceOnUse'},defs);
+   svg('circle',{cx:p.x,cy:p.y,r:radius-.4},clip);
+   const optics=svg('g',{class:'liquid-optics','clip-path':`url(#${clipId})`,'aria-hidden':'true'},g);
+   for(const curve of curves)svg('path',{class:'liquid-refracted-line',d:curve.d,stroke:curve.color,
+    'stroke-width':2.25,opacity:curve.opacity,
+    ...(refractedCurves.length<=90?{filter:'url(#liquid-water-warp)'}:{})},optics);
+  }
   svg('circle',{class:'mark liquid-glass-mark',cx:p.x,cy:p.y,r:radius,fill:'url(#liquid-glass-face)'},g);
   svg('path',{class:'liquid-rim-highlight',d:LiquidNodes.rim(p.x,p.y,radius),'aria-hidden':'true'},g);
   if(p.kind==='scene'||p.kind==='episode'||p.kind==='arc-cluster'){
@@ -835,6 +836,7 @@ function render(){
  // SVG replacement discards StoryTitleScale's DOM classes but not its state.
  // Restore any pinned/hovered story filter on the new elements immediately.
  StoryTitleScale.restoreGraph();
+ LiquidNodes.syncNecks(document);
  syncBufferedTabStops();updateFocusBar();tooltipController?.refresh();
  paintedCenter=center;
 }
