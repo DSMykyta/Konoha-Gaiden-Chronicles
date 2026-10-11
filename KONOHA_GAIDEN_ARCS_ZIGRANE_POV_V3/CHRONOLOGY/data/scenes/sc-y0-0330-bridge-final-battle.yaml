@@ -23,7 +23,7 @@ events:
   legacy_ids:
   - V10-000031
   title: Забуза й Хаку атакують на мосту
-  text: Забуза й Хаку перехоплюють Какаші та генінів біля мосту, де Тадзуна продовжує роботу.
+  text: "На будівельному майданчику Тадзуна та його охоронці знаходять поранених робітників, а густий туман сповіщає про повернення Забузи. Хаку стоїть поруч із ним; Какаші розуміє, що мисливець-нін раніше лише інсценував смерть свого спільника. Наруто в цей момент ще відпочиває в домі Тадзуни."
   origin: M
   extent: interval
   display_rank: 100
@@ -49,6 +49,7 @@ events:
   focus_teams:
   - team-7
   evidence_ids:
+  - evd-sub-ep12-bridge-depart
   - evd-v10-000031
   - evd-manga-land-waves
 - origin: A
@@ -57,7 +58,7 @@ events:
   id: ev-y0-0330-sasuke-fights-haku-open
   display_rank: 110
   title: Саске здобуває перевагу у відкритому бою
-  text: Швидкість Саске дає йому перевагу над Хаку. Забуза закликає Хаку застосувати таємну техніку.
+  text: "Саске впізнає обманщика в масці Хаку й вступає з ним у бій. Використавши контроль чакри після тренування на деревах, Саске стає швидшим за противника у відкритому просторі. Навіть техніка Хаку з одноручними печатями та водяними голками не дає йому рішучої переваги, тому Забуза наказує застосувати крижані дзеркала."
   involvement:
   - entity_id: c-sasuke
     role: focus
@@ -69,6 +70,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep13-bridge-ice
   - evd-narutopedia-ep13-audit
 - origin: A
   extent: interval
@@ -76,7 +78,7 @@ events:
   id: ev-y0-0330-haku-traps-sasuke-in-mirrors
   display_rank: 120
   title: Хаку оточує Саске крижаними дзеркалами
-  text: Хаку оточує Саске крижаними дзеркалами, входить у них і атакує сенбонами.
+  text: "На мосту Хаку утворює з криги замкнене коло дзеркал навколо Саске. Пересуваючись між відображеннями, він атакує хлопця сенбонами з багатьох напрямків, а Саске не може встигнути за його швидкістю. Какаші не здатен вийти Саске на допомогу, не лишивши Тадзуну без захисту від Забузи."
   involvement:
   - entity_id: c-haku
     role: focus
@@ -85,6 +87,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep13-bridge-ice
   - evd-narutopedia-ep13-audit
 - origin: A
   extent: interval
@@ -118,6 +121,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep13-bridge-ice
   - evd-narutopedia-ep13-audit
   - evd-narutopedia-ep14-audit
 - origin: A
@@ -138,6 +142,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep14-mirror-battle
   - evd-narutopedia-ep14-audit
 - origin: A
   extent: interval
@@ -145,8 +150,7 @@ events:
   id: ev-y0-0330-naruto-enters-ice-mirrors
   display_rank: 180
   title: Наруто заходить усередину крижаних дзеркал
-  text: Саске кидає кунай, поки Хаку говорить із Наруто. Хаку знову входить у дзеркала й продовжує бій. Какаші пропонує атакувати
-    дзеркала ззовні й зсередини. Наруто натомість заходить до Саске та теж опиняється в пастці.
+  text: "Какаші радить Наруто й Саске атакувати крижані дзеркала одночасно ззовні та зсередини. Але Наруто, бажаючи допомогти Саске безпосередньо, вбігає всередину кільця і також потрапляє в пастку. Хаку тепер може атакувати обох учнів, а Какаші вимушений стримувати Забузу та захищати Тадзуну."
   involvement:
   - entity_id: c-naruto
     role: focus
@@ -161,6 +165,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep14-mirror-battle
   - evd-narutopedia-ep14-audit
 - id: ev-y0-0330-sasuke-fails-to-melt-mirrors
   title: Саске намагається розплавити дзеркала
@@ -179,6 +184,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep14-mirror-battle
   - evd-narutopedia-ep14-audit
 - origin: A
   extent: interval
@@ -200,6 +206,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep15-sasuke-tactics
   - evd-narutopedia-ep15-audit
 - origin: A
   extent: interval
@@ -207,8 +214,7 @@ events:
   id: ev-y0-0330-zabuza-mist-negates-sharingan
   display_rank: 195
   title: Забуза приховує себе від Шарінґана
-  text: Какаші знову відкриває Шарінґан. Забуза попереджає, що знайшов спосіб протидіяти йому. Забуза здіймає туман, щоб нейтралізувати
-    Шарінґан, і зникає з поля зору Какаші.
+  text: "Какаші знову відкриває Шарінґан, але Забуза вже врахував їхню попередню сутичку: Хаку спостерігав за техніками Какаші й допоміг виробити протидію. Забуза напускає непроглядний туман і заплющує очі, щоб не дати Шарінґану зчитувати рухи та впливати на сприйняття; натомість він покладається на слух і беззвучне вбивство. Какаші не може покинути Тадзуну заради Наруто й Саске."
   involvement:
   - entity_id: c-zabuza
     role: focus
@@ -223,6 +229,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep15-mist-counter
   - evd-narutopedia-ep15-audit
 - origin: A
   extent: interval
@@ -242,12 +249,13 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep16-sharingan-sacrifice
   - evd-narutopedia-ep16-audit
 - id: ev-y0-0330-sasuke-awakens-sharingan
   legacy_ids:
   - V10-000031
   title: Саске пробуджує Шарінґан
-  text: Саске пробуджує Шарінґан і починає відстежувати рухи Хаку, захищаючи непритомного Наруто.
+  text: "У крижаних дзеркалах Саске починає вловлювати рухи Хаку: під час смертельно небезпечного бою прокидається його Шарінґан. Завдяки цьому Саске може відбивати удари сенбонів і намагається прикривати виснаженого Наруто. Хаку розуміє, що затяжна сутичка грає проти нього, і вирішує атакувати менш захищеного товариша Саске."
   origin: M
   extent: interval
   display_rank: 200
@@ -262,6 +270,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep16-sharingan-sacrifice
   - evd-v10-000031
   - evd-manga-land-waves
   - evd-narutopedia-ep16-audit
@@ -269,8 +278,7 @@ events:
   legacy_ids:
   - V10-000031
   title: Саске прикриває Наруто
-  text: Зрозумівши, що Шарінґан Саске ускладнить тривалий бій, Хаку спрямовує сенбони в беззахисного Наруто. Саске приймає
-    на себе атаку Хаку, прикриваючи Наруто.
+  text: "Хаку спрямовує шквал сенбонів просто у виснаженого Наруто, щоб обійти захист Шарінґана Саске. Саске інстинктивно кидається між ними й приймає удар на себе. Для Наруто, який опритомніє за мить, це виглядає як загибель людини, з якою він увесь час змагався."
   origin: M
   extent: interval
   display_rank: 300
@@ -285,6 +293,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep16-sharingan-sacrifice
   - evd-v10-000031
   - evd-manga-land-waves
   - evd-narutopedia-ep16-audit
@@ -292,10 +301,9 @@ events:
   extent: interval
   focus_teams: []
   id: ev-y0-0330-kakashi-cut-protecting-tazuna
-  display_rank: 350
+  display_rank: 197
   title: Какаші отримує поріз, захищаючи Тадзуну й Сакуру
-  text: Какаші розуміє, що Забуза цілитиметься в Тадзуну та Сакуру, й кидається перехопити удар. Сакура кричить у тумані.
-    Перехоплюючи удар по Сакурі й Тадзуні, Какаші отримує удар мечем Забузи.
+  text: "Приховавшись непроглядним туманом, Забуза намагається оминути Какаші та смертельно вдарити Тадзуну біля Сакури. Какаші передбачає небезпеку й кидається перехопити напад, але отримує рану від меча Забузи. Сакура кричить, і її крик чують Наруто й Саске, замкнені в крижаних дзеркалах. Подію показано на межі серій 15–16, паралельно бою учнів із Хаку."
   involvement:
   - entity_id: c-kakashi
     role: focus
@@ -310,15 +318,15 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep15-mist-counter
+  - evd-sub-ep16-kakashi-wound
   - evd-narutopedia-ep16-audit
   - evd-narutopedia-ep15-audit
 - id: ev-y0-0330-naruto-nine-tails-chakra
   legacy_ids:
   - V10-000031
   title: Наруто вивільняє чакру Дев’ятихвостого
-  text: Наруто приходить до тями й підхоплює Саске, пронизаного сенбонами. Коли той завмирає, Наруто вважає його мертвим.
-    Вважаючи Саске смертельно пораненим, Наруто вивільняє чакру Дев’ятихвостого й прориває техніку Хаку. Какаші й Забуза відчувають
-    зміну чакри. Какаші непокоїться про печатку; Хаку бачить, як сила Лиса загоює рани Наруто.
+  text: "Наруто підтримує Саске, чиє тіло пронизане сенбонами. Саске зізнається, що не обдумував власного вчинку: тіло саме кинулося захищати товариша. Коли Саске нерухомо падає, Наруто вважає його мертвим, і горе обертається на лють: із нього починає витікати чакра Дев’ятихвостого. Хаку, Забуза й Какаші відчувають небезпечний сплеск сили, але не можуть водночас бачити його з однієї точки мосту."
   origin: M
   extent: interval
   display_rank: 400
@@ -339,6 +347,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep16-sharingan-sacrifice
   - evd-v10-000031
   - evd-manga-land-waves
   - evd-narutopedia-ep16-audit
@@ -747,14 +756,16 @@ relations:
   review: accepted
   evidence_ids:
   - evd-narutopedia-ep16-audit
-- id: rel-audit-16-y0-0330-sasuke-protects-naruto-before-y0-0330-kakashi-cut-protecting-tazuna
+- id: rel-sub-15-kakashi-cut-before-16-sasuke-protects
   kind: before
-  a: ev-y0-0330-sasuke-protects-naruto
-  b: ev-y0-0330-kakashi-cut-protecting-tazuna
+  a: ev-y0-0330-kakashi-cut-protecting-tazuna
+  b: ev-y0-0330-sasuke-protects-naruto
   basis: source
   review: accepted
   evidence_ids:
-  - evd-narutopedia-ep16-audit
+  - evd-sub-ep15-mist-counter
+  - evd-sub-ep16-kakashi-wound
+  - evd-manga-land-waves
 - id: rel-audit-17-y0-0330-haku-explains-past-before-y0-0330-kakashi-summons-tracking-ninken
   kind: before
   a: ev-y0-0330-haku-explains-past
