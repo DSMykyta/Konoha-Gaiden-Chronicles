@@ -529,7 +529,9 @@ const TimelineCore = {
     // proximity so a connected branch still reads as one stream.
     // Normalizing a sparse scene to its own occupied gap erases the
     // distinction between nearby local places and distant countries.
-    const values=[...y.values()],lo=Math.min(...values),hi=Math.max(...values),span=Math.max(1.25,hi-lo);
+    const values=[...y.values()],lo=Math.min(...values),hi=Math.max(...values),
+      minSpan=geography&&nodes.length===2?1.25:.55,
+      span=Math.max(minSpan,hi-lo);
     const out=new Map();
     for(const n of nodes){const normalized=(y.get(n.id)-(lo+hi)/2)/span*1.7;out.set(n.id,middle+Math.max(-.92,Math.min(.92,normalized))*amplitude);}
     return out;
