@@ -89,7 +89,7 @@ test('on a phone the sticky date stays near the left plot edge',()=>{
  const {sync,label}=fixture();
  // Mobile viewport 375px; the normal plot begins at x=22 instead of x=48.
  // This zoom exposes less than one calendar day at a time.
- sync(20.4,-132,{valueOf:()=>330},375);
+ sync(20.4,-132,330,375);
  // The mock scale itself starts at desktop x=48. The sticky date is
  // correctly positioned by the real mobile plot padding instead.
  assert.equal(label.style.display,'');
