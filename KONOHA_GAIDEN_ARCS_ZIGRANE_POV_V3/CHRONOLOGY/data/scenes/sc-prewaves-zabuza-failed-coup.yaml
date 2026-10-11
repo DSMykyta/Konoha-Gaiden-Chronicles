@@ -1,0 +1,32 @@
+schema_version: 1
+id: sc-prewaves-zabuza-failed-coup
+episode_id: ep-prewaves-zabuza-failed-coup
+display_rank: 100
+continuity_id: main
+title: "Забуза зазнає поразки в заколоті проти Мідзукаґе"
+description: "Задовго до сутички з Командою 7 Забуза намагається вбити Мідзукаґе й силою змінити владу Кіріґакуре, але терпить поразку. Він тікає з батьківщини з уцілілими послідовниками, лишається ніндзя-відступником і потребує грошей на повернення та нову спробу захопити владу. Какаші розповідає про ці обставини Забузі під час бою на мосту; точні дата замаху та місце Хаку в цю мить не відомі."
+location_id: loc-kirigakure
+placement: null
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-zabuza-failed-mizukage-coup
+  title: "Провал змушує Забузу втекти з Кіріґакуре"
+  text: "Забуза здійснює невдалу спробу вбити Мідзукаґе та провести переворот у Кіріґакуре. Його план руйнується; Забуза тікає з кількома прибічниками та стає ніндзя-відступником, якого переслідують мисливці Кірі. Саме прагнення зібрати гроші для повернення згодом підштовхне його працювати на Ґато."
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-zabuza
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-sub-ep17-coup-dogs
+relations: []
+presence: []
