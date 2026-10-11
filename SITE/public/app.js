@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261011-calm-shell-r1';
+const UI_VERSION='20261011-calm-shell-r2';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -233,6 +233,7 @@ function updatePanChrome(lo,hi,shift){
   :activeMode==='day'?`${dateText(centerDay,true)} · ${yearLabel}`
   :`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;
  $('periodLabel').textContent=label;
+ $('periodButton').setAttribute('aria-label',`Період: ${label}. Налаштувати дату й шари історії.`);
  $('dateInputLabel').textContent=`Перейти до дня · ${yearLabel}`;
  syncStickyDay(lo,shift,panFrame.scale,$('canvas').clientWidth||1000);
  renderEraHeading(loDay,day=>panFrame.scale.px(day)+shift);
@@ -652,6 +653,7 @@ function render(){
  timeline.style.height=h+'px';timeline.setAttribute('viewBox',`0 0 ${w} ${h}`);
  panFrame={...buffered,nodes:renderNodes,svgHeight:h,level,numbered,scale:timeScale,lineCount:ids.length,availableCount:availableLines.length};
  $('linesCount').textContent=`Лінії · ${ids.length}`;
+ $('linesButton').setAttribute('aria-label',`Лінії персонажів: ${ids.length} вибрано`);
  // Date backgrounds are independent of the density of the visible scenes.
  if(timeScale.dayPx>=2)for(let day=Math.floor(bufferLoDay);day<Math.ceil(bufferHiDay);day++){
   const a=dayToAxis(day+.5,allEvents);
@@ -687,7 +689,7 @@ function render(){
  const nodesByCharacter=TimelineCore.characterAnchors(routeAnchorNodes,ids);
  const reading=readingActive();
  if(!cloudRenderer)cloudRenderer=StoryClouds.create($('storyClouds'));
- const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),yearLabel=yearText(centerDay),label=overview?(data.calendar.view_days>365?`${data.calendar.view_start_year}–${data.calendar.view_end_year} роки Конохи`:yearLabel):activeMode==='day'?`${dateText(centerDay,true)} · ${yearLabel}`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;$('periodLabel').textContent=label;
+ const centerDay=axisToDay(center,'after',allEvents),activeMode=currentZoomMode(),yearLabel=yearText(centerDay),label=overview?(data.calendar.view_days>365?`${data.calendar.view_start_year}–${data.calendar.view_end_year} роки Конохи`:yearLabel):activeMode==='day'?`${dateText(centerDay,true)} · ${yearLabel}`:`${dateText(loDay)} — ${dateText(Math.max(loDay,hiDay-.01))}${data.calendar.view_days>365?'':' · '+yearLabel}`;$('periodLabel').textContent=label;$('periodButton').setAttribute('aria-label',`Період: ${label}. Налаштувати дату й шари історії.`);
  renderEraHeading(loDay,px);
  $('dateInputLabel').textContent=`Перейти до дня · ${yearLabel}`;
  document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===activeMode)));
