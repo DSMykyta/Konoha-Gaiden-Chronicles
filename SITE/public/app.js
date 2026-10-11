@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261011-spacious-rivers-r1';
+const UI_VERSION='20261011-liquid-glass-nodes-r1';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -664,7 +664,7 @@ function render(){
   const text=svg('text',{x,y:28,'text-anchor':'start','data-date':tick.day},axis);text.textContent=tick.text;
  });
  timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
- const labelPositions=[],continuityPaths=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
+ const labelPositions=[],continuityPaths=[],refractedCurves=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
@@ -692,12 +692,26 @@ function render(){
    }
   });
   const coordinates=routes.map(route=>route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
-  const foreign=renderNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<(p.kind==='arc'?arcRadius:19)+7));
+  // Refract only the original curve fragments that actually pass through
+  // each droplet. Sampling locally avoids cloning/filtering the entire SVG.
+  for(const route of samples){
+   if(refractedCurves.length>=720)break;
+   for(const node of renderNodes){
+    const r=LiquidNodes.radius(node.kind,numbered);
+    if(node.opacity<.12||node.x<route[0].day-r*1.2||node.x>route.at(-1).day+r*1.2)continue;
+    const nearX=clamp(node.x,route[0].day,route.at(-1).day);
+    if(Math.abs(TimelineCore.curveY(route,nearX)-node.y)>r+8)continue;
+    const d=LiquidNodes.refract(route,{...node,numbered},TimelineCore.curveY.bind(TimelineCore));
+    if(d)refractedCurves.push({node,id,d,color:color(id),opacity:n>24?.5:.9});
+    if(refractedCurves.length>=720)break;
+   }
+  }
+  const foreign=renderNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<LiquidNodes.radius(p.kind,numbered)+8));
   let mask=null;
   if(foreign.length){
    const maskId='strand-clearance-'+id,cutout=svg('mask',{id:maskId,maskUnits:'userSpaceOnUse',x:-buffered.leftPx-96,y:0,width:w+buffered.leftPx+buffered.rightPx+192,height:h},defs);
    svg('rect',{x:-buffered.leftPx-96,y:0,width:w+buffered.leftPx+buffered.rightPx+192,height:h,fill:'white'},cutout);
-   foreign.forEach(p=>svg('ellipse',{cx:p.x,cy:p.y,rx:p.kind==='arc'?arcRadius+3:p.kind==='moment'?(numbered?17:13):19,ry:p.kind==='arc'?arcRadius*.58+3:p.kind==='moment'?(numbered?17:13):19,fill:'url(#strand-node-halo)','data-node-id':p.id},cutout));
+   foreign.forEach(p=>svg('circle',{cx:p.x,cy:p.y,r:LiquidNodes.radius(p.kind,numbered)+4,fill:'url(#strand-node-halo)','data-node-id':p.id},cutout));
    mask=`url(#${maskId})`;
   }
   // Cache a continuous version of the same recorded curve. Focusing only
@@ -744,13 +758,47 @@ function render(){
  }
 
  drawMapTitles(flow,w,headerBottom()+42,h-readerHeight-42,renderNodes,buffered);
- // Large touch targets stay below every visible mark. A neighboring transparent
- // target can never intercept a tap directly on another node's visible center.
+ // All semantic levels use one circular liquid-glass material. Only radius
+ // and the informational count differ; hit areas remain independent.
+ const liquidGrad=svg('radialGradient',{id:'liquid-glass-depth',cx:'31%',cy:'21%',r:'85%'},defs);
+ for(const [offset,color,opacity] of [[0,'#ffffff',.78],[.5,'#e9f7ff',.61],[.82,'#c5e5ff',.43],[1,'#88b8d6',.32]])
+  svg('stop',{offset,'stop-color':color,'stop-opacity':opacity},liquidGrad);
+ const faceGrad=svg('radialGradient',{id:'liquid-glass-face',cx:'30%',cy:'16%',r:'90%'},defs);
+ for(const [offset,color,opacity] of [[0,'#ffffff',.27],[.56,'#ffffff',.035],[.82,'#aeddf8',.08],[1,'#578aad',.20]])
+  svg('stop',{offset,'stop-color':color,'stop-opacity':opacity},faceGrad);
+ const warp=svg('filter',{id:'liquid-water-warp',x:'-18%',y:'-32%',width:'136%',height:'164%',colorInterpolationFilters:'sRGB'},defs);
+ svg('feTurbulence',{type:'fractalNoise',baseFrequency:'.044 .075',numOctaves:2,seed:7,result:'water-noise'},warp);
+ svg('feDisplacementMap',{in:'SourceGraphic',in2:'water-noise',scale:2.5,xChannelSelector:'R',yChannelSelector:'G'},warp);
+ const liquidPairs=LiquidNodes.connections(renderNodes,graphClouds,flowBridges);
+ const depthLayer=svg('g',{class:'liquid-depth-layer','aria-hidden':'true'});
+ for(const pair of liquidPairs){
+  const d=LiquidNodes.neck(pair);
+  if(d)svg('path',{class:'liquid-neck',d,fill:'url(#liquid-glass-depth)',opacity:Math.min(pair.a.opacity,pair.b.opacity)*(.55+.45*pair.strength)},depthLayer);
+ }
+ for(const p of renderNodes)svg('circle',{class:'liquid-depth',cx:p.x,cy:p.y,r:LiquidNodes.radius(p.kind,numbered),
+  fill:'url(#liquid-glass-depth)',opacity:p.opacity},depthLayer);
+ // Local wave refraction: the original world-space strand is untouched, but
+ // its image inside the lens bends toward the water's convex interior.
+ const liquidClipIds=new Map();
+ const optics=svg('g',{class:'liquid-optics','aria-hidden':'true'});
+ for(const curve of refractedCurves){
+  let clipId=liquidClipIds.get(curve.node.id);
+  if(!clipId){
+   clipId='liquid-lens-'+liquidClipIds.size;
+   const clip=svg('clipPath',{id:clipId,clipPathUnits:'userSpaceOnUse'},defs);
+   svg('circle',{cx:curve.node.x,cy:curve.node.y,r:LiquidNodes.radius(curve.node.kind,numbered)-.4},clip);
+   liquidClipIds.set(curve.node.id,clipId);
+  }
+  svg('path',{class:'liquid-refracted-line',d:curve.d,stroke:curve.color,'stroke-width':2.25,
+   opacity:curve.opacity*curve.node.opacity,'clip-path':`url(#${clipId})`,
+   ...(refractedCurves.length<=90?{filter:'url(#liquid-water-warp)'}:{})},optics);
+ }
+ // Large touch targets stay below the painted mark, with no intercepting
+ // decorative glass or refracted fragments.
  const hitLayer=svg('g',{'aria-hidden':'true'});
  renderNodes.filter(p=>p.opacity>=.48).forEach(p=>{
-  svg(p.kind==='arc'||p.kind==='arc-cluster'?'ellipse':'circle',
-   {class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,
-    ...(p.kind==='arc'||p.kind==='arc-cluster'?{rx:12+12*spread,ry:10+12*spread}:{r:22})},hitLayer);
+  svg('circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,
+   r:Math.max(22,LiquidNodes.radius(p.kind,numbered)+7)},hitLayer);
  });
  renderNodes.forEach(p=>{
   const names={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка','arc-cluster':'Група арок'};
@@ -760,34 +808,22 @@ function render(){
    tabindex:p.opacity>=.48?0:-1,role:'button','aria-label':label,'aria-haspopup':'dialog',
    'data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):'',
    style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'}`});
-  if(p.kind==='arc'||p.kind==='arc-cluster'){
-   const radius=p.kind==='arc-cluster'?Math.max(17,arcRadius):arcRadius;
-   svg('ellipse',{class:'mark',cx:p.x,cy:p.y,rx:radius,ry:radius*.62},g);
-   if(p.kind==='arc-cluster'){
-    const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);
-    count.textContent=p.childCount;
-   }
-  }else{
-   const radius=p.kind==='moment'?(numbered?11:5):p.kind==='scene'?9:11;
-   const elongation=Math.max(0,p.stretch||0)*.7;
-   if(elongation>.025){
-    svg('ellipse',{class:'mark',cx:p.x,cy:p.y,rx:radius*(1+elongation),ry:radius*(1-.24*elongation),
-     transform:`rotate(${p.flowAngle||0} ${p.x} ${p.y})`},g);
-   }else svg('circle',{class:'mark',cx:p.x,cy:p.y,r:radius},g);
-   if(p.kind==='scene'||p.kind==='episode'){
-    const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);
-    count.textContent=p.childCount>99?'99+':p.childCount;
-   }
-   if(numbered&&p.kind==='moment'){
-    const number=svg('text',{class:'moment-number',x:p.x,y:p.y+3.5,'text-anchor':'middle',
-     'aria-hidden':'true','data-moment-number':p.id},g);
-    number.textContent=graphNodes.find(node=>node.id===p.id)?.number||'';
-   }
+  const radius=LiquidNodes.radius(p.kind,numbered);
+  svg('circle',{class:'mark liquid-glass-mark',cx:p.x,cy:p.y,r:radius,fill:'url(#liquid-glass-face)'},g);
+  svg('path',{class:'liquid-rim-highlight',d:LiquidNodes.rim(p.x,p.y,radius),'aria-hidden':'true'},g);
+  if(p.kind==='scene'||p.kind==='episode'||p.kind==='arc-cluster'){
+   const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);
+   count.textContent=p.childCount>99?'99+':p.childCount;
+  }
+  if(numbered&&p.kind==='moment'){
+   const number=svg('text',{class:'moment-number',x:p.x,y:p.y+3.5,'text-anchor':'middle',
+    'aria-hidden':'true','data-moment-number':p.id},g);
+   number.textContent=graphNodes.find(node=>node.id===p.id)?.number||'';
   }
  });
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
- cloudRenderer.update({groups:graphClouds,flowBridges,zoom:semanticZoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
+ cloudRenderer.update({groups:graphClouds,flowBridges:[],zoom:semanticZoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
   $('emptyTitle').textContent=!availableLines.length?'У вибраних шарах немає ліній персонажів':ids.length?'У цьому періоді немає подій':'Обери лінії персонажів';
