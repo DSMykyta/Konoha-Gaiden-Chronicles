@@ -2783,3 +2783,18 @@ memberships:
     aliases:
       - "Кіріґакуре"
       - "Селище Прихованого Туману"
+  - id: "loc-land-water"
+    kind: "location"
+    name: "Land of Water"
+    aliases:
+      - "Країна Води"
+  - id: "c-haku-father"
+    kind: "person"
+    name: "Haku's father"
+    aliases:
+      - "батько Хаку"
+  - id: "c-haku-mother"
+    kind: "person"
+    name: "Haku's mother"
+    aliases:
+      - "мати Хаку"
