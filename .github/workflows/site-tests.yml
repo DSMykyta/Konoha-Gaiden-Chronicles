@@ -33,3 +33,9 @@ jobs:
         run: npm --prefix SITE run check
       - name: Build chronology and run all regression tests
         run: npm --prefix SITE test
+      # npm test deliberately runs the long DOM integration first. If that
+      # fails, run the independent suites anyway so one broken scenario
+      # never hides unrelated regressions.
+      - name: Run remaining unit suites after integration failure
+        if: failure()
+        run: node --test SITE/tests/*.test.mjs
