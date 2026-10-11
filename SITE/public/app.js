@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261011-validated-layout-r1';
+const UI_VERSION='20261011-spatial-dock-r1';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -400,7 +400,12 @@ function nodeLeave(event){
  if(hoveredNodeId===id){hoveredNodeId=null;hoveredNodeTarget=null;uiTimers.cancel('node-open');}
  deferHoverClose();
 }
-function headerBottom(){return document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||(($('canvas').clientWidth||1000)<480?144:($('canvas').clientWidth||1000)<=1240?118:64);}
+function headerBottom(){
+ const header=document.querySelector('.masthead')?.getBoundingClientRect?.().bottom||64;
+ // On phones, the scale is below the title. Measure the real second row.
+ const width=$('canvas')?.clientWidth||window.innerWidth||1000;
+ return width<=760?Math.max(header,document.querySelector('.time-controls')?.getBoundingClientRect?.().bottom||header):header;
+}
 function readingBounds(){const viewport=$('canvas').clientHeight||700,top=headerBottom()+(focusedCharacter?96:44);return {top,height:Math.max(120,Math.min(580,viewport-top-100))};}
 function revealReadingNode(){
  const p=graphNodes.find(n=>n.id===focusId);if(!p)return;

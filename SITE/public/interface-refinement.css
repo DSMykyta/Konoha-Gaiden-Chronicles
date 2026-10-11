@@ -274,3 +274,141 @@
     backdrop-filter: none;
   }
 }
+
+/* 2026-10-11 spatial re-layout: no second kind of chronology nodes.
+   Reposition the existing tools by purpose; keep all graph physics intact. */
+.masthead {
+ position:fixed; inset:auto; top:calc(14px + env(safe-area-inset-top));
+ left:calc(18px + env(safe-area-inset-left)); right:auto;
+ display:flex; grid-template-columns:none;grid-template-rows:none;
+ align-items:center;gap:4px;justify-content:flex-start;
+ width:max-content;max-width:calc(100vw - 36px);min-height:46px;
+ margin:0;padding:4px 5px 4px 15px;
+ border:1px solid var(--ui-hairline);border-radius:13px;
+ background:rgba(255,255,255,.97);box-shadow:0 5px 20px rgba(27,40,53,.07);
+ pointer-events:auto;
+}
+.identity{flex:none}
+.identity h1{font-size:13px;letter-spacing:-.018em;white-space:nowrap}
+.masthead #periodButton{
+ position:static;inset:auto;flex:0 1 auto;justify-content:center;
+ width:auto;max-width:205px;min-height:38px;
+ margin:0;padding:0 9px;gap:5px;border:0;border-radius:8px;
+ background:transparent;box-shadow:none;color:var(--ui-secondary);
+ font-size:12px;
+}
+#periodButton svg{width:14px;height:14px}
+.tools.navigation-dock{
+ position:fixed;z-index:var(--z-chrome);
+ top:50%;left:calc(18px + env(safe-area-inset-left));right:auto;bottom:auto;
+ display:flex;flex-direction:column;align-items:center;gap:2px;
+ width:54px;margin:0;padding:5px;
+ border:1px solid var(--ui-hairline);border-radius:15px;
+ background:rgba(255,255,255,.97);box-shadow:0 8px 26px rgba(25,38,53,.09);
+ transform:translateY(-50%);
+}
+.tools.navigation-dock button{
+ display:grid;place-items:center;
+ width:44px;height:44px;min-width:44px;min-height:44px;
+ flex:0 0 44px;margin:0;padding:0;gap:0;
+ border:0;border-radius:10px;background:transparent;box-shadow:none;
+ color:var(--ui-secondary);-webkit-backdrop-filter:none;backdrop-filter:none;
+ transition:background-color .14s ease,color .14s ease;
+}
+.navigation-dock button > span,.navigation-dock button kbd{display:none}
+.navigation-dock button svg{width:20px;height:20px}
+.navigation-dock button:is(:hover,[aria-expanded="true"],:focus-visible){
+ background:var(--ui-hover);border:0;box-shadow:none;color:var(--ui-ink)
+}
+.time-controls {
+ position:fixed;z-index:var(--z-chrome);
+ inset:auto auto calc(61px + env(safe-area-inset-bottom)) 50%;
+ display:flex;justify-self:auto;align-items:center;gap:1px;
+ width:max-content;max-width:calc(100vw - 24px);min-height:50px;
+ margin:0;padding:4px;
+ border:1px solid var(--ui-hairline);border-radius:15px;
+ background:rgba(255,255,255,.97);box-shadow:0 6px 28px rgba(28,41,56,.1);
+ transform:translateX(-50%);
+}
+.time-controls > button,.zoom-tools > button {
+ flex:0 0 40px;width:40px;min-width:40px;max-width:40px;
+ height:40px;min-height:40px;max-height:40px;border:0;
+ border-radius:9px;background:transparent;box-shadow:none;
+ -webkit-backdrop-filter:none;backdrop-filter:none;
+}
+.time-controls :is(#previous,#next,#zoomOut,#zoomIn,#fit):not(:disabled):hover{
+ border:0;background:var(--ui-hover);box-shadow:none;
+}
+.time-controls .modes{display:flex;gap:1px}
+.time-controls .modes button{
+ flex:0 0 auto;min-width:58px;min-height:40px;
+ margin:0;padding:0 9px;border-radius:9px;
+ background:transparent;color:var(--ui-secondary);
+ font-size:12px;font-weight:500;
+}
+.time-controls .modes button[aria-pressed="true"]{
+ background:#e8edf1;color:var(--ui-ink);box-shadow:none;font-weight:650
+}
+.control-divider{margin:0 4px}
+.time-axis{background:linear-gradient(180deg,transparent,rgba(246,248,250,.96) 70%)}
+.era-heading{left:94px;width:min(620px,calc(100vw - 110px))}
+.left-panel{
+ top:clamp(74px,16vh,130px);left:calc(82px + env(safe-area-inset-left));right:auto;
+ width:min(390px,calc(100vw - 108px));
+ max-height:calc(100dvh - 170px - env(safe-area-inset-bottom));
+}
+.right-panel{top:calc(70px + env(safe-area-inset-top));left:calc(18px + env(safe-area-inset-left));right:auto}
+#searchPanel,#cardContent,.hierarchy-preview-content{
+ border-color:var(--ui-hairline);background:#fff;
+ -webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:var(--ui-sheet-shadow);
+}
+#searchPanel{border-radius:14px}
+.event-card{background:transparent;border:0;box-shadow:none}
+.search-query-field{background:#f7f9fb;box-shadow:none;border-color:var(--ui-hairline)}
+@media (max-width:760px){
+ .masthead{
+  top:calc(8px + env(safe-area-inset-top));left:12px;right:12px;
+  width:calc(100vw - 24px);max-width:none;height:48px;min-height:48px;
+  display:flex;grid-template-columns:none;grid-template-rows:none;
+  justify-content:space-between;gap:6px;margin:0;padding:4px 6px 4px 12px;
+ }
+ .identity-full{display:none}.identity-short{display:inline}
+ .masthead #periodButton{max-width:min(64vw,245px);min-height:40px;font-size:12px}
+ .time-controls{
+  position:fixed;top:calc(64px + env(safe-area-inset-top));bottom:auto;
+  left:50%;right:auto;width:calc(100vw - 24px);max-width:540px;
+  min-height:48px;padding:3px;margin:0;transform:translateX(-50%);
+ }
+ .time-controls .modes{flex:1;min-width:0;justify-content:center}
+ .time-controls .modes button{flex:1 1 0;min-width:0;padding:0 2px;font-size:12px}
+ .time-controls > button{flex:0 0 40px}
+ .time-controls .zoom-tools{display:none}
+ .tools.navigation-dock{
+  position:fixed;top:auto;bottom:calc(64px + env(safe-area-inset-bottom));
+  left:50%;right:auto;width:max-content;height:auto;
+  flex-direction:row;gap:4px;padding:5px;transform:translateX(-50%);
+ }
+ .era-heading{left:12px;width:calc(100vw - 24px)}
+ .panel,.left-panel,.right-panel{
+  top:calc(124px + env(safe-area-inset-top));
+  left:12px;right:12px;width:calc(100vw - 24px);
+  max-height:calc(100dvh - 216px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  padding:16px;
+ }
+ #searchPanel{width:calc(100vw - 24px);padding:0}
+ .focus-bar{right:12px;max-width:calc(100vw - 24px)}
+}
+@media (max-width:370px){
+ .masthead #periodButton{max-width:58vw}
+ .time-controls > button{flex-basis:36px;min-width:36px;width:36px}
+ .time-controls .modes button{font-size:11px}
+}
+@media (max-height:500px) and (min-width:761px){
+ .time-controls{bottom:47px;min-height:44px}
+ .time-controls .zoom-tools{display:none}
+ .left-panel{top:64px;max-height:calc(100dvh - 100px)}
+}
+@media (prefers-reduced-motion:reduce){.time-controls button,.navigation-dock button{transition:none}}
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more){
+ .masthead,.time-controls,.tools.navigation-dock{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}

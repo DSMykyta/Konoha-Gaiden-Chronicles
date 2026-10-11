@@ -24,16 +24,20 @@ test('period and story filters have a single visible entry point with nondefault
  assert.match(app,/togglePanel\('periodPanel'\)/);
 });
 
-test('mobile title is short but accessible and the top toolbar has two rows',()=>{
+test('context, dock and scale are distinct; phone dock moves to the bottom',()=>{
  assert.match(html,/<h1 aria-label="Хронологія Конохи">/);
  assert.match(html,/class="identity-short" aria-hidden="true">Коноха/);
- assert.match(style,/@media \(max-width: 560px\)\s*\{[\s\S]*?grid-template-rows: 44px 48px/);
- assert.match(style,/#periodButton\s*\{\s*position: static/);
+ const header=html.slice(html.indexOf('<header class="masthead">'),html.indexOf('</header>')+9);
+ assert(!header.includes('time-controls')&&!header.includes('navigation-dock'));
+ assert.match(html,/<nav class="tools navigation-dock"/);
+ assert.match(style,/\.tools\.navigation-dock\s*\{[\s\S]*?flex-direction:\s*column/);
+ assert.match(style,/@media \(max-width:760px\)[\s\S]*?\.tools\.navigation-dock\s*\{[\s\S]*?flex-direction:row/);
+ assert.match(style,/\.time-controls\s*\{[\s\S]*?position:fixed/);
 });
 
 test('minimal chrome restores actual 44px icon hit areas and opaque reading surfaces',()=>{
  assert.match(style,/flex:\s*0 0 44px;[\s\S]*?min-width:\s*44px;/);
- assert.match(style,/\.panel,\s*\.event-card,\s*\.event-preview,\s*\.focus-bar,\s*#contentsPanel\s*\{[\s\S]*?background: var\(--ui-paper\)/);
+ assert.match(style,/#searchPanel,#cardContent,\.hierarchy-preview-content\s*\{[\s\S]*?background:#fff/);
  assert.match(style,/\.time-axis[\s\S]*?sticky-day-label/);
 });
 
