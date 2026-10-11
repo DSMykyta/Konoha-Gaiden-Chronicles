@@ -1,0 +1,35 @@
+name: SITE tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'SITE/**'
+      - 'KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/**'
+      - '.github/workflows/site-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out exact commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Use Vercel Node.js version
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: SITE/package-lock.json
+      - name: Install locked dependencies
+        run: npm --prefix SITE ci
+      - name: Check scripts
+        run: npm --prefix SITE run check
+      - name: Build chronology and run all regression tests
+        run: npm --prefix SITE test
