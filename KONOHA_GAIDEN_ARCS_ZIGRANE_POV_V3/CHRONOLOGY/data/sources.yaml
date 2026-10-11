@@ -1470,6 +1470,21 @@ sources:
     title: Naruto Shippuden — серія 265, англійські субтитри
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 265.srt
     locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-017
+    type: anime_transcript
+    title: Naruto (2002) — серія 017, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 017.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-018
+    type: anime_transcript
+    title: Naruto (2002) — серія 018, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 018.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-019
+    type: anime_transcript
+    title: Naruto (2002) — серія 019, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 019.srt
+    locator_status: subtitle_timestamps_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4873,5 +4888,45 @@ evidence:
   - id: evd-sub-shippuden-265-waves-retro
     source_id: src-subtitle-shippuden-265
     locator: '00:05:00–00:16:55 — Какаші зустрічає повернених Едо Тенсей Забузу й Хаку; переказує зустріч Хаку з Наруто, туман і останні слова про людяність'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep17-haku-childhood
+    source_id: src-subtitle-naruto-017
+    locator: '00:07:40–00:12:45 — Хаку розповідає про страх перед кеккей-ґенкай у Країні Води, загибель матері й батька'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep17-zabuza-meets-haku
+    source_id: src-subtitle-naruto-017
+    locator: '00:12:45–00:15:25 — Забуза знаходить самотнього Хаку й бере із собою; готується залишити Країну Води'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep17-coup-dogs
+    source_id: src-subtitle-naruto-017
+    locator: '00:15:40–00:20:00 — Какаші викликає нінкен, переказує провал заколоту Забузи проти Мідзукаґе та готує Різак блискавки'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep18-haku-sacrifice
+    source_id: src-subtitle-naruto-018
+    locator: '00:07:05–00:15:20 — Хаку кидається рятувати Забузу від Какаші, гине від удару, Какаші захищає його тіло'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep18-inari-sakura
+    source_id: src-subtitle-naruto-018
+    locator: '00:03:00–00:20:40 — Інарі шукає підтримки мешканців; Сакура з Тадзуною знаходить нерухомого Саске'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep19-gato-and-sasuke
+    source_id: src-subtitle-naruto-019
+    locator: '00:02:30–00:12:42 — слова Наруто змінюють Забузу, напад на Ґато, Саске прокидається біля Сакури'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep19-villagers-and-last-wish
+    source_id: src-subtitle-naruto-019
+    locator: '00:12:30–00:17:35 — Інарі приводить людей, вони проганяють найманців; Какаші переносить Забузу до Хаку, йде сніг і Забуза помирає'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep19-burial-farewell
+    source_id: src-subtitle-naruto-019
+    locator: '00:17:30–00:21:30 — поховання, рішення Наруто про власний шлях, прощання й назва Великого Мосту Наруто'
     basis: source
     review: accepted
