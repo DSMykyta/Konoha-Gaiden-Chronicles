@@ -369,6 +369,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep17-haku-childhood
   - evd-narutopedia-ep17-audit
 - origin: A
   extent: interval
@@ -376,8 +377,7 @@ events:
   id: ev-y0-0330-haku-explains-past
   display_rank: 440
   title: Наруто зупиняє бій і вислуховує Хаку
-  text: Маска Хаку падає. Наруто впізнає хлопця з лісу й зупиняє наступний удар. Хаку вважає себе непотрібним Забузі й просить
-    Наруто вбити його. Він розповідає про успадковану силу, загибель батьків і прийняття Забузою.
+  text: "Після руйнування дзеркал маска Хаку розбивається. Наруто впізнає хлопця, з яким говорив у лісі, і не може відразу його вбити. Хаку, який вважає себе більше не потрібним Забузі, розповідає про загибель батьків через переслідування носіїв кеккей-ґенкай у Країні Води та про те, як Забуза прихистив його й дав сенс жити. Наруто бачить, що противник бореться за єдину дорогу людину, а не через ненависть до нього."
   involvement:
   - entity_id: c-haku
     role: focus
@@ -386,6 +386,8 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep17-haku-childhood
+  - evd-sub-ep17-zabuza-meets-haku
   - evd-narutopedia-ep17-audit
 - origin: A
   extent: interval
@@ -393,8 +395,7 @@ events:
   id: ev-y0-0330-kakashi-summons-tracking-ninken
   display_rank: 450
   title: Какаші затримує Забузу псами й готує завершальний удар
-  text: Какаші викликає нінкен через сувій. Пси знаходять Забузу за кров’ю Какаші на його мечі й утримують його. Какаші представляє
-    власну техніку — Різак блискавки — та готується завершити бій.
+  text: "У непроглядному тумані Какаші викликає нінкен і вистежує Забузу за запахом власної крові на його мечі. Какаші навмисне дозволив лезу зачепити себе, щоб собаки могли знайти ворога та утримати його. Він нагадує Забузі про невдалий замах на Мідзукаґе, втечу із Кіріґакуре й потребу заробити гроші на нову спробу захоплення влади. Коли туман розсіюється, Какаші збирає чакру для свого Різака блискавки."
   involvement:
   - entity_id: c-kakashi
     role: focus
@@ -406,14 +407,13 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep17-coup-dogs
   - evd-narutopedia-ep17-audit
 - id: ev-y0-0330-haku-sacrifices-self
   legacy_ids:
   - V10-000031
   title: Хаку жертвує собою за Забузу
-  text: Після суперечки про роль ніндзя Наруто погоджується й кидається до Хаку з кунаєм. Відчувши небезпеку для Забузи, Хаку
-    зупиняє атаку Наруто й кидається до напарника. Хаку залишає бій із Наруто й підставляється під удар Какаші, призначений
-    Забузі. Під час втручання Хаку сенбони влучають у закривавлений сувій. Викликані пси зникають, звільняючи Забузу.
+  text: "Хаку, не бачачи більше користі від свого життя, просить Наруто вбити його. Наруто вагається: вони могли б стати друзями за інших обставин. Коли Хаку відчуває, що Какаші ось-ось смертельно вдарить Забузу, він зупиняє бій із Наруто й кидається захистити наставника. Хаку приймає на себе Різак блискавки, рятує Забузу і гине; нінкен Какаші, які стримували Забузу, зникають."
   origin: M
   extent: interval
   display_rank: 500
@@ -434,6 +434,7 @@ events:
     role: focus
     mode: physical
   evidence_ids:
+  - evd-sub-ep18-haku-sacrifice
   - evd-v10-000031
   - evd-manga-land-waves
   - evd-narutopedia-ep18-audit
@@ -460,6 +461,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep18-haku-sacrifice
   - evd-narutopedia-ep18-audit
 - origin: A
   extent: interval
@@ -479,6 +481,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep18-inari-sakura
   - evd-narutopedia-ep18-audit
 - origin: A
   extent: interval
@@ -495,6 +498,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep18-inari-sakura
   - evd-narutopedia-ep18-audit
 - id: ev-y0-0330-gato-arrives
   legacy_ids:
@@ -515,6 +519,7 @@ events:
     role: affected
     mode: physical
   evidence_ids:
+  - evd-sub-ep18-inari-sakura
   - evd-v10-000031
   - evd-manga-land-waves
 - origin: A
@@ -542,13 +547,13 @@ events:
     role: focus
     mode: physical
   evidence_ids:
+  - evd-sub-ep19-gato-and-sasuke
   - evd-narutopedia-ep19-audit
 - id: ev-y0-0330-zabuza-kills-gato
   legacy_ids:
   - V10-000031
   title: Забуза вбиває Ґато
-  text: Забуза просить кунай Наруто й бере його в зуби, готуючись атакувати Ґато. Позбавлений можливості користуватися руками
-    Забуза бере кунай у зуби, проривається крізь найманців і вбиває Ґато, отримуючи численні рани.
+  text: "Наруто змушує Забузу визнати, що Хаку був для нього дорогою людиною, а не просто знаряддям. Через ушкоджені руки Забуза не може тримати зброю, тож просить кунай у Наруто й затискає його зубами. Прорвавшись крізь найманців та діставши тяжкі рани, Забуза смертельно ранить Ґато за його зраду й наругу над Хаку."
   origin: M
   extent: interval
   display_rank: 700
@@ -563,6 +568,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep19-gato-and-sasuke
   - evd-v10-000031
   - evd-manga-land-waves
   - evd-narutopedia-ep19-audit
@@ -572,7 +578,7 @@ events:
   id: ev-y0-0330-sasuke-found-alive
   display_rank: 750
   title: Сакура виявляє, що Саске живий
-  text: 'Команда виявляє, що Саске живий: Хаку навмисно уникнув смертельних ушкоджень.'
+  text: "Саске опритомнює, коли Сакура плаче над ним, упевнена, що він помер. Сакура з полегшенням обіймає Саске та повідомляє Наруто, що той живий. Саске усвідомлює, що Хаку навмисно уникав смертельних ударів навіть проти ворогів."
   involvement:
   - entity_id: c-sakura
     role: focus
@@ -584,12 +590,13 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep19-gato-and-sasuke
   - evd-narutopedia-ep19-audit
 - id: ev-y0-0330-zabuza-dies-by-haku
   legacy_ids:
   - V10-000031
   title: Забуза помирає поруч із Хаку
-  text: Після вбивства Ґато Забуза повертається до тіла Хаку й помирає поруч із ним.
+  text: "Після вбивства Ґато та втечі найманців смертельно поранений Забуза просить Какаші перенести його до мертвого Хаку. Какаші піднімає його й кладе поряд із хлопцем. Коли несподівано починає падати сніг, Забуза дякує Хаку й шкодує, що не може бути певним у зустрічі з ним після смерті. Какаші втішає його; Забуза помирає біля Хаку."
   origin: M
   extent: interval
   display_rank: 800
@@ -600,7 +607,11 @@ events:
   - entity_id: c-haku
     role: affected
     mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
   evidence_ids:
+  - evd-sub-ep19-villagers-and-last-wish
   - evd-v10-000031
   - evd-manga-land-waves
 - id: ev-y0-0330-villagers-drive-off-mercenaries
@@ -608,10 +619,10 @@ events:
   - V10-000031
   - V10-000032
   title: Мешканці Країни Хвиль проганяють найманців
-  text: Інарі приводить мешканців Країни Хвиль на міст; натовп примушує людей Ґато відступити.
+  text: "Після загибелі Ґато його найманці погрожують пограбувати селище. Інарі приходить на міст разом із мешканцями, яких раніше скував страх. Наруто та виснажений Какаші підтримують людей технікою тіньових клонів. Найманці бачать спільну рішучість захисників і тікають; тепер жителі самі відстоюють власне майбутнє."
   origin: M
   extent: interval
-  display_rank: 900
+  display_rank: 780
   involvement:
   - entity_id: c-inari
     role: focus
@@ -623,6 +634,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep19-villagers-and-last-wish
   - evd-v10-000031
   - evd-v10-000032
   - evd-manga-land-waves
@@ -683,15 +695,15 @@ relations:
   review: pending
   evidence_ids:
   - evd-manga-land-waves
-- id: rel-0330-bridge-800-900
+- id: rel-sub-19-villagers-before-zabuza-last-wish
   kind: before
-  a: ev-y0-0330-zabuza-dies-by-haku
-  b: ev-y0-0330-villagers-drive-off-mercenaries
-  basis: imported
-  review: pending
+  a: ev-y0-0330-villagers-drive-off-mercenaries
+  b: ev-y0-0330-zabuza-dies-by-haku
+  basis: source
+  review: accepted
   evidence_ids:
-  - evd-v10-000031
-  - evd-v10-000032
+  - evd-sub-ep19-villagers-and-last-wish
+  - evd-narutopedia-ep19-audit
 - id: rel-audit-13-y0-0330-zabuza-haku-attack-bridge-before-y0-0330-sasuke-fights-haku-open
   kind: before
   a: ev-y0-0330-zabuza-haku-attack-bridge
