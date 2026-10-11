@@ -1,0 +1,38 @@
+schema_version: 1
+id: sc-prewaves-haku-bloodline-tragedy
+episode_id: ep-prewaves-haku-childhood
+display_rank: 100
+continuity_id: main
+title: "Родина Хаку гине через страх перед його спадковою силою"
+description: "Відлюдне поселення Країни Води пам'ятає жахи міжусобних воєн і боїться носіїв кеккей-ґенкай. Мати Хаку приховує від чоловіка свою здатність створювати кригу. Коли малий Хаку показує, що успадкував цей дар, батько вбиває дружину і намагається вбити сина, але наляканий хлопчик мимоволі застосовує свою силу й убиває батька. Залишившись сиротою, Хаку не бачить сенсу в житті, доки не зустріне Забузу."
+location_id: loc-land-water
+placement: null
+state: active
+presence_coverage: partial
+review:
+  time: unknown
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-prewaves-haku-loses-family
+  title: "Мати й батько Хаку гинуть після викриття спадкового дару"
+  text: "Побачивши, що Хаку, як і його мати, успадкував кеккей-ґенкай, батько — наляканий пам'яттю кривавих воєн у Країні Води — убиває дружину й намагається вбити хлопчика. Захищаючись, Хаку мимоволі вивільняє силу криги, убиває батька й залишається один, не знаючи, чи потрібен комусь у світі."
+  origin: A
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-haku
+    role: focus
+    mode: physical
+  - entity_id: c-haku-mother
+    role: participant
+    mode: physical
+  - entity_id: c-haku-father
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-sub-ep17-haku-childhood
+relations: []
+presence: []
