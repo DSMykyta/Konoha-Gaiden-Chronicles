@@ -116,8 +116,8 @@ test('an unknown stop cannot erase a confirmed international split by transitive
 
 test('timeline core and app assets use the same cache release',()=>{
  const html=fs.readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
- const coreVersion=html.match(/timeline-core\\.js\\?v=([^"]+)/)?.[1];
- const appVersion=html.match(/app\\.js\\?v=([^"]+)/)?.[1];
+ const coreVersion=html.match(/timeline-core\.js\?v=([^"]+)/)?.[1];
+ const appVersion=html.match(/app\.js\?v=([^"]+)/)?.[1];
  assert(coreVersion&&appVersion,'both critical assets must carry cache versions');
  assert.equal(coreVersion,appVersion);
 });
