@@ -16,7 +16,7 @@ events:
   id: ev-waves-sakura-tsunami-worry-naruto
   display_rank: 100
   title: Какаші заспокоює Сакуру й Цунамі
-  text: Сакура й Цунамі непокояться, що Наруто провів ніч у лісі. Какаші їх заспокоює; Саске виходить на ранкову прогулянку.
+  text: "За ранковим столом у домі Тадзуни Сакура й Цунамі хвилюються, що Наруто провів ніч сам у лісі після виснажливого тренування. Какаші нагадує, що Наруто вже генін і здатен подбати про себе. Саске залишає сніданок і йде назовні; незабаром він знаходить Наруто в лісі."
   involvement:
   - entity_id: c-sakura
     role: focus
@@ -31,6 +31,7 @@ events:
     role: participant
     mode: physical
   evidence_ids:
+  - evd-sub-ep12-haku-forest
   - evd-narutopedia-ep12-audit
 relations: []
 presence:
