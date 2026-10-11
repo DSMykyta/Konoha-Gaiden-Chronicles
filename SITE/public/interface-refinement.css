@@ -1,0 +1,268 @@
+/* SITE 2026-10-11 — restrained shell, untouched timeline geometry.
+   The chronology is the primary surface. All secondary controls are quiet.
+   Loaded last to replace the older per-button glass and oversized chrome. */
+
+:root {
+  --ui-hairline: rgba(61,76,92,.11);
+  --ui-control: #f4f6f8;
+  --ui-hover: #ebeff3;
+  --ui-ink: #29323e;
+  --ui-secondary: #66727f;
+  --ui-paper: #fff;
+  --ui-sheet-shadow: 0 12px 38px rgba(32,45,60,.10), 0 2px 7px rgba(32,45,60,.04);
+}
+
+/* 1 — HEADER: typography and grouping first, not a separate glass capsule
+   around every action. The existing IDs, button events, and shortcuts remain. */
+.masthead { gap: 14px; }
+.identity { min-width: 0; }
+.identity h1 { font-size: 14px; font-weight: 600; letter-spacing: -.012em; }
+.identity-short { display: none; }
+.header-actions { gap: 6px; }
+.tools { gap: 1px; }
+.tools button { gap: 6px; padding: 0 9px; font-weight: 500; }
+.time-controls {
+  gap: 1px;
+  padding: 3px;
+  border: 1px solid var(--ui-hairline);
+  border-radius: 12px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 2px 9px rgba(35,50,69,.06);
+}
+.modes { gap: 0; }
+.modes button {
+  border-radius: 8px;
+  color: var(--ui-secondary);
+  font-weight: 500;
+}
+.modes button[aria-pressed="true"] {
+  color: var(--ui-ink);
+  background: var(--ui-hover);
+  box-shadow: none;
+  font-weight: 650;
+}
+.control-divider { background: var(--ui-hairline); margin-inline: 4px; }
+
+:is(#linesButton,#contentsButton,#abilitiesButton,#searchButton,#periodButton,.search-chip) {
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  color: var(--ui-ink);
+  transition: background-color .15s ease, color .15s ease;
+}
+:is(#linesButton,#contentsButton,#abilitiesButton,#searchButton,#periodButton,.search-chip):not(:disabled):hover,
+:is(#linesButton,#contentsButton,#abilitiesButton,#searchButton,#periodButton,.search-chip)[aria-expanded="true"],
+.search-chip[aria-pressed="true"] {
+  border: 0;
+  background: var(--ui-hover);
+  box-shadow: none;
+}
+#periodButton { max-width: 240px; background: rgba(255,255,255,.82); }
+#periodLabel { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.story-layers-open {
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--ui-secondary);
+  font-weight: 500;
+}
+.story-layers-open:hover,
+.story-layers-open:focus-visible { border-color: transparent; background: var(--ui-hover); }
+
+/* Icon button hit targets are large while their visual surfaces remain flat. */
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,
+    #focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,
+    #characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) {
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  max-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  max-height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  color: var(--ui-secondary);
+  transform: none;
+}
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,
+    #focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,
+    #characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):hover {
+  border: 0;
+  background: var(--ui-hover);
+  box-shadow: none;
+  color: var(--ui-ink);
+}
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,
+    #focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,
+    #characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile):not(:disabled):active {
+  border: 0;
+  background: #e1e8ee;
+  box-shadow: none;
+  transform: none;
+}
+:is(.close,.card-arrow,.profile-arrow,#previous,#next,#zoomOut,#zoomIn,#fit,
+    #focusPrevious,#focusNext,#clearFocus,#characterEventPrevious,
+    #characterEventNext,#closeCharacterEvents,#closeScene,#closeProfile) svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* 2 — CONTENT FIRST: meaningful eras and titles remain, but instructional
+   chrome and leader lines must not compete with the narrative. */
+.canvas-hint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+.era-heading-label { color: #515d6b; font-size: 15px; font-weight: 600; }
+.cloud-label-guide { opacity: .32; }
+.cloud-label-kind { font-size: 11px; font-weight: 500; }
+.cloud-label-copy { font-weight: 550; }
+#timeline .calendar-day { opacity: .14; }
+#timeline .calendar-week { opacity: .26; }
+#timeline .calendar-month { opacity: .42; }
+#timeline .calendar-year { opacity: .56; }
+
+/* 3 — BOTTOM: time is the only persistent footer; the source of truth stays
+   at the beginning of each day, with a sticky tick at very close zoom. */
+.time-axis {
+  background: linear-gradient(180deg,rgba(248,250,252,0),rgba(248,250,252,.91) 62%,#f6f8fa);
+}
+.time-axis text { fill: #596675; font-size: 12px; }
+.time-axis .sticky-day-label { fill: #2f3a47; font-weight: 650; }
+
+/* 4 — FLOATING UI: one calm opaque sheet, not overlapping blurred glass.
+   Preserve popover positioning, dialog semantics, and the existing cascades. */
+.panel,
+.event-card,
+.event-preview,
+.focus-bar,
+#contentsPanel {
+  border: 1px solid var(--ui-hairline);
+  background: var(--ui-paper);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: var(--ui-sheet-shadow);
+}
+.panel { border-radius: 14px; }
+.event-card, .event-preview, #contentsPanel { border-radius: 16px; }
+.focus-bar { border-radius: 12px; padding: 2px; }
+.panel-heading { background: var(--ui-paper); }
+.panel-heading h2 { margin-top: 3px; font-weight: 650; }
+.card-top, .story-panel-header {
+  border-bottom-color: var(--ui-hairline);
+  background: #fbfcfd;
+}
+.event-card h2, .event-preview h2 { line-height: 1.32; }
+.event-text { font-size: 15px; line-height: 1.7; color: #424d59; }
+.card-date, .card-meta-line { font-size: 12px; }
+.field { background: #f8fafb; }
+.search-chip { background: #f3f5f7; font-size: 12px; }
+.search-chip[aria-pressed="true"] { background: #e6ebf0; color: #283341; }
+.person {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+.person:not(:disabled):hover { box-shadow: none; transform: none; }
+.contents-copy small,
+.contents-summary,
+.contents-count { font-size: 12px; }
+.contents-read { min-height: 40px; border-color: var(--ui-hairline); background: #f7f9fb; }
+.contents-read:hover { background: var(--ui-hover); }
+
+/* 5 — RESPONSIVE: keep a two-row top toolbar on phones.
+   The layers control duplicates the period panel, so on narrow screens the
+   period button is its single entry point; no functionality disappears. */
+@media (max-width: 1450px) {
+  .tools button > span, .tools kbd { display: none; }
+  .tools button { justify-content: center; width: 44px; padding-inline: 0; }
+  #periodButton { max-width: 165px; }
+}
+@media (max-width: 760px) {
+  .era-heading-label { font-size: 14px; }
+  .masthead { padding-inline: 12px; }
+  .period { font-size: 12px; min-height: 40px; }
+  .panel { padding: 16px; }
+  .event-text { font-size: 15px; }
+  #contentsPanel { border-radius: 14px; }
+  #contentsPanel .contents-body { padding: 12px; }
+}
+@media (max-width: 560px) {
+  .masthead {
+    grid-template-columns: minmax(0,1fr) auto;
+    grid-template-rows: 44px 48px;
+    align-items: center;
+    gap: 2px 6px;
+    padding: max(6px,env(safe-area-inset-top)) 12px 6px;
+  }
+  .identity { grid-column: 1; grid-row: 1; }
+  .identity h1 { font-size: 13px; overflow: hidden; text-overflow: ellipsis; }
+  .identity-full { display: none; }
+  .identity-short { display: inline; }
+  .header-actions { grid-column: 2; grid-row: 1; justify-self: end; gap: 0; }
+  .tools { gap: 0; }
+  .tools button { min-width: 44px; width: 44px; min-height: 44px; padding: 0; }
+  #layersButton { display: none; }
+  #periodButton {
+    position: static;
+    display: flex;
+    width: auto;
+    min-width: 0;
+    max-width: 88px;
+    min-height: 40px;
+    padding: 0 6px;
+    border: 0;
+    gap: 3px;
+    font-size: 11px;
+    background: transparent;
+  }
+  #periodLabel { display: block; max-width: 62px; }
+  #periodButton svg { flex: 0 0 12px; width: 12px; }
+  .time-controls {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: stretch;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    min-height: 44px;
+    padding: 1px;
+  }
+  .modes { flex: 1; justify-content: center; }
+  .modes button { min-width: 0; flex: 1; font-size: 12px; padding: 0 4px; }
+  .zoom-tools { display: none; }
+  .focus-bar { right: 12px; max-width: calc(100vw - 24px); }
+  .focus-bar #focusName { max-width: 110px; }
+}
+@media (max-width: 360px) {
+  #periodButton { max-width: 43px; justify-content: center; }
+  #periodLabel { max-width: 18px; }
+  .identity h1 { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .time-controls button,
+  .tools button,
+  .search-chip { transition: none; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .time-controls, .panel, .event-card, .event-preview, .focus-bar, #contentsPanel {
+    background: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
