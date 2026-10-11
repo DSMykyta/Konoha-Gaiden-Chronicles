@@ -325,7 +325,18 @@ const TimelineCore = {
         list.sort((a,b)=>a.first-b.first||a.key.localeCompare(b.key));
         const parent=list.map((_,i)=>i);
         const find=i=>{while(parent[i]!==i){parent[i]=parent[parent[i]];i=parent[i];}return i;};
-        const union=(i,j)=>{const a=find(i),b=find(j);if(a!==b)parent[b]=a;};
+        const members=list.map((_,i)=>[i]);
+         const union=(i,j)=>{
+           const a=find(i),b=find(j);
+           if(a===b)return;
+           // An unknown intermediate location must never turn confirmed
+           // different countries into one visual corridor by transitivity.
+           for(const left of members[a])for(const right of members[b]){
+             if(geography.relation(list[left].location,list[right].location).grade===4)return;
+           }
+           parent[b]=a;
+           members[a].push(...members[b]);members[b]=[];
+         };
         for(let i=0;i<list.length;i++)for(let j=i+1;j<Math.min(list.length,i+61);j++){
           const a=list[i],b=list[j];
           if(b.first-a.first>.85)break;

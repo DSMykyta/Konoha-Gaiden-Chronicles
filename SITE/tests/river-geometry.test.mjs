@@ -96,3 +96,28 @@ test('stable character channels replace random per-segment left/right bends',()=
  assert.equal(core.curveY(a,10),140);
  assert.equal(core.curveY(a,20),140);
 });
+
+test('an unknown stop cannot erase a confirmed international split by transitive merging',()=>{
+ const home=scene('home',team9,'land-fire',0),
+  unknown=scene('unknown',team9,'unlocated-stop',.08),
+  abroad=scene('abroad',team9,'land-snow',.16);
+ const atlas={
+  relation(a,b){
+   if(a==='unlocated-stop'||b==='unlocated-stop')return {grade:null};
+   return {grade:a===b?0:4};
+  }
+ };
+ const initial=new Map([...home.map(p=>[p.id,-.8]),
+  ...unknown.map(p=>[p.id,0]),...abroad.map(p=>[p.id,.8])]);
+ const stable=core.stabilizeSequences([...home,...unknown,...abroad],initial,atlas);
+ assert(Math.abs(stable.get(home[0].id)-stable.get(abroad[0].id))>1,
+  'unknown geography must not collapse two confirmed countries into one corridor');
+});
+
+test('timeline core and app assets use the same cache release',()=>{
+ const html=fs.readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
+ const coreVersion=html.match(/timeline-core\\.js\\?v=([^"]+)/)?.[1];
+ const appVersion=html.match(/app\\.js\\?v=([^"]+)/)?.[1];
+ assert(coreVersion&&appVersion,'both critical assets must carry cache versions');
+ assert.equal(coreVersion,appVersion);
+});
