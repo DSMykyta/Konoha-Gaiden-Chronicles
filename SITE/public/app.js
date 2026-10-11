@@ -892,7 +892,9 @@ function render(){
  // Render one continuous droplet body; circles are semantic hit targets.
  LiquidBody.update(timeline,renderNodes,zoom);
  syncStickyDay(lo,0,timeScale,w);
- cloudRenderer.update({groups:graphClouds,flowBridges:[],zoom:semanticZoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
+ // Hierarchy groups still drive labels and source-aware connections. Do not
+ // paint a second canvas silhouette: the connected balls are the sole material.
+ cloudRenderer.update({groups:[],flowBridges:[],zoom:semanticZoom,nodes:graphNodes,width:w,height:viewport,scrollTop:canvas.scrollTop,panX:0,paused:reading});
  $('timelineEmpty').hidden=graphNodes.length>0;
  if(!graphNodes.length){
   $('emptyTitle').textContent=!availableLines.length?'У вибраних шарах немає ліній персонажів':ids.length?'У цьому періоді немає подій':'Обери лінії персонажів';
