@@ -1437,7 +1437,7 @@ sources:
     locator_status: secondary_synopsis_checked
   - id: src-subtitle-boruto-026
     type: anime_transcript
-    title: Boruto: Naruto Next Generations — серія 026, англійські субтитри
+    title: 'Boruto: Naruto Next Generations — серія 026, англійські субтитри'
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 026.vtt
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-012
