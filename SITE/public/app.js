@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
-const UI_VERSION='20261011-sticky-day-axis-r1';
+const UI_VERSION='20261011-calm-shell-r1';
 const uiTimers=TimelineInteractions.scheduler();
 let tooltipController=null,hoveredNodeId=null,hoveredNodeTarget=null,cardPlacement=null,cardSelection=null,drawingTarget=null;
 const months=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],gen=['січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня'];
@@ -1241,7 +1241,13 @@ async function init(){
   const date=axisToDay(center),previousSpan=axisLength()/zoom;
   storyLayers={...storyLayers,[key]:active};
   layerRevision++;
-  $('layersButton').querySelector('span').textContent='Шари · '+Object.values(storyLayers).filter(Boolean).length+'/4';
+  const enabledLayerCount=Object.values(storyLayers).filter(Boolean).length;
+  $('layersButton').querySelector('span').textContent='Шари · '+enabledLayerCount+'/4';
+  // One persistent period/filter entry point: only a non-default filter
+  // needs a quiet status indicator; all-enabled remains visually clean.
+  $('layerIndicator').hidden=enabledLayerCount===4;
+  $('layerIndicator').textContent=enabledLayerCount+'/4';
+  $('layerIndicator').setAttribute('aria-label','Увімкнено '+enabledLayerCount+' із 4 шарів');
   events();
   updateZoomPresets();
   zoom=clamp(axisLength()/Math.max(.001,previousSpan),1,maximumZoom());
