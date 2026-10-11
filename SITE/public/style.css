@@ -418,6 +418,7 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 #timeline.has-liquid-body .node .liquid-depth,
 #timeline.has-liquid-body .node .mark.liquid-glass-mark,
 #timeline.has-liquid-body .node .liquid-rim-highlight { opacity: 0; }
+#timeline.has-liquid-body .liquid-depth-layer { opacity: 0; }
 #timeline .liquid-body-layer,
 #timeline .liquid-body-group,
 #timeline .liquid-body-drop { pointer-events: none; }
