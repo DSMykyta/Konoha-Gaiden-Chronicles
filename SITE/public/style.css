@@ -127,6 +127,12 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
 .time-axis { position: fixed; left: 0; bottom: calc(10px + env(safe-area-inset-bottom)); width: 100%; height: 40px; pointer-events: none; z-index: var(--z-axis); }
 .time-axis text { font: 12px Manrope, sans-serif; font-variant-numeric: tabular-nums; fill: var(--muted); }
 .time-axis .time-break-axis-slash { fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linecap: round; }
+/* A date behaves like a sticky timeline tick once a single day gets wider
+   than the available viewport. It remains aligned with the ordinary 40px axis. */
+.time-axis .sticky-day-backing { fill: var(--background); opacity: .97; pointer-events: none; }
+.time-axis .sticky-day-label { fill: var(--text); font-weight: 700; }
+.time-axis .is-sticky-suppressed { visibility: hidden; }
+
 
 /* One scale control, the same hit areas at every size. */
 .time-controls { justify-self: center; display: flex; align-items: center; gap: 2px; padding: 2px; border: 1px solid #ffffffdf; border-radius: 12px; background: #e8edf366; box-shadow: inset 0 1px 0 #ffffffb3; white-space: nowrap; }
