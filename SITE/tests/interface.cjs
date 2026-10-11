@@ -282,7 +282,9 @@ async function check(width,height){
  run('setZoom(zoomModes.week)');await sleep();assert(run('axisToDay(center)<31'),'Year-to-week zoom jumped away from the January story');assert(run('graphNodes.length>0'));
  run('zoom=zoomModes.week;center=dayToAxis(21.5);render();setZoom(zoomModes.year)');await sleep();run('setZoom(zoomModes.week)');await sleep();assert(Math.abs(run('axisToDay(center)')-21.5)<1e-8);
  // An explicit wheel pivot uses the visible year center, not the remembered date.
- run('zoom=zoomModes.year;center=dayToAxis(21.5);render()');const pivot=run('dayToAxis(73.5)'),fraction=run('dayToAxis(73.5)/axisLength()');run('setZoom(zoomModes.month,'+pivot+')');await sleep();const bounds=run('range()');assert(Math.abs((pivot-bounds[0])/(bounds[1]-bounds[0])-fraction)<1e-8,'Explicit zoom pivot drift: '+JSON.stringify({pivot,bounds,fraction,actual:(pivot-bounds[0])/(bounds[1]-bounds[0]),state:run('({zoom,center,axis:axisLength(),month:zoomModes.month,year:zoomModes.year,rememberedDetailAxis})')}));
+ run('zoom=zoomModes.year;center=dayToAxis(21.5);render()');// The year preset covers one year, not the full multi-year atlas; preserve
+ // the cursor's fractional position inside the OLD visible range.
+ const pivot=run('dayToAxis(73.5)'),oldBounds=run('range()'),fraction=(pivot-oldBounds[0])/(oldBounds[1]-oldBounds[0]);run('setZoom(zoomModes.month,'+pivot+')');await sleep();const bounds=run('range()');assert(Math.abs((pivot-bounds[0])/(bounds[1]-bounds[0])-fraction)<1e-8,'Explicit zoom pivot drift: '+JSON.stringify({pivot,bounds,fraction,actual:(pivot-bounds[0])/(bounds[1]-bounds[0]),state:run('({zoom,center,axis:axisLength(),month:zoomModes.month,year:zoomModes.year,rememberedDetailAxis})')}));
  const moments=run("semanticNodes('moment',orderedScenes())");
  for(const scene of run('orderedScenes()')){if(scene.day===null)continue;const members=moments.filter(node=>node.scene?.id===scene.id);assert(members.every(node=>node.day>scene.day&&node.day<scene.day+1));}
  // Enhanced search is the only renderer; readers open their own hierarchy level.
