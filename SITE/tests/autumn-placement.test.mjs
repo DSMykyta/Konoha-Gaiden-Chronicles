@@ -52,7 +52,9 @@ test('Kurenai’s social evening precedes her injury and preserves Kakashi’s l
  const evening=scene('sc-games-kakashi-nobari-gathering');assert(evening.day<hospital.day);
  assert.equal(evening.day,plan.kurenai_social_day);
  for(const id of ['sc-games-kakashi-rest-order','sc-games-kakashi-forced-rest'])assert.equal(scene(id).day,evening.day);
- assert.deepEqual([scene('sc-y0-1010-naruto-thirteenth-birthday').date.year,scene('sc-y0-1010-naruto-thirteenth-birthday').date.month,scene('sc-y0-1010-naruto-thirteenth-birthday').date.day],[61,10,10]);
+ const kurosuki=scene('sc-y0-1010-kurosuki-mission-assigned');
+ assert.equal(kurosuki.day,plan.arcs.find(a=>a.arc_id==='arc-y0-raiga-ranmaru').start,'Corrected October mission must match accepted plan date');
+ assert.equal(scene('sc-y0-1010-naruto-thirteenth-birthday'),undefined,'Do not invent an unrecorded birthday scene');
 });
 
 test('every existing before relation involving moved stories still agrees with their dates',()=>{

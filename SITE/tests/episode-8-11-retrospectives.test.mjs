@@ -59,7 +59,7 @@ test('episodes 8-11 retain existing present-day action without duplicates', () =
   assert(events.find(e=>e.id==='ev-y0-0318-naruto-reclaims-headband').evidence_ids.includes('evd-sub-ep8-teamwork'));
   assert(events.find(e=>e.id==='ev-y0-0318-kakashi-defeats-zabuza').evidence_ids.includes('evd-sub-ep9-zabuza-rescue'));
   const hospital=scene('sc-y0-0322-tazuna-home-briefing');
-  assert(hospital.events[0].evidence_ids.includes('evd-sub-ep10-haku-recovery'));
+  assert(hospital.events.find(e=>e.id==='ev-y0-0322-kakashi-deduces-haku-ruse').evidence_ids.includes('evd-sub-ep10-haku-recovery'));
   const market=scene('sc-waves-sakura-market');
   assert.equal(market.location_id,'loc-land-waves');
   assert.equal(market.review.location,'partial');

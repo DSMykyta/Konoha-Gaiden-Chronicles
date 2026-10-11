@@ -92,7 +92,7 @@ const GeographyAtlas={
     {wanted:.11,factor:.028},
     {wanted:.20,factor:.042},
     {wanted:.44,factor:.065},
-    {wanted:.87,factor:.12}
+    {wanted:1.16,factor:.15}
    ];
    return result.grade===null?null:{...result,...values[result.grade]};
   }
