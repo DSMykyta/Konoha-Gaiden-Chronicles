@@ -47,6 +47,8 @@ For local builds, use Node 22+, `npm ci`, then `CHRONOLOGY_SOURCE_ROOT=/absolute
 
 `public/data.json` is generated only when a deployment runs. It is a snapshot of the source revision used for that build, not a live editor or an automatic scheduled refresh. Automatic Git-triggered deployments are disabled via `git.deploymentEnabled: false` in `vercel.json` to avoid exhausting the free Vercel plan's deployment allowance. Pushing commits to `main` (including chronology or UI changes) does **not** automatically update the published site. When an update is needed, start a deployment manually and verify that it uses the intended commit.
 
+**Manual deployment builds must not be ignored.** `ignoreCommand: "exit 1"` deliberately tells Vercel to continue the build on each manual deployment, even when the newest commit modifies only `CHRONOLOGY/data` or other files outside the `SITE` root. The earlier `git diff --quiet HEAD^ HEAD ./` incorrectly skipped data-only deployments. When using Redeploy, verify that the selected commit is the current `main` HEAD rather than the SHA of an older failed deployment.
+
 ## Аудит канонічних суперечностей Naruto
 
 [Реєстр суперечностей Naruto й адресний аудит опублікованих записів SITE](docs/NARUTO_CANON_INCONSISTENCIES_UA.md) — 73 питання з міжнародних обговорень і перевірка їхньої застосовності до поточної хронології. У документі окремо зазначено підтверджені технічні ризики (шари, похідні дати, вікові профілі), питання для звіряння за манґою/аніме та майбутні реткони `Shippuden`. **Реєстр не є автоматичним підтвердженням усіх фанатських тверджень і не дозволяє змінювати рольові події без окремого канонічного доказу.**
