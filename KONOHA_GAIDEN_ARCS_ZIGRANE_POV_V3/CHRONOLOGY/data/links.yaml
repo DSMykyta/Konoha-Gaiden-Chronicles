@@ -5804,6 +5804,106 @@ links:
   evidence_ids:
   - evd-time-slip-working-placement
 
+
+- id: lnk-prewaves-dranks-before-tora-capture
+  kind: before
+  a: sc-prewaves-team7-d-ranks
+  b: sc-prewaves-tora-capture
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-manga-land-waves
+  - evd-narutopedia-ep6-audit
+- id: lnk-episode3-kakashi-apartment-before-class
+  kind: before
+  a: ev-y0-0122-kakashi-discovers-spoiled-milk
+  b: ev-y0-0122-kakashi-arrives
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep3-kakashi-milk
+  - evd-narutopedia-ep3-kakashi-milk
+
+- id: lnk-kaiza-rescues-inari-before-flood
+  kind: before
+  a: ev-prewaves-kaiza-saves-inari
+  b: ev-prewaves-kaiza-stops-flood
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+- id: lnk-kaiza-flood-before-execution
+  kind: before
+  a: ev-prewaves-kaiza-stops-flood
+  b: ev-prewaves-gato-executes-kaiza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+- id: lnk-kaiza-execution-before-dinner-story
+  kind: before
+  a: ev-prewaves-gato-executes-kaiza
+  b: ev-y0-0322-tazuna-tells-kaiza-story
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
+- id: lnk-zabuza-bloody-mist-before-first-encounter
+  kind: before
+  a: ev-prewaves-zabuza-kiri-graduation
+  b: ev-y0-0318-zabuza-attacks
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep8-zabuza-kiri-backstory
+- id: lnk-haku-childhood-before-recruitment
+  kind: before
+  a: ev-prewaves-haku-loses-family
+  b: ev-prewaves-zabuza-recruits-haku
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-haku-childhood
+- id: lnk-haku-recruitment-before-forest
+  kind: before
+  a: ev-prewaves-zabuza-recruits-haku
+  b: ev-y0-0328-naruto-meets-haku-herbs
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-zabuza-meets-haku
+- id: lnk-zabuza-academy-before-coup
+  kind: before
+  a: ev-prewaves-zabuza-kiri-graduation
+  b: ev-prewaves-zabuza-failed-mizukage-coup
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-coup-dogs
+- id: lnk-zabuza-coup-before-gato
+  kind: before
+  a: ev-prewaves-zabuza-failed-mizukage-coup
+  b: ev-prewaves-gato-demands-zabuza
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep17-coup-dogs
+- id: lnk-inari-asks-before-arriving-bridge
+  kind: before
+  a: ev-y0-0330-inari-asks-villagers
+  b: ev-y0-0330-villagers-drive-off-mercenaries
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep18-inari-sakura
+- id: lnk-kaiza-tragedy-before-inari-protects-mother
+  kind: before
+  a: ev-prewaves-gato-executes-kaiza
+  b: ev-y0-0330-inari-defends-tsunami
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-sub-ep11-kaiza-past
 notes:
 - No relation is stored between the Kankuro, Temari and Gaara rescue branches unless a source establishes one. Absence
   of relation means unknown order, not simultaneity.
@@ -6086,102 +6186,3 @@ notes:
   review: accepted
   evidence_ids:
   - evd-anime-197-201
-- id: lnk-prewaves-dranks-before-tora-capture
-  kind: before
-  a: sc-prewaves-team7-d-ranks
-  b: sc-prewaves-tora-capture
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-manga-land-waves
-  - evd-narutopedia-ep6-audit
-- id: lnk-episode3-kakashi-apartment-before-class
-  kind: before
-  a: ev-y0-0122-kakashi-discovers-spoiled-milk
-  b: ev-y0-0122-kakashi-arrives
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep3-kakashi-milk
-  - evd-narutopedia-ep3-kakashi-milk
-
-- id: lnk-kaiza-rescues-inari-before-flood
-  kind: before
-  a: ev-prewaves-kaiza-saves-inari
-  b: ev-prewaves-kaiza-stops-flood
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep11-kaiza-past
-- id: lnk-kaiza-flood-before-execution
-  kind: before
-  a: ev-prewaves-kaiza-stops-flood
-  b: ev-prewaves-gato-executes-kaiza
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep11-kaiza-past
-- id: lnk-kaiza-execution-before-dinner-story
-  kind: before
-  a: ev-prewaves-gato-executes-kaiza
-  b: ev-y0-0322-tazuna-tells-kaiza-story
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep11-kaiza-past
-- id: lnk-zabuza-bloody-mist-before-first-encounter
-  kind: before
-  a: ev-prewaves-zabuza-kiri-graduation
-  b: ev-y0-0318-zabuza-attacks
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep8-zabuza-kiri-backstory
-- id: lnk-haku-childhood-before-recruitment
-  kind: before
-  a: ev-prewaves-haku-loses-family
-  b: ev-prewaves-zabuza-recruits-haku
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep17-haku-childhood
-- id: lnk-haku-recruitment-before-forest
-  kind: before
-  a: ev-prewaves-zabuza-recruits-haku
-  b: ev-y0-0328-naruto-meets-haku-herbs
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep17-zabuza-meets-haku
-- id: lnk-zabuza-academy-before-coup
-  kind: before
-  a: ev-prewaves-zabuza-kiri-graduation
-  b: ev-prewaves-zabuza-failed-mizukage-coup
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep17-coup-dogs
-- id: lnk-zabuza-coup-before-gato
-  kind: before
-  a: ev-prewaves-zabuza-failed-mizukage-coup
-  b: ev-prewaves-gato-demands-zabuza
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep17-coup-dogs
-- id: lnk-inari-asks-before-arriving-bridge
-  kind: before
-  a: ev-y0-0330-inari-asks-villagers
-  b: ev-y0-0330-villagers-drive-off-mercenaries
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep18-inari-sakura
-- id: lnk-kaiza-tragedy-before-inari-protects-mother
-  kind: before
-  a: ev-prewaves-gato-executes-kaiza
-  b: ev-y0-0330-inari-defends-tsunami
-  basis: source
-  review: accepted
-  evidence_ids:
-  - evd-sub-ep11-kaiza-past
