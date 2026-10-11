@@ -112,8 +112,12 @@ async function check(width,height){
  flipLayer(fillerLayer,false);
  assert.equal(run('focusedCharacter'),'c-naruto','Disabling filler cleared a surviving focus');
  assert.equal(run('selected.size'),2);assert(!doc.getElementById('focusBar').hidden);
- for(const input of layerInputs.filter(input=>input.checked))flipLayer(input,false);
- assert.equal(run('events().length'),0);
+ // linkedom's parsed checked attributes are not a reliable live checkbox
+ // property: explicitly dispatch a change for all four provenance layers.
+ // A partial filter must not be mistaken for the all-layers-disabled state.
+ for(const input of layerInputs)flipLayer(input,false);
+ assert.equal(run('StoryLayers.mask(storyLayers)'),'0000','All provenance layers must be disabled');
+ assert.equal(run('events().length'),0,'No moments may remain when all four layers are disabled');
  assert.equal(run('focusedCharacter'),null,'Focus remained after every event was hidden');
  assert(doc.getElementById('focusBar').hidden);
  for(const input of layerInputs)flipLayer(input,true);
