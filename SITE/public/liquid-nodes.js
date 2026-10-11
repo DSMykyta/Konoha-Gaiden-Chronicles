@@ -90,6 +90,18 @@ const LiquidNodes = {
   if(!intersects||samples.length<2)return '';
   return samples.map(([x,y],i)=>(i?'L':'M')+x.toFixed(2)+','+y.toFixed(2)).join(' ');
  },
+ // Mirrored decorations cannot remain visible when focus controls hide
+ // either of the semantic nodes that make up a bridge.
+ syncNecks(document){
+  const nodes=new Map([...document.querySelectorAll('#timeline .node')].map(n=>[n.dataset.event,n]));
+  const hidden=node=>!node||['is-line-focus-hidden','is-story-scale-fixed-hidden'].some(c=>node.classList.contains(c));
+  for(const neck of document.querySelectorAll('#timeline .liquid-neck')){
+   const a=nodes.get(neck.dataset.liquidFrom),b=nodes.get(neck.dataset.liquidTo);
+   neck.classList.toggle('is-liquid-hidden',hidden(a)||hidden(b));
+   neck.classList.toggle('is-liquid-muted',!hidden(a)&&!hidden(b)&&
+    ['is-story-scale-hover-muted','is-context-muted'].some(c=>a.classList.contains(c)||b.classList.contains(c)));
+  }
+ },
  rim(x,y,r){
   const start=-146*Math.PI/180,end=-35*Math.PI/180;
   const point=angle=>[Number((x+Math.cos(angle)*r*.86).toFixed(3)),Number((y+Math.sin(angle)*r*.86).toFixed(3))];
