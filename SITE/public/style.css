@@ -422,6 +422,8 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
+#timeline .liquid-neck.is-liquid-hidden { opacity: 0 !important; }
+#timeline .liquid-neck.is-liquid-muted { opacity: .1 !important; }
 #timeline .liquid-refracted-line {
   fill: none;
   stroke-linecap: round;
