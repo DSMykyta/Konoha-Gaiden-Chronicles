@@ -1440,6 +1440,31 @@ sources:
     title: Boruto: Naruto Next Generations — серія 026, англійські субтитри
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 026.vtt
     locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-012
+    type: anime_transcript
+    title: Naruto (2002) — серія 012, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 012.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-013
+    type: anime_transcript
+    title: Naruto (2002) — серія 013, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 013.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-014
+    type: anime_transcript
+    title: Naruto (2002) — серія 014, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 014.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-015
+    type: anime_transcript
+    title: Naruto (2002) — серія 015, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 015.srt
+    locator_status: subtitle_timestamps_checked
+  - id: src-subtitle-naruto-016
+    type: anime_transcript
+    title: Naruto (2002) — серія 016, англійські субтитри
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 016.srt
+    locator_status: subtitle_timestamps_checked
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -4788,5 +4813,55 @@ evidence:
   - id: evd-sub-boruto-026-bloody-mist
     source_id: src-subtitle-boruto-026
     locator: '00:15:43–00:16:08 — згадка старого випускного іспиту Кривавого Туману та четвертого Мідзукаґе; Забузу поіменно не названо'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep12-haku-forest
+    source_id: src-subtitle-naruto-012
+    locator: '00:04:15–00:10:10 — Наруто зустрічає Хаку, обговорює силу для захисту близьких, Саске приходить по Наруто'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep12-training-inari
+    source_id: src-subtitle-naruto-012
+    locator: '00:10:14–00:17:52 — завершення тренування, сварка з Інарі, розмова Какаші з хлопцем'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep12-bridge-depart
+    source_id: src-subtitle-naruto-012
+    locator: '00:17:58–00:21:30 — Команда 7 вирушає на міст без виснаженого Наруто; Забуза й Хаку атакують'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep13-home-rescue
+    source_id: src-subtitle-naruto-013
+    locator: '00:05:00–00:16:52 — напад найманців Ґато на дім, сміливість Інарі, порятунок Цунамі, вибачення Наруто'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep13-bridge-ice
+    source_id: src-subtitle-naruto-013
+    locator: '00:03:25–00:21:30 — Хаку атакує Саске та застосовує дзеркала, Наруто прибуває на міст'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep14-mirror-battle
+    source_id: src-subtitle-naruto-014
+    locator: '00:08:26–00:21:30 — Наруто демаскує своє прибуття, втрачає тактичну перевагу, входить у пастку дзеркал, розкрито природу техніки Хаку'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep15-mist-counter
+    source_id: src-subtitle-naruto-015
+    locator: '00:04:08–00:21:35 — Забуза використовує туман і закриті очі проти Шарінґана; Какаші захищає Тадзуну, напад завершується криком Сакури'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep15-sasuke-tactics
+    source_id: src-subtitle-naruto-015
+    locator: '00:08:00–00:20:35 — Саске вчиться відстежувати Хаку, Наруто виснажується, а небезпека в дзеркалах зростає'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep16-sharingan-sacrifice
+    source_id: src-subtitle-naruto-016
+    locator: '00:05:05–00:19:35 — Саске пробуджує Шарінґан, закриває Наруто від сенбонів; Наруто вивільняє люту чакру'
+    basis: source
+    review: accepted
+  - id: evd-sub-ep16-kakashi-wound
+    source_id: src-subtitle-naruto-016
+    locator: '00:10:00–00:14:12 — після удару Забузи поранений Какаші говорить зі Сакурою й Тадзуною; паралельно Саске захищає Наруто'
     basis: source
     review: accepted
