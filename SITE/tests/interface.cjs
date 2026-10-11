@@ -223,12 +223,20 @@ async function check(width,height){
 
  // Characters not yet introduced do not draw unrelated lanes through early scenes.
  assert(!canvas.querySelector('.thread[data-character="c-genma"]'));assert(canvas.querySelector('.thread[data-character="c-naruto"]'));assert(parseFloat(canvas.style.height)>=height);
- // After hit-area separation, every physical cast member still reaches the mark
- // exactly, including aggregate nodes at identical display times.
+ // Every *narrative* mark must lie exactly on its physical cast's
+ // character routes. Arc clusters are navigation-only unions of multiple
+ // independent stories, not encounters: a character must not be moved to the
+ // cluster centroid, which would falsely imply simultaneous co-presence.
  for(const mode of ['year','month','week','day']){
   run('closeCard();zoom=zoomModes.'+mode+';center=dayToAxis(21.5);render()');
-  const missing=run(`graphNodes.flatMap(p=>p.cast.filter(id=>{const paths=[...document.querySelectorAll('.thread[data-character="'+id+'"]')];return !paths.some(path=>path.getAttribute('d').includes(p.x.toFixed(2)+','+p.y.toFixed(2)));}).map(character=>({node:p.id,character})))`);
-  assert.equal(missing.length,0,mode+' floating nodes: '+JSON.stringify(missing));
+  const missing=run(`graphNodes.filter(p=>p.kind!=='arc-cluster').flatMap(p=>p.cast.filter(id=>{const paths=[...document.querySelectorAll('.thread[data-character="'+id+'"]')];return !paths.some(path=>path.getAttribute('d').includes(p.x.toFixed(2)+','+p.y.toFixed(2)));}).map(character=>({node:p.id,character})))`);
+  assert.equal(missing.length,0,mode+' floating narrative nodes: '+JSON.stringify(missing));
+  const clusters=run(`graphNodes.filter(p=>p.kind==='arc-cluster').map(p=>({id:p.id,children:p.childCount,arcIds:p.arcs.map(arc=>arc.id),cast:p.cast,expected:[...new Set(p.group.flatMap(event=>event.physical||[]))].filter(id=>selected.has(id))}))`);
+  for(const cluster of clusters){
+   assert(cluster.children>=2,mode+' cluster must group at least two arcs: '+cluster.id);
+   assert.equal(cluster.arcIds.length,cluster.children,mode+' cluster lost an arc reference');
+   assert.deepEqual([...cluster.cast].sort(),[...cluster.expected].sort(),mode+' cluster must retain the original casts without inventing a common meeting');
+  }
  }
  // Reading a title changes neither the map topology nor the view; redraw and
  // small pans keep Y anchors fixed. Going from an episode to its arc keeps lines.
