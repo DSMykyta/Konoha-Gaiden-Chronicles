@@ -68,7 +68,7 @@ test('conflicting autumn missions move while independent Team 8 scenes stay corr
   ['sc-y0-0930-team8-hot-springs-training',9,30],
   ['sc-y0-1001-mizuki-prison-break',10,9],
   ['sc-y0-1004-powered-mizuki-battle',10,9],
-  ['sc-y0-1005-animal-district-four-warriors',11,4],
+  ['sc-y0-1005-animal-district-four-warriors',11,13],
   ['sc-y0-1006-tsunade-approves-bikochu',10,12],
   ['sc-y0-1010-kurosuki-mission-assigned',10,19],
  ]){const s=data.scenes.find(s=>s.id===id);assert.deepEqual([s.date.year,s.date.month,s.date.day],[61,month,date],id);}

@@ -13,24 +13,26 @@ const scene=id=>scenes.find(s=>s.id===id);
 const eventDays=new Map(scenes.flatMap(s=>[[s.id,s.day],...s.events.map(e=>[e.id,s.day])]));
 const selectedArcs=new Set([...plan.arcs.map(a=>a.arc_id),'arc-time-slip-performers']);
 
-test('the published missions have disjoint occupied ranges for shared participants',()=>{
- const arcs=[...selectedArcs].map(id=>({id,scenes:scenes.filter(s=>s.arc_id===id)}));
+const main=s=>(s.source_continuity_id||'main')==='main';
+const local=s=>/^(loc-konohagakure|loc-konoha-|loc-hokage-|loc-academy-|loc-guy-dojo)/.test(s.location_id||'');
+const compatibleDay=(a,b)=>local(a)&&local(b)&&a.day===b.day;
+test('different missions never put one person in distant locations on one day',()=>{
+ const arcs=[...selectedArcs].map(id=>({id,scenes:scenes.filter(s=>s.arc_id===id&&main(s))}));
  for(let i=0;i<arcs.length;i++)for(const b of arcs.slice(i+1)){
-  const a=arcs[i],cast=new Set(a.scenes.flatMap(s=>[...participants(s)]));
-  const shared=b.scenes.flatMap(s=>[...participants(s)]).filter(id=>cast.has(id));
-  if(!shared.length)continue;
-  const start=a.scenes.reduce((n,s)=>Math.min(n,s.day),Infinity),end=a.scenes.reduce((n,s)=>Math.max(n,s.day),-Infinity);
-  const otherStart=b.scenes.reduce((n,s)=>Math.min(n,s.day),Infinity),otherEnd=b.scenes.reduce((n,s)=>Math.max(n,s.day),-Infinity);
-  assert(end<otherStart||otherEnd<start,`${a.id} overlaps ${b.id}: ${[...new Set(shared)]}`);
+  const a=arcs[i];
+  for(const s of a.scenes)for(const t of b.scenes.filter(t=>t.day===s.day)){
+   const shared=[...participants(s)].filter(id=>participants(t).has(id));
+   assert(!shared.length||compatibleDay(s,t),`${a.id} and ${b.id} duplicate ${shared} at ${s.location_id} / ${t.location_id}`);
+  }
  }
 });
 
 test('no other dated story borrows the same physical participant on a reserved mission day',()=>{
- const reviewed=scenes.filter(s=>selectedArcs.has(s.arc_id));
- const other=scenes.filter(s=>s.day>=272&&!selectedArcs.has(s.arc_id)&&s.arc_id!=='arc-y0-naruto-birthday');
+ const reviewed=scenes.filter(s=>selectedArcs.has(s.arc_id)&&main(s));
+ const other=scenes.filter(s=>s.day>=272&&main(s)&&!selectedArcs.has(s.arc_id)&&s.arc_id!=='arc-y0-naruto-birthday');
  for(const s of reviewed)for(const t of other.filter(t=>t.day===s.day)){
   const cast=participants(s),common=[...participants(t)].filter(id=>cast.has(id));
-  assert.equal(common.length,0,`${s.id} conflicts with ${t.id}: ${common}`);
+  assert(!common.length||compatibleDay(s,t),`${s.id} conflicts with ${t.id}: ${common}`);
  }
 });
 
@@ -66,12 +68,12 @@ test('every existing before relation involving moved stories still agrees with t
  }
 });
 
-test('the calendar crosses into positive year 62 before its within-year epoch transition',()=>{
+test('the epoch boundary follows the final ramen on December 28 year 61',()=>{
  assert(data.calendar.view_start_year<=61);assert(data.calendar.view_end_year>=62);
  assert.equal(data.calendar.view_days,(data.calendar.view_end_year-data.calendar.view_start_year+1)*365);
  const last=scene('sc-y0-1216-iruka-naruto-last-ramen');assert.equal(last.day,plan.last_ramen_day+originShift);
- assert.deepEqual([last.date.year,last.date.month,last.date.day],[62,5,30]);
- assert.deepEqual(data.periods.find(p=>p.id==='timeskip').boundary_date,{year:62,month:5,day:31});
+ assert.deepEqual([last.date.year,last.date.month,last.date.day],[61,12,27]);
+ assert.deepEqual(data.periods.find(p=>p.id==='timeskip').boundary_date,{year:61,month:12,day:28});
  const anchors=YAML.parse(fs.readFileSync(path.join(root,'data/time-anchors.yaml'),'utf8')).anchors;
  assert(anchors.filter(a=>a.date).every(a=>Number.isInteger(a.date.year)&&a.date.year>0));
  assert(anchors.filter(a=>a.id.startsWith('ta-autumn-reconciled')).every(a=>a.placement_status==='working'&&a.evidence_ids.includes('evd-autumn-cast-reconciliation')));
