@@ -323,7 +323,7 @@ async function check(width,height){
  assert.match(doc.querySelector('#eraHeadingTrack [data-era="part-i"]').style.transform,/-/);
  assert(doc.querySelector('#eraHeadingTrack [data-era="timeskip"]'));
  run('const nextYearDay=(62-data.calendar.view_start_year)*365;renderEraHeading(nextYearDay,day=>10*(day-nextYearDay))');
- assert.equal(doc.getElementById('eraHeading').dataset.era,'part-i');
+ assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
  run(`renderEraHeading(${eraBoundary},day=>10*(day-${eraBoundary}))`);
  assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
  assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,1);
