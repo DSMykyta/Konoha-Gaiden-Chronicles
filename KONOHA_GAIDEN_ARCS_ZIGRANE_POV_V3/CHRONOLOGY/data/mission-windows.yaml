@@ -878,8 +878,8 @@ scene_days:
   sc-y0-1017-gosunkugi-mission-opening: 247
   sc-y0-1017-sazanami-wounded-identity: 247
   sc-y0-1018-ok-temple-showdown: 248
-  sc-y0-1019-mondai-potcha-infiltration: 287
-  sc-y0-1019-real-guy-lee-return: 287
+  sc-y0-1019-mondai-potcha-infiltration: 170
+  sc-y0-1019-real-guy-lee-return: 170
   sc-y0-1020-birds-mission-arrival: 304
   sc-y0-1020-first-cursed-warrior: 304
   sc-y0-1021-komei-cursed-warrior-investigation: 305
@@ -926,9 +926,9 @@ scene_days:
   sc-y0-1106-akahoshi-star-fusion-battle: 331
   sc-y0-1106-hoshigakure-aftermath: 332
   sc-y0-1106-hoshigakure-trainees-reveal-truth: 331
-  sc-y0-1107-akamaru-antidote: 305
-  sc-y0-1107-akamaru-infection-detected: 304
-  sc-y0-1107-kiba-flees-with-akamaru: 305
+  sc-y0-1107-akamaru-antidote: 153
+  sc-y0-1107-akamaru-infection-detected: 152
+  sc-y0-1107-kiba-flees-with-akamaru: 153
   sc-y0-1108-onbaa-mother-reclaims-onbu: 339
   sc-y0-1108-onbu-attaches-naruto: 336
   sc-y0-1108-onbu-grows-with-naruto: 338
@@ -948,9 +948,9 @@ scene_days:
   sc-y0-1113-greens-captive-rescue: 306
   sc-y0-1113-greens-renga-finale: 306
   sc-y0-1113-haruna-restoration: 307
-  sc-y0-1114-fuku-matchmaking: 284
+  sc-y0-1114-fuku-matchmaking: 191
   sc-y0-1115-lee-dojo-challenge: 288
-  sc-y0-1116-haunted-castle-chameleon: 313
+  sc-y0-1116-haunted-castle-chameleon: 159
   sc-y0-1117-ryudoin-yagura-trap: 280
   sc-y0-1118-ryudoin-finale: 282
   sc-y0-1119-genno-blueprints: 346
@@ -975,7 +975,7 @@ scene_days:
   sc-y0-1125-yakumo-sealed-power: 322
   sc-y0-1126-yakumo-genjutsu-konoha: 322
   sc-y0-1127-yakumo-ido-finale: 322
-  sc-y0-1128-shinemon-tea-bowl: 326
+  sc-y0-1128-shinemon-tea-bowl: 164
   sc-y0-1129-gantetsu-escort: 300
   sc-y0-1130-gantetsu-bewildering-forest: 300
   sc-y0-1201-gantetsu-akio-truth: 301
@@ -1027,8 +1027,8 @@ constraints:
   actors:
   - c-kiba
   - c-akamaru
-  start: 306
-  end: 308
+  start: 154
+  end: 156
   kind: recovery
   note: Три робочі дні після ризикованого антидоту й поранення Кіби.
 scene_day_parts:
