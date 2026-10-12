@@ -7,7 +7,7 @@ title: Ґаара обіймає посаду Кадзекаґе
 description: Своєю працею він здобуває довіру Суни; після призначення підтримує зв’язок із Конохою.
 location_id: loc-sunagakure
 placement:
-  anchor_id: ta-s2-64-08-01
+  anchor_id: ta-s2-64-04-20-gaara-kazekage
   day_offset: 0
 state: active
 presence_coverage: complete

@@ -7,7 +7,7 @@ title: Какаші передає запрошення Аме
 description: Конан видає себе за Ханзо, який уже загинув; Пейн вирішує послати свої команди на іспит.
 location_id: loc-amegakure
 placement:
-  anchor_id: ta-s2-64-10-04
+  anchor_id: ta-s2-64-05-04-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete

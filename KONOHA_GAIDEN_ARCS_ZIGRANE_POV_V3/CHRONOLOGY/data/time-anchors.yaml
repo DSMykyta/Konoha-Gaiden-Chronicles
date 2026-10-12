@@ -6333,11 +6333,11 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-08-01
+  - id: ta-s2-64-04-20-gaara-kazekage
     date:
       year: 64
-      month: 8
-      day: 1
+      month: 4
+      day: 20
     precision: day
     placement_status: working
     basis: project_reconstruction
@@ -6346,10 +6346,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-01
+  - id: ta-s2-64-05-01-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 1
     precision: day
     placement_status: working
@@ -6359,10 +6359,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-04
+  - id: ta-s2-64-05-04-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 4
     precision: day
     placement_status: working
@@ -6372,10 +6372,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-10
+  - id: ta-s2-64-05-10-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 10
     precision: day
     placement_status: working
@@ -6385,10 +6385,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-11
+  - id: ta-s2-64-05-11-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 11
     precision: day
     placement_status: working
@@ -6398,10 +6398,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-12
+  - id: ta-s2-64-05-12-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 12
     precision: day
     placement_status: working
@@ -6411,10 +6411,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-14
+  - id: ta-s2-64-05-14-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 14
     precision: day
     placement_status: working
@@ -6424,10 +6424,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-15
+  - id: ta-s2-64-05-15-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 15
     precision: day
     placement_status: working
@@ -6437,10 +6437,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-16
+  - id: ta-s2-64-05-16-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 16
     precision: day
     placement_status: working
@@ -6450,10 +6450,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-17
+  - id: ta-s2-64-05-17-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 17
     precision: day
     placement_status: working
@@ -6463,10 +6463,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-18
+  - id: ta-s2-64-05-18-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 18
     precision: day
     placement_status: working
@@ -6476,10 +6476,10 @@ anchors:
     review: partial
     reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
       календарний день.'
-  - id: ta-s2-64-10-20
+  - id: ta-s2-64-05-20-second-chunin
     date:
       year: 64
-      month: 10
+      month: 5
       day: 20
     precision: day
     placement_status: working

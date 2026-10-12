@@ -7,7 +7,7 @@ title: Команди збираються на новий іспит
 description: Через відсутність Шикамару Сакура приєднується до Іно й Чоджі; Наруто лишається з Джираєю.
 location_id: loc-konohagakure
 placement:
-  anchor_id: ta-s2-64-10-10
+  anchor_id: ta-s2-64-05-10-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete
