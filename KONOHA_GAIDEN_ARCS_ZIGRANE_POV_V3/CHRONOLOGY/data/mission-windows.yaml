@@ -1,8 +1,3 @@
-schema_version: 2
-working_calendar: true
-calendar_base_year: 61
-scope_start: 266
-arcs:
 - arc_id: arc-y0-mizuki-return
   title: Повернення Мідзукі
   start: 281
@@ -127,6 +122,10 @@ arcs:
   - c-shino
   - c-lee
   - c-kotetsu
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: ''
   note: Ретроспективна місія не має жорсткої дати між Мідзукі й бікоочу.
   scene_ids:
@@ -185,6 +184,10 @@ arcs:
   - c-kiba
   - c-akamaru
   - c-shino
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: Коноха → хатина Садзанамі → храм О.К. → Коноха
   note: 160 згадує напад попередньої ночі; дорога до першої зустрічі має окремий день.
   scene_ids:
@@ -201,6 +204,10 @@ arcs:
   rest_days: 1
   actors:
   - c-konohamaru
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: replaceable
+  naruto_canonical_scenes_preserved: true
   route: ''
   note: Ґай і Лі в першій половині поза селом, повертаються наприкінці; їх не вважаємо учасниками роботи самозванців
     увесь день.
@@ -263,6 +270,10 @@ arcs:
   - c-anko
   - c-ino
   - c-shino
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: Коноха → порт → Мати-острів → Острів Демона → корабель → Коноха
   note: 169–172 дають вечірнє відплиття, пробудження наступного дня, перенесений рейс та ранкову атаку. Орочімару
     залишив лабораторію тижнями раніше; спогад не є його фізичною участю нині.
@@ -395,6 +406,10 @@ arcs:
   - c-kiba
   - c-akamaru
   - c-shino
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: ''
   note: 184 згадує вчорашній напад; лікування не накладається на наступний вихід Кіби та Акамару.
   scene_ids:
@@ -470,6 +485,10 @@ arcs:
   - c-choji
   - c-shikamaru
   - c-shizune
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: Коноха → Країна Овочів → Коноха
   note: 189–191 — безперервні пов’язані бої. Хіната і Юріношін поранені; підкріплення й повернення мають час.
   scene_ids:
@@ -493,6 +512,10 @@ arcs:
   actors:
   - c-ino
   - c-sakura
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: replaceable
+  naruto_canonical_scenes_preserved: true
   route: ''
   note: '192: Фуку просить підмінити її на зустрічі завтра; перший день зарезервовано для підготовки.'
   scene_ids:
@@ -507,6 +530,10 @@ arcs:
   rest_days: 1
   actors:
   - c-tenten
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: replaceable
+  naruto_canonical_scenes_preserved: true
   route: ''
   note: '193: Наруто повертається після тижня доставки листа. Саме доджьо займає останній день, попередні сім —
     окрема підтверджена дорога.'
@@ -525,6 +552,10 @@ arcs:
   - c-kiba
   - c-akamaru
   - c-shino
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: replaceable
+  naruto_canonical_scenes_preserved: true
   route: Коноха → замок → Коноха
   note: Одна пригода в замку; дорога назовні й назад не згорнуті в той самий день.
   scene_ids:
@@ -542,6 +573,10 @@ arcs:
   - c-tenten
   - c-lee
   - c-might-guy
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: Коноха → пастка в Країні Гірських Потоків → Коноха
   note: '195: Яґура вже тиждень у Ґая. Його попереднє перебування локальне й може співіснувати з доджьо. Відділено
     вихід Ґая від огляду Лі; бій 196 безперервний.'
@@ -661,6 +696,10 @@ arcs:
   - c-kiba
   - c-shino
   - c-might-guy
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: ''
   note: '203: нічний візит; 204: наступний ранок. 205–207 продовжують ту саму кризу, тому не вигадано додаткові
     ночівлі під час бою.'
@@ -681,6 +720,10 @@ arcs:
   - c-kiba
   - c-akamaru
   - c-shino
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: Коноха → маршрут Шінемона → Коноха
   note: Бій і доставка — один день між окремими днями дороги.
   scene_ids:
@@ -696,6 +739,10 @@ arcs:
   actors:
   - c-sakura
   - c-lee
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: Річковий супровід → нічний ліс → сховок Шінобазу → Коноха
   note: 209–212 продовжують напад на човен. Нічний ліс 210 і ранкова розв’язка не розтягнуті на чотири доби без
     ознак.
@@ -762,6 +809,10 @@ arcs:
   - c-gaara
   - c-kankuro
   - c-temari
+  naruto_presence_default: excluded
+  naruto_presence_optional: true
+  naruto_original_role: supporting_or_partial
+  naruto_canonical_scenes_preserved: true
   route: Суна й Коноха → переслідування Мацурі → повернення
   note: '216–220: окремі двійки, розвідка й медична підтримка. Тентен не залучена. Не ставимо окремий день на кожну
     серію безперервного бою.'
