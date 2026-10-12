@@ -117,10 +117,10 @@ arcs:
   - sc-alt-y0-1005-gelel-shikamaru-fortress
 - arc_id: arc-y0-animal-district
   title: Нульова ділянка й ніндзя-тварини
-  start: 271
-  end: 271
-  occupied_start: 271
-  occupied_end: 272
+  start: 316
+  end: 316
+  occupied_start: 316
+  occupied_end: 317
   return_days: 0
   rest_days: 1
   actors:
@@ -810,10 +810,10 @@ scene_days:
   sc-alt-y0-1005-gelel-mine-convergence: 303
   sc-alt-y0-1005-gelel-sealing-chamber: 303
   sc-alt-y0-1005-gelel-shikamaru-fortress: 302
-  sc-y0-1005-animal-district-four-warriors: 271
-  sc-y0-1005-animal-district-lee-kangaroo: 271
-  sc-y0-1005-animal-district-naruto-kotetsu-condor: 271
-  sc-y0-1005-animal-district-shino-plants: 271
+  sc-y0-1005-animal-district-four-warriors: 316
+  sc-y0-1005-animal-district-lee-kangaroo: 316
+  sc-y0-1005-animal-district-naruto-kotetsu-condor: 316
+  sc-y0-1005-animal-district-shino-plants: 316
   sc-alt-y0-1012-uzumaki-chronicles-opening: 309
   sc-alt-y0-1013-uzumaki-chronicles-counteroffensive: 312
   sc-alt-y0-1014-uzumaki-chronicles-finale: 315
