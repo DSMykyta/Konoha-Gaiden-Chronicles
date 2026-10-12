@@ -13354,3 +13354,35 @@ notes:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+- id: lnk-alt-s2-ova-field-before-rules
+  kind: before
+  a: sc-alt-s2-ova-chunin-field
+  b: sc-alt-s2-ova-chunin-rules
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-purpose
+- id: lnk-alt-s2-ova-rules-before-fight
+  kind: before
+  a: sc-alt-s2-ova-chunin-rules
+  b: sc-alt-s2-ova-chunin-fight
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-rasengan
+- id: lnk-alt-s2-ova-fight-before-disqualification
+  kind: before
+  a: sc-alt-s2-ova-chunin-fight
+  b: sc-alt-s2-ova-chunin-disqualification
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-ban
+- id: lnk-alt-s2-ova-disqualification-before-promotion
+  kind: before
+  a: sc-alt-s2-ova-chunin-disqualification
+  b: sc-alt-s2-ova-chunin-promotion
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-promotion

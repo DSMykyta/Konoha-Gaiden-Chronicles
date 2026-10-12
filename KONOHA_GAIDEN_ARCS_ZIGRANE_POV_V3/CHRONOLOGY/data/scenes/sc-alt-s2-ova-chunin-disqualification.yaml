@@ -1,0 +1,103 @@
+schema_version: 1
+id: sc-alt-s2-ova-chunin-disqualification
+episode_id: ep-alt-s2-ova-disqualification
+display_rank: 400
+continuity_id: alt-ova-chunin-fire
+title: Режим мудреця призводить до дискваліфікації Наруто
+location_id: loc-suna-chunin-tournament-arena
+placement:
+  anchor_id: ta-alt-s2-66-09-02-chunin-fire
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: partial
+events:
+- id: ev-alt-s2-ova-chunin-disqualification-sage
+  title: Наруто входить у Режим мудреця
+  text: "Наруто збирає природну енергію в поєдинку, не пам’ятаючи заборону сендзюцу, оголошену перед боями."
+  origin: O
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-ban
+- id: ev-alt-s2-ova-chunin-disqualification-decision
+  title: Суддя присуджує перемогу Конохамару
+  text: "Використання забороненого сендзюцу дискваліфікує Наруто; Конохамару стає переможцем."
+  origin: O
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-ban
+relations:
+- id: rel-alt-s2-ova-disqualification-1
+  kind: before
+  a: ev-alt-s2-ova-chunin-disqualification-sage
+  b: ev-alt-s2-ova-chunin-disqualification-decision
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-ban
+presence:
+- id: pr-alt-s2-ova-chunin-disqualification-c-naruto
+  entity_id: c-naruto
+  from: sc-alt-s2-ova-chunin-disqualification.start
+  to: sc-alt-s2-ova-chunin-disqualification.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-ban
+- id: pr-alt-s2-ova-chunin-disqualification-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-alt-s2-ova-chunin-disqualification.start
+  to: sc-alt-s2-ova-chunin-disqualification.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-ban
+- id: pr-alt-s2-ova-chunin-disqualification-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-alt-s2-ova-chunin-disqualification.start
+  to: sc-alt-s2-ova-chunin-disqualification.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-ban
+- id: pr-alt-s2-ova-chunin-disqualification-c-temari
+  entity_id: c-temari
+  from: sc-alt-s2-ova-chunin-disqualification.start
+  to: sc-alt-s2-ova-chunin-disqualification.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-ban

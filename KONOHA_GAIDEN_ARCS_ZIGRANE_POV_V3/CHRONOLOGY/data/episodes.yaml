@@ -3467,89 +3467,89 @@ episodes:
   title: Ґаара обіймає посаду Кадзекаґе
   description: Своєю працею він здобуває довіру Суни; після призначення підтримує зв’язок із Конохою.
 - id: ep-s2-exam-cohost-plan
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Цунаде й Ґаара планують спільний іспит
   description: Перший етап має відбутися в Конохі, другий — у Суні; обоє прагнуть виявити загрози селам.
 - id: ep-s2-kakashi-ame-invitation
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Какаші передає запрошення Аме
   description: Конан видає себе за Ханзо, який уже загинув; Пейн вирішує послати свої команди на іспит.
 - id: ep-s2-second-exam-arrivals
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Команди збираються на новий іспит
   description: Через відсутність Шикамару Сакура приєднується до Іно й Чоджі; Наруто лишається з Джираєю.
 - id: ep-s2-second-exam-written
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Шикамару розділяє учасників по кімнатах
   description: Команда має узгодити суму балів; Неджі знаходить спосіб передавати відповіді стуком. Шикамару перевіряє
     рішення щодо жертви товариша; після завершення учасники отримують маршрут до Суни.
 - id: ep-s2-second-exam-race
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Геніни вирушають до Суни
   description: Темарі оголошує обмеження часу; дорога займає щонайменше три доби.
 - id: ep-s2-gaara-assassination-attempt
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Канкуро перехоплює вбивцю
   description: Нападник намагається підірвати себе; Темарі рятує брата, Ґаара відмовляється ховатися.
 - id: ep-s2-demon-desert-start
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Команда Ґая зустрічає Шіру
   description: Шіра допомагає іншим командам Суни; Лі просить про чесний двобій. Шіра блокує тенкецу Лі, але він
     знаходить спосіб продовжити бій; суперники визнають силу один одного.
 - id: ep-s2-team8-scroll-pursuit
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Команда Кадзамi краде сувій
   description: Запахові пастки та ілюзії затримують Команду 8. Комахи, Б’якуґан та нюх приводять її до перемоги.
 - id: ep-s2-tenten-ajisai-ruins
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Тентен і Аджісай падають під землю
   description: Вони змушені співпрацювати, щоб подолати пастки та гігантських мурах. Подруги з двох команд знаходять
     спосіб звільнитися.
 - id: ep-s2-tenten-ajisai-rescue
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Команди витягають товаришок
   description: Після спільної допомоги вони відмовляються продовжувати бій та обіцяють зустрітися на наступному
     етапі.
 - id: ep-s2-ino-ameno
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Іно координує команду через свідомість
   description: Бій біля оази випробовує медичні навички Сакури й техніки Яманака. Після лікування вони розходяться
     з обома потрібними сувоями.
 - id: ep-s2-sakura-saya-puppet
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Сая захоплює рухи Іно й Чоджі
   description: Сакура слабшає через накопичення чакри для печаті, але продовжує захищати команду. Вона розбиває
     ворогів і витягає отруту з товаришів.
 - id: ep-s2-suigetsu-karin-training
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Орочімару випробовує Суйґецу й Карін
   description: Карін зупиняє втечу Суйґецу своїми чакровими ланцюгами.
 - id: ep-s2-gaara-fu-hoichi
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Ґаара рятує учасників під час бурі
   description: Фу допомагає Мацурі; Хоічі починає витягати чакру хвостатих із Ґаари та Фу.
 - id: ep-s2-neji-saves-jinchuriki
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Неджі обирає порятунок замість завершення іспиту
   description: Б’якуґан показує канали витягання чакри; М’який Кулак розриває техніку. Наставники прибувають після
     завершення небезпеки.
 - id: ep-s2-second-exam-promotions
-  arc_id: arc-s2-timeskip
+  arc_id: arc-s2-second-chunin-exams
   continuity_id: main
   title: Цунаде підвищує учасників за звітами
   description: Після скасування третього етапу трійці стають чюнінами; Неджі отримує звання джоніна.
@@ -4847,3 +4847,23 @@ episodes:
   continuity_id: main
   title: Пакура тренує Макі після перемоги над Івою
   description: Учениця просить продовжити заняття; наставниця закликає її стати сильною заради близьких і села.
+- id: ep-alt-s2-ova-exam-field
+  arc_id: arc-alt-s2-ova-chunin-fire
+  continuity_id: alt-ova-chunin-fire
+  title: Другий етап у Суні
+  description: Конохамару, Моегі та Удон проходять випробування серед небезпек полігону. Наруто відбиває напад чудовиська, після чого команда продовжує шлях на відбіркові бої.
+- id: ep-alt-s2-ova-exam-finals-rules
+  arc_id: arc-alt-s2-ova-chunin-fire
+  continuity_id: alt-ova-chunin-fire
+  title: Правила позачергового іспиту
+  description: Темарі оголошує, що цей іспит має підготувати більше шинобі до війни. Вона пояснює правила, та Наруто з Конохамару сперечаються, не дослухавши заборони.
+- id: ep-alt-s2-ova-naruto-konohamaru-fight
+  arc_id: arc-alt-s2-ova-chunin-fire
+  continuity_id: alt-ova-chunin-fire
+  title: Наруто проти Конохамару
+  description: Конохамару використовує Великий Расенґан, тіньових клонів та успадковані техніки свого клану. Попри перевагу Наруто він завдає одного удару.
+- id: ep-alt-s2-ova-disqualification
+  arc_id: arc-alt-s2-ova-chunin-fire
+  continuity_id: alt-ova-chunin-fire
+  title: Заборонена техніка й новий чунін
+  description: Наруто входить у Режим мудреця й порушує оголошене правило. Суддя віддає перемогу Конохамару, який отримує звання чуніна.

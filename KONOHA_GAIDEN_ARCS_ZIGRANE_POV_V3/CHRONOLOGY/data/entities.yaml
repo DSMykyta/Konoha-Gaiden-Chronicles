@@ -845,6 +845,18 @@ entities:
     name: "Akatsuki"
     aliases:
       - "Акацукі"
+  - id: loc-suna-chunin-second-course
+    kind: location
+    name: Suna Chunin exam second stage ground
+    aliases:
+      - Полігон другого етапу іспиту Суни
+    parent_id: loc-sunagakure
+  - id: loc-suna-chunin-tournament-arena
+    kind: location
+    name: Suna Chunin exam tournament ground
+    aliases:
+      - Арена іспиту на чуніна в Суні
+    parent_id: loc-sunagakure
   - id: "loc-sunagakure"
     kind: "location"
     name: "Sunagakure"

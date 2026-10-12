@@ -1,0 +1,103 @@
+schema_version: 1
+id: sc-alt-s2-ova-chunin-field
+episode_id: ep-alt-s2-ova-exam-field
+display_rank: 100
+continuity_id: alt-ova-chunin-fire
+title: Наруто рятує команду Конохамару на другому етапі
+location_id: loc-suna-chunin-second-course
+placement:
+  anchor_id: ta-alt-s2-66-09-02-chunin-fire
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: partial
+events:
+- id: ev-alt-s2-ova-chunin-field-monster
+  title: Конохамару, Моегі й Удон опиняються під загрозою
+  text: "Команда Конохамару намагається пройти другий етап, але на полігоні натрапляє на небезпечне чудовисько."
+  origin: O
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-field
+- id: ev-alt-s2-ova-chunin-field-rescue
+  title: Наруто рятує генінів та залишає їх продовжувати іспит
+  text: "Наруто долає супротивника, а Конохамару сердиться, що наставник випередив його; команда йде далі."
+  origin: O
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-field
+relations:
+- id: rel-alt-s2-ova-field-1
+  kind: before
+  a: ev-alt-s2-ova-chunin-field-monster
+  b: ev-alt-s2-ova-chunin-field-rescue
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-field
+presence:
+- id: pr-alt-s2-ova-chunin-field-c-naruto
+  entity_id: c-naruto
+  from: sc-alt-s2-ova-chunin-field.start
+  to: sc-alt-s2-ova-chunin-field.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-field
+- id: pr-alt-s2-ova-chunin-field-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-alt-s2-ova-chunin-field.start
+  to: sc-alt-s2-ova-chunin-field.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-field
+- id: pr-alt-s2-ova-chunin-field-c-moegi
+  entity_id: c-moegi
+  from: sc-alt-s2-ova-chunin-field.start
+  to: sc-alt-s2-ova-chunin-field.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-field
+- id: pr-alt-s2-ova-chunin-field-c-udon
+  entity_id: c-udon
+  from: sc-alt-s2-ova-chunin-field.start
+  to: sc-alt-s2-ova-chunin-field.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-field

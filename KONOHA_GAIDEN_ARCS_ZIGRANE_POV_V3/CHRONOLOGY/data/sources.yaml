@@ -3375,6 +3375,16 @@ sources:
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md
     revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
 
+  - id: src-ova-chunin-fire
+    type: ova
+    title: 'Chūnin Exam on Fire! Naruto vs. Konohamaru!'
+    url: https://naruto.fandom.com/wiki/Ch%C5%ABnin_Exam_on_Fire%21_Naruto_vs._Konohamaru%21
+    locator_status: ova_known_timestamps_pending
+  - id: src-ova-chunin-fire-transcript
+    type: subtitle_reference
+    title: 'Chūnin Exam on Fire! — English subtitle transcript'
+    url: https://www.subtitlecat.com/subs/592/Naruto%20OVA%2007%20-%20Ch%C5%ABnin%20Exam%20on%20Fire%21%20Naruto%20vs.html
+    locator_status: transcript_without_reliable_timestamps
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -13267,3 +13277,75 @@ evidence:
       нових пригод.'
     basis: editorial
     review: accepted
+  - id: evd-ova-chunin-fire-purpose
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA: Темарі пояснює військову мету позачергового іспиту та правила; 00:01:53–00:02:48"
+    claim: "Новий іспит Суни створює резерв шинобі перед війною."
+    basis: source
+    review: partial
+  - id: evd-ova-chunin-fire-field
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA, вступ: команда Конохамару в другому випробуванні; Наруто долає чудовисько"
+    claim: "Конохамару, Моегі й Удон продовжують іспит після втручання Наруто."
+    basis: source
+    review: partial
+  - id: evd-ova-chunin-fire-finals
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA, оголошення фіналістів та пари; після другого етапу"
+    claim: "Темарі оголошує бій Наруто проти Конохамару, обидва не чують частини правил."
+    basis: source
+    review: partial
+  - id: evd-ova-chunin-fire-rasengan
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA, початок поєдинку"
+    claim: "Конохамару застосовує Великий Расенґан та клони, Наруто відповідає власними техніками."
+    basis: source
+    review: partial
+  - id: evd-ova-chunin-fire-tenacity
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA, продовження бою"
+    claim: "Конохамару підіймається після падіння й прагне завдати суперникові удару."
+    basis: source
+    review: partial
+  - id: evd-ova-chunin-fire-sarutobi
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA, друга половина бою"
+    claim: "Конохамару поєднує Тіньові копії сюрікенів, вогняний попіл та удар."
+    basis: source
+    review: partial
+  - id: evd-ova-chunin-fire-ban
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA, фінальна частина поєдинку"
+    claim: "Режим мудреця заборонений: Наруто дискваліфікують."
+    basis: source
+    review: partial
+  - id: evd-ova-chunin-fire-promotion
+    source_ids:
+    - src-ova-chunin-fire-transcript
+    - src-ova-chunin-fire
+    source_id: src-ova-chunin-fire-transcript
+    locator: "OVA, фінал"
+    claim: "Конохамару отримує ранг чуніна й дражнить Наруто."
+    basis: source
+    review: partial

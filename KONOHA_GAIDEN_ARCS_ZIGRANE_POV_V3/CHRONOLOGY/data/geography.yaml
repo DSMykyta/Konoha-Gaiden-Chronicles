@@ -50,6 +50,8 @@ kinds:
   loc-land-of-mountain-streams: country
   loc-konohagakure: settlement
   loc-sunagakure: settlement
+  loc-suna-chunin-second-course: area
+  loc-suna-chunin-tournament-arena: area
   loc-takigakure: settlement
   loc-tanzaku: settlement
   loc-academy-classroom: room
@@ -432,6 +434,8 @@ parents:
   geo-konoha-academy: loc-konohagakure
   loc-konohagakure: loc-land-of-fire
   loc-sunagakure: geo-land-wind
+  loc-suna-chunin-second-course: loc-sunagakure
+  loc-suna-chunin-tournament-arena: loc-sunagakure
   loc-takigakure: geo-land-waterfalls
   loc-tanzaku: loc-land-of-fire
   loc-forest-death: loc-konohagakure

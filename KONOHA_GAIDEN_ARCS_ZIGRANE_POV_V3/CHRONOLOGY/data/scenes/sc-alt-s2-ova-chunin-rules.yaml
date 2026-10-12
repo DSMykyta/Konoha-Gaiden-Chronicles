@@ -1,0 +1,117 @@
+schema_version: 1
+id: sc-alt-s2-ova-chunin-rules
+episode_id: ep-alt-s2-ova-exam-finals-rules
+display_rank: 200
+continuity_id: alt-ova-chunin-fire
+title: Темарі оголошує фінальні правила й перший двобій
+location_id: loc-suna-chunin-tournament-arena
+placement:
+  anchor_id: ta-alt-s2-66-09-02-chunin-fire
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: partial
+events:
+- id: ev-alt-s2-ova-chunin-rules-alliance
+  title: Темарі пояснює мету позачергового іспиту
+  text: "Учасники дізнаються, що іспит має поповнити сили Альянсу шинобі перед майбутньою війною."
+  origin: O
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-purpose
+- id: ev-alt-s2-ova-chunin-rules-pairing
+  title: Наруто й Конохамару стають суперниками в першому бою
+  text: "Наруто й Конохамару сперечаються, пропускають частину інструкцій; Темарі оголошує їхній двобій."
+  origin: O
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-finals
+relations:
+- id: rel-alt-s2-ova-rules-1
+  kind: before
+  a: ev-alt-s2-ova-chunin-rules-alliance
+  b: ev-alt-s2-ova-chunin-rules-pairing
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-finals
+presence:
+- id: pr-alt-s2-ova-chunin-rules-c-naruto
+  entity_id: c-naruto
+  from: sc-alt-s2-ova-chunin-rules.start
+  to: sc-alt-s2-ova-chunin-rules.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-purpose
+- id: pr-alt-s2-ova-chunin-rules-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-alt-s2-ova-chunin-rules.start
+  to: sc-alt-s2-ova-chunin-rules.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-purpose
+- id: pr-alt-s2-ova-chunin-rules-c-temari
+  entity_id: c-temari
+  from: sc-alt-s2-ova-chunin-rules.start
+  to: sc-alt-s2-ova-chunin-rules.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-purpose
+- id: pr-alt-s2-ova-chunin-rules-c-sakura
+  entity_id: c-sakura
+  from: sc-alt-s2-ova-chunin-rules.start
+  to: sc-alt-s2-ova-chunin-rules.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-purpose
+- id: pr-alt-s2-ova-chunin-rules-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-alt-s2-ova-chunin-rules.start
+  to: sc-alt-s2-ova-chunin-rules.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-purpose

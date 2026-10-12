@@ -1,0 +1,74 @@
+schema_version: 1
+id: sc-alt-s2-ova-chunin-promotion
+episode_id: ep-alt-s2-ova-disqualification
+display_rank: 500
+continuity_id: alt-ova-chunin-fire
+title: Конохамару отримує звання чуніна
+location_id: loc-suna-chunin-tournament-arena
+placement:
+  anchor_id: ta-alt-s2-66-09-02-chunin-fire
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: partial
+events:
+- id: ev-alt-s2-ova-chunin-promotion-promotion
+  title: Конохамару одержує ранг чуніна
+  text: "Какаші й Ґаара втішають Наруто після дискваліфікації; Конохамару отримує звання чуніна й називає Наруто підлеглим."
+  origin: O
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-promotion
+relations:
+presence:
+- id: pr-alt-s2-ova-chunin-promotion-c-naruto
+  entity_id: c-naruto
+  from: sc-alt-s2-ova-chunin-promotion.start
+  to: sc-alt-s2-ova-chunin-promotion.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-promotion
+- id: pr-alt-s2-ova-chunin-promotion-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-alt-s2-ova-chunin-promotion.start
+  to: sc-alt-s2-ova-chunin-promotion.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-promotion
+- id: pr-alt-s2-ova-chunin-promotion-c-kakashi
+  entity_id: c-kakashi
+  from: sc-alt-s2-ova-chunin-promotion.start
+  to: sc-alt-s2-ova-chunin-promotion.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-promotion
+- id: pr-alt-s2-ova-chunin-promotion-c-gaara
+  entity_id: c-gaara
+  from: sc-alt-s2-ova-chunin-promotion.start
+  to: sc-alt-s2-ova-chunin-promotion.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-promotion

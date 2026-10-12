@@ -1,0 +1,141 @@
+schema_version: 1
+id: sc-alt-s2-ova-chunin-fight
+episode_id: ep-alt-s2-ova-naruto-konohamaru-fight
+display_rank: 300
+continuity_id: alt-ova-chunin-fire
+title: Конохамару намагається перемогти Наруто в двобої
+location_id: loc-suna-chunin-tournament-arena
+placement:
+  anchor_id: ta-alt-s2-66-09-02-chunin-fire
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: partial
+events:
+- id: ev-alt-s2-ova-chunin-fight-rasengan
+  title: Конохамару відкриває бій Великим Расенґаном
+  text: "Конохамару атакує Великим Расенґаном, якого Наруто не вчив його особисто, а потім суперники застосовують тіньових клонів."
+  origin: O
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-rasengan
+- id: ev-alt-s2-ova-chunin-fight-stands
+  title: Конохамару підіймається й відмовляється здаватися
+  text: "Після зіткнення клонів Конохамару лежить на землі, але підіймається на перевірку судді та продовжує бій."
+  origin: O
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-tenacity
+- id: ev-alt-s2-ova-chunin-fight-sarutobi
+  title: Конохамару застосовує техніки Хірузена й Асуми
+  text: "Конохамару множить сюрікени тіньовими копіями, підпалює хмару попелу й змушує Наруто ухилятися."
+  origin: O
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-sarutobi
+- id: ev-alt-s2-ova-chunin-fight-punch
+  title: Конохамару таки завдає Наруто удару
+  text: "Попри виснаження Конохамару знаходить нагоду влучити; Наруто визнає його силу та готується відповідати."
+  origin: O
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: observer
+    mode: physical
+  evidence_ids:
+  - evd-ova-chunin-fire-sarutobi
+relations:
+- id: rel-alt-s2-ova-fight-1
+  kind: before
+  a: ev-alt-s2-ova-chunin-fight-rasengan
+  b: ev-alt-s2-ova-chunin-fight-stands
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-tenacity
+- id: rel-alt-s2-ova-fight-2
+  kind: before
+  a: ev-alt-s2-ova-chunin-fight-stands
+  b: ev-alt-s2-ova-chunin-fight-sarutobi
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-sarutobi
+- id: rel-alt-s2-ova-fight-3
+  kind: before
+  a: ev-alt-s2-ova-chunin-fight-sarutobi
+  b: ev-alt-s2-ova-chunin-fight-punch
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-ova-chunin-fire-sarutobi
+presence:
+- id: pr-alt-s2-ova-chunin-fight-c-naruto
+  entity_id: c-naruto
+  from: sc-alt-s2-ova-chunin-fight.start
+  to: sc-alt-s2-ova-chunin-fight.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-rasengan
+- id: pr-alt-s2-ova-chunin-fight-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-alt-s2-ova-chunin-fight.start
+  to: sc-alt-s2-ova-chunin-fight.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-rasengan
+- id: pr-alt-s2-ova-chunin-fight-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-alt-s2-ova-chunin-fight.start
+  to: sc-alt-s2-ova-chunin-fight.end
+  basis: source
+  review: partial
+  evidence_ids:
+  - evd-ova-chunin-fire-rasengan
