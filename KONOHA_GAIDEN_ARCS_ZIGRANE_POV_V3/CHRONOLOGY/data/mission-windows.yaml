@@ -117,14 +117,13 @@ arcs:
   - sc-alt-y0-1005-gelel-shikamaru-fortress
 - arc_id: arc-y0-animal-district
   title: Нульова ділянка й ніндзя-тварини
-  start: 307
-  end: 307
-  occupied_start: 307
-  occupied_end: 308
+  start: 271
+  end: 271
+  occupied_start: 271
+  occupied_end: 272
   return_days: 0
   rest_days: 1
   actors:
-  - c-naruto
   - c-shino
   - c-lee
   - c-kotetsu
@@ -154,10 +153,10 @@ arcs:
   - sc-alt-y0-1014-uzumaki-chronicles-finale
 - arc_id: arc-y0-academy-survival
   title: Наруто веде учнів Академії
-  start: 318
-  end: 318
-  occupied_start: 318
-  occupied_end: 319
+  start: 300
+  end: 300
+  occupied_start: 300
+  occupied_end: 301
   return_days: 0
   rest_days: 1
   actors:
@@ -175,17 +174,17 @@ arcs:
   - sc-y0-1015-academy-survival-mountain
 - arc_id: arc-y0-gosunkugi
   title: Погоня за Ґосункуґі
-  start: 320
-  end: 322
-  occupied_start: 320
-  occupied_end: 324
+  start: 266
+  end: 268
+  occupied_start: 266
+  occupied_end: 270
   return_days: 1
   rest_days: 1
   actors:
-  - c-naruto
   - c-hinata
   - c-kiba
   - c-akamaru
+  - c-shino
   route: Коноха → хатина Садзанамі → храм О.К. → Коноха
   note: 160 згадує напад попередньої ночі; дорога до першої зустрічі має окремий день.
   scene_ids:
@@ -194,14 +193,14 @@ arcs:
   - sc-y0-1018-ok-temple-showdown
 - arc_id: arc-y0-guy-lee-impostors
   title: Самозванці Ґай і Лі
-  start: 325
-  end: 325
-  occupied_start: 325
-  occupied_end: 326
+  start: 266
+  end: 266
+  occupied_start: 266
+  occupied_end: 267
   return_days: 0
   rest_days: 1
   actors:
-  - c-naruto
+  - c-konohamaru
   route: ''
   note: Ґай і Лі в першій половині поза селом, повертаються наприкінці; їх не вважаємо учасниками роботи самозванців
     увесь день.
@@ -210,10 +209,10 @@ arcs:
   - sc-y0-1019-real-guy-lee-return
 - arc_id: arc-y0-land-of-birds
   title: Проклятий Воїн Країни Птахів
-  start: 327
-  end: 333
-  occupied_start: 327
-  occupied_end: 336
+  start: 302
+  end: 308
+  occupied_start: 302
+  occupied_end: 311
   return_days: 2
   rest_days: 1
   actors:
@@ -235,10 +234,10 @@ arcs:
   - sc-y0-1023-toki-hoki-reveal
 - arc_id: arc-y0-ayame-rescue
   title: Порятунок Аяме
-  start: 337
-  end: 338
-  occupied_start: 337
-  occupied_end: 339
+  start: 312
+  end: 313
+  occupied_start: 312
+  occupied_end: 314
   return_days: 0
   rest_days: 1
   actors:
@@ -254,14 +253,13 @@ arcs:
   - sc-y0-1024-ramen-training
 - arc_id: arc-y0-kaima-sea
   title: Кайма Країни Моря
-  start: 340
-  end: 344
-  occupied_start: 340
-  occupied_end: 348
+  start: 295
+  end: 299
+  occupied_start: 295
+  occupied_end: 303
   return_days: 3
   rest_days: 1
   actors:
-  - c-naruto
   - c-anko
   - c-ino
   - c-shino
@@ -282,10 +280,10 @@ arcs:
   - sc-y0-1029-umibozu-battle
 - arc_id: arc-y0-kunihisa
   title: Куніхіса й життя шинобі
-  start: 349
-  end: 349
-  occupied_start: 349
-  occupied_end: 350
+  start: 315
+  end: 315
+  occupied_start: 315
+  occupied_end: 316
   return_days: 0
   rest_days: 1
   actors:
@@ -297,10 +295,10 @@ arcs:
   - sc-y0-1030-kunihisa-ninja-day
 - arc_id: arc-y0-buried-gold
   title: Скарб і двійники Кедоїн
-  start: 351
-  end: 353
-  occupied_start: 351
-  occupied_end: 354
+  start: 317
+  end: 319
+  occupied_start: 317
+  occupied_end: 320
   return_days: 0
   rest_days: 1
   actors:
@@ -342,10 +340,10 @@ arcs:
   - sc-alt-y0-1103-uc2-master-puppet-finale
 - arc_id: arc-y0-postman
   title: Рукопис Джираї й листоноші
-  start: 365
-  end: 367
-  occupied_start: 365
-  occupied_end: 369
+  start: 321
+  end: 323
+  occupied_start: 321
+  occupied_end: 325
   return_days: 1
   rest_days: 1
   actors:
@@ -360,10 +358,10 @@ arcs:
   - sc-period-postman-morning-mixup
 - arc_id: arc-y0-hoshigakure
   title: Зірка Хошіґакуре
-  start: 370
-  end: 376
-  occupied_start: 370
-  occupied_end: 379
+  start: 326
+  end: 332
+  occupied_start: 326
+  occupied_end: 335
   return_days: 2
   rest_days: 1
   actors:
@@ -387,16 +385,16 @@ arcs:
   - sc-y0-1106-hoshigakure-trainees-reveal-truth
 - arc_id: arc-y0-akamaru-infection
   title: Хвороба Акамару
-  start: 380
-  end: 381
-  occupied_start: 380
-  occupied_end: 382
+  start: 304
+  end: 305
+  occupied_start: 304
+  occupied_end: 306
   return_days: 0
   rest_days: 1
   actors:
-  - c-naruto
   - c-kiba
   - c-akamaru
+  - c-shino
   route: ''
   note: 184 згадує вчорашній напад; лікування не накладається на наступний вихід Кіби та Акамару.
   scene_ids:
@@ -405,10 +403,10 @@ arcs:
   - sc-y0-1107-kiba-flees-with-akamaru
 - arc_id: arc-y0-onba
   title: Наруто й Онбу
-  start: 383
-  end: 386
-  occupied_start: 383
-  occupied_end: 388
+  start: 336
+  end: 339
+  occupied_start: 336
+  occupied_end: 341
   return_days: 1
   rest_days: 1
   actors:
@@ -422,10 +420,10 @@ arcs:
   - sc-y0-1108-onbu-grows-with-naruto
 - arc_id: arc-y0-kagetsu-funeral
   title: Постановний похорон Каґецу
-  start: 389
-  end: 390
-  occupied_start: 389
-  occupied_end: 392
+  start: 342
+  end: 343
+  occupied_start: 342
+  occupied_end: 345
   return_days: 1
   rest_days: 1
   actors:
@@ -461,14 +459,13 @@ arcs:
   - sc-alt-y0-1112-mugen-castle-finale
 - arc_id: arc-y0-land-of-greens
   title: Харуна й Країна Овочів
-  start: 398
-  end: 403
-  occupied_start: 398
-  occupied_end: 407
+  start: 302
+  end: 307
+  occupied_start: 302
+  occupied_end: 311
   return_days: 2
   rest_days: 2
   actors:
-  - c-naruto
   - c-hinata
   - c-choji
   - c-shikamaru
@@ -487,29 +484,29 @@ arcs:
   - sc-y0-1113-haruna-restoration
 - arc_id: arc-y0-fuku-matchmaking
   title: Сватання Фуку
-  start: 408
-  end: 409
-  occupied_start: 408
-  occupied_end: 411
+  start: 283
+  end: 284
+  occupied_start: 283
+  occupied_end: 286
   return_days: 1
   rest_days: 1
   actors:
-  - c-naruto
   - c-ino
+  - c-sakura
   route: ''
   note: '192: Фуку просить підмінити її на зустрічі завтра; перший день зарезервовано для підготовки.'
   scene_ids:
   - sc-y0-1114-fuku-matchmaking
 - arc_id: arc-y0-lee-dojo
   title: Доджьо Рока Лі
-  start: 412
-  end: 419
-  occupied_start: 412
-  occupied_end: 420
+  start: 266
+  end: 266
+  occupied_start: 266
+  occupied_end: 267
   return_days: 0
   rest_days: 1
   actors:
-  - c-naruto
+  - c-tenten
   route: ''
   note: '193: Наруто повертається після тижня доставки листа. Саме доджьо займає останній день, попередні сім —
     окрема підтверджена дорога.'
@@ -517,31 +514,30 @@ arcs:
   - sc-y0-1115-lee-dojo-challenge
 - arc_id: arc-y0-haunted-castle
   title: Проклятий замок
-  start: 421
-  end: 423
-  occupied_start: 421
-  occupied_end: 424
+  start: 312
+  end: 314
+  occupied_start: 312
+  occupied_end: 315
   return_days: 0
   rest_days: 1
   actors:
-  - c-naruto
   - c-hinata
   - c-kiba
   - c-akamaru
+  - c-shino
   route: Коноха → замок → Коноха
   note: Одна пригода в замку; дорога назовні й назад не згорнуті в той самий день.
   scene_ids:
   - sc-y0-1116-haunted-castle-chameleon
 - arc_id: arc-y0-ryudoin
   title: Помста братів Рюдоін
-  start: 425
-  end: 427
-  occupied_start: 425
-  occupied_end: 430
+  start: 281
+  end: 283
+  occupied_start: 281
+  occupied_end: 286
   return_days: 1
   rest_days: 2
   actors:
-  - c-naruto
   - c-neji
   - c-tenten
   - c-lee
@@ -555,10 +551,10 @@ arcs:
   - sc-period-ryudoin-foreign-trap
 - arc_id: arc-y0-genno
   title: Пастки Ґенно
-  start: 431
-  end: 433
-  occupied_start: 431
-  occupied_end: 435
+  start: 346
+  end: 348
+  occupied_start: 346
+  occupied_end: 350
   return_days: 0
   rest_days: 2
   actors:
@@ -652,14 +648,13 @@ arcs:
   - sc-alt-y0-1122-jiraiya-bando
 - arc_id: arc-y0-yakumo-kurenai
   title: Якумо й Куренай
-  start: 476
-  end: 477
-  occupied_start: 476
-  occupied_end: 479
+  start: 291
+  end: 292
+  occupied_start: 291
+  occupied_end: 294
   return_days: 0
   rest_days: 2
   actors:
-  - c-naruto
   - c-sakura
   - c-kurenai
   - c-hinata
@@ -676,30 +671,29 @@ arcs:
   - sc-y0-1127-yakumo-ido-finale
 - arc_id: arc-y0-shinemon-bowl
   title: Коштовна чаша Шінемона
-  start: 480
-  end: 482
-  occupied_start: 480
-  occupied_end: 483
+  start: 307
+  end: 309
+  occupied_start: 307
+  occupied_end: 310
   return_days: 0
   rest_days: 1
   actors:
-  - c-naruto
   - c-kiba
   - c-akamaru
+  - c-shino
   route: Коноха → маршрут Шінемона → Коноха
   note: Бій і доставка — один день між окремими днями дороги.
   scene_ids:
   - sc-y0-1128-shinemon-tea-bowl
 - arc_id: arc-y0-gantetsu
   title: Ґантецу й сироти
-  start: 484
-  end: 485
-  occupied_start: 484
-  occupied_end: 488
+  start: 266
+  end: 267
+  occupied_start: 266
+  occupied_end: 270
   return_days: 2
   rest_days: 1
   actors:
-  - c-naruto
   - c-sakura
   - c-lee
   route: Річковий супровід → нічний ліс → сховок Шінобазу → Коноха
@@ -729,10 +723,10 @@ arcs:
   - sc-alt-y0-1203-ninja-destiny2eu-finale
 - arc_id: arc-y0-menma
   title: Наруто й Менма
-  start: 497
-  end: 501
-  occupied_start: 497
-  occupied_end: 505
+  start: 351
+  end: 355
+  occupied_start: 351
+  occupied_end: 359
   return_days: 2
   rest_days: 2
   actors:
@@ -748,14 +742,13 @@ arcs:
   - sc-y0-1205-menma-sacrifice
 - arc_id: arc-y0-matsuri-rescue
   title: Порятунок Мацурі
-  start: 506
-  end: 509
-  occupied_start: 506
-  occupied_end: 513
+  start: 273
+  end: 276
+  occupied_start: 273
+  occupied_end: 280
   return_days: 2
   rest_days: 2
   actors:
-  - c-naruto
   - c-shikamaru
   - c-ino
   - c-choji
@@ -817,98 +810,98 @@ scene_days:
   sc-alt-y0-1005-gelel-mine-convergence: 303
   sc-alt-y0-1005-gelel-sealing-chamber: 303
   sc-alt-y0-1005-gelel-shikamaru-fortress: 302
-  sc-y0-1005-animal-district-four-warriors: 307
-  sc-y0-1005-animal-district-lee-kangaroo: 307
-  sc-y0-1005-animal-district-naruto-kotetsu-condor: 307
-  sc-y0-1005-animal-district-shino-plants: 307
+  sc-y0-1005-animal-district-four-warriors: 271
+  sc-y0-1005-animal-district-lee-kangaroo: 271
+  sc-y0-1005-animal-district-naruto-kotetsu-condor: 271
+  sc-y0-1005-animal-district-shino-plants: 271
   sc-alt-y0-1012-uzumaki-chronicles-opening: 309
   sc-alt-y0-1013-uzumaki-chronicles-counteroffensive: 312
   sc-alt-y0-1014-uzumaki-chronicles-finale: 315
-  sc-y0-1015-academy-lead-assignment: 318
-  sc-y0-1015-academy-lead-debrief: 318
-  sc-y0-1015-academy-survival-mountain: 318
-  sc-y0-1017-gosunkugi-mission-opening: 321
-  sc-y0-1017-sazanami-wounded-identity: 321
-  sc-y0-1018-ok-temple-showdown: 322
-  sc-y0-1019-mondai-potcha-infiltration: 325
-  sc-y0-1019-real-guy-lee-return: 325
-  sc-y0-1020-birds-mission-arrival: 329
-  sc-y0-1020-first-cursed-warrior: 329
-  sc-y0-1021-komei-cursed-warrior-investigation: 330
-  sc-y0-1021-naruto-prison-cursed-warrior: 331
-  sc-y0-1022-komei-rescue-moso-confrontation: 332
-  sc-y0-1023-birds-final-battle: 332
-  sc-y0-1023-toki-daimyo-aftermath: 333
-  sc-y0-1023-toki-hoki-reveal: 332
-  sc-y0-1024-ayame-kidnapped: 337
-  sc-y0-1024-cooking-nin-showdown: 338
-  sc-y0-1024-ramen-training: 337
-  sc-y0-1026-isaribi-saves-naruto: 342
-  sc-y0-1026-kaima-mission-departure: 340
-  sc-y0-1027-anko-memory-lab: 343
-  sc-y0-1027-isaribi-kaima-reveal: 343
-  sc-y0-1028-demon-island-infiltration: 343
-  sc-y0-1028-government-ship-attack: 344
-  sc-y0-1028-isaribi-breaks-with-amachi: 344
-  sc-y0-1029-amachi-defeat: 344
-  sc-y0-1029-anko-memory-resolution: 344
-  sc-y0-1029-isaribi-anko-aftermath: 344
-  sc-y0-1029-umibozu-battle: 344
-  sc-y0-1030-kunihisa-kidnapping-rescue: 349
-  sc-y0-1030-kunihisa-ninja-day: 349
-  sc-y0-1031-buried-gold-assignment: 351
-  sc-y0-1031-buried-gold-team-collapse: 352
-  sc-y0-1031-kedoin-capture-copies: 352
-  sc-y0-1101-kedoin-pursuit-konoha: 353
-  sc-y0-1101-tsunade-kedoin-test-reveal: 353
+  sc-y0-1015-academy-lead-assignment: 300
+  sc-y0-1015-academy-lead-debrief: 300
+  sc-y0-1015-academy-survival-mountain: 300
+  sc-y0-1017-gosunkugi-mission-opening: 267
+  sc-y0-1017-sazanami-wounded-identity: 267
+  sc-y0-1018-ok-temple-showdown: 268
+  sc-y0-1019-mondai-potcha-infiltration: 266
+  sc-y0-1019-real-guy-lee-return: 266
+  sc-y0-1020-birds-mission-arrival: 304
+  sc-y0-1020-first-cursed-warrior: 304
+  sc-y0-1021-komei-cursed-warrior-investigation: 305
+  sc-y0-1021-naruto-prison-cursed-warrior: 306
+  sc-y0-1022-komei-rescue-moso-confrontation: 307
+  sc-y0-1023-birds-final-battle: 307
+  sc-y0-1023-toki-daimyo-aftermath: 308
+  sc-y0-1023-toki-hoki-reveal: 307
+  sc-y0-1024-ayame-kidnapped: 312
+  sc-y0-1024-cooking-nin-showdown: 313
+  sc-y0-1024-ramen-training: 312
+  sc-y0-1026-isaribi-saves-naruto: 297
+  sc-y0-1026-kaima-mission-departure: 295
+  sc-y0-1027-anko-memory-lab: 298
+  sc-y0-1027-isaribi-kaima-reveal: 298
+  sc-y0-1028-demon-island-infiltration: 298
+  sc-y0-1028-government-ship-attack: 299
+  sc-y0-1028-isaribi-breaks-with-amachi: 299
+  sc-y0-1029-amachi-defeat: 299
+  sc-y0-1029-anko-memory-resolution: 299
+  sc-y0-1029-isaribi-anko-aftermath: 299
+  sc-y0-1029-umibozu-battle: 299
+  sc-y0-1030-kunihisa-kidnapping-rescue: 315
+  sc-y0-1030-kunihisa-ninja-day: 315
+  sc-y0-1031-buried-gold-assignment: 317
+  sc-y0-1031-buried-gold-team-collapse: 318
+  sc-y0-1031-kedoin-capture-copies: 318
+  sc-y0-1101-kedoin-pursuit-konoha: 319
+  sc-y0-1101-tsunade-kedoin-test-reveal: 319
   sc-alt-y0-1101-uc2-hokage-briefing: 355
   sc-alt-y0-1101-uc2-shirogane-attack: 355
   sc-alt-y0-1102-uc2-spirit-orb-war: 358
   sc-alt-y0-1103-uc2-master-puppet-finale: 361
-  sc-y0-1102-postman-chase-peace: 367
-  sc-y0-1102-postman-manuscript-mixup: 365
-  sc-y0-1103-hoshigakure-meets-sumaru: 372
-  sc-y0-1103-hoshigakure-mission-departure: 370
-  sc-y0-1104-akahoshi-sumaru-bait: 373
-  sc-y0-1104-star-stolen-investigation: 372
-  sc-y0-1104-star-training-cost: 373
-  sc-y0-1105-akahoshi-third-hoshikage-truth: 374
-  sc-y0-1105-natsuhi-final-attempt: 374
-  sc-y0-1105-natsuhi-identity-motive: 374
-  sc-y0-1106-akahoshi-star-fusion-battle: 375
-  sc-y0-1106-hoshigakure-aftermath: 376
-  sc-y0-1106-hoshigakure-trainees-reveal-truth: 375
-  sc-y0-1107-akamaru-antidote: 381
-  sc-y0-1107-akamaru-infection-detected: 380
-  sc-y0-1107-kiba-flees-with-akamaru: 381
-  sc-y0-1108-onbaa-mother-reclaims-onbu: 386
-  sc-y0-1108-onbu-attaches-naruto: 383
-  sc-y0-1108-onbu-grows-with-naruto: 385
-  sc-y0-1109-kagetsu-fake-funeral-reveal: 390
-  sc-y0-1109-kagetsu-funeral-mission-briefing: 389
-  sc-y0-1109-shino-laughing-drug: 389
+  sc-y0-1102-postman-chase-peace: 323
+  sc-y0-1102-postman-manuscript-mixup: 321
+  sc-y0-1103-hoshigakure-meets-sumaru: 328
+  sc-y0-1103-hoshigakure-mission-departure: 326
+  sc-y0-1104-akahoshi-sumaru-bait: 329
+  sc-y0-1104-star-stolen-investigation: 328
+  sc-y0-1104-star-training-cost: 329
+  sc-y0-1105-akahoshi-third-hoshikage-truth: 330
+  sc-y0-1105-natsuhi-final-attempt: 330
+  sc-y0-1105-natsuhi-identity-motive: 330
+  sc-y0-1106-akahoshi-star-fusion-battle: 331
+  sc-y0-1106-hoshigakure-aftermath: 332
+  sc-y0-1106-hoshigakure-trainees-reveal-truth: 331
+  sc-y0-1107-akamaru-antidote: 305
+  sc-y0-1107-akamaru-infection-detected: 304
+  sc-y0-1107-kiba-flees-with-akamaru: 305
+  sc-y0-1108-onbaa-mother-reclaims-onbu: 339
+  sc-y0-1108-onbu-attaches-naruto: 336
+  sc-y0-1108-onbu-grows-with-naruto: 338
+  sc-y0-1109-kagetsu-fake-funeral-reveal: 343
+  sc-y0-1109-kagetsu-funeral-mission-briefing: 342
+  sc-y0-1109-shino-laughing-drug: 342
   sc-alt-y0-1110-phantom-fortress-summoned: 393
   sc-alt-y0-1111-hidden-mugen-basement: 394
   sc-alt-y0-1111-phantom-fortress-climb: 394
   sc-alt-y0-1112-mugen-castle-finale: 395
-  sc-y0-1110-greens-merchant-escort: 400
-  sc-y0-1110-haruna-identity-reveal: 400
-  sc-y0-1111-haruna-abandons-hinata: 401
-  sc-y0-1111-ruiga-battle: 401
-  sc-y0-1112-greens-jiga-battle: 401
-  sc-y0-1112-renga-captures-allies: 401
-  sc-y0-1113-greens-captive-rescue: 402
-  sc-y0-1113-greens-renga-finale: 402
-  sc-y0-1113-haruna-restoration: 403
-  sc-y0-1114-fuku-matchmaking: 409
-  sc-y0-1115-lee-dojo-challenge: 419
-  sc-y0-1116-haunted-castle-chameleon: 422
-  sc-y0-1117-ryudoin-yagura-trap: 425
-  sc-y0-1118-ryudoin-finale: 427
-  sc-y0-1119-genno-blueprints: 431
-  sc-y0-1120-genno-investigation: 432
-  sc-y0-1121-genno-paper-bombs: 433
-  sc-y0-1122-genno-final-trap: 433
+  sc-y0-1110-greens-merchant-escort: 304
+  sc-y0-1110-haruna-identity-reveal: 304
+  sc-y0-1111-haruna-abandons-hinata: 305
+  sc-y0-1111-ruiga-battle: 305
+  sc-y0-1112-greens-jiga-battle: 305
+  sc-y0-1112-renga-captures-allies: 305
+  sc-y0-1113-greens-captive-rescue: 306
+  sc-y0-1113-greens-renga-finale: 306
+  sc-y0-1113-haruna-restoration: 307
+  sc-y0-1114-fuku-matchmaking: 284
+  sc-y0-1115-lee-dojo-challenge: 266
+  sc-y0-1116-haunted-castle-chameleon: 313
+  sc-y0-1117-ryudoin-yagura-trap: 281
+  sc-y0-1118-ryudoin-finale: 283
+  sc-y0-1119-genno-blueprints: 346
+  sc-y0-1120-genno-investigation: 347
+  sc-y0-1121-genno-paper-bombs: 348
+  sc-y0-1122-genno-final-trap: 348
   sc-alt-y0-1020-path-ninja-mirrors-opening: 436
   sc-alt-y0-1021-path-ninja-mirrors-trials: 439
   sc-alt-y0-1022-path-ninja-spirit-beast-finale: 442
@@ -923,36 +916,36 @@ scene_days:
   sc-alt-y0-1122-anbu-find-kagura: 473
   sc-alt-y0-1122-clash2-finale: 473
   sc-alt-y0-1122-jiraiya-bando: 473
-  sc-y0-1124-yakumo-kurenai-resigns: 476
-  sc-y0-1125-yakumo-sealed-power: 477
-  sc-y0-1126-yakumo-genjutsu-konoha: 477
-  sc-y0-1127-yakumo-ido-finale: 477
-  sc-y0-1128-shinemon-tea-bowl: 481
-  sc-y0-1129-gantetsu-escort: 484
-  sc-y0-1130-gantetsu-bewildering-forest: 484
-  sc-y0-1201-gantetsu-akio-truth: 485
-  sc-y0-1201-gantetsu-orphans: 485
-  sc-y0-1202-gantetsu-finale: 485
+  sc-y0-1124-yakumo-kurenai-resigns: 291
+  sc-y0-1125-yakumo-sealed-power: 292
+  sc-y0-1126-yakumo-genjutsu-konoha: 292
+  sc-y0-1127-yakumo-ido-finale: 292
+  sc-y0-1128-shinemon-tea-bowl: 308
+  sc-y0-1129-gantetsu-escort: 266
+  sc-y0-1130-gantetsu-bewildering-forest: 266
+  sc-y0-1201-gantetsu-akio-truth: 267
+  sc-y0-1201-gantetsu-orphans: 267
+  sc-y0-1202-gantetsu-finale: 267
   sc-alt-y0-1201-ninja-destiny2eu-start: 489
   sc-alt-y0-1202-ninja-destiny2eu-scrolls: 492
   sc-alt-y0-1203-ninja-destiny2eu-finale: 495
-  sc-y0-1203-menma-found: 497
-  sc-y0-1204-menma-rice-fields: 499
-  sc-y0-1205-menma-sacrifice: 500
-  sc-y0-1207-baki-suna-council-matsuri: 506
-  sc-y0-1216-iruka-naruto-last-ramen: 514
+  sc-y0-1203-menma-found: 351
+  sc-y0-1204-menma-rice-fields: 353
+  sc-y0-1205-menma-sacrifice: 354
+  sc-y0-1207-baki-suna-council-matsuri: 273
+  sc-y0-1216-iruka-naruto-last-ramen: 360
   sc-games-kakashi-rest-order: 269
   sc-games-kakashi-forced-rest: 269
   sc-games-kakashi-nobari-gathering: 269
-  sc-period-postman-morning-mixup: 366
-  sc-period-ryudoin-foreign-trap: 427
-  sc-period-genno-morning-alert: 432
+  sc-period-postman-morning-mixup: 322
+  sc-period-ryudoin-foreign-trap: 283
+  sc-period-genno-morning-alert: 347
   sc-period-moon-care: 451
   sc-period-moon-departure: 465
-  sc-period-genno-lunch: 431
+  sc-period-genno-lunch: 346
 kurenai_social_day: 269
-last_ramen_day: 514
-epoch_boundary_day: 515
+last_ramen_day: 360
+epoch_boundary_day: 361
 constraints:
 - id: kakashi-week-off
   actors:
@@ -971,16 +964,16 @@ constraints:
   - c-might-guy
   - c-guy
   - c-gensho-ryudoin
-  start: 418
-  end: 424
+  start: 274
+  end: 280
   kind: local_preparation
   note: Яґура тиждень тренується з Ґаєм у Конохі. Доджьо — сумісна місцева подія.
 - id: akamaru-aftercare
   actors:
   - c-kiba
   - c-akamaru
-  start: 382
-  end: 384
+  start: 306
+  end: 308
   kind: recovery
   note: Три робочі дні після ризикованого антидоту й поранення Кіби.
 scene_day_parts:
