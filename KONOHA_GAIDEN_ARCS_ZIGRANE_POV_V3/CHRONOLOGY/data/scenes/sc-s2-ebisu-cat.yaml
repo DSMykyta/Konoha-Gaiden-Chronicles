@@ -1,0 +1,108 @@
+schema_version: 1
+id: sc-s2-ebisu-cat
+episode_id: ep-s2-ebisu-cat
+display_rank: 0
+continuity_id: main
+title: Команда Ебісу здає D-рангову місію
+description: Конохамару після ловлі кота просить складніше завдання й називає Наруто майбутнім Шостим Хокаґе.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-64-11-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-ebisu-cat-1
+  title: Команда Ебісу здає D-рангову місію
+  text: Конохамару після ловлі кота просить складніше завдання й називає Наруто майбутнім Шостим Хокаґе.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-ebisu
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-ebisu-cat
+relations: []
+presence:
+- id: pr-s2-ebisu-cat-c-ebisu
+  entity_id: c-ebisu
+  from: sc-s2-ebisu-cat.start
+  to: sc-s2-ebisu-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ebisu-cat
+- id: pr-s2-ebisu-cat-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-s2-ebisu-cat.start
+  to: sc-s2-ebisu-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ebisu-cat
+- id: pr-s2-ebisu-cat-c-moegi
+  entity_id: c-moegi
+  from: sc-s2-ebisu-cat.start
+  to: sc-s2-ebisu-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ebisu-cat
+- id: pr-s2-ebisu-cat-c-udon
+  entity_id: c-udon
+  from: sc-s2-ebisu-cat.start
+  to: sc-s2-ebisu-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ebisu-cat
+- id: pr-s2-ebisu-cat-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-ebisu-cat.start
+  to: sc-s2-ebisu-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ebisu-cat
+- id: pr-s2-ebisu-cat-c-iruka
+  entity_id: c-iruka
+  from: sc-s2-ebisu-cat.start
+  to: sc-s2-ebisu-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ebisu-cat
+- id: pr-s2-ebisu-cat-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-ebisu-cat.start
+  to: sc-s2-ebisu-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ebisu-cat

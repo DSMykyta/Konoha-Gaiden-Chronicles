@@ -1,0 +1,121 @@
+schema_version: 1
+id: sc-s2-road-final-duel
+episode_id: ep-s2-road-final-duel
+display_rank: 41700
+continuity_id: movie-road
+title: Наруто протистоїть Менмі та Тобі
+description: Ітачі іншого світу допомагає Сакурі; Курама бореться з віддзеркаленим Дев’ятихвостим. Менма звільняється
+  від контролю; Наруто та Сакура повертаються.
+location_id: loc-rtn-menma-battlefield
+placement:
+  anchor_id: ta-s2-66-06-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-final-duel-1
+  title: Наруто протистоїть Менмі та Тобі
+  text: Ітачі іншого світу допомагає Сакурі; Курама бореться з віддзеркаленим Дев’ятихвостим.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-menma
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-final-duel
+  layer: sources
+- id: ev-s2-road-final-duel-2
+  title: Наруто розбиває Обмежене Цукуйомі
+  text: Менма звільняється від контролю; Наруто та Сакура повертаються.
+  origin: V
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-menma
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-final-duel
+  layer: sources
+relations:
+- id: rel-s2-road-final-duel-1
+  kind: before
+  a: ev-s2-road-final-duel-1
+  b: ev-s2-road-final-duel-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-final-duel
+presence:
+- id: pr-s2-road-final-duel-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-road-final-duel.start
+  to: sc-s2-road-final-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-final-duel
+- id: pr-s2-road-final-duel-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-road-final-duel.start
+  to: sc-s2-road-final-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-final-duel
+- id: pr-s2-road-final-duel-c-menma
+  entity_id: c-menma
+  from: sc-s2-road-final-duel.start
+  to: sc-s2-road-final-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-final-duel
+- id: pr-s2-road-final-duel-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-road-final-duel.start
+  to: sc-s2-road-final-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-final-duel
+- id: pr-s2-road-final-duel-c-rtn-itachi
+  entity_id: c-rtn-itachi
+  from: sc-s2-road-final-duel.start
+  to: sc-s2-road-final-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-final-duel

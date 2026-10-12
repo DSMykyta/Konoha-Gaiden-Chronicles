@@ -1,0 +1,78 @@
+schema_version: 1
+id: sc-s2-deidara-gaara
+episode_id: ep-s2-deidara-gaara
+display_rank: 700
+continuity_id: main
+title: Дейдара нападає на Ґаару
+description: Ґаара захищає Суну піском і відриває противнику руку. Дейдара відволікає Кадзекаґе загрозою селу, підриває
+  глину всередині піщаного захисту й забирає непритомного Ґаару.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-64-11-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-deidara-gaara-1
+  title: Дейдара нападає на Ґаару
+  text: Ґаара захищає Суну піском і відриває противнику руку.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-deidara-gaara
+- id: ev-s2-deidara-gaara-2
+  title: Ґаара закриває село від вибуху
+  text: Дейдара відволікає Кадзекаґе загрозою селу, підриває глину всередині піщаного захисту й забирає непритомного
+    Ґаару.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-deidara-gaara
+relations:
+- id: rel-s2-deidara-gaara-1
+  kind: before
+  a: ev-s2-deidara-gaara-1
+  b: ev-s2-deidara-gaara-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-deidara-gaara
+presence:
+- id: pr-s2-deidara-gaara-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-deidara-gaara.start
+  to: sc-s2-deidara-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-deidara-gaara
+- id: pr-s2-deidara-gaara-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-deidara-gaara.start
+  to: sc-s2-deidara-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-deidara-gaara

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-chen-student-training
+episode_id: ep-s2-chen-student-training
+display_rank: 900
+continuity_id: main
+title: Чен навчає хлопця без нінджюцу
+description: Учень стає шинобі завдяки тайдзюцу, але не встигає опанувати Дракон Конохи до війни.
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-s2-46-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-chen-student-training-1
+  title: Чен навчає хлопця без нінджюцу
+  text: Учень стає шинобі завдяки тайдзюцу, але не встигає опанувати Дракон Конохи до війни.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-chen
+    role: participant
+    mode: physical
+  - entity_id: c-chen-student
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-chen-student-training
+relations: []
+presence:
+- id: pr-s2-chen-student-training-c-chen
+  entity_id: c-chen
+  from: sc-s2-chen-student-training.start
+  to: sc-s2-chen-student-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chen-student-training
+- id: pr-s2-chen-student-training-c-chen-student
+  entity_id: c-chen-student
+  from: sc-s2-chen-student-training.start
+  to: sc-s2-chen-student-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chen-student-training

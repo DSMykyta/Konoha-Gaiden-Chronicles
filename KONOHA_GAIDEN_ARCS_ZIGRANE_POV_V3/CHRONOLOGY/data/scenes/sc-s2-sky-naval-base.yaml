@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-sky-naval-base
+episode_id: ep-s2-sky-naval-base
+display_rank: 38000
+continuity_id: movie-bonds
+title: Сай і Шіно руйнують морську базу
+description: Вони зупиняють підтримку повітряного нападу.
+location_id: loc-sky-naval-base
+placement:
+  anchor_id: ta-s2-66-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-sky-naval-base-1
+  title: Сай і Шіно руйнують морську базу
+  text: Вони зупиняють підтримку повітряного нападу.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sky-naval-base
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-sky-naval-base-c-sai
+  entity_id: c-sai
+  from: sc-s2-sky-naval-base.start
+  to: sc-s2-sky-naval-base.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-naval-base
+- id: pr-s2-sky-naval-base-c-shino
+  entity_id: c-shino
+  from: sc-s2-sky-naval-base.start
+  to: sc-s2-sky-naval-base.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-naval-base

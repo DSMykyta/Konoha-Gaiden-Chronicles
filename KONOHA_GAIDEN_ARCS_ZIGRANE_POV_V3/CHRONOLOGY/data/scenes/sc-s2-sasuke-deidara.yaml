@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-sasuke-deidara
+episode_id: ep-s2-sasuke-deidara
+display_rank: 9700
+continuity_id: main
+title: Саске нейтралізує вибухову глину Блискавкою
+description: Дейдара виводить у бій дракона й мікроскопічні бомби. Шарінґан розпізнає бомби, а Блискавка зупиняє
+  детонацію в його тілі.
+location_id: loc-deidara-battlefield
+placement:
+  anchor_id: ta-s2-66-07-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasuke-deidara-1
+  title: Саске нейтралізує вибухову глину Блискавкою
+  text: Дейдара виводить у бій дракона й мікроскопічні бомби.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-deidara
+- id: ev-s2-sasuke-deidara-2
+  title: Саске переживає C4
+  text: Шарінґан розпізнає бомби, а Блискавка зупиняє детонацію в його тілі.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-deidara
+relations:
+- id: rel-s2-sasuke-deidara-1
+  kind: before
+  a: ev-s2-sasuke-deidara-1
+  b: ev-s2-sasuke-deidara-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-deidara
+presence:
+- id: pr-s2-sasuke-deidara-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sasuke-deidara.start
+  to: sc-s2-sasuke-deidara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-deidara
+- id: pr-s2-sasuke-deidara-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-sasuke-deidara.start
+  to: sc-s2-sasuke-deidara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-deidara
+- id: pr-s2-sasuke-deidara-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-sasuke-deidara.start
+  to: sc-s2-sasuke-deidara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-deidara

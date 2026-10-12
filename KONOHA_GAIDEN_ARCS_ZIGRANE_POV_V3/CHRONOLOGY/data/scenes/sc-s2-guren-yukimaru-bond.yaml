@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-guren-yukimaru-bond
+episode_id: ep-s2-guren-yukimaru-bond
+display_rank: 7200
+continuity_id: main
+title: Ґурен доглядає Юкімару
+description: Вона впізнає хлопчика й дарує йому кристалічну камелію; між ними виникає прив’язаність.
+location_id: loc-guren-cabin
+placement:
+  anchor_id: ta-s2-66-04-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guren-yukimaru-bond-1
+  title: Ґурен доглядає Юкімару
+  text: Вона впізнає хлопчика й дарує йому кристалічну камелію; між ними виникає прив’язаність.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guren-yukimaru-bond
+relations: []
+presence:
+- id: pr-s2-guren-yukimaru-bond-c-guren
+  entity_id: c-guren
+  from: sc-s2-guren-yukimaru-bond.start
+  to: sc-s2-guren-yukimaru-bond.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-yukimaru-bond
+- id: pr-s2-guren-yukimaru-bond-c-yukimaru
+  entity_id: c-yukimaru
+  from: sc-s2-guren-yukimaru-bond.start
+  to: sc-s2-guren-yukimaru-bond.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-yukimaru-bond

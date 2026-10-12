@@ -1,0 +1,130 @@
+schema_version: 1
+id: sc-s2-naruto-sage-arrival
+episode_id: ep-s2-naruto-sage-arrival
+display_rank: 14300
+continuity_id: main
+title: Наруто прибуває до зруйнованої Конохи
+description: Шіма викликає його з жабами; він прикриває виснажену Цунаде й руйнує Шлях Асура.
+location_id: loc-konoha-pain-crater
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-sage-arrival-1
+  title: Наруто прибуває до зруйнованої Конохи
+  text: Шіма викликає його з жабами; він прикриває виснажену Цунаде й руйнує Шлях Асура.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  - entity_id: c-gamabunta
+    role: participant
+    mode: physical
+  - entity_id: c-gamakichi
+    role: participant
+    mode: physical
+  - entity_id: c-gamaken
+    role: participant
+    mode: physical
+  - entity_id: c-gamahiro
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+relations: []
+presence:
+- id: pr-s2-naruto-sage-arrival-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-shima
+  entity_id: c-shima
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-gamabunta
+  entity_id: c-gamabunta
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-gamakichi
+  entity_id: c-gamakichi
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-gamaken
+  entity_id: c-gamaken
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-gamahiro
+  entity_id: c-gamahiro
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival
+- id: pr-s2-naruto-sage-arrival-c-pain
+  entity_id: c-pain
+  from: sc-s2-naruto-sage-arrival.start
+  to: sc-s2-naruto-sage-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sage-arrival

@@ -1,0 +1,63 @@
+schema_version: 1
+id: sc-s2-kaguya-god-tree
+episode_id: ep-s2-kaguya-god-tree
+display_rank: 42700
+continuity_id: main
+title: Каґуя прибуває до людей
+description: Напруження між правителями приводить до переслідування; вона їсть плід Божественного дерева та отримує
+  чакру.
+location_id: loc-ancient-god-tree
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kaguya-god-tree-1
+  title: Каґуя прибуває до людей
+  text: Напруження між правителями приводить до переслідування; вона їсть плід Божественного дерева та отримує чакру.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kaguya
+    role: participant
+    mode: physical
+  - entity_id: c-tenji
+    role: participant
+    mode: physical
+  - entity_id: c-aino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kaguya-god-tree
+relations: []
+presence:
+- id: pr-s2-kaguya-god-tree-c-kaguya
+  entity_id: c-kaguya
+  from: sc-s2-kaguya-god-tree.start
+  to: sc-s2-kaguya-god-tree.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kaguya-god-tree
+- id: pr-s2-kaguya-god-tree-c-tenji
+  entity_id: c-tenji
+  from: sc-s2-kaguya-god-tree.start
+  to: sc-s2-kaguya-god-tree.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kaguya-god-tree
+- id: pr-s2-kaguya-god-tree-c-aino
+  entity_id: c-aino
+  from: sc-s2-kaguya-god-tree.start
+  to: sc-s2-kaguya-god-tree.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kaguya-god-tree

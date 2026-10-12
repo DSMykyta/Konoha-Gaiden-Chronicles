@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-itachi-kakashi-anbu
+episode_id: ep-s2-itachi-kakashi-anbu
+display_rank: 29400
+continuity_id: main
+title: Ітачі вступає до АНБУ
+description: Какаші знайомиться з молодим Учіха; служба проходить під тиском сільської та кланової політики.
+location_id: loc-anbu-training-field
+placement:
+  anchor_id: ta-s2-55-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-kakashi-anbu-1
+  title: Ітачі вступає до АНБУ
+  text: Какаші знайомиться з молодим Учіха; служба проходить під тиском сільської та кланової політики.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-kakashi-anbu
+relations: []
+presence:
+- id: pr-s2-itachi-kakashi-anbu-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-kakashi-anbu.start
+  to: sc-s2-itachi-kakashi-anbu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-kakashi-anbu
+- id: pr-s2-itachi-kakashi-anbu-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-itachi-kakashi-anbu.start
+  to: sc-s2-itachi-kakashi-anbu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-kakashi-anbu
+- id: pr-s2-itachi-kakashi-anbu-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-itachi-kakashi-anbu.start
+  to: sc-s2-itachi-kakashi-anbu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-kakashi-anbu

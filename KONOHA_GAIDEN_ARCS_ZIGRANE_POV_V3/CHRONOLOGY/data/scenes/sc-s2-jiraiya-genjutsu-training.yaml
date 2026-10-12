@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-jiraiya-genjutsu-training
+episode_id: ep-s2-jiraiya-genjutsu-training
+display_rank: 23800
+continuity_id: main
+title: Джирая вчить Наруто виходити з ґенджюцу
+description: Наруто тренується зупиняти й перезапускати чакру; дорога приводить їх до села з примарним деревом.
+location_id: loc-genjutsu-tree-village-route
+placement:
+  anchor_id: ta-s2-63-06-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-genjutsu-training-1
+  title: Джирая вчить Наруто виходити з ґенджюцу
+  text: Наруто тренується зупиняти й перезапускати чакру; дорога приводить їх до села з примарним деревом.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-genjutsu-training
+relations: []
+presence:
+- id: pr-s2-jiraiya-genjutsu-training-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-jiraiya-genjutsu-training.start
+  to: sc-s2-jiraiya-genjutsu-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-genjutsu-training
+- id: pr-s2-jiraiya-genjutsu-training-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-genjutsu-training.start
+  to: sc-s2-jiraiya-genjutsu-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-genjutsu-training

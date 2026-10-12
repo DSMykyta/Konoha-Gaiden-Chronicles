@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-shino-suika-first-loss
+episode_id: ep-s2-shino-suika-first-loss
+display_rank: 44600
+continuity_id: main
+title: Суйка перемагає Шіно зблизька
+description: Втрата впевненості змушує його уникати команди.
+location_id: loc-suika-hideout-route
+placement:
+  anchor_id: ta-s2-62-06-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shino-suika-first-loss-1
+  title: Суйка перемагає Шіно зблизька
+  text: Втрата впевненості змушує його уникати команди.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-suika
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shino-suika-first-loss
+relations: []
+presence:
+- id: pr-s2-shino-suika-first-loss-c-shino
+  entity_id: c-shino
+  from: sc-s2-shino-suika-first-loss.start
+  to: sc-s2-shino-suika-first-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shino-suika-first-loss
+- id: pr-s2-shino-suika-first-loss-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-shino-suika-first-loss.start
+  to: sc-s2-shino-suika-first-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shino-suika-first-loss
+- id: pr-s2-shino-suika-first-loss-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-shino-suika-first-loss.start
+  to: sc-s2-shino-suika-first-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shino-suika-first-loss
+- id: pr-s2-shino-suika-first-loss-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-shino-suika-first-loss.start
+  to: sc-s2-shino-suika-first-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shino-suika-first-loss
+- id: pr-s2-shino-suika-first-loss-c-suika
+  entity_id: c-suika
+  from: sc-s2-shino-suika-first-loss.start
+  to: sc-s2-shino-suika-first-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shino-suika-first-loss

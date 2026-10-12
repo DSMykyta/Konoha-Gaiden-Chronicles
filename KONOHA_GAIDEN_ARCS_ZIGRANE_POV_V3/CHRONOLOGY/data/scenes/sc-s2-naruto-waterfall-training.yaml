@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-naruto-waterfall-training
+episode_id: ep-s2-naruto-waterfall-training
+display_rank: 5500
+continuity_id: main
+title: Наруто розрізає водоспад чакрою Вітру
+description: Ямато створює місце для тренування; клони накопичують досвід. Какаші показує, як розподілити дві задачі
+  між клонами.
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-s2-66-03-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-waterfall-training-1
+  title: Наруто розрізає водоспад чакрою Вітру
+  text: Ямато створює місце для тренування; клони накопичують досвід.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-waterfall-training
+- id: ev-s2-naruto-waterfall-training-2
+  title: Наруто поєднує Вітер із Расенґаном
+  text: Какаші показує, як розподілити дві задачі між клонами.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-waterfall-training
+relations:
+- id: rel-s2-naruto-waterfall-training-1
+  kind: before
+  a: ev-s2-naruto-waterfall-training-1
+  b: ev-s2-naruto-waterfall-training-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-waterfall-training
+presence:
+- id: pr-s2-naruto-waterfall-training-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-waterfall-training.start
+  to: sc-s2-naruto-waterfall-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-waterfall-training
+- id: pr-s2-naruto-waterfall-training-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-naruto-waterfall-training.start
+  to: sc-s2-naruto-waterfall-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-waterfall-training
+- id: pr-s2-naruto-waterfall-training-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-naruto-waterfall-training.start
+  to: sc-s2-naruto-waterfall-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-waterfall-training

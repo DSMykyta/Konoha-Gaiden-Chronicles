@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-tenchi-spy-meeting
+episode_id: ep-s2-tenchi-spy-meeting
+display_rank: 3100
+continuity_id: main
+title: Ямато зустрічає Кабуто під виглядом Сасорі
+description: Кабуто повідомляє про сховище, але прибуває Орочімару й викриває підміну.
+location_id: loc-tenchi-bridge
+placement:
+  anchor_id: ta-s2-64-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tenchi-spy-meeting-1
+  title: Ямато зустрічає Кабуто під виглядом Сасорі
+  text: Кабуто повідомляє про сховище, але прибуває Орочімару й викриває підміну.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenchi-spy-meeting
+relations: []
+presence:
+- id: pr-s2-tenchi-spy-meeting-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-tenchi-spy-meeting.start
+  to: sc-s2-tenchi-spy-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-spy-meeting
+- id: pr-s2-tenchi-spy-meeting-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-tenchi-spy-meeting.start
+  to: sc-s2-tenchi-spy-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-spy-meeting
+- id: pr-s2-tenchi-spy-meeting-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-tenchi-spy-meeting.start
+  to: sc-s2-tenchi-spy-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-spy-meeting

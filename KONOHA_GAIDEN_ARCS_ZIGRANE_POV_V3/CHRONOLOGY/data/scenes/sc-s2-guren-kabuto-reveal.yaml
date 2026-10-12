@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-guren-kabuto-reveal
+episode_id: ep-s2-guren-kabuto-reveal
+display_rank: 8300
+continuity_id: main
+title: Кабуто розкриває підміну Рінджі
+description: Юкімару прощає Ґурен за смерть матері. Юкімару втрачає контроль; Наруто з жабами зупиняє чергову атаку
+  Ісобу.
+location_id: loc-three-tails-cliff
+placement:
+  anchor_id: ta-s2-66-04-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guren-kabuto-reveal-1
+  title: Кабуто розкриває підміну Рінджі
+  text: Юкімару прощає Ґурен за смерть матері.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-rinji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal
+- id: ev-s2-guren-kabuto-reveal-2
+  title: Ґурен падає з оживленим Рінджі в озеро
+  text: Юкімару втрачає контроль; Наруто з жабами зупиняє чергову атаку Ісобу.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-rinji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal
+relations:
+- id: rel-s2-guren-kabuto-reveal-1
+  kind: before
+  a: ev-s2-guren-kabuto-reveal-1
+  b: ev-s2-guren-kabuto-reveal-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal
+presence:
+- id: pr-s2-guren-kabuto-reveal-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-guren-kabuto-reveal.start
+  to: sc-s2-guren-kabuto-reveal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal
+- id: pr-s2-guren-kabuto-reveal-c-guren
+  entity_id: c-guren
+  from: sc-s2-guren-kabuto-reveal.start
+  to: sc-s2-guren-kabuto-reveal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal
+- id: pr-s2-guren-kabuto-reveal-c-yukimaru
+  entity_id: c-yukimaru
+  from: sc-s2-guren-kabuto-reveal.start
+  to: sc-s2-guren-kabuto-reveal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal
+- id: pr-s2-guren-kabuto-reveal-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-guren-kabuto-reveal.start
+  to: sc-s2-guren-kabuto-reveal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal
+- id: pr-s2-guren-kabuto-reveal-c-rinji
+  entity_id: c-rinji
+  from: sc-s2-guren-kabuto-reveal.start
+  to: sc-s2-guren-kabuto-reveal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-kabuto-reveal

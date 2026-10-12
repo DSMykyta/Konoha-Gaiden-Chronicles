@@ -1,0 +1,163 @@
+schema_version: 1
+id: sc-s2-prison-satori-battle
+episode_id: ep-s2-prison-satori-battle
+display_rank: 40700
+continuity_id: movie-prison
+title: Коноха та Бі вступають у бій
+description: Саторі передбачає страх атакувальників; Наруто застосовує сенджюцу, Рюдзецу допомагає знайти слабкість.
+  Остання печать і допомога Наруто дозволяють повернути Муку до Скрині.
+location_id: loc-hozuki-castle-courtyard
+placement:
+  anchor_id: ta-s2-66-09-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-prison-satori-battle-1
+  title: Коноха та Бі вступають у бій
+  text: Саторі передбачає страх атакувальників; Наруто застосовує сенджюцу, Рюдзецу допомагає знайти слабкість.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-ryuzetsu
+    role: participant
+    mode: physical
+  - entity_id: c-mui
+    role: participant
+    mode: physical
+  - entity_id: c-muku
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+  layer: sources
+- id: ev-s2-prison-satori-battle-2
+  title: Муі зупиняє власного сина
+  text: Остання печать і допомога Наруто дозволяють повернути Муку до Скрині.
+  origin: V
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-ryuzetsu
+    role: participant
+    mode: physical
+  - entity_id: c-mui
+    role: participant
+    mode: physical
+  - entity_id: c-muku
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+  layer: sources
+relations:
+- id: rel-s2-prison-satori-battle-1
+  kind: before
+  a: ev-s2-prison-satori-battle-1
+  b: ev-s2-prison-satori-battle-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+presence:
+- id: pr-s2-prison-satori-battle-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+- id: pr-s2-prison-satori-battle-c-ryuzetsu
+  entity_id: c-ryuzetsu
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+- id: pr-s2-prison-satori-battle-c-mui
+  entity_id: c-mui
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+- id: pr-s2-prison-satori-battle-c-muku
+  entity_id: c-muku
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+- id: pr-s2-prison-satori-battle-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+- id: pr-s2-prison-satori-battle-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+- id: pr-s2-prison-satori-battle-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle
+- id: pr-s2-prison-satori-battle-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-prison-satori-battle.start
+  to: sc-s2-prison-satori-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-satori-battle

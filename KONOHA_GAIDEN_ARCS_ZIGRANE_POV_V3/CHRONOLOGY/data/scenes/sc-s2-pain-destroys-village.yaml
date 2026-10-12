@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-pain-destroys-village
+episode_id: ep-s2-pain-destroys-village
+display_rank: 14200
+continuity_id: main
+title: Пейн застосовує великий Шінра Тенсей
+description: Кацую закриває мешканців від удару; будівлі Конохи зносяться.
+location_id: loc-hokage-rooftop
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-pain-destroys-village-1
+  title: Пейн застосовує великий Шінра Тенсей
+  text: Кацую закриває мешканців від удару; будівлі Конохи зносяться.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-katsuyu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-pain-destroys-village
+relations: []
+presence:
+- id: pr-s2-pain-destroys-village-c-pain
+  entity_id: c-pain
+  from: sc-s2-pain-destroys-village.start
+  to: sc-s2-pain-destroys-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-destroys-village
+- id: pr-s2-pain-destroys-village-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-pain-destroys-village.start
+  to: sc-s2-pain-destroys-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-destroys-village
+- id: pr-s2-pain-destroys-village-c-katsuyu
+  entity_id: c-katsuyu
+  from: sc-s2-pain-destroys-village.start
+  to: sc-s2-pain-destroys-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-destroys-village

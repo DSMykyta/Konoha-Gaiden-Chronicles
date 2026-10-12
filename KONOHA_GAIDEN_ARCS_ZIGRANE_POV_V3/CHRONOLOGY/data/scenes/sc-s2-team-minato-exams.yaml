@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-team-minato-exams
+episode_id: ep-s2-team-minato-exams
+display_rank: 27500
+continuity_id: main
+title: Команда Мінато проходить ранні іспити
+description: Обіто змагається з Ґаєм; Какаші раніше товаришів отримує підвищення.
+location_id: loc-chunin-finals-arena
+placement:
+  anchor_id: ta-s2-45-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-team-minato-exams-1
+  title: Команда Мінато проходить ранні іспити
+  text: Обіто змагається з Ґаєм; Какаші раніше товаришів отримує підвищення.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team-minato-exams
+relations: []
+presence:
+- id: pr-s2-team-minato-exams-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-team-minato-exams.start
+  to: sc-s2-team-minato-exams.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-exams
+- id: pr-s2-team-minato-exams-c-obito
+  entity_id: c-obito
+  from: sc-s2-team-minato-exams.start
+  to: sc-s2-team-minato-exams.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-exams
+- id: pr-s2-team-minato-exams-c-rin
+  entity_id: c-rin
+  from: sc-s2-team-minato-exams.start
+  to: sc-s2-team-minato-exams.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-exams
+- id: pr-s2-team-minato-exams-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-team-minato-exams.start
+  to: sc-s2-team-minato-exams.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-exams

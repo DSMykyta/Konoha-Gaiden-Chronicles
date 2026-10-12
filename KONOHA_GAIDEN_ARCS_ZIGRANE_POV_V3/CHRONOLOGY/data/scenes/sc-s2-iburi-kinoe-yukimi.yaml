@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-iburi-kinoe-yukimi
+episode_id: ep-s2-iburi-kinoe-yukimi
+display_rank: 29000
+continuity_id: main
+title: Кіное зустрічає Юкімі
+description: Вона приймає його за брата Тензо; Какаші потрапляє до сховища Ібурі. Вони виходять до міста; Ґотта
+  гине від нестабільності димного тіла.
+location_id: loc-iburi-hideout
+placement:
+  anchor_id: ta-s2-51-06-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-iburi-kinoe-yukimi-1
+  title: Кіное зустрічає Юкімі
+  text: Вона приймає його за брата Тензо; Какаші потрапляє до сховища Ібурі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-yukimi
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-gotta
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-iburi-kinoe-yukimi
+- id: ev-s2-iburi-kinoe-yukimi-2
+  title: Кіное відмовляється пожертвувати Юкімі
+  text: Вони виходять до міста; Ґотта гине від нестабільності димного тіла.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-yukimi
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-gotta
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-iburi-kinoe-yukimi
+relations:
+- id: rel-s2-iburi-kinoe-yukimi-1
+  kind: before
+  a: ev-s2-iburi-kinoe-yukimi-1
+  b: ev-s2-iburi-kinoe-yukimi-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-kinoe-yukimi
+presence:
+- id: pr-s2-iburi-kinoe-yukimi-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-iburi-kinoe-yukimi.start
+  to: sc-s2-iburi-kinoe-yukimi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-kinoe-yukimi
+- id: pr-s2-iburi-kinoe-yukimi-c-yukimi
+  entity_id: c-yukimi
+  from: sc-s2-iburi-kinoe-yukimi.start
+  to: sc-s2-iburi-kinoe-yukimi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-kinoe-yukimi
+- id: pr-s2-iburi-kinoe-yukimi-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-iburi-kinoe-yukimi.start
+  to: sc-s2-iburi-kinoe-yukimi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-kinoe-yukimi
+- id: pr-s2-iburi-kinoe-yukimi-c-gotta
+  entity_id: c-gotta
+  from: sc-s2-iburi-kinoe-yukimi.start
+  to: sc-s2-iburi-kinoe-yukimi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-kinoe-yukimi

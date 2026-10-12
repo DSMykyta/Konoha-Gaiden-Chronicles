@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-naruto-animal-census
+episode_id: ep-s2-naruto-animal-census
+display_rank: 22900
+continuity_id: main
+title: Наруто обліковує тварин острова
+description: Аоба підтримує прикриття S-рангової місії, приховуючи початок ворожих дій.
+location_id: loc-island-turtle
+placement:
+  anchor_id: ta-s2-66-10-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-animal-census-1
+  title: Наруто обліковує тварин острова
+  text: Аоба підтримує прикриття S-рангової місії, приховуючи початок ворожих дій.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-condor
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-animal-census
+relations: []
+presence:
+- id: pr-s2-naruto-animal-census-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-animal-census.start
+  to: sc-s2-naruto-animal-census.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-animal-census
+- id: pr-s2-naruto-animal-census-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-naruto-animal-census.start
+  to: sc-s2-naruto-animal-census.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-animal-census
+- id: pr-s2-naruto-animal-census-c-condor
+  entity_id: c-condor
+  from: sc-s2-naruto-animal-census.start
+  to: sc-s2-naruto-animal-census.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-animal-census

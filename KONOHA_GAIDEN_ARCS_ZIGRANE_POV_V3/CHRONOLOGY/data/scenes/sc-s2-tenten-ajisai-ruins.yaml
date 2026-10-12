@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-tenten-ajisai-ruins
+episode_id: ep-s2-tenten-ajisai-ruins
+display_rank: 25100
+continuity_id: main
+title: Тентен і Аджісай падають під землю
+description: Вони змушені співпрацювати, щоб подолати пастки та гігантських мурах. Подруги з двох команд знаходять
+  спосіб звільнитися.
+location_id: loc-demon-desert-underground-ruins
+placement:
+  anchor_id: ta-s2-64-10-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tenten-ajisai-ruins-1
+  title: Тентен і Аджісай падають під землю
+  text: Вони змушені співпрацювати, щоб подолати пастки та гігантських мурах.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-ajisai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenten-ajisai-ruins
+- id: ev-s2-tenten-ajisai-ruins-2
+  title: Сувої допомагають розбити вихід
+  text: Подруги з двох команд знаходять спосіб звільнитися.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-ajisai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenten-ajisai-ruins
+relations:
+- id: rel-s2-tenten-ajisai-ruins-1
+  kind: before
+  a: ev-s2-tenten-ajisai-ruins-1
+  b: ev-s2-tenten-ajisai-ruins-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-ruins
+presence:
+- id: pr-s2-tenten-ajisai-ruins-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-tenten-ajisai-ruins.start
+  to: sc-s2-tenten-ajisai-ruins.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-ruins
+- id: pr-s2-tenten-ajisai-ruins-c-ajisai
+  entity_id: c-ajisai
+  from: sc-s2-tenten-ajisai-ruins.start
+  to: sc-s2-tenten-ajisai-ruins.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-ruins

@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-kinkaku-ginkaku-coup
+episode_id: ep-s2-first-war-history-main
+display_rank: 3100
+continuity_id: main
+title: Брати зривають переговори Кумо та Конохи
+description: Напад тяжко ранить двох Каґе й руйнує спробу миру.
+location_id: loc-kumo-treaty-meeting
+placement:
+  anchor_id: ta-s2-14-03-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kinkaku-ginkaku-coup-1
+  title: Брати зривають переговори Кумо та Конохи
+  text: Напад тяжко ранить двох Каґе й руйнує спробу миру.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kinkaku
+    role: participant
+    mode: physical
+  - entity_id: c-ginkaku
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  - entity_id: c-a-second
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-coup
+relations: []
+presence:
+- id: pr-s2-kinkaku-ginkaku-coup-c-kinkaku
+  entity_id: c-kinkaku
+  from: sc-s2-kinkaku-ginkaku-coup.start
+  to: sc-s2-kinkaku-ginkaku-coup.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-coup
+- id: pr-s2-kinkaku-ginkaku-coup-c-ginkaku
+  entity_id: c-ginkaku
+  from: sc-s2-kinkaku-ginkaku-coup.start
+  to: sc-s2-kinkaku-ginkaku-coup.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-coup
+- id: pr-s2-kinkaku-ginkaku-coup-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-kinkaku-ginkaku-coup.start
+  to: sc-s2-kinkaku-ginkaku-coup.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-coup
+- id: pr-s2-kinkaku-ginkaku-coup-c-a-second
+  entity_id: c-a-second
+  from: sc-s2-kinkaku-ginkaku-coup.start
+  to: sc-s2-kinkaku-ginkaku-coup.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-coup

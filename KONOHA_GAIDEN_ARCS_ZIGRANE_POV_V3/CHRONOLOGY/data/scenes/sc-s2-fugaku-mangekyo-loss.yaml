@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-fugaku-mangekyo-loss
+episode_id: ep-s2-fugaku-mangekyo-loss
+display_rank: 2300
+continuity_id: main
+title: Фуґаку втрачає товариша на війні
+description: Його загибель пробуджує Манґекьо; Фуґаку зберігає це в таємниці від більшості клану.
+location_id: loc-third-war-battlefield
+placement:
+  anchor_id: ta-s2-47-05-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-fugaku-mangekyo-loss-1
+  title: Фуґаку втрачає товариша на війні
+  text: Його загибель пробуджує Манґекьо; Фуґаку зберігає це в таємниці від більшості клану.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku-comrade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-fugaku-mangekyo-loss
+relations: []
+presence:
+- id: pr-s2-fugaku-mangekyo-loss-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-fugaku-mangekyo-loss.start
+  to: sc-s2-fugaku-mangekyo-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-fugaku-mangekyo-loss
+- id: pr-s2-fugaku-mangekyo-loss-c-fugaku-comrade
+  entity_id: c-fugaku-comrade
+  from: sc-s2-fugaku-mangekyo-loss.start
+  to: sc-s2-fugaku-mangekyo-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-fugaku-mangekyo-loss

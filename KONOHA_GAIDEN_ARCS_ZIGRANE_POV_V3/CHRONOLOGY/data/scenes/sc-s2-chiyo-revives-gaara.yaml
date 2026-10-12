@@ -1,0 +1,175 @@
+schema_version: 1
+id: sc-s2-chiyo-revives-gaara
+episode_id: ep-s2-chiyo-revives-gaara
+display_rank: 2100
+continuity_id: main
+title: Чіо віддає життя Ґаарі
+description: Наруто передає їй чакру; Чіо повертає Ґаару до життя й помирає. До групи приходять шинобі Суни; вони
+  вшановують Чіо.
+location_id: loc-river-pursuit-route
+placement:
+  anchor_id: ta-s2-64-12-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-chiyo-revives-gaara-1
+  title: Чіо віддає життя Ґаарі
+  text: Наруто передає їй чакру; Чіо повертає Ґаару до життя й помирає.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: ev-s2-chiyo-revives-gaara-2
+  title: Ґаара дякує рятівникам
+  text: До групи приходять шинобі Суни; вони вшановують Чіо.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+relations:
+- id: rel-s2-chiyo-revives-gaara-1
+  kind: before
+  a: ev-s2-chiyo-revives-gaara-1
+  b: ev-s2-chiyo-revives-gaara-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+presence:
+- id: pr-s2-chiyo-revives-gaara-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-chiyo
+  entity_id: c-chiyo
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-lee
+  entity_id: c-lee
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-neji
+  entity_id: c-neji
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara
+- id: pr-s2-chiyo-revives-gaara-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-chiyo-revives-gaara.start
+  to: sc-s2-chiyo-revives-gaara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiyo-revives-gaara

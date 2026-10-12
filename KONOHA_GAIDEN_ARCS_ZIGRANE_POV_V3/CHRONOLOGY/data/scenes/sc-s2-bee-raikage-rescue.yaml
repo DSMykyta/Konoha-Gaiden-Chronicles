@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-bee-raikage-rescue
+episode_id: ep-s2-bee-raikage-rescue
+display_rank: 17800
+continuity_id: main
+title: Райкаґе знаходить Бі
+description: Брати обезголовлюють підмінного Кісаме подвійним ударом; справжній Кісаме лишається всередині Самехади.
+location_id: loc-sabu-enka-site
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-bee-raikage-rescue-1
+  title: Райкаґе знаходить Бі
+  text: Брати обезголовлюють підмінного Кісаме подвійним ударом; справжній Кісаме лишається всередині Самехади.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-darui
+    role: participant
+    mode: physical
+  - entity_id: c-cee
+    role: participant
+    mode: physical
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-bee-raikage-rescue
+relations: []
+presence:
+- id: pr-s2-bee-raikage-rescue-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-bee-raikage-rescue.start
+  to: sc-s2-bee-raikage-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-raikage-rescue
+- id: pr-s2-bee-raikage-rescue-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-bee-raikage-rescue.start
+  to: sc-s2-bee-raikage-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-raikage-rescue
+- id: pr-s2-bee-raikage-rescue-c-darui
+  entity_id: c-darui
+  from: sc-s2-bee-raikage-rescue.start
+  to: sc-s2-bee-raikage-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-raikage-rescue
+- id: pr-s2-bee-raikage-rescue-c-cee
+  entity_id: c-cee
+  from: sc-s2-bee-raikage-rescue.start
+  to: sc-s2-bee-raikage-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-raikage-rescue
+- id: pr-s2-bee-raikage-rescue-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-bee-raikage-rescue.start
+  to: sc-s2-bee-raikage-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-raikage-rescue

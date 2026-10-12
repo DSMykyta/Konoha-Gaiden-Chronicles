@@ -5085,3 +5085,3753 @@ anchors:
     - evd-post-sasuke-calendar-review
     review: accepted
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
+  - id: ta-s2-64-11-30
+    date:
+      year: 64
+      month: 11
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-ebisu-cat
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-01
+    date:
+      year: 64
+      month: 12
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kankuro-sasori
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-03
+    date:
+      year: 64
+      month: 12
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kankuro-antidote
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-02
+    date:
+      year: 64
+      month: 12
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-guy-deployed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-04
+    date:
+      year: 64
+      month: 12
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-substitute
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-05
+    date:
+      year: 64
+      month: 12
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hideout-barrier
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-06
+    date:
+      year: 64
+      month: 12
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kazekage-return
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-07
+    date:
+      year: 64
+      month: 12
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-rescue-homeward
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-09
+    date:
+      year: 64
+      month: 12
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-hospitalised
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-10
+    date:
+      year: 64
+      month: 12
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tenchi-road-and-inn
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-11
+    date:
+      year: 64
+      month: 12
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tenchi-camp
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-15
+    date:
+      year: 64
+      month: 12
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tenchi-spy-meeting
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-19
+    date:
+      year: 64
+      month: 12
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tenchi-report
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-12-20
+    date:
+      year: 64
+      month: 12
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sai-friendship
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-02
+    date:
+      year: 66
+      month: 4
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-guren-recruited
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-03
+    date:
+      year: 66
+      month: 4
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-team8-search
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-05
+    date:
+      year: 66
+      month: 4
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-crystal-prison-hinata
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-06
+    date:
+      year: 66
+      month: 4
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-three-tails-summoned
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-07
+    date:
+      year: 66
+      month: 4
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shizune-sealing-team
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-08
+    date:
+      year: 66
+      month: 4
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-yukimaru-leaves
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-09
+    date:
+      year: 66
+      month: 4
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tobi-deidara-isobu
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-01
+    date:
+      year: 66
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-orochimaru-defeated
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-02
+    date:
+      year: 66
+      month: 7
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-suigetsu-freed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-05
+    date:
+      year: 66
+      month: 7
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-suigetsu-zabuza-blade
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-08
+    date:
+      year: 66
+      month: 7
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-karin-recruited
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-11
+    date:
+      year: 66
+      month: 7
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jugo-recruited
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-12
+    date:
+      year: 66
+      month: 7
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-roshi-captured
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-13
+    date:
+      year: 66
+      month: 7
+      day: 13
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-eight-man-squad
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-14
+    date:
+      year: 66
+      month: 7
+      day: 14
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hebi-cat-armoury
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-15
+    date:
+      year: 66
+      month: 7
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-konoha-search-split
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-16
+    date:
+      year: 66
+      month: 7
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sasuke-deidara
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-18
+    date:
+      year: 66
+      month: 7
+      day: 18
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-itachi-crow
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-22
+    date:
+      year: 66
+      month: 7
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sasuke-itachi-invitation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-24
+    date:
+      year: 66
+      month: 7
+      day: 24
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-eight-man-tobi-delay
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-25
+    date:
+      year: 66
+      month: 7
+      day: 25
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-truth
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-26
+    date:
+      year: 66
+      month: 7
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-taka-renamed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-27
+    date:
+      year: 66
+      month: 7
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-taka-cloud-journey
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-31
+    date:
+      year: 66
+      month: 7
+      day: 31
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-taka-killer-b
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-17
+    date:
+      year: 66
+      month: 7
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-tsunade-farewell
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-21
+    date:
+      year: 66
+      month: 7
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-ame-infiltration
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-28
+    date:
+      year: 66
+      month: 7
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hotaru-escort
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-29
+    date:
+      year: 66
+      month: 7
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hotaru-village-betrayal
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-30
+    date:
+      year: 66
+      month: 7
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shiranami-revealed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-02
+    date:
+      year: 66
+      month: 8
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-six-tails-extraction
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-03
+    date:
+      year: 66
+      month: 8
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-news
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-04
+    date:
+      year: 66
+      month: 8
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-code
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-10
+    date:
+      year: 66
+      month: 8
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sage-mode-clones
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-12
+    date:
+      year: 66
+      month: 8
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-pain-enters-konoha
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-15
+    date:
+      year: 66
+      month: 8
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-reconstruction-waves
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-14
+    date:
+      year: 66
+      month: 8
+      day: 14
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-danzo-appointed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-16
+    date:
+      year: 66
+      month: 8
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-neji-tenten-supply
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-17
+    date:
+      year: 66
+      month: 8
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-anko-kabuto-search
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-18
+    date:
+      year: 66
+      month: 8
+      day: 18
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-fourth-report
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-20
+    date:
+      year: 66
+      month: 8
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-danzo-road-ambush
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-19
+    date:
+      year: 66
+      month: 8
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-summit-journey
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-24
+    date:
+      year: 66
+      month: 8
+      day: 24
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-raikage-plea
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-21
+    date:
+      year: 66
+      month: 8
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sakura-iron-journey
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-25
+    date:
+      year: 66
+      month: 8
+      day: 25
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-five-kage-debate
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-26
+    date:
+      year: 66
+      month: 8
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-eye-transplant
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-29
+    date:
+      year: 66
+      month: 8
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tsunade-awakens
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-30
+    date:
+      year: 66
+      month: 8
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-seal-key
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-31
+    date:
+      year: 66
+      month: 8
+      day: 31
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-sea-departure
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-02
+    date:
+      year: 66
+      month: 9
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-benisu-herbs
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-03
+    date:
+      year: 66
+      month: 9
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-ghost-ship
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-04
+    date:
+      year: 66
+      month: 9
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-battleship-island
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-05
+    date:
+      year: 66
+      month: 9
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-forgotten-island
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-06
+    date:
+      year: 66
+      month: 9
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-sea-departure
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-07
+    date:
+      year: 66
+      month: 9
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-benisu-herbs
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-13
+    date:
+      year: 66
+      month: 9
+      day: 13
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-silence-mushrooms
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-21
+    date:
+      year: 66
+      month: 9
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-silence-route-end
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-22
+    date:
+      year: 66
+      month: 9
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-clone-nightmare
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-23
+    date:
+      year: 66
+      month: 9
+      day: 23
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-mokuzu-whirlpool
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-24
+    date:
+      year: 66
+      month: 9
+      day: 24
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-imposter
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-25
+    date:
+      year: 66
+      month: 9
+      day: 25
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-clone-nightmare
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-26
+    date:
+      year: 66
+      month: 9
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-mokuzu-whirlpool
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-28
+    date:
+      year: 66
+      month: 9
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-voyage-sos
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-29
+    date:
+      year: 66
+      month: 9
+      day: 29
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-iwa-kiri-reconciliation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-30
+    date:
+      year: 66
+      month: 9
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-lightning-final-ship
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-08
+    date:
+      year: 66
+      month: 9
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-ghost-ship
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-09
+    date:
+      year: 66
+      month: 9
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-battleship-island
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-11
+    date:
+      year: 66
+      month: 9
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-silence-route-supplies
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-12
+    date:
+      year: 66
+      month: 9
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sai-day-off
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-14
+    date:
+      year: 66
+      month: 9
+      day: 14
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-ino-shika-cho-children
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-15
+    date:
+      year: 66
+      month: 9
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kiba-kakashi-training
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-16
+    date:
+      year: 66
+      month: 9
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tenten-lee-training-present
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-10-01
+    date:
+      year: 66
+      month: 10
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-island-arrival
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-10-02
+    date:
+      year: 66
+      month: 10
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-accepts-darkness
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-10-03
+    date:
+      year: 66
+      month: 10
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-konan-tobi-battle
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-10-04
+    date:
+      year: 66
+      month: 10
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tobi-new-rinnegan
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-10-05
+    date:
+      year: 66
+      month: 10
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-island-moved-to-kumo
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-10-08
+    date:
+      year: 66
+      month: 10
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-allied-army-assembly
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-62-06-03
+    date:
+      year: 62
+      month: 6
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sakura-tsunade-apprenticeship
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-63-06-05
+    date:
+      year: 63
+      month: 6
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-ino-medical-apprenticeship
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-63-06-10
+    date:
+      year: 63
+      month: 6
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-genjutsu-training
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-63-06-11
+    date:
+      year: 63
+      month: 6
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-genjutsu-tree-infiltration
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-05-12
+    date:
+      year: 64
+      month: 5
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-four-tails-jiraiya-injury
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-08-01
+    date:
+      year: 64
+      month: 8
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-gaara-becomes-kazekage
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-01
+    date:
+      year: 64
+      month: 10
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-exam-cohost-plan
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-04
+    date:
+      year: 64
+      month: 10
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-ame-invitation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-10
+    date:
+      year: 64
+      month: 10
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-second-exam-arrivals
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-11
+    date:
+      year: 64
+      month: 10
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-second-exam-written
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-12
+    date:
+      year: 64
+      month: 10
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-second-exam-race
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-14
+    date:
+      year: 64
+      month: 10
+      day: 14
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-gaara-assassination-attempt
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-15
+    date:
+      year: 64
+      month: 10
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-demon-desert-start
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-16
+    date:
+      year: 64
+      month: 10
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tenten-ajisai-ruins
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-17
+    date:
+      year: 64
+      month: 10
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sakura-saya-puppet
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-18
+    date:
+      year: 64
+      month: 10
+      day: 18
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-gaara-fu-hoichi
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-64-10-20
+    date:
+      year: 64
+      month: 10
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-second-exam-promotions
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-13-06-01
+    date:
+      year: 13
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hiruzen-bell-test
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-13-06-03
+    date:
+      year: 13
+      month: 6
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-first-myoboku
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-13-07-01
+    date:
+      year: 13
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-orochimaru-white-skin
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-36-10-01
+    date:
+      year: 36
+      month: 10
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-nawaki-death
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-38-05-01
+    date:
+      year: 38
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-dan-death
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-38-05-10
+    date:
+      year: 38
+      month: 5
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sannin-hanzo
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-38-04-01
+    date:
+      year: 38
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-nagato-parents-killed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-38-04-05
+    date:
+      year: 38
+      month: 4
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-ame-orphans-meet
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-38-05-11
+    date:
+      year: 38
+      month: 5
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-adopts-orphans
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-39-06-01
+    date:
+      year: 39
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-nagato-protects-yahiko
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-41-05-11
+    date:
+      year: 41
+      month: 5
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-leaves-orphans
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-58-05-10
+    date:
+      year: 58
+      month: 5
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tsunade-raikage-treatment
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-43-06-01
+    date:
+      year: 43
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sakumo-disgrace
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-43-07-01
+    date:
+      year: 43
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-childhood-dinner
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-43-08-01
+    date:
+      year: 43
+      month: 8
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-guy-duy-childhood
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-44-06-01
+    date:
+      year: 44
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-team-minato-formation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-45-07-01
+    date:
+      year: 45
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-team-minato-exams
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-10-01
+    date:
+      year: 47
+      month: 10
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kannabi-mission
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-10-02
+    date:
+      year: 47
+      month: 10
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-rin-abducted-kannabi
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-10-03
+    date:
+      year: 47
+      month: 10
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-madara-saves-obito
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-11-01
+    date:
+      year: 47
+      month: 11
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-obito-rehabilitation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-02-01
+    date:
+      year: 48
+      month: 2
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-rin-three-tails
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-02-02
+    date:
+      year: 48
+      month: 2
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-obito-accepts-madara
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-06-01
+    date:
+      year: 48
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-minato-fourth-appointed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-06-10
+    date:
+      year: 48
+      month: 6
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-anbu-appointed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-04-01
+    date:
+      year: 49
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-guards-kushina
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-11-01
+    date:
+      year: 49
+      month: 11
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-kinoe-first-meeting
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-11-03
+    date:
+      year: 49
+      month: 11
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hiruzen-assassination-stopped
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-51-06-01
+    date:
+      year: 51
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-orochimaru-defects
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-51-06-02
+    date:
+      year: 51
+      month: 6
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-iburi-kinoe-yukimi
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-51-06-03
+    date:
+      year: 51
+      month: 6
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-iburi-orochimaru-escape
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-54-06-01
+    date:
+      year: 54
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kinoe-sharingan-order
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-54-06-02
+    date:
+      year: 54
+      month: 6
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tenzo-joins-anbu
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-55-06-01
+    date:
+      year: 55
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-kakashi-anbu
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-57-01-10
+    date:
+      year: 57
+      month: 1
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-leaves-anbu
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-60-09-01
+    date:
+      year: 60
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-previous-students
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-34-04-01
+    date:
+      year: 34
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kushina-konoha-arrival
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-36-07-01
+    date:
+      year: 36
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-minato-rescues-kushina
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-34-04-05
+    date:
+      year: 34
+      month: 4
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kushina-mito
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-05-01
+    date:
+      year: 49
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-name-chosen
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-10-10
+    date:
+      year: 49
+      month: 10
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-birth
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-11-10
+    date:
+      year: 49
+      month: 11
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-uchiha-relocated
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-05-01
+    date:
+      year: 47
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-war-child
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-50-04-01
+    date:
+      year: 50
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-academy
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-51-05-01
+    date:
+      year: 51
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-team2-cat
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-51-07-01
+    date:
+      year: 51
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-tenma-death
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-52-06-01
+    date:
+      year: 52
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-shisui-root-clash
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-09-01
+    date:
+      year: 56
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-uchiha-coup-preparation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-09-20
+    date:
+      year: 56
+      month: 9
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shisui-danzo-eye
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-09-22
+    date:
+      year: 56
+      month: 9
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-police-confrontation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-10-15
+    date:
+      year: 56
+      month: 10
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-danzo-itachi-ultimatum
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-10-16
+    date:
+      year: 56
+      month: 10
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-uchiha-massacre
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-10-17
+    date:
+      year: 56
+      month: 10
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-hiruzen-request
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-11-01
+    date:
+      year: 56
+      month: 11
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-juzo-partnership
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-57-02-01
+    date:
+      year: 57
+      month: 2
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-orochimaru-itachi-defeat
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-58-05-01
+    date:
+      year: 58
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-deidara-recruited
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-63-06-01
+    date:
+      year: 63
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hidan-recruited
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-01-19
+    date:
+      year: 49
+      month: 1
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-gaara-birth
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-54-05-01
+    date:
+      year: 54
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-gaara-siblings-sandbox
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-54-09-01
+    date:
+      year: 54
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-hiruzen-campfire
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-54-12-20
+    date:
+      year: 54
+      month: 12
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hinata-naruto-bullies
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-52-12-20
+    date:
+      year: 52
+      month: 12
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hizashi-neji-childhood
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-52-12-28
+    date:
+      year: 52
+      month: 12
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hinata-after-hizashi-funeral
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-58-04-01
+    date:
+      year: 58
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-iruka-first-class
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-58-04-03
+    date:
+      year: 58
+      month: 4
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-iruka-mask-and-spies
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-54-07-01
+    date:
+      year: 54
+      month: 7
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-sasuke-weekend
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-55-04-01
+    date:
+      year: 55
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sakura-ino-ribbon
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-58-06-01
+    date:
+      year: 58
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-academy-ino-shika-cho
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-55-05-01
+    date:
+      year: 55
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-torune-saves-shino
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-57-06-01
+    date:
+      year: 57
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-yota-children-meeting
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-57-06-02
+    date:
+      year: 57
+      month: 6
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-yota-river-memory-erasure
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-04-01
+    date:
+      year: 48
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-small-akatsuki-founded
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-04-02
+    date:
+      year: 48
+      month: 4
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-obito-approaches-nagato
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-05-01
+    date:
+      year: 48
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-danzo-akatsuki-false-flag
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-05-03
+    date:
+      year: 48
+      month: 5
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hanzo-konan-hostage
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-52-05-01
+    date:
+      year: 52
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-pain-overthrows-hanzo
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-37-06-01
+    date:
+      year: 37
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sasori-parents-loss
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-46-05-01
+    date:
+      year: 46
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sasori-third-kazekage
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-50-01-01
+    date:
+      year: 50
+      month: 1
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kisame-meets-masked-ruler
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-36-06-01
+    date:
+      year: 36
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-bee-chosen-as-brother
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-37-01-01
+    date:
+      year: 37
+      month: 1
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-motoi-attacks-bee
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-06-01
+    date:
+      year: 47
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-minato-ab-clash
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-38-02-01
+    date:
+      year: 38
+      month: 2
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hanzo-mifune-first-duel
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-50-06-01
+    date:
+      year: 50
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kabuto-root-recruited
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-05-01
+    date:
+      year: 65
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-moryo-revived
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-05-02
+    date:
+      year: 65
+      month: 5
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shion-mission
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-05-03
+    date:
+      year: 65
+      month: 5
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shion-palace-assault
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-05-04
+    date:
+      year: 65
+      month: 5
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shion-prediction
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-05-05
+    date:
+      year: 65
+      month: 5
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shion-escort-ambush
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-05-06
+    date:
+      year: 65
+      month: 5
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shion-moryo-seal
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-05-07
+    date:
+      year: 65
+      month: 5
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shion-farewell
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-60-05-01
+    date:
+      year: 60
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-miroku-first-seal
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-05-01
+    date:
+      year: 66
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sky-konoha-raid
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-05-03
+    date:
+      year: 66
+      month: 5
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sky-escort-village
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-05-04
+    date:
+      year: 66
+      month: 5
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sky-fortress-duel
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-05-06
+    date:
+      year: 66
+      month: 5
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sky-sasuke-return
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-25
+    date:
+      year: 66
+      month: 4
+      day: 25
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hiruko-investigation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-26
+    date:
+      year: 66
+      month: 4
+      day: 26
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hiruko-threat
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-27
+    date:
+      year: 66
+      month: 4
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hiruko-puppet-curse
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-04-28
+    date:
+      year: 66
+      month: 4
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hiruko-final-duel
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-09-01
+    date:
+      year: 65
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tower-pursuit
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-45-09-01
+    date:
+      year: 45
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tower-arrival-past
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-39-09-01
+    date:
+      year: 39
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tower-mukade-arrives
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-43-09-01
+    date:
+      year: 43
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tower-queen-murdered
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-01
+    date:
+      year: 66
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-prison-accusation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-10
+    date:
+      year: 66
+      month: 9
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-guy-lee-ocean-training
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-56-09-11
+    date:
+      year: 56
+      month: 9
+      day: 11
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-prison-muku-lost
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-06-01
+    date:
+      year: 66
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-road-akatsuki-copy-attack
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-06-02
+    date:
+      year: 66
+      month: 6
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-road-red-moon-scroll
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-06-03
+    date:
+      year: 66
+      month: 6
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-road-menma-attack
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-1-01-01
+    date:
+      year: 1
+      month: 1
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-senju-uchiha-peace
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-1-04-01
+    date:
+      year: 1
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-konoha-founded
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-2-04-01
+    date:
+      year: 2
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-madara-leaves-konoha
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-3-06-01
+    date:
+      year: 3
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-founders-valley-duel
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-3-06-02
+    date:
+      year: 3
+      month: 6
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-madara-hidden-survival
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-11-06-01
+    date:
+      year: 11
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kosuke-lost-comrades
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-08-01
+    date:
+      year: 48
+      month: 8
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kosuke-minato-leg
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-46-06-01
+    date:
+      year: 46
+      month: 6
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hanare-kakashi-childhood
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-60-08-01
+    date:
+      year: 60
+      month: 8
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-lee-drunk-restaurant
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-60-08-02
+    date:
+      year: 60
+      month: 8
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-lee-seasickness-training
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-62-06-10
+    date:
+      year: 62
+      month: 6
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shino-suika-first-loss
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-62-06-12
+    date:
+      year: 62
+      month: 6
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shino-suika-rematch
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-05-15
+    date:
+      year: 66
+      month: 5
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-teaches-konohamaru-rasengan
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-03-01
+    date:
+      year: 66
+      month: 3
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-wind-nature
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-02
+    date:
+      year: 66
+      month: 3
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-asuma-wind-lesson
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-04
+    date:
+      year: 66
+      month: 3
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-fire-temple-arrival
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-05
+    date:
+      year: 66
+      month: 3
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-guardian-tombs
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-07
+    date:
+      year: 66
+      month: 3
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sora-konoha
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-08
+    date:
+      year: 66
+      month: 3
+      day: 8
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sora-hokage-threat
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-09
+    date:
+      year: 66
+      month: 3
+      day: 9
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sora-departs
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-13
+    date:
+      year: 66
+      month: 3
+      day: 13
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-yugito-capture
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-16
+    date:
+      year: 66
+      month: 3
+      day: 16
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-chiriku-death
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-15
+    date:
+      year: 66
+      month: 3
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-waterfall-training
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-17
+    date:
+      year: 66
+      month: 3
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-twenty-platoons
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-19
+    date:
+      year: 66
+      month: 3
+      day: 19
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-asuma-bounty-station
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-21
+    date:
+      year: 66
+      month: 3
+      day: 21
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-asuma-funeral
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-22
+    date:
+      year: 66
+      month: 3
+      day: 22
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-revenge-departure
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-23
+    date:
+      year: 66
+      month: 3
+      day: 23
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakuzu-ambush
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-03-25
+    date:
+      year: 66
+      month: 3
+      day: 25
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-rasenshuriken-ban
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-47-10-05
+    date:
+      year: 47
+      month: 10
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-hiruko-curse-past
+    review: partial
+    reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
+  - id: ta-s2-66-08-27
+    date:
+      year: 66
+      month: 8
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-power-tonika-massacre
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-08-28
+    date:
+      year: 66
+      month: 8
+      day: 28
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-power-survivors-hacho
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-43-05-01
+    date:
+      year: 43
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-guy-academy-effort
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-43-05-02
+    date:
+      year: 43
+      month: 5
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sakumo-sees-guy
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-65-08-01
+    date:
+      year: 65
+      month: 8
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sasuke-suigetsu-promise
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-59-05-01
+    date:
+      year: 59
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sai-shin-picturebook
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-63-05-01
+    date:
+      year: 63
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-shizuka-sagiri-loss
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-05-01
+    date:
+      year: 56
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-temujin-village-destroyed
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-12-05-01
+    date:
+      year: 12
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kinkaku-ginkaku-kurama
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-14-03-01
+    date:
+      year: 14
+      month: 3
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kinkaku-ginkaku-coup
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-14-04-01
+    date:
+      year: 14
+      month: 4
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-tobirama-last-escort
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-09-17
+    date:
+      year: 66
+      month: 9
+      day: 17
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-silence-mushrooms
+    review: partial
+    reason: 'Робочий розклад після включення довоєнної арки «Сила»: резерв повернення й послідовна морська дорога;
+      для безвітряної ділянки залишено 14 діб.'
+  - id: ta-s2-66-09-27
+    date:
+      year: 66
+      month: 9
+      day: 27
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-sea-departure
+    review: partial
+    reason: Робочий розклад дороги після арки «Сила».
+  - id: ta-s2-66-10-06
+    date:
+      year: 66
+      month: 10
+      day: 6
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-sea-departure
+    review: partial
+    reason: Робочий розклад дороги після арки «Сила».
+  - id: ta-s2-66-10-07
+    date:
+      year: 66
+      month: 10
+      day: 7
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-naruto-sea-departure
+    review: partial
+    reason: Робочий розклад дороги після арки «Сила».
+  - id: ta-s2-66-05-31
+    date:
+      year: 66
+      month: 5
+      day: 31
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-road-telescope-preparation
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-55-08-24
+    date:
+      year: 55
+      month: 8
+      day: 24
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-yugao-hayate-training
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-06-05
+    date:
+      year: 47
+      month: 6
+      day: 5
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-chen-student-death
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-06-10
+    date:
+      year: 47
+      month: 6
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-chen-fakes-death
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-10
+    date:
+      year: 66
+      month: 7
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kabuto-grave-robbing
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-34-02-01
+    date:
+      year: 34
+      month: 2
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-madara-rinnegan-awakens
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-03-01
+    date:
+      year: 48
+      month: 3
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-madara-instructs-obito
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-48-03-02
+    date:
+      year: 48
+      month: 3
+      day: 2
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-madara-life-support-ends
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-05-03
+    date:
+      year: 47
+      month: 5
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-orochimaru-life-death
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-05-04
+    date:
+      year: 47
+      month: 5
+      day: 4
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-cliff-crows
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-07-23
+    date:
+      year: 49
+      month: 7
+      day: 23
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sasuke-birth
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-49-11-12
+    date:
+      year: 49
+      month: 11
+      day: 12
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-great-fireball
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-50-05-01
+    date:
+      year: 50
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-dokan-clone
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-51-04-15
+    date:
+      year: 51
+      month: 4
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-izumi-dumplings
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-47-05-10
+    date:
+      year: 47
+      month: 5
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-fugaku-mangekyo-loss
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-09-24
+    date:
+      year: 56
+      month: 9
+      day: 24
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-itachi-captain-mission
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-56-10-10
+    date:
+      year: 56
+      month: 10
+      day: 10
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-fugaku-shows-tablet
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-55-04-03
+    date:
+      year: 55
+      month: 4
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sakura-ino-hideout
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-58-06-03
+    date:
+      year: 58
+      month: 6
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-academy-hinata-bullies
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-43-07-03
+    date:
+      year: 43
+      month: 7
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kakashi-sakumo-grave-child
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-22-05-01
+    date:
+      year: 22
+      month: 5
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-jiraiya-tsunade-failed-rescue
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-38-03-01
+    date:
+      year: 38
+      month: 3
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-sannin-kiri-night-fight
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-2-01-15
+    date:
+      year: 2
+      month: 1
+      day: 15
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-onoki-mu-madara
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-66-07-20
+    date:
+      year: 66
+      month: 7
+      day: 20
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-kabuto-ryuchi-training
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-44-05-30
+    date:
+      year: 44
+      month: 5
+      day: 30
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-obito-graduation-support
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-1-09-01
+    date:
+      year: 1
+      month: 9
+      day: 1
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    evidence_ids:
+    - evd-s2-first-kage-summit
+    review: partial
+    reason: 'Робочий день проєкту: сюжетний порядок, резерв дороги й відновлення. Джерело підтверджує подію, а не
+      календарний день.'
+  - id: ta-s2-59-05-03
+    date:
+      year: 59
+      month: 5
+      day: 3
+    precision: day
+    placement_status: working
+    basis: project_reconstruction
+    review: partial
+    evidence_ids:
+    - evd-s2-pakura-sacrificed
+    reason: 'Робочий резерв після показаного навчання малої Макі: початковий 52 рік був занадто раннім для її покоління.
+      Точний рік і вік Макі джерело не дає.'

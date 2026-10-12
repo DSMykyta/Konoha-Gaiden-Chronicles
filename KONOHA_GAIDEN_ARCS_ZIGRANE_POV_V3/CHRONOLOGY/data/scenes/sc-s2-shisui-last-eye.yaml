@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-shisui-last-eye
+episode_id: ep-s2-shisui-last-eye
+display_rank: 31700
+continuity_id: main
+title: Шісуї передає друге око Ітачі
+description: Він довіряє другові захист села та стрибає зі скелі; Ітачі відкриває Манґекьо.
+location_id: loc-naka-river-cliff
+placement:
+  anchor_id: ta-s2-56-09-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shisui-last-eye-1
+  title: Шісуї передає друге око Ітачі
+  text: Він довіряє другові захист села та стрибає зі скелі; Ітачі відкриває Манґекьо.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shisui
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shisui-last-eye
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-shisui-last-eye-c-shisui
+  entity_id: c-shisui
+  from: sc-s2-shisui-last-eye.start
+  to: sc-s2-shisui-last-eye.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shisui-last-eye
+- id: pr-s2-shisui-last-eye-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-shisui-last-eye.start
+  to: sc-s2-shisui-last-eye.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shisui-last-eye

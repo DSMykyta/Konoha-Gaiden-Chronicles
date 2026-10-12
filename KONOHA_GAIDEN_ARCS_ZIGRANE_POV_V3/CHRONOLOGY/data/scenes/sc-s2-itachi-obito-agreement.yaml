@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-itachi-obito-agreement
+episode_id: ep-s2-itachi-obito-agreement
+display_rank: 32000
+continuity_id: main
+title: Ітачі домовляється з Обіто
+description: Він просить допомогти знищити клан і не чіпати село та Саске.
+location_id: loc-uchiha-forest
+placement:
+  anchor_id: ta-s2-56-10-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-obito-agreement-1
+  title: Ітачі домовляється з Обіто
+  text: Він просить допомогти знищити клан і не чіпати село та Саске.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-obito-agreement
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-itachi-obito-agreement-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-obito-agreement.start
+  to: sc-s2-itachi-obito-agreement.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-obito-agreement
+- id: pr-s2-itachi-obito-agreement-c-obito
+  entity_id: c-obito
+  from: sc-s2-itachi-obito-agreement.start
+  to: sc-s2-itachi-obito-agreement.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-obito-agreement

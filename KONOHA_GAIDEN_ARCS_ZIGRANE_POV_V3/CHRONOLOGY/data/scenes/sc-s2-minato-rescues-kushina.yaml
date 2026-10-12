@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-minato-rescues-kushina
+episode_id: ep-s2-minato-rescues-kushina
+display_rank: 29800
+continuity_id: main
+title: Мінато знаходить викрадену Кушіну
+description: Вона залишає пасма червоного волосся; Мінато наздоганяє викрадачів і повертає її до села.
+location_id: loc-fire-kumo-border-route
+placement:
+  anchor_id: ta-s2-36-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-minato-rescues-kushina-1
+  title: Мінато знаходить викрадену Кушіну
+  text: Вона залишає пасма червоного волосся; Мінато наздоганяє викрадачів і повертає її до села.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-minato-rescues-kushina
+relations: []
+presence:
+- id: pr-s2-minato-rescues-kushina-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-minato-rescues-kushina.start
+  to: sc-s2-minato-rescues-kushina.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-rescues-kushina
+- id: pr-s2-minato-rescues-kushina-c-minato
+  entity_id: c-minato
+  from: sc-s2-minato-rescues-kushina.start
+  to: sc-s2-minato-rescues-kushina.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-rescues-kushina

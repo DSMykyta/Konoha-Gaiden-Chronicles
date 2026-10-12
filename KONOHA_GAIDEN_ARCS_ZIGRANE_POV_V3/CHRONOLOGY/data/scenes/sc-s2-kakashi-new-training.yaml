@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-kakashi-new-training
+episode_id: ep-s2-kakashi-new-training
+display_rank: 4100
+continuity_id: main
+title: Какаші пропонує нове тренування
+description: Команда розповідає про силу Саске; Какаші готує спосіб прискорити навчання Наруто.
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-s2-64-12-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-new-training-1
+  title: Какаші пропонує нове тренування
+  text: Команда розповідає про силу Саске; Какаші готує спосіб прискорити навчання Наруто.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-new-training
+relations: []
+presence:
+- id: pr-s2-kakashi-new-training-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-kakashi-new-training.start
+  to: sc-s2-kakashi-new-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-new-training
+- id: pr-s2-kakashi-new-training-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-kakashi-new-training.start
+  to: sc-s2-kakashi-new-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-new-training
+- id: pr-s2-kakashi-new-training-c-sai
+  entity_id: c-sai
+  from: sc-s2-kakashi-new-training.start
+  to: sc-s2-kakashi-new-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-new-training
+- id: pr-s2-kakashi-new-training-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-new-training.start
+  to: sc-s2-kakashi-new-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-new-training

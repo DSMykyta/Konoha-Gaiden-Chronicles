@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-kakashi-leaves-anbu
+episode_id: ep-s2-kakashi-leaves-anbu
+display_rank: 29500
+continuity_id: main
+title: Хірудзен робить Какаші наставником генінів
+description: Після трагедії Учіха він завершує службу в АНБУ; перші трійці провалюють його тест.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-57-01-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-leaves-anbu-1
+  title: Хірудзен робить Какаші наставником генінів
+  text: Після трагедії Учіха він завершує службу в АНБУ; перші трійці провалюють його тест.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-leaves-anbu
+relations: []
+presence:
+- id: pr-s2-kakashi-leaves-anbu-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-leaves-anbu.start
+  to: sc-s2-kakashi-leaves-anbu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-leaves-anbu
+- id: pr-s2-kakashi-leaves-anbu-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-kakashi-leaves-anbu.start
+  to: sc-s2-kakashi-leaves-anbu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-leaves-anbu

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-minato-safehouse
+episode_id: ep-s2-minato-safehouse
+display_rank: 30400
+continuity_id: main
+title: Мінато ховає дружину й дитину
+description: Він залишає їх у безпечному домі та виходить захищати село.
+location_id: loc-minato-safehouse
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-minato-safehouse-1
+  title: Мінато ховає дружину й дитину
+  text: Він залишає їх у безпечному домі та виходить захищати село.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-minato-safehouse
+relations: []
+presence:
+- id: pr-s2-minato-safehouse-c-minato
+  entity_id: c-minato
+  from: sc-s2-minato-safehouse.start
+  to: sc-s2-minato-safehouse.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-safehouse
+- id: pr-s2-minato-safehouse-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-minato-safehouse.start
+  to: sc-s2-minato-safehouse.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-safehouse
+- id: pr-s2-minato-safehouse-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-minato-safehouse.start
+  to: sc-s2-minato-safehouse.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-safehouse

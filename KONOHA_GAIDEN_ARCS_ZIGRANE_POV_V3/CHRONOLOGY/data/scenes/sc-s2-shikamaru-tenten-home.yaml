@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-shikamaru-tenten-home
+episode_id: ep-s2-shikamaru-tenten-home
+display_rank: 500
+continuity_id: main
+title: Підкріплення повертається до Конохи
+description: Після допомоги біля Мокудзу Шикамару й Тентен повертаються до Конохи.
+location_id: loc-konoha-gate
+placement:
+  anchor_id: ta-s2-66-09-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-shikamaru-tenten-home-1
+  title: Підкріплення повертається до Конохи
+  text: Після допомоги біля Мокудзу Шикамару й Тентен повертаються до Конохи.
+  origin: R
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shikamaru-tenten-home
+relations: []
+presence:
+- id: pr-s2-shikamaru-tenten-home-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-shikamaru-tenten-home.start
+  to: sc-s2-shikamaru-tenten-home.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-tenten-home
+- id: pr-s2-shikamaru-tenten-home-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-shikamaru-tenten-home.start
+  to: sc-s2-shikamaru-tenten-home.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-tenten-home
+editorial_note: Чотири дні зворотної дороги реконструйовано; окрема сцена повернення не показана.

@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-tower-mukade-arrives
+episode_id: ep-s2-tower-mukade-arrives
+display_rank: 40000
+continuity_id: movie-tower
+title: Мукаде входить до Роурану
+description: Майбутній утікач використовує знання маріонеток та Рюмяку, щоб стати міністром Анрокудзаном.
+location_id: loc-roran-palace
+placement:
+  anchor_id: ta-s2-39-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tower-mukade-arrives-1
+  title: Мукаде входить до Роурану
+  text: Майбутній утікач використовує знання маріонеток та Рюмяку, щоб стати міністром Анрокудзаном.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-mukade
+    role: participant
+    mode: physical
+  - entity_id: c-sara-mother
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tower-mukade-arrives
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-tower-mukade-arrives-c-mukade
+  entity_id: c-mukade
+  from: sc-s2-tower-mukade-arrives.start
+  to: sc-s2-tower-mukade-arrives.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-mukade-arrives
+- id: pr-s2-tower-mukade-arrives-c-sara-mother
+  entity_id: c-sara-mother
+  from: sc-s2-tower-mukade-arrives.start
+  to: sc-s2-tower-mukade-arrives.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-mukade-arrives

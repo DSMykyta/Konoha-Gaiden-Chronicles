@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-sannin-hanzo
+episode_id: ep-s2-sannin-hanzo
+display_rank: 26400
+continuity_id: main
+title: Ханзо називає трійцю Саннінами
+description: Виснажені шинобі виживають після бою з ним і отримують нове ім’я.
+location_id: loc-ame-war-battlefield
+placement:
+  anchor_id: ta-s2-38-05-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sannin-hanzo-1
+  title: Ханзо називає трійцю Саннінами
+  text: Виснажені шинобі виживають після бою з ним і отримують нове ім’я.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-hanzo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sannin-hanzo
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-sannin-hanzo-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-sannin-hanzo.start
+  to: sc-s2-sannin-hanzo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sannin-hanzo
+- id: pr-s2-sannin-hanzo-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-sannin-hanzo.start
+  to: sc-s2-sannin-hanzo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sannin-hanzo
+- id: pr-s2-sannin-hanzo-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-sannin-hanzo.start
+  to: sc-s2-sannin-hanzo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sannin-hanzo
+- id: pr-s2-sannin-hanzo-c-hanzo
+  entity_id: c-hanzo
+  from: sc-s2-sannin-hanzo.start
+  to: sc-s2-sannin-hanzo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sannin-hanzo

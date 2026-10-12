@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-konoha-founded
+episode_id: ep-s2-konoha-founded
+display_rank: 42300
+continuity_id: main
+title: Клани будують спільне село
+description: Мадара пропонує назву Коноха; до союзу приєднуються Сарутобі, Шімура та інші клани. Вибір керівника
+  відходить від його особистого наміру передати посаду Мадарі.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-1-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-konoha-founded-1
+  title: Клани будують спільне село
+  text: Мадара пропонує назву Коноха; до союзу приєднуються Сарутобі, Шімура та інші клани.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-konoha-founded
+- id: ev-s2-konoha-founded-2
+  title: Хашірама стає Першим Хокаґе
+  text: Вибір керівника відходить від його особистого наміру передати посаду Мадарі.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-konoha-founded
+relations:
+- id: rel-s2-konoha-founded-1
+  kind: before
+  a: ev-s2-konoha-founded-1
+  b: ev-s2-konoha-founded-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-founded
+presence:
+- id: pr-s2-konoha-founded-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-konoha-founded.start
+  to: sc-s2-konoha-founded.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-founded
+- id: pr-s2-konoha-founded-c-madara
+  entity_id: c-madara
+  from: sc-s2-konoha-founded.start
+  to: sc-s2-konoha-founded.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-founded
+- id: pr-s2-konoha-founded-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-konoha-founded.start
+  to: sc-s2-konoha-founded.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-founded

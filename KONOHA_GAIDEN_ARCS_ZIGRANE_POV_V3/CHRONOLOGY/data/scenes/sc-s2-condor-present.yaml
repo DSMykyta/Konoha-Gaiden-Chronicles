@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-condor-present
+episode_id: ep-s2-condor-present
+display_rank: 15900
+continuity_id: main
+title: Наруто знову наздоганяє Кондора
+description: Страус розповідає пташенятам про давні сутички, але Наруто помічає його спробу втекти.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-condor-present-1
+  title: Наруто знову наздоганяє Кондора
+  text: Страус розповідає пташенятам про давні сутички, але Наруто помічає його спробу втекти.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-condor
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-condor-present
+relations: []
+presence:
+- id: pr-s2-condor-present-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-condor-present.start
+  to: sc-s2-condor-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-condor-present
+- id: pr-s2-condor-present-c-condor
+  entity_id: c-condor
+  from: sc-s2-condor-present.start
+  to: sc-s2-condor-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-condor-present

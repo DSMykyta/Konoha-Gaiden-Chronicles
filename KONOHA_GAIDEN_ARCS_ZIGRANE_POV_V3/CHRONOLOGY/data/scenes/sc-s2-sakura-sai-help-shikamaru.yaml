@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-sakura-sai-help-shikamaru
+episode_id: ep-s2-sakura-sai-help-shikamaru
+display_rank: 6600
+continuity_id: main
+title: Сакура й Сай знаходять Шикамару
+description: Після перемоги над Хіданом Шикамару виходить із лісу до товаришів.
+location_id: loc-nara-forest-trap
+placement:
+  anchor_id: ta-s2-66-03-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sakura-sai-help-shikamaru-1
+  title: Сакура й Сай знаходять Шикамару
+  text: Після перемоги над Хіданом Шикамару виходить із лісу до товаришів.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-sai-help-shikamaru
+relations: []
+presence:
+- id: pr-s2-sakura-sai-help-shikamaru-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sakura-sai-help-shikamaru.start
+  to: sc-s2-sakura-sai-help-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sai-help-shikamaru
+- id: pr-s2-sakura-sai-help-shikamaru-c-sai
+  entity_id: c-sai
+  from: sc-s2-sakura-sai-help-shikamaru.start
+  to: sc-s2-sakura-sai-help-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sai-help-shikamaru
+- id: pr-s2-sakura-sai-help-shikamaru-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-sakura-sai-help-shikamaru.start
+  to: sc-s2-sakura-sai-help-shikamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sai-help-shikamaru

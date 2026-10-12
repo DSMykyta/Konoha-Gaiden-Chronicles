@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-island-moved-to-kumo
+episode_id: ep-s2-island-moved-to-kumo
+display_rank: 23200
+continuity_id: main
+title: Онокі переносить черепаху до Кумо
+description: Наруто продовжує тренуватися з Бі, не знаючи долі Ямато.
+location_id: loc-kumogakure-island-dock
+placement:
+  anchor_id: ta-s2-66-10-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-island-moved-to-kumo-1
+  title: Онокі переносить черепаху до Кумо
+  text: Наруто продовжує тренуватися з Бі, не знаючи долі Ямато.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-island-moved-to-kumo
+relations: []
+presence:
+- id: pr-s2-island-moved-to-kumo-c-onoki
+  entity_id: c-onoki
+  from: sc-s2-island-moved-to-kumo.start
+  to: sc-s2-island-moved-to-kumo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-moved-to-kumo
+- id: pr-s2-island-moved-to-kumo-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-island-moved-to-kumo.start
+  to: sc-s2-island-moved-to-kumo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-moved-to-kumo
+- id: pr-s2-island-moved-to-kumo-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-island-moved-to-kumo.start
+  to: sc-s2-island-moved-to-kumo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-moved-to-kumo
+- id: pr-s2-island-moved-to-kumo-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-island-moved-to-kumo.start
+  to: sc-s2-island-moved-to-kumo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-moved-to-kumo

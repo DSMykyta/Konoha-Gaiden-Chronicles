@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-danzo-akatsuki-false-flag
+episode_id: ep-s2-danzo-akatsuki-false-flag
+display_rank: 34900
+continuity_id: main
+title: Корінь нападає під виглядом Іви
+description: Наґато захищає товаришів статуєю; Данзо використовує напад, щоб налаштувати Ханзо проти Акацукі.
+location_id: loc-ame-border-village
+placement:
+  anchor_id: ta-s2-48-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-danzo-akatsuki-false-flag-1
+  title: Корінь нападає під виглядом Іви
+  text: Наґато захищає товаришів статуєю; Данзо використовує напад, щоб налаштувати Ханзо проти Акацукі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-yahiko
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-danzo-akatsuki-false-flag
+relations: []
+presence:
+- id: pr-s2-danzo-akatsuki-false-flag-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-danzo-akatsuki-false-flag.start
+  to: sc-s2-danzo-akatsuki-false-flag.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-akatsuki-false-flag
+- id: pr-s2-danzo-akatsuki-false-flag-c-yahiko
+  entity_id: c-yahiko
+  from: sc-s2-danzo-akatsuki-false-flag.start
+  to: sc-s2-danzo-akatsuki-false-flag.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-akatsuki-false-flag
+- id: pr-s2-danzo-akatsuki-false-flag-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-danzo-akatsuki-false-flag.start
+  to: sc-s2-danzo-akatsuki-false-flag.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-akatsuki-false-flag
+- id: pr-s2-danzo-akatsuki-false-flag-c-konan
+  entity_id: c-konan
+  from: sc-s2-danzo-akatsuki-false-flag.start
+  to: sc-s2-danzo-akatsuki-false-flag.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-akatsuki-false-flag

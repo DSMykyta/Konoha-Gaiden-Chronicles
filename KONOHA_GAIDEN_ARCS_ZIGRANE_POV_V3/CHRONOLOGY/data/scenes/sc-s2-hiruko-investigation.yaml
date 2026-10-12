@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-hiruko-investigation
+episode_id: ep-s2-hiruko-investigation
+display_rank: 38500
+continuity_id: movie-fire
+title: Команда досліджує викрадення носіїв кеккей-ґенкай
+description: Під час розвідки вони зустрічають нову загрозу; села звинувачують Коноху.
+location_id: loc-hiruko-investigation-site
+placement:
+  anchor_id: ta-s2-66-04-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hiruko-investigation-1
+  title: Команда досліджує викрадення носіїв кеккей-ґенкай
+  text: Під час розвідки вони зустрічають нову загрозу; села звинувачують Коноху.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hiruko-investigation
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-hiruko-investigation-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hiruko-investigation.start
+  to: sc-s2-hiruko-investigation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-investigation
+- id: pr-s2-hiruko-investigation-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-hiruko-investigation.start
+  to: sc-s2-hiruko-investigation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-investigation
+- id: pr-s2-hiruko-investigation-c-sai
+  entity_id: c-sai
+  from: sc-s2-hiruko-investigation.start
+  to: sc-s2-hiruko-investigation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-investigation
+- id: pr-s2-hiruko-investigation-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-hiruko-investigation.start
+  to: sc-s2-hiruko-investigation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-investigation

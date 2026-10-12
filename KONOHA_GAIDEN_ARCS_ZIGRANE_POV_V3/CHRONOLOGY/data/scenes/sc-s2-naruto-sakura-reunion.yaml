@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-naruto-sakura-reunion
+episode_id: ep-s2-naruto-sakura-reunion
+display_rank: 200
+continuity_id: main
+title: Наруто зустрічає Сакуру та Конохамару
+description: Сакура зауважує, як виріс Наруто; його спроба показати нову Сексуальну техніку завершується її ударом.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-64-11-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-sakura-reunion-1
+  title: Наруто зустрічає Сакуру та Конохамару
+  text: Сакура зауважує, як виріс Наруто; його спроба показати нову Сексуальну техніку завершується її ударом.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-sakura-reunion
+relations: []
+presence:
+- id: pr-s2-naruto-sakura-reunion-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-sakura-reunion.start
+  to: sc-s2-naruto-sakura-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sakura-reunion
+- id: pr-s2-naruto-sakura-reunion-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-naruto-sakura-reunion.start
+  to: sc-s2-naruto-sakura-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sakura-reunion
+- id: pr-s2-naruto-sakura-reunion-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-s2-naruto-sakura-reunion.start
+  to: sc-s2-naruto-sakura-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sakura-reunion
+- id: pr-s2-naruto-sakura-reunion-c-moegi
+  entity_id: c-moegi
+  from: sc-s2-naruto-sakura-reunion.start
+  to: sc-s2-naruto-sakura-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sakura-reunion
+- id: pr-s2-naruto-sakura-reunion-c-udon
+  entity_id: c-udon
+  from: sc-s2-naruto-sakura-reunion.start
+  to: sc-s2-naruto-sakura-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sakura-reunion
+- id: pr-s2-naruto-sakura-reunion-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-naruto-sakura-reunion.start
+  to: sc-s2-naruto-sakura-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sakura-reunion

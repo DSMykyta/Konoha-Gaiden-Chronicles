@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-naruto-hiruzen-campfire
+episode_id: ep-s2-naruto-hiruzen-campfire
+display_rank: 33200
+continuity_id: main
+title: Наруто ділиться рибою з Хірудзеном
+description: Голодний хлопчик сам збирає їжу; нічна розмова розширює його уявлення про світ.
+location_id: loc-konoha-woods
+placement:
+  anchor_id: ta-s2-54-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-hiruzen-campfire-1
+  title: Наруто ділиться рибою з Хірудзеном
+  text: Голодний хлопчик сам збирає їжу; нічна розмова розширює його уявлення про світ.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-hiruzen-campfire
+relations: []
+presence:
+- id: pr-s2-naruto-hiruzen-campfire-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-hiruzen-campfire.start
+  to: sc-s2-naruto-hiruzen-campfire.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-hiruzen-campfire
+- id: pr-s2-naruto-hiruzen-campfire-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-naruto-hiruzen-campfire.start
+  to: sc-s2-naruto-hiruzen-campfire.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-hiruzen-campfire

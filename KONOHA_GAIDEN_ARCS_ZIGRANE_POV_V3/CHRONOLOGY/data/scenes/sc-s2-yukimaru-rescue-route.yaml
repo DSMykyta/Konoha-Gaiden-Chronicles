@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-yukimaru-rescue-route
+episode_id: ep-s2-yukimaru-rescue-route
+display_rank: 8100
+continuity_id: main
+title: Юкімару допомагає знайти Наруто
+description: Камелії та пролом у захисті звіра відкривають вихід із його черева.
+location_id: loc-three-tails-lake
+placement:
+  anchor_id: ta-s2-66-04-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yukimaru-rescue-route-1
+  title: Юкімару допомагає знайти Наруто
+  text: Камелії та пролом у захисті звіра відкривають вихід із його черева.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  - entity_id: c-gamakichi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yukimaru-rescue-route
+relations: []
+presence:
+- id: pr-s2-yukimaru-rescue-route-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-yukimaru-rescue-route.start
+  to: sc-s2-yukimaru-rescue-route.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-rescue-route
+- id: pr-s2-yukimaru-rescue-route-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-yukimaru-rescue-route.start
+  to: sc-s2-yukimaru-rescue-route.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-rescue-route
+- id: pr-s2-yukimaru-rescue-route-c-yukimaru
+  entity_id: c-yukimaru
+  from: sc-s2-yukimaru-rescue-route.start
+  to: sc-s2-yukimaru-rescue-route.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-rescue-route
+- id: pr-s2-yukimaru-rescue-route-c-gamakichi
+  entity_id: c-gamakichi
+  from: sc-s2-yukimaru-rescue-route.start
+  to: sc-s2-yukimaru-rescue-route.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-rescue-route

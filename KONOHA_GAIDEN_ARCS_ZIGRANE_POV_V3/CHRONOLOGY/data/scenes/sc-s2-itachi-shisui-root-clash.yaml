@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-itachi-shisui-root-clash
+episode_id: ep-s2-itachi-shisui-root-clash
+display_rank: 31400
+continuity_id: main
+title: Ітачі й Шісуї зупиняють напад Кореня
+description: Під час навчального стеження вони бачать боротьбу за сувій та захищають пораненого АНБУ.
+location_id: loc-konoha-training-forest
+placement:
+  anchor_id: ta-s2-52-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-shisui-root-clash-1
+  title: Ітачі й Шісуї зупиняють напад Кореня
+  text: Під час навчального стеження вони бачать боротьбу за сувій та захищають пораненого АНБУ.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-shisui
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-shisui-root-clash
+relations: []
+presence:
+- id: pr-s2-itachi-shisui-root-clash-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-shisui-root-clash.start
+  to: sc-s2-itachi-shisui-root-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-shisui-root-clash
+- id: pr-s2-itachi-shisui-root-clash-c-shisui
+  entity_id: c-shisui
+  from: sc-s2-itachi-shisui-root-clash.start
+  to: sc-s2-itachi-shisui-root-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-shisui-root-clash

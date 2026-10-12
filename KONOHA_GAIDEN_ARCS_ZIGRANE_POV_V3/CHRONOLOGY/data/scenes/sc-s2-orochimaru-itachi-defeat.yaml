@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-orochimaru-itachi-defeat
+episode_id: ep-s2-orochimaru-itachi-defeat
+display_rank: 32500
+continuity_id: main
+title: Орочімару намагається забрати тіло Ітачі
+description: Шарінґан перемагає його; Орочімару залишає Акацукі.
+location_id: loc-akatsuki-hideout
+placement:
+  anchor_id: ta-s2-57-02-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-orochimaru-itachi-defeat-1
+  title: Орочімару намагається забрати тіло Ітачі
+  text: Шарінґан перемагає його; Орочімару залишає Акацукі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-orochimaru-itachi-defeat
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-orochimaru-itachi-defeat-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-orochimaru-itachi-defeat.start
+  to: sc-s2-orochimaru-itachi-defeat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-itachi-defeat
+- id: pr-s2-orochimaru-itachi-defeat-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-orochimaru-itachi-defeat.start
+  to: sc-s2-orochimaru-itachi-defeat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-itachi-defeat

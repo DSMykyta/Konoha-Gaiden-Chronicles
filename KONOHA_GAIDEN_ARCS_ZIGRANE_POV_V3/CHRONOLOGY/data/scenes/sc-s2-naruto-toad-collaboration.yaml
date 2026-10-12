@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-naruto-toad-collaboration
+episode_id: ep-s2-naruto-toad-collaboration
+display_rank: 7100
+continuity_id: main
+title: Джирая тренує спільні техніки Наруто та жаб
+description: Після невдалої співпраці з Ґамарікі Наруто переходить до Ґамакічі й Ґаматацу. Жаби продовжують тренування
+  й допомагають Наруто повернутися до Конохи.
+location_id: loc-hot-springs-town
+placement:
+  anchor_id: ta-s2-66-04-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-toad-collaboration-1
+  title: Джирая тренує спільні техніки Наруто та жаб
+  text: Після невдалої співпраці з Ґамарікі Наруто переходить до Ґамакічі й Ґаматацу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-gamakichi
+    role: participant
+    mode: physical
+  - entity_id: c-gamatatsu
+    role: participant
+    mode: physical
+  - entity_id: c-gamariki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration
+- id: ev-s2-naruto-toad-collaboration-2
+  title: Джирая вирушає за відомостями про Акацукі
+  text: Жаби продовжують тренування й допомагають Наруто повернутися до Конохи.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-gamakichi
+    role: participant
+    mode: physical
+  - entity_id: c-gamatatsu
+    role: participant
+    mode: physical
+  - entity_id: c-gamariki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration
+relations:
+- id: rel-s2-naruto-toad-collaboration-1
+  kind: before
+  a: ev-s2-naruto-toad-collaboration-1
+  b: ev-s2-naruto-toad-collaboration-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration
+presence:
+- id: pr-s2-naruto-toad-collaboration-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-toad-collaboration.start
+  to: sc-s2-naruto-toad-collaboration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration
+- id: pr-s2-naruto-toad-collaboration-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-naruto-toad-collaboration.start
+  to: sc-s2-naruto-toad-collaboration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration
+- id: pr-s2-naruto-toad-collaboration-c-gamakichi
+  entity_id: c-gamakichi
+  from: sc-s2-naruto-toad-collaboration.start
+  to: sc-s2-naruto-toad-collaboration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration
+- id: pr-s2-naruto-toad-collaboration-c-gamatatsu
+  entity_id: c-gamatatsu
+  from: sc-s2-naruto-toad-collaboration.start
+  to: sc-s2-naruto-toad-collaboration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration
+- id: pr-s2-naruto-toad-collaboration-c-gamariki
+  entity_id: c-gamariki
+  from: sc-s2-naruto-toad-collaboration.start
+  to: sc-s2-naruto-toad-collaboration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-toad-collaboration

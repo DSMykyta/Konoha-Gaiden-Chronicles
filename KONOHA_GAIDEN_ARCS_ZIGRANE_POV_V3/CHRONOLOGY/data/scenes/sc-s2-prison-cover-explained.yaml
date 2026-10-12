@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-prison-cover-explained
+episode_id: ep-s2-prison-cover-explained
+display_rank: 40900
+continuity_id: movie-prison
+title: Загін пояснює таємну операцію
+description: Наруто дізнається, чому йому не розповіли задум, та прощається з Рюдзецу.
+location_id: loc-hozuki-castle
+placement:
+  anchor_id: ta-s2-66-09-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-prison-cover-explained-1
+  title: Загін пояснює таємну операцію
+  text: Наруто дізнається, чому йому не розповіли задум, та прощається з Рюдзецу.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-cover-explained
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-prison-cover-explained-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-prison-cover-explained.start
+  to: sc-s2-prison-cover-explained.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-cover-explained
+- id: pr-s2-prison-cover-explained-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-prison-cover-explained.start
+  to: sc-s2-prison-cover-explained.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-cover-explained
+- id: pr-s2-prison-cover-explained-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-prison-cover-explained.start
+  to: sc-s2-prison-cover-explained.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-cover-explained

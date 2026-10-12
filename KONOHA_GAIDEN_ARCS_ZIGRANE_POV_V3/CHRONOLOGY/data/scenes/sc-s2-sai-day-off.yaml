@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-sai-day-off
+episode_id: ep-s2-sai-day-off
+display_rank: 21400
+continuity_id: main
+title: Сай малює на вихідному
+description: Знайомство з дітьми нагадує йому товаришів; він створює малюнок своєї команди.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-10-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sai-day-off-1
+  title: Сай малює на вихідному
+  text: Знайомство з дітьми нагадує йому товаришів; він створює малюнок своєї команди.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sai-day-off
+relations: []
+presence:
+- id: pr-s2-sai-day-off-c-sai
+  entity_id: c-sai
+  from: sc-s2-sai-day-off.start
+  to: sc-s2-sai-day-off.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-day-off

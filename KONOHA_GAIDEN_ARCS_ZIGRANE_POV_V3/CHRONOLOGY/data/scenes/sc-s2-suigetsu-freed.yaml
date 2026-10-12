@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-suigetsu-freed
+episode_id: ep-s2-suigetsu-freed
+display_rank: 8800
+continuity_id: main
+title: Саске звільняє Суйґецу
+description: Він відкриває резервуар і пропонує йому приєднатися до команди.
+location_id: loc-orochimaru-tenchi-hideout
+placement:
+  anchor_id: ta-s2-66-07-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-suigetsu-freed-1
+  title: Саске звільняє Суйґецу
+  text: Він відкриває резервуар і пропонує йому приєднатися до команди.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-suigetsu-freed
+relations: []
+presence:
+- id: pr-s2-suigetsu-freed-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-suigetsu-freed.start
+  to: sc-s2-suigetsu-freed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-freed
+- id: pr-s2-suigetsu-freed-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-suigetsu-freed.start
+  to: sc-s2-suigetsu-freed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-freed

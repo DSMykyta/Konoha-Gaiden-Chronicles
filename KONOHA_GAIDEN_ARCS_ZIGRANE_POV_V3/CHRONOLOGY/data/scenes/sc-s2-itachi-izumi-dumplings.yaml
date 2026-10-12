@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-itachi-izumi-dumplings
+episode_id: ep-s2-itachi-izumi-dumplings
+display_rank: 2200
+continuity_id: main
+title: Ідзумі ділиться данґо з Ітачі
+description: Вона вітає його з підвищенням; він згодом вирушає на місію з Командою 2.
+location_id: loc-konoha-lake
+placement:
+  anchor_id: ta-s2-51-04-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-izumi-dumplings-1
+  title: Ідзумі ділиться данґо з Ітачі
+  text: Вона вітає його з підвищенням; він згодом вирушає на місію з Командою 2.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-izumi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-izumi-dumplings
+relations: []
+presence:
+- id: pr-s2-itachi-izumi-dumplings-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-izumi-dumplings.start
+  to: sc-s2-itachi-izumi-dumplings.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-izumi-dumplings
+- id: pr-s2-itachi-izumi-dumplings-c-izumi
+  entity_id: c-izumi
+  from: sc-s2-itachi-izumi-dumplings.start
+  to: sc-s2-itachi-izumi-dumplings.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-izumi-dumplings

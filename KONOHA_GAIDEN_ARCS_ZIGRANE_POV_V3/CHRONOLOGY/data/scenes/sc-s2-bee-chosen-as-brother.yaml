@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-bee-chosen-as-brother
+episode_id: ep-s2-bee-chosen-as-brother
+display_rank: 35900
+continuity_id: main
+title: Бі обирають напарником А
+description: Вони узгоджують силу подвійного удару та стають названими братами.
+location_id: loc-kumogakure
+placement:
+  anchor_id: ta-s2-36-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-bee-chosen-as-brother-1
+  title: Бі обирають напарником А
+  text: Вони узгоджують силу подвійного удару та стають названими братами.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-a-third
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-bee-chosen-as-brother
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-bee-chosen-as-brother-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-bee-chosen-as-brother.start
+  to: sc-s2-bee-chosen-as-brother.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-chosen-as-brother
+- id: pr-s2-bee-chosen-as-brother-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-bee-chosen-as-brother.start
+  to: sc-s2-bee-chosen-as-brother.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-chosen-as-brother
+- id: pr-s2-bee-chosen-as-brother-c-a-third
+  entity_id: c-a-third
+  from: sc-s2-bee-chosen-as-brother.start
+  to: sc-s2-bee-chosen-as-brother.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-chosen-as-brother

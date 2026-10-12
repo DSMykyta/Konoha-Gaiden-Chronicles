@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-road-bath-invitation
+episode_id: ep-s2-road-bath-invitation
+display_rank: 100
+continuity_id: movie-road
+title: Лі збирає друзів для Наруто
+description: Повернувшись із місії, він кличе товаришів до лазні.
+location_id: loc-naruto-apartment
+placement:
+  anchor_id: ta-s2-66-05-31
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-bath-invitation-1
+  title: Лі збирає друзів для Наруто
+  text: Повернувшись із місії, він кличе товаришів до лазні.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-bath-invitation
+relations: []
+presence:
+- id: pr-s2-road-bath-invitation-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-road-bath-invitation.start
+  to: sc-s2-road-bath-invitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-bath-invitation
+- id: pr-s2-road-bath-invitation-c-lee
+  entity_id: c-lee
+  from: sc-s2-road-bath-invitation.start
+  to: sc-s2-road-bath-invitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-bath-invitation

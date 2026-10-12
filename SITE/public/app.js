@@ -528,6 +528,7 @@ function render(){
  const n=ids.length,semanticZoom=scaledZoom(),overview=semanticZoom<3,spread=clamp(Math.log(Math.max(1,semanticZoom))/Math.log(12),0,1),compactRadius=clamp(plot/180,3,7),arcRadius=compactRadius+(16-compactRadius)*spread,flow=TimelineFlow.state(semanticZoom),level=flow.t>=.5&&flow.coarse?flow.coarse:flow.fine;
  axisElement.style.width=w+'px';axisElement.setAttribute('viewBox',`0 0 ${w} 40`);
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
+ const axisAtX=x=>lo+(x-pad)/plot*(hi-lo);
  const buffered=TimelinePanCache.frame({lo,hi,maxAxis:axisLength(),width:w,height:viewport,zoom,dayPx:timeScale.dayPx,breaks:axisBreaks()});
  const bufferLoDay=axisToDay(buffered.coverLo,'before',allEvents),bufferHiDay=axisToDay(buffered.coverHi,'after',allEvents);
  // Build the complete narrative hierarchy once. Zoom must never rebuild an
@@ -627,22 +628,23 @@ function render(){
   const shift=movedArcDay.get(sourceArc?.id);
   const shiftFactor=flow.coarse==='arc'?t:0; // Fine arc marks already include their own cluster motion.
   const shiftDay=shift&&originalArc?(shift.day-originalArc.day)*shiftFactor:0;
+  const shiftX=shift&&originalArc?(sourceArc.x-px(originalArc.day))*shiftFactor:0;
   const shiftY=shift&&originalArc?(shift.y-parentY(originalArc,originalArc===to?flow.coarse:flow.fine))*shiftFactor:0;
-  visualMoment.set(id,{day:mark.day+shiftDay,y:mark.y+shiftY});
+  visualMoment.set(id,{day:mark.day+shiftDay,x:mark.x+shiftX,y:mark.y+shiftY});
  }
  const layoutKey=`flow:${w}:${viewport}:${zoom.toFixed(6)}`;
  const worldLineNodes=canonical.moments.map(p=>{
   const visual=visualMoment.get(p.id);
-  return {...p,day:visual?.day??p.day,y:visual?.y??mid,
+  return {...p,day:visual?.day??p.day,projectedX:visual?.x??px(p.day),y:visual?.y??mid,
    cast:p.layoutCast.filter(id=>selected.has(id))};
  });
  // Hit targets switch at the halfway point; the marks themselves do not.
  const visibleGlobal=globalNodes.filter(p=>p.opacity>.012&&p.group.some(relevant));
  graphNodes=visibleGlobal.filter(p=>{
-  const a=dayToAxis(p.day,allEvents);return a>=lo&&a<hi&&p.opacity>=.48;
+  const a=axisAtX(p.x);return a>=lo&&a<hi&&p.opacity>=.48;
  });
  const renderNodes=visibleGlobal.filter(p=>{
-  const a=dayToAxis(p.day,allEvents);return a>=buffered.coverLo&&a<buffered.coverHi;
+  const a=axisAtX(p.x);return a>=buffered.coverLo&&a<buffered.coverHi;
  });
  const numbered=phoneReader&&level==='moment';
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
@@ -706,6 +708,27 @@ function render(){
  const linked=(p,id)=>p.cast.includes(id);
  // Character curves inherit the positions of the underlying source moments.
  const routeAnchorNodes=worldLineNodes;
+ const projectedAnchors=new Map(worldLineNodes.map(p=>[p.id,{x:p.projectedX,y:p.y}]));
+ // Screen-space morphs can pass across a compressed calendar gap. Project
+ // cached curve controls between the same current anchors, so the marker
+ // and its route use exactly the same position even inside a gap gutter.
+ const projectRoute=route=>{
+  const marked=route.map((p,index)=>p.node&&projectedAnchors.has(p.id)?index:-1).filter(i=>i>=0);
+  let right=0;
+  return route.map((p,index)=>{
+   while(right<marked.length&&marked[right]<index)right++;
+   const own=p.node?projectedAnchors.get(p.id):null;
+   if(own)return {...p,...own};
+   const ai=marked[right-1],bi=marked[right];
+   if(ai!==undefined&&bi!==undefined){
+    const a=route[ai],b=route[bi],from=projectedAnchors.get(a.id),to=projectedAnchors.get(b.id),fraction=(p.day-a.day)/Math.max(1e-8,b.day-a.day);
+    const bend=p.y-TimelineFlow.lerp(a.y,b.y,fraction);
+    return {...p,x:TimelineFlow.lerp(from.x,to.x,fraction),y:TimelineFlow.lerp(from.y,to.y,fraction)+bend};
+   }
+   const nearest=route[ai??bi],anchor=nearest&&projectedAnchors.get(nearest.id);
+   return {...p,x:anchor?anchor.x+(p.day-nearest.day)*timeScale.dayPx:pxAxis(p.day),y:anchor?.y??p.y};
+  });
+ };
  const nodesByCharacter=TimelineCore.characterAnchors(routeAnchorNodes,ids);
  const reading=readingActive();
  if(!cloudRenderer)cloudRenderer=StoryClouds.create($('storyClouds'));
@@ -757,7 +780,7 @@ function render(){
     runs.push(run);routes.push(geometry.routes[index]);
    }
   });
-  const coordinates=routes.map(route=>route.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
+  const coordinates=routes.map(projectRoute),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
   // Refract only the original curve fragments that actually pass through
   // each droplet. Sampling locally avoids cloning/filtering the entire SVG.
   for(const route of samples){
@@ -785,7 +808,7 @@ function render(){
   const continuousGradient='strand-continuous-'+id,continuousSpan=Math.max(.001,continuous.at(-1).day-continuous[0].day);
   const continuousPaint=svg('linearGradient',{id:continuousGradient,gradientUnits:'userSpaceOnUse',x1:pxAxis(continuous[0].day),x2:pxAxis(continuous.at(-1).day),y1:0,y2:0},defs);
   for(const [offset,opacity] of [[0,0],[(anchors[0].day-continuous[0].day)/continuousSpan,1],[(anchors.at(-1).day-continuous[0].day)/continuousSpan,1],[1,0]])svg('stop',{offset,'stop-color':color(id),'stop-opacity':opacity},continuousPaint);
-  continuityPaths.push({id,d:smoothPath(continuous.map(p=>({x:pxAxis(p.day),y:p.y,node:p.node,flat:p.flat}))),stroke:`url(#${continuousGradient})`,mask,runCount:lifetimes.length});
+  continuityPaths.push({id,d:smoothPath(projectRoute(continuous)),stroke:`url(#${continuousGradient})`,mask,runCount:lifetimes.length});
   routes.forEach((route,index)=>{
    const run=runs[index],gradientId=`strand-${id}-${index}`,span=Math.max(.001,route.at(-1).day-route[0].day),gradient=svg('linearGradient',{id:gradientId,gradientUnits:'userSpaceOnUse',x1:pxAxis(route[0].day),x2:pxAxis(route.at(-1).day),y1:0,y2:0},defs);
    for(const [offset,opacity] of [[0,0],[(run[0].day-route[0].day)/span,1],[(run.at(-1).day-route[0].day)/span,1],[1,0]])svg('stop',{offset,'stop-color':color(id),'stop-opacity':opacity},gradient);
@@ -1049,9 +1072,14 @@ function narrativeHtml(item){
   .map(p=>`<p class="event-text${p.i?' story-project-addendum':''}">${esc(p.text)}</p>`).join('');
 }
 
+function storyVersionHtml(item){
+ const id=item?.source_continuity_id||item?.source_continuity||item?.continuity_id;
+ const titles={'movie-shion':'Naruto Shippuden: The Movie','movie-bonds':'Bonds','movie-fire':'The Will of Fire','movie-tower':'The Lost Tower','movie-prison':'Blood Prison','movie-road':'Road to Ninja'};
+ return titles[id]?`<p class="card-meta story-version">Джерело: фільм «${esc(titles[id])}».</p>`:'';
+}
 function sceneCardBody(scene,group){
  const cast=sceneCast(scene,group);
- return `<h2>${esc(scene.title)}</h2>${narrativeHtml(scene)}${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" data-tooltip="Зосередитися на лінії">${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></li>`).join('')}</ol>`;
+ return `<h2>${esc(scene.title)}</h2>${narrativeHtml(scene)}${storyVersionHtml(scene)}${cast.length?`<div class="people scene-people">${cast.map(id=>`<button class="person" style="--person-color:${color(id)}" data-event-focus-character="${esc(id)}" aria-label="Зосередитися на лінії ${esc(name(id))}" data-tooltip="Зосередитися на лінії">${esc(name(id))}</button>`).join('')}</div>`:''}<ol class="scene-actions">${group.map(e=>`<li data-scene-preview="${esc(e.id)}"><button class="scene-action-title" aria-haspopup="dialog" aria-label="Переглянути дію: ${esc(e.title)}">${esc(e.title)}</button></li>`).join('')}</ol>`;
 }
 function showSceneCard(scene,group){
  cardSelection={kind:'scene',id:scene.id,events:group};setCardContent(`${cardTop(group[0].day,sceneNavigation(scene.id),'scene',scene.id)}${sceneCardBody(scene,group)}`);bindCard();
@@ -1064,7 +1092,7 @@ function storyCardBody(point){
  const children=point.kind==='arc'
   ?(point.sourceEpisodeIds||[]).map(id=>{const episode=episodeMap.get(id);return episode?{id,title:episode.title}:null;}).filter(Boolean)
   :(point.sourceSceneIds||[]).map(id=>{const scene=sceneMap.get(id);return scene&&sceneEvents(id).length?{id,title:scene.title}:null;}).filter(Boolean);
- return `<h2>${esc(point.title)}</h2>${narrativeHtml(point.story)}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong></button>`).join('')}</div>`;
+ return `<h2>${esc(point.title)}</h2>${narrativeHtml(point.story)}${storyVersionHtml(point.story)}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong></button>`).join('')}</div>`;
 }
 function showArcCluster(point){
  const items=point.arcs.map(arc=>`<button class="result" data-cluster-arc="${esc(arc.id)}"><strong>${esc(arc.title)}</strong></button>`).join('');
@@ -1090,7 +1118,7 @@ function eventSupplementHtml(e,relationAttribute){
 }
 function eventDetailsHtml(e,relationAttribute='data-card-event',showDetails=false){
  const physical=e.involvement.filter(i=>e.physical.includes(i.entity_id)),special=e.involvement.filter(i=>modes[i.mode]),mentioned=e.involvement.filter(i=>i.role==='mentioned'||i.mode==='remote');
- return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(StoryLayers.compose(e.text,storyLayers))}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div><p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
+ return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(StoryLayers.compose(e.text,storyLayers))}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div>${storyVersionHtml(e)}<p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
 }
 function showEvent(e){
  cardSelection={kind:'moment',id:e.id,events:[e]};const navigation=nav();
@@ -1226,7 +1254,9 @@ function ingest(next,initial=false){
   const compact=($('canvas').clientWidth||window.innerWidth||1000)<600||($('canvas').clientHeight||window.innerHeight||700)<520;
   zoom=compact?zoomModes.week:zoomModes.month;
  }else if(previousSpan!==null)zoom=clamp(axisLength()/Math.max(.001,previousSpan),1,maximumZoom());
- center=clampAxisCenter(dayToAxis(calendarCenter));
+ const initialDays=next.scenes.filter(s=>s.state==='active'&&s.date?.year===next.calendar.current_year&&s.day!==null).map(s=>s.day);
+ const initialEraStart=dayToAxis(initialDays.length?Math.min(...initialDays):(next.calendar.current_year-nextBase)*365);
+ center=clampAxisCenter(initial?Math.max(dayToAxis(calendarCenter),initialEraStart+axisLength()/zoom/2+.01):dayToAxis(calendarCenter));
  $('revision').textContent=`Дані: ${data.revision.slice(0,8)}`;$('sourceLink').href=`https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/tree/${data.revision}/${data.base}`;
  renderCalendar();
  eraSegments=TimelineEraHeading.segments(data.periods,data.calendar);eraHeadingNodes.clear();$('eraHeadingTrack').replaceChildren();

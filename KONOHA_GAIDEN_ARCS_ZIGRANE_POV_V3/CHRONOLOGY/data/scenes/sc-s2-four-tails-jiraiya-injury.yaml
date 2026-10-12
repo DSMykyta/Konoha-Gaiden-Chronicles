@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-four-tails-jiraiya-injury
+episode_id: ep-s2-four-tails-jiraiya-injury
+display_rank: 24100
+continuity_id: main
+title: Послаблена печать відкриває чотири хвости
+description: Наруто втрачає контроль і тяжко ранить Джираю; після цього наставник шукає способи зупиняти трансформацію.
+location_id: loc-jiraiya-training-route
+placement:
+  anchor_id: ta-s2-64-05-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-four-tails-jiraiya-injury-1
+  title: Послаблена печать відкриває чотири хвости
+  text: Наруто втрачає контроль і тяжко ранить Джираю; після цього наставник шукає способи зупиняти трансформацію.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-four-tails-jiraiya-injury
+relations: []
+presence:
+- id: pr-s2-four-tails-jiraiya-injury-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-four-tails-jiraiya-injury.start
+  to: sc-s2-four-tails-jiraiya-injury.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-four-tails-jiraiya-injury
+- id: pr-s2-four-tails-jiraiya-injury-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-four-tails-jiraiya-injury.start
+  to: sc-s2-four-tails-jiraiya-injury.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-four-tails-jiraiya-injury

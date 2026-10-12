@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-hiruko-curse-past
+episode_id: ep-s2-hiruko-curse-past
+display_rank: 39100
+continuity_id: movie-fire
+title: Хіруко залишає прокляття на Какаші
+description: Зустріч у минулому готує майбутнє примусове повернення носія Шарінґана.
+location_id: loc-third-war-return-route
+placement:
+  anchor_id: ta-s2-47-10-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hiruko-curse-past-1
+  title: Хіруко залишає прокляття на Какаші
+  text: Зустріч у минулому готує майбутнє примусове повернення носія Шарінґана.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-hiruko
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hiruko-curse-past
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-hiruko-curse-past-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-hiruko-curse-past.start
+  to: sc-s2-hiruko-curse-past.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-curse-past
+- id: pr-s2-hiruko-curse-past-c-hiruko
+  entity_id: c-hiruko
+  from: sc-s2-hiruko-curse-past.start
+  to: sc-s2-hiruko-curse-past.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-curse-past

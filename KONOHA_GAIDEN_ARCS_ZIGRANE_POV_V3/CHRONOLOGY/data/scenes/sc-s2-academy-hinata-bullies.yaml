@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-academy-hinata-bullies
+episode_id: ep-s2-academy-hinata-bullies
+display_rank: 2800
+continuity_id: main
+title: Наруто втручається заради Хінати
+description: Чоджі й Шікамару сперечаються про його вчинок; Наруто перериває сварку, і трійця сміється.
+location_id: loc-academy-classroom
+placement:
+  anchor_id: ta-s2-58-06-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-academy-hinata-bullies-1
+  title: Наруто втручається заради Хінати
+  text: Чоджі й Шікамару сперечаються про його вчинок; Наруто перериває сварку, і трійця сміється.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-academy-hinata-bullies
+relations: []
+presence:
+- id: pr-s2-academy-hinata-bullies-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-academy-hinata-bullies.start
+  to: sc-s2-academy-hinata-bullies.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-hinata-bullies
+- id: pr-s2-academy-hinata-bullies-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-academy-hinata-bullies.start
+  to: sc-s2-academy-hinata-bullies.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-hinata-bullies
+- id: pr-s2-academy-hinata-bullies-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-academy-hinata-bullies.start
+  to: sc-s2-academy-hinata-bullies.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-hinata-bullies
+- id: pr-s2-academy-hinata-bullies-c-choji
+  entity_id: c-choji
+  from: sc-s2-academy-hinata-bullies.start
+  to: sc-s2-academy-hinata-bullies.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-hinata-bullies

@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-guy-deployed
+episode_id: ep-s2-guy-deployed
+display_rank: 1200
+continuity_id: main
+title: Команда Ґая вирушає на підмогу
+description: Цунаде посилає другу команду до Країни Річок.
+location_id: loc-fire-river-route
+placement:
+  anchor_id: ta-s2-64-12-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guy-deployed-1
+  title: Команда Ґая вирушає на підмогу
+  text: Цунаде посилає другу команду до Країни Річок.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guy-deployed
+relations: []
+presence:
+- id: pr-s2-guy-deployed-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-guy-deployed.start
+  to: sc-s2-guy-deployed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-deployed
+- id: pr-s2-guy-deployed-c-lee
+  entity_id: c-lee
+  from: sc-s2-guy-deployed.start
+  to: sc-s2-guy-deployed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-deployed
+- id: pr-s2-guy-deployed-c-neji
+  entity_id: c-neji
+  from: sc-s2-guy-deployed.start
+  to: sc-s2-guy-deployed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-deployed
+- id: pr-s2-guy-deployed-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-guy-deployed.start
+  to: sc-s2-guy-deployed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-deployed

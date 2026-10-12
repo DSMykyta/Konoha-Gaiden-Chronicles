@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-sakura-tsunade-apprenticeship
+episode_id: ep-s2-sakura-tsunade-apprenticeship
+display_rank: 23600
+continuity_id: main
+title: Цунаде навчає Сакуру медицині
+description: Сакура опановує контроль чакри, лікування та накопичення чакри в майбутній печаті.
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-s2-62-06-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sakura-tsunade-apprenticeship-1
+  title: Цунаде навчає Сакуру медицині
+  text: Сакура опановує контроль чакри, лікування та накопичення чакри в майбутній печаті.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-tsunade-apprenticeship
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-sakura-tsunade-apprenticeship-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sakura-tsunade-apprenticeship.start
+  to: sc-s2-sakura-tsunade-apprenticeship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-tsunade-apprenticeship
+- id: pr-s2-sakura-tsunade-apprenticeship-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-sakura-tsunade-apprenticeship.start
+  to: sc-s2-sakura-tsunade-apprenticeship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-tsunade-apprenticeship

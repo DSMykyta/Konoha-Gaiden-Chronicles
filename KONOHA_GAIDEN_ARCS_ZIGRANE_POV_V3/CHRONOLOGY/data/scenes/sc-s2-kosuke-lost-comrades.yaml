@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-kosuke-lost-comrades
+episode_id: ep-s2-kosuke-lost-comrades
+display_rank: 44000
+continuity_id: main
+title: Косуке втрачає товаришів через власне рішення
+description: Прагнення підвищення закінчується їхньою смертю; він обирає назавжди залишитися геніном.
+location_id: loc-kosuke-early-mission
+placement:
+  anchor_id: ta-s2-11-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kosuke-lost-comrades-1
+  title: Косуке втрачає товаришів через власне рішення
+  text: Прагнення підвищення закінчується їхньою смертю; він обирає назавжди залишитися геніном.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kosuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kosuke-lost-comrades
+relations: []
+presence:
+- id: pr-s2-kosuke-lost-comrades-c-kosuke
+  entity_id: c-kosuke
+  from: sc-s2-kosuke-lost-comrades.start
+  to: sc-s2-kosuke-lost-comrades.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kosuke-lost-comrades

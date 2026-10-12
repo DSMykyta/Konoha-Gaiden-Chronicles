@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-kankuro-sasori
+episode_id: ep-s2-kankuro-sasori
+display_rank: 800
+continuity_id: main
+title: Канкуро наздоганяє викрадачів
+description: Сасорі розбиває його маріонеток і отруює; Канкуро встигає залишити слід для переслідувачів.
+location_id: loc-suna-desert-route
+placement:
+  anchor_id: ta-s2-64-12-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kankuro-sasori-1
+  title: Канкуро наздоганяє викрадачів
+  text: Сасорі розбиває його маріонеток і отруює; Канкуро встигає залишити слід для переслідувачів.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kankuro-sasori
+relations: []
+presence:
+- id: pr-s2-kankuro-sasori-c-kankuro
+  entity_id: c-kankuro
+  from: sc-s2-kankuro-sasori.start
+  to: sc-s2-kankuro-sasori.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-sasori
+- id: pr-s2-kankuro-sasori-c-sasori
+  entity_id: c-sasori
+  from: sc-s2-kankuro-sasori.start
+  to: sc-s2-kankuro-sasori.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-sasori
+- id: pr-s2-kankuro-sasori-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-kankuro-sasori.start
+  to: sc-s2-kankuro-sasori.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-sasori

@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-revenge-departure
+episode_id: ep-s2-revenge-departure
+display_rank: 6100
+continuity_id: main
+title: Команда 10 вирушає на пошук Акацукі
+description: Какаші пропонує себе четвертим учасником; Цунаде дозволяє вихід загону.
+location_id: loc-konoha-gate
+placement:
+  anchor_id: ta-s2-66-03-22
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-revenge-departure-1
+  title: Команда 10 вирушає на пошук Акацукі
+  text: Какаші пропонує себе четвертим учасником; Цунаде дозволяє вихід загону.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-revenge-departure
+relations: []
+presence:
+- id: pr-s2-revenge-departure-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-revenge-departure.start
+  to: sc-s2-revenge-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-revenge-departure
+- id: pr-s2-revenge-departure-c-ino
+  entity_id: c-ino
+  from: sc-s2-revenge-departure.start
+  to: sc-s2-revenge-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-revenge-departure
+- id: pr-s2-revenge-departure-c-choji
+  entity_id: c-choji
+  from: sc-s2-revenge-departure.start
+  to: sc-s2-revenge-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-revenge-departure
+- id: pr-s2-revenge-departure-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-revenge-departure.start
+  to: sc-s2-revenge-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-revenge-departure
+- id: pr-s2-revenge-departure-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-revenge-departure.start
+  to: sc-s2-revenge-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-revenge-departure

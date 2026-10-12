@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-tenten-ajisai-rescue
+episode_id: ep-s2-tenten-ajisai-rescue
+display_rank: 25200
+continuity_id: main
+title: Команди витягають товаришок
+description: Після спільної допомоги вони відмовляються продовжувати бій та обіцяють зустрітися на наступному етапі.
+location_id: loc-demon-desert
+placement:
+  anchor_id: ta-s2-64-10-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tenten-ajisai-rescue-1
+  title: Команди витягають товаришок
+  text: Після спільної допомоги вони відмовляються продовжувати бій та обіцяють зустрітися на наступному етапі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-ajisai
+    role: participant
+    mode: physical
+  - entity_id: c-fuyo
+    role: participant
+    mode: physical
+  - entity_id: c-suiren
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenten-ajisai-rescue
+relations: []
+presence:
+- id: pr-s2-tenten-ajisai-rescue-c-neji
+  entity_id: c-neji
+  from: sc-s2-tenten-ajisai-rescue.start
+  to: sc-s2-tenten-ajisai-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-rescue
+- id: pr-s2-tenten-ajisai-rescue-c-lee
+  entity_id: c-lee
+  from: sc-s2-tenten-ajisai-rescue.start
+  to: sc-s2-tenten-ajisai-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-rescue
+- id: pr-s2-tenten-ajisai-rescue-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-tenten-ajisai-rescue.start
+  to: sc-s2-tenten-ajisai-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-rescue
+- id: pr-s2-tenten-ajisai-rescue-c-ajisai
+  entity_id: c-ajisai
+  from: sc-s2-tenten-ajisai-rescue.start
+  to: sc-s2-tenten-ajisai-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-rescue
+- id: pr-s2-tenten-ajisai-rescue-c-fuyo
+  entity_id: c-fuyo
+  from: sc-s2-tenten-ajisai-rescue.start
+  to: sc-s2-tenten-ajisai-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-rescue
+- id: pr-s2-tenten-ajisai-rescue-c-suiren
+  entity_id: c-suiren
+  from: sc-s2-tenten-ajisai-rescue.start
+  to: sc-s2-tenten-ajisai-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-ajisai-rescue

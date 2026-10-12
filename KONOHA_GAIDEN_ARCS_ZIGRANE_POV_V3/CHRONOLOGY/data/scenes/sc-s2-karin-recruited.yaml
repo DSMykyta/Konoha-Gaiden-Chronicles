@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-karin-recruited
+episode_id: ep-s2-karin-recruited
+display_rank: 9000
+continuity_id: main
+title: Карін залишає південне сховище
+description: Саске пропонує їй місце в команді; Суйґецу випускає в’язнів, і Карін приєднується.
+location_id: loc-orochimaru-southern-hideout
+placement:
+  anchor_id: ta-s2-66-07-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-karin-recruited-1
+  title: Карін залишає південне сховище
+  text: Саске пропонує їй місце в команді; Суйґецу випускає в’язнів, і Карін приєднується.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-karin-recruited
+relations: []
+presence:
+- id: pr-s2-karin-recruited-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-karin-recruited.start
+  to: sc-s2-karin-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-recruited
+- id: pr-s2-karin-recruited-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-karin-recruited.start
+  to: sc-s2-karin-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-recruited
+- id: pr-s2-karin-recruited-c-karin
+  entity_id: c-karin
+  from: sc-s2-karin-recruited.start
+  to: sc-s2-karin-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-recruited

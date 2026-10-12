@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-madara-life-support-ends
+episode_id: ep-s2-madara-life-support-ends
+display_rank: 1600
+continuity_id: main
+title: Мадара від’єднується від Ґедо Мазо
+description: Він помирає, покладаючи майбутнє воскресіння на Ріннеґан Наґато та дії Обіто.
+location_id: loc-madara-cave
+placement:
+  anchor_id: ta-s2-48-03-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-madara-life-support-ends-1
+  title: Мадара від’єднується від Ґедо Мазо
+  text: Він помирає, покладаючи майбутнє воскресіння на Ріннеґан Наґато та дії Обіто.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-madara-life-support-ends
+relations: []
+presence:
+- id: pr-s2-madara-life-support-ends-c-madara
+  entity_id: c-madara
+  from: sc-s2-madara-life-support-ends.start
+  to: sc-s2-madara-life-support-ends.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-life-support-ends
+- id: pr-s2-madara-life-support-ends-c-obito
+  entity_id: c-obito
+  from: sc-s2-madara-life-support-ends.start
+  to: sc-s2-madara-life-support-ends.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-life-support-ends
+- id: pr-s2-madara-life-support-ends-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-madara-life-support-ends.start
+  to: sc-s2-madara-life-support-ends.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-life-support-ends

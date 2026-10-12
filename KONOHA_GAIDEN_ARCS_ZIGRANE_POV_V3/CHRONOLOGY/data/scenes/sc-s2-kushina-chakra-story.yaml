@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-s2-kushina-chakra-story
+episode_id: ep-s2-kushina-chakra-story
+display_rank: 22300
+continuity_id: main
+title: Наруто зустрічає чакру матері
+description: Кушіна розповідає про Удзушіо, Мінато та ніч народження. Він дякує батькам за життя; її залишена чакра
+  зникає.
+location_id: loc-naruto-seal-space
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kushina-chakra-story-1
+  title: Наруто зустрічає чакру матері
+  text: Кушіна розповідає про Удзушіо, Мінато та ніч народження.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: internal
+  - entity_id: c-kushina
+    role: participant
+    mode: manifested
+  evidence_ids:
+  - evd-s2-kushina-chakra-story
+- id: ev-s2-kushina-chakra-story-2
+  title: Наруто прощається з Кушіною
+  text: Він дякує батькам за життя; її залишена чакра зникає.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: internal
+  - entity_id: c-kushina
+    role: participant
+    mode: manifested
+  evidence_ids:
+  - evd-s2-kushina-chakra-story
+relations:
+- id: rel-s2-kushina-chakra-story-1
+  kind: before
+  a: ev-s2-kushina-chakra-story-1
+  b: ev-s2-kushina-chakra-story-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kushina-chakra-story
+presence: []
+scene_plane: mental

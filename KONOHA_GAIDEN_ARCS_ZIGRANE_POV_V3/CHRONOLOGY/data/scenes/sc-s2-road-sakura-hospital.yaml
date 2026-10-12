@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-road-sakura-hospital
+episode_id: ep-s2-road-sakura-hospital
+display_rank: 500
+continuity_id: movie-road
+title: Цунаде оглядає Сакуру з амнезією
+description: Її спогади про знайомих не відповідають поведінці людей у цьому світі.
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-s2-66-06-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-sakura-hospital-1
+  title: Цунаде оглядає Сакуру з амнезією
+  text: Її спогади про знайомих не відповідають поведінці людей у цьому світі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-rtn-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-sakura-hospital
+relations: []
+presence:
+- id: pr-s2-road-sakura-hospital-c-rtn-sakura
+  entity_id: c-rtn-sakura
+  from: sc-s2-road-sakura-hospital.start
+  to: sc-s2-road-sakura-hospital.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-hospital
+- id: pr-s2-road-sakura-hospital-c-ino
+  entity_id: c-ino
+  from: sc-s2-road-sakura-hospital.start
+  to: sc-s2-road-sakura-hospital.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-hospital
+- id: pr-s2-road-sakura-hospital-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-road-sakura-hospital.start
+  to: sc-s2-road-sakura-hospital.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-hospital
+- id: pr-s2-road-sakura-hospital-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-road-sakura-hospital.start
+  to: sc-s2-road-sakura-hospital.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-hospital

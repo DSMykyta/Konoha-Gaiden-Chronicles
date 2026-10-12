@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-hotaru-jutsu-stopped
+episode_id: ep-s2-hotaru-jutsu-stopped
+display_rank: 12200
+continuity_id: main
+title: Наруто переслідує Шіранамі
+description: Утаката застосовує силу Шестихвостого, зупиняє некерований вибух і знімає печать Хотару.
+location_id: loc-tsuchigumo-village
+placement:
+  anchor_id: ta-s2-66-07-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hotaru-jutsu-stopped-1
+  title: Наруто переслідує Шіранамі
+  text: Утаката застосовує силу Шестихвостого, зупиняє некерований вибух і знімає печать Хотару.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-utakata
+    role: participant
+    mode: physical
+  - entity_id: c-hotaru
+    role: participant
+    mode: physical
+  - entity_id: c-shiranami
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hotaru-jutsu-stopped
+relations: []
+presence:
+- id: pr-s2-hotaru-jutsu-stopped-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hotaru-jutsu-stopped.start
+  to: sc-s2-hotaru-jutsu-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-jutsu-stopped
+- id: pr-s2-hotaru-jutsu-stopped-c-utakata
+  entity_id: c-utakata
+  from: sc-s2-hotaru-jutsu-stopped.start
+  to: sc-s2-hotaru-jutsu-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-jutsu-stopped
+- id: pr-s2-hotaru-jutsu-stopped-c-hotaru
+  entity_id: c-hotaru
+  from: sc-s2-hotaru-jutsu-stopped.start
+  to: sc-s2-hotaru-jutsu-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-jutsu-stopped
+- id: pr-s2-hotaru-jutsu-stopped-c-shiranami
+  entity_id: c-shiranami
+  from: sc-s2-hotaru-jutsu-stopped.start
+  to: sc-s2-hotaru-jutsu-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-jutsu-stopped

@@ -6,6 +6,13 @@ export function physicalParticipants(scene){
   .map(i=>identity(i.entity_id))));
 }
 export function validateMissionWindows(plan,scenes,entities=[]){
+ // Reservations use their own calendar origin. Adding historical years moves
+ // canvas coordinates, but must not move an existing mission reservation.
+ const lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
+ if(Number.isInteger(plan.calendar_base_year))scenes=scenes.map(s=>s.date&&s.day!==null?{
+  ...s,day:(s.date.year-plan.calendar_base_year)*365+
+   lengths.slice(0,s.date.month-1).reduce((sum,n)=>sum+n,0)+s.date.day-1+(s.placement?.day_offset||0)
+ }:s);
  const active=scenes.filter(s=>s.state==='active'&&s.day!==null);
  const byId=new Map(active.map(s=>[s.id,s]));
  const entityMap=new Map(entities.map(e=>[e.id,e]));

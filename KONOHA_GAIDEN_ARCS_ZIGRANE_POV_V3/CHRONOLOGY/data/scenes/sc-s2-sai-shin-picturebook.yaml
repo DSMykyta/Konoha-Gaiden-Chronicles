@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-sai-shin-picturebook
+episode_id: ep-s2-sai-shin-picturebook
+display_rank: 2400
+continuity_id: main
+title: Сай малює історію себе та Шіна
+description: У Корені вони зберігають зв’язок як брати; смерть Шіна залишає книгу без останньої сторінки.
+location_id: loc-root-base
+placement:
+  anchor_id: ta-s2-59-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sai-shin-picturebook-1
+  title: Сай малює історію себе та Шіна
+  text: У Корені вони зберігають зв’язок як брати; смерть Шіна залишає книгу без останньої сторінки.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-shin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sai-shin-picturebook
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-sai-shin-picturebook-c-sai
+  entity_id: c-sai
+  from: sc-s2-sai-shin-picturebook.start
+  to: sc-s2-sai-shin-picturebook.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-shin-picturebook
+- id: pr-s2-sai-shin-picturebook-c-shin
+  entity_id: c-shin
+  from: sc-s2-sai-shin-picturebook.start
+  to: sc-s2-sai-shin-picturebook.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-shin-picturebook

@@ -694,3 +694,942 @@ arcs:
   source_arc: Time Slip / Back in Time
   source_episode_range: Boruto 128–136
   included_episode_range: 'Boruto 129–136: лише перебування в минулому'
+- id: arc-s2-homecoming
+  continuity_id: main
+  title: Повернення Наруто
+  description: Повернення Наруто
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Викрадення й порятунок Кадзекаґе
+  description: Викрадення й порятунок Кадзекаґе
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-tenchi
+  continuity_id: main
+  title: Міст Тенчі та зустріч із Саске
+  description: Міст Тенчі та зустріч із Саске
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-guardians
+  continuity_id: main
+  title: Дванадцять охоронців та напад Казуми
+  description: Дванадцять охоронців та напад Казуми
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-immortals
+  continuity_id: main
+  title: Хідан, Какудзу та помста Команди 10
+  description: Хідан, Какудзу та помста Команди 10
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-three-tails
+  continuity_id: main
+  title: Ґурен, Юкімару та Трихвостий
+  description: Ґурен, Юкімару та Трихвостий
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-hebi
+  continuity_id: main
+  title: Падіння Орочімару та пошук Ітачі
+  description: Падіння Орочімару та пошук Ітачі
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-jiraiya-pain
+  continuity_id: main
+  title: Остання розвідка Джираї
+  description: Остання розвідка Джираї
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-six-tails
+  continuity_id: main
+  title: Хотару, Утаката та заборонена техніка
+  description: Хотару, Утаката та заборонена техніка
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Учні Джираї та напад Пейна
+  description: Учні Джираї та напад Пейна
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-summit
+  continuity_id: main
+  title: Відбудова Конохи, рада Каґе та переслідування Саске
+  description: Відбудова Конохи, рада Каґе та переслідування Саске
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Дорога Наруто до Країни Блискавки
+  description: Дорога Наруто до Країни Блискавки
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Коноха готується до спільної війни
+  description: Коноха готується до спільної війни
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-island
+  continuity_id: main
+  title: Острів Черепахи та останні приготування
+  description: Острів Черепахи та останні приготування
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-timeskip
+  continuity_id: main
+  title: Тренування та зміни під час відсутності Наруто
+  description: Тренування та зміни під час відсутності Наруто
+  period_id: timeskip
+  kind: adaptation
+- id: arc-s2-uchiha-history
+  continuity_id: main
+  title: Ітачі, Шісуї та трагедія Учіха
+  description: Ітачі, Шісуї та трагедія Учіха
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Шіон та повернення Морьо
+  description: Шіон та повернення Морьо
+  period_id: shippuden
+  kind: alternate
+- id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Напад Країни Неба
+  description: Напад Країни Неба
+  period_id: shippuden
+  kind: alternate
+- id: arc-s2-movie-fire
+  continuity_id: movie-fire
+  title: Хіруко та Воля вогню
+  description: Хіруко та Воля вогню
+  period_id: shippuden
+  kind: alternate
+- id: arc-s2-movie-tower
+  continuity_id: movie-tower
+  title: Роуран і загублена вежа
+  description: Роуран і загублена вежа
+  period_id: shippuden
+  kind: alternate
+- id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Замок Ходзукі та Скриня блаженства
+  description: Замок Ходзукі та Скриня блаженства
+  period_id: shippuden
+  kind: alternate
+- id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Світ Обмеженого Цукуйомі
+  description: Світ Обмеженого Цукуйомі
+  period_id: shippuden
+  kind: alternate
+- id: arc-s2-founding-history
+  continuity_id: main
+  title: Хашірама, Мадара та заснування Конохи
+  description: Хашірама, Мадара та заснування Конохи
+  period_id: village-founding
+  kind: canonical
+- id: arc-s2-ancient-history
+  continuity_id: main
+  title: Каґуя, Хаґоромо та походження ніншю
+  description: Каґуя, Хаґоромо та походження ніншю
+  period_id: warring-states
+  kind: adaptation
+- id: arc-s2-reconstruction-frames
+  continuity_id: main
+  title: Розмови й спогади під час відбудови
+  description: Розмови й спогади під час відбудови
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Команда Мінато та роки Какаші в АНБУ — Третя світова війна шинобі
+  description: Команда Мінато та роки Какаші в АНБУ
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-kakashi-history-fourth-hokage
+  continuity_id: main
+  title: Команда Мінато та роки Какаші в АНБУ — Правління Четвертого Хокаґе
+  description: Команда Мінато та роки Какаші в АНБУ
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-kakashi-history-post-nine-tails
+  continuity_id: main
+  title: Команда Мінато та роки Какаші в АНБУ — Відбудова Конохи
+  description: Команда Мінато та роки Какаші в АНБУ
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-kakashi-history-uchiha-crisis
+  continuity_id: main
+  title: Команда Мінато та роки Какаші в АНБУ — Криза клану Учіха
+  description: Команда Мінато та роки Какаші в АНБУ
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-nine-tails-history-first-postwar-peace
+  continuity_id: main
+  title: Народження Наруто та напад Дев’ятихвостого — Перше міжвоєння
+  description: Народження Наруто та напад Дев’ятихвостого
+  period_id: first-postwar-peace
+  kind: canonical
+- id: arc-s2-nine-tails-history-second-shinobi-war
+  continuity_id: main
+  title: Народження Наруто та напад Дев’ятихвостого — Друга світова війна шинобі
+  description: Народження Наруто та напад Дев’ятихвостого
+  period_id: second-shinobi-war
+  kind: canonical
+- id: arc-s2-nine-tails-history-post-nine-tails
+  continuity_id: main
+  title: Народження Наруто та напад Дев’ятихвостого — Відбудова Конохи
+  description: Народження Наруто та напад Дев’ятихвостого
+  period_id: post-nine-tails
+  kind: canonical
+- id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Народження Наруто та напад Дев’ятихвостого — Напад Дев’ятихвостого
+  description: Народження Наруто та напад Дев’ятихвостого
+  period_id: nine-tails-crisis
+  kind: canonical
+- id: arc-s2-uchiha-history-third-shinobi-war
+  continuity_id: main
+  title: Ітачі, Шісуї та трагедія Учіха — Третя світова війна шинобі
+  description: Ітачі, Шісуї та трагедія Учіха
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-uchiha-history-post-nine-tails
+  continuity_id: main
+  title: Ітачі, Шісуї та трагедія Учіха — Відбудова Конохи
+  description: Ітачі, Шісуї та трагедія Учіха
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Ітачі, Шісуї та трагедія Учіха — Покоління Академії
+  description: Ітачі, Шісуї та трагедія Учіха
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-movie-shion-pre-naruto
+  continuity_id: movie-shion
+  title: Шіон та повернення Морьо — Покоління Академії
+  description: Шіон та повернення Морьо
+  period_id: pre-naruto
+  kind: alternate
+- id: arc-s2-movie-fire-third-shinobi-war
+  continuity_id: movie-fire
+  title: Хіруко та Воля вогню — Третя світова війна шинобі
+  description: Хіруко та Воля вогню
+  period_id: third-shinobi-war
+  kind: alternate
+- id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Роуран і загублена вежа — Третя світова війна шинобі
+  description: Роуран і загублена вежа
+  period_id: third-shinobi-war
+  kind: alternate
+- id: arc-s2-movie-tower-second-shinobi-war
+  continuity_id: movie-tower
+  title: Роуран і загублена вежа — Друга світова війна шинобі
+  description: Роуран і загублена вежа
+  period_id: second-shinobi-war
+  kind: alternate
+- id: arc-s2-movie-prison-pre-naruto
+  continuity_id: movie-prison
+  title: Замок Ходзукі та Скриня блаженства — Покоління Академії
+  description: Замок Ходзукі та Скриня блаженства
+  period_id: pre-naruto
+  kind: alternate
+- id: arc-s2-founding-history-village-founding
+  continuity_id: main
+  title: Хашірама, Мадара та заснування Конохи — Заснування прихованих селищ
+  description: Хашірама, Мадара та заснування Конохи
+  period_id: village-founding
+  kind: canonical
+- id: arc-s2-power
+  continuity_id: main
+  title: Тоніка та Ама но Хоко
+  description: Тоніка та Ама но Хоко
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-first-war-history
+  continuity_id: main
+  title: Золоті й Срібні брати та остання місія Тобірами
+  description: Золоті й Срібні брати та остання місія Тобірами
+  period_id: first-shinobi-war
+  kind: canonical
+- id: arc-s2-history-hanzo-mifune-first-duel
+  continuity_id: main
+  title: Ханзо щадить Міфуне
+  description: Самурай залишається прикривати товаришів; Ханзо дає йому протиотруту після двобою.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-kimimaro-jugo-friendship
+  continuity_id: main
+  title: Кімімаро стає опорою Джюґо
+  description: Він стримує його напади й запрошує до Орочімару; обіцянка клітки визначає подальші рішення Джюґо.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-sai-shin-picturebook
+  continuity_id: main
+  title: Сай малює історію себе та Шіна
+  description: У Корені вони зберігають зв’язок як брати; смерть Шіна залишає книгу без останньої сторінки.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-naruto-teaches-konohamaru-rasengan
+  continuity_id: main
+  title: Наруто навчає Конохамару Расенґану
+  description: Пояснення трьох етапів перетворює їхню звичну гру з техніками на справжнє навчання.
+  period_id: post-fourth-war
+  kind: adaptation
+- id: arc-s2-history-yota-children-meeting
+  continuity_id: main
+  title: Діти знайомляться з Йотою
+  description: Погода змінюється від його переживань; Наруто навчає його свистіти. Діти проникають визволити його;
+    Йота зупиняє охоронців блискавкою.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-kosuke-lost-comrades
+  continuity_id: main
+  title: Косуке втрачає товаришів через власне рішення
+  description: Прагнення підвищення закінчується їхньою смертю; він обирає назавжди залишитися геніном.
+  period_id: first-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-kabuto-root-recruited
+  continuity_id: main
+  title: Данзо домагається нового шпигуна
+  description: Кабуто погоджується піти заради сиротинця; Нонo знову відряджають на розвідку.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-sasori-parents-loss
+  continuity_id: main
+  title: Сасорі чекає на загиблих батьків
+  description: Чіо навчає його маріонеток; він створює батька й матір, але не отримує їхнього тепла.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-lee-seasickness-training
+  continuity_id: main
+  title: Ґай тренує Лі на човні
+  description: Морська хвороба має замінити сп’яніння; учень визнає вдячність за допомогу наставника.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-minato-ab-clash
+  continuity_id: main
+  title: Мінато протистоїть А та Бі
+  description: Летючий Бог Грому обходить атаку Райкаґе; Бі прикриває брата щупальцем, після чого обидві сторони
+    стримують останній удар.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-itachi-sasuke-weekend
+  continuity_id: main
+  title: Ітачі навчає Саске метати кунай
+  description: За відсутності батьків він готує вечерю, і брати засинають надворі.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-komushi-sasori-puppet
+  continuity_id: main
+  title: Комуші помирає після втрати руки
+  description: Сасорі створює йому протез; після отруєння та прохання матері робить із друга людську маріонетку.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-gaara-yashamaru-test
+  continuity_id: main
+  title: Раса наказує випробувати Ґаару
+  description: Яшамару нападає на нього та бреше про ненависть матері; напад руйнує довіру Ґаари до людей.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-naruto-hiruzen-campfire
+  continuity_id: main
+  title: Наруто ділиться рибою з Хірудзеном
+  description: Голодний хлопчик сам збирає їжу; нічна розмова розширює його уявлення про світ.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-motoi-attacks-bee
+  continuity_id: main
+  title: Мотої намагається вбити Бі
+  description: Він переносить провину за загибель батька на нового джінчюрікі; Бі продовжує усміхатися попри цькування.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-tenten-finds-weapons-path
+  continuity_id: main
+  title: Тентен випробовує медицину й виклик
+  description: Невдалі спроби наслідувати Цунаде допомагають Ґаю помітити її здібності до просторових технік зі
+    зброєю.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-sakumo-sees-guy
+  continuity_id: main
+  title: Сакумо вказує Какаші на потенціал Ґая
+  description: Наполегливість хлопця дає батькові підставу назвати його майбутнім сильним суперником.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-kisame-fuguki-death
+  continuity_id: main
+  title: Кісаме вбиває Фуґукі
+  description: Викритий витік від командира руйнує його довіру; він отримує Самехаду.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-pain-overthrows-hanzo
+  continuity_id: main
+  title: Пейн убиває Ханзо
+  description: Він знищує його прибічників та бере Аме під свій контроль.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-kabuto-orochimaru-remains
+  continuity_id: main
+  title: Кабуто прищеплює собі рештки Орочімару
+  description: Після загибелі наставника він перебудовує своє тіло та продовжує пошуки сили.
+  period_id: post-fourth-war
+  kind: adaptation
+- id: arc-s2-history-hizashi-neji-childhood
+  continuity_id: main
+  title: Хізаші пояснює Неджі роль побічної гілки
+  description: Тренування й знайомство з молодшою кузиною передують смерті батька.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-orochimaru-white-skin
+  continuity_id: main
+  title: Орочімару знаходить шкіру білої змії
+  description: Біля могили батьків Хірудзен говорить із ним про відновлення життя.
+  period_id: first-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-shino-suika-first-loss
+  continuity_id: main
+  title: Суйка перемагає Шіно зблизька
+  description: Втрата впевненості змушує його уникати команди.
+  period_id: timeskip
+  kind: adaptation
+- id: arc-s2-history-tsunade-raikage-treatment
+  continuity_id: main
+  title: Райкаґе просить Цунаде врятувати підлеглого
+  description: Вона ставить умову двобою; Шізуне бере участь у лікуванні вибухового паразита.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-sakura-ino-ribbon
+  continuity_id: main
+  title: Іно дарує Сакурі стрічку
+  description: Вона допомагає їй перестати ховати чоло; подруги збирають квіти та відкривають власне сховище.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-nagato-protects-yahiko
+  continuity_id: main
+  title: Наґато захищає Яхіко від шинобі Іви
+  description: Після загибелі нападника Джирая пояснює йому відповідальність за свою силу.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-small-akatsuki-founded
+  continuity_id: main
+  title: Яхіко називає загін Акацукі
+  description: Група допомагає мешканцям Аме та шукає розв’язання конфліктів переговорами.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-temujin-village-destroyed
+  continuity_id: main
+  title: Хайдо знищує поселення Темуджіна
+  description: Він убиває батьків хлопця, приховує свою роль і виховує його як прибічника.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-hinata-after-hizashi-funeral
+  continuity_id: main
+  title: Наруто проводжає Хінату додому
+  description: Після похорону Хізаші вона відходить від рідних; Хіаші забирає її на навчання.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-kosuke-minato-leg
+  continuity_id: main
+  title: Мінато перев’язує Косуке ногу
+  description: Він відмовляється залишати товариша; пізніше ці слова нагадує Наруто.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-obito-kills-early-akatsuki
+  continuity_id: main
+  title: Обіто перехоплює підкріплення Акацукі
+  description: Товариші Яхіко намагаються дістатися пастки, але не можуть пройти.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-kisame-meets-masked-ruler
+  continuity_id: main
+  title: Кісаме бачить керування Яґурою
+  description: Чоловік у масці показує йому приховану владу над Мідзукаґе та план світу без брехні.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-koyuki-child-rescued
+  continuity_id: main
+  title: Какаші рятує малу Коюкі
+  description: Переворот Дото руйнує палац і забирає життя батька Коюкі; Какаші виносить її з країни.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-dan-death
+  continuity_id: main
+  title: Цунаде не може врятувати Дана
+  description: Його рана призводить до смертельної втрати крові, попри її лікування.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-academy-naruto-sasuke-spar
+  continuity_id: main
+  title: Наруто й Саске відмовляються від знака примирення
+  description: Після спарингу їхня суперечка триває; кожен бачить самотність іншого.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-kakashi-previous-students
+  continuity_id: main
+  title: Колишні кандидати дякують Какаші
+  description: Попри провал тесту вони засвоїли цінність товаришів; новою трійцею для нього призначають Команду
+    7.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-kisame-cipher-mission
+  continuity_id: main
+  title: Кісаме вбиває власних шифрувальників
+  description: Під загрозою витоку він виконує наказ знищити носіїв відомостей.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-choji-protection-oath
+  continuity_id: main
+  title: Чоджі дає батькові обіцянку
+  description: Він має берегти товаришів і майбутнє клану; ця настанова повертається під час бою з Асумою.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-sasuke-suigetsu-promise
+  continuity_id: main
+  title: Саске обіцяє звільнити Суйґецу
+  description: Той лишається в резервуарі до загибелі Орочімару.
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-history-hinata-naruto-bullies
+  continuity_id: main
+  title: Наруто захищає Хінату від хлопців
+  description: Наруто стає перед кривдниками й зазнає їхніх ударів; Хіната запам’ятовує його допомогу.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-gaara-birth
+  continuity_id: main
+  title: У Ґаарі запечатують Шукаку
+  description: Карура помирає після пологів; її захист залишається в піску сина.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-jiraiya-nadeshiko-duel
+  continuity_id: main
+  title: Джирая залишає двобій наступним учням
+  description: Бій із очільницею Надешіко завершується обіцянкою продовжити його через спадкоємців.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-lee-drunk-restaurant
+  continuity_id: main
+  title: Лі випадково випиває алкоголь
+  description: П’яний Кулак руйнує ресторан; Ґай бере відповідальність перед власником.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-jiraiya-leaves-orphans
+  continuity_id: main
+  title: Учні перемагають клона Джираї
+  description: Після трьох років навчання наставник залишає їх; перевернуті дощечки позначають вихід із дому.
+  period_id: sannin-interwar
+  kind: adaptation
+- id: arc-s2-history-shino-suika-rematch
+  continuity_id: main
+  title: Команда 8 повертається до Суйки
+  description: Шіно рятує товаришів та застосовує навчену тайджюцу; Куренай спостерігає за загоном.
+  period_id: timeskip
+  kind: adaptation
+- id: arc-s2-history-sasori-third-kazekage
+  continuity_id: main
+  title: Сасорі вбиває Третього Кадзекаґе
+  description: Він робить з його тіла людську маріонетку та зберігає Залізний Пісок.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-shizuka-sagiri-loss
+  continuity_id: main
+  title: Шізука втрачає Саґірі
+  description: Їхньому зв’язку противляться старші села; загибель коханого змушує її відмовитися від нового шлюбу.
+  period_id: timeskip
+  kind: adaptation
+- id: arc-s2-history-iruka-first-class
+  continuity_id: main
+  title: Ірука стає наставником Наруто
+  description: Витівки учня стикаються з особистим болем Іруки після нападу Курами; Хірудзен переконує його побачити
+    дитину.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-hanzo-konan-hostage
+  continuity_id: main
+  title: Ханзо заманює Акацукі на переговори
+  description: Конан захоплюють; він вимагає, щоб Наґато вбив Яхіко. Він віддає життя, щоб Наґато не мусив обирати
+    між друзями.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-torune-saves-shino
+  continuity_id: main
+  title: Торуне погоджується вступити до Кореня
+  description: Він займає місце Шіно після життя під опікою Шібі; згодом товаришує з Фу.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-iruka-mask-and-spies
+  continuity_id: main
+  title: Наруто йде по трофей ворожого шинобі
+  description: Обіцянка однокласників дружити з ним приводить до пастки; Ірука та Какаші захищають Наруто від шпигунів.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-hiruzen-bell-test
+  continuity_id: main
+  title: Хірудзен випробовує майбутніх Саннінів
+  description: Цунаде й Орочімару забирають дзвіночки; Джирая лишається прив’язаним до стовпа та бачить виклик Енми.
+  period_id: first-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-bee-chosen-as-brother
+  continuity_id: main
+  title: Бі обирають напарником А
+  description: Вони узгоджують силу подвійного удару та стають названими братами.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-academy-ino-shika-cho
+  continuity_id: main
+  title: Ірука відправляє трійцю до коридору
+  description: Витівки під час уроку зближують Наруто, Шикамару й Чоджі.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-kabuto-orphanage
+  continuity_id: main
+  title: Нонo знаходить дитину без пам’яті
+  description: Вона дає Кабуто ім’я та окуляри; він навчається лікувати.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-ame-orphans-meet
+  continuity_id: main
+  title: Наґато знаходить Яхіко та Конан
+  description: Діти разом шукають їжу; Чібі гине під час вибуху, вони продовжують дорогу.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-blue-b-extraction
+  continuity_id: main
+  title: Орочімару провокує вихід Ґюкі
+  description: Експеримент над попереднім джінчюрікі спричиняє його смерть і напад Восьмихвостого; батько Мотої
+    гине.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-bunpuku-shukaku
+  continuity_id: main
+  title: Бунпуку говорить із Шукаку як із товаришем
+  description: Попри ув’язнення він не звинувачує звіра; його слова лишаються в пам’яті Шукаку.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-naruto-parents-question
+  continuity_id: main
+  title: Наруто питає про своїх батьків
+  description: Хірудзен приносить гроші, але відмовляється розповісти хлопчикові, хто вони були.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-jiraiya-adopts-orphans
+  continuity_id: main
+  title: Джирая лишається з дітьми Аме
+  description: Після зустрічі із Саннінами він погоджується захищати та вчити їх.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-hanare-kakashi-childhood
+  continuity_id: main
+  title: Какаші допомагає загубленій Ханаре
+  description: Він показує спосіб знайти напрямок, який залишається в її пам’яті.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-duy-eight-gates-sacrifice
+  continuity_id: main
+  title: Дай захищає трійцю від мечників Туману
+  description: Восьмі Ворота дають змогу затримати нападників; Ґай, Ґенма й Ебісу залишають поле, а Дай гине.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-obito-approaches-nagato
+  continuity_id: main
+  title: Обіто пропонує Наґато співпрацю
+  description: Яхіко відмовляється від його допомоги; Обіто обіцяє повертатися.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-kakashi-leaves-anbu
+  continuity_id: main
+  title: Хірудзен робить Какаші наставником генінів
+  description: Після трагедії Учіха він завершує службу в АНБУ; перші трійці провалюють його тест.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-yota-river-memory-erasure
+  continuity_id: main
+  title: Йота рятує Наруто з річки
+  description: Після небезпеки він стирає спогади дітей; його минула смерть та оживлення Орочімару пояснюються пізніше.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-sannin-hanzo
+  continuity_id: main
+  title: Ханзо називає трійцю Саннінами
+  description: Виснажені шинобі виживають після бою з ним і отримують нове ім’я.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-jiraiya-first-myoboku
+  continuity_id: main
+  title: Джирая потрапляє до Мьобоку
+  description: Невдалий виклик приводить його до жаб; він починає навчання й чує пророцтво про свого учня.
+  period_id: first-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-pakura-sacrificed
+  continuity_id: main
+  title: Суна видає Пакуру заради перемир’я
+  description: Шинобі Кірі вбивають її під виглядом зустрічі; Суна поширює іншу причину загибелі.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-guy-academy-effort
+  continuity_id: main
+  title: Ґай намагається потрапити до Академії
+  description: Він не проходить відбір і тренується до виснаження; Дай продовжує підтримувати його.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-gaara-siblings-sandbox
+  continuity_id: main
+  title: Діти Суни граються з піском
+  description: Ґаара створює фігури, але батько відводить від нього старших дітей; Яшамару відповідає на його запитання.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-nagato-parents-killed
+  continuity_id: main
+  title: Шинобі Конохи вбивають батьків Наґато
+  description: Війна приводить чужих шинобі до його дому; Ріннеґан зупиняє нападників.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-kabuto-nono-tragedy
+  continuity_id: main
+  title: Кабуто смертельно ранить Нонo
+  description: Підмінені фотографії не дозволяють їй впізнати вихованця. Він пояснює, як Корінь позбувався обох
+    шпигунів, і дає Кабуто нове місце.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-nagato-gedo-retaliation
+  continuity_id: main
+  title: Наґато викликає Ґедо Мазо
+  description: Статуя поглинає душі нападників; чакроприймачі виснажують тіло Наґато.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-danzo-akatsuki-false-flag
+  continuity_id: main
+  title: Корінь нападає під виглядом Іви
+  description: Наґато захищає товаришів статуєю; Данзо використовує напад, щоб налаштувати Ханзо проти Акацукі.
+  period_id: fourth-hokage
+  kind: adaptation
+- id: arc-s2-history-nawaki-death
+  continuity_id: main
+  title: Навакі гине під час війни
+  description: Орочімару бачить наслідки вибухової пастки; Цунаде втрачає брата.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Перед Обмеженим Цукуйомі
+  description: Перед Обмеженим Цукуйомі
+  period_id: shippuden
+  kind: alternate
+- id: arc-s2-kabuto-prewar-research
+  continuity_id: main
+  title: Кабуто готує Едо Тенсей
+  description: Кабуто готує Едо Тенсей
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-founders-childhood-additions
+  continuity_id: main
+  title: Втрати братів до заснування Конохи
+  description: Втрати братів до заснування Конохи
+  period_id: warring-states
+  kind: canonical
+- id: arc-s2-last-film-history
+  continuity_id: main
+  title: Довоєнна історія з The Last
+  description: Довоєнна історія з The Last
+  period_id: pre-naruto
+  kind: canonical
+- id: arc-s2-ancient-lunar-history
+  continuity_id: main
+  title: Хамура й давній місячний клан
+  description: Хамура й давній місячний клан
+  period_id: warring-states
+  kind: canonical
+- id: arc-s2-rescue-sealing-end
+  continuity_id: main
+  title: Завершення вилучення Шукаку
+  description: Завершення вилучення Шукаку
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-prewar-support-route
+  continuity_id: main
+  title: 'Шикамару й Тентен: допомога кораблю'
+  description: 'Шикамару й Тентен: допомога кораблю'
+  period_id: shippuden
+  kind: adaptation
+- id: arc-s2-history-hidan-akatsuki-recruitment
+  continuity_id: main
+  title: Акацукі випробовує безсмертя Хідана
+  description: Конан виступає приманкою; Хідан руйнує одне серце Какудзу й стає його напарником.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-chen-fakes-death
+  continuity_id: main
+  title: Чен ставить власну порожню могилу
+  description: Він удає свою смерть після втрати єдиного учня й відмовляється навчати нових.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-fugaku-shows-tablet
+  continuity_id: main
+  title: Фуґаку показує Ітачі свої очі
+  description: Він пояснює план перевороту та можливість безкровного захоплення влади; Ітачі передає попередження
+    керівництву села.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-sannin-kiri-night-fight
+  continuity_id: main
+  title: Трійця відбиває нічний напад Кірі
+  description: Розмова про мрії біля вогню закінчується атакою шинобі Туману.
+  period_id: second-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-academy-hinata-bullies
+  continuity_id: main
+  title: Наруто втручається заради Хінати
+  description: Чоджі й Шікамару сперечаються про його вчинок; Наруто перериває сварку, і трійця сміється.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-yugao-hayate-training
+  continuity_id: main
+  title: Юґао тренується з Хаяте
+  description: Спільне кенджюцу залишає рухи, за якими вона згодом упізнає колишнього товариша.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-madara-rinnegan-awakens
+  continuity_id: main
+  title: Мадара пробуджує Ріннеґан наприкінці життя
+  description: Сила Хашірами дає йому нові очі й доступ до Ґедо Мазо.
+  period_id: first-postwar-peace
+  kind: canonical
+- id: arc-s2-history-fugaku-mangekyo-loss
+  continuity_id: main
+  title: Фуґаку втрачає товариша на війні
+  description: Його загибель пробуджує Манґекьо; Фуґаку зберігає це в таємниці від більшості клану.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-itachi-captain-mission
+  continuity_id: main
+  title: Ітачі виконує наказ Данзо як капітан АНБУ
+  description: Разом із двома підлеглими він іде на вбивство; Данзо розпитує про невдоволення Учіха.
+  period_id: pre-naruto
+  kind: adaptation
+- id: arc-s2-history-itachi-great-fireball
+  continuity_id: main
+  title: Ітачі швидко опановує Велику Вогняну Кулю
+  description: Фуґаку навчає його після переселення клану.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-chen-student-training
+  continuity_id: main
+  title: Чен навчає хлопця без нінджюцу
+  description: Учень стає шинобі завдяки тайдзюцу, але не встигає опанувати Дракон Конохи до війни.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-sasuke-birth
+  continuity_id: main
+  title: Народжується Саске
+  description: Ітачі отримує молодшого брата й починає дбати про нього.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-kakashi-sakumo-grave-child
+  continuity_id: main
+  title: Какаші розповідає батьковій могилі про друзів
+  description: Після спільної вечері Рін та Обіто лишаються поруч, а Ґай продовжує викликати Какаші на двобої.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-jiraiya-tsunade-failed-rescue
+  continuity_id: main
+  title: Джирая влаштовує невдалий порятунок Цунаде
+  description: Він просить Орочімару зіграти нападника, але задум не працює.
+  period_id: first-postwar-peace
+  kind: adaptation
+- id: arc-s2-history-madara-nagato-eyes
+  continuity_id: main
+  title: Мадара пересаджує очі Наґато
+  description: Дитина отримує Ріннеґан, не знаючи його походження; це відбувається до загибелі її батьків.
+  period_id: first-postwar-peace
+  kind: canonical
+- id: arc-s2-history-itachi-dokan-clone
+  continuity_id: main
+  title: Ітачі лишає клона в Академії
+  description: Старші учні нападають на нього; вчителі дізнаються про рівень Ітачі й пропонують ранній випуск.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-history-itachi-orochimaru-life-death
+  continuity_id: main
+  title: Ітачі питає про життя і смерть
+  description: Після побаченої війни він зустрічає Орочімару біля могил.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-chen-student-death
+  continuity_id: main
+  title: Учень Чена гине на війні
+  description: Його відправляють на фронт; загибель змушує Чена залишити життя шинобі.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-itachi-cliff-crows
+  continuity_id: main
+  title: Ітачі стрибає зі скелі та зупиняє падіння
+  description: Побачивши ворона, він користується кунаєм і повертається до життя.
+  period_id: third-shinobi-war
+  kind: adaptation
+- id: arc-s2-history-sakura-ino-hideout
+  continuity_id: main
+  title: Сакура приводить Іно до свого сховку
+  description: Іно допомагає з квітами; розмова про Саске започатковує їхнє суперництво.
+  period_id: uchiha-crisis
+  kind: adaptation
+- id: arc-s2-history-madara-instructs-obito
+  continuity_id: main
+  title: Мадара навчає Обіто плану Ока Місяця
+  description: Мадара передає Обіто знання, техніки й роль свого наступника для майбутнього повернення.
+  period_id: fourth-hokage
+  kind: canonical
+- id: arc-s2-history-madara-life-support-ends
+  continuity_id: main
+  title: Мадара від’єднується від Ґедо Мазо
+  description: Він помирає, покладаючи майбутнє воскресіння на Ріннеґан Наґато та дії Обіто.
+  period_id: fourth-hokage
+  kind: canonical
+- id: arc-s2-history-itachi-izumi-dumplings
+  continuity_id: main
+  title: Ідзумі ділиться данґо з Ітачі
+  description: Вона вітає його з підвищенням; він згодом вирушає на місію з Командою 2.
+  period_id: post-nine-tails
+  kind: adaptation
+- id: arc-s2-lunar-branch-history
+  continuity_id: main
+  title: Війна місячних гілок
+  description: Історія клану до самотнього дитинства Тонері. Точний рік не встановлено.
+  period_id: pre-naruto
+  kind: canonical
+- id: arc-s2-onoki-madara-history
+  continuity_id: main
+  title: Мадара відкидає угоду Іви
+  description: Мадара відкидає угоду Іви
+  period_id: village-founding
+  kind: canonical
+- id: arc-s2-kabuto-sage-preparation
+  continuity_id: main
+  title: Кабуто збирає техніки до війни
+  description: Кабуто збирає техніки до війни
+  period_id: shippuden
+  kind: canonical
+- id: arc-s2-obito-academy-additions
+  continuity_id: main
+  title: Обіто перед Командою Мінато
+  description: Обіто перед Командою Мінато
+  period_id: third-shinobi-war
+  kind: canonical
+- id: arc-s2-first-kage-summit
+  continuity_id: main
+  title: Перший саміт Каґе
+  description: Перший саміт Каґе
+  period_id: village-founding
+  kind: canonical
+- id: arc-s2-pakura-maki-history
+  continuity_id: main
+  title: Пакура навчає Макі
+  description: Пакура навчає Макі
+  period_id: pre-naruto
+  kind: adaptation

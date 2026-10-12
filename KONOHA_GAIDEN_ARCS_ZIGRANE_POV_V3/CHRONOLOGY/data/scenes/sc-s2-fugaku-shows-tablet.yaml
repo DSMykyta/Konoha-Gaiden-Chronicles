@@ -1,0 +1,55 @@
+schema_version: 1
+id: sc-s2-fugaku-shows-tablet
+episode_id: ep-s2-fugaku-shows-tablet
+display_rank: 2500
+continuity_id: main
+title: Фуґаку показує Ітачі свої очі
+description: Він пояснює план перевороту та можливість безкровного захоплення влади; Ітачі передає попередження
+  керівництву села.
+location_id: loc-naka-shrine
+placement:
+  anchor_id: ta-s2-56-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-fugaku-shows-tablet-1
+  title: Фуґаку показує Ітачі свої очі
+  text: Він пояснює план перевороту та можливість безкровного захоплення влади; Ітачі передає попередження керівництву
+    села.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-fugaku-shows-tablet
+relations: []
+presence:
+- id: pr-s2-fugaku-shows-tablet-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-fugaku-shows-tablet.start
+  to: sc-s2-fugaku-shows-tablet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-fugaku-shows-tablet
+- id: pr-s2-fugaku-shows-tablet-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-fugaku-shows-tablet.start
+  to: sc-s2-fugaku-shows-tablet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-fugaku-shows-tablet

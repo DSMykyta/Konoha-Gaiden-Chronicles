@@ -1,0 +1,107 @@
+schema_version: 1
+id: sc-s2-shion-moryo-seal
+episode_id: ep-s2-shion-moryo-seal
+display_rank: 37500
+continuity_id: movie-shion
+title: Шіон дізнається правду про силу матері
+description: Морьо прагне поглинути її, як колись Міроку. Наруто рятує жрицю; її сила підсилює Расенґан і руйнує
+  демона.
+location_id: loc-moryo-body-shrine
+placement:
+  anchor_id: ta-s2-65-05-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shion-moryo-seal-1
+  title: Шіон дізнається правду про силу матері
+  text: Морьо прагне поглинути її, як колись Міроку.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shion
+    role: participant
+    mode: physical
+  - entity_id: c-yomi
+    role: participant
+    mode: physical
+  - entity_id: c-moryo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shion-moryo-seal
+  layer: sources
+- id: ev-s2-shion-moryo-seal-2
+  title: Наруто й Шіон зупиняють Морьо
+  text: Наруто рятує жрицю; її сила підсилює Расенґан і руйнує демона.
+  origin: V
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shion
+    role: participant
+    mode: physical
+  - entity_id: c-yomi
+    role: participant
+    mode: physical
+  - entity_id: c-moryo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shion-moryo-seal
+  layer: sources
+relations:
+- id: rel-s2-shion-moryo-seal-1
+  kind: before
+  a: ev-s2-shion-moryo-seal-1
+  b: ev-s2-shion-moryo-seal-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-moryo-seal
+presence:
+- id: pr-s2-shion-moryo-seal-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-shion-moryo-seal.start
+  to: sc-s2-shion-moryo-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-moryo-seal
+- id: pr-s2-shion-moryo-seal-c-shion
+  entity_id: c-shion
+  from: sc-s2-shion-moryo-seal.start
+  to: sc-s2-shion-moryo-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-moryo-seal
+- id: pr-s2-shion-moryo-seal-c-yomi
+  entity_id: c-yomi
+  from: sc-s2-shion-moryo-seal.start
+  to: sc-s2-shion-moryo-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-moryo-seal
+- id: pr-s2-shion-moryo-seal-c-moryo
+  entity_id: c-moryo
+  from: sc-s2-shion-moryo-seal.start
+  to: sc-s2-shion-moryo-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-moryo-seal

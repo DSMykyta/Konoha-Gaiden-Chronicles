@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-utakata-pain-capture
+episode_id: ep-s2-utakata-pain-capture
+display_rank: 12300
+continuity_id: main
+title: Пейн убиває мисливців Кірі
+description: Його виклики перекривають дорогу їхньому загону. Утаката шукає дозвіл навчати Хотару, але зустрічає
+  Шість Шляхів і програє.
+location_id: loc-tsuchigumo-forest
+placement:
+  anchor_id: ta-s2-66-07-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-utakata-pain-capture-1
+  title: Пейн убиває мисливців Кірі
+  text: Його виклики перекривають дорогу їхньому загону.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-utakata
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-utakata-pain-capture
+- id: ev-s2-utakata-pain-capture-2
+  title: Пейн захоплює Утакату
+  text: Утаката шукає дозвіл навчати Хотару, але зустрічає Шість Шляхів і програє.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-utakata
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-utakata-pain-capture
+relations:
+- id: rel-s2-utakata-pain-capture-1
+  kind: before
+  a: ev-s2-utakata-pain-capture-1
+  b: ev-s2-utakata-pain-capture-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-utakata-pain-capture
+presence:
+- id: pr-s2-utakata-pain-capture-c-utakata
+  entity_id: c-utakata
+  from: sc-s2-utakata-pain-capture.start
+  to: sc-s2-utakata-pain-capture.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-utakata-pain-capture
+- id: pr-s2-utakata-pain-capture-c-pain
+  entity_id: c-pain
+  from: sc-s2-utakata-pain-capture.start
+  to: sc-s2-utakata-pain-capture.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-utakata-pain-capture

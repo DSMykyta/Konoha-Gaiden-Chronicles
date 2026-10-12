@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-nagato-gedo-retaliation
+episode_id: ep-s2-nagato-gedo-retaliation
+display_rank: 35100
+continuity_id: main
+title: Наґато викликає Ґедо Мазо
+description: Статуя поглинає душі нападників; чакроприймачі виснажують тіло Наґато.
+location_id: loc-ame-negotiation-cliff
+placement:
+  anchor_id: ta-s2-48-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-nagato-gedo-retaliation-1
+  title: Наґато викликає Ґедо Мазо
+  text: Статуя поглинає душі нападників; чакроприймачі виснажують тіло Наґато.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-hanzo
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-nagato-gedo-retaliation
+relations: []
+presence:
+- id: pr-s2-nagato-gedo-retaliation-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-nagato-gedo-retaliation.start
+  to: sc-s2-nagato-gedo-retaliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-gedo-retaliation
+- id: pr-s2-nagato-gedo-retaliation-c-konan
+  entity_id: c-konan
+  from: sc-s2-nagato-gedo-retaliation.start
+  to: sc-s2-nagato-gedo-retaliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-gedo-retaliation
+- id: pr-s2-nagato-gedo-retaliation-c-hanzo
+  entity_id: c-hanzo
+  from: sc-s2-nagato-gedo-retaliation.start
+  to: sc-s2-nagato-gedo-retaliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-gedo-retaliation
+- id: pr-s2-nagato-gedo-retaliation-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-nagato-gedo-retaliation.start
+  to: sc-s2-nagato-gedo-retaliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-gedo-retaliation

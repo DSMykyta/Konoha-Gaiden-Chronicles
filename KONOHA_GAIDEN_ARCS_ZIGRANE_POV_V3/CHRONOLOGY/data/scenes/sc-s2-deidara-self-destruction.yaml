@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-deidara-self-destruction
+episode_id: ep-s2-deidara-self-destruction
+display_rank: 9800
+continuity_id: main
+title: Дейдара підриває себе
+description: Саске викликає Манду, ховається в ньому та зникає; Манда гине від вибуху.
+location_id: loc-deidara-battlefield
+placement:
+  anchor_id: ta-s2-66-07-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-deidara-self-destruction-1
+  title: Дейдара підриває себе
+  text: Саске викликає Манду, ховається в ньому та зникає; Манда гине від вибуху.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-deidara-self-destruction
+relations: []
+presence:
+- id: pr-s2-deidara-self-destruction-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-deidara-self-destruction.start
+  to: sc-s2-deidara-self-destruction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-deidara-self-destruction
+- id: pr-s2-deidara-self-destruction-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-deidara-self-destruction.start
+  to: sc-s2-deidara-self-destruction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-deidara-self-destruction

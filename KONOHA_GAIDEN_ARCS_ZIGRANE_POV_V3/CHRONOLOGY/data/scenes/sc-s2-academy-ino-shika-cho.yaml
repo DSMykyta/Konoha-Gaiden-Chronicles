@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-academy-ino-shika-cho
+episode_id: ep-s2-academy-ino-shika-cho
+display_rank: 34300
+continuity_id: main
+title: Ірука відправляє трійцю до коридору
+description: Витівки під час уроку зближують Наруто, Шикамару й Чоджі.
+location_id: loc-academy-classroom
+placement:
+  anchor_id: ta-s2-58-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-academy-ino-shika-cho-1
+  title: Ірука відправляє трійцю до коридору
+  text: Витівки під час уроку зближують Наруто, Шикамару й Чоджі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-academy-ino-shika-cho
+relations: []
+presence:
+- id: pr-s2-academy-ino-shika-cho-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-academy-ino-shika-cho.start
+  to: sc-s2-academy-ino-shika-cho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-ino-shika-cho
+- id: pr-s2-academy-ino-shika-cho-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-academy-ino-shika-cho.start
+  to: sc-s2-academy-ino-shika-cho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-ino-shika-cho
+- id: pr-s2-academy-ino-shika-cho-c-choji
+  entity_id: c-choji
+  from: sc-s2-academy-ino-shika-cho.start
+  to: sc-s2-academy-ino-shika-cho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-ino-shika-cho
+- id: pr-s2-academy-ino-shika-cho-c-iruka
+  entity_id: c-iruka
+  from: sc-s2-academy-ino-shika-cho.start
+  to: sc-s2-academy-ino-shika-cho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-ino-shika-cho

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-kakashi-ame-invitation
+episode_id: ep-s2-kakashi-ame-invitation
+display_rank: 24400
+continuity_id: main
+title: Какаші передає запрошення Аме
+description: Конан видає себе за Ханзо, який уже загинув; Пейн вирішує послати свої команди на іспит.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-64-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-ame-invitation-1
+  title: Какаші передає запрошення Аме
+  text: Конан видає себе за Ханзо, який уже загинув; Пейн вирішує послати свої команди на іспит.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-ame-invitation
+relations: []
+presence:
+- id: pr-s2-kakashi-ame-invitation-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-ame-invitation.start
+  to: sc-s2-kakashi-ame-invitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-ame-invitation
+- id: pr-s2-kakashi-ame-invitation-c-konan
+  entity_id: c-konan
+  from: sc-s2-kakashi-ame-invitation.start
+  to: sc-s2-kakashi-ame-invitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-ame-invitation
+- id: pr-s2-kakashi-ame-invitation-c-pain
+  entity_id: c-pain
+  from: sc-s2-kakashi-ame-invitation.start
+  to: sc-s2-kakashi-ame-invitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-ame-invitation

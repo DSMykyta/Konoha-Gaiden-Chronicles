@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-reconstruction-waves
+episode_id: ep-s2-reconstruction-waves
+display_rank: 15300
+continuity_id: main
+title: Тадзуна й Інарі допомагають відбудові
+description: Ямато створює будинки; майстри з Країни Хвиль беруться відновлювати Коноху та Ічіраку.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-reconstruction-waves-1
+  title: Тадзуна й Інарі допомагають відбудові
+  text: Ямато створює будинки; майстри з Країни Хвиль беруться відновлювати Коноху та Ічіраку.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-tazuna
+    role: participant
+    mode: physical
+  - entity_id: c-inari
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-reconstruction-waves
+relations: []
+presence:
+- id: pr-s2-reconstruction-waves-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-reconstruction-waves.start
+  to: sc-s2-reconstruction-waves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-reconstruction-waves
+- id: pr-s2-reconstruction-waves-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-reconstruction-waves.start
+  to: sc-s2-reconstruction-waves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-reconstruction-waves
+- id: pr-s2-reconstruction-waves-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-reconstruction-waves.start
+  to: sc-s2-reconstruction-waves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-reconstruction-waves
+- id: pr-s2-reconstruction-waves-c-tazuna
+  entity_id: c-tazuna
+  from: sc-s2-reconstruction-waves.start
+  to: sc-s2-reconstruction-waves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-reconstruction-waves
+- id: pr-s2-reconstruction-waves-c-inari
+  entity_id: c-inari
+  from: sc-s2-reconstruction-waves.start
+  to: sc-s2-reconstruction-waves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-reconstruction-waves

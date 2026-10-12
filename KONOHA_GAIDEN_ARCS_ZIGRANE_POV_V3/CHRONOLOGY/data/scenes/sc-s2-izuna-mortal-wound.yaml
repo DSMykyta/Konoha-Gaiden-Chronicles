@@ -1,0 +1,73 @@
+schema_version: 1
+id: sc-s2-izuna-mortal-wound
+episode_id: ep-s2-izuna-mortal-wound
+display_rank: 42100
+continuity_id: main
+title: Тобірама смертельно ранить Ідзуну
+description: Мадара відмовляється від миру; після смерті брата отримує його очі та продовжує війну.
+location_id: loc-senju-uchiha-battlefield
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-izuna-mortal-wound-1
+  title: Тобірама смертельно ранить Ідзуну
+  text: Мадара відмовляється від миру; після смерті брата отримує його очі та продовжує війну.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-izuna
+    role: participant
+    mode: physical
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-izuna-mortal-wound
+relations: []
+presence:
+- id: pr-s2-izuna-mortal-wound-c-madara
+  entity_id: c-madara
+  from: sc-s2-izuna-mortal-wound.start
+  to: sc-s2-izuna-mortal-wound.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-izuna-mortal-wound
+- id: pr-s2-izuna-mortal-wound-c-izuna
+  entity_id: c-izuna
+  from: sc-s2-izuna-mortal-wound.start
+  to: sc-s2-izuna-mortal-wound.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-izuna-mortal-wound
+- id: pr-s2-izuna-mortal-wound-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-izuna-mortal-wound.start
+  to: sc-s2-izuna-mortal-wound.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-izuna-mortal-wound
+- id: pr-s2-izuna-mortal-wound-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-izuna-mortal-wound.start
+  to: sc-s2-izuna-mortal-wound.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-izuna-mortal-wound

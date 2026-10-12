@@ -1,0 +1,61 @@
+schema_version: 1
+id: sc-s2-iwa-kage-departure
+episode_id: ep-s2-iwa-kage-departure
+display_rank: 16500
+continuity_id: main
+title: Цучікаґе вирушає до саміту
+description: Акацучі допомагає Онокі в дорозі; Куруцучі супроводжує їх.
+location_id: loc-iwagakure
+placement:
+  anchor_id: ta-s2-66-08-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-iwa-kage-departure
+  title: Цучікаґе вирушає до саміту
+  text: Акацучі допомагає Онокі в дорозі; Куруцучі супроводжує їх.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-akatsuchi
+    role: participant
+    mode: physical
+  - entity_id: c-kurotsuchi
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-s2-kage-departures
+relations: []
+presence:
+- id: pr-sc-s2-iwa-kage-departure-c-onoki
+  entity_id: c-onoki
+  from: sc-s2-iwa-kage-departure.start
+  to: sc-s2-iwa-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-sc-s2-iwa-kage-departure-c-akatsuchi
+  entity_id: c-akatsuchi
+  from: sc-s2-iwa-kage-departure.start
+  to: sc-s2-iwa-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-sc-s2-iwa-kage-departure-c-kurotsuchi
+  entity_id: c-kurotsuchi
+  from: sc-s2-iwa-kage-departure.start
+  to: sc-s2-iwa-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

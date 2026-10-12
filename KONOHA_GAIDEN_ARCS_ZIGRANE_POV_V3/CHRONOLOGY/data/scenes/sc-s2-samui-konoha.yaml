@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-samui-konoha
+episode_id: ep-s2-samui-konoha
+display_rank: 16100
+continuity_id: main
+title: Самуї передає лист Райкаґе
+description: Данзо погоджується видати відомості про Саске й наказує його ліквідувати.
+location_id: loc-hokage-tent
+placement:
+  anchor_id: ta-s2-66-08-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-samui-konoha-1
+  title: Самуї передає лист Райкаґе
+  text: Данзо погоджується видати відомості про Саске й наказує його ліквідувати.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-samui
+    role: participant
+    mode: physical
+  - entity_id: c-karui
+    role: participant
+    mode: physical
+  - entity_id: c-omoi
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-samui-konoha
+relations: []
+presence:
+- id: pr-s2-samui-konoha-c-samui
+  entity_id: c-samui
+  from: sc-s2-samui-konoha.start
+  to: sc-s2-samui-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-samui-konoha
+- id: pr-s2-samui-konoha-c-karui
+  entity_id: c-karui
+  from: sc-s2-samui-konoha.start
+  to: sc-s2-samui-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-samui-konoha
+- id: pr-s2-samui-konoha-c-omoi
+  entity_id: c-omoi
+  from: sc-s2-samui-konoha.start
+  to: sc-s2-samui-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-samui-konoha
+- id: pr-s2-samui-konoha-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-samui-konoha.start
+  to: sc-s2-samui-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-samui-konoha

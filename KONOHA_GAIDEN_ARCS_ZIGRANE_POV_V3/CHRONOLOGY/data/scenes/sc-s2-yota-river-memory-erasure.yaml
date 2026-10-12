@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-yota-river-memory-erasure
+episode_id: ep-s2-yota-river-memory-erasure
+display_rank: 34600
+continuity_id: main
+title: Йота рятує Наруто з річки
+description: Після небезпеки він стирає спогади дітей; його минула смерть та оживлення Орочімару пояснюються пізніше.
+location_id: loc-konoha-childhood-river
+placement:
+  anchor_id: ta-s2-57-06-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yota-river-memory-erasure-1
+  title: Йота рятує Наруто з річки
+  text: Після небезпеки він стирає спогади дітей; його минула смерть та оживлення Орочімару пояснюються пізніше.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yota
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+relations: []
+presence:
+- id: pr-s2-yota-river-memory-erasure-c-yota
+  entity_id: c-yota
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+- id: pr-s2-yota-river-memory-erasure-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+- id: pr-s2-yota-river-memory-erasure-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+- id: pr-s2-yota-river-memory-erasure-c-choji
+  entity_id: c-choji
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+- id: pr-s2-yota-river-memory-erasure-c-ino
+  entity_id: c-ino
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+- id: pr-s2-yota-river-memory-erasure-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+- id: pr-s2-yota-river-memory-erasure-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure
+- id: pr-s2-yota-river-memory-erasure-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-yota-river-memory-erasure.start
+  to: sc-s2-yota-river-memory-erasure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-river-memory-erasure

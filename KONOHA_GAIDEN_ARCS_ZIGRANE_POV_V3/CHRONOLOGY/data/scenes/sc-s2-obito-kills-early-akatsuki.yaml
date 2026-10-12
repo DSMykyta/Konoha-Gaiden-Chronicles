@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-obito-kills-early-akatsuki
+episode_id: ep-s2-obito-kills-early-akatsuki
+display_rank: 35200
+continuity_id: main
+title: Обіто перехоплює підкріплення Акацукі
+description: Товариші Яхіко намагаються дістатися пастки, але не можуть пройти.
+location_id: loc-ame-akatsuki-route
+placement:
+  anchor_id: ta-s2-48-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-obito-kills-early-akatsuki-1
+  title: Обіто перехоплює підкріплення Акацукі
+  text: Товариші Яхіко намагаються дістатися пастки, але не можуть пройти.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  - entity_id: c-kyusuke
+    role: participant
+    mode: physical
+  - entity_id: c-daibutsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-obito-kills-early-akatsuki
+relations: []
+presence:
+- id: pr-s2-obito-kills-early-akatsuki-c-obito
+  entity_id: c-obito
+  from: sc-s2-obito-kills-early-akatsuki.start
+  to: sc-s2-obito-kills-early-akatsuki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-kills-early-akatsuki
+- id: pr-s2-obito-kills-early-akatsuki-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-obito-kills-early-akatsuki.start
+  to: sc-s2-obito-kills-early-akatsuki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-kills-early-akatsuki
+- id: pr-s2-obito-kills-early-akatsuki-c-kyusuke
+  entity_id: c-kyusuke
+  from: sc-s2-obito-kills-early-akatsuki.start
+  to: sc-s2-obito-kills-early-akatsuki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-kills-early-akatsuki
+- id: pr-s2-obito-kills-early-akatsuki-c-daibutsu
+  entity_id: c-daibutsu
+  from: sc-s2-obito-kills-early-akatsuki.start
+  to: sc-s2-obito-kills-early-akatsuki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-kills-early-akatsuki

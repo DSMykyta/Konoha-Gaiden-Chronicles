@@ -1,0 +1,134 @@
+schema_version: 1
+id: sc-s2-parents-sacrifice
+episode_id: ep-s2-parents-sacrifice
+display_rank: 30700
+continuity_id: main
+title: Мінато переносить Кураму з села
+description: Кушіна стримує лиса ланцюгами; Мінато готує Печать Бога Смерті. Курама пронизує їх; вони залишають
+  дитині останні слова. Чакра батьків залишається в печаті; Мінато та Кушіна помирають.
+location_id: loc-naruto-sealing-clearing
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-parents-sacrifice-1
+  title: Мінато переносить Кураму з села
+  text: Кушіна стримує лиса ланцюгами; Мінато готує Печать Бога Смерті.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+- id: ev-s2-parents-sacrifice-2
+  title: Батьки закривають Наруто від кігтя
+  text: Курама пронизує їх; вони залишають дитині останні слова.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+- id: ev-s2-parents-sacrifice-3
+  title: Мінато запечатує частину Курами в Наруто
+  text: Чакра батьків залишається в печаті; Мінато та Кушіна помирають.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+relations:
+- id: rel-s2-parents-sacrifice-1
+  kind: before
+  a: ev-s2-parents-sacrifice-1
+  b: ev-s2-parents-sacrifice-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+- id: rel-s2-parents-sacrifice-2
+  kind: before
+  a: ev-s2-parents-sacrifice-2
+  b: ev-s2-parents-sacrifice-3
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+presence:
+- id: pr-s2-parents-sacrifice-c-minato
+  entity_id: c-minato
+  from: sc-s2-parents-sacrifice.start
+  to: sc-s2-parents-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+- id: pr-s2-parents-sacrifice-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-parents-sacrifice.start
+  to: sc-s2-parents-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+- id: pr-s2-parents-sacrifice-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-parents-sacrifice.start
+  to: sc-s2-parents-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-parents-sacrifice
+- id: pr-s2-parents-sacrifice-c-kurama
+  entity_id: c-kurama
+  from: sc-s2-parents-sacrifice.start
+  to: sc-s2-parents-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-parents-sacrifice

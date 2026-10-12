@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-tower-puppet-citizens
+episode_id: ep-s2-tower-puppet-citizens
+display_rank: 39400
+continuity_id: movie-tower
+title: Сара знаходить прихованих мешканців
+description: Вулицями керують маріонетки, а справжніх людей змушують працювати під землею.
+location_id: loc-roran-underground-factory
+placement:
+  anchor_id: ta-s2-45-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tower-puppet-citizens-1
+  title: Сара знаходить прихованих мешканців
+  text: Вулицями керують маріонетки, а справжніх людей змушують працювати під землею.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tower-puppet-citizens
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-tower-puppet-citizens-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tower-puppet-citizens.start
+  to: sc-s2-tower-puppet-citizens.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-puppet-citizens
+- id: pr-s2-tower-puppet-citizens-c-sara
+  entity_id: c-sara
+  from: sc-s2-tower-puppet-citizens.start
+  to: sc-s2-tower-puppet-citizens.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-puppet-citizens

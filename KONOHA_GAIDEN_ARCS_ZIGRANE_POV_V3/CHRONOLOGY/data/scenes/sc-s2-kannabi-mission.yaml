@@ -1,0 +1,107 @@
+schema_version: 1
+id: sc-s2-kannabi-mission
+episode_id: ep-s2-kannabi-mission
+display_rank: 27600
+continuity_id: main
+title: Какаші отримує першу місію як джонін
+description: Мінато відділяється для іншої ділянки фронту; трійця має зруйнувати міст Каннабі. Мінато рятує його
+  та попереджає про небезпеку прямої атаки.
+location_id: loc-kannabi-route
+placement:
+  anchor_id: ta-s2-47-10-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kannabi-mission-1
+  title: Какаші отримує першу місію як джонін
+  text: Мінато відділяється для іншої ділянки фронту; трійця має зруйнувати міст Каннабі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kannabi-mission
+  layer: canon
+- id: ev-s2-kannabi-mission-2
+  title: Какаші застосовує незавершений Чідорі
+  text: Мінато рятує його та попереджає про небезпеку прямої атаки.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kannabi-mission
+  layer: canon
+relations:
+- id: rel-s2-kannabi-mission-1
+  kind: before
+  a: ev-s2-kannabi-mission-1
+  b: ev-s2-kannabi-mission-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-mission
+presence:
+- id: pr-s2-kannabi-mission-c-minato
+  entity_id: c-minato
+  from: sc-s2-kannabi-mission.start
+  to: sc-s2-kannabi-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-mission
+- id: pr-s2-kannabi-mission-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kannabi-mission.start
+  to: sc-s2-kannabi-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-mission
+- id: pr-s2-kannabi-mission-c-obito
+  entity_id: c-obito
+  from: sc-s2-kannabi-mission.start
+  to: sc-s2-kannabi-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-mission
+- id: pr-s2-kannabi-mission-c-rin
+  entity_id: c-rin
+  from: sc-s2-kannabi-mission.start
+  to: sc-s2-kannabi-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-mission

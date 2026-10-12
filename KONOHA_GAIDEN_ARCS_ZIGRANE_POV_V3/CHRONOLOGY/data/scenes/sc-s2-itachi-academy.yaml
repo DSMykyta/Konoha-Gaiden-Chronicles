@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-itachi-academy
+episode_id: ep-s2-itachi-academy
+display_rank: 31100
+continuity_id: main
+title: Ітачі навчається в Академії
+description: Він опановує Вогняну кулю, перевершує старших учнів і навчається з Шісуї, залишаючи клона в класі.
+location_id: loc-academy-classroom
+placement:
+  anchor_id: ta-s2-50-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-academy-1
+  title: Ітачі навчається в Академії
+  text: Він опановує Вогняну кулю, перевершує старших учнів і навчається з Шісуї, залишаючи клона в класі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-izumi
+    role: participant
+    mode: physical
+  - entity_id: c-shisui
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-academy
+relations: []
+presence:
+- id: pr-s2-itachi-academy-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-academy.start
+  to: sc-s2-itachi-academy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-academy
+- id: pr-s2-itachi-academy-c-izumi
+  entity_id: c-izumi
+  from: sc-s2-itachi-academy.start
+  to: sc-s2-itachi-academy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-academy
+- id: pr-s2-itachi-academy-c-shisui
+  entity_id: c-shisui
+  from: sc-s2-itachi-academy.start
+  to: sc-s2-itachi-academy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-academy

@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-hanzo-mifune-first-duel
+episode_id: ep-s2-hanzo-mifune-first-duel
+display_rank: 36300
+continuity_id: main
+title: Ханзо щадить Міфуне
+description: Самурай залишається прикривати товаришів; Ханзо дає йому протиотруту після двобою.
+location_id: loc-hanzo-samurai-battlefield
+placement:
+  anchor_id: ta-s2-38-02-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hanzo-mifune-first-duel-1
+  title: Ханзо щадить Міфуне
+  text: Самурай залишається прикривати товаришів; Ханзо дає йому протиотруту після двобою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hanzo
+    role: participant
+    mode: physical
+  - entity_id: c-mifune
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hanzo-mifune-first-duel
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-hanzo-mifune-first-duel-c-hanzo
+  entity_id: c-hanzo
+  from: sc-s2-hanzo-mifune-first-duel.start
+  to: sc-s2-hanzo-mifune-first-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-mifune-first-duel
+- id: pr-s2-hanzo-mifune-first-duel-c-mifune
+  entity_id: c-mifune
+  from: sc-s2-hanzo-mifune-first-duel.start
+  to: sc-s2-hanzo-mifune-first-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-mifune-first-duel

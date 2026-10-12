@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-tobi-kisame-identity
+episode_id: ep-s2-tobi-kisame-identity
+display_rank: 10800
+continuity_id: main
+title: Тобі показує Кісаме обличчя
+description: Кісаме впізнає свого давнього керівника та погоджується залишитися з Акацукі.
+location_id: loc-akatsuki-eastern-hideout
+placement:
+  anchor_id: ta-s2-66-07-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tobi-kisame-identity-1
+  title: Тобі показує Кісаме обличчя
+  text: Кісаме впізнає свого давнього керівника та погоджується залишитися з Акацукі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tobi-kisame-identity
+relations: []
+presence:
+- id: pr-s2-tobi-kisame-identity-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-tobi-kisame-identity.start
+  to: sc-s2-tobi-kisame-identity.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-kisame-identity
+- id: pr-s2-tobi-kisame-identity-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-tobi-kisame-identity.start
+  to: sc-s2-tobi-kisame-identity.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-kisame-identity

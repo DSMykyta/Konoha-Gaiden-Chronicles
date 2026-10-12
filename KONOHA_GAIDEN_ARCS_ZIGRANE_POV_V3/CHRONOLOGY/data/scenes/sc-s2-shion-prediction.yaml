@@ -1,0 +1,98 @@
+schema_version: 1
+id: sc-s2-shion-prediction
+episode_id: ep-s2-shion-prediction
+display_rank: 37200
+continuity_id: movie-shion
+title: Шіон передбачає загибель Наруто
+description: Він відмовляється прийняти пророцтво й починає охороняти її в дорозі.
+location_id: loc-shion-palace
+placement:
+  anchor_id: ta-s2-65-05-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shion-prediction-1
+  title: Шіон передбачає загибель Наруто
+  text: Він відмовляється прийняти пророцтво й починає охороняти її в дорозі.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-shion
+    role: participant
+    mode: physical
+  - entity_id: c-taruho
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shion-prediction
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-shion-prediction-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-shion-prediction.start
+  to: sc-s2-shion-prediction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-prediction
+- id: pr-s2-shion-prediction-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-shion-prediction.start
+  to: sc-s2-shion-prediction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-prediction
+- id: pr-s2-shion-prediction-c-neji
+  entity_id: c-neji
+  from: sc-s2-shion-prediction.start
+  to: sc-s2-shion-prediction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-prediction
+- id: pr-s2-shion-prediction-c-lee
+  entity_id: c-lee
+  from: sc-s2-shion-prediction.start
+  to: sc-s2-shion-prediction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-prediction
+- id: pr-s2-shion-prediction-c-shion
+  entity_id: c-shion
+  from: sc-s2-shion-prediction.start
+  to: sc-s2-shion-prediction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-prediction
+- id: pr-s2-shion-prediction-c-taruho
+  entity_id: c-taruho
+  from: sc-s2-shion-prediction.start
+  to: sc-s2-shion-prediction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-prediction

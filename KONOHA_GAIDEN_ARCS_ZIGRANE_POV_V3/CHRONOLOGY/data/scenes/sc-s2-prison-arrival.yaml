@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-prison-arrival
+episode_id: ep-s2-prison-arrival
+display_rank: 40300
+continuity_id: movie-prison
+title: Муі накладає Небесну В’язницю
+description: Печать карає застосування чакри й спроби покинути острів.
+location_id: loc-hozuki-castle
+placement:
+  anchor_id: ta-s2-66-09-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-prison-arrival-1
+  title: Муі накладає Небесну В’язницю
+  text: Печать карає застосування чакри й спроби покинути острів.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-mui
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-arrival
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-prison-arrival-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-prison-arrival.start
+  to: sc-s2-prison-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-arrival
+- id: pr-s2-prison-arrival-c-mui
+  entity_id: c-mui
+  from: sc-s2-prison-arrival.start
+  to: sc-s2-prison-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-arrival

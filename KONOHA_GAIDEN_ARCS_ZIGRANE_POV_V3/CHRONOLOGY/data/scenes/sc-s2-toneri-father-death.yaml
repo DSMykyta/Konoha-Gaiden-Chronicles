@@ -1,0 +1,43 @@
+schema_version: 1
+id: sc-s2-toneri-father-death
+episode_id: ep-s2-toneri-father-death
+display_rank: 0
+continuity_id: main
+title: Тонері лишається сам після смерті батька
+description: Після смерті батька Тонері живе в замку сам, оточений маріонетками.
+location_id: loc-moon-toneri-castle
+placement:
+  anchor_id: ta-s2-58-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-toneri-father-death-1
+  title: Тонері лишається сам після смерті батька
+  text: Після смерті батька Тонері живе в замку сам, оточений маріонетками.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-toneri
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-toneri-father-death
+relations: []
+presence:
+- id: pr-s2-toneri-father-death-c-toneri
+  entity_id: c-toneri
+  from: sc-s2-toneri-father-death.start
+  to: sc-s2-toneri-father-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-toneri-father-death
+editorial_note: Рік смерті батька джерело не називає; 58 — робоче розташування дитинства Тонері.

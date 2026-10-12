@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-itachi-orochimaru-life-death
+episode_id: ep-s2-itachi-orochimaru-life-death
+display_rank: 1700
+continuity_id: main
+title: Ітачі питає про життя і смерть
+description: Після побаченої війни він зустрічає Орочімару біля могил.
+location_id: loc-konoha-cemetery
+placement:
+  anchor_id: ta-s2-47-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-orochimaru-life-death-1
+  title: Ітачі питає про життя і смерть
+  text: Після побаченої війни він зустрічає Орочімару біля могил.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-orochimaru-life-death
+relations: []
+presence:
+- id: pr-s2-itachi-orochimaru-life-death-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-orochimaru-life-death.start
+  to: sc-s2-itachi-orochimaru-life-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-orochimaru-life-death
+- id: pr-s2-itachi-orochimaru-life-death-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-itachi-orochimaru-life-death.start
+  to: sc-s2-itachi-orochimaru-life-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-orochimaru-life-death

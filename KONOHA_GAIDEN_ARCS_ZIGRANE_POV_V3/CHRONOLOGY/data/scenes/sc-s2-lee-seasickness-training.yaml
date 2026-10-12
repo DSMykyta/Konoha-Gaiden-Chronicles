@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-lee-seasickness-training
+episode_id: ep-s2-lee-seasickness-training
+display_rank: 44500
+continuity_id: main
+title: Ґай тренує Лі на човні
+description: Морська хвороба має замінити сп’яніння; учень визнає вдячність за допомогу наставника.
+location_id: loc-lee-guy-lake
+placement:
+  anchor_id: ta-s2-60-08-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-lee-seasickness-training-1
+  title: Ґай тренує Лі на човні
+  text: Морська хвороба має замінити сп’яніння; учень визнає вдячність за допомогу наставника.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-lee-seasickness-training
+relations: []
+presence:
+- id: pr-s2-lee-seasickness-training-c-lee
+  entity_id: c-lee
+  from: sc-s2-lee-seasickness-training.start
+  to: sc-s2-lee-seasickness-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lee-seasickness-training
+- id: pr-s2-lee-seasickness-training-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-lee-seasickness-training.start
+  to: sc-s2-lee-seasickness-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lee-seasickness-training

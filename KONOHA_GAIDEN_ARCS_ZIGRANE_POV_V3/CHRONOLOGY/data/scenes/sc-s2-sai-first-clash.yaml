@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-sai-first-clash
+episode_id: ep-s2-sai-first-clash
+display_rank: 2600
+continuity_id: main
+title: Сай випробовує Наруто
+description: Чорнильні звірі нападають на Наруто та Команду 10; Сай після сутички відступає.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-64-12-09
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sai-first-clash-1
+  title: Сай випробовує Наруто
+  text: Чорнильні звірі нападають на Наруто та Команду 10; Сай після сутички відступає.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sai-first-clash
+relations: []
+presence:
+- id: pr-s2-sai-first-clash-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sai-first-clash.start
+  to: sc-s2-sai-first-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-first-clash
+- id: pr-s2-sai-first-clash-c-sai
+  entity_id: c-sai
+  from: sc-s2-sai-first-clash.start
+  to: sc-s2-sai-first-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-first-clash
+- id: pr-s2-sai-first-clash-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-sai-first-clash.start
+  to: sc-s2-sai-first-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-first-clash
+- id: pr-s2-sai-first-clash-c-choji
+  entity_id: c-choji
+  from: sc-s2-sai-first-clash.start
+  to: sc-s2-sai-first-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-first-clash
+- id: pr-s2-sai-first-clash-c-ino
+  entity_id: c-ino
+  from: sc-s2-sai-first-clash.start
+  to: sc-s2-sai-first-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-first-clash

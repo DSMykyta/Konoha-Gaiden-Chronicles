@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-naruto-chibaku-tensei
+episode_id: ep-s2-naruto-chibaku-tensei
+display_rank: 14600
+continuity_id: main
+title: Чакра Курами прориває печать
+description: Після поранення Хінати Наруто втрачає контроль. Кам’яна сфера затягує трансформованого Наруто; він
+  наближається до восьми хвостів.
+location_id: loc-konoha-pain-crater
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-chibaku-tensei-1
+  title: Чакра Курами прориває печать
+  text: Після поранення Хінати Наруто втрачає контроль.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-chibaku-tensei
+- id: ev-s2-naruto-chibaku-tensei-2
+  title: Пейн застосовує Чібаку Тенсей
+  text: Кам’яна сфера затягує трансформованого Наруто; він наближається до восьми хвостів.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-chibaku-tensei
+relations:
+- id: rel-s2-naruto-chibaku-tensei-1
+  kind: before
+  a: ev-s2-naruto-chibaku-tensei-1
+  b: ev-s2-naruto-chibaku-tensei-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-chibaku-tensei
+presence:
+- id: pr-s2-naruto-chibaku-tensei-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-chibaku-tensei.start
+  to: sc-s2-naruto-chibaku-tensei.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-chibaku-tensei
+- id: pr-s2-naruto-chibaku-tensei-c-pain
+  entity_id: c-pain
+  from: sc-s2-naruto-chibaku-tensei.start
+  to: sc-s2-naruto-chibaku-tensei.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-chibaku-tensei

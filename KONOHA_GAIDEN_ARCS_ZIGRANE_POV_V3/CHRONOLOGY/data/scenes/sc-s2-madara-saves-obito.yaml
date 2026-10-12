@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-madara-saves-obito
+episode_id: ep-s2-madara-saves-obito
+display_rank: 28000
+continuity_id: main
+title: Мадара витягає Обіто з-під каміння
+description: Клітини Хашірами замінюють зруйновану частину тіла; Обіто починає тривале відновлення.
+location_id: loc-madara-underground-hideout
+placement:
+  anchor_id: ta-s2-47-10-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-madara-saves-obito-1
+  title: Мадара витягає Обіто з-під каміння
+  text: Клітини Хашірами замінюють зруйновану частину тіла; Обіто починає тривале відновлення.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-madara-saves-obito
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-madara-saves-obito-c-obito
+  entity_id: c-obito
+  from: sc-s2-madara-saves-obito.start
+  to: sc-s2-madara-saves-obito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-saves-obito
+- id: pr-s2-madara-saves-obito-c-madara
+  entity_id: c-madara
+  from: sc-s2-madara-saves-obito.start
+  to: sc-s2-madara-saves-obito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-saves-obito
+- id: pr-s2-madara-saves-obito-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-madara-saves-obito.start
+  to: sc-s2-madara-saves-obito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-saves-obito

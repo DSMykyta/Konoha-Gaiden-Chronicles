@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-sky-zero-tails
+episode_id: ep-s2-sky-zero-tails
+display_rank: 38100
+continuity_id: movie-bonds
+title: Нульхвостий захоплює Амару
+description: Наруто допомагає їй звільнитися від темної чакри.
+location_id: loc-amaru-village
+placement:
+  anchor_id: ta-s2-66-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-sky-zero-tails-1
+  title: Нульхвостий захоплює Амару
+  text: Наруто допомагає їй звільнитися від темної чакри.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-amaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sky-zero-tails
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-sky-zero-tails-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sky-zero-tails.start
+  to: sc-s2-sky-zero-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-zero-tails
+- id: pr-s2-sky-zero-tails-c-amaru
+  entity_id: c-amaru
+  from: sc-s2-sky-zero-tails.start
+  to: sc-s2-sky-zero-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-zero-tails

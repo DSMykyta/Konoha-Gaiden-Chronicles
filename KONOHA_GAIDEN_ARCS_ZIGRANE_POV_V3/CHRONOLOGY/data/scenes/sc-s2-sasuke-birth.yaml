@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-sasuke-birth
+episode_id: ep-s2-sasuke-birth
+display_rank: 1900
+continuity_id: main
+title: Народжується Саске
+description: Ітачі отримує молодшого брата й починає дбати про нього.
+location_id: loc-uchiha-home
+placement:
+  anchor_id: ta-s2-49-07-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasuke-birth-1
+  title: Народжується Саске
+  text: Ітачі отримує молодшого брата й починає дбати про нього.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-mikoto
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-birth
+relations: []
+presence:
+- id: pr-s2-sasuke-birth-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sasuke-birth.start
+  to: sc-s2-sasuke-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-birth
+- id: pr-s2-sasuke-birth-c-mikoto
+  entity_id: c-mikoto
+  from: sc-s2-sasuke-birth.start
+  to: sc-s2-sasuke-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-birth
+- id: pr-s2-sasuke-birth-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-sasuke-birth.start
+  to: sc-s2-sasuke-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-birth
+- id: pr-s2-sasuke-birth-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-sasuke-birth.start
+  to: sc-s2-sasuke-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-birth

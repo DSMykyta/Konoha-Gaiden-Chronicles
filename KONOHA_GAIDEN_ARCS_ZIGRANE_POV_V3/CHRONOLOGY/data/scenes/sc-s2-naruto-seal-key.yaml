@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-naruto-seal-key
+episode_id: ep-s2-naruto-seal-key
+display_rank: 19100
+continuity_id: main
+title: Великий Мудрець дає пророцтво
+description: Наруто має зустріти восьминога й битися з юнаком з особливими очима. Наруто приймає ключ та готується
+  опанувати чакру Курами.
+location_id: loc-mount-myoboku
+placement:
+  anchor_id: ta-s2-66-08-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-seal-key-1
+  title: Великий Мудрець дає пророцтво
+  text: Наруто має зустріти восьминога й битися з юнаком з особливими очима.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-gerotora
+    role: participant
+    mode: physical
+  - entity_id: c-gamamaru
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-seal-key
+- id: ev-s2-naruto-seal-key-2
+  title: Ґеротора передає ключ до печаті
+  text: Наруто приймає ключ та готується опанувати чакру Курами.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-gerotora
+    role: participant
+    mode: physical
+  - entity_id: c-gamamaru
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-seal-key
+relations:
+- id: rel-s2-naruto-seal-key-1
+  kind: before
+  a: ev-s2-naruto-seal-key-1
+  b: ev-s2-naruto-seal-key-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-seal-key
+presence:
+- id: pr-s2-naruto-seal-key-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-seal-key.start
+  to: sc-s2-naruto-seal-key.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-seal-key
+- id: pr-s2-naruto-seal-key-c-gerotora
+  entity_id: c-gerotora
+  from: sc-s2-naruto-seal-key.start
+  to: sc-s2-naruto-seal-key.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-seal-key
+- id: pr-s2-naruto-seal-key-c-gamamaru
+  entity_id: c-gamamaru
+  from: sc-s2-naruto-seal-key.start
+  to: sc-s2-naruto-seal-key.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-seal-key
+- id: pr-s2-naruto-seal-key-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-naruto-seal-key.start
+  to: sc-s2-naruto-seal-key.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-seal-key

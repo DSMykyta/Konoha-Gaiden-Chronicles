@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-sage-mode-clones
+episode_id: ep-s2-sage-mode-clones
+display_rank: 13100
+continuity_id: main
+title: Курама не дозволяє злиття з Фукасаку
+description: Наруто шукає інший спосіб відновлювати природну енергію. Клони лишаються нерухомими для накопичення
+  сенджюцу; Наруто таємно вдосконалює Расенсюрикен.
+location_id: loc-mount-myoboku
+placement:
+  anchor_id: ta-s2-66-08-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sage-mode-clones-1
+  title: Курама не дозволяє злиття з Фукасаку
+  text: Наруто шукає інший спосіб відновлювати природну енергію.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sage-mode-clones
+- id: ev-s2-sage-mode-clones-2
+  title: Наруто готує запас тіньових клонів
+  text: Клони лишаються нерухомими для накопичення сенджюцу; Наруто таємно вдосконалює Расенсюрикен.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sage-mode-clones
+relations:
+- id: rel-s2-sage-mode-clones-1
+  kind: before
+  a: ev-s2-sage-mode-clones-1
+  b: ev-s2-sage-mode-clones-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sage-mode-clones
+presence:
+- id: pr-s2-sage-mode-clones-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sage-mode-clones.start
+  to: sc-s2-sage-mode-clones.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sage-mode-clones
+- id: pr-s2-sage-mode-clones-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-sage-mode-clones.start
+  to: sc-s2-sage-mode-clones.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sage-mode-clones

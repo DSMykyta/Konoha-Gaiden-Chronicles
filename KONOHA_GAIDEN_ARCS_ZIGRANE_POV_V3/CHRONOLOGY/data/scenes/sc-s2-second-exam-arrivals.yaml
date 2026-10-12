@@ -1,0 +1,141 @@
+schema_version: 1
+id: sc-s2-second-exam-arrivals
+episode_id: ep-s2-second-exam-arrivals
+display_rank: 24500
+continuity_id: main
+title: Команди збираються на новий іспит
+description: Через відсутність Шикамару Сакура приєднується до Іно й Чоджі; Наруто лишається з Джираєю.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-64-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-second-exam-arrivals-1
+  title: Команди збираються на новий іспит
+  text: Через відсутність Шикамару Сакура приєднується до Іно й Чоджі; Наруто лишається з Джираєю.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+relations: []
+presence:
+- id: pr-s2-second-exam-arrivals-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-ino
+  entity_id: c-ino
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-choji
+  entity_id: c-choji
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-neji
+  entity_id: c-neji
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-lee
+  entity_id: c-lee
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals
+- id: pr-s2-second-exam-arrivals-c-shino
+  entity_id: c-shino
+  from: sc-s2-second-exam-arrivals.start
+  to: sc-s2-second-exam-arrivals.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-arrivals

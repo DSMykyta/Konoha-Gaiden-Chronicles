@@ -1,0 +1,175 @@
+schema_version: 1
+id: sc-s2-yamato-appointed
+episode_id: ep-s2-yamato-appointed
+display_rank: 2700
+continuity_id: main
+title: Цунаде відстоює право Наруто на місії
+description: Рада домагається включення представника Кореня. Наруто й Сакура отримують нових товариша й командира
+  та збираються в дорогу.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-64-12-09
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yamato-appointed-1
+  title: Цунаде відстоює право Наруто на місії
+  text: Рада домагається включення представника Кореня.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-koharu
+    role: participant
+    mode: physical
+  - entity_id: c-homura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: ev-s2-yamato-appointed-2
+  title: Ямато очолює тимчасову команду
+  text: Наруто й Сакура отримують нових товариша й командира та збираються в дорогу.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-koharu
+    role: participant
+    mode: physical
+  - entity_id: c-homura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yamato-appointed
+relations:
+- id: rel-s2-yamato-appointed-1
+  kind: before
+  a: ev-s2-yamato-appointed-1
+  b: ev-s2-yamato-appointed-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+presence:
+- id: pr-s2-yamato-appointed-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-koharu
+  entity_id: c-koharu
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-homura
+  entity_id: c-homura
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-sai
+  entity_id: c-sai
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed
+- id: pr-s2-yamato-appointed-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-yamato-appointed.start
+  to: sc-s2-yamato-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-appointed

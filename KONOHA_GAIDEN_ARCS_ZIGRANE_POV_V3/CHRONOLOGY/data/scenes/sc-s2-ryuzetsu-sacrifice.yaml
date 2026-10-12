@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-ryuzetsu-sacrifice
+episode_id: ep-s2-ryuzetsu-sacrifice
+display_rank: 40800
+continuity_id: movie-prison
+title: Рюдзецу віддає життя Наруто
+description: Після смертельного поранення вона відновлює його своєю технікою та помирає.
+location_id: loc-hozuki-castle-courtyard
+placement:
+  anchor_id: ta-s2-66-09-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-ryuzetsu-sacrifice-1
+  title: Рюдзецу віддає життя Наруто
+  text: Після смертельного поранення вона відновлює його своєю технікою та помирає.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-ryuzetsu
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-ryuzetsu-sacrifice
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-ryuzetsu-sacrifice-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-ryuzetsu-sacrifice.start
+  to: sc-s2-ryuzetsu-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ryuzetsu-sacrifice
+- id: pr-s2-ryuzetsu-sacrifice-c-ryuzetsu
+  entity_id: c-ryuzetsu
+  from: sc-s2-ryuzetsu-sacrifice.start
+  to: sc-s2-ryuzetsu-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ryuzetsu-sacrifice
+- id: pr-s2-ryuzetsu-sacrifice-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-ryuzetsu-sacrifice.start
+  to: sc-s2-ryuzetsu-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ryuzetsu-sacrifice

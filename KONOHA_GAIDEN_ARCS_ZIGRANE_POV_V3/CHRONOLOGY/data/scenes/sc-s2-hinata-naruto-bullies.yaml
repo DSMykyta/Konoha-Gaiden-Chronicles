@@ -1,0 +1,56 @@
+schema_version: 1
+id: sc-s2-hinata-naruto-bullies
+episode_id: ep-s2-hinata-naruto-bullies
+display_rank: 33300
+continuity_id: main
+title: Наруто захищає Хінату від хлопців
+description: Наруто стає перед кривдниками й зазнає їхніх ударів; Хіната запам’ятовує його допомогу.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-54-12-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hinata-naruto-bullies-1
+  title: Наруто захищає Хінату від хлопців
+  text: Наруто стає перед кривдниками й зазнає їхніх ударів; Хіната запам’ятовує його допомогу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hinata-naruto-bullies
+  - evd-s2-last-childhood-scarf
+relations: []
+presence:
+- id: pr-s2-hinata-naruto-bullies-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hinata-naruto-bullies.start
+  to: sc-s2-hinata-naruto-bullies.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-naruto-bullies
+- id: pr-s2-hinata-naruto-bullies-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-hinata-naruto-bullies.start
+  to: sc-s2-hinata-naruto-bullies.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-naruto-bullies
+editorial_note: The Last додає розірваний червоний шарф до дитячого порятунку. Відмінність від №166 збережено в
+  окремому доказі; точний збіг версій не встановлено.

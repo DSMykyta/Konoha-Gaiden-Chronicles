@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-sai-orochimaru-deal
+episode_id: ep-s2-sai-orochimaru-deal
+display_rank: 3300
+continuity_id: main
+title: Сай передає Орочімару лист Данзо
+description: Сай летить услід Орочімару; у сховищі зустрічає Саске.
+location_id: loc-orochimaru-tenchi-hideout
+placement:
+  anchor_id: ta-s2-64-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sai-orochimaru-deal-1
+  title: Сай передає Орочімару лист Данзо
+  text: Сай летить услід Орочімару; у сховищі зустрічає Саске.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sai-orochimaru-deal
+relations: []
+presence:
+- id: pr-s2-sai-orochimaru-deal-c-sai
+  entity_id: c-sai
+  from: sc-s2-sai-orochimaru-deal.start
+  to: sc-s2-sai-orochimaru-deal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-orochimaru-deal
+- id: pr-s2-sai-orochimaru-deal-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-sai-orochimaru-deal.start
+  to: sc-s2-sai-orochimaru-deal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-orochimaru-deal
+- id: pr-s2-sai-orochimaru-deal-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-sai-orochimaru-deal.start
+  to: sc-s2-sai-orochimaru-deal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-orochimaru-deal
+- id: pr-s2-sai-orochimaru-deal-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sai-orochimaru-deal.start
+  to: sc-s2-sai-orochimaru-deal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-orochimaru-deal

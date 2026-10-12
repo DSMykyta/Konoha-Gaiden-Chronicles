@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-orochimaru-defeated
+episode_id: ep-s2-orochimaru-defeated
+display_rank: 8700
+continuity_id: main
+title: Саске нападає на ослабленого Орочімару
+description: Поточне тіло відторгає Орочімару; він показує білу змію й намагається переселитися в Саске. Шарінґан
+  перевертає техніку; Саске поглинає Орочімару та залишає сховище.
+location_id: loc-orochimaru-tenchi-hideout
+placement:
+  anchor_id: ta-s2-66-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-orochimaru-defeated-1
+  title: Саске нападає на ослабленого Орочімару
+  text: Поточне тіло відторгає Орочімару; він показує білу змію й намагається переселитися в Саске.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-orochimaru-defeated
+- id: ev-s2-orochimaru-defeated-2
+  title: Саске перемагає в просторі переселення
+  text: Шарінґан перевертає техніку; Саске поглинає Орочімару та залишає сховище.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-orochimaru-defeated
+relations:
+- id: rel-s2-orochimaru-defeated-1
+  kind: before
+  a: ev-s2-orochimaru-defeated-1
+  b: ev-s2-orochimaru-defeated-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-defeated
+presence:
+- id: pr-s2-orochimaru-defeated-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-orochimaru-defeated.start
+  to: sc-s2-orochimaru-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-defeated
+- id: pr-s2-orochimaru-defeated-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-orochimaru-defeated.start
+  to: sc-s2-orochimaru-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-defeated
+- id: pr-s2-orochimaru-defeated-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-orochimaru-defeated.start
+  to: sc-s2-orochimaru-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-defeated

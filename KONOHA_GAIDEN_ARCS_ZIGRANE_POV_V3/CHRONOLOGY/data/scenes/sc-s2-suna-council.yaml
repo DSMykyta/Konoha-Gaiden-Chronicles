@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-suna-council
+episode_id: ep-s2-suna-council
+display_rank: 600
+continuity_id: main
+title: Суна обговорює загрозу Акацукі
+description: Ґаара бере участь у нараді; Юра, якого контролює Сасорі, відкриває нападникам шлях до села.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-64-11-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-suna-council-1
+  title: Суна обговорює загрозу Акацукі
+  text: Ґаара бере участь у нараді; Юра, якого контролює Сасорі, відкриває нападникам шлях до села.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-baki
+    role: participant
+    mode: physical
+  - entity_id: c-yura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-suna-council
+relations: []
+presence:
+- id: pr-s2-suna-council-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-suna-council.start
+  to: sc-s2-suna-council.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-council
+- id: pr-s2-suna-council-c-baki
+  entity_id: c-baki
+  from: sc-s2-suna-council.start
+  to: sc-s2-suna-council.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-council
+- id: pr-s2-suna-council-c-yura
+  entity_id: c-yura
+  from: sc-s2-suna-council.start
+  to: sc-s2-suna-council.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-council

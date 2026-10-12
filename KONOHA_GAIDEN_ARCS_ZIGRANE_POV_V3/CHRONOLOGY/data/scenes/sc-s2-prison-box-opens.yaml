@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-prison-box-opens
+episode_id: ep-s2-prison-box-opens
+display_rank: 40600
+continuity_id: movie-prison
+title: Муі відкриває Скриню чакрою Наруто
+description: Його бажання повертає Муку, але Скриня перетворює юнака на Саторі.
+location_id: loc-hozuki-box-chamber
+placement:
+  anchor_id: ta-s2-66-09-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-prison-box-opens-1
+  title: Муі відкриває Скриню чакрою Наруто
+  text: Його бажання повертає Муку, але Скриня перетворює юнака на Саторі.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-mui
+    role: participant
+    mode: physical
+  - entity_id: c-muku
+    role: participant
+    mode: physical
+  - entity_id: c-ryuzetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-box-opens
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-prison-box-opens-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-prison-box-opens.start
+  to: sc-s2-prison-box-opens.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-box-opens
+- id: pr-s2-prison-box-opens-c-mui
+  entity_id: c-mui
+  from: sc-s2-prison-box-opens.start
+  to: sc-s2-prison-box-opens.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-box-opens
+- id: pr-s2-prison-box-opens-c-muku
+  entity_id: c-muku
+  from: sc-s2-prison-box-opens.start
+  to: sc-s2-prison-box-opens.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-box-opens
+- id: pr-s2-prison-box-opens-c-ryuzetsu
+  entity_id: c-ryuzetsu
+  from: sc-s2-prison-box-opens.start
+  to: sc-s2-prison-box-opens.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-box-opens

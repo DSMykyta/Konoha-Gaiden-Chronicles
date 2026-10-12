@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-exam-cohost-plan
+episode_id: ep-s2-exam-cohost-plan
+display_rank: 24300
+continuity_id: main
+title: Цунаде й Ґаара планують спільний іспит
+description: Перший етап має відбутися в Конохі, другий — у Суні; обоє прагнуть виявити загрози селам.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-64-10-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-exam-cohost-plan-1
+  title: Цунаде й Ґаара планують спільний іспит
+  text: Перший етап має відбутися в Конохі, другий — у Суні; обоє прагнуть виявити загрози селам.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-exam-cohost-plan
+relations: []
+presence:
+- id: pr-s2-exam-cohost-plan-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-exam-cohost-plan.start
+  to: sc-s2-exam-cohost-plan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-exam-cohost-plan
+- id: pr-s2-exam-cohost-plan-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-exam-cohost-plan.start
+  to: sc-s2-exam-cohost-plan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-exam-cohost-plan
+- id: pr-s2-exam-cohost-plan-c-temari
+  entity_id: c-temari
+  from: sc-s2-exam-cohost-plan.start
+  to: sc-s2-exam-cohost-plan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-exam-cohost-plan
+- id: pr-s2-exam-cohost-plan-c-kankuro
+  entity_id: c-kankuro
+  from: sc-s2-exam-cohost-plan.start
+  to: sc-s2-exam-cohost-plan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-exam-cohost-plan

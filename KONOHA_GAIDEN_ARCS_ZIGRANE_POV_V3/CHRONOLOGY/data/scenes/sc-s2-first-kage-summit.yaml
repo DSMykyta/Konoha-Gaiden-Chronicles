@@ -1,0 +1,189 @@
+schema_version: 1
+id: sc-s2-first-kage-summit
+episode_id: ep-s2-first-kage-summit
+display_rank: 0
+continuity_id: main
+title: Хашірама збирає перших Каґе
+description: Він пропонує співпрацю й розподіл хвостатих звірів; Тобірама наполягає на оплаті. Суна вже має Шукаку;
+  суперечка показує, що створення сіл саме по собі не забезпечило довіри.
+location_id: loc-first-kage-summit-hall
+placement:
+  anchor_id: ta-s2-1-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-first-kage-summit-1
+  title: Хашірама збирає перших Каґе
+  text: Він пропонує співпрацю й розподіл хвостатих звірів; Тобірама наполягає на оплаті.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  - entity_id: c-reto
+    role: participant
+    mode: physical
+  - entity_id: c-shamon
+    role: participant
+    mode: physical
+  - entity_id: c-a-first
+    role: participant
+    mode: physical
+  - entity_id: c-a-second
+    role: participant
+    mode: physical
+  - entity_id: c-byakuren
+    role: participant
+    mode: physical
+  - entity_id: c-third-mizukage
+    role: participant
+    mode: physical
+  - entity_id: c-ishikawa
+    role: participant
+    mode: physical
+  - entity_id: c-mu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: ev-s2-first-kage-summit-2
+  title: Рето вимагає землю й гроші замість звіра
+  text: Суна вже має Шукаку; суперечка показує, що створення сіл саме по собі не забезпечило довіри.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  - entity_id: c-reto
+    role: participant
+    mode: physical
+  - entity_id: c-shamon
+    role: participant
+    mode: physical
+  - entity_id: c-a-first
+    role: participant
+    mode: physical
+  - entity_id: c-a-second
+    role: participant
+    mode: physical
+  - entity_id: c-byakuren
+    role: participant
+    mode: physical
+  - entity_id: c-third-mizukage
+    role: participant
+    mode: physical
+  - entity_id: c-ishikawa
+    role: participant
+    mode: physical
+  - entity_id: c-mu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-first-kage-summit
+relations:
+- id: rel-s2-first-kage-summit-1
+  kind: before
+  a: ev-s2-first-kage-summit-1
+  b: ev-s2-first-kage-summit-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+presence:
+- id: pr-s2-first-kage-summit-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-reto
+  entity_id: c-reto
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-shamon
+  entity_id: c-shamon
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-a-first
+  entity_id: c-a-first
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-a-second
+  entity_id: c-a-second
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-byakuren
+  entity_id: c-byakuren
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-third-mizukage
+  entity_id: c-third-mizukage
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-ishikawa
+  entity_id: c-ishikawa
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit
+- id: pr-s2-first-kage-summit-c-mu
+  entity_id: c-mu
+  from: sc-s2-first-kage-summit.start
+  to: sc-s2-first-kage-summit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-first-kage-summit

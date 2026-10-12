@@ -1,0 +1,141 @@
+schema_version: 1
+id: sc-s2-konoha-search-split
+episode_id: ep-s2-konoha-search-split
+display_rank: 9600
+continuity_id: main
+title: Какаші розділяє пошуковців
+description: Нінкен супроводжують підгрупи; усі шукають запах та сліди Саске й Ітачі.
+location_id: loc-uchiha-search-forest
+placement:
+  anchor_id: ta-s2-66-07-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-konoha-search-split-1
+  title: Какаші розділяє пошуковців
+  text: Нінкен супроводжують підгрупи; усі шукають запах та сліди Саске й Ітачі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-pakkun
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-konoha-search-split
+relations: []
+presence:
+- id: pr-s2-konoha-search-split-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-sai
+  entity_id: c-sai
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-shino
+  entity_id: c-shino
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split
+- id: pr-s2-konoha-search-split-c-pakkun
+  entity_id: c-pakkun
+  from: sc-s2-konoha-search-split.start
+  to: sc-s2-konoha-search-split.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konoha-search-split

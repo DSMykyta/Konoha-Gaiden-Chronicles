@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-shion-palace-assault
+episode_id: ep-s2-shion-palace-assault
+display_rank: 37100
+continuity_id: movie-shion
+title: Нападники атакують палац жриці
+description: Сусукі прикриває втечу; Шіон розповідає Тарухо про передбачену смерть.
+location_id: loc-shion-palace
+placement:
+  anchor_id: ta-s2-65-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shion-palace-assault-1
+  title: Нападники атакують палац жриці
+  text: Сусукі прикриває втечу; Шіон розповідає Тарухо про передбачену смерть.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shion
+    role: participant
+    mode: physical
+  - entity_id: c-taruho
+    role: participant
+    mode: physical
+  - entity_id: c-susuki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shion-palace-assault
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-shion-palace-assault-c-shion
+  entity_id: c-shion
+  from: sc-s2-shion-palace-assault.start
+  to: sc-s2-shion-palace-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-palace-assault
+- id: pr-s2-shion-palace-assault-c-taruho
+  entity_id: c-taruho
+  from: sc-s2-shion-palace-assault.start
+  to: sc-s2-shion-palace-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-palace-assault
+- id: pr-s2-shion-palace-assault-c-susuki
+  entity_id: c-susuki
+  from: sc-s2-shion-palace-assault.start
+  to: sc-s2-shion-palace-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-palace-assault

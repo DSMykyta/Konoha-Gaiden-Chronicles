@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-orochimaru-defects
+episode_id: ep-s2-orochimaru-defects
+display_rank: 28900
+continuity_id: main
+title: Хірудзен знаходить досліди Орочімару
+description: Орочімару тікає; Какаші не може зупинити його на шляху до кордону.
+location_id: loc-orochimaru-konoha-lab
+placement:
+  anchor_id: ta-s2-51-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-orochimaru-defects-1
+  title: Хірудзен знаходить досліди Орочімару
+  text: Орочімару тікає; Какаші не може зупинити його на шляху до кордону.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-orochimaru-defects
+relations: []
+presence:
+- id: pr-s2-orochimaru-defects-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-orochimaru-defects.start
+  to: sc-s2-orochimaru-defects.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-defects
+- id: pr-s2-orochimaru-defects-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-orochimaru-defects.start
+  to: sc-s2-orochimaru-defects.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-defects
+- id: pr-s2-orochimaru-defects-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-orochimaru-defects.start
+  to: sc-s2-orochimaru-defects.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-defects

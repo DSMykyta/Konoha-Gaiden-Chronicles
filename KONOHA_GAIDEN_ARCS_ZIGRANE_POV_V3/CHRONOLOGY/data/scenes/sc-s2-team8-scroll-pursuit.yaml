@@ -1,0 +1,146 @@
+schema_version: 1
+id: sc-s2-team8-scroll-pursuit
+episode_id: ep-s2-team8-scroll-pursuit
+display_rank: 25000
+continuity_id: main
+title: Команда Кадзамі краде сувій
+description: Запахові пастки та ілюзії затримують Команду 8. Комахи, Б’якуґан та нюх приводять її до перемоги.
+location_id: loc-demon-desert
+placement:
+  anchor_id: ta-s2-64-10-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-team8-scroll-pursuit-1
+  title: Команда Кадзамі краде сувій
+  text: Запахові пастки та ілюзії затримують Команду 8.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-kazami
+    role: participant
+    mode: physical
+  - entity_id: c-burami
+    role: participant
+    mode: physical
+  - entity_id: c-muyami
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+- id: ev-s2-team8-scroll-pursuit-2
+  title: Команда 8 повертає сувої
+  text: Комахи, Б’якуґан та нюх приводять її до перемоги.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-kazami
+    role: participant
+    mode: physical
+  - entity_id: c-burami
+    role: participant
+    mode: physical
+  - entity_id: c-muyami
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+relations:
+- id: rel-s2-team8-scroll-pursuit-1
+  kind: before
+  a: ev-s2-team8-scroll-pursuit-1
+  b: ev-s2-team8-scroll-pursuit-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+presence:
+- id: pr-s2-team8-scroll-pursuit-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-team8-scroll-pursuit.start
+  to: sc-s2-team8-scroll-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+- id: pr-s2-team8-scroll-pursuit-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-team8-scroll-pursuit.start
+  to: sc-s2-team8-scroll-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+- id: pr-s2-team8-scroll-pursuit-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-team8-scroll-pursuit.start
+  to: sc-s2-team8-scroll-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+- id: pr-s2-team8-scroll-pursuit-c-shino
+  entity_id: c-shino
+  from: sc-s2-team8-scroll-pursuit.start
+  to: sc-s2-team8-scroll-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+- id: pr-s2-team8-scroll-pursuit-c-kazami
+  entity_id: c-kazami
+  from: sc-s2-team8-scroll-pursuit.start
+  to: sc-s2-team8-scroll-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+- id: pr-s2-team8-scroll-pursuit-c-burami
+  entity_id: c-burami
+  from: sc-s2-team8-scroll-pursuit.start
+  to: sc-s2-team8-scroll-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit
+- id: pr-s2-team8-scroll-pursuit-c-muyami
+  entity_id: c-muyami
+  from: sc-s2-team8-scroll-pursuit.start
+  to: sc-s2-team8-scroll-pursuit.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team8-scroll-pursuit

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-shikamaru-kurenai
+episode_id: ep-s2-shikamaru-kurenai
+display_rank: 6800
+continuity_id: main
+title: Шикамару бере відповідальність за дитину Асуми
+description: Біля могили наставника він обіцяє Куренай підтримку й майбутнє навчання дитини.
+location_id: loc-konoha-cemetery
+placement:
+  anchor_id: ta-s2-66-03-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shikamaru-kurenai-1
+  title: Шикамару бере відповідальність за дитину Асуми
+  text: Біля могили наставника він обіцяє Куренай підтримку й майбутнє навчання дитини.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-kurenai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shikamaru-kurenai
+relations: []
+presence:
+- id: pr-s2-shikamaru-kurenai-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-shikamaru-kurenai.start
+  to: sc-s2-shikamaru-kurenai.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-kurenai
+- id: pr-s2-shikamaru-kurenai-c-kurenai
+  entity_id: c-kurenai
+  from: sc-s2-shikamaru-kurenai.start
+  to: sc-s2-shikamaru-kurenai.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-kurenai

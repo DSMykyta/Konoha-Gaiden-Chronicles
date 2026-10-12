@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-s2-tower-return-present
+episode_id: ep-s2-tower-return-present
+display_rank: 39900
+continuity_id: movie-tower
+title: Команда повертається до руїн
+description: Дочка Сари береже чакролезо й розповідає про матір, але Наруто не пам’ятає її.
+location_id: loc-roran-ruins
+placement:
+  anchor_id: ta-s2-65-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tower-return-present-1
+  title: Команда повертається до руїн
+  text: Дочка Сари береже чакролезо й розповідає про матір, але Наруто не пам’ятає її.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sara-daughter
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tower-return-present
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-tower-return-present-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tower-return-present.start
+  to: sc-s2-tower-return-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-return-present
+- id: pr-s2-tower-return-present-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-tower-return-present.start
+  to: sc-s2-tower-return-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-return-present
+- id: pr-s2-tower-return-present-c-sai
+  entity_id: c-sai
+  from: sc-s2-tower-return-present.start
+  to: sc-s2-tower-return-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-return-present
+- id: pr-s2-tower-return-present-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-tower-return-present.start
+  to: sc-s2-tower-return-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-return-present
+- id: pr-s2-tower-return-present-c-sara-daughter
+  entity_id: c-sara-daughter
+  from: sc-s2-tower-return-present.start
+  to: sc-s2-tower-return-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-return-present

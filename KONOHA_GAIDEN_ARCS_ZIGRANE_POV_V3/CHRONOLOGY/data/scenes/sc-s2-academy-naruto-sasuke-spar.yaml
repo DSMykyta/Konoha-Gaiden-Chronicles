@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-academy-naruto-sasuke-spar
+episode_id: ep-s2-academy-naruto-sasuke-spar
+display_rank: 34000
+continuity_id: main
+title: Наруто й Саске відмовляються від знака примирення
+description: Після спарингу їхня суперечка триває; кожен бачить самотність іншого.
+location_id: loc-academy-classroom
+placement:
+  anchor_id: ta-s2-58-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-academy-naruto-sasuke-spar-1
+  title: Наруто й Саске відмовляються від знака примирення
+  text: Після спарингу їхня суперечка триває; кожен бачить самотність іншого.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-academy-naruto-sasuke-spar
+relations: []
+presence:
+- id: pr-s2-academy-naruto-sasuke-spar-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-academy-naruto-sasuke-spar.start
+  to: sc-s2-academy-naruto-sasuke-spar.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-naruto-sasuke-spar
+- id: pr-s2-academy-naruto-sasuke-spar-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-academy-naruto-sasuke-spar.start
+  to: sc-s2-academy-naruto-sasuke-spar.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-naruto-sasuke-spar
+- id: pr-s2-academy-naruto-sasuke-spar-c-iruka
+  entity_id: c-iruka
+  from: sc-s2-academy-naruto-sasuke-spar.start
+  to: sc-s2-academy-naruto-sasuke-spar.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-academy-naruto-sasuke-spar

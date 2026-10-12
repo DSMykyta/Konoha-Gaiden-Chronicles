@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-kunoichi-evening
+episode_id: ep-s2-kunoichi-evening
+display_rank: 21100
+continuity_id: main
+title: Куноїчі збираються разом
+description: Хіната після наради Хюґа зустрічає Куренай; розмова подруг переходить до мрій та Наруто.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-09-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kunoichi-evening-1
+  title: Куноїчі збираються разом
+  text: Хіната після наради Хюґа зустрічає Куренай; розмова подруг переходить до мрій та Наруто.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-kurenai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kunoichi-evening
+relations: []
+presence:
+- id: pr-s2-kunoichi-evening-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-kunoichi-evening.start
+  to: sc-s2-kunoichi-evening.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kunoichi-evening
+- id: pr-s2-kunoichi-evening-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-kunoichi-evening.start
+  to: sc-s2-kunoichi-evening.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kunoichi-evening
+- id: pr-s2-kunoichi-evening-c-ino
+  entity_id: c-ino
+  from: sc-s2-kunoichi-evening.start
+  to: sc-s2-kunoichi-evening.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kunoichi-evening
+- id: pr-s2-kunoichi-evening-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-kunoichi-evening.start
+  to: sc-s2-kunoichi-evening.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kunoichi-evening
+- id: pr-s2-kunoichi-evening-c-kurenai
+  entity_id: c-kurenai
+  from: sc-s2-kunoichi-evening.start
+  to: sc-s2-kunoichi-evening.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kunoichi-evening

@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-naruto-deidara
+episode_id: ep-s2-naruto-deidara
+display_rank: 1900
+continuity_id: main
+title: Наруто й Какаші переслідують Дейдару
+description: Какаші застосовує Камуі й відриває йому другу руку; Наруто витягає тіло Ґаари з глиняного птаха. Гнів
+  Наруто викликає хвости чакри; Какаші застосовує печать Джираї.
+location_id: loc-river-pursuit-route
+placement:
+  anchor_id: ta-s2-64-12-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-deidara-1
+  title: Наруто й Какаші переслідують Дейдару
+  text: Какаші застосовує Камуі й відриває йому другу руку; Наруто витягає тіло Ґаари з глиняного птаха.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-deidara
+- id: ev-s2-naruto-deidara-2
+  title: Какаші зупиняє прояв Курами
+  text: Гнів Наруто викликає хвости чакри; Какаші застосовує печать Джираї.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-deidara
+relations:
+- id: rel-s2-naruto-deidara-1
+  kind: before
+  a: ev-s2-naruto-deidara-1
+  b: ev-s2-naruto-deidara-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-deidara
+presence:
+- id: pr-s2-naruto-deidara-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-deidara.start
+  to: sc-s2-naruto-deidara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-deidara
+- id: pr-s2-naruto-deidara-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-naruto-deidara.start
+  to: sc-s2-naruto-deidara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-deidara
+- id: pr-s2-naruto-deidara-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-naruto-deidara.start
+  to: sc-s2-naruto-deidara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-deidara

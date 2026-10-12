@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-s2-temujin-village-destroyed
+episode_id: ep-s2-temujin-village-destroyed
+display_rank: 2900
+continuity_id: main
+title: Хайдо знищує поселення Темуджіна
+description: Він убиває батьків хлопця, приховує свою роль і виховує його як прибічника.
+location_id: loc-temujin-childhood-village
+placement:
+  anchor_id: ta-s2-56-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-temujin-village-destroyed-1
+  title: Хайдо знищує поселення Темуджіна
+  text: Він убиває батьків хлопця, приховує свою роль і виховує його як прибічника.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-temujin
+    role: participant
+    mode: physical
+  - entity_id: c-haido
+    role: participant
+    mode: physical
+  - entity_id: c-kamira
+    role: participant
+    mode: physical
+  - entity_id: c-ranke
+    role: participant
+    mode: physical
+  - entity_id: c-fugai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-temujin-village-destroyed
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-temujin-village-destroyed-c-temujin
+  entity_id: c-temujin
+  from: sc-s2-temujin-village-destroyed.start
+  to: sc-s2-temujin-village-destroyed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-temujin-village-destroyed
+- id: pr-s2-temujin-village-destroyed-c-haido
+  entity_id: c-haido
+  from: sc-s2-temujin-village-destroyed.start
+  to: sc-s2-temujin-village-destroyed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-temujin-village-destroyed
+- id: pr-s2-temujin-village-destroyed-c-kamira
+  entity_id: c-kamira
+  from: sc-s2-temujin-village-destroyed.start
+  to: sc-s2-temujin-village-destroyed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-temujin-village-destroyed
+- id: pr-s2-temujin-village-destroyed-c-ranke
+  entity_id: c-ranke
+  from: sc-s2-temujin-village-destroyed.start
+  to: sc-s2-temujin-village-destroyed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-temujin-village-destroyed
+- id: pr-s2-temujin-village-destroyed-c-fugai
+  entity_id: c-fugai
+  from: sc-s2-temujin-village-destroyed.start
+  to: sc-s2-temujin-village-destroyed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-temujin-village-destroyed

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-orochimaru-white-skin
+episode_id: ep-s2-orochimaru-white-skin
+display_rank: 26100
+continuity_id: main
+title: Орочімару знаходить шкіру білої змії
+description: Біля могили батьків Хірудзен говорить із ним про відновлення життя.
+location_id: loc-konoha-cemetery
+placement:
+  anchor_id: ta-s2-13-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-orochimaru-white-skin-1
+  title: Орочімару знаходить шкіру білої змії
+  text: Біля могили батьків Хірудзен говорить із ним про відновлення життя.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-orochimaru-white-skin
+relations: []
+presence:
+- id: pr-s2-orochimaru-white-skin-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-orochimaru-white-skin.start
+  to: sc-s2-orochimaru-white-skin.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-white-skin
+- id: pr-s2-orochimaru-white-skin-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-orochimaru-white-skin.start
+  to: sc-s2-orochimaru-white-skin.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-orochimaru-white-skin

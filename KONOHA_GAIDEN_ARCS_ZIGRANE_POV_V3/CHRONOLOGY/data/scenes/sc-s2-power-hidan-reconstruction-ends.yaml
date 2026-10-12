@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-power-hidan-reconstruction-ends
+episode_id: ep-s2-power-main
+display_rank: 1300
+continuity_id: main
+title: Зміїна реконструкція Хідана розпадається
+description: Загін відбиває ритуальну атаку; відтворене тіло не може існувати довго.
+location_id: loc-tonika-hole
+placement:
+  anchor_id: ta-s2-66-09-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-hidan-reconstruction-ends-1
+  title: Зміїна реконструкція Хідана розпадається
+  text: Загін відбиває ритуальну атаку; відтворене тіло не може існувати довго.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-hidan-reconstruction-ends
+relations: []
+presence:
+- id: pr-s2-power-hidan-reconstruction-ends-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-power-hidan-reconstruction-ends.start
+  to: sc-s2-power-hidan-reconstruction-ends.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-hidan-reconstruction-ends
+- id: pr-s2-power-hidan-reconstruction-ends-c-ino
+  entity_id: c-ino
+  from: sc-s2-power-hidan-reconstruction-ends.start
+  to: sc-s2-power-hidan-reconstruction-ends.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-hidan-reconstruction-ends
+- id: pr-s2-power-hidan-reconstruction-ends-c-choji
+  entity_id: c-choji
+  from: sc-s2-power-hidan-reconstruction-ends.start
+  to: sc-s2-power-hidan-reconstruction-ends.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-hidan-reconstruction-ends

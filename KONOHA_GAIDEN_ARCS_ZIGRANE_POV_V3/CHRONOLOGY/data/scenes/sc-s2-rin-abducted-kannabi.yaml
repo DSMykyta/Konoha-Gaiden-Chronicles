@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-s2-rin-abducted-kannabi
+episode_id: ep-s2-rin-abducted-kannabi
+display_rank: 27700
+continuity_id: main
+title: Шинобі Іви забирають Рін
+description: Обіто вирішує рятувати її всупереч наказу; Какаші повертається допомогти.
+location_id: loc-kannabi-cave
+placement:
+  anchor_id: ta-s2-47-10-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-rin-abducted-kannabi-1
+  title: Шинобі Іви забирають Рін
+  text: Обіто вирішує рятувати її всупереч наказу; Какаші повертається допомогти.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  - entity_id: c-kakko
+    role: participant
+    mode: physical
+  - entity_id: c-taiseki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-rin-abducted-kannabi
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-rin-abducted-kannabi-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-rin-abducted-kannabi.start
+  to: sc-s2-rin-abducted-kannabi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-abducted-kannabi
+- id: pr-s2-rin-abducted-kannabi-c-obito
+  entity_id: c-obito
+  from: sc-s2-rin-abducted-kannabi.start
+  to: sc-s2-rin-abducted-kannabi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-abducted-kannabi
+- id: pr-s2-rin-abducted-kannabi-c-rin
+  entity_id: c-rin
+  from: sc-s2-rin-abducted-kannabi.start
+  to: sc-s2-rin-abducted-kannabi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-abducted-kannabi
+- id: pr-s2-rin-abducted-kannabi-c-kakko
+  entity_id: c-kakko
+  from: sc-s2-rin-abducted-kannabi.start
+  to: sc-s2-rin-abducted-kannabi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-abducted-kannabi
+- id: pr-s2-rin-abducted-kannabi-c-taiseki
+  entity_id: c-taiseki
+  from: sc-s2-rin-abducted-kannabi.start
+  to: sc-s2-rin-abducted-kannabi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-abducted-kannabi

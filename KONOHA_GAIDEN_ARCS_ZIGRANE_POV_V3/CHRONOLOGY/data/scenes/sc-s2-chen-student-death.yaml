@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-chen-student-death
+episode_id: ep-s2-chen-student-death
+display_rank: 1000
+continuity_id: main
+title: Учень Чена гине на війні
+description: Його відправляють на фронт; загибель змушує Чена залишити життя шинобі.
+location_id: loc-third-war-battlefield
+placement:
+  anchor_id: ta-s2-47-06-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-chen-student-death-1
+  title: Учень Чена гине на війні
+  text: Його відправляють на фронт; загибель змушує Чена залишити життя шинобі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-chen-student
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-chen-student-death
+relations: []
+presence:
+- id: pr-s2-chen-student-death-c-chen-student
+  entity_id: c-chen-student
+  from: sc-s2-chen-student-death.start
+  to: sc-s2-chen-student-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chen-student-death

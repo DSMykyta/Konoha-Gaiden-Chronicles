@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-iburi-orochimaru-escape
+episode_id: ep-s2-iburi-orochimaru-escape
+display_rank: 29100
+continuity_id: main
+title: Орочімару вбиває Ібурі заради крові
+description: Какаші й Кіное відбивають напад; Деревна стихія та залишки клану рятують Юкімі.
+location_id: loc-iburi-hideout
+placement:
+  anchor_id: ta-s2-51-06-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-iburi-orochimaru-escape-1
+  title: Орочімару вбиває Ібурі заради крові
+  text: Какаші й Кіное відбивають напад; Деревна стихія та залишки клану рятують Юкімі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-yukimi
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-iburi-orochimaru-escape
+relations: []
+presence:
+- id: pr-s2-iburi-orochimaru-escape-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-iburi-orochimaru-escape.start
+  to: sc-s2-iburi-orochimaru-escape.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-orochimaru-escape
+- id: pr-s2-iburi-orochimaru-escape-c-yukimi
+  entity_id: c-yukimi
+  from: sc-s2-iburi-orochimaru-escape.start
+  to: sc-s2-iburi-orochimaru-escape.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-orochimaru-escape
+- id: pr-s2-iburi-orochimaru-escape-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-iburi-orochimaru-escape.start
+  to: sc-s2-iburi-orochimaru-escape.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-orochimaru-escape
+- id: pr-s2-iburi-orochimaru-escape-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-iburi-orochimaru-escape.start
+  to: sc-s2-iburi-orochimaru-escape.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iburi-orochimaru-escape

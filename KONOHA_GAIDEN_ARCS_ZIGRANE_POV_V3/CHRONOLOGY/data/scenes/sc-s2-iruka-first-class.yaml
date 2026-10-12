@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-iruka-first-class
+episode_id: ep-s2-iruka-first-class
+display_rank: 33800
+continuity_id: main
+title: Ірука стає наставником Наруто
+description: Витівки учня стикаються з особистим болем Іруки після нападу Курами; Хірудзен переконує його побачити
+  дитину.
+location_id: loc-academy-classroom
+placement:
+  anchor_id: ta-s2-58-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-iruka-first-class-1
+  title: Ірука стає наставником Наруто
+  text: Витівки учня стикаються з особистим болем Іруки після нападу Курами; Хірудзен переконує його побачити дитину.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-iruka-first-class
+relations: []
+presence:
+- id: pr-s2-iruka-first-class-c-iruka
+  entity_id: c-iruka
+  from: sc-s2-iruka-first-class.start
+  to: sc-s2-iruka-first-class.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iruka-first-class
+- id: pr-s2-iruka-first-class-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-iruka-first-class.start
+  to: sc-s2-iruka-first-class.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iruka-first-class
+- id: pr-s2-iruka-first-class-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-iruka-first-class.start
+  to: sc-s2-iruka-first-class.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iruka-first-class

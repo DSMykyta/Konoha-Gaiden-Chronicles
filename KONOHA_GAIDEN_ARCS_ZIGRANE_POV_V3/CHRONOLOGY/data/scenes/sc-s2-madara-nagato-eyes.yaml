@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-madara-nagato-eyes
+episode_id: ep-s2-madara-nagato-eyes
+display_rank: 1400
+continuity_id: main
+title: Мадара пересаджує очі Наґато
+description: Дитина отримує Ріннеґан, не знаючи його походження; це відбувається до загибелі її батьків.
+location_id: loc-ame-nagato-home
+placement:
+  anchor_id: ta-s2-34-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: partial
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-madara-nagato-eyes-1
+  title: Мадара пересаджує очі Наґато
+  text: Дитина отримує Ріннеґан, не знаючи його походження; це відбувається до загибелі її батьків.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-madara-nagato-eyes
+relations: []
+presence:
+- id: pr-s2-madara-nagato-eyes-c-madara
+  entity_id: c-madara
+  from: sc-s2-madara-nagato-eyes.start
+  to: sc-s2-madara-nagato-eyes.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-nagato-eyes
+- id: pr-s2-madara-nagato-eyes-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-madara-nagato-eyes.start
+  to: sc-s2-madara-nagato-eyes.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-nagato-eyes

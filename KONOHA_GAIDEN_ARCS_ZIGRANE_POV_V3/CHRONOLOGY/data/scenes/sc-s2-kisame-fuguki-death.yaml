@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-kisame-fuguki-death
+episode_id: ep-s2-kisame-fuguki-death
+display_rank: 35700
+continuity_id: main
+title: Кісаме вбиває Фуґукі
+description: Викритий витік від командира руйнує його довіру; він отримує Самехаду.
+location_id: loc-kirigakure
+placement:
+  anchor_id: ta-s2-48-06-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kisame-fuguki-death-1
+  title: Кісаме вбиває Фуґукі
+  text: Викритий витік від командира руйнує його довіру; він отримує Самехаду.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-fuguki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kisame-fuguki-death
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-kisame-fuguki-death-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-kisame-fuguki-death.start
+  to: sc-s2-kisame-fuguki-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-fuguki-death
+- id: pr-s2-kisame-fuguki-death-c-fuguki
+  entity_id: c-fuguki
+  from: sc-s2-kisame-fuguki-death.start
+  to: sc-s2-kisame-fuguki-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-fuguki-death

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-gaara-konoha-news
+episode_id: ep-s2-gaara-konoha-news
+display_rank: 15700
+continuity_id: main
+title: Ґаара обговорює руйнування Конохи
+description: Він переконує брата й сестру, що Наруто допоможе селу відновитися.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-66-08-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-gaara-konoha-news-1
+  title: Ґаара обговорює руйнування Конохи
+  text: Він переконує брата й сестру, що Наруто допоможе селу відновитися.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-gaara-konoha-news
+relations: []
+presence:
+- id: pr-s2-gaara-konoha-news-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-gaara-konoha-news.start
+  to: sc-s2-gaara-konoha-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-konoha-news
+- id: pr-s2-gaara-konoha-news-c-temari
+  entity_id: c-temari
+  from: sc-s2-gaara-konoha-news.start
+  to: sc-s2-gaara-konoha-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-konoha-news
+- id: pr-s2-gaara-konoha-news-c-kankuro
+  entity_id: c-kankuro
+  from: sc-s2-gaara-konoha-news.start
+  to: sc-s2-gaara-konoha-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-konoha-news

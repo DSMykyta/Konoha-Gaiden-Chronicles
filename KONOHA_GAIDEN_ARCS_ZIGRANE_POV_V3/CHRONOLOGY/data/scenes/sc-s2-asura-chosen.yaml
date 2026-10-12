@@ -1,0 +1,63 @@
+schema_version: 1
+id: sc-s2-asura-chosen
+episode_id: ep-s2-asura-chosen
+display_rank: 43400
+continuity_id: main
+title: Хаґоромо обирає Асуру
+description: Індра вбиває прибічників, відкриває Манґекьо та нападає на брата; їхній конфлікт продовжується через
+  нащадків.
+location_id: loc-ninshu-home
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-asura-chosen-1
+  title: Хаґоромо обирає Асуру
+  text: Індра вбиває прибічників, відкриває Манґекьо та нападає на брата; їхній конфлікт продовжується через нащадків.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hagoromo
+    role: participant
+    mode: physical
+  - entity_id: c-indra
+    role: participant
+    mode: physical
+  - entity_id: c-asura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-asura-chosen
+relations: []
+presence:
+- id: pr-s2-asura-chosen-c-hagoromo
+  entity_id: c-hagoromo
+  from: sc-s2-asura-chosen.start
+  to: sc-s2-asura-chosen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asura-chosen
+- id: pr-s2-asura-chosen-c-indra
+  entity_id: c-indra
+  from: sc-s2-asura-chosen.start
+  to: sc-s2-asura-chosen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asura-chosen
+- id: pr-s2-asura-chosen-c-asura
+  entity_id: c-asura
+  from: sc-s2-asura-chosen.start
+  to: sc-s2-asura-chosen.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asura-chosen

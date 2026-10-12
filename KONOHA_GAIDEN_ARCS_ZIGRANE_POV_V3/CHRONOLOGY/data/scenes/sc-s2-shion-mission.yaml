@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-s2-shion-mission
+episode_id: ep-s2-shion-mission
+display_rank: 37000
+continuity_id: movie-shion
+title: Цунаде посилає охорону до Шіон
+description: Неджі очолює загін, який має довести жрицю до місця запечатування; інші сили затримують кам’яне військо.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-65-05-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shion-mission-1
+  title: Цунаде посилає охорону до Шіон
+  text: Неджі очолює загін, який має довести жрицю до місця запечатування; інші сили затримують кам’яне військо.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shion-mission
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-shion-mission-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-shion-mission.start
+  to: sc-s2-shion-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-mission
+- id: pr-s2-shion-mission-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-shion-mission.start
+  to: sc-s2-shion-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-mission
+- id: pr-s2-shion-mission-c-neji
+  entity_id: c-neji
+  from: sc-s2-shion-mission.start
+  to: sc-s2-shion-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-mission
+- id: pr-s2-shion-mission-c-lee
+  entity_id: c-lee
+  from: sc-s2-shion-mission.start
+  to: sc-s2-shion-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-mission
+- id: pr-s2-shion-mission-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-shion-mission.start
+  to: sc-s2-shion-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-mission

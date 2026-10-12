@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-karin-interrogation
+episode_id: ep-s2-karin-interrogation
+display_rank: 18900
+continuity_id: main
+title: Карін передають розвідці
+description: Какаші приводить її на допит після повернення з саміту.
+location_id: loc-intelligence-division
+placement:
+  anchor_id: ta-s2-66-08-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-karin-interrogation-1
+  title: Карін передають розвідці
+  text: Какаші приводить її на допит після повернення з саміту.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-ibiki
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-karin-interrogation
+relations: []
+presence:
+- id: pr-s2-karin-interrogation-c-karin
+  entity_id: c-karin
+  from: sc-s2-karin-interrogation.start
+  to: sc-s2-karin-interrogation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-interrogation
+- id: pr-s2-karin-interrogation-c-ibiki
+  entity_id: c-ibiki
+  from: sc-s2-karin-interrogation.start
+  to: sc-s2-karin-interrogation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-interrogation
+- id: pr-s2-karin-interrogation-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-karin-interrogation.start
+  to: sc-s2-karin-interrogation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-interrogation

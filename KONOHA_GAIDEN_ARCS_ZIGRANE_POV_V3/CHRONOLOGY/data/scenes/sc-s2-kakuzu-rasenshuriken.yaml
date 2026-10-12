@@ -1,0 +1,168 @@
+schema_version: 1
+id: sc-s2-kakuzu-rasenshuriken
+episode_id: ep-s2-kakuzu-rasenshuriken
+display_rank: 6500
+continuity_id: main
+title: Команда Какаші приходить на підмогу
+description: Вітер Наруто й Вода Ямато гасять ворожий вогонь. Перша спроба провалюється; друга знищує серця Какудзу
+  та ранить руку Наруто. Він завдає останнього удару після поразки противника.
+location_id: loc-fire-akatsuki-battlefield
+placement:
+  anchor_id: ta-s2-66-03-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakuzu-rasenshuriken-1
+  title: Команда Какаші приходить на підмогу
+  text: Вітер Наруто й Вода Ямато гасять ворожий вогонь.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: ev-s2-kakuzu-rasenshuriken-2
+  title: Наруто влучає Расенсюрикеном
+  text: Перша спроба провалюється; друга знищує серця Какудзу та ранить руку Наруто.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: ev-s2-kakuzu-rasenshuriken-3
+  title: Какаші добиває Какудзу
+  text: Він завдає останнього удару після поразки противника.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+relations:
+- id: rel-s2-kakuzu-rasenshuriken-1
+  kind: before
+  a: ev-s2-kakuzu-rasenshuriken-1
+  b: ev-s2-kakuzu-rasenshuriken-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: rel-s2-kakuzu-rasenshuriken-2
+  kind: before
+  a: ev-s2-kakuzu-rasenshuriken-2
+  b: ev-s2-kakuzu-rasenshuriken-3
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+presence:
+- id: pr-s2-kakuzu-rasenshuriken-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-kakuzu-rasenshuriken.start
+  to: sc-s2-kakuzu-rasenshuriken.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: pr-s2-kakuzu-rasenshuriken-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-kakuzu-rasenshuriken.start
+  to: sc-s2-kakuzu-rasenshuriken.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: pr-s2-kakuzu-rasenshuriken-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakuzu-rasenshuriken.start
+  to: sc-s2-kakuzu-rasenshuriken.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: pr-s2-kakuzu-rasenshuriken-c-ino
+  entity_id: c-ino
+  from: sc-s2-kakuzu-rasenshuriken.start
+  to: sc-s2-kakuzu-rasenshuriken.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: pr-s2-kakuzu-rasenshuriken-c-choji
+  entity_id: c-choji
+  from: sc-s2-kakuzu-rasenshuriken.start
+  to: sc-s2-kakuzu-rasenshuriken.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken
+- id: pr-s2-kakuzu-rasenshuriken-c-kakuzu
+  entity_id: c-kakuzu
+  from: sc-s2-kakuzu-rasenshuriken.start
+  to: sc-s2-kakuzu-rasenshuriken.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-rasenshuriken

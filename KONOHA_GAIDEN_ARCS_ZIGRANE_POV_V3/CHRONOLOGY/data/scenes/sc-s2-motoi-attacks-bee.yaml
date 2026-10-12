@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-motoi-attacks-bee
+episode_id: ep-s2-motoi-attacks-bee
+display_rank: 36100
+continuity_id: main
+title: Мотої намагається вбити Бі
+description: Він переносить провину за загибель батька на нового джінчюрікі; Бі продовжує усміхатися попри цькування.
+location_id: loc-kumogakure
+placement:
+  anchor_id: ta-s2-37-01-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-motoi-attacks-bee-1
+  title: Мотої намагається вбити Бі
+  text: Він переносить провину за загибель батька на нового джінчюрікі; Бі продовжує усміхатися попри цькування.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-motoi
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-motoi-attacks-bee
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-motoi-attacks-bee-c-motoi
+  entity_id: c-motoi
+  from: sc-s2-motoi-attacks-bee.start
+  to: sc-s2-motoi-attacks-bee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-motoi-attacks-bee
+- id: pr-s2-motoi-attacks-bee-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-motoi-attacks-bee.start
+  to: sc-s2-motoi-attacks-bee.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-motoi-attacks-bee

@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-shino-talks-to-children
+episode_id: ep-s2-shino-talks-to-children
+display_rank: 21300
+continuity_id: main
+title: Шіно розповідає дітям про товаришів
+description: Питання про війну приводить до спогаду про місію Команди 8.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-10-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shino-talks-to-children-1
+  title: Шіно розповідає дітям про товаришів
+  text: Питання про війну приводить до спогаду про місію Команди 8.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shino-talks-to-children
+relations: []
+presence:
+- id: pr-s2-shino-talks-to-children-c-shino
+  entity_id: c-shino
+  from: sc-s2-shino-talks-to-children.start
+  to: sc-s2-shino-talks-to-children.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shino-talks-to-children

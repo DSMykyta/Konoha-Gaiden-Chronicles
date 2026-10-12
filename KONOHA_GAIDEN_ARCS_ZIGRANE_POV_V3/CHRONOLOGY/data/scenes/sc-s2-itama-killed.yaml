@@ -1,0 +1,51 @@
+schema_version: 1
+id: sc-s2-itama-killed
+episode_id: ep-s2-itama-killed
+display_rank: 3300
+continuity_id: main
+title: Ітама гине від рук Учіха
+description: Хашірама приходить запізно й знаходить молодшого брата мертвим.
+location_id: loc-senju-uchiha-battlefield
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itama-killed-1
+  title: Ітама гине від рук Учіха
+  text: Хашірама приходить запізно й знаходить молодшого брата мертвим.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itama
+    role: participant
+    mode: physical
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itama-killed
+relations: []
+presence:
+- id: pr-s2-itama-killed-c-itama
+  entity_id: c-itama
+  from: sc-s2-itama-killed.start
+  to: sc-s2-itama-killed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itama-killed
+- id: pr-s2-itama-killed-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-itama-killed.start
+  to: sc-s2-itama-killed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itama-killed

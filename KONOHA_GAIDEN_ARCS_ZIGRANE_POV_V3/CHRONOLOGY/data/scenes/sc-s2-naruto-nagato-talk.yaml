@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-naruto-nagato-talk
+episode_id: ep-s2-naruto-nagato-talk
+display_rank: 15000
+continuity_id: main
+title: Наруто знаходить Наґато
+description: За чакрою чорного стрижня він виходить до сховища; Наґато розповідає про війну, Яхіко й Акацукі. Він
+  відповідає словами з книги Джираї та обіцяє шукати мир.
+location_id: loc-nagato-paper-tree
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-nagato-talk-1
+  title: Наруто знаходить Наґато
+  text: За чакрою чорного стрижня він виходить до сховища; Наґато розповідає про війну, Яхіко й Акацукі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-nagato-talk
+- id: ev-s2-naruto-nagato-talk-2
+  title: Наруто відмовляється від помсти
+  text: Він відповідає словами з книги Джираї та обіцяє шукати мир.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-nagato-talk
+relations:
+- id: rel-s2-naruto-nagato-talk-1
+  kind: before
+  a: ev-s2-naruto-nagato-talk-1
+  b: ev-s2-naruto-nagato-talk-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-nagato-talk
+presence:
+- id: pr-s2-naruto-nagato-talk-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-nagato-talk.start
+  to: sc-s2-naruto-nagato-talk.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-nagato-talk
+- id: pr-s2-naruto-nagato-talk-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-naruto-nagato-talk.start
+  to: sc-s2-naruto-nagato-talk.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-nagato-talk
+- id: pr-s2-naruto-nagato-talk-c-konan
+  entity_id: c-konan
+  from: sc-s2-naruto-nagato-talk.start
+  to: sc-s2-naruto-nagato-talk.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-nagato-talk

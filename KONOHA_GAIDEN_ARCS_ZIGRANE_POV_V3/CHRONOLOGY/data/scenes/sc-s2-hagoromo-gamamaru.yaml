@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-s2-hagoromo-gamamaru
+episode_id: ep-s2-hagoromo-gamamaru
+display_rank: 42900
+continuity_id: main
+title: Брати слухають Ґамамару
+description: Хаґоромо вчиться сенджюцу й дізнається про людей у Божественному дереві.
+location_id: loc-mount-myoboku
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hagoromo-gamamaru-1
+  title: Брати слухають Ґамамару
+  text: Хаґоромо вчиться сенджюцу й дізнається про людей у Божественному дереві.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hagoromo
+    role: participant
+    mode: physical
+  - entity_id: c-hamura
+    role: participant
+    mode: physical
+  - entity_id: c-gamamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hagoromo-gamamaru
+relations: []
+presence:
+- id: pr-s2-hagoromo-gamamaru-c-hagoromo
+  entity_id: c-hagoromo
+  from: sc-s2-hagoromo-gamamaru.start
+  to: sc-s2-hagoromo-gamamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hagoromo-gamamaru
+- id: pr-s2-hagoromo-gamamaru-c-hamura
+  entity_id: c-hamura
+  from: sc-s2-hagoromo-gamamaru.start
+  to: sc-s2-hagoromo-gamamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hagoromo-gamamaru
+- id: pr-s2-hagoromo-gamamaru-c-gamamaru
+  entity_id: c-gamamaru
+  from: sc-s2-hagoromo-gamamaru.start
+  to: sc-s2-hagoromo-gamamaru.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hagoromo-gamamaru

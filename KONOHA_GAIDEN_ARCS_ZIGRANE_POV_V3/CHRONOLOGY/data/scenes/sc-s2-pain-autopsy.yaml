@@ -1,0 +1,66 @@
+schema_version: 1
+id: sc-s2-pain-autopsy
+episode_id: ep-s2-pain-autopsy
+display_rank: 12900
+continuity_id: main
+title: Коноха досліджує тіло Пейна
+description: Чорні стрижні проводять чужу чакру; допит полоненого й розтин наближають шинобі до пояснення спільного
+  зору тіл.
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-s2-66-08-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-pain-autopsy-1
+  title: Коноха досліджує тіло Пейна
+  text: Чорні стрижні проводять чужу чакру; допит полоненого й розтин наближають шинобі до пояснення спільного зору
+    тіл.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-inoichi
+    role: participant
+    mode: physical
+  - entity_id: c-ibiki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-pain-autopsy
+relations: []
+presence:
+- id: pr-s2-pain-autopsy-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-pain-autopsy.start
+  to: sc-s2-pain-autopsy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-autopsy
+- id: pr-s2-pain-autopsy-c-inoichi
+  entity_id: c-inoichi
+  from: sc-s2-pain-autopsy.start
+  to: sc-s2-pain-autopsy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-autopsy
+- id: pr-s2-pain-autopsy-c-ibiki
+  entity_id: c-ibiki
+  from: sc-s2-pain-autopsy.start
+  to: sc-s2-pain-autopsy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-autopsy

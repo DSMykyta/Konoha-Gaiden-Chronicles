@@ -2133,3 +2133,2683 @@ episodes:
   title: Невдалий заколот Забузи в Кіріґакуре
   description: >-
     Забуза планує вбивство Мідзукаґе та намагається захопити владу в Кіріґакуре, але заколот зазнає поразки. Він змушений тікати разом із тими, хто залишився на його боці, і шукати гроші для майбутнього повернення. Згодом саме потреба у фінансуванні пов'язує його з Ґато. Точний рік провалу й перебування Хаку в момент замаху не підтверджені.
+- id: ep-s2-ebisu-cat
+  arc_id: arc-s2-homecoming
+  continuity_id: main
+  title: Команда Ебісу здає D-рангову місію
+  description: Конохамару після ловлі кота просить складніше завдання й називає Наруто майбутнім Шостим Хокаґе.
+- id: ep-s2-naruto-homecoming
+  arc_id: arc-s2-homecoming
+  continuity_id: main
+  title: Наруто повертається з Джираєю
+  description: Після тривалого тренування Наруто входить до Конохи й бачить нове обличчя Цунаде на Скелі Хокаґе.
+- id: ep-s2-naruto-sakura-reunion
+  arc_id: arc-s2-homecoming
+  continuity_id: main
+  title: Наруто зустрічає Сакуру та Конохамару
+  description: Сакура зауважує, як виріс Наруто; його спроба показати нову Сексуальну техніку завершується її ударом.
+- id: ep-s2-new-kakashi-team
+  arc_id: arc-s2-homecoming
+  continuity_id: main
+  title: Цунаде призначає перевірку навичок
+  description: Наруто дарує Какаші нову книгу Джираї; Шикамару й Темарі здають документи щодо іспиту. Його однокласники
+    вже чюніни, Неджі — джонін, а Ґаара став Кадзекаґе.
+- id: ep-s2-second-bell-test
+  arc_id: arc-s2-homecoming
+  continuity_id: main
+  title: Наруто й Сакура знову проходять тест із дзвіночками
+  description: Какаші використовує Шарінґан; Наруто застосовує клонів, Сакура розбиває землю. Погроза розповісти
+    фінал нової книги змушує Какаші закрити очі й затулити вуха; учні користуються нагодою.
+- id: ep-s2-jiraiya-handover
+  arc_id: arc-s2-homecoming
+  continuity_id: main
+  title: Джирая попереджає Какаші про Акацукі
+  description: Джирая повертає Наруто під опіку Какаші й попереджає союзні села про полювання на джінчюрікі.
+- id: ep-s2-suna-council
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Суна обговорює загрозу Акацукі
+  description: Ґаара бере участь у нараді; Юра, якого контролює Сасорі, відкриває нападникам шлях до села.
+- id: ep-s2-deidara-gaara
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Дейдара нападає на Ґаару
+  description: Ґаара захищає Суну піском і відриває противнику руку. Дейдара відволікає Кадзекаґе загрозою селу,
+    підриває глину всередині піщаного захисту й забирає непритомного Ґаару.
+- id: ep-s2-kankuro-sasori
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Канкуро наздоганяє викрадачів
+  description: Сасорі розбиває його маріонеток і отруює; Канкуро встигає залишити слід для переслідувачів.
+- id: ep-s2-suna-request
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Коноха отримує прохання Суни
+  description: Цунаде відправляє Команду Какаші рятувати Кадзекаґе.
+- id: ep-s2-rescue-road
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Команда Какаші вирушає до Суни
+  description: Темарі приєднується до команди; Наруто пояснює, чому доля Ґаари для нього важлива.
+- id: ep-s2-kankuro-antidote
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Сакура лікує Канкуро
+  description: Вона витягує отруту й готує протиотруту; Чіо впізнає роботу Сасорі. Темарі лишається захищати Суну;
+    Чіо веде переслідування свого онука.
+- id: ep-s2-guy-deployed
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Команда Ґая вирушає на підмогу
+  description: Цунаде посилає другу команду до Країни Річок.
+- id: ep-s2-gaara-extraction
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Акацукі витягають Шукаку
+  description: Сасорі та Дейдара починають вилучення Шукаку з Ґаари у сховищі Країни Річок. Вони лишаються там,
+    доки ритуал не завершиться.
+- id: ep-s2-itachi-substitute
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Команду Какаші затримує двійник Ітачі
+  description: Шарінґан ловить Наруто в ґенджюцу; товариші звільняють його. Після бою команда знаходить тіло Юри,
+    використане для підміни.
+- id: ep-s2-kisame-substitute
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Команда Ґая б’ється з двійником Кісаме
+  description: Неджі, Лі й Тентен потрапляють у водяні в’язниці; Ґай відкриває ворота й перемагає супротивника.
+- id: ep-s2-hideout-barrier
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Обидві команди знімають печаті входу
+  description: Неджі знаходить п’ять бар’єрних печатей; Ґай, Лі, Неджі й Тентен знімають віддалені мітки, а Сакура
+    розбиває камінь.
+- id: ep-s2-guy-doppelgangers
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Команду Ґая затримують власні двійники
+  description: Зняття печатей викликає копії шинобі. Лі знаходить спосіб перемогти незмінних двійників, ставши сильнішим
+    за себе на початку бою.
+- id: ep-s2-sakura-sasori
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Сакура й Чіо руйнують Хіруко
+  description: Чіо керує рухами Сакури, допомагаючи ухилятися від отруєних атак. Залізний пісок змушує Сакуру застосувати
+    протиотруту; вона розбиває маріонетку. Сакура розбиває тіло Сасорі, але він переносить своє живе ядро. Чіо лікує
+    поранену Сакуру й пронизує ядро Сасорі маріонетками його батьків. Перед смертю він називає міст Тенчі й зустріч
+    через десять днів.
+- id: ep-s2-naruto-deidara
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Наруто й Какаші переслідують Дейдару
+  description: Какаші застосовує Камуі й відриває йому другу руку; Наруто витягає тіло Ґаари з глиняного птаха.
+    Гнів Наруто викликає хвости чакри; Какаші застосовує печать Джираї.
+- id: ep-s2-rescue-groups-reunite
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Какаші відводить вибух Камуі
+  description: Дейдара залишає вибухового двійника й тікає; Какаші рятує команди, але падає від виснаження.
+- id: ep-s2-chiyo-revives-gaara
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Чіо віддає життя Ґаарі
+  description: Наруто передає їй чакру; Чіо повертає Ґаару до життя й помирає. До групи приходять шинобі Суни; вони
+    вшановують Чіо.
+- id: ep-s2-kazekage-return
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Ґаара повертається до Суни
+  description: Мешканці зустрічають Кадзекаґе; рятівники відвідують могилу Чіо та вирушають додому.
+- id: ep-s2-rescue-homeward
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Ґай несе виснаженого Какаші додому
+  description: Команди повертаються через дорогу між Суною й Конохою.
+- id: ep-s2-kakashi-hospitalised
+  arc_id: arc-s2-kazekage-rescue
+  continuity_id: main
+  title: Какаші залишають у лікарні на тиждень
+  description: Сакура передає слова Сасорі; до зустрічі на мосту лишається шість днів.
+- id: ep-s2-root-sai-order
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Данзо відряджає Сая до Команди Какаші
+  description: Сай отримує прикриття нового товариша Наруто й таємне завдання щодо Саске.
+- id: ep-s2-sai-first-clash
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Сай випробовує Наруто
+  description: Чорнильні звірі нападають на Наруто та Команду 10; Сай після сутички відступає.
+- id: ep-s2-yamato-appointed
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Цунаде відстоює право Наруто на місії
+  description: Рада домагається включення представника Кореня. Наруто й Сакура отримують нових товариша й командира
+    та збираються в дорогу.
+- id: ep-s2-yamato-cloak-warning
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Джирая попереджає Ямато про чотири хвости
+  description: Він показує шрам після втрати Наруто контролю й передає спосіб стримування чакри Курами.
+- id: ep-s2-tenchi-road-and-inn
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Сакура зупиняє суперечку Сая з Наруто
+  description: Сай ображає Саске; Ямато нагадує команді про довіру й робить зупинку біля гарячих джерел. Наступного
+    ранку Сай малює, але відмовляється показати книгу брата.
+- id: ep-s2-tenchi-camp
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Ямато проводить навчальне захоплення шпигуна
+  description: Команда тренує розподіл ролей; Ямато ставить дерев’яний табір на ніч.
+- id: ep-s2-tenchi-spy-meeting
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Ямато зустрічає Кабуто під виглядом Сасорі
+  description: Кабуто повідомляє про сховище, але прибуває Орочімару й викриває підміну.
+- id: ep-s2-tenchi-four-tails
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Наруто втрачає контроль і набуває чотирьох хвостів
+  description: Орочімару провокує його згадками про Саске; бій руйнує міст та береги. Чакра Курами ранить її; Ямато
+    пригнічує трансформацію, а Кабуто лікує Сакуру.
+- id: ep-s2-sai-orochimaru-deal
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Сай передає Орочімару лист Данзо
+  description: Сай летить услід Орочімару; у сховищі зустрічає Саске.
+- id: ep-s2-yamato-tracks-sai
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Ямато розповідає Наруто про поранення Сакури
+  description: Наруто дізнається про наслідки втрати контролю. Команда знаходить його речі та вирушає до сховища.
+- id: ep-s2-hideout-sai-captured
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Команда знаходить і зв’язує Сая
+  description: Ямато викриває його зв’язок із Данзо; Наруто пояснює свій зв’язок із Саске. Його незавершена книга
+    й слова Наруто змінюють ставлення до завдання.
+- id: ep-s2-kabuto-captured
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Сай допомагає захопити Кабуто
+  description: Кабуто нападає на команду; Сай зв’язує його й вирішує побачити зв’язок Наруто та Саске.
+- id: ep-s2-hideout-search
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Сай завершує малюнок із братом
+  description: Наруто непритомніє від виснаження; після пробудження Сай показує йому завершену сторінку. Ямато приходить
+    на допомогу, поки Сай шукає Саске.
+- id: ep-s2-sasuke-reunion
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Сай знаходить Саске
+  description: Саске виривається з чорнильних змій і руйнує частину сховища; команда виходить до нього. Сай прикриває
+    Наруто, Ямато зупиняє напад на Сакуру; Саске пригнічує чакру Курами. Кабуто переконує залишити Команду Какаші
+    живою, щоб вона продовжувала боротися з Акацукі.
+- id: ep-s2-tenchi-report
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Команда звітує про невдалий порятунок
+  description: Наруто й Сакура зберігають намір повернути Саске; Сай залишається з ними.
+- id: ep-s2-sai-friendship
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Сай читає про дружбу
+  description: Він пробує давати товаришам прізвиська й отримує нову сварку із Сакурою.
+- id: ep-s2-kakashi-new-training
+  arc_id: arc-s2-tenchi
+  continuity_id: main
+  title: Какаші пропонує нове тренування
+  description: Команда розповідає про силу Саске; Какаші готує спосіб прискорити навчання Наруто.
+- id: ep-s2-wind-nature
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Наруто визначає природу своєї чакри
+  description: Папір розрізається навпіл; Какаші пояснює трансформації форми та природи. Наруто накопичує досвід
+    кожного клона; Ямато стримує прояви Курами.
+- id: ep-s2-asuma-wind-lesson
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Асума показує силу Вітру
+  description: Чакра на лезі проходить крізь дерево й камінь; Наруто погоджується оплатити обід Команди 10 за пораду.
+- id: ep-s2-fire-temple-arrival
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Команда прибуває до Храму Вогню
+  description: Монахи повідомляють про пограбовані могили охоронців; Наруто зустрічає Сору. Після сутички між ними
+    Чіріку пояснює його минуле.
+- id: ep-s2-guardian-tombs
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Команда потрапляє в пастку грабіжників
+  description: Земляні стіни розділяють шинобі; Фудо, Фука й Фуен затримують їх. Він послаблює печать на його тілі;
+    команда вибирається з пастки.
+- id: ep-s2-sora-konoha
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Сора тимчасово замінює пораненого Сая
+  description: Він знайомиться з Командою 10; Асума повідомляє про знищені прикордонні поселення. Розмова про даймьо
+    та Хокаґе відкриває давній конфлікт охоронців.
+- id: ep-s2-sora-hokage-threat
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Сора дізнається про смерть батька й нападає
+  description: Під впливом Фурідо він звинувачує Асуму та намагається дістатися Цунаде.
+- id: ep-s2-konoha-blackout
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Нападники відключають електрику
+  description: Цунаде організовує захист; оживлені тіла наступають на село. Руйнування ворожих технік знімає частину
+    облоги.
+- id: ep-s2-naruto-fuka
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Наруто знаходить слабкість Фуки
+  description: Її тіло змінюється після атак; Наруто знищує волосся, що утримує її життя.
+- id: ep-s2-limelight-guardians
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Асума зупиняє Блискавкове знищення
+  description: Казума використовує тіла чотирьох охоронців для атаки на село; Асума руйнує задум.
+- id: ep-s2-sora-four-tails
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Сора набуває хвостів чакри Курами
+  description: Чакра, зібрана Казумою під час нападу Дев’ятихвостого, резонує з Наруто. Казума гине в сутичці з
+    Асумою; Наруто зупиняє повну втрату контролю Сори.
+- id: ep-s2-sora-departs
+  arc_id: arc-s2-guardians
+  continuity_id: main
+  title: Сора залишає Коноху
+  description: Він вирушає шукати друзів; Сай повертається до команди.
+- id: ep-s2-yugito-capture
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Хідан і Какудзу захоплюють Юґіто
+  description: Юґіто перетворюється на Двохвосту, але програє; Акацукі забирають джінчюрікі.
+- id: ep-s2-chiriku-death
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Акацукі нападають на Храм Вогню
+  description: Чіріку гине; Какудзу забирає його тіло заради винагороди.
+- id: ep-s2-naruto-waterfall-training
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Наруто розрізає водоспад чакрою Вітру
+  description: Ямато створює місце для тренування; клони накопичують досвід. Какаші показує, як розподілити дві
+    задачі між клонами.
+- id: ep-s2-twenty-platoons
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Цунаде відправляє двадцять загонів
+  description: Команда Асуми отримує завдання знайти Акацукі після загибелі Чіріку.
+- id: ep-s2-asuma-bounty-station
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Загін Асуми вступає в бій із Хіданом
+  description: Шикамару встановлює зв’язок між кров’ю Асуми та ритуалом. Какудзу пришиває йому голову; Хідан повертається
+    до кола й смертельно ранить Асуму.
+- id: ep-s2-asuma-last-words
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Підкріплення відтісняє Акацукі
+  description: Хідана й Какудзу відкликають на запечатування Двохвостої. Іно не може врятувати його; Асума залишає
+    кожному останню настанову й помирає.
+- id: ep-s2-asuma-funeral
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Коноха ховає Асуму
+  description: Товариші й учні прощаються з наставником; Шикамару спершу залишається вдома.
+- id: ep-s2-shikamaru-mourning
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Шикаку грає із сином у сьоґі
+  description: Розмова про Асуму завершується сльозами Шикамару; згодом він складає план бою.
+- id: ep-s2-revenge-departure
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Команда 10 вирушає на пошук Акацукі
+  description: Какаші пропонує себе четвертим учасником; Цунаде дозволяє вихід загону.
+- id: ep-s2-rasenshuriken-deadline
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Цунаде дає Наруто добу
+  description: Підкріплення відправлять, якщо він завершить нову техніку; Наруто продовжує роботу з клонами.
+- id: ep-s2-kakuzu-ambush
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Шикамару ловить Акацукі тінями
+  description: Какаші пробиває серце Какудзу, але той випускає маски з іншими серцями. Шикамару відводить Хідана
+    в ліс; Какаші, Іно й Чоджі залишаються з Какудзу.
+- id: ep-s2-hidan-nara-trap
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Шикамару підміняє кров для ритуалу
+  description: Хідан ранить серце Какудзу замість Шикамару. Вибухові мітки розривають його тіло; яма в лісі клану
+    Нара закривається над ним.
+- id: ep-s2-kakuzu-rasenshuriken
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Команда Какаші приходить на підмогу
+  description: Вітер Наруто й Вода Ямато гасять ворожий вогонь. Перша спроба провалюється; друга знищує серця Какудзу
+    та ранить руку Наруто. Він завдає останнього удару після поразки противника.
+- id: ep-s2-sakura-sai-help-shikamaru
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Сакура й Сай знаходять Шикамару
+  description: Після перемоги над Хіданом Шикамару виходить із лісу до товаришів.
+- id: ep-s2-rasenshuriken-ban
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Цунаде забороняє небезпечну техніку
+  description: Обстеження показує пошкодження чакропровідної системи руки Наруто.
+- id: ep-s2-shikamaru-kurenai
+  arc_id: arc-s2-immortals
+  continuity_id: main
+  title: Шикамару бере відповідальність за дитину Асуми
+  description: Біля могили наставника він обіцяє Куренай підтримку й майбутнє навчання дитини.
+- id: ep-s2-guren-recruited
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Кабуто залучає Ґурен до захоплення Трихвостого
+  description: Орочімару доручає їй Юкімару; Ґурен відбирає собі загін з уцілілих в’язнів.
+- id: ep-s2-team8-search
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Какаші очолює розвідку Команди 8
+  description: Вони знаходять сліди Кристалічної стихії; Паккун несе зразок кристала до Конохи.
+- id: ep-s2-naruto-toad-collaboration
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Джирая тренує спільні техніки Наруто та жаб
+  description: Після невдалої співпраці з Ґамарікі Наруто переходить до Ґамакічі й Ґаматацу. Жаби продовжують тренування
+    й допомагають Наруто повернутися до Конохи.
+- id: ep-s2-guren-yukimaru-bond
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Ґурен доглядає Юкімару
+  description: Вона впізнає хлопчика й дарує йому кристалічну камелію; між ними виникає прив’язаність.
+- id: ep-s2-crystal-prison-hinata
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Ґурен ув’язнює Команду 8 у кристалі
+  description: Хіната вкриває тіло чакрою, рятуючись від повної кристалізації; Шіно готує стійких комах.
+- id: ep-s2-naruto-reinforcements
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Підкріплення визволяє розвідників
+  description: Наруто й Ґаматацу пробивають кристалічний бар’єр; команди об’єднуються.
+- id: ep-s2-three-tails-summoned
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Юкімару викликає Трихвостого
+  description: Кабуто дає хлопчикові препарати; Ґурен безуспішно намагається втримати звіра. Його сила на мить приборкує
+    Ісобу; Ґурен витягає хлопчика з води.
+- id: ep-s2-naruto-fog
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Туман Ісобу створює видіння
+  description: Наруто губиться біля озера, а команда встановлює присутність хвостатого звіра.
+- id: ep-s2-shizune-sealing-team
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Шізуне готує чотирикутний бар’єр
+  description: Команди розподіляють запечатування, охорону та напад на Ґурен.
+- id: ep-s2-guren-crystal-defeated
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Комахи Шіно руйнують кристалічну пастку
+  description: Сай стримує Ґозу; Какаші й Наруто відтісняють Ґурен.
+- id: ep-s2-guren-barrier-attack
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Кабуто шантажує Ґурен смертю матері Юкімару
+  description: Вона атакує охоронців, поки Рінджі намагається зруйнувати бар’єр. Він викликає звіра, і запечатування
+    зривається.
+- id: ep-s2-naruto-guren-swallowed
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Наруто й Ґурен опиняються всередині Ісобу
+  description: Наруто перев’язує її рану; обидва відбиваються від малих копій звіра. Ґурен визнає, що вбила матір
+    Юкімару; Наруто виносить її до пролому.
+- id: ep-s2-yukimaru-rescue-route
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Юкімару допомагає знайти Наруто
+  description: Камелії та пролом у захисті звіра відкривають вихід із його черева.
+- id: ep-s2-second-seal-fails
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Коноха повторює запечатування
+  description: Підсилені проклятими печатями противники забирають Юкімару; Какаші, Шіно й Ямато перемагають нападників.
+- id: ep-s2-guren-kabuto-reveal
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Кабуто розкриває підміну Рінджі
+  description: Юкімару прощає Ґурен за смерть матері. Юкімару втрачає контроль; Наруто з жабами зупиняє чергову
+    атаку Ісобу.
+- id: ep-s2-yukimaru-leaves
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Юкімару залишає табір
+  description: Ґозу рятує Ґурен, і хлопчик вирушає з ними; Наруто за цілою камелією розуміє, що вони живі.
+- id: ep-s2-three-tails-retreat
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Коноха повертає команди додому
+  description: Цунаде змінює їх загоном АНБУ; сила Юкімару після виснаження зникає.
+- id: ep-s2-tobi-deidara-isobu
+  arc_id: arc-s2-three-tails
+  continuity_id: main
+  title: Дейдара й Тобі захоплюють Ісобу
+  description: Дейдара вбиває загін АНБУ, підриває звіра та відвозить його до сховища Акацукі.
+- id: ep-s2-orochimaru-defeated
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Саске нападає на ослабленого Орочімару
+  description: Поточне тіло відторгає Орочімару; він показує білу змію й намагається переселитися в Саске. Шарінґан
+    перевертає техніку; Саске поглинає Орочімару та залишає сховище.
+- id: ep-s2-suigetsu-freed
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Саске звільняє Суйґецу
+  description: Він відкриває резервуар і пропонує йому приєднатися до команди.
+- id: ep-s2-suigetsu-zabuza-blade
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Суйґецу знаходить меч Забузи
+  description: Біля могили зброї вже немає; він відбирає її у Тензена, а Саске зупиняє вбивство власника.
+- id: ep-s2-karin-recruited
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Карін залишає південне сховище
+  description: Саске пропонує їй місце в команді; Суйґецу випускає в’язнів, і Карін приєднується.
+- id: ep-s2-jugo-recruited
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Саске стримує напад Джюґо
+  description: Він обіцяє бути його кліткою замість Кімімаро. Саске називає мету команди; учасники виходять зі сховища.
+- id: ep-s2-orochimaru-news
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Коноха дізнається про поразку Орочімару
+  description: Наруто сподівається на повернення Саске, але Джирая попереджає про інші його цілі.
+- id: ep-s2-roshi-captured
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Кісаме захоплює Роші
+  description: Він долає Стихію Лави джінчюрікі Чотирьохвостого водними техніками.
+- id: ep-s2-eight-man-squad
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Коноха відправляє вісім шинобі
+  description: Команди Какаші й Куренай об’єднуються, щоб знайти Ітачі та через нього Саске.
+- id: ep-s2-hebi-cat-armoury
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Хебі поповнює спорядження
+  description: Котяча зброярня забезпечує команду; пошук Ітачі триває.
+- id: ep-s2-konoha-search-split
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Какаші розділяє пошуковців
+  description: Нінкен супроводжують підгрупи; усі шукають запах та сліди Саске й Ітачі.
+- id: ep-s2-sasuke-deidara
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Саске нейтралізує вибухову глину Блискавкою
+  description: Дейдара виводить у бій дракона й мікроскопічні бомби. Шарінґан розпізнає бомби, а Блискавка зупиняє
+    детонацію в його тілі.
+- id: ep-s2-deidara-self-destruction
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Дейдара підриває себе
+  description: Саске викликає Манду, ховається в ньому та зникає; Манда гине від вибуху.
+- id: ep-s2-hebi-sasuke-recovery
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Хебі витягає виснаженого Саске
+  description: Суйґецу застосовує сувій виклику; товариші доглядають Саске після вибуху.
+- id: ep-s2-naruto-itachi-crow
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Ітачі говорить із клоном Наруто
+  description: Він запитує, що Наруто зробить, якщо Саске нападе на Коноху. Наруто обіцяє захистити і село, і Саске;
+    Ітачі передає йому свою підготовлену силу.
+- id: ep-s2-sasuke-itachi-invitation
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Ітачі призначає остаточну зустріч
+  description: Саске пробиває двійника брата; Ітачі кличе його до сховища Учіха.
+- id: ep-s2-eight-man-tobi-delay
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Тобі затримує пошуковців Конохи
+  description: Удари проходять крізь нього; він не дає команді дістатися Саске.
+- id: ep-s2-suigetsu-kisame
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Кісаме пропускає лише Саске
+  description: Суйґецу викликає його на бій, поки Карін і Джюґо чекають зовні.
+- id: ep-s2-uchiha-final-duel
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Брати вступають у бій ґенджюцу
+  description: Саске виривається з Цукуйомі; Ітачі говорить про Мадарy та очі Учіха. Полум’я нагріває небо; блискавка
+    руйнує сховище, але Сусаноо захищає Ітачі. З виснаженого Саске виходить Орочімару; меч Тоцука забирає його та
+    прокляту печать. Сусаноо зникає; Саске непритомніє біля брата.
+- id: ep-s2-tobi-takes-sasuke
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Тобі забирає тіла братів
+  description: Зецу повідомляє Коноху й Хебі про завершення бою; Тобі переносить Саске у сховище.
+- id: ep-s2-itachi-truth
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Передане Аматерасу спалахує на Тобі
+  description: Саске бачить його Шарінґан; підготовлена Ітачі техніка намагається вбити співрозмовника. Саске слухає
+    історію брата, села та перевороту.
+- id: ep-s2-taka-renamed
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Саске перейменовує Хебі на Така
+  description: Він відкриває Манґекьо й оголошує метою знищення Конохи.
+- id: ep-s2-tobi-kisame-identity
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Тобі показує Кісаме обличчя
+  description: Кісаме впізнає свого давнього керівника та погоджується залишитися з Акацукі.
+- id: ep-s2-taka-cloud-journey
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Така вирушає за Восьмихвостим
+  description: Команда отримує відомості про Кіллера Бі й долину його тренування.
+- id: ep-s2-taka-killer-b
+  arc_id: arc-s2-hebi
+  continuity_id: main
+  title: Кіллер Бі перемагає перші напади Така
+  description: Він ранить Саске; Карін лікує його, а Джюґо віддає частину свого тіла. Полум’я охоплює Ґюкі; Бі підміняє
+    себе щупальцем і тікає, а Така забирає підміну.
+- id: ep-s2-jiraiya-tsunade-farewell
+  arc_id: arc-s2-jiraiya-pain
+  continuity_id: main
+  title: Джирая повідомляє, де шукати лідера Акацукі
+  description: Вони з Цунаде розмовляють перед його самостійною розвідкою.
+- id: ep-s2-jiraiya-ame-infiltration
+  arc_id: arc-s2-jiraiya-pain
+  continuity_id: main
+  title: Джирая входить до Аме через жабу
+  description: Він збирає чутки, захоплює двох шинобі та допитує їх у жаб’ячому просторі. У разі його загибелі ключ
+    до печаті Наруто має перейти до учня.
+- id: ep-s2-jiraiya-konan
+  arc_id: arc-s2-jiraiya-pain
+  continuity_id: main
+  title: Конан знаходить Джираю
+  description: Він впізнає колишню ученицю; Пейн вступає в бій і викликає звірів.
+- id: ep-s2-jiraiya-sage-mode
+  arc_id: arc-s2-jiraiya-pain
+  continuity_id: main
+  title: Ґамакен прикриває підготовку Джираї
+  description: Джирая завершує Режим Мудреця з Фукасаку й Шімою. Джирая перемагає перших противників, але з’являються
+    інші Шляхи Пейна.
+- id: ep-s2-jiraiya-six-paths
+  arc_id: arc-s2-jiraiya-pain
+  continuity_id: main
+  title: Шість тіл Пейна ранять Джираю
+  description: Він втрачає руку й бачить обличчя людей, яких колись зустрічав. Він передає його Фукасаку для розслідування.
+- id: ep-s2-jiraiya-last-message
+  arc_id: arc-s2-jiraiya-pain
+  continuity_id: main
+  title: Джирая записує останній шифр
+  description: Перед смертю він лишає на спині Фукасаку повідомлення про справжнього ворога; Фукасаку тікає, а Джирая
+    тоне.
+- id: ep-s2-hotaru-escort
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Команда приймає охорону Хотару
+  description: Під час дороги з пошуків Саске Цунаде перенаправляє команду до гори Кацураґі; Утаката залишає дівчину
+    під їхнім захистом.
+- id: ep-s2-hotaru-village-betrayal
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Рідне поселення видає Хотару нападникам
+  description: Вона виривається з будинку; Утаката повертається та рятує її.
+- id: ep-s2-kiri-terms
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Ямато домовляється з мисливцями Кірі
+  description: Утаката залишається з Хотару до завершення місії; Цуруґі просить його повернутися до села.
+- id: ep-s2-hotaru-seal
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Наруто бачить печать на спині Хотару
+  description: Тонбей пояснює можливість зняття техніки; Хотару шукає Шіранамi, сподіваючись виконати заповіт діда.
+- id: ep-s2-shiranami-revealed
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Шіранамi захоплює Хотару
+  description: Він визнає вбивство свого батька й починає накопичувати природну енергію в її печаті.
+- id: ep-s2-hotaru-jutsu-stopped
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Наруто переслідує Шіранамi
+  description: Утаката застосовує силу Шестихвостого, зупиняє некерований вибух і знімає печать Хотару.
+- id: ep-s2-utakata-pain-capture
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Пейн убиває мисливців Кірі
+  description: Його виклики перекривають дорогу їхньому загону. Утаката шукає дозвіл навчати Хотару, але зустрічає
+    Шість Шляхів і програє.
+- id: ep-s2-hotaru-waits
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Хотару чекає на наставника
+  description: До неї долітають бульбашки Утакати; сам він більше не повертається.
+- id: ep-s2-six-tails-extraction
+  arc_id: arc-s2-six-tails
+  continuity_id: main
+  title: Акацукі завершують вилучення Шестихвостого
+  description: Утаката гине після запечатування звіра.
+- id: ep-s2-jiraiya-news
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Фукасаку повідомляє про загибель Джираї
+  description: Наруто чує про смерть наставника; Цунаде отримує полоненого, тіло Шляху Пейна та шифр.
+- id: ep-s2-naruto-iruka-grief
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Ірука приходить до Наруто
+  description: Вночі Наруто плаче з морозивом у руці; Ірука нагадує, що Джирая пишався ним.
+- id: ep-s2-jiraiya-code
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Наруто впізнає знак у шифрі
+  description: Особливість почерку Джираї вказує на його книгу; команда читає сторінки й знаходить повідомлення,
+    що справжнього Пейна серед тіл немає.
+- id: ep-s2-pain-autopsy
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Коноха досліджує тіло Пейна
+  description: Чорні стрижні проводять чужу чакру; допит полоненого й розтин наближають шинобі до пояснення спільного
+    зору тіл.
+- id: ep-s2-myoboku-training
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Наруто починає сенджюцу
+  description: Фукасаку застосовує жаб’ячу олію й прибирає надлишок природної енергії палицею. Він тренується на
+    кам’яних шпилях та досягає Режиму Мудреця без олії.
+- id: ep-s2-sage-mode-clones
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Курама не дозволяє злиття з Фукасаку
+  description: Наруто шукає інший спосіб відновлювати природну енергію. Клони лишаються нерухомими для накопичення
+    сенджюцу; Наруто таємно вдосконалює Расенсюрикен.
+- id: ep-s2-taka-failed-eight-tails
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Акацукі виявляють підміну Бі
+  description: Замість джінчюрікі зі схопленого тіла лишається щупальце Ґюкі.
+- id: ep-s2-pain-enters-konoha
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Пейн проходить крізь захисний бар’єр
+  description: Одне тіло входить повітрям і викликає решту; Конан та Шляхи розподіляють пошук Наруто й руйнування.
+- id: ep-s2-konoha-hospital-defence
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Сакура рятує мешканців
+  description: Вона зупиняє викликаного звіра та організовує лікування поранених у лікарні.
+- id: ep-s2-tsunade-katsuyu-defence
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Цунаде наказує повернути Наруто
+  description: Вона відстоює рішення перед радниками та розсилає Кацую лікувати мешканців.
+- id: ep-s2-danzo-recall-blocked
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Данзо вбиває жабу-посланця
+  description: Він перекриває виклик Наруто й наказує Кореню залишатися під землею.
+- id: ep-s2-kakashi-iruka-pain
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Какаші рятує Іруку
+  description: Він зупиняє допит Шляхом Дева та вступає в бій із двома тілами Пейна.
+- id: ep-s2-kakashi-choza-pain
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Акімічі приходять на допомогу Какаші
+  description: Вони намагаються використати проміжок між поштовхами Пейна. Виснаживши чакру, Какаші помирає; Чоджі
+    доносить Цунаде дані про техніку.
+- id: ep-s2-konohamaru-rasengan-pain
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Конохамару прикриває Ебісу
+  description: Клон відволікає Шлях Нарака; Конохамару завдає удару Расенґаном.
+- id: ep-s2-pain-investigation-loss
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Шізуне розкриває спосіб керування Пейном
+  description: Шлях Людини витягає з неї відомості про Наруто й забирає її життя.
+- id: ep-s2-inuzuka-aburame-defence
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Інузука та Абураме захищають село
+  description: Кіба з матір’ю переслідують Шлях Прета; Шіно та клан Абураме атакують Конан.
+- id: ep-s2-pain-destroys-village
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Пейн застосовує великий Шінра Тенсей
+  description: Кацую закриває мешканців від удару; будівлі Конохи зносяться.
+- id: ep-s2-naruto-sage-arrival
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Наруто прибуває до зруйнованої Конохи
+  description: Шіма викликає його з жабами; він прикриває виснажену Цунаде й руйнує Шлях Асура.
+- id: ep-s2-naruto-pain-sage-fight
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Наруто кидає Расенсюрикен
+  description: Режим Мудреця дозволяє застосувати новий спосіб атаки; Шлях Людини гине. Запасні клони відновлюють
+    сенджюцу; жаби допомагають обійти спільний зір. Наруто використовує нерухомість під час захоплення. Фукасаку
+    гине, а Пейн починає розмову про біль і помсту.
+- id: ep-s2-hinata-confession
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Хіната виходить захищати Наруто
+  description: Вона освідчується й намагається звільнити його; Пейн відкидає та ранить її.
+- id: ep-s2-naruto-chibaku-tensei
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Чакра Курами прориває печать
+  description: Після поранення Хінати Наруто втрачає контроль. Кам’яна сфера затягує трансформованого Наруто; він
+    наближається до восьми хвостів.
+- id: ep-s2-minato-seal-appearance
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Чакра Мінато зупиняє зняття печаті
+  description: Наруто вперше дізнається, хто його батько. Він розповідає про чоловіка в масці та довіряє Наруто
+    знайти відповідь на ненависть.
+- id: ep-s2-deva-path-defeated
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Наруто використовує п’ятисекундну перерву
+  description: Він відволікає Пейна клонами та добиває Шлях Дева Расенґаном.
+- id: ep-s2-hinata-treatment
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Сакура лікує Хінату
+  description: Команда Ґая повертається з місії; Кацую передає наказ Наруто не переслідувати його.
+- id: ep-s2-naruto-nagato-talk
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Наруто знаходить Наґато
+  description: За чакрою чорного стрижня він виходить до сховища; Наґато розповідає про війну, Яхіко й Акацукі.
+    Він відповідає словами з книги Джираї та обіцяє шукати мир.
+- id: ep-s2-nagato-rinne-rebirth
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Наґато повертає загиблих Конохи
+  description: Рінне Тенсей забирає решту його життя; Конан виходить з Акацукі та віддає Наруто паперові квіти.
+- id: ep-s2-naruto-konoha-hero
+  arc_id: arc-s2-pain-invasion
+  continuity_id: main
+  title: Коноха зустрічає Наруто
+  description: Какаші підхоплює виснаженого учня; врятовані мешканці вшановують його.
+- id: ep-s2-reconstruction-waves
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Тадзуна й Інарі допомагають відбудові
+  description: Ямато створює будинки; майстри з Країни Хвиль беруться відновлювати Коноху та Ічіраку.
+- id: ep-s2-danzo-appointed
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Рада призначає Данзо кандидатом у Хокаґе
+  description: Через кому Цунаде розглядають Какаші, але Данзо переконує даймьо обрати його.
+- id: ep-s2-tsunade-care
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Учні доглядають Цунаде
+  description: Вони приносять їжу й ліки до намету, поки Цунаде залишається непритомною.
+- id: ep-s2-neji-tenten-supply
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Неджі й Тентен забирають спорядження
+  description: Відбудова потребує нової зброї; Тентен згадує свій попередній візит.
+- id: ep-s2-gaara-konoha-news
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Ґаара обговорює руйнування Конохи
+  description: Він переконує брата й сестру, що Наруто допоможе селу відновитися.
+- id: ep-s2-konohamaru-interviews
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Команда Конохамару збирає історії про Наруто
+  description: Неджі розповідає про порятунок Хінати під час першого іспиту.
+- id: ep-s2-condor-present
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Наруто знову наздоганяє Кондора
+  description: Страус розповідає пташенятам про давні сутички, але Наруто помічає його спробу втекти.
+- id: ep-s2-anko-kabuto-search
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сая відкликають із розвідки
+  description: Токума повідомляє Анко про руйнування Конохи та призначення Данзо; група продовжує шукати Кабуто.
+- id: ep-s2-samui-konoha
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Самуї передає лист Райкаґе
+  description: Данзо погоджується видати відомості про Саске й наказує його ліквідувати.
+- id: ep-s2-karui-naruto
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Каруї вимагає відомостей про Саске
+  description: Наруто говорить про живих полонених джінчюрікі й пропонує допомогу. Сай та Омой зупиняють побиття.
+- id: ep-s2-naruto-fourth-report
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Наруто розповідає про зустріч із Мінато
+  description: Какаші дізнається про чоловіка в масці; він погоджується супроводити Наруто до Райкаґе.
+- id: ep-s2-taka-summit-redirection
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Тобі направляє Така на раду Каґе
+  description: Зецу повідомляє про Данзо та поразку Пейна; Саске змінює маршрут.
+- id: ep-s2-kage-departures
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Каґе вирушають до Країни Заліза
+  description: Кожен бере двох охоронців; дороги різних сіл сходяться до саміту.
+- id: ep-s2-danzo-road-ambush
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: На Данзо нападає група Праджня
+  description: Він відкриває Шарінґан і знищує нападників Вітром.
+- id: ep-s2-naruto-summit-journey
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Какаші відволікає охорону Кореня
+  description: Ямато стежить за маршрутом Самуї; троє виходять з Конохи.
+- id: ep-s2-naruto-raikage-plea
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Наруто просить Райкаґе помилувати Саске
+  description: Райкаґе відмовляє та продовжує дорогу до ради.
+- id: ep-s2-sakura-sasuke-decision
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сай говорить із Сакурою про обіцянку Наруто
+  description: Шикамару повідомляє про рішення товаришів самостійно зупинити Саске.
+- id: ep-s2-sakura-iron-journey
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сакура вирушає до Наруто
+  description: Кіба веде групу за запахом; вони перетинають дорогу до Країни Заліза.
+- id: ep-s2-five-kage-debate
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: П’ятеро Каґе обговорюють Акацукі
+  description: Взаємні звинувачення переходять до пропозиції союзу. Данзо намагається вплинути на Міфуне; розмова
+    переривається повідомленням Зецу про Саске.
+- id: ep-s2-tobi-naruto-inn
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Тобі розповідає Наруто правду про Ітачі
+  description: Какаші та Ямато намагаються схопити його; Тобі говорить про вибір Саске й зникає.
+- id: ep-s2-sasuke-raikage
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Така проривається крізь самураїв
+  description: Райкаґе атакує Саске; Сусаноо й Аматерасу зупиняють його удари. Райкаґе відтинає обпечену руку; Ґаара
+    пробує переконати Саске відступити.
+- id: ep-s2-sasuke-summit-breach
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Саске руйнує перекриття й шукає Данзо
+  description: Мей розчиняє захист Сусаноо; Зецу передає Саске чакру. Він забирає Саске й Карін до свого простору.
+- id: ep-s2-war-declaration
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Тобі оголошує план Ока Місяця
+  description: Каґе відмовляються віддати Наруто та Бі; він оголошує війну. Райкаґе погоджуються поставити на чолі
+    спільних сил; Ґаара має сповістити Какаші.
+- id: ep-s2-sakura-confession-naruto
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сакура каже Наруто, що кохає його
+  description: Наруто відкидає її спробу зняти з нього обіцянку та підтверджує власне рішення повернути Саске.
+- id: ep-s2-bee-sabu-kisame
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Кісаме нападає на Бі біля Сабу
+  description: Самехада поглинає чакру; Кісаме зливається з мечем і затоплює місце бою.
+- id: ep-s2-bee-raikage-rescue
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Райкаґе знаходить Бі
+  description: Брати обезголовлюють підмінного Кісаме подвійним ударом; справжній Кісаме лишається всередині Самехади.
+- id: ep-s2-ao-fu-chase
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Фу перехоплює тіло Ао
+  description: Пастка загрожує Б’якуґану, але Мей знаходить охоронця й змушує Фу відступити.
+- id: ep-s2-naruto-sai-news
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сай викриває задум Сакури
+  description: Клон повідомляє про спробу самостійно вбити Саске; Ґаара розповідає про саміт. Звістки та тиск викликають
+    напад; Какаші вирушає зупинити Сакуру.
+- id: ep-s2-sasuke-danzo-duel
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Данзо застосовує Ідзанаґі
+  description: Очі на його руці одне за одним заплющуються після скасованих смертей. Данзо хапає її як заручницю;
+    Саске завдає удару обом. Він намагається забрати противників із собою та знищує око Шісуї.
+- id: ep-s2-sakura-sleep-bombs
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сакура присипляє супутників
+  description: Вона приховує від них намір і сама виходить до Саске.
+- id: ep-s2-team7-samurai-bridge
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сакура пропонує приєднатися до Саске
+  description: Саске вимагає вбити Карін і намагається вбити Сакуру; Какаші втручається. Він встигає перехопити
+    черговий удар та стикається із Саске. Він говорить, що в їхньому наступному зіткненні вони можуть загинути обидва;
+    Тобі забирає Саске.
+- id: ep-s2-karin-naruto-treatment
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Сакура лікує Карін і Наруто
+  description: Наруто отруює кунай Сакури; вона дає протиотруту, а Карін допомагає впізнати смерть Данзо.
+- id: ep-s2-itachi-eye-transplant
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Саске погоджується на очі Ітачі
+  description: Тобі готує пересадку; Саске відновлюється до відкриття Вічного Манґекьо.
+- id: ep-s2-alliance-ratified
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Даймьо затверджують спільне військо
+  description: Правителі П’яти Країн погоджують союз проти Акацукі.
+- id: ep-s2-summit-homeward
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Команди повертаються з Країни Заліза
+  description: Вони забирають приспаних товаришів та ведуть Карін до Конохи.
+- id: ep-s2-tsunade-awakens
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Цунаде прокидається
+  description: Підготовка призначення Какаші припиняється; Цунаде повертається до обов’язків.
+- id: ep-s2-karin-interrogation
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Карін передають розвідці
+  description: Какаші приводить її на допит після повернення з саміту.
+- id: ep-s2-naruto-friends-decision
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Наруто повідомляє рішення товаришам
+  description: Він просить залишити Саске йому та відмовляється пояснити весь зміст розмови.
+- id: ep-s2-naruto-seal-key
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Великий Мудрець дає пророцтво
+  description: Наруто має зустріти восьминога й битися з юнаком з особливими очима. Наруто приймає ключ та готується
+    опанувати чакру Курами.
+- id: ep-s2-kabuto-tobi-alliance
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Кабуто пропонує союз Тобі
+  description: Едо Тенсей і прихована труна змушують Тобі погодитися; Кабуто вимагає Саске після війни.
+- id: ep-s2-kage-hidden-jinchuriki
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Каґе вирішують сховати Наруто й Бі
+  description: Острів Черепахи визначають місцем їхнього захисту та тренування.
+- id: ep-s2-naruto-sea-departure
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Загін Наруто зупиняється в порту
+  description: Великий марлін не дозволяє суднам вийти в море. Після допомоги Юсуке виклик зникає, і корабель отримує
+    шлях.
+- id: ep-s2-benisu-herbs
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Наруто зустрічає загін лікарських трав
+  description: 'Сакура, Іно та Чоджі збирають запаси до війни; шинобі Бенісу оспорюють трави. Після сутички команди
+    розходяться: Наруто продовжує морську дорогу.'
+- id: ep-s2-ghost-ship
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Загін досліджує покинутий корабель
+  description: Краб захоплює Ямато; Наруто з Хішаку перемагають його. Дух хлопчика й загиблі моряки знаходять спокій,
+    корабель зникає.
+- id: ep-s2-battleship-island
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Пірати атакують корабель
+  description: Загін ховається в підземній гавані та виявляє цвинтар кораблів. Вони руйнують ворожий задум і відновлюють
+    плавання.
+- id: ep-s2-forgotten-island
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Птах викрадає Ґая
+  description: Загін знаходить його серед пташенят та виходить до покинутої лабораторії викликів. Аоба розкриває
+    загибель дослідників; дух Хоноки стримує звіра, Наруто відкидає його в лаву.
+- id: ep-s2-guy-lee-ocean-training
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Лі намагається повторити морське тренування
+  description: Спогад Ґая й рухи Лі на човні сходяться на воді; наставник рятує учня.
+- id: ep-s2-silence-route-supplies
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Корабель готується до двотижневого переходу
+  description: Наруто купує гриби; загін запасає воду та їжу перед безвітряним морем.
+- id: ep-s2-silence-mushrooms
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Гриби поглинають чакру й припаси
+  description: Ямато слабшає; Наруто та Ґай отруюються після спроби їх з’їсти. Ґаматацу приносить їжу Шіми; загін
+    затримує торговця та його спільників.
+- id: ep-s2-silence-route-end
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Загін завершує перехід
+  description: Корабель виходить із безвітряної ділянки; Ямато одужує, морська хвороба Ґая повертається.
+- id: ep-s2-clone-nightmare
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Наруто отримує сон виснаженого клона
+  description: Перевтомлений клон передає йому видіння бунту; після пробудження Наруто помічає межі навантаження.
+- id: ep-s2-mokuzu-whirlpool
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Шикамару розгадує замкнений маршрут
+  description: Погода й рифи повертають судно до того самого місця. Загін удає аварію й захоплює грабіжників, які
+    приходять до уламків.
+- id: ep-s2-naruto-imposter
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Загін зустрічає самозваного Наруто
+  description: Банна й Іґґі влаштовують показові перемоги, але привертають найманців. Іґґі не кидає товариша; загін
+    продовжує дорогу до Блискавки.
+- id: ep-s2-nadeshiko-arrival
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Токіва впізнає учня Джираї
+  description: Старий договір вимагає двобою Наруто з Шізукою; загін робить зупинку на ніч.
+- id: ep-s2-nadeshiko-duel
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Наруто зупиняє двобій без шлюбу
+  description: Він перехитрює Шізуку клоном і відмовляється примушувати її. Ворожі нитки захоплюють Шізуку; Наруто
+    звільняє її й повертається на корабель.
+- id: ep-s2-kakashi-voyage-sos
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Какаші прибуває на помилковий сигнал
+  description: Ґай вважає його самозванцем і нападає. Подробиця їхнього юнацтва зупиняє бій; він починає дорогу
+    назад до Конохи.
+- id: ep-s2-iwa-kiri-reconciliation
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Ґанрю атакує посланців Іви
+  description: Наруто й Чоджюро зупиняють сутичку; Наруто прикриває Ґанрю від Куруцучі. Посланці передають вибачення
+    та річ загиблого; Ґанрю здається.
+- id: ep-s2-lightning-final-ship
+  arc_id: arc-s2-sea-voyage
+  continuity_id: main
+  title: Загін переходить на судно до Блискавки
+  description: Остання частина морської дороги веде до захищеного острова.
+- id: ep-s2-kunoichi-evening
+  arc_id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Куноїчі збираються разом
+  description: Хіната після наради Хюґа зустрічає Куренай; розмова подруг переходить до мрій та Наруто.
+- id: ep-s2-konohamaru-temari
+  arc_id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Конохамару викликає Темарі
+  description: Він хоче довести готовність до війни; Шикамару зупиняє надто небезпечне зіткнення й пояснює, кого
+    треба захищати.
+- id: ep-s2-shino-talks-to-children
+  arc_id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Шіно розповідає дітям про товаришів
+  description: Питання про війну приводить до спогаду про місію Команди 8.
+- id: ep-s2-sai-day-off
+  arc_id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Сай малює на вихідному
+  description: Знайомство з дітьми нагадує йому товаришів; він створює малюнок своєї команди.
+- id: ep-s2-ino-shika-cho-children
+  arc_id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Команда 10 примирює дітей
+  description: Розмова про майбутню війну повертає трійцю до батьків і спадкоємності Іно–Шіка–Чо.
+- id: ep-s2-kiba-kakashi-training
+  arc_id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Кіба тренується проти нінкен Какаші
+  description: Він намагається наздогнати силу Наруто; Паккун і зграя загострюють його навички.
+- id: ep-s2-tenten-lee-training-present
+  arc_id: arc-s2-prewar-konoha
+  continuity_id: main
+  title: Тентен чекає Лі біля річки
+  description: Під час тренування він падає у воду; вона згадує, як обирала свій шлях зі зброєю.
+- id: ep-s2-island-arrival
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Наруто прибуває до Бі
+  description: Нова S-рангова місія приховує справжню мету захисту; Бі спершу відмовляється навчати його.
+- id: ep-s2-falls-of-truth
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Наруто зустрічає темного себе
+  description: Супротивники мають однакові можливості; Наруто не може перемогти прямим боєм.
+- id: ep-s2-motoi-bee-rescue
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Бі рятує Мотої від кальмара
+  description: Після розповіді про давню спробу вбивства Бі називає Мотої другом.
+- id: ep-s2-naruto-accepts-darkness
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Наруто приймає свого темного двійника
+  description: Подяка й обійми завершують внутрішній двобій; група переходить до храму.
+- id: ep-s2-kurama-chakra-duel
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Наруто відкриває печать і бореться з Курамою
+  description: Бі допомагає стримати лиса; Наруто застосовує сенджюцу, але ненависть Курами проривається. Вона стримує
+    Кураму ланцюгами; Наруто відділяє його чакру та замикає лиса.
+- id: ep-s2-kushina-chakra-story
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Наруто зустрічає чакру матері
+  description: Кушіна розповідає про Удзушіо, Мінато та ніч народження. Він дякує батькам за життя; її залишена
+    чакра зникає.
+- id: ep-s2-naruto-senses-kisame
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Наруто виявляє Кісаме в Самехаді
+  description: Режим чакри Дев’ятихвостого дозволяє відчути його ворожість; Кісаме тікає з розвідданими.
+- id: ep-s2-guy-kisame-island
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Ґай наздоганяє Кісаме
+  description: Сьомі ворота й Денний Тигр зупиняють водну атаку та спробу передати сувій.
+- id: ep-s2-kisame-suicide
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Кісаме перериває допит
+  description: Аоба входить у його спогади; Кісаме кусає язик, звільняється та наказує акулам з’їсти себе. Пастка
+    на сувої ув’язнює загін у воді, поки посланець тікає з координатами острова.
+- id: ep-s2-konan-tobi-battle
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Конан протистоїть Тобі
+  description: Озеро стає пасткою з вибухових міток; Ідзанаґі дозволяє Тобі пережити вибух. Він добуває місце могили
+    Наґато та забирає Ріннеґан.
+- id: ep-s2-tobi-new-rinnegan
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Тобі змінює маску й пересаджує Ріннеґан
+  description: Сувій Кісаме повідомляє координати острова; Кабуто пропонує піти за джінчюрікі.
+- id: ep-s2-naruto-animal-census
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Наруто обліковує тварин острова
+  description: Аоба підтримує прикриття S-рангової місії, приховуючи початок ворожих дій.
+- id: ep-s2-kabuto-deidara-island-raid
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Кабуто летить з оживленим Дейдарою
+  description: Онокі перехоплює їх; Манда II виявляє острів, а вибух перевертає черепаху.
+- id: ep-s2-yamato-abducted
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Кабуто захоплює Ямато
+  description: Ямато захищає острів, але Кабуто забирає його замість джінчюрікі; Наруто залишається всередині храму.
+- id: ep-s2-island-moved-to-kumo
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Онокі переносить черепаху до Кумо
+  description: Наруто продовжує тренуватися з Бі, не знаючи долі Ямато.
+- id: ep-s2-yamato-zetsu-experiments
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Кабуто використовує клітини Ямато
+  description: Тобі погоджується тримати його живим для посилення білих Зецу.
+- id: ep-s2-allied-army-assembly
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Спільне військо збирається в дивізії
+  description: Шинобі різних сіл отримують командирів та призначення перед виходом на фронт.
+- id: ep-s2-edo-army-revealed
+  arc_id: arc-s2-island
+  continuity_id: main
+  title: Кабуто показує військо Едо Тенсей
+  description: Оживлені Каґе, джінчюрікі, мечники та загиблі шинобі стають основою наступу; підготовка завершується.
+- id: ep-s2-sakura-tsunade-apprenticeship
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Цунаде навчає Сакуру медицині
+  description: Сакура опановує контроль чакри, лікування та накопичення чакри в майбутній печаті.
+- id: ep-s2-ino-medical-apprenticeship
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Іно починає вивчати медичні техніки
+  description: Вона вчиться поряд із Сакурою й шукає застосування здібностей Яманака в лікуванні.
+- id: ep-s2-jiraiya-genjutsu-training
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Джирая вчить Наруто виходити з ґенджюцу
+  description: Наруто тренується зупиняти й перезапускати чакру; дорога приводить їх до села з примарним деревом.
+- id: ep-s2-genjutsu-tree-infiltration
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Наруто проникає до Кандачі
+  description: Під виглядом Танiші він приводить зв’язаного Джираю, щоб дістатися заручників.
+- id: ep-s2-genjutsu-tree-freed
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Джирая визволяє заручників
+  description: Кандачі викликає Царя Мушель; Наруто перемагає його Великим Расенґаном. Ілюзія зникає; Наруто й Джирая
+    продовжують тренувальну подорож.
+- id: ep-s2-four-tails-jiraiya-injury
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Послаблена печать відкриває чотири хвости
+  description: Наруто втрачає контроль і тяжко ранить Джираю; після цього наставник шукає способи зупиняти трансформацію.
+- id: ep-s2-gaara-becomes-kazekage
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Ґаара обіймає посаду Кадзекаґе
+  description: Своєю працею він здобуває довіру Суни; після призначення підтримує зв’язок із Конохою.
+- id: ep-s2-exam-cohost-plan
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Цунаде й Ґаара планують спільний іспит
+  description: Перший етап має відбутися в Конохі, другий — у Суні; обоє прагнуть виявити загрози селам.
+- id: ep-s2-kakashi-ame-invitation
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Какаші передає запрошення Аме
+  description: Конан видає себе за Ханзо, який уже загинув; Пейн вирішує послати свої команди на іспит.
+- id: ep-s2-second-exam-arrivals
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Команди збираються на новий іспит
+  description: Через відсутність Шикамару Сакура приєднується до Іно й Чоджі; Наруто лишається з Джираєю.
+- id: ep-s2-second-exam-written
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Шикамару розділяє учасників по кімнатах
+  description: Команда має узгодити суму балів; Неджі знаходить спосіб передавати відповіді стуком. Шикамару перевіряє
+    рішення щодо жертви товариша; після завершення учасники отримують маршрут до Суни.
+- id: ep-s2-second-exam-race
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Геніни вирушають до Суни
+  description: Темарі оголошує обмеження часу; дорога займає щонайменше три доби.
+- id: ep-s2-gaara-assassination-attempt
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Канкуро перехоплює вбивцю
+  description: Нападник намагається підірвати себе; Темарі рятує брата, Ґаара відмовляється ховатися.
+- id: ep-s2-demon-desert-start
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Команда Ґая зустрічає Шіру
+  description: Шіра допомагає іншим командам Суни; Лі просить про чесний двобій. Шіра блокує тенкецу Лі, але він
+    знаходить спосіб продовжити бій; суперники визнають силу один одного.
+- id: ep-s2-team8-scroll-pursuit
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Команда Кадзамi краде сувій
+  description: Запахові пастки та ілюзії затримують Команду 8. Комахи, Б’якуґан та нюх приводять її до перемоги.
+- id: ep-s2-tenten-ajisai-ruins
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Тентен і Аджісай падають під землю
+  description: Вони змушені співпрацювати, щоб подолати пастки та гігантських мурах. Подруги з двох команд знаходять
+    спосіб звільнитися.
+- id: ep-s2-tenten-ajisai-rescue
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Команди витягають товаришок
+  description: Після спільної допомоги вони відмовляються продовжувати бій та обіцяють зустрітися на наступному
+    етапі.
+- id: ep-s2-ino-ameno
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Іно координує команду через свідомість
+  description: Бій біля оази випробовує медичні навички Сакури й техніки Яманака. Після лікування вони розходяться
+    з обома потрібними сувоями.
+- id: ep-s2-sakura-saya-puppet
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Сая захоплює рухи Іно й Чоджі
+  description: Сакура слабшає через накопичення чакри для печаті, але продовжує захищати команду. Вона розбиває
+    ворогів і витягає отруту з товаришів.
+- id: ep-s2-suigetsu-karin-training
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Орочімару випробовує Суйґецу й Карін
+  description: Карін зупиняє втечу Суйґецу своїми чакровими ланцюгами.
+- id: ep-s2-gaara-fu-hoichi
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Ґаара рятує учасників під час бурі
+  description: Фу допомагає Мацурі; Хоічі починає витягати чакру хвостатих із Ґаари та Фу.
+- id: ep-s2-neji-saves-jinchuriki
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Неджі обирає порятунок замість завершення іспиту
+  description: Б’якуґан показує канали витягання чакри; М’який Кулак розриває техніку. Наставники прибувають після
+    завершення небезпеки.
+- id: ep-s2-second-exam-promotions
+  arc_id: arc-s2-timeskip
+  continuity_id: main
+  title: Цунаде підвищує учасників за звітами
+  description: Після скасування третього етапу трійці стають чюнінами; Неджі отримує звання джоніна.
+- id: ep-s2-hiruzen-bell-test
+  arc_id: arc-s2-history-hiruzen-bell-test
+  continuity_id: main
+  title: Хірудзен випробовує майбутніх Саннінів
+  description: Цунаде й Орочімару забирають дзвіночки; Джирая лишається прив’язаним до стовпа та бачить виклик Енми.
+- id: ep-s2-jiraiya-first-myoboku
+  arc_id: arc-s2-history-jiraiya-first-myoboku
+  continuity_id: main
+  title: Джирая потрапляє до Мьобоку
+  description: Невдалий виклик приводить його до жаб; він починає навчання й чує пророцтво про свого учня.
+- id: ep-s2-orochimaru-white-skin
+  arc_id: arc-s2-history-orochimaru-white-skin
+  continuity_id: main
+  title: Орочімару знаходить шкіру білої змії
+  description: Біля могили батьків Хірудзен говорить із ним про відновлення життя.
+- id: ep-s2-nawaki-death
+  arc_id: arc-s2-history-nawaki-death
+  continuity_id: main
+  title: Навакі гине під час війни
+  description: Орочімару бачить наслідки вибухової пастки; Цунаде втрачає брата.
+- id: ep-s2-dan-death
+  arc_id: arc-s2-history-dan-death
+  continuity_id: main
+  title: Цунаде не може врятувати Дана
+  description: Його рана призводить до смертельної втрати крові, попри її лікування.
+- id: ep-s2-sannin-hanzo
+  arc_id: arc-s2-history-sannin-hanzo
+  continuity_id: main
+  title: Ханзо називає трійцю Саннінами
+  description: Виснажені шинобі виживають після бою з ним і отримують нове ім’я.
+- id: ep-s2-nagato-parents-killed
+  arc_id: arc-s2-history-nagato-parents-killed
+  continuity_id: main
+  title: Шинобі Конохи вбивають батьків Наґато
+  description: Війна приводить чужих шинобі до його дому; Ріннеґан зупиняє нападників.
+- id: ep-s2-ame-orphans-meet
+  arc_id: arc-s2-history-ame-orphans-meet
+  continuity_id: main
+  title: Наґато знаходить Яхіко та Конан
+  description: Діти разом шукають їжу; Чібі гине під час вибуху, вони продовжують дорогу.
+- id: ep-s2-jiraiya-adopts-orphans
+  arc_id: arc-s2-history-jiraiya-adopts-orphans
+  continuity_id: main
+  title: Джирая лишається з дітьми Аме
+  description: Після зустрічі із Саннінами він погоджується захищати та вчити їх.
+- id: ep-s2-nagato-protects-yahiko
+  arc_id: arc-s2-history-nagato-protects-yahiko
+  continuity_id: main
+  title: Наґато захищає Яхіко від шинобі Іви
+  description: Після загибелі нападника Джирая пояснює йому відповідальність за свою силу.
+- id: ep-s2-jiraiya-leaves-orphans
+  arc_id: arc-s2-history-jiraiya-leaves-orphans
+  continuity_id: main
+  title: Учні перемагають клона Джираї
+  description: Після трьох років навчання наставник залишає їх; перевернуті дощечки позначають вихід із дому.
+- id: ep-s2-tsunade-raikage-treatment
+  arc_id: arc-s2-history-tsunade-raikage-treatment
+  continuity_id: main
+  title: Райкаґе просить Цунаде врятувати підлеглого
+  description: Вона ставить умову двобою; Шізуне бере участь у лікуванні вибухового паразита.
+- id: ep-s2-sakumo-disgrace
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Сакумо повертається після зірваної місії
+  description: Він обрав життя товаришів; осуд села та врятованих шинобі передує його самогубству.
+- id: ep-s2-kakashi-childhood-dinner
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Какаші запрошує Рін та Обіто на рибу
+  description: Після Академії він помічає, що вони стежать за його тренуванням, і кличе їх до столу.
+- id: ep-s2-guy-duy-childhood
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Ґай тренується з батьком
+  description: Дай підтримує його попри насмішки; Какаші стає суперником Ґая.
+- id: ep-s2-team-minato-formation
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Мінато приймає Какаші, Обіто та Рін
+  description: Спільне випробування відкриває суперечності правил і товаришів; трійця починає місії.
+- id: ep-s2-team-minato-exams
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Команда Мінато проходить ранні іспити
+  description: Обіто змагається з Ґаєм; Какаші раніше товаришів отримує підвищення.
+- id: ep-s2-kannabi-mission
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Какаші отримує першу місію як джонін
+  description: Мінато відділяється для іншої ділянки фронту; трійця має зруйнувати міст Каннабi. Мінато рятує його
+    та попереджає про небезпеку прямої атаки.
+- id: ep-s2-rin-abducted-kannabi
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Шинобі Іви забирають Рін
+  description: Обіто вирішує рятувати її всупереч наказу; Какаші повертається допомогти.
+- id: ep-s2-obito-eye-gift
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Какаші втрачає око, Обіто відкриває Шарінґан
+  description: Вони визволяють Рін, але обвал придавлює Обіто. Рін виконує пересадку; Какаші застосовує Чідорі з
+    Шарінґаном.
+- id: ep-s2-kannabi-team-rescued
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Мінато знаходить уцілілих учнів
+  description: Какаші й Рін залишають завал; команда завершує знищення мосту.
+- id: ep-s2-madara-saves-obito
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Мадара витягає Обіто з-під каміння
+  description: Клітини Хашірами замінюють зруйновану частину тіла; Обіто починає тривале відновлення.
+- id: ep-s2-obito-rehabilitation
+  arc_id: arc-s2-kakashi-history-third-shinobi-war
+  continuity_id: main
+  title: Обіто звикає до нового тіла
+  description: Він тренується, плануючи повернутися до Рін і Какаші.
+- id: ep-s2-rin-three-tails
+  arc_id: arc-s2-kakashi-history-fourth-hokage
+  continuity_id: main
+  title: Рін стає пасткою для Конохи
+  description: Шинобі Кірі поміщають у неї Ісобу; Рін підставляється під Чідорі Какаші. Манґекьо пробуджується в
+    обох очах; Обіто вбиває переслідувачів Кірі.
+- id: ep-s2-obito-accepts-madara
+  arc_id: arc-s2-kakashi-history-fourth-hokage
+  continuity_id: main
+  title: Обіто повертається до Мадари
+  description: Він приймає план світу снів; Мадара передає знання й від’єднується від статуї.
+- id: ep-s2-minato-fourth-appointed
+  arc_id: arc-s2-kakashi-history-fourth-hokage
+  continuity_id: main
+  title: Мінато стає Четвертим Хокаґе
+  description: Хірудзен підтримує його кандидатуру; Данзо та Орочімару не отримують бажаного призначення.
+- id: ep-s2-kakashi-anbu-appointed
+  arc_id: arc-s2-kakashi-history-fourth-hokage
+  continuity_id: main
+  title: Мінато переводить Какаші до АНБУ
+  description: Ґай рятує його під час місії; Мінато обирає службу під власним командуванням.
+- id: ep-s2-kakashi-guards-kushina
+  arc_id: arc-s2-kakashi-history-post-nine-tails
+  continuity_id: main
+  title: Какаші охороняє вагітну Кушіну
+  description: Мінато призначає захист через особливий стан печаті джінчюрікі.
+- id: ep-s2-kakashi-kinoe-first-meeting
+  arc_id: arc-s2-kakashi-history-post-nine-tails
+  continuity_id: main
+  title: Какаші зустрічає Кіное
+  description: Данзо пропонує йому Корінь; Какаші бачить шинобі з Деревною стихією.
+- id: ep-s2-hiruzen-assassination-stopped
+  arc_id: arc-s2-kakashi-history-post-nine-tails
+  continuity_id: main
+  title: Какаші перешкоджає вбивству Хірудзена
+  description: Він попереджає Хокаґе про задум Данзо та звільняє Кіное після сутички.
+- id: ep-s2-orochimaru-defects
+  arc_id: arc-s2-kakashi-history-post-nine-tails
+  continuity_id: main
+  title: Хірудзен знаходить досліди Орочімару
+  description: Орочімару тікає; Какаші не може зупинити його на шляху до кордону.
+- id: ep-s2-iburi-kinoe-yukimi
+  arc_id: arc-s2-kakashi-history-post-nine-tails
+  continuity_id: main
+  title: Кіное зустрічає Юкімі
+  description: Вона приймає його за брата Тензо; Какаші потрапляє до сховища Ібурi. Вони виходять до міста; Ґотта
+    гине від нестабільності димного тіла.
+- id: ep-s2-iburi-orochimaru-escape
+  arc_id: arc-s2-kakashi-history-post-nine-tails
+  continuity_id: main
+  title: Орочімару вбиває Ібурi заради крові
+  description: Какаші й Кіное відбивають напад; Деревна стихія та залишки клану рятують Юкімі.
+- id: ep-s2-kinoe-sharingan-order
+  arc_id: arc-s2-kakashi-history-uchiha-crisis
+  continuity_id: main
+  title: Кіное отримує наказ забрати Шарінґан
+  description: Бій із Какаші завершується відмовою від наказу; Какаші рятує його від змії, а Кіное лікує Какаші.
+- id: ep-s2-tenzo-joins-anbu
+  arc_id: arc-s2-kakashi-history-uchiha-crisis
+  continuity_id: main
+  title: Хірудзен переводить Кіное до своїх АНБУ
+  description: Какаші вириває його з-під покарання Данзо; наступного дня він приймає ім’я Тензо.
+- id: ep-s2-itachi-kakashi-anbu
+  arc_id: arc-s2-kakashi-history-uchiha-crisis
+  continuity_id: main
+  title: Ітачі вступає до АНБУ
+  description: Какаші знайомиться з молодим Учіха; служба проходить під тиском сільської та кланової політики.
+- id: ep-s2-kakashi-leaves-anbu
+  arc_id: arc-s2-history-kakashi-leaves-anbu
+  continuity_id: main
+  title: Хірудзен робить Какаші наставником генінів
+  description: Після трагедії Учіха він завершує службу в АНБУ; перші трійці провалюють його тест.
+- id: ep-s2-kakashi-previous-students
+  arc_id: arc-s2-history-kakashi-previous-students
+  continuity_id: main
+  title: Колишні кандидати дякують Какаші
+  description: Попри провал тесту вони засвоїли цінність товаришів; новою трійцею для нього призначають Команду
+    7.
+- id: ep-s2-kushina-konoha-arrival
+  arc_id: arc-s2-nine-tails-history-first-postwar-peace
+  continuity_id: main
+  title: Кушіна переходить до Академії Конохи
+  description: Вона оголошує мрію стати Хокаґе; насмішки через червоне волосся спричиняють її бійки.
+- id: ep-s2-minato-rescues-kushina
+  arc_id: arc-s2-nine-tails-history-second-shinobi-war
+  continuity_id: main
+  title: Мінато знаходить викрадену Кушіну
+  description: Вона залишає пасма червоного волосся; Мінато наздоганяє викрадачів і повертає її до села.
+- id: ep-s2-kushina-mito
+  arc_id: arc-s2-nine-tails-history-first-postwar-peace
+  continuity_id: main
+  title: Міто готує Кушіну до ролі джінчюрікі
+  description: Любов та зв’язки з людьми мають заповнити її життя перед отриманням Курами.
+- id: ep-s2-naruto-name-chosen
+  arc_id: arc-s2-nine-tails-history-post-nine-tails
+  continuity_id: main
+  title: Мінато й Кушіна обирають ім’я Наруто
+  description: Книга Джираї дає ім’я майбутньому синові; наставник приймає роль хрещеного.
+- id: ep-s2-naruto-birth
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Кушіна народжує Наруто
+  description: Мінато підтримує печать, поки Бівако й Таджі допомагають пологам.
+- id: ep-s2-masked-man-birth-attack
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Чоловік у масці вбиває охорону й повитух
+  description: Він бере немовля та прикріплює вибухові мітки; Мінато рятує Наруто й залишає місце пологів.
+- id: ep-s2-kurama-extracted
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Обіто витягає Кураму з Кушіни
+  description: Шарінґан підкорює лиса; Мінато рятує Кушіну від смертельного удару.
+- id: ep-s2-minato-safehouse
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Мінато ховає дружину й дитину
+  description: Він залишає їх у безпечному домі та виходить захищати село.
+- id: ep-s2-kurama-konoha-assault
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Курама атакує Коноху
+  description: Хірудзен із Енмою та шинобі відтісняють лиса. Іруку відводять від бою; молодим шинобі не дозволяють
+    наближатися до звіра.
+- id: ep-s2-minato-obito-duel
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Мінато використовує момент матеріалізації Обіто
+  description: Летючий Бог Грому та Расенґан ранять чоловіка в масці. Обіто втрачає контроль над лисом і відступає.
+- id: ep-s2-parents-sacrifice
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Мінато переносить Кураму з села
+  description: Кушіна стримує лиса ланцюгами; Мінато готує Печать Бога Смерті. Курама пронизує їх; вони залишають
+    дитині останні слова. Чакра батьків залишається в печаті; Мінато та Кушіна помирають.
+- id: ep-s2-itachi-nine-tails-night
+  arc_id: arc-s2-nine-tails-history-nine-tails-crisis
+  continuity_id: main
+  title: Ітачі захищає Саске та Ідзумі
+  description: Під час нападу він веде дітей до сховища.
+- id: ep-s2-uchiha-relocated
+  arc_id: arc-s2-nine-tails-history-post-nine-tails
+  continuity_id: main
+  title: Учіха переселяють на околицю
+  description: Після нападу підозри щодо Шарінґана приводять до нагляду за кланом і нового поселення.
+- id: ep-s2-itachi-war-child
+  arc_id: arc-s2-uchiha-history-third-shinobi-war
+  continuity_id: main
+  title: Малий Ітачі бачить наслідки війни
+  description: Фуґаку веде його серед загиблих; Орочімару говорить із ним про життя та смерть.
+- id: ep-s2-itachi-academy
+  arc_id: arc-s2-uchiha-history-post-nine-tails
+  continuity_id: main
+  title: Ітачі навчається в Академії
+  description: Він опановує Вогняну кулю, перевершує старших учнів і навчається з Шісуї, залишаючи клона в класі.
+- id: ep-s2-itachi-team2-cat
+  arc_id: arc-s2-uchiha-history-post-nine-tails
+  continuity_id: main
+  title: Команда Ітачі ловить ніндзя-кота
+  description: Тенма хоче отримати вуса для ліків батькові; Ітачі завершує завдання та рятує товариша.
+- id: ep-s2-itachi-tenma-death
+  arc_id: arc-s2-uchiha-history-post-nine-tails
+  continuity_id: main
+  title: Чоловік у масці вбиває Тенму
+  description: Втрачений товариш стає причиною пробудження Шарінґана Ітачі.
+- id: ep-s2-itachi-shisui-root-clash
+  arc_id: arc-s2-uchiha-history-post-nine-tails
+  continuity_id: main
+  title: Ітачі й Шісуї зупиняють напад Кореня
+  description: Під час навчального стеження вони бачать боротьбу за сувій та захищають пораненого АНБУ.
+- id: ep-s2-uchiha-coup-preparation
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Фуґаку доручає Ітачі стежити за селом
+  description: Під час кланових зборів обговорюють переворот; Ітачі стає подвійним агентом.
+- id: ep-s2-shisui-danzo-eye
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Данзо забирає око Шісуї
+  description: Спроба зупинити переворот Котоамацукамі зривається через втручання Данзо.
+- id: ep-s2-shisui-last-eye
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Шісуї передає друге око Ітачі
+  description: Він довіряє другові захист села та стрибає зі скелі; Ітачі відкриває Манґекьо.
+- id: ep-s2-itachi-police-confrontation
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Поліція звинувачує Ітачі в смерті Шісуї
+  description: Ітачі б’ється з обвинувачами; голос Саске зупиняє сутичку.
+- id: ep-s2-danzo-itachi-ultimatum
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Данзо ставить Ітачі перед вибором
+  description: Він пропонує врятувати Саске в обмін на знищення клану; мирні спроби Хірудзена не зупиняють кризу.
+- id: ep-s2-itachi-obito-agreement
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Ітачі домовляється з Обіто
+  description: Він просить допомогти знищити клан і не чіпати село та Саске.
+- id: ep-s2-uchiha-massacre
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Ітачі та Обіто винищують Учіха
+  description: Фуґаку й Мікото не чинять опору синові; Ітачі залишає Саске живим. Він показує братові загибель родини
+    та наказує зростити ненависть; згодом Саске згадує сльози Ітачі.
+- id: ep-s2-itachi-hiruzen-request
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Ітачі просить захистити Саске
+  description: Хірудзен залишає йому доступ через бар’єр Конохи; Ітачі йде з села.
+- id: ep-s2-itachi-juzo-partnership
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Ітачі працює з Джюдзо
+  description: Вони виконують завдання Акацукі та узгоджують правила дій у разі полону.
+- id: ep-s2-juzo-yagura-death
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Яґура переслідує Ітачі й Джюдзо
+  description: Джюдзо прикриває напарника від Бомби хвостатого та гине; Ітачі застосовує Аматерасу.
+- id: ep-s2-orochimaru-itachi-defeat
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Орочімару намагається забрати тіло Ітачі
+  description: Шарінґан перемагає його; Орочімару залишає Акацукі.
+- id: ep-s2-deidara-recruited
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Ітачі змушує Дейдару вступити до Акацукі
+  description: Ґенджюцу обертає вибухову глину проти нього; Сасорі стає його напарником.
+- id: ep-s2-akatsuki-orochimaru-hunt
+  arc_id: arc-s2-uchiha-history-pre-naruto
+  continuity_id: main
+  title: Сасорі й Дейдара шукають Орочімару
+  description: Маріонетка Третього Кадзекаґе зустрічає його оживлену версію; Орочімару тікає з підірваного сховища.
+- id: ep-s2-hidan-recruited
+  arc_id: arc-s2-uchiha-history
+  continuity_id: main
+  title: Акацукі перевіряють безсмертя Хідана
+  description: Хідан руйнує одне серце Какудзу; його приймають до організації й призначають напарником Какудзу.
+- id: ep-s2-gaara-birth
+  arc_id: arc-s2-history-gaara-birth
+  continuity_id: main
+  title: У Ґаарі запечатують Шукаку
+  description: Карура помирає після пологів; її захист залишається в піску сина.
+- id: ep-s2-gaara-yashamaru-test
+  arc_id: arc-s2-history-gaara-yashamaru-test
+  continuity_id: main
+  title: Раса наказує випробувати Ґаару
+  description: Яшамару нападає на нього та бреше про ненависть матері; напад руйнує довіру Ґаари до людей.
+- id: ep-s2-gaara-siblings-sandbox
+  arc_id: arc-s2-history-gaara-siblings-sandbox
+  continuity_id: main
+  title: Діти Суни граються з піском
+  description: Ґаара створює фігури, але батько відводить від нього старших дітей; Яшамару відповідає на його запитання.
+- id: ep-s2-naruto-hiruzen-campfire
+  arc_id: arc-s2-history-naruto-hiruzen-campfire
+  continuity_id: main
+  title: Наруто ділиться рибою з Хірудзеном
+  description: Голодний хлопчик сам збирає їжу; нічна розмова розширює його уявлення про світ.
+- id: ep-s2-hinata-naruto-bullies
+  arc_id: arc-s2-history-hinata-naruto-bullies
+  continuity_id: main
+  title: Наруто захищає Хінату від хлопців
+  description: Наруто стає перед кривдниками й зазнає їхніх ударів; Хіната запам’ятовує його допомогу.
+- id: ep-s2-hizashi-neji-childhood
+  arc_id: arc-s2-history-hizashi-neji-childhood
+  continuity_id: main
+  title: Хізаші пояснює Неджі роль побічної гілки
+  description: Тренування й знайомство з молодшою кузиною передують смерті батька.
+- id: ep-s2-hinata-after-hizashi-funeral
+  arc_id: arc-s2-history-hinata-after-hizashi-funeral
+  continuity_id: main
+  title: Наруто проводжає Хінату додому
+  description: Після похорону Хізаші вона відходить від рідних; Хіаші забирає її на навчання.
+- id: ep-s2-naruto-parents-question
+  arc_id: arc-s2-history-naruto-parents-question
+  continuity_id: main
+  title: Наруто питає про своїх батьків
+  description: Хірудзен приносить гроші, але відмовляється розповісти хлопчикові, хто вони були.
+- id: ep-s2-iruka-first-class
+  arc_id: arc-s2-history-iruka-first-class
+  continuity_id: main
+  title: Ірука стає наставником Наруто
+  description: Витівки учня стикаються з особистим болем Іруки після нападу Курами; Хірудзен переконує його побачити
+    дитину.
+- id: ep-s2-iruka-mask-and-spies
+  arc_id: arc-s2-history-iruka-mask-and-spies
+  continuity_id: main
+  title: Наруто йде по трофей ворожого шинобі
+  description: Обіцянка однокласників дружити з ним приводить до пастки; Ірука та Какаші захищають Наруто від шпигунів.
+- id: ep-s2-academy-naruto-sasuke-spar
+  arc_id: arc-s2-history-academy-naruto-sasuke-spar
+  continuity_id: main
+  title: Наруто й Саске відмовляються від знака примирення
+  description: Після спарингу їхня суперечка триває; кожен бачить самотність іншого.
+- id: ep-s2-itachi-sasuke-weekend
+  arc_id: arc-s2-history-itachi-sasuke-weekend
+  continuity_id: main
+  title: Ітачі навчає Саске метати кунай
+  description: За відсутності батьків він готує вечерю, і брати засинають надворі.
+- id: ep-s2-sakura-ino-ribbon
+  arc_id: arc-s2-history-sakura-ino-ribbon
+  continuity_id: main
+  title: Іно дарує Сакурі стрічку
+  description: Вона допомагає їй перестати ховати чоло; подруги збирають квіти та відкривають власне сховище.
+- id: ep-s2-academy-ino-shika-cho
+  arc_id: arc-s2-history-academy-ino-shika-cho
+  continuity_id: main
+  title: Ірука відправляє трійцю до коридору
+  description: Витівки під час уроку зближують Наруто, Шикамару й Чоджі.
+- id: ep-s2-torune-saves-shino
+  arc_id: arc-s2-history-torune-saves-shino
+  continuity_id: main
+  title: Торуне погоджується вступити до Кореня
+  description: Він займає місце Шіно після життя під опікою Шібі; згодом товаришує з Фу.
+- id: ep-s2-yota-children-meeting
+  arc_id: arc-s2-history-yota-children-meeting
+  continuity_id: main
+  title: Діти знайомляться з Йотою
+  description: Погода змінюється від його переживань; Наруто навчає його свистіти. Діти проникають визволити його;
+    Йота зупиняє охоронців блискавкою.
+- id: ep-s2-yota-river-memory-erasure
+  arc_id: arc-s2-history-yota-river-memory-erasure
+  continuity_id: main
+  title: Йота рятує Наруто з річки
+  description: Після небезпеки він стирає спогади дітей; його минула смерть та оживлення Орочімару пояснюються пізніше.
+- id: ep-s2-small-akatsuki-founded
+  arc_id: arc-s2-history-small-akatsuki-founded
+  continuity_id: main
+  title: Яхіко називає загін Акацукі
+  description: Група допомагає мешканцям Аме та шукає розв’язання конфліктів переговорами.
+- id: ep-s2-obito-approaches-nagato
+  arc_id: arc-s2-history-obito-approaches-nagato
+  continuity_id: main
+  title: Обіто пропонує Наґато співпрацю
+  description: Яхіко відмовляється від його допомоги; Обіто обіцяє повертатися.
+- id: ep-s2-danzo-akatsuki-false-flag
+  arc_id: arc-s2-history-danzo-akatsuki-false-flag
+  continuity_id: main
+  title: Корінь нападає під виглядом Іви
+  description: Наґато захищає товаришів статуєю; Данзо використовує напад, щоб налаштувати Ханзо проти Акацукі.
+- id: ep-s2-hanzo-konan-hostage
+  arc_id: arc-s2-history-hanzo-konan-hostage
+  continuity_id: main
+  title: Ханзо заманює Акацукі на переговори
+  description: Конан захоплюють; він вимагає, щоб Наґато вбив Яхіко. Він віддає життя, щоб Наґато не мусив обирати
+    між друзями.
+- id: ep-s2-nagato-gedo-retaliation
+  arc_id: arc-s2-history-nagato-gedo-retaliation
+  continuity_id: main
+  title: Наґато викликає Ґедо Мазо
+  description: Статуя поглинає душі нападників; чакроприймачі виснажують тіло Наґато.
+- id: ep-s2-obito-kills-early-akatsuki
+  arc_id: arc-s2-history-obito-kills-early-akatsuki
+  continuity_id: main
+  title: Обіто перехоплює підкріплення Акацукі
+  description: Товариші Яхіко намагаються дістатися пастки, але не можуть пройти.
+- id: ep-s2-pain-overthrows-hanzo
+  arc_id: arc-s2-history-pain-overthrows-hanzo
+  continuity_id: main
+  title: Пейн убиває Ханзо
+  description: Він знищує його прибічників та бере Аме під свій контроль.
+- id: ep-s2-sasori-parents-loss
+  arc_id: arc-s2-history-sasori-parents-loss
+  continuity_id: main
+  title: Сасорі чекає на загиблих батьків
+  description: Чіо навчає його маріонеток; він створює батька й матір, але не отримує їхнього тепла.
+- id: ep-s2-sasori-third-kazekage
+  arc_id: arc-s2-history-sasori-third-kazekage
+  continuity_id: main
+  title: Сасорі вбиває Третього Кадзекаґе
+  description: Він робить з його тіла людську маріонетку та зберігає Залізний Пісок.
+- id: ep-s2-kisame-cipher-mission
+  arc_id: arc-s2-history-kisame-cipher-mission
+  continuity_id: main
+  title: Кісаме вбиває власних шифрувальників
+  description: Під загрозою витоку він виконує наказ знищити носіїв відомостей.
+- id: ep-s2-kisame-fuguki-death
+  arc_id: arc-s2-history-kisame-fuguki-death
+  continuity_id: main
+  title: Кісаме вбиває Фуґукі
+  description: Викритий витік від командира руйнує його довіру; він отримує Самехаду.
+- id: ep-s2-kisame-meets-masked-ruler
+  arc_id: arc-s2-history-kisame-meets-masked-ruler
+  continuity_id: main
+  title: Кісаме бачить керування Яґурою
+  description: Чоловік у масці показує йому приховану владу над Мідзукаґе та план світу без брехні.
+- id: ep-s2-bee-chosen-as-brother
+  arc_id: arc-s2-history-bee-chosen-as-brother
+  continuity_id: main
+  title: Бі обирають напарником А
+  description: Вони узгоджують силу подвійного удару та стають названими братами.
+- id: ep-s2-blue-b-extraction
+  arc_id: arc-s2-history-blue-b-extraction
+  continuity_id: main
+  title: Орочімару провокує вихід Ґюкі
+  description: Експеримент над попереднім джінчюрікі спричиняє його смерть і напад Восьмихвостого; батько Мотої
+    гине.
+- id: ep-s2-motoi-attacks-bee
+  arc_id: arc-s2-history-motoi-attacks-bee
+  continuity_id: main
+  title: Мотої намагається вбити Бі
+  description: Він переносить провину за загибель батька на нового джінчюрікі; Бі продовжує усміхатися попри цькування.
+- id: ep-s2-minato-ab-clash
+  arc_id: arc-s2-history-minato-ab-clash
+  continuity_id: main
+  title: Мінато протистоїть А та Бі
+  description: Летючий Бог Грому обходить атаку Райкаґе; Бі прикриває брата щупальцем, після чого обидві сторони
+    стримують останній удар.
+- id: ep-s2-hanzo-mifune-first-duel
+  arc_id: arc-s2-history-hanzo-mifune-first-duel
+  continuity_id: main
+  title: Ханзо щадить Міфуне
+  description: Самурай залишається прикривати товаришів; Ханзо дає йому протиотруту після двобою.
+- id: ep-s2-pakura-sacrificed
+  arc_id: arc-s2-history-pakura-sacrificed
+  continuity_id: main
+  title: Суна видає Пакуру заради перемир’я
+  description: Шинобі Кірі вбивають її під виглядом зустрічі; Суна поширює іншу причину загибелі.
+- id: ep-s2-kabuto-orphanage
+  arc_id: arc-s2-history-kabuto-orphanage
+  continuity_id: main
+  title: Нонo знаходить дитину без пам’яті
+  description: Вона дає Кабуто ім’я та окуляри; він навчається лікувати.
+- id: ep-s2-kabuto-root-recruited
+  arc_id: arc-s2-history-kabuto-root-recruited
+  continuity_id: main
+  title: Данзо домагається нового шпигуна
+  description: Кабуто погоджується піти заради сиротинця; Нонo знову відряджають на розвідку.
+- id: ep-s2-kabuto-nono-tragedy
+  arc_id: arc-s2-history-kabuto-nono-tragedy
+  continuity_id: main
+  title: Кабуто смертельно ранить Нонo
+  description: Підмінені фотографії не дозволяють їй впізнати вихованця. Він пояснює, як Корінь позбувався обох
+    шпигунів, і дає Кабуто нове місце.
+- id: ep-s2-kabuto-orochimaru-remains
+  arc_id: arc-s2-history-kabuto-orochimaru-remains
+  continuity_id: main
+  title: Кабуто прищеплює собі рештки Орочімару
+  description: Після загибелі наставника він перебудовує своє тіло та продовжує пошуки сили.
+- id: ep-s2-moryo-revived
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Йомі звільняє Морьо
+  description: Він надає демону своє тіло; кам’яне військо починає наступ.
+- id: ep-s2-shion-mission
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Цунаде посилає охорону до Шіон
+  description: Неджі очолює загін, який має довести жрицю до місця запечатування; інші сили затримують кам’яне військо.
+- id: ep-s2-shion-palace-assault
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Нападники атакують палац жриці
+  description: Сусукi прикриває втечу; Шіон розповідає Тарухо про передбачену смерть.
+- id: ep-s2-shion-prediction
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Шіон передбачає загибель Наруто
+  description: Він відмовляється прийняти пророцтво й починає охороняти її в дорозі.
+- id: ep-s2-shion-escort-ambush
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Загін відбиває напад послідовників Йомі
+  description: Противники підсилюють техніки чакрою Морьо; учні Конохи розділяють охорону та бій.
+- id: ep-s2-taruho-sacrifice
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Тарухо гине під виглядом Шіон
+  description: Його підміна приймає удар, призначений жриці; справжня Шіон продовжує дорогу з Наруто.
+- id: ep-s2-shion-moryo-seal
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Шіон дізнається правду про силу матері
+  description: Морьо прагне поглинути її, як колись Міроку. Наруто рятує жрицю; її сила підсилює Расенґан і руйнує
+    демона.
+- id: ep-s2-shion-farewell
+  arc_id: arc-s2-movie-shion
+  continuity_id: movie-shion
+  title: Шіон говорить про майбутнє жриць
+  description: Після порятунку вона прощається із загоном, який готується повертатися.
+- id: ep-s2-miroku-first-seal
+  arc_id: arc-s2-movie-shion-pre-naruto
+  continuity_id: movie-shion
+  title: Міроку запечатує Морьо
+  description: Мати Шіон віддає життя та залишає дочці захисну силу.
+- id: ep-s2-sky-konoha-raid
+  arc_id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Країна Неба атакує Коноху
+  description: Літаючі шинобі здійснюють напад; Шінно допомагає пораненим.
+- id: ep-s2-sky-escort-village
+  arc_id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Загін іде до поселення Амару
+  description: Поселення знищене; Шінно удає смерть.
+- id: ep-s2-sky-naval-base
+  arc_id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Сай і Шіно руйнують морську базу
+  description: Вони зупиняють підтримку повітряного нападу.
+- id: ep-s2-sky-zero-tails
+  arc_id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Нульхвостий захоплює Амару
+  description: Наруто допомагає їй звільнитися від темної чакри.
+- id: ep-s2-sky-fortress-duel
+  arc_id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Саске й Наруто перемагають Шінно
+  description: Вони перевантажують Нульхвостого чакрою та руйнують ядро фортеці.
+- id: ep-s2-sky-prisoners-rescued
+  arc_id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Амару визволяє полонених
+  description: Наруто знищує фортецю; Амару рятує його планером.
+- id: ep-s2-sky-sasuke-return
+  arc_id: arc-s2-movie-bonds
+  continuity_id: movie-bonds
+  title: Саске повертає сувій Орочімару
+  description: Після спільного бою з Наруто він продовжує навчання в наставника.
+- id: ep-s2-hiruko-investigation
+  arc_id: arc-s2-movie-fire
+  continuity_id: movie-fire
+  title: Команда досліджує викрадення носіїв кеккей-ґенкай
+  description: Під час розвідки вони зустрічають нову загрозу; села звинувачують Коноху.
+- id: ep-s2-hiruko-threat
+  arc_id: arc-s2-movie-fire
+  continuity_id: movie-fire
+  title: Хіруко погрожує новою війною
+  description: Четверо викрадених шинобі вже дали йому свої здібності; для завершення він прагне Шарінґана Какаші.
+- id: ep-s2-kakashi-self-sacrifice
+  arc_id: arc-s2-movie-fire
+  continuity_id: movie-fire
+  title: Какаші готує пастку для Хіруко
+  description: Камуі має забрати поглинача разом із ним; він просить Цунаде стримати товаришів.
+- id: ep-s2-hiruko-puppet-curse
+  arc_id: arc-s2-movie-fire
+  continuity_id: movie-fire
+  title: Прокляття веде Какаші до гори
+  description: Наруто відмовляється залишати наставника й вирушає слідом; команда відбиває напад прибічників Хіруко.
+- id: ep-s2-hiruko-gaara-road
+  arc_id: arc-s2-movie-fire
+  continuity_id: movie-fire
+  title: Ґаара випробовує рішення Наруто
+  description: Загроза війни змушує його перехопити друга, але Наруто продовжує порятунок.
+- id: ep-s2-hiruko-final-duel
+  arc_id: arc-s2-movie-fire
+  continuity_id: movie-fire
+  title: Наруто звільняє Какаші
+  description: Чимера не може поглинути Расенсюрикен; Хіруко гине під час затемнення.
+- id: ep-s2-hiruko-curse-past
+  arc_id: arc-s2-movie-fire-third-shinobi-war
+  continuity_id: movie-fire
+  title: Хіруко залишає прокляття на Какаші
+  description: Зустріч у минулому готує майбутнє примусове повернення носія Шарінґана.
+- id: ep-s2-tower-pursuit
+  arc_id: arc-s2-movie-tower
+  continuity_id: movie-tower
+  title: Команда наздоганяє Мукаде в руїнах
+  description: Мукаде розриває печать джерела Рюмяку; Наруто та Ямато затягує часовий потік.
+- id: ep-s2-tower-arrival-past
+  arc_id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Наруто потрапляє до живого Роурану
+  description: Він бачить королеву Сару; Мінато пояснює, що їх розділяють приблизно двадцять років.
+- id: ep-s2-tower-puppet-citizens
+  arc_id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Сара знаходить прихованих мешканців
+  description: Вулицями керують маріонетки, а справжніх людей змушують працювати під землею.
+- id: ep-s2-tower-anrokuzan-revealed
+  arc_id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Анрокудзан розкриває обман
+  description: Мукаде прибув шість років тому, привласнив ім’я міністра та вбив матір Сари.
+- id: ep-s2-tower-past-team-reunited
+  arc_id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Ямато зустрічає малого Какаші
+  description: Команда Мінато допомагає рятувати мешканців та знищувати виробництво маріонеток.
+- id: ep-s2-tower-ryumyaku-sealed
+  arc_id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Наруто й Мінато перемагають Мукаде
+  description: Їхній спільний Расенґан руйнує його тіло; Сара відключає джерело, Мінато відновлює печать.
+- id: ep-s2-tower-memory-sealed
+  arc_id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Мінато запечатує спогади про зустріч
+  description: Зміна історії має зупинитися; часовий потік повертає мандрівників.
+- id: ep-s2-tower-return-present
+  arc_id: arc-s2-movie-tower
+  continuity_id: movie-tower
+  title: Команда повертається до руїн
+  description: Дочка Сари береже чакролезо й розповідає про матір, але Наруто не пам’ятає її.
+- id: ep-s2-tower-mukade-arrives
+  arc_id: arc-s2-movie-tower-second-shinobi-war
+  continuity_id: movie-tower
+  title: Мукаде входить до Роурану
+  description: Майбутній утікач використовує знання маріонеток та Рюмяку, щоб стати міністром Анрокудзаном.
+- id: ep-s2-tower-queen-murdered
+  arc_id: arc-s2-movie-tower-third-shinobi-war
+  continuity_id: movie-tower
+  title: Анрокудзан убиває королеву
+  description: Сара успадковує владу та залежність від міністра, прихованого за її престолом.
+- id: ep-s2-prison-accusation
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Наруто звинувачують у замаху на Райкаґе
+  description: Свідчення перетворюють його на в’язня; справжній задум місії від нього приховують.
+- id: ep-s2-prison-arrival
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Муі накладає Небесну В’язницю
+  description: Печать карає застосування чакри й спроби покинути острів.
+- id: ep-s2-prison-solitary
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Наруто потрапляє до карцеру
+  description: Повторна спроба опору продовжує ізоляцію; він шукає спосіб обійти печать.
+- id: ep-s2-prison-ryuzetsu
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Рюдзецу розкриває план Скрині
+  description: Вона шукає спосіб зупинити Муі, який прагне повернути свого сина Муку.
+- id: ep-s2-prison-box-opens
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Муі відкриває Скриню чакрою Наруто
+  description: Його бажання повертає Муку, але Скриня перетворює юнака на Саторі.
+- id: ep-s2-prison-satori-battle
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Коноха та Бі вступають у бій
+  description: Саторі передбачає страх атакувальників; Наруто застосовує сенджюцу, Рюдзецу допомагає знайти слабкість.
+    Остання печать і допомога Наруто дозволяють повернути Муку до Скрині.
+- id: ep-s2-ryuzetsu-sacrifice
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Рюдзецу віддає життя Наруто
+  description: Після смертельного поранення вона відновлює його своєю технікою та помирає.
+- id: ep-s2-prison-cover-explained
+  arc_id: arc-s2-movie-prison
+  continuity_id: movie-prison
+  title: Загін пояснює таємну операцію
+  description: Наруто дізнається, чому йому не розповіли задум, та прощається з Рюдзецу.
+- id: ep-s2-prison-muku-lost
+  arc_id: arc-s2-movie-prison-pre-naruto
+  continuity_id: movie-prison
+  title: Муку зникає всередині Скрині
+  description: Муі використовує його чакру для відкриття; втрата сина визначає наступні десять років його життя.
+- id: ep-s2-road-akatsuki-copy-attack
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Коноха відбиває напад копій Акацукі
+  description: Після бою Наруто знову помічає відсутність батьків; Сакура свариться зі своїми.
+- id: ep-s2-road-tsukuyomi-trap
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Тобі замикає Наруто й Сакуру в іншому світі
+  description: Обмежене Цукуйомі змінює звичні стосунки та місця людей.
+- id: ep-s2-road-reversed-konoha
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Товариші поводяться по-іншому
+  description: Наруто називають Менмою; Сакура дізнається, що тут вона донька загиблих героїв.
+- id: ep-s2-road-minato-kushina-home
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Наруто зустрічає живих батьків іншого світу
+  description: Він залишається з ними за столом і поступово приймає домашній побут.
+- id: ep-s2-road-red-moon-scroll
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Загін забирає сувій Джираї
+  description: Пастки та напад загрожують Кушіні; Наруто рятує її й повертається до Конохи.
+- id: ep-s2-road-menma-attack
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Менма руйнує село й викрадає Сакуру
+  description: Наруто бачить, що перебування з батьками не захистить друзів, і виходить рятувати Сакуру.
+- id: ep-s2-road-final-duel
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Наруто протистоїть Менмі та Тобі
+  description: Ітачі іншого світу допомагає Сакурі; Курама бореться з віддзеркаленим Дев’ятихвостим. Менма звільняється
+    від контролю; Наруто та Сакура повертаються.
+- id: ep-s2-road-iruka-home
+  arc_id: arc-s2-movie-road
+  continuity_id: movie-road
+  title: Ірука вітає Наруто вдома
+  description: Після прощання з віддзеркаленими батьками Наруто повертається до своєї родини в Конохі.
+- id: ep-s2-hashirama-madara-river
+  arc_id: arc-s2-founding-history
+  continuity_id: main
+  title: Хашірама й Мадара зустрічаються біля річки
+  description: Обоє втратили братів у клановій війні; вони тренуються та мріють про безпечне село.
+- id: ep-s2-senju-uchiha-fathers
+  arc_id: arc-s2-founding-history
+  continuity_id: main
+  title: Батьки викривають дружбу дітей
+  description: Хашірама й Мадара попереджають один одного камінцями; напад на молодших братів розриває їхню дружбу.
+- id: ep-s2-izuna-mortal-wound
+  arc_id: arc-s2-founding-history
+  continuity_id: main
+  title: Тобірама смертельно ранить Ідзуну
+  description: Мадара відмовляється від миру; після смерті брата отримує його очі та продовжує війну.
+- id: ep-s2-senju-uchiha-peace
+  arc_id: arc-s2-founding-history-village-founding
+  continuity_id: main
+  title: Хашірама пропонує власне життя за мир
+  description: Мадара зупиняє його; Сенджю й Учіха укладають угоду.
+- id: ep-s2-konoha-founded
+  arc_id: arc-s2-founding-history-village-founding
+  continuity_id: main
+  title: Клани будують спільне село
+  description: Мадара пропонує назву Коноха; до союзу приєднуються Сарутобі, Шімура та інші клани. Вибір керівника
+    відходить від його особистого наміру передати посаду Мадарі.
+- id: ep-s2-madara-leaves-konoha
+  arc_id: arc-s2-founding-history-village-founding
+  continuity_id: main
+  title: Мадара залишає Коноху
+  description: Він читає плиту Учіха, втрачає підтримку клану та відмовляється від спільного шляху.
+- id: ep-s2-founders-valley-duel
+  arc_id: arc-s2-founding-history-village-founding
+  continuity_id: main
+  title: Мадара повертається з Курамою
+  description: Сусаноо вкриває звіра; Хашірама руйнує захист і звільняє лиса від контролю. Дерев’яний клон відволікає
+    Мадару; долина отримує сліди їхнього бою.
+- id: ep-s2-madara-hidden-survival
+  arc_id: arc-s2-founding-history-village-founding
+  continuity_id: main
+  title: Ідзанаґі дозволяє Мадарі вижити
+  description: Він зберігає тканини Хашірами та зникає з відомої селу історії.
+- id: ep-s2-kaguya-god-tree
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Каґуя прибуває до людей
+  description: Напруження між правителями приводить до переслідування; вона їсть плід Божественного дерева та отримує
+    чакру.
+- id: ep-s2-kaguya-tsukuyomi
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Каґуя підкорює людей Цукуйомі
+  description: Божественне дерево забирає полонених; її сини починають бачити приховану ціну порядку.
+- id: ep-s2-hagoromo-gamamaru
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Брати слухають Ґамамару
+  description: Хаґоромо вчиться сенджюцу й дізнається про людей у Божественному дереві.
+- id: ep-s2-kaguya-sealed
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Брати запечатують Каґую
+  description: Після тривалого бою Чібаку Тенсей завершує протистояння; Чорний Зецу лишається прихованим.
+- id: ep-s2-hagoromo-ninshu
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Хаґоромо поширює ніншю
+  description: Він відновлює міст, допомагає поселенням та передає людям спосіб розуміти один одного через чакру.
+- id: ep-s2-indra-asura-childhood
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Індра створює печаті та техніки
+  description: Асура відстає в навчанні; Чорний Зецу посилює віддалення Індри від інших.
+- id: ep-s2-brothers-succession-trials
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Сини отримують завдання допомогти поселенням
+  description: Індра працює сам, а Асура знаходить допомогу людей та усуває шкоду Божественного дерева.
+- id: ep-s2-asura-chosen
+  arc_id: arc-s2-ancient-history
+  continuity_id: main
+  title: Хаґоромо обирає Асуру
+  description: Індра вбиває прибічників, відкриває Манґекьо та нападає на брата; їхній конфлікт продовжується через
+    нащадків.
+- id: ep-s2-kakashi-reconstruction-memory
+  arc_id: arc-s2-reconstruction-frames
+  continuity_id: main
+  title: Какаші помічає мандрівну музикантку
+  description: Відбудова села повертає його до спогадів про знайомство з Командою 7 та справу Ханаре.
+- id: ep-s2-nekomata-nekobaa-memory
+  arc_id: arc-s2-reconstruction-frames
+  continuity_id: main
+  title: Некобаа розглядає старе фото братів
+  description: Розмова з Некоматою повертає їх до завдання з відбитком лапи.
+- id: ep-s2-kosuke-reconstruction-memory
+  arc_id: arc-s2-reconstruction-frames
+  continuity_id: main
+  title: Косуке згадує прикордонну місію
+  description: Під час відбудови він дивиться на Скелю Хокаґе та згадує Наруто поруч із колишніми наставниками.
+- id: ep-s2-team10-reconstruction
+  arc_id: arc-s2-reconstruction-frames
+  continuity_id: main
+  title: Команда 10 збирає худобу для мешканців
+  description: Шикамару згадує спільне визволення заручниці з Командою 7.
+- id: ep-s2-taka-childhood-route-memory
+  arc_id: arc-s2-reconstruction-frames
+  continuity_id: main
+  title: Саске проходить знайомою дорогою
+  description: Місце повертає його до місії охорони Нахо та суперництва з Наруто.
+- id: ep-s2-kosuke-lost-comrades
+  arc_id: arc-s2-history-kosuke-lost-comrades
+  continuity_id: main
+  title: Косуке втрачає товаришів через власне рішення
+  description: Прагнення підвищення закінчується їхньою смертю; він обирає назавжди залишитися геніном.
+- id: ep-s2-kosuke-minato-leg
+  arc_id: arc-s2-history-kosuke-minato-leg
+  continuity_id: main
+  title: Мінато перев’язує Косуке ногу
+  description: Він відмовляється залишати товариша; пізніше ці слова нагадує Наруто.
+- id: ep-s2-hanare-kakashi-childhood
+  arc_id: arc-s2-history-hanare-kakashi-childhood
+  continuity_id: main
+  title: Какаші допомагає загубленій Ханаре
+  description: Він показує спосіб знайти напрямок, який залишається в її пам’яті.
+- id: ep-s2-tenten-finds-weapons-path
+  arc_id: arc-s2-history-tenten-finds-weapons-path
+  continuity_id: main
+  title: Тентен випробовує медицину й виклик
+  description: Невдалі спроби наслідувати Цунаде допомагають Ґаю помітити її здібності до просторових технік зі
+    зброєю.
+- id: ep-s2-lee-drunk-restaurant
+  arc_id: arc-s2-history-lee-drunk-restaurant
+  continuity_id: main
+  title: Лі випадково випиває алкоголь
+  description: П’яний Кулак руйнує ресторан; Ґай бере відповідальність перед власником.
+- id: ep-s2-lee-seasickness-training
+  arc_id: arc-s2-history-lee-seasickness-training
+  continuity_id: main
+  title: Ґай тренує Лі на човні
+  description: Морська хвороба має замінити сп’яніння; учень визнає вдячність за допомогу наставника.
+- id: ep-s2-shino-suika-first-loss
+  arc_id: arc-s2-history-shino-suika-first-loss
+  continuity_id: main
+  title: Суйка перемагає Шіно зблизька
+  description: Втрата впевненості змушує його уникати команди.
+- id: ep-s2-shino-suika-rematch
+  arc_id: arc-s2-history-shino-suika-rematch
+  continuity_id: main
+  title: Команда 8 повертається до Суйки
+  description: Шіно рятує товаришів та застосовує навчену тайджюцу; Куренай спостерігає за загоном.
+- id: ep-s2-naruto-teaches-konohamaru-rasengan
+  arc_id: arc-s2-history-naruto-teaches-konohamaru-rasengan
+  continuity_id: main
+  title: Наруто навчає Конохамару Расенґану
+  description: Пояснення трьох етапів перетворює їхню звичну гру з техніками на справжнє навчання.
+- id: ep-s2-kumo-kage-departure
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Райкаґе вирушає до саміту
+  description: А бере Даруї й Сі та домовляється зустріти загін Самуї дорогою.
+- id: ep-s2-kiri-kage-departure
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Мідзукаґе вирушає до саміту
+  description: Мей бере Чоджюро та Ао й залишає Кірі.
+- id: ep-s2-iwa-kage-departure
+  arc_id: arc-s2-summit
+  continuity_id: main
+  title: Цучікаґе вирушає до саміту
+  description: Акацучі допомагає Онокі в дорозі; Куруцучі супроводжує їх.
+- id: ep-s2-power-main
+  arc_id: arc-s2-power
+  continuity_id: main
+  title: Power — main
+  description: Кабуто знищує Тоніку
+- id: ep-s2-first-war-history-main
+  arc_id: arc-s2-first-war-history
+  continuity_id: main
+  title: First War History — main
+  description: Курама ковтає братів Кінкаку й Ґінкаку
+- id: ep-s2-kimimaro-jugo-friendship
+  arc_id: arc-s2-history-kimimaro-jugo-friendship
+  continuity_id: main
+  title: Кімімаро стає опорою Джюґо
+  description: Він стримує його напади й запрошує до Орочімару; обіцянка клітки визначає подальші рішення Джюґо.
+- id: ep-s2-sai-shin-picturebook
+  arc_id: arc-s2-history-sai-shin-picturebook
+  continuity_id: main
+  title: Сай малює історію себе та Шіна
+  description: У Корені вони зберігають зв’язок як брати; смерть Шіна залишає книгу без останньої сторінки.
+- id: ep-s2-komushi-sasori-puppet
+  arc_id: arc-s2-history-komushi-sasori-puppet
+  continuity_id: main
+  title: Комуші помирає після втрати руки
+  description: Сасорі створює йому протез; після отруєння та прохання матері робить із друга людську маріонетку.
+- id: ep-s2-sakumo-sees-guy
+  arc_id: arc-s2-history-sakumo-sees-guy
+  continuity_id: main
+  title: Сакумо вказує Какаші на потенціал Ґая
+  description: Наполегливість хлопця дає батькові підставу назвати його майбутнім сильним суперником.
+- id: ep-s2-temujin-village-destroyed
+  arc_id: arc-s2-history-temujin-village-destroyed
+  continuity_id: main
+  title: Хайдо знищує поселення Темуджіна
+  description: Він убиває батьків хлопця, приховує свою роль і виховує його як прибічника.
+- id: ep-s2-koyuki-child-rescued
+  arc_id: arc-s2-history-koyuki-child-rescued
+  continuity_id: main
+  title: Какаші рятує малу Коюкі
+  description: Переворот Дото руйнує палац і забирає життя батька Коюкі; Какаші виносить її з країни.
+- id: ep-s2-choji-protection-oath
+  arc_id: arc-s2-history-choji-protection-oath
+  continuity_id: main
+  title: Чоджі дає батькові обіцянку
+  description: Він має берегти товаришів і майбутнє клану; ця настанова повертається під час бою з Асумою.
+- id: ep-s2-sasuke-suigetsu-promise
+  arc_id: arc-s2-history-sasuke-suigetsu-promise
+  continuity_id: main
+  title: Саске обіцяє звільнити Суйґецу
+  description: Той лишається в резервуарі до загибелі Орочімару.
+- id: ep-s2-jiraiya-nadeshiko-duel
+  arc_id: arc-s2-history-jiraiya-nadeshiko-duel
+  continuity_id: main
+  title: Джирая залишає двобій наступним учням
+  description: Бій із очільницею Надешіко завершується обіцянкою продовжити його через спадкоємців.
+- id: ep-s2-shizuka-sagiri-loss
+  arc_id: arc-s2-history-shizuka-sagiri-loss
+  continuity_id: main
+  title: Шізука втрачає Саґірі
+  description: Їхньому зв’язку противляться старші села; загибель коханого змушує її відмовитися від нового шлюбу.
+- id: ep-s2-bunpuku-shukaku
+  arc_id: arc-s2-history-bunpuku-shukaku
+  continuity_id: main
+  title: Бунпуку говорить із Шукаку як із товаришем
+  description: Попри ув’язнення він не звинувачує звіра; його слова лишаються в пам’яті Шукаку.
+- id: ep-s2-duy-eight-gates-sacrifice
+  arc_id: arc-s2-history-duy-eight-gates-sacrifice
+  continuity_id: main
+  title: Дай захищає трійцю від мечників Туману
+  description: Восьмі Ворота дають змогу затримати нападників; Ґай, Ґенма й Ебісу залишають поле, а Дай гине.
+- id: ep-s2-guy-academy-effort
+  arc_id: arc-s2-history-guy-academy-effort
+  continuity_id: main
+  title: Ґай намагається потрапити до Академії
+  description: Він не проходить відбір і тренується до виснаження; Дай продовжує підтримувати його.
+- id: ep-s2-road-telescope-preparation
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Тобі вивчає бажання Наруто
+  description: Він спостерігає через техніку телескопа й готує пробний варіант Цукуйомі.
+- id: ep-s2-road-bath-invitation
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Лі збирає друзів для Наруто
+  description: Повернувшись із місії, він кличе товаришів до лазні.
+- id: ep-s2-road-public-bath
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Похід до лазні закінчується сваркою
+  description: Акамару спричиняє ковзання Чоджі, а Лі провалюється крізь стелю; Наруто захищає його, але сам потрапляє
+    під підозру Сакури.
+- id: ep-s2-road-evening-cards
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Друзі приходять грати в карти
+  description: Після їхнього відходу Наруто знову лишається сам; спостереження дає Тобі потрібний образ для пастки.
+- id: ep-s2-road-sakura-skyfall
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Іно знаходить іншу Сакуру
+  description: Дівчина падає з неба й непритомніє на гілці; Іно забирає її до Конохи.
+- id: ep-s2-road-sakura-hospital
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Цунаде оглядає Сакуру з амнезією
+  description: Її спогади про знайомих не відповідають поведінці людей у цьому світі.
+- id: ep-s2-road-sakura-search-pendant
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Іно допомагає шукати підвіску
+  description: Зустрічі зі знайомими не повертають пам’ять; Сакура помічає втрату прикраси.
+- id: ep-s2-road-sakura-parents-return
+  arc_id: arc-s2-movie-road-prologue
+  continuity_id: movie-road
+  title: Кідзаші повертає підвіску Сакурі
+  description: Вона обіймає батьків, потім каже Іно, що, мабуть, є іншою Сакурою, й зникає у світлі.
+- id: ep-s2-yugao-hayate-training
+  arc_id: arc-s2-history-yugao-hayate-training
+  continuity_id: main
+  title: Юґао тренується з Хаяте
+  description: Спільне кенджюцу залишає рухи, за якими вона згодом упізнає колишнього товариша.
+- id: ep-s2-chen-student-training
+  arc_id: arc-s2-history-chen-student-training
+  continuity_id: main
+  title: Чен навчає хлопця без нінджюцу
+  description: Учень стає шинобі завдяки тайдзюцу, але не встигає опанувати Дракон Конохи до війни.
+- id: ep-s2-chen-student-death
+  arc_id: arc-s2-history-chen-student-death
+  continuity_id: main
+  title: Учень Чена гине на війні
+  description: Його відправляють на фронт; загибель змушує Чена залишити життя шинобі.
+- id: ep-s2-chen-fakes-death
+  arc_id: arc-s2-history-chen-fakes-death
+  continuity_id: main
+  title: Чен ставить власну порожню могилу
+  description: Він удає свою смерть після втрати єдиного учня й відмовляється навчати нових.
+- id: ep-s2-kabuto-grave-robbing
+  arc_id: arc-s2-kabuto-prewar-research
+  continuity_id: main
+  title: Кабуто збирає останки для Едо Тенсей
+  description: Після вживлення клітин Орочімару він розкопує могили й готує матеріал для майбутніх оживлень.
+- id: ep-s2-madara-rinnegan-awakens
+  arc_id: arc-s2-history-madara-rinnegan-awakens
+  continuity_id: main
+  title: Мадара пробуджує Ріннеґан наприкінці життя
+  description: Сила Хашірами дає йому нові очі й доступ до Ґедо Мазо.
+- id: ep-s2-madara-nagato-eyes
+  arc_id: arc-s2-history-madara-nagato-eyes
+  continuity_id: main
+  title: Мадара пересаджує очі Наґато
+  description: Дитина отримує Ріннеґан, не знаючи його походження; це відбувається до загибелі її батьків.
+- id: ep-s2-madara-instructs-obito
+  arc_id: arc-s2-history-madara-instructs-obito
+  continuity_id: main
+  title: Мадара навчає Обіто плану Ока Місяця
+  description: Мадара передає Обіто знання, техніки й роль свого наступника для майбутнього повернення.
+- id: ep-s2-madara-life-support-ends
+  arc_id: arc-s2-history-madara-life-support-ends
+  continuity_id: main
+  title: Мадара від’єднується від Ґедо Мазо
+  description: Він помирає, покладаючи майбутнє воскресіння на Ріннеґан Наґато та дії Обіто.
+- id: ep-s2-itachi-orochimaru-life-death
+  arc_id: arc-s2-history-itachi-orochimaru-life-death
+  continuity_id: main
+  title: Ітачі питає про життя і смерть
+  description: Після побаченої війни він зустрічає Орочімару біля могил.
+- id: ep-s2-itachi-cliff-crows
+  arc_id: arc-s2-history-itachi-cliff-crows
+  continuity_id: main
+  title: Ітачі стрибає зі скелі та зупиняє падіння
+  description: Побачивши ворона, він користується кунаєм і повертається до життя.
+- id: ep-s2-sasuke-birth
+  arc_id: arc-s2-history-sasuke-birth
+  continuity_id: main
+  title: Народжується Саске
+  description: Ітачі отримує молодшого брата й починає дбати про нього.
+- id: ep-s2-itachi-great-fireball
+  arc_id: arc-s2-history-itachi-great-fireball
+  continuity_id: main
+  title: Ітачі швидко опановує Велику Вогняну Кулю
+  description: Фуґаку навчає його після переселення клану.
+- id: ep-s2-itachi-dokan-clone
+  arc_id: arc-s2-history-itachi-dokan-clone
+  continuity_id: main
+  title: Ітачі лишає клона в Академії
+  description: Старші учні нападають на нього; вчителі дізнаються про рівень Ітачі й пропонують ранній випуск.
+- id: ep-s2-itachi-izumi-dumplings
+  arc_id: arc-s2-history-itachi-izumi-dumplings
+  continuity_id: main
+  title: Ідзумі ділиться данґо з Ітачі
+  description: Вона вітає його з підвищенням; він згодом вирушає на місію з Командою 2.
+- id: ep-s2-fugaku-mangekyo-loss
+  arc_id: arc-s2-history-fugaku-mangekyo-loss
+  continuity_id: main
+  title: Фуґаку втрачає товариша на війні
+  description: Його загибель пробуджує Манґекьо; Фуґаку зберігає це в таємниці від більшості клану.
+- id: ep-s2-itachi-captain-mission
+  arc_id: arc-s2-history-itachi-captain-mission
+  continuity_id: main
+  title: Ітачі виконує наказ Данзо як капітан АНБУ
+  description: Разом із двома підлеглими він іде на вбивство; Данзо розпитує про невдоволення Учіха.
+- id: ep-s2-fugaku-shows-tablet
+  arc_id: arc-s2-history-fugaku-shows-tablet
+  continuity_id: main
+  title: Фуґаку показує Ітачі свої очі
+  description: Він пояснює план перевороту та можливість безкровного захоплення влади; Ітачі передає попередження
+    керівництву села.
+- id: ep-s2-hidan-akatsuki-recruitment
+  arc_id: arc-s2-history-hidan-akatsuki-recruitment
+  continuity_id: main
+  title: Акацукі випробовує безсмертя Хідана
+  description: Конан виступає приманкою; Хідан руйнує одне серце Какудзу й стає його напарником.
+- id: ep-s2-sakura-ino-hideout
+  arc_id: arc-s2-history-sakura-ino-hideout
+  continuity_id: main
+  title: Сакура приводить Іно до свого сховку
+  description: Іно допомагає з квітами; розмова про Саске започатковує їхнє суперництво.
+- id: ep-s2-academy-hinata-bullies
+  arc_id: arc-s2-history-academy-hinata-bullies
+  continuity_id: main
+  title: Наруто втручається заради Хінати
+  description: Чоджі й Шікамару сперечаються про його вчинок; Наруто перериває сварку, і трійця сміється.
+- id: ep-s2-kakashi-sakumo-grave-child
+  arc_id: arc-s2-history-kakashi-sakumo-grave-child
+  continuity_id: main
+  title: Какаші розповідає батьковій могилі про друзів
+  description: Після спільної вечері Рін та Обіто лишаються поруч, а Ґай продовжує викликати Какаші на двобої.
+- id: ep-s2-jiraiya-tsunade-failed-rescue
+  arc_id: arc-s2-history-jiraiya-tsunade-failed-rescue
+  continuity_id: main
+  title: Джирая влаштовує невдалий порятунок Цунаде
+  description: Він просить Орочімару зіграти нападника, але задум не працює.
+- id: ep-s2-sannin-kiri-night-fight
+  arc_id: arc-s2-history-sannin-kiri-night-fight
+  continuity_id: main
+  title: Трійця відбиває нічний напад Кірі
+  description: Розмова про мрії біля вогню закінчується атакою шинобі Туману.
+- id: ep-s2-kawarama-funeral
+  arc_id: arc-s2-founders-childhood-additions
+  continuity_id: main
+  title: Сенджю ховають Кавараму
+  description: Хашірама заперечує проти відправлення дітей на війну; Бутсума вдаряє його.
+- id: ep-s2-itama-killed
+  arc_id: arc-s2-founders-childhood-additions
+  continuity_id: main
+  title: Ітама гине від рук Учіха
+  description: Хашірама приходить запізно й знаходить молодшого брата мертвим.
+- id: ep-s2-toneri-father-death
+  arc_id: arc-s2-last-film-history
+  continuity_id: main
+  title: Тонері лишається сам після смерті батька
+  description: Після смерті батька Тонері живе в замку сам, оточений маріонетками.
+- id: ep-s2-hamura-moon-departure
+  arc_id: arc-s2-ancient-lunar-history
+  continuity_id: main
+  title: Хамура переходить на Місяць
+  description: Після запечатування Десятихвостого він лишається охороняти Ґедо Мазо.
+- id: ep-s2-lunar-branch-war
+  arc_id: arc-s2-lunar-branch-history
+  continuity_id: main
+  title: Побічна гілка знищує головну
+  description: Неправильне тлумачення заповіту Хамури приводить до створення спільного Тенсейґана та війни місячного
+    клану.
+- id: ep-s2-gaara-extraction-complete
+  arc_id: arc-s2-rescue-sealing-end
+  continuity_id: main
+  title: Триденне вилучення Шукаку завершується
+  description: Ґаара помирає; Акацукі готуються відбивати загін порятунку.
+- id: ep-s2-shikamaru-tenten-to-voyage
+  arc_id: arc-s2-prewar-support-route
+  continuity_id: main
+  title: Шикамару й Тентен виходять до морського загону
+  description: Шикамару й Тентен прямують до морського загону Наруто.
+- id: ep-s2-shikamaru-tenten-home
+  arc_id: arc-s2-prewar-support-route
+  continuity_id: main
+  title: Підкріплення повертається до Конохи
+  description: Після допомоги біля Мокудзу Шикамару й Тентен повертаються до Конохи.
+- id: ep-s2-onoki-mu-madara
+  arc_id: arc-s2-onoki-madara-history
+  continuity_id: main
+  title: Мадара принижує молодого Онокі та Мю
+  description: Він відкидає рівноправну угоду Іви з Хашірамою й вимагає підкорення; поразка лишається в пам’яті
+    Онокі.
+- id: ep-s2-kabuto-body-splicing
+  arc_id: arc-s2-kabuto-sage-preparation
+  continuity_id: main
+  title: Кабуто поєднує матеріал експериментів Орочімару
+  description: Він привласнює властивості піддослідних і готує нове тіло для власних технік.
+- id: ep-s2-kabuto-ryuchi-training
+  arc_id: arc-s2-kabuto-sage-preparation
+  continuity_id: main
+  title: Кабуто навчається сенджюцу в Рючі
+  description: Біла Змія-Мудрець дає йому шлях до Режиму Мудреця; це навчання передує його воєнному бою з братами
+    Учіха.
+- id: ep-s2-obito-graduation-support
+  arc_id: arc-s2-obito-academy-additions
+  continuity_id: main
+  title: Рін підтримує Обіто перед випуском
+  description: Його допомога літнім мешканцям приводить до запізнень; Рін нагадує про навчання й підтримує його
+    шлях шинобі.
+- id: ep-s2-first-kage-summit
+  arc_id: arc-s2-first-kage-summit
+  continuity_id: main
+  title: Хашірама збирає перших Каґе
+  description: Він пропонує співпрацю й розподіл хвостатих звірів; Тобірама наполягає на оплаті. Суна вже має Шукаку;
+    суперечка показує, що створення сіл саме по собі не забезпечило довіри.
+- id: ep-s2-pakura-maki-training
+  arc_id: arc-s2-pakura-maki-history
+  continuity_id: main
+  title: Пакура тренує Макі після перемоги над Івою
+  description: Учениця просить продовжити заняття; наставниця закликає її стати сильною заради близьких і села.

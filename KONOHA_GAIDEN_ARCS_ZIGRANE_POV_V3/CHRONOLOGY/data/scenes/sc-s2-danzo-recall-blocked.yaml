@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-danzo-recall-blocked
+episode_id: ep-s2-danzo-recall-blocked
+display_rank: 13600
+continuity_id: main
+title: Данзо вбиває жабу-посланця
+description: Він перекриває виклик Наруто й наказує Кореню залишатися під землею.
+location_id: loc-root-base
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-danzo-recall-blocked-1
+  title: Данзо вбиває жабу-посланця
+  text: Він перекриває виклик Наруто й наказує Кореню залишатися під землею.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-kosuke-toad
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-danzo-recall-blocked
+relations: []
+presence:
+- id: pr-s2-danzo-recall-blocked-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-danzo-recall-blocked.start
+  to: sc-s2-danzo-recall-blocked.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-recall-blocked
+- id: pr-s2-danzo-recall-blocked-c-kosuke-toad
+  entity_id: c-kosuke-toad
+  from: sc-s2-danzo-recall-blocked.start
+  to: sc-s2-danzo-recall-blocked.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-recall-blocked

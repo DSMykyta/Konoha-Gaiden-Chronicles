@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-anko-kabuto-search
+episode_id: ep-s2-anko-kabuto-search
+display_rank: 16000
+continuity_id: main
+title: Сая відкликають із розвідки
+description: Токума повідомляє Анко про руйнування Конохи та призначення Данзо; група продовжує шукати Кабуто.
+location_id: loc-kabuto-abandoned-hideout
+placement:
+  anchor_id: ta-s2-66-08-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-anko-kabuto-search-1
+  title: Сая відкликають із розвідки
+  text: Токума повідомляє Анко про руйнування Конохи та призначення Данзо; група продовжує шукати Кабуто.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-anko
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-tokuma
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-anko-kabuto-search
+relations: []
+presence:
+- id: pr-s2-anko-kabuto-search-c-anko
+  entity_id: c-anko
+  from: sc-s2-anko-kabuto-search.start
+  to: sc-s2-anko-kabuto-search.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-anko-kabuto-search
+- id: pr-s2-anko-kabuto-search-c-sai
+  entity_id: c-sai
+  from: sc-s2-anko-kabuto-search.start
+  to: sc-s2-anko-kabuto-search.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-anko-kabuto-search
+- id: pr-s2-anko-kabuto-search-c-tokuma
+  entity_id: c-tokuma
+  from: sc-s2-anko-kabuto-search.start
+  to: sc-s2-anko-kabuto-search.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-anko-kabuto-search

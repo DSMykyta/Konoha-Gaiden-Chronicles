@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-shikamaru-mourning
+episode_id: ep-s2-shikamaru-mourning
+display_rank: 6000
+continuity_id: main
+title: Шикаку грає із сином у сьоґі
+description: Розмова про Асуму завершується сльозами Шикамару; згодом він складає план бою.
+location_id: loc-nara-residence
+placement:
+  anchor_id: ta-s2-66-03-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shikamaru-mourning-1
+  title: Шикаку грає із сином у сьоґі
+  text: Розмова про Асуму завершується сльозами Шикамару; згодом він складає план бою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shikaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shikamaru-mourning
+relations: []
+presence:
+- id: pr-s2-shikamaru-mourning-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-shikamaru-mourning.start
+  to: sc-s2-shikamaru-mourning.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-mourning
+- id: pr-s2-shikamaru-mourning-c-shikaku
+  entity_id: c-shikaku
+  from: sc-s2-shikamaru-mourning.start
+  to: sc-s2-shikamaru-mourning.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-mourning

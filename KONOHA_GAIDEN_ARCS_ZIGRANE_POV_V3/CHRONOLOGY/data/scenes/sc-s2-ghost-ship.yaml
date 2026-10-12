@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-ghost-ship
+episode_id: ep-s2-ghost-ship
+display_rank: 19600
+continuity_id: main
+title: Загін досліджує покинутий корабель
+description: Краб захоплює Ямато; Наруто з Хішаку перемагають його. Дух хлопчика й загиблі моряки знаходять спокій,
+  корабель зникає.
+location_id: loc-ghost-ship
+placement:
+  anchor_id: ta-s2-66-09-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-ghost-ship-1
+  title: Загін досліджує покинутий корабель
+  text: Краб захоплює Ямато; Наруто з Хішаку перемагають його.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-hishaku
+    role: participant
+    mode: manifested
+  evidence_ids:
+  - evd-s2-ghost-ship
+- id: ev-s2-ghost-ship-2
+  title: Хішаку прощається з екіпажем
+  text: Дух хлопчика й загиблі моряки знаходять спокій, корабель зникає.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-hishaku
+    role: participant
+    mode: manifested
+  evidence_ids:
+  - evd-s2-ghost-ship
+relations:
+- id: rel-s2-ghost-ship-1
+  kind: before
+  a: ev-s2-ghost-ship-1
+  b: ev-s2-ghost-ship-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ghost-ship
+presence:
+- id: pr-s2-ghost-ship-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-ghost-ship.start
+  to: sc-s2-ghost-ship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ghost-ship
+- id: pr-s2-ghost-ship-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-ghost-ship.start
+  to: sc-s2-ghost-ship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ghost-ship
+- id: pr-s2-ghost-ship-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-ghost-ship.start
+  to: sc-s2-ghost-ship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ghost-ship

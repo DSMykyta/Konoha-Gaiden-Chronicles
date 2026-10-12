@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-kinkaku-ginkaku-kurama
+episode_id: ep-s2-first-war-history-main
+display_rank: 3000
+continuity_id: main
+title: Курама ковтає братів Кінкаку й Ґінкаку
+description: Вони виживають, поїдаючи його плоть; через два тижні лис випльовує їх із власною чакрою.
+location_id: loc-kumo-kurama-battlefield
+placement:
+  anchor_id: ta-s2-12-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kinkaku-ginkaku-kurama-1
+  title: Курама ковтає братів Кінкаку й Ґінкаку
+  text: Вони виживають, поїдаючи його плоть; через два тижні лис випльовує їх із власною чакрою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kinkaku
+    role: participant
+    mode: physical
+  - entity_id: c-ginkaku
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-kurama
+relations: []
+presence:
+- id: pr-s2-kinkaku-ginkaku-kurama-c-kinkaku
+  entity_id: c-kinkaku
+  from: sc-s2-kinkaku-ginkaku-kurama.start
+  to: sc-s2-kinkaku-ginkaku-kurama.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-kurama
+- id: pr-s2-kinkaku-ginkaku-kurama-c-ginkaku
+  entity_id: c-ginkaku
+  from: sc-s2-kinkaku-ginkaku-kurama.start
+  to: sc-s2-kinkaku-ginkaku-kurama.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-kurama
+- id: pr-s2-kinkaku-ginkaku-kurama-c-kurama
+  entity_id: c-kurama
+  from: sc-s2-kinkaku-ginkaku-kurama.start
+  to: sc-s2-kinkaku-ginkaku-kurama.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinkaku-ginkaku-kurama

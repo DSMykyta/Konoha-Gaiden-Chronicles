@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-kurama-chakra-duel
+episode_id: ep-s2-kurama-chakra-duel
+display_rank: 22200
+continuity_id: main
+title: Наруто відкриває печать і бореться з Курамою
+description: Бі допомагає стримати лиса; Наруто застосовує сенджюцу, але ненависть Курами проривається. Вона стримує
+  Кураму ланцюгами; Наруто відділяє його чакру та замикає лиса.
+location_id: loc-tailed-beast-temple
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kurama-chakra-duel-1
+  title: Наруто відкриває печать і бореться з Курамою
+  text: Бі допомагає стримати лиса; Наруто застосовує сенджюцу, але ненависть Курами проривається.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kurama-chakra-duel
+- id: ev-s2-kurama-chakra-duel-2
+  title: Чакра Кушіни допомагає Наруто
+  text: Вона стримує Кураму ланцюгами; Наруто відділяє його чакру та замикає лиса.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kurama-chakra-duel
+relations:
+- id: rel-s2-kurama-chakra-duel-1
+  kind: before
+  a: ev-s2-kurama-chakra-duel-1
+  b: ev-s2-kurama-chakra-duel-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-chakra-duel
+presence:
+- id: pr-s2-kurama-chakra-duel-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-kurama-chakra-duel.start
+  to: sc-s2-kurama-chakra-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-chakra-duel
+- id: pr-s2-kurama-chakra-duel-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-kurama-chakra-duel.start
+  to: sc-s2-kurama-chakra-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-chakra-duel
+- id: pr-s2-kurama-chakra-duel-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-kurama-chakra-duel.start
+  to: sc-s2-kurama-chakra-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-chakra-duel

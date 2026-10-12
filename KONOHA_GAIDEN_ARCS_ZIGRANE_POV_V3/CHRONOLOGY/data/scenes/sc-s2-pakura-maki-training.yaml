@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-pakura-maki-training
+episode_id: ep-s2-pakura-maki-training
+display_rank: 100
+continuity_id: main
+title: Пакура тренує Макі після перемоги над Івою
+description: Учениця просить продовжити заняття; наставниця закликає її стати сильною заради близьких і села.
+location_id: loc-suna-training-ground
+placement:
+  anchor_id: ta-s2-59-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-pakura-maki-training-1
+  title: Пакура тренує Макі після перемоги над Івою
+  text: Учениця просить продовжити заняття; наставниця закликає її стати сильною заради близьких і села.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-pakura
+    role: participant
+    mode: physical
+  - entity_id: c-maki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-pakura-maki-training
+relations: []
+presence:
+- id: pr-s2-pakura-maki-training-c-pakura
+  entity_id: c-pakura
+  from: sc-s2-pakura-maki-training.start
+  to: sc-s2-pakura-maki-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pakura-maki-training
+- id: pr-s2-pakura-maki-training-c-maki
+  entity_id: c-maki
+  from: sc-s2-pakura-maki-training.start
+  to: sc-s2-pakura-maki-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pakura-maki-training

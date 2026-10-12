@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-three-tails-summoned
+episode_id: ep-s2-three-tails-summoned
+display_rank: 7500
+continuity_id: main
+title: Юкімару викликає Трихвостого
+description: Кабуто дає хлопчикові препарати; Ґурен безуспішно намагається втримати звіра. Його сила на мить приборкує
+  Ісобу; Ґурен витягає хлопчика з води.
+location_id: loc-three-tails-lake
+placement:
+  anchor_id: ta-s2-66-04-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-three-tails-summoned-1
+  title: Юкімару викликає Трихвостого
+  text: Кабуто дає хлопчикові препарати; Ґурен безуспішно намагається втримати звіра.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-three-tails-summoned
+- id: ev-s2-three-tails-summoned-2
+  title: Юкімару захищає Ґурен
+  text: Його сила на мить приборкує Ісобу; Ґурен витягає хлопчика з води.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-three-tails-summoned
+relations:
+- id: rel-s2-three-tails-summoned-1
+  kind: before
+  a: ev-s2-three-tails-summoned-1
+  b: ev-s2-three-tails-summoned-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-three-tails-summoned
+presence:
+- id: pr-s2-three-tails-summoned-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-three-tails-summoned.start
+  to: sc-s2-three-tails-summoned.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-three-tails-summoned
+- id: pr-s2-three-tails-summoned-c-guren
+  entity_id: c-guren
+  from: sc-s2-three-tails-summoned.start
+  to: sc-s2-three-tails-summoned.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-three-tails-summoned
+- id: pr-s2-three-tails-summoned-c-yukimaru
+  entity_id: c-yukimaru
+  from: sc-s2-three-tails-summoned.start
+  to: sc-s2-three-tails-summoned.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-three-tails-summoned

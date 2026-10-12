@@ -1,0 +1,104 @@
+schema_version: 1
+id: sc-s2-jugo-recruited
+episode_id: ep-s2-jugo-recruited
+display_rank: 9100
+continuity_id: main
+title: Саске стримує напад Джюґо
+description: Він обіцяє бути його кліткою замість Кімімаро. Саске називає мету команди; учасники виходять зі сховища.
+location_id: loc-orochimaru-northern-hideout
+placement:
+  anchor_id: ta-s2-66-07-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jugo-recruited-1
+  title: Саске стримує напад Джюґо
+  text: Він обіцяє бути його кліткою замість Кімімаро.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jugo-recruited
+- id: ev-s2-jugo-recruited-2
+  title: Хебі починає пошук Ітачі
+  text: Саске називає мету команди; учасники виходять зі сховища.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jugo-recruited
+relations:
+- id: rel-s2-jugo-recruited-1
+  kind: before
+  a: ev-s2-jugo-recruited-1
+  b: ev-s2-jugo-recruited-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jugo-recruited
+presence:
+- id: pr-s2-jugo-recruited-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-jugo-recruited.start
+  to: sc-s2-jugo-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jugo-recruited
+- id: pr-s2-jugo-recruited-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-jugo-recruited.start
+  to: sc-s2-jugo-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jugo-recruited
+- id: pr-s2-jugo-recruited-c-karin
+  entity_id: c-karin
+  from: sc-s2-jugo-recruited.start
+  to: sc-s2-jugo-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jugo-recruited
+- id: pr-s2-jugo-recruited-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-jugo-recruited.start
+  to: sc-s2-jugo-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jugo-recruited

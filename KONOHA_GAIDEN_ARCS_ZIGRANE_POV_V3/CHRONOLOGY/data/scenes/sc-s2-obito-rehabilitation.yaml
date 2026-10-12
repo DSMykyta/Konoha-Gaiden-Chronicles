@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-obito-rehabilitation
+episode_id: ep-s2-obito-rehabilitation
+display_rank: 28100
+continuity_id: main
+title: Обіто звикає до нового тіла
+description: Він тренується, плануючи повернутися до Рін і Какаші.
+location_id: loc-madara-underground-hideout
+placement:
+  anchor_id: ta-s2-47-11-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-obito-rehabilitation-1
+  title: Обіто звикає до нового тіла
+  text: Він тренується, плануючи повернутися до Рін і Какаші.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-white-zetsu
+    role: participant
+    mode: physical
+  - entity_id: c-guruguru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-obito-rehabilitation
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-obito-rehabilitation-c-obito
+  entity_id: c-obito
+  from: sc-s2-obito-rehabilitation.start
+  to: sc-s2-obito-rehabilitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-rehabilitation
+- id: pr-s2-obito-rehabilitation-c-madara
+  entity_id: c-madara
+  from: sc-s2-obito-rehabilitation.start
+  to: sc-s2-obito-rehabilitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-rehabilitation
+- id: pr-s2-obito-rehabilitation-c-white-zetsu
+  entity_id: c-white-zetsu
+  from: sc-s2-obito-rehabilitation.start
+  to: sc-s2-obito-rehabilitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-rehabilitation
+- id: pr-s2-obito-rehabilitation-c-guruguru
+  entity_id: c-guruguru
+  from: sc-s2-obito-rehabilitation.start
+  to: sc-s2-obito-rehabilitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-rehabilitation

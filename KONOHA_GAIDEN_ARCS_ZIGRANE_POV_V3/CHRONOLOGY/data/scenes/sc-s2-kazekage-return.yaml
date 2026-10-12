@@ -1,0 +1,141 @@
+schema_version: 1
+id: sc-s2-kazekage-return
+episode_id: ep-s2-kazekage-return
+display_rank: 2200
+continuity_id: main
+title: Ґаара повертається до Суни
+description: Мешканці зустрічають Кадзекаґе; рятівники відвідують могилу Чіо та вирушають додому.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-64-12-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kazekage-return-1
+  title: Ґаара повертається до Суни
+  text: Мешканці зустрічають Кадзекаґе; рятівники відвідують могилу Чіо та вирушають додому.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kazekage-return
+relations: []
+presence:
+- id: pr-s2-kazekage-return-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-kankuro
+  entity_id: c-kankuro
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-temari
+  entity_id: c-temari
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-lee
+  entity_id: c-lee
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-neji
+  entity_id: c-neji
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return
+- id: pr-s2-kazekage-return-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-kazekage-return.start
+  to: sc-s2-kazekage-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kazekage-return

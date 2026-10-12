@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-tenchi-road-and-inn
+episode_id: ep-s2-tenchi-road-and-inn
+display_rank: 2900
+continuity_id: main
+title: Сакура зупиняє суперечку Сая з Наруто
+description: Сай ображає Саске; Ямато нагадує команді про довіру й робить зупинку біля гарячих джерел. Наступного
+  ранку Сай малює, але відмовляється показати книгу брата.
+location_id: loc-tenchi-route-inn
+placement:
+  anchor_id: ta-s2-64-12-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tenchi-road-and-inn-1
+  title: Сакура зупиняє суперечку Сая з Наруто
+  text: Сай ображає Саске; Ямато нагадує команді про довіру й робить зупинку біля гарячих джерел.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenchi-road-and-inn
+- id: ev-s2-tenchi-road-and-inn-2
+  title: Сакура бачить незавершену книгу Сая
+  text: Наступного ранку Сай малює, але відмовляється показати книгу брата.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenchi-road-and-inn
+relations:
+- id: rel-s2-tenchi-road-and-inn-1
+  kind: before
+  a: ev-s2-tenchi-road-and-inn-1
+  b: ev-s2-tenchi-road-and-inn-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-road-and-inn
+presence:
+- id: pr-s2-tenchi-road-and-inn-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tenchi-road-and-inn.start
+  to: sc-s2-tenchi-road-and-inn.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-road-and-inn
+- id: pr-s2-tenchi-road-and-inn-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-tenchi-road-and-inn.start
+  to: sc-s2-tenchi-road-and-inn.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-road-and-inn
+- id: pr-s2-tenchi-road-and-inn-c-sai
+  entity_id: c-sai
+  from: sc-s2-tenchi-road-and-inn.start
+  to: sc-s2-tenchi-road-and-inn.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-road-and-inn
+- id: pr-s2-tenchi-road-and-inn-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-tenchi-road-and-inn.start
+  to: sc-s2-tenchi-road-and-inn.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-road-and-inn

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-danzo-road-ambush
+episode_id: ep-s2-danzo-road-ambush
+display_rank: 16600
+continuity_id: main
+title: На Данзо нападає група Праджня
+description: Він відкриває Шарінґан і знищує нападників Вітром.
+location_id: loc-iron-country-route
+placement:
+  anchor_id: ta-s2-66-08-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-danzo-road-ambush-1
+  title: На Данзо нападає група Праджня
+  text: Він відкриває Шарінґан і знищує нападників Вітром.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-fu-yamanaka
+    role: participant
+    mode: physical
+  - entity_id: c-torune
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-danzo-road-ambush
+relations: []
+presence:
+- id: pr-s2-danzo-road-ambush-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-danzo-road-ambush.start
+  to: sc-s2-danzo-road-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-road-ambush
+- id: pr-s2-danzo-road-ambush-c-fu-yamanaka
+  entity_id: c-fu-yamanaka
+  from: sc-s2-danzo-road-ambush.start
+  to: sc-s2-danzo-road-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-road-ambush
+- id: pr-s2-danzo-road-ambush-c-torune
+  entity_id: c-torune
+  from: sc-s2-danzo-road-ambush.start
+  to: sc-s2-danzo-road-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-road-ambush

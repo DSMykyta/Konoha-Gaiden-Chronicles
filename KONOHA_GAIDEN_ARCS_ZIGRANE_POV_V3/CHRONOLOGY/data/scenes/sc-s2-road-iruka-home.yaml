@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-road-iruka-home
+episode_id: ep-s2-road-iruka-home
+display_rank: 41800
+continuity_id: movie-road
+title: Ірука вітає Наруто вдома
+description: Після прощання з віддзеркаленими батьками Наруто повертається до своєї родини в Конохі.
+location_id: loc-naruto-apartment
+placement:
+  anchor_id: ta-s2-66-06-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-iruka-home-1
+  title: Ірука вітає Наруто вдома
+  text: Після прощання з віддзеркаленими батьками Наруто повертається до своєї родини в Конохі.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-iruka-home
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-road-iruka-home-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-road-iruka-home.start
+  to: sc-s2-road-iruka-home.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-iruka-home
+- id: pr-s2-road-iruka-home-c-iruka
+  entity_id: c-iruka
+  from: sc-s2-road-iruka-home.start
+  to: sc-s2-road-iruka-home.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-iruka-home

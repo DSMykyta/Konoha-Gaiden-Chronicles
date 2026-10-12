@@ -143,7 +143,7 @@ async function check(width,height){
 
  click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('22 січня 61'));run('closeCard()');
 
- run('zoom=zoomModes.week;center=dayToAxis(21.5);render()');assert.equal(run('semanticLevel()'),'scene');
+ run('zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');assert.equal(run('semanticLevel()'),'scene');
  // The classroom remains a scene because it groups multiple moments. The one-moment exterior scene collapses to its moment.
  assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,1);
  assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,0);
@@ -164,9 +164,9 @@ async function check(width,height){
  click('[data-parent-kind="scene"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);
 
  // At month scale the classroom assignment sequence is one episode; the one-scene/one-moment jōnin episode still collapses to its moment.
- run('closeCard();zoom=zoomModes.month;center=dayToAxis(21.5);render()');assert.equal(run('semanticLevel()'),'episode');
+ run('closeCard();zoom=zoomModes.month;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');assert.equal(run('semanticLevel()'),'episode');
  const formationEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-team-formation")');const joninCollapsed=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert(formationEpisode);assert(joninCollapsed);assert.equal(formationEpisode.kind,'episode');assert(formationEpisode.childCount>=5,'Team formation should keep its original classroom scenes');assert.equal(formationEpisode.childCount,formationEpisode.sourceSceneIds.length);for(const id of ['sc-y0-0122-accidental-kiss','sc-y0-0122-academy-announcements','sc-y0-0122-sakura-searches-sasuke','sc-y0-0122-naruto-impersonates-sasuke','sc-y0-0122-academy-waiting'])assert(formationEpisode.sourceSceneIds.includes(id),'Missing classroom source scene '+id);assert.equal(joninCollapsed.kind,'moment');
- run('center=dayToAxis(22.5);render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'ЕПІЗОД');
+ run('center=dayToAxis(22.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'ЕПІЗОД');
 
  run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');if(arcNode&&Number(arcNode.style.opacity)>0.4){assert(arcNode.classList.contains('arc-node'));assert(arcNode.querySelector('circle.mark.liquid-glass-mark'));click('[data-event="arc:arc-y0-genin-formation"]');}else{const hub=canvas.querySelector('.arc-cluster-node');assert(hub,'Overview must retain a grouped arc');click('[data-event="'+hub.dataset.event+'"]');assert(doc.querySelector('#eventCard [data-cluster-arc="arc-y0-genin-formation"]'),'Original arc must be available from grouped mark');click('#eventCard [data-cluster-arc="arc-y0-genin-formation"]');}assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'АРКА');
  // Cascades have no redundant parent bar and restore parent content/scroll.
@@ -196,7 +196,7 @@ async function check(width,height){
  run('closeCard()');
 
  // Desktop hover opens complete scene data without a click.
- run('zoom=zoomModes.week;center=dayToAxis(21.5);render()');await sleep();const sceneNode=doc.querySelector('[data-scene="sc-y0-0122-academy-announcements"]');
+ run('zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');await sleep();const sceneNode=doc.querySelector('[data-scene="sc-y0-0122-academy-announcements"]');
  sceneNode.dataset.testHovered='true';const hover=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hover,'pointerType',{value:width>=600?'mouse':'touch'});sceneNode.querySelector('.scene-count').dispatchEvent(hover);
  assert(doc.getElementById('eventCard').hidden,'Hover must wait before opening');await new Promise(r=>setTimeout(r,280));
  assert.equal(doc.getElementById('eventCard').hidden,width<=760||height<520);
@@ -228,7 +228,7 @@ async function check(width,height){
  // independent stories, not encounters: a character must not be moved to the
  // cluster centroid, which would falsely imply simultaneous co-presence.
  for(const mode of ['year','month','week','day']){
-  run('closeCard();zoom=zoomModes.'+mode+';center=dayToAxis(21.5);render()');
+  run('closeCard();zoom=zoomModes.'+mode+';center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');
   const missing=run(`graphNodes.filter(p=>p.kind!=='arc-cluster').flatMap(p=>p.cast.filter(id=>{const paths=[...document.querySelectorAll('.thread[data-character="'+id+'"]')];return !paths.some(path=>path.getAttribute('d').includes(p.x.toFixed(2)+','+p.y.toFixed(2)));}).map(character=>({node:p.id,character})))`);
   assert.equal(missing.length,0,mode+' floating narrative nodes: '+JSON.stringify(missing));
   const clusters=run(`graphNodes.filter(p=>p.kind==='arc-cluster').map(p=>({id:p.id,children:p.childCount,arcIds:p.arcs.map(arc=>arc.id),cast:p.cast,expected:[...new Set(p.group.flatMap(event=>event.physical||[]))].filter(id=>selected.has(id))}))`);
@@ -242,7 +242,7 @@ async function check(width,height){
  // small pans keep Y anchors fixed. Going from an episode to its arc keeps lines.
  // Limit this interaction fixture to Team 7 so unrelated new scenes cannot
  // legitimately crowd every cloud label out of the short landscape viewport.
- run('closeCard();selected=new Set(teams["team-7"]);zoom=zoomModes.week;center=dayToAxis(21.5);render()');
+ run('closeCard();selected=new Set(teams["team-7"]);zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');
  const geometry=run('JSON.stringify(graphNodes.map(node=>[node.id,node.x,node.y]))'),view=run('JSON.stringify([zoom,center])');
  assert(canvas.querySelector('.cloud-label'),'The map has no readable group name');
  click('.cloud-label');assert(!doc.getElementById('eventCard').hidden);
@@ -279,16 +279,16 @@ async function check(width,height){
  run("navigateStory('episode',[...episodeMap.values()].find(episode=>episode.arc_id==='arc-y0-scroll-of-seals').id)");click('#eventCard [data-parent-kind="arc"]');
  assert.equal(doc.querySelector('#cardContent h2').textContent,'Наруто і Сувій Печатей');assert(run("graphNodes.some(node=>node.rawId==='arc-y0-scroll-of-seals')"));assert(canvas.querySelector('.thread'));assert(doc.getElementById('timelineEmpty').hidden);run('closeCard()');
  // Fitting the year must remember the story date for the next detail view.
- run('setZoom(zoomModes.week)');await sleep();assert(run('axisToDay(center)<31'),'Year-to-week zoom jumped away from the January story');assert(run('graphNodes.length>0'));
- run('zoom=zoomModes.week;center=dayToAxis(21.5);render();setZoom(zoomModes.year)');await sleep();run('setZoom(zoomModes.week)');await sleep();assert(Math.abs(run('axisToDay(center)')-21.5)<1e-8);
+ run('setZoom(zoomModes.week)');await sleep();assert(run('axisToDay(center)-(data.calendar.current_year-data.calendar.view_start_year)*365<31'),'Year-to-week zoom jumped away from the January story');assert(run('graphNodes.length>0'));
+ run('zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render();setZoom(zoomModes.year)');await sleep();run('setZoom(zoomModes.week)');await sleep();assert(Math.abs(run('axisToDay(center)-(data.calendar.current_year-data.calendar.view_start_year)*365')-21.5)<1e-8);
  // An explicit wheel pivot uses the visible year center, not the remembered date.
- run('zoom=zoomModes.year;center=dayToAxis(21.5);render()');// The year preset covers one year, not the full multi-year atlas; preserve
+ run('zoom=zoomModes.year;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');// The year preset covers one year, not the full multi-year atlas; preserve
  // the cursor's fractional position inside the OLD visible range.
- const pivot=run('dayToAxis(73.5)'),oldBounds=run('range()'),fraction=(pivot-oldBounds[0])/(oldBounds[1]-oldBounds[0]);run('setZoom(zoomModes.month,'+pivot+')');await sleep();const bounds=run('range()');assert(Math.abs((pivot-bounds[0])/(bounds[1]-bounds[0])-fraction)<1e-8,'Explicit zoom pivot drift: '+JSON.stringify({pivot,bounds,fraction,actual:(pivot-bounds[0])/(bounds[1]-bounds[0]),state:run('({zoom,center,axis:axisLength(),month:zoomModes.month,year:zoomModes.year,rememberedDetailAxis})')}));
+ const pivot=run('dayToAxis(73.5+(data.calendar.current_year-data.calendar.view_start_year)*365)'),oldBounds=run('range()'),fraction=(pivot-oldBounds[0])/(oldBounds[1]-oldBounds[0]);run('setZoom(zoomModes.month,'+pivot+')');await sleep();const bounds=run('range()');assert(Math.abs((pivot-bounds[0])/(bounds[1]-bounds[0])-fraction)<1e-8,'Explicit zoom pivot drift: '+JSON.stringify({pivot,bounds,fraction,actual:(pivot-bounds[0])/(bounds[1]-bounds[0]),state:run('({zoom,center,axis:axisLength(),month:zoomModes.month,year:zoomModes.year,rememberedDetailAxis})')}));
  const moments=run("semanticNodes('moment',orderedScenes())");
  for(const scene of run('orderedScenes()')){if(scene.day===null)continue;const members=moments.filter(node=>node.scene?.id===scene.id);assert(members.every(node=>node.day>scene.day&&node.day<scene.day+1));}
  // Enhanced search is the only renderer; readers open their own hierarchy level.
- run('closeCard();zoom=zoomModes.week;center=dayToAxis(21.5);render()');
+ run('closeCard();zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');
  const query=doc.getElementById('eventSearch'),searchType=kind=>click('[data-search-type="'+kind+'"]');
  const fillQuery=value=>{query.value=value;query.dispatchEvent(new window.Event('input'));};
  click('#searchButton');fillQuery('Наруто');searchType('person');
@@ -311,9 +311,10 @@ async function check(width,height){
  const filtered=run('TimelineSearchEnhanced.searchDocs("").items');assert(filtered.length>0);assert(filtered.every(item=>item.kind==='moment'&&item.personIds.includes('c-raido')));
  doc.getElementById('searchDate').value='31.02';doc.getElementById('searchDate').dispatchEvent(new window.Event('input'));await new Promise(resolve=>setTimeout(resolve,215));assert(doc.getElementById('searchSummary').textContent.includes('Дата поза діапазоном хронології або неправильна'));assert.equal(doc.querySelector('[data-search-kind]'),null);
  click('#clearSearchFilters');fillQuery('какаш');searchType('person');assert(doc.querySelector('[data-search-kind="person"][data-search-id="c-kakashi"]'));click('#clearSearchFilters');run('closePanels()');
+ run("navigateScene('sc-s2-prison-accusation')");assert.match(doc.querySelector('#cardContent .story-version').textContent,/Джерело: фільм.*Blood Prison/);run('closeCard()');
  // Exercise the actual DOM renderer with a second populated year, in both
  // directions. This fixture changes the view metadata, not repository scenes.
- run('closeCard();closePanels();const multi=JSON.parse(JSON.stringify(data));multi.calendar.view_end_year=62;multi.calendar.view_days=730;ingest(multi);');
+ run('closeCard();closePanels();const multi=JSON.parse(JSON.stringify(data));multi.calendar.view_end_year=62;multi.calendar.view_days=(62-multi.calendar.view_start_year+1)*365;ingest(multi);');
  window.matchMedia=()=>({matches:false});
  const eraBoundary=run('TimelineEraHeading.segments(data.periods,data.calendar).find(p=>p.id==="timeskip").start');
  const beforeEra=eraBoundary-15;
@@ -321,13 +322,13 @@ async function check(width,height){
  assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,2);
  assert.match(doc.querySelector('#eraHeadingTrack [data-era="part-i"]').style.transform,/-/);
  assert(doc.querySelector('#eraHeadingTrack [data-era="timeskip"]'));
- run('renderEraHeading(365,day=>10*(day-365))');
+ run('const nextYearDay=(62-data.calendar.view_start_year)*365;renderEraHeading(nextYearDay,day=>10*(day-nextYearDay))');
  assert.equal(doc.getElementById('eraHeading').dataset.era,'part-i');
  run(`renderEraHeading(${eraBoundary},day=>10*(day-${eraBoundary}))`);
  assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
  assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,1);
  assert.equal(doc.querySelector('#eraHeadingTrack span').style.transform,'translate3d(0px,0,0)');
- assert.equal(run('date(365).year'),62);assert.equal(run('date(365).d'),1);
+ assert.equal(run('date(nextYearDay).year'),62);assert.equal(run('date(nextYearDay).d'),1);
  run(`renderEraHeading(${beforeEra},day=>10*(day-${beforeEra}))`);
  assert.equal(doc.getElementById('eraHeading').dataset.era,'part-i');
  window.matchMedia=()=>({matches:true});

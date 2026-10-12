@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-moryo-revived
+episode_id: ep-s2-moryo-revived
+display_rank: 36900
+continuity_id: movie-shion
+title: Йомі звільняє Морьо
+description: Він надає демону своє тіло; кам’яне військо починає наступ.
+location_id: loc-moryo-soul-shrine
+placement:
+  anchor_id: ta-s2-65-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-moryo-revived-1
+  title: Йомі звільняє Морьо
+  text: Він надає демону своє тіло; кам’яне військо починає наступ.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yomi
+    role: participant
+    mode: physical
+  - entity_id: c-moryo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-moryo-revived
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-moryo-revived-c-yomi
+  entity_id: c-yomi
+  from: sc-s2-moryo-revived.start
+  to: sc-s2-moryo-revived.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-moryo-revived
+- id: pr-s2-moryo-revived-c-moryo
+  entity_id: c-moryo
+  from: sc-s2-moryo-revived.start
+  to: sc-s2-moryo-revived.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-moryo-revived

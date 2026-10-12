@@ -1,0 +1,161 @@
+schema_version: 1
+id: sc-s2-yota-children-meeting
+episode_id: ep-s2-yota-children-meeting
+display_rank: 34500
+continuity_id: main
+title: Діти знайомляться з Йотою
+description: Погода змінюється від його переживань; Наруто навчає його свистіти. Діти проникають визволити його;
+  Йота зупиняє охоронців блискавкою.
+location_id: loc-konoha-woods
+placement:
+  anchor_id: ta-s2-57-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yota-children-meeting-1
+  title: Діти знайомляться з Йотою
+  text: Погода змінюється від його переживань; Наруто навчає його свистіти.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yota
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: ev-s2-yota-children-meeting-2
+  title: Йоту забирає АНБУ
+  text: Діти проникають визволити його; Йота зупиняє охоронців блискавкою.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-yota
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+relations:
+- id: rel-s2-yota-children-meeting-1
+  kind: before
+  a: ev-s2-yota-children-meeting-1
+  b: ev-s2-yota-children-meeting-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+presence:
+- id: pr-s2-yota-children-meeting-c-yota
+  entity_id: c-yota
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: pr-s2-yota-children-meeting-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: pr-s2-yota-children-meeting-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: pr-s2-yota-children-meeting-c-choji
+  entity_id: c-choji
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: pr-s2-yota-children-meeting-c-ino
+  entity_id: c-ino
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: pr-s2-yota-children-meeting-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: pr-s2-yota-children-meeting-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting
+- id: pr-s2-yota-children-meeting-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-yota-children-meeting.start
+  to: sc-s2-yota-children-meeting.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yota-children-meeting

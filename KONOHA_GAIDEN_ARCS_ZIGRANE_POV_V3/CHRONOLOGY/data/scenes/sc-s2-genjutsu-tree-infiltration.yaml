@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-genjutsu-tree-infiltration
+episode_id: ep-s2-genjutsu-tree-infiltration
+display_rank: 23900
+continuity_id: main
+title: Наруто проникає до Кандачі
+description: Під виглядом Таніші він приводить зв’язаного Джираю, щоб дістатися заручників.
+location_id: loc-genjutsu-tree-village
+placement:
+  anchor_id: ta-s2-63-06-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-genjutsu-tree-infiltration-1
+  title: Наруто проникає до Кандачі
+  text: Під виглядом Таніші він приводить зв’язаного Джираю, щоб дістатися заручників.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-tanishi
+    role: participant
+    mode: physical
+  - entity_id: c-kandachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-genjutsu-tree-infiltration
+relations: []
+presence:
+- id: pr-s2-genjutsu-tree-infiltration-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-genjutsu-tree-infiltration.start
+  to: sc-s2-genjutsu-tree-infiltration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-genjutsu-tree-infiltration
+- id: pr-s2-genjutsu-tree-infiltration-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-genjutsu-tree-infiltration.start
+  to: sc-s2-genjutsu-tree-infiltration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-genjutsu-tree-infiltration
+- id: pr-s2-genjutsu-tree-infiltration-c-tanishi
+  entity_id: c-tanishi
+  from: sc-s2-genjutsu-tree-infiltration.start
+  to: sc-s2-genjutsu-tree-infiltration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-genjutsu-tree-infiltration
+- id: pr-s2-genjutsu-tree-infiltration-c-kandachi
+  entity_id: c-kandachi
+  from: sc-s2-genjutsu-tree-infiltration.start
+  to: sc-s2-genjutsu-tree-infiltration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-genjutsu-tree-infiltration

@@ -1,0 +1,186 @@
+schema_version: 1
+id: sc-s2-sasuke-reunion
+episode_id: ep-s2-sasuke-reunion
+display_rank: 3800
+continuity_id: main
+title: Сай знаходить Саске
+description: Саске виривається з чорнильних змій і руйнує частину сховища; команда виходить до нього. Сай прикриває
+  Наруто, Ямато зупиняє напад на Сакуру; Саске пригнічує чакру Курами. Кабуто переконує залишити Команду Какаші
+  живою, щоб вона продовжувала боротися з Акацукі.
+location_id: loc-orochimaru-tenchi-hideout
+placement:
+  anchor_id: ta-s2-64-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasuke-reunion-1
+  title: Сай знаходить Саске
+  text: Саске виривається з чорнильних змій і руйнує частину сховища; команда виходить до нього.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: ev-s2-sasuke-reunion-2
+  title: Саске відбиває спробу повернути його
+  text: Сай прикриває Наруто, Ямато зупиняє напад на Сакуру; Саске пригнічує чакру Курами.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: ev-s2-sasuke-reunion-3
+  title: Орочімару зупиняє Саске
+  text: Кабуто переконує залишити Команду Какаші живою, щоб вона продовжувала боротися з Акацукі.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+relations:
+- id: rel-s2-sasuke-reunion-1
+  kind: before
+  a: ev-s2-sasuke-reunion-1
+  b: ev-s2-sasuke-reunion-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: rel-s2-sasuke-reunion-2
+  kind: before
+  a: ev-s2-sasuke-reunion-2
+  b: ev-s2-sasuke-reunion-3
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+presence:
+- id: pr-s2-sasuke-reunion-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sasuke-reunion.start
+  to: sc-s2-sasuke-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: pr-s2-sasuke-reunion-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sasuke-reunion.start
+  to: sc-s2-sasuke-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: pr-s2-sasuke-reunion-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-sasuke-reunion.start
+  to: sc-s2-sasuke-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: pr-s2-sasuke-reunion-c-sai
+  entity_id: c-sai
+  from: sc-s2-sasuke-reunion.start
+  to: sc-s2-sasuke-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: pr-s2-sasuke-reunion-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sasuke-reunion.start
+  to: sc-s2-sasuke-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: pr-s2-sasuke-reunion-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-sasuke-reunion.start
+  to: sc-s2-sasuke-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion
+- id: pr-s2-sasuke-reunion-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-sasuke-reunion.start
+  to: sc-s2-sasuke-reunion.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-reunion

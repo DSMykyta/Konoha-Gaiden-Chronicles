@@ -61,3 +61,9 @@ An episode follows one narrative line. Independent parallel actions are separate
 Validation: `python validate_timeline.py` from `CHRONOLOGY/`. Site validation: `npm --prefix SITE test` from repository root. Validators check references and continuity; editorial review is still needed to decide whether a narrative line is coherent.
 
 `mission-windows.yaml` — чинні робочі резерви дороги, участі й відновлення після відходу Саске; збірка перевіряє їх проти фізичної присутності в усіх активних датованих сценах. Підстави — `../POST_SASUKE_SCHEDULE_UA.md`.
+
+## Shippuden до війни
+
+[../SHIPPUDEN_PREWAR_REVIEW_UA.md](../SHIPPUDEN_PREWAR_REVIEW_UA.md) — звіт, робочий порядок та відкриті календарні питання. `shippuden-placement.yaml` — вісім резервацій основної тяглості й сім відносних інтервалів; вони перевіряються при збірці. `../SHIPPUDEN_COVERAGE.json` відділяє представлену серію від повністю завершеного джерельного аудиту. `../SHIPPUDEN_CHANGE_INDEX.json` містить кожну нову сцену, причину дня та джерела. `../MOVIE_SOURCE_REVIEW.json` — інвентар 11 фільмів і відсутніх субтитрів.
+
+Структурна перевірка нових записів: `python ../validate_shippuden.py` з цієї папки. Вона не замінює сюжетний / географічний аудит.

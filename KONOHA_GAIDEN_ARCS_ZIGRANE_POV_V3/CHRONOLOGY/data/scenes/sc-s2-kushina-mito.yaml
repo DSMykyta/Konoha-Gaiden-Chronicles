@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-kushina-mito
+episode_id: ep-s2-kushina-mito
+display_rank: 29900
+continuity_id: main
+title: Міто готує Кушіну до ролі джінчюрікі
+description: Любов та зв’язки з людьми мають заповнити її життя перед отриманням Курами.
+location_id: loc-uzumaki-sealing-chamber
+placement:
+  anchor_id: ta-s2-34-04-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kushina-mito-1
+  title: Міто готує Кушіну до ролі джінчюрікі
+  text: Любов та зв’язки з людьми мають заповнити її життя перед отриманням Курами.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-mito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kushina-mito
+relations: []
+presence:
+- id: pr-s2-kushina-mito-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-kushina-mito.start
+  to: sc-s2-kushina-mito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kushina-mito
+- id: pr-s2-kushina-mito-c-mito
+  entity_id: c-mito
+  from: sc-s2-kushina-mito.start
+  to: sc-s2-kushina-mito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kushina-mito

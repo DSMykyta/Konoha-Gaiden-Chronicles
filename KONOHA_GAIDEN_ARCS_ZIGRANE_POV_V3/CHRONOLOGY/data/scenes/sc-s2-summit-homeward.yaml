@@ -1,0 +1,130 @@
+schema_version: 1
+id: sc-s2-summit-homeward
+episode_id: ep-s2-summit-homeward
+display_rank: 18700
+continuity_id: main
+title: Команди повертаються з Країни Заліза
+description: Вони забирають приспаних товаришів та ведуть Карін до Конохи.
+location_id: loc-iron-country-route
+placement:
+  anchor_id: ta-s2-66-08-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-summit-homeward-1
+  title: Команди повертаються з Країни Заліза
+  text: Вони забирають приспаних товаришів та ведуть Карін до Конохи.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-summit-homeward
+relations: []
+presence:
+- id: pr-s2-summit-homeward-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-sai
+  entity_id: c-sai
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-lee
+  entity_id: c-lee
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward
+- id: pr-s2-summit-homeward-c-karin
+  entity_id: c-karin
+  from: sc-s2-summit-homeward.start
+  to: sc-s2-summit-homeward.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-summit-homeward

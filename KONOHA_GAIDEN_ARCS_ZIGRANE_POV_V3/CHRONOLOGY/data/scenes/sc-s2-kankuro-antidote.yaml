@@ -1,0 +1,147 @@
+schema_version: 1
+id: sc-s2-kankuro-antidote
+episode_id: ep-s2-kankuro-antidote
+display_rank: 1100
+continuity_id: main
+title: Сакура лікує Канкуро
+description: Вона витягує отруту й готує протиотруту; Чіо впізнає роботу Сасорі. Темарі лишається захищати Суну;
+  Чіо веде переслідування свого онука.
+location_id: loc-suna-hospital
+placement:
+  anchor_id: ta-s2-64-12-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kankuro-antidote-1
+  title: Сакура лікує Канкуро
+  text: Вона витягує отруту й готує протиотруту; Чіо впізнає роботу Сасорі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-baki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+- id: ev-s2-kankuro-antidote-2
+  title: Чіо вирушає з Командою Какаші
+  text: Темарі лишається захищати Суну; Чіо веде переслідування свого онука.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-baki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+relations:
+- id: rel-s2-kankuro-antidote-1
+  kind: before
+  a: ev-s2-kankuro-antidote-1
+  b: ev-s2-kankuro-antidote-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+presence:
+- id: pr-s2-kankuro-antidote-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-kankuro-antidote.start
+  to: sc-s2-kankuro-antidote.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+- id: pr-s2-kankuro-antidote-c-chiyo
+  entity_id: c-chiyo
+  from: sc-s2-kankuro-antidote.start
+  to: sc-s2-kankuro-antidote.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+- id: pr-s2-kankuro-antidote-c-kankuro
+  entity_id: c-kankuro
+  from: sc-s2-kankuro-antidote.start
+  to: sc-s2-kankuro-antidote.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+- id: pr-s2-kankuro-antidote-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kankuro-antidote.start
+  to: sc-s2-kankuro-antidote.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+- id: pr-s2-kankuro-antidote-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-kankuro-antidote.start
+  to: sc-s2-kankuro-antidote.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+- id: pr-s2-kankuro-antidote-c-temari
+  entity_id: c-temari
+  from: sc-s2-kankuro-antidote.start
+  to: sc-s2-kankuro-antidote.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote
+- id: pr-s2-kankuro-antidote-c-baki
+  entity_id: c-baki
+  from: sc-s2-kankuro-antidote.start
+  to: sc-s2-kankuro-antidote.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kankuro-antidote

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-kakashi-anbu-appointed
+episode_id: ep-s2-kakashi-anbu-appointed
+display_rank: 28500
+continuity_id: main
+title: Мінато переводить Какаші до АНБУ
+description: Ґай рятує його під час місії; Мінато обирає службу під власним командуванням.
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-s2-48-06-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-anbu-appointed-1
+  title: Мінато переводить Какаші до АНБУ
+  text: Ґай рятує його під час місії; Мінато обирає службу під власним командуванням.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-anbu-appointed
+relations: []
+presence:
+- id: pr-s2-kakashi-anbu-appointed-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-anbu-appointed.start
+  to: sc-s2-kakashi-anbu-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-anbu-appointed
+- id: pr-s2-kakashi-anbu-appointed-c-minato
+  entity_id: c-minato
+  from: sc-s2-kakashi-anbu-appointed.start
+  to: sc-s2-kakashi-anbu-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-anbu-appointed
+- id: pr-s2-kakashi-anbu-appointed-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-kakashi-anbu-appointed.start
+  to: sc-s2-kakashi-anbu-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-anbu-appointed

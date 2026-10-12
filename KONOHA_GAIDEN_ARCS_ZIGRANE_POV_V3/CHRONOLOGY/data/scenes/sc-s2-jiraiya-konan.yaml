@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-jiraiya-konan
+episode_id: ep-s2-jiraiya-konan
+display_rank: 11300
+continuity_id: main
+title: Конан знаходить Джираю
+description: Він впізнає колишню ученицю; Пейн вступає в бій і викликає звірів.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-66-07-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-konan-1
+  title: Конан знаходить Джираю
+  text: Він впізнає колишню ученицю; Пейн вступає в бій і викликає звірів.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-konan
+relations: []
+presence:
+- id: pr-s2-jiraiya-konan-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-konan.start
+  to: sc-s2-jiraiya-konan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-konan
+- id: pr-s2-jiraiya-konan-c-konan
+  entity_id: c-konan
+  from: sc-s2-jiraiya-konan.start
+  to: sc-s2-jiraiya-konan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-konan
+- id: pr-s2-jiraiya-konan-c-pain
+  entity_id: c-pain
+  from: sc-s2-jiraiya-konan.start
+  to: sc-s2-jiraiya-konan.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-konan

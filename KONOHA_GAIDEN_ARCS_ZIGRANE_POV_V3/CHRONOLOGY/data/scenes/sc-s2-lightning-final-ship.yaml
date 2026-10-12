@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-lightning-final-ship
+episode_id: ep-s2-lightning-final-ship
+display_rank: 21000
+continuity_id: main
+title: Загін переходить на судно до Блискавки
+description: Остання частина морської дороги веде до захищеного острова.
+location_id: loc-water-country-messenger-island
+placement:
+  anchor_id: ta-s2-66-10-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-lightning-final-ship-1
+  title: Загін переходить на судно до Блискавки
+  text: Остання частина морської дороги веде до захищеного острова.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-lightning-final-ship
+relations: []
+presence:
+- id: pr-s2-lightning-final-ship-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-lightning-final-ship.start
+  to: sc-s2-lightning-final-ship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lightning-final-ship
+- id: pr-s2-lightning-final-ship-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-lightning-final-ship.start
+  to: sc-s2-lightning-final-ship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lightning-final-ship
+- id: pr-s2-lightning-final-ship-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-lightning-final-ship.start
+  to: sc-s2-lightning-final-ship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lightning-final-ship
+- id: pr-s2-lightning-final-ship-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-lightning-final-ship.start
+  to: sc-s2-lightning-final-ship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lightning-final-ship

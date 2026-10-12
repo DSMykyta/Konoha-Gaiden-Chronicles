@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-nadeshiko-arrival
+episode_id: ep-s2-nadeshiko-arrival
+display_rank: 20600
+continuity_id: main
+title: Токіва впізнає учня Джираї
+description: Старий договір вимагає двобою Наруто з Шізукою; загін робить зупинку на ніч.
+location_id: loc-nadeshiko-village
+placement:
+  anchor_id: ta-s2-66-09-27
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-nadeshiko-arrival-1
+  title: Токіва впізнає учня Джираї
+  text: Старий договір вимагає двобою Наруто з Шізукою; загін робить зупинку на ніч.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-shizuka
+    role: participant
+    mode: physical
+  - entity_id: c-tokiwa
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-nadeshiko-arrival
+relations: []
+presence:
+- id: pr-s2-nadeshiko-arrival-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-nadeshiko-arrival.start
+  to: sc-s2-nadeshiko-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-arrival
+- id: pr-s2-nadeshiko-arrival-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-nadeshiko-arrival.start
+  to: sc-s2-nadeshiko-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-arrival
+- id: pr-s2-nadeshiko-arrival-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-nadeshiko-arrival.start
+  to: sc-s2-nadeshiko-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-arrival
+- id: pr-s2-nadeshiko-arrival-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-nadeshiko-arrival.start
+  to: sc-s2-nadeshiko-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-arrival
+- id: pr-s2-nadeshiko-arrival-c-shizuka
+  entity_id: c-shizuka
+  from: sc-s2-nadeshiko-arrival.start
+  to: sc-s2-nadeshiko-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-arrival
+- id: pr-s2-nadeshiko-arrival-c-tokiwa
+  entity_id: c-tokiwa
+  from: sc-s2-nadeshiko-arrival.start
+  to: sc-s2-nadeshiko-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-arrival

@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-suna-request
+episode_id: ep-s2-suna-request
+display_rank: 900
+continuity_id: main
+title: Коноха отримує прохання Суни
+description: Цунаде відправляє Команду Какаші рятувати Кадзекаґе.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-64-12-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-suna-request-1
+  title: Коноха отримує прохання Суни
+  text: Цунаде відправляє Команду Какаші рятувати Кадзекаґе.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-suna-request
+relations: []
+presence:
+- id: pr-s2-suna-request-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-suna-request.start
+  to: sc-s2-suna-request.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-request
+- id: pr-s2-suna-request-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-suna-request.start
+  to: sc-s2-suna-request.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-request
+- id: pr-s2-suna-request-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-suna-request.start
+  to: sc-s2-suna-request.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-request
+- id: pr-s2-suna-request-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-suna-request.start
+  to: sc-s2-suna-request.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-request
+- id: pr-s2-suna-request-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-suna-request.start
+  to: sc-s2-suna-request.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suna-request

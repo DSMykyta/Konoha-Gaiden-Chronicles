@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-road-sakura-search-pendant
+episode_id: ep-s2-road-sakura-search-pendant
+display_rank: 600
+continuity_id: movie-road
+title: Іно допомагає шукати підвіску
+description: Зустрічі зі знайомими не повертають пам’ять; Сакура помічає втрату прикраси.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-06-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-sakura-search-pendant-1
+  title: Іно допомагає шукати підвіску
+  text: Зустрічі зі знайомими не повертають пам’ять; Сакура помічає втрату прикраси.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-rtn-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-sakura-search-pendant
+relations: []
+presence:
+- id: pr-s2-road-sakura-search-pendant-c-rtn-sakura
+  entity_id: c-rtn-sakura
+  from: sc-s2-road-sakura-search-pendant.start
+  to: sc-s2-road-sakura-search-pendant.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-search-pendant
+- id: pr-s2-road-sakura-search-pendant-c-ino
+  entity_id: c-ino
+  from: sc-s2-road-sakura-search-pendant.start
+  to: sc-s2-road-sakura-search-pendant.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-search-pendant

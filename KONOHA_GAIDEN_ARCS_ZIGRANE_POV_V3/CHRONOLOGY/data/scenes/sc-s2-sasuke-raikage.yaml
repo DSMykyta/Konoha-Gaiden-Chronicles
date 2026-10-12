@@ -1,0 +1,189 @@
+schema_version: 1
+id: sc-s2-sasuke-raikage
+episode_id: ep-s2-sasuke-raikage
+display_rank: 17300
+continuity_id: main
+title: Така проривається крізь самураїв
+description: Райкаґе атакує Саске; Сусаноо й Аматерасу зупиняють його удари. Райкаґе відтинає обпечену руку; Ґаара
+  пробує переконати Саске відступити.
+location_id: loc-five-kage-lower-hall
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasuke-raikage-1
+  title: Така проривається крізь самураїв
+  text: Райкаґе атакує Саске; Сусаноо й Аматерасу зупиняють його удари.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-darui
+    role: participant
+    mode: physical
+  - entity_id: c-cee
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: ev-s2-sasuke-raikage-2
+  title: Ґаара перериває небезпечне зіткнення
+  text: Райкаґе відтинає обпечену руку; Ґаара пробує переконати Саске відступити.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-darui
+    role: participant
+    mode: physical
+  - entity_id: c-cee
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+relations:
+- id: rel-s2-sasuke-raikage-1
+  kind: before
+  a: ev-s2-sasuke-raikage-1
+  b: ev-s2-sasuke-raikage-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+presence:
+- id: pr-s2-sasuke-raikage-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-karin
+  entity_id: c-karin
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-darui
+  entity_id: c-darui
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-cee
+  entity_id: c-cee
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-temari
+  entity_id: c-temari
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage
+- id: pr-s2-sasuke-raikage-c-kankuro
+  entity_id: c-kankuro
+  from: sc-s2-sasuke-raikage.start
+  to: sc-s2-sasuke-raikage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-raikage

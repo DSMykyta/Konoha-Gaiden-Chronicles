@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-kurama-extracted
+episode_id: ep-s2-kurama-extracted
+display_rank: 30300
+continuity_id: main
+title: Обіто витягає Кураму з Кушіни
+description: Шарінґан підкорює лиса; Мінато рятує Кушіну від смертельного удару.
+location_id: loc-kurama-release-clearing
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kurama-extracted-1
+  title: Обіто витягає Кураму з Кушіни
+  text: Шарінґан підкорює лиса; Мінато рятує Кушіну від смертельного удару.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kurama-extracted
+relations: []
+presence:
+- id: pr-s2-kurama-extracted-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-kurama-extracted.start
+  to: sc-s2-kurama-extracted.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-extracted
+- id: pr-s2-kurama-extracted-c-obito
+  entity_id: c-obito
+  from: sc-s2-kurama-extracted.start
+  to: sc-s2-kurama-extracted.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-extracted
+- id: pr-s2-kurama-extracted-c-minato
+  entity_id: c-minato
+  from: sc-s2-kurama-extracted.start
+  to: sc-s2-kurama-extracted.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-extracted
+- id: pr-s2-kurama-extracted-c-kurama
+  entity_id: c-kurama
+  from: sc-s2-kurama-extracted.start
+  to: sc-s2-kurama-extracted.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-extracted

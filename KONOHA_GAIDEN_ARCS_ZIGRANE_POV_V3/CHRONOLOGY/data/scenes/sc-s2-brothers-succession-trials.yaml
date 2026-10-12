@@ -1,0 +1,73 @@
+schema_version: 1
+id: sc-s2-brothers-succession-trials
+episode_id: ep-s2-brothers-succession-trials
+display_rank: 43300
+continuity_id: main
+title: Сини отримують завдання допомогти поселенням
+description: Індра працює сам, а Асура знаходить допомогу людей та усуває шкоду Божественного дерева.
+location_id: loc-ninshu-trial-villages
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-brothers-succession-trials-1
+  title: Сини отримують завдання допомогти поселенням
+  text: Індра працює сам, а Асура знаходить допомогу людей та усуває шкоду Божественного дерева.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-indra
+    role: participant
+    mode: physical
+  - entity_id: c-asura
+    role: participant
+    mode: physical
+  - entity_id: c-taizo
+    role: participant
+    mode: physical
+  - entity_id: c-kanna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-brothers-succession-trials
+relations: []
+presence:
+- id: pr-s2-brothers-succession-trials-c-indra
+  entity_id: c-indra
+  from: sc-s2-brothers-succession-trials.start
+  to: sc-s2-brothers-succession-trials.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-brothers-succession-trials
+- id: pr-s2-brothers-succession-trials-c-asura
+  entity_id: c-asura
+  from: sc-s2-brothers-succession-trials.start
+  to: sc-s2-brothers-succession-trials.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-brothers-succession-trials
+- id: pr-s2-brothers-succession-trials-c-taizo
+  entity_id: c-taizo
+  from: sc-s2-brothers-succession-trials.start
+  to: sc-s2-brothers-succession-trials.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-brothers-succession-trials
+- id: pr-s2-brothers-succession-trials-c-kanna
+  entity_id: c-kanna
+  from: sc-s2-brothers-succession-trials.start
+  to: sc-s2-brothers-succession-trials.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-brothers-succession-trials

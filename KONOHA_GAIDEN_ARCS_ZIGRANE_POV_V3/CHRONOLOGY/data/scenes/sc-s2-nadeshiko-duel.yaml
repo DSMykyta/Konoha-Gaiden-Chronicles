@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-nadeshiko-duel
+episode_id: ep-s2-nadeshiko-duel
+display_rank: 20700
+continuity_id: main
+title: Наруто зупиняє двобій без шлюбу
+description: Він перехитрює Шізуку клоном і відмовляється примушувати її. Ворожі нитки захоплюють Шізуку; Наруто
+  звільняє її й повертається на корабель.
+location_id: loc-nadeshiko-village
+placement:
+  anchor_id: ta-s2-66-09-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-nadeshiko-duel-1
+  title: Наруто зупиняє двобій без шлюбу
+  text: Він перехитрює Шізуку клоном і відмовляється примушувати її.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shizuka
+    role: participant
+    mode: physical
+  - entity_id: c-tokiwa
+    role: participant
+    mode: physical
+  - entity_id: c-kokuyo
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-nadeshiko-duel
+- id: ev-s2-nadeshiko-duel-2
+  title: Наруто розбиває техніку Кокуйо
+  text: Ворожі нитки захоплюють Шізуку; Наруто звільняє її й повертається на корабель.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shizuka
+    role: participant
+    mode: physical
+  - entity_id: c-tokiwa
+    role: participant
+    mode: physical
+  - entity_id: c-kokuyo
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-nadeshiko-duel
+relations:
+- id: rel-s2-nadeshiko-duel-1
+  kind: before
+  a: ev-s2-nadeshiko-duel-1
+  b: ev-s2-nadeshiko-duel-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-duel
+presence:
+- id: pr-s2-nadeshiko-duel-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-nadeshiko-duel.start
+  to: sc-s2-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-duel
+- id: pr-s2-nadeshiko-duel-c-shizuka
+  entity_id: c-shizuka
+  from: sc-s2-nadeshiko-duel.start
+  to: sc-s2-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-duel
+- id: pr-s2-nadeshiko-duel-c-tokiwa
+  entity_id: c-tokiwa
+  from: sc-s2-nadeshiko-duel.start
+  to: sc-s2-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-duel
+- id: pr-s2-nadeshiko-duel-c-kokuyo
+  entity_id: c-kokuyo
+  from: sc-s2-nadeshiko-duel.start
+  to: sc-s2-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-duel
+- id: pr-s2-nadeshiko-duel-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-nadeshiko-duel.start
+  to: sc-s2-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nadeshiko-duel

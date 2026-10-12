@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-uchiha-relocated
+episode_id: ep-s2-uchiha-relocated
+display_rank: 30900
+continuity_id: main
+title: Учіха переселяють на околицю
+description: Після нападу підозри щодо Шарінґана приводять до нагляду за кланом і нового поселення.
+location_id: loc-konoha-council-room
+placement:
+  anchor_id: ta-s2-49-11-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-uchiha-relocated-1
+  title: Учіха переселяють на околицю
+  text: Після нападу підозри щодо Шарінґана приводять до нагляду за кланом і нового поселення.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-uchiha-relocated
+relations: []
+presence:
+- id: pr-s2-uchiha-relocated-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-uchiha-relocated.start
+  to: sc-s2-uchiha-relocated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-relocated
+- id: pr-s2-uchiha-relocated-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-uchiha-relocated.start
+  to: sc-s2-uchiha-relocated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-relocated
+- id: pr-s2-uchiha-relocated-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-uchiha-relocated.start
+  to: sc-s2-uchiha-relocated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-relocated

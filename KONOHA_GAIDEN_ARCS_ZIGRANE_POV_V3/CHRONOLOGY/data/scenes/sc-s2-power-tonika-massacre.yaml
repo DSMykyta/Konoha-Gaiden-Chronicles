@@ -1,0 +1,108 @@
+schema_version: 1
+id: sc-s2-power-tonika-massacre
+episode_id: ep-s2-power-main
+display_rank: 0
+continuity_id: main
+title: Кабуто знищує Тоніку
+description: Докку витягає дітей із палаючих будинків; оживлені шинобі винищують мешканців.
+location_id: loc-tonika-village
+placement:
+  anchor_id: ta-s2-66-08-27
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-tonika-massacre-1
+  title: Кабуто знищує Тоніку
+  text: Докку витягає дітей із палаючих будинків; оживлені шинобі винищують мешканців.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-dokku
+    role: participant
+    mode: physical
+  - entity_id: c-leo-power
+    role: participant
+    mode: physical
+  - entity_id: c-miina
+    role: participant
+    mode: physical
+  - entity_id: c-faz
+    role: participant
+    mode: physical
+  - entity_id: c-lando
+    role: participant
+    mode: physical
+  - entity_id: c-sora-power
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-tonika-massacre
+relations: []
+presence:
+- id: pr-s2-power-tonika-massacre-c-dokku
+  entity_id: c-dokku
+  from: sc-s2-power-tonika-massacre.start
+  to: sc-s2-power-tonika-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tonika-massacre
+- id: pr-s2-power-tonika-massacre-c-leo-power
+  entity_id: c-leo-power
+  from: sc-s2-power-tonika-massacre.start
+  to: sc-s2-power-tonika-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tonika-massacre
+- id: pr-s2-power-tonika-massacre-c-miina
+  entity_id: c-miina
+  from: sc-s2-power-tonika-massacre.start
+  to: sc-s2-power-tonika-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tonika-massacre
+- id: pr-s2-power-tonika-massacre-c-faz
+  entity_id: c-faz
+  from: sc-s2-power-tonika-massacre.start
+  to: sc-s2-power-tonika-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tonika-massacre
+- id: pr-s2-power-tonika-massacre-c-lando
+  entity_id: c-lando
+  from: sc-s2-power-tonika-massacre.start
+  to: sc-s2-power-tonika-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tonika-massacre
+- id: pr-s2-power-tonika-massacre-c-sora-power
+  entity_id: c-sora-power
+  from: sc-s2-power-tonika-massacre.start
+  to: sc-s2-power-tonika-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tonika-massacre
+- id: pr-s2-power-tonika-massacre-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-power-tonika-massacre.start
+  to: sc-s2-power-tonika-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tonika-massacre

@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-hanzo-konan-hostage
+episode_id: ep-s2-hanzo-konan-hostage
+display_rank: 35000
+continuity_id: main
+title: Ханзо заманює Акацукі на переговори
+description: Конан захоплюють; він вимагає, щоб Наґато вбив Яхіко. Він віддає життя, щоб Наґато не мусив обирати
+  між друзями.
+location_id: loc-ame-negotiation-cliff
+placement:
+  anchor_id: ta-s2-48-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hanzo-konan-hostage-1
+  title: Ханзо заманює Акацукі на переговори
+  text: Конан захоплюють; він вимагає, щоб Наґато вбив Яхіко.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hanzo
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-yahiko
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage
+- id: ev-s2-hanzo-konan-hostage-2
+  title: Яхіко сам кидається на кунай
+  text: Він віддає життя, щоб Наґато не мусив обирати між друзями.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-hanzo
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-yahiko
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage
+relations:
+- id: rel-s2-hanzo-konan-hostage-1
+  kind: before
+  a: ev-s2-hanzo-konan-hostage-1
+  b: ev-s2-hanzo-konan-hostage-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage
+presence:
+- id: pr-s2-hanzo-konan-hostage-c-hanzo
+  entity_id: c-hanzo
+  from: sc-s2-hanzo-konan-hostage.start
+  to: sc-s2-hanzo-konan-hostage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage
+- id: pr-s2-hanzo-konan-hostage-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-hanzo-konan-hostage.start
+  to: sc-s2-hanzo-konan-hostage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage
+- id: pr-s2-hanzo-konan-hostage-c-konan
+  entity_id: c-konan
+  from: sc-s2-hanzo-konan-hostage.start
+  to: sc-s2-hanzo-konan-hostage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage
+- id: pr-s2-hanzo-konan-hostage-c-yahiko
+  entity_id: c-yahiko
+  from: sc-s2-hanzo-konan-hostage.start
+  to: sc-s2-hanzo-konan-hostage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage
+- id: pr-s2-hanzo-konan-hostage-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-hanzo-konan-hostage.start
+  to: sc-s2-hanzo-konan-hostage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanzo-konan-hostage

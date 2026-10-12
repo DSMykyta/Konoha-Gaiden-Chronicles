@@ -1,0 +1,88 @@
+schema_version: 1
+id: sc-s2-konohamaru-temari
+episode_id: ep-s2-konohamaru-temari
+display_rank: 21200
+continuity_id: main
+title: Конохамару викликає Темарі
+description: Він хоче довести готовність до війни; Шикамару зупиняє надто небезпечне зіткнення й пояснює, кого треба
+  захищати.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-10-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-konohamaru-temari-1
+  title: Конохамару викликає Темарі
+  text: Він хоче довести готовність до війни; Шикамару зупиняє надто небезпечне зіткнення й пояснює, кого треба
+    захищати.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  - entity_id: c-moegi
+    role: participant
+    mode: physical
+  - entity_id: c-udon
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-konohamaru-temari
+relations: []
+presence:
+- id: pr-s2-konohamaru-temari-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-s2-konohamaru-temari.start
+  to: sc-s2-konohamaru-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konohamaru-temari
+- id: pr-s2-konohamaru-temari-c-moegi
+  entity_id: c-moegi
+  from: sc-s2-konohamaru-temari.start
+  to: sc-s2-konohamaru-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konohamaru-temari
+- id: pr-s2-konohamaru-temari-c-udon
+  entity_id: c-udon
+  from: sc-s2-konohamaru-temari.start
+  to: sc-s2-konohamaru-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konohamaru-temari
+- id: pr-s2-konohamaru-temari-c-temari
+  entity_id: c-temari
+  from: sc-s2-konohamaru-temari.start
+  to: sc-s2-konohamaru-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konohamaru-temari
+- id: pr-s2-konohamaru-temari-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-konohamaru-temari.start
+  to: sc-s2-konohamaru-temari.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konohamaru-temari

@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-naruto-guren-swallowed
+episode_id: ep-s2-naruto-guren-swallowed
+display_rank: 8000
+continuity_id: main
+title: Наруто й Ґурен опиняються всередині Ісобу
+description: Наруто перев’язує її рану; обидва відбиваються від малих копій звіра. Ґурен визнає, що вбила матір
+  Юкімару; Наруто виносить її до пролому.
+location_id: loc-three-tails-stomach
+placement:
+  anchor_id: ta-s2-66-04-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-guren-swallowed-1
+  title: Наруто й Ґурен опиняються всередині Ісобу
+  text: Наруто перев’язує її рану; обидва відбиваються від малих копій звіра.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-guren-swallowed
+- id: ev-s2-naruto-guren-swallowed-2
+  title: Камелії показують шлях назовні
+  text: Ґурен визнає, що вбила матір Юкімару; Наруто виносить її до пролому.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-guren-swallowed
+relations:
+- id: rel-s2-naruto-guren-swallowed-1
+  kind: before
+  a: ev-s2-naruto-guren-swallowed-1
+  b: ev-s2-naruto-guren-swallowed-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-guren-swallowed
+presence:
+- id: pr-s2-naruto-guren-swallowed-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-guren-swallowed.start
+  to: sc-s2-naruto-guren-swallowed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-guren-swallowed
+- id: pr-s2-naruto-guren-swallowed-c-guren
+  entity_id: c-guren
+  from: sc-s2-naruto-guren-swallowed.start
+  to: sc-s2-naruto-guren-swallowed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-guren-swallowed

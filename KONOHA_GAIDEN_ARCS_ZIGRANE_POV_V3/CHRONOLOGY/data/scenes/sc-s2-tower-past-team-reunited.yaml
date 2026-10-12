@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-s2-tower-past-team-reunited
+episode_id: ep-s2-tower-past-team-reunited
+display_rank: 39600
+continuity_id: movie-tower
+title: Ямато зустрічає малого Какаші
+description: Команда Мінато допомагає рятувати мешканців та знищувати виробництво маріонеток.
+location_id: loc-roran-underground-factory
+placement:
+  anchor_id: ta-s2-45-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tower-past-team-reunited-1
+  title: Ямато зустрічає малого Какаші
+  text: Команда Мінато допомагає рятувати мешканців та знищувати виробництво маріонеток.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-choza
+    role: participant
+    mode: physical
+  - entity_id: c-shibi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tower-past-team-reunited
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-tower-past-team-reunited-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-tower-past-team-reunited.start
+  to: sc-s2-tower-past-team-reunited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-past-team-reunited
+- id: pr-s2-tower-past-team-reunited-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-tower-past-team-reunited.start
+  to: sc-s2-tower-past-team-reunited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-past-team-reunited
+- id: pr-s2-tower-past-team-reunited-c-minato
+  entity_id: c-minato
+  from: sc-s2-tower-past-team-reunited.start
+  to: sc-s2-tower-past-team-reunited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-past-team-reunited
+- id: pr-s2-tower-past-team-reunited-c-choza
+  entity_id: c-choza
+  from: sc-s2-tower-past-team-reunited.start
+  to: sc-s2-tower-past-team-reunited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-past-team-reunited
+- id: pr-s2-tower-past-team-reunited-c-shibi
+  entity_id: c-shibi
+  from: sc-s2-tower-past-team-reunited.start
+  to: sc-s2-tower-past-team-reunited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-past-team-reunited

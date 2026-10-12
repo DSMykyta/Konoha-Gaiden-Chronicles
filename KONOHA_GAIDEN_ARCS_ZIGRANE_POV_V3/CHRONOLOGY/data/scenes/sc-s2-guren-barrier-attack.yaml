@@ -1,0 +1,189 @@
+schema_version: 1
+id: sc-s2-guren-barrier-attack
+episode_id: ep-s2-guren-barrier-attack
+display_rank: 7900
+continuity_id: main
+title: Кабуто шантажує Ґурен смертю матері Юкімару
+description: Вона атакує охоронців, поки Рінджі намагається зруйнувати бар’єр. Він викликає звіра, і запечатування
+  зривається.
+location_id: loc-three-tails-lake
+placement:
+  anchor_id: ta-s2-66-04-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guren-barrier-attack-1
+  title: Кабуто шантажує Ґурен смертю матері Юкімару
+  text: Вона атакує охоронців, поки Рінджі намагається зруйнувати бар’єр.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-rinji
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: ev-s2-guren-barrier-attack-2
+  title: Юкімару знову захищає Ґурен
+  text: Він викликає звіра, і запечатування зривається.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-rinji
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+relations:
+- id: rel-s2-guren-barrier-attack-1
+  kind: before
+  a: ev-s2-guren-barrier-attack-1
+  b: ev-s2-guren-barrier-attack-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+presence:
+- id: pr-s2-guren-barrier-attack-c-guren
+  entity_id: c-guren
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-rinji
+  entity_id: c-rinji
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-yukimaru
+  entity_id: c-yukimaru
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-lee
+  entity_id: c-lee
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-ino
+  entity_id: c-ino
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack
+- id: pr-s2-guren-barrier-attack-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-guren-barrier-attack.start
+  to: sc-s2-guren-barrier-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-barrier-attack

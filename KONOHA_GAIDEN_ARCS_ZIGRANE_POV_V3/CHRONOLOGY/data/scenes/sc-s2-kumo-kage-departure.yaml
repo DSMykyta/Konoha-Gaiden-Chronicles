@@ -1,0 +1,61 @@
+schema_version: 1
+id: sc-s2-kumo-kage-departure
+episode_id: ep-s2-kumo-kage-departure
+display_rank: 16500
+continuity_id: main
+title: Райкаґе вирушає до саміту
+description: А бере Даруї й Сі та домовляється зустріти загін Самуї дорогою.
+location_id: loc-kumogakure
+placement:
+  anchor_id: ta-s2-66-08-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kumo-kage-departure
+  title: Райкаґе вирушає до саміту
+  text: А бере Даруї й Сі та домовляється зустріти загін Самуї дорогою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-darui
+    role: participant
+    mode: physical
+  - entity_id: c-cee
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-s2-kage-departures
+relations: []
+presence:
+- id: pr-sc-s2-kumo-kage-departure-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-kumo-kage-departure.start
+  to: sc-s2-kumo-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-sc-s2-kumo-kage-departure-c-darui
+  entity_id: c-darui
+  from: sc-s2-kumo-kage-departure.start
+  to: sc-s2-kumo-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-sc-s2-kumo-kage-departure-c-cee
+  entity_id: c-cee
+  from: sc-s2-kumo-kage-departure.start
+  to: sc-s2-kumo-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-jiraiya-last-message
+episode_id: ep-s2-jiraiya-last-message
+display_rank: 11600
+continuity_id: main
+title: Джирая записує останній шифр
+description: Перед смертю він лишає на спині Фукасаку повідомлення про справжнього ворога; Фукасаку тікає, а Джирая
+  тоне.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-66-07-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-last-message-1
+  title: Джирая записує останній шифр
+  text: Перед смертю він лишає на спині Фукасаку повідомлення про справжнього ворога; Фукасаку тікає, а Джирая тоне.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-last-message
+relations: []
+presence:
+- id: pr-s2-jiraiya-last-message-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-last-message.start
+  to: sc-s2-jiraiya-last-message.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-last-message
+- id: pr-s2-jiraiya-last-message-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-jiraiya-last-message.start
+  to: sc-s2-jiraiya-last-message.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-last-message
+- id: pr-s2-jiraiya-last-message-c-pain
+  entity_id: c-pain
+  from: sc-s2-jiraiya-last-message.start
+  to: sc-s2-jiraiya-last-message.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-last-message

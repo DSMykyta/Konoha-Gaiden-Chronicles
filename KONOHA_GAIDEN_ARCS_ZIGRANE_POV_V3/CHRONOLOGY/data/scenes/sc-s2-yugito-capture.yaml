@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-yugito-capture
+episode_id: ep-s2-yugito-capture
+display_rank: 5300
+continuity_id: main
+title: Хідан і Какудзу захоплюють Юґіто
+description: Юґіто перетворюється на Двохвосту, але програє; Акацукі забирають джінчюрікі.
+location_id: loc-kumo-yugito-battlefield
+placement:
+  anchor_id: ta-s2-66-03-13
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yugito-capture-1
+  title: Хідан і Какудзу захоплюють Юґіто
+  text: Юґіто перетворюється на Двохвосту, але програє; Акацукі забирають джінчюрікі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yugito
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yugito-capture
+relations: []
+presence:
+- id: pr-s2-yugito-capture-c-yugito
+  entity_id: c-yugito
+  from: sc-s2-yugito-capture.start
+  to: sc-s2-yugito-capture.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yugito-capture
+- id: pr-s2-yugito-capture-c-hidan
+  entity_id: c-hidan
+  from: sc-s2-yugito-capture.start
+  to: sc-s2-yugito-capture.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yugito-capture
+- id: pr-s2-yugito-capture-c-kakuzu
+  entity_id: c-kakuzu
+  from: sc-s2-yugito-capture.start
+  to: sc-s2-yugito-capture.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yugito-capture

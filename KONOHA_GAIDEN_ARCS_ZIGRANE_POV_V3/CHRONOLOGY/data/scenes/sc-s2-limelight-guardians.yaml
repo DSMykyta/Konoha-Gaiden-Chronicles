@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-limelight-guardians
+episode_id: ep-s2-limelight-guardians
+display_rank: 5000
+continuity_id: main
+title: Асума зупиняє Блискавкове знищення
+description: Казума використовує тіла чотирьох охоронців для атаки на село; Асума руйнує задум.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-03-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-limelight-guardians-1
+  title: Асума зупиняє Блискавкове знищення
+  text: Казума використовує тіла чотирьох охоронців для атаки на село; Асума руйнує задум.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-sora-guardian
+    role: participant
+    mode: physical
+  - entity_id: c-kazuma
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-limelight-guardians
+relations: []
+presence:
+- id: pr-s2-limelight-guardians-c-asuma
+  entity_id: c-asuma
+  from: sc-s2-limelight-guardians.start
+  to: sc-s2-limelight-guardians.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-limelight-guardians
+- id: pr-s2-limelight-guardians-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-limelight-guardians.start
+  to: sc-s2-limelight-guardians.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-limelight-guardians
+- id: pr-s2-limelight-guardians-c-choji
+  entity_id: c-choji
+  from: sc-s2-limelight-guardians.start
+  to: sc-s2-limelight-guardians.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-limelight-guardians
+- id: pr-s2-limelight-guardians-c-ino
+  entity_id: c-ino
+  from: sc-s2-limelight-guardians.start
+  to: sc-s2-limelight-guardians.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-limelight-guardians
+- id: pr-s2-limelight-guardians-c-sora-guardian
+  entity_id: c-sora-guardian
+  from: sc-s2-limelight-guardians.start
+  to: sc-s2-limelight-guardians.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-limelight-guardians
+- id: pr-s2-limelight-guardians-c-kazuma
+  entity_id: c-kazuma
+  from: sc-s2-limelight-guardians.start
+  to: sc-s2-limelight-guardians.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-limelight-guardians

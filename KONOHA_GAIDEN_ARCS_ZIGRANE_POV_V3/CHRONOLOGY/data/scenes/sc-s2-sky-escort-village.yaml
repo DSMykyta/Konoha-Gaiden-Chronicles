@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-s2-sky-escort-village
+episode_id: ep-s2-sky-escort-village
+display_rank: 37900
+continuity_id: movie-bonds
+title: Загін іде до поселення Амару
+description: Поселення знищене; Шінно удає смерть.
+location_id: loc-amaru-village
+placement:
+  anchor_id: ta-s2-66-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-sky-escort-village-1
+  title: Загін іде до поселення Амару
+  text: Поселення знищене; Шінно удає смерть.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shinno
+    role: participant
+    mode: physical
+  - entity_id: c-amaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sky-escort-village
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-sky-escort-village-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sky-escort-village.start
+  to: sc-s2-sky-escort-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-escort-village
+- id: pr-s2-sky-escort-village-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sky-escort-village.start
+  to: sc-s2-sky-escort-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-escort-village
+- id: pr-s2-sky-escort-village-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-sky-escort-village.start
+  to: sc-s2-sky-escort-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-escort-village
+- id: pr-s2-sky-escort-village-c-shinno
+  entity_id: c-shinno
+  from: sc-s2-sky-escort-village.start
+  to: sc-s2-sky-escort-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-escort-village
+- id: pr-s2-sky-escort-village-c-amaru
+  entity_id: c-amaru
+  from: sc-s2-sky-escort-village.start
+  to: sc-s2-sky-escort-village.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-escort-village

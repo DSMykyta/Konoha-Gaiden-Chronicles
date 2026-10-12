@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-pain-overthrows-hanzo
+episode_id: ep-s2-pain-overthrows-hanzo
+display_rank: 35300
+continuity_id: main
+title: Пейн убиває Ханзо
+description: Він знищує його прибічників та бере Аме під свій контроль.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-52-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-pain-overthrows-hanzo-1
+  title: Пейн убиває Ханзо
+  text: Він знищує його прибічників та бере Аме під свій контроль.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-hanzo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-pain-overthrows-hanzo
+relations: []
+presence:
+- id: pr-s2-pain-overthrows-hanzo-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-pain-overthrows-hanzo.start
+  to: sc-s2-pain-overthrows-hanzo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-overthrows-hanzo
+- id: pr-s2-pain-overthrows-hanzo-c-konan
+  entity_id: c-konan
+  from: sc-s2-pain-overthrows-hanzo.start
+  to: sc-s2-pain-overthrows-hanzo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-overthrows-hanzo
+- id: pr-s2-pain-overthrows-hanzo-c-hanzo
+  entity_id: c-hanzo
+  from: sc-s2-pain-overthrows-hanzo.start
+  to: sc-s2-pain-overthrows-hanzo.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-overthrows-hanzo

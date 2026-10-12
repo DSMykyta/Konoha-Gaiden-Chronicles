@@ -1,0 +1,174 @@
+schema_version: 1
+id: sc-s2-power-konoha-reinforcements
+episode_id: ep-s2-power-main
+display_rank: 900
+continuity_id: main
+title: Підкріплення Конохи захищає дітей
+description: Ґай і Лі затримують звіра; інші команди відбивають оживлених противників.
+location_id: loc-hacho-village
+placement:
+  anchor_id: ta-s2-66-09-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-konoha-reinforcements-1
+  title: Підкріплення Конохи захищає дітей
+  text: Ґай і Лі затримують звіра; інші команди відбивають оживлених противників.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+relations: []
+presence:
+- id: pr-s2-power-konoha-reinforcements-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-lee
+  entity_id: c-lee
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-neji
+  entity_id: c-neji
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-ino
+  entity_id: c-ino
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-choji
+  entity_id: c-choji
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-shino
+  entity_id: c-shino
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements
+- id: pr-s2-power-konoha-reinforcements-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-power-konoha-reinforcements.start
+  to: sc-s2-power-konoha-reinforcements.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-konoha-reinforcements

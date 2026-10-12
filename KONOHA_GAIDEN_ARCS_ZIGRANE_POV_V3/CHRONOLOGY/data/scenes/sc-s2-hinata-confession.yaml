@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-hinata-confession
+episode_id: ep-s2-hinata-confession
+display_rank: 14500
+continuity_id: main
+title: Хіната виходить захищати Наруто
+description: Вона освідчується й намагається звільнити його; Пейн відкидає та ранить її.
+location_id: loc-konoha-pain-crater
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hinata-confession-1
+  title: Хіната виходить захищати Наруто
+  text: Вона освідчується й намагається звільнити його; Пейн відкидає та ранить її.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hinata-confession
+relations: []
+presence:
+- id: pr-s2-hinata-confession-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hinata-confession.start
+  to: sc-s2-hinata-confession.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-confession
+- id: pr-s2-hinata-confession-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-hinata-confession.start
+  to: sc-s2-hinata-confession.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-confession
+- id: pr-s2-hinata-confession-c-pain
+  entity_id: c-pain
+  from: sc-s2-hinata-confession.start
+  to: sc-s2-hinata-confession.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-confession

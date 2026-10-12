@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-hiruko-gaara-road
+episode_id: ep-s2-hiruko-gaara-road
+display_rank: 38900
+continuity_id: movie-fire
+title: Ґаара випробовує рішення Наруто
+description: Загроза війни змушує його перехопити друга, але Наруто продовжує порятунок.
+location_id: loc-mount-shumi-route
+placement:
+  anchor_id: ta-s2-66-04-27
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hiruko-gaara-road-1
+  title: Ґаара випробовує рішення Наруто
+  text: Загроза війни змушує його перехопити друга, але Наруто продовжує порятунок.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hiruko-gaara-road
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-hiruko-gaara-road-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hiruko-gaara-road.start
+  to: sc-s2-hiruko-gaara-road.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-gaara-road
+- id: pr-s2-hiruko-gaara-road-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-hiruko-gaara-road.start
+  to: sc-s2-hiruko-gaara-road.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-gaara-road

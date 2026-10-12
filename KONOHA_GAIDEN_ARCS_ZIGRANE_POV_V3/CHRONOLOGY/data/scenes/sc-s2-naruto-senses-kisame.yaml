@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-naruto-senses-kisame
+episode_id: ep-s2-naruto-senses-kisame
+display_rank: 22400
+continuity_id: main
+title: Наруто виявляє Кісаме в Самехаді
+description: Режим чакри Дев’ятихвостого дозволяє відчути його ворожість; Кісаме тікає з розвідданими.
+location_id: loc-tailed-beast-temple
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-senses-kisame-1
+  title: Наруто виявляє Кісаме в Самехаді
+  text: Режим чакри Дев’ятихвостого дозволяє відчути його ворожість; Кісаме тікає з розвідданими.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-senses-kisame
+relations: []
+presence:
+- id: pr-s2-naruto-senses-kisame-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-senses-kisame.start
+  to: sc-s2-naruto-senses-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-senses-kisame
+- id: pr-s2-naruto-senses-kisame-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-naruto-senses-kisame.start
+  to: sc-s2-naruto-senses-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-senses-kisame
+- id: pr-s2-naruto-senses-kisame-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-naruto-senses-kisame.start
+  to: sc-s2-naruto-senses-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-senses-kisame
+- id: pr-s2-naruto-senses-kisame-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-naruto-senses-kisame.start
+  to: sc-s2-naruto-senses-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-senses-kisame

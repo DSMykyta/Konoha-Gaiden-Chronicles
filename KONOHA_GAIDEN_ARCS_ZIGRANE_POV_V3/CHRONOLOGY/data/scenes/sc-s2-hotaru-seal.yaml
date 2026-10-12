@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-hotaru-seal
+episode_id: ep-s2-hotaru-seal
+display_rank: 12000
+continuity_id: main
+title: Наруто бачить печать на спині Хотару
+description: Тонбей пояснює можливість зняття техніки; Хотару шукає Шіранамі, сподіваючись виконати заповіт діда.
+location_id: loc-mount-katsuragi
+placement:
+  anchor_id: ta-s2-66-07-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hotaru-seal-1
+  title: Наруто бачить печать на спині Хотару
+  text: Тонбей пояснює можливість зняття техніки; Хотару шукає Шіранамі, сподіваючись виконати заповіт діда.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-hotaru
+    role: participant
+    mode: physical
+  - entity_id: c-utakata
+    role: participant
+    mode: physical
+  - entity_id: c-tonbee
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hotaru-seal
+relations: []
+presence:
+- id: pr-s2-hotaru-seal-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hotaru-seal.start
+  to: sc-s2-hotaru-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-seal
+- id: pr-s2-hotaru-seal-c-hotaru
+  entity_id: c-hotaru
+  from: sc-s2-hotaru-seal.start
+  to: sc-s2-hotaru-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-seal
+- id: pr-s2-hotaru-seal-c-utakata
+  entity_id: c-utakata
+  from: sc-s2-hotaru-seal.start
+  to: sc-s2-hotaru-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-seal
+- id: pr-s2-hotaru-seal-c-tonbee
+  entity_id: c-tonbee
+  from: sc-s2-hotaru-seal.start
+  to: sc-s2-hotaru-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-seal

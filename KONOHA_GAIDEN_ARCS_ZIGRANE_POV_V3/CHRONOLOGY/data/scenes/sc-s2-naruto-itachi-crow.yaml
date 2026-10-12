@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-naruto-itachi-crow
+episode_id: ep-s2-naruto-itachi-crow
+display_rank: 10000
+continuity_id: main
+title: Ітачі говорить із клоном Наруто
+description: Він запитує, що Наруто зробить, якщо Саске нападе на Коноху. Наруто обіцяє захистити і село, і Саске;
+  Ітачі передає йому свою підготовлену силу.
+location_id: loc-uchiha-search-forest
+placement:
+  anchor_id: ta-s2-66-07-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-itachi-crow-1
+  title: Ітачі говорить із клоном Наруто
+  text: Він запитує, що Наруто зробить, якщо Саске нападе на Коноху.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-itachi-crow
+- id: ev-s2-naruto-itachi-crow-2
+  title: Ітачі залишає Наруто ворона
+  text: Наруто обіцяє захистити і село, і Саске; Ітачі передає йому свою підготовлену силу.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-itachi-crow
+relations:
+- id: rel-s2-naruto-itachi-crow-1
+  kind: before
+  a: ev-s2-naruto-itachi-crow-1
+  b: ev-s2-naruto-itachi-crow-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-itachi-crow
+presence:
+- id: pr-s2-naruto-itachi-crow-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-itachi-crow.start
+  to: sc-s2-naruto-itachi-crow.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-itachi-crow
+- id: pr-s2-naruto-itachi-crow-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-naruto-itachi-crow.start
+  to: sc-s2-naruto-itachi-crow.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-itachi-crow

@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-ao-fu-chase
+episode_id: ep-s2-ao-fu-chase
+display_rank: 17900
+continuity_id: main
+title: Фу перехоплює тіло Ао
+description: Пастка загрожує Б’якуґану, але Мей знаходить охоронця й змушує Фу відступити.
+location_id: loc-iron-country-forest
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-ao-fu-chase-1
+  title: Фу перехоплює тіло Ао
+  text: Пастка загрожує Б’якуґану, але Мей знаходить охоронця й змушує Фу відступити.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-ao
+    role: participant
+    mode: physical
+  - entity_id: c-fu-yamanaka
+    role: participant
+    mode: physical
+  - entity_id: c-mei
+    role: participant
+    mode: physical
+  - entity_id: c-chojuro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-ao-fu-chase
+relations: []
+presence:
+- id: pr-s2-ao-fu-chase-c-ao
+  entity_id: c-ao
+  from: sc-s2-ao-fu-chase.start
+  to: sc-s2-ao-fu-chase.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ao-fu-chase
+- id: pr-s2-ao-fu-chase-c-fu-yamanaka
+  entity_id: c-fu-yamanaka
+  from: sc-s2-ao-fu-chase.start
+  to: sc-s2-ao-fu-chase.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ao-fu-chase
+- id: pr-s2-ao-fu-chase-c-mei
+  entity_id: c-mei
+  from: sc-s2-ao-fu-chase.start
+  to: sc-s2-ao-fu-chase.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ao-fu-chase
+- id: pr-s2-ao-fu-chase-c-chojuro
+  entity_id: c-chojuro
+  from: sc-s2-ao-fu-chase.start
+  to: sc-s2-ao-fu-chase.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ao-fu-chase

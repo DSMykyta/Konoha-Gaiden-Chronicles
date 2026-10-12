@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-naruto-sea-departure
+episode_id: ep-s2-naruto-sea-departure
+display_rank: 19400
+continuity_id: main
+title: Загін Наруто зупиняється в порту
+description: Великий марлін не дозволяє суднам вийти в море. Після допомоги Юсуке виклик зникає, і корабель отримує
+  шлях.
+location_id: loc-fire-country-port
+placement:
+  anchor_id: ta-s2-66-09-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-sea-departure-1
+  title: Загін Наруто зупиняється в порту
+  text: Великий марлін не дозволяє суднам вийти в море.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-yusuke-fisherman
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-sea-departure
+- id: ev-s2-naruto-sea-departure-2
+  title: Наруто прибирає сюрикен із голови марліна
+  text: Після допомоги Юсуке виклик зникає, і корабель отримує шлях.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-yusuke-fisherman
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-sea-departure
+relations:
+- id: rel-s2-naruto-sea-departure-1
+  kind: before
+  a: ev-s2-naruto-sea-departure-1
+  b: ev-s2-naruto-sea-departure-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sea-departure
+presence:
+- id: pr-s2-naruto-sea-departure-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-sea-departure.start
+  to: sc-s2-naruto-sea-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sea-departure
+- id: pr-s2-naruto-sea-departure-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-naruto-sea-departure.start
+  to: sc-s2-naruto-sea-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sea-departure
+- id: pr-s2-naruto-sea-departure-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-naruto-sea-departure.start
+  to: sc-s2-naruto-sea-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sea-departure
+- id: pr-s2-naruto-sea-departure-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-naruto-sea-departure.start
+  to: sc-s2-naruto-sea-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sea-departure
+- id: pr-s2-naruto-sea-departure-c-yusuke-fisherman
+  entity_id: c-yusuke-fisherman
+  from: sc-s2-naruto-sea-departure.start
+  to: sc-s2-naruto-sea-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-sea-departure

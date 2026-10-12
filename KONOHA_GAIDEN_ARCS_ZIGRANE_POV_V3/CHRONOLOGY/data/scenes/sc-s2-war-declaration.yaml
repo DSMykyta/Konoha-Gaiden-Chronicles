@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-war-declaration
+episode_id: ep-s2-war-declaration
+display_rank: 17500
+continuity_id: main
+title: Тобі оголошує план Ока Місяця
+description: Каґе відмовляються віддати Наруто та Бі; він оголошує війну. Райкаґе погоджуються поставити на чолі
+  спільних сил; Ґаара має сповістити Какаші.
+location_id: loc-five-kage-hall
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-war-declaration-1
+  title: Тобі оголошує план Ока Місяця
+  text: Каґе відмовляються віддати Наруто та Бі; він оголошує війну.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-mei
+    role: participant
+    mode: physical
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-mifune
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-war-declaration
+- id: ev-s2-war-declaration-2
+  title: Каґе створюють союз
+  text: Райкаґе погоджуються поставити на чолі спільних сил; Ґаара має сповістити Какаші.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-mei
+    role: participant
+    mode: physical
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-mifune
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-war-declaration
+relations:
+- id: rel-s2-war-declaration-1
+  kind: before
+  a: ev-s2-war-declaration-1
+  b: ev-s2-war-declaration-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-war-declaration
+presence:
+- id: pr-s2-war-declaration-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-war-declaration.start
+  to: sc-s2-war-declaration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-war-declaration
+- id: pr-s2-war-declaration-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-war-declaration.start
+  to: sc-s2-war-declaration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-war-declaration
+- id: pr-s2-war-declaration-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-war-declaration.start
+  to: sc-s2-war-declaration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-war-declaration
+- id: pr-s2-war-declaration-c-mei
+  entity_id: c-mei
+  from: sc-s2-war-declaration.start
+  to: sc-s2-war-declaration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-war-declaration
+- id: pr-s2-war-declaration-c-onoki
+  entity_id: c-onoki
+  from: sc-s2-war-declaration.start
+  to: sc-s2-war-declaration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-war-declaration
+- id: pr-s2-war-declaration-c-mifune
+  entity_id: c-mifune
+  from: sc-s2-war-declaration.start
+  to: sc-s2-war-declaration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-war-declaration

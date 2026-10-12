@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-obito-accepts-madara
+episode_id: ep-s2-obito-accepts-madara
+display_rank: 28300
+continuity_id: main
+title: Обіто повертається до Мадари
+description: Він приймає план світу снів; Мадара передає знання й від’єднується від статуї.
+location_id: loc-madara-underground-hideout
+placement:
+  anchor_id: ta-s2-48-02-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-obito-accepts-madara-1
+  title: Обіто повертається до Мадари
+  text: Він приймає план світу снів; Мадара передає знання й від’єднується від статуї.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-obito-accepts-madara
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-obito-accepts-madara-c-obito
+  entity_id: c-obito
+  from: sc-s2-obito-accepts-madara.start
+  to: sc-s2-obito-accepts-madara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-accepts-madara
+- id: pr-s2-obito-accepts-madara-c-madara
+  entity_id: c-madara
+  from: sc-s2-obito-accepts-madara.start
+  to: sc-s2-obito-accepts-madara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-accepts-madara
+- id: pr-s2-obito-accepts-madara-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-obito-accepts-madara.start
+  to: sc-s2-obito-accepts-madara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-accepts-madara

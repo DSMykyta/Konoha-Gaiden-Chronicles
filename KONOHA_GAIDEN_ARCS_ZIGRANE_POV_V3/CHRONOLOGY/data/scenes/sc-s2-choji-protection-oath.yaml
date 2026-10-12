@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-choji-protection-oath
+episode_id: ep-s2-choji-protection-oath
+display_rank: 2500
+continuity_id: main
+title: Чоджі дає батькові обіцянку
+description: Він має берегти товаришів і майбутнє клану; ця настанова повертається під час бою з Асумою.
+location_id: loc-akimichi-compound
+placement:
+  anchor_id: ta-s2-58-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-choji-protection-oath-1
+  title: Чоджі дає батькові обіцянку
+  text: Він має берегти товаришів і майбутнє клану; ця настанова повертається під час бою з Асумою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-choza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-choji-protection-oath
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-choji-protection-oath-c-choji
+  entity_id: c-choji
+  from: sc-s2-choji-protection-oath.start
+  to: sc-s2-choji-protection-oath.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-choji-protection-oath
+- id: pr-s2-choji-protection-oath-c-choza
+  entity_id: c-choza
+  from: sc-s2-choji-protection-oath.start
+  to: sc-s2-choji-protection-oath.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-choji-protection-oath

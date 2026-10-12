@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-tenten-finds-weapons-path
+episode_id: ep-s2-tenten-finds-weapons-path
+display_rank: 44300
+continuity_id: main
+title: Тентен випробовує медицину й виклик
+description: Невдалі спроби наслідувати Цунаде допомагають Ґаю помітити її здібності до просторових технік зі зброєю.
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-s2-60-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tenten-finds-weapons-path-1
+  title: Тентен випробовує медицину й виклик
+  text: Невдалі спроби наслідувати Цунаде допомагають Ґаю помітити її здібності до просторових технік зі зброєю.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-ningame
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenten-finds-weapons-path
+relations: []
+presence:
+- id: pr-s2-tenten-finds-weapons-path-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-tenten-finds-weapons-path.start
+  to: sc-s2-tenten-finds-weapons-path.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-finds-weapons-path
+- id: pr-s2-tenten-finds-weapons-path-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-tenten-finds-weapons-path.start
+  to: sc-s2-tenten-finds-weapons-path.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-finds-weapons-path
+- id: pr-s2-tenten-finds-weapons-path-c-ningame
+  entity_id: c-ningame
+  from: sc-s2-tenten-finds-weapons-path.start
+  to: sc-s2-tenten-finds-weapons-path.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-finds-weapons-path

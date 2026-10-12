@@ -1,0 +1,224 @@
+schema_version: 1
+id: sc-s2-naruto-pain-sage-fight
+episode_id: ep-s2-naruto-pain-sage-fight
+display_rank: 14400
+continuity_id: main
+title: Наруто кидає Расенсюрикен
+description: Режим Мудреця дозволяє застосувати новий спосіб атаки; Шлях Людини гине. Запасні клони відновлюють
+  сенджюцу; жаби допомагають обійти спільний зір. Наруто використовує нерухомість під час захоплення. Фукасаку гине,
+  а Пейн починає розмову про біль і помсту.
+location_id: loc-konoha-pain-crater
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-pain-sage-fight-1
+  title: Наруто кидає Расенсюрикен
+  text: Режим Мудреця дозволяє застосувати новий спосіб атаки; Шлях Людини гине.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  - entity_id: c-gamabunta
+    role: participant
+    mode: physical
+  - entity_id: c-gamaken
+    role: participant
+    mode: physical
+  - entity_id: c-gamahiro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: ev-s2-naruto-pain-sage-fight-2
+  title: Наруто знімає тіла одне за одним
+  text: Запасні клони відновлюють сенджюцу; жаби допомагають обійти спільний зір.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  - entity_id: c-gamabunta
+    role: participant
+    mode: physical
+  - entity_id: c-gamaken
+    role: participant
+    mode: physical
+  - entity_id: c-gamahiro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: ev-s2-naruto-pain-sage-fight-3
+  title: Шлях Прета кам’яніє від природної енергії
+  text: Наруто використовує нерухомість під час захоплення.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  - entity_id: c-gamabunta
+    role: participant
+    mode: physical
+  - entity_id: c-gamaken
+    role: participant
+    mode: physical
+  - entity_id: c-gamahiro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: ev-s2-naruto-pain-sage-fight-4
+  title: Шлях Дева пригвождає Наруто стрижнями
+  text: Фукасаку гине, а Пейн починає розмову про біль і помсту.
+  origin: M
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  - entity_id: c-gamabunta
+    role: participant
+    mode: physical
+  - entity_id: c-gamaken
+    role: participant
+    mode: physical
+  - entity_id: c-gamahiro
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+relations:
+- id: rel-s2-naruto-pain-sage-fight-1
+  kind: before
+  a: ev-s2-naruto-pain-sage-fight-1
+  b: ev-s2-naruto-pain-sage-fight-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: rel-s2-naruto-pain-sage-fight-2
+  kind: before
+  a: ev-s2-naruto-pain-sage-fight-2
+  b: ev-s2-naruto-pain-sage-fight-3
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: rel-s2-naruto-pain-sage-fight-3
+  kind: before
+  a: ev-s2-naruto-pain-sage-fight-3
+  b: ev-s2-naruto-pain-sage-fight-4
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+presence:
+- id: pr-s2-naruto-pain-sage-fight-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-pain-sage-fight.start
+  to: sc-s2-naruto-pain-sage-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: pr-s2-naruto-pain-sage-fight-c-pain
+  entity_id: c-pain
+  from: sc-s2-naruto-pain-sage-fight.start
+  to: sc-s2-naruto-pain-sage-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: pr-s2-naruto-pain-sage-fight-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-naruto-pain-sage-fight.start
+  to: sc-s2-naruto-pain-sage-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: pr-s2-naruto-pain-sage-fight-c-shima
+  entity_id: c-shima
+  from: sc-s2-naruto-pain-sage-fight.start
+  to: sc-s2-naruto-pain-sage-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: pr-s2-naruto-pain-sage-fight-c-gamabunta
+  entity_id: c-gamabunta
+  from: sc-s2-naruto-pain-sage-fight.start
+  to: sc-s2-naruto-pain-sage-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: pr-s2-naruto-pain-sage-fight-c-gamaken
+  entity_id: c-gamaken
+  from: sc-s2-naruto-pain-sage-fight.start
+  to: sc-s2-naruto-pain-sage-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight
+- id: pr-s2-naruto-pain-sage-fight-c-gamahiro
+  entity_id: c-gamahiro
+  from: sc-s2-naruto-pain-sage-fight.start
+  to: sc-s2-naruto-pain-sage-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-pain-sage-fight

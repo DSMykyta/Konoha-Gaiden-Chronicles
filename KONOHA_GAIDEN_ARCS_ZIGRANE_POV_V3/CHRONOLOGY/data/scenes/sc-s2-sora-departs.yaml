@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-sora-departs
+episode_id: ep-s2-sora-departs
+display_rank: 5200
+continuity_id: main
+title: Сора залишає Коноху
+description: Він вирушає шукати друзів; Сай повертається до команди.
+location_id: loc-konoha-gate
+placement:
+  anchor_id: ta-s2-66-03-09
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sora-departs-1
+  title: Сора залишає Коноху
+  text: Він вирушає шукати друзів; Сай повертається до команди.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sora-guardian
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sora-departs
+relations: []
+presence:
+- id: pr-s2-sora-departs-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sora-departs.start
+  to: sc-s2-sora-departs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-departs
+- id: pr-s2-sora-departs-c-sora-guardian
+  entity_id: c-sora-guardian
+  from: sc-s2-sora-departs.start
+  to: sc-s2-sora-departs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-departs
+- id: pr-s2-sora-departs-c-sai
+  entity_id: c-sai
+  from: sc-s2-sora-departs.start
+  to: sc-s2-sora-departs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-departs
+- id: pr-s2-sora-departs-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sora-departs.start
+  to: sc-s2-sora-departs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-departs
+- id: pr-s2-sora-departs-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-sora-departs.start
+  to: sc-s2-sora-departs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-departs

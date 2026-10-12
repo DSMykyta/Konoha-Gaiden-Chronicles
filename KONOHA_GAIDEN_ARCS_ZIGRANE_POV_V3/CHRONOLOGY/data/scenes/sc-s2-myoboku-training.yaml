@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-myoboku-training
+episode_id: ep-s2-myoboku-training
+display_rank: 13000
+continuity_id: main
+title: Наруто починає сенджюцу
+description: Фукасаку застосовує жаб’ячу олію й прибирає надлишок природної енергії палицею. Він тренується на кам’яних
+  шпилях та досягає Режиму Мудреця без олії.
+location_id: loc-mount-myoboku
+placement:
+  anchor_id: ta-s2-66-08-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-myoboku-training-1
+  title: Наруто починає сенджюцу
+  text: Фукасаку застосовує жаб’ячу олію й прибирає надлишок природної енергії палицею.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-gamakichi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-myoboku-training
+- id: ev-s2-myoboku-training-2
+  title: Наруто вчиться стояти нерухомо
+  text: Він тренується на кам’яних шпилях та досягає Режиму Мудреця без олії.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-gamakichi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-myoboku-training
+relations:
+- id: rel-s2-myoboku-training-1
+  kind: before
+  a: ev-s2-myoboku-training-1
+  b: ev-s2-myoboku-training-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-myoboku-training
+presence:
+- id: pr-s2-myoboku-training-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-myoboku-training.start
+  to: sc-s2-myoboku-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-myoboku-training
+- id: pr-s2-myoboku-training-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-myoboku-training.start
+  to: sc-s2-myoboku-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-myoboku-training
+- id: pr-s2-myoboku-training-c-gamakichi
+  entity_id: c-gamakichi
+  from: sc-s2-myoboku-training.start
+  to: sc-s2-myoboku-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-myoboku-training

@@ -1,0 +1,174 @@
+schema_version: 1
+id: sc-s2-naruto-friends-decision
+episode_id: ep-s2-naruto-friends-decision
+display_rank: 19000
+continuity_id: main
+title: Наруто повідомляє рішення товаришам
+description: Він просить залишити Саске йому та відмовляється пояснити весь зміст розмови.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-friends-decision-1
+  title: Наруто повідомляє рішення товаришам
+  text: Він просить залишити Саске йому та відмовляється пояснити весь зміст розмови.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+relations: []
+presence:
+- id: pr-s2-naruto-friends-decision-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-ino
+  entity_id: c-ino
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-choji
+  entity_id: c-choji
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-shino
+  entity_id: c-shino
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-lee
+  entity_id: c-lee
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-neji
+  entity_id: c-neji
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision
+- id: pr-s2-naruto-friends-decision-c-sai
+  entity_id: c-sai
+  from: sc-s2-naruto-friends-decision.start
+  to: sc-s2-naruto-friends-decision.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-friends-decision

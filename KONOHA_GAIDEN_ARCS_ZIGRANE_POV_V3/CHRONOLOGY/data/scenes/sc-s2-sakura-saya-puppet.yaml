@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-sakura-saya-puppet
+episode_id: ep-s2-sakura-saya-puppet
+display_rank: 25400
+continuity_id: main
+title: Сая захоплює рухи Іно й Чоджі
+description: Сакура слабшає через накопичення чакри для печаті, але продовжує захищати команду. Вона розбиває ворогів
+  і витягає отруту з товаришів.
+location_id: loc-demon-desert
+placement:
+  anchor_id: ta-s2-64-10-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sakura-saya-puppet-1
+  title: Сая захоплює рухи Іно й Чоджі
+  text: Сакура слабшає через накопичення чакри для печаті, але продовжує захищати команду.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-saya
+    role: participant
+    mode: physical
+  - entity_id: c-mamushi
+    role: participant
+    mode: physical
+  - entity_id: c-sana
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+- id: ev-s2-sakura-saya-puppet-2
+  title: Сакура повертає чакру до бою
+  text: Вона розбиває ворогів і витягає отруту з товаришів.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-saya
+    role: participant
+    mode: physical
+  - entity_id: c-mamushi
+    role: participant
+    mode: physical
+  - entity_id: c-sana
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+relations:
+- id: rel-s2-sakura-saya-puppet-1
+  kind: before
+  a: ev-s2-sakura-saya-puppet-1
+  b: ev-s2-sakura-saya-puppet-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+presence:
+- id: pr-s2-sakura-saya-puppet-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sakura-saya-puppet.start
+  to: sc-s2-sakura-saya-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+- id: pr-s2-sakura-saya-puppet-c-ino
+  entity_id: c-ino
+  from: sc-s2-sakura-saya-puppet.start
+  to: sc-s2-sakura-saya-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+- id: pr-s2-sakura-saya-puppet-c-choji
+  entity_id: c-choji
+  from: sc-s2-sakura-saya-puppet.start
+  to: sc-s2-sakura-saya-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+- id: pr-s2-sakura-saya-puppet-c-saya
+  entity_id: c-saya
+  from: sc-s2-sakura-saya-puppet.start
+  to: sc-s2-sakura-saya-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+- id: pr-s2-sakura-saya-puppet-c-mamushi
+  entity_id: c-mamushi
+  from: sc-s2-sakura-saya-puppet.start
+  to: sc-s2-sakura-saya-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet
+- id: pr-s2-sakura-saya-puppet-c-sana
+  entity_id: c-sana
+  from: sc-s2-sakura-saya-puppet.start
+  to: sc-s2-sakura-saya-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-saya-puppet

@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-tsunade-care
+episode_id: ep-s2-tsunade-care
+display_rank: 15500
+continuity_id: main
+title: Учні доглядають Цунаде
+description: Вони приносять їжу й ліки до намету, поки Цунаде залишається непритомною.
+location_id: loc-tsunade-treatment-tent
+placement:
+  anchor_id: ta-s2-66-08-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tsunade-care-1
+  title: Учні доглядають Цунаде
+  text: Вони приносять їжу й ліки до намету, поки Цунаде залишається непритомною.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-tonton
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tsunade-care
+relations: []
+presence:
+- id: pr-s2-tsunade-care-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-tsunade-care.start
+  to: sc-s2-tsunade-care.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-care
+- id: pr-s2-tsunade-care-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-tsunade-care.start
+  to: sc-s2-tsunade-care.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-care
+- id: pr-s2-tsunade-care-c-tonton
+  entity_id: c-tonton
+  from: sc-s2-tsunade-care.start
+  to: sc-s2-tsunade-care.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-care
+- id: pr-s2-tsunade-care-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tsunade-care.start
+  to: sc-s2-tsunade-care.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-care
+- id: pr-s2-tsunade-care-c-choji
+  entity_id: c-choji
+  from: sc-s2-tsunade-care.start
+  to: sc-s2-tsunade-care.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-care
+- id: pr-s2-tsunade-care-c-lee
+  entity_id: c-lee
+  from: sc-s2-tsunade-care.start
+  to: sc-s2-tsunade-care.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-care

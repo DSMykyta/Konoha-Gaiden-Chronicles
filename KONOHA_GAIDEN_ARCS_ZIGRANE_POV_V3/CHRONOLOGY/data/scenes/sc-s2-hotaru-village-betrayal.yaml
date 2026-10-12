@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-hotaru-village-betrayal
+episode_id: ep-s2-hotaru-village-betrayal
+display_rank: 11800
+continuity_id: main
+title: Рідне поселення видає Хотару нападникам
+description: Вона виривається з будинку; Утаката повертається та рятує її.
+location_id: loc-tsuchigumo-village
+placement:
+  anchor_id: ta-s2-66-07-29
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hotaru-village-betrayal-1
+  title: Рідне поселення видає Хотару нападникам
+  text: Вона виривається з будинку; Утаката повертається та рятує її.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hotaru
+    role: participant
+    mode: physical
+  - entity_id: c-utakata
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hotaru-village-betrayal
+relations: []
+presence:
+- id: pr-s2-hotaru-village-betrayal-c-hotaru
+  entity_id: c-hotaru
+  from: sc-s2-hotaru-village-betrayal.start
+  to: sc-s2-hotaru-village-betrayal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-village-betrayal
+- id: pr-s2-hotaru-village-betrayal-c-utakata
+  entity_id: c-utakata
+  from: sc-s2-hotaru-village-betrayal.start
+  to: sc-s2-hotaru-village-betrayal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-village-betrayal
+- id: pr-s2-hotaru-village-betrayal-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hotaru-village-betrayal.start
+  to: sc-s2-hotaru-village-betrayal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-village-betrayal

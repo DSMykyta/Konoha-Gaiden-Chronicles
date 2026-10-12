@@ -1,0 +1,44 @@
+schema_version: 1
+id: sc-s2-naruto-accepts-darkness
+episode_id: ep-s2-naruto-accepts-darkness
+display_rank: 22100
+continuity_id: main
+title: Наруто приймає свого темного двійника
+description: Подяка й обійми завершують внутрішній двобій; група переходить до храму.
+location_id: loc-falls-of-truth
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-accepts-darkness-1
+  title: Наруто приймає свого темного двійника
+  text: Подяка й обійми завершують внутрішній двобій; група переходить до храму.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: internal
+  - entity_id: c-killer-b
+    role: participant
+    mode: internal
+  - entity_id: c-yamato
+    role: participant
+    mode: internal
+  - entity_id: c-motoi
+    role: participant
+    mode: internal
+  evidence_ids:
+  - evd-s2-naruto-accepts-darkness
+relations: []
+presence: []
+scene_plane: mental

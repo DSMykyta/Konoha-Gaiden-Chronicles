@@ -1,0 +1,108 @@
+schema_version: 1
+id: sc-s2-hinata-treatment
+episode_id: ep-s2-hinata-treatment
+display_rank: 14900
+continuity_id: main
+title: Сакура лікує Хінату
+description: Команда Ґая повертається з місії; Кацую передає наказ Наруто не переслідувати його.
+location_id: loc-konoha-pain-crater
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hinata-treatment-1
+  title: Сакура лікує Хінату
+  text: Команда Ґая повертається з місії; Кацую передає наказ Наруто не переслідувати його.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-ko-hyuga
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hinata-treatment
+relations: []
+presence:
+- id: pr-s2-hinata-treatment-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-hinata-treatment.start
+  to: sc-s2-hinata-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-treatment
+- id: pr-s2-hinata-treatment-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-hinata-treatment.start
+  to: sc-s2-hinata-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-treatment
+- id: pr-s2-hinata-treatment-c-ko-hyuga
+  entity_id: c-ko-hyuga
+  from: sc-s2-hinata-treatment.start
+  to: sc-s2-hinata-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-treatment
+- id: pr-s2-hinata-treatment-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-hinata-treatment.start
+  to: sc-s2-hinata-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-treatment
+- id: pr-s2-hinata-treatment-c-lee
+  entity_id: c-lee
+  from: sc-s2-hinata-treatment.start
+  to: sc-s2-hinata-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-treatment
+- id: pr-s2-hinata-treatment-c-neji
+  entity_id: c-neji
+  from: sc-s2-hinata-treatment.start
+  to: sc-s2-hinata-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-treatment
+- id: pr-s2-hinata-treatment-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-hinata-treatment.start
+  to: sc-s2-hinata-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-treatment

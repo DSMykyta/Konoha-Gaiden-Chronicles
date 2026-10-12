@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-kisame-meets-masked-ruler
+episode_id: ep-s2-kisame-meets-masked-ruler
+display_rank: 35800
+continuity_id: main
+title: Кісаме бачить керування Яґурою
+description: Чоловік у масці показує йому приховану владу над Мідзукаґе та план світу без брехні.
+location_id: loc-kirigakure
+placement:
+  anchor_id: ta-s2-50-01-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kisame-meets-masked-ruler-1
+  title: Кісаме бачить керування Яґурою
+  text: Чоловік у масці показує йому приховану владу над Мідзукаґе та план світу без брехні.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-yagura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kisame-meets-masked-ruler
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-kisame-meets-masked-ruler-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-kisame-meets-masked-ruler.start
+  to: sc-s2-kisame-meets-masked-ruler.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-meets-masked-ruler
+- id: pr-s2-kisame-meets-masked-ruler-c-obito
+  entity_id: c-obito
+  from: sc-s2-kisame-meets-masked-ruler.start
+  to: sc-s2-kisame-meets-masked-ruler.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-meets-masked-ruler
+- id: pr-s2-kisame-meets-masked-ruler-c-yagura
+  entity_id: c-yagura
+  from: sc-s2-kisame-meets-masked-ruler.start
+  to: sc-s2-kisame-meets-masked-ruler.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-meets-masked-ruler

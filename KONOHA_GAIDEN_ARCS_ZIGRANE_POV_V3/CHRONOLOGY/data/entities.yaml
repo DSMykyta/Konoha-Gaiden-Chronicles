@@ -802,12 +802,12 @@ entities:
     name: "Konoha outskirts"
     aliases:
       - "околиці Конохи"
-  - id: "loc-konoha-training-field"
-    kind: "location"
-    name: "Unspecified Konoha training field"
+  - id: loc-konoha-training-field
+    kind: location
+    name: Unspecified Konoha training field
     aliases:
-      - "тренувальне поле Конохи"
-    parent_id: "loc-konohagakure"
+    - тренувальне поле Конохи
+    parent_id: loc-konohagakure
   - id: "loc-hyuga-compound"
     kind: "location"
     name: "Hyuga compound"
@@ -2683,6 +2683,1916 @@ entities:
     name: "Haku's mother"
     aliases:
       - "мати Хаку"
+  - id: c-yura
+    kind: person
+    name: Yura
+    aliases: []
+  - id: loc-suna-desert-route
+    kind: location
+    name: Suna Desert Route
+    aliases: []
+  - id: loc-fire-suna-route
+    kind: location
+    name: Fire Suna Route
+    aliases: []
+  - id: loc-suna-hospital
+    kind: location
+    name: Suna Hospital
+    aliases: []
+  - id: loc-fire-river-route
+    kind: location
+    name: Fire River Route
+    aliases: []
+  - id: loc-akatsuki-river-hideout
+    kind: location
+    name: Akatsuki River Hideout
+    aliases: []
+  - id: loc-river-seal-sites
+    kind: location
+    name: River Seal Sites
+    aliases: []
+  - id: loc-river-pursuit-route
+    kind: location
+    name: River Pursuit Route
+    aliases: []
+  - id: loc-root-base
+    kind: location
+    name: Root Base
+    aliases: []
+  - id: c-danzo
+    kind: person
+    name: Danzo Shimura
+    aliases:
+    - Данзо Шімура
+  - id: c-sai
+    kind: person
+    name: Sai
+    aliases:
+    - Сай
+  - id: loc-tenchi-route-inn
+    kind: location
+    name: Tenchi Route Inn
+    aliases: []
+  - id: loc-tenchi-route-camp
+    kind: location
+    name: Tenchi Route Camp
+    aliases: []
+  - id: loc-tenchi-bridge
+    kind: location
+    name: Tenchi Bridge
+    aliases: []
+  - id: loc-orochimaru-tenchi-hideout
+    kind: location
+    name: Orochimaru Tenchi Hideout
+    aliases: []
+  - id: loc-tenchi-crater
+    kind: location
+    name: Tenchi Crater
+    aliases: []
+  - id: loc-konoha-library
+    kind: location
+    name: Konoha Library
+    aliases: []
+  - id: loc-fire-temple
+    kind: location
+    name: Fire Temple
+    aliases: []
+  - id: c-chiriku
+    kind: person
+    name: Chiriku
+    aliases: []
+  - id: c-sora-guardian
+    kind: person
+    name: Sora — Fire Temple
+    aliases:
+    - Сора — монах Храму Вогню
+  - id: loc-guardian-hidden-tombs
+    kind: location
+    name: Guardian Hidden Tombs
+    aliases: []
+  - id: c-furido
+    kind: person
+    name: Furido
+    aliases: []
+  - id: c-fudo
+    kind: person
+    name: Fudo
+    aliases: []
+  - id: c-fuka
+    kind: person
+    name: Fuka
+    aliases: []
+  - id: c-fuen
+    kind: person
+    name: Fuen
+    aliases: []
+  - id: c-kazuma
+    kind: person
+    name: Kazuma
+    aliases: []
+  - id: loc-kumo-yugito-battlefield
+    kind: location
+    name: Kumo Yugito Battlefield
+    aliases: []
+  - id: c-yugito
+    kind: person
+    name: Yugito
+    aliases: []
+  - id: c-hidan
+    kind: person
+    name: Hidan
+    aliases: []
+  - id: c-kakuzu
+    kind: person
+    name: Kakuzu
+    aliases: []
+  - id: loc-fire-bounty-station
+    kind: location
+    name: Fire Bounty Station
+    aliases: []
+  - id: loc-fire-akatsuki-battlefield
+    kind: location
+    name: Fire Akatsuki Battlefield
+    aliases: []
+  - id: loc-nara-forest-trap
+    kind: location
+    name: Nara Forest Trap
+    aliases: []
+  - id: loc-orochimaru-guren-hideout
+    kind: location
+    name: Orochimaru Guren Hideout
+    aliases: []
+  - id: c-guren
+    kind: person
+    name: Guren
+    aliases:
+    - Ґурен
+  - id: c-yukimaru
+    kind: person
+    name: Yukimaru
+    aliases:
+    - Юкімару
+  - id: loc-three-tails-forest
+    kind: location
+    name: Three Tails Forest
+    aliases: []
+  - id: c-gamakichi
+    kind: person
+    name: Gamakichi
+    aliases: []
+  - id: c-gamatatsu
+    kind: person
+    name: Gamatatsu
+    aliases: []
+  - id: c-gamariki
+    kind: person
+    name: Gamariki
+    aliases: []
+  - id: loc-guren-cabin
+    kind: location
+    name: Guren Cabin
+    aliases: []
+  - id: loc-three-tails-lake
+    kind: location
+    name: Three Tails Lake
+    aliases: []
+  - id: c-gozu-guren
+    kind: person
+    name: Gozu — Guren subordinate
+    aliases:
+    - Ґозу — підлеглий Ґурен
+  - id: c-rinji
+    kind: person
+    name: Rinji
+    aliases: []
+  - id: loc-three-tails-stomach
+    kind: location
+    name: Three Tails Stomach
+    aliases: []
+  - id: loc-three-tails-cliff
+    kind: location
+    name: Three Tails Cliff
+    aliases: []
+  - id: loc-three-tails-camp
+    kind: location
+    name: Three Tails Camp
+    aliases: []
+  - id: c-tobi
+    kind: person
+    name: Tobi
+    aliases:
+    - Тобі
+    representation_of: c-obito
+  - id: c-suigetsu
+    kind: person
+    name: Suigetsu Hozuki
+    aliases:
+    - Суйґецу Ходзукі
+  - id: c-tenzen
+    kind: person
+    name: Tenzen
+    aliases: []
+  - id: loc-orochimaru-southern-hideout
+    kind: location
+    name: Orochimaru Southern Hideout
+    aliases: []
+  - id: loc-orochimaru-northern-hideout
+    kind: location
+    name: Orochimaru Northern Hideout
+    aliases: []
+  - id: c-jugo
+    kind: person
+    name: Jugo
+    aliases:
+    - Джюґо
+  - id: loc-four-tails-battlefield
+    kind: location
+    name: Four Tails Battlefield
+    aliases: []
+  - id: c-roshi
+    kind: person
+    name: Roshi
+    aliases: []
+  - id: loc-nekobaa-armoury
+    kind: location
+    name: Nekobaa Armoury
+    aliases: []
+  - id: loc-uchiha-search-forest
+    kind: location
+    name: Uchiha Search Forest
+    aliases: []
+  - id: loc-deidara-battlefield
+    kind: location
+    name: Deidara Battlefield
+    aliases: []
+  - id: loc-hebi-recovery-inn
+    kind: location
+    name: Hebi Recovery Inn
+    aliases: []
+  - id: loc-akatsuki-uchiha-outpost
+    kind: location
+    name: Akatsuki Uchiha Outpost
+    aliases: []
+  - id: loc-uchiha-hideout-entrance
+    kind: location
+    name: Uchiha Hideout Entrance
+    aliases: []
+  - id: loc-uchiha-hideout
+    kind: location
+    name: Uchiha Hideout
+    aliases: []
+  - id: c-zetsu
+    kind: person
+    name: Zetsu
+    aliases: []
+  - id: loc-akatsuki-eastern-hideout
+    kind: location
+    name: Akatsuki Eastern Hideout
+    aliases: []
+  - id: loc-lightning-country-route
+    kind: location
+    name: Lightning Country Route
+    aliases: []
+  - id: loc-valley-clouds-lightning
+    kind: location
+    name: Valley Clouds Lightning
+    aliases: []
+  - id: c-killer-b
+    kind: person
+    name: Killer B
+    aliases:
+    - Кіллер Бі
+  - id: loc-amegakure
+    kind: location
+    name: Amegakure
+    aliases: []
+  - id: c-konan
+    kind: person
+    name: Konan
+    aliases:
+    - Конан
+  - id: c-pain
+    kind: person
+    name: Six Paths of Pain
+    aliases:
+    - Шість Шляхів Пейна
+  - id: c-gamaken
+    kind: person
+    name: Gamaken
+    aliases: []
+  - id: c-fukasaku
+    kind: person
+    name: Fukasaku
+    aliases: []
+  - id: c-shima
+    kind: person
+    name: Shima
+    aliases: []
+  - id: loc-mount-katsuragi
+    kind: location
+    name: Mount Katsuragi
+    aliases: []
+  - id: c-hotaru
+    kind: person
+    name: Hotaru
+    aliases: []
+  - id: c-utakata
+    kind: person
+    name: Utakata
+    aliases: []
+  - id: c-tonbee
+    kind: person
+    name: Tonbee
+    aliases: []
+  - id: loc-tsuchigumo-village
+    kind: location
+    name: Tsuchigumo Village
+    aliases: []
+  - id: loc-tsuchigumo-forest
+    kind: location
+    name: Tsuchigumo Forest
+    aliases: []
+  - id: c-tsurugi
+    kind: person
+    name: Tsurugi
+    aliases: []
+  - id: c-shiranami
+    kind: person
+    name: Shiranami
+    aliases: []
+  - id: loc-tsuchigumo-meadow
+    kind: location
+    name: Tsuchigumo Meadow
+    aliases: []
+  - id: loc-akatsuki-extraction-hideout
+    kind: location
+    name: Akatsuki Extraction Hideout
+    aliases: []
+  - id: c-shiho
+    kind: person
+    name: Shiho
+    aliases: []
+  - id: loc-mount-myoboku
+    kind: location
+    name: Mount Myoboku
+    aliases: []
+  - id: c-kosuke-toad
+    kind: person
+    name: Kosuke Toad
+    aliases: []
+  - id: c-tsume
+    kind: person
+    name: Tsume
+    aliases: []
+  - id: c-kuromaru
+    kind: person
+    name: Kuromaru
+    aliases: []
+  - id: c-shibi
+    kind: person
+    name: Shibi
+    aliases: []
+  - id: loc-konoha-pain-crater
+    kind: location
+    name: Konoha Pain Crater
+    aliases: []
+  - id: loc-naruto-seal-space
+    kind: location
+    name: Naruto Seal Space
+    aliases: []
+  - id: c-ko-hyuga
+    kind: person
+    name: Ko Hyuga
+    aliases: []
+  - id: loc-nagato-paper-tree
+    kind: location
+    name: Nagato Paper Tree
+    aliases: []
+  - id: c-nagato
+    kind: person
+    name: Nagato
+    aliases:
+    - Наґато
+  - id: loc-fire-daimyo-council
+    kind: location
+    name: Fire Daimyo Council
+    aliases: []
+  - id: c-fire-daimyo
+    kind: person
+    name: Fire Daimyo
+    aliases:
+    - Даймьо Країни Вогню
+  - id: loc-tsunade-treatment-tent
+    kind: location
+    name: Tsunade Treatment Tent
+    aliases: []
+  - id: loc-ninja-tool-facility
+    kind: location
+    name: Ninja Tool Facility
+    aliases: []
+  - id: loc-kabuto-abandoned-hideout
+    kind: location
+    name: Kabuto Abandoned Hideout
+    aliases: []
+  - id: c-tokuma
+    kind: person
+    name: Tokuma
+    aliases: []
+  - id: loc-hokage-tent
+    kind: location
+    name: Hokage Tent
+    aliases: []
+  - id: c-samui
+    kind: person
+    name: Samui
+    aliases: []
+  - id: c-karui
+    kind: person
+    name: Karui
+    aliases: []
+  - id: c-omoi
+    kind: person
+    name: Omoi
+    aliases: []
+  - id: loc-naruto-treatment-tent
+    kind: location
+    name: Naruto Treatment Tent
+    aliases: []
+  - id: loc-taka-konoha-route
+    kind: location
+    name: Taka Konoha Route
+    aliases: []
+  - id: loc-kage-summit-routes
+    kind: location
+    name: Kage Summit Routes
+    aliases: []
+  - id: c-a-fourth
+    kind: person
+    name: A — Fourth Raikage
+    aliases:
+    - А — Четвертий Райкаґе
+  - id: c-darui
+    kind: person
+    name: Darui
+    aliases: []
+  - id: c-cee
+    kind: person
+    name: C
+    aliases:
+    - Сі
+  - id: c-mei
+    kind: person
+    name: Mei
+    aliases: []
+  - id: c-chojuro
+    kind: person
+    name: Chojuro
+    aliases: []
+  - id: c-ao
+    kind: person
+    name: Ao
+    aliases: []
+  - id: c-onoki
+    kind: person
+    name: Onoki
+    aliases: []
+  - id: c-kurotsuchi
+    kind: person
+    name: Kurotsuchi
+    aliases: []
+  - id: c-akatsuchi
+    kind: person
+    name: Akatsuchi
+    aliases: []
+  - id: loc-iron-country-route
+    kind: location
+    name: Iron Country Route
+    aliases: []
+  - id: c-fu-yamanaka
+    kind: person
+    name: Fu Yamanaka
+    aliases:
+    - Фу Яманака
+  - id: c-torune
+    kind: person
+    name: Torune
+    aliases: []
+  - id: loc-five-kage-hall
+    kind: location
+    name: Five Kage Hall
+    aliases: []
+  - id: c-mifune
+    kind: person
+    name: Mifune
+    aliases: []
+  - id: loc-iron-country-inn
+    kind: location
+    name: Iron Country Inn
+    aliases: []
+  - id: loc-five-kage-lower-hall
+    kind: location
+    name: Five Kage Lower Hall
+    aliases: []
+  - id: loc-sabu-enka-site
+    kind: location
+    name: Sabu Enka Site
+    aliases: []
+  - id: c-sabu
+    kind: person
+    name: Sabu
+    aliases: []
+  - id: c-ponta
+    kind: person
+    name: Ponta
+    aliases: []
+  - id: loc-iron-country-forest
+    kind: location
+    name: Iron Country Forest
+    aliases: []
+  - id: loc-samurai-bridge
+    kind: location
+    name: Samurai Bridge
+    aliases: []
+  - id: loc-five-daimyo-conference
+    kind: location
+    name: Five Daimyo Conference
+    aliases: []
+  - id: c-gerotora
+    kind: person
+    name: Gerotora
+    aliases: []
+  - id: c-gamamaru
+    kind: person
+    name: Gamamaru
+    aliases: []
+  - id: loc-mountains-graveyard
+    kind: location
+    name: Mountains Graveyard
+    aliases: []
+  - id: loc-alliance-planning-hall
+    kind: location
+    name: Alliance Planning Hall
+    aliases: []
+  - id: loc-fire-country-port
+    kind: location
+    name: Fire Country Port
+    aliases: []
+  - id: c-yusuke-fisherman
+    kind: person
+    name: Yusuke Fisherman
+    aliases: []
+  - id: loc-benisu-island
+    kind: location
+    name: Benisu Island
+    aliases: []
+  - id: loc-ghost-ship
+    kind: location
+    name: Ghost Ship
+    aliases: []
+  - id: c-hishaku
+    kind: person
+    name: Hishaku
+    aliases: []
+  - id: loc-battleship-island
+    kind: location
+    name: Battleship Island
+    aliases: []
+  - id: loc-forgotten-summon-island
+    kind: location
+    name: Forgotten Summon Island
+    aliases: []
+  - id: c-honoka-spirit
+    kind: person
+    name: Honoka’s spirit
+    aliases:
+    - Дух Хоноки
+  - id: loc-naruto-voyage-ship
+    kind: location
+    name: Naruto Voyage Ship
+    aliases: []
+  - id: loc-silence-route-port
+    kind: location
+    name: Silence Route Port
+    aliases: []
+  - id: loc-sea-route-silence
+    kind: location
+    name: Sea Route Silence
+    aliases: []
+  - id: loc-mokuzu-island
+    kind: location
+    name: Mokuzu Island
+    aliases: []
+  - id: loc-water-country-coastal-route
+    kind: location
+    name: Water Country Coastal Route
+    aliases: []
+  - id: c-banna
+    kind: person
+    name: Banna
+    aliases: []
+  - id: c-iggy
+    kind: person
+    name: Iggy
+    aliases: []
+  - id: loc-nadeshiko-village
+    kind: location
+    name: Nadeshiko Village
+    aliases: []
+  - id: c-shizuka
+    kind: person
+    name: Shizuka
+    aliases: []
+  - id: c-tokiwa
+    kind: person
+    name: Tokiwa
+    aliases: []
+  - id: c-kokuyo
+    kind: person
+    name: Kokuyo
+    aliases: []
+  - id: loc-water-country-messenger-island
+    kind: location
+    name: Water Country Messenger Island
+    aliases: []
+  - id: c-ganryu
+    kind: person
+    name: Ganryu
+    aliases: []
+  - id: loc-island-turtle
+    kind: location
+    name: Island Turtle
+    aliases: []
+  - id: c-motoi
+    kind: person
+    name: Motoi
+    aliases: []
+  - id: loc-falls-of-truth
+    kind: location
+    name: Falls Of Truth
+    aliases: []
+  - id: loc-island-turtle-shore
+    kind: location
+    name: Island Turtle Shore
+    aliases: []
+  - id: loc-tailed-beast-temple
+    kind: location
+    name: Tailed Beast Temple
+    aliases: []
+  - id: c-kushina
+    kind: person
+    name: Kushina Uzumaki
+    aliases:
+    - Кушіна Удзумакі
+  - id: loc-amegakure-lake
+    kind: location
+    name: Amegakure Lake
+    aliases: []
+  - id: loc-island-turtle-airspace
+    kind: location
+    name: Island Turtle Airspace
+    aliases: []
+  - id: loc-kumogakure-island-dock
+    kind: location
+    name: Kumogakure Island Dock
+    aliases: []
+  - id: loc-allied-shinobi-staging-ground
+    kind: location
+    name: Allied Shinobi Staging Ground
+    aliases: []
+  - id: c-kitsuchi
+    kind: person
+    name: Kitsuchi
+    aliases: []
+  - id: loc-genjutsu-tree-village-route
+    kind: location
+    name: Genjutsu Tree Village Route
+    aliases: []
+  - id: loc-genjutsu-tree-village
+    kind: location
+    name: Genjutsu Tree Village
+    aliases: []
+  - id: c-tanishi
+    kind: person
+    name: Tanishi
+    aliases: []
+  - id: c-kandachi
+    kind: person
+    name: Kandachi
+    aliases: []
+  - id: loc-jiraiya-training-route
+    kind: location
+    name: Jiraiya Training Route
+    aliases: []
+  - id: loc-demon-desert
+    kind: location
+    name: Demon Desert
+    aliases: []
+  - id: c-shira
+    kind: person
+    name: Shira
+    aliases: []
+  - id: c-sen
+    kind: person
+    name: Sen
+    aliases: []
+  - id: c-yome
+    kind: person
+    name: Yome
+    aliases: []
+  - id: c-kazami
+    kind: person
+    name: Kazami
+    aliases: []
+  - id: c-burami
+    kind: person
+    name: Burami
+    aliases: []
+  - id: c-muyami
+    kind: person
+    name: Muyami
+    aliases: []
+  - id: loc-demon-desert-underground-ruins
+    kind: location
+    name: Demon Desert Underground Ruins
+    aliases: []
+  - id: c-ajisai
+    kind: person
+    name: Ajisai
+    aliases: []
+  - id: c-fuyo
+    kind: person
+    name: Fuyo
+    aliases: []
+  - id: c-suiren
+    kind: person
+    name: Suiren
+    aliases: []
+  - id: loc-demon-desert-oasis
+    kind: location
+    name: Demon Desert Oasis
+    aliases: []
+  - id: c-ameno
+    kind: person
+    name: Ameno
+    aliases: []
+  - id: c-shishio
+    kind: person
+    name: Shishio
+    aliases: []
+  - id: c-koji-suna
+    kind: person
+    name: Koji Suna
+    aliases: []
+  - id: c-saya
+    kind: person
+    name: Saya
+    aliases: []
+  - id: c-mamushi
+    kind: person
+    name: Mamushi
+    aliases: []
+  - id: c-sana
+    kind: person
+    name: Sana
+    aliases: []
+  - id: c-fu-seven-tails
+    kind: person
+    name: Fu — Seven-Tails jinchuriki
+    aliases:
+    - Фу — джінчюрікі Семихвостого
+  - id: c-hoichi
+    kind: person
+    name: Hoichi
+    aliases: []
+  - id: loc-second-war-battlefield
+    kind: location
+    name: Second War Battlefield
+    aliases: []
+  - id: loc-second-war-medical-camp
+    kind: location
+    name: Second War Medical Camp
+    aliases: []
+  - id: loc-ame-war-battlefield
+    kind: location
+    name: Ame War Battlefield
+    aliases: []
+  - id: c-hanzo
+    kind: person
+    name: Hanzo
+    aliases: []
+  - id: loc-nagato-childhood-home
+    kind: location
+    name: Nagato Childhood Home
+    aliases: []
+  - id: c-nagato-father
+    kind: person
+    name: Nagato Father
+    aliases: []
+  - id: c-nagato-mother
+    kind: person
+    name: Nagato Mother
+    aliases: []
+  - id: loc-ame-war-streets
+    kind: location
+    name: Ame War Streets
+    aliases: []
+  - id: c-yahiko
+    kind: person
+    name: Yahiko
+    aliases:
+    - Яхіко
+  - id: c-chibi-dog
+    kind: person
+    name: Chibi
+    aliases:
+    - Чібі — пес
+  - id: loc-ame-orphans-hideout
+    kind: location
+    name: Ame Orphans Hideout
+    aliases: []
+  - id: loc-tsunade-travel-inn
+    kind: location
+    name: Tsunade Travel Inn
+    aliases: []
+  - id: c-sakumo
+    kind: person
+    name: Sakumo Hatake
+    aliases:
+    - Сакумо Хатаке
+  - id: c-obito
+    kind: person
+    name: Obito Uchiha
+    aliases:
+    - Обіто Учіха
+  - id: c-rin
+    kind: person
+    name: Rin Nohara
+    aliases:
+    - Рін Нохара
+  - id: c-might-duy
+    kind: person
+    name: Might Duy
+    aliases: []
+  - id: loc-kannabi-route
+    kind: location
+    name: Kannabi Route
+    aliases: []
+  - id: loc-kannabi-cave
+    kind: location
+    name: Kannabi Cave
+    aliases: []
+  - id: c-kakko
+    kind: person
+    name: Kakko
+    aliases: []
+  - id: c-taiseki
+    kind: person
+    name: Taiseki
+    aliases: []
+  - id: loc-madara-underground-hideout
+    kind: location
+    name: Madara Underground Hideout
+    aliases: []
+  - id: c-madara
+    kind: person
+    name: Madara
+    aliases: []
+  - id: c-white-zetsu
+    kind: person
+    name: White Zetsu
+    aliases: []
+  - id: c-guruguru
+    kind: person
+    name: Guruguru
+    aliases: []
+  - id: loc-rin-kiri-battlefield
+    kind: location
+    name: Rin Kiri Battlefield
+    aliases: []
+  - id: loc-kushina-home
+    kind: location
+    name: Kushina Home
+    aliases: []
+  - id: loc-fire-daimyo-route
+    kind: location
+    name: Fire Daimyo Route
+    aliases: []
+  - id: loc-orochimaru-konoha-lab
+    kind: location
+    name: Orochimaru Konoha Lab
+    aliases: []
+  - id: loc-iburi-hideout
+    kind: location
+    name: Iburi Hideout
+    aliases: []
+  - id: c-yukimi
+    kind: person
+    name: Yukimi
+    aliases: []
+  - id: c-gotta
+    kind: person
+    name: Gotta
+    aliases: []
+  - id: loc-orochimaru-abandoned-lab
+    kind: location
+    name: Orochimaru Abandoned Lab
+    aliases: []
+  - id: loc-anbu-training-field
+    kind: location
+    name: Anbu Training Field
+    aliases: []
+  - id: loc-fire-kumo-border-route
+    kind: location
+    name: Fire Kumo Border Route
+    aliases: []
+  - id: loc-uzumaki-sealing-chamber
+    kind: location
+    name: Uzumaki Sealing Chamber
+    aliases: []
+  - id: c-mito
+    kind: person
+    name: Mito
+    aliases: []
+  - id: loc-minato-kushina-home
+    kind: location
+    name: Minato Kushina Home
+    aliases: []
+  - id: loc-naruto-birth-cave
+    kind: location
+    name: Naruto Birth Cave
+    aliases: []
+  - id: c-biwako
+    kind: person
+    name: Biwako
+    aliases: []
+  - id: c-taji
+    kind: person
+    name: Taji
+    aliases: []
+  - id: loc-kurama-release-clearing
+    kind: location
+    name: Kurama Release Clearing
+    aliases: []
+  - id: loc-minato-safehouse
+    kind: location
+    name: Minato Safehouse
+    aliases: []
+  - id: c-enma
+    kind: person
+    name: Enma
+    aliases: []
+  - id: c-iruka-father
+    kind: person
+    name: Iruka Father
+    aliases: []
+  - id: c-iruka-mother
+    kind: person
+    name: Iruka Mother
+    aliases: []
+  - id: loc-minato-obito-battlefield
+    kind: location
+    name: Minato Obito Battlefield
+    aliases: []
+  - id: loc-naruto-sealing-clearing
+    kind: location
+    name: Naruto Sealing Clearing
+    aliases: []
+  - id: loc-uchiha-district
+    kind: location
+    name: Uchiha District
+    aliases: []
+  - id: c-izumi
+    kind: person
+    name: Izumi
+    aliases: []
+  - id: loc-konoha-council-room
+    kind: location
+    name: Konoha Council Room
+    aliases: []
+  - id: c-fugaku
+    kind: person
+    name: Fugaku Uchiha
+    aliases:
+    - Фуґаку Учіха
+  - id: loc-third-war-battlefield
+    kind: location
+    name: Third War Battlefield
+    aliases: []
+  - id: c-shisui
+    kind: person
+    name: Shisui Uchiha
+    aliases:
+    - Шісуї Учіха
+  - id: c-tenma-izumo
+    kind: person
+    name: Tenma Izumo
+    aliases: []
+  - id: c-shinko-inari
+    kind: person
+    name: Shinko Inari
+    aliases: []
+  - id: c-yuki-minazuki
+    kind: person
+    name: Yuki Minazuki
+    aliases: []
+  - id: loc-itachi-mission-route
+    kind: location
+    name: Itachi Mission Route
+    aliases: []
+  - id: loc-konoha-training-forest
+    kind: location
+    name: Konoha Training Forest
+    aliases: []
+  - id: loc-naka-shrine
+    kind: location
+    name: Naka Shrine
+    aliases: []
+  - id: loc-konoha-forest
+    kind: location
+    name: Konoha Forest
+    aliases: []
+  - id: loc-naka-river-cliff
+    kind: location
+    name: Naka River Cliff
+    aliases: []
+  - id: c-inabi
+    kind: person
+    name: Inabi
+    aliases: []
+  - id: c-yashiro
+    kind: person
+    name: Yashiro
+    aliases: []
+  - id: c-tekka
+    kind: person
+    name: Tekka
+    aliases: []
+  - id: loc-uchiha-forest
+    kind: location
+    name: Uchiha Forest
+    aliases: []
+  - id: c-mikoto
+    kind: person
+    name: Mikoto Uchiha
+    aliases:
+    - Мікото Учіха
+  - id: loc-akatsuki-mission-route
+    kind: location
+    name: Akatsuki Mission Route
+    aliases: []
+  - id: c-juzo
+    kind: person
+    name: Juzo
+    aliases: []
+  - id: c-yagura
+    kind: person
+    name: Yagura
+    aliases: []
+  - id: loc-akatsuki-hideout
+    kind: location
+    name: Akatsuki Hideout
+    aliases: []
+  - id: loc-deidara-workshop
+    kind: location
+    name: Deidara Workshop
+    aliases: []
+  - id: loc-orochimaru-wind-hideout
+    kind: location
+    name: Orochimaru Wind Hideout
+    aliases: []
+  - id: loc-land-hot-water
+    kind: location
+    name: Land Hot Water
+    aliases: []
+  - id: c-karura
+    kind: person
+    name: Karura
+    aliases: []
+  - id: c-yashamaru
+    kind: person
+    name: Yashamaru
+    aliases: []
+  - id: loc-uchiha-home
+    kind: location
+    name: Uchiha Home
+    aliases: []
+  - id: loc-sakura-childhood-hideout
+    kind: location
+    name: Sakura Childhood Hideout
+    aliases: []
+  - id: c-yota
+    kind: person
+    name: Yota
+    aliases: []
+  - id: loc-konoha-childhood-river
+    kind: location
+    name: Konoha Childhood River
+    aliases: []
+  - id: c-kyusuke
+    kind: person
+    name: Kyusuke
+    aliases: []
+  - id: loc-ame-border-village
+    kind: location
+    name: Ame Border Village
+    aliases: []
+  - id: loc-ame-negotiation-cliff
+    kind: location
+    name: Ame Negotiation Cliff
+    aliases: []
+  - id: loc-ame-akatsuki-route
+    kind: location
+    name: Ame Akatsuki Route
+    aliases: []
+  - id: c-daibutsu
+    kind: person
+    name: Daibutsu
+    aliases: []
+  - id: c-third-kazekage
+    kind: person
+    name: Third Kazekage
+    aliases:
+    - Третій Кадзекаґе
+  - id: loc-kiri-cipher-route
+    kind: location
+    name: Kiri Cipher Route
+    aliases: []
+  - id: c-miru
+    kind: person
+    name: Miru
+    aliases: []
+  - id: c-fuguki
+    kind: person
+    name: Fuguki
+    aliases: []
+  - id: loc-kumogakure
+    kind: location
+    name: Kumogakure
+    aliases: []
+  - id: c-a-third
+    kind: person
+    name: A — Third Raikage
+    aliases:
+    - Третій Райкаґе
+  - id: c-blue-b
+    kind: person
+    name: Blue B
+    aliases: []
+  - id: c-motoi-father
+    kind: person
+    name: Motoi Father
+    aliases: []
+  - id: loc-third-war-kumo-front
+    kind: location
+    name: Third War Kumo Front
+    aliases: []
+  - id: loc-hanzo-samurai-battlefield
+    kind: location
+    name: Hanzo Samurai Battlefield
+    aliases: []
+  - id: loc-kiri-suna-truce-route
+    kind: location
+    name: Kiri Suna Truce Route
+    aliases: []
+  - id: c-pakura
+    kind: person
+    name: Pakura
+    aliases: []
+  - id: loc-konoha-orphanage
+    kind: location
+    name: Konoha Orphanage
+    aliases: []
+  - id: c-nono
+    kind: person
+    name: Nono Yakushi
+    aliases:
+    - Ноно Якуші
+  - id: c-urushi
+    kind: person
+    name: Urushi
+    aliases: []
+  - id: loc-iwa-spy-route
+    kind: location
+    name: Iwa Spy Route
+    aliases: []
+  - id: loc-moryo-soul-shrine
+    kind: location
+    name: Moryo Soul Shrine
+    aliases: []
+  - id: c-yomi
+    kind: person
+    name: Yomi
+    aliases:
+    - Йомі
+  - id: c-moryo
+    kind: person
+    name: Moryo
+    aliases:
+    - Морьо
+  - id: loc-shion-palace
+    kind: location
+    name: Shion Palace
+    aliases: []
+  - id: c-shion
+    kind: person
+    name: Shion
+    aliases:
+    - Шіон
+  - id: c-taruho
+    kind: person
+    name: Taruho
+    aliases:
+    - Тарухо
+  - id: c-susuki
+    kind: person
+    name: Susuki
+    aliases: []
+  - id: loc-shion-sealing-route
+    kind: location
+    name: Shion Sealing Route
+    aliases: []
+  - id: loc-moryo-body-shrine
+    kind: location
+    name: Moryo Body Shrine
+    aliases: []
+  - id: c-miroku
+    kind: person
+    name: Miroku
+    aliases:
+    - Міроку
+  - id: c-shinno
+    kind: person
+    name: Shinno
+    aliases: []
+  - id: c-amaru
+    kind: person
+    name: Amaru
+    aliases: []
+  - id: loc-amaru-village
+    kind: location
+    name: Amaru Village
+    aliases: []
+  - id: loc-sky-naval-base
+    kind: location
+    name: Sky Naval Base
+    aliases: []
+  - id: loc-ancor-vantian
+    kind: location
+    name: Ancor Vantian
+    aliases: []
+  - id: loc-hiruko-investigation-site
+    kind: location
+    name: Hiruko Investigation Site
+    aliases: []
+  - id: loc-mount-shumi-route
+    kind: location
+    name: Mount Shumi Route
+    aliases: []
+  - id: loc-mount-shumi
+    kind: location
+    name: Mount Shumi
+    aliases: []
+  - id: c-hiruko
+    kind: person
+    name: Hiruko — missing-nin
+    aliases:
+    - Хіруко — нукенін
+  - id: loc-third-war-return-route
+    kind: location
+    name: Third War Return Route
+    aliases: []
+  - id: loc-roran-ruins
+    kind: location
+    name: Roran Ruins
+    aliases: []
+  - id: c-mukade
+    kind: person
+    name: Mukade / Anrokuzan
+    aliases:
+    - Мукаде / Анрокудзан
+  - id: loc-roran-palace
+    kind: location
+    name: Roran Palace
+    aliases: []
+  - id: c-sara
+    kind: person
+    name: Sara
+    aliases:
+    - Сара
+  - id: loc-roran-underground-factory
+    kind: location
+    name: Roran Underground Factory
+    aliases: []
+  - id: loc-roran-ryumyaku-chamber
+    kind: location
+    name: Roran Ryumyaku Chamber
+    aliases: []
+  - id: c-sara-daughter
+    kind: person
+    name: Sara’s daughter
+    aliases:
+    - Дочка Сари
+  - id: c-sara-mother
+    kind: person
+    name: Sara’s mother
+    aliases:
+    - Мати Сари
+  - id: loc-hozuki-castle
+    kind: location
+    name: Hozuki Castle
+    aliases: []
+  - id: c-mui
+    kind: person
+    name: Mui
+    aliases:
+    - Муі
+  - id: loc-hozuki-solitary-cell
+    kind: location
+    name: Hozuki Solitary Cell
+    aliases: []
+  - id: c-ryuzetsu
+    kind: person
+    name: Ryuzetsu
+    aliases:
+    - Рюдзецу
+  - id: c-maroi
+    kind: person
+    name: Maroi
+    aliases:
+    - Марої
+  - id: loc-hozuki-box-chamber
+    kind: location
+    name: Hozuki Box Chamber
+    aliases: []
+  - id: c-muku
+    kind: person
+    name: Muku
+    aliases:
+    - Муку
+  - id: loc-hozuki-castle-courtyard
+    kind: location
+    name: Hozuki Castle Courtyard
+    aliases: []
+  - id: loc-rtn-konohagakure
+    kind: location
+    name: Rtn Konohagakure
+    aliases: []
+  - id: c-rtn-hinata
+    kind: person
+    name: Rtn Hinata (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Hinata'
+    representation_of: c-hinata
+    representation_context: Limited Tsukuyomi
+  - id: c-rtn-kiba
+    kind: person
+    name: Rtn Kiba (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Kiba'
+    representation_of: c-kiba
+    representation_context: Limited Tsukuyomi
+  - id: c-rtn-shino
+    kind: person
+    name: Rtn Shino (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Shino'
+    representation_of: c-shino
+    representation_context: Limited Tsukuyomi
+  - id: c-rtn-ino
+    kind: person
+    name: Rtn Ino (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Ino'
+    representation_of: c-ino
+    representation_context: Limited Tsukuyomi
+  - id: c-rtn-shikamaru
+    kind: person
+    name: Rtn Shikamaru (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Shikamaru'
+    representation_of: c-shikamaru
+    representation_context: Limited Tsukuyomi
+  - id: c-rtn-choji
+    kind: person
+    name: Rtn Choji (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Choji'
+    representation_of: c-choji
+    representation_context: Limited Tsukuyomi
+  - id: loc-rtn-minato-home
+    kind: location
+    name: Rtn Minato Home
+    aliases: []
+  - id: c-rtn-minato
+    kind: person
+    name: Rtn Minato (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Minato'
+    representation_of: c-minato
+    representation_context: Limited Tsukuyomi
+  - id: c-rtn-kushina
+    kind: person
+    name: Rtn Kushina (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Kushina'
+    representation_of: c-kushina
+    representation_context: Limited Tsukuyomi
+  - id: loc-rtn-mission-route
+    kind: location
+    name: Rtn Mission Route
+    aliases: []
+  - id: c-rtn-kakashi
+    kind: person
+    name: Rtn Kakashi (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Kakashi'
+    representation_of: c-kakashi
+    representation_context: Limited Tsukuyomi
+  - id: c-rtn-might-guy
+    kind: person
+    name: Rtn Might Guy (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Might Guy'
+    representation_of: c-might-guy
+    representation_context: Limited Tsukuyomi
+  - id: c-menma
+    kind: person
+    name: Menma Uzumaki
+    aliases:
+    - Менма Удзумакі
+  - id: loc-rtn-menma-battlefield
+    kind: location
+    name: Rtn Menma Battlefield
+    aliases: []
+  - id: c-rtn-itachi
+    kind: person
+    name: Rtn Itachi (Limited Tsukuyomi)
+    aliases:
+    - 'Віддзеркалення: Itachi'
+    representation_of: c-itachi
+    representation_context: Limited Tsukuyomi
+  - id: loc-founding-river
+    kind: location
+    name: Founding River
+    aliases: []
+  - id: c-izuna
+    kind: person
+    name: Izuna
+    aliases: []
+  - id: c-butsuma
+    kind: person
+    name: Butsuma
+    aliases: []
+  - id: c-tajima
+    kind: person
+    name: Tajima
+    aliases: []
+  - id: loc-senju-uchiha-battlefield
+    kind: location
+    name: Senju Uchiha Battlefield
+    aliases: []
+  - id: loc-ancient-god-tree
+    kind: location
+    name: Ancient God Tree
+    aliases: []
+  - id: c-kaguya
+    kind: person
+    name: Kaguya
+    aliases: []
+  - id: c-tenji
+    kind: person
+    name: Tenji
+    aliases: []
+  - id: c-aino
+    kind: person
+    name: Aino
+    aliases: []
+  - id: c-hagoromo
+    kind: person
+    name: Hagoromo
+    aliases: []
+  - id: c-hamura
+    kind: person
+    name: Hamura
+    aliases: []
+  - id: loc-hagoromo-travel-route
+    kind: location
+    name: Hagoromo Travel Route
+    aliases: []
+  - id: c-futami
+    kind: person
+    name: Futami
+    aliases: []
+  - id: loc-ninshu-home
+    kind: location
+    name: Ninshu Home
+    aliases: []
+  - id: c-indra
+    kind: person
+    name: Indra
+    aliases: []
+  - id: c-asura
+    kind: person
+    name: Asura
+    aliases: []
+  - id: c-black-zetsu
+    kind: person
+    name: Black Zetsu
+    aliases: []
+  - id: loc-ninshu-trial-villages
+    kind: location
+    name: Ninshu Trial Villages
+    aliases: []
+  - id: c-taizo
+    kind: person
+    name: Taizo
+    aliases: []
+  - id: c-kanna
+    kind: person
+    name: Kanna
+    aliases: []
+  - id: loc-kosuke-early-mission
+    kind: location
+    name: Kosuke Early Mission
+    aliases: []
+  - id: loc-kosuke-mission-camp
+    kind: location
+    name: Kosuke Mission Camp
+    aliases: []
+  - id: loc-hanare-childhood-road
+    kind: location
+    name: Hanare Childhood Road
+    aliases: []
+  - id: loc-lee-guy-restaurant
+    kind: location
+    name: Lee Guy Restaurant
+    aliases: []
+  - id: loc-lee-guy-lake
+    kind: location
+    name: Lee Guy Lake
+    aliases: []
+  - id: loc-suika-hideout-route
+    kind: location
+    name: Suika Hideout Route
+    aliases: []
+  - id: loc-iwagakure
+    kind: location
+    name: Iwagakure
+    aliases: []
+  - id: loc-tonika-village
+    kind: location
+    name: Tonika Village
+    aliases: []
+  - id: c-dokku
+    kind: person
+    name: Dokku
+    aliases: []
+  - id: c-leo-power
+    kind: person
+    name: Leo Power
+    aliases: []
+  - id: c-miina
+    kind: person
+    name: Miina
+    aliases: []
+  - id: c-faz
+    kind: person
+    name: Faz
+    aliases: []
+  - id: c-lando
+    kind: person
+    name: Lando
+    aliases: []
+  - id: c-sora-power
+    kind: person
+    name: Sora Power
+    aliases: []
+  - id: loc-hacho-village
+    kind: location
+    name: Hacho Village
+    aliases: []
+  - id: c-shiseru
+    kind: person
+    name: Shiseru
+    aliases: []
+  - id: loc-tonika-hole
+    kind: location
+    name: Tonika Hole
+    aliases: []
+  - id: loc-hacho-broken-bridge
+    kind: location
+    name: Hacho Broken Bridge
+    aliases: []
+  - id: c-disonasu
+    kind: person
+    name: Disonasu
+    aliases: []
+  - id: loc-dokku-house
+    kind: location
+    name: Dokku House
+    aliases: []
+  - id: c-tonika-head
+    kind: person
+    name: Tonika Head
+    aliases: []
+  - id: loc-ama-no-hoko
+    kind: location
+    name: Ama No Hoko
+    aliases: []
+  - id: loc-tonika-outskirts
+    kind: location
+    name: Tonika Outskirts
+    aliases: []
+  - id: loc-mist-swordsmen-battlefield
+    kind: location
+    name: Mist Swordsmen Battlefield
+    aliases: []
+  - id: loc-sasori-workshop
+    kind: location
+    name: Sasori Workshop
+    aliases: []
+  - id: c-komushi
+    kind: person
+    name: Komushi
+    aliases: []
+  - id: c-komushi-mother
+    kind: person
+    name: Komushi Mother
+    aliases: []
+  - id: loc-suna-jinchuriki-cell
+    kind: location
+    name: Suna Jinchuriki Cell
+    aliases: []
+  - id: c-bunpuku
+    kind: person
+    name: Bunpuku
+    aliases: []
+  - id: c-shin
+    kind: person
+    name: Shin
+    aliases: []
+  - id: loc-akimichi-compound
+    kind: location
+    name: Akimichi Compound
+    aliases: []
+  - id: c-sagiri
+    kind: person
+    name: Sagiri
+    aliases: []
+  - id: c-nadeshiko-former-leader
+    kind: person
+    name: Nadeshiko Former Leader
+    aliases: []
+  - id: loc-snow-burning-palace
+    kind: location
+    name: Snow Burning Palace
+    aliases: []
+  - id: c-sosetsu
+    kind: person
+    name: Sosetsu
+    aliases: []
+  - id: loc-temujin-childhood-village
+    kind: location
+    name: Temujin Childhood Village
+    aliases: []
+  - id: loc-kumo-kurama-battlefield
+    kind: location
+    name: Kumo Kurama Battlefield
+    aliases: []
+  - id: c-kinkaku
+    kind: person
+    name: Kinkaku
+    aliases: []
+  - id: c-ginkaku
+    kind: person
+    name: Ginkaku
+    aliases: []
+  - id: loc-kumo-treaty-meeting
+    kind: location
+    name: Kumo Treaty Meeting
+    aliases: []
+  - id: c-a-second
+    kind: person
+    name: A Second
+    aliases: []
+  - id: loc-tobirama-last-battlefield
+    kind: location
+    name: Tobirama Last Battlefield
+    aliases: []
+  - id: c-kagami
+    kind: person
+    name: Kagami
+    aliases: []
+  - id: c-torifu
+    kind: person
+    name: Torifu
+    aliases: []
+  - id: loc-tobi-observation-hideout
+    kind: location
+    name: Tobi Observation Hideout
+    aliases: []
+  - id: loc-konoha-public-bath
+    kind: location
+    name: Konoha Public Bath
+    aliases: []
+    parent_id: loc-konohagakure
+  - id: c-rtn-sakura
+    kind: person
+    name: Сакура — інший світ
+    aliases: []
+    representation_of: c-sakura
+  - id: loc-haruno-home
+    kind: location
+    name: Haruno Home
+    aliases: []
+    parent_id: loc-konohagakure
+  - id: c-kizashi
+    kind: person
+    name: Kizashi
+    aliases: []
+  - id: c-mebuki
+    kind: person
+    name: Mebuki
+    aliases: []
+  - id: c-chen-student
+    kind: person
+    name: Неназваний учень Чена
+    aliases: []
+  - id: loc-chen-grave
+    kind: location
+    name: Chen Grave
+    aliases: []
+    parent_id: loc-konohagakure
+  - id: loc-shinobi-graveyards
+    kind: location
+    name: Shinobi Graveyards
+    aliases: []
+  - id: loc-madara-cave
+    kind: location
+    name: Madara Cave
+    aliases: []
+  - id: loc-ame-nagato-home
+    kind: location
+    name: Ame Nagato Home
+    aliases: []
+  - id: loc-konoha-cliff
+    kind: location
+    name: Konoha Cliff
+    aliases: []
+  - id: loc-uchiha-training-ground
+    kind: location
+    name: Uchiha Training Ground
+    aliases: []
+  - id: c-dokan
+    kind: person
+    name: Докан
+    aliases: []
+  - id: c-saisu
+    kind: person
+    name: Сайсу Камано
+    aliases: []
+  - id: loc-konoha-lake
+    kind: location
+    name: Konoha Lake
+    aliases: []
+  - id: c-fugaku-comrade
+    kind: person
+    name: Неназваний товариш Фуґаку
+    aliases: []
+  - id: loc-root-mission-site
+    kind: location
+    name: Root Mission Site
+    aliases: []
+  - id: c-root-operative-a
+    kind: person
+    name: Неназваний підлеглий Ітачі №1
+    aliases: []
+  - id: c-root-operative-b
+    kind: person
+    name: Неназваний підлеглий Ітачі №2
+    aliases: []
+  - id: loc-second-war-camp
+    kind: location
+    name: Second War Camp
+    aliases: []
+  - id: loc-senju-clan-home
+    kind: location
+    name: Senju Clan Home
+    aliases: []
+  - id: c-itama
+    kind: person
+    name: Ітама Сенджю
+    aliases: []
+  - id: loc-moon-toneri-castle
+    kind: location
+    name: Moon Toneri Castle
+    aliases: []
+    parent_id: loc-moon
+  - id: c-toneri
+    kind: person
+    name: Тонері Оцуцукі
+    aliases: []
+  - id: loc-moon-otsutsuki-settlement
+    kind: location
+    name: Moon Otsutsuki Settlement
+    aliases: []
+    parent_id: loc-moon
+  - id: group-lunar-main-branch
+    kind: group
+    name: Головна гілка місячних Оцуцукі
+    aliases: []
+  - id: group-lunar-cadet-branch
+    kind: group
+    name: Побічна гілка місячних Оцуцукі
+    aliases: []
+  - id: loc-fire-water-supply-route
+    kind: location
+    name: Fire Water Supply Route
+    aliases: []
+  - id: loc-valley-judgement
+    kind: location
+    name: Долина Суду
+    aliases: []
+    parent_id: loc-land-of-fire
+  - id: loc-moon
+    kind: location
+    name: Місяць
+    aliases: []
+  - id: c-kawarama
+    kind: person
+    aliases: []
+    name: Каварама Сенджю
+  - id: c-mukade-sacrifice
+    kind: person
+    name: Мукаде — жертва підміни Кісаме
+    aliases:
+    - Mukade (Akatsuki sacrifice)
+  - id: loc-konoha-diplomatic-hall
+    kind: location
+    name: Konoha Diplomatic Hall
+    aliases: []
+  - id: c-mu
+    kind: person
+    name: Мю
+    aliases: []
+  - id: loc-kabuto-research-hideout
+    kind: location
+    name: Kabuto Research Hideout
+    aliases: []
+  - id: loc-ryuchi-cave
+    kind: location
+    name: Ryuchi Cave
+    aliases: []
+  - id: c-white-snake-sage
+    kind: person
+    name: Біла Змія-Мудрець
+    aliases: []
+  - id: c-chiyo-this
+    kind: person
+    name: Чійо — сестра Шю
+    aliases:
+    - Chiyo (Land of This)
+  - id: loc-land-this-castle
+    kind: location
+    name: Замок Шю та Чійо
+    aliases:
+    - Land of This castle
+  - id: loc-first-kage-summit-hall
+    kind: location
+    name: First Kage Summit Hall
+    aliases: []
+  - id: c-reto
+    kind: person
+    name: Рето — Перший Кадзекаґе
+    aliases: []
+  - id: c-shamon
+    kind: person
+    name: Шамон
+    aliases: []
+  - id: c-a-first
+    kind: person
+    name: А — Перший Райкаґе
+    aliases: []
+  - id: c-byakuren
+    kind: person
+    name: Бякурен
+    aliases: []
+  - id: c-third-mizukage
+    kind: person
+    name: Третій Мідзукаґе
+    aliases: []
+  - id: c-ishikawa
+    kind: person
+    name: Ішікава
+    aliases: []
+  - id: loc-suna-training-ground
+    kind: location
+    name: Suna Training Ground
+    aliases: []
+  - id: c-maki
+    kind: person
+    name: Макі
+    aliases: []
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

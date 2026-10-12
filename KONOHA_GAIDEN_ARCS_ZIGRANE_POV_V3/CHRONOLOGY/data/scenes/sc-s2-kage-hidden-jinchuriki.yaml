@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-kage-hidden-jinchuriki
+episode_id: ep-s2-kage-hidden-jinchuriki
+display_rank: 19300
+continuity_id: main
+title: Каґе вирішують сховати Наруто й Бі
+description: Острів Черепахи визначають місцем їхнього захисту та тренування.
+location_id: loc-alliance-planning-hall
+placement:
+  anchor_id: ta-s2-66-08-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kage-hidden-jinchuriki-1
+  title: Каґе вирішують сховати Наруто й Бі
+  text: Острів Черепахи визначають місцем їхнього захисту та тренування.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-mei
+    role: participant
+    mode: physical
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kage-hidden-jinchuriki
+relations: []
+presence:
+- id: pr-s2-kage-hidden-jinchuriki-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-kage-hidden-jinchuriki.start
+  to: sc-s2-kage-hidden-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kage-hidden-jinchuriki
+- id: pr-s2-kage-hidden-jinchuriki-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-kage-hidden-jinchuriki.start
+  to: sc-s2-kage-hidden-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kage-hidden-jinchuriki
+- id: pr-s2-kage-hidden-jinchuriki-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-kage-hidden-jinchuriki.start
+  to: sc-s2-kage-hidden-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kage-hidden-jinchuriki
+- id: pr-s2-kage-hidden-jinchuriki-c-mei
+  entity_id: c-mei
+  from: sc-s2-kage-hidden-jinchuriki.start
+  to: sc-s2-kage-hidden-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kage-hidden-jinchuriki
+- id: pr-s2-kage-hidden-jinchuriki-c-onoki
+  entity_id: c-onoki
+  from: sc-s2-kage-hidden-jinchuriki.start
+  to: sc-s2-kage-hidden-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kage-hidden-jinchuriki

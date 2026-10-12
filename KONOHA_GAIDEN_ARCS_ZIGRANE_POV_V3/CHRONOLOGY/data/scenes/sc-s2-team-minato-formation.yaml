@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-team-minato-formation
+episode_id: ep-s2-team-minato-formation
+display_rank: 27400
+continuity_id: main
+title: Мінато приймає Какаші, Обіто та Рін
+description: Спільне випробування відкриває суперечності правил і товаришів; трійця починає місії.
+location_id: loc-training-ground-3
+placement:
+  anchor_id: ta-s2-44-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-team-minato-formation-1
+  title: Мінато приймає Какаші, Обіто та Рін
+  text: Спільне випробування відкриває суперечності правил і товаришів; трійця починає місії.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team-minato-formation
+relations: []
+presence:
+- id: pr-s2-team-minato-formation-c-minato
+  entity_id: c-minato
+  from: sc-s2-team-minato-formation.start
+  to: sc-s2-team-minato-formation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-formation
+- id: pr-s2-team-minato-formation-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-team-minato-formation.start
+  to: sc-s2-team-minato-formation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-formation
+- id: pr-s2-team-minato-formation-c-obito
+  entity_id: c-obito
+  from: sc-s2-team-minato-formation.start
+  to: sc-s2-team-minato-formation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-formation
+- id: pr-s2-team-minato-formation-c-rin
+  entity_id: c-rin
+  from: sc-s2-team-minato-formation.start
+  to: sc-s2-team-minato-formation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team-minato-formation

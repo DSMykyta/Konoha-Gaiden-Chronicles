@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-kisame-cipher-mission
+episode_id: ep-s2-kisame-cipher-mission
+display_rank: 35600
+continuity_id: main
+title: Кісаме вбиває власних шифрувальників
+description: Під загрозою витоку він виконує наказ знищити носіїв відомостей.
+location_id: loc-kiri-cipher-route
+placement:
+  anchor_id: ta-s2-48-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kisame-cipher-mission-1
+  title: Кісаме вбиває власних шифрувальників
+  text: Під загрозою витоку він виконує наказ знищити носіїв відомостей.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-miru
+    role: participant
+    mode: physical
+  - entity_id: c-fuguki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kisame-cipher-mission
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-kisame-cipher-mission-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-kisame-cipher-mission.start
+  to: sc-s2-kisame-cipher-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-cipher-mission
+- id: pr-s2-kisame-cipher-mission-c-miru
+  entity_id: c-miru
+  from: sc-s2-kisame-cipher-mission.start
+  to: sc-s2-kisame-cipher-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-cipher-mission
+- id: pr-s2-kisame-cipher-mission-c-fuguki
+  entity_id: c-fuguki
+  from: sc-s2-kisame-cipher-mission.start
+  to: sc-s2-kisame-cipher-mission.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-cipher-mission

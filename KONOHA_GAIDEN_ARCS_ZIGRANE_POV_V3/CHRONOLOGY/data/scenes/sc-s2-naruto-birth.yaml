@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-naruto-birth
+episode_id: ep-s2-naruto-birth
+display_rank: 30100
+continuity_id: main
+title: Кушіна народжує Наруто
+description: Мінато підтримує печать, поки Бівако й Таджі допомагають пологам.
+location_id: loc-naruto-birth-cave
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-birth-1
+  title: Кушіна народжує Наруто
+  text: Мінато підтримує печать, поки Бівако й Таджі допомагають пологам.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-biwako
+    role: participant
+    mode: physical
+  - entity_id: c-taji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-birth
+relations: []
+presence:
+- id: pr-s2-naruto-birth-c-minato
+  entity_id: c-minato
+  from: sc-s2-naruto-birth.start
+  to: sc-s2-naruto-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-birth
+- id: pr-s2-naruto-birth-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-naruto-birth.start
+  to: sc-s2-naruto-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-birth
+- id: pr-s2-naruto-birth-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-birth.start
+  to: sc-s2-naruto-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-birth
+- id: pr-s2-naruto-birth-c-biwako
+  entity_id: c-biwako
+  from: sc-s2-naruto-birth.start
+  to: sc-s2-naruto-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-birth
+- id: pr-s2-naruto-birth-c-taji
+  entity_id: c-taji
+  from: sc-s2-naruto-birth.start
+  to: sc-s2-naruto-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-birth

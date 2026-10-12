@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-kakashi-self-sacrifice
+episode_id: ep-s2-kakashi-self-sacrifice
+display_rank: 38700
+continuity_id: movie-fire
+title: Какаші готує пастку для Хіруко
+description: Камуі має забрати поглинача разом із ним; він просить Цунаде стримати товаришів.
+location_id: loc-kakashi-home
+placement:
+  anchor_id: ta-s2-66-04-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-self-sacrifice-1
+  title: Какаші готує пастку для Хіруко
+  text: Камуі має забрати поглинача разом із ним; він просить Цунаде стримати товаришів.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-self-sacrifice
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-kakashi-self-sacrifice-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-self-sacrifice.start
+  to: sc-s2-kakashi-self-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-self-sacrifice
+- id: pr-s2-kakashi-self-sacrifice-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-kakashi-self-sacrifice.start
+  to: sc-s2-kakashi-self-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-self-sacrifice

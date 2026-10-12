@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-yugao-hayate-training
+episode_id: ep-s2-yugao-hayate-training
+display_rank: 800
+continuity_id: main
+title: Юґао тренується з Хаяте
+description: Спільне кенджюцу залишає рухи, за якими вона згодом упізнає колишнього товариша.
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-s2-55-08-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yugao-hayate-training-1
+  title: Юґао тренується з Хаяте
+  text: Спільне кенджюцу залишає рухи, за якими вона згодом упізнає колишнього товариша.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yugao
+    role: participant
+    mode: physical
+  - entity_id: c-hayate
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yugao-hayate-training
+relations: []
+presence:
+- id: pr-s2-yugao-hayate-training-c-yugao
+  entity_id: c-yugao
+  from: sc-s2-yugao-hayate-training.start
+  to: sc-s2-yugao-hayate-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yugao-hayate-training
+- id: pr-s2-yugao-hayate-training-c-hayate
+  entity_id: c-hayate
+  from: sc-s2-yugao-hayate-training.start
+  to: sc-s2-yugao-hayate-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yugao-hayate-training

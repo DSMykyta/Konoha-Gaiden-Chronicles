@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-12",
+  "note": "Ідентичність файлів, опорні події та історичні періоди перевірено. Не повний покадровий аудит 11 фільмів.",
+  "movies": [
+    {
+      "id": "snow",
+      "title": "Ninja Clash in the Land of Snow",
+      "subtitles_path": null,
+      "continuity_id": "alt-movie-land-of-snow",
+      "scope": "prewar_story_branch",
+      "review": "synopsis_only_partial",
+      "note": "Субтитрів немає. Наявні сцени звірено за описом; додано порятунок малої Коюкі.",
+      "scene_ids": [
+        "sc-alt-y0-0903-koyuki-identity",
+        "sc-alt-y0-0903-naruto-defeats-doto",
+        "sc-alt-y0-0903-land-snow-armored-shinobi",
+        "sc-alt-y0-0903-land-snow-escort"
+      ],
+      "historical_scene_ids": [
+        "sc-s2-koyuki-child-rescued"
+      ]
+    },
+    {
+      "id": "gelel",
+      "title": "Legend of the Stone of Gelel",
+      "subtitles_path": null,
+      "continuity_id": "alt-movie-gelel",
+      "scope": "prewar_story_branch",
+      "review": "synopsis_only_partial",
+      "note": "Субтитрів немає. Наявні сцени звірено за описом; додано знищення поселення Темуджіна.",
+      "scene_ids": [
+        "sc-alt-y0-1005-gelel-ferret-ambush",
+        "sc-alt-y0-1005-gelel-mine-convergence",
+        "sc-alt-y0-1005-gelel-shikamaru-fortress",
+        "sc-alt-y0-1005-gelel-caravan-attack",
+        "sc-alt-y0-1005-gelel-sealing-chamber",
+        "sc-alt-y0-1005-gelel-mine-collapse",
+        "sc-alt-y0-1005-gelel-haido-meeting",
+        "sc-alt-y0-1005-gelel-caravan-recovery"
+      ],
+      "historical_scene_ids": [
+        "sc-s2-temujin-village-destroyed"
+      ]
+    },
+    {
+      "id": "moon",
+      "title": "Guardians of the Crescent Moon Kingdom",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto_ The Movie - Guardians of the Crescent Moon Kingdom (English Dubbed).vtt",
+      "continuity_id": "alt-movie-crescent-moon",
+      "scope": "prewar_story_branch",
+      "review": "identity_checked_and_story_represented",
+      "note": "Файл відповідає Мічіру та Хікару; попередній резерв дороги й догляду Какаші збережено.",
+      "scene_ids": [
+        "sc-period-moon-departure",
+        "sc-alt-y0-1118-moon-michiru-throne",
+        "sc-alt-y0-1118-crescent-moon-movie",
+        "sc-alt-y0-1118-moon-coup-revealed",
+        "sc-period-moon-care",
+        "sc-alt-y0-1118-moon-palace-rescue"
+      ],
+      "historical_scene_ids": []
+    },
+    {
+      "id": "shion",
+      "title": "Naruto Shippuden: The Movie",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden_ The Movie (English Dubbed).vtt",
+      "continuity_id": "movie-shion",
+      "scope": "prewar_story_branch",
+      "review": "identity_checked_and_story_represented",
+      "note": "Шіон / Морьо; смерть Міроку відділено від сучасної місії.",
+      "scene_ids": [
+        "sc-s2-shion-mission",
+        "sc-s2-shion-moryo-seal",
+        "sc-s2-shion-prediction",
+        "sc-s2-shion-escort-ambush",
+        "sc-s2-shion-palace-assault",
+        "sc-s2-moryo-revived",
+        "sc-s2-taruho-sacrifice",
+        "sc-s2-shion-farewell",
+        "sc-s2-miroku-first-seal"
+      ],
+      "historical_scene_ids": [
+        "sc-s2-miroku-first-seal"
+      ]
+    },
+    {
+      "id": "bonds",
+      "title": "Bonds",
+      "subtitles_path": null,
+      "continuity_id": "movie-bonds",
+      "scope": "prewar_story_branch",
+      "review": "synopsis_only_partial",
+      "note": "Справжніх субтитрів немає. Країна Неба, Амару й Шінно внесені за окремим описом; text/cast partial.",
+      "scene_ids": [
+        "sc-s2-sky-naval-base",
+        "sc-s2-sky-prisoners-rescued",
+        "sc-s2-sky-konoha-raid",
+        "sc-s2-sky-zero-tails",
+        "sc-s2-sky-fortress-duel",
+        "sc-s2-sky-escort-village",
+        "sc-s2-sky-sasuke-return"
+      ],
+      "historical_scene_ids": []
+    },
+    {
+      "id": "fire",
+      "title": "The Will of Fire",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden The Movie - The Will of Fire (English Dubbed).vtt",
+      "continuity_id": "movie-fire",
+      "scope": "prewar_story_branch",
+      "review": "identity_checked_and_story_represented",
+      "note": "Помилково названий Bonds файл містить Хіруко та затемнення. Перейменовано без зміни діалогів; давнє прокляття — в минулому.",
+      "scene_ids": [
+        "sc-s2-hiruko-curse-past",
+        "sc-s2-hiruko-final-duel",
+        "sc-s2-hiruko-puppet-curse",
+        "sc-s2-hiruko-investigation",
+        "sc-s2-kakashi-self-sacrifice",
+        "sc-s2-hiruko-threat",
+        "sc-s2-hiruko-gaara-road"
+      ],
+      "historical_scene_ids": [
+        "sc-s2-hiruko-curse-past"
+      ]
+    },
+    {
+      "id": "tower",
+      "title": "The Lost Tower",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden the Movie_ The Lost Tower (English Dubbed).vtt",
+      "continuity_id": "movie-tower",
+      "scope": "prewar_story_branch",
+      "review": "identity_checked_and_story_represented",
+      "note": "Теперішнє 65 → Роуран 45; прибуття Мукаде 39, загибель матері Сари 43. Збережено різницю 20 років та додаткові 6 років.",
+      "scene_ids": [
+        "sc-s2-tower-mukade-arrives",
+        "sc-s2-tower-return-present",
+        "sc-s2-tower-queen-murdered",
+        "sc-s2-tower-past-team-reunited",
+        "sc-s2-tower-pursuit",
+        "sc-s2-tower-puppet-citizens",
+        "sc-s2-tower-arrival-past",
+        "sc-s2-tower-memory-sealed",
+        "sc-s2-tower-anrokuzan-revealed",
+        "sc-s2-tower-ryumyaku-sealed"
+      ],
+      "historical_scene_ids": [
+        "sc-s2-tower-mukade-arrives",
+        "sc-s2-tower-queen-murdered",
+        "sc-s2-tower-past-team-reunited",
+        "sc-s2-tower-puppet-citizens",
+        "sc-s2-tower-arrival-past",
+        "sc-s2-tower-memory-sealed",
+        "sc-s2-tower-anrokuzan-revealed",
+        "sc-s2-tower-ryumyaku-sealed"
+      ]
+    },
+    {
+      "id": "prison",
+      "title": "Blood Prison",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden the Movie_ Blood Prison (English Dubbed).vtt",
+      "continuity_id": "movie-prison",
+      "scope": "prewar_story_branch",
+      "review": "identity_checked_and_story_represented",
+      "note": "Втрата Муку — за десять років до відкриття Скрині. Сучасна частина конфліктує з морським шляхом серіалу; окрема тяглість у даних.",
+      "scene_ids": [
+        "sc-s2-prison-accusation",
+        "sc-s2-prison-box-opens",
+        "sc-s2-prison-arrival",
+        "sc-s2-prison-cover-explained",
+        "sc-s2-prison-satori-battle",
+        "sc-s2-prison-muku-lost",
+        "sc-s2-prison-ryuzetsu",
+        "sc-s2-prison-solitary",
+        "sc-s2-ryuzetsu-sacrifice"
+      ],
+      "historical_scene_ids": [
+        "sc-s2-prison-muku-lost"
+      ]
+    },
+    {
+      "id": "road",
+      "title": "Road to Ninja",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Road To Ninja - Naruto the Movie (English Dubbed).vtt",
+      "continuity_id": "movie-road",
+      "scope": "prewar_story_branch",
+      "review": "identity_checked_and_story_represented",
+      "note": "Віддзеркалення — окремі сутності; додано підготовку 311 та іншу Сакуру 271.",
+      "scene_ids": [
+        "sc-s2-road-menma-attack",
+        "sc-s2-road-sakura-parents-return",
+        "sc-s2-road-tsukuyomi-trap",
+        "sc-s2-road-bath-invitation",
+        "sc-s2-road-public-bath",
+        "sc-s2-road-evening-cards",
+        "sc-s2-road-iruka-home",
+        "sc-s2-road-sakura-hospital",
+        "sc-s2-road-red-moon-scroll",
+        "sc-s2-road-reversed-konoha",
+        "sc-s2-road-final-duel",
+        "sc-s2-road-telescope-preparation",
+        "sc-s2-road-akatsuki-copy-attack",
+        "sc-s2-road-sakura-skyfall",
+        "sc-s2-road-sakura-search-pendant",
+        "sc-s2-road-minato-kushina-home"
+      ],
+      "historical_scene_ids": []
+    },
+    {
+      "id": "last",
+      "title": "The Last: Naruto the Movie",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/The Last_ Naruto the Movie (English Dubbed).vtt",
+      "continuity_id": "main",
+      "scope": "postwar_present_excluded",
+      "review": "identity_checked_and_story_represented",
+      "note": "Сучасний післявоєнний сюжет виключено. Дитячий шарф — окремий доказ до порятунку; додано минуле Тонері та місячного клану.",
+      "scene_ids": [],
+      "historical_scene_ids": [
+        "sc-s2-hinata-naruto-bullies",
+        "sc-s2-toneri-father-death",
+        "sc-s2-hamura-moon-departure",
+        "sc-s2-lunar-branch-war"
+      ]
+    },
+    {
+      "id": "boruto",
+      "title": "Boruto: Naruto the Movie",
+      "subtitles_path": "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Boruto_ Naruto The Movie (English Dubbed).vtt",
+      "continuity_id": "main",
+      "scope": "postwar_present_excluded",
+      "review": "identity_checked_and_story_represented",
+      "note": "Кіншікі, наукові інструменти та іспит Боруто підтверджують ідентичність. Події покоління Боруто поза довоєнним обсягом.",
+      "scene_ids": [],
+      "historical_scene_ids": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-hinata-after-hizashi-funeral
+episode_id: ep-s2-hinata-after-hizashi-funeral
+display_rank: 33600
+continuity_id: main
+title: Наруто проводжає Хінату додому
+description: Після похорону Хізаші вона відходить від рідних; Хіаші забирає її на навчання.
+location_id: loc-hyuga-compound
+placement:
+  anchor_id: ta-s2-52-12-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hinata-after-hizashi-funeral-1
+  title: Наруто проводжає Хінату додому
+  text: Після похорону Хізаші вона відходить від рідних; Хіаші забирає її на навчання.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-hiashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hinata-after-hizashi-funeral
+relations: []
+presence:
+- id: pr-s2-hinata-after-hizashi-funeral-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-hinata-after-hizashi-funeral.start
+  to: sc-s2-hinata-after-hizashi-funeral.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-after-hizashi-funeral
+- id: pr-s2-hinata-after-hizashi-funeral-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hinata-after-hizashi-funeral.start
+  to: sc-s2-hinata-after-hizashi-funeral.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-after-hizashi-funeral
+- id: pr-s2-hinata-after-hizashi-funeral-c-hiashi
+  entity_id: c-hiashi
+  from: sc-s2-hinata-after-hizashi-funeral.start
+  to: sc-s2-hinata-after-hizashi-funeral.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hinata-after-hizashi-funeral

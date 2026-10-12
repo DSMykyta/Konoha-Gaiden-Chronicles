@@ -1,0 +1,163 @@
+schema_version: 1
+id: sc-s2-second-seal-fails
+episode_id: ep-s2-second-seal-fails
+display_rank: 8200
+continuity_id: main
+title: Коноха повторює запечатування
+description: Підсилені проклятими печатями противники забирають Юкімару; Какаші, Шіно й Ямато перемагають нападників.
+location_id: loc-three-tails-lake
+placement:
+  anchor_id: ta-s2-66-04-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-second-seal-fails-1
+  title: Коноха повторює запечатування
+  text: Підсилені проклятими печатями противники забирають Юкімару; Какаші, Шіно й Ямато перемагають нападників.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-second-seal-fails
+relations: []
+presence:
+- id: pr-s2-second-seal-fails-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-ino
+  entity_id: c-ino
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-shino
+  entity_id: c-shino
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-lee
+  entity_id: c-lee
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails
+- id: pr-s2-second-seal-fails-c-sai
+  entity_id: c-sai
+  from: sc-s2-second-seal-fails.start
+  to: sc-s2-second-seal-fails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-seal-fails

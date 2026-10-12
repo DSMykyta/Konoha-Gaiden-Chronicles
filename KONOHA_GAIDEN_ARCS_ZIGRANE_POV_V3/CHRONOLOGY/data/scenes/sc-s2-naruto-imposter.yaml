@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-naruto-imposter
+episode_id: ep-s2-naruto-imposter
+display_rank: 20500
+continuity_id: main
+title: Загін зустрічає самозваного Наруто
+description: Банна й Іґґі влаштовують показові перемоги, але привертають найманців. Іґґі не кидає товариша; загін
+  продовжує дорогу до Блискавки.
+location_id: loc-water-country-coastal-route
+placement:
+  anchor_id: ta-s2-66-09-27
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-imposter-1
+  title: Загін зустрічає самозваного Наруто
+  text: Банна й Іґґі влаштовують показові перемоги, але привертають найманців.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-banna
+    role: participant
+    mode: physical
+  - entity_id: c-iggy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-imposter
+- id: ev-s2-naruto-imposter-2
+  title: Наруто допомагає відбити напад
+  text: Іґґі не кидає товариша; загін продовжує дорогу до Блискавки.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-banna
+    role: participant
+    mode: physical
+  - entity_id: c-iggy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-imposter
+relations:
+- id: rel-s2-naruto-imposter-1
+  kind: before
+  a: ev-s2-naruto-imposter-1
+  b: ev-s2-naruto-imposter-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-imposter
+presence:
+- id: pr-s2-naruto-imposter-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-imposter.start
+  to: sc-s2-naruto-imposter.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-imposter
+- id: pr-s2-naruto-imposter-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-naruto-imposter.start
+  to: sc-s2-naruto-imposter.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-imposter
+- id: pr-s2-naruto-imposter-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-naruto-imposter.start
+  to: sc-s2-naruto-imposter.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-imposter
+- id: pr-s2-naruto-imposter-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-naruto-imposter.start
+  to: sc-s2-naruto-imposter.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-imposter
+- id: pr-s2-naruto-imposter-c-banna
+  entity_id: c-banna
+  from: sc-s2-naruto-imposter.start
+  to: sc-s2-naruto-imposter.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-imposter
+- id: pr-s2-naruto-imposter-c-iggy
+  entity_id: c-iggy
+  from: sc-s2-naruto-imposter.start
+  to: sc-s2-naruto-imposter.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-imposter

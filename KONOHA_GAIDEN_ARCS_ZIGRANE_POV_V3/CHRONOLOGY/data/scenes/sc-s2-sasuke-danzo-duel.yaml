@@ -1,0 +1,134 @@
+schema_version: 1
+id: sc-s2-sasuke-danzo-duel
+episode_id: ep-s2-sasuke-danzo-duel
+display_rank: 18100
+continuity_id: main
+title: Данзо застосовує Ідзанаґі
+description: Очі на його руці одне за одним заплющуються після скасованих смертей. Данзо хапає її як заручницю;
+  Саске завдає удару обом. Він намагається забрати противників із собою та знищує око Шісуї.
+location_id: loc-samurai-bridge
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasuke-danzo-duel-1
+  title: Данзо застосовує Ідзанаґі
+  text: Очі на його руці одне за одним заплющуються після скасованих смертей.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+- id: ev-s2-sasuke-danzo-duel-2
+  title: Саске пронизує Данзо крізь Карін
+  text: Данзо хапає її як заручницю; Саске завдає удару обом.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+- id: ev-s2-sasuke-danzo-duel-3
+  title: Данзо гине з останньою печаттю
+  text: Він намагається забрати противників із собою та знищує око Шісуї.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+relations:
+- id: rel-s2-sasuke-danzo-duel-1
+  kind: before
+  a: ev-s2-sasuke-danzo-duel-1
+  b: ev-s2-sasuke-danzo-duel-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+- id: rel-s2-sasuke-danzo-duel-2
+  kind: before
+  a: ev-s2-sasuke-danzo-duel-2
+  b: ev-s2-sasuke-danzo-duel-3
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+presence:
+- id: pr-s2-sasuke-danzo-duel-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sasuke-danzo-duel.start
+  to: sc-s2-sasuke-danzo-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+- id: pr-s2-sasuke-danzo-duel-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-sasuke-danzo-duel.start
+  to: sc-s2-sasuke-danzo-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+- id: pr-s2-sasuke-danzo-duel-c-karin
+  entity_id: c-karin
+  from: sc-s2-sasuke-danzo-duel.start
+  to: sc-s2-sasuke-danzo-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel
+- id: pr-s2-sasuke-danzo-duel-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-sasuke-danzo-duel.start
+  to: sc-s2-sasuke-danzo-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-danzo-duel

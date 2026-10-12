@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-power-naruto-dokku-captured
+episode_id: ep-s2-power-main
+display_rank: 1000
+continuity_id: main
+title: Кабуто забирає Наруто й Докку
+description: Змія переносить їх під землю; Дісонасу розкриває зраду та задум Ама но Хоко.
+location_id: loc-tonika-hole
+placement:
+  anchor_id: ta-s2-66-09-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-naruto-dokku-captured-1
+  title: Кабуто забирає Наруто й Докку
+  text: Змія переносить їх під землю; Дісонасу розкриває зраду та задум Ама но Хоко.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-dokku
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-disonasu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-naruto-dokku-captured
+relations: []
+presence:
+- id: pr-s2-power-naruto-dokku-captured-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-power-naruto-dokku-captured.start
+  to: sc-s2-power-naruto-dokku-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-naruto-dokku-captured
+- id: pr-s2-power-naruto-dokku-captured-c-dokku
+  entity_id: c-dokku
+  from: sc-s2-power-naruto-dokku-captured.start
+  to: sc-s2-power-naruto-dokku-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-naruto-dokku-captured
+- id: pr-s2-power-naruto-dokku-captured-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-power-naruto-dokku-captured.start
+  to: sc-s2-power-naruto-dokku-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-naruto-dokku-captured
+- id: pr-s2-power-naruto-dokku-captured-c-disonasu
+  entity_id: c-disonasu
+  from: sc-s2-power-naruto-dokku-captured.start
+  to: sc-s2-power-naruto-dokku-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-naruto-dokku-captured

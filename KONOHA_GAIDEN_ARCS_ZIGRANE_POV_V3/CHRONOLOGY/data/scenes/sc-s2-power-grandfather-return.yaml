@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-power-grandfather-return
+episode_id: ep-s2-power-main
+display_rank: 700
+continuity_id: main
+title: Голова Тоніки повертається як Едо Тенсей
+description: Дісонасу шукає відсутню частину реліквії; Мііна викриває, що дід уже мертвий.
+location_id: loc-dokku-house
+placement:
+  anchor_id: ta-s2-66-09-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-grandfather-return-1
+  title: Голова Тоніки повертається як Едо Тенсей
+  text: Дісонасу шукає відсутню частину реліквії; Мііна викриває, що дід уже мертвий.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-dokku
+    role: participant
+    mode: physical
+  - entity_id: c-shiseru
+    role: participant
+    mode: physical
+  - entity_id: c-miina
+    role: participant
+    mode: physical
+  - entity_id: c-disonasu
+    role: participant
+    mode: physical
+  - entity_id: c-tonika-head
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+relations: []
+presence:
+- id: pr-s2-power-grandfather-return-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+- id: pr-s2-power-grandfather-return-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+- id: pr-s2-power-grandfather-return-c-dokku
+  entity_id: c-dokku
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+- id: pr-s2-power-grandfather-return-c-shiseru
+  entity_id: c-shiseru
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+- id: pr-s2-power-grandfather-return-c-miina
+  entity_id: c-miina
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+- id: pr-s2-power-grandfather-return-c-disonasu
+  entity_id: c-disonasu
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+- id: pr-s2-power-grandfather-return-c-tonika-head
+  entity_id: c-tonika-head
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return
+- id: pr-s2-power-grandfather-return-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-power-grandfather-return.start
+  to: sc-s2-power-grandfather-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-grandfather-return

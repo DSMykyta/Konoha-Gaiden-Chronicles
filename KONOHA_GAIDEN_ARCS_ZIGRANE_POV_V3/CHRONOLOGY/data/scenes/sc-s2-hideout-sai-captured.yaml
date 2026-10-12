@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-hideout-sai-captured
+episode_id: ep-s2-hideout-sai-captured
+display_rank: 3500
+continuity_id: main
+title: Команда знаходить і зв’язує Сая
+description: Ямато викриває його зв’язок із Данзо; Наруто пояснює свій зв’язок із Саске. Його незавершена книга
+  й слова Наруто змінюють ставлення до завдання.
+location_id: loc-orochimaru-tenchi-hideout
+placement:
+  anchor_id: ta-s2-64-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hideout-sai-captured-1
+  title: Команда знаходить і зв’язує Сая
+  text: Ямато викриває його зв’язок із Данзо; Наруто пояснює свій зв’язок із Саске.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hideout-sai-captured
+- id: ev-s2-hideout-sai-captured-2
+  title: Сай пригадує брата
+  text: Його незавершена книга й слова Наруто змінюють ставлення до завдання.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hideout-sai-captured
+relations:
+- id: rel-s2-hideout-sai-captured-1
+  kind: before
+  a: ev-s2-hideout-sai-captured-1
+  b: ev-s2-hideout-sai-captured-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-sai-captured
+presence:
+- id: pr-s2-hideout-sai-captured-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hideout-sai-captured.start
+  to: sc-s2-hideout-sai-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-sai-captured
+- id: pr-s2-hideout-sai-captured-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-hideout-sai-captured.start
+  to: sc-s2-hideout-sai-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-sai-captured
+- id: pr-s2-hideout-sai-captured-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-hideout-sai-captured.start
+  to: sc-s2-hideout-sai-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-sai-captured
+- id: pr-s2-hideout-sai-captured-c-sai
+  entity_id: c-sai
+  from: sc-s2-hideout-sai-captured.start
+  to: sc-s2-hideout-sai-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-sai-captured

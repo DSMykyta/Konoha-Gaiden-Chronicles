@@ -1,0 +1,62 @@
+schema_version: 1
+id: sc-s2-kaguya-sealed
+episode_id: ep-s2-kaguya-sealed
+display_rank: 43000
+continuity_id: main
+title: Брати запечатують Каґую
+description: Після тривалого бою Чібаку Тенсей завершує протистояння; Чорний Зецу лишається прихованим.
+location_id: loc-ancient-god-tree
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kaguya-sealed-1
+  title: Брати запечатують Каґую
+  text: Після тривалого бою Чібаку Тенсей завершує протистояння; Чорний Зецу лишається прихованим.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kaguya
+    role: participant
+    mode: physical
+  - entity_id: c-hagoromo
+    role: participant
+    mode: physical
+  - entity_id: c-hamura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kaguya-sealed
+relations: []
+presence:
+- id: pr-s2-kaguya-sealed-c-kaguya
+  entity_id: c-kaguya
+  from: sc-s2-kaguya-sealed.start
+  to: sc-s2-kaguya-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kaguya-sealed
+- id: pr-s2-kaguya-sealed-c-hagoromo
+  entity_id: c-hagoromo
+  from: sc-s2-kaguya-sealed.start
+  to: sc-s2-kaguya-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kaguya-sealed
+- id: pr-s2-kaguya-sealed-c-hamura
+  entity_id: c-hamura
+  from: sc-s2-kaguya-sealed.start
+  to: sc-s2-kaguya-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kaguya-sealed

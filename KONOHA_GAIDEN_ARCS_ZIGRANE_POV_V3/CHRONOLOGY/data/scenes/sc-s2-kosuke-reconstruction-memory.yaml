@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-kosuke-reconstruction-memory
+episode_id: ep-s2-kosuke-reconstruction-memory
+display_rank: 43700
+continuity_id: main
+title: Косуке згадує прикордонну місію
+description: Під час відбудови він дивиться на Скелю Хокаґе та згадує Наруто поруч із колишніми наставниками.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kosuke-reconstruction-memory-1
+  title: Косуке згадує прикордонну місію
+  text: Під час відбудови він дивиться на Скелю Хокаґе та згадує Наруто поруч із колишніми наставниками.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kosuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kosuke-reconstruction-memory
+relations: []
+presence:
+- id: pr-s2-kosuke-reconstruction-memory-c-kosuke
+  entity_id: c-kosuke
+  from: sc-s2-kosuke-reconstruction-memory.start
+  to: sc-s2-kosuke-reconstruction-memory.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kosuke-reconstruction-memory

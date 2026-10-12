@@ -1,0 +1,68 @@
+schema_version: 1
+id: sc-s2-minato-seal-appearance
+episode_id: ep-s2-minato-seal-appearance
+display_rank: 14700
+continuity_id: main
+title: Чакра Мінато зупиняє зняття печаті
+description: Наруто вперше дізнається, хто його батько. Він розповідає про чоловіка в масці та довіряє Наруто знайти
+  відповідь на ненависть.
+location_id: loc-naruto-seal-space
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-minato-seal-appearance-1
+  title: Чакра Мінато зупиняє зняття печаті
+  text: Наруто вперше дізнається, хто його батько.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: internal
+  - entity_id: c-minato
+    role: participant
+    mode: manifested
+  - entity_id: c-kurama
+    role: participant
+    mode: internal
+  evidence_ids:
+  - evd-s2-minato-seal-appearance
+- id: ev-s2-minato-seal-appearance-2
+  title: Мінато відновлює печать
+  text: Він розповідає про чоловіка в масці та довіряє Наруто знайти відповідь на ненависть.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: internal
+  - entity_id: c-minato
+    role: participant
+    mode: manifested
+  - entity_id: c-kurama
+    role: participant
+    mode: internal
+  evidence_ids:
+  - evd-s2-minato-seal-appearance
+relations:
+- id: rel-s2-minato-seal-appearance-1
+  kind: before
+  a: ev-s2-minato-seal-appearance-1
+  b: ev-s2-minato-seal-appearance-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-seal-appearance
+presence: []
+scene_plane: mental

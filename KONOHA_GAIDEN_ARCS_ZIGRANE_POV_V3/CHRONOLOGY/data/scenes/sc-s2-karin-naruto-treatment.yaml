@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-karin-naruto-treatment
+episode_id: ep-s2-karin-naruto-treatment
+display_rank: 18400
+continuity_id: main
+title: Сакура лікує Карін і Наруто
+description: Наруто отруює кунай Сакури; вона дає протиотруту, а Карін допомагає впізнати смерть Данзо.
+location_id: loc-samurai-bridge
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-karin-naruto-treatment-1
+  title: Сакура лікує Карін і Наруто
+  text: Наруто отруює кунай Сакури; вона дає протиотруту, а Карін допомагає впізнати смерть Данзо.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-karin-naruto-treatment
+relations: []
+presence:
+- id: pr-s2-karin-naruto-treatment-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-karin-naruto-treatment.start
+  to: sc-s2-karin-naruto-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-naruto-treatment
+- id: pr-s2-karin-naruto-treatment-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-karin-naruto-treatment.start
+  to: sc-s2-karin-naruto-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-naruto-treatment
+- id: pr-s2-karin-naruto-treatment-c-karin
+  entity_id: c-karin
+  from: sc-s2-karin-naruto-treatment.start
+  to: sc-s2-karin-naruto-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-naruto-treatment
+- id: pr-s2-karin-naruto-treatment-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-karin-naruto-treatment.start
+  to: sc-s2-karin-naruto-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-karin-naruto-treatment

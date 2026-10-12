@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-tower-anrokuzan-revealed
+episode_id: ep-s2-tower-anrokuzan-revealed
+display_rank: 39500
+continuity_id: movie-tower
+title: Анрокудзан розкриває обман
+description: Мукаде прибув шість років тому, привласнив ім’я міністра та вбив матір Сари.
+location_id: loc-roran-palace
+placement:
+  anchor_id: ta-s2-45-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tower-anrokuzan-revealed-1
+  title: Анрокудзан розкриває обман
+  text: Мукаде прибув шість років тому, привласнив ім’я міністра та вбив матір Сари.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sara
+    role: participant
+    mode: physical
+  - entity_id: c-mukade
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tower-anrokuzan-revealed
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-tower-anrokuzan-revealed-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tower-anrokuzan-revealed.start
+  to: sc-s2-tower-anrokuzan-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-anrokuzan-revealed
+- id: pr-s2-tower-anrokuzan-revealed-c-sara
+  entity_id: c-sara
+  from: sc-s2-tower-anrokuzan-revealed.start
+  to: sc-s2-tower-anrokuzan-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-anrokuzan-revealed
+- id: pr-s2-tower-anrokuzan-revealed-c-mukade
+  entity_id: c-mukade
+  from: sc-s2-tower-anrokuzan-revealed.start
+  to: sc-s2-tower-anrokuzan-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-anrokuzan-revealed
+- id: pr-s2-tower-anrokuzan-revealed-c-minato
+  entity_id: c-minato
+  from: sc-s2-tower-anrokuzan-revealed.start
+  to: sc-s2-tower-anrokuzan-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-anrokuzan-revealed

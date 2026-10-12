@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-guy-doppelgangers
+episode_id: ep-s2-guy-doppelgangers
+display_rank: 1700
+continuity_id: main
+title: Команду Ґая затримують власні двійники
+description: Зняття печатей викликає копії шинобі. Лі знаходить спосіб перемогти незмінних двійників, ставши сильнішим
+  за себе на початку бою.
+location_id: loc-river-seal-sites
+placement:
+  anchor_id: ta-s2-64-12-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guy-doppelgangers-1
+  title: Команду Ґая затримують власні двійники
+  text: Зняття печатей викликає копії шинобі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guy-doppelgangers
+- id: ev-s2-guy-doppelgangers-2
+  title: Команда перевершує сили своїх копій
+  text: Лі знаходить спосіб перемогти незмінних двійників, ставши сильнішим за себе на початку бою.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guy-doppelgangers
+relations:
+- id: rel-s2-guy-doppelgangers-1
+  kind: before
+  a: ev-s2-guy-doppelgangers-1
+  b: ev-s2-guy-doppelgangers-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-doppelgangers
+presence:
+- id: pr-s2-guy-doppelgangers-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-guy-doppelgangers.start
+  to: sc-s2-guy-doppelgangers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-doppelgangers
+- id: pr-s2-guy-doppelgangers-c-lee
+  entity_id: c-lee
+  from: sc-s2-guy-doppelgangers.start
+  to: sc-s2-guy-doppelgangers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-doppelgangers
+- id: pr-s2-guy-doppelgangers-c-neji
+  entity_id: c-neji
+  from: sc-s2-guy-doppelgangers.start
+  to: sc-s2-guy-doppelgangers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-doppelgangers
+- id: pr-s2-guy-doppelgangers-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-guy-doppelgangers.start
+  to: sc-s2-guy-doppelgangers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-doppelgangers

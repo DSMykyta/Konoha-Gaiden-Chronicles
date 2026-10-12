@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-suigetsu-kisame
+episode_id: ep-s2-suigetsu-kisame
+display_rank: 10300
+continuity_id: main
+title: Кісаме пропускає лише Саске
+description: Суйґецу викликає його на бій, поки Карін і Джюґо чекають зовні.
+location_id: loc-uchiha-hideout-entrance
+placement:
+  anchor_id: ta-s2-66-07-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-suigetsu-kisame-1
+  title: Кісаме пропускає лише Саске
+  text: Суйґецу викликає його на бій, поки Карін і Джюґо чекають зовні.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-suigetsu-kisame
+relations: []
+presence:
+- id: pr-s2-suigetsu-kisame-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-suigetsu-kisame.start
+  to: sc-s2-suigetsu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-kisame
+- id: pr-s2-suigetsu-kisame-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-suigetsu-kisame.start
+  to: sc-s2-suigetsu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-kisame
+- id: pr-s2-suigetsu-kisame-c-karin
+  entity_id: c-karin
+  from: sc-s2-suigetsu-kisame.start
+  to: sc-s2-suigetsu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-kisame
+- id: pr-s2-suigetsu-kisame-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-suigetsu-kisame.start
+  to: sc-s2-suigetsu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-kisame

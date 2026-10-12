@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-itachi-truth
+episode_id: ep-s2-itachi-truth
+display_rank: 10600
+continuity_id: main
+title: Передане Аматерасу спалахує на Тобі
+description: Саске бачить його Шарінґан; підготовлена Ітачі техніка намагається вбити співрозмовника. Саске слухає
+  історію брата, села та перевороту.
+location_id: loc-akatsuki-eastern-hideout
+placement:
+  anchor_id: ta-s2-66-07-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-truth-1
+  title: Передане Аматерасу спалахує на Тобі
+  text: Саске бачить його Шарінґан; підготовлена Ітачі техніка намагається вбити співрозмовника.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-truth
+- id: ev-s2-itachi-truth-2
+  title: Тобі розповідає про наказ винищити Учіха
+  text: Саске слухає історію брата, села та перевороту.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-truth
+relations:
+- id: rel-s2-itachi-truth-1
+  kind: before
+  a: ev-s2-itachi-truth-1
+  b: ev-s2-itachi-truth-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-truth
+presence:
+- id: pr-s2-itachi-truth-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-itachi-truth.start
+  to: sc-s2-itachi-truth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-truth
+- id: pr-s2-itachi-truth-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-itachi-truth.start
+  to: sc-s2-itachi-truth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-truth

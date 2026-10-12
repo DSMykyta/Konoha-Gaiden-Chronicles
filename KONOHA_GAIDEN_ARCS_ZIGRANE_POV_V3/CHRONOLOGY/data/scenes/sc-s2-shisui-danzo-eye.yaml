@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-shisui-danzo-eye
+episode_id: ep-s2-shisui-danzo-eye
+display_rank: 31600
+continuity_id: main
+title: Данзо забирає око Шісуї
+description: Спроба зупинити переворот Котоамацукамі зривається через втручання Данзо.
+location_id: loc-konoha-forest
+placement:
+  anchor_id: ta-s2-56-09-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shisui-danzo-eye-1
+  title: Данзо забирає око Шісуї
+  text: Спроба зупинити переворот Котоамацукамі зривається через втручання Данзо.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shisui
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shisui-danzo-eye
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-shisui-danzo-eye-c-shisui
+  entity_id: c-shisui
+  from: sc-s2-shisui-danzo-eye.start
+  to: sc-s2-shisui-danzo-eye.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shisui-danzo-eye
+- id: pr-s2-shisui-danzo-eye-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-shisui-danzo-eye.start
+  to: sc-s2-shisui-danzo-eye.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shisui-danzo-eye

@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-pain-investigation-loss
+episode_id: ep-s2-pain-investigation-loss
+display_rank: 14000
+continuity_id: main
+title: Шізуне розкриває спосіб керування Пейном
+description: Шлях Людини витягає з неї відомості про Наруто й забирає її життя.
+location_id: loc-intelligence-division
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-pain-investigation-loss-1
+  title: Шізуне розкриває спосіб керування Пейном
+  text: Шлях Людини витягає з неї відомості про Наруто й забирає її життя.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-inoichi
+    role: participant
+    mode: physical
+  - entity_id: c-ibiki
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-pain-investigation-loss
+relations: []
+presence:
+- id: pr-s2-pain-investigation-loss-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-pain-investigation-loss.start
+  to: sc-s2-pain-investigation-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-investigation-loss
+- id: pr-s2-pain-investigation-loss-c-inoichi
+  entity_id: c-inoichi
+  from: sc-s2-pain-investigation-loss.start
+  to: sc-s2-pain-investigation-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-investigation-loss
+- id: pr-s2-pain-investigation-loss-c-ibiki
+  entity_id: c-ibiki
+  from: sc-s2-pain-investigation-loss.start
+  to: sc-s2-pain-investigation-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-investigation-loss
+- id: pr-s2-pain-investigation-loss-c-pain
+  entity_id: c-pain
+  from: sc-s2-pain-investigation-loss.start
+  to: sc-s2-pain-investigation-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-investigation-loss

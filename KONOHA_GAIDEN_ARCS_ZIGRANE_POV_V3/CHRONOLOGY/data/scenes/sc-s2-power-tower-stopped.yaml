@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-power-tower-stopped
+episode_id: ep-s2-power-main
+display_rank: 1400
+continuity_id: main
+title: Докку відключає Ама но Хоко
+description: Мелодія Мііни підказує правильні звуки; Наруто руйнує двійника та рятує Шісеру.
+location_id: loc-ama-no-hoko
+placement:
+  anchor_id: ta-s2-66-09-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-tower-stopped-1
+  title: Докку відключає Ама но Хоко
+  text: Мелодія Мііни підказує правильні звуки; Наруто руйнує двійника та рятує Шісеру.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-dokku
+    role: participant
+    mode: physical
+  - entity_id: c-shiseru
+    role: participant
+    mode: physical
+  - entity_id: c-miina
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-tower-stopped
+relations: []
+presence:
+- id: pr-s2-power-tower-stopped-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-power-tower-stopped.start
+  to: sc-s2-power-tower-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tower-stopped
+- id: pr-s2-power-tower-stopped-c-dokku
+  entity_id: c-dokku
+  from: sc-s2-power-tower-stopped.start
+  to: sc-s2-power-tower-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tower-stopped
+- id: pr-s2-power-tower-stopped-c-shiseru
+  entity_id: c-shiseru
+  from: sc-s2-power-tower-stopped.start
+  to: sc-s2-power-tower-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tower-stopped
+- id: pr-s2-power-tower-stopped-c-miina
+  entity_id: c-miina
+  from: sc-s2-power-tower-stopped.start
+  to: sc-s2-power-tower-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-tower-stopped

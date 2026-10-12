@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-danzo-appointed
+episode_id: ep-s2-danzo-appointed
+display_rank: 15400
+continuity_id: main
+title: Рада призначає Данзо кандидатом у Хокаґе
+description: Через кому Цунаде розглядають Какаші, але Данзо переконує даймьо обрати його.
+location_id: loc-fire-daimyo-council
+placement:
+  anchor_id: ta-s2-66-08-14
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-danzo-appointed-1
+  title: Рада призначає Данзо кандидатом у Хокаґе
+  text: Через кому Цунаде розглядають Какаші, але Данзо переконує даймьо обрати його.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-koharu
+    role: participant
+    mode: physical
+  - entity_id: c-homura
+    role: participant
+    mode: physical
+  - entity_id: c-shikaku
+    role: participant
+    mode: physical
+  - entity_id: c-fire-daimyo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-danzo-appointed
+relations: []
+presence:
+- id: pr-s2-danzo-appointed-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-danzo-appointed.start
+  to: sc-s2-danzo-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-appointed
+- id: pr-s2-danzo-appointed-c-koharu
+  entity_id: c-koharu
+  from: sc-s2-danzo-appointed.start
+  to: sc-s2-danzo-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-appointed
+- id: pr-s2-danzo-appointed-c-homura
+  entity_id: c-homura
+  from: sc-s2-danzo-appointed.start
+  to: sc-s2-danzo-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-appointed
+- id: pr-s2-danzo-appointed-c-shikaku
+  entity_id: c-shikaku
+  from: sc-s2-danzo-appointed.start
+  to: sc-s2-danzo-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-appointed
+- id: pr-s2-danzo-appointed-c-fire-daimyo
+  entity_id: c-fire-daimyo
+  from: sc-s2-danzo-appointed.start
+  to: sc-s2-danzo-appointed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-danzo-appointed

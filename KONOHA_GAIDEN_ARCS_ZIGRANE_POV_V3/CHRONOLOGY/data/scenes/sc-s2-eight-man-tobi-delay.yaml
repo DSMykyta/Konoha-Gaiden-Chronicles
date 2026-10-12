@@ -1,0 +1,141 @@
+schema_version: 1
+id: sc-s2-eight-man-tobi-delay
+episode_id: ep-s2-eight-man-tobi-delay
+display_rank: 10200
+continuity_id: main
+title: Тобі затримує пошуковців Конохи
+description: Удари проходять крізь нього; він не дає команді дістатися Саске.
+location_id: loc-uchiha-search-forest
+placement:
+  anchor_id: ta-s2-66-07-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-eight-man-tobi-delay-1
+  title: Тобі затримує пошуковців Конохи
+  text: Удари проходять крізь нього; він не дає команді дістатися Саске.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+relations: []
+presence:
+- id: pr-s2-eight-man-tobi-delay-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-sai
+  entity_id: c-sai
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-shino
+  entity_id: c-shino
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay
+- id: pr-s2-eight-man-tobi-delay-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-eight-man-tobi-delay.start
+  to: sc-s2-eight-man-tobi-delay.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-eight-man-tobi-delay

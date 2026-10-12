@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-akatsuki-orochimaru-hunt
+episode_id: ep-s2-akatsuki-orochimaru-hunt
+display_rank: 32700
+continuity_id: main
+title: Сасорі й Дейдара шукають Орочімару
+description: Маріонетка Третього Кадзекаґе зустрічає його оживлену версію; Орочімару тікає з підірваного сховища.
+location_id: loc-orochimaru-wind-hideout
+placement:
+  anchor_id: ta-s2-58-05-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-akatsuki-orochimaru-hunt-1
+  title: Сасорі й Дейдара шукають Орочімару
+  text: Маріонетка Третього Кадзекаґе зустрічає його оживлену версію; Орочімару тікає з підірваного сховища.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-akatsuki-orochimaru-hunt
+relations: []
+presence:
+- id: pr-s2-akatsuki-orochimaru-hunt-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-akatsuki-orochimaru-hunt.start
+  to: sc-s2-akatsuki-orochimaru-hunt.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-akatsuki-orochimaru-hunt
+- id: pr-s2-akatsuki-orochimaru-hunt-c-sasori
+  entity_id: c-sasori
+  from: sc-s2-akatsuki-orochimaru-hunt.start
+  to: sc-s2-akatsuki-orochimaru-hunt.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-akatsuki-orochimaru-hunt
+- id: pr-s2-akatsuki-orochimaru-hunt-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-akatsuki-orochimaru-hunt.start
+  to: sc-s2-akatsuki-orochimaru-hunt.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-akatsuki-orochimaru-hunt
+- id: pr-s2-akatsuki-orochimaru-hunt-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-akatsuki-orochimaru-hunt.start
+  to: sc-s2-akatsuki-orochimaru-hunt.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-akatsuki-orochimaru-hunt

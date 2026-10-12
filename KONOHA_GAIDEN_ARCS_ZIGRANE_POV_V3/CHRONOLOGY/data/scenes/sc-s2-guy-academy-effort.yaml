@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-guy-academy-effort
+episode_id: ep-s2-guy-academy-effort
+display_rank: 1700
+continuity_id: main
+title: Ґай намагається потрапити до Академії
+description: Він не проходить відбір і тренується до виснаження; Дай продовжує підтримувати його.
+location_id: loc-academy-front
+placement:
+  anchor_id: ta-s2-43-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guy-academy-effort-1
+  title: Ґай намагається потрапити до Академії
+  text: Він не проходить відбір і тренується до виснаження; Дай продовжує підтримувати його.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-might-duy
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guy-academy-effort
+relations: []
+presence:
+- id: pr-s2-guy-academy-effort-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-guy-academy-effort.start
+  to: sc-s2-guy-academy-effort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-academy-effort
+- id: pr-s2-guy-academy-effort-c-might-duy
+  entity_id: c-might-duy
+  from: sc-s2-guy-academy-effort.start
+  to: sc-s2-guy-academy-effort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-academy-effort
+- id: pr-s2-guy-academy-effort-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-guy-academy-effort.start
+  to: sc-s2-guy-academy-effort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-academy-effort

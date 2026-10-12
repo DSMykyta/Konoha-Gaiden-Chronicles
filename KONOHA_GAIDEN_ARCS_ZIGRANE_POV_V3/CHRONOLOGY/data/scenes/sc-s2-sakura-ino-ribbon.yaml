@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-sakura-ino-ribbon
+episode_id: ep-s2-sakura-ino-ribbon
+display_rank: 34200
+continuity_id: main
+title: Іно дарує Сакурі стрічку
+description: Вона допомагає їй перестати ховати чоло; подруги збирають квіти та відкривають власне сховище.
+location_id: loc-sakura-childhood-hideout
+placement:
+  anchor_id: ta-s2-55-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sakura-ino-ribbon-1
+  title: Іно дарує Сакурі стрічку
+  text: Вона допомагає їй перестати ховати чоло; подруги збирають квіти та відкривають власне сховище.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-ino-ribbon
+relations: []
+presence:
+- id: pr-s2-sakura-ino-ribbon-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sakura-ino-ribbon.start
+  to: sc-s2-sakura-ino-ribbon.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-ino-ribbon
+- id: pr-s2-sakura-ino-ribbon-c-ino
+  entity_id: c-ino
+  from: sc-s2-sakura-ino-ribbon.start
+  to: sc-s2-sakura-ino-ribbon.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-ino-ribbon

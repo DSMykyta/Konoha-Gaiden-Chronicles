@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-naruto-summit-journey
+episode_id: ep-s2-naruto-summit-journey
+display_rank: 16700
+continuity_id: main
+title: Какаші відволікає охорону Кореня
+description: Ямато стежить за маршрутом Самуї; троє виходять з Конохи.
+location_id: loc-iron-country-route
+placement:
+  anchor_id: ta-s2-66-08-19
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-summit-journey-1
+  title: Какаші відволікає охорону Кореня
+  text: Ямато стежить за маршрутом Самуї; троє виходять з Конохи.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-summit-journey
+relations: []
+presence:
+- id: pr-s2-naruto-summit-journey-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-summit-journey.start
+  to: sc-s2-naruto-summit-journey.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-summit-journey
+- id: pr-s2-naruto-summit-journey-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-naruto-summit-journey.start
+  to: sc-s2-naruto-summit-journey.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-summit-journey
+- id: pr-s2-naruto-summit-journey-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-naruto-summit-journey.start
+  to: sc-s2-naruto-summit-journey.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-summit-journey

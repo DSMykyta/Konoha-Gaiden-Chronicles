@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-sakumo-sees-guy
+episode_id: ep-s2-sakumo-sees-guy
+display_rank: 1800
+continuity_id: main
+title: Сакумо вказує Какаші на потенціал Ґая
+description: Наполегливість хлопця дає батькові підставу назвати його майбутнім сильним суперником.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-43-05-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sakumo-sees-guy-1
+  title: Сакумо вказує Какаші на потенціал Ґая
+  text: Наполегливість хлопця дає батькові підставу назвати його майбутнім сильним суперником.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakumo
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakumo-sees-guy
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-sakumo-sees-guy-c-sakumo
+  entity_id: c-sakumo
+  from: sc-s2-sakumo-sees-guy.start
+  to: sc-s2-sakumo-sees-guy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakumo-sees-guy
+- id: pr-s2-sakumo-sees-guy-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-sakumo-sees-guy.start
+  to: sc-s2-sakumo-sees-guy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakumo-sees-guy
+- id: pr-s2-sakumo-sees-guy-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-sakumo-sees-guy.start
+  to: sc-s2-sakumo-sees-guy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakumo-sees-guy

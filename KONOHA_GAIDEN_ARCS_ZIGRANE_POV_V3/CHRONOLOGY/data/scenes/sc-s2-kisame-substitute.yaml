@@ -1,0 +1,90 @@
+schema_version: 1
+id: sc-s2-kisame-substitute
+episode_id: ep-s2-kisame-substitute
+display_rank: 1500
+continuity_id: main
+title: Команда Ґая б’ється з двійником Кісаме
+description: Неджі, Лі й Тентен потрапляють у водяні в’язниці; Ґай відкриває ворота й перемагає супротивника.
+location_id: loc-river-country
+placement:
+  anchor_id: ta-s2-64-12-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kisame-substitute-1
+  title: Команда Ґая б’ється з двійником Кісаме
+  text: Неджі, Лі й Тентен потрапляють у водяні в’язниці; Ґай відкриває ворота й перемагає супротивника.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-mukade-sacrifice
+    role: transformed_body
+    mode: physical
+  - entity_id: c-kisame
+    role: controller
+    mode: remote
+  evidence_ids:
+  - evd-s2-kisame-substitute
+  - evd-s2-shapeshifting-bodies
+relations: []
+presence:
+- id: pr-s2-kisame-substitute-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-kisame-substitute.start
+  to: sc-s2-kisame-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-substitute
+- id: pr-s2-kisame-substitute-c-lee
+  entity_id: c-lee
+  from: sc-s2-kisame-substitute.start
+  to: sc-s2-kisame-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-substitute
+- id: pr-s2-kisame-substitute-c-neji
+  entity_id: c-neji
+  from: sc-s2-kisame-substitute.start
+  to: sc-s2-kisame-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-substitute
+- id: pr-s2-kisame-substitute-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-kisame-substitute.start
+  to: sc-s2-kisame-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-substitute
+- id: pr-s2-kisame-substitute-c-mukade-sacrifice
+  entity_id: c-mukade-sacrifice
+  from: sc-s2-kisame-substitute.start
+  to: sc-s2-kisame-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shapeshifting-bodies

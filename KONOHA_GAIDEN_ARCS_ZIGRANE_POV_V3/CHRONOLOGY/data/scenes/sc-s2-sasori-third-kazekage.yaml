@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-sasori-third-kazekage
+episode_id: ep-s2-sasori-third-kazekage
+display_rank: 35500
+continuity_id: main
+title: Сасорі вбиває Третього Кадзекаґе
+description: Він робить з його тіла людську маріонетку та зберігає Залізний Пісок.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-46-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasori-third-kazekage-1
+  title: Сасорі вбиває Третього Кадзекаґе
+  text: Він робить з його тіла людську маріонетку та зберігає Залізний Пісок.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  - entity_id: c-third-kazekage
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasori-third-kazekage
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-sasori-third-kazekage-c-sasori
+  entity_id: c-sasori
+  from: sc-s2-sasori-third-kazekage.start
+  to: sc-s2-sasori-third-kazekage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasori-third-kazekage
+- id: pr-s2-sasori-third-kazekage-c-third-kazekage
+  entity_id: c-third-kazekage
+  from: sc-s2-sasori-third-kazekage.start
+  to: sc-s2-sasori-third-kazekage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasori-third-kazekage

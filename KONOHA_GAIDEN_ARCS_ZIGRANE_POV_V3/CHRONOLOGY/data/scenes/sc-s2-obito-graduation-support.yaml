@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-obito-graduation-support
+episode_id: ep-s2-obito-graduation-support
+display_rank: 300
+continuity_id: main
+title: Рін підтримує Обіто перед випуском
+description: Його допомога літнім мешканцям приводить до запізнень; Рін нагадує про навчання й підтримує його шлях
+  шинобі.
+location_id: loc-academy-front
+placement:
+  anchor_id: ta-s2-44-05-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-obito-graduation-support-1
+  title: Рін підтримує Обіто перед випуском
+  text: Його допомога літнім мешканцям приводить до запізнень; Рін нагадує про навчання й підтримує його шлях шинобі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-obito-graduation-support
+relations: []
+presence:
+- id: pr-s2-obito-graduation-support-c-obito
+  entity_id: c-obito
+  from: sc-s2-obito-graduation-support.start
+  to: sc-s2-obito-graduation-support.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-graduation-support
+- id: pr-s2-obito-graduation-support-c-rin
+  entity_id: c-rin
+  from: sc-s2-obito-graduation-support.start
+  to: sc-s2-obito-graduation-support.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-graduation-support

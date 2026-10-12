@@ -1,0 +1,104 @@
+schema_version: 1
+id: sc-s2-jiraiya-six-paths
+episode_id: ep-s2-jiraiya-six-paths
+display_rank: 11500
+continuity_id: main
+title: Шість тіл Пейна ранять Джираю
+description: Він втрачає руку й бачить обличчя людей, яких колись зустрічав. Він передає його Фукасаку для розслідування.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-66-07-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-six-paths-1
+  title: Шість тіл Пейна ранять Джираю
+  text: Він втрачає руку й бачить обличчя людей, яких колись зустрічав.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-six-paths
+- id: ev-s2-jiraiya-six-paths-2
+  title: Джирая забирає тіло одного Шляху
+  text: Він передає його Фукасаку для розслідування.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-six-paths
+relations:
+- id: rel-s2-jiraiya-six-paths-1
+  kind: before
+  a: ev-s2-jiraiya-six-paths-1
+  b: ev-s2-jiraiya-six-paths-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-six-paths
+presence:
+- id: pr-s2-jiraiya-six-paths-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-six-paths.start
+  to: sc-s2-jiraiya-six-paths.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-six-paths
+- id: pr-s2-jiraiya-six-paths-c-pain
+  entity_id: c-pain
+  from: sc-s2-jiraiya-six-paths.start
+  to: sc-s2-jiraiya-six-paths.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-six-paths
+- id: pr-s2-jiraiya-six-paths-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-jiraiya-six-paths.start
+  to: sc-s2-jiraiya-six-paths.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-six-paths
+- id: pr-s2-jiraiya-six-paths-c-shima
+  entity_id: c-shima
+  from: sc-s2-jiraiya-six-paths.start
+  to: sc-s2-jiraiya-six-paths.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-six-paths

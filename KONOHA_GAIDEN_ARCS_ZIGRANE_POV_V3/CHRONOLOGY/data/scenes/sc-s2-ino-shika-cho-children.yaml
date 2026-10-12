@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-ino-shika-cho-children
+episode_id: ep-s2-ino-shika-cho-children
+display_rank: 21500
+continuity_id: main
+title: Команда 10 примирює дітей
+description: Розмова про майбутню війну повертає трійцю до батьків і спадкоємності Іно–Шіка–Чо.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-ino-shika-cho-children-1
+  title: Команда 10 примирює дітей
+  text: Розмова про майбутню війну повертає трійцю до батьків і спадкоємності Іно–Шіка–Чо.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-inoichi
+    role: participant
+    mode: physical
+  - entity_id: c-shikaku
+    role: participant
+    mode: physical
+  - entity_id: c-choza
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-ino-shika-cho-children
+relations: []
+presence:
+- id: pr-s2-ino-shika-cho-children-c-ino
+  entity_id: c-ino
+  from: sc-s2-ino-shika-cho-children.start
+  to: sc-s2-ino-shika-cho-children.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-shika-cho-children
+- id: pr-s2-ino-shika-cho-children-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-ino-shika-cho-children.start
+  to: sc-s2-ino-shika-cho-children.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-shika-cho-children
+- id: pr-s2-ino-shika-cho-children-c-choji
+  entity_id: c-choji
+  from: sc-s2-ino-shika-cho-children.start
+  to: sc-s2-ino-shika-cho-children.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-shika-cho-children
+- id: pr-s2-ino-shika-cho-children-c-inoichi
+  entity_id: c-inoichi
+  from: sc-s2-ino-shika-cho-children.start
+  to: sc-s2-ino-shika-cho-children.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-shika-cho-children
+- id: pr-s2-ino-shika-cho-children-c-shikaku
+  entity_id: c-shikaku
+  from: sc-s2-ino-shika-cho-children.start
+  to: sc-s2-ino-shika-cho-children.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-shika-cho-children
+- id: pr-s2-ino-shika-cho-children-c-choza
+  entity_id: c-choza
+  from: sc-s2-ino-shika-cho-children.start
+  to: sc-s2-ino-shika-cho-children.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-shika-cho-children

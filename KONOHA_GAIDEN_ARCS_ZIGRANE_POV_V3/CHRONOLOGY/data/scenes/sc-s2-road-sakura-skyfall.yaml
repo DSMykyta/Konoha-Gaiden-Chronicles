@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-road-sakura-skyfall
+episode_id: ep-s2-road-sakura-skyfall
+display_rank: 400
+continuity_id: movie-road
+title: Іно знаходить іншу Сакуру
+description: Дівчина падає з неба й непритомніє на гілці; Іно забирає її до Конохи.
+location_id: loc-konoha-outskirts
+placement:
+  anchor_id: ta-s2-66-06-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-sakura-skyfall-1
+  title: Іно знаходить іншу Сакуру
+  text: Дівчина падає з неба й непритомніє на гілці; Іно забирає її до Конохи.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-rtn-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-sakura-skyfall
+relations: []
+presence:
+- id: pr-s2-road-sakura-skyfall-c-rtn-sakura
+  entity_id: c-rtn-sakura
+  from: sc-s2-road-sakura-skyfall.start
+  to: sc-s2-road-sakura-skyfall.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-skyfall
+- id: pr-s2-road-sakura-skyfall-c-ino
+  entity_id: c-ino
+  from: sc-s2-road-sakura-skyfall.start
+  to: sc-s2-road-sakura-skyfall.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-skyfall

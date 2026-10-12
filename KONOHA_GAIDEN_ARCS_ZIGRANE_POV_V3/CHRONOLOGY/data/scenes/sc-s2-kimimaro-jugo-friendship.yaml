@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-kimimaro-jugo-friendship
+episode_id: ep-s2-kimimaro-jugo-friendship
+display_rank: 2200
+continuity_id: main
+title: Кімімаро стає опорою Джюґо
+description: Він стримує його напади й запрошує до Орочімару; обіцянка клітки визначає подальші рішення Джюґо.
+location_id: loc-orochimaru-northern-hideout
+placement:
+  anchor_id: ta-s2-58-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kimimaro-jugo-friendship-1
+  title: Кімімаро стає опорою Джюґо
+  text: Він стримує його напади й запрошує до Орочімару; обіцянка клітки визначає подальші рішення Джюґо.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kimimaro
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kimimaro-jugo-friendship
+relations: []
+presence:
+- id: pr-s2-kimimaro-jugo-friendship-c-kimimaro
+  entity_id: c-kimimaro
+  from: sc-s2-kimimaro-jugo-friendship.start
+  to: sc-s2-kimimaro-jugo-friendship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kimimaro-jugo-friendship
+- id: pr-s2-kimimaro-jugo-friendship-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-kimimaro-jugo-friendship.start
+  to: sc-s2-kimimaro-jugo-friendship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kimimaro-jugo-friendship

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-onoki-mu-madara
+episode_id: ep-s2-onoki-mu-madara
+display_rank: 0
+continuity_id: main
+title: Мадара принижує молодого Онокі та Мю
+description: Він відкидає рівноправну угоду Іви з Хашірамою й вимагає підкорення; поразка лишається в пам’яті Онокі.
+location_id: loc-konoha-diplomatic-hall
+placement:
+  anchor_id: ta-s2-2-01-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-onoki-mu-madara-1
+  title: Мадара принижує молодого Онокі та Мю
+  text: Він відкидає рівноправну угоду Іви з Хашірамою й вимагає підкорення; поразка лишається в пам’яті Онокі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-mu
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-onoki-mu-madara
+relations: []
+presence:
+- id: pr-s2-onoki-mu-madara-c-onoki
+  entity_id: c-onoki
+  from: sc-s2-onoki-mu-madara.start
+  to: sc-s2-onoki-mu-madara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-onoki-mu-madara
+- id: pr-s2-onoki-mu-madara-c-mu
+  entity_id: c-mu
+  from: sc-s2-onoki-mu-madara.start
+  to: sc-s2-onoki-mu-madara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-onoki-mu-madara
+- id: pr-s2-onoki-mu-madara-c-madara
+  entity_id: c-madara
+  from: sc-s2-onoki-mu-madara.start
+  to: sc-s2-onoki-mu-madara.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-onoki-mu-madara

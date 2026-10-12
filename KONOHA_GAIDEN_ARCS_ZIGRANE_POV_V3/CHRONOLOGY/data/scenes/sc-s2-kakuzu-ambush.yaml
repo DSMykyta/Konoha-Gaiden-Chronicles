@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-kakuzu-ambush
+episode_id: ep-s2-kakuzu-ambush
+display_rank: 6300
+continuity_id: main
+title: Шикамару ловить Акацукі тінями
+description: Какаші пробиває серце Какудзу, але той випускає маски з іншими серцями. Шикамару відводить Хідана в
+  ліс; Какаші, Іно й Чоджі залишаються з Какудзу.
+location_id: loc-fire-akatsuki-battlefield
+placement:
+  anchor_id: ta-s2-66-03-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakuzu-ambush-1
+  title: Шикамару ловить Акацукі тінями
+  text: Какаші пробиває серце Какудзу, але той випускає маски з іншими серцями.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+- id: ev-s2-kakuzu-ambush-2
+  title: Команда розділяє противників
+  text: Шикамару відводить Хідана в ліс; Какаші, Іно й Чоджі залишаються з Какудзу.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+relations:
+- id: rel-s2-kakuzu-ambush-1
+  kind: before
+  a: ev-s2-kakuzu-ambush-1
+  b: ev-s2-kakuzu-ambush-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+presence:
+- id: pr-s2-kakuzu-ambush-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakuzu-ambush.start
+  to: sc-s2-kakuzu-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+- id: pr-s2-kakuzu-ambush-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-kakuzu-ambush.start
+  to: sc-s2-kakuzu-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+- id: pr-s2-kakuzu-ambush-c-ino
+  entity_id: c-ino
+  from: sc-s2-kakuzu-ambush.start
+  to: sc-s2-kakuzu-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+- id: pr-s2-kakuzu-ambush-c-choji
+  entity_id: c-choji
+  from: sc-s2-kakuzu-ambush.start
+  to: sc-s2-kakuzu-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+- id: pr-s2-kakuzu-ambush-c-hidan
+  entity_id: c-hidan
+  from: sc-s2-kakuzu-ambush.start
+  to: sc-s2-kakuzu-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-ambush
+- id: pr-s2-kakuzu-ambush-c-kakuzu
+  entity_id: c-kakuzu
+  from: sc-s2-kakuzu-ambush.start
+  to: sc-s2-kakuzu-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakuzu-ambush

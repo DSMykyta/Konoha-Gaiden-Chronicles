@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-guren-recruited
+episode_id: ep-s2-guren-recruited
+display_rank: 6900
+continuity_id: main
+title: Кабуто залучає Ґурен до захоплення Трихвостого
+description: Орочімару доручає їй Юкімару; Ґурен відбирає собі загін з уцілілих в’язнів.
+location_id: loc-orochimaru-guren-hideout
+placement:
+  anchor_id: ta-s2-66-04-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guren-recruited-1
+  title: Кабуто залучає Ґурен до захоплення Трихвостого
+  text: Орочімару доручає їй Юкімару; Ґурен відбирає собі загін з уцілілих в’язнів.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guren-recruited
+relations: []
+presence:
+- id: pr-s2-guren-recruited-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-guren-recruited.start
+  to: sc-s2-guren-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-recruited
+- id: pr-s2-guren-recruited-c-guren
+  entity_id: c-guren
+  from: sc-s2-guren-recruited.start
+  to: sc-s2-guren-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-recruited
+- id: pr-s2-guren-recruited-c-yukimaru
+  entity_id: c-yukimaru
+  from: sc-s2-guren-recruited.start
+  to: sc-s2-guren-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-recruited
+- id: pr-s2-guren-recruited-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-guren-recruited.start
+  to: sc-s2-guren-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-recruited

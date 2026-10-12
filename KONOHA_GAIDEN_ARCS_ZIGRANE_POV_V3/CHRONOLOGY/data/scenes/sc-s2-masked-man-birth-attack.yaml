@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-masked-man-birth-attack
+episode_id: ep-s2-masked-man-birth-attack
+display_rank: 30200
+continuity_id: main
+title: Чоловік у масці вбиває охорону й повитух
+description: Він бере немовля та прикріплює вибухові мітки; Мінато рятує Наруто й залишає місце пологів.
+location_id: loc-naruto-birth-cave
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-masked-man-birth-attack-1
+  title: Чоловік у масці вбиває охорону й повитух
+  text: Він бере немовля та прикріплює вибухові мітки; Мінато рятує Наруто й залишає місце пологів.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-biwako
+    role: participant
+    mode: physical
+  - entity_id: c-taji
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-masked-man-birth-attack
+relations: []
+presence:
+- id: pr-s2-masked-man-birth-attack-c-minato
+  entity_id: c-minato
+  from: sc-s2-masked-man-birth-attack.start
+  to: sc-s2-masked-man-birth-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-masked-man-birth-attack
+- id: pr-s2-masked-man-birth-attack-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-masked-man-birth-attack.start
+  to: sc-s2-masked-man-birth-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-masked-man-birth-attack
+- id: pr-s2-masked-man-birth-attack-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-masked-man-birth-attack.start
+  to: sc-s2-masked-man-birth-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-masked-man-birth-attack
+- id: pr-s2-masked-man-birth-attack-c-biwako
+  entity_id: c-biwako
+  from: sc-s2-masked-man-birth-attack.start
+  to: sc-s2-masked-man-birth-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-masked-man-birth-attack
+- id: pr-s2-masked-man-birth-attack-c-taji
+  entity_id: c-taji
+  from: sc-s2-masked-man-birth-attack.start
+  to: sc-s2-masked-man-birth-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-masked-man-birth-attack
+- id: pr-s2-masked-man-birth-attack-c-obito
+  entity_id: c-obito
+  from: sc-s2-masked-man-birth-attack.start
+  to: sc-s2-masked-man-birth-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-masked-man-birth-attack

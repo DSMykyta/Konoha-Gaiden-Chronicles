@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-silence-mushrooms
+episode_id: ep-s2-silence-mushrooms
+display_rank: 20100
+continuity_id: main
+title: Гриби поглинають чакру й припаси
+description: Ямато слабшає; Наруто та Ґай отруюються після спроби їх з’їсти. Ґаматацу приносить їжу Шіми; загін
+  затримує торговця та його спільників.
+location_id: loc-sea-route-silence
+placement:
+  anchor_id: ta-s2-66-09-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-silence-mushrooms-1
+  title: Гриби поглинають чакру й припаси
+  text: Ямато слабшає; Наруто та Ґай отруюються після спроби їх з’їсти.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-gamatatsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-silence-mushrooms
+- id: ev-s2-silence-mushrooms-2
+  title: Жаби допомагають пережити голод
+  text: Ґаматацу приносить їжу Шіми; загін затримує торговця та його спільників.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-gamatatsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-silence-mushrooms
+relations:
+- id: rel-s2-silence-mushrooms-1
+  kind: before
+  a: ev-s2-silence-mushrooms-1
+  b: ev-s2-silence-mushrooms-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-silence-mushrooms
+presence:
+- id: pr-s2-silence-mushrooms-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-silence-mushrooms.start
+  to: sc-s2-silence-mushrooms.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-silence-mushrooms
+- id: pr-s2-silence-mushrooms-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-silence-mushrooms.start
+  to: sc-s2-silence-mushrooms.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-silence-mushrooms
+- id: pr-s2-silence-mushrooms-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-silence-mushrooms.start
+  to: sc-s2-silence-mushrooms.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-silence-mushrooms
+- id: pr-s2-silence-mushrooms-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-silence-mushrooms.start
+  to: sc-s2-silence-mushrooms.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-silence-mushrooms
+- id: pr-s2-silence-mushrooms-c-gamatatsu
+  entity_id: c-gamatatsu
+  from: sc-s2-silence-mushrooms.start
+  to: sc-s2-silence-mushrooms.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-silence-mushrooms

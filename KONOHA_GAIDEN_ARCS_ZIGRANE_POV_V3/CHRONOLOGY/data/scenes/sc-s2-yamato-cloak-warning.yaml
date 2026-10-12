@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-yamato-cloak-warning
+episode_id: ep-s2-yamato-cloak-warning
+display_rank: 2800
+continuity_id: main
+title: Джирая попереджає Ямато про чотири хвости
+description: Він показує шрам після втрати Наруто контролю й передає спосіб стримування чакри Курами.
+location_id: loc-konoha-hospital
+placement:
+  anchor_id: ta-s2-64-12-09
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yamato-cloak-warning-1
+  title: Джирая попереджає Ямато про чотири хвости
+  text: Він показує шрам після втрати Наруто контролю й передає спосіб стримування чакри Курами.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yamato-cloak-warning
+relations: []
+presence:
+- id: pr-s2-yamato-cloak-warning-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-yamato-cloak-warning.start
+  to: sc-s2-yamato-cloak-warning.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-cloak-warning
+- id: pr-s2-yamato-cloak-warning-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-yamato-cloak-warning.start
+  to: sc-s2-yamato-cloak-warning.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-cloak-warning
+- id: pr-s2-yamato-cloak-warning-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-yamato-cloak-warning.start
+  to: sc-s2-yamato-cloak-warning.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-cloak-warning
+- id: pr-s2-yamato-cloak-warning-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-yamato-cloak-warning.start
+  to: sc-s2-yamato-cloak-warning.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yamato-cloak-warning

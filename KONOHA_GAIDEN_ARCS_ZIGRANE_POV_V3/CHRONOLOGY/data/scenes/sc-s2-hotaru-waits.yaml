@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-hotaru-waits
+episode_id: ep-s2-hotaru-waits
+display_rank: 12400
+continuity_id: main
+title: Хотару чекає на наставника
+description: До неї долітають бульбашки Утакати; сам він більше не повертається.
+location_id: loc-tsuchigumo-meadow
+placement:
+  anchor_id: ta-s2-66-07-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hotaru-waits-1
+  title: Хотару чекає на наставника
+  text: До неї долітають бульбашки Утакати; сам він більше не повертається.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hotaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hotaru-waits
+relations: []
+presence:
+- id: pr-s2-hotaru-waits-c-hotaru
+  entity_id: c-hotaru
+  from: sc-s2-hotaru-waits.start
+  to: sc-s2-hotaru-waits.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hotaru-waits

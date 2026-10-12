@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-miroku-first-seal
+episode_id: ep-s2-miroku-first-seal
+display_rank: 37700
+continuity_id: movie-shion
+title: Міроку запечатує Морьо
+description: Мати Шіон віддає життя та залишає дочці захисну силу.
+location_id: loc-moryo-soul-shrine
+placement:
+  anchor_id: ta-s2-60-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-miroku-first-seal-1
+  title: Міроку запечатує Морьо
+  text: Мати Шіон віддає життя та залишає дочці захисну силу.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-miroku
+    role: participant
+    mode: physical
+  - entity_id: c-shion
+    role: participant
+    mode: physical
+  - entity_id: c-moryo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-miroku-first-seal
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-miroku-first-seal-c-miroku
+  entity_id: c-miroku
+  from: sc-s2-miroku-first-seal.start
+  to: sc-s2-miroku-first-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-miroku-first-seal
+- id: pr-s2-miroku-first-seal-c-shion
+  entity_id: c-shion
+  from: sc-s2-miroku-first-seal.start
+  to: sc-s2-miroku-first-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-miroku-first-seal
+- id: pr-s2-miroku-first-seal-c-moryo
+  entity_id: c-moryo
+  from: sc-s2-miroku-first-seal.start
+  to: sc-s2-miroku-first-seal.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-miroku-first-seal

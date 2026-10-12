@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-nagato-parents-killed
+episode_id: ep-s2-nagato-parents-killed
+display_rank: 26500
+continuity_id: main
+title: Шинобі Конохи вбивають батьків Наґато
+description: Війна приводить чужих шинобі до його дому; Ріннеґан зупиняє нападників.
+location_id: loc-nagato-childhood-home
+placement:
+  anchor_id: ta-s2-38-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-nagato-parents-killed-1
+  title: Шинобі Конохи вбивають батьків Наґато
+  text: Війна приводить чужих шинобі до його дому; Ріннеґан зупиняє нападників.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-nagato-father
+    role: participant
+    mode: physical
+  - entity_id: c-nagato-mother
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-nagato-parents-killed
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-nagato-parents-killed-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-nagato-parents-killed.start
+  to: sc-s2-nagato-parents-killed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-parents-killed
+- id: pr-s2-nagato-parents-killed-c-nagato-father
+  entity_id: c-nagato-father
+  from: sc-s2-nagato-parents-killed.start
+  to: sc-s2-nagato-parents-killed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-parents-killed
+- id: pr-s2-nagato-parents-killed-c-nagato-mother
+  entity_id: c-nagato-mother
+  from: sc-s2-nagato-parents-killed.start
+  to: sc-s2-nagato-parents-killed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-parents-killed

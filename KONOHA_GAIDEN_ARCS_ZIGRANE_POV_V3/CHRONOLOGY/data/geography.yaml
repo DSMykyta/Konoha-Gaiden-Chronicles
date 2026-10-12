@@ -1,22 +1,35 @@
 schema_version: 1
-# Geographic topology, not an invented latitude/longitude map.
-# Country is the largest visual region; a nested room shares the location of
-# its building/settlement. Unknown sites remain unresolved, never assigned
-# to Konoha as a fallback.
 regions:
-  - id: geo-land-wind
-    name: Країна Вітру
-    kind: country
-  - id: geo-land-waterfalls
-    name: Країна Водоспадів
-    kind: country
-  - id: geo-konoha-academy
-    name: Академія Конохи
-    kind: building
-  - id: geo-shukuba-town
-    name: Шукуба
-    kind: settlement
-
+- id: geo-land-wind
+  name: Країна Вітру
+  kind: country
+- id: geo-land-waterfalls
+  name: Країна Водоспадів
+  kind: country
+- id: geo-konoha-academy
+  name: Академія Конохи
+  kind: building
+- id: geo-shukuba-town
+  name: Шукуба
+  kind: settlement
+- id: geo-land-lightning
+  name: Країна Блискавки
+  kind: country
+- id: geo-land-earth
+  name: Країна Землі
+  kind: country
+- id: geo-land-rain
+  name: Країна Дощу
+  kind: country
+- id: geo-land-iron
+  name: Країна Заліза
+  kind: country
+- id: geo-land-grass
+  name: Країна Трави
+  kind: country
+- id: geo-land-demons
+  name: Країна Демонів
+  kind: country
 kinds:
   loc-land-of-fire: country
   loc-land-waves: country
@@ -47,9 +60,372 @@ kinds:
   loc-konoha-outskirts: area
   loc-valley-end: area
   loc-valley-of-end: area
-
-# More precise containment may refine the canonical broad parent_id, but
-# never contradict it. Countries are editorial/canonical containment claims.
+  loc-valley-judgement: area
+  loc-haruno-home: building
+  loc-konoha-public-bath: building
+  loc-konoha-training-field: area
+  loc-chen-grave: area
+  loc-shinobi-graveyards: area
+  loc-moon-toneri-castle: building
+  loc-moon-otsutsuki-settlement: settlement
+  loc-land-hot-water: country
+  loc-fire-water-supply-route: route
+  loc-academy-front: area
+  loc-dango-shop: area
+  loc-kita-home: area
+  loc-hokage-monument: area
+  loc-training-ground-8: area
+  loc-training-ground-9: area
+  loc-team9-ravine: area
+  loc-team9-catacombs: area
+  loc-akagahara: area
+  loc-nekomata-domain: area
+  loc-road-fire-waves: area
+  loc-wave-coast: area
+  loc-tazuna-home: area
+  loc-wave-forest: area
+  loc-wave-tree-training: area
+  loc-great-naruto-bridge: area
+  loc-wave-burial-hill: area
+  loc-konoha-gate: area
+  loc-chunin-written-exam: area
+  loc-forest-death-tower: area
+  loc-chunin-prelim-arena: area
+  loc-chunin-tower-side-room: area
+  loc-konoha-hospital: area
+  loc-konoha-hot-springs: area
+  loc-honegami-field: area
+  loc-chunin-finals-arena: area
+  loc-hokage-rooftop: area
+  loc-konoha-memorial-stone: area
+  loc-hyuga-compound: area
+  loc-konoha-cemetery: area
+  loc-inn: area
+  loc-nagi-island: area
+  loc-modoroki-shrine: area
+  loc-shino-home: area
+  loc-konoha-correctional-facility: area
+  loc-mizuki-hideout: area
+  loc-academy-instructor-test-building: area
+  loc-zeroth-training-ground: area
+  loc-gelel-coast: area
+  loc-gelel-caravan: area
+  loc-haido-moving-fortress: area
+  loc-gelel-ruins: area
+  loc-gelel-sealing-chamber: area
+  loc-gelel-mine: area
+  loc-bikocho-habitat: area
+  loc-bikocho-waterfall: area
+  loc-kamizuru-riverbank: area
+  loc-katabami-gold-mine: area
+  loc-curry-of-life-shop: area
+  loc-lightning-pass: area
+  loc-katabami-cliff: area
+  loc-academy-survival-mountain: area
+  loc-sazanami-cabin: area
+  loc-ok-temple: area
+  loc-moso-house: area
+  loc-birds-daimyo-palace: area
+  loc-birds-lake: area
+  loc-cursed-warrior-tunnels: area
+  loc-valley-of-evil: area
+  loc-cooking-nin-kitchen: area
+  loc-demon-island: area
+  loc-orochimaru-lab-sea: area
+  loc-land-sea-government-ship: area
+  loc-land-sea-coast: area
+  loc-kunijiro-estate: area
+  loc-treasure-cave: area
+  loc-hot-springs-town: area
+  loc-hoshigakure: area
+  loc-death-valley-hoshi: area
+  loc-star-training-building: area
+  loc-star-temple: area
+  loc-motoyoshi-village: area
+  loc-kagetsu-estate: area
+  loc-kagetsu-funeral: area
+  loc-greens-capital: area
+  loc-fuku-castle: area
+  loc-mugen-castle: area
+  loc-haunted-castle: area
+  loc-moon-royal-palace: area
+  loc-yakumo-villa: area
+  loc-konoha-woods: area
+  loc-academy-swing: area
+  loc-kikyo-castle: area
+  loc-intelligence-division: area
+  loc-mikata-office: area
+  loc-intelligence-upper-corridor: area
+  loc-intelligence-holding-cell: area
+  loc-fire-north-forest-route: area
+  loc-fire-north-ravine: area
+  loc-fire-north-exchange-point: area
+  loc-fire-north-camp: area
+  loc-intelligence-lower-interrogation: area
+  loc-mission-assignment-room: area
+  loc-archive-corps: area
+  loc-archive-technical-room: area
+  loc-archive-sector-3b: area
+  loc-archive-medical-checkpoint: area
+  loc-archive-gate: area
+  loc-konoha-archive-street: area
+  loc-archive-administration: area
+  loc-archive-audit-room: area
+  loc-hospital-quarantine-lab: area
+  loc-archive-civil-registry: area
+  loc-archive-civil-workroom: area
+  loc-archive-civil-transfer-office: area
+  loc-archive-civil-corridor: area
+  loc-archive-courtyard: area
+  loc-isshin-forge: area
+  loc-isshin-home: area
+  loc-team9-warehouse: area
+  loc-chunin-exam-room: area
+  loc-team9-farm-route: area
+  loc-tanigawa-route: area
+  loc-oto-base2: area
+  loc-oto-base18: area
+  loc-kakashi-eatery: area
+  loc-konoha-izakaya: area
+  loc-konoha-grocery: area
+  loc-sakura-neighborhood: area
+  loc-konoha-park: area
+  loc-kakashi-home: area
+  loc-shukuba-contact-room: area
+  loc-iwa-mercenary-mines: area
+  loc-team9-escort-route: area
+  loc-team9-road-inn: area
+  loc-konoha-bank: area
+  loc-training-ground-4: area
+  loc-training-ground-10: area
+  loc-team9-medical-post: area
+  loc-team9-weeding-site: area
+  loc-base2-riverbank: area
+  loc-base18-riverbank: area
+  loc-long-mission-settlement: area
+  loc-training-ground-3: area
+  loc-training-ground-7: area
+  loc-nara-residence: area
+  loc-yumiko-balcony: area
+  loc-naruto-apartment: area
+  loc-time-slip-bathhouse: area
+  loc-time-slip-ravine: area
+  loc-time-slip-riverbank: area
+  loc-time-slip-village-bridge: area
+  loc-yakiniku-q: area
+  loc-time-slip-toad-stomach: area
+  loc-time-slip-hospital-roof: area
+  loc-time-slip-departure-clearing: area
+  loc-moon-escort-route: area
+  loc-kirigakure: area
+  loc-land-water: area
+  loc-suna-desert-route: area
+  loc-fire-suna-route: area
+  loc-suna-hospital: area
+  loc-fire-river-route: area
+  loc-akatsuki-river-hideout: area
+  loc-river-seal-sites: area
+  loc-river-pursuit-route: area
+  loc-root-base: area
+  loc-tenchi-route-inn: area
+  loc-tenchi-route-camp: area
+  loc-tenchi-bridge: area
+  loc-orochimaru-tenchi-hideout: area
+  loc-tenchi-crater: area
+  loc-konoha-library: area
+  loc-fire-temple: area
+  loc-guardian-hidden-tombs: area
+  loc-kumo-yugito-battlefield: area
+  loc-fire-bounty-station: area
+  loc-fire-akatsuki-battlefield: area
+  loc-nara-forest-trap: area
+  loc-orochimaru-guren-hideout: area
+  loc-three-tails-forest: area
+  loc-guren-cabin: area
+  loc-three-tails-lake: area
+  loc-three-tails-stomach: area
+  loc-three-tails-cliff: area
+  loc-three-tails-camp: area
+  loc-orochimaru-southern-hideout: area
+  loc-orochimaru-northern-hideout: area
+  loc-four-tails-battlefield: area
+  loc-nekobaa-armoury: area
+  loc-uchiha-search-forest: area
+  loc-deidara-battlefield: area
+  loc-hebi-recovery-inn: area
+  loc-akatsuki-uchiha-outpost: area
+  loc-uchiha-hideout-entrance: area
+  loc-uchiha-hideout: area
+  loc-akatsuki-eastern-hideout: area
+  loc-lightning-country-route: area
+  loc-valley-clouds-lightning: area
+  loc-amegakure: area
+  loc-mount-katsuragi: area
+  loc-tsuchigumo-village: area
+  loc-tsuchigumo-forest: area
+  loc-tsuchigumo-meadow: area
+  loc-akatsuki-extraction-hideout: area
+  loc-mount-myoboku: area
+  loc-konoha-pain-crater: area
+  loc-naruto-seal-space: area
+  loc-nagato-paper-tree: area
+  loc-fire-daimyo-council: area
+  loc-tsunade-treatment-tent: area
+  loc-ninja-tool-facility: area
+  loc-kabuto-abandoned-hideout: area
+  loc-hokage-tent: area
+  loc-naruto-treatment-tent: area
+  loc-taka-konoha-route: area
+  loc-kage-summit-routes: area
+  loc-iron-country-route: area
+  loc-five-kage-hall: area
+  loc-iron-country-inn: area
+  loc-five-kage-lower-hall: area
+  loc-sabu-enka-site: area
+  loc-iron-country-forest: area
+  loc-samurai-bridge: area
+  loc-five-daimyo-conference: area
+  loc-mountains-graveyard: area
+  loc-alliance-planning-hall: area
+  loc-fire-country-port: area
+  loc-benisu-island: area
+  loc-ghost-ship: area
+  loc-battleship-island: area
+  loc-forgotten-summon-island: area
+  loc-naruto-voyage-ship: area
+  loc-silence-route-port: area
+  loc-sea-route-silence: area
+  loc-mokuzu-island: area
+  loc-water-country-coastal-route: area
+  loc-nadeshiko-village: area
+  loc-water-country-messenger-island: area
+  loc-island-turtle: area
+  loc-falls-of-truth: area
+  loc-island-turtle-shore: area
+  loc-tailed-beast-temple: area
+  loc-amegakure-lake: area
+  loc-island-turtle-airspace: area
+  loc-kumogakure-island-dock: area
+  loc-allied-shinobi-staging-ground: area
+  loc-genjutsu-tree-village-route: area
+  loc-genjutsu-tree-village: area
+  loc-jiraiya-training-route: area
+  loc-demon-desert: area
+  loc-demon-desert-underground-ruins: area
+  loc-demon-desert-oasis: area
+  loc-second-war-battlefield: area
+  loc-second-war-medical-camp: area
+  loc-ame-war-battlefield: area
+  loc-nagato-childhood-home: area
+  loc-ame-war-streets: area
+  loc-ame-orphans-hideout: area
+  loc-tsunade-travel-inn: area
+  loc-kannabi-route: area
+  loc-kannabi-cave: area
+  loc-madara-underground-hideout: area
+  loc-rin-kiri-battlefield: area
+  loc-kushina-home: area
+  loc-fire-daimyo-route: area
+  loc-orochimaru-konoha-lab: area
+  loc-iburi-hideout: area
+  loc-orochimaru-abandoned-lab: area
+  loc-anbu-training-field: area
+  loc-fire-kumo-border-route: area
+  loc-uzumaki-sealing-chamber: area
+  loc-minato-kushina-home: area
+  loc-naruto-birth-cave: area
+  loc-kurama-release-clearing: area
+  loc-minato-safehouse: area
+  loc-minato-obito-battlefield: area
+  loc-naruto-sealing-clearing: area
+  loc-uchiha-district: area
+  loc-konoha-council-room: area
+  loc-third-war-battlefield: area
+  loc-itachi-mission-route: area
+  loc-konoha-training-forest: area
+  loc-naka-shrine: area
+  loc-konoha-forest: area
+  loc-naka-river-cliff: area
+  loc-uchiha-forest: area
+  loc-akatsuki-mission-route: area
+  loc-akatsuki-hideout: area
+  loc-deidara-workshop: area
+  loc-orochimaru-wind-hideout: area
+  loc-uchiha-home: area
+  loc-sakura-childhood-hideout: area
+  loc-konoha-childhood-river: area
+  loc-ame-border-village: area
+  loc-ame-negotiation-cliff: area
+  loc-ame-akatsuki-route: area
+  loc-kiri-cipher-route: area
+  loc-kumogakure: area
+  loc-third-war-kumo-front: area
+  loc-hanzo-samurai-battlefield: area
+  loc-kiri-suna-truce-route: area
+  loc-konoha-orphanage: area
+  loc-iwa-spy-route: area
+  loc-moryo-soul-shrine: area
+  loc-shion-palace: area
+  loc-shion-sealing-route: area
+  loc-moryo-body-shrine: area
+  loc-amaru-village: area
+  loc-sky-naval-base: area
+  loc-ancor-vantian: area
+  loc-hiruko-investigation-site: area
+  loc-mount-shumi-route: area
+  loc-mount-shumi: area
+  loc-third-war-return-route: area
+  loc-roran-ruins: area
+  loc-roran-palace: area
+  loc-roran-underground-factory: area
+  loc-roran-ryumyaku-chamber: area
+  loc-hozuki-castle: area
+  loc-hozuki-solitary-cell: area
+  loc-hozuki-box-chamber: area
+  loc-hozuki-castle-courtyard: area
+  loc-rtn-konohagakure: area
+  loc-rtn-minato-home: area
+  loc-rtn-mission-route: area
+  loc-rtn-menma-battlefield: area
+  loc-founding-river: area
+  loc-senju-uchiha-battlefield: area
+  loc-ancient-god-tree: area
+  loc-hagoromo-travel-route: area
+  loc-ninshu-home: area
+  loc-ninshu-trial-villages: area
+  loc-kosuke-early-mission: area
+  loc-kosuke-mission-camp: area
+  loc-hanare-childhood-road: area
+  loc-lee-guy-restaurant: area
+  loc-lee-guy-lake: area
+  loc-suika-hideout-route: area
+  loc-iwagakure: area
+  loc-tonika-village: area
+  loc-hacho-village: area
+  loc-tonika-hole: area
+  loc-hacho-broken-bridge: area
+  loc-dokku-house: area
+  loc-ama-no-hoko: area
+  loc-tonika-outskirts: area
+  loc-mist-swordsmen-battlefield: area
+  loc-sasori-workshop: area
+  loc-suna-jinchuriki-cell: area
+  loc-akimichi-compound: area
+  loc-snow-burning-palace: area
+  loc-temujin-childhood-village: area
+  loc-kumo-kurama-battlefield: area
+  loc-kumo-treaty-meeting: area
+  loc-tobirama-last-battlefield: area
+  loc-tobi-observation-hideout: area
+  loc-madara-cave: area
+  loc-ame-nagato-home: area
+  loc-konoha-cliff: area
+  loc-uchiha-training-ground: area
+  loc-konoha-lake: area
+  loc-root-mission-site: area
+  loc-second-war-camp: area
+  loc-senju-clan-home: area
+  loc-moon: area
 parents:
   geo-konoha-academy: loc-konohagakure
   loc-konohagakure: loc-land-of-fire
@@ -68,13 +444,63 @@ parents:
   loc-time-slip-riverbank: loc-konoha-outskirts
   loc-time-slip-departure-clearing: loc-konoha-outskirts
   loc-shukuba-contact-room: geo-shukuba-town
-
-# Two editorial identifiers for the SAME landmark, not distinct places.
+  loc-kumogakure: geo-land-lightning
+  loc-iwagakure: geo-land-earth
+  loc-amegakure: geo-land-rain
+  loc-kirigakure: loc-land-water
+  loc-suna-hospital: loc-sunagakure
+  loc-suna-desert-route: geo-land-wind
+  loc-fire-temple: loc-land-of-fire
+  loc-nara-forest-trap: loc-land-of-fire
+  loc-root-base: loc-konohagakure
+  loc-konoha-library: loc-konohagakure
+  loc-tsunade-treatment-tent: loc-konohagakure
+  loc-hokage-tent: loc-konohagakure
+  loc-konoha-pain-crater: loc-konohagakure
+  loc-uchiha-district: loc-konohagakure
+  loc-uchiha-home: loc-konohagakure
+  loc-naka-shrine: loc-konohagakure
+  loc-naka-river-cliff: loc-land-of-fire
+  loc-konoha-council-room: loc-konohagakure
+  loc-konoha-orphanage: loc-land-of-fire
+  loc-demon-desert: geo-land-wind
+  loc-demon-desert-oasis: geo-land-wind
+  loc-demon-desert-underground-ruins: geo-land-wind
+  loc-akatsuki-river-hideout: loc-river-country
+  loc-river-pursuit-route: loc-river-country
+  loc-river-seal-sites: loc-river-country
+  loc-tenchi-bridge: geo-land-grass
+  loc-samurai-bridge: geo-land-iron
+  loc-iron-country-forest: geo-land-iron
+  loc-iron-country-inn: geo-land-iron
+  loc-five-kage-hall: geo-land-iron
+  loc-five-kage-lower-hall: loc-five-kage-hall
+  loc-amegakure-lake: loc-amegakure
+  loc-island-turtle: geo-land-lightning
+  loc-island-turtle-shore: loc-island-turtle
+  loc-island-turtle-airspace: loc-island-turtle
+  loc-falls-of-truth: loc-island-turtle
+  loc-tailed-beast-temple: loc-island-turtle
+  loc-kumogakure-island-dock: loc-kumogakure
+  loc-valley-clouds-lightning: geo-land-lightning
+  loc-mount-shumi: loc-land-of-fire
+  loc-shion-palace: geo-land-demons
+  loc-moryo-soul-shrine: geo-land-demons
+  loc-hozuki-castle: geo-land-grass
+  loc-hozuki-solitary-cell: loc-hozuki-castle
+  loc-hozuki-box-chamber: loc-hozuki-castle
+  loc-hozuki-castle-courtyard: loc-hozuki-castle
+  loc-ancor-vantian: loc-land-of-fire
+  loc-fire-country-port: loc-land-of-fire
+  loc-valley-judgement: loc-land-of-fire
+  loc-haruno-home: loc-konohagakure
+  loc-konoha-public-bath: loc-konohagakure
+  loc-konoha-training-field: loc-konohagakure
+  loc-chen-grave: loc-konohagakure
+  loc-moon-toneri-castle: loc-moon
+  loc-moon-otsutsuki-settlement: loc-moon
 equivalents:
   loc-valley-of-end: loc-valley-end
-
-# These are not fixed coordinates. They cannot establish a country's lane
-# or automatically trigger geographic impossibility warnings.
 spatial:
   loc-inn: unspecified
   loc-gelel-caravan: mobile
@@ -83,3 +509,18 @@ spatial:
   loc-road-fire-waves: mobile
   loc-time-slip-toad-stomach: non_geographic
   loc-iwa-mercenary-mines: border_unknown
+  loc-naruto-voyage-ship: mobile
+  loc-ghost-ship: mobile
+  loc-fire-suna-route: mobile
+  loc-fire-river-route: mobile
+  loc-iron-country-route: mobile
+  loc-lightning-country-route: mobile
+  loc-shion-sealing-route: mobile
+  loc-mount-shumi-route: mobile
+  loc-jiraiya-training-route: mobile
+  loc-naruto-seal-space: non_geographic
+  loc-three-tails-stomach: non_geographic
+  loc-rtn-konohagakure: non_geographic
+  loc-rtn-minato-home: non_geographic
+  loc-rtn-menma-battlefield: non_geographic
+  loc-rtn-mission-route: non_geographic

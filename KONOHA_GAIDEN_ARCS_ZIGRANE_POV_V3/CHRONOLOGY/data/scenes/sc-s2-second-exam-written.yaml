@@ -1,0 +1,203 @@
+schema_version: 1
+id: sc-s2-second-exam-written
+episode_id: ep-s2-second-exam-written
+display_rank: 24600
+continuity_id: main
+title: Шикамару розділяє учасників по кімнатах
+description: Команда має узгодити суму балів; Неджі знаходить спосіб передавати відповіді стуком. Шикамару перевіряє
+  рішення щодо жертви товариша; після завершення учасники отримують маршрут до Суни.
+location_id: loc-chunin-written-exam
+placement:
+  anchor_id: ta-s2-64-10-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-second-exam-written-1
+  title: Шикамару розділяє учасників по кімнатах
+  text: Команда має узгодити суму балів; Неджі знаходить спосіб передавати відповіді стуком.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: ev-s2-second-exam-written-2
+  title: Учасники відповідають на питання про командира
+  text: Шикамару перевіряє рішення щодо жертви товариша; після завершення учасники отримують маршрут до Суни.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-konohamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-second-exam-written
+relations:
+- id: rel-s2-second-exam-written-1
+  kind: before
+  a: ev-s2-second-exam-written-1
+  b: ev-s2-second-exam-written-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+presence:
+- id: pr-s2-second-exam-written-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-ino
+  entity_id: c-ino
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-choji
+  entity_id: c-choji
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-neji
+  entity_id: c-neji
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-lee
+  entity_id: c-lee
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-shino
+  entity_id: c-shino
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written
+- id: pr-s2-second-exam-written-c-konohamaru
+  entity_id: c-konohamaru
+  from: sc-s2-second-exam-written.start
+  to: sc-s2-second-exam-written.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-second-exam-written

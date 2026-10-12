@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-kakashi-guards-kushina
+episode_id: ep-s2-kakashi-guards-kushina
+display_rank: 28600
+continuity_id: main
+title: Какаші охороняє вагітну Кушіну
+description: Мінато призначає захист через особливий стан печаті джінчюрікі.
+location_id: loc-kushina-home
+placement:
+  anchor_id: ta-s2-49-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-guards-kushina-1
+  title: Какаші охороняє вагітну Кушіну
+  text: Мінато призначає захист через особливий стан печаті джінчюрікі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-guards-kushina
+relations: []
+presence:
+- id: pr-s2-kakashi-guards-kushina-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-guards-kushina.start
+  to: sc-s2-kakashi-guards-kushina.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-guards-kushina
+- id: pr-s2-kakashi-guards-kushina-c-minato
+  entity_id: c-minato
+  from: sc-s2-kakashi-guards-kushina.start
+  to: sc-s2-kakashi-guards-kushina.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-guards-kushina
+- id: pr-s2-kakashi-guards-kushina-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-kakashi-guards-kushina.start
+  to: sc-s2-kakashi-guards-kushina.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-guards-kushina

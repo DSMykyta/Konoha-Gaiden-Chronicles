@@ -6,6 +6,7 @@ import {loadEnrichment} from './enrichment.mjs';
 import {validateHierarchy} from './hierarchy.mjs';
 import {validateCalendar,dayInYear} from './calendar.mjs';
 import {validateMissionWindows} from './mission-windows.mjs';
+import {validateShippudenPrewar} from './shippuden-prewar.mjs';
 const project=path.resolve(import.meta.dirname,'..');
 const relative='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data';
 // Vercel builds current repository data. There is no browser GitHub token or write endpoint.
@@ -61,6 +62,7 @@ const geographicUnknown=scenes.filter(scene=>scene.state!=='inactive'&&(!scene.l
 if(geographicUnknown.length)console.warn('Geography: '+geographicUnknown.length+' scenes lack a known location; retained as unknown, not assigned a country.');
 
 validateMissionWindows(read('mission-windows.yaml'),scenes,entities.entities);
+validateShippudenPrewar(read('shippuden-placement.yaml'),scenes,read('links.yaml').links||[]);
 let revision=process.env.VERCEL_GIT_COMMIT_SHA;try{revision=execFileSync('git',['-C',source,'rev-parse','HEAD'],{encoding:'utf8'}).trim();}catch{if(!revision)throw new Error('Source revision is required');}
 const sources=read('sources.yaml');
 const enrichment=loadEnrichment({source,relative,project,entities:entities.entities,events,sourceIds:new Set(sources.sources.map(s=>s.id))});

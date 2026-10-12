@@ -1,0 +1,152 @@
+schema_version: 1
+id: sc-s2-team7-samurai-bridge
+episode_id: ep-s2-team7-samurai-bridge
+display_rank: 18300
+continuity_id: main
+title: Сакура пропонує приєднатися до Саске
+description: Саске вимагає вбити Карін і намагається вбити Сакуру; Какаші втручається. Він встигає перехопити черговий
+  удар та стикається із Саске. Він говорить, що в їхньому наступному зіткненні вони можуть загинути обидва; Тобі
+  забирає Саске.
+location_id: loc-samurai-bridge
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-team7-samurai-bridge-1
+  title: Сакура пропонує приєднатися до Саске
+  text: Саске вимагає вбити Карін і намагається вбити Сакуру; Какаші втручається.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+- id: ev-s2-team7-samurai-bridge-2
+  title: Наруто рятує Сакуру
+  text: Він встигає перехопити черговий удар та стикається із Саске.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+- id: ev-s2-team7-samurai-bridge-3
+  title: Наруто бере бій на себе
+  text: Він говорить, що в їхньому наступному зіткненні вони можуть загинути обидва; Тобі забирає Саске.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+relations:
+- id: rel-s2-team7-samurai-bridge-1
+  kind: before
+  a: ev-s2-team7-samurai-bridge-1
+  b: ev-s2-team7-samurai-bridge-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+- id: rel-s2-team7-samurai-bridge-2
+  kind: before
+  a: ev-s2-team7-samurai-bridge-2
+  b: ev-s2-team7-samurai-bridge-3
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+presence:
+- id: pr-s2-team7-samurai-bridge-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-team7-samurai-bridge.start
+  to: sc-s2-team7-samurai-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+- id: pr-s2-team7-samurai-bridge-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-team7-samurai-bridge.start
+  to: sc-s2-team7-samurai-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+- id: pr-s2-team7-samurai-bridge-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-team7-samurai-bridge.start
+  to: sc-s2-team7-samurai-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+- id: pr-s2-team7-samurai-bridge-c-karin
+  entity_id: c-karin
+  from: sc-s2-team7-samurai-bridge.start
+  to: sc-s2-team7-samurai-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge
+- id: pr-s2-team7-samurai-bridge-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-team7-samurai-bridge.start
+  to: sc-s2-team7-samurai-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team7-samurai-bridge

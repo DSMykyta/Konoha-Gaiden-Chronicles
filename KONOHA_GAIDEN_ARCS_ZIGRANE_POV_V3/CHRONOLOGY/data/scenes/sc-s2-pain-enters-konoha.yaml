@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-pain-enters-konoha
+episode_id: ep-s2-pain-enters-konoha
+display_rank: 13300
+continuity_id: main
+title: Пейн проходить крізь захисний бар’єр
+description: Одне тіло входить повітрям і викликає решту; Конан та Шляхи розподіляють пошук Наруто й руйнування.
+location_id: loc-konoha-gate
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-pain-enters-konoha-1
+  title: Пейн проходить крізь захисний бар’єр
+  text: Одне тіло входить повітрям і викликає решту; Конан та Шляхи розподіляють пошук Наруто й руйнування.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-pain-enters-konoha
+relations: []
+presence:
+- id: pr-s2-pain-enters-konoha-c-pain
+  entity_id: c-pain
+  from: sc-s2-pain-enters-konoha.start
+  to: sc-s2-pain-enters-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-enters-konoha
+- id: pr-s2-pain-enters-konoha-c-konan
+  entity_id: c-konan
+  from: sc-s2-pain-enters-konoha.start
+  to: sc-s2-pain-enters-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pain-enters-konoha

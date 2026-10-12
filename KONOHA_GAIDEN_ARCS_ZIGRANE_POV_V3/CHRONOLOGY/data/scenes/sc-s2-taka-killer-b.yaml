@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-taka-killer-b
+episode_id: ep-s2-taka-killer-b
+display_rank: 11000
+continuity_id: main
+title: Кіллер Бі перемагає перші напади Така
+description: Він ранить Саске; Карін лікує його, а Джюґо віддає частину свого тіла. Полум’я охоплює Ґюкі; Бі підміняє
+  себе щупальцем і тікає, а Така забирає підміну.
+location_id: loc-valley-clouds-lightning
+placement:
+  anchor_id: ta-s2-66-07-31
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-taka-killer-b-1
+  title: Кіллер Бі перемагає перші напади Така
+  text: Він ранить Саске; Карін лікує його, а Джюґо віддає частину свого тіла.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-taka-killer-b
+- id: ev-s2-taka-killer-b-2
+  title: Саске застосовує Аматерасу
+  text: Полум’я охоплює Ґюкі; Бі підміняє себе щупальцем і тікає, а Така забирає підміну.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-taka-killer-b
+relations:
+- id: rel-s2-taka-killer-b-1
+  kind: before
+  a: ev-s2-taka-killer-b-1
+  b: ev-s2-taka-killer-b-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-killer-b
+presence:
+- id: pr-s2-taka-killer-b-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-taka-killer-b.start
+  to: sc-s2-taka-killer-b.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-killer-b
+- id: pr-s2-taka-killer-b-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-taka-killer-b.start
+  to: sc-s2-taka-killer-b.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-killer-b
+- id: pr-s2-taka-killer-b-c-karin
+  entity_id: c-karin
+  from: sc-s2-taka-killer-b.start
+  to: sc-s2-taka-killer-b.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-killer-b
+- id: pr-s2-taka-killer-b-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-taka-killer-b.start
+  to: sc-s2-taka-killer-b.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-killer-b
+- id: pr-s2-taka-killer-b-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-taka-killer-b.start
+  to: sc-s2-taka-killer-b.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-killer-b

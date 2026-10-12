@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-kabuto-root-recruited
+episode_id: ep-s2-kabuto-root-recruited
+display_rank: 36600
+continuity_id: main
+title: Данзо домагається нового шпигуна
+description: Кабуто погоджується піти заради сиротинця; Нонo знову відряджають на розвідку.
+location_id: loc-konoha-orphanage
+placement:
+  anchor_id: ta-s2-50-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-root-recruited-1
+  title: Данзо домагається нового шпигуна
+  text: Кабуто погоджується піти заради сиротинця; Нонo знову відряджають на розвідку.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-nono
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-root-recruited
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-kabuto-root-recruited-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-root-recruited.start
+  to: sc-s2-kabuto-root-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-root-recruited
+- id: pr-s2-kabuto-root-recruited-c-nono
+  entity_id: c-nono
+  from: sc-s2-kabuto-root-recruited.start
+  to: sc-s2-kabuto-root-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-root-recruited
+- id: pr-s2-kabuto-root-recruited-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-kabuto-root-recruited.start
+  to: sc-s2-kabuto-root-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-root-recruited
+- id: pr-s2-kabuto-root-recruited-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-kabuto-root-recruited.start
+  to: sc-s2-kabuto-root-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-root-recruited

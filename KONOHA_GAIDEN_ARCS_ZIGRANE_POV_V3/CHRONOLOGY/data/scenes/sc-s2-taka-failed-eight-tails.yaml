@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-taka-failed-eight-tails
+episode_id: ep-s2-taka-failed-eight-tails
+display_rank: 13200
+continuity_id: main
+title: Акацукі виявляють підміну Бі
+description: Замість джінчюрікі зі схопленого тіла лишається щупальце Ґюкі.
+location_id: loc-akatsuki-extraction-hideout
+placement:
+  anchor_id: ta-s2-66-08-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-taka-failed-eight-tails-1
+  title: Акацукі виявляють підміну Бі
+  text: Замість джінчюрікі зі схопленого тіла лишається щупальце Ґюкі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-taka-failed-eight-tails
+relations: []
+presence:
+- id: pr-s2-taka-failed-eight-tails-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-taka-failed-eight-tails.start
+  to: sc-s2-taka-failed-eight-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-failed-eight-tails
+- id: pr-s2-taka-failed-eight-tails-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-taka-failed-eight-tails.start
+  to: sc-s2-taka-failed-eight-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-failed-eight-tails
+- id: pr-s2-taka-failed-eight-tails-c-konan
+  entity_id: c-konan
+  from: sc-s2-taka-failed-eight-tails.start
+  to: sc-s2-taka-failed-eight-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-failed-eight-tails
+- id: pr-s2-taka-failed-eight-tails-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-taka-failed-eight-tails.start
+  to: sc-s2-taka-failed-eight-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-failed-eight-tails

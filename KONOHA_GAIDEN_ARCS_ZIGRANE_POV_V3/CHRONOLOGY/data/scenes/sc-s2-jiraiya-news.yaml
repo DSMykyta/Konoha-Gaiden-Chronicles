@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-jiraiya-news
+episode_id: ep-s2-jiraiya-news
+display_rank: 12600
+continuity_id: main
+title: Фукасаку повідомляє про загибель Джираї
+description: Наруто чує про смерть наставника; Цунаде отримує полоненого, тіло Шляху Пейна та шифр.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-66-08-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-news-1
+  title: Фукасаку повідомляє про загибель Джираї
+  text: Наруто чує про смерть наставника; Цунаде отримує полоненого, тіло Шляху Пейна та шифр.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-news
+relations: []
+presence:
+- id: pr-s2-jiraiya-news-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-jiraiya-news.start
+  to: sc-s2-jiraiya-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-news
+- id: pr-s2-jiraiya-news-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-jiraiya-news.start
+  to: sc-s2-jiraiya-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-news
+- id: pr-s2-jiraiya-news-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-jiraiya-news.start
+  to: sc-s2-jiraiya-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-news
+- id: pr-s2-jiraiya-news-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-jiraiya-news.start
+  to: sc-s2-jiraiya-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-news
+- id: pr-s2-jiraiya-news-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-jiraiya-news.start
+  to: sc-s2-jiraiya-news.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-news

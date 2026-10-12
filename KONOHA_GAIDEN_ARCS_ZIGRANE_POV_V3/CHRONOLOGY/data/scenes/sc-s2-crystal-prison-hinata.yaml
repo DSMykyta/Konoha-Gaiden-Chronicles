@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-crystal-prison-hinata
+episode_id: ep-s2-crystal-prison-hinata
+display_rank: 7300
+continuity_id: main
+title: Ґурен ув’язнює Команду 8 у кристалі
+description: Хіната вкриває тіло чакрою, рятуючись від повної кристалізації; Шіно готує стійких комах.
+location_id: loc-three-tails-forest
+placement:
+  anchor_id: ta-s2-66-04-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-crystal-prison-hinata-1
+  title: Ґурен ув’язнює Команду 8 у кристалі
+  text: Хіната вкриває тіло чакрою, рятуючись від повної кристалізації; Шіно готує стійких комах.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-crystal-prison-hinata
+relations: []
+presence:
+- id: pr-s2-crystal-prison-hinata-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-crystal-prison-hinata.start
+  to: sc-s2-crystal-prison-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-crystal-prison-hinata
+- id: pr-s2-crystal-prison-hinata-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-crystal-prison-hinata.start
+  to: sc-s2-crystal-prison-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-crystal-prison-hinata
+- id: pr-s2-crystal-prison-hinata-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-crystal-prison-hinata.start
+  to: sc-s2-crystal-prison-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-crystal-prison-hinata
+- id: pr-s2-crystal-prison-hinata-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-crystal-prison-hinata.start
+  to: sc-s2-crystal-prison-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-crystal-prison-hinata
+- id: pr-s2-crystal-prison-hinata-c-shino
+  entity_id: c-shino
+  from: sc-s2-crystal-prison-hinata.start
+  to: sc-s2-crystal-prison-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-crystal-prison-hinata
+- id: pr-s2-crystal-prison-hinata-c-guren
+  entity_id: c-guren
+  from: sc-s2-crystal-prison-hinata.start
+  to: sc-s2-crystal-prison-hinata.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-crystal-prison-hinata

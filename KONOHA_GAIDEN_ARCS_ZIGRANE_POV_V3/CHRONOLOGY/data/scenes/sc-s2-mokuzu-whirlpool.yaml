@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-mokuzu-whirlpool
+episode_id: ep-s2-mokuzu-whirlpool
+display_rank: 20400
+continuity_id: main
+title: Шикамару розгадує замкнений маршрут
+description: Погода й рифи повертають судно до того самого місця. Загін удає аварію й захоплює грабіжників, які
+  приходять до уламків.
+location_id: loc-mokuzu-island
+placement:
+  anchor_id: ta-s2-66-09-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-mokuzu-whirlpool-1
+  title: Шикамару розгадує замкнений маршрут
+  text: Погода й рифи повертають судно до того самого місця.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+- id: ev-s2-mokuzu-whirlpool-2
+  title: Тентен ховає корабель у сувій
+  text: Загін удає аварію й захоплює грабіжників, які приходять до уламків.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+relations:
+- id: rel-s2-mokuzu-whirlpool-1
+  kind: before
+  a: ev-s2-mokuzu-whirlpool-1
+  b: ev-s2-mokuzu-whirlpool-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+presence:
+- id: pr-s2-mokuzu-whirlpool-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-mokuzu-whirlpool.start
+  to: sc-s2-mokuzu-whirlpool.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+- id: pr-s2-mokuzu-whirlpool-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-mokuzu-whirlpool.start
+  to: sc-s2-mokuzu-whirlpool.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+- id: pr-s2-mokuzu-whirlpool-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-mokuzu-whirlpool.start
+  to: sc-s2-mokuzu-whirlpool.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+- id: pr-s2-mokuzu-whirlpool-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-mokuzu-whirlpool.start
+  to: sc-s2-mokuzu-whirlpool.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+- id: pr-s2-mokuzu-whirlpool-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-mokuzu-whirlpool.start
+  to: sc-s2-mokuzu-whirlpool.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool
+- id: pr-s2-mokuzu-whirlpool-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-mokuzu-whirlpool.start
+  to: sc-s2-mokuzu-whirlpool.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-mokuzu-whirlpool

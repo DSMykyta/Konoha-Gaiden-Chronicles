@@ -1,0 +1,171 @@
+schema_version: 1
+id: sc-s2-sakura-sasori
+episode_id: ep-s2-sakura-sasori
+display_rank: 1800
+continuity_id: main
+title: Сакура й Чіо руйнують Хіруко
+description: Чіо керує рухами Сакури, допомагаючи ухилятися від отруєних атак. Залізний пісок змушує Сакуру застосувати
+  протиотруту; вона розбиває маріонетку. Сакура розбиває тіло Сасорі, але він переносить своє живе ядро. Чіо лікує
+  поранену Сакуру й пронизує ядро Сасорі маріонетками його батьків. Перед смертю він називає міст Тенчі й зустріч
+  через десять днів.
+location_id: loc-akatsuki-river-hideout
+placement:
+  anchor_id: ta-s2-64-12-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sakura-sasori-1
+  title: Сакура й Чіо руйнують Хіруко
+  text: Чіо керує рухами Сакури, допомагаючи ухилятися від отруєних атак.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: ev-s2-sakura-sasori-2
+  title: Сасорі показує маріонетку Третього Кадзекаґе
+  text: Залізний пісок змушує Сакуру застосувати протиотруту; вона розбиває маріонетку.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: ev-s2-sakura-sasori-3
+  title: Чіо протиставляє десять маріонеток сотні Сасорі
+  text: Сакура розбиває тіло Сасорі, але він переносить своє живе ядро.
+  origin: M
+  extent: interval
+  display_rank: 300
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: ev-s2-sakura-sasori-4
+  title: Сакура прикриває Чіо
+  text: Чіо лікує поранену Сакуру й пронизує ядро Сасорі маріонетками його батьків.
+  origin: M
+  extent: interval
+  display_rank: 400
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: ev-s2-sakura-sasori-5
+  title: Сасорі повідомляє про шпигуна
+  text: Перед смертю він називає міст Тенчі й зустріч через десять днів.
+  origin: M
+  extent: interval
+  display_rank: 500
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-sasori
+relations:
+- id: rel-s2-sakura-sasori-1
+  kind: before
+  a: ev-s2-sakura-sasori-1
+  b: ev-s2-sakura-sasori-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: rel-s2-sakura-sasori-2
+  kind: before
+  a: ev-s2-sakura-sasori-2
+  b: ev-s2-sakura-sasori-3
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: rel-s2-sakura-sasori-3
+  kind: before
+  a: ev-s2-sakura-sasori-3
+  b: ev-s2-sakura-sasori-4
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: rel-s2-sakura-sasori-4
+  kind: before
+  a: ev-s2-sakura-sasori-4
+  b: ev-s2-sakura-sasori-5
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sasori
+presence:
+- id: pr-s2-sakura-sasori-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sakura-sasori.start
+  to: sc-s2-sakura-sasori.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: pr-s2-sakura-sasori-c-chiyo
+  entity_id: c-chiyo
+  from: sc-s2-sakura-sasori.start
+  to: sc-s2-sakura-sasori.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sasori
+- id: pr-s2-sakura-sasori-c-sasori
+  entity_id: c-sasori
+  from: sc-s2-sakura-sasori.start
+  to: sc-s2-sakura-sasori.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sasori

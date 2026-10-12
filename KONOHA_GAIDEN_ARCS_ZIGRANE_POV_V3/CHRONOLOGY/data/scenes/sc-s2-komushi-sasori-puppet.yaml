@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-komushi-sasori-puppet
+episode_id: ep-s2-komushi-sasori-puppet
+display_rank: 2000
+continuity_id: main
+title: Комуші помирає після втрати руки
+description: Сасорі створює йому протез; після отруєння та прохання матері робить із друга людську маріонетку.
+location_id: loc-sasori-workshop
+placement:
+  anchor_id: ta-s2-44-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-komushi-sasori-puppet-1
+  title: Комуші помирає після втрати руки
+  text: Сасорі створює йому протез; після отруєння та прохання матері робить із друга людську маріонетку.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  - entity_id: c-komushi
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-komushi-mother
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-komushi-sasori-puppet
+relations: []
+presence:
+- id: pr-s2-komushi-sasori-puppet-c-sasori
+  entity_id: c-sasori
+  from: sc-s2-komushi-sasori-puppet.start
+  to: sc-s2-komushi-sasori-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-komushi-sasori-puppet
+- id: pr-s2-komushi-sasori-puppet-c-komushi
+  entity_id: c-komushi
+  from: sc-s2-komushi-sasori-puppet.start
+  to: sc-s2-komushi-sasori-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-komushi-sasori-puppet
+- id: pr-s2-komushi-sasori-puppet-c-chiyo
+  entity_id: c-chiyo
+  from: sc-s2-komushi-sasori-puppet.start
+  to: sc-s2-komushi-sasori-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-komushi-sasori-puppet
+- id: pr-s2-komushi-sasori-puppet-c-komushi-mother
+  entity_id: c-komushi-mother
+  from: sc-s2-komushi-sasori-puppet.start
+  to: sc-s2-komushi-sasori-puppet.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-komushi-sasori-puppet

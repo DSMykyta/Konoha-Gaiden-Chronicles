@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-inuzuka-aburame-defence
+episode_id: ep-s2-inuzuka-aburame-defence
+display_rank: 14100
+continuity_id: main
+title: Інузука та Абураме захищають село
+description: Кіба з матір’ю переслідують Шлях Прета; Шіно та клан Абураме атакують Конан.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-inuzuka-aburame-defence-1
+  title: Інузука та Абураме захищають село
+  text: Кіба з матір’ю переслідують Шлях Прета; Шіно та клан Абураме атакують Конан.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-tsume
+    role: participant
+    mode: physical
+  - entity_id: c-kuromaru
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-shibi
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+relations: []
+presence:
+- id: pr-s2-inuzuka-aburame-defence-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+- id: pr-s2-inuzuka-aburame-defence-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+- id: pr-s2-inuzuka-aburame-defence-c-tsume
+  entity_id: c-tsume
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+- id: pr-s2-inuzuka-aburame-defence-c-kuromaru
+  entity_id: c-kuromaru
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+- id: pr-s2-inuzuka-aburame-defence-c-shino
+  entity_id: c-shino
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+- id: pr-s2-inuzuka-aburame-defence-c-shibi
+  entity_id: c-shibi
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+- id: pr-s2-inuzuka-aburame-defence-c-konan
+  entity_id: c-konan
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence
+- id: pr-s2-inuzuka-aburame-defence-c-pain
+  entity_id: c-pain
+  from: sc-s2-inuzuka-aburame-defence.start
+  to: sc-s2-inuzuka-aburame-defence.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-inuzuka-aburame-defence

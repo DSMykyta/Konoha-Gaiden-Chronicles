@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-small-akatsuki-founded
+episode_id: ep-s2-small-akatsuki-founded
+display_rank: 34700
+continuity_id: main
+title: Яхіко називає загін Акацукі
+description: Група допомагає мешканцям Аме та шукає розв’язання конфліктів переговорами.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-48-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-small-akatsuki-founded-1
+  title: Яхіко називає загін Акацукі
+  text: Група допомагає мешканцям Аме та шукає розв’язання конфліктів переговорами.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yahiko
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-kyusuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-small-akatsuki-founded
+relations: []
+presence:
+- id: pr-s2-small-akatsuki-founded-c-yahiko
+  entity_id: c-yahiko
+  from: sc-s2-small-akatsuki-founded.start
+  to: sc-s2-small-akatsuki-founded.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-small-akatsuki-founded
+- id: pr-s2-small-akatsuki-founded-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-small-akatsuki-founded.start
+  to: sc-s2-small-akatsuki-founded.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-small-akatsuki-founded
+- id: pr-s2-small-akatsuki-founded-c-konan
+  entity_id: c-konan
+  from: sc-s2-small-akatsuki-founded.start
+  to: sc-s2-small-akatsuki-founded.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-small-akatsuki-founded
+- id: pr-s2-small-akatsuki-founded-c-kyusuke
+  entity_id: c-kyusuke
+  from: sc-s2-small-akatsuki-founded.start
+  to: sc-s2-small-akatsuki-founded.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-small-akatsuki-founded

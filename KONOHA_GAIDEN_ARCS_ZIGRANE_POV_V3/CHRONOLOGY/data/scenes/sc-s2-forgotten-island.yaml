@@ -1,0 +1,111 @@
+schema_version: 1
+id: sc-s2-forgotten-island
+episode_id: ep-s2-forgotten-island
+display_rank: 19800
+continuity_id: main
+title: Птах викрадає Ґая
+description: Загін знаходить його серед пташенят та виходить до покинутої лабораторії викликів. Аоба розкриває загибель
+  дослідників; дух Хоноки стримує звіра, Наруто відкидає його в лаву.
+location_id: loc-forgotten-summon-island
+placement:
+  anchor_id: ta-s2-66-09-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-forgotten-island-1
+  title: Птах викрадає Ґая
+  text: Загін знаходить його серед пташенят та виходить до покинутої лабораторії викликів.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-honoka-spirit
+    role: participant
+    mode: manifested
+  evidence_ids:
+  - evd-s2-forgotten-island
+- id: ev-s2-forgotten-island-2
+  title: Загін знищує некерованого звіра
+  text: Аоба розкриває загибель дослідників; дух Хоноки стримує звіра, Наруто відкидає його в лаву.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-honoka-spirit
+    role: participant
+    mode: manifested
+  evidence_ids:
+  - evd-s2-forgotten-island
+relations:
+- id: rel-s2-forgotten-island-1
+  kind: before
+  a: ev-s2-forgotten-island-1
+  b: ev-s2-forgotten-island-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-forgotten-island
+presence:
+- id: pr-s2-forgotten-island-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-forgotten-island.start
+  to: sc-s2-forgotten-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-forgotten-island
+- id: pr-s2-forgotten-island-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-forgotten-island.start
+  to: sc-s2-forgotten-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-forgotten-island
+- id: pr-s2-forgotten-island-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-forgotten-island.start
+  to: sc-s2-forgotten-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-forgotten-island
+- id: pr-s2-forgotten-island-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-forgotten-island.start
+  to: sc-s2-forgotten-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-forgotten-island

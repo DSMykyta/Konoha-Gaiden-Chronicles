@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-asuma-wind-lesson
+episode_id: ep-s2-asuma-wind-lesson
+display_rank: 4300
+continuity_id: main
+title: Асума показує силу Вітру
+description: Чакра на лезі проходить крізь дерево й камінь; Наруто погоджується оплатити обід Команди 10 за пораду.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-03-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-asuma-wind-lesson-1
+  title: Асума показує силу Вітру
+  text: Чакра на лезі проходить крізь дерево й камінь; Наруто погоджується оплатити обід Команди 10 за пораду.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-asuma-wind-lesson
+relations: []
+presence:
+- id: pr-s2-asuma-wind-lesson-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-asuma-wind-lesson.start
+  to: sc-s2-asuma-wind-lesson.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-wind-lesson
+- id: pr-s2-asuma-wind-lesson-c-asuma
+  entity_id: c-asuma
+  from: sc-s2-asuma-wind-lesson.start
+  to: sc-s2-asuma-wind-lesson.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-wind-lesson
+- id: pr-s2-asuma-wind-lesson-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-asuma-wind-lesson.start
+  to: sc-s2-asuma-wind-lesson.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-wind-lesson

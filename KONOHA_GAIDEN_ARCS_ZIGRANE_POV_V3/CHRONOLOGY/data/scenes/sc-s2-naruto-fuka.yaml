@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-naruto-fuka
+episode_id: ep-s2-naruto-fuka
+display_rank: 4900
+continuity_id: main
+title: Наруто знаходить слабкість Фуки
+description: Її тіло змінюється після атак; Наруто знищує волосся, що утримує її життя.
+location_id: loc-konoha-outskirts
+placement:
+  anchor_id: ta-s2-66-03-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-fuka-1
+  title: Наруто знаходить слабкість Фуки
+  text: Її тіло змінюється після атак; Наруто знищує волосся, що утримує її життя.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-fuka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-fuka
+relations: []
+presence:
+- id: pr-s2-naruto-fuka-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-fuka.start
+  to: sc-s2-naruto-fuka.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-fuka
+- id: pr-s2-naruto-fuka-c-fuka
+  entity_id: c-fuka
+  from: sc-s2-naruto-fuka.start
+  to: sc-s2-naruto-fuka.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-fuka

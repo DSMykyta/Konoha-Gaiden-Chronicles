@@ -1,0 +1,93 @@
+schema_version: 1
+id: sc-s2-rin-three-tails
+episode_id: ep-s2-rin-three-tails
+display_rank: 28200
+continuity_id: main
+title: Рін стає пасткою для Конохи
+description: Шинобі Кірі поміщають у неї Ісобу; Рін підставляється під Чідорі Какаші. Манґекьо пробуджується в обох
+  очах; Обіто вбиває переслідувачів Кірі.
+location_id: loc-rin-kiri-battlefield
+placement:
+  anchor_id: ta-s2-48-02-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-rin-three-tails-1
+  title: Рін стає пасткою для Конохи
+  text: Шинобі Кірі поміщають у неї Ісобу; Рін підставляється під Чідорі Какаші.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-rin-three-tails
+  layer: canon
+- id: ev-s2-rin-three-tails-2
+  title: Обіто бачить смерть Рін
+  text: Манґекьо пробуджується в обох очах; Обіто вбиває переслідувачів Кірі.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-rin-three-tails
+  layer: canon
+relations:
+- id: rel-s2-rin-three-tails-1
+  kind: before
+  a: ev-s2-rin-three-tails-1
+  b: ev-s2-rin-three-tails-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-three-tails
+presence:
+- id: pr-s2-rin-three-tails-c-rin
+  entity_id: c-rin
+  from: sc-s2-rin-three-tails.start
+  to: sc-s2-rin-three-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-three-tails
+- id: pr-s2-rin-three-tails-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-rin-three-tails.start
+  to: sc-s2-rin-three-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-three-tails
+- id: pr-s2-rin-three-tails-c-obito
+  entity_id: c-obito
+  from: sc-s2-rin-three-tails.start
+  to: sc-s2-rin-three-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rin-three-tails

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-guy-kisame-island
+episode_id: ep-s2-guy-kisame-island
+display_rank: 22500
+continuity_id: main
+title: Ґай наздоганяє Кісаме
+description: Сьомі ворота й Денний Тигр зупиняють водну атаку та спробу передати сувій.
+location_id: loc-island-turtle-shore
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guy-kisame-island-1
+  title: Ґай наздоганяє Кісаме
+  text: Сьомі ворота й Денний Тигр зупиняють водну атаку та спробу передати сувій.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guy-kisame-island
+relations: []
+presence:
+- id: pr-s2-guy-kisame-island-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-guy-kisame-island.start
+  to: sc-s2-guy-kisame-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-kisame-island
+- id: pr-s2-guy-kisame-island-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-guy-kisame-island.start
+  to: sc-s2-guy-kisame-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-kisame-island

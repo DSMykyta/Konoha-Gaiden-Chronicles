@@ -1,0 +1,67 @@
+schema_version: 1
+id: sc-s2-minato-ab-clash
+episode_id: ep-s2-minato-ab-clash
+display_rank: 36200
+continuity_id: main
+title: Мінато протистоїть А та Бі
+description: Летючий Бог Грому обходить атаку Райкаґе; Бі прикриває брата щупальцем, після чого обидві сторони стримують
+  останній удар.
+location_id: loc-third-war-kumo-front
+placement:
+  anchor_id: ta-s2-47-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-minato-ab-clash-1
+  title: Мінато протистоїть А та Бі
+  text: Летючий Бог Грому обходить атаку Райкаґе; Бі прикриває брата щупальцем, після чого обидві сторони стримують
+    останній удар.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-minato-ab-clash
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-minato-ab-clash-c-minato
+  entity_id: c-minato
+  from: sc-s2-minato-ab-clash.start
+  to: sc-s2-minato-ab-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-ab-clash
+- id: pr-s2-minato-ab-clash-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-minato-ab-clash.start
+  to: sc-s2-minato-ab-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-ab-clash
+- id: pr-s2-minato-ab-clash-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-minato-ab-clash.start
+  to: sc-s2-minato-ab-clash.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-ab-clash

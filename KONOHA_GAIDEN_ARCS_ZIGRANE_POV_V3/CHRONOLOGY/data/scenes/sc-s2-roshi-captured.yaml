@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-roshi-captured
+episode_id: ep-s2-roshi-captured
+display_rank: 9300
+continuity_id: main
+title: Кісаме захоплює Роші
+description: Він долає Стихію Лави джінчюрікі Чотирьохвостого водними техніками.
+location_id: loc-four-tails-battlefield
+placement:
+  anchor_id: ta-s2-66-07-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-roshi-captured-1
+  title: Кісаме захоплює Роші
+  text: Він долає Стихію Лави джінчюрікі Чотирьохвостого водними техніками.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-roshi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-roshi-captured
+relations: []
+presence:
+- id: pr-s2-roshi-captured-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-roshi-captured.start
+  to: sc-s2-roshi-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-roshi-captured
+- id: pr-s2-roshi-captured-c-roshi
+  entity_id: c-roshi
+  from: sc-s2-roshi-captured.start
+  to: sc-s2-roshi-captured.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-roshi-captured

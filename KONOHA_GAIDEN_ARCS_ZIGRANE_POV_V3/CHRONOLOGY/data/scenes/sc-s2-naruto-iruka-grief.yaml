@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-naruto-iruka-grief
+episode_id: ep-s2-naruto-iruka-grief
+display_rank: 12700
+continuity_id: main
+title: Ірука приходить до Наруто
+description: Вночі Наруто плаче з морозивом у руці; Ірука нагадує, що Джирая пишався ним.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-iruka-grief-1
+  title: Ірука приходить до Наруто
+  text: Вночі Наруто плаче з морозивом у руці; Ірука нагадує, що Джирая пишався ним.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-iruka-grief
+relations: []
+presence:
+- id: pr-s2-naruto-iruka-grief-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-iruka-grief.start
+  to: sc-s2-naruto-iruka-grief.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-iruka-grief
+- id: pr-s2-naruto-iruka-grief-c-iruka
+  entity_id: c-iruka
+  from: sc-s2-naruto-iruka-grief.start
+  to: sc-s2-naruto-iruka-grief.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-iruka-grief

@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-shiranami-revealed
+episode_id: ep-s2-shiranami-revealed
+display_rank: 12100
+continuity_id: main
+title: Шіранамі захоплює Хотару
+description: Він визнає вбивство свого батька й починає накопичувати природну енергію в її печаті.
+location_id: loc-tsuchigumo-village
+placement:
+  anchor_id: ta-s2-66-07-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shiranami-revealed-1
+  title: Шіранамі захоплює Хотару
+  text: Він визнає вбивство свого батька й починає накопичувати природну енергію в її печаті.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-utakata
+    role: participant
+    mode: physical
+  - entity_id: c-hotaru
+    role: participant
+    mode: physical
+  - entity_id: c-shiranami
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shiranami-revealed
+relations: []
+presence:
+- id: pr-s2-shiranami-revealed-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-shiranami-revealed.start
+  to: sc-s2-shiranami-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shiranami-revealed
+- id: pr-s2-shiranami-revealed-c-utakata
+  entity_id: c-utakata
+  from: sc-s2-shiranami-revealed.start
+  to: sc-s2-shiranami-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shiranami-revealed
+- id: pr-s2-shiranami-revealed-c-hotaru
+  entity_id: c-hotaru
+  from: sc-s2-shiranami-revealed.start
+  to: sc-s2-shiranami-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shiranami-revealed
+- id: pr-s2-shiranami-revealed-c-shiranami
+  entity_id: c-shiranami
+  from: sc-s2-shiranami-revealed.start
+  to: sc-s2-shiranami-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shiranami-revealed

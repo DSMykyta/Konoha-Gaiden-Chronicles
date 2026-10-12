@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-hebi-sasuke-recovery
+episode_id: ep-s2-hebi-sasuke-recovery
+display_rank: 9900
+continuity_id: main
+title: Хебі витягає виснаженого Саске
+description: Суйґецу застосовує сувій виклику; товариші доглядають Саске після вибуху.
+location_id: loc-hebi-recovery-inn
+placement:
+  anchor_id: ta-s2-66-07-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hebi-sasuke-recovery-1
+  title: Хебі витягає виснаженого Саске
+  text: Суйґецу застосовує сувій виклику; товариші доглядають Саске після вибуху.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hebi-sasuke-recovery
+relations: []
+presence:
+- id: pr-s2-hebi-sasuke-recovery-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-hebi-sasuke-recovery.start
+  to: sc-s2-hebi-sasuke-recovery.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-sasuke-recovery
+- id: pr-s2-hebi-sasuke-recovery-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-hebi-sasuke-recovery.start
+  to: sc-s2-hebi-sasuke-recovery.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-sasuke-recovery
+- id: pr-s2-hebi-sasuke-recovery-c-karin
+  entity_id: c-karin
+  from: sc-s2-hebi-sasuke-recovery.start
+  to: sc-s2-hebi-sasuke-recovery.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-sasuke-recovery
+- id: pr-s2-hebi-sasuke-recovery-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-hebi-sasuke-recovery.start
+  to: sc-s2-hebi-sasuke-recovery.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-sasuke-recovery

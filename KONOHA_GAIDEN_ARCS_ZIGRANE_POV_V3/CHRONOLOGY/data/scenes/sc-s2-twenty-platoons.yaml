@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-twenty-platoons
+episode_id: ep-s2-twenty-platoons
+display_rank: 5600
+continuity_id: main
+title: Цунаде відправляє двадцять загонів
+description: Команда Асуми отримує завдання знайти Акацукі після загибелі Чіріку.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-66-03-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-twenty-platoons-1
+  title: Цунаде відправляє двадцять загонів
+  text: Команда Асуми отримує завдання знайти Акацукі після загибелі Чіріку.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-kotetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-twenty-platoons
+relations: []
+presence:
+- id: pr-s2-twenty-platoons-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-twenty-platoons.start
+  to: sc-s2-twenty-platoons.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-twenty-platoons
+- id: pr-s2-twenty-platoons-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-twenty-platoons.start
+  to: sc-s2-twenty-platoons.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-twenty-platoons
+- id: pr-s2-twenty-platoons-c-asuma
+  entity_id: c-asuma
+  from: sc-s2-twenty-platoons.start
+  to: sc-s2-twenty-platoons.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-twenty-platoons
+- id: pr-s2-twenty-platoons-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-twenty-platoons.start
+  to: sc-s2-twenty-platoons.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-twenty-platoons
+- id: pr-s2-twenty-platoons-c-izumo
+  entity_id: c-izumo
+  from: sc-s2-twenty-platoons.start
+  to: sc-s2-twenty-platoons.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-twenty-platoons
+- id: pr-s2-twenty-platoons-c-kotetsu
+  entity_id: c-kotetsu
+  from: sc-s2-twenty-platoons.start
+  to: sc-s2-twenty-platoons.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-twenty-platoons

@@ -1,0 +1,93 @@
+schema_version: 1
+id: sc-s2-kabuto-nono-tragedy
+episode_id: ep-s2-kabuto-nono-tragedy
+display_rank: 36700
+continuity_id: main
+title: Кабуто смертельно ранить Нонo
+description: Підмінені фотографії не дозволяють їй впізнати вихованця. Він пояснює, як Корінь позбувався обох шпигунів,
+  і дає Кабуто нове місце.
+location_id: loc-iwa-spy-route
+placement:
+  anchor_id: ta-s2-55-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-nono-tragedy-1
+  title: Кабуто смертельно ранить Нонo
+  text: Підмінені фотографії не дозволяють їй впізнати вихованця.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-nono
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-nono-tragedy
+  layer: canon
+- id: ev-s2-kabuto-nono-tragedy-2
+  title: Орочімару вербує Кабуто
+  text: Він пояснює, як Корінь позбувався обох шпигунів, і дає Кабуто нове місце.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-nono
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-nono-tragedy
+  layer: canon
+relations:
+- id: rel-s2-kabuto-nono-tragedy-1
+  kind: before
+  a: ev-s2-kabuto-nono-tragedy-1
+  b: ev-s2-kabuto-nono-tragedy-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-nono-tragedy
+presence:
+- id: pr-s2-kabuto-nono-tragedy-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-nono-tragedy.start
+  to: sc-s2-kabuto-nono-tragedy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-nono-tragedy
+- id: pr-s2-kabuto-nono-tragedy-c-nono
+  entity_id: c-nono
+  from: sc-s2-kabuto-nono-tragedy.start
+  to: sc-s2-kabuto-nono-tragedy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-nono-tragedy
+- id: pr-s2-kabuto-nono-tragedy-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-kabuto-nono-tragedy.start
+  to: sc-s2-kabuto-nono-tragedy.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-nono-tragedy

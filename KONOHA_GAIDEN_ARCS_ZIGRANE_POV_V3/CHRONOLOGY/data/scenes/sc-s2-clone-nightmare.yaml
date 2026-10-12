@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-clone-nightmare
+episode_id: ep-s2-clone-nightmare
+display_rank: 20300
+continuity_id: main
+title: Наруто отримує сон виснаженого клона
+description: Перевтомлений клон передає йому видіння бунту; після пробудження Наруто помічає межі навантаження.
+location_id: loc-naruto-voyage-ship
+placement:
+  anchor_id: ta-s2-66-09-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-clone-nightmare-1
+  title: Наруто отримує сон виснаженого клона
+  text: Перевтомлений клон передає йому видіння бунту; після пробудження Наруто помічає межі навантаження.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-clone-nightmare
+relations: []
+presence:
+- id: pr-s2-clone-nightmare-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-clone-nightmare.start
+  to: sc-s2-clone-nightmare.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-clone-nightmare

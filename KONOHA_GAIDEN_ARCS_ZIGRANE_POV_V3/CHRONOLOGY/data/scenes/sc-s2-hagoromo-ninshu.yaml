@@ -1,0 +1,51 @@
+schema_version: 1
+id: sc-s2-hagoromo-ninshu
+episode_id: ep-s2-hagoromo-ninshu
+display_rank: 43100
+continuity_id: main
+title: Хаґоромо поширює ніншю
+description: Він відновлює міст, допомагає поселенням та передає людям спосіб розуміти один одного через чакру.
+location_id: loc-hagoromo-travel-route
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hagoromo-ninshu-1
+  title: Хаґоромо поширює ніншю
+  text: Він відновлює міст, допомагає поселенням та передає людям спосіб розуміти один одного через чакру.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hagoromo
+    role: participant
+    mode: physical
+  - entity_id: c-futami
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hagoromo-ninshu
+relations: []
+presence:
+- id: pr-s2-hagoromo-ninshu-c-hagoromo
+  entity_id: c-hagoromo
+  from: sc-s2-hagoromo-ninshu.start
+  to: sc-s2-hagoromo-ninshu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hagoromo-ninshu
+- id: pr-s2-hagoromo-ninshu-c-futami
+  entity_id: c-futami
+  from: sc-s2-hagoromo-ninshu.start
+  to: sc-s2-hagoromo-ninshu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hagoromo-ninshu

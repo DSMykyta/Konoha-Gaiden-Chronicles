@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-taka-renamed
+episode_id: ep-s2-taka-renamed
+display_rank: 10700
+continuity_id: main
+title: Саске перейменовує Хебі на Така
+description: Він відкриває Манґекьо й оголошує метою знищення Конохи.
+location_id: loc-akatsuki-eastern-hideout
+placement:
+  anchor_id: ta-s2-66-07-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-taka-renamed-1
+  title: Саске перейменовує Хебі на Така
+  text: Він відкриває Манґекьо й оголошує метою знищення Конохи.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-taka-renamed
+relations: []
+presence:
+- id: pr-s2-taka-renamed-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-taka-renamed.start
+  to: sc-s2-taka-renamed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-renamed
+- id: pr-s2-taka-renamed-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-taka-renamed.start
+  to: sc-s2-taka-renamed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-renamed
+- id: pr-s2-taka-renamed-c-karin
+  entity_id: c-karin
+  from: sc-s2-taka-renamed.start
+  to: sc-s2-taka-renamed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-renamed
+- id: pr-s2-taka-renamed-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-taka-renamed.start
+  to: sc-s2-taka-renamed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-renamed

@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-jiraiya-sage-mode
+episode_id: ep-s2-jiraiya-sage-mode
+display_rank: 11400
+continuity_id: main
+title: Ґамакен прикриває підготовку Джираї
+description: Джирая завершує Режим Мудреця з Фукасаку й Шімою. Джирая перемагає перших противників, але з’являються
+  інші Шляхи Пейна.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-66-07-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-sage-mode-1
+  title: Ґамакен прикриває підготовку Джираї
+  text: Джирая завершує Режим Мудреця з Фукасаку й Шімою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-gamaken
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode
+- id: ev-s2-jiraiya-sage-mode-2
+  title: Жаб’яче ґенджюцу зупиняє три тіла
+  text: Джирая перемагає перших противників, але з’являються інші Шляхи Пейна.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-gamaken
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  - entity_id: c-shima
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode
+relations:
+- id: rel-s2-jiraiya-sage-mode-1
+  kind: before
+  a: ev-s2-jiraiya-sage-mode-1
+  b: ev-s2-jiraiya-sage-mode-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode
+presence:
+- id: pr-s2-jiraiya-sage-mode-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-sage-mode.start
+  to: sc-s2-jiraiya-sage-mode.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode
+- id: pr-s2-jiraiya-sage-mode-c-gamaken
+  entity_id: c-gamaken
+  from: sc-s2-jiraiya-sage-mode.start
+  to: sc-s2-jiraiya-sage-mode.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode
+- id: pr-s2-jiraiya-sage-mode-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-jiraiya-sage-mode.start
+  to: sc-s2-jiraiya-sage-mode.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode
+- id: pr-s2-jiraiya-sage-mode-c-shima
+  entity_id: c-shima
+  from: sc-s2-jiraiya-sage-mode.start
+  to: sc-s2-jiraiya-sage-mode.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode
+- id: pr-s2-jiraiya-sage-mode-c-pain
+  entity_id: c-pain
+  from: sc-s2-jiraiya-sage-mode.start
+  to: sc-s2-jiraiya-sage-mode.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-sage-mode

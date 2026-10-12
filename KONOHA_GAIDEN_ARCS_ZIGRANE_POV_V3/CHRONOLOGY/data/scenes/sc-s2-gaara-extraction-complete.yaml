@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-gaara-extraction-complete
+episode_id: ep-s2-gaara-extraction-complete
+display_rank: 300
+continuity_id: main
+title: Триденне вилучення Шукаку завершується
+description: Ґаара помирає; Акацукі готуються відбивати загін порятунку.
+location_id: loc-akatsuki-river-hideout
+placement:
+  anchor_id: ta-s2-64-12-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-gaara-extraction-complete-1
+  title: Триденне вилучення Шукаку завершується
+  text: Ґаара помирає; Акацукі готуються відбивати загін порятунку.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-gaara-extraction-complete
+relations: []
+presence:
+- id: pr-s2-gaara-extraction-complete-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-gaara-extraction-complete.start
+  to: sc-s2-gaara-extraction-complete.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-extraction-complete
+- id: pr-s2-gaara-extraction-complete-c-sasori
+  entity_id: c-sasori
+  from: sc-s2-gaara-extraction-complete.start
+  to: sc-s2-gaara-extraction-complete.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-extraction-complete
+- id: pr-s2-gaara-extraction-complete-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-gaara-extraction-complete.start
+  to: sc-s2-gaara-extraction-complete.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-extraction-complete

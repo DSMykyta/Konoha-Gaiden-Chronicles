@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-taka-childhood-route-memory
+episode_id: ep-s2-taka-childhood-route-memory
+display_rank: 43900
+continuity_id: main
+title: Саске проходить знайомою дорогою
+description: Місце повертає його до місії охорони Нахо та суперництва з Наруто.
+location_id: loc-taka-konoha-route
+placement:
+  anchor_id: ta-s2-66-08-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-taka-childhood-route-memory-1
+  title: Саске проходить знайомою дорогою
+  text: Місце повертає його до місії охорони Нахо та суперництва з Наруто.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-taka-childhood-route-memory
+relations: []
+presence:
+- id: pr-s2-taka-childhood-route-memory-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-taka-childhood-route-memory.start
+  to: sc-s2-taka-childhood-route-memory.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-childhood-route-memory
+- id: pr-s2-taka-childhood-route-memory-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-taka-childhood-route-memory.start
+  to: sc-s2-taka-childhood-route-memory.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-childhood-route-memory
+- id: pr-s2-taka-childhood-route-memory-c-karin
+  entity_id: c-karin
+  from: sc-s2-taka-childhood-route-memory.start
+  to: sc-s2-taka-childhood-route-memory.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-childhood-route-memory
+- id: pr-s2-taka-childhood-route-memory-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-taka-childhood-route-memory.start
+  to: sc-s2-taka-childhood-route-memory.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taka-childhood-route-memory

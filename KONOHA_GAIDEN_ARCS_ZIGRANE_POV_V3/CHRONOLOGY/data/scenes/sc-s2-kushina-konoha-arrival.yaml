@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-kushina-konoha-arrival
+episode_id: ep-s2-kushina-konoha-arrival
+display_rank: 29700
+continuity_id: main
+title: Кушіна переходить до Академії Конохи
+description: Вона оголошує мрію стати Хокаґе; насмішки через червоне волосся спричиняють її бійки.
+location_id: loc-academy-classroom
+placement:
+  anchor_id: ta-s2-34-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kushina-konoha-arrival-1
+  title: Кушіна переходить до Академії Конохи
+  text: Вона оголошує мрію стати Хокаґе; насмішки через червоне волосся спричиняють її бійки.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kushina
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kushina-konoha-arrival
+relations: []
+presence:
+- id: pr-s2-kushina-konoha-arrival-c-kushina
+  entity_id: c-kushina
+  from: sc-s2-kushina-konoha-arrival.start
+  to: sc-s2-kushina-konoha-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kushina-konoha-arrival
+- id: pr-s2-kushina-konoha-arrival-c-minato
+  entity_id: c-minato
+  from: sc-s2-kushina-konoha-arrival.start
+  to: sc-s2-kushina-konoha-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kushina-konoha-arrival

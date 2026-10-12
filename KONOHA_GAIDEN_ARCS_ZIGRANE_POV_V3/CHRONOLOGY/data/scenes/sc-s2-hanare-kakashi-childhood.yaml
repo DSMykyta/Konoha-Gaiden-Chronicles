@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-hanare-kakashi-childhood
+episode_id: ep-s2-hanare-kakashi-childhood
+display_rank: 44200
+continuity_id: main
+title: Какаші допомагає загубленій Ханаре
+description: Він показує спосіб знайти напрямок, який залишається в її пам’яті.
+location_id: loc-hanare-childhood-road
+placement:
+  anchor_id: ta-s2-46-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hanare-kakashi-childhood-1
+  title: Какаші допомагає загубленій Ханаре
+  text: Він показує спосіб знайти напрямок, який залишається в її пам’яті.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hanare
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hanare-kakashi-childhood
+relations: []
+presence:
+- id: pr-s2-hanare-kakashi-childhood-c-hanare
+  entity_id: c-hanare
+  from: sc-s2-hanare-kakashi-childhood.start
+  to: sc-s2-hanare-kakashi-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanare-kakashi-childhood
+- id: pr-s2-hanare-kakashi-childhood-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-hanare-kakashi-childhood.start
+  to: sc-s2-hanare-kakashi-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hanare-kakashi-childhood

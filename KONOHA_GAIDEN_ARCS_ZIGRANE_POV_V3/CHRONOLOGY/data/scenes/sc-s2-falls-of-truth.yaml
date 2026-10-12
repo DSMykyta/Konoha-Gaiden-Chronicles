@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-falls-of-truth
+episode_id: ep-s2-falls-of-truth
+display_rank: 21900
+continuity_id: main
+title: Наруто зустрічає темного себе
+description: Супротивники мають однакові можливості; Наруто не може перемогти прямим боєм.
+location_id: loc-falls-of-truth
+placement:
+  anchor_id: ta-s2-66-10-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-falls-of-truth-1
+  title: Наруто зустрічає темного себе
+  text: Супротивники мають однакові можливості; Наруто не може перемогти прямим боєм.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-motoi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-falls-of-truth
+relations: []
+presence:
+- id: pr-s2-falls-of-truth-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-falls-of-truth.start
+  to: sc-s2-falls-of-truth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-falls-of-truth
+- id: pr-s2-falls-of-truth-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-falls-of-truth.start
+  to: sc-s2-falls-of-truth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-falls-of-truth
+- id: pr-s2-falls-of-truth-c-motoi
+  entity_id: c-motoi
+  from: sc-s2-falls-of-truth.start
+  to: sc-s2-falls-of-truth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-falls-of-truth

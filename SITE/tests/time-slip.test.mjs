@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import YAML from 'yaml';
 
 const data=JSON.parse(fs.readFileSync(new URL('../public/data.json',import.meta.url),'utf8'));
+const originShift=(61-data.calendar.view_start_year)*365;
 const root=path.resolve(import.meta.dirname,'../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data');
 const load=file=>YAML.parse(fs.readFileSync(path.join(root,file),'utf8'));
 const traveler='c-unnamed-travelling-performer';
@@ -20,10 +21,10 @@ test('Time Slip publishes only the past and uses the reconstructed founding cale
  assert.equal(moments.length,95);
  for(const scene of scenes){
   assert.equal(scene.date.year,61);assert.equal(scene.date_status,'working');
-  assert(scene.day>=272&&scene.day<=278,scene.id);
+  assert(scene.day>=272+originShift&&scene.day<=278+originShift,scene.id);
  }
- assert.equal(arc.day_start,272);assert.equal(arc.day_end,278);
- assert.equal(event('ev-time-slip-136-past-exit').day,278);
+ assert.equal(arc.day_start,272+originShift);assert.equal(arc.day_end,278+originShift);
+ assert.equal(event('ev-time-slip-136-past-exit').day,278+originShift);
  assert(!moments.some(e=>/могил|дорослий Наруто|доросла Сакура/.test(e.title)));
 });
 
@@ -39,7 +40,7 @@ test('the unnamed traveller has his own profile and never joins young Sasuke’s
  for(const id of ['c-boruto',traveler]){
   const state=data.character_profiles_v2.find(p=>p.entity_id===id).states[0];
   assert.equal(state.from,'ev-time-slip-129-arrival.start');assert.equal(state.to,'ev-time-slip-136-past-exit.end');
-  assert.equal(state.from_day,272);assert.equal(state.to_day,278);
+  assert.equal(state.from_day,272+originShift);assert.equal(state.to_day,278+originShift);
   const line=moments.filter(e=>e.tracks.includes(id));
   assert(line.some(e=>e.id==='ev-time-slip-136-past-exit'));
   assert(!line.some(e=>e.day>state.to_day||e.id==='ev-time-slip-136-hyuga-find'));
@@ -52,7 +53,7 @@ test('continuations and the exit from the past respect causality without repeati
  for(const ep of [133,134,135]){
   const epScenes=scenes.filter(s=>s.episode_id===`ep-time-slip-${ep}`);
   // The opening of 133 continues the previous evening; its battle is on 04.10.
-  for(const s of epScenes.filter(s=>!s.id.endsWith('identity-agreement')))assert.equal(s.day,276,s.id);
+  for(const s of epScenes.filter(s=>!s.id.endsWith('identity-agreement')))assert.equal(s.day,276+originShift,s.id);
  }
  const links=data.links.filter(l=>l.id.startsWith('lnk-time-slip-'));
  for(const link of links.filter(l=>l.a.startsWith('sc-time-slip')||l.a.startsWith('ev-time-slip')))assert(day(link.a)<=day(link.b),link.id);

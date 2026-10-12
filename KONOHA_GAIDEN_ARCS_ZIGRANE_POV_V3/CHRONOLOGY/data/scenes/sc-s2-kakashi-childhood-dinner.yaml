@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-kakashi-childhood-dinner
+episode_id: ep-s2-kakashi-childhood-dinner
+display_rank: 27200
+continuity_id: main
+title: Какаші запрошує Рін та Обіто на рибу
+description: Після Академії він помічає, що вони стежать за його тренуванням, і кличе їх до столу.
+location_id: loc-kakashi-home
+placement:
+  anchor_id: ta-s2-43-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-childhood-dinner-1
+  title: Какаші запрошує Рін та Обіто на рибу
+  text: Після Академії він помічає, що вони стежать за його тренуванням, і кличе їх до столу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-childhood-dinner
+relations: []
+presence:
+- id: pr-s2-kakashi-childhood-dinner-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-childhood-dinner.start
+  to: sc-s2-kakashi-childhood-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-childhood-dinner
+- id: pr-s2-kakashi-childhood-dinner-c-obito
+  entity_id: c-obito
+  from: sc-s2-kakashi-childhood-dinner.start
+  to: sc-s2-kakashi-childhood-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-childhood-dinner
+- id: pr-s2-kakashi-childhood-dinner-c-rin
+  entity_id: c-rin
+  from: sc-s2-kakashi-childhood-dinner.start
+  to: sc-s2-kakashi-childhood-dinner.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-childhood-dinner

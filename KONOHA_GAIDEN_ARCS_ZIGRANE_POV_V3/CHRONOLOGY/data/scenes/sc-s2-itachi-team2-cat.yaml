@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-itachi-team2-cat
+episode_id: ep-s2-itachi-team2-cat
+display_rank: 31200
+continuity_id: main
+title: Команда Ітачі ловить ніндзя-кота
+description: Тенма хоче отримати вуса для ліків батькові; Ітачі завершує завдання та рятує товариша.
+location_id: loc-nekobaa-armoury
+placement:
+  anchor_id: ta-s2-51-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-team2-cat-1
+  title: Команда Ітачі ловить ніндзя-кота
+  text: Тенма хоче отримати вуса для ліків батькові; Ітачі завершує завдання та рятує товариша.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-tenma-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-shinko-inari
+    role: participant
+    mode: physical
+  - entity_id: c-yuki-minazuki
+    role: participant
+    mode: physical
+  - entity_id: c-nekoba
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-team2-cat
+relations: []
+presence:
+- id: pr-s2-itachi-team2-cat-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-team2-cat.start
+  to: sc-s2-itachi-team2-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-team2-cat
+- id: pr-s2-itachi-team2-cat-c-tenma-izumo
+  entity_id: c-tenma-izumo
+  from: sc-s2-itachi-team2-cat.start
+  to: sc-s2-itachi-team2-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-team2-cat
+- id: pr-s2-itachi-team2-cat-c-shinko-inari
+  entity_id: c-shinko-inari
+  from: sc-s2-itachi-team2-cat.start
+  to: sc-s2-itachi-team2-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-team2-cat
+- id: pr-s2-itachi-team2-cat-c-yuki-minazuki
+  entity_id: c-yuki-minazuki
+  from: sc-s2-itachi-team2-cat.start
+  to: sc-s2-itachi-team2-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-team2-cat
+- id: pr-s2-itachi-team2-cat-c-nekoba
+  entity_id: c-nekoba
+  from: sc-s2-itachi-team2-cat.start
+  to: sc-s2-itachi-team2-cat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-team2-cat

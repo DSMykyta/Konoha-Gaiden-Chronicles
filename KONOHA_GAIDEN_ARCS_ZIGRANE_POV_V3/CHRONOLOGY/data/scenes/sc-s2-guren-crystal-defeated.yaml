@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-guren-crystal-defeated
+episode_id: ep-s2-guren-crystal-defeated
+display_rank: 7800
+continuity_id: main
+title: Комахи Шіно руйнують кристалічну пастку
+description: Сай стримує Ґозу; Какаші й Наруто відтісняють Ґурен.
+location_id: loc-three-tails-forest
+placement:
+  anchor_id: ta-s2-66-04-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guren-crystal-defeated-1
+  title: Комахи Шіно руйнують кристалічну пастку
+  text: Сай стримує Ґозу; Какаші й Наруто відтісняють Ґурен.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-gozu-guren
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guren-crystal-defeated
+relations: []
+presence:
+- id: pr-s2-guren-crystal-defeated-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-guren-crystal-defeated.start
+  to: sc-s2-guren-crystal-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-crystal-defeated
+- id: pr-s2-guren-crystal-defeated-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-guren-crystal-defeated.start
+  to: sc-s2-guren-crystal-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-crystal-defeated
+- id: pr-s2-guren-crystal-defeated-c-shino
+  entity_id: c-shino
+  from: sc-s2-guren-crystal-defeated.start
+  to: sc-s2-guren-crystal-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-crystal-defeated
+- id: pr-s2-guren-crystal-defeated-c-sai
+  entity_id: c-sai
+  from: sc-s2-guren-crystal-defeated.start
+  to: sc-s2-guren-crystal-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-crystal-defeated
+- id: pr-s2-guren-crystal-defeated-c-guren
+  entity_id: c-guren
+  from: sc-s2-guren-crystal-defeated.start
+  to: sc-s2-guren-crystal-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-crystal-defeated
+- id: pr-s2-guren-crystal-defeated-c-gozu-guren
+  entity_id: c-gozu-guren
+  from: sc-s2-guren-crystal-defeated.start
+  to: sc-s2-guren-crystal-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guren-crystal-defeated

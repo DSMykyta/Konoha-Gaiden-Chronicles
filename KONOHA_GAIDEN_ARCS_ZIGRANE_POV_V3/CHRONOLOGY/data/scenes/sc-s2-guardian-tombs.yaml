@@ -1,0 +1,175 @@
+schema_version: 1
+id: sc-s2-guardian-tombs
+episode_id: ep-s2-guardian-tombs
+display_rank: 4500
+continuity_id: main
+title: Команда потрапляє в пастку грабіжників
+description: Земляні стіни розділяють шинобі; Фудо, Фука й Фуен затримують їх. Він послаблює печать на його тілі;
+  команда вибирається з пастки.
+location_id: loc-guardian-hidden-tombs
+placement:
+  anchor_id: ta-s2-66-03-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guardian-tombs-1
+  title: Команда потрапляє в пастку грабіжників
+  text: Земляні стіни розділяють шинобі; Фудо, Фука й Фуен затримують їх.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sora-guardian
+    role: participant
+    mode: physical
+  - entity_id: c-furido
+    role: participant
+    mode: physical
+  - entity_id: c-fudo
+    role: participant
+    mode: physical
+  - entity_id: c-fuka
+    role: participant
+    mode: physical
+  - entity_id: c-fuen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: ev-s2-guardian-tombs-2
+  title: Фурідо розкриває силу Сори
+  text: Він послаблює печать на його тілі; команда вибирається з пастки.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sora-guardian
+    role: participant
+    mode: physical
+  - entity_id: c-furido
+    role: participant
+    mode: physical
+  - entity_id: c-fudo
+    role: participant
+    mode: physical
+  - entity_id: c-fuka
+    role: participant
+    mode: physical
+  - entity_id: c-fuen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guardian-tombs
+relations:
+- id: rel-s2-guardian-tombs-1
+  kind: before
+  a: ev-s2-guardian-tombs-1
+  b: ev-s2-guardian-tombs-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+presence:
+- id: pr-s2-guardian-tombs-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-sai
+  entity_id: c-sai
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-sora-guardian
+  entity_id: c-sora-guardian
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-furido
+  entity_id: c-furido
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-fudo
+  entity_id: c-fudo
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-fuka
+  entity_id: c-fuka
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs
+- id: pr-s2-guardian-tombs-c-fuen
+  entity_id: c-fuen
+  from: sc-s2-guardian-tombs.start
+  to: sc-s2-guardian-tombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guardian-tombs

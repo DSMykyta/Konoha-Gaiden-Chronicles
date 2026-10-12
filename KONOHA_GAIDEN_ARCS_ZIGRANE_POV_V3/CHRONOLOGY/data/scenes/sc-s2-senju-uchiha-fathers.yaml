@@ -1,0 +1,95 @@
+schema_version: 1
+id: sc-s2-senju-uchiha-fathers
+episode_id: ep-s2-senju-uchiha-fathers
+display_rank: 42000
+continuity_id: main
+title: Батьки викривають дружбу дітей
+description: Хашірама й Мадара попереджають один одного камінцями; напад на молодших братів розриває їхню дружбу.
+location_id: loc-founding-river
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-senju-uchiha-fathers-1
+  title: Батьки викривають дружбу дітей
+  text: Хашірама й Мадара попереджають один одного камінцями; напад на молодших братів розриває їхню дружбу.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  - entity_id: c-izuna
+    role: participant
+    mode: physical
+  - entity_id: c-butsuma
+    role: participant
+    mode: physical
+  - entity_id: c-tajima
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-senju-uchiha-fathers
+relations: []
+presence:
+- id: pr-s2-senju-uchiha-fathers-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-senju-uchiha-fathers.start
+  to: sc-s2-senju-uchiha-fathers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-fathers
+- id: pr-s2-senju-uchiha-fathers-c-madara
+  entity_id: c-madara
+  from: sc-s2-senju-uchiha-fathers.start
+  to: sc-s2-senju-uchiha-fathers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-fathers
+- id: pr-s2-senju-uchiha-fathers-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-senju-uchiha-fathers.start
+  to: sc-s2-senju-uchiha-fathers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-fathers
+- id: pr-s2-senju-uchiha-fathers-c-izuna
+  entity_id: c-izuna
+  from: sc-s2-senju-uchiha-fathers.start
+  to: sc-s2-senju-uchiha-fathers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-fathers
+- id: pr-s2-senju-uchiha-fathers-c-butsuma
+  entity_id: c-butsuma
+  from: sc-s2-senju-uchiha-fathers.start
+  to: sc-s2-senju-uchiha-fathers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-fathers
+- id: pr-s2-senju-uchiha-fathers-c-tajima
+  entity_id: c-tajima
+  from: sc-s2-senju-uchiha-fathers.start
+  to: sc-s2-senju-uchiha-fathers.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-fathers

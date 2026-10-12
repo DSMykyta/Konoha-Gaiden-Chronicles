@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-itachi-great-fireball
+episode_id: ep-s2-itachi-great-fireball
+display_rank: 2000
+continuity_id: main
+title: Ітачі швидко опановує Велику Вогняну Кулю
+description: Фуґаку навчає його після переселення клану.
+location_id: loc-uchiha-training-ground
+placement:
+  anchor_id: ta-s2-49-11-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-great-fireball-1
+  title: Ітачі швидко опановує Велику Вогняну Кулю
+  text: Фуґаку навчає його після переселення клану.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-great-fireball
+relations: []
+presence:
+- id: pr-s2-itachi-great-fireball-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-great-fireball.start
+  to: sc-s2-itachi-great-fireball.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-great-fireball
+- id: pr-s2-itachi-great-fireball-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-itachi-great-fireball.start
+  to: sc-s2-itachi-great-fireball.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-great-fireball

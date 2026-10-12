@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-suigetsu-karin-training
+episode_id: ep-s2-suigetsu-karin-training
+display_rank: 25500
+continuity_id: main
+title: Орочімару випробовує Суйґецу й Карін
+description: Карін зупиняє втечу Суйґецу своїми чакровими ланцюгами.
+location_id: loc-orochimaru-southern-hideout
+placement:
+  anchor_id: ta-s2-64-10-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-suigetsu-karin-training-1
+  title: Орочімару випробовує Суйґецу й Карін
+  text: Карін зупиняє втечу Суйґецу своїми чакровими ланцюгами.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-suigetsu-karin-training
+relations: []
+presence:
+- id: pr-s2-suigetsu-karin-training-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-suigetsu-karin-training.start
+  to: sc-s2-suigetsu-karin-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-karin-training
+- id: pr-s2-suigetsu-karin-training-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-suigetsu-karin-training.start
+  to: sc-s2-suigetsu-karin-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-karin-training
+- id: pr-s2-suigetsu-karin-training-c-karin
+  entity_id: c-karin
+  from: sc-s2-suigetsu-karin-training.start
+  to: sc-s2-suigetsu-karin-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-karin-training

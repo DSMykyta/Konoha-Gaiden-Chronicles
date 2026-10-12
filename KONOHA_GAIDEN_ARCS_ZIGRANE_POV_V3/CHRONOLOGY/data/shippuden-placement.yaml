@@ -1,0 +1,122 @@
+schema_version: 1
+calendar: konoha-founding
+review: working
+scope: Основна тяглість, таймскіп та Shippuden до збору армії. Фільми перевіряються у власних гілках.
+reservations:
+- id: naruto-jiraiya-timeskip
+  start: 62-05-31
+  end: 64-11-29
+  actors:
+  - c-naruto
+  - c-jiraiya
+  allow_arc_ids:
+  - arc-s2-timeskip
+- id: kazekage-outbound-and-return
+  start: 64-12-01
+  end: 64-12-09
+  actors:
+  - c-naruto
+  - c-sakura
+  - c-kakashi
+  allow_arc_ids:
+  - arc-s2-kazekage-rescue
+  - arc-s2-rescue-sealing-end
+  allow_scene_ids:
+  - sc-s2-sai-first-clash
+  - sc-s2-yamato-appointed
+  - sc-s2-yamato-cloak-warning
+- id: tenchi-outbound-and-return
+  start: 64-12-10
+  end: 64-12-19
+  actors:
+  - c-naruto
+  - c-sakura
+  - c-sai
+  - c-yamato
+  allow_arc_ids:
+  - arc-s2-tenchi
+- id: jiraiya-last-road
+  start: 66-07-17
+  end: 66-07-21
+  actors:
+  - c-jiraiya
+  allow_arc_ids:
+  - arc-s2-jiraiya-pain
+- id: power-investigation-and-return
+  start: 66-08-30
+  end: 66-09-05
+  actors:
+  - c-naruto
+  - c-sakura
+  - c-yamato
+  - c-sai
+  allow_arc_ids:
+  - arc-s2-power
+  allow_scene_ids:
+  - sc-s2-naruto-seal-key
+  note: Мьобоку 30.08 — підтверджене зворотне призивання, не звичайний піший шлях.
+- id: sea-voyage
+  start: 66-09-06
+  end: 66-10-02
+  actors:
+  - c-naruto
+  - c-yamato
+  - c-aoba
+  - c-might-guy
+  allow_arc_ids:
+  - arc-s2-sea-voyage
+- id: shikamaru-tenten-support
+  start: 66-09-23
+  end: 66-09-30
+  actors:
+  - c-shikamaru
+  - c-tenten
+  allow_arc_ids:
+  - arc-s2-sea-voyage
+  - arc-s2-prewar-support-route
+  allow_scene_ids:
+  - sc-s2-kunoichi-evening
+- id: kakashi-sea-help-and-return
+  start: 66-09-27
+  end: 66-10-03
+  actors:
+  - c-kakashi
+  allow_scene_ids:
+  - sc-s2-kakashi-voyage-sos
+intervals:
+- id: six-days-to-tenchi
+  from: sc-s2-kakashi-hospitalised
+  to: sc-s2-tenchi-spy-meeting
+  days: 6
+  evidence: 'Shippuden 033: лишилося шість днів'
+- id: kakashi-minimum-hospital-week
+  from: sc-s2-kakashi-hospitalised
+  to: sc-s2-kakashi-new-training
+  min_days: 7
+  evidence: 'Shippuden 033: щонайменше тиждень'
+- id: two-week-silence-route
+  from: sc-s2-silence-route-supplies
+  to: sc-s2-silence-route-end
+  days: 14
+  evidence: 'Shippuden 229: двотижневий перехід'
+- id: three-day-shukaku-extraction
+  from: sc-s2-gaara-extraction
+  to: sc-s2-gaara-extraction-complete
+  days: 2
+  evidence: Перший і третій календарні дні триденного процесу
+- id: power-home-before-voyage
+  from: sc-s2-power-survivors-letter
+  to: sc-s2-naruto-sea-departure
+  min_days: 1
+- id: kakashi-return-before-kiba
+  from: sc-s2-kakashi-voyage-sos
+  to: sc-s2-kiba-kakashi-training
+  min_days: 4
+- id: support-return-before-assembly
+  from: sc-s2-shikamaru-tenten-home
+  to: sc-s2-allied-army-assembly
+  min_days: 4
+open_issues:
+- 'CLOCK-S2-001: спадковий календар Part I / тіло Орочімару / повернення через 2,5 роки'
+- 'CLOCK-S2-002: довгий робочий проміжок від грудня 64 до березня 66; точну тривалість джерела не підтверджують'
+- 'CLOCK-S2-003: вихідні віки у січні 61 і дата народження Наруто потребують окремого узгодження'

@@ -1,0 +1,40 @@
+schema_version: 1
+id: sc-s2-kaguya-tsukuyomi
+episode_id: ep-s2-kaguya-tsukuyomi
+display_rank: 42800
+continuity_id: main
+title: Каґуя підкорює людей Цукуйомі
+description: Божественне дерево забирає полонених; її сини починають бачити приховану ціну порядку.
+location_id: loc-ancient-god-tree
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kaguya-tsukuyomi-1
+  title: Каґуя підкорює людей Цукуйомі
+  text: Божественне дерево забирає полонених; її сини починають бачити приховану ціну порядку.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kaguya
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kaguya-tsukuyomi
+relations: []
+presence:
+- id: pr-s2-kaguya-tsukuyomi-c-kaguya
+  entity_id: c-kaguya
+  from: sc-s2-kaguya-tsukuyomi.start
+  to: sc-s2-kaguya-tsukuyomi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kaguya-tsukuyomi

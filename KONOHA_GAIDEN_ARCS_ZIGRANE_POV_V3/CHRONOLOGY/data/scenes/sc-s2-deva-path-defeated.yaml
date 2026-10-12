@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-deva-path-defeated
+episode_id: ep-s2-deva-path-defeated
+display_rank: 14800
+continuity_id: main
+title: Наруто використовує п’ятисекундну перерву
+description: Він відволікає Пейна клонами та добиває Шлях Дева Расенґаном.
+location_id: loc-konoha-pain-crater
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-deva-path-defeated-1
+  title: Наруто використовує п’ятисекундну перерву
+  text: Він відволікає Пейна клонами та добиває Шлях Дева Расенґаном.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-deva-path-defeated
+relations: []
+presence:
+- id: pr-s2-deva-path-defeated-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-deva-path-defeated.start
+  to: sc-s2-deva-path-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-deva-path-defeated
+- id: pr-s2-deva-path-defeated-c-pain
+  entity_id: c-pain
+  from: sc-s2-deva-path-defeated.start
+  to: sc-s2-deva-path-defeated.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-deva-path-defeated

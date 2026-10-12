@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-duy-eight-gates-sacrifice
+episode_id: ep-s2-duy-eight-gates-sacrifice
+display_rank: 1900
+continuity_id: main
+title: Дай захищає трійцю від мечників Туману
+description: Восьмі Ворота дають змогу затримати нападників; Ґай, Ґенма й Ебісу залишають поле, а Дай гине.
+location_id: loc-mist-swordsmen-battlefield
+placement:
+  anchor_id: ta-s2-47-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-duy-eight-gates-sacrifice-1
+  title: Дай захищає трійцю від мечників Туману
+  text: Восьмі Ворота дають змогу затримати нападників; Ґай, Ґенма й Ебісу залишають поле, а Дай гине.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-might-duy
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-genma
+    role: participant
+    mode: physical
+  - entity_id: c-ebisu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-duy-eight-gates-sacrifice
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-duy-eight-gates-sacrifice-c-might-duy
+  entity_id: c-might-duy
+  from: sc-s2-duy-eight-gates-sacrifice.start
+  to: sc-s2-duy-eight-gates-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-duy-eight-gates-sacrifice
+- id: pr-s2-duy-eight-gates-sacrifice-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-duy-eight-gates-sacrifice.start
+  to: sc-s2-duy-eight-gates-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-duy-eight-gates-sacrifice
+- id: pr-s2-duy-eight-gates-sacrifice-c-genma
+  entity_id: c-genma
+  from: sc-s2-duy-eight-gates-sacrifice.start
+  to: sc-s2-duy-eight-gates-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-duy-eight-gates-sacrifice
+- id: pr-s2-duy-eight-gates-sacrifice-c-ebisu
+  entity_id: c-ebisu
+  from: sc-s2-duy-eight-gates-sacrifice.start
+  to: sc-s2-duy-eight-gates-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-duy-eight-gates-sacrifice

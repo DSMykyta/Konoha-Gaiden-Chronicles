@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-root-sai-order
+episode_id: ep-s2-root-sai-order
+display_rank: 2500
+continuity_id: main
+title: Данзо відряджає Сая до Команди Какаші
+description: Сай отримує прикриття нового товариша Наруто й таємне завдання щодо Саске.
+location_id: loc-root-base
+placement:
+  anchor_id: ta-s2-64-12-09
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-root-sai-order-1
+  title: Данзо відряджає Сая до Команди Какаші
+  text: Сай отримує прикриття нового товариша Наруто й таємне завдання щодо Саске.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-root-sai-order
+relations: []
+presence:
+- id: pr-s2-root-sai-order-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-root-sai-order.start
+  to: sc-s2-root-sai-order.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-root-sai-order
+- id: pr-s2-root-sai-order-c-sai
+  entity_id: c-sai
+  from: sc-s2-root-sai-order.start
+  to: sc-s2-root-sai-order.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-root-sai-order

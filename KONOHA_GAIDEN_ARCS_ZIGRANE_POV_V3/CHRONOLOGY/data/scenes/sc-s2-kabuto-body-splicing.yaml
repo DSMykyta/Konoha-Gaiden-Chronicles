@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-kabuto-body-splicing
+episode_id: ep-s2-kabuto-body-splicing
+display_rank: 100
+continuity_id: main
+title: Кабуто поєднує матеріал експериментів Орочімару
+description: Він привласнює властивості піддослідних і готує нове тіло для власних технік.
+location_id: loc-kabuto-research-hideout
+placement:
+  anchor_id: ta-s2-66-07-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-body-splicing-1
+  title: Кабуто поєднує матеріал експериментів Орочімару
+  text: Він привласнює властивості піддослідних і готує нове тіло для власних технік.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-body-splicing
+relations: []
+presence:
+- id: pr-s2-kabuto-body-splicing-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-body-splicing.start
+  to: sc-s2-kabuto-body-splicing.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-body-splicing

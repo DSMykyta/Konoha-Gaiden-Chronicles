@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-sky-prisoners-rescued
+episode_id: ep-s2-sky-prisoners-rescued
+display_rank: 38300
+continuity_id: movie-bonds
+title: Амару визволяє полонених
+description: Наруто знищує фортецю; Амару рятує його планером.
+location_id: loc-ancor-vantian
+placement:
+  anchor_id: ta-s2-66-05-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-sky-prisoners-rescued-1
+  title: Амару визволяє полонених
+  text: Наруто знищує фортецю; Амару рятує його планером.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-amaru
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sky-prisoners-rescued
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-sky-prisoners-rescued-c-amaru
+  entity_id: c-amaru
+  from: sc-s2-sky-prisoners-rescued.start
+  to: sc-s2-sky-prisoners-rescued.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-prisoners-rescued
+- id: pr-s2-sky-prisoners-rescued-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-sky-prisoners-rescued.start
+  to: sc-s2-sky-prisoners-rescued.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-prisoners-rescued
+- id: pr-s2-sky-prisoners-rescued-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sky-prisoners-rescued.start
+  to: sc-s2-sky-prisoners-rescued.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-prisoners-rescued

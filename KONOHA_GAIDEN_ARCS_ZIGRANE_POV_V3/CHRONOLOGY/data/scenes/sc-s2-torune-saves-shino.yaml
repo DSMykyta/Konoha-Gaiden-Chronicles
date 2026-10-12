@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-torune-saves-shino
+episode_id: ep-s2-torune-saves-shino
+display_rank: 34400
+continuity_id: main
+title: Торуне погоджується вступити до Кореня
+description: Він займає місце Шіно після життя під опікою Шібі; згодом товаришує з Фу.
+location_id: loc-shino-home
+placement:
+  anchor_id: ta-s2-55-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-torune-saves-shino-1
+  title: Торуне погоджується вступити до Кореня
+  text: Він займає місце Шіно після життя під опікою Шібі; згодом товаришує з Фу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-torune
+    role: participant
+    mode: physical
+  - entity_id: c-shibi
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-torune-saves-shino
+relations: []
+presence:
+- id: pr-s2-torune-saves-shino-c-shino
+  entity_id: c-shino
+  from: sc-s2-torune-saves-shino.start
+  to: sc-s2-torune-saves-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-torune-saves-shino
+- id: pr-s2-torune-saves-shino-c-torune
+  entity_id: c-torune
+  from: sc-s2-torune-saves-shino.start
+  to: sc-s2-torune-saves-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-torune-saves-shino
+- id: pr-s2-torune-saves-shino-c-shibi
+  entity_id: c-shibi
+  from: sc-s2-torune-saves-shino.start
+  to: sc-s2-torune-saves-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-torune-saves-shino
+- id: pr-s2-torune-saves-shino-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-torune-saves-shino.start
+  to: sc-s2-torune-saves-shino.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-torune-saves-shino

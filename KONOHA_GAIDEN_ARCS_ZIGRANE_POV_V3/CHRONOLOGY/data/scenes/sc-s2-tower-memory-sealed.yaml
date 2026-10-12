@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-tower-memory-sealed
+episode_id: ep-s2-tower-memory-sealed
+display_rank: 39800
+continuity_id: movie-tower
+title: Мінато запечатує спогади про зустріч
+description: Зміна історії має зупинитися; часовий потік повертає мандрівників.
+location_id: loc-roran-ryumyaku-chamber
+placement:
+  anchor_id: ta-s2-45-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tower-memory-sealed-1
+  title: Мінато запечатує спогади про зустріч
+  text: Зміна історії має зупинитися; часовий потік повертає мандрівників.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tower-memory-sealed
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-tower-memory-sealed-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tower-memory-sealed.start
+  to: sc-s2-tower-memory-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-memory-sealed
+- id: pr-s2-tower-memory-sealed-c-minato
+  entity_id: c-minato
+  from: sc-s2-tower-memory-sealed.start
+  to: sc-s2-tower-memory-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-memory-sealed
+- id: pr-s2-tower-memory-sealed-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-tower-memory-sealed.start
+  to: sc-s2-tower-memory-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-memory-sealed
+- id: pr-s2-tower-memory-sealed-c-sara
+  entity_id: c-sara
+  from: sc-s2-tower-memory-sealed.start
+  to: sc-s2-tower-memory-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-memory-sealed

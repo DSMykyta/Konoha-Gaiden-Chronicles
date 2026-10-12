@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-motoi-bee-rescue
+episode_id: ep-s2-motoi-bee-rescue
+display_rank: 22000
+continuity_id: main
+title: Бі рятує Мотої від кальмара
+description: Після розповіді про давню спробу вбивства Бі називає Мотої другом.
+location_id: loc-island-turtle-shore
+placement:
+  anchor_id: ta-s2-66-10-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-motoi-bee-rescue-1
+  title: Бі рятує Мотої від кальмара
+  text: Після розповіді про давню спробу вбивства Бі називає Мотої другом.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-motoi
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-motoi-bee-rescue
+relations: []
+presence:
+- id: pr-s2-motoi-bee-rescue-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-motoi-bee-rescue.start
+  to: sc-s2-motoi-bee-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-motoi-bee-rescue
+- id: pr-s2-motoi-bee-rescue-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-motoi-bee-rescue.start
+  to: sc-s2-motoi-bee-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-motoi-bee-rescue
+- id: pr-s2-motoi-bee-rescue-c-motoi
+  entity_id: c-motoi
+  from: sc-s2-motoi-bee-rescue.start
+  to: sc-s2-motoi-bee-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-motoi-bee-rescue
+- id: pr-s2-motoi-bee-rescue-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-motoi-bee-rescue.start
+  to: sc-s2-motoi-bee-rescue.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-motoi-bee-rescue

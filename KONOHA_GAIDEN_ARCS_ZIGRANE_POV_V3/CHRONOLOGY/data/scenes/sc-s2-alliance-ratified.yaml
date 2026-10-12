@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-alliance-ratified
+episode_id: ep-s2-alliance-ratified
+display_rank: 18600
+continuity_id: main
+title: Даймьо затверджують спільне військо
+description: Правителі П’яти Країн погоджують союз проти Акацукі.
+location_id: loc-five-daimyo-conference
+placement:
+  anchor_id: ta-s2-66-08-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-alliance-ratified-1
+  title: Даймьо затверджують спільне військо
+  text: Правителі П’яти Країн погоджують союз проти Акацукі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-fire-daimyo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-alliance-ratified
+relations: []
+presence:
+- id: pr-s2-alliance-ratified-c-fire-daimyo
+  entity_id: c-fire-daimyo
+  from: sc-s2-alliance-ratified.start
+  to: sc-s2-alliance-ratified.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-alliance-ratified

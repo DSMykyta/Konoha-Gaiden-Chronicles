@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-jiraiya-handover
+episode_id: ep-s2-jiraiya-handover
+display_rank: 500
+continuity_id: main
+title: Джирая попереджає Какаші про Акацукі
+description: Джирая повертає Наруто під опіку Какаші й попереджає союзні села про полювання на джінчюрікі.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-64-11-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-handover-1
+  title: Джирая попереджає Какаші про Акацукі
+  text: Джирая повертає Наруто під опіку Какаші й попереджає союзні села про полювання на джінчюрікі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-handover
+relations: []
+presence:
+- id: pr-s2-jiraiya-handover-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-handover.start
+  to: sc-s2-jiraiya-handover.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-handover
+- id: pr-s2-jiraiya-handover-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-jiraiya-handover.start
+  to: sc-s2-jiraiya-handover.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-handover

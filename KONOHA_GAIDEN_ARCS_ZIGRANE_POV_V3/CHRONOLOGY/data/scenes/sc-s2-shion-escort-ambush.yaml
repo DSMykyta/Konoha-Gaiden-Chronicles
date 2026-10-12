@@ -1,0 +1,98 @@
+schema_version: 1
+id: sc-s2-shion-escort-ambush
+episode_id: ep-s2-shion-escort-ambush
+display_rank: 37300
+continuity_id: movie-shion
+title: Загін відбиває напад послідовників Йомі
+description: Противники підсилюють техніки чакрою Морьо; учні Конохи розділяють охорону та бій.
+location_id: loc-shion-sealing-route
+placement:
+  anchor_id: ta-s2-65-05-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shion-escort-ambush-1
+  title: Загін відбиває напад послідовників Йомі
+  text: Противники підсилюють техніки чакрою Морьо; учні Конохи розділяють охорону та бій.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-shion
+    role: participant
+    mode: physical
+  - entity_id: c-taruho
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shion-escort-ambush
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-shion-escort-ambush-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-shion-escort-ambush.start
+  to: sc-s2-shion-escort-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-escort-ambush
+- id: pr-s2-shion-escort-ambush-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-shion-escort-ambush.start
+  to: sc-s2-shion-escort-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-escort-ambush
+- id: pr-s2-shion-escort-ambush-c-neji
+  entity_id: c-neji
+  from: sc-s2-shion-escort-ambush.start
+  to: sc-s2-shion-escort-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-escort-ambush
+- id: pr-s2-shion-escort-ambush-c-lee
+  entity_id: c-lee
+  from: sc-s2-shion-escort-ambush.start
+  to: sc-s2-shion-escort-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-escort-ambush
+- id: pr-s2-shion-escort-ambush-c-shion
+  entity_id: c-shion
+  from: sc-s2-shion-escort-ambush.start
+  to: sc-s2-shion-escort-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-escort-ambush
+- id: pr-s2-shion-escort-ambush-c-taruho
+  entity_id: c-taruho
+  from: sc-s2-shion-escort-ambush.start
+  to: sc-s2-shion-escort-ambush.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shion-escort-ambush

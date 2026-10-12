@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-gaara-birth
+episode_id: ep-s2-gaara-birth
+display_rank: 32900
+continuity_id: main
+title: У Ґаарі запечатують Шукаку
+description: Карура помирає після пологів; її захист залишається в піску сина.
+location_id: loc-suna-hospital
+placement:
+  anchor_id: ta-s2-49-01-19
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-gaara-birth-1
+  title: У Ґаарі запечатують Шукаку
+  text: Карура помирає після пологів; її захист залишається в піску сина.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-karura
+    role: participant
+    mode: physical
+  - entity_id: c-rasa
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-gaara-birth
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-gaara-birth-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-gaara-birth.start
+  to: sc-s2-gaara-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-birth
+- id: pr-s2-gaara-birth-c-karura
+  entity_id: c-karura
+  from: sc-s2-gaara-birth.start
+  to: sc-s2-gaara-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-birth
+- id: pr-s2-gaara-birth-c-rasa
+  entity_id: c-rasa
+  from: sc-s2-gaara-birth.start
+  to: sc-s2-gaara-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-birth
+- id: pr-s2-gaara-birth-c-chiyo
+  entity_id: c-chiyo
+  from: sc-s2-gaara-birth.start
+  to: sc-s2-gaara-birth.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-birth

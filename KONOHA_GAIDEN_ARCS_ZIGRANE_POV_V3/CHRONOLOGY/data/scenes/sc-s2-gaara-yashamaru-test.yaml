@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-gaara-yashamaru-test
+episode_id: ep-s2-gaara-yashamaru-test
+display_rank: 33000
+continuity_id: main
+title: Раса наказує випробувати Ґаару
+description: Яшамару нападає на нього та бреше про ненависть матері; напад руйнує довіру Ґаари до людей.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-55-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-gaara-yashamaru-test-1
+  title: Раса наказує випробувати Ґаару
+  text: Яшамару нападає на нього та бреше про ненависть матері; напад руйнує довіру Ґаари до людей.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-yashamaru
+    role: participant
+    mode: physical
+  - entity_id: c-rasa
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-gaara-yashamaru-test
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-gaara-yashamaru-test-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-gaara-yashamaru-test.start
+  to: sc-s2-gaara-yashamaru-test.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-yashamaru-test
+- id: pr-s2-gaara-yashamaru-test-c-yashamaru
+  entity_id: c-yashamaru
+  from: sc-s2-gaara-yashamaru-test.start
+  to: sc-s2-gaara-yashamaru-test.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-yashamaru-test
+- id: pr-s2-gaara-yashamaru-test-c-rasa
+  entity_id: c-rasa
+  from: sc-s2-gaara-yashamaru-test.start
+  to: sc-s2-gaara-yashamaru-test.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-yashamaru-test

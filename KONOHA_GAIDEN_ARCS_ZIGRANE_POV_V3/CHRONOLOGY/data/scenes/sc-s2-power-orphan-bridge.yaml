@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-power-orphan-bridge
+episode_id: ep-s2-power-main
+display_rank: 400
+continuity_id: main
+title: Наруто рятує Докку й Мііну
+description: Діти тікають від шинобі з протекторами нападників; зруйнований міст приводить до падіння.
+location_id: loc-hacho-broken-bridge
+placement:
+  anchor_id: ta-s2-66-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-orphan-bridge-1
+  title: Наруто рятує Докку й Мііну
+  text: Діти тікають від шинобі з протекторами нападників; зруйнований міст приводить до падіння.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-dokku
+    role: participant
+    mode: physical
+  - entity_id: c-shiseru
+    role: participant
+    mode: physical
+  - entity_id: c-leo-power
+    role: participant
+    mode: physical
+  - entity_id: c-miina
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-orphan-bridge
+relations: []
+presence:
+- id: pr-s2-power-orphan-bridge-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-power-orphan-bridge.start
+  to: sc-s2-power-orphan-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-orphan-bridge
+- id: pr-s2-power-orphan-bridge-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-power-orphan-bridge.start
+  to: sc-s2-power-orphan-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-orphan-bridge
+- id: pr-s2-power-orphan-bridge-c-dokku
+  entity_id: c-dokku
+  from: sc-s2-power-orphan-bridge.start
+  to: sc-s2-power-orphan-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-orphan-bridge
+- id: pr-s2-power-orphan-bridge-c-shiseru
+  entity_id: c-shiseru
+  from: sc-s2-power-orphan-bridge.start
+  to: sc-s2-power-orphan-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-orphan-bridge
+- id: pr-s2-power-orphan-bridge-c-leo-power
+  entity_id: c-leo-power
+  from: sc-s2-power-orphan-bridge.start
+  to: sc-s2-power-orphan-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-orphan-bridge
+- id: pr-s2-power-orphan-bridge-c-miina
+  entity_id: c-miina
+  from: sc-s2-power-orphan-bridge.start
+  to: sc-s2-power-orphan-bridge.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-orphan-bridge

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-itachi-eye-transplant
+episode_id: ep-s2-itachi-eye-transplant
+display_rank: 18500
+continuity_id: main
+title: Саске погоджується на очі Ітачі
+description: Тобі готує пересадку; Саске відновлюється до відкриття Вічного Манґекьо.
+location_id: loc-akatsuki-eastern-hideout
+placement:
+  anchor_id: ta-s2-66-08-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-eye-transplant-1
+  title: Саске погоджується на очі Ітачі
+  text: Тобі готує пересадку; Саске відновлюється до відкриття Вічного Манґекьо.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-eye-transplant
+relations: []
+presence:
+- id: pr-s2-itachi-eye-transplant-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-itachi-eye-transplant.start
+  to: sc-s2-itachi-eye-transplant.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-eye-transplant
+- id: pr-s2-itachi-eye-transplant-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-itachi-eye-transplant.start
+  to: sc-s2-itachi-eye-transplant.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-eye-transplant

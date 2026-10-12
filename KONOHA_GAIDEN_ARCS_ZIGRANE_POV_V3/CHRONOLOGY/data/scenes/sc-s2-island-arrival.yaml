@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-island-arrival
+episode_id: ep-s2-island-arrival
+display_rank: 21800
+continuity_id: main
+title: Наруто прибуває до Бі
+description: Нова S-рангова місія приховує справжню мету захисту; Бі спершу відмовляється навчати його.
+location_id: loc-island-turtle
+placement:
+  anchor_id: ta-s2-66-10-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-island-arrival-1
+  title: Наруто прибуває до Бі
+  text: Нова S-рангова місія приховує справжню мету захисту; Бі спершу відмовляється навчати його.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-motoi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-island-arrival
+relations: []
+presence:
+- id: pr-s2-island-arrival-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-island-arrival.start
+  to: sc-s2-island-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-arrival
+- id: pr-s2-island-arrival-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-island-arrival.start
+  to: sc-s2-island-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-arrival
+- id: pr-s2-island-arrival-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-island-arrival.start
+  to: sc-s2-island-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-arrival
+- id: pr-s2-island-arrival-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-island-arrival.start
+  to: sc-s2-island-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-arrival
+- id: pr-s2-island-arrival-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-island-arrival.start
+  to: sc-s2-island-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-arrival
+- id: pr-s2-island-arrival-c-motoi
+  entity_id: c-motoi
+  from: sc-s2-island-arrival.start
+  to: sc-s2-island-arrival.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-island-arrival

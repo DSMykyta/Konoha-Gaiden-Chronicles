@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-sakura-sleep-bombs
+episode_id: ep-s2-sakura-sleep-bombs
+display_rank: 18200
+continuity_id: main
+title: Сакура присипляє супутників
+description: Вона приховує від них намір і сама виходить до Саске.
+location_id: loc-iron-country-forest
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sakura-sleep-bombs-1
+  title: Сакура присипляє супутників
+  text: Вона приховує від них намір і сама виходить до Саске.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sakura-sleep-bombs
+relations: []
+presence:
+- id: pr-s2-sakura-sleep-bombs-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sakura-sleep-bombs.start
+  to: sc-s2-sakura-sleep-bombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sleep-bombs
+- id: pr-s2-sakura-sleep-bombs-c-sai
+  entity_id: c-sai
+  from: sc-s2-sakura-sleep-bombs.start
+  to: sc-s2-sakura-sleep-bombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sleep-bombs
+- id: pr-s2-sakura-sleep-bombs-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-sakura-sleep-bombs.start
+  to: sc-s2-sakura-sleep-bombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sleep-bombs
+- id: pr-s2-sakura-sleep-bombs-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-sakura-sleep-bombs.start
+  to: sc-s2-sakura-sleep-bombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sleep-bombs
+- id: pr-s2-sakura-sleep-bombs-c-lee
+  entity_id: c-lee
+  from: sc-s2-sakura-sleep-bombs.start
+  to: sc-s2-sakura-sleep-bombs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sakura-sleep-bombs

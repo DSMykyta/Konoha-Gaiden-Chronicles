@@ -1,0 +1,163 @@
+schema_version: 1
+id: sc-s2-yukimaru-leaves
+episode_id: ep-s2-yukimaru-leaves
+display_rank: 8400
+continuity_id: main
+title: Юкімару залишає табір
+description: Ґозу рятує Ґурен, і хлопчик вирушає з ними; Наруто за цілою камелією розуміє, що вони живі.
+location_id: loc-three-tails-camp
+placement:
+  anchor_id: ta-s2-66-04-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-yukimaru-leaves-1
+  title: Юкімару залишає табір
+  text: Ґозу рятує Ґурен, і хлопчик вирушає з ними; Наруто за цілою камелією розуміє, що вони живі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yukimaru
+    role: participant
+    mode: physical
+  - entity_id: c-guren
+    role: participant
+    mode: physical
+  - entity_id: c-gozu-guren
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+relations: []
+presence:
+- id: pr-s2-yukimaru-leaves-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-ino
+  entity_id: c-ino
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-hinata
+  entity_id: c-hinata
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-shino
+  entity_id: c-shino
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-sai
+  entity_id: c-sai
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-yukimaru
+  entity_id: c-yukimaru
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-guren
+  entity_id: c-guren
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves
+- id: pr-s2-yukimaru-leaves-c-gozu-guren
+  entity_id: c-gozu-guren
+  from: sc-s2-yukimaru-leaves.start
+  to: sc-s2-yukimaru-leaves.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-yukimaru-leaves

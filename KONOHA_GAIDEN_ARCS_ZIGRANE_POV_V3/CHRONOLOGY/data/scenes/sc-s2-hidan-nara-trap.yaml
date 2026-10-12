@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-hidan-nara-trap
+episode_id: ep-s2-hidan-nara-trap
+display_rank: 6400
+continuity_id: main
+title: Шикамару підміняє кров для ритуалу
+description: Хідан ранить серце Какудзу замість Шикамару. Вибухові мітки розривають його тіло; яма в лісі клану
+  Нара закривається над ним.
+location_id: loc-nara-forest-trap
+placement:
+  anchor_id: ta-s2-66-03-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hidan-nara-trap-1
+  title: Шикамару підміняє кров для ритуалу
+  text: Хідан ранить серце Какудзу замість Шикамару.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hidan-nara-trap
+- id: ev-s2-hidan-nara-trap-2
+  title: Шикамару підриває й ховає Хідана
+  text: Вибухові мітки розривають його тіло; яма в лісі клану Нара закривається над ним.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hidan-nara-trap
+relations:
+- id: rel-s2-hidan-nara-trap-1
+  kind: before
+  a: ev-s2-hidan-nara-trap-1
+  b: ev-s2-hidan-nara-trap-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hidan-nara-trap
+presence:
+- id: pr-s2-hidan-nara-trap-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-hidan-nara-trap.start
+  to: sc-s2-hidan-nara-trap.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hidan-nara-trap
+- id: pr-s2-hidan-nara-trap-c-hidan
+  entity_id: c-hidan
+  from: sc-s2-hidan-nara-trap.start
+  to: sc-s2-hidan-nara-trap.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hidan-nara-trap

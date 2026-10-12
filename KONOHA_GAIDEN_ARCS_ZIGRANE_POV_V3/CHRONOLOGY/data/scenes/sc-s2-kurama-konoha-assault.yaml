@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-kurama-konoha-assault
+episode_id: ep-s2-kurama-konoha-assault
+display_rank: 30500
+continuity_id: main
+title: Курама атакує Коноху
+description: Хірудзен із Енмою та шинобі відтісняють лиса. Іруку відводять від бою; молодим шинобі не дозволяють
+  наближатися до звіра.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kurama-konoha-assault-1
+  title: Курама атакує Коноху
+  text: Хірудзен із Енмою та шинобі відтісняють лиса.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-enma
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  - entity_id: c-iruka-father
+    role: participant
+    mode: physical
+  - entity_id: c-iruka-mother
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+- id: ev-s2-kurama-konoha-assault-2
+  title: Батьки Іруки гинуть, захищаючи село
+  text: Іруку відводять від бою; молодим шинобі не дозволяють наближатися до звіра.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-enma
+    role: participant
+    mode: physical
+  - entity_id: c-iruka
+    role: participant
+    mode: physical
+  - entity_id: c-iruka-father
+    role: participant
+    mode: physical
+  - entity_id: c-iruka-mother
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+relations:
+- id: rel-s2-kurama-konoha-assault-1
+  kind: before
+  a: ev-s2-kurama-konoha-assault-1
+  b: ev-s2-kurama-konoha-assault-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+presence:
+- id: pr-s2-kurama-konoha-assault-c-kurama
+  entity_id: c-kurama
+  from: sc-s2-kurama-konoha-assault.start
+  to: sc-s2-kurama-konoha-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+- id: pr-s2-kurama-konoha-assault-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-kurama-konoha-assault.start
+  to: sc-s2-kurama-konoha-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+- id: pr-s2-kurama-konoha-assault-c-enma
+  entity_id: c-enma
+  from: sc-s2-kurama-konoha-assault.start
+  to: sc-s2-kurama-konoha-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+- id: pr-s2-kurama-konoha-assault-c-iruka
+  entity_id: c-iruka
+  from: sc-s2-kurama-konoha-assault.start
+  to: sc-s2-kurama-konoha-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+- id: pr-s2-kurama-konoha-assault-c-iruka-father
+  entity_id: c-iruka-father
+  from: sc-s2-kurama-konoha-assault.start
+  to: sc-s2-kurama-konoha-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault
+- id: pr-s2-kurama-konoha-assault-c-iruka-mother
+  entity_id: c-iruka-mother
+  from: sc-s2-kurama-konoha-assault.start
+  to: sc-s2-kurama-konoha-assault.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kurama-konoha-assault

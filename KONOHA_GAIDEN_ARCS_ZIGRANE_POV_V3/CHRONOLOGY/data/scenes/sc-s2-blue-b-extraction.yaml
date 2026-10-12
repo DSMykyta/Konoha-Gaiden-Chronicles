@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-blue-b-extraction
+episode_id: ep-s2-blue-b-extraction
+display_rank: 36000
+continuity_id: main
+title: Орочімару провокує вихід Ґюкі
+description: Експеримент над попереднім джінчюрікі спричиняє його смерть і напад Восьмихвостого; батько Мотої гине.
+location_id: loc-kumogakure
+placement:
+  anchor_id: ta-s2-36-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-blue-b-extraction-1
+  title: Орочімару провокує вихід Ґюкі
+  text: Експеримент над попереднім джінчюрікі спричиняє його смерть і напад Восьмихвостого; батько Мотої гине.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-blue-b
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-a-third
+    role: participant
+    mode: physical
+  - entity_id: c-motoi-father
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-blue-b-extraction
+relations: []
+presence:
+- id: pr-s2-blue-b-extraction-c-blue-b
+  entity_id: c-blue-b
+  from: sc-s2-blue-b-extraction.start
+  to: sc-s2-blue-b-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-blue-b-extraction
+- id: pr-s2-blue-b-extraction-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-blue-b-extraction.start
+  to: sc-s2-blue-b-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-blue-b-extraction
+- id: pr-s2-blue-b-extraction-c-a-third
+  entity_id: c-a-third
+  from: sc-s2-blue-b-extraction.start
+  to: sc-s2-blue-b-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-blue-b-extraction
+- id: pr-s2-blue-b-extraction-c-motoi-father
+  entity_id: c-motoi-father
+  from: sc-s2-blue-b-extraction.start
+  to: sc-s2-blue-b-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-blue-b-extraction

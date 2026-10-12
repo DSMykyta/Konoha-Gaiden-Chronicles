@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-nagato-protects-yahiko
+episode_id: ep-s2-nagato-protects-yahiko
+display_rank: 26800
+continuity_id: main
+title: Наґато захищає Яхіко від шинобі Іви
+description: Після загибелі нападника Джирая пояснює йому відповідальність за свою силу.
+location_id: loc-ame-orphans-hideout
+placement:
+  anchor_id: ta-s2-39-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-nagato-protects-yahiko-1
+  title: Наґато захищає Яхіко від шинобі Іви
+  text: Після загибелі нападника Джирая пояснює йому відповідальність за свою силу.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-yahiko
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-nagato-protects-yahiko
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-nagato-protects-yahiko-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-nagato-protects-yahiko.start
+  to: sc-s2-nagato-protects-yahiko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-protects-yahiko
+- id: pr-s2-nagato-protects-yahiko-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-nagato-protects-yahiko.start
+  to: sc-s2-nagato-protects-yahiko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-protects-yahiko
+- id: pr-s2-nagato-protects-yahiko-c-yahiko
+  entity_id: c-yahiko
+  from: sc-s2-nagato-protects-yahiko.start
+  to: sc-s2-nagato-protects-yahiko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-protects-yahiko
+- id: pr-s2-nagato-protects-yahiko-c-konan
+  entity_id: c-konan
+  from: sc-s2-nagato-protects-yahiko.start
+  to: sc-s2-nagato-protects-yahiko.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-nagato-protects-yahiko

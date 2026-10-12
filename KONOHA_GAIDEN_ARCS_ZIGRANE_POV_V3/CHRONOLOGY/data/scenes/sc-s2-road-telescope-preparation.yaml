@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-road-telescope-preparation
+episode_id: ep-s2-road-telescope-preparation
+display_rank: 0
+continuity_id: movie-road
+title: Тобі вивчає бажання Наруто
+description: Він спостерігає через техніку телескопа й готує пробний варіант Цукуйомі.
+location_id: loc-tobi-observation-hideout
+placement:
+  anchor_id: ta-s2-66-05-31
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-telescope-preparation-1
+  title: Тобі вивчає бажання Наруто
+  text: Він спостерігає через техніку телескопа й готує пробний варіант Цукуйомі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-telescope-preparation
+relations: []
+presence:
+- id: pr-s2-road-telescope-preparation-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-road-telescope-preparation.start
+  to: sc-s2-road-telescope-preparation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-telescope-preparation
+- id: pr-s2-road-telescope-preparation-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-road-telescope-preparation.start
+  to: sc-s2-road-telescope-preparation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-telescope-preparation

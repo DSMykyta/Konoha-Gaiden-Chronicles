@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-juzo-yagura-death
+episode_id: ep-s2-juzo-yagura-death
+display_rank: 32400
+continuity_id: main
+title: Яґура переслідує Ітачі й Джюдзо
+description: Джюдзо прикриває напарника від Бомби хвостатого та гине; Ітачі застосовує Аматерасу.
+location_id: loc-land-water
+placement:
+  anchor_id: ta-s2-57-01-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-juzo-yagura-death-1
+  title: Яґура переслідує Ітачі й Джюдзо
+  text: Джюдзо прикриває напарника від Бомби хвостатого та гине; Ітачі застосовує Аматерасу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-juzo
+    role: participant
+    mode: physical
+  - entity_id: c-yagura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-juzo-yagura-death
+relations: []
+presence:
+- id: pr-s2-juzo-yagura-death-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-juzo-yagura-death.start
+  to: sc-s2-juzo-yagura-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-juzo-yagura-death
+- id: pr-s2-juzo-yagura-death-c-juzo
+  entity_id: c-juzo
+  from: sc-s2-juzo-yagura-death.start
+  to: sc-s2-juzo-yagura-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-juzo-yagura-death
+- id: pr-s2-juzo-yagura-death-c-yagura
+  entity_id: c-yagura
+  from: sc-s2-juzo-yagura-death.start
+  to: sc-s2-juzo-yagura-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-juzo-yagura-death

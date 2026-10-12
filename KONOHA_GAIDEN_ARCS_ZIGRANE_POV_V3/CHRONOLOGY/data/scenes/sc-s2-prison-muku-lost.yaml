@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-prison-muku-lost
+episode_id: ep-s2-prison-muku-lost
+display_rank: 41000
+continuity_id: movie-prison
+title: Муку зникає всередині Скрині
+description: Муі використовує його чакру для відкриття; втрата сина визначає наступні десять років його життя.
+location_id: loc-hozuki-box-chamber
+placement:
+  anchor_id: ta-s2-56-09-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-prison-muku-lost-1
+  title: Муку зникає всередині Скрині
+  text: Муі використовує його чакру для відкриття; втрата сина визначає наступні десять років його життя.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-mui
+    role: participant
+    mode: physical
+  - entity_id: c-muku
+    role: participant
+    mode: physical
+  - entity_id: c-ryuzetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-muku-lost
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-prison-muku-lost-c-mui
+  entity_id: c-mui
+  from: sc-s2-prison-muku-lost.start
+  to: sc-s2-prison-muku-lost.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-muku-lost
+- id: pr-s2-prison-muku-lost-c-muku
+  entity_id: c-muku
+  from: sc-s2-prison-muku-lost.start
+  to: sc-s2-prison-muku-lost.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-muku-lost
+- id: pr-s2-prison-muku-lost-c-ryuzetsu
+  entity_id: c-ryuzetsu
+  from: sc-s2-prison-muku-lost.start
+  to: sc-s2-prison-muku-lost.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-muku-lost

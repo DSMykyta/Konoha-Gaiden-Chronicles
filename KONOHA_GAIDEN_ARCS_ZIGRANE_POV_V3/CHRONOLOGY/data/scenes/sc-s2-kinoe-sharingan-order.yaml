@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-kinoe-sharingan-order
+episode_id: ep-s2-kinoe-sharingan-order
+display_rank: 29200
+continuity_id: main
+title: Кіное отримує наказ забрати Шарінґан
+description: Бій із Какаші завершується відмовою від наказу; Какаші рятує його від змії, а Кіное лікує Какаші.
+location_id: loc-orochimaru-abandoned-lab
+placement:
+  anchor_id: ta-s2-54-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kinoe-sharingan-order-1
+  title: Кіное отримує наказ забрати Шарінґан
+  text: Бій із Какаші завершується відмовою від наказу; Какаші рятує його від змії, а Кіное лікує Какаші.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kinoe-sharingan-order
+relations: []
+presence:
+- id: pr-s2-kinoe-sharingan-order-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kinoe-sharingan-order.start
+  to: sc-s2-kinoe-sharingan-order.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinoe-sharingan-order
+- id: pr-s2-kinoe-sharingan-order-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-kinoe-sharingan-order.start
+  to: sc-s2-kinoe-sharingan-order.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kinoe-sharingan-order

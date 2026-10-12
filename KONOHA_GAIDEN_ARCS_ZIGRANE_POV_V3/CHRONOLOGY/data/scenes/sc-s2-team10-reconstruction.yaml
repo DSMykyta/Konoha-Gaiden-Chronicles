@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-team10-reconstruction
+episode_id: ep-s2-team10-reconstruction
+display_rank: 43800
+continuity_id: main
+title: Команда 10 збирає худобу для мешканців
+description: Шикамару згадує спільне визволення заручниці з Командою 7.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-17
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-team10-reconstruction-1
+  title: Команда 10 збирає худобу для мешканців
+  text: Шикамару згадує спільне визволення заручниці з Командою 7.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-team10-reconstruction
+relations: []
+presence:
+- id: pr-s2-team10-reconstruction-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-team10-reconstruction.start
+  to: sc-s2-team10-reconstruction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team10-reconstruction
+- id: pr-s2-team10-reconstruction-c-ino
+  entity_id: c-ino
+  from: sc-s2-team10-reconstruction.start
+  to: sc-s2-team10-reconstruction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team10-reconstruction
+- id: pr-s2-team10-reconstruction-c-choji
+  entity_id: c-choji
+  from: sc-s2-team10-reconstruction.start
+  to: sc-s2-team10-reconstruction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-team10-reconstruction

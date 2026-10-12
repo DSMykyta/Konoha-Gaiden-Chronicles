@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-demon-desert-start
+episode_id: ep-s2-demon-desert-start
+display_rank: 24900
+continuity_id: main
+title: Команда Ґая зустрічає Шіру
+description: Шіра допомагає іншим командам Суни; Лі просить про чесний двобій. Шіра блокує тенкецу Лі, але він знаходить
+  спосіб продовжити бій; суперники визнають силу один одного.
+location_id: loc-demon-desert
+placement:
+  anchor_id: ta-s2-64-10-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-demon-desert-start-1
+  title: Команда Ґая зустрічає Шіру
+  text: Шіра допомагає іншим командам Суни; Лі просить про чесний двобій.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-shira
+    role: participant
+    mode: physical
+  - entity_id: c-sen
+    role: participant
+    mode: physical
+  - entity_id: c-yome
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-demon-desert-start
+- id: ev-s2-demon-desert-start-2
+  title: Лі й Шіра випробовують свою тайджюцу
+  text: Шіра блокує тенкецу Лі, але він знаходить спосіб продовжити бій; суперники визнають силу один одного.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-shira
+    role: participant
+    mode: physical
+  - entity_id: c-sen
+    role: participant
+    mode: physical
+  - entity_id: c-yome
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-demon-desert-start
+relations:
+- id: rel-s2-demon-desert-start-1
+  kind: before
+  a: ev-s2-demon-desert-start-1
+  b: ev-s2-demon-desert-start-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-demon-desert-start
+presence:
+- id: pr-s2-demon-desert-start-c-neji
+  entity_id: c-neji
+  from: sc-s2-demon-desert-start.start
+  to: sc-s2-demon-desert-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-demon-desert-start
+- id: pr-s2-demon-desert-start-c-lee
+  entity_id: c-lee
+  from: sc-s2-demon-desert-start.start
+  to: sc-s2-demon-desert-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-demon-desert-start
+- id: pr-s2-demon-desert-start-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-demon-desert-start.start
+  to: sc-s2-demon-desert-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-demon-desert-start
+- id: pr-s2-demon-desert-start-c-shira
+  entity_id: c-shira
+  from: sc-s2-demon-desert-start.start
+  to: sc-s2-demon-desert-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-demon-desert-start
+- id: pr-s2-demon-desert-start-c-sen
+  entity_id: c-sen
+  from: sc-s2-demon-desert-start.start
+  to: sc-s2-demon-desert-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-demon-desert-start
+- id: pr-s2-demon-desert-start-c-yome
+  entity_id: c-yome
+  from: sc-s2-demon-desert-start.start
+  to: sc-s2-demon-desert-start.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-demon-desert-start

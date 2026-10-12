@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-power-yamato-investigation
+episode_id: ep-s2-power-main
+display_rank: 500
+continuity_id: main
+title: Ямато й Сай досліджують походження Ями
+description: Відомості про давню силу та Саедзурі стають ключем до задуму нападників.
+location_id: loc-hacho-village
+placement:
+  anchor_id: ta-s2-66-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-yamato-investigation-1
+  title: Ямато й Сай досліджують походження Ями
+  text: Відомості про давню силу та Саедзурі стають ключем до задуму нападників.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-disonasu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-yamato-investigation
+relations: []
+presence:
+- id: pr-s2-power-yamato-investigation-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-power-yamato-investigation.start
+  to: sc-s2-power-yamato-investigation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-yamato-investigation
+- id: pr-s2-power-yamato-investigation-c-sai
+  entity_id: c-sai
+  from: sc-s2-power-yamato-investigation.start
+  to: sc-s2-power-yamato-investigation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-yamato-investigation
+- id: pr-s2-power-yamato-investigation-c-disonasu
+  entity_id: c-disonasu
+  from: sc-s2-power-yamato-investigation.start
+  to: sc-s2-power-yamato-investigation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-yamato-investigation

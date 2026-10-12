@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-minato-obito-duel
+episode_id: ep-s2-minato-obito-duel
+display_rank: 30600
+continuity_id: main
+title: Мінато використовує момент матеріалізації Обіто
+description: Летючий Бог Грому та Расенґан ранять чоловіка в масці. Обіто втрачає контроль над лисом і відступає.
+location_id: loc-minato-obito-battlefield
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-minato-obito-duel-1
+  title: Мінато використовує момент матеріалізації Обіто
+  text: Летючий Бог Грому та Расенґан ранять чоловіка в масці.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-minato-obito-duel
+- id: ev-s2-minato-obito-duel-2
+  title: Мінато розриває договір із Курамою
+  text: Обіто втрачає контроль над лисом і відступає.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-minato-obito-duel
+relations:
+- id: rel-s2-minato-obito-duel-1
+  kind: before
+  a: ev-s2-minato-obito-duel-1
+  b: ev-s2-minato-obito-duel-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-obito-duel
+presence:
+- id: pr-s2-minato-obito-duel-c-minato
+  entity_id: c-minato
+  from: sc-s2-minato-obito-duel.start
+  to: sc-s2-minato-obito-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-obito-duel
+- id: pr-s2-minato-obito-duel-c-obito
+  entity_id: c-obito
+  from: sc-s2-minato-obito-duel.start
+  to: sc-s2-minato-obito-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-minato-obito-duel

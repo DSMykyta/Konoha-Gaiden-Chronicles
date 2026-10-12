@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-hiruko-threat
+episode_id: ep-s2-hiruko-threat
+display_rank: 38600
+continuity_id: movie-fire
+title: Хіруко погрожує новою війною
+description: Четверо викрадених шинобі вже дали йому свої здібності; для завершення він прагне Шарінґана Какаші.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-66-04-26
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hiruko-threat-1
+  title: Хіруко погрожує новою війною
+  text: Четверо викрадених шинобі вже дали йому свої здібності; для завершення він прагне Шарінґана Какаші.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hiruko-threat
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-hiruko-threat-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-hiruko-threat.start
+  to: sc-s2-hiruko-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-threat
+- id: pr-s2-hiruko-threat-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-hiruko-threat.start
+  to: sc-s2-hiruko-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-threat

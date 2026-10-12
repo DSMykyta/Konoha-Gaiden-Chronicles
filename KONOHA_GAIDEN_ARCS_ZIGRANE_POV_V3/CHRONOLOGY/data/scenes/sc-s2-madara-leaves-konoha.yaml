@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-madara-leaves-konoha
+episode_id: ep-s2-madara-leaves-konoha
+display_rank: 42400
+continuity_id: main
+title: Мадара залишає Коноху
+description: Він читає плиту Учіха, втрачає підтримку клану та відмовляється від спільного шляху.
+location_id: loc-naka-shrine
+placement:
+  anchor_id: ta-s2-2-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-madara-leaves-konoha-1
+  title: Мадара залишає Коноху
+  text: Він читає плиту Учіха, втрачає підтримку клану та відмовляється від спільного шляху.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-madara-leaves-konoha
+relations: []
+presence:
+- id: pr-s2-madara-leaves-konoha-c-madara
+  entity_id: c-madara
+  from: sc-s2-madara-leaves-konoha.start
+  to: sc-s2-madara-leaves-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-leaves-konoha
+- id: pr-s2-madara-leaves-konoha-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-madara-leaves-konoha.start
+  to: sc-s2-madara-leaves-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-leaves-konoha

@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-bee-sabu-kisame
+episode_id: ep-s2-bee-sabu-kisame
+display_rank: 17700
+continuity_id: main
+title: Кісаме нападає на Бі біля Сабу
+description: Самехада поглинає чакру; Кісаме зливається з мечем і затоплює місце бою.
+location_id: loc-sabu-enka-site
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-bee-sabu-kisame-1
+  title: Кісаме нападає на Бі біля Сабу
+  text: Самехада поглинає чакру; Кісаме зливається з мечем і затоплює місце бою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-sabu
+    role: participant
+    mode: physical
+  - entity_id: c-ponta
+    role: participant
+    mode: physical
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-bee-sabu-kisame
+relations: []
+presence:
+- id: pr-s2-bee-sabu-kisame-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-bee-sabu-kisame.start
+  to: sc-s2-bee-sabu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-sabu-kisame
+- id: pr-s2-bee-sabu-kisame-c-sabu
+  entity_id: c-sabu
+  from: sc-s2-bee-sabu-kisame.start
+  to: sc-s2-bee-sabu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-sabu-kisame
+- id: pr-s2-bee-sabu-kisame-c-ponta
+  entity_id: c-ponta
+  from: sc-s2-bee-sabu-kisame.start
+  to: sc-s2-bee-sabu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-sabu-kisame
+- id: pr-s2-bee-sabu-kisame-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-bee-sabu-kisame.start
+  to: sc-s2-bee-sabu-kisame.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-bee-sabu-kisame

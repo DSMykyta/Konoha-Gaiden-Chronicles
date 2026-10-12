@@ -1,0 +1,147 @@
+schema_version: 1
+id: sc-s2-benisu-herbs
+episode_id: ep-s2-benisu-herbs
+display_rank: 19500
+continuity_id: main
+title: Наруто зустрічає загін лікарських трав
+description: 'Сакура, Іно та Чоджі збирають запаси до війни; шинобі Бенісу оспорюють трави. Після сутички команди
+  розходяться: Наруто продовжує морську дорогу.'
+location_id: loc-benisu-island
+placement:
+  anchor_id: ta-s2-66-09-07
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-benisu-herbs-1
+  title: Наруто зустрічає загін лікарських трав
+  text: Сакура, Іно та Чоджі збирають запаси до війни; шинобі Бенісу оспорюють трави.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-benisu-herbs
+- id: ev-s2-benisu-herbs-2
+  title: Загін Конохи повертає збір
+  text: 'Після сутички команди розходяться: Наруто продовжує морську дорогу.'
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-benisu-herbs
+relations:
+- id: rel-s2-benisu-herbs-1
+  kind: before
+  a: ev-s2-benisu-herbs-1
+  b: ev-s2-benisu-herbs-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs
+presence:
+- id: pr-s2-benisu-herbs-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-benisu-herbs.start
+  to: sc-s2-benisu-herbs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs
+- id: pr-s2-benisu-herbs-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-benisu-herbs.start
+  to: sc-s2-benisu-herbs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs
+- id: pr-s2-benisu-herbs-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-benisu-herbs.start
+  to: sc-s2-benisu-herbs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs
+- id: pr-s2-benisu-herbs-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-benisu-herbs.start
+  to: sc-s2-benisu-herbs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs
+- id: pr-s2-benisu-herbs-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-benisu-herbs.start
+  to: sc-s2-benisu-herbs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs
+- id: pr-s2-benisu-herbs-c-ino
+  entity_id: c-ino
+  from: sc-s2-benisu-herbs.start
+  to: sc-s2-benisu-herbs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs
+- id: pr-s2-benisu-herbs-c-choji
+  entity_id: c-choji
+  from: sc-s2-benisu-herbs.start
+  to: sc-s2-benisu-herbs.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-benisu-herbs

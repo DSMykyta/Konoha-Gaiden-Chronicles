@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-tenchi-four-tails
+episode_id: ep-s2-tenchi-four-tails
+display_rank: 3200
+continuity_id: main
+title: Наруто втрачає контроль і набуває чотирьох хвостів
+description: Орочімару провокує його згадками про Саске; бій руйнує міст та береги. Чакра Курами ранить її; Ямато
+  пригнічує трансформацію, а Кабуто лікує Сакуру.
+location_id: loc-tenchi-bridge
+placement:
+  anchor_id: ta-s2-64-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tenchi-four-tails-1
+  title: Наруто втрачає контроль і набуває чотирьох хвостів
+  text: Орочімару провокує його згадками про Саске; бій руйнує міст та береги.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+- id: ev-s2-tenchi-four-tails-2
+  title: Сакура намагається зупинити Наруто
+  text: Чакра Курами ранить її; Ямато пригнічує трансформацію, а Кабуто лікує Сакуру.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+relations:
+- id: rel-s2-tenchi-four-tails-1
+  kind: before
+  a: ev-s2-tenchi-four-tails-1
+  b: ev-s2-tenchi-four-tails-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+presence:
+- id: pr-s2-tenchi-four-tails-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tenchi-four-tails.start
+  to: sc-s2-tenchi-four-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+- id: pr-s2-tenchi-four-tails-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-tenchi-four-tails.start
+  to: sc-s2-tenchi-four-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+- id: pr-s2-tenchi-four-tails-c-sai
+  entity_id: c-sai
+  from: sc-s2-tenchi-four-tails.start
+  to: sc-s2-tenchi-four-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+- id: pr-s2-tenchi-four-tails-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-tenchi-four-tails.start
+  to: sc-s2-tenchi-four-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+- id: pr-s2-tenchi-four-tails-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-tenchi-four-tails.start
+  to: sc-s2-tenchi-four-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-four-tails
+- id: pr-s2-tenchi-four-tails-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-tenchi-four-tails.start
+  to: sc-s2-tenchi-four-tails.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenchi-four-tails

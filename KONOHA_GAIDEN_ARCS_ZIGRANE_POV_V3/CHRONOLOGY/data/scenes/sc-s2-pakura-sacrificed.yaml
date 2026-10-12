@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-pakura-sacrificed
+episode_id: ep-s2-pakura-sacrificed
+display_rank: 36400
+continuity_id: main
+title: Суна видає Пакуру заради перемир’я
+description: Шинобі Кірі вбивають її під виглядом зустрічі; Суна поширює іншу причину загибелі.
+location_id: loc-kiri-suna-truce-route
+placement:
+  anchor_id: ta-s2-59-05-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-pakura-sacrificed-1
+  title: Суна видає Пакуру заради перемир’я
+  text: Шинобі Кірі вбивають її під виглядом зустрічі; Суна поширює іншу причину загибелі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-pakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-pakura-sacrificed
+relations: []
+presence:
+- id: pr-s2-pakura-sacrificed-c-pakura
+  entity_id: c-pakura
+  from: sc-s2-pakura-sacrificed.start
+  to: sc-s2-pakura-sacrificed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-pakura-sacrificed

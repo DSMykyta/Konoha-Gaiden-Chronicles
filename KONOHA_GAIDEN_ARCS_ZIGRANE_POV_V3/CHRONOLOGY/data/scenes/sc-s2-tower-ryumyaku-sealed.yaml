@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-tower-ryumyaku-sealed
+episode_id: ep-s2-tower-ryumyaku-sealed
+display_rank: 39700
+continuity_id: movie-tower
+title: Наруто й Мінато перемагають Мукаде
+description: Їхній спільний Расенґан руйнує його тіло; Сара відключає джерело, Мінато відновлює печать.
+location_id: loc-roran-ryumyaku-chamber
+placement:
+  anchor_id: ta-s2-45-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tower-ryumyaku-sealed-1
+  title: Наруто й Мінато перемагають Мукаде
+  text: Їхній спільний Расенґан руйнує його тіло; Сара відключає джерело, Мінато відновлює печать.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-sara
+    role: participant
+    mode: physical
+  - entity_id: c-mukade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tower-ryumyaku-sealed
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-tower-ryumyaku-sealed-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-tower-ryumyaku-sealed.start
+  to: sc-s2-tower-ryumyaku-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-ryumyaku-sealed
+- id: pr-s2-tower-ryumyaku-sealed-c-minato
+  entity_id: c-minato
+  from: sc-s2-tower-ryumyaku-sealed.start
+  to: sc-s2-tower-ryumyaku-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-ryumyaku-sealed
+- id: pr-s2-tower-ryumyaku-sealed-c-sara
+  entity_id: c-sara
+  from: sc-s2-tower-ryumyaku-sealed.start
+  to: sc-s2-tower-ryumyaku-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-ryumyaku-sealed
+- id: pr-s2-tower-ryumyaku-sealed-c-mukade
+  entity_id: c-mukade
+  from: sc-s2-tower-ryumyaku-sealed.start
+  to: sc-s2-tower-ryumyaku-sealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tower-ryumyaku-sealed

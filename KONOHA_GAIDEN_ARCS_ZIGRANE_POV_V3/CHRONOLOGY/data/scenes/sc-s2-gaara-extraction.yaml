@@ -1,0 +1,69 @@
+schema_version: 1
+id: sc-s2-gaara-extraction
+episode_id: ep-s2-gaara-extraction
+display_rank: 1300
+continuity_id: main
+title: Акацукі починають триденне вилучення Шукаку
+description: Сасорі та Дейдара починають вилучення Шукаку з Ґаари у сховищі Країни Річок. Вони лишаються там, доки
+  ритуал не завершиться.
+location_id: loc-akatsuki-river-hideout
+placement:
+  anchor_id: ta-s2-64-12-03
+  day_offset: 0
+  end_anchor_id: ta-s2-64-12-05
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-gaara-extraction-1
+  title: Акацукі починають триденне вилучення Шукаку
+  text: Сасорі та Дейдара починають вилучення Шукаку з Ґаари у сховищі Країни Річок. Вони лишаються там, доки ритуал
+    не завершиться.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasori
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-gaara-extraction
+relations: []
+presence:
+- id: pr-s2-gaara-extraction-c-sasori
+  entity_id: c-sasori
+  from: sc-s2-gaara-extraction.start
+  to: sc-s2-gaara-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-extraction
+- id: pr-s2-gaara-extraction-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-gaara-extraction.start
+  to: sc-s2-gaara-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-extraction
+- id: pr-s2-gaara-extraction-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-gaara-extraction.start
+  to: sc-s2-gaara-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-extraction
+duration_days: 3
+editorial_note: Початок вилучення і смерть Ґаари відображено окремими сценами з триденним резервом.

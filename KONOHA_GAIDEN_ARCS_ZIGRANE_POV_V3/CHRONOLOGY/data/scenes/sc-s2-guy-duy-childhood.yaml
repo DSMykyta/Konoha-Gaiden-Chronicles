@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-guy-duy-childhood
+episode_id: ep-s2-guy-duy-childhood
+display_rank: 27300
+continuity_id: main
+title: Ґай тренується з батьком
+description: Дай підтримує його попри насмішки; Какаші стає суперником Ґая.
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-s2-43-08-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-guy-duy-childhood-1
+  title: Ґай тренується з батьком
+  text: Дай підтримує його попри насмішки; Какаші стає суперником Ґая.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-might-duy
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-guy-duy-childhood
+relations: []
+presence:
+- id: pr-s2-guy-duy-childhood-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-guy-duy-childhood.start
+  to: sc-s2-guy-duy-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-duy-childhood
+- id: pr-s2-guy-duy-childhood-c-might-duy
+  entity_id: c-might-duy
+  from: sc-s2-guy-duy-childhood.start
+  to: sc-s2-guy-duy-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-duy-childhood
+- id: pr-s2-guy-duy-childhood-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-guy-duy-childhood.start
+  to: sc-s2-guy-duy-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-guy-duy-childhood

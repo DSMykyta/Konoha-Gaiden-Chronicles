@@ -1,0 +1,40 @@
+schema_version: 1
+id: sc-s2-hamura-moon-departure
+episode_id: ep-s2-hamura-moon-departure
+display_rank: 100
+continuity_id: main
+title: Хамура переходить на Місяць
+description: Після запечатування Десятихвостого він лишається охороняти Ґедо Мазо.
+location_id: loc-moon-otsutsuki-settlement
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hamura-moon-departure-1
+  title: Хамура переходить на Місяць
+  text: Після запечатування Десятихвостого він лишається охороняти Ґедо Мазо.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hamura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hamura-moon-departure
+relations: []
+presence:
+- id: pr-s2-hamura-moon-departure-c-hamura
+  entity_id: c-hamura
+  from: sc-s2-hamura-moon-departure.start
+  to: sc-s2-hamura-moon-departure.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hamura-moon-departure

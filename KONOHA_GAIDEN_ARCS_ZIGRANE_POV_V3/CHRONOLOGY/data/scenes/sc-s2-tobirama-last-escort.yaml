@@ -1,0 +1,108 @@
+schema_version: 1
+id: sc-s2-tobirama-last-escort
+episode_id: ep-s2-first-war-history-main
+display_rank: 3200
+continuity_id: main
+title: Тобірама бере на себе роль приманки
+description: Під час оточення він призначає Хірудзена наступним Хокаґе та залишається прикривати відступ загону.
+location_id: loc-tobirama-last-battlefield
+placement:
+  anchor_id: ta-s2-14-04-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tobirama-last-escort-1
+  title: Тобірама бере на себе роль приманки
+  text: Під час оточення він призначає Хірудзена наступним Хокаґе та залишається прикривати відступ загону.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  - entity_id: c-homura
+    role: participant
+    mode: physical
+  - entity_id: c-koharu
+    role: participant
+    mode: physical
+  - entity_id: c-kagami
+    role: participant
+    mode: physical
+  - entity_id: c-torifu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tobirama-last-escort
+relations: []
+presence:
+- id: pr-s2-tobirama-last-escort-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-tobirama-last-escort.start
+  to: sc-s2-tobirama-last-escort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobirama-last-escort
+- id: pr-s2-tobirama-last-escort-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-tobirama-last-escort.start
+  to: sc-s2-tobirama-last-escort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobirama-last-escort
+- id: pr-s2-tobirama-last-escort-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-tobirama-last-escort.start
+  to: sc-s2-tobirama-last-escort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobirama-last-escort
+- id: pr-s2-tobirama-last-escort-c-homura
+  entity_id: c-homura
+  from: sc-s2-tobirama-last-escort.start
+  to: sc-s2-tobirama-last-escort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobirama-last-escort
+- id: pr-s2-tobirama-last-escort-c-koharu
+  entity_id: c-koharu
+  from: sc-s2-tobirama-last-escort.start
+  to: sc-s2-tobirama-last-escort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobirama-last-escort
+- id: pr-s2-tobirama-last-escort-c-kagami
+  entity_id: c-kagami
+  from: sc-s2-tobirama-last-escort.start
+  to: sc-s2-tobirama-last-escort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobirama-last-escort
+- id: pr-s2-tobirama-last-escort-c-torifu
+  entity_id: c-torifu
+  from: sc-s2-tobirama-last-escort.start
+  to: sc-s2-tobirama-last-escort.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobirama-last-escort

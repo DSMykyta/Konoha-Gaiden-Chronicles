@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-sannin-kiri-night-fight
+episode_id: ep-s2-sannin-kiri-night-fight
+display_rank: 3100
+continuity_id: main
+title: Трійця відбиває нічний напад Кірі
+description: Розмова про мрії біля вогню закінчується атакою шинобі Туману.
+location_id: loc-second-war-camp
+placement:
+  anchor_id: ta-s2-38-03-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sannin-kiri-night-fight-1
+  title: Трійця відбиває нічний напад Кірі
+  text: Розмова про мрії біля вогню закінчується атакою шинобі Туману.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sannin-kiri-night-fight
+relations: []
+presence:
+- id: pr-s2-sannin-kiri-night-fight-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-sannin-kiri-night-fight.start
+  to: sc-s2-sannin-kiri-night-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sannin-kiri-night-fight
+- id: pr-s2-sannin-kiri-night-fight-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-sannin-kiri-night-fight.start
+  to: sc-s2-sannin-kiri-night-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sannin-kiri-night-fight
+- id: pr-s2-sannin-kiri-night-fight-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-sannin-kiri-night-fight.start
+  to: sc-s2-sannin-kiri-night-fight.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sannin-kiri-night-fight

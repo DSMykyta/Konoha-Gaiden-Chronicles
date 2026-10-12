@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-shizuka-sagiri-loss
+episode_id: ep-s2-shizuka-sagiri-loss
+display_rank: 2600
+continuity_id: main
+title: Шізука втрачає Саґірі
+description: Їхньому зв’язку противляться старші села; загибель коханого змушує її відмовитися від нового шлюбу.
+location_id: loc-nadeshiko-village
+placement:
+  anchor_id: ta-s2-63-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-shizuka-sagiri-loss-1
+  title: Шізука втрачає Саґірі
+  text: Їхньому зв’язку противляться старші села; загибель коханого змушує її відмовитися від нового шлюбу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shizuka
+    role: participant
+    mode: physical
+  - entity_id: c-sagiri
+    role: participant
+    mode: physical
+  - entity_id: c-tokiwa
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shizuka-sagiri-loss
+relations: []
+presence:
+- id: pr-s2-shizuka-sagiri-loss-c-shizuka
+  entity_id: c-shizuka
+  from: sc-s2-shizuka-sagiri-loss.start
+  to: sc-s2-shizuka-sagiri-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shizuka-sagiri-loss
+- id: pr-s2-shizuka-sagiri-loss-c-sagiri
+  entity_id: c-sagiri
+  from: sc-s2-shizuka-sagiri-loss.start
+  to: sc-s2-shizuka-sagiri-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shizuka-sagiri-loss
+- id: pr-s2-shizuka-sagiri-loss-c-tokiwa
+  entity_id: c-tokiwa
+  from: sc-s2-shizuka-sagiri-loss.start
+  to: sc-s2-shizuka-sagiri-loss.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shizuka-sagiri-loss

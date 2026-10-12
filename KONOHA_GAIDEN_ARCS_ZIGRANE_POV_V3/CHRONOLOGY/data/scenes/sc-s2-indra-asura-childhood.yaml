@@ -1,0 +1,73 @@
+schema_version: 1
+id: sc-s2-indra-asura-childhood
+episode_id: ep-s2-indra-asura-childhood
+display_rank: 43200
+continuity_id: main
+title: Індра створює печаті та техніки
+description: Асура відстає в навчанні; Чорний Зецу посилює віддалення Індри від інших.
+location_id: loc-ninshu-home
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-indra-asura-childhood-1
+  title: Індра створює печаті та техніки
+  text: Асура відстає в навчанні; Чорний Зецу посилює віддалення Індри від інших.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hagoromo
+    role: participant
+    mode: physical
+  - entity_id: c-indra
+    role: participant
+    mode: physical
+  - entity_id: c-asura
+    role: participant
+    mode: physical
+  - entity_id: c-black-zetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-indra-asura-childhood
+relations: []
+presence:
+- id: pr-s2-indra-asura-childhood-c-hagoromo
+  entity_id: c-hagoromo
+  from: sc-s2-indra-asura-childhood.start
+  to: sc-s2-indra-asura-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-indra-asura-childhood
+- id: pr-s2-indra-asura-childhood-c-indra
+  entity_id: c-indra
+  from: sc-s2-indra-asura-childhood.start
+  to: sc-s2-indra-asura-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-indra-asura-childhood
+- id: pr-s2-indra-asura-childhood-c-asura
+  entity_id: c-asura
+  from: sc-s2-indra-asura-childhood.start
+  to: sc-s2-indra-asura-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-indra-asura-childhood
+- id: pr-s2-indra-asura-childhood-c-black-zetsu
+  entity_id: c-black-zetsu
+  from: sc-s2-indra-asura-childhood.start
+  to: sc-s2-indra-asura-childhood.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-indra-asura-childhood

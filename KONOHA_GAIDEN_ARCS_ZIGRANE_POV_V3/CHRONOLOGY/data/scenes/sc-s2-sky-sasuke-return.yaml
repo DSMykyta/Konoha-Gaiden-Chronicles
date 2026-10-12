@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-sky-sasuke-return
+episode_id: ep-s2-sky-sasuke-return
+display_rank: 38400
+continuity_id: movie-bonds
+title: Саске повертає сувій Орочімару
+description: Після спільного бою з Наруто він продовжує навчання в наставника.
+location_id: loc-orochimaru-tenchi-hideout
+placement:
+  anchor_id: ta-s2-66-05-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: partial
+  location: accepted
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-sky-sasuke-return-1
+  title: Саске повертає сувій Орочімару
+  text: Після спільного бою з Наруто він продовжує навчання в наставника.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sky-sasuke-return
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-sky-sasuke-return-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sky-sasuke-return.start
+  to: sc-s2-sky-sasuke-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-sasuke-return
+- id: pr-s2-sky-sasuke-return-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-sky-sasuke-return.start
+  to: sc-s2-sky-sasuke-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sky-sasuke-return

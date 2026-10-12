@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-hebi-cat-armoury
+episode_id: ep-s2-hebi-cat-armoury
+display_rank: 9500
+continuity_id: main
+title: Хебі поповнює спорядження
+description: Котяча зброярня забезпечує команду; пошук Ітачі триває.
+location_id: loc-nekobaa-armoury
+placement:
+  anchor_id: ta-s2-66-07-14
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hebi-cat-armoury-1
+  title: Хебі поповнює спорядження
+  text: Котяча зброярня забезпечує команду; пошук Ітачі триває.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-jugo
+    role: participant
+    mode: physical
+  - entity_id: c-nekoba
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hebi-cat-armoury
+relations: []
+presence:
+- id: pr-s2-hebi-cat-armoury-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-hebi-cat-armoury.start
+  to: sc-s2-hebi-cat-armoury.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-cat-armoury
+- id: pr-s2-hebi-cat-armoury-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-hebi-cat-armoury.start
+  to: sc-s2-hebi-cat-armoury.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-cat-armoury
+- id: pr-s2-hebi-cat-armoury-c-karin
+  entity_id: c-karin
+  from: sc-s2-hebi-cat-armoury.start
+  to: sc-s2-hebi-cat-armoury.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-cat-armoury
+- id: pr-s2-hebi-cat-armoury-c-jugo
+  entity_id: c-jugo
+  from: sc-s2-hebi-cat-armoury.start
+  to: sc-s2-hebi-cat-armoury.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-cat-armoury
+- id: pr-s2-hebi-cat-armoury-c-nekoba
+  entity_id: c-nekoba
+  from: sc-s2-hebi-cat-armoury.start
+  to: sc-s2-hebi-cat-armoury.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hebi-cat-armoury

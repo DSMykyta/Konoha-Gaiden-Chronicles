@@ -1,0 +1,43 @@
+schema_version: 1
+id: sc-s2-kabuto-orochimaru-remains
+episode_id: ep-s2-kabuto-orochimaru-remains
+display_rank: 36800
+continuity_id: main
+title: Кабуто прищеплює собі рештки Орочімару
+description: Після загибелі наставника він перебудовує своє тіло та продовжує пошуки сили.
+location_id: loc-kabuto-abandoned-hideout
+placement:
+  anchor_id: ta-s2-66-07-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-orochimaru-remains-1
+  title: Кабуто прищеплює собі рештки Орочімару
+  text: Після загибелі наставника він перебудовує своє тіло та продовжує пошуки сили.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-orochimaru-remains
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-kabuto-orochimaru-remains-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-orochimaru-remains.start
+  to: sc-s2-kabuto-orochimaru-remains.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-orochimaru-remains

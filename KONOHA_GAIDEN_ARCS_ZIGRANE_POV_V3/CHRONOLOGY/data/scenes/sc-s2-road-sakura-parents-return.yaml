@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-road-sakura-parents-return
+episode_id: ep-s2-road-sakura-parents-return
+display_rank: 700
+continuity_id: movie-road
+title: Кідзаші повертає підвіску Сакурі
+description: Вона обіймає батьків, потім каже Іно, що, мабуть, є іншою Сакурою, й зникає у світлі.
+location_id: loc-haruno-home
+placement:
+  anchor_id: ta-s2-66-06-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-sakura-parents-return-1
+  title: Кідзаші повертає підвіску Сакурі
+  text: Вона обіймає батьків, потім каже Іно, що, мабуть, є іншою Сакурою, й зникає у світлі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-rtn-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-kizashi
+    role: participant
+    mode: physical
+  - entity_id: c-mebuki
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-sakura-parents-return
+relations: []
+presence:
+- id: pr-s2-road-sakura-parents-return-c-rtn-sakura
+  entity_id: c-rtn-sakura
+  from: sc-s2-road-sakura-parents-return.start
+  to: sc-s2-road-sakura-parents-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-parents-return
+- id: pr-s2-road-sakura-parents-return-c-ino
+  entity_id: c-ino
+  from: sc-s2-road-sakura-parents-return.start
+  to: sc-s2-road-sakura-parents-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-parents-return
+- id: pr-s2-road-sakura-parents-return-c-kizashi
+  entity_id: c-kizashi
+  from: sc-s2-road-sakura-parents-return.start
+  to: sc-s2-road-sakura-parents-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-parents-return
+- id: pr-s2-road-sakura-parents-return-c-mebuki
+  entity_id: c-mebuki
+  from: sc-s2-road-sakura-parents-return.start
+  to: sc-s2-road-sakura-parents-return.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-sakura-parents-return

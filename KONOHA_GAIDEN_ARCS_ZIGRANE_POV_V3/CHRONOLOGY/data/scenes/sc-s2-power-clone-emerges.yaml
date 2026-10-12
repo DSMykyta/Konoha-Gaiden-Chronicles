@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-power-clone-emerges
+episode_id: ep-s2-power-main
+display_rank: 800
+continuity_id: main
+title: З Наруто виходить некерований двійник
+description: Мііна витягає чорну масу; істота отримує чотири хвости й нападає без розбору.
+location_id: loc-hacho-village
+placement:
+  anchor_id: ta-s2-66-09-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-clone-emerges-1
+  title: З Наруто виходить некерований двійник
+  text: Мііна витягає чорну масу; істота отримує чотири хвости й нападає без розбору.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-dokku
+    role: participant
+    mode: physical
+  - entity_id: c-shiseru
+    role: participant
+    mode: physical
+  - entity_id: c-miina
+    role: participant
+    mode: physical
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-clone-emerges
+relations: []
+presence:
+- id: pr-s2-power-clone-emerges-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-power-clone-emerges.start
+  to: sc-s2-power-clone-emerges.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-clone-emerges
+- id: pr-s2-power-clone-emerges-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-power-clone-emerges.start
+  to: sc-s2-power-clone-emerges.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-clone-emerges
+- id: pr-s2-power-clone-emerges-c-dokku
+  entity_id: c-dokku
+  from: sc-s2-power-clone-emerges.start
+  to: sc-s2-power-clone-emerges.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-clone-emerges
+- id: pr-s2-power-clone-emerges-c-shiseru
+  entity_id: c-shiseru
+  from: sc-s2-power-clone-emerges.start
+  to: sc-s2-power-clone-emerges.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-clone-emerges
+- id: pr-s2-power-clone-emerges-c-miina
+  entity_id: c-miina
+  from: sc-s2-power-clone-emerges.start
+  to: sc-s2-power-clone-emerges.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-clone-emerges
+- id: pr-s2-power-clone-emerges-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-power-clone-emerges.start
+  to: sc-s2-power-clone-emerges.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-clone-emerges

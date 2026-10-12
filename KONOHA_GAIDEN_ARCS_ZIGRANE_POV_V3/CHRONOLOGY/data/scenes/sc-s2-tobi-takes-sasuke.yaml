@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-tobi-takes-sasuke
+episode_id: ep-s2-tobi-takes-sasuke
+display_rank: 10500
+continuity_id: main
+title: Тобі забирає тіла братів
+description: Зецу повідомляє Коноху й Хебі про завершення бою; Тобі переносить Саске у сховище.
+location_id: loc-uchiha-hideout
+placement:
+  anchor_id: ta-s2-66-07-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tobi-takes-sasuke-1
+  title: Тобі забирає тіла братів
+  text: Зецу повідомляє Коноху й Хебі про завершення бою; Тобі переносить Саске у сховище.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tobi-takes-sasuke
+relations: []
+presence:
+- id: pr-s2-tobi-takes-sasuke-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-tobi-takes-sasuke.start
+  to: sc-s2-tobi-takes-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-takes-sasuke
+- id: pr-s2-tobi-takes-sasuke-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-tobi-takes-sasuke.start
+  to: sc-s2-tobi-takes-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-takes-sasuke
+- id: pr-s2-tobi-takes-sasuke-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-tobi-takes-sasuke.start
+  to: sc-s2-tobi-takes-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-takes-sasuke
+- id: pr-s2-tobi-takes-sasuke-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-tobi-takes-sasuke.start
+  to: sc-s2-tobi-takes-sasuke.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-takes-sasuke

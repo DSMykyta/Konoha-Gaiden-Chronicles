@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-kakashi-previous-students
+episode_id: ep-s2-kakashi-previous-students
+display_rank: 29600
+continuity_id: main
+title: Колишні кандидати дякують Какаші
+description: Попри провал тесту вони засвоїли цінність товаришів; новою трійцею для нього призначають Команду 7.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-60-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-previous-students-1
+  title: Колишні кандидати дякують Какаші
+  text: Попри провал тесту вони засвоїли цінність товаришів; новою трійцею для нього призначають Команду 7.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-previous-students
+relations: []
+presence:
+- id: pr-s2-kakashi-previous-students-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-previous-students.start
+  to: sc-s2-kakashi-previous-students.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-previous-students

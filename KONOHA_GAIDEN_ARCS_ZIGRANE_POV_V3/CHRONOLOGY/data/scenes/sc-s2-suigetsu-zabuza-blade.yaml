@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-suigetsu-zabuza-blade
+episode_id: ep-s2-suigetsu-zabuza-blade
+display_rank: 8900
+continuity_id: main
+title: Суйґецу знаходить меч Забузи
+description: Біля могили зброї вже немає; він відбирає її у Тензена, а Саске зупиняє вбивство власника.
+location_id: loc-land-waves
+placement:
+  anchor_id: ta-s2-66-07-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-suigetsu-zabuza-blade-1
+  title: Суйґецу знаходить меч Забузи
+  text: Біля могили зброї вже немає; він відбирає її у Тензена, а Саске зупиняє вбивство власника.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-suigetsu
+    role: participant
+    mode: physical
+  - entity_id: c-tenzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-suigetsu-zabuza-blade
+relations: []
+presence:
+- id: pr-s2-suigetsu-zabuza-blade-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-suigetsu-zabuza-blade.start
+  to: sc-s2-suigetsu-zabuza-blade.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-zabuza-blade
+- id: pr-s2-suigetsu-zabuza-blade-c-suigetsu
+  entity_id: c-suigetsu
+  from: sc-s2-suigetsu-zabuza-blade.start
+  to: sc-s2-suigetsu-zabuza-blade.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-zabuza-blade
+- id: pr-s2-suigetsu-zabuza-blade-c-tenzen
+  entity_id: c-tenzen
+  from: sc-s2-suigetsu-zabuza-blade.start
+  to: sc-s2-suigetsu-zabuza-blade.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-suigetsu-zabuza-blade

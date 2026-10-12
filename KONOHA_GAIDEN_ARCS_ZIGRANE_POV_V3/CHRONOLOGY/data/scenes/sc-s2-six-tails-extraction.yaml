@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-six-tails-extraction
+episode_id: ep-s2-six-tails-extraction
+display_rank: 12500
+continuity_id: main
+title: Акацукі завершують вилучення Шестихвостого
+description: Утаката гине після запечатування звіра.
+location_id: loc-akatsuki-extraction-hideout
+placement:
+  anchor_id: ta-s2-66-08-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-six-tails-extraction-1
+  title: Акацукі завершують вилучення Шестихвостого
+  text: Утаката гине після запечатування звіра.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-utakata
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-six-tails-extraction
+relations: []
+presence:
+- id: pr-s2-six-tails-extraction-c-utakata
+  entity_id: c-utakata
+  from: sc-s2-six-tails-extraction.start
+  to: sc-s2-six-tails-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-six-tails-extraction
+- id: pr-s2-six-tails-extraction-c-pain
+  entity_id: c-pain
+  from: sc-s2-six-tails-extraction.start
+  to: sc-s2-six-tails-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-six-tails-extraction
+- id: pr-s2-six-tails-extraction-c-konan
+  entity_id: c-konan
+  from: sc-s2-six-tails-extraction.start
+  to: sc-s2-six-tails-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-six-tails-extraction
+- id: pr-s2-six-tails-extraction-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-six-tails-extraction.start
+  to: sc-s2-six-tails-extraction.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-six-tails-extraction

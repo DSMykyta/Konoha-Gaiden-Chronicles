@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-sai-friendship
+episode_id: ep-s2-sai-friendship
+display_rank: 4000
+continuity_id: main
+title: Сай читає про дружбу
+description: Він пробує давати товаришам прізвиська й отримує нову сварку із Сакурою.
+location_id: loc-konoha-library
+placement:
+  anchor_id: ta-s2-64-12-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sai-friendship-1
+  title: Сай читає про дружбу
+  text: Він пробує давати товаришам прізвиська й отримує нову сварку із Сакурою.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sai-friendship
+relations: []
+presence:
+- id: pr-s2-sai-friendship-c-sai
+  entity_id: c-sai
+  from: sc-s2-sai-friendship.start
+  to: sc-s2-sai-friendship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-friendship
+- id: pr-s2-sai-friendship-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-sai-friendship.start
+  to: sc-s2-sai-friendship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-friendship
+- id: pr-s2-sai-friendship-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sai-friendship.start
+  to: sc-s2-sai-friendship.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sai-friendship

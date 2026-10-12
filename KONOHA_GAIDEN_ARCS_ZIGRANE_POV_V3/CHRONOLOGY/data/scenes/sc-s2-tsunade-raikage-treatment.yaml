@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-tsunade-raikage-treatment
+episode_id: ep-s2-tsunade-raikage-treatment
+display_rank: 27000
+continuity_id: main
+title: Райкаґе просить Цунаде врятувати підлеглого
+description: Вона ставить умову двобою; Шізуне бере участь у лікуванні вибухового паразита.
+location_id: loc-tsunade-travel-inn
+placement:
+  anchor_id: ta-s2-58-05-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tsunade-raikage-treatment-1
+  title: Райкаґе просить Цунаде врятувати підлеглого
+  text: Вона ставить умову двобою; Шізуне бере участь у лікуванні вибухового паразита.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-shizune
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tsunade-raikage-treatment
+relations: []
+presence:
+- id: pr-s2-tsunade-raikage-treatment-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-tsunade-raikage-treatment.start
+  to: sc-s2-tsunade-raikage-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-raikage-treatment
+- id: pr-s2-tsunade-raikage-treatment-c-shizune
+  entity_id: c-shizune
+  from: sc-s2-tsunade-raikage-treatment.start
+  to: sc-s2-tsunade-raikage-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-raikage-treatment
+- id: pr-s2-tsunade-raikage-treatment-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-tsunade-raikage-treatment.start
+  to: sc-s2-tsunade-raikage-treatment.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tsunade-raikage-treatment

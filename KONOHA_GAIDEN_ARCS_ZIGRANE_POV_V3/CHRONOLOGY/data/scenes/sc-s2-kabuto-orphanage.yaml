@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-kabuto-orphanage
+episode_id: ep-s2-kabuto-orphanage
+display_rank: 36500
+continuity_id: main
+title: Нонo знаходить дитину без пам’яті
+description: Вона дає Кабуто ім’я та окуляри; він навчається лікувати.
+location_id: loc-konoha-orphanage
+placement:
+  anchor_id: ta-s2-50-01-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-orphanage-1
+  title: Нонo знаходить дитину без пам’яті
+  text: Вона дає Кабуто ім’я та окуляри; він навчається лікувати.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-nono
+    role: participant
+    mode: physical
+  - entity_id: c-urushi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-orphanage
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-kabuto-orphanage-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-orphanage.start
+  to: sc-s2-kabuto-orphanage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-orphanage
+- id: pr-s2-kabuto-orphanage-c-nono
+  entity_id: c-nono
+  from: sc-s2-kabuto-orphanage.start
+  to: sc-s2-kabuto-orphanage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-orphanage
+- id: pr-s2-kabuto-orphanage-c-urushi
+  entity_id: c-urushi
+  from: sc-s2-kabuto-orphanage.start
+  to: sc-s2-kabuto-orphanage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-orphanage

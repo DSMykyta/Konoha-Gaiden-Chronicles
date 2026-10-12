@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-itachi-nine-tails-night
+episode_id: ep-s2-itachi-nine-tails-night
+display_rank: 30800
+continuity_id: main
+title: Ітачі захищає Саске та Ідзумі
+description: Під час нападу він веде дітей до сховища.
+location_id: loc-uchiha-district
+placement:
+  anchor_id: ta-s2-49-10-10
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-nine-tails-night-1
+  title: Ітачі захищає Саске та Ідзумі
+  text: Під час нападу він веде дітей до сховища.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-izumi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-nine-tails-night
+relations: []
+presence:
+- id: pr-s2-itachi-nine-tails-night-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-nine-tails-night.start
+  to: sc-s2-itachi-nine-tails-night.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-nine-tails-night
+- id: pr-s2-itachi-nine-tails-night-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-itachi-nine-tails-night.start
+  to: sc-s2-itachi-nine-tails-night.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-nine-tails-night
+- id: pr-s2-itachi-nine-tails-night-c-izumi
+  entity_id: c-izumi
+  from: sc-s2-itachi-nine-tails-night.start
+  to: sc-s2-itachi-nine-tails-night.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-nine-tails-night

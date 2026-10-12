@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-itachi-sasuke-weekend
+episode_id: ep-s2-itachi-sasuke-weekend
+display_rank: 34100
+continuity_id: main
+title: Ітачі навчає Саске метати кунай
+description: За відсутності батьків він готує вечерю, і брати засинають надворі.
+location_id: loc-uchiha-home
+placement:
+  anchor_id: ta-s2-54-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-sasuke-weekend-1
+  title: Ітачі навчає Саске метати кунай
+  text: За відсутності батьків він готує вечерю, і брати засинають надворі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  - entity_id: c-mikoto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-sasuke-weekend
+relations: []
+presence:
+- id: pr-s2-itachi-sasuke-weekend-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-sasuke-weekend.start
+  to: sc-s2-itachi-sasuke-weekend.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-sasuke-weekend
+- id: pr-s2-itachi-sasuke-weekend-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-itachi-sasuke-weekend.start
+  to: sc-s2-itachi-sasuke-weekend.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-sasuke-weekend
+- id: pr-s2-itachi-sasuke-weekend-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-itachi-sasuke-weekend.start
+  to: sc-s2-itachi-sasuke-weekend.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-sasuke-weekend
+- id: pr-s2-itachi-sasuke-weekend-c-mikoto
+  entity_id: c-mikoto
+  from: sc-s2-itachi-sasuke-weekend.start
+  to: sc-s2-itachi-sasuke-weekend.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-sasuke-weekend

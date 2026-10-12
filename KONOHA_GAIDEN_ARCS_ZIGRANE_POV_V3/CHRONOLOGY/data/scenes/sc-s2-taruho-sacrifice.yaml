@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-taruho-sacrifice
+episode_id: ep-s2-taruho-sacrifice
+display_rank: 37400
+continuity_id: movie-shion
+title: Тарухо гине під виглядом Шіон
+description: Його підміна приймає удар, призначений жриці; справжня Шіон продовжує дорогу з Наруто.
+location_id: loc-shion-sealing-route
+placement:
+  anchor_id: ta-s2-65-05-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-taruho-sacrifice-1
+  title: Тарухо гине під виглядом Шіон
+  text: Його підміна приймає удар, призначений жриці; справжня Шіон продовжує дорогу з Наруто.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-taruho
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-taruho-sacrifice
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-taruho-sacrifice-c-taruho
+  entity_id: c-taruho
+  from: sc-s2-taruho-sacrifice.start
+  to: sc-s2-taruho-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taruho-sacrifice
+- id: pr-s2-taruho-sacrifice-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-taruho-sacrifice.start
+  to: sc-s2-taruho-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taruho-sacrifice
+- id: pr-s2-taruho-sacrifice-c-neji
+  entity_id: c-neji
+  from: sc-s2-taruho-sacrifice.start
+  to: sc-s2-taruho-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taruho-sacrifice
+- id: pr-s2-taruho-sacrifice-c-lee
+  entity_id: c-lee
+  from: sc-s2-taruho-sacrifice.start
+  to: sc-s2-taruho-sacrifice.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-taruho-sacrifice

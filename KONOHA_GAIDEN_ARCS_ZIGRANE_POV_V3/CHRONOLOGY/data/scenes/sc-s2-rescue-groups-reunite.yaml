@@ -1,0 +1,130 @@
+schema_version: 1
+id: sc-s2-rescue-groups-reunite
+episode_id: ep-s2-rescue-groups-reunite
+display_rank: 2000
+continuity_id: main
+title: Какаші відводить вибух Камуі
+description: Дейдара залишає вибухового двійника й тікає; Какаші рятує команди, але падає від виснаження.
+location_id: loc-river-pursuit-route
+placement:
+  anchor_id: ta-s2-64-12-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-rescue-groups-reunite-1
+  title: Какаші відводить вибух Камуі
+  text: Дейдара залишає вибухового двійника й тікає; Какаші рятує команди, але падає від виснаження.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+relations: []
+presence:
+- id: pr-s2-rescue-groups-reunite-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-chiyo
+  entity_id: c-chiyo
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-lee
+  entity_id: c-lee
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-neji
+  entity_id: c-neji
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite
+- id: pr-s2-rescue-groups-reunite-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-rescue-groups-reunite.start
+  to: sc-s2-rescue-groups-reunite.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-rescue-groups-reunite

@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-chiriku-death
+episode_id: ep-s2-chiriku-death
+display_rank: 5400
+continuity_id: main
+title: Акацукі нападають на Храм Вогню
+description: Чіріку гине; Какудзу забирає його тіло заради винагороди.
+location_id: loc-fire-temple
+placement:
+  anchor_id: ta-s2-66-03-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-chiriku-death-1
+  title: Акацукі нападають на Храм Вогню
+  text: Чіріку гине; Какудзу забирає його тіло заради винагороди.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-chiriku
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-chiriku-death
+relations: []
+presence:
+- id: pr-s2-chiriku-death-c-chiriku
+  entity_id: c-chiriku
+  from: sc-s2-chiriku-death.start
+  to: sc-s2-chiriku-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiriku-death
+- id: pr-s2-chiriku-death-c-hidan
+  entity_id: c-hidan
+  from: sc-s2-chiriku-death.start
+  to: sc-s2-chiriku-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiriku-death
+- id: pr-s2-chiriku-death-c-kakuzu
+  entity_id: c-kakuzu
+  from: sc-s2-chiriku-death.start
+  to: sc-s2-chiriku-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-chiriku-death

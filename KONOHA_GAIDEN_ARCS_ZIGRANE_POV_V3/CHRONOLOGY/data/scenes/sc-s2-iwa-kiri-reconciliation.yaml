@@ -1,0 +1,119 @@
+schema_version: 1
+id: sc-s2-iwa-kiri-reconciliation
+episode_id: ep-s2-iwa-kiri-reconciliation
+display_rank: 20900
+continuity_id: main
+title: Ґанрю атакує посланців Іви
+description: Наруто й Чоджюро зупиняють сутичку; Наруто прикриває Ґанрю від Куруцучі. Посланці передають вибачення
+  та річ загиблого; Ґанрю здається.
+location_id: loc-water-country-messenger-island
+placement:
+  anchor_id: ta-s2-66-09-30
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-iwa-kiri-reconciliation-1
+  title: Ґанрю атакує посланців Іви
+  text: Наруто й Чоджюро зупиняють сутичку; Наруто прикриває Ґанрю від Куруцучі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-chojuro
+    role: participant
+    mode: physical
+  - entity_id: c-akatsuchi
+    role: participant
+    mode: physical
+  - entity_id: c-kurotsuchi
+    role: participant
+    mode: physical
+  - entity_id: c-ganryu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation
+- id: ev-s2-iwa-kiri-reconciliation-2
+  title: Кірі й Іва завершують справу перевалу
+  text: Посланці передають вибачення та річ загиблого; Ґанрю здається.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-chojuro
+    role: participant
+    mode: physical
+  - entity_id: c-akatsuchi
+    role: participant
+    mode: physical
+  - entity_id: c-kurotsuchi
+    role: participant
+    mode: physical
+  - entity_id: c-ganryu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation
+relations:
+- id: rel-s2-iwa-kiri-reconciliation-1
+  kind: before
+  a: ev-s2-iwa-kiri-reconciliation-1
+  b: ev-s2-iwa-kiri-reconciliation-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation
+presence:
+- id: pr-s2-iwa-kiri-reconciliation-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-iwa-kiri-reconciliation.start
+  to: sc-s2-iwa-kiri-reconciliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation
+- id: pr-s2-iwa-kiri-reconciliation-c-chojuro
+  entity_id: c-chojuro
+  from: sc-s2-iwa-kiri-reconciliation.start
+  to: sc-s2-iwa-kiri-reconciliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation
+- id: pr-s2-iwa-kiri-reconciliation-c-akatsuchi
+  entity_id: c-akatsuchi
+  from: sc-s2-iwa-kiri-reconciliation.start
+  to: sc-s2-iwa-kiri-reconciliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation
+- id: pr-s2-iwa-kiri-reconciliation-c-kurotsuchi
+  entity_id: c-kurotsuchi
+  from: sc-s2-iwa-kiri-reconciliation.start
+  to: sc-s2-iwa-kiri-reconciliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation
+- id: pr-s2-iwa-kiri-reconciliation-c-ganryu
+  entity_id: c-ganryu
+  from: sc-s2-iwa-kiri-reconciliation.start
+  to: sc-s2-iwa-kiri-reconciliation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-iwa-kiri-reconciliation

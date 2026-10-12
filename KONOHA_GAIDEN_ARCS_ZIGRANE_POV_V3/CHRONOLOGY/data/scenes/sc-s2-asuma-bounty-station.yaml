@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-asuma-bounty-station
+episode_id: ep-s2-asuma-bounty-station
+display_rank: 5700
+continuity_id: main
+title: Загін Асуми вступає в бій із Хіданом
+description: Шикамару встановлює зв’язок між кров’ю Асуми та ритуалом. Какудзу пришиває йому голову; Хідан повертається
+  до кола й смертельно ранить Асуму.
+location_id: loc-fire-bounty-station
+placement:
+  anchor_id: ta-s2-66-03-19
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-asuma-bounty-station-1
+  title: Загін Асуми вступає в бій із Хіданом
+  text: Шикамару встановлює зв’язок між кров’ю Асуми та ритуалом.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-kotetsu
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+- id: ev-s2-asuma-bounty-station-2
+  title: Хідан переживає обезголовлення
+  text: Какудзу пришиває йому голову; Хідан повертається до кола й смертельно ранить Асуму.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-kotetsu
+    role: participant
+    mode: physical
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+relations:
+- id: rel-s2-asuma-bounty-station-1
+  kind: before
+  a: ev-s2-asuma-bounty-station-1
+  b: ev-s2-asuma-bounty-station-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+presence:
+- id: pr-s2-asuma-bounty-station-c-asuma
+  entity_id: c-asuma
+  from: sc-s2-asuma-bounty-station.start
+  to: sc-s2-asuma-bounty-station.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+- id: pr-s2-asuma-bounty-station-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-asuma-bounty-station.start
+  to: sc-s2-asuma-bounty-station.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+- id: pr-s2-asuma-bounty-station-c-izumo
+  entity_id: c-izumo
+  from: sc-s2-asuma-bounty-station.start
+  to: sc-s2-asuma-bounty-station.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+- id: pr-s2-asuma-bounty-station-c-kotetsu
+  entity_id: c-kotetsu
+  from: sc-s2-asuma-bounty-station.start
+  to: sc-s2-asuma-bounty-station.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+- id: pr-s2-asuma-bounty-station-c-hidan
+  entity_id: c-hidan
+  from: sc-s2-asuma-bounty-station.start
+  to: sc-s2-asuma-bounty-station.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-bounty-station
+- id: pr-s2-asuma-bounty-station-c-kakuzu
+  entity_id: c-kakuzu
+  from: sc-s2-asuma-bounty-station.start
+  to: sc-s2-asuma-bounty-station.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-bounty-station

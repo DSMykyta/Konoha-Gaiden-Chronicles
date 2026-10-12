@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-neji-tenten-supply
+episode_id: ep-s2-neji-tenten-supply
+display_rank: 15600
+continuity_id: main
+title: Неджі й Тентен забирають спорядження
+description: Відбудова потребує нової зброї; Тентен згадує свій попередній візит.
+location_id: loc-ninja-tool-facility
+placement:
+  anchor_id: ta-s2-66-08-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-neji-tenten-supply-1
+  title: Неджі й Тентен забирають спорядження
+  text: Відбудова потребує нової зброї; Тентен згадує свій попередній візит.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-neji-tenten-supply
+relations: []
+presence:
+- id: pr-s2-neji-tenten-supply-c-neji
+  entity_id: c-neji
+  from: sc-s2-neji-tenten-supply.start
+  to: sc-s2-neji-tenten-supply.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-tenten-supply
+- id: pr-s2-neji-tenten-supply-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-neji-tenten-supply.start
+  to: sc-s2-neji-tenten-supply.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-tenten-supply

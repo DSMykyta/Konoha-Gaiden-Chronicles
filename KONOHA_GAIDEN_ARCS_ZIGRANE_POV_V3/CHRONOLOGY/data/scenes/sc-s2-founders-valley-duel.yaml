@@ -1,0 +1,91 @@
+schema_version: 1
+id: sc-s2-founders-valley-duel
+episode_id: ep-s2-founders-valley-duel
+display_rank: 42500
+continuity_id: main
+title: Мадара повертається з Курамою
+description: Сусаноо вкриває звіра; Хашірама руйнує захист і звільняє лиса від контролю. Дерев’яний клон відволікає
+  Мадару; долина отримує сліди їхнього бою.
+location_id: loc-valley-of-end
+placement:
+  anchor_id: ta-s2-3-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-founders-valley-duel-1
+  title: Мадара повертається з Курамою
+  text: Сусаноо вкриває звіра; Хашірама руйнує захист і звільняє лиса від контролю.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-founders-valley-duel
+- id: ev-s2-founders-valley-duel-2
+  title: Хашірама завдає Мадарі смертельного удару
+  text: Дерев’яний клон відволікає Мадару; долина отримує сліди їхнього бою.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-kurama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-founders-valley-duel
+relations:
+- id: rel-s2-founders-valley-duel-1
+  kind: before
+  a: ev-s2-founders-valley-duel-1
+  b: ev-s2-founders-valley-duel-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-founders-valley-duel
+presence:
+- id: pr-s2-founders-valley-duel-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-founders-valley-duel.start
+  to: sc-s2-founders-valley-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-founders-valley-duel
+- id: pr-s2-founders-valley-duel-c-madara
+  entity_id: c-madara
+  from: sc-s2-founders-valley-duel.start
+  to: sc-s2-founders-valley-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-founders-valley-duel
+- id: pr-s2-founders-valley-duel-c-kurama
+  entity_id: c-kurama
+  from: sc-s2-founders-valley-duel.start
+  to: sc-s2-founders-valley-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-founders-valley-duel

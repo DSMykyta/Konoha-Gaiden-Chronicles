@@ -1,0 +1,73 @@
+schema_version: 1
+id: sc-s2-kawarama-funeral
+episode_id: ep-s2-kawarama-funeral
+display_rank: 3200
+continuity_id: main
+title: Сенджю ховають Кавараму
+description: Хашірама заперечує проти відправлення дітей на війну; Бутсума вдаряє його.
+location_id: loc-senju-clan-home
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kawarama-funeral-1
+  title: Сенджю ховають Кавараму
+  text: Хашірама заперечує проти відправлення дітей на війну; Бутсума вдаряє його.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  - entity_id: c-itama
+    role: participant
+    mode: physical
+  - entity_id: c-butsuma
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kawarama-funeral
+relations: []
+presence:
+- id: pr-s2-kawarama-funeral-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-kawarama-funeral.start
+  to: sc-s2-kawarama-funeral.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kawarama-funeral
+- id: pr-s2-kawarama-funeral-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-kawarama-funeral.start
+  to: sc-s2-kawarama-funeral.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kawarama-funeral
+- id: pr-s2-kawarama-funeral-c-itama
+  entity_id: c-itama
+  from: sc-s2-kawarama-funeral.start
+  to: sc-s2-kawarama-funeral.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kawarama-funeral
+- id: pr-s2-kawarama-funeral-c-butsuma
+  entity_id: c-butsuma
+  from: sc-s2-kawarama-funeral.start
+  to: sc-s2-kawarama-funeral.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kawarama-funeral

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-kabuto-tobi-alliance
+episode_id: ep-s2-kabuto-tobi-alliance
+display_rank: 19200
+continuity_id: main
+title: Кабуто пропонує союз Тобі
+description: Едо Тенсей і прихована труна змушують Тобі погодитися; Кабуто вимагає Саске після війни.
+location_id: loc-mountains-graveyard
+placement:
+  anchor_id: ta-s2-66-09-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-tobi-alliance-1
+  title: Кабуто пропонує союз Тобі
+  text: Едо Тенсей і прихована труна змушують Тобі погодитися; Кабуто вимагає Саске після війни.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-tobi-alliance
+relations: []
+presence:
+- id: pr-s2-kabuto-tobi-alliance-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-tobi-alliance.start
+  to: sc-s2-kabuto-tobi-alliance.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-tobi-alliance
+- id: pr-s2-kabuto-tobi-alliance-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-kabuto-tobi-alliance.start
+  to: sc-s2-kabuto-tobi-alliance.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-tobi-alliance

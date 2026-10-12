@@ -1,0 +1,51 @@
+schema_version: 1
+id: sc-s2-hashirama-madara-river
+episode_id: ep-s2-hashirama-madara-river
+display_rank: 41900
+continuity_id: main
+title: Хашірама й Мадара зустрічаються біля річки
+description: Обоє втратили братів у клановій війні; вони тренуються та мріють про безпечне село.
+location_id: loc-founding-river
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hashirama-madara-river-1
+  title: Хашірама й Мадара зустрічаються біля річки
+  text: Обоє втратили братів у клановій війні; вони тренуються та мріють про безпечне село.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hashirama-madara-river
+relations: []
+presence:
+- id: pr-s2-hashirama-madara-river-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-hashirama-madara-river.start
+  to: sc-s2-hashirama-madara-river.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hashirama-madara-river
+- id: pr-s2-hashirama-madara-river-c-madara
+  entity_id: c-madara
+  from: sc-s2-hashirama-madara-river.start
+  to: sc-s2-hashirama-madara-river.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hashirama-madara-river

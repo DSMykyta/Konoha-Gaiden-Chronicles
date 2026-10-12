@@ -1,0 +1,146 @@
+schema_version: 1
+id: sc-s2-sasuke-summit-breach
+episode_id: ep-s2-sasuke-summit-breach
+display_rank: 17400
+continuity_id: main
+title: Саске руйнує перекриття й шукає Данзо
+description: Мей розчиняє захист Сусаноо; Зецу передає Саске чакру. Він забирає Саске й Карін до свого простору.
+location_id: loc-five-kage-hall
+placement:
+  anchor_id: ta-s2-66-08-25
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasuke-summit-breach-1
+  title: Саске руйнує перекриття й шукає Данзо
+  text: Мей розчиняє захист Сусаноо; Зецу передає Саске чакру.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-mei
+    role: participant
+    mode: physical
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-mifune
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+- id: ev-s2-sasuke-summit-breach-2
+  title: Тобі рятує Саске від Пилової стихії
+  text: Він забирає Саске й Карін до свого простору.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-karin
+    role: participant
+    mode: physical
+  - entity_id: c-mei
+    role: participant
+    mode: physical
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-mifune
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+relations:
+- id: rel-s2-sasuke-summit-breach-1
+  kind: before
+  a: ev-s2-sasuke-summit-breach-1
+  b: ev-s2-sasuke-summit-breach-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+presence:
+- id: pr-s2-sasuke-summit-breach-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sasuke-summit-breach.start
+  to: sc-s2-sasuke-summit-breach.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+- id: pr-s2-sasuke-summit-breach-c-karin
+  entity_id: c-karin
+  from: sc-s2-sasuke-summit-breach.start
+  to: sc-s2-sasuke-summit-breach.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+- id: pr-s2-sasuke-summit-breach-c-mei
+  entity_id: c-mei
+  from: sc-s2-sasuke-summit-breach.start
+  to: sc-s2-sasuke-summit-breach.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+- id: pr-s2-sasuke-summit-breach-c-onoki
+  entity_id: c-onoki
+  from: sc-s2-sasuke-summit-breach.start
+  to: sc-s2-sasuke-summit-breach.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+- id: pr-s2-sasuke-summit-breach-c-mifune
+  entity_id: c-mifune
+  from: sc-s2-sasuke-summit-breach.start
+  to: sc-s2-sasuke-summit-breach.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+- id: pr-s2-sasuke-summit-breach-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-sasuke-summit-breach.start
+  to: sc-s2-sasuke-summit-breach.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach
+- id: pr-s2-sasuke-summit-breach-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-sasuke-summit-breach.start
+  to: sc-s2-sasuke-summit-breach.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-summit-breach

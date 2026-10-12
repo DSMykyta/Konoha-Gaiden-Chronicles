@@ -1,0 +1,97 @@
+schema_version: 1
+id: sc-s2-kiba-kakashi-training
+episode_id: ep-s2-kiba-kakashi-training
+display_rank: 21600
+continuity_id: main
+title: Кіба тренується проти нінкен Какаші
+description: Він намагається наздогнати силу Наруто; Паккун і зграя загострюють його навички.
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kiba-kakashi-training-1
+  title: Кіба тренується проти нінкен Какаші
+  text: Він намагається наздогнати силу Наруто; Паккун і зграя загострюють його навички.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-akamaru
+    role: participant
+    mode: physical
+  - entity_id: c-shino
+    role: participant
+    mode: physical
+  - entity_id: c-tsume
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-pakkun
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kiba-kakashi-training
+relations: []
+presence:
+- id: pr-s2-kiba-kakashi-training-c-kiba
+  entity_id: c-kiba
+  from: sc-s2-kiba-kakashi-training.start
+  to: sc-s2-kiba-kakashi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kiba-kakashi-training
+- id: pr-s2-kiba-kakashi-training-c-akamaru
+  entity_id: c-akamaru
+  from: sc-s2-kiba-kakashi-training.start
+  to: sc-s2-kiba-kakashi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kiba-kakashi-training
+- id: pr-s2-kiba-kakashi-training-c-shino
+  entity_id: c-shino
+  from: sc-s2-kiba-kakashi-training.start
+  to: sc-s2-kiba-kakashi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kiba-kakashi-training
+- id: pr-s2-kiba-kakashi-training-c-tsume
+  entity_id: c-tsume
+  from: sc-s2-kiba-kakashi-training.start
+  to: sc-s2-kiba-kakashi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kiba-kakashi-training
+- id: pr-s2-kiba-kakashi-training-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kiba-kakashi-training.start
+  to: sc-s2-kiba-kakashi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kiba-kakashi-training
+- id: pr-s2-kiba-kakashi-training-c-pakkun
+  entity_id: c-pakkun
+  from: sc-s2-kiba-kakashi-training.start
+  to: sc-s2-kiba-kakashi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kiba-kakashi-training

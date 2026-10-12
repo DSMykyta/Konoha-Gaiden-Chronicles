@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-shikamaru-tenten-to-voyage
+episode_id: ep-s2-shikamaru-tenten-to-voyage
+display_rank: 400
+continuity_id: main
+title: Шикамару й Тентен виходять до морського загону
+description: Шикамару й Тентен прямують до морського загону Наруто.
+location_id: loc-fire-water-supply-route
+placement:
+  anchor_id: ta-s2-66-09-23
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: partial
+  origin: accepted
+  text: partial
+events:
+- id: ev-s2-shikamaru-tenten-to-voyage-1
+  title: Шикамару й Тентен виходять до морського загону
+  text: Шикамару й Тентен прямують до морського загону Наруто.
+  origin: R
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-shikamaru-tenten-to-voyage
+relations: []
+presence:
+- id: pr-s2-shikamaru-tenten-to-voyage-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-shikamaru-tenten-to-voyage.start
+  to: sc-s2-shikamaru-tenten-to-voyage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-tenten-to-voyage
+- id: pr-s2-shikamaru-tenten-to-voyage-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-shikamaru-tenten-to-voyage.start
+  to: sc-s2-shikamaru-tenten-to-voyage.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shikamaru-tenten-to-voyage
+editorial_note: Реконструкція дороги для підтвердженої появи в №231; день виходу не показано.

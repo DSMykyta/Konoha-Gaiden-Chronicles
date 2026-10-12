@@ -1,0 +1,147 @@
+schema_version: 1
+id: sc-s2-neji-saves-jinchuriki
+episode_id: ep-s2-neji-saves-jinchuriki
+display_rank: 25700
+continuity_id: main
+title: Неджі обирає порятунок замість завершення іспиту
+description: Б’якуґан показує канали витягання чакри; М’який Кулак розриває техніку. Наставники прибувають після
+  завершення небезпеки.
+location_id: loc-demon-desert
+placement:
+  anchor_id: ta-s2-64-10-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-neji-saves-jinchuriki-1
+  title: Неджі обирає порятунок замість завершення іспиту
+  text: Б’якуґан показує канали витягання чакри; М’який Кулак розриває техніку.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-fu-seven-tails
+    role: participant
+    mode: physical
+  - entity_id: c-matsuri
+    role: participant
+    mode: physical
+  - entity_id: c-hoichi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+- id: ev-s2-neji-saves-jinchuriki-2
+  title: Ґаара та Фу залишаються живими
+  text: Наставники прибувають після завершення небезпеки.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-neji
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-fu-seven-tails
+    role: participant
+    mode: physical
+  - entity_id: c-matsuri
+    role: participant
+    mode: physical
+  - entity_id: c-hoichi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+relations:
+- id: rel-s2-neji-saves-jinchuriki-1
+  kind: before
+  a: ev-s2-neji-saves-jinchuriki-1
+  b: ev-s2-neji-saves-jinchuriki-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+presence:
+- id: pr-s2-neji-saves-jinchuriki-c-neji
+  entity_id: c-neji
+  from: sc-s2-neji-saves-jinchuriki.start
+  to: sc-s2-neji-saves-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+- id: pr-s2-neji-saves-jinchuriki-c-lee
+  entity_id: c-lee
+  from: sc-s2-neji-saves-jinchuriki.start
+  to: sc-s2-neji-saves-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+- id: pr-s2-neji-saves-jinchuriki-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-neji-saves-jinchuriki.start
+  to: sc-s2-neji-saves-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+- id: pr-s2-neji-saves-jinchuriki-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-neji-saves-jinchuriki.start
+  to: sc-s2-neji-saves-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+- id: pr-s2-neji-saves-jinchuriki-c-fu-seven-tails
+  entity_id: c-fu-seven-tails
+  from: sc-s2-neji-saves-jinchuriki.start
+  to: sc-s2-neji-saves-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+- id: pr-s2-neji-saves-jinchuriki-c-matsuri
+  entity_id: c-matsuri
+  from: sc-s2-neji-saves-jinchuriki.start
+  to: sc-s2-neji-saves-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki
+- id: pr-s2-neji-saves-jinchuriki-c-hoichi
+  entity_id: c-hoichi
+  from: sc-s2-neji-saves-jinchuriki.start
+  to: sc-s2-neji-saves-jinchuriki.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-neji-saves-jinchuriki

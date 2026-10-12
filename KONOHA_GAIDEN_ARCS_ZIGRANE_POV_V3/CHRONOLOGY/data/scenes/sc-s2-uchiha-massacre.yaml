@@ -1,0 +1,121 @@
+schema_version: 1
+id: sc-s2-uchiha-massacre
+episode_id: ep-s2-uchiha-massacre
+display_rank: 32100
+continuity_id: main
+title: Ітачі та Обіто винищують Учіха
+description: Фуґаку й Мікото не чинять опору синові; Ітачі залишає Саске живим. Він показує братові загибель родини
+  та наказує зростити ненависть; згодом Саске згадує сльози Ітачі.
+location_id: loc-uchiha-district
+placement:
+  anchor_id: ta-s2-56-10-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-uchiha-massacre-1
+  title: Ітачі та Обіто винищують Учіха
+  text: Фуґаку й Мікото не чинять опору синові; Ітачі залишає Саске живим.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  - entity_id: c-mikoto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-uchiha-massacre
+  layer: canon
+- id: ev-s2-uchiha-massacre-2
+  title: Ітачі відштовхує Саске
+  text: Він показує братові загибель родини та наказує зростити ненависть; згодом Саске згадує сльози Ітачі.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  - entity_id: c-mikoto
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-uchiha-massacre
+  layer: canon
+relations:
+- id: rel-s2-uchiha-massacre-1
+  kind: before
+  a: ev-s2-uchiha-massacre-1
+  b: ev-s2-uchiha-massacre-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-massacre
+presence:
+- id: pr-s2-uchiha-massacre-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-uchiha-massacre.start
+  to: sc-s2-uchiha-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-massacre
+- id: pr-s2-uchiha-massacre-c-obito
+  entity_id: c-obito
+  from: sc-s2-uchiha-massacre.start
+  to: sc-s2-uchiha-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-massacre
+- id: pr-s2-uchiha-massacre-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-uchiha-massacre.start
+  to: sc-s2-uchiha-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-massacre
+- id: pr-s2-uchiha-massacre-c-mikoto
+  entity_id: c-mikoto
+  from: sc-s2-uchiha-massacre.start
+  to: sc-s2-uchiha-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-massacre
+- id: pr-s2-uchiha-massacre-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-uchiha-massacre.start
+  to: sc-s2-uchiha-massacre.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-uchiha-massacre

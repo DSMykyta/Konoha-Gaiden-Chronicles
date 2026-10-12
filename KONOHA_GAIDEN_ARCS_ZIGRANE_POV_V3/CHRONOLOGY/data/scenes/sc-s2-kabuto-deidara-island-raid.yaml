@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-kabuto-deidara-island-raid
+episode_id: ep-s2-kabuto-deidara-island-raid
+display_rank: 23000
+continuity_id: main
+title: Кабуто летить з оживленим Дейдарою
+description: Онокі перехоплює їх; Манда II виявляє острів, а вибух перевертає черепаху.
+location_id: loc-island-turtle-airspace
+placement:
+  anchor_id: ta-s2-66-10-06
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-deidara-island-raid-1
+  title: Кабуто летить з оживленим Дейдарою
+  text: Онокі перехоплює їх; Манда II виявляє острів, а вибух перевертає черепаху.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  - entity_id: c-onoki
+    role: participant
+    mode: physical
+  - entity_id: c-kurotsuchi
+    role: participant
+    mode: physical
+  - entity_id: c-akatsuchi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-deidara-island-raid
+relations: []
+presence:
+- id: pr-s2-kabuto-deidara-island-raid-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-deidara-island-raid.start
+  to: sc-s2-kabuto-deidara-island-raid.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-deidara-island-raid
+- id: pr-s2-kabuto-deidara-island-raid-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-kabuto-deidara-island-raid.start
+  to: sc-s2-kabuto-deidara-island-raid.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-deidara-island-raid
+- id: pr-s2-kabuto-deidara-island-raid-c-onoki
+  entity_id: c-onoki
+  from: sc-s2-kabuto-deidara-island-raid.start
+  to: sc-s2-kabuto-deidara-island-raid.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-deidara-island-raid
+- id: pr-s2-kabuto-deidara-island-raid-c-kurotsuchi
+  entity_id: c-kurotsuchi
+  from: sc-s2-kabuto-deidara-island-raid.start
+  to: sc-s2-kabuto-deidara-island-raid.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-deidara-island-raid
+- id: pr-s2-kabuto-deidara-island-raid-c-akatsuchi
+  entity_id: c-akatsuchi
+  from: sc-s2-kabuto-deidara-island-raid.start
+  to: sc-s2-kabuto-deidara-island-raid.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-deidara-island-raid

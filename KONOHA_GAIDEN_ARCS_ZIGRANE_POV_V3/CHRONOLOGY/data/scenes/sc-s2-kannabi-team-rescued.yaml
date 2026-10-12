@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-kannabi-team-rescued
+episode_id: ep-s2-kannabi-team-rescued
+display_rank: 27900
+continuity_id: main
+title: Мінато знаходить уцілілих учнів
+description: Какаші й Рін залишають завал; команда завершує знищення мосту.
+location_id: loc-kannabi-route
+placement:
+  anchor_id: ta-s2-47-10-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kannabi-team-rescued-1
+  title: Мінато знаходить уцілілих учнів
+  text: Какаші й Рін залишають завал; команда завершує знищення мосту.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-minato
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kannabi-team-rescued
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-kannabi-team-rescued-c-minato
+  entity_id: c-minato
+  from: sc-s2-kannabi-team-rescued.start
+  to: sc-s2-kannabi-team-rescued.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-team-rescued
+- id: pr-s2-kannabi-team-rescued-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kannabi-team-rescued.start
+  to: sc-s2-kannabi-team-rescued.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-team-rescued
+- id: pr-s2-kannabi-team-rescued-c-rin
+  entity_id: c-rin
+  from: sc-s2-kannabi-team-rescued.start
+  to: sc-s2-kannabi-team-rescued.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kannabi-team-rescued

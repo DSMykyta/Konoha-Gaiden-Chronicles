@@ -1,0 +1,77 @@
+schema_version: 1
+id: sc-s2-konan-tobi-battle
+episode_id: ep-s2-konan-tobi-battle
+display_rank: 22700
+continuity_id: main
+title: Конан протистоїть Тобі
+description: Озеро стає пасткою з вибухових міток; Ідзанаґі дозволяє Тобі пережити вибух. Він добуває місце могили
+  Наґато та забирає Ріннеґан.
+location_id: loc-amegakure-lake
+placement:
+  anchor_id: ta-s2-66-10-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-konan-tobi-battle-1
+  title: Конан протистоїть Тобі
+  text: Озеро стає пасткою з вибухових міток; Ідзанаґі дозволяє Тобі пережити вибух.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-konan-tobi-battle
+- id: ev-s2-konan-tobi-battle-2
+  title: Тобі вбиває Конан
+  text: Він добуває місце могили Наґато та забирає Ріннеґан.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-konan-tobi-battle
+relations:
+- id: rel-s2-konan-tobi-battle-1
+  kind: before
+  a: ev-s2-konan-tobi-battle-1
+  b: ev-s2-konan-tobi-battle-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konan-tobi-battle
+presence:
+- id: pr-s2-konan-tobi-battle-c-konan
+  entity_id: c-konan
+  from: sc-s2-konan-tobi-battle.start
+  to: sc-s2-konan-tobi-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konan-tobi-battle
+- id: pr-s2-konan-tobi-battle-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-konan-tobi-battle.start
+  to: sc-s2-konan-tobi-battle.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-konan-tobi-battle

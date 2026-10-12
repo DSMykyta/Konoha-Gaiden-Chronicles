@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-hideout-search
+episode_id: ep-s2-hideout-search
+display_rank: 3700
+continuity_id: main
+title: Сай завершує малюнок із братом
+description: Наруто непритомніє від виснаження; після пробудження Сай показує йому завершену сторінку. Ямато приходить
+  на допомогу, поки Сай шукає Саске.
+location_id: loc-orochimaru-tenchi-hideout
+placement:
+  anchor_id: ta-s2-64-12-15
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hideout-search-1
+  title: Сай завершує малюнок із братом
+  text: Наруто непритомніє від виснаження; після пробудження Сай показує йому завершену сторінку.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hideout-search
+- id: ev-s2-hideout-search-2
+  title: Орочімару затримує Наруто
+  text: Ямато приходить на допомогу, поки Сай шукає Саске.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  - entity_id: c-orochimaru
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hideout-search
+relations:
+- id: rel-s2-hideout-search-1
+  kind: before
+  a: ev-s2-hideout-search-1
+  b: ev-s2-hideout-search-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-search
+presence:
+- id: pr-s2-hideout-search-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hideout-search.start
+  to: sc-s2-hideout-search.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-search
+- id: pr-s2-hideout-search-c-sai
+  entity_id: c-sai
+  from: sc-s2-hideout-search.start
+  to: sc-s2-hideout-search.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-search
+- id: pr-s2-hideout-search-c-orochimaru
+  entity_id: c-orochimaru
+  from: sc-s2-hideout-search.start
+  to: sc-s2-hideout-search.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-search
+- id: pr-s2-hideout-search-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-hideout-search.start
+  to: sc-s2-hideout-search.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hideout-search

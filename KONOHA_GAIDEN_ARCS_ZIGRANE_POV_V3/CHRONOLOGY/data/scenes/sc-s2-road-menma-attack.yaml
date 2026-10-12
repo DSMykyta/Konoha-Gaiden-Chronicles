@@ -1,0 +1,87 @@
+schema_version: 1
+id: sc-s2-road-menma-attack
+episode_id: ep-s2-road-menma-attack
+display_rank: 41600
+continuity_id: movie-road
+title: Менма руйнує село й викрадає Сакуру
+description: Наруто бачить, що перебування з батьками не захистить друзів, і виходить рятувати Сакуру.
+location_id: loc-rtn-konohagakure
+placement:
+  anchor_id: ta-s2-66-06-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-menma-attack-1
+  title: Менма руйнує село й викрадає Сакуру
+  text: Наруто бачить, що перебування з батьками не захистить друзів, і виходить рятувати Сакуру.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-menma
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-minato
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-kushina
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-menma-attack
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-road-menma-attack-c-menma
+  entity_id: c-menma
+  from: sc-s2-road-menma-attack.start
+  to: sc-s2-road-menma-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-menma-attack
+- id: pr-s2-road-menma-attack-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-road-menma-attack.start
+  to: sc-s2-road-menma-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-menma-attack
+- id: pr-s2-road-menma-attack-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-road-menma-attack.start
+  to: sc-s2-road-menma-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-menma-attack
+- id: pr-s2-road-menma-attack-c-rtn-minato
+  entity_id: c-rtn-minato
+  from: sc-s2-road-menma-attack.start
+  to: sc-s2-road-menma-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-menma-attack
+- id: pr-s2-road-menma-attack-c-rtn-kushina
+  entity_id: c-rtn-kushina
+  from: sc-s2-road-menma-attack.start
+  to: sc-s2-road-menma-attack.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-menma-attack

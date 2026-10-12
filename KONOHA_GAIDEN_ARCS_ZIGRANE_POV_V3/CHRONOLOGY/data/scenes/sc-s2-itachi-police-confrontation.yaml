@@ -1,0 +1,98 @@
+schema_version: 1
+id: sc-s2-itachi-police-confrontation
+episode_id: ep-s2-itachi-police-confrontation
+display_rank: 31800
+continuity_id: main
+title: Поліція звинувачує Ітачі в смерті Шісуї
+description: Ітачі б’ється з обвинувачами; голос Саске зупиняє сутичку.
+location_id: loc-uchiha-district
+placement:
+  anchor_id: ta-s2-56-09-22
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-police-confrontation-1
+  title: Поліція звинувачує Ітачі в смерті Шісуї
+  text: Ітачі б’ється з обвинувачами; голос Саске зупиняє сутичку.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-fugaku
+    role: participant
+    mode: physical
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-inabi
+    role: participant
+    mode: physical
+  - entity_id: c-yashiro
+    role: participant
+    mode: physical
+  - entity_id: c-tekka
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-police-confrontation
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-itachi-police-confrontation-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-police-confrontation.start
+  to: sc-s2-itachi-police-confrontation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-police-confrontation
+- id: pr-s2-itachi-police-confrontation-c-fugaku
+  entity_id: c-fugaku
+  from: sc-s2-itachi-police-confrontation.start
+  to: sc-s2-itachi-police-confrontation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-police-confrontation
+- id: pr-s2-itachi-police-confrontation-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-itachi-police-confrontation.start
+  to: sc-s2-itachi-police-confrontation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-police-confrontation
+- id: pr-s2-itachi-police-confrontation-c-inabi
+  entity_id: c-inabi
+  from: sc-s2-itachi-police-confrontation.start
+  to: sc-s2-itachi-police-confrontation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-police-confrontation
+- id: pr-s2-itachi-police-confrontation-c-yashiro
+  entity_id: c-yashiro
+  from: sc-s2-itachi-police-confrontation.start
+  to: sc-s2-itachi-police-confrontation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-police-confrontation
+- id: pr-s2-itachi-police-confrontation-c-tekka
+  entity_id: c-tekka
+  from: sc-s2-itachi-police-confrontation.start
+  to: sc-s2-itachi-police-confrontation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-police-confrontation

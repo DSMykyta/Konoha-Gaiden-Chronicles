@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-kabuto-ryuchi-training
+episode_id: ep-s2-kabuto-ryuchi-training
+display_rank: 200
+continuity_id: main
+title: Кабуто навчається сенджюцу в Рючі
+description: Біла Змія-Мудрець дає йому шлях до Режиму Мудреця; це навчання передує його воєнному бою з братами
+  Учіха.
+location_id: loc-ryuchi-cave
+placement:
+  anchor_id: ta-s2-66-07-20
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kabuto-ryuchi-training-1
+  title: Кабуто навчається сенджюцу в Рючі
+  text: Біла Змія-Мудрець дає йому шлях до Режиму Мудреця; це навчання передує його воєнному бою з братами Учіха.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-white-snake-sage
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kabuto-ryuchi-training
+relations: []
+presence:
+- id: pr-s2-kabuto-ryuchi-training-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-kabuto-ryuchi-training.start
+  to: sc-s2-kabuto-ryuchi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-ryuchi-training
+- id: pr-s2-kabuto-ryuchi-training-c-white-snake-sage
+  entity_id: c-white-snake-sage
+  from: sc-s2-kabuto-ryuchi-training.start
+  to: sc-s2-kabuto-ryuchi-training.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kabuto-ryuchi-training

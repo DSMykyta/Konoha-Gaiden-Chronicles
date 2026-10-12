@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-jiraiya-first-myoboku
+episode_id: ep-s2-jiraiya-first-myoboku
+display_rank: 26000
+continuity_id: main
+title: Джирая потрапляє до Мьобоку
+description: Невдалий виклик приводить його до жаб; він починає навчання й чує пророцтво про свого учня.
+location_id: loc-mount-myoboku
+placement:
+  anchor_id: ta-s2-13-06-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-first-myoboku-1
+  title: Джирая потрапляє до Мьобоку
+  text: Невдалий виклик приводить його до жаб; він починає навчання й чує пророцтво про свого учня.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-gamamaru
+    role: participant
+    mode: physical
+  - entity_id: c-fukasaku
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-first-myoboku
+relations: []
+presence:
+- id: pr-s2-jiraiya-first-myoboku-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-first-myoboku.start
+  to: sc-s2-jiraiya-first-myoboku.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-first-myoboku
+- id: pr-s2-jiraiya-first-myoboku-c-gamamaru
+  entity_id: c-gamamaru
+  from: sc-s2-jiraiya-first-myoboku.start
+  to: sc-s2-jiraiya-first-myoboku.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-first-myoboku
+- id: pr-s2-jiraiya-first-myoboku-c-fukasaku
+  entity_id: c-fukasaku
+  from: sc-s2-jiraiya-first-myoboku.start
+  to: sc-s2-jiraiya-first-myoboku.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-first-myoboku

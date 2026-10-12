@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-senju-uchiha-peace
+episode_id: ep-s2-senju-uchiha-peace
+display_rank: 42200
+continuity_id: main
+title: Хашірама пропонує власне життя за мир
+description: Мадара зупиняє його; Сенджю й Учіха укладають угоду.
+location_id: loc-senju-uchiha-battlefield
+placement:
+  anchor_id: ta-s2-1-01-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-senju-uchiha-peace-1
+  title: Хашірама пропонує власне життя за мир
+  text: Мадара зупиняє його; Сенджю й Учіха укладають угоду.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hashirama
+    role: participant
+    mode: physical
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-tobirama
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-senju-uchiha-peace
+relations: []
+presence:
+- id: pr-s2-senju-uchiha-peace-c-hashirama
+  entity_id: c-hashirama
+  from: sc-s2-senju-uchiha-peace.start
+  to: sc-s2-senju-uchiha-peace.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-peace
+- id: pr-s2-senju-uchiha-peace-c-madara
+  entity_id: c-madara
+  from: sc-s2-senju-uchiha-peace.start
+  to: sc-s2-senju-uchiha-peace.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-peace
+- id: pr-s2-senju-uchiha-peace-c-tobirama
+  entity_id: c-tobirama
+  from: sc-s2-senju-uchiha-peace.start
+  to: sc-s2-senju-uchiha-peace.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-senju-uchiha-peace

@@ -1,0 +1,61 @@
+schema_version: 1
+id: sc-s2-kiri-kage-departure
+episode_id: ep-s2-kiri-kage-departure
+display_rank: 16500
+continuity_id: main
+title: Мідзукаґе вирушає до саміту
+description: Мей бере Чоджюро та Ао й залишає Кірі.
+location_id: loc-kirigakure
+placement:
+  anchor_id: ta-s2-66-08-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kiri-kage-departure
+  title: Мідзукаґе вирушає до саміту
+  text: Мей бере Чоджюро та Ао й залишає Кірі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-mei
+    role: participant
+    mode: physical
+  - entity_id: c-chojuro
+    role: participant
+    mode: physical
+  - entity_id: c-ao
+    role: participant
+    mode: physical
+  evidence_ids: &id001
+  - evd-s2-kage-departures
+relations: []
+presence:
+- id: pr-sc-s2-kiri-kage-departure-c-mei
+  entity_id: c-mei
+  from: sc-s2-kiri-kage-departure.start
+  to: sc-s2-kiri-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-sc-s2-kiri-kage-departure-c-chojuro
+  entity_id: c-chojuro
+  from: sc-s2-kiri-kage-departure.start
+  to: sc-s2-kiri-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001
+- id: pr-sc-s2-kiri-kage-departure-c-ao
+  entity_id: c-ao
+  from: sc-s2-kiri-kage-departure.start
+  to: sc-s2-kiri-kage-departure.end
+  basis: source
+  review: accepted
+  evidence_ids: *id001

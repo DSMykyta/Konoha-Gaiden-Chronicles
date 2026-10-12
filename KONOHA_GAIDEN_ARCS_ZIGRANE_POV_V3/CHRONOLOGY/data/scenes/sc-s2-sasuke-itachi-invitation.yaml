@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-sasuke-itachi-invitation
+episode_id: ep-s2-sasuke-itachi-invitation
+display_rank: 10100
+continuity_id: main
+title: Ітачі призначає остаточну зустріч
+description: Саске пробиває двійника брата; Ітачі кличе його до сховища Учіха.
+location_id: loc-akatsuki-uchiha-outpost
+placement:
+  anchor_id: ta-s2-66-07-22
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sasuke-itachi-invitation-1
+  title: Ітачі призначає остаточну зустріч
+  text: Саске пробиває двійника брата; Ітачі кличе його до сховища Учіха.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sasuke
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sasuke-itachi-invitation
+relations: []
+presence:
+- id: pr-s2-sasuke-itachi-invitation-c-sasuke
+  entity_id: c-sasuke
+  from: sc-s2-sasuke-itachi-invitation.start
+  to: sc-s2-sasuke-itachi-invitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-itachi-invitation
+- id: pr-s2-sasuke-itachi-invitation-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-sasuke-itachi-invitation.start
+  to: sc-s2-sasuke-itachi-invitation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sasuke-itachi-invitation

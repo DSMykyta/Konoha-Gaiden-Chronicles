@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-sora-hokage-threat
+episode_id: ep-s2-sora-hokage-threat
+display_rank: 4700
+continuity_id: main
+title: Сора дізнається про смерть батька й нападає
+description: Під впливом Фурідо він звинувачує Асуму та намагається дістатися Цунаде.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-66-03-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-sora-hokage-threat-1
+  title: Сора дізнається про смерть батька й нападає
+  text: Під впливом Фурідо він звинувачує Асуму та намагається дістатися Цунаде.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sora-guardian
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-danzo
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-sora-hokage-threat
+relations: []
+presence:
+- id: pr-s2-sora-hokage-threat-c-sora-guardian
+  entity_id: c-sora-guardian
+  from: sc-s2-sora-hokage-threat.start
+  to: sc-s2-sora-hokage-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-hokage-threat
+- id: pr-s2-sora-hokage-threat-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-sora-hokage-threat.start
+  to: sc-s2-sora-hokage-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-hokage-threat
+- id: pr-s2-sora-hokage-threat-c-asuma
+  entity_id: c-asuma
+  from: sc-s2-sora-hokage-threat.start
+  to: sc-s2-sora-hokage-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-hokage-threat
+- id: pr-s2-sora-hokage-threat-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-sora-hokage-threat.start
+  to: sc-s2-sora-hokage-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-hokage-threat
+- id: pr-s2-sora-hokage-threat-c-danzo
+  entity_id: c-danzo
+  from: sc-s2-sora-hokage-threat.start
+  to: sc-s2-sora-hokage-threat.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-sora-hokage-threat

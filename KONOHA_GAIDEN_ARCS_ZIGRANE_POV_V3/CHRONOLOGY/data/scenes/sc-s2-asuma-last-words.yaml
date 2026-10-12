@@ -1,0 +1,161 @@
+schema_version: 1
+id: sc-s2-asuma-last-words
+episode_id: ep-s2-asuma-last-words
+display_rank: 5800
+continuity_id: main
+title: Підкріплення відтісняє Акацукі
+description: Хідана й Какудзу відкликають на запечатування Двохвостої. Іно не може врятувати його; Асума залишає
+  кожному останню настанову й помирає.
+location_id: loc-fire-bounty-station
+placement:
+  anchor_id: ta-s2-66-03-19
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-asuma-last-words-1
+  title: Підкріплення відтісняє Акацукі
+  text: Хідана й Какудзу відкликають на запечатування Двохвостої.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-kotetsu
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-raido
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: ev-s2-asuma-last-words-2
+  title: Асума прощається з учнями
+  text: Іно не може врятувати його; Асума залишає кожному останню настанову й помирає.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-asuma
+    role: participant
+    mode: physical
+  - entity_id: c-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-kotetsu
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-raido
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-asuma-last-words
+relations:
+- id: rel-s2-asuma-last-words-1
+  kind: before
+  a: ev-s2-asuma-last-words-1
+  b: ev-s2-asuma-last-words-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+presence:
+- id: pr-s2-asuma-last-words-c-asuma
+  entity_id: c-asuma
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: pr-s2-asuma-last-words-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: pr-s2-asuma-last-words-c-ino
+  entity_id: c-ino
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: pr-s2-asuma-last-words-c-choji
+  entity_id: c-choji
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: pr-s2-asuma-last-words-c-izumo
+  entity_id: c-izumo
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: pr-s2-asuma-last-words-c-kotetsu
+  entity_id: c-kotetsu
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: pr-s2-asuma-last-words-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words
+- id: pr-s2-asuma-last-words-c-raido
+  entity_id: c-raido
+  from: sc-s2-asuma-last-words.start
+  to: sc-s2-asuma-last-words.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-asuma-last-words

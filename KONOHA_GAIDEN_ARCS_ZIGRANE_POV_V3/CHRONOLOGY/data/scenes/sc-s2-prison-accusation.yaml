@@ -1,0 +1,65 @@
+schema_version: 1
+id: sc-s2-prison-accusation
+episode_id: ep-s2-prison-accusation
+display_rank: 40200
+continuity_id: movie-prison
+title: Наруто звинувачують у замаху на Райкаґе
+description: Свідчення перетворюють його на в’язня; справжній задум місії від нього приховують.
+location_id: loc-hokage-residence
+placement:
+  anchor_id: ta-s2-66-09-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-prison-accusation-1
+  title: Наруто звинувачують у замаху на Райкаґе
+  text: Свідчення перетворюють його на в’язня; справжній задум місії від нього приховують.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-accusation
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-prison-accusation-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-prison-accusation.start
+  to: sc-s2-prison-accusation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-accusation
+- id: pr-s2-prison-accusation-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-prison-accusation.start
+  to: sc-s2-prison-accusation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-accusation
+- id: pr-s2-prison-accusation-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-prison-accusation.start
+  to: sc-s2-prison-accusation.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-accusation

@@ -1,0 +1,63 @@
+schema_version: 1
+id: sc-s2-jiraiya-ame-infiltration
+episode_id: ep-s2-jiraiya-ame-infiltration
+display_rank: 11200
+continuity_id: main
+title: Джирая входить до Аме через жабу
+description: Він збирає чутки, захоплює двох шинобі та допитує їх у жаб’ячому просторі. У разі його загибелі ключ
+  до печаті Наруто має перейти до учня.
+location_id: loc-amegakure
+placement:
+  anchor_id: ta-s2-66-07-21
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-ame-infiltration-1
+  title: Джирая входить до Аме через жабу
+  text: Він збирає чутки, захоплює двох шинобі та допитує їх у жаб’ячому просторі.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-ame-infiltration
+- id: ev-s2-jiraiya-ame-infiltration-2
+  title: Джирая передає Ґероторі наказ
+  text: У разі його загибелі ключ до печаті Наруто має перейти до учня.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-ame-infiltration
+relations:
+- id: rel-s2-jiraiya-ame-infiltration-1
+  kind: before
+  a: ev-s2-jiraiya-ame-infiltration-1
+  b: ev-s2-jiraiya-ame-infiltration-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-ame-infiltration
+presence:
+- id: pr-s2-jiraiya-ame-infiltration-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-ame-infiltration.start
+  to: sc-s2-jiraiya-ame-infiltration.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-ame-infiltration

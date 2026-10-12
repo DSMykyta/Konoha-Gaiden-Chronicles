@@ -1,0 +1,52 @@
+schema_version: 1
+id: sc-s2-lunar-branch-war
+episode_id: ep-s2-lunar-branch-war
+display_rank: 200
+continuity_id: main
+title: Побічна гілка знищує головну
+description: Неправильне тлумачення заповіту Хамури приводить до створення спільного Тенсейґана та війни місячного
+  клану.
+location_id: loc-moon-otsutsuki-settlement
+placement: null
+state: active
+presence_coverage: complete
+review:
+  time: unknown
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-lunar-branch-war-1
+  title: Побічна гілка знищує головну
+  text: Неправильне тлумачення заповіту Хамури приводить до створення спільного Тенсейґана та війни місячного клану.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: group-lunar-main-branch
+    role: participant
+    mode: physical
+  - entity_id: group-lunar-cadet-branch
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-lunar-branch-war
+relations: []
+presence:
+- id: pr-s2-lunar-branch-war-group-lunar-main-branch
+  entity_id: group-lunar-main-branch
+  from: sc-s2-lunar-branch-war.start
+  to: sc-s2-lunar-branch-war.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lunar-branch-war
+- id: pr-s2-lunar-branch-war-group-lunar-cadet-branch
+  entity_id: group-lunar-cadet-branch
+  from: sc-s2-lunar-branch-war.start
+  to: sc-s2-lunar-branch-war.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-lunar-branch-war

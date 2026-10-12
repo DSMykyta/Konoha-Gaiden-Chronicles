@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-itachi-tenma-death
+episode_id: ep-s2-itachi-tenma-death
+display_rank: 31300
+continuity_id: main
+title: Чоловік у масці вбиває Тенму
+description: Втрачений товариш стає причиною пробудження Шарінґана Ітачі.
+location_id: loc-itachi-mission-route
+placement:
+  anchor_id: ta-s2-51-07-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-tenma-death-1
+  title: Чоловік у масці вбиває Тенму
+  text: Втрачений товариш стає причиною пробудження Шарінґана Ітачі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-tenma-izumo
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-itachi-tenma-death
+relations: []
+presence:
+- id: pr-s2-itachi-tenma-death-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-itachi-tenma-death.start
+  to: sc-s2-itachi-tenma-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-tenma-death
+- id: pr-s2-itachi-tenma-death-c-tenma-izumo
+  entity_id: c-tenma-izumo
+  from: sc-s2-itachi-tenma-death.start
+  to: sc-s2-itachi-tenma-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-tenma-death
+- id: pr-s2-itachi-tenma-death-c-obito
+  entity_id: c-obito
+  from: sc-s2-itachi-tenma-death.start
+  to: sc-s2-itachi-tenma-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-tenma-death

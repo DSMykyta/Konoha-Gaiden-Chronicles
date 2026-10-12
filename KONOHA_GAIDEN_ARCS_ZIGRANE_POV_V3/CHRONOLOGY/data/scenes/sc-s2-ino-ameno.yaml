@@ -1,0 +1,133 @@
+schema_version: 1
+id: sc-s2-ino-ameno
+episode_id: ep-s2-ino-ameno
+display_rank: 25300
+continuity_id: main
+title: Іно координує команду через свідомість
+description: Бій біля оази випробовує медичні навички Сакури й техніки Яманака. Після лікування вони розходяться
+  з обома потрібними сувоями.
+location_id: loc-demon-desert-oasis
+placement:
+  anchor_id: ta-s2-64-10-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-ino-ameno-1
+  title: Іно координує команду через свідомість
+  text: Бій біля оази випробовує медичні навички Сакури й техніки Яманака.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-ameno
+    role: participant
+    mode: physical
+  - entity_id: c-shishio
+    role: participant
+    mode: physical
+  - entity_id: c-koji-suna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-ino-ameno
+- id: ev-s2-ino-ameno-2
+  title: Команди обмінюються потрібними сувоями
+  text: Після лікування вони розходяться з обома потрібними сувоями.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-ino
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-ameno
+    role: participant
+    mode: physical
+  - entity_id: c-shishio
+    role: participant
+    mode: physical
+  - entity_id: c-koji-suna
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-ino-ameno
+relations:
+- id: rel-s2-ino-ameno-1
+  kind: before
+  a: ev-s2-ino-ameno-1
+  b: ev-s2-ino-ameno-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-ameno
+presence:
+- id: pr-s2-ino-ameno-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-ino-ameno.start
+  to: sc-s2-ino-ameno.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-ameno
+- id: pr-s2-ino-ameno-c-ino
+  entity_id: c-ino
+  from: sc-s2-ino-ameno.start
+  to: sc-s2-ino-ameno.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-ameno
+- id: pr-s2-ino-ameno-c-choji
+  entity_id: c-choji
+  from: sc-s2-ino-ameno.start
+  to: sc-s2-ino-ameno.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-ameno
+- id: pr-s2-ino-ameno-c-ameno
+  entity_id: c-ameno
+  from: sc-s2-ino-ameno.start
+  to: sc-s2-ino-ameno.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-ameno
+- id: pr-s2-ino-ameno-c-shishio
+  entity_id: c-shishio
+  from: sc-s2-ino-ameno.start
+  to: sc-s2-ino-ameno.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-ameno
+- id: pr-s2-ino-ameno-c-koji-suna
+  entity_id: c-koji-suna
+  from: sc-s2-ino-ameno.start
+  to: sc-s2-ino-ameno.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-ino-ameno

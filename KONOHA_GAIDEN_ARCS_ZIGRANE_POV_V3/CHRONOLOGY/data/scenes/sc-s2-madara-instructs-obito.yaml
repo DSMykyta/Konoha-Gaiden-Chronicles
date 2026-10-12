@@ -1,0 +1,66 @@
+schema_version: 1
+id: sc-s2-madara-instructs-obito
+episode_id: ep-s2-madara-instructs-obito
+display_rank: 1500
+continuity_id: main
+title: Мадара навчає Обіто плану Ока Місяця
+description: Мадара передає Обіто знання, техніки й роль свого наступника для майбутнього повернення.
+location_id: loc-madara-cave
+placement:
+  anchor_id: ta-s2-48-03-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-madara-instructs-obito-1
+  title: Мадара навчає Обіто плану Ока Місяця
+  text: Мадара передає Обіто знання, техніки й роль свого наступника для майбутнього повернення.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-madara
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-zetsu
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-madara-instructs-obito
+relations: []
+presence:
+- id: pr-s2-madara-instructs-obito-c-madara
+  entity_id: c-madara
+  from: sc-s2-madara-instructs-obito.start
+  to: sc-s2-madara-instructs-obito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-instructs-obito
+- id: pr-s2-madara-instructs-obito-c-obito
+  entity_id: c-obito
+  from: sc-s2-madara-instructs-obito.start
+  to: sc-s2-madara-instructs-obito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-instructs-obito
+- id: pr-s2-madara-instructs-obito-c-zetsu
+  entity_id: c-zetsu
+  from: sc-s2-madara-instructs-obito.start
+  to: sc-s2-madara-instructs-obito.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-madara-instructs-obito
+editorial_note: У №346 Чорний Зецу поданий як воля Мадари; пізнє пояснення розкриває, що він уже існував і обманював
+  його.

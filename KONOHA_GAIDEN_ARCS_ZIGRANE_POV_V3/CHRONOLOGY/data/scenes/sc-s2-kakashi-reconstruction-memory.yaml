@@ -1,0 +1,42 @@
+schema_version: 1
+id: sc-s2-kakashi-reconstruction-memory
+episode_id: ep-s2-kakashi-reconstruction-memory
+display_rank: 43500
+continuity_id: main
+title: Какаші помічає мандрівну музикантку
+description: Відбудова села повертає його до спогадів про знайомство з Командою 7 та справу Ханаре.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-16
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-reconstruction-memory-1
+  title: Какаші помічає мандрівну музикантку
+  text: Відбудова села повертає його до спогадів про знайомство з Командою 7 та справу Ханаре.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-reconstruction-memory
+relations: []
+presence:
+- id: pr-s2-kakashi-reconstruction-memory-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-reconstruction-memory.start
+  to: sc-s2-kakashi-reconstruction-memory.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-reconstruction-memory

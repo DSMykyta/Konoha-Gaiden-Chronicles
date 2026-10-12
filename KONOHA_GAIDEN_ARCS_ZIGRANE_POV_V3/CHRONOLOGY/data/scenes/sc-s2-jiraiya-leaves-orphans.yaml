@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-jiraiya-leaves-orphans
+episode_id: ep-s2-jiraiya-leaves-orphans
+display_rank: 26900
+continuity_id: main
+title: Учні перемагають клона Джираї
+description: Після трьох років навчання наставник залишає їх; перевернуті дощечки позначають вихід із дому.
+location_id: loc-ame-orphans-hideout
+placement:
+  anchor_id: ta-s2-41-05-11
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-leaves-orphans-1
+  title: Учні перемагають клона Джираї
+  text: Після трьох років навчання наставник залишає їх; перевернуті дощечки позначають вихід із дому.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-nagato
+    role: participant
+    mode: physical
+  - entity_id: c-yahiko
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-leaves-orphans
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-jiraiya-leaves-orphans-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-leaves-orphans.start
+  to: sc-s2-jiraiya-leaves-orphans.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-leaves-orphans
+- id: pr-s2-jiraiya-leaves-orphans-c-nagato
+  entity_id: c-nagato
+  from: sc-s2-jiraiya-leaves-orphans.start
+  to: sc-s2-jiraiya-leaves-orphans.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-leaves-orphans
+- id: pr-s2-jiraiya-leaves-orphans-c-yahiko
+  entity_id: c-yahiko
+  from: sc-s2-jiraiya-leaves-orphans.start
+  to: sc-s2-jiraiya-leaves-orphans.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-leaves-orphans
+- id: pr-s2-jiraiya-leaves-orphans-c-konan
+  entity_id: c-konan
+  from: sc-s2-jiraiya-leaves-orphans.start
+  to: sc-s2-jiraiya-leaves-orphans.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-leaves-orphans

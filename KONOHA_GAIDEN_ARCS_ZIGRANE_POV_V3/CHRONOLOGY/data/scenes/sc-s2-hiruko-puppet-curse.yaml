@@ -1,0 +1,76 @@
+schema_version: 1
+id: sc-s2-hiruko-puppet-curse
+episode_id: ep-s2-hiruko-puppet-curse
+display_rank: 38800
+continuity_id: movie-fire
+title: Прокляття веде Какаші до гори
+description: Наруто відмовляється залишати наставника й вирушає слідом; команда відбиває напад прибічників Хіруко.
+location_id: loc-mount-shumi-route
+placement:
+  anchor_id: ta-s2-66-04-27
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hiruko-puppet-curse-1
+  title: Прокляття веде Какаші до гори
+  text: Наруто відмовляється залишати наставника й вирушає слідом; команда відбиває напад прибічників Хіруко.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-sai
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hiruko-puppet-curse
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-hiruko-puppet-curse-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-hiruko-puppet-curse.start
+  to: sc-s2-hiruko-puppet-curse.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-puppet-curse
+- id: pr-s2-hiruko-puppet-curse-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-hiruko-puppet-curse.start
+  to: sc-s2-hiruko-puppet-curse.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-puppet-curse
+- id: pr-s2-hiruko-puppet-curse-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-hiruko-puppet-curse.start
+  to: sc-s2-hiruko-puppet-curse.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-puppet-curse
+- id: pr-s2-hiruko-puppet-curse-c-sai
+  entity_id: c-sai
+  from: sc-s2-hiruko-puppet-curse.start
+  to: sc-s2-hiruko-puppet-curse.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruko-puppet-curse

@@ -1,0 +1,43 @@
+schema_version: 1
+id: sc-s2-prison-solitary
+episode_id: ep-s2-prison-solitary
+display_rank: 40400
+continuity_id: movie-prison
+title: Наруто потрапляє до карцеру
+description: Повторна спроба опору продовжує ізоляцію; він шукає спосіб обійти печать.
+location_id: loc-hozuki-solitary-cell
+placement:
+  anchor_id: ta-s2-66-09-05
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-prison-solitary-1
+  title: Наруто потрапляє до карцеру
+  text: Повторна спроба опору продовжує ізоляцію; він шукає спосіб обійти печать.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-prison-solitary
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-prison-solitary-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-prison-solitary.start
+  to: sc-s2-prison-solitary.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-prison-solitary

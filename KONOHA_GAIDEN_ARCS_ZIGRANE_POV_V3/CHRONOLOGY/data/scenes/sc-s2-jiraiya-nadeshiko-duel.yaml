@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-jiraiya-nadeshiko-duel
+episode_id: ep-s2-jiraiya-nadeshiko-duel
+display_rank: 2700
+continuity_id: main
+title: Джирая залишає двобій наступним учням
+description: Бій із очільницею Надешіко завершується обіцянкою продовжити його через спадкоємців.
+location_id: loc-nadeshiko-village
+placement:
+  anchor_id: ta-s2-55-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-jiraiya-nadeshiko-duel-1
+  title: Джирая залишає двобій наступним учням
+  text: Бій із очільницею Надешіко завершується обіцянкою продовжити його через спадкоємців.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-jiraiya
+    role: participant
+    mode: physical
+  - entity_id: c-nadeshiko-former-leader
+    role: participant
+    mode: physical
+  - entity_id: c-tokiwa
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-jiraiya-nadeshiko-duel
+relations: []
+presence:
+- id: pr-s2-jiraiya-nadeshiko-duel-c-jiraiya
+  entity_id: c-jiraiya
+  from: sc-s2-jiraiya-nadeshiko-duel.start
+  to: sc-s2-jiraiya-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-nadeshiko-duel
+- id: pr-s2-jiraiya-nadeshiko-duel-c-nadeshiko-former-leader
+  entity_id: c-nadeshiko-former-leader
+  from: sc-s2-jiraiya-nadeshiko-duel.start
+  to: sc-s2-jiraiya-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-nadeshiko-duel
+- id: pr-s2-jiraiya-nadeshiko-duel-c-tokiwa
+  entity_id: c-tokiwa
+  from: sc-s2-jiraiya-nadeshiko-duel.start
+  to: sc-s2-jiraiya-nadeshiko-duel.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-jiraiya-nadeshiko-duel

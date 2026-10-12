@@ -1,0 +1,54 @@
+schema_version: 1
+id: sc-s2-dan-death
+episode_id: ep-s2-dan-death
+display_rank: 26300
+continuity_id: main
+title: Цунаде не може врятувати Дана
+description: Його рана призводить до смертельної втрати крові, попри її лікування.
+location_id: loc-second-war-medical-camp
+placement:
+  anchor_id: ta-s2-38-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-dan-death-1
+  title: Цунаде не може врятувати Дана
+  text: Його рана призводить до смертельної втрати крові, попри її лікування.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tsunade
+    role: participant
+    mode: physical
+  - entity_id: c-dan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-dan-death
+  layer: canon
+relations: []
+presence:
+- id: pr-s2-dan-death-c-tsunade
+  entity_id: c-tsunade
+  from: sc-s2-dan-death.start
+  to: sc-s2-dan-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-dan-death
+- id: pr-s2-dan-death-c-dan
+  entity_id: c-dan
+  from: sc-s2-dan-death.start
+  to: sc-s2-dan-death.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-dan-death

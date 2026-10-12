@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-tobi-deidara-isobu
+episode_id: ep-s2-tobi-deidara-isobu
+display_rank: 8600
+continuity_id: main
+title: Дейдара й Тобі захоплюють Ісобу
+description: Дейдара вбиває загін АНБУ, підриває звіра та відвозить його до сховища Акацукі.
+location_id: loc-three-tails-lake
+placement:
+  anchor_id: ta-s2-66-04-09
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tobi-deidara-isobu-1
+  title: Дейдара й Тобі захоплюють Ісобу
+  text: Дейдара вбиває загін АНБУ, підриває звіра та відвозить його до сховища Акацукі.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  - entity_id: c-deidara
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tobi-deidara-isobu
+relations: []
+presence:
+- id: pr-s2-tobi-deidara-isobu-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-tobi-deidara-isobu.start
+  to: sc-s2-tobi-deidara-isobu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-deidara-isobu
+- id: pr-s2-tobi-deidara-isobu-c-deidara
+  entity_id: c-deidara
+  from: sc-s2-tobi-deidara-isobu.start
+  to: sc-s2-tobi-deidara-isobu.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tobi-deidara-isobu

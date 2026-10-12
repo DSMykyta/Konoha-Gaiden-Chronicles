@@ -1,0 +1,3728 @@
+{
+  "schema_version": 1,
+  "scope": "001–256; історичні доповнення з пізніших серій",
+  "episodes": [
+    {
+      "episode": 1,
+      "scene_ids": [
+        "sc-s2-ebisu-cat",
+        "sc-s2-naruto-homecoming",
+        "sc-s2-naruto-sakura-reunion",
+        "sc-s2-new-kakashi-team"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 2,
+      "scene_ids": [
+        "sc-s2-new-kakashi-team",
+        "sc-s2-second-bell-test",
+        "sc-s2-jiraiya-handover",
+        "sc-s2-suna-council",
+        "sc-s2-gaara-becomes-kazekage"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 3,
+      "scene_ids": [
+        "sc-s2-second-bell-test",
+        "sc-s2-deidara-gaara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 4,
+      "scene_ids": [
+        "sc-s2-second-bell-test",
+        "sc-s2-deidara-gaara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 5,
+      "scene_ids": [
+        "sc-s2-second-bell-test",
+        "sc-s2-jiraiya-handover",
+        "sc-s2-deidara-gaara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 6,
+      "scene_ids": [
+        "sc-s2-second-bell-test",
+        "sc-s2-deidara-gaara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 7,
+      "scene_ids": [
+        "sc-s2-kankuro-sasori"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 8,
+      "scene_ids": [
+        "sc-s2-kankuro-sasori",
+        "sc-s2-suna-request"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 9,
+      "scene_ids": [
+        "sc-s2-kankuro-sasori",
+        "sc-s2-suna-request",
+        "sc-s2-rescue-road"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 10,
+      "scene_ids": [
+        "sc-s2-rescue-road",
+        "sc-s2-kankuro-antidote",
+        "sc-s2-gaara-extraction"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 11,
+      "scene_ids": [
+        "sc-s2-kankuro-antidote",
+        "sc-s2-guy-deployed",
+        "sc-s2-gaara-extraction"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 12,
+      "scene_ids": [
+        "sc-s2-kankuro-antidote",
+        "sc-s2-guy-deployed",
+        "sc-s2-gaara-extraction"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 13,
+      "scene_ids": [
+        "sc-s2-gaara-extraction",
+        "sc-s2-itachi-substitute",
+        "sc-s2-kisame-substitute"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 14,
+      "scene_ids": [
+        "sc-s2-gaara-extraction",
+        "sc-s2-itachi-substitute",
+        "sc-s2-kisame-substitute"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 15,
+      "scene_ids": [
+        "sc-s2-gaara-extraction",
+        "sc-s2-itachi-substitute",
+        "sc-s2-kisame-substitute"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 16,
+      "scene_ids": [
+        "sc-s2-gaara-extraction",
+        "sc-s2-hideout-barrier"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 17,
+      "scene_ids": [
+        "sc-s2-gaara-extraction",
+        "sc-s2-hideout-barrier",
+        "sc-s2-gaara-extraction-complete"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 18,
+      "scene_ids": [
+        "sc-s2-hideout-barrier",
+        "sc-s2-guy-doppelgangers",
+        "sc-s2-gaara-extraction-complete"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 19,
+      "scene_ids": [
+        "sc-s2-guy-doppelgangers",
+        "sc-s2-sakura-sasori",
+        "sc-s2-naruto-deidara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 20,
+      "scene_ids": [
+        "sc-s2-guy-doppelgangers",
+        "sc-s2-sakura-sasori",
+        "sc-s2-naruto-deidara",
+        "sc-s2-sasori-parents-loss"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 21,
+      "scene_ids": [
+        "sc-s2-guy-doppelgangers",
+        "sc-s2-sakura-sasori",
+        "sc-s2-naruto-deidara",
+        "sc-s2-sasori-parents-loss"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 22,
+      "scene_ids": [
+        "sc-s2-guy-doppelgangers",
+        "sc-s2-sakura-sasori",
+        "sc-s2-naruto-deidara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 23,
+      "scene_ids": [
+        "sc-s2-sakura-sasori",
+        "sc-s2-sasori-third-kazekage"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 24,
+      "scene_ids": [
+        "sc-s2-sakura-sasori"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 25,
+      "scene_ids": [
+        "sc-s2-sakura-sasori"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 26,
+      "scene_ids": [
+        "sc-s2-sakura-sasori"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 27,
+      "scene_ids": [
+        "sc-s2-sakura-sasori",
+        "sc-s2-naruto-deidara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 28,
+      "scene_ids": [
+        "sc-s2-guy-doppelgangers",
+        "sc-s2-naruto-deidara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 29,
+      "scene_ids": [
+        "sc-s2-naruto-deidara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 30,
+      "scene_ids": [
+        "sc-s2-naruto-deidara",
+        "sc-s2-rescue-groups-reunite",
+        "sc-s2-chiyo-revives-gaara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 31,
+      "scene_ids": [
+        "sc-s2-chiyo-revives-gaara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 32,
+      "scene_ids": [
+        "sc-s2-kazekage-return",
+        "sc-s2-rescue-homeward",
+        "sc-s2-root-sai-order"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 33,
+      "scene_ids": [
+        "sc-s2-kakashi-hospitalised",
+        "sc-s2-sai-first-clash"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 34,
+      "scene_ids": [
+        "sc-s2-root-sai-order",
+        "sc-s2-sai-first-clash",
+        "sc-s2-yamato-appointed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 35,
+      "scene_ids": [
+        "sc-s2-root-sai-order",
+        "sc-s2-yamato-appointed",
+        "sc-s2-yamato-cloak-warning",
+        "sc-s2-four-tails-jiraiya-injury"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 36,
+      "scene_ids": [
+        "sc-s2-tenchi-road-and-inn"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 37,
+      "scene_ids": [
+        "sc-s2-tenchi-road-and-inn",
+        "sc-s2-tenchi-camp"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 38,
+      "scene_ids": [
+        "sc-s2-tenchi-camp"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 39,
+      "scene_ids": [
+        "sc-s2-tenchi-spy-meeting"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 40,
+      "scene_ids": [
+        "sc-s2-yamato-cloak-warning",
+        "sc-s2-tenchi-spy-meeting",
+        "sc-s2-tenchi-four-tails",
+        "sc-s2-four-tails-jiraiya-injury"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 41,
+      "scene_ids": [
+        "sc-s2-tenchi-four-tails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 42,
+      "scene_ids": [
+        "sc-s2-tenchi-four-tails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 43,
+      "scene_ids": [
+        "sc-s2-tenchi-four-tails",
+        "sc-s2-sai-orochimaru-deal"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 44,
+      "scene_ids": [
+        "sc-s2-sai-orochimaru-deal",
+        "sc-s2-yamato-tracks-sai"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 45,
+      "scene_ids": [
+        "sc-s2-sai-orochimaru-deal",
+        "sc-s2-yamato-tracks-sai"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 46,
+      "scene_ids": [
+        "sc-s2-yamato-tracks-sai",
+        "sc-s2-hideout-sai-captured"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 47,
+      "scene_ids": [
+        "sc-s2-hideout-sai-captured"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 48,
+      "scene_ids": [
+        "sc-s2-hideout-sai-captured"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 49,
+      "scene_ids": [
+        "sc-s2-kabuto-captured"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 50,
+      "scene_ids": [
+        "sc-s2-hideout-search",
+        "sc-s2-sai-shin-picturebook"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 51,
+      "scene_ids": [
+        "sc-s2-sasuke-reunion"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 52,
+      "scene_ids": [
+        "sc-s2-sasuke-reunion"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 53,
+      "scene_ids": [
+        "sc-s2-sasuke-reunion",
+        "sc-s2-tenchi-report",
+        "sc-s2-kakashi-new-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 54,
+      "scene_ids": [
+        "sc-s2-sai-friendship",
+        "sc-s2-kakashi-new-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 55,
+      "scene_ids": [
+        "sc-s2-wind-nature"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 56,
+      "scene_ids": [
+        "sc-s2-wind-nature",
+        "sc-s2-asuma-wind-lesson"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 57,
+      "scene_ids": [
+        "sc-s2-fire-temple-arrival"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 58,
+      "scene_ids": [
+        "sc-s2-fire-temple-arrival"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 59,
+      "scene_ids": [
+        "sc-s2-fire-temple-arrival",
+        "sc-s2-guardian-tombs"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 60,
+      "scene_ids": [
+        "sc-s2-guardian-tombs"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 61,
+      "scene_ids": [
+        "sc-s2-guardian-tombs"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 62,
+      "scene_ids": [
+        "sc-s2-sora-konoha"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 63,
+      "scene_ids": [
+        "sc-s2-sora-konoha"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 64,
+      "scene_ids": [
+        "sc-s2-sora-hokage-threat"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 65,
+      "scene_ids": [
+        "sc-s2-sora-hokage-threat",
+        "sc-s2-konoha-blackout"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 66,
+      "scene_ids": [
+        "sc-s2-konoha-blackout",
+        "sc-s2-limelight-guardians"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 67,
+      "scene_ids": [
+        "sc-s2-konoha-blackout",
+        "sc-s2-naruto-fuka",
+        "sc-s2-limelight-guardians"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 68,
+      "scene_ids": [
+        "sc-s2-naruto-fuka",
+        "sc-s2-limelight-guardians"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 69,
+      "scene_ids": [
+        "sc-s2-limelight-guardians",
+        "sc-s2-sora-four-tails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 70,
+      "scene_ids": [
+        "sc-s2-sora-four-tails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 71,
+      "scene_ids": [
+        "sc-s2-sora-four-tails",
+        "sc-s2-sora-departs"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 72,
+      "scene_ids": [
+        "sc-s2-yugito-capture",
+        "sc-s2-chiriku-death"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 73,
+      "scene_ids": [
+        "sc-s2-chiriku-death",
+        "sc-s2-naruto-waterfall-training",
+        "sc-s2-twenty-platoons"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 74,
+      "scene_ids": [
+        "sc-s2-naruto-waterfall-training",
+        "sc-s2-twenty-platoons"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 75,
+      "scene_ids": [
+        "sc-s2-naruto-waterfall-training",
+        "sc-s2-twenty-platoons"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 76,
+      "scene_ids": [
+        "sc-s2-asuma-bounty-station"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 77,
+      "scene_ids": [
+        "sc-s2-asuma-bounty-station"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 78,
+      "scene_ids": [
+        "sc-s2-asuma-bounty-station"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 79,
+      "scene_ids": [
+        "sc-s2-asuma-bounty-station"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 80,
+      "scene_ids": [
+        "sc-s2-asuma-last-words"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 81,
+      "scene_ids": [
+        "sc-s2-naruto-waterfall-training",
+        "sc-s2-asuma-funeral"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 82,
+      "scene_ids": [
+        "sc-s2-asuma-funeral",
+        "sc-s2-shikamaru-mourning",
+        "sc-s2-revenge-departure"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 83,
+      "scene_ids": [
+        "sc-s2-revenge-departure",
+        "sc-s2-rasenshuriken-deadline",
+        "sc-s2-kakuzu-ambush"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 84,
+      "scene_ids": [
+        "sc-s2-rasenshuriken-deadline",
+        "sc-s2-kakuzu-ambush"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 85,
+      "scene_ids": [
+        "sc-s2-kakuzu-ambush",
+        "sc-s2-hidan-nara-trap"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 86,
+      "scene_ids": [
+        "sc-s2-hidan-nara-trap",
+        "sc-s2-kakuzu-rasenshuriken"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 87,
+      "scene_ids": [
+        "sc-s2-hidan-nara-trap",
+        "sc-s2-kakuzu-rasenshuriken",
+        "sc-s2-sakura-sai-help-shikamaru"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 88,
+      "scene_ids": [
+        "sc-s2-hidan-nara-trap",
+        "sc-s2-kakuzu-rasenshuriken",
+        "sc-s2-sakura-sai-help-shikamaru"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 89,
+      "scene_ids": [
+        "sc-s2-kakuzu-rasenshuriken",
+        "sc-s2-rasenshuriken-ban",
+        "sc-s2-shikamaru-kurenai",
+        "sc-s2-guren-recruited"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 90,
+      "scene_ids": [
+        "sc-s2-rasenshuriken-ban",
+        "sc-s2-guren-recruited",
+        "sc-s2-team8-search",
+        "sc-s2-naruto-toad-collaboration"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 91,
+      "scene_ids": [
+        "sc-s2-guren-recruited",
+        "sc-s2-team8-search",
+        "sc-s2-naruto-toad-collaboration"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 92,
+      "scene_ids": [
+        "sc-s2-guren-recruited",
+        "sc-s2-team8-search",
+        "sc-s2-naruto-toad-collaboration"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 93,
+      "scene_ids": [
+        "sc-s2-guren-recruited",
+        "sc-s2-team8-search",
+        "sc-s2-naruto-toad-collaboration",
+        "sc-s2-guren-yukimaru-bond"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 94,
+      "scene_ids": [
+        "sc-s2-team8-search",
+        "sc-s2-guren-yukimaru-bond"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 95,
+      "scene_ids": [
+        "sc-s2-guren-yukimaru-bond",
+        "sc-s2-crystal-prison-hinata"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 96,
+      "scene_ids": [
+        "sc-s2-guren-yukimaru-bond",
+        "sc-s2-crystal-prison-hinata",
+        "sc-s2-naruto-reinforcements"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 97,
+      "scene_ids": [
+        "sc-s2-crystal-prison-hinata",
+        "sc-s2-naruto-reinforcements"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 98,
+      "scene_ids": [
+        "sc-s2-naruto-reinforcements",
+        "sc-s2-three-tails-summoned"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 99,
+      "scene_ids": [
+        "sc-s2-three-tails-summoned",
+        "sc-s2-naruto-fog"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 100,
+      "scene_ids": [
+        "sc-s2-naruto-fog"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 101,
+      "scene_ids": [
+        "sc-s2-naruto-fog"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 102,
+      "scene_ids": [
+        "sc-s2-shizune-sealing-team"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 103,
+      "scene_ids": [
+        "sc-s2-shizune-sealing-team",
+        "sc-s2-guren-crystal-defeated"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 104,
+      "scene_ids": [
+        "sc-s2-guren-crystal-defeated",
+        "sc-s2-guren-barrier-attack"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 105,
+      "scene_ids": [
+        "sc-s2-guren-barrier-attack"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 106,
+      "scene_ids": [
+        "sc-s2-guren-barrier-attack",
+        "sc-s2-naruto-guren-swallowed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 107,
+      "scene_ids": [
+        "sc-s2-naruto-guren-swallowed",
+        "sc-s2-yukimaru-rescue-route"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 108,
+      "scene_ids": [
+        "sc-s2-naruto-guren-swallowed",
+        "sc-s2-yukimaru-rescue-route"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 109,
+      "scene_ids": [
+        "sc-s2-second-seal-fails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 110,
+      "scene_ids": [
+        "sc-s2-second-seal-fails",
+        "sc-s2-guren-kabuto-reveal"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 111,
+      "scene_ids": [
+        "sc-s2-second-seal-fails",
+        "sc-s2-guren-kabuto-reveal"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 112,
+      "scene_ids": [
+        "sc-s2-yukimaru-leaves",
+        "sc-s2-three-tails-retreat",
+        "sc-s2-tobi-deidara-isobu"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 113,
+      "scene_ids": [
+        "sc-s2-orochimaru-defeated"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 114,
+      "scene_ids": [
+        "sc-s2-orochimaru-defeated",
+        "sc-s2-orochimaru-white-skin",
+        "sc-s2-nawaki-death",
+        "sc-s2-orochimaru-itachi-defeat"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 115,
+      "scene_ids": [
+        "sc-s2-suigetsu-freed",
+        "sc-s2-suigetsu-zabuza-blade",
+        "sc-s2-sasuke-suigetsu-promise"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 116,
+      "scene_ids": [
+        "sc-s2-karin-recruited"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 117,
+      "scene_ids": [
+        "sc-s2-jugo-recruited",
+        "sc-s2-orochimaru-news",
+        "sc-s2-kimimaro-jugo-friendship"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 118,
+      "scene_ids": [
+        "sc-s2-jugo-recruited",
+        "sc-s2-orochimaru-news",
+        "sc-s2-kimimaro-jugo-friendship"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 119,
+      "scene_ids": [
+        "sc-s2-sakumo-disgrace",
+        "sc-s2-kannabi-mission",
+        "sc-s2-rin-abducted-kannabi"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 120,
+      "scene_ids": [
+        "sc-s2-rin-abducted-kannabi",
+        "sc-s2-obito-eye-gift",
+        "sc-s2-kannabi-team-rescued"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 121,
+      "scene_ids": [
+        "sc-s2-roshi-captured",
+        "sc-s2-eight-man-squad",
+        "sc-s2-hebi-cat-armoury"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 122,
+      "scene_ids": [
+        "sc-s2-hebi-cat-armoury",
+        "sc-s2-konoha-search-split"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 123,
+      "scene_ids": [
+        "sc-s2-sasuke-deidara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 124,
+      "scene_ids": [
+        "sc-s2-sasuke-deidara",
+        "sc-s2-deidara-self-destruction",
+        "sc-s2-deidara-recruited"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 125,
+      "scene_ids": [
+        "sc-s2-deidara-self-destruction",
+        "sc-s2-hebi-sasuke-recovery"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 126,
+      "scene_ids": [
+        "sc-s2-hebi-sasuke-recovery",
+        "sc-s2-naruto-itachi-crow",
+        "sc-s2-jiraiya-tsunade-farewell"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 127,
+      "scene_ids": [
+        "sc-s2-hiruzen-bell-test",
+        "sc-s2-jiraiya-first-myoboku"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 128,
+      "scene_ids": [
+        "sc-s2-sannin-hanzo",
+        "sc-s2-jiraiya-adopts-orphans",
+        "sc-s2-jiraiya-leaves-orphans",
+        "sc-s2-naruto-name-chosen"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 129,
+      "scene_ids": [
+        "sc-s2-jiraiya-ame-infiltration",
+        "sc-s2-pain-overthrows-hanzo"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 130,
+      "scene_ids": [
+        "sc-s2-jiraiya-ame-infiltration",
+        "sc-s2-jiraiya-konan",
+        "sc-s2-pain-overthrows-hanzo"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 131,
+      "scene_ids": [
+        "sc-s2-jiraiya-konan",
+        "sc-s2-jiraiya-sage-mode"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 132,
+      "scene_ids": [
+        "sc-s2-jiraiya-sage-mode",
+        "sc-s2-jiraiya-six-paths"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 133,
+      "scene_ids": [
+        "sc-s2-jiraiya-six-paths",
+        "sc-s2-jiraiya-last-message"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 134,
+      "scene_ids": [
+        "sc-s2-sasuke-itachi-invitation",
+        "sc-s2-eight-man-tobi-delay",
+        "sc-s2-suigetsu-kisame",
+        "sc-s2-jiraiya-last-message"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 135,
+      "scene_ids": [
+        "sc-s2-uchiha-final-duel",
+        "sc-s2-itachi-police-confrontation",
+        "sc-s2-uchiha-massacre"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 136,
+      "scene_ids": [
+        "sc-s2-uchiha-final-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 137,
+      "scene_ids": [
+        "sc-s2-uchiha-final-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 138,
+      "scene_ids": [
+        "sc-s2-uchiha-final-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 139,
+      "scene_ids": [
+        "sc-s2-eight-man-tobi-delay",
+        "sc-s2-suigetsu-kisame",
+        "sc-s2-tobi-takes-sasuke",
+        "sc-s2-itachi-truth"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 140,
+      "scene_ids": [
+        "sc-s2-itachi-truth",
+        "sc-s2-uchiha-relocated",
+        "sc-s2-uchiha-coup-preparation"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 141,
+      "scene_ids": [
+        "sc-s2-itachi-truth",
+        "sc-s2-taka-renamed",
+        "sc-s2-itachi-war-child",
+        "sc-s2-uchiha-coup-preparation",
+        "sc-s2-danzo-itachi-ultimatum",
+        "sc-s2-itachi-obito-agreement",
+        "sc-s2-uchiha-massacre"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 142,
+      "scene_ids": [
+        "sc-s2-taka-renamed",
+        "sc-s2-tobi-kisame-identity",
+        "sc-s2-taka-cloud-journey",
+        "sc-s2-taka-killer-b"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 143,
+      "scene_ids": [
+        "sc-s2-taka-killer-b"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 144,
+      "scene_ids": [
+        "sc-s2-hotaru-escort"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 145,
+      "scene_ids": [
+        "sc-s2-hotaru-escort",
+        "sc-s2-hotaru-village-betrayal"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 146,
+      "scene_ids": [
+        "sc-s2-hotaru-village-betrayal",
+        "sc-s2-kiri-terms"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 147,
+      "scene_ids": [
+        "sc-s2-kiri-terms",
+        "sc-s2-hotaru-seal"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 148,
+      "scene_ids": [
+        "sc-s2-hotaru-seal",
+        "sc-s2-utakata-pain-capture"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 149,
+      "scene_ids": [
+        "sc-s2-shiranami-revealed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 150,
+      "scene_ids": [
+        "sc-s2-shiranami-revealed",
+        "sc-s2-hotaru-jutsu-stopped"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 151,
+      "scene_ids": [
+        "sc-s2-hotaru-jutsu-stopped",
+        "sc-s2-utakata-pain-capture",
+        "sc-s2-hotaru-waits"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 152,
+      "scene_ids": [
+        "sc-s2-naruto-itachi-crow",
+        "sc-s2-six-tails-extraction",
+        "sc-s2-jiraiya-news"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 153,
+      "scene_ids": [
+        "sc-s2-jiraiya-news",
+        "sc-s2-naruto-iruka-grief",
+        "sc-s2-jiraiya-code",
+        "sc-s2-pain-autopsy"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 154,
+      "scene_ids": [
+        "sc-s2-jiraiya-code",
+        "sc-s2-pain-autopsy",
+        "sc-s2-myoboku-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 155,
+      "scene_ids": [
+        "sc-s2-myoboku-training",
+        "sc-s2-taka-failed-eight-tails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 156,
+      "scene_ids": [
+        "sc-s2-myoboku-training",
+        "sc-s2-sage-mode-clones"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 157,
+      "scene_ids": [
+        "sc-s2-pain-enters-konoha",
+        "sc-s2-konoha-hospital-defence",
+        "sc-s2-tsunade-katsuyu-defence"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 158,
+      "scene_ids": [
+        "sc-s2-konoha-hospital-defence",
+        "sc-s2-tsunade-katsuyu-defence",
+        "sc-s2-danzo-recall-blocked",
+        "sc-s2-kakashi-iruka-pain"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 159,
+      "scene_ids": [
+        "sc-s2-kakashi-iruka-pain",
+        "sc-s2-kakashi-choza-pain"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 160,
+      "scene_ids": [
+        "sc-s2-pain-autopsy",
+        "sc-s2-sage-mode-clones",
+        "sc-s2-danzo-recall-blocked",
+        "sc-s2-pain-investigation-loss"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 161,
+      "scene_ids": [
+        "sc-s2-sage-mode-clones",
+        "sc-s2-konohamaru-rasengan-pain",
+        "sc-s2-naruto-teaches-konohamaru-rasengan"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 162,
+      "scene_ids": [
+        "sc-s2-tsunade-katsuyu-defence",
+        "sc-s2-pain-investigation-loss",
+        "sc-s2-inuzuka-aburame-defence",
+        "sc-s2-pain-destroys-village",
+        "sc-s2-naruto-sage-arrival"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 163,
+      "scene_ids": [
+        "sc-s2-naruto-sage-arrival",
+        "sc-s2-naruto-pain-sage-fight"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 164,
+      "scene_ids": [
+        "sc-s2-naruto-pain-sage-fight"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 165,
+      "scene_ids": [
+        "sc-s2-naruto-pain-sage-fight"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 166,
+      "scene_ids": [
+        "sc-s2-hinata-confession",
+        "sc-s2-hinata-treatment",
+        "sc-s2-hinata-naruto-bullies"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 167,
+      "scene_ids": [
+        "sc-s2-naruto-chibaku-tensei"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 168,
+      "scene_ids": [
+        "sc-s2-minato-seal-appearance",
+        "sc-s2-deva-path-defeated"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 169,
+      "scene_ids": [
+        "sc-s2-deva-path-defeated",
+        "sc-s2-hinata-treatment",
+        "sc-s2-naruto-nagato-talk"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 170,
+      "scene_ids": [
+        "sc-y0-0731-honegami-field",
+        "sc-y0-0727-anko-naruto-dango-retro"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 171,
+      "scene_ids": [
+        "sc-y0-0731-honegami-field"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 172,
+      "scene_ids": [
+        "sc-s2-naruto-nagato-talk",
+        "sc-s2-sannin-hanzo",
+        "sc-s2-nagato-parents-killed",
+        "sc-s2-ame-orphans-meet",
+        "sc-s2-jiraiya-adopts-orphans"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 173,
+      "scene_ids": [
+        "sc-s2-naruto-nagato-talk",
+        "sc-s2-sannin-hanzo",
+        "sc-s2-jiraiya-adopts-orphans",
+        "sc-s2-nagato-protects-yahiko",
+        "sc-s2-jiraiya-leaves-orphans",
+        "sc-s2-hanzo-konan-hostage",
+        "sc-s2-nagato-gedo-retaliation"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 174,
+      "scene_ids": [
+        "sc-s2-naruto-nagato-talk",
+        "sc-s2-nagato-rinne-rebirth"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 175,
+      "scene_ids": [
+        "sc-s2-nagato-rinne-rebirth",
+        "sc-s2-naruto-konoha-hero"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 176,
+      "scene_ids": [
+        "sc-s2-naruto-konoha-hero",
+        "sc-s2-samui-konoha",
+        "sc-s2-iruka-first-class"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 177,
+      "scene_ids": [
+        "sc-s2-iruka-first-class",
+        "sc-s2-iruka-mask-and-spies"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 178,
+      "scene_ids": [
+        "sc-s2-taka-summit-redirection",
+        "sc-s2-iruka-first-class",
+        "sc-s2-iruka-mask-and-spies"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 179,
+      "scene_ids": [
+        "sc-s2-danzo-appointed",
+        "sc-s2-kakashi-reconstruction-memory"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 180,
+      "scene_ids": [
+        "sc-s2-reconstruction-waves"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 181,
+      "scene_ids": [
+        "sc-s2-reconstruction-waves"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 182,
+      "scene_ids": [
+        "sc-s2-gaara-konoha-news",
+        "sc-s2-gaara-becomes-kazekage",
+        "sc-y0-0913-gaara-settlement-defense"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 183,
+      "scene_ids": [
+        "sc-s2-tsunade-care"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 184,
+      "scene_ids": [
+        "sc-s2-neji-tenten-supply"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 185,
+      "scene_ids": [
+        "sc-s2-condor-present"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 186,
+      "scene_ids": [
+        "sc-s2-tsunade-care"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 187,
+      "scene_ids": [
+        "sc-s2-jiraiya-genjutsu-training",
+        "sc-s2-genjutsu-tree-infiltration"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 188,
+      "scene_ids": [
+        "sc-s2-genjutsu-tree-infiltration",
+        "sc-s2-genjutsu-tree-freed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 189,
+      "scene_ids": [
+        "sc-s2-nekomata-nekobaa-memory",
+        "sc-y0-0125-nekomata-mission"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 190,
+      "scene_ids": [
+        "sc-s2-kosuke-lost-comrades",
+        "sc-s2-kosuke-reconstruction-memory",
+        "sc-s2-kosuke-minato-leg",
+        "sc-s2-danzo-recall-blocked"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 191,
+      "scene_ids": [
+        "sc-s2-hanare-kakashi-childhood",
+        "sc-s2-kakashi-reconstruction-memory"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 192,
+      "scene_ids": [
+        "sc-s2-konohamaru-interviews",
+        "sc-y0-0801-hinata-kidnapping"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 193,
+      "scene_ids": [
+        "sc-y0-0126-kisuke-ghost"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 194,
+      "scene_ids": [
+        "sc-y0-0127-webbed-together"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 195,
+      "scene_ids": [
+        "sc-s2-team10-reconstruction",
+        "sc-y0-0128-team7-team10-hostage"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 196,
+      "scene_ids": [
+        "sc-s2-taka-childhood-route-memory",
+        "sc-y0-0921-sasuke-naho-criminal-search"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 197,
+      "scene_ids": [
+        "sc-s2-anko-kabuto-search",
+        "sc-s2-samui-konoha",
+        "sc-s2-karui-naruto",
+        "sc-s2-taka-summit-redirection"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 198,
+      "scene_ids": [
+        "sc-s2-karui-naruto",
+        "sc-s2-naruto-fourth-report",
+        "sc-s2-taka-summit-redirection"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 199,
+      "scene_ids": [
+        "sc-s2-kage-departures",
+        "sc-s2-danzo-road-ambush",
+        "sc-s2-naruto-summit-journey",
+        "sc-s2-naruto-raikage-plea",
+        "sc-s2-kumo-kage-departure",
+        "sc-s2-kiri-kage-departure",
+        "sc-s2-iwa-kage-departure"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 200,
+      "scene_ids": [
+        "sc-s2-naruto-raikage-plea",
+        "sc-s2-five-kage-debate"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 201,
+      "scene_ids": [
+        "sc-s2-sakura-sasuke-decision",
+        "sc-s2-sakura-iron-journey",
+        "sc-s2-five-kage-debate",
+        "sc-s2-tobi-naruto-inn"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 202,
+      "scene_ids": [
+        "sc-s2-five-kage-debate",
+        "sc-s2-tobi-naruto-inn",
+        "sc-s2-sasuke-raikage"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 203,
+      "scene_ids": [
+        "sc-s2-tobi-naruto-inn",
+        "sc-s2-sasuke-raikage"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 204,
+      "scene_ids": [
+        "sc-s2-sasuke-summit-breach",
+        "sc-s2-bee-sabu-kisame"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 205,
+      "scene_ids": [
+        "sc-s2-sakura-iron-journey",
+        "sc-s2-war-declaration",
+        "sc-s2-sakura-confession-naruto"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 206,
+      "scene_ids": [
+        "sc-s2-sakura-iron-journey",
+        "sc-s2-war-declaration",
+        "sc-s2-sakura-confession-naruto",
+        "sc-s2-bee-sabu-kisame"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 207,
+      "scene_ids": [
+        "sc-s2-bee-sabu-kisame",
+        "sc-s2-bee-raikage-rescue",
+        "sc-s2-ao-fu-chase"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 208,
+      "scene_ids": [
+        "sc-s2-bee-raikage-rescue",
+        "sc-s2-ao-fu-chase",
+        "sc-s2-naruto-sai-news"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 209,
+      "scene_ids": [
+        "sc-s2-naruto-sai-news",
+        "sc-s2-sasuke-danzo-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 210,
+      "scene_ids": [
+        "sc-s2-sasuke-danzo-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 211,
+      "scene_ids": [
+        "sc-s2-sasuke-danzo-duel",
+        "sc-s2-tobirama-last-escort"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 212,
+      "scene_ids": [
+        "sc-s2-sakura-sleep-bombs"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 213,
+      "scene_ids": [
+        "sc-s2-naruto-sai-news",
+        "sc-y0-0924-valley-end"
+      ],
+      "status": "recap_reused",
+      "reason": "Сон повторює вже представлене протистояння; окрема сцена минулого не створюється."
+    },
+    {
+      "episode": 214,
+      "scene_ids": [
+        "sc-s2-team7-samurai-bridge"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 215,
+      "scene_ids": [
+        "sc-s2-team7-samurai-bridge"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 216,
+      "scene_ids": [
+        "sc-s2-team7-samurai-bridge",
+        "sc-s2-karin-naruto-treatment",
+        "sc-s2-itachi-eye-transplant"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 217,
+      "scene_ids": [
+        "sc-s2-karin-naruto-treatment",
+        "sc-s2-summit-homeward"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 218,
+      "scene_ids": [
+        "sc-s2-alliance-ratified",
+        "sc-s2-summit-homeward"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 219,
+      "scene_ids": [
+        "sc-s2-tsunade-awakens",
+        "sc-s2-karin-interrogation",
+        "sc-s2-naruto-friends-decision"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 220,
+      "scene_ids": [
+        "sc-s2-itachi-eye-transplant",
+        "sc-s2-tsunade-awakens",
+        "sc-s2-naruto-seal-key"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 221,
+      "scene_ids": [
+        "sc-s2-naruto-seal-key",
+        "sc-s2-kabuto-tobi-alliance",
+        "sc-s2-four-tails-jiraiya-injury"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 222,
+      "scene_ids": [
+        "sc-s2-kage-hidden-jinchuriki"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 223,
+      "scene_ids": [
+        "sc-s2-naruto-sea-departure"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 224,
+      "scene_ids": [
+        "sc-s2-benisu-herbs"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 225,
+      "scene_ids": [
+        "sc-s2-ghost-ship"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 226,
+      "scene_ids": [
+        "sc-s2-battleship-island"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 227,
+      "scene_ids": [
+        "sc-s2-forgotten-island"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 228,
+      "scene_ids": [
+        "sc-s2-guy-lee-ocean-training",
+        "sc-s2-lee-drunk-restaurant",
+        "sc-s2-lee-seasickness-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 229,
+      "scene_ids": [
+        "sc-s2-silence-route-supplies",
+        "sc-s2-silence-mushrooms",
+        "sc-s2-silence-route-end"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 230,
+      "scene_ids": [
+        "sc-s2-clone-nightmare"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 231,
+      "scene_ids": [
+        "sc-s2-mokuzu-whirlpool",
+        "sc-s2-shikamaru-tenten-to-voyage",
+        "sc-s2-shikamaru-tenten-home"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 232,
+      "scene_ids": [
+        "sc-s2-kunoichi-evening",
+        "sc-s2-shikamaru-tenten-home"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 233,
+      "scene_ids": [
+        "sc-s2-naruto-imposter"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 234,
+      "scene_ids": [
+        "sc-s2-konohamaru-temari"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 235,
+      "scene_ids": [
+        "sc-s2-nadeshiko-arrival",
+        "sc-s2-nadeshiko-duel",
+        "sc-s2-shizuka-sagiri-loss",
+        "sc-s2-jiraiya-nadeshiko-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 236,
+      "scene_ids": [
+        "sc-s2-shino-talks-to-children",
+        "sc-s2-shino-suika-first-loss",
+        "sc-s2-shino-suika-rematch"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 237,
+      "scene_ids": [
+        "sc-s2-tenten-lee-training-present",
+        "sc-s2-tenten-finds-weapons-path"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 238,
+      "scene_ids": [
+        "sc-s2-sai-day-off"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 239,
+      "scene_ids": [
+        "sc-s2-ino-shika-cho-children"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 240,
+      "scene_ids": [
+        "sc-s2-kiba-kakashi-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 241,
+      "scene_ids": [
+        "sc-s2-kakashi-voyage-sos",
+        "sc-s2-sakumo-disgrace",
+        "sc-s2-guy-duy-childhood"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 242,
+      "scene_ids": [
+        "sc-s2-iwa-kiri-reconciliation",
+        "sc-s2-lightning-final-ship"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 243,
+      "scene_ids": [
+        "sc-s2-island-arrival",
+        "sc-s2-falls-of-truth"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 244,
+      "scene_ids": [
+        "sc-s2-falls-of-truth",
+        "sc-s2-motoi-bee-rescue",
+        "sc-s2-blue-b-extraction",
+        "sc-s2-motoi-attacks-bee"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 245,
+      "scene_ids": [
+        "sc-s2-naruto-accepts-darkness",
+        "sc-s2-kurama-chakra-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 246,
+      "scene_ids": [
+        "sc-s2-kurama-chakra-duel",
+        "sc-s2-kushina-chakra-story",
+        "sc-s2-kushina-konoha-arrival",
+        "sc-s2-minato-rescues-kushina"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 247,
+      "scene_ids": [
+        "sc-s2-kurama-chakra-duel",
+        "sc-s2-kushina-chakra-story",
+        "sc-s2-kushina-mito",
+        "sc-s2-naruto-birth"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 248,
+      "scene_ids": [
+        "sc-s2-kushina-chakra-story",
+        "sc-s2-naruto-birth",
+        "sc-s2-masked-man-birth-attack",
+        "sc-s2-kurama-extracted",
+        "sc-s2-minato-safehouse",
+        "sc-s2-kurama-konoha-assault",
+        "sc-s2-minato-obito-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 249,
+      "scene_ids": [
+        "sc-s2-kushina-chakra-story",
+        "sc-s2-kurama-konoha-assault",
+        "sc-s2-parents-sacrifice"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 250,
+      "scene_ids": [
+        "sc-s2-naruto-senses-kisame",
+        "sc-s2-guy-kisame-island"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 251,
+      "scene_ids": [
+        "sc-s2-guy-kisame-island",
+        "sc-s2-kisame-suicide",
+        "sc-s2-kisame-cipher-mission",
+        "sc-s2-kisame-fuguki-death",
+        "sc-s2-kisame-meets-masked-ruler"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 252,
+      "scene_ids": [
+        "sc-s2-konan-tobi-battle"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 253,
+      "scene_ids": [
+        "sc-s2-konan-tobi-battle",
+        "sc-s2-tobi-new-rinnegan",
+        "sc-s2-jiraiya-leaves-orphans"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 254,
+      "scene_ids": [
+        "sc-s2-tobi-new-rinnegan",
+        "sc-s2-naruto-animal-census",
+        "sc-s2-kabuto-deidara-island-raid"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 255,
+      "scene_ids": [
+        "sc-s2-kabuto-deidara-island-raid",
+        "sc-s2-yamato-abducted",
+        "sc-s2-yamato-zetsu-experiments"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 256,
+      "scene_ids": [
+        "sc-s2-island-moved-to-kumo",
+        "sc-s2-yamato-zetsu-experiments",
+        "sc-s2-allied-army-assembly",
+        "sc-s2-edo-army-revealed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 257,
+      "scene_ids": [
+        "sc-s2-naruto-parents-question",
+        "sc-s2-academy-naruto-sasuke-spar"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 258,
+      "scene_ids": [
+        "sc-y0-0122-team7-rooftop"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 259,
+      "scene_ids": [
+        "sc-y0-0801-naruto-gaara-battle"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 260,
+      "scene_ids": [
+        "sc-y0-0924-gaara-vs-kimimaro"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 261,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 262,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 263,
+      "scene_ids": [
+        "sc-s2-sai-shin-picturebook"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 264,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 265,
+      "scene_ids": [
+        "sc-y0-0330-bridge-final-battle"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 266,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 267,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 268,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 269,
+      "scene_ids": [
+        "sc-s2-kinkaku-ginkaku-kurama",
+        "sc-s2-kinkaku-ginkaku-coup"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 270,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 271,
+      "scene_ids": [
+        "sc-s2-road-sakura-skyfall",
+        "sc-s2-road-sakura-hospital",
+        "sc-s2-road-sakura-search-pendant",
+        "sc-s2-road-sakura-parents-return"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 272,
+      "scene_ids": [
+        "sc-s2-hanzo-mifune-first-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 273,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 274,
+      "scene_ids": [
+        "sc-s2-choji-protection-oath"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 275,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 276,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 277,
+      "scene_ids": [
+        "sc-s2-academy-naruto-sasuke-spar"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 278,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 279,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 280,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 281,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 282,
+      "scene_ids": [
+        "sc-s2-bee-chosen-as-brother",
+        "sc-s2-minato-ab-clash"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 283,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 284,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 285,
+      "scene_ids": [
+        "sc-s2-pakura-sacrificed",
+        "sc-s2-pakura-maki-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 286,
+      "scene_ids": [
+        "sc-s2-nawaki-death",
+        "sc-s2-dan-death",
+        "sc-s2-tsunade-raikage-treatment"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 287,
+      "scene_ids": [
+        "sc-s2-dan-death",
+        "sc-s2-tsunade-raikage-treatment"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 288,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 289,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 290,
+      "scene_ids": [
+        "sc-s2-power-tonika-massacre",
+        "sc-s2-power-survivors-hacho",
+        "sc-s2-power-tsunade-mission",
+        "sc-s2-power-first-kabuto-fight"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 291,
+      "scene_ids": [
+        "sc-s2-power-survivors-hacho",
+        "sc-s2-power-first-kabuto-fight",
+        "sc-s2-power-orphan-bridge",
+        "sc-s2-power-yamato-investigation"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 292,
+      "scene_ids": [
+        "sc-s2-power-miina-warning",
+        "sc-s2-power-grandfather-return",
+        "sc-s2-power-clone-emerges"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 293,
+      "scene_ids": [
+        "sc-s2-power-clone-emerges",
+        "sc-s2-power-konoha-reinforcements",
+        "sc-s2-power-naruto-dokku-captured"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 294,
+      "scene_ids": [
+        "sc-s2-power-naruto-dokku-captured",
+        "sc-s2-power-tower-rises",
+        "sc-s2-power-clone-duel",
+        "sc-s2-power-hidan-reconstruction-ends"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 295,
+      "scene_ids": [
+        "sc-s2-power-clone-duel",
+        "sc-s2-power-tower-stopped",
+        "sc-s2-power-kabuto-disonasu",
+        "sc-s2-power-survivors-letter"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 296,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 297,
+      "scene_ids": [
+        "sc-s2-gaara-birth",
+        "sc-s2-gaara-yashamaru-test"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 298,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 299,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 300,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 301,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 302,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 303,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 304,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 305,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 306,
+      "scene_ids": [
+        "sc-y0-0919-hinata-vision-loss",
+        "sc-y0-0919-clear-eye-herb-mission",
+        "sc-y0-0919-hinata-fireworks"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 307,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 308,
+      "scene_ids": [
+        "sc-s2-yugao-hayate-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 309,
+      "scene_ids": [
+        "sc-y0-0920-shu-mission-assignment",
+        "sc-y0-0920-shu-infiltration",
+        "sc-y0-0920-shu-extraction"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 310,
+      "scene_ids": [
+        "sc-y0-0921-naruto-disguise-exposed",
+        "sc-y0-0921-castle-akatsuki-attack",
+        "sc-y0-0921-shu-mission-complete"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 311,
+      "scene_ids": [
+        "sc-s2-road-telescope-preparation",
+        "sc-s2-road-bath-invitation",
+        "sc-s2-road-public-bath",
+        "sc-s2-road-evening-cards"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 312,
+      "scene_ids": [
+        "sc-s2-chen-student-training",
+        "sc-s2-chen-student-death",
+        "sc-s2-chen-fakes-death",
+        "sc-y0-0416-chen-lesson"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 313,
+      "scene_ids": [
+        "sc-s2-yota-children-meeting"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 314,
+      "scene_ids": [
+        "sc-s2-yota-children-meeting"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 315,
+      "scene_ids": [
+        "sc-s2-yota-children-meeting",
+        "sc-s2-yota-river-memory-erasure"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 316,
+      "scene_ids": [
+        "sc-s2-kabuto-grave-robbing"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 317,
+      "scene_ids": [
+        "sc-s2-torune-saves-shino"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 318,
+      "scene_ids": [
+        "sc-s2-blue-b-extraction"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 319,
+      "scene_ids": [
+        "sc-s2-komushi-sasori-puppet"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 320,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 321,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 322,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 323,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 324,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 325,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 326,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 327,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 328,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 329,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 330,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 331,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 332,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 333,
+      "scene_ids": [
+        "sc-s2-kabuto-body-splicing",
+        "sc-s2-kabuto-ryuchi-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 334,
+      "scene_ids": [
+        "sc-s2-kabuto-body-splicing",
+        "sc-s2-kabuto-ryuchi-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 335,
+      "scene_ids": [
+        "sc-s2-kabuto-orphanage",
+        "sc-s2-kabuto-body-splicing",
+        "sc-s2-kabuto-ryuchi-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 336,
+      "scene_ids": [
+        "sc-s2-kabuto-orphanage",
+        "sc-s2-kabuto-root-recruited",
+        "sc-s2-kabuto-nono-tragedy",
+        "sc-s2-kabuto-body-splicing",
+        "sc-s2-kabuto-ryuchi-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 337,
+      "scene_ids": [
+        "sc-s2-kabuto-nono-tragedy",
+        "sc-s2-kabuto-orochimaru-remains"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 338,
+      "scene_ids": [
+        "sc-s2-kabuto-orochimaru-remains",
+        "sc-s2-onoki-mu-madara"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 339,
+      "scene_ids": [
+        "sc-s2-shisui-danzo-eye",
+        "sc-s2-danzo-itachi-ultimatum",
+        "sc-s2-itachi-obito-agreement",
+        "sc-s2-uchiha-massacre"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 340,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 341,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 342,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 343,
+      "scene_ids": [
+        "sc-s2-team-minato-exams"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 344,
+      "scene_ids": [
+        "sc-s2-madara-saves-obito",
+        "sc-s2-madara-rinnegan-awakens",
+        "sc-s2-madara-nagato-eyes"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 345,
+      "scene_ids": [
+        "sc-s2-madara-saves-obito",
+        "sc-s2-obito-rehabilitation",
+        "sc-s2-rin-three-tails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 346,
+      "scene_ids": [
+        "sc-s2-obito-accepts-madara",
+        "sc-s2-small-akatsuki-founded",
+        "sc-s2-obito-approaches-nagato",
+        "sc-s2-madara-hidden-survival",
+        "sc-s2-madara-rinnegan-awakens",
+        "sc-s2-madara-nagato-eyes",
+        "sc-s2-madara-instructs-obito",
+        "sc-s2-madara-life-support-ends"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 347,
+      "scene_ids": [
+        "sc-s2-nagato-parents-killed",
+        "sc-s2-small-akatsuki-founded",
+        "sc-s2-danzo-akatsuki-false-flag"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 348,
+      "scene_ids": [
+        "sc-s2-obito-approaches-nagato",
+        "sc-s2-hanzo-konan-hostage",
+        "sc-s2-nagato-gedo-retaliation",
+        "sc-s2-obito-kills-early-akatsuki"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 349,
+      "scene_ids": [
+        "sc-s2-minato-fourth-appointed",
+        "sc-s2-kakashi-anbu-appointed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 350,
+      "scene_ids": [
+        "sc-s2-kakashi-guards-kushina",
+        "sc-s2-kakashi-kinoe-first-meeting",
+        "sc-s2-uchiha-relocated"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 351,
+      "scene_ids": [
+        "sc-s2-kakashi-kinoe-first-meeting",
+        "sc-s2-hiruzen-assassination-stopped",
+        "sc-s2-uchiha-relocated"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 352,
+      "scene_ids": [
+        "sc-s2-orochimaru-defects",
+        "sc-s2-iburi-kinoe-yukimi"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 353,
+      "scene_ids": [
+        "sc-s2-iburi-kinoe-yukimi"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 354,
+      "scene_ids": [
+        "sc-s2-iburi-orochimaru-escape"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 355,
+      "scene_ids": [
+        "sc-s2-kinoe-sharingan-order"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 356,
+      "scene_ids": [
+        "sc-s2-kinoe-sharingan-order",
+        "sc-s2-tenzo-joins-anbu"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 357,
+      "scene_ids": [
+        "sc-s2-itachi-kakashi-anbu"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 358,
+      "scene_ids": [
+        "sc-s2-itachi-kakashi-anbu",
+        "sc-s2-shisui-danzo-eye",
+        "sc-s2-shisui-last-eye"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 359,
+      "scene_ids": [
+        "sc-s2-kakashi-leaves-anbu",
+        "sc-s2-danzo-itachi-ultimatum",
+        "sc-s2-uchiha-massacre",
+        "sc-s2-itachi-hiruzen-request"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 360,
+      "scene_ids": [
+        "sc-s2-kakashi-leaves-anbu",
+        "sc-s2-kakashi-previous-students"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 361,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 362,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 363,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 364,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 365,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 366,
+      "scene_ids": [
+        "sc-s2-hashirama-madara-river"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 367,
+      "scene_ids": [
+        "sc-s2-hashirama-madara-river",
+        "sc-s2-kawarama-funeral",
+        "sc-s2-itama-killed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 368,
+      "scene_ids": [
+        "sc-s2-senju-uchiha-fathers",
+        "sc-s2-izuna-mortal-wound",
+        "sc-s2-senju-uchiha-peace"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 369,
+      "scene_ids": [
+        "sc-s2-konoha-founded",
+        "sc-s2-madara-leaves-konoha",
+        "sc-s2-founders-valley-duel"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 370,
+      "scene_ids": [
+        "sc-s2-founders-valley-duel",
+        "sc-s2-madara-hidden-survival"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 371,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 372,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 373,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 374,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 375,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 376,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 377,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 378,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 379,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 380,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 381,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 382,
+      "scene_ids": [
+        "sc-s2-first-kage-summit"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 383,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 384,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 385,
+      "scene_ids": [
+        "sc-s2-obito-graduation-support"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 386,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 387,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 388,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 389,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 390,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 391,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 392,
+      "scene_ids": [
+        "sc-s2-bunpuku-shukaku"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 393,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 394,
+      "scene_ids": [
+        "sc-s2-gaara-becomes-kazekage",
+        "sc-s2-exam-cohost-plan",
+        "sc-s2-kakashi-ame-invitation"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 395,
+      "scene_ids": [
+        "sc-s2-sakura-tsunade-apprenticeship",
+        "sc-s2-kakashi-ame-invitation",
+        "sc-s2-second-exam-arrivals"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 396,
+      "scene_ids": [
+        "sc-s2-second-exam-written"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 397,
+      "scene_ids": [
+        "sc-s2-second-exam-written",
+        "sc-s2-second-exam-race"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 398,
+      "scene_ids": [
+        "sc-s2-gaara-assassination-attempt",
+        "sc-s2-demon-desert-start"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 399,
+      "scene_ids": [
+        "sc-s2-demon-desert-start"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 400,
+      "scene_ids": [
+        "sc-s2-demon-desert-start"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 401,
+      "scene_ids": [
+        "sc-s2-demon-desert-start"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 402,
+      "scene_ids": [
+        "sc-s2-team8-scroll-pursuit"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 403,
+      "scene_ids": [
+        "sc-s2-team8-scroll-pursuit"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 404,
+      "scene_ids": [
+        "sc-s2-tenten-ajisai-ruins",
+        "sc-s2-tenten-finds-weapons-path"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 405,
+      "scene_ids": [
+        "sc-s2-tenten-ajisai-ruins",
+        "sc-s2-tenten-ajisai-rescue"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 406,
+      "scene_ids": [
+        "sc-s2-sakura-tsunade-apprenticeship",
+        "sc-s2-ino-medical-apprenticeship",
+        "sc-s2-ino-ameno"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 407,
+      "scene_ids": [
+        "sc-s2-ino-ameno"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 408,
+      "scene_ids": [
+        "sc-s2-sakura-tsunade-apprenticeship",
+        "sc-s2-sakura-saya-puppet",
+        "sc-s2-suigetsu-karin-training"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 409,
+      "scene_ids": [
+        "sc-s2-sakura-saya-puppet"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 410,
+      "scene_ids": [
+        "sc-s2-gaara-fu-hoichi"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 411,
+      "scene_ids": [
+        "sc-s2-gaara-fu-hoichi",
+        "sc-s2-neji-saves-jinchuriki"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 412,
+      "scene_ids": [
+        "sc-s2-gaara-fu-hoichi",
+        "sc-s2-neji-saves-jinchuriki"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 413,
+      "scene_ids": [
+        "sc-s2-second-exam-promotions"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 414,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 415,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 416,
+      "scene_ids": [
+        "sc-s2-team-minato-formation",
+        "sc-s2-team-minato-exams"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 417,
+      "scene_ids": [
+        "sc-s2-team-minato-formation",
+        "sc-s2-team-minato-exams"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 418,
+      "scene_ids": [
+        "sc-s2-guy-academy-effort"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 419,
+      "scene_ids": [
+        "sc-s2-guy-duy-childhood",
+        "sc-s2-guy-academy-effort",
+        "sc-s2-duy-eight-gates-sacrifice"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 420,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 421,
+      "scene_ids": [
+        "sc-s2-sakumo-sees-guy"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 422,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 423,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 424,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 425,
+      "scene_ids": [
+        "sc-s2-rin-three-tails"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 426,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 427,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 428,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 429,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 430,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 431,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 432,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 433,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 434,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 435,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 436,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 437,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 438,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 439,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 440,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 441,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 442,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 443,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 444,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 445,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 446,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 447,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 448,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 449,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 450,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 451,
+      "scene_ids": [
+        "sc-s2-itachi-war-child",
+        "sc-s2-itachi-orochimaru-life-death",
+        "sc-s2-itachi-cliff-crows",
+        "sc-s2-sasuke-birth"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 452,
+      "scene_ids": [
+        "sc-s2-itachi-nine-tails-night",
+        "sc-s2-uchiha-relocated",
+        "sc-s2-itachi-academy",
+        "sc-s2-itachi-great-fireball",
+        "sc-s2-itachi-dokan-clone"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 453,
+      "scene_ids": [
+        "sc-s2-uchiha-relocated",
+        "sc-s2-itachi-team2-cat",
+        "sc-s2-itachi-tenma-death",
+        "sc-s2-itachi-izumi-dumplings"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 454,
+      "scene_ids": [
+        "sc-s2-itachi-shisui-root-clash"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 455,
+      "scene_ids": [
+        "sc-s2-uchiha-coup-preparation",
+        "sc-s2-shisui-last-eye",
+        "sc-s2-itachi-police-confrontation",
+        "sc-s2-danzo-itachi-ultimatum",
+        "sc-s2-itachi-obito-agreement",
+        "sc-s2-uchiha-massacre",
+        "sc-s2-fugaku-mangekyo-loss",
+        "sc-s2-itachi-captain-mission",
+        "sc-s2-fugaku-shows-tablet"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 456,
+      "scene_ids": [
+        "sc-s2-itachi-juzo-partnership",
+        "sc-s2-juzo-yagura-death",
+        "sc-s2-orochimaru-itachi-defeat"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 457,
+      "scene_ids": [
+        "sc-s2-deidara-recruited",
+        "sc-s2-akatsuki-orochimaru-hunt",
+        "sc-s2-hidan-recruited",
+        "sc-s2-sasori-third-kazekage",
+        "sc-s2-hidan-akatsuki-recruitment"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 458,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 459,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 460,
+      "scene_ids": [
+        "sc-s2-kaguya-god-tree",
+        "sc-s2-kaguya-tsukuyomi"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 461,
+      "scene_ids": [
+        "sc-s2-kaguya-tsukuyomi",
+        "sc-s2-hagoromo-gamamaru"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 462,
+      "scene_ids": [
+        "sc-s2-hagoromo-gamamaru",
+        "sc-s2-kaguya-sealed"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 463,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 464,
+      "scene_ids": [
+        "sc-s2-hagoromo-ninshu"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 465,
+      "scene_ids": [
+        "sc-s2-indra-asura-childhood"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 466,
+      "scene_ids": [
+        "sc-s2-brothers-succession-trials"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 467,
+      "scene_ids": [
+        "sc-s2-brothers-succession-trials"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 468,
+      "scene_ids": [
+        "sc-s2-asura-chosen"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 469,
+      "scene_ids": [
+        "sc-alt-y0-0903-secret-archive-infiltration",
+        "sc-alt-y0-0903-sukea-mask-hunt",
+        "sc-alt-y0-0903-fake-rescue-sukea-reveal"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 470,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 471,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 472,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 473,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 474,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 475,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 476,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 477,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 478,
+      "scene_ids": [
+        "sc-s2-academy-naruto-sasuke-spar"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 479,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 480,
+      "scene_ids": [
+        "sc-s2-naruto-hiruzen-campfire",
+        "sc-s2-hizashi-neji-childhood",
+        "sc-s2-hinata-after-hizashi-funeral"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 481,
+      "scene_ids": [
+        "sc-s2-itachi-sasuke-weekend",
+        "sc-s2-sakura-ino-ribbon",
+        "sc-s2-sakura-ino-hideout"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 482,
+      "scene_ids": [
+        "sc-s2-gaara-yashamaru-test",
+        "sc-s2-gaara-siblings-sandbox",
+        "sc-s2-academy-ino-shika-cho",
+        "sc-s2-academy-hinata-bullies"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 483,
+      "scene_ids": [
+        "sc-s2-sannin-hanzo",
+        "sc-s2-sakumo-disgrace",
+        "sc-s2-kakashi-childhood-dinner",
+        "sc-s2-kakashi-sakumo-grave-child",
+        "sc-s2-jiraiya-tsunade-failed-rescue",
+        "sc-s2-sannin-kiri-night-fight"
+      ],
+      "status": "represented_not_full_audit"
+    },
+    {
+      "episode": 484,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 485,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 486,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 487,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 488,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 489,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 490,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 491,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 492,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 493,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 494,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 495,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 496,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 497,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 498,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 499,
+      "scene_ids": [],
+      "status": "not_mapped"
+    },
+    {
+      "episode": 500,
+      "scene_ids": [],
+      "status": "not_mapped"
+    }
+  ],
+  "review_note": "Наявність сцени означає представлення сюжетного матеріалу. Не означає завершеної покадрової звірки всіх реплік та учасників; точні дні реконструйовані."
+}

@@ -1,0 +1,127 @@
+schema_version: 1
+id: sc-s2-itachi-substitute
+episode_id: ep-s2-itachi-substitute
+display_rank: 1400
+continuity_id: main
+title: Команду Какаші затримує двійник Ітачі
+description: Шарінґан ловить Наруто в ґенджюцу; товариші звільняють його. Після бою команда знаходить тіло Юри,
+  використане для підміни.
+location_id: loc-river-country
+placement:
+  anchor_id: ta-s2-64-12-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-itachi-substitute-1
+  title: Команду Какаші затримує двійник Ітачі
+  text: Шарінґан ловить Наруто в ґенджюцу; товариші звільняють його.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-yura
+    role: transformed_body
+    mode: physical
+  - entity_id: c-itachi
+    role: controller
+    mode: remote
+  evidence_ids:
+  - evd-s2-itachi-substitute
+  - evd-s2-shapeshifting-bodies
+- id: ev-s2-itachi-substitute-2
+  title: Наруто й Какаші перемагають підмінного Ітачі
+  text: Після бою команда знаходить тіло Юри, використане для підміни.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-chiyo
+    role: participant
+    mode: physical
+  - entity_id: c-yura
+    role: transformed_body
+    mode: physical
+  - entity_id: c-itachi
+    role: controller
+    mode: remote
+  evidence_ids:
+  - evd-s2-itachi-substitute
+  - evd-s2-shapeshifting-bodies
+relations:
+- id: rel-s2-itachi-substitute-1
+  kind: before
+  a: ev-s2-itachi-substitute-1
+  b: ev-s2-itachi-substitute-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-substitute
+presence:
+- id: pr-s2-itachi-substitute-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-itachi-substitute.start
+  to: sc-s2-itachi-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-substitute
+- id: pr-s2-itachi-substitute-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-itachi-substitute.start
+  to: sc-s2-itachi-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-substitute
+- id: pr-s2-itachi-substitute-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-itachi-substitute.start
+  to: sc-s2-itachi-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-substitute
+- id: pr-s2-itachi-substitute-c-chiyo
+  entity_id: c-chiyo
+  from: sc-s2-itachi-substitute.start
+  to: sc-s2-itachi-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-itachi-substitute
+- id: pr-s2-itachi-substitute-c-yura
+  entity_id: c-yura
+  from: sc-s2-itachi-substitute.start
+  to: sc-s2-itachi-substitute.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-shapeshifting-bodies

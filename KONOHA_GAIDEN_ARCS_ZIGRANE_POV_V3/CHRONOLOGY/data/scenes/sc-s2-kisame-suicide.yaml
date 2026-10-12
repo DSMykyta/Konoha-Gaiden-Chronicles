@@ -1,0 +1,147 @@
+schema_version: 1
+id: sc-s2-kisame-suicide
+episode_id: ep-s2-kisame-suicide
+display_rank: 22600
+continuity_id: main
+title: Кісаме перериває допит
+description: Аоба входить у його спогади; Кісаме кусає язик, звільняється та наказує акулам з’їсти себе. Пастка
+  на сувої ув’язнює загін у воді, поки посланець тікає з координатами острова.
+location_id: loc-island-turtle-shore
+placement:
+  anchor_id: ta-s2-66-10-04
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kisame-suicide-1
+  title: Кісаме перериває допит
+  text: Аоба входить у його спогади; Кісаме кусає язик, звільняється та наказує акулам з’їсти себе.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-motoi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kisame-suicide
+- id: ev-s2-kisame-suicide-2
+  title: Прихована акула забирає сувій
+  text: Пастка на сувої ув’язнює загін у воді, поки посланець тікає з координатами острова.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kisame
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-killer-b
+    role: participant
+    mode: physical
+  - entity_id: c-motoi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kisame-suicide
+relations:
+- id: rel-s2-kisame-suicide-1
+  kind: before
+  a: ev-s2-kisame-suicide-1
+  b: ev-s2-kisame-suicide-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide
+presence:
+- id: pr-s2-kisame-suicide-c-kisame
+  entity_id: c-kisame
+  from: sc-s2-kisame-suicide.start
+  to: sc-s2-kisame-suicide.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide
+- id: pr-s2-kisame-suicide-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-kisame-suicide.start
+  to: sc-s2-kisame-suicide.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide
+- id: pr-s2-kisame-suicide-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-kisame-suicide.start
+  to: sc-s2-kisame-suicide.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide
+- id: pr-s2-kisame-suicide-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-kisame-suicide.start
+  to: sc-s2-kisame-suicide.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide
+- id: pr-s2-kisame-suicide-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-kisame-suicide.start
+  to: sc-s2-kisame-suicide.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide
+- id: pr-s2-kisame-suicide-c-killer-b
+  entity_id: c-killer-b
+  from: sc-s2-kisame-suicide.start
+  to: sc-s2-kisame-suicide.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide
+- id: pr-s2-kisame-suicide-c-motoi
+  entity_id: c-motoi
+  from: sc-s2-kisame-suicide.start
+  to: sc-s2-kisame-suicide.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kisame-suicide

@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-tenten-lee-training-present
+episode_id: ep-s2-tenten-lee-training-present
+display_rank: 21700
+continuity_id: main
+title: Тентен чекає Лі біля річки
+description: Під час тренування він падає у воду; вона згадує, як обирала свій шлях зі зброєю.
+location_id: loc-konoha-training-field
+placement:
+  anchor_id: ta-s2-66-10-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-tenten-lee-training-present-1
+  title: Тентен чекає Лі біля річки
+  text: Під час тренування він падає у воду; вона згадує, як обирала свій шлях зі зброєю.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-tenten
+    role: participant
+    mode: physical
+  - entity_id: c-lee
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-tenten-lee-training-present
+relations: []
+presence:
+- id: pr-s2-tenten-lee-training-present-c-tenten
+  entity_id: c-tenten
+  from: sc-s2-tenten-lee-training-present.start
+  to: sc-s2-tenten-lee-training-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-lee-training-present
+- id: pr-s2-tenten-lee-training-present-c-lee
+  entity_id: c-lee
+  from: sc-s2-tenten-lee-training-present.start
+  to: sc-s2-tenten-lee-training-present.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-tenten-lee-training-present

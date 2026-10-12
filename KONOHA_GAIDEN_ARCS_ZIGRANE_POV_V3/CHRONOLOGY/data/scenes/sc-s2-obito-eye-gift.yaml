@@ -1,0 +1,106 @@
+schema_version: 1
+id: sc-s2-obito-eye-gift
+episode_id: ep-s2-obito-eye-gift
+display_rank: 27800
+continuity_id: main
+title: Какаші втрачає око, Обіто відкриває Шарінґан
+description: Вони визволяють Рін, але обвал придавлює Обіто. Рін виконує пересадку; Какаші застосовує Чідорі з Шарінґаном.
+location_id: loc-kannabi-cave
+placement:
+  anchor_id: ta-s2-47-10-02
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-obito-eye-gift-1
+  title: Какаші втрачає око, Обіто відкриває Шарінґан
+  text: Вони визволяють Рін, але обвал придавлює Обіто.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  - entity_id: c-kakko
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-obito-eye-gift
+  layer: canon
+- id: ev-s2-obito-eye-gift-2
+  title: Обіто віддає Какаші своє око
+  text: Рін виконує пересадку; Какаші застосовує Чідорі з Шарінґаном.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-obito
+    role: participant
+    mode: physical
+  - entity_id: c-rin
+    role: participant
+    mode: physical
+  - entity_id: c-kakko
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-obito-eye-gift
+  layer: canon
+relations:
+- id: rel-s2-obito-eye-gift-1
+  kind: before
+  a: ev-s2-obito-eye-gift-1
+  b: ev-s2-obito-eye-gift-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-eye-gift
+presence:
+- id: pr-s2-obito-eye-gift-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-obito-eye-gift.start
+  to: sc-s2-obito-eye-gift.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-eye-gift
+- id: pr-s2-obito-eye-gift-c-obito
+  entity_id: c-obito
+  from: sc-s2-obito-eye-gift.start
+  to: sc-s2-obito-eye-gift.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-eye-gift
+- id: pr-s2-obito-eye-gift-c-rin
+  entity_id: c-rin
+  from: sc-s2-obito-eye-gift.start
+  to: sc-s2-obito-eye-gift.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-eye-gift
+- id: pr-s2-obito-eye-gift-c-kakko
+  entity_id: c-kakko
+  from: sc-s2-obito-eye-gift.start
+  to: sc-s2-obito-eye-gift.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-obito-eye-gift

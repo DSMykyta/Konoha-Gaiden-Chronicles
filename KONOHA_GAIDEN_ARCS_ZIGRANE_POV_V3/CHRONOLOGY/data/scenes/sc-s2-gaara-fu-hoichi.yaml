@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-gaara-fu-hoichi
+episode_id: ep-s2-gaara-fu-hoichi
+display_rank: 25600
+continuity_id: main
+title: Ґаара рятує учасників під час бурі
+description: Фу допомагає Мацурі; Хоічі починає витягати чакру хвостатих із Ґаари та Фу.
+location_id: loc-demon-desert
+placement:
+  anchor_id: ta-s2-64-10-18
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-gaara-fu-hoichi-1
+  title: Ґаара рятує учасників під час бурі
+  text: Фу допомагає Мацурі; Хоічі починає витягати чакру хвостатих із Ґаари та Фу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-fu-seven-tails
+    role: participant
+    mode: physical
+  - entity_id: c-hoichi
+    role: participant
+    mode: physical
+  - entity_id: c-matsuri
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-gaara-fu-hoichi
+relations: []
+presence:
+- id: pr-s2-gaara-fu-hoichi-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-gaara-fu-hoichi.start
+  to: sc-s2-gaara-fu-hoichi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-fu-hoichi
+- id: pr-s2-gaara-fu-hoichi-c-fu-seven-tails
+  entity_id: c-fu-seven-tails
+  from: sc-s2-gaara-fu-hoichi.start
+  to: sc-s2-gaara-fu-hoichi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-fu-hoichi
+- id: pr-s2-gaara-fu-hoichi-c-hoichi
+  entity_id: c-hoichi
+  from: sc-s2-gaara-fu-hoichi.start
+  to: sc-s2-gaara-fu-hoichi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-fu-hoichi
+- id: pr-s2-gaara-fu-hoichi-c-matsuri
+  entity_id: c-matsuri
+  from: sc-s2-gaara-fu-hoichi.start
+  to: sc-s2-gaara-fu-hoichi.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-fu-hoichi

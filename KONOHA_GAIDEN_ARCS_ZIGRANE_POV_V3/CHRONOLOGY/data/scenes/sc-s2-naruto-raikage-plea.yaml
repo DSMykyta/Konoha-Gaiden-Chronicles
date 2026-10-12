@@ -1,0 +1,130 @@
+schema_version: 1
+id: sc-s2-naruto-raikage-plea
+episode_id: ep-s2-naruto-raikage-plea
+display_rank: 16800
+continuity_id: main
+title: Наруто просить Райкаґе помилувати Саске
+description: Райкаґе відмовляє та продовжує дорогу до ради.
+location_id: loc-iron-country-route
+placement:
+  anchor_id: ta-s2-66-08-24
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-naruto-raikage-plea-1
+  title: Наруто просить Райкаґе помилувати Саске
+  text: Райкаґе відмовляє та продовжує дорогу до ради.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: physical
+  - entity_id: c-darui
+    role: participant
+    mode: physical
+  - entity_id: c-cee
+    role: participant
+    mode: physical
+  - entity_id: c-samui
+    role: participant
+    mode: physical
+  - entity_id: c-karui
+    role: participant
+    mode: physical
+  - entity_id: c-omoi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+relations: []
+presence:
+- id: pr-s2-naruto-raikage-plea-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-a-fourth
+  entity_id: c-a-fourth
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-darui
+  entity_id: c-darui
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-cee
+  entity_id: c-cee
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-samui
+  entity_id: c-samui
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-karui
+  entity_id: c-karui
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea
+- id: pr-s2-naruto-raikage-plea-c-omoi
+  entity_id: c-omoi
+  from: sc-s2-naruto-raikage-plea.start
+  to: sc-s2-naruto-raikage-plea.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-naruto-raikage-plea

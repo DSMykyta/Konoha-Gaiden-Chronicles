@@ -1,0 +1,53 @@
+schema_version: 1
+id: sc-s2-edo-army-revealed
+episode_id: ep-s2-edo-army-revealed
+display_rank: 23500
+continuity_id: main
+title: Кабуто показує військо Едо Тенсей
+description: Оживлені Каґе, джінчюрікі, мечники та загиблі шинобі стають основою наступу; підготовка завершується.
+location_id: loc-mountains-graveyard
+placement:
+  anchor_id: ta-s2-66-10-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-edo-army-revealed-1
+  title: Кабуто показує військо Едо Тенсей
+  text: Оживлені Каґе, джінчюрікі, мечники та загиблі шинобі стають основою наступу; підготовка завершується.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kabuto
+    role: participant
+    mode: physical
+  - entity_id: c-tobi
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-edo-army-revealed
+relations: []
+presence:
+- id: pr-s2-edo-army-revealed-c-kabuto
+  entity_id: c-kabuto
+  from: sc-s2-edo-army-revealed.start
+  to: sc-s2-edo-army-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-edo-army-revealed
+- id: pr-s2-edo-army-revealed-c-tobi
+  entity_id: c-tobi
+  from: sc-s2-edo-army-revealed.start
+  to: sc-s2-edo-army-revealed.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-edo-army-revealed

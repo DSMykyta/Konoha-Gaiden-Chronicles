@@ -1,0 +1,75 @@
+schema_version: 1
+id: sc-s2-hidan-recruited
+episode_id: ep-s2-hidan-recruited
+display_rank: 32800
+continuity_id: main
+title: Акацукі перевіряють безсмертя Хідана
+description: Хідан руйнує одне серце Какудзу; його приймають до організації й призначають напарником Какудзу.
+location_id: loc-land-hot-water
+placement:
+  anchor_id: ta-s2-63-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hidan-recruited-1
+  title: Акацукі перевіряють безсмертя Хідана
+  text: Хідан руйнує одне серце Какудзу; його приймають до організації й призначають напарником Какудзу.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-hidan
+    role: participant
+    mode: physical
+  - entity_id: c-kakuzu
+    role: participant
+    mode: physical
+  - entity_id: c-itachi
+    role: participant
+    mode: physical
+  - entity_id: c-konan
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hidan-recruited
+relations: []
+presence:
+- id: pr-s2-hidan-recruited-c-hidan
+  entity_id: c-hidan
+  from: sc-s2-hidan-recruited.start
+  to: sc-s2-hidan-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hidan-recruited
+- id: pr-s2-hidan-recruited-c-kakuzu
+  entity_id: c-kakuzu
+  from: sc-s2-hidan-recruited.start
+  to: sc-s2-hidan-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hidan-recruited
+- id: pr-s2-hidan-recruited-c-itachi
+  entity_id: c-itachi
+  from: sc-s2-hidan-recruited.start
+  to: sc-s2-hidan-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hidan-recruited
+- id: pr-s2-hidan-recruited-c-konan
+  entity_id: c-konan
+  from: sc-s2-hidan-recruited.start
+  to: sc-s2-hidan-recruited.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hidan-recruited

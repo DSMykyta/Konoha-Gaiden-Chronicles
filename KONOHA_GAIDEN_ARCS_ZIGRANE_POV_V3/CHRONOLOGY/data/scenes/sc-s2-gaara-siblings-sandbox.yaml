@@ -1,0 +1,86 @@
+schema_version: 1
+id: sc-s2-gaara-siblings-sandbox
+episode_id: ep-s2-gaara-siblings-sandbox
+display_rank: 33100
+continuity_id: main
+title: Діти Суни граються з піском
+description: Ґаара створює фігури, але батько відводить від нього старших дітей; Яшамару відповідає на його запитання.
+location_id: loc-sunagakure
+placement:
+  anchor_id: ta-s2-54-05-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-gaara-siblings-sandbox-1
+  title: Діти Суни граються з піском
+  text: Ґаара створює фігури, але батько відводить від нього старших дітей; Яшамару відповідає на його запитання.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-temari
+    role: participant
+    mode: physical
+  - entity_id: c-kankuro
+    role: participant
+    mode: physical
+  - entity_id: c-yashamaru
+    role: participant
+    mode: physical
+  - entity_id: c-rasa
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-gaara-siblings-sandbox
+relations: []
+presence:
+- id: pr-s2-gaara-siblings-sandbox-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-gaara-siblings-sandbox.start
+  to: sc-s2-gaara-siblings-sandbox.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-siblings-sandbox
+- id: pr-s2-gaara-siblings-sandbox-c-temari
+  entity_id: c-temari
+  from: sc-s2-gaara-siblings-sandbox.start
+  to: sc-s2-gaara-siblings-sandbox.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-siblings-sandbox
+- id: pr-s2-gaara-siblings-sandbox-c-kankuro
+  entity_id: c-kankuro
+  from: sc-s2-gaara-siblings-sandbox.start
+  to: sc-s2-gaara-siblings-sandbox.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-siblings-sandbox
+- id: pr-s2-gaara-siblings-sandbox-c-yashamaru
+  entity_id: c-yashamaru
+  from: sc-s2-gaara-siblings-sandbox.start
+  to: sc-s2-gaara-siblings-sandbox.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-siblings-sandbox
+- id: pr-s2-gaara-siblings-sandbox-c-rasa
+  entity_id: c-rasa
+  from: sc-s2-gaara-siblings-sandbox.start
+  to: sc-s2-gaara-siblings-sandbox.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-gaara-siblings-sandbox

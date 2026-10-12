@@ -1,0 +1,108 @@
+schema_version: 1
+id: sc-s2-power-survivors-hacho
+episode_id: ep-s2-power-main
+display_rank: 100
+continuity_id: main
+title: Уцілілі діти знаходять притулок
+description: Докку приводить їх до Шісеру; Мііна після пережитого не говорить.
+location_id: loc-hacho-village
+placement:
+  anchor_id: ta-s2-66-08-28
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-power-survivors-hacho-1
+  title: Уцілілі діти знаходять притулок
+  text: Докку приводить їх до Шісеру; Мііна після пережитого не говорить.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-dokku
+    role: participant
+    mode: physical
+  - entity_id: c-leo-power
+    role: participant
+    mode: physical
+  - entity_id: c-miina
+    role: participant
+    mode: physical
+  - entity_id: c-faz
+    role: participant
+    mode: physical
+  - entity_id: c-lando
+    role: participant
+    mode: physical
+  - entity_id: c-sora-power
+    role: participant
+    mode: physical
+  - entity_id: c-shiseru
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-power-survivors-hacho
+relations: []
+presence:
+- id: pr-s2-power-survivors-hacho-c-dokku
+  entity_id: c-dokku
+  from: sc-s2-power-survivors-hacho.start
+  to: sc-s2-power-survivors-hacho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-survivors-hacho
+- id: pr-s2-power-survivors-hacho-c-leo-power
+  entity_id: c-leo-power
+  from: sc-s2-power-survivors-hacho.start
+  to: sc-s2-power-survivors-hacho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-survivors-hacho
+- id: pr-s2-power-survivors-hacho-c-miina
+  entity_id: c-miina
+  from: sc-s2-power-survivors-hacho.start
+  to: sc-s2-power-survivors-hacho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-survivors-hacho
+- id: pr-s2-power-survivors-hacho-c-faz
+  entity_id: c-faz
+  from: sc-s2-power-survivors-hacho.start
+  to: sc-s2-power-survivors-hacho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-survivors-hacho
+- id: pr-s2-power-survivors-hacho-c-lando
+  entity_id: c-lando
+  from: sc-s2-power-survivors-hacho.start
+  to: sc-s2-power-survivors-hacho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-survivors-hacho
+- id: pr-s2-power-survivors-hacho-c-sora-power
+  entity_id: c-sora-power
+  from: sc-s2-power-survivors-hacho.start
+  to: sc-s2-power-survivors-hacho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-survivors-hacho
+- id: pr-s2-power-survivors-hacho-c-shiseru
+  entity_id: c-shiseru
+  from: sc-s2-power-survivors-hacho.start
+  to: sc-s2-power-survivors-hacho.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-power-survivors-hacho

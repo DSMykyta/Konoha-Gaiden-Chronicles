@@ -1,0 +1,64 @@
+schema_version: 1
+id: sc-s2-hiruzen-assassination-stopped
+episode_id: ep-s2-hiruzen-assassination-stopped
+display_rank: 28800
+continuity_id: main
+title: Какаші перешкоджає вбивству Хірудзена
+description: Він попереджає Хокаґе про задум Данзо та звільняє Кіное після сутички.
+location_id: loc-fire-daimyo-route
+placement:
+  anchor_id: ta-s2-49-11-03
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-hiruzen-assassination-stopped-1
+  title: Какаші перешкоджає вбивству Хірудзена
+  text: Він попереджає Хокаґе про задум Данзо та звільняє Кіное після сутички.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-hiruzen
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-hiruzen-assassination-stopped
+relations: []
+presence:
+- id: pr-s2-hiruzen-assassination-stopped-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-hiruzen-assassination-stopped.start
+  to: sc-s2-hiruzen-assassination-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruzen-assassination-stopped
+- id: pr-s2-hiruzen-assassination-stopped-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-hiruzen-assassination-stopped.start
+  to: sc-s2-hiruzen-assassination-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruzen-assassination-stopped
+- id: pr-s2-hiruzen-assassination-stopped-c-hiruzen
+  entity_id: c-hiruzen
+  from: sc-s2-hiruzen-assassination-stopped.start
+  to: sc-s2-hiruzen-assassination-stopped.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-hiruzen-assassination-stopped

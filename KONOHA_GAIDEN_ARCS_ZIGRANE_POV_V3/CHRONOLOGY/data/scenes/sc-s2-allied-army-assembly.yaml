@@ -1,0 +1,107 @@
+schema_version: 1
+id: sc-s2-allied-army-assembly
+episode_id: ep-s2-allied-army-assembly
+display_rank: 23400
+continuity_id: main
+title: Спільне військо збирається в дивізії
+description: Шинобі різних сіл отримують командирів та призначення перед виходом на фронт.
+location_id: loc-allied-shinobi-staging-ground
+placement:
+  anchor_id: ta-s2-66-10-08
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-allied-army-assembly-1
+  title: Спільне військо збирається в дивізії
+  text: Шинобі різних сіл отримують командирів та призначення перед виходом на фронт.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-gaara
+    role: participant
+    mode: physical
+  - entity_id: c-a-fourth
+    role: participant
+    mode: remote
+  - entity_id: c-tsunade
+    role: participant
+    mode: remote
+  - entity_id: c-onoki
+    role: participant
+    mode: remote
+  - entity_id: c-mei
+    role: participant
+    mode: remote
+  - entity_id: c-mifune
+    role: participant
+    mode: physical
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-darui
+    role: participant
+    mode: physical
+  - entity_id: c-kitsuchi
+    role: participant
+    mode: physical
+  - entity_id: c-shikaku
+    role: participant
+    mode: remote
+  - entity_id: c-inoichi
+    role: participant
+    mode: remote
+  - entity_id: c-ao
+    role: participant
+    mode: remote
+  evidence_ids:
+  - evd-s2-allied-army-assembly
+relations: []
+presence:
+- id: pr-s2-allied-army-assembly-c-gaara
+  entity_id: c-gaara
+  from: sc-s2-allied-army-assembly.start
+  to: sc-s2-allied-army-assembly.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-allied-army-assembly
+- id: pr-s2-allied-army-assembly-c-mifune
+  entity_id: c-mifune
+  from: sc-s2-allied-army-assembly.start
+  to: sc-s2-allied-army-assembly.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-allied-army-assembly
+- id: pr-s2-allied-army-assembly-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-allied-army-assembly.start
+  to: sc-s2-allied-army-assembly.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-allied-army-assembly
+- id: pr-s2-allied-army-assembly-c-darui
+  entity_id: c-darui
+  from: sc-s2-allied-army-assembly.start
+  to: sc-s2-allied-army-assembly.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-allied-army-assembly
+- id: pr-s2-allied-army-assembly-c-kitsuchi
+  entity_id: c-kitsuchi
+  from: sc-s2-allied-army-assembly.start
+  to: sc-s2-allied-army-assembly.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-allied-army-assembly

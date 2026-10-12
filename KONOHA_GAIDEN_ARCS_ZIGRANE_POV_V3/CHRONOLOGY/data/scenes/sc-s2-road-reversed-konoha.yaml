@@ -1,0 +1,120 @@
+schema_version: 1
+id: sc-s2-road-reversed-konoha
+episode_id: ep-s2-road-reversed-konoha
+display_rank: 41300
+continuity_id: movie-road
+title: Товариші поводяться по-іншому
+description: Наруто називають Менмою; Сакура дізнається, що тут вона донька загиблих героїв.
+location_id: loc-rtn-konohagakure
+placement:
+  anchor_id: ta-s2-66-06-01
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-road-reversed-konoha-1
+  title: Товариші поводяться по-іншому
+  text: Наруто називають Менмою; Сакура дізнається, що тут вона донька загиблих героїв.
+  origin: V
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-sakura
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-hinata
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-kiba
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-shino
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-ino
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-shikamaru
+    role: participant
+    mode: physical
+  - entity_id: c-rtn-choji
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+  layer: sources
+relations: []
+presence:
+- id: pr-s2-road-reversed-konoha-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+- id: pr-s2-road-reversed-konoha-c-sakura
+  entity_id: c-sakura
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+- id: pr-s2-road-reversed-konoha-c-rtn-hinata
+  entity_id: c-rtn-hinata
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+- id: pr-s2-road-reversed-konoha-c-rtn-kiba
+  entity_id: c-rtn-kiba
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+- id: pr-s2-road-reversed-konoha-c-rtn-shino
+  entity_id: c-rtn-shino
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+- id: pr-s2-road-reversed-konoha-c-rtn-ino
+  entity_id: c-rtn-ino
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+- id: pr-s2-road-reversed-konoha-c-rtn-shikamaru
+  entity_id: c-rtn-shikamaru
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha
+- id: pr-s2-road-reversed-konoha-c-rtn-choji
+  entity_id: c-rtn-choji
+  from: sc-s2-road-reversed-konoha.start
+  to: sc-s2-road-reversed-konoha.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-road-reversed-konoha

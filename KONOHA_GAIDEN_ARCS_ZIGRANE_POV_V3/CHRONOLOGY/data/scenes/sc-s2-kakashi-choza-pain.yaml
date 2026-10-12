@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-kakashi-choza-pain
+episode_id: ep-s2-kakashi-choza-pain
+display_rank: 13800
+continuity_id: main
+title: Акімічі приходять на допомогу Какаші
+description: Вони намагаються використати проміжок між поштовхами Пейна. Виснаживши чакру, Какаші помирає; Чоджі
+  доносить Цунаде дані про техніку.
+location_id: loc-konohagakure
+placement:
+  anchor_id: ta-s2-66-08-12
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-kakashi-choza-pain-1
+  title: Акімічі приходять на допомогу Какаші
+  text: Вони намагаються використати проміжок між поштовхами Пейна.
+  origin: M
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-choza
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-choza-pain
+- id: ev-s2-kakashi-choza-pain-2
+  title: Какаші рятує Чоджі Камуі
+  text: Виснаживши чакру, Какаші помирає; Чоджі доносить Цунаде дані про техніку.
+  origin: M
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-kakashi
+    role: participant
+    mode: physical
+  - entity_id: c-choza
+    role: participant
+    mode: physical
+  - entity_id: c-choji
+    role: participant
+    mode: physical
+  - entity_id: c-pain
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-kakashi-choza-pain
+relations:
+- id: rel-s2-kakashi-choza-pain-1
+  kind: before
+  a: ev-s2-kakashi-choza-pain-1
+  b: ev-s2-kakashi-choza-pain-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-choza-pain
+presence:
+- id: pr-s2-kakashi-choza-pain-c-kakashi
+  entity_id: c-kakashi
+  from: sc-s2-kakashi-choza-pain.start
+  to: sc-s2-kakashi-choza-pain.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-choza-pain
+- id: pr-s2-kakashi-choza-pain-c-choza
+  entity_id: c-choza
+  from: sc-s2-kakashi-choza-pain.start
+  to: sc-s2-kakashi-choza-pain.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-choza-pain
+- id: pr-s2-kakashi-choza-pain-c-choji
+  entity_id: c-choji
+  from: sc-s2-kakashi-choza-pain.start
+  to: sc-s2-kakashi-choza-pain.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-choza-pain
+- id: pr-s2-kakashi-choza-pain-c-pain
+  entity_id: c-pain
+  from: sc-s2-kakashi-choza-pain.start
+  to: sc-s2-kakashi-choza-pain.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-kakashi-choza-pain

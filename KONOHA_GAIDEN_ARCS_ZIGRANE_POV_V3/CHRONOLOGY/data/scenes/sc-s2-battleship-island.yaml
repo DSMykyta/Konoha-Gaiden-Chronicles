@@ -1,0 +1,105 @@
+schema_version: 1
+id: sc-s2-battleship-island
+episode_id: ep-s2-battleship-island
+display_rank: 19700
+continuity_id: main
+title: Пірати атакують корабель
+description: Загін ховається в підземній гавані та виявляє цвинтар кораблів. Вони руйнують ворожий задум і відновлюють
+  плавання.
+location_id: loc-battleship-island
+placement:
+  anchor_id: ta-s2-66-09-09
+  day_offset: 0
+state: active
+presence_coverage: complete
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-s2-battleship-island-1
+  title: Пірати атакують корабель
+  text: Загін ховається в підземній гавані та виявляє цвинтар кораблів.
+  origin: F
+  extent: interval
+  display_rank: 100
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-battleship-island
+- id: ev-s2-battleship-island-2
+  title: Коноха перемагає піратів
+  text: Вони руйнують ворожий задум і відновлюють плавання.
+  origin: F
+  extent: interval
+  display_rank: 200
+  involvement:
+  - entity_id: c-naruto
+    role: participant
+    mode: physical
+  - entity_id: c-yamato
+    role: participant
+    mode: physical
+  - entity_id: c-aoba
+    role: participant
+    mode: physical
+  - entity_id: c-might-guy
+    role: participant
+    mode: physical
+  evidence_ids:
+  - evd-s2-battleship-island
+relations:
+- id: rel-s2-battleship-island-1
+  kind: before
+  a: ev-s2-battleship-island-1
+  b: ev-s2-battleship-island-2
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-battleship-island
+presence:
+- id: pr-s2-battleship-island-c-naruto
+  entity_id: c-naruto
+  from: sc-s2-battleship-island.start
+  to: sc-s2-battleship-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-battleship-island
+- id: pr-s2-battleship-island-c-yamato
+  entity_id: c-yamato
+  from: sc-s2-battleship-island.start
+  to: sc-s2-battleship-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-battleship-island
+- id: pr-s2-battleship-island-c-aoba
+  entity_id: c-aoba
+  from: sc-s2-battleship-island.start
+  to: sc-s2-battleship-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-battleship-island
+- id: pr-s2-battleship-island-c-might-guy
+  entity_id: c-might-guy
+  from: sc-s2-battleship-island.start
+  to: sc-s2-battleship-island.end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-s2-battleship-island
