@@ -671,10 +671,10 @@ arcs:
   - sc-y0-1127-yakumo-ido-finale
 - arc_id: arc-y0-shinemon-bowl
   title: Коштовна чаша Шінемона
-  start: 307
-  end: 309
-  occupied_start: 307
-  occupied_end: 310
+  start: 325
+  end: 327
+  occupied_start: 325
+  occupied_end: 328
   return_days: 0
   rest_days: 1
   actors:
@@ -920,7 +920,7 @@ scene_days:
   sc-y0-1125-yakumo-sealed-power: 322
   sc-y0-1126-yakumo-genjutsu-konoha: 322
   sc-y0-1127-yakumo-ido-finale: 322
-  sc-y0-1128-shinemon-tea-bowl: 308
+  sc-y0-1128-shinemon-tea-bowl: 326
   sc-y0-1129-gantetsu-escort: 300
   sc-y0-1130-gantetsu-bewildering-forest: 300
   sc-y0-1201-gantetsu-akio-truth: 301
