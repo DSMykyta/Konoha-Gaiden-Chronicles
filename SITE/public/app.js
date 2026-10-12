@@ -25,6 +25,7 @@ function updateZoomPresets(){
 function currentZoomMode(){return Object.entries(zoomModes).reduce((best,[mode,value])=>Math.abs(Math.log(zoom/value))<best.distance?{mode,distance:Math.abs(Math.log(zoom/value))}:best,{mode:'year',distance:Infinity}).mode;}
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 let storyLayers={...StoryLayers.ALL},layerRevision=0;
+const narutoVisibleArcs=new Set();
 let data,entityMap,eventMap,sceneMap,episodeMap,arcMap,evidenceMap,sourceMap,profileMap,selected=new Set(),focusedCharacter=null,profileEntity=null,profileVersion=null,profileReturnFocus=null,characterEventsEntity=null,characterEventsReturnFocus=null,zoom=12,center=21.5,focusId=null,anchorEvent=null,graphNodes=[],raf=null,paintedCenter=21.5,wheelPreview=false,searchLimit=30;
 function date(day){if(day===null)return null;day=clamp(Math.floor(day),0,(data?.calendar.view_days||365)-1);const year=(data?.calendar.view_start_year??data?.calendar.current_year??61)+Math.floor(day/365);day%=365;const m=starts.findLastIndex(s=>s<=day);return {d:day-starts[m]+1,m,year};}
 function dateText(day,long=false){const a=date(day);return a?(long?`${a.d} ${gen[a.m]}${data.calendar.view_days>365?' '+a.year:''}`:`${String(a.d).padStart(2,'0')}.${String(a.m+1).padStart(2,'0')}${data.calendar.view_days>365?'.'+a.year:''}`):'Без установленої дати';}
@@ -1059,6 +1060,15 @@ function cardTop(day,navigation,kind='moment',id=null){
  const actions=`<nav class="card-arrows" aria-label="Перехід між ${kind==='scene'?'сценами':'моментами'}">${arrow(-1,kind==='scene'?'Попередня сцена':'Попередній момент')}${arrow(1,kind==='scene'?'Наступна сцена':'Наступний момент')}</nav>`;
  return storyPanelHeader(kind,day===null?'Без установленої дати':dateText(day,true),day!==null,id,actions);
 }
+function toggleNarutoAppearance(arcId){
+ const enabled=!narutoVisibleArcs.has(arcId);
+ NarutoArcToggle.set(data,arcId,enabled);
+ if(enabled)narutoVisibleArcs.add(arcId);else narutoVisibleArcs.delete(arcId);
+ layerRevision++;
+ events();renderCharacters();renderGeographyAudit();search();
+ ChronologyContents.render();refreshOpenCard();render();
+ if(characterEventsEntity)renderCharacterEvents(true);
+}
 function sceneNavigation(id){const allowed=new Set(navigationEvents().map(e=>e.id)),list=orderedScenes().filter(s=>s.group.some(e=>allowed.has(e.id))),i=list.findIndex(s=>s.id===id);return {previous:list[i-1]||null,next:list[i+1]||null};}
 function stepScene(direction){const id=sceneMap.has(focusId)?focusId:eventMap.get(focusId)?.scene_id,target=sceneNavigation(id)[direction<0?'previous':'next'];if(target)navigateScene(target.id);}
 function navigateScene(id){
@@ -1092,7 +1102,8 @@ function storyCardBody(point){
  const children=point.kind==='arc'
   ?(point.sourceEpisodeIds||[]).map(id=>{const episode=episodeMap.get(id);return episode?{id,title:episode.title}:null;}).filter(Boolean)
   :(point.sourceSceneIds||[]).map(id=>{const scene=sceneMap.get(id);return scene&&sceneEvents(id).length?{id,title:scene.title}:null;}).filter(Boolean);
- return `<h2>${esc(point.title)}</h2>${narrativeHtml(point.story)}${storyVersionHtml(point.story)}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong></button>`).join('')}</div>`;
+ const narutoChoice=point.kind==='arc'&&point.story?.naruto_optional?`<div class="naruto-variant-control"><button type="button" class="naruto-variant-toggle" data-naruto-arc="${esc(point.rawId)}" aria-pressed="${narutoVisibleArcs.has(point.rawId)}">${narutoVisibleArcs.has(point.rawId)?'Прибрати Наруто':'Показати Наруто з оригіналу'}</button><small>${narutoVisibleArcs.has(point.rawId)?'Оригінальна версія аніме':'Основна хронологія: Наруто не бере участі в цій арці'}</small></div>`:'';
+  return `<h2>${esc(point.title)}</h2>${narutoChoice}${narrativeHtml(point.story)}${storyVersionHtml(point.story)}<p class="scene-location">${point.kind==='arc'?`${point.childCount} епізодів`:`${point.childCount} сцен`} · ${point.group.length} моментів</p><div class="story-children">${children.map(child=>`<button class="result" ${point.kind==='arc'?`data-story-episode="${esc(child.id)}"`:`data-story-scene="${esc(child.id)}"`}><strong>${esc(child.title)}</strong></button>`).join('')}</div>`;
 }
 function showArcCluster(point){
  const items=point.arcs.map(arc=>`<button class="result" data-cluster-arc="${esc(arc.id)}"><strong>${esc(arc.title)}</strong></button>`).join('');
@@ -1118,7 +1129,7 @@ function eventSupplementHtml(e,relationAttribute){
 }
 function eventDetailsHtml(e,relationAttribute='data-card-event',showDetails=false){
  const physical=e.involvement.filter(i=>e.physical.includes(i.entity_id)),special=e.involvement.filter(i=>modes[i.mode]),mentioned=e.involvement.filter(i=>i.role==='mentioned'||i.mode==='remote');
- return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(StoryLayers.compose(e.text,storyLayers))}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div>${storyVersionHtml(e)}<p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
+ return `${eventGallery(e)}<h2>${esc(e.title)}</h2><p class="event-text">${esc(StoryLayers.compose(e.text,storyLayers))}</p><div class="people">${physical.map(i=>`<button class="person" style="--person-color:${color(i.entity_id)}" data-event-focus-character="${esc(i.entity_id)}" aria-label="Зосередитися на лінії ${esc(name(i.entity_id))}" title="Зосередитися на лінії">${esc(name(i.entity_id))}</button>`).join('')}</div>${storyVersionHtml(e)}${e.naruto_variant==='without_naruto'?'<p class="card-meta">Редакційна версія без Наруто · оригінал доступний у картці арки</p>':''}<p class="card-meta">${esc(origins[e.origin]||e.origin)}${e.date_status!=='established'&&e.day!==null?' · Робоча дата':''}${e.scene_state!=='active'?' · Чернетка':''}</p>${special.length?`<p class="card-meta">${special.map(i=>`${esc(name(i.entity_id))} (${modes[i.mode]})`).join(', ')}</p>`:''}${mentioned.length?`<p class="card-meta">Згадки / віддалена дія: ${mentioned.map(i=>esc(name(i.entity_id))).join(', ')}</p>`:''}${showDetails?eventSupplementHtml(e,relationAttribute):''}`;
 }
 function showEvent(e){
  cardSelection={kind:'moment',id:e.id,events:[e]};const navigation=nav();
@@ -1247,6 +1258,7 @@ function ingest(next,initial=false){
  const previousSpan=data?axisLength()/zoom:null;
  const nextBase=next.calendar.view_start_year??next.calendar.current_year,oldBase=data?.calendar.view_start_year??data?.calendar.current_year;
  const calendarCenter=data?axisToDay(center)+(oldBase-nextBase)*365:center+(next.calendar.current_year-nextBase)*365,wasAll=data&&selectable().every(e=>selected.has(e.id));
+ for(const arcId of [...narutoVisibleArcs])if((next.arcs||[]).some(a=>a.id===arcId&&a.naruto_optional))NarutoArcToggle.set(next,arcId,true);
  data=next;geographyAtlas=GeographyAtlas.create(data.entities,data.geography||{});entityMap=new Map(data.entities.map(e=>[e.id,e]));characterColors=new Map(data.entities.map((e,i)=>[e.id,palette[i%palette.length]]));eventMap=new Map(data.events.map(e=>[e.id,e]));sceneMap=new Map(data.scenes.map(s=>[s.id,s]));episodeMap=new Map((data.episodes||[]).map(e=>[e.id,e]));arcMap=new Map((data.arcs||[]).map(a=>[a.id,a]));evidenceMap=new Map(data.sources.evidence.map(e=>[e.id,e]));sourceMap=new Map(data.sources.sources.map(s=>[s.id,s]));profileMap=new Map((data.profiles||[]).map(p=>[p.entity_id,p]));
  if(initial||wasAll)selected=new Set(selectable().map(e=>e.id));else selected=new Set([...selected].filter(id=>entityMap.has(id)));if(focusedCharacter&&!entityMap.has(focusedCharacter))focusedCharacter=null;if(anchorEvent&&!eventMap.has(anchorEvent))closeCard();
  updateZoomPresets();
@@ -1381,6 +1393,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
  $('eventCard').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.hasAttribute('data-close-card'))closeCard(true);
+   else if(b.dataset.narutoArc)toggleNarutoAppearance(b.dataset.narutoArc);
   else if(b.dataset.parentKind){if(b.dataset.parentKind==='scene')navigateScene(b.dataset.parentId);else navigateStory(b.dataset.parentKind,b.dataset.parentId);}
   else if(b.dataset.stepEvent)stepEvent(+b.dataset.stepEvent);
   else if(b.dataset.stepScene)stepScene(+b.dataset.stepScene);

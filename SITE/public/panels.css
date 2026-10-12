@@ -373,3 +373,9 @@
 .geography-audit ol {margin:7px 0 12px;padding-left:21px;max-height:190px;overflow:auto;}
 .geography-audit li {padding:5px 0;border-bottom:1px solid rgba(90,105,124,.10);overflow-wrap:anywhere;}
 .geography-audit .text-button {display:inline;border:0;padding:2px 0;background:none;color:var(--accent,#426e9c);font:inherit;text-align:left;text-decoration:underline;cursor:pointer;}
+
+/* Naruto appears only when its source version is selected for a B/V arc. */
+.naruto-variant-control{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:10px 0 14px}
+.naruto-variant-control small{font-size:12px;opacity:.72}
+.naruto-variant-toggle{font:inherit;font-size:13px;padding:9px 13px;border-radius:12px;border:1px solid var(--border,#b9c3ce);background:transparent;color:inherit;cursor:pointer}
+.naruto-variant-toggle[aria-pressed="true"]{border-width:2px}
