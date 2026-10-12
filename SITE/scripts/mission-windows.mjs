@@ -1,4 +1,5 @@
 // Working reservations include travel and recovery absent from plotted scenes.
+const isSourceAlternative=id=>String(id||'').startsWith('arc-alt-');
 const identity=id=>id==='c-guy'?'c-might-guy':id;
 export function physicalParticipants(scene){
  return new Set((scene.events||[]).flatMap(e=>(e.involvement||[])
@@ -29,14 +30,16 @@ export function validateMissionWindows(plan,scenes,entities=[]){
    const s=byId.get(id);
    if(!s||s.arc_id!==w.arc_id||s.day<w.start||s.day>w.end)fail('scene outside its mission '+id);
   }
+  if(isSourceAlternative(w.arc_id))continue;
   for(const s of active){
-   if(s.arc_id===w.arc_id||neutral.has(s.id)||s.day<w.occupied_start||s.day>w.occupied_end)continue;
+   if(isSourceAlternative(s.arc_id)||s.arc_id===w.arc_id||neutral.has(s.id)||s.day<w.occupied_start||s.day>w.occupied_end)continue;
    const common=[...physicalParticipants(s)].filter(id=>cast.has(id));
    if(common.length)fail(`${s.id} borrows ${common.join(', ')} during ${w.arc_id}, including travel/recovery`);
   }
  }
  for(let i=0;i<plan.arcs.length;i++)for(const b of plan.arcs.slice(i+1)){
-  const a=plan.arcs[i],shared=b.actors.map(identity).filter(id=>a.actors.map(identity).includes(id));
+  const a=plan.arcs[i];if(isSourceAlternative(a.arc_id)||isSourceAlternative(b.arc_id))continue;
+  const shared=b.actors.map(identity).filter(id=>a.actors.map(identity).includes(id));
   if(shared.length&&a.occupied_start<=b.occupied_end&&b.occupied_start<=a.occupied_end)fail(`${a.arc_id} overlaps ${b.arc_id}: ${shared}`);
  }
  function local(location){

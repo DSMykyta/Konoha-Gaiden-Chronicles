@@ -37,7 +37,7 @@ test('overnight transitions are separate scenes and Moon care has a full fortnig
  assert.equal(get('sc-period-genno-morning-alert').day,get('sc-y0-1119-genno-blueprints').day+1);
  assert.equal(get('sc-period-moon-departure').day-get('sc-period-moon-care').day,14);
  const dojo=plan.arcs.find(w=>w.arc_id==='arc-y0-lee-dojo');
- assert.equal(get('sc-y0-1115-lee-dojo-challenge').day-dojo.start-(plan.calendar_base_year-data.calendar.view_start_year)*365,7);
+ assert.equal(get('sc-y0-1115-lee-dojo-challenge').day-dojo.start-(plan.calendar_base_year-data.calendar.view_start_year)*365,0);
 });
 test('dated source relations in reviewed scenes preserve order inside a day too',()=>{
  const affected=new Set(Object.keys(plan.scene_days));

@@ -31,6 +31,14 @@ const episodes=read('episodes.yaml').episodes||[],arcs=read('arcs.yaml').arcs||[
 if(new Set(episodes.map(e=>e.id)).size!==episodes.length)throw new Error('Duplicate episode IDs');
 if(new Set(arcs.map(a=>a.id)).size!==arcs.length)throw new Error('Duplicate arc IDs');
 const episodeMap=new Map(episodes.map(e=>[e.id,e])),arcMap=new Map(arcs.map(a=>[a.id,a]));
+const missionPlan=read('mission-windows.yaml');
+const normalizedMissionDays=missionPlan.scene_days||{};
+function missionDayToDate(index){
+ const calendarYear=missionPlan.calendar_base_year+Math.floor(index/365);
+ let day=index%365,month=1;
+ while(day>=lengths[month-1])day-=lengths[month++-1];
+ return {year:calendarYear,month,day:day+1};
+}
 const narutoVariantPolicy=read('naruto-optional.yaml');
 const optionalNarutoArcs=new Map(narutoVariantPolicy.arcs.map(item=>[item.arc_id,item]));
 for(const [id,variant] of optionalNarutoArcs){
@@ -41,16 +49,18 @@ const sourceScenes=fs.readdirSync(path.join(p,'scenes')).filter(f=>f.endsWith('.
 validateHierarchy({arcs,episodes,scenes:sourceScenes.map(x=>x.scene),periods});
 for(const row of sourceScenes){
  const arcId=episodeMap.get(row.scene.episode_id)?.arc_id;
- row.scene=adaptNarutoScene(row.scene,optionalNarutoArcs.get(arcId),narutoVariantPolicy.event_overrides);
+ row.scene=adaptNarutoScene(row.scene,optionalNarutoArcs.get(arcId),narutoVariantPolicy.event_overrides,narutoVariantPolicy.scene_overrides);
 }
 const scenes=[],events=[];
 for(const {file,scene:s} of sourceScenes){
- const a=anchors.get(s.placement?.anchor_id),date=a?.date,episode=s.episode_id?episodeMap.get(s.episode_id):null;
+ const a=anchors.get(s.placement?.anchor_id),oldDate=a?.date,episode=s.episode_id?episodeMap.get(s.episode_id):null;
+ const missionDay=normalizedMissionDays[s.id],date=Number.isInteger(missionDay)?missionDayToDate(missionDay):oldDate;
+ const scenePlacement=Number.isInteger(missionDay)?{...s.placement,source_anchor_id:s.placement.anchor_id,day_offset:0,editorial_day:missionDay}:s.placement;
  if(s.episode_id&&!episode)throw new Error('Unknown episode '+s.episode_id+' in '+file);
  if(episode&&(episode.continuity_id||'main')!==(s.continuity_id||'main'))throw new Error('Episode continuity mismatch in '+file);
- const day=date?dayInYear(date,s.placement.day_offset||0,calendar,lengths):null;
- const dateStatus=a?.placement_status||'unknown',arcId=episode?.arc_id||null,sourceContinuity=s.continuity_id||'main';
- scenes.push({...s,source_continuity_id:sourceContinuity,continuity_id:'main',arc_id:arcId,day,date,date_status:dateStatus,file});
+ const day=date?dayInYear(date,scenePlacement.day_offset||0,calendar,lengths):null;
+ const dateStatus=Number.isInteger(missionDay)?'editorial_reconstruction':a?.placement_status||'unknown',arcId=episode?.arc_id||null,sourceContinuity=s.continuity_id||'main';
+ scenes.push({...s,placement:scenePlacement,source_continuity_id:sourceContinuity,continuity_id:'main',arc_id:arcId,day,date,date_status:dateStatus,file});
  for(const e of s.events||[]){const physical=(e.involvement||[]).filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id),tracks=(e.involvement||[]).filter(i=>i.role!=='mentioned'&&i.mode!=='remote').map(i=>i.entity_id);events.push({...e,layer:e.layer||s.layer||null,scene_id:s.id,scene_title:s.title,episode_id:s.episode_id||null,arc_id:arcId,day,date_status:dateStatus,continuity:'main',source_continuity:sourceContinuity,scene_state:s.state,review:s.review||{},location_id:s.location_id,physical,tracks,file});}
 }
 const episodeViews=episodes.map(episode=>{const members=scenes.filter(s=>s.episode_id===episode.id&&s.state!=='inactive').sort((a,b)=>a.display_rank!==undefined&&b.display_rank!==undefined&&a.display_rank!==b.display_rank?a.display_rank-b.display_rank:0),dated=members.map(s=>s.day).filter(d=>d!==null);return {...episode,source_continuity_id:episode.continuity_id||'main',continuity_id:'main',scene_ids:members.map(s=>s.id),day_start:dated.length?Math.min(...dated):null,day_end:dated.length?Math.max(...dated):null};});
@@ -71,7 +81,7 @@ for(const id of Object.keys(geography.spatial||{}))if(!locationIds.has(id))throw
 const geographicUnknown=scenes.filter(scene=>scene.state!=='inactive'&&(!scene.location_id||!locationIds.has(scene.location_id)));
 if(geographicUnknown.length)console.warn('Geography: '+geographicUnknown.length+' scenes lack a known location; retained as unknown, not assigned a country.');
 
-validateMissionWindows(read('mission-windows.yaml'),scenes,entities.entities);
+validateMissionWindows(missionPlan,scenes,entities.entities);
 validateShippudenPrewar(read('shippuden-placement.yaml'),scenes,read('links.yaml').links||[]);
 let revision=process.env.VERCEL_GIT_COMMIT_SHA;try{revision=execFileSync('git',['-C',source,'rev-parse','HEAD'],{encoding:'utf8'}).trim();}catch{if(!revision)throw new Error('Source revision is required');}
 const sources=read('sources.yaml');
