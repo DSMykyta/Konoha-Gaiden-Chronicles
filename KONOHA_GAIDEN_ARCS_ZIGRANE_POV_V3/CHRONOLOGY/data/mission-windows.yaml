@@ -201,10 +201,10 @@ arcs:
   - sc-y0-1018-ok-temple-showdown
 - arc_id: arc-y0-guy-lee-impostors
   title: Самозванці Ґай і Лі
-  start: 287
-  end: 287
-  occupied_start: 287
-  occupied_end: 288
+  start: 170
+  end: 170
+  occupied_start: 170
+  occupied_end: 171
   return_days: 0
   rest_days: 1
   actors:
@@ -401,10 +401,10 @@ arcs:
   - sc-y0-1106-hoshigakure-trainees-reveal-truth
 - arc_id: arc-y0-akamaru-infection
   title: Хвороба Акамару
-  start: 304
-  end: 305
-  occupied_start: 304
-  occupied_end: 306
+  start: 152
+  end: 153
+  occupied_start: 152
+  occupied_end: 154
   return_days: 0
   rest_days: 1
   actors:
@@ -508,10 +508,10 @@ arcs:
   - sc-y0-1113-haruna-restoration
 - arc_id: arc-y0-fuku-matchmaking
   title: Сватання Фуку
-  start: 283
-  end: 284
-  occupied_start: 283
-  occupied_end: 286
+  start: 190
+  end: 191
+  occupied_start: 190
+  occupied_end: 193
   return_days: 1
   rest_days: 1
   actors:
@@ -545,10 +545,10 @@ arcs:
   - sc-y0-1115-lee-dojo-challenge
 - arc_id: arc-y0-haunted-castle
   title: Проклятий замок
-  start: 312
-  end: 314
-  occupied_start: 312
-  occupied_end: 315
+  start: 158
+  end: 160
+  occupied_start: 158
+  occupied_end: 161
   return_days: 0
   rest_days: 1
   actors:
@@ -714,10 +714,10 @@ arcs:
   - sc-y0-1127-yakumo-ido-finale
 - arc_id: arc-y0-shinemon-bowl
   title: Коштовна чаша Шінемона
-  start: 325
-  end: 327
-  occupied_start: 325
-  occupied_end: 328
+  start: 163
+  end: 165
+  occupied_start: 163
+  occupied_end: 166
   return_days: 0
   rest_days: 1
   actors:
