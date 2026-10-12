@@ -137,3 +137,5 @@
 **Статус — `represented_not_full_audit`.** Це сюжетне наповнення та контроль визначених інтервалів / доріг, а не завершена покадрова перевірка всіх реплік і учасників. Дні реконструйовані; джерельний факт і точний календарний день мають різні рівні впевненості. Три глобальні календарні питання та відсутні субтитри Bonds / Snow / Gelel лишаються відкритими.
 
 Звіт і порядок: [SHIPPUDEN_PREWAR_REVIEW_UA.md](SHIPPUDEN_PREWAR_REVIEW_UA.md). Кожна нова сцена, дата та її причина: [SHIPPUDEN_CHANGE_INDEX.json](SHIPPUDEN_CHANGE_INDEX.json). Фільми: [MOVIE_SOURCE_REVIEW.json](MOVIE_SOURCE_REVIEW.json). Прийняті рішення: журнал LOG-014–LOG-021.
+
+Коміт проходу Shippuden: [fe0552d3aa156cac629349d7f0a9b416034be671](https://github.com/DSMykyta/Konoha-Gaiden-Chronicles/commit/fe0552d3aa156cac629349d7f0a9b416034be671). Остаточний запуск: 234 тести pass, 0 fail; обидва структурні валідатори та синтаксис пройшли.
