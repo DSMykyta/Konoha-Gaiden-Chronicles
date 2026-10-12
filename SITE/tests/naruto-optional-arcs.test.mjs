@@ -20,6 +20,9 @@ test('Naruto-free default is enforced across all fourteen B/V arcs and every mom
    assert(!event.tracks.includes('c-naruto'),event.id);
    assert(!/Наруто|Naruto/.test(event.title+' '+event.text),event.id);
   }
+  for(const episode of data.episodes.filter(x=>x.arc_id===setting.arc_id)){
+   assert(!/Наруто|Naruto/.test(episode.title),episode.id);
+  }
   for(const scene of data.scenes.filter(x=>x.arc_id===setting.arc_id)){
    assert(!/Наруто|Naruto/.test(scene.title+' '+(scene.description||'')),scene.id);
   }
@@ -31,7 +34,9 @@ test('the per-arc switch restores original scenes, names and physical Naruto, wi
  const originalText=e.naruto_original.text,absentText=e.text,other=data.events.find(x=>x.arc_id!==arc);
  const otherText=other.text;
  assert(e&&!e.physical.includes('c-naruto'));
+ const ep=data.episodes.find(ep=>ep.arc_id===arc&&/Наруто/.test(ep.naruto_original?.title||''));
  NarutoArcToggle.set(data,arc,true);
+ if(ep)assert.equal(ep.title,ep.naruto_original.title);
  assert.equal(e.text,originalText);
  assert(e.physical.includes('c-naruto'));
  assert.equal(scene.title,scene.naruto_original.title);

@@ -9,6 +9,11 @@ const NarutoArcToggle=(()=>{
   const arc=(data.arcs||[]).find(a=>a.id===arcId);
   if(!arc?.naruto_optional)throw Error('Naruto option unavailable for '+arcId);
   const scenes=new Map((data.scenes||[]).filter(s=>s.arc_id===arcId).map(s=>[s.id,s]));
+  for(const episode of (data.episodes||[]).filter(e=>e.arc_id===arcId&&e.naruto_original)){
+   if(!episode.naruto_absent)episode.naruto_absent={title:episode.title};
+   episode.title=include?episode.naruto_original.title:episode.naruto_absent.title;
+   episode.naruto_variant=include?'with_naruto':'without_naruto';
+  }
   for(const scene of scenes.values()){
    if(!scene.naruto_original)continue;
    if(!scene.naruto_absent)scene.naruto_absent=copy({title:scene.title,description:scene.description});
