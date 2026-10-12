@@ -7,8 +7,8 @@ title: Лікар показує Нобарі результат лікуван�
 location_id: loc-team9-medical-post
 day_part: night
 placement:
-  anchor_id: ta-games-0-08-07
-  day_offset: 0
+  anchor_id: ta-games-0-07-06
+  day_offset: 2
 state: active
 presence_coverage: partial
 review:
@@ -21,9 +21,10 @@ events:
 - id: ev-games-t9-nobari-treatment-result
   display_rank: 100
   title: Нобарі бачить загоєний опік без очікуваного рубця
-  text: 'Коли приїздить транспорт по поранених, Рен несе заснулого Кіту. Лікар хвалить роботу Сори й Кіти та показує
-    Нобарі чоловіка з опіком плеча й половини обличчя: шкіра гладка й рожева, очікуваного грубого рубця немає. Нобарі
-    перепитує, чи це зробив Кіта, й не стримує лайки.'
+  text: 'Після прибуття транспорту лікар показує Нобарі пацієнта з опіком плеча й половини обличчя: після Кітиної
+    роботи тканина загоєна без очікуваного грубого рубця. На першій рані лікар перевіряв результат особисто; подальша
+    робота йшла під наглядом Нобарі. Саме масштаб результату на плечі й щоці дивує їх. Кіта заснув і чує лише уривки
+    розмови, поки Рен несе його до транспорту.'
   origin: P
   extent: interval
   involvement:
@@ -41,6 +42,7 @@ events:
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 relations: []
@@ -55,6 +57,7 @@ presence:
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-evacuation-c-t9-medical-doctor
   entity_id: c-t9-medical-doctor
@@ -66,6 +69,7 @@ presence:
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-evacuation-c-t9-medical-burn-patient
   entity_id: c-t9-medical-burn-patient
@@ -77,4 +81,5 @@ presence:
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted

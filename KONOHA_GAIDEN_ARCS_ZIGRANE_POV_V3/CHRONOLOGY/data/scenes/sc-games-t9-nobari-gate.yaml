@@ -7,8 +7,8 @@ title: Нобарі й Команда 9 виходять через ворота
 location_id: loc-konoha-gate
 day_part: afternoon
 placement:
-  anchor_id: ta-games-0-08-07
-  day_offset: 0
+  anchor_id: ta-games-0-07-06
+  day_offset: 2
 state: active
 presence_coverage: partial
 review:
@@ -48,6 +48,7 @@ events:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 relations: []
@@ -61,6 +62,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-gate-c-ren
   entity_id: c-ren
@@ -71,6 +73,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-gate-c-sora
   entity_id: c-sora
@@ -81,6 +84,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-gate-c-nobari
   entity_id: c-nobari
@@ -91,6 +95,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-gate-c-kotetsu
   entity_id: c-kotetsu
@@ -101,6 +106,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-gate-c-izumo
   entity_id: c-izumo
@@ -111,4 +117,5 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted

@@ -13,7 +13,7 @@ const byId=new Map(allScenes.map(s=>[s.id,s]));
 const scene=key=>scenes.find(s=>s.id==='sc-games-'+key);
 const months=[31,28,31,30,31,30,31,31,30,31,30,31];
 const absoluteDay=s=>{const a=anchors.get(s.placement?.anchor_id);return a? a.year*365+months.slice(0,a.month-1).reduce((a,b)=>a+b,0)+a.day-1+(s.placement.day_offset||0):null;};
-const date=s=>{const a=anchors.get(s.placement.anchor_id);return (a.year-activeYear)*10000+a.month*100+a.day;};
+const date=s=>{const absolute=absoluteDay(s);if(absolute===null)return null;const relative=absolute-activeYear*365,year=Math.floor(relative/365);let day=((relative%365)+365)%365,month=0;while(day>=months[month])day-=months[month++];return year*10000+(month+1)*100+day+1;};
 const cast=s=>s.events.flatMap(e=>e.involvement.map(i=>i.entity_id));
 const physical=s=>s.events.flatMap(e=>e.involvement.filter(i=>i.mode==='physical').map(i=>i.entity_id));
 const text=s=>s.events.map(e=>e.text).join(' ');
@@ -22,7 +22,7 @@ const parts={dawn:0,morning:1,noon:2,afternoon:3,evening:4,night:5};
 const linked=(a,b)=>links.some(l=>l.a===a.id&&l.b===b.id&&l.kind==='before');
 test('imported games stop at Part I and respect the Hokage transitions',()=>{
  assert(scenes.length>=123);
- for(const s of scenes){
+ for(const s of scenes.filter(s=>s.state!=='inactive')){
   const d=date(s);assert(d<=1216&&anchors.get(s.placement.anchor_id).year===activeYear,s.id);
   assert(!(cast(s).includes('c-hiruzen')&&d>801),s.id+' Hiruzen after his death');
   assert(!(cast(s).includes('c-tsunade')&&d<902),s.id+' Tsunade before returning');
@@ -46,6 +46,8 @@ test('escort, closed departure and long-mission bases preserve the causal order'
 test('all audited before links agree with days, day parts and reader order',()=>{
  for(const l of links){
   const a=byId.get(l.a),b=byId.get(l.b);assert(a&&b,l.id);
+  // Historical source links remain archived when their scene is inactive.
+  if(a.state==='inactive'||b.state==='inactive')continue;
   const da=absoluteDay(a),db=absoluteDay(b);assert(da!==null&&db!==null,l.id);
   assert(da<=db,`${l.id}: ${a.id} comes after ${b.id}`);
   if(da===db&&a.day_part&&b.day_part){
@@ -55,7 +57,7 @@ test('all audited before links agree with days, day parts and reader order',()=>
  }
  const episodes=load('episodes.yaml').episodes.filter(e=>e.id.startsWith('ep-games-'));
  for(const ep of episodes){
-  const members=scenes.filter(s=>s.episode_id===ep.id).sort((a,b)=>a.display_rank-b.display_rank);
+  const members=scenes.filter(s=>s.state!=='inactive'&&s.episode_id===ep.id).sort((a,b)=>a.display_rank-b.display_rank);
   for(let i=1;i<members.length;i++)assert(absoluteDay(members[i-1])<=absoluteDay(members[i]),ep.id+' reader order');
  }
 });

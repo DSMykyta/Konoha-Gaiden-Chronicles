@@ -7,8 +7,8 @@ title: Нобарі розповідає наставникам про меди�
 location_id: loc-konoha-izakaya
 day_part: night
 placement:
-  anchor_id: ta-games-0-08-07
-  day_offset: 0
+  anchor_id: ta-games-0-07-06
+  day_offset: 2
 state: active
 presence_coverage: partial
 review:
@@ -42,6 +42,7 @@ events:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   focus_teams: []
 - id: ev-games-t9-nobari-learns-fifty-meters
   display_rank: 200
@@ -67,12 +68,13 @@ events:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   focus_teams: []
 - id: ev-games-t9-nobari-raido-journal
   display_rank: 300
   title: Райдо просить показувати йому журнал Сори
-  text: Райдо вже знає про блінк із передіспитових занять. Він просить Асуму показати журнал Сори, коли назбираються
-    нові записи, щоб бачити розвиток прийому після передачі команди Анко.
+  text: Райдо вже знає про блінк із передіспитових занять. Він запитує Асуму про записи й дізнається, що папка перебуває
+    в Анко. Райдо збирається попросити журнал Сори в чинної наставниці команди.
   origin: P
   extent: interval
   involvement:
@@ -90,6 +92,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams: []
 relations:
 - id: rel-ev-games-t9-nobari-debrief-1-before-next
@@ -112,6 +115,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-debrief-c-kurenai
   entity_id: c-kurenai
@@ -122,6 +126,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-debrief-c-asuma
   entity_id: c-asuma
@@ -132,6 +137,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-debrief-c-raido
   entity_id: c-raido
@@ -142,4 +148,5 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted

@@ -7,16 +7,16 @@ title: Команди 8 і 9 тренуються перед медичною м
 location_id: loc-training-ground-8
 day_part: morning
 placement:
-  anchor_id: ta-games-0-08-07
+  anchor_id: null
   day_offset: 0
-state: active
+state: inactive
 presence_coverage: partial
 review:
-  time: partial
+  time: pending
   cast: accepted
   location: accepted
   origin: accepted
-  text: accepted
+  text: partial
 events:
 - id: ev-games-t9-kurenai-cover-1
   display_rank: 100
@@ -54,6 +54,7 @@ events:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-nobari-morning-spars
@@ -92,6 +93,7 @@ events:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 relations:
@@ -115,6 +117,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-kurenai-cover-c-ren
   entity_id: c-ren
@@ -125,6 +128,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-kurenai-cover-c-sora
   entity_id: c-sora
@@ -135,6 +139,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-kurenai-cover-c-kurenai
   entity_id: c-kurenai
@@ -145,6 +150,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-kurenai-cover-c-kiba
   entity_id: c-kiba
@@ -155,6 +161,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-kurenai-cover-c-akamaru
   entity_id: c-akamaru
@@ -165,6 +172,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-kurenai-cover-c-hinata
   entity_id: c-hinata
@@ -175,6 +183,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-kurenai-cover-c-shino
   entity_id: c-shino
@@ -185,4 +194,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
+editorial_note: 'Архів попередньої версії. Спаринги й обід вилучені з поточної арки: раннє післяіспитове вікно несумісне
+  з пораненням Хінати. Пізніше розміщення не встановлене.'

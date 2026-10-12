@@ -3,11 +3,11 @@ id: sc-games-t9-anko-order
 episode_id: ep-games-t9-anko-new-command
 display_rank: 50100
 continuity_id: main
-title: Адміністрація передає Команду 9 Анко за запечатаним наказом
-location_id: loc-mission-assignment-room
-day_part: afternoon
+title: Хірузен передає Команду 9 Анко після провалу другого етапу
+location_id: loc-hokage-office
+day_part: evening
 placement:
-  anchor_id: ta-games-0-08-05
+  anchor_id: ta-games-0-07-06
   day_offset: 0
 state: active
 presence_coverage: complete
@@ -20,16 +20,14 @@ review:
 events:
 - id: ev-games-t9-anko-order-1
   display_rank: 100
-  title: Радники оголошують зміну наставника
-  text: 'Кохару оголошує запечатане розпорядження Хірузена: Райдо повертається до охорони та спеціальних призначень,
-    польовим наставником Команди 9 стає Анко. На запитання Рена Хомура відповідає, що кінцевої дати наказу немає.'
+  title: Хірузен оголошує зміну наставника
+  text: Того самого вечора після провалу другого етапу Хірузен викликає Команду 9. Райдо повертається до охорони
+    й спеціальних призначень; польовим наставником трійки стає Анко. На запитання Рена Хірузен відповідає, що наказ
+    не має кінцевої дати.
   origin: P
   extent: interval
   involvement:
-  - entity_id: c-koharu
-    role: focus
-    mode: physical
-  - entity_id: c-homura
+  - entity_id: c-hiruzen
     role: focus
     mode: physical
   - entity_id: c-ren
@@ -49,6 +47,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-anko-handover-records
@@ -76,6 +75,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-anko-first-meeting
@@ -103,6 +103,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 relations:
@@ -130,6 +131,7 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-anko-order-c-ren
   entity_id: c-ren
@@ -138,6 +140,7 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-anko-order-c-sora
   entity_id: c-sora
@@ -146,6 +149,7 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-anko-order-c-raido
   entity_id: c-raido
@@ -154,6 +158,7 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-anko-order-c-anko
   entity_id: c-anko
@@ -162,20 +167,13 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
-- id: pr-sc-games-t9-anko-order-c-homura
-  entity_id: c-homura
+- id: pr-games-t9-anko-order-c-hiruzen
+  entity_id: c-hiruzen
   from: sc-games-t9-anko-order.start
   to: sc-games-t9-anko-order.end
   basis: source
   evidence_ids:
-  - evd-games-team-9-07
-  review: accepted
-- id: pr-sc-games-t9-anko-order-c-koharu
-  entity_id: c-koharu
-  from: sc-games-t9-anko-order.start
-  to: sc-games-t9-anko-order.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted

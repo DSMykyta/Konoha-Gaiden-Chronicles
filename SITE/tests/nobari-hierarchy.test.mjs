@@ -11,12 +11,26 @@ test('medical mission has its own arc and preserves the original entry IDs',()=>
  const ids=new Set(data.events.map(e=>e.id));
  for(const suffix of ['anko-order','anko-assessment','kurenai-cover','nobari-assignment','nobari-field','nobari-debrief'])assert(ids.has('ev-games-t9-'+suffix+'-1'));
 });
-test('supporting teams stay at assignment and followup stays after the mission',()=>{
- const assignment=scenes.get('sc-games-t9-nobari-assignment');
- const cast=new Set(assignment.presence.map(p=>p.entity_id));
- for(const id of ['c-kiba','c-hinata','c-shino','c-ino','c-shikamaru','c-choji'])assert(cast.has(id));
- for(const sid of ['sc-games-t9-nobari-outbound','sc-games-t9-nobari-field','sc-games-t9-nobari-return'])for(const p of scenes.get(sid).presence)assert(!['c-kiba','c-hinata','c-shino','c-ino','c-shikamaru','c-choji'].includes(p.entity_id));
- assert(scenes.get('sc-games-t9-nobari-followup-training').day>scenes.get('sc-games-t9-nobari-debrief').day);
+test('immediate transfer uses living Hiruzen and precedes the invasion',()=>{
+ const failure=scenes.get('sc-games-t9-exam-failure');
+ const transfer=scenes.get('sc-games-t9-anko-order');
+ assert.equal(transfer.day,failure.day);
+ assert.equal(transfer.day_part,'evening');
+ assert(transfer.events[0].involvement.some(i=>i.entity_id==='c-hiruzen'&&i.mode==='physical'));
+ assert(!transfer.presence.some(p=>['c-koharu','c-homura','c-tsunade'].includes(p.entity_id)));
+ assert.equal(scenes.get('sc-games-t9-anko-assessment').day,transfer.day+1);
+ assert.equal(scenes.get('sc-games-t9-nobari-assignment').day,transfer.day+2);
+ assert(data.links.some(l=>l.a===failure.id&&l.b===transfer.id&&l.kind==='before'));
+});
+test('injured Team 8 is absent from the assignment and archived training is invisible',()=>{
+ const cast=new Set(scenes.get('sc-games-t9-nobari-assignment').presence.map(p=>p.entity_id));
+ for(const id of ['c-kurenai','c-asuma','c-nobari'])assert(cast.has(id));
+ for(const id of ['c-kiba','c-hinata','c-shino','c-ino','c-shikamaru','c-choji'])assert(!cast.has(id));
+ for(const sid of ['sc-games-t9-kurenai-cover','sc-games-t9-nobari-followup-training','sc-games-t9-nobari-followup-lunch']){
+  const scene=scenes.get(sid);
+  assert.equal(scene.state,'inactive');assert.equal(scene.day,null);
+  assert(!episodes.get(scene.episode_id).scene_ids.includes(sid));
+ }
 });
 test('parallel medical work has no fabricated serial order or sleeping witness',()=>{
  const medical=scenes.get('sc-games-t9-nobari-field');

@@ -7,16 +7,16 @@ title: Куренай спостерігає самостійну програм
 location_id: loc-training-ground-8
 day_part: morning
 placement:
-  anchor_id: ta-games-0-08-07
-  day_offset: 1
-state: active
+  anchor_id: null
+  day_offset: 0
+state: inactive
 presence_coverage: partial
 review:
-  time: partial
+  time: pending
   cast: accepted
   location: accepted
   origin: accepted
-  text: accepted
+  text: partial
 events:
 - id: ev-games-t9-nobari-followup-program
   display_rank: 100
@@ -42,6 +42,7 @@ events:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-nobari-followup-spars
@@ -80,6 +81,7 @@ events:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 relations:
@@ -101,6 +103,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-followup-training-c-ren
   entity_id: c-ren
@@ -110,6 +113,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-followup-training-c-sora
   entity_id: c-sora
@@ -119,6 +123,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-followup-training-c-kurenai
   entity_id: c-kurenai
@@ -128,6 +133,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-followup-training-c-kiba
   entity_id: c-kiba
@@ -137,6 +143,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-followup-training-c-akamaru
   entity_id: c-akamaru
@@ -146,6 +153,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-followup-training-c-hinata
   entity_id: c-hinata
@@ -155,6 +163,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-followup-training-c-shino
   entity_id: c-shino
@@ -164,4 +173,7 @@ presence:
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-lunch-draft
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
+editorial_note: 'Архів попередньої версії. Спаринги й обід вилучені з поточної арки: раннє післяіспитове вікно несумісне
+  з пораненням Хінати. Пізніше розміщення не встановлене.'

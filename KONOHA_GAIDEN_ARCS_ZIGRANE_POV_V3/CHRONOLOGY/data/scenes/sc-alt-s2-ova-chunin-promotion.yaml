@@ -38,7 +38,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-ova-chunin-fire-promotion
-relations:
+relations: []
 presence:
 - id: pr-alt-s2-ova-chunin-promotion-c-naruto
   entity_id: c-naruto

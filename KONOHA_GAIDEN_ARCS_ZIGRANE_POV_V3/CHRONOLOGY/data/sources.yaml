@@ -1227,7 +1227,7 @@ sources:
     type: project_roleplay
     title: arc 04 [Чакронитка і перший блінк]
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 04 [Чакронитка і перший блінк].txt
-    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+    locator_status: current_author_corrected_text
   - id: src-games-team-9-05
     type: project_roleplay
     title: arc 05 [Передіспитові тижні]
@@ -1242,7 +1242,7 @@ sources:
     type: project_roleplay
     title: arc 07 [Передача Анко і місія Нобарі]
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt
-    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+    locator_status: current_author_corrected_text
   - id: src-games-team-9-08
     type: project_roleplay
     title: arc 08 [Огорожа Лісу Смерті]
@@ -3374,6 +3374,11 @@ sources:
     title: Аудит суперечностей місії Нобарі
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md
     revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+
+  - id: src-t9-nobari-author-fix-20261012
+    type: project_editorial
+    title: Авторські уточнення передачі Анко й роботи Кіти з тканинами
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/NOBARI_WORLD_LOGIC_FIX_UA.md
 
   - id: src-ova-chunin-fire
     type: ova
@@ -13275,6 +13280,12 @@ evidence:
     source_id: src-t9-nobari-logic-audit
     locator: 'Пункти 15, 16, 26: знання Райдо, повтор корекції Сори, D-ранг. Доказ редакторського рішення, не джерело
       нових пригод.'
+    basis: editorial
+    review: accepted
+  - id: evd-t9-nobari-author-fix-20261012
+    source_id: src-t9-nobari-author-fix-20261012
+    locator: 'Вказівки користувача 12.10.2026: передача одразу після провалу другого етапу; щоденні опіки й самовідновлення
+      рук; дозвіл підправити дії та передачу.'
     basis: editorial
     review: accepted
   - id: evd-ova-chunin-fire-purpose

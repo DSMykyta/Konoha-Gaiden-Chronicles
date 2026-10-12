@@ -7,8 +7,8 @@ title: Нобарі отримує медичний D-ранг із Команд
 location_id: loc-mission-assignment-room
 day_part: noon
 placement:
-  anchor_id: ta-games-0-08-07
-  day_offset: 0
+  anchor_id: ta-games-0-07-06
+  day_offset: 2
 state: active
 presence_coverage: partial
 review:
@@ -21,9 +21,9 @@ events:
 - id: ev-games-t9-nobari-assignment-1
   display_rank: 100
   title: Нобарі зачитує своє призначення керівником місії
-  text: 'У розподільчій Команди 8 і 9 зустрічають Асуму з Десятою й Нобарі у джонінській формі. Нобарі зачитує D-ранг:
-    Команда 9, супроводжуючий джонін Хаяші Нобарі. Асума підхоплює впущений сувій; Нобарі дякує йому «Асума-кун»,
-    і Кіба це чує.'
+  text: Після термінового доручення Анко відправляє трійку до розподільчої, де її мають передати Нобарі. Там чекають
+    Нобарі у джонінській формі, Асума й Куренай. Нобарі зачитує D-ранг із власним призначенням супроводжуючим джоніном;
+    Асума підхоплює впущений сувій.
   origin: P
   extent: interval
   involvement:
@@ -36,9 +36,6 @@ events:
   - entity_id: c-ren
     role: focus
     mode: physical
-  - entity_id: c-kiba
-    role: focus
-    mode: physical
   - entity_id: c-kita
     role: background
     mode: physical
@@ -46,38 +43,20 @@ events:
     role: background
     mode: physical
   - entity_id: c-kurenai
-    role: background
-    mode: physical
-  - entity_id: c-akamaru
-    role: background
-    mode: physical
-  - entity_id: c-hinata
-    role: background
-    mode: physical
-  - entity_id: c-shino
-    role: background
-    mode: physical
-  - entity_id: c-ino
-    role: background
-    mode: physical
-  - entity_id: c-shikamaru
-    role: background
-    mode: physical
-  - entity_id: c-choji
     role: background
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-nobari-mission-brief
   display_rank: 200
   title: Асума пояснює завдання в сусідньому поселенні
-  text: 'Асума пояснює: після сутички в поселенні неподалік лишилися стабільні поранені, місцеві лікарі не встигають
-    допомогти всім. Нобарі супроводжує учнів на медичну допомогу. Вона рушає до виходу, зупиняється й кличе трійку
-    за собою.'
+  text: 'Асума пояснює: у поселенні неподалік стабільним пораненим бракує допомоги місцевих лікарів. Учні отримують
+    роботу від лікарів під наглядом Нобарі; важкі випадки залишають дорослим медикам. Нобарі веде Команду 9 до воріт.'
   origin: P
   extent: interval
   involvement:
@@ -99,31 +78,11 @@ events:
   - entity_id: c-kurenai
     role: background
     mode: physical
-  - entity_id: c-kiba
-    role: background
-    mode: physical
-  - entity_id: c-akamaru
-    role: background
-    mode: physical
-  - entity_id: c-hinata
-    role: background
-    mode: physical
-  - entity_id: c-shino
-    role: background
-    mode: physical
-  - entity_id: c-ino
-    role: background
-    mode: physical
-  - entity_id: c-shikamaru
-    role: background
-    mode: physical
-  - entity_id: c-choji
-    role: background
-    mode: physical
   evidence_ids:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-mission-draft
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 relations:
@@ -148,6 +107,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-assignment-c-ren
   entity_id: c-ren
@@ -158,6 +118,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-assignment-c-sora
   entity_id: c-sora
@@ -168,6 +129,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-assignment-c-nobari
   entity_id: c-nobari
@@ -178,6 +140,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-assignment-c-kurenai
   entity_id: c-kurenai
@@ -188,6 +151,7 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-nobari-assignment-c-asuma
   entity_id: c-asuma
@@ -198,74 +162,5 @@ presence:
   - evd-games-team-9-07
   - evd-t9-nobari-recap
   - evd-t9-nobari-kitchen-prose
-  review: accepted
-- id: pr-sc-games-t9-nobari-assignment-c-kiba
-  entity_id: c-kiba
-  from: sc-games-t9-nobari-assignment.start
-  to: sc-games-t9-nobari-assignment.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
-  - evd-t9-nobari-recap
-  - evd-t9-nobari-kitchen-prose
-  review: accepted
-- id: pr-sc-games-t9-nobari-assignment-c-akamaru
-  entity_id: c-akamaru
-  from: sc-games-t9-nobari-assignment.start
-  to: sc-games-t9-nobari-assignment.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
-  - evd-t9-nobari-recap
-  - evd-t9-nobari-kitchen-prose
-  review: accepted
-- id: pr-sc-games-t9-nobari-assignment-c-hinata
-  entity_id: c-hinata
-  from: sc-games-t9-nobari-assignment.start
-  to: sc-games-t9-nobari-assignment.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
-  - evd-t9-nobari-recap
-  - evd-t9-nobari-kitchen-prose
-  review: accepted
-- id: pr-sc-games-t9-nobari-assignment-c-shino
-  entity_id: c-shino
-  from: sc-games-t9-nobari-assignment.start
-  to: sc-games-t9-nobari-assignment.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
-  - evd-t9-nobari-recap
-  - evd-t9-nobari-kitchen-prose
-  review: accepted
-- id: pr-sc-games-t9-nobari-assignment-c-ino
-  entity_id: c-ino
-  from: sc-games-t9-nobari-assignment.start
-  to: sc-games-t9-nobari-assignment.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
-  - evd-t9-nobari-recap
-  - evd-t9-nobari-kitchen-prose
-  review: accepted
-- id: pr-sc-games-t9-nobari-assignment-c-shikamaru
-  entity_id: c-shikamaru
-  from: sc-games-t9-nobari-assignment.start
-  to: sc-games-t9-nobari-assignment.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
-  - evd-t9-nobari-recap
-  - evd-t9-nobari-kitchen-prose
-  review: accepted
-- id: pr-sc-games-t9-nobari-assignment-c-choji
-  entity_id: c-choji
-  from: sc-games-t9-nobari-assignment.start
-  to: sc-games-t9-nobari-assignment.end
-  basis: source
-  evidence_ids:
-  - evd-games-team-9-07
-  - evd-t9-nobari-recap
-  - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-author-fix-20261012
   review: accepted

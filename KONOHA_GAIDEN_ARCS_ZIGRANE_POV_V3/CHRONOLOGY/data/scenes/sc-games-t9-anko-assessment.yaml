@@ -7,8 +7,8 @@ title: Перша перевірка Команди 9 на полі Анко
 location_id: loc-training-ground-4
 day_part: morning
 placement:
-  anchor_id: ta-games-0-08-06
-  day_offset: 0
+  anchor_id: ta-games-0-07-06
+  day_offset: 1
 state: active
 presence_coverage: complete
 review:
@@ -40,6 +40,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-anko-skills
@@ -64,6 +65,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-anko-separation
@@ -88,13 +90,15 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 - id: ev-games-t9-anko-assessment-notes
   display_rank: 400
   title: Анко записує результат першої перевірки
-  text: Анко записує в папці, що трійка реагує як одне тіло й сприймає розділення як загрозу. Запис учням вона не
-    показує. Після заняття Рен іде між Кітою й Сорою, поклавши руки їм на плечі.
+  text: Анко записує, що на розділення трійка відповідає зближенням, Сора веде облік і дає короткі команди. Вона
+    позначає необхідність перевірити роботу поодинці. Запис учням не показує; після заняття Рен іде між Кітою й
+    Сорою.
   origin: P
   extent: interval
   involvement:
@@ -112,6 +116,7 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   focus_teams:
   - team-9
 relations:
@@ -147,6 +152,7 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-anko-assessment-c-ren
   entity_id: c-ren
@@ -155,6 +161,7 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-anko-assessment-c-sora
   entity_id: c-sora
@@ -163,6 +170,7 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
 - id: pr-sc-games-t9-anko-assessment-c-anko
   entity_id: c-anko
@@ -171,4 +179,5 @@ presence:
   basis: source
   evidence_ids:
   - evd-games-team-9-07
+  - evd-t9-nobari-author-fix-20261012
   review: accepted
