@@ -1,9 +1,9 @@
 schema_version: 1
 id: sc-games-t9-anko-assessment
-episode_id: ep-games-t9-anko-new-command
+episode_id: ep-games-t9-anko-first-assessment
 display_rank: 50200
 continuity_id: main
-title: Анко перевіряє витривалість Команди 9
+title: Перша перевірка Команди 9 на полі Анко
 location_id: loc-training-ground-4
 day_part: morning
 placement:
@@ -20,8 +20,33 @@ review:
 events:
 - id: ev-games-t9-anko-assessment-1
   display_rank: 100
-  title: Анко перевіряє витривалість Команди 9
-  text: Анко починає перевірку з десяти кіл. Коли Кіта й Сора втрачають темп, Рен підхоплює їх і завершує біг разом із ними. Після відпочинку трійка показує зброю, короткі переміщення й спаринги. Анко навмисно розділяє учнів, але вони відновлюють спільну взаємодію. Вона фіксує, що команда вже реагує як одне ціле й сприймає розділення як загрозу.
+  title: Рен завершує біг разом із Кітою й Сорою
+  text: Анко задає десять кіл. Коли Кіта й Сора втрачають темп, Рен несе обох і закінчує дистанцію з ними. Анко
+    зауважує, що не оголошувала вправу командною.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  focus_teams:
+  - team-9
+- id: ev-games-t9-anko-skills
+  display_rank: 200
+  title: Трійка показує Анко свої прийоми
+  text: Після відпочинку Рен демонструє сокири й зміну рук, Сора метає кунаї лівою з рикошетом, Кіта показує підміни
+    й короткий блінк. Сора називає відстань, час і приблизну витрату чакри. Анко переглядає папку Райдо.
   origin: P
   extent: interval
   involvement:
@@ -39,44 +64,111 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
   focus_teams:
   - team-9
-relations: []
+- id: ev-games-t9-anko-separation
+  display_rank: 300
+  title: Учні відновлюють взаємодію під час спарингів
+  text: Анко розводить учнів по різних кутах. Рен зміщується так, щоб бачити напарників, Сора вибудовує шлях повернення,
+    Кіта повертається ближче до них. На кинутий між Кітою й Сорою кунай реагують усі троє.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  focus_teams:
+  - team-9
+- id: ev-games-t9-anko-assessment-notes
+  display_rank: 400
+  title: Анко записує результат першої перевірки
+  text: Анко записує в папці, що трійка реагує як одне тіло й сприймає розділення як загрозу. Запис учням вона не
+    показує. Після заняття Рен іде між Кітою й Сорою, поклавши руки їм на плечі.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-anko
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-ren
+    role: background
+    mode: physical
+  - entity_id: c-sora
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  focus_teams:
+  - team-9
+relations:
+- id: rel-ev-games-t9-anko-assessment-1-before-next
+  kind: before
+  a: ev-games-t9-anko-assessment-1
+  b: ev-games-t9-anko-skills
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+- id: rel-ev-games-t9-anko-skills-before-next
+  kind: before
+  a: ev-games-t9-anko-skills
+  b: ev-games-t9-anko-separation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+- id: rel-ev-games-t9-anko-separation-before-next
+  kind: before
+  a: ev-games-t9-anko-separation
+  b: ev-games-t9-anko-assessment-notes
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
 presence:
-- id: pr-games-t9-anko-assessment-c-kita
+- id: pr-sc-games-t9-anko-assessment-c-kita
   entity_id: c-kita
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
   review: accepted
-- id: pr-games-t9-anko-assessment-c-ren
+- id: pr-sc-games-t9-anko-assessment-c-ren
   entity_id: c-ren
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
   review: accepted
-- id: pr-games-t9-anko-assessment-c-sora
+- id: pr-sc-games-t9-anko-assessment-c-sora
   entity_id: c-sora
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
   review: accepted
-- id: pr-games-t9-anko-assessment-c-anko
+- id: pr-sc-games-t9-anko-assessment-c-anko
   entity_id: c-anko
   from: sc-games-t9-anko-assessment.start
   to: sc-games-t9-anko-assessment.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
   review: accepted

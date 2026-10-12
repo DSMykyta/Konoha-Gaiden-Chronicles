@@ -1,0 +1,84 @@
+schema_version: 1
+id: sc-games-t9-nobari-outbound
+episode_id: ep-games-t9-nobari-medical-mission
+display_rank: 50440
+continuity_id: main
+title: Дорога до поселення медичної місії
+location_id: loc-t9-medical-road
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-road-stories
+  display_rank: 100
+  title: Рен розпитує Нобарі про її польову службу
+  text: Дорогою Рен іде поруч із Нобарі й питає про її старі місії. Вона розповідає про евакуацію, перев’язки й
+    зламану ногу, стабілізовану дощечками та поясом напарника. Сора слухає без блокнота; Кіта йде з ними. Група
+    доходить до поселення.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-sora
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-sc-games-t9-nobari-outbound-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-nobari-outbound.start
+  to: sc-games-t9-nobari-outbound.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-outbound-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-nobari-outbound.start
+  to: sc-games-t9-nobari-outbound.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-outbound-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-nobari-outbound.start
+  to: sc-games-t9-nobari-outbound.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-outbound-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-nobari-outbound.start
+  to: sc-games-t9-nobari-outbound.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+  review: accepted

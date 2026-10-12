@@ -1,16 +1,16 @@
 schema_version: 1
 id: sc-games-t9-nobari-field
-episode_id: ep-games-t9-nobari-medical-mission
+episode_id: ep-games-t9-nobari-hospital
 display_rank: 50500
 continuity_id: main
-title: Нобарі веде Команду 9 на медичну місію
+title: Команда 9 допомагає польовому шпиталю
 location_id: loc-team9-medical-post
 day_part: afternoon
 placement:
   anchor_id: ta-games-0-08-07
   day_offset: 0
 state: active
-presence_coverage: complete
+presence_coverage: partial
 review:
   time: partial
   cast: accepted
@@ -20,8 +20,107 @@ review:
 events:
 - id: ev-games-t9-nobari-field-1
   display_rank: 100
-  title: Нобарі веде Команду 9 на медичну місію
-  text: 'У складі, перетвореному на шпиталь, Нобарі розподіляє роботу. Сора короткими циклами послаблює біль гендзюцу, Кіта під наглядом матері стягує краї вже оброблених ран, Рен носить воду, перев’язки й поранених. Після виснажливої зміни лікар показує Нобарі нову шкіру на плечі й щоці пацієнта: після роботи Кіти очікуваного грубого рубця немає. Сам Кіта вже спить від виснаження й не чує цього висновку.'
+  title: Нобарі приймає справи й розподіляє роботу
+  text: Перед входом у склад-шпиталь Нобарі попереджає Рена. Сора підтримує її словами «Хаяші-сенсей права», але
+    Рен заходить. Лікарі вводять Нобарі в курс справ; вона допомагає з важчими випадками, Сору спрямовує на знеболення,
+    Кіту — на оброблені рани, Рена — до старшого санітара.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-t9-medical-doctor
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-t9-medical-orderly
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-recap
+  - evd-t9-nobari-mission-draft
+  focus_teams:
+  - team-9
+- id: ev-games-t9-nobari-kita-treatment
+  display_rank: 200
+  title: Кіта стягує краї опіків і розсічень
+  text: Кіта працює над ранами, які лікарі вже обробили або залишили після першої допомоги. Він тримає тонкий медичний
+    потік і стягує краї опіків та розсічень. Нобарі помічає надмірну витрату чакри й велить послабити потік.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-t9-medical-burn-patient
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  focus_teams:
+  - team-9
+- id: ev-games-t9-nobari-sora-analgesia
+  display_rank: 300
+  title: Сора послаблює біль під час обробки ран
+  text: Сора короткими гендзюцу послаблює біль поранених, поки лікарі очищують і зашивають рани. Чунін перестає
+    кричати, лишаючись при свідомості. Після завершення ілюзії Сора записує її тривалість.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-t9-medical-doctor
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  focus_teams:
+  - team-9
+- id: ev-games-t9-nobari-ren-orderly
+  display_rank: 400
+  title: Рен переносить воду, перев’язки й поранених
+  text: За вказівками санітара Рен приносить воду й матеріали та переносить поранених. Після однієї відкритої рани
+    він відвертається до стіни, стоїть із зеленим обличчям, а потім повертається до носилок.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-t9-medical-orderly
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  focus_teams:
+  - team-9
+- id: ev-games-t9-nobari-shift-end
+  display_rank: 500
+  title: Медична зміна закінчується виснаженням трійки
+  text: До ночі руки Кіти тремтять після лікування, пальці Сори — після коротких ілюзій. Рен мокрий від поту після
+    перенесення людей і матеріалів. Нобарі витирає чоло, розмазуючи чужу кров. Група збирає речі перед прибуттям
+    транспорту.
   origin: P
   extent: interval
   involvement:
@@ -39,44 +138,143 @@ events:
     mode: physical
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   focus_teams:
   - team-9
-relations: []
+relations:
+- id: rel-nobari-intake-to-ev-games-t9-nobari-kita-treatment
+  kind: before
+  a: ev-games-t9-nobari-field-1
+  b: ev-games-t9-nobari-kita-treatment
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+- id: rel-nobari-intake-to-ev-games-t9-nobari-ren-orderly
+  kind: before
+  a: ev-games-t9-nobari-field-1
+  b: ev-games-t9-nobari-ren-orderly
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+- id: rel-nobari-intake-to-ev-games-t9-nobari-sora-analgesia
+  kind: before
+  a: ev-games-t9-nobari-field-1
+  b: ev-games-t9-nobari-sora-analgesia
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+- id: rel-nobari-ev-games-t9-nobari-kita-treatment-to-shift-end
+  kind: before
+  a: ev-games-t9-nobari-kita-treatment
+  b: ev-games-t9-nobari-shift-end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+- id: rel-nobari-ev-games-t9-nobari-ren-orderly-to-shift-end
+  kind: before
+  a: ev-games-t9-nobari-ren-orderly
+  b: ev-games-t9-nobari-shift-end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+- id: rel-nobari-ev-games-t9-nobari-sora-analgesia-to-shift-end
+  kind: before
+  a: ev-games-t9-nobari-sora-analgesia
+  b: ev-games-t9-nobari-shift-end
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
 presence:
-- id: pr-games-t9-nobari-field-c-kita
+- id: pr-sc-games-t9-nobari-field-c-kita
   entity_id: c-kita
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-games-t9-nobari-field-c-ren
+- id: pr-sc-games-t9-nobari-field-c-ren
   entity_id: c-ren
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-games-t9-nobari-field-c-sora
+- id: pr-sc-games-t9-nobari-field-c-sora
   entity_id: c-sora
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-games-t9-nobari-field-c-nobari
+- id: pr-sc-games-t9-nobari-field-c-nobari
   entity_id: c-nobari
   from: sc-games-t9-nobari-field.start
   to: sc-games-t9-nobari-field.end
   basis: source
   evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-field-c-t9-medical-orderly
+  entity_id: c-t9-medical-orderly
+  from: ev-games-t9-nobari-ren-orderly.start
+  to: ev-games-t9-nobari-ren-orderly.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-field-c-t9-medical-burn-patient
+  entity_id: c-t9-medical-burn-patient
+  from: ev-games-t9-nobari-kita-treatment.start
+  to: ev-games-t9-nobari-kita-treatment.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-ev-games-t9-nobari-field-1-doctor
+  entity_id: c-t9-medical-doctor
+  from: ev-games-t9-nobari-field-1.start
+  to: ev-games-t9-nobari-field-1.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-ev-games-t9-nobari-sora-analgesia-doctor
+  entity_id: c-t9-medical-doctor
+  from: ev-games-t9-nobari-sora-analgesia.start
+  to: ev-games-t9-nobari-sora-analgesia.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted

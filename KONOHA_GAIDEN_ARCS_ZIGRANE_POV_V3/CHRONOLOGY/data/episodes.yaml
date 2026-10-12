@@ -1898,13 +1898,47 @@ episodes:
 - id: ep-games-t9-anko-new-command
   continuity_id: main
   arc_id: arc-games-t9-anko-transfer
-  title: Новий командир
-  description: Райдо більше не керує щоденною роботою трійки. Анко перевіряє її витривалість і вже сформовані звички.
-- id: ep-games-t9-nobari-medical-mission
+  title: Наказ і передача команди
+  description: Радники оголошують запечатане розпорядження; Райдо передає Анко записи про учнів.
+- id: ep-games-t9-anko-first-assessment
   continuity_id: main
   arc_id: arc-games-t9-anko-transfer
-  title: Медична робота за межами селища
-  description: Коли Анко зникає у службових справах, Куренай допомагає команді зберегти заняття, а Нобарі веде її на медичний D-ранг.
+  title: Перша перевірка Анко
+  description: Анко перевіряє витривалість і прийоми трійки та записує результат спарингів.
+- id: ep-games-t9-nobari-morning
+  continuity_id: main
+  arc_id: arc-games-t9-nobari-medical-mission
+  title: Ранок із Командою 8
+  description: За відсутності Анко Куренай проводить спільне тренування перед медичним завданням.
+- id: ep-games-t9-nobari-medical-mission
+  continuity_id: main
+  arc_id: arc-games-t9-nobari-medical-mission
+  title: Завдання й дорога до поселення
+  description: Асума пояснює медичний D-ранг. Нобарі очолює вихід через ворота Конохи й веде трійку до поселення.
+- id: ep-games-t9-nobari-hospital
+  continuity_id: main
+  arc_id: arc-games-t9-nobari-medical-mission
+  title: Робота польового шпиталю
+  description: Нобарі допомагає лікарям і розподіляє роботу учнів. Сора послаблює біль, Кіта доліковує рани, Рен
+    переносить людей і матеріали.
+- id: ep-games-t9-nobari-evacuation
+  continuity_id: main
+  arc_id: arc-games-t9-nobari-medical-mission
+  title: Евакуація й повернення
+  description: Під час підготовки перевезення лікар показує Нобарі загоєний опік. Рен несе заснулого Кіту; трійка
+    повертається з Нобарі.
+- id: ep-games-t9-nobari-debrief
+  continuity_id: main
+  arc_id: arc-games-t9-nobari-medical-mission
+  title: Нобарі за столом наставників
+  description: Після місії Нобарі зустрічається з Куренай, Асумою та Райдо й дізнається про давній висотний блінк
+    Кіти.
+- id: ep-games-t9-nobari-followup
+  continuity_id: main
+  arc_id: arc-games-t9-nobari-medical-mission
+  title: Наступні заняття з Восьмою
+  description: Після медичної місії Куренай спостерігає самостійну програму Сори. Спаринги закінчуються спільним
+    обідом двох команд.
 - id: ep-games-t9-fence-check
   continuity_id: main
   arc_id: arc-games-t9-death-forest-fence

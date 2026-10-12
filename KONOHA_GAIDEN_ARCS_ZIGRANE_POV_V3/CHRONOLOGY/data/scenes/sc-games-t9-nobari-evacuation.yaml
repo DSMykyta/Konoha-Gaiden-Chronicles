@@ -1,0 +1,80 @@
+schema_version: 1
+id: sc-games-t9-nobari-evacuation
+episode_id: ep-games-t9-nobari-evacuation
+display_rank: 50520
+continuity_id: main
+title: Лікар показує Нобарі результат лікування перед евакуацією
+location_id: loc-team9-medical-post
+day_part: night
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-treatment-result
+  display_rank: 100
+  title: Нобарі бачить загоєний опік без очікуваного рубця
+  text: 'Коли приїздить транспорт по поранених, Рен несе заснулого Кіту. Лікар хвалить роботу Сори й Кіти та показує
+    Нобарі чоловіка з опіком плеча й половини обличчя: шкіра гладка й рожева, очікуваного грубого рубця немає. Нобарі
+    перепитує, чи це зробив Кіта, й не стримує лайки.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-t9-medical-doctor
+    role: focus
+    mode: physical
+  - entity_id: c-t9-medical-burn-patient
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-mission-draft
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-sc-games-t9-nobari-evacuation-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-nobari-evacuation.start
+  to: sc-games-t9-nobari-evacuation.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-evacuation-c-t9-medical-doctor
+  entity_id: c-t9-medical-doctor
+  from: sc-games-t9-nobari-evacuation.start
+  to: sc-games-t9-nobari-evacuation.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-evacuation-c-t9-medical-burn-patient
+  entity_id: c-t9-medical-burn-patient
+  from: sc-games-t9-nobari-evacuation.start
+  to: sc-games-t9-nobari-evacuation.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-mission-draft
+  review: accepted

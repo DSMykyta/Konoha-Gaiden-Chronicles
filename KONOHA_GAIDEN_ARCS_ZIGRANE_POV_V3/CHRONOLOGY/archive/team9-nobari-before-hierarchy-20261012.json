@@ -1,0 +1,876 @@
+{
+  "revision": "5c57245aa4ebf68436b79de7508d11306b8a5c9c",
+  "scenes": [
+    {
+      "schema_version": 1,
+      "id": "sc-games-t9-anko-order",
+      "episode_id": "ep-games-t9-anko-new-command",
+      "display_rank": 50100,
+      "continuity_id": "main",
+      "title": "Адміністрація передає Команду 9 Анко за запечатаним наказом",
+      "location_id": "loc-mission-assignment-room",
+      "day_part": "afternoon",
+      "placement": {
+        "anchor_id": "ta-games-0-08-05",
+        "day_offset": 0
+      },
+      "state": "active",
+      "presence_coverage": "complete",
+      "review": {
+        "time": "partial",
+        "cast": "accepted",
+        "location": "accepted",
+        "origin": "accepted",
+        "text": "accepted"
+      },
+      "events": [
+        {
+          "id": "ev-games-t9-anko-order-1",
+          "display_rank": 100,
+          "title": "Адміністрація передає Команду 9 Анко за запечатаним наказом",
+          "text": "Після похорону Хірузена адміністрація виконує залишене ним запечатане розпорядження. Команду 9 передають від Райдо до Анко. Для учнів це зміна реального щоденного командира, а не чергова тимчасова заміна на полігоні. Райдо повертається до своїх службових обов’язків; трійка мусить пристосувати вже сформовану взаємодію до іншої манери керівництва.",
+          "origin": "P",
+          "extent": "interval",
+          "involvement": [
+            {
+              "entity_id": "c-raido",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-sora",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-anko",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-homura",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-koharu",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ],
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "focus_teams": [
+            "team-9"
+          ]
+        }
+      ],
+      "relations": [],
+      "presence": [
+        {
+          "id": "pr-games-t9-anko-order-c-raido",
+          "entity_id": "c-raido",
+          "from": "sc-games-t9-anko-order.start",
+          "to": "sc-games-t9-anko-order.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-order-c-kita",
+          "entity_id": "c-kita",
+          "from": "sc-games-t9-anko-order.start",
+          "to": "sc-games-t9-anko-order.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-order-c-ren",
+          "entity_id": "c-ren",
+          "from": "sc-games-t9-anko-order.start",
+          "to": "sc-games-t9-anko-order.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-order-c-sora",
+          "entity_id": "c-sora",
+          "from": "sc-games-t9-anko-order.start",
+          "to": "sc-games-t9-anko-order.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-order-c-anko",
+          "entity_id": "c-anko",
+          "from": "sc-games-t9-anko-order.start",
+          "to": "sc-games-t9-anko-order.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-order-c-homura",
+          "entity_id": "c-homura",
+          "from": "sc-games-t9-anko-order.start",
+          "to": "sc-games-t9-anko-order.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-order-c-koharu",
+          "entity_id": "c-koharu",
+          "from": "sc-games-t9-anko-order.start",
+          "to": "sc-games-t9-anko-order.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "sc-games-t9-anko-assessment",
+      "episode_id": "ep-games-t9-anko-new-command",
+      "display_rank": 50200,
+      "continuity_id": "main",
+      "title": "Анко перевіряє витривалість Команди 9",
+      "location_id": "loc-training-ground-4",
+      "day_part": "morning",
+      "placement": {
+        "anchor_id": "ta-games-0-08-06",
+        "day_offset": 0
+      },
+      "state": "active",
+      "presence_coverage": "complete",
+      "review": {
+        "time": "partial",
+        "cast": "accepted",
+        "location": "accepted",
+        "origin": "accepted",
+        "text": "accepted"
+      },
+      "events": [
+        {
+          "id": "ev-games-t9-anko-assessment-1",
+          "display_rank": 100,
+          "title": "Анко перевіряє витривалість Команди 9",
+          "text": "Анко починає перевірку з десяти кіл. Коли Кіта й Сора втрачають темп, Рен підхоплює їх і завершує біг разом із ними. Після відпочинку трійка показує зброю, короткі переміщення й спаринги. Анко навмисно розділяє учнів, але вони відновлюють спільну взаємодію. Вона фіксує, що команда вже реагує як одне ціле й сприймає розділення як загрозу.",
+          "origin": "P",
+          "extent": "interval",
+          "involvement": [
+            {
+              "entity_id": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-sora",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-anko",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ],
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "focus_teams": [
+            "team-9"
+          ]
+        }
+      ],
+      "relations": [],
+      "presence": [
+        {
+          "id": "pr-games-t9-anko-assessment-c-kita",
+          "entity_id": "c-kita",
+          "from": "sc-games-t9-anko-assessment.start",
+          "to": "sc-games-t9-anko-assessment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-assessment-c-ren",
+          "entity_id": "c-ren",
+          "from": "sc-games-t9-anko-assessment.start",
+          "to": "sc-games-t9-anko-assessment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-assessment-c-sora",
+          "entity_id": "c-sora",
+          "from": "sc-games-t9-anko-assessment.start",
+          "to": "sc-games-t9-anko-assessment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-anko-assessment-c-anko",
+          "entity_id": "c-anko",
+          "from": "sc-games-t9-anko-assessment.start",
+          "to": "sc-games-t9-anko-assessment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "sc-games-t9-kurenai-cover",
+      "episode_id": "ep-games-t9-nobari-medical-mission",
+      "display_rank": 50300,
+      "continuity_id": "main",
+      "title": "Куренай бере Команду 9 на заняття Команди 8",
+      "location_id": "loc-training-ground-8",
+      "day_part": "morning",
+      "placement": {
+        "anchor_id": "ta-games-0-08-07",
+        "day_offset": 0
+      },
+      "state": "active",
+      "presence_coverage": "complete",
+      "review": {
+        "time": "partial",
+        "cast": "accepted",
+        "location": "accepted",
+        "origin": "accepted",
+        "text": "accepted"
+      },
+      "events": [
+        {
+          "id": "ev-games-t9-kurenai-cover-1",
+          "display_rank": 100,
+          "title": "Куренай бере Команду 9 на заняття Команди 8",
+          "text": "За відсутності Анко трійка займається поруч із Командою 8. Куренай спостерігає за окремою програмою Сори та проводить спільну практику. Учні отримують підтримку, не втрачаючи свого складу. Звичайна їжа й робота поруч з іншою командою відділяють службову відсутність наставниці від відчуття, ніби їх зовсім залишили без допомоги.",
+          "origin": "P",
+          "extent": "interval",
+          "involvement": [
+            {
+              "entity_id": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-sora",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-kurenai",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-kiba",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-akamaru",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-hinata",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-shino",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ],
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "focus_teams": [
+            "team-9"
+          ]
+        }
+      ],
+      "relations": [],
+      "presence": [
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-kita",
+          "entity_id": "c-kita",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-ren",
+          "entity_id": "c-ren",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-sora",
+          "entity_id": "c-sora",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-kurenai",
+          "entity_id": "c-kurenai",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-kiba",
+          "entity_id": "c-kiba",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-akamaru",
+          "entity_id": "c-akamaru",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-hinata",
+          "entity_id": "c-hinata",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-kurenai-cover-c-shino",
+          "entity_id": "c-shino",
+          "from": "sc-games-t9-kurenai-cover.start",
+          "to": "sc-games-t9-kurenai-cover.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "sc-games-t9-nobari-assignment",
+      "episode_id": "ep-games-t9-nobari-medical-mission",
+      "display_rank": 50400,
+      "continuity_id": "main",
+      "title": "Нобарі отримує медичний D-ранг із Командою 9",
+      "location_id": "loc-mission-assignment-room",
+      "day_part": "noon",
+      "placement": {
+        "anchor_id": "ta-games-0-08-07",
+        "day_offset": 0
+      },
+      "state": "active",
+      "presence_coverage": "complete",
+      "review": {
+        "time": "partial",
+        "cast": "accepted",
+        "location": "accepted",
+        "origin": "accepted",
+        "text": "accepted"
+      },
+      "events": [
+        {
+          "id": "ev-games-t9-nobari-assignment-1",
+          "display_rank": 100,
+          "title": "Нобарі отримує медичний D-ранг із Командою 9",
+          "text": "Після тренування Куренай приводить трійку до розподільчої. Нобарі чекає у формі джоніна із сувоєм: вона має супроводити Команду 9 на медичний D-ранг. Асума пояснює, що в сусідньому поселенні стабільним пораненим бракує допомоги місцевих лікарів. Для Кіти це перше завдання з матір’ю як польовим керівником. Команда готується й вирушає з нею до воріт.",
+          "origin": "P",
+          "extent": "interval",
+          "involvement": [
+            {
+              "entity_id": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-sora",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-nobari",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-kurenai",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-asuma",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-kiba",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ],
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "focus_teams": [
+            "team-9"
+          ]
+        }
+      ],
+      "relations": [],
+      "presence": [
+        {
+          "id": "pr-audit-games-t9-nobari-assignment-c-kita",
+          "entity_id": "c-kita",
+          "from": "sc-games-t9-nobari-assignment.start",
+          "to": "sc-games-t9-nobari-assignment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-assignment-c-ren",
+          "entity_id": "c-ren",
+          "from": "sc-games-t9-nobari-assignment.start",
+          "to": "sc-games-t9-nobari-assignment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-assignment-c-sora",
+          "entity_id": "c-sora",
+          "from": "sc-games-t9-nobari-assignment.start",
+          "to": "sc-games-t9-nobari-assignment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-assignment-c-nobari",
+          "entity_id": "c-nobari",
+          "from": "sc-games-t9-nobari-assignment.start",
+          "to": "sc-games-t9-nobari-assignment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-assignment-c-kurenai",
+          "entity_id": "c-kurenai",
+          "from": "sc-games-t9-nobari-assignment.start",
+          "to": "sc-games-t9-nobari-assignment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-assignment-c-asuma",
+          "entity_id": "c-asuma",
+          "from": "sc-games-t9-nobari-assignment.start",
+          "to": "sc-games-t9-nobari-assignment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-assignment-c-kiba",
+          "entity_id": "c-kiba",
+          "from": "sc-games-t9-nobari-assignment.start",
+          "to": "sc-games-t9-nobari-assignment.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "sc-games-t9-nobari-field",
+      "episode_id": "ep-games-t9-nobari-medical-mission",
+      "display_rank": 50500,
+      "continuity_id": "main",
+      "title": "Нобарі веде Команду 9 на медичну місію",
+      "location_id": "loc-team9-medical-post",
+      "day_part": "afternoon",
+      "placement": {
+        "anchor_id": "ta-games-0-08-07",
+        "day_offset": 0
+      },
+      "state": "active",
+      "presence_coverage": "complete",
+      "review": {
+        "time": "partial",
+        "cast": "accepted",
+        "location": "accepted",
+        "origin": "accepted",
+        "text": "accepted"
+      },
+      "events": [
+        {
+          "id": "ev-games-t9-nobari-field-1",
+          "display_rank": 100,
+          "title": "Нобарі веде Команду 9 на медичну місію",
+          "text": "У складі, перетвореному на шпиталь, Нобарі розподіляє роботу. Сора короткими циклами послаблює біль гендзюцу, Кіта під наглядом матері стягує краї вже оброблених ран, Рен носить воду, перев’язки й поранених. Після виснажливої зміни лікар показує Нобарі нову шкіру на плечі й щоці пацієнта: після роботи Кіти очікуваного грубого рубця немає. Сам Кіта вже спить від виснаження й не чує цього висновку.",
+          "origin": "P",
+          "extent": "interval",
+          "involvement": [
+            {
+              "entity_id": "c-kita",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-ren",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-sora",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-nobari",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ],
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "focus_teams": [
+            "team-9"
+          ]
+        }
+      ],
+      "relations": [],
+      "presence": [
+        {
+          "id": "pr-games-t9-nobari-field-c-kita",
+          "entity_id": "c-kita",
+          "from": "sc-games-t9-nobari-field.start",
+          "to": "sc-games-t9-nobari-field.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-nobari-field-c-ren",
+          "entity_id": "c-ren",
+          "from": "sc-games-t9-nobari-field.start",
+          "to": "sc-games-t9-nobari-field.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-nobari-field-c-sora",
+          "entity_id": "c-sora",
+          "from": "sc-games-t9-nobari-field.start",
+          "to": "sc-games-t9-nobari-field.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-games-t9-nobari-field-c-nobari",
+          "entity_id": "c-nobari",
+          "from": "sc-games-t9-nobari-field.start",
+          "to": "sc-games-t9-nobari-field.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "sc-games-t9-nobari-debrief",
+      "episode_id": "ep-games-t9-nobari-medical-mission",
+      "display_rank": 50600,
+      "continuity_id": "main",
+      "title": "Нобарі розповідає джонінам про медичну місію",
+      "location_id": "loc-konoha-izakaya",
+      "day_part": "night",
+      "placement": {
+        "anchor_id": "ta-games-0-08-07",
+        "day_offset": 0
+      },
+      "state": "active",
+      "presence_coverage": "complete",
+      "review": {
+        "time": "partial",
+        "cast": "accepted",
+        "location": "accepted",
+        "origin": "accepted",
+        "text": "accepted"
+      },
+      "events": [
+        {
+          "id": "ev-games-t9-nobari-debrief-1",
+          "display_rank": 100,
+          "title": "Нобарі розповідає джонінам про медичну місію",
+          "text": "Після повернення Нобарі приходить до ізакаї й розповідає Куренай, Асумі та Райдо про роботу дітей у тимчасовому шпиталі. Вона дізнається про висоту неконтрольованого блінка на полі Асуми й лякається ризику, якого раніше не знала. Райдо вже знайомий із переміщеннями Кіти; він просить показати журнал Сори, щоб стежити за розвитком техніки після зміни наставника.",
+          "origin": "P",
+          "extent": "interval",
+          "involvement": [
+            {
+              "entity_id": "c-nobari",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-kurenai",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-asuma",
+              "role": "focus",
+              "mode": "physical"
+            },
+            {
+              "entity_id": "c-raido",
+              "role": "focus",
+              "mode": "physical"
+            }
+          ],
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ]
+        }
+      ],
+      "relations": [],
+      "presence": [
+        {
+          "id": "pr-audit-games-t9-nobari-debrief-c-nobari",
+          "entity_id": "c-nobari",
+          "from": "sc-games-t9-nobari-debrief.start",
+          "to": "sc-games-t9-nobari-debrief.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-debrief-c-kurenai",
+          "entity_id": "c-kurenai",
+          "from": "sc-games-t9-nobari-debrief.start",
+          "to": "sc-games-t9-nobari-debrief.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-debrief-c-asuma",
+          "entity_id": "c-asuma",
+          "from": "sc-games-t9-nobari-debrief.start",
+          "to": "sc-games-t9-nobari-debrief.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        },
+        {
+          "id": "pr-audit-games-t9-nobari-debrief-c-raido",
+          "entity_id": "c-raido",
+          "from": "sc-games-t9-nobari-debrief.start",
+          "to": "sc-games-t9-nobari-debrief.end",
+          "basis": "source",
+          "evidence_ids": [
+            "evd-games-team-9-07",
+            "evd-games-part-i-placement"
+          ],
+          "review": "accepted"
+        }
+      ]
+    }
+  ],
+  "arcs": [
+    {
+      "id": "arc-games-t9-anko-transfer",
+      "continuity_id": "main",
+      "title": "Передача Анко і місія Нобарі",
+      "description": "Після смерті Хірузена адміністрація виконує запечатане розпорядження й передає Команду 9 Анко. Жорсткі вправи нового наставника поєднуються з підтримкою Куренай та першою медичною місією з Нобарі.",
+      "period_id": "part-i",
+      "kind": "project"
+    }
+  ],
+  "episodes": [
+    {
+      "id": "ep-games-t9-anko-new-command",
+      "continuity_id": "main",
+      "arc_id": "arc-games-t9-anko-transfer",
+      "title": "Новий командир",
+      "description": "Райдо більше не керує щоденною роботою трійки. Анко перевіряє її витривалість і вже сформовані звички."
+    },
+    {
+      "id": "ep-games-t9-nobari-medical-mission",
+      "continuity_id": "main",
+      "arc_id": "arc-games-t9-anko-transfer",
+      "title": "Медична робота за межами селища",
+      "description": "Коли Анко зникає у службових справах, Куренай допомагає команді зберегти заняття, а Нобарі веде її на медичний D-ранг."
+    }
+  ]
+}

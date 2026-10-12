@@ -13282,3 +13282,75 @@ notes:
   review: accepted
   evidence_ids:
   - evd-anime-197-201
+- id: lnk-nobari-route-nobari-assignment
+  kind: before
+  a: sc-games-t9-nobari-assignment
+  b: sc-games-t9-nobari-gate
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+- id: lnk-nobari-route-nobari-gate
+  kind: before
+  a: sc-games-t9-nobari-gate
+  b: sc-games-t9-nobari-outbound
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+- id: lnk-nobari-route-nobari-outbound
+  kind: before
+  a: sc-games-t9-nobari-outbound
+  b: sc-games-t9-nobari-field
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+- id: lnk-nobari-route-nobari-field
+  kind: before
+  a: sc-games-t9-nobari-field
+  b: sc-games-t9-nobari-evacuation
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+- id: lnk-nobari-route-nobari-evacuation
+  kind: before
+  a: sc-games-t9-nobari-evacuation
+  b: sc-games-t9-nobari-return
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+- id: lnk-nobari-route-nobari-return
+  kind: before
+  a: sc-games-t9-nobari-return
+  b: sc-games-t9-nobari-debrief
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-mission-draft
+- id: lnk-nobari-route-nobari-debrief
+  kind: before
+  a: sc-games-t9-nobari-debrief
+  b: sc-games-t9-nobari-followup-training
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+- id: lnk-nobari-route-nobari-followup-training
+  kind: before
+  a: sc-games-t9-nobari-followup-training
+  b: sc-games-t9-nobari-followup-lunch
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft

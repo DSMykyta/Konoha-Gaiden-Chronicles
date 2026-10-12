@@ -4593,6 +4593,34 @@ entities:
     kind: person
     name: Макі
     aliases: []
+  - id: c-t9-medical-doctor
+    kind: person
+    name: Лікар польового шпиталю місії Нобарі
+    aliases:
+    - Лікар місії Нобарі
+  - id: c-t9-medical-orderly
+    kind: person
+    name: Старший санітар у синій пов’язці
+    aliases:
+    - Санітар місії Нобарі
+  - id: c-t9-medical-burn-patient
+    kind: person
+    name: Поранений із опіком плеча й обличчя
+    aliases:
+    - Пацієнт місії Нобарі
+  - id: loc-t9-medical-road
+    kind: location
+    name: Дорога між Конохою й поселенням медичної місії
+    aliases:
+    - Дорога місії Нобарі
+    parent_id: loc-land-of-fire
+  - id: loc-t9-medical-transport
+    kind: location
+    name: Транспорт медичної місії на дорозі до Конохи
+    aliases:
+    - Транспорт місії Нобарі
+    parent_id: loc-t9-medical-road
+
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"

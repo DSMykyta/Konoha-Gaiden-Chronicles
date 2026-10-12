@@ -1242,7 +1242,7 @@ sources:
     type: project_roleplay
     title: arc 07 [Передача Анко і місія Нобарі]
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt
-    revision: 99f0d5709622bd39ad96e236607c68f11e2be543
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
   - id: src-games-team-9-08
     type: project_roleplay
     title: arc 08 [Огорожа Лісу Смерті]
@@ -3329,6 +3329,52 @@ sources:
     title: Naruto Shippūden — 382
     path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 382.srt
     locator_status: full_episode_scope
+  - id: src-t9-nobari-recap
+    type: project_roleplay
+    title: Ігровий RECAP — тренування, місія Нобарі й розмова наставників
+    path: Cloude Role-play-naruto-team-6/game-state/RECAP.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-kitchen-recap
+    type: project_roleplay
+    title: Місія Нобарі — докладний рекап
+    path: Cloude Role-play-naruto-team-6/nobari-kitchen-recap.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-kitchen-prose
+    type: project_roleplay
+    title: Місія Нобарі — прозова версія
+    path: Cloude Role-play-naruto-team-6/nobari-kitchen-prose.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-transfer-draft
+    type: project_roleplay
+    title: Передача Анко — попередня редакція
+    path: TEAM9_AGE12_MAXIMUM/PART_2_AFTER_EXAM/00_transfer_to_anko_and_first_assessment.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-mission-draft
+    type: project_roleplay
+    title: Місія Нобарі — попередня повна редакція
+    path: TEAM9_AGE12_MAXIMUM/PART_2_AFTER_EXAM/01_nobari_medical_mission.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-lunch-draft
+    type: project_roleplay
+    title: Заняття й обід із Восьмою після місії
+    path: TEAM9_AGE12_MAXIMUM/PART_2_AFTER_EXAM/01b_kurenai_team8_lunch.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-full-narrative
+    type: project_roleplay
+    title: Команда 9 — зведений ранній наратив
+    path: TEAM9_AGE12_MAXIMUM/01_FULL_NARRATIVE.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-all-games
+    type: project_roleplay
+    title: Усі ігри — зведення місії Нобарі
+    path: Cloude Role-play-naruto-team-6/ALL_GAMES.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+  - id: src-t9-nobari-logic-audit
+    type: project_editorial
+    title: Аудит суперечностей місії Нобарі
+    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md
+    revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
+
 evidence:
   - id: evd-sub-ep3-breakfast
     source_id: src-subtitle-naruto-003
@@ -13172,3 +13218,52 @@ evidence:
     review: accepted
     episode_numbers:
     - 285
+  - id: evd-t9-nobari-recap
+    source_id: src-t9-nobari-recap
+    locator: Ходи 37, 43–50; прямо названі Команди 8 і 10 у розподільчій; 49 уточнює зміну варти Райдо.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-kitchen-recap
+    source_id: src-t9-nobari-kitchen-recap
+    locator: Епізоди 2–3. Рекап, не окрема друга місія; «день 47» не абсолютна календарна дата.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-kitchen-prose
+    source_id: src-t9-nobari-kitchen-prose
+    locator: Розділи IV–VII. Повторне зображення тієї самої місії.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-transfer-draft
+    source_id: src-t9-nobari-transfer-draft
+    locator: Передача й Поле 4; живий Хірузен у наказі суперечить чинній даті. Адміністративне виправлення — за чинною
+      хронологією.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-mission-draft
+    source_id: src-t9-nobari-mission-draft
+    locator: Розподільча, ворота, дорога, Польовий шпиталь, Ідзакая. Повторне повернення Райдо виправлено в основній
+      арці.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-lunch-draft
+    source_id: src-t9-nobari-lunch-draft
+    locator: Початок прямо ставить ці заняття після медичної місії; не зливати з її ранком. Повторну першу корекцію
+      лівої стійки не переносити.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-full-narrative
+    source_id: src-t9-nobari-full-narrative
+    locator: Повторює розділи передачі, місії та наступних занять; дублікати не утворюють нових подій.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-all-games
+    source_id: src-t9-nobari-all-games
+    locator: Фрагмент місії повторює nobari-kitchen-prose; додаткове свідчення, не окрема подія.
+    basis: source
+    review: accepted
+  - id: evd-t9-nobari-logic-audit
+    source_id: src-t9-nobari-logic-audit
+    locator: 'Пункти 15, 16, 26: знання Райдо, повтор корекції Сори, D-ранг. Доказ редакторського рішення, не джерело
+      нових пригод.'
+    basis: editorial
+    review: accepted

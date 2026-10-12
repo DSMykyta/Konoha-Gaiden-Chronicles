@@ -31,6 +31,8 @@ regions:
   name: Країна Демонів
   kind: country
 kinds:
+  loc-t9-medical-road: area
+  loc-t9-medical-transport: area
   loc-land-of-fire: country
   loc-land-waves: country
   loc-land-of-snow: country

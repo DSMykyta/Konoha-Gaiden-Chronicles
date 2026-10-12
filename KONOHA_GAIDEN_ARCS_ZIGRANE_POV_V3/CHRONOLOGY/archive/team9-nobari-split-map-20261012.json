@@ -1,0 +1,41 @@
+{
+  "revision": "5c57245aa4ebf68436b79de7508d11306b8a5c9c",
+  "split_map": {
+    "ev-games-t9-anko-order-1": [
+      "ev-games-t9-anko-order-1",
+      "ev-games-t9-anko-handover-records",
+      "ev-games-t9-anko-first-meeting"
+    ],
+    "ev-games-t9-anko-assessment-1": [
+      "ev-games-t9-anko-assessment-1",
+      "ev-games-t9-anko-skills",
+      "ev-games-t9-anko-separation",
+      "ev-games-t9-anko-assessment-notes"
+    ],
+    "ev-games-t9-kurenai-cover-1": [
+      "ev-games-t9-kurenai-cover-1",
+      "ev-games-t9-nobari-morning-spars",
+      "ev-games-t9-nobari-followup-program",
+      "ev-games-t9-nobari-followup-spars",
+      "ev-games-t9-nobari-six-genin-lunch"
+    ],
+    "ev-games-t9-nobari-assignment-1": [
+      "ev-games-t9-nobari-assignment-1",
+      "ev-games-t9-nobari-mission-brief"
+    ],
+    "ev-games-t9-nobari-field-1": [
+      "ev-games-t9-nobari-field-1",
+      "ev-games-t9-nobari-kita-treatment",
+      "ev-games-t9-nobari-sora-analgesia",
+      "ev-games-t9-nobari-ren-orderly",
+      "ev-games-t9-nobari-shift-end",
+      "ev-games-t9-nobari-treatment-result",
+      "ev-games-t9-nobari-return-transport"
+    ],
+    "ev-games-t9-nobari-debrief-1": [
+      "ev-games-t9-nobari-debrief-1",
+      "ev-games-t9-nobari-learns-fifty-meters",
+      "ev-games-t9-nobari-raido-journal"
+    ]
+  }
+}

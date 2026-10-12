@@ -1,0 +1,132 @@
+schema_version: 1
+id: sc-games-t9-nobari-followup-lunch
+episode_id: ep-games-t9-nobari-followup
+display_rank: 50640
+continuity_id: main
+title: Команди 8 і 9 обідають після спарингів
+location_id: loc-training-ground-8
+day_part: noon
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 1
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-six-genin-lunch
+  display_rank: 100
+  title: Шестеро генінів діляться їжею й дитячими історіями
+  text: Рен приносить онігірі Іщіна. За обідом Кіба й Кіта згадують жуків, яких їли з Наруто біля річки; Шіно розпитує,
+    що це були за жуки. Рен розповідає про змію на риболовлі. Акамару краде шматок омлету Хінати, діти пропонують
+    обмін їжею. Куренай сидить за деревом.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-shino
+    role: focus
+    mode: physical
+  - entity_id: c-hinata
+    role: focus
+    mode: physical
+  - entity_id: c-akamaru
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-sc-games-t9-nobari-followup-lunch-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-lunch-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-lunch-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-lunch-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-lunch-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-lunch-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-lunch-c-hinata
+  entity_id: c-hinata
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-lunch-c-shino
+  entity_id: c-shino
+  from: sc-games-t9-nobari-followup-lunch.start
+  to: sc-games-t9-nobari-followup-lunch.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted

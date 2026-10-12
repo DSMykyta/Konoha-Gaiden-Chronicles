@@ -20,85 +20,162 @@ review:
 events:
 - id: ev-games-t9-anko-order-1
   display_rank: 100
-  title: Адміністрація передає Команду 9 Анко за запечатаним наказом
-  text: Після похорону Хірузена адміністрація виконує залишене ним запечатане розпорядження. Команду 9 передають від Райдо до Анко. Для учнів це зміна реального щоденного командира, а не чергова тимчасова заміна на полігоні. Райдо повертається до своїх службових обов’язків; трійка мусить пристосувати вже сформовану взаємодію до іншої манери керівництва.
+  title: Радники оголошують зміну наставника
+  text: 'Кохару оголошує запечатане розпорядження Хірузена: Райдо повертається до охорони та спеціальних призначень,
+    польовим наставником Команди 9 стає Анко. На запитання Рена Хомура відповідає, що кінцевої дати наказу немає.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-koharu
+    role: focus
+    mode: physical
+  - entity_id: c-homura
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-sora
+    role: background
+    mode: physical
+  - entity_id: c-raido
+    role: background
+    mode: physical
+  - entity_id: c-anko
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  focus_teams:
+  - team-9
+- id: ev-games-t9-anko-handover-records
+  display_rank: 200
+  title: Райдо передає Анко записи про трійку
+  text: Райдо передає Анко папку з графіком, записами Сори про витрату чакри, кріпленнями сокир, дозволеними медичними
+    вправами й виплатами. Він перелічує обмеження для Рена, перевірку запасу Кіти та звіряння журналу Сори.
   origin: P
   extent: interval
   involvement:
   - entity_id: c-raido
     role: focus
     mode: physical
-  - entity_id: c-kita
+  - entity_id: c-anko
     role: focus
     mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
   - entity_id: c-ren
+    role: background
+    mode: physical
+  - entity_id: c-sora
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  focus_teams:
+  - team-9
+- id: ev-games-t9-anko-first-meeting
+  display_rank: 300
+  title: Анко призначає перше заняття
+  text: Сора нагадує Анко, що та ще не тренувала всю трійку. Анко призначає зустріч на полі 4 наступного ранку.
+    Перед виходом Райдо велить виконувати накази наставника й продовжувати думати; Рен запитує, чи він приходитиме.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-anko
     role: focus
     mode: physical
   - entity_id: c-sora
     role: focus
     mode: physical
-  - entity_id: c-anko
+  - entity_id: c-raido
     role: focus
     mode: physical
-  - entity_id: c-homura
+  - entity_id: c-ren
     role: focus
     mode: physical
-  - entity_id: c-koharu
-    role: focus
+  - entity_id: c-kita
+    role: background
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
   focus_teams:
   - team-9
-relations: []
-presence:
-- id: pr-games-t9-anko-order-c-raido
-  entity_id: c-raido
-  from: sc-games-t9-anko-order.start
-  to: sc-games-t9-anko-order.end
+relations:
+- id: rel-ev-games-t9-anko-order-1-before-next
+  kind: before
+  a: ev-games-t9-anko-order-1
+  b: ev-games-t9-anko-handover-records
   basis: source
-  evidence_ids: *id001
   review: accepted
-- id: pr-games-t9-anko-order-c-kita
+  evidence_ids:
+  - evd-games-team-9-07
+- id: rel-ev-games-t9-anko-handover-records-before-next
+  kind: before
+  a: ev-games-t9-anko-handover-records
+  b: ev-games-t9-anko-first-meeting
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+presence:
+- id: pr-sc-games-t9-anko-order-c-kita
   entity_id: c-kita
   from: sc-games-t9-anko-order.start
   to: sc-games-t9-anko-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
   review: accepted
-- id: pr-games-t9-anko-order-c-ren
+- id: pr-sc-games-t9-anko-order-c-ren
   entity_id: c-ren
   from: sc-games-t9-anko-order.start
   to: sc-games-t9-anko-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
   review: accepted
-- id: pr-games-t9-anko-order-c-sora
+- id: pr-sc-games-t9-anko-order-c-sora
   entity_id: c-sora
   from: sc-games-t9-anko-order.start
   to: sc-games-t9-anko-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
   review: accepted
-- id: pr-games-t9-anko-order-c-anko
+- id: pr-sc-games-t9-anko-order-c-raido
+  entity_id: c-raido
+  from: sc-games-t9-anko-order.start
+  to: sc-games-t9-anko-order.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  review: accepted
+- id: pr-sc-games-t9-anko-order-c-anko
   entity_id: c-anko
   from: sc-games-t9-anko-order.start
   to: sc-games-t9-anko-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
   review: accepted
-- id: pr-games-t9-anko-order-c-homura
+- id: pr-sc-games-t9-anko-order-c-homura
   entity_id: c-homura
   from: sc-games-t9-anko-order.start
   to: sc-games-t9-anko-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
   review: accepted
-- id: pr-games-t9-anko-order-c-koharu
+- id: pr-sc-games-t9-anko-order-c-koharu
   entity_id: c-koharu
   from: sc-games-t9-anko-order.start
   to: sc-games-t9-anko-order.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
   review: accepted

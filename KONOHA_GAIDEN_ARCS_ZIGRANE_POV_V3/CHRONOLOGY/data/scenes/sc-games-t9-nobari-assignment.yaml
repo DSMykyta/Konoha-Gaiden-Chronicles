@@ -10,7 +10,7 @@ placement:
   anchor_id: ta-games-0-08-07
   day_offset: 0
 state: active
-presence_coverage: complete
+presence_coverage: partial
 review:
   time: partial
   cast: accepted
@@ -20,11 +20,73 @@ review:
 events:
 - id: ev-games-t9-nobari-assignment-1
   display_rank: 100
-  title: Нобарі отримує медичний D-ранг із Командою 9
-  text: 'Після тренування Куренай приводить трійку до розподільчої. Нобарі чекає у формі джоніна із сувоєм: вона має супроводити Команду 9 на медичний D-ранг. Асума пояснює, що в сусідньому поселенні стабільним пораненим бракує допомоги місцевих лікарів. Для Кіти це перше завдання з матір’ю як польовим керівником. Команда готується й вирушає з нею до воріт.'
+  title: Нобарі зачитує своє призначення керівником місії
+  text: 'У розподільчій Команди 8 і 9 зустрічають Асуму з Десятою й Нобарі у джонінській формі. Нобарі зачитує D-ранг:
+    Команда 9, супроводжуючий джонін Хаяші Нобарі. Асума підхоплює впущений сувій; Нобарі дякує йому «Асума-кун»,
+    і Кіба це чує.'
   origin: P
   extent: interval
   involvement:
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-sora
+    role: background
+    mode: physical
+  - entity_id: c-kurenai
+    role: background
+    mode: physical
+  - entity_id: c-akamaru
+    role: background
+    mode: physical
+  - entity_id: c-hinata
+    role: background
+    mode: physical
+  - entity_id: c-shino
+    role: background
+    mode: physical
+  - entity_id: c-ino
+    role: background
+    mode: physical
+  - entity_id: c-shikamaru
+    role: background
+    mode: physical
+  - entity_id: c-choji
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  focus_teams:
+  - team-9
+- id: ev-games-t9-nobari-mission-brief
+  display_rank: 200
+  title: Асума пояснює завдання в сусідньому поселенні
+  text: 'Асума пояснює: після сутички в поселенні неподалік лишилися стабільні поранені, місцеві лікарі не встигають
+    допомогти всім. Нобарі супроводжує учнів на медичну допомогу. Вона рушає до виходу, зупиняється й кличе трійку
+    за собою.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
   - entity_id: c-kita
     role: focus
     mode: physical
@@ -34,71 +96,176 @@ events:
   - entity_id: c-sora
     role: focus
     mode: physical
-  - entity_id: c-nobari
-    role: focus
-    mode: physical
   - entity_id: c-kurenai
-    role: focus
-    mode: physical
-  - entity_id: c-asuma
-    role: focus
+    role: background
     mode: physical
   - entity_id: c-kiba
-    role: focus
+    role: background
     mode: physical
-  evidence_ids: &id001
+  - entity_id: c-akamaru
+    role: background
+    mode: physical
+  - entity_id: c-hinata
+    role: background
+    mode: physical
+  - entity_id: c-shino
+    role: background
+    mode: physical
+  - entity_id: c-ino
+    role: background
+    mode: physical
+  - entity_id: c-shikamaru
+    role: background
+    mode: physical
+  - entity_id: c-choji
+    role: background
+    mode: physical
+  evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   focus_teams:
   - team-9
-relations: []
+relations:
+- id: rel-ev-games-t9-nobari-assignment-1-before-next
+  kind: before
+  a: ev-games-t9-nobari-assignment-1
+  b: ev-games-t9-nobari-mission-brief
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  - evd-t9-nobari-mission-draft
 presence:
-- id: pr-audit-games-t9-nobari-assignment-c-kita
+- id: pr-sc-games-t9-nobari-assignment-c-kita
   entity_id: c-kita
   from: sc-games-t9-nobari-assignment.start
   to: sc-games-t9-nobari-assignment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-assignment-c-ren
+- id: pr-sc-games-t9-nobari-assignment-c-ren
   entity_id: c-ren
   from: sc-games-t9-nobari-assignment.start
   to: sc-games-t9-nobari-assignment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-assignment-c-sora
+- id: pr-sc-games-t9-nobari-assignment-c-sora
   entity_id: c-sora
   from: sc-games-t9-nobari-assignment.start
   to: sc-games-t9-nobari-assignment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-assignment-c-nobari
+- id: pr-sc-games-t9-nobari-assignment-c-nobari
   entity_id: c-nobari
   from: sc-games-t9-nobari-assignment.start
   to: sc-games-t9-nobari-assignment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-assignment-c-kurenai
+- id: pr-sc-games-t9-nobari-assignment-c-kurenai
   entity_id: c-kurenai
   from: sc-games-t9-nobari-assignment.start
   to: sc-games-t9-nobari-assignment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-assignment-c-asuma
+- id: pr-sc-games-t9-nobari-assignment-c-asuma
   entity_id: c-asuma
   from: sc-games-t9-nobari-assignment.start
   to: sc-games-t9-nobari-assignment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-assignment-c-kiba
+- id: pr-sc-games-t9-nobari-assignment-c-kiba
   entity_id: c-kiba
   from: sc-games-t9-nobari-assignment.start
   to: sc-games-t9-nobari-assignment.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-assignment-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-assignment-c-hinata
+  entity_id: c-hinata
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-assignment-c-shino
+  entity_id: c-shino
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-assignment-c-ino
+  entity_id: c-ino
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-assignment-c-shikamaru
+  entity_id: c-shikamaru
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-assignment-c-choji
+  entity_id: c-choji
+  from: sc-games-t9-nobari-assignment.start
+  to: sc-games-t9-nobari-assignment.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted

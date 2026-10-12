@@ -1,0 +1,114 @@
+schema_version: 1
+id: sc-games-t9-nobari-gate
+episode_id: ep-games-t9-nobari-medical-mission
+display_rank: 50420
+continuity_id: main
+title: Нобарі й Команда 9 виходять через ворота Конохи
+location_id: loc-konoha-gate
+day_part: afternoon
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-gate-check
+  display_rank: 100
+  title: Ізумо перевіряє документ на вихід Нобарі
+  text: Нобарі підходить до воріт із сувоєм і Командою 9. Котецу двічі моргає, побачивши її у джонінській формі.
+    Ізумо перевіряє печатку й бажає дороги Хаяші-сенсей. Група виходить із Конохи.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-kotetsu
+    role: focus
+    mode: physical
+  - entity_id: c-izumo
+    role: focus
+    mode: physical
+  - entity_id: c-kita
+    role: background
+    mode: physical
+  - entity_id: c-ren
+    role: background
+    mode: physical
+  - entity_id: c-sora
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-sc-games-t9-nobari-gate-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-nobari-gate.start
+  to: sc-games-t9-nobari-gate.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-gate-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-nobari-gate.start
+  to: sc-games-t9-nobari-gate.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-gate-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-nobari-gate.start
+  to: sc-games-t9-nobari-gate.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-gate-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-nobari-gate.start
+  to: sc-games-t9-nobari-gate.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-gate-c-kotetsu
+  entity_id: c-kotetsu
+  from: sc-games-t9-nobari-gate.start
+  to: sc-games-t9-nobari-gate.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-gate-c-izumo
+  entity_id: c-izumo
+  from: sc-games-t9-nobari-gate.start
+  to: sc-games-t9-nobari-gate.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  review: accepted

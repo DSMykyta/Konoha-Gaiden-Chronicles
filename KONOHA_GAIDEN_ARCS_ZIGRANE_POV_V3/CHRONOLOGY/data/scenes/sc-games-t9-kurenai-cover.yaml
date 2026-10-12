@@ -1,16 +1,16 @@
 schema_version: 1
 id: sc-games-t9-kurenai-cover
-episode_id: ep-games-t9-nobari-medical-mission
+episode_id: ep-games-t9-nobari-morning
 display_rank: 50300
 continuity_id: main
-title: Куренай бере Команду 9 на заняття Команди 8
+title: Команди 8 і 9 тренуються перед медичною місією
 location_id: loc-training-ground-8
 day_part: morning
 placement:
   anchor_id: ta-games-0-08-07
   day_offset: 0
 state: active
-presence_coverage: complete
+presence_coverage: partial
 review:
   time: partial
   cast: accepted
@@ -20,8 +20,9 @@ review:
 events:
 - id: ev-games-t9-kurenai-cover-1
   display_rank: 100
-  title: Куренай бере Команду 9 на заняття Команди 8
-  text: За відсутності Анко трійка займається поруч із Командою 8. Куренай спостерігає за окремою програмою Сори та проводить спільну практику. Учні отримують підтримку, не втрачаючи свого складу. Звичайна їжа й робота поруч з іншою командою відділяють службову відсутність наставниці від відчуття, ніби їх зовсім залишили без допомоги.
+  title: Куренай приймає трійку на заняття Восьмої
+  text: Анко отримує термінове доручення до другого спільного заняття. Команду 9 відправляють на поле 8 до Куренай,
+    де тренується її команда. Куренай проводить спільну практику.
   origin: P
   extent: interval
   involvement:
@@ -49,66 +50,139 @@ events:
   - entity_id: c-shino
     role: focus
     mode: physical
-  evidence_ids: &id001
+  evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   focus_teams:
   - team-9
-relations: []
+- id: ev-games-t9-nobari-morning-spars
+  display_rank: 200
+  title: Рен перемагає Кібу; решта трійки поступається Восьмій
+  text: 'Команда 9 поступається Восьмій у спільному тренуванні: Шіно тримає дистанцію комахами, Хіната бачить рух
+    чакри. Рен перемагає Кібу в прямому спарингу. Після заняття Куренай веде обидві команди до розподільчої.'
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-shino
+    role: focus
+    mode: physical
+  - entity_id: c-hinata
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: background
+    mode: physical
+  - entity_id: c-akamaru
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
+  focus_teams:
+  - team-9
+relations:
+- id: rel-ev-games-t9-kurenai-cover-1-before-next
+  kind: before
+  a: ev-games-t9-kurenai-cover-1
+  b: ev-games-t9-nobari-morning-spars
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
 presence:
-- id: pr-audit-games-t9-kurenai-cover-c-kita
+- id: pr-sc-games-t9-kurenai-cover-c-kita
   entity_id: c-kita
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-audit-games-t9-kurenai-cover-c-ren
+- id: pr-sc-games-t9-kurenai-cover-c-ren
   entity_id: c-ren
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-audit-games-t9-kurenai-cover-c-sora
+- id: pr-sc-games-t9-kurenai-cover-c-sora
   entity_id: c-sora
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-audit-games-t9-kurenai-cover-c-kurenai
+- id: pr-sc-games-t9-kurenai-cover-c-kurenai
   entity_id: c-kurenai
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-audit-games-t9-kurenai-cover-c-kiba
+- id: pr-sc-games-t9-kurenai-cover-c-kiba
   entity_id: c-kiba
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-audit-games-t9-kurenai-cover-c-akamaru
+- id: pr-sc-games-t9-kurenai-cover-c-akamaru
   entity_id: c-akamaru
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-audit-games-t9-kurenai-cover-c-hinata
+- id: pr-sc-games-t9-kurenai-cover-c-hinata
   entity_id: c-hinata
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted
-- id: pr-audit-games-t9-kurenai-cover-c-shino
+- id: pr-sc-games-t9-kurenai-cover-c-shino
   entity_id: c-shino
   from: sc-games-t9-kurenai-cover.start
   to: sc-games-t9-kurenai-cover.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-mission-draft
   review: accepted

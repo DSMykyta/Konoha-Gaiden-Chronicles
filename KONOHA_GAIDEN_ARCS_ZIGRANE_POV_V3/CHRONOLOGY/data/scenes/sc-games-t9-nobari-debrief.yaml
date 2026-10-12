@@ -1,16 +1,16 @@
 schema_version: 1
 id: sc-games-t9-nobari-debrief
-episode_id: ep-games-t9-nobari-medical-mission
+episode_id: ep-games-t9-nobari-debrief
 display_rank: 50600
 continuity_id: main
-title: Нобарі розповідає джонінам про медичну місію
+title: Нобарі розповідає наставникам про медичну місію
 location_id: loc-konoha-izakaya
 day_part: night
 placement:
   anchor_id: ta-games-0-08-07
   day_offset: 0
 state: active
-presence_coverage: complete
+presence_coverage: partial
 review:
   time: partial
   cast: accepted
@@ -20,8 +20,34 @@ review:
 events:
 - id: ev-games-t9-nobari-debrief-1
   display_rank: 100
-  title: Нобарі розповідає джонінам про медичну місію
-  text: Після повернення Нобарі приходить до ізакаї й розповідає Куренай, Асумі та Райдо про роботу дітей у тимчасовому шпиталі. Вона дізнається про висоту неконтрольованого блінка на полі Асуми й лякається ризику, якого раніше не знала. Райдо вже знайомий із переміщеннями Кіти; він просить показати журнал Сори, щоб стежити за розвитком техніки після зміни наставника.
+  title: Нобарі розповідає про роботу дітей у шпиталі
+  text: Нобарі приходить до Куренай та Асуми у джонінському жилеті з кров’ю на рукаві й розповідає про лікаря та
+    результат роботи Кіти. Райдо заходить виснаженим після зміни охорони й сідає до столу.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: background
+    mode: physical
+  - entity_id: c-asuma
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  focus_teams: []
+- id: ev-games-t9-nobari-learns-fifty-meters
+  display_rank: 200
+  title: Нобарі дізнається про висотний блінк Кіти
+  text: 'Розмова доходить до випадку на полі Асуми. Почувши про п’ятдесят метрів, Нобарі підводиться й струшує стіл.
+    Куренай кладе їй руку на плече й садить назад. Нобарі повторює висоту, а Райдо відповідає: «Я знаю».'
   origin: P
   extent: interval
   involvement:
@@ -31,42 +57,89 @@ events:
   - entity_id: c-kurenai
     role: focus
     mode: physical
-  - entity_id: c-asuma
-    role: focus
-    mode: physical
   - entity_id: c-raido
     role: focus
     mode: physical
-  evidence_ids: &id001
+  - entity_id: c-asuma
+    role: background
+    mode: physical
+  evidence_ids:
   - evd-games-team-9-07
-  - evd-games-part-i-placement
-relations: []
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  focus_teams: []
+- id: ev-games-t9-nobari-raido-journal
+  display_rank: 300
+  title: Райдо просить показувати йому журнал Сори
+  text: Райдо вже знає про блінк із передіспитових занять. Він просить Асуму показати журнал Сори, коли назбираються
+    нові записи, щоб бачити розвиток прийому після передачі команди Анко.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-raido
+    role: focus
+    mode: physical
+  - entity_id: c-asuma
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: background
+    mode: physical
+  - entity_id: c-kurenai
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  focus_teams: []
+relations:
+- id: rel-ev-games-t9-nobari-debrief-1-before-next
+  kind: before
+  a: ev-games-t9-nobari-debrief-1
+  b: ev-games-t9-nobari-learns-fifty-meters
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
 presence:
-- id: pr-audit-games-t9-nobari-debrief-c-nobari
+- id: pr-sc-games-t9-nobari-debrief-c-nobari
   entity_id: c-nobari
   from: sc-games-t9-nobari-debrief.start
   to: sc-games-t9-nobari-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-debrief-c-kurenai
+- id: pr-sc-games-t9-nobari-debrief-c-kurenai
   entity_id: c-kurenai
   from: sc-games-t9-nobari-debrief.start
   to: sc-games-t9-nobari-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-debrief-c-asuma
+- id: pr-sc-games-t9-nobari-debrief-c-asuma
   entity_id: c-asuma
   from: sc-games-t9-nobari-debrief.start
   to: sc-games-t9-nobari-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted
-- id: pr-audit-games-t9-nobari-debrief-c-raido
+- id: pr-sc-games-t9-nobari-debrief-c-raido
   entity_id: c-raido
   from: sc-games-t9-nobari-debrief.start
   to: sc-games-t9-nobari-debrief.end
   basis: source
-  evidence_ids: *id001
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
   review: accepted

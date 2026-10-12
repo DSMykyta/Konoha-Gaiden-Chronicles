@@ -1,0 +1,88 @@
+schema_version: 1
+id: sc-games-t9-nobari-return
+episode_id: ep-games-t9-nobari-evacuation
+display_rank: 50540
+continuity_id: main
+title: Нобарі й трійка повертаються транспортом до Конохи
+location_id: loc-t9-medical-transport
+day_part: night
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 0
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-return-transport
+  display_rank: 100
+  title: Кіта й Сора сплять дорогою назад
+  text: Рен несе заснулого Кіту до транспорту. Дорогою назад Кіта й Сора сплять, Нобарі дивиться у вікно. Група
+    повертається до Конохи після роботи в польовому шпиталі.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-nobari
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  focus_teams:
+  - team-9
+relations: []
+presence:
+- id: pr-sc-games-t9-nobari-return-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-nobari-return.start
+  to: sc-games-t9-nobari-return.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-return-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-nobari-return.start
+  to: sc-games-t9-nobari-return.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-return-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-nobari-return.start
+  to: sc-games-t9-nobari-return.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted
+- id: pr-sc-games-t9-nobari-return-c-nobari
+  entity_id: c-nobari
+  from: sc-games-t9-nobari-return.start
+  to: sc-games-t9-nobari-return.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-recap
+  - evd-t9-nobari-kitchen-prose
+  review: accepted

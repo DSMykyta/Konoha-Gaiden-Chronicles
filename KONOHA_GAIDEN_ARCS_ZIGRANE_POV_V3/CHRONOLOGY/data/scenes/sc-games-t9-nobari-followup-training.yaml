@@ -1,0 +1,167 @@
+schema_version: 1
+id: sc-games-t9-nobari-followup-training
+episode_id: ep-games-t9-nobari-followup
+display_rank: 50620
+continuity_id: main
+title: Куренай спостерігає самостійну програму Команди 9
+location_id: loc-training-ground-8
+day_part: morning
+placement:
+  anchor_id: ta-games-0-08-07
+  day_offset: 1
+state: active
+presence_coverage: partial
+review:
+  time: partial
+  cast: accepted
+  location: accepted
+  origin: accepted
+  text: accepted
+events:
+- id: ev-games-t9-nobari-followup-program
+  display_rank: 100
+  title: Сора веде звичайну програму трійки перед Куренай
+  text: Після медичної місії Куренай просить Команду 9 показати звичайне самостійне тренування. Сора розподіляє
+    вправи, чергує контроль, метання й спаринги. Рен зупиняється на її коротку команду, Кіта коригує політ куная
+    чакрою. Куренай спостерігає й запитує, хто склав порядок.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: focus
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  focus_teams:
+  - team-9
+- id: ev-games-t9-nobari-followup-spars
+  display_rank: 200
+  title: Команди проводять спаринги без кланових технік
+  text: На наступному спільному занятті Кіба стає проти Рена, Хіната — проти Сори, Шіно — проти Кіти. Рен перемагає
+    Кібу, Хіната виграє в Сори й підтримує її після поєдинку, Шіно без комах перекриває Кіті шлях до центра. Куренай
+    спостерігає збоку.
+  origin: P
+  extent: interval
+  involvement:
+  - entity_id: c-kita
+    role: focus
+    mode: physical
+  - entity_id: c-ren
+    role: focus
+    mode: physical
+  - entity_id: c-sora
+    role: focus
+    mode: physical
+  - entity_id: c-kiba
+    role: focus
+    mode: physical
+  - entity_id: c-hinata
+    role: focus
+    mode: physical
+  - entity_id: c-shino
+    role: focus
+    mode: physical
+  - entity_id: c-kurenai
+    role: background
+    mode: physical
+  - entity_id: c-akamaru
+    role: background
+    mode: physical
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  focus_teams:
+  - team-9
+relations:
+- id: rel-ev-games-t9-nobari-followup-program-before-next
+  kind: before
+  a: ev-games-t9-nobari-followup-program
+  b: ev-games-t9-nobari-followup-spars
+  basis: source
+  review: accepted
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+presence:
+- id: pr-sc-games-t9-nobari-followup-training-c-kita
+  entity_id: c-kita
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-training-c-ren
+  entity_id: c-ren
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-training-c-sora
+  entity_id: c-sora
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-training-c-kurenai
+  entity_id: c-kurenai
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-training-c-kiba
+  entity_id: c-kiba
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-training-c-akamaru
+  entity_id: c-akamaru
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-training-c-hinata
+  entity_id: c-hinata
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
+- id: pr-sc-games-t9-nobari-followup-training-c-shino
+  entity_id: c-shino
+  from: sc-games-t9-nobari-followup-training.start
+  to: sc-games-t9-nobari-followup-training.end
+  basis: source
+  evidence_ids:
+  - evd-games-team-9-07
+  - evd-t9-nobari-lunch-draft
+  review: accepted
