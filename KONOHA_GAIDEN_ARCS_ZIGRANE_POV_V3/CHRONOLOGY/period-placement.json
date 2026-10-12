@@ -150,7 +150,11 @@
         "sc-y0-1005-animal-district-lee-kangaroo",
         "sc-y0-1005-animal-district-naruto-kotetsu-condor",
         "sc-y0-1005-animal-district-shino-plants"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-alt-game-uzumaki-chronicles",
@@ -218,7 +222,11 @@
         "sc-y0-1017-gosunkugi-mission-opening",
         "sc-y0-1017-sazanami-wounded-identity",
         "sc-y0-1018-ok-temple-showdown"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-guy-lee-impostors",
@@ -237,7 +245,11 @@
       "scene_ids": [
         "sc-y0-1019-mondai-potcha-infiltration",
         "sc-y0-1019-real-guy-lee-return"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "replaceable",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-land-of-birds",
@@ -317,7 +329,11 @@
         "sc-y0-1029-anko-memory-resolution",
         "sc-y0-1029-isaribi-anko-aftermath",
         "sc-y0-1029-umibozu-battle"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-kunihisa",
@@ -462,7 +478,11 @@
         "sc-y0-1107-akamaru-antidote",
         "sc-y0-1107-akamaru-infection-detected",
         "sc-y0-1107-kiba-flees-with-akamaru"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-onba",
@@ -557,7 +577,11 @@
         "sc-y0-1113-greens-captive-rescue",
         "sc-y0-1113-greens-renga-finale",
         "sc-y0-1113-haruna-restoration"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-fuku-matchmaking",
@@ -576,7 +600,11 @@
       "note": "192: Фуку просить підмінити її на зустрічі завтра; перший день зарезервовано для підготовки.",
       "scene_ids": [
         "sc-y0-1114-fuku-matchmaking"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "replaceable",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-lee-dojo",
@@ -591,10 +619,14 @@
         "c-tenten"
       ],
       "route": "",
-      "note": "193: Наруто повертається після тижня доставки листа. Саме доджьо займає останній день, попередні сім — окрема підтверджена дорога.",
+      "note": "193: у вихідному аніме Наруто повертається після тижня доставки листа. У варіанті без Наруто доджьо займає один день; тиждень доставки не резервує час Лі.",
       "scene_ids": [
         "sc-y0-1115-lee-dojo-challenge"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "replaceable",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-haunted-castle",
@@ -615,7 +647,11 @@
       "note": "Одна пригода в замку; дорога назовні й назад не згорнуті в той самий день.",
       "scene_ids": [
         "sc-y0-1116-haunted-castle-chameleon"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "replaceable",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-ryudoin",
@@ -638,7 +674,11 @@
         "sc-y0-1117-ryudoin-yagura-trap",
         "sc-y0-1118-ryudoin-finale",
         "sc-period-ryudoin-foreign-trap"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-genno",
@@ -774,7 +814,11 @@
         "sc-y0-1125-yakumo-sealed-power",
         "sc-y0-1126-yakumo-genjutsu-konoha",
         "sc-y0-1127-yakumo-ido-finale"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-shinemon-bowl",
@@ -794,7 +838,11 @@
       "note": "Бій і доставка — один день між окремими днями дороги.",
       "scene_ids": [
         "sc-y0-1128-shinemon-tea-bowl"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-y0-gantetsu",
@@ -817,7 +865,11 @@
         "sc-y0-1201-gantetsu-akio-truth",
         "sc-y0-1201-gantetsu-orphans",
         "sc-y0-1202-gantetsu-finale"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     },
     {
       "arc_id": "arc-alt-game-ninja-destiny-2-eu",
@@ -864,10 +916,10 @@
     {
       "arc_id": "arc-y0-matsuri-rescue",
       "title": "Порятунок Мацурі",
-      "start": 257,
-      "end": 260,
-      "occupied_start": 257,
-      "occupied_end": 264,
+      "start": 374,
+      "end": 377,
+      "occupied_start": 374,
+      "occupied_end": 381,
       "return_days": 2,
       "rest_days": 2,
       "actors": [
@@ -889,7 +941,11 @@
       "note": "216–220: окремі двійки, розвідка й медична підтримка. Тентен не залучена. Не ставимо окремий день на кожну серію безперервного бою.",
       "scene_ids": [
         "sc-y0-1207-baki-suna-council-matsuri"
-      ]
+      ],
+      "naruto_presence_default": "excluded",
+      "naruto_presence_optional": true,
+      "naruto_original_role": "supporting_or_partial",
+      "naruto_canonical_scenes_preserved": true
     }
   ],
   "scene_days": {
@@ -1057,7 +1113,7 @@
     "sc-y0-1203-menma-found": 351,
     "sc-y0-1204-menma-rice-fields": 353,
     "sc-y0-1205-menma-sacrifice": 354,
-    "sc-y0-1207-baki-suna-council-matsuri": 257,
+    "sc-y0-1207-baki-suna-council-matsuri": 374,
     "sc-y0-1216-iruka-naruto-last-ramen": 360,
     "sc-games-kakashi-rest-order": 269,
     "sc-games-kakashi-forced-rest": 269,

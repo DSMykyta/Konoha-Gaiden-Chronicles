@@ -192,7 +192,7 @@ arcs:
   description: Сюжетна арка «Коштовна чаша Шінемона». Самостійні паралельні лінії оформлено окремими епізодами.
 - id: arc-y0-matsuri-rescue
   continuity_id: main
-  period_id: part-i
+  period_id: timeskip
   kind: adaptation
   title: Порятунок Мацурі
   description: Сюжетна арка «Порятунок Мацурі». Самостійні паралельні лінії оформлено окремими епізодами.
