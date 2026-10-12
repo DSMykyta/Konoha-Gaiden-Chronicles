@@ -4,12 +4,12 @@ const clone=value=>JSON.parse(JSON.stringify(value));
 const replaceName=(text,name)=>typeof text==='string'?text.replace(/Нарутові|Нарутом|Наруту|Наруто|Naruto/g,name)
  .replaceAll(name+' й '+name,name).replaceAll(name+', '+name,name)
  .replaceAll(name+' та '+name,name):text;
-export function adaptNarutoScene(original,policy,eventOverrides={}){
+export function adaptNarutoScene(original,policy,eventOverrides={},sceneOverrides={}){
  if(!policy)return original;
  const scene=clone(original),name=policy.substitute_name,id=policy.substitute_id;
  scene.naruto_original={title:scene.title,description:scene.description??null};
  scene.naruto_variant='without_naruto';
- scene.title=replaceName(scene.title,name);
+ scene.title=sceneOverrides[scene.id]?.title||replaceName(scene.title,name);
  if(scene.description!==undefined)scene.description=replaceName(scene.description,name);
  for(const e of scene.events||[]){
   e.naruto_original={title:e.title,text:e.text,involvement:clone(e.involvement||[])};

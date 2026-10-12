@@ -34,6 +34,10 @@ export function validateMissionWindows(plan,scenes,entities=[]){
   for(const s of active){
    if(isSourceAlternative(s.arc_id)||s.arc_id===w.arc_id||neutral.has(s.id)||s.day<w.occupied_start||s.day>w.occupied_end)continue;
    const common=[...physicalParticipants(s)].filter(id=>cast.has(id));
+   // A local, non-combat appearance on a reserved rest day is not a
+   // second distant mission. In the village a character can go home,
+   // receive news or meet someone on the same date.
+   if(common.length&&w.route===''&&s.day>w.end&&local(s.location_id))continue;
    if(common.length)fail(`${s.id} borrows ${common.join(', ')} during ${w.arc_id}, including travel/recovery`);
   }
  }
