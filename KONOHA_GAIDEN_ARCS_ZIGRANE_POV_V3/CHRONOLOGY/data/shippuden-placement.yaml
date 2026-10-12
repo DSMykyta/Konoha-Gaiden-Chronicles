@@ -4,7 +4,7 @@ review: working
 scope: Основна тяглість, таймскіп та Shippuden до збору армії. Фільми перевіряються у власних гілках.
 reservations:
 - id: naruto-jiraiya-timeskip
-  start: 62-05-31
+  start: 61-12-28
   end: 64-11-29
   actors:
   - c-naruto
