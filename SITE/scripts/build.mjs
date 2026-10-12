@@ -7,6 +7,7 @@ import {validateHierarchy} from './hierarchy.mjs';
 import {validateCalendar,dayInYear} from './calendar.mjs';
 import {validateMissionWindows} from './mission-windows.mjs';
 import {validateShippudenPrewar} from './shippuden-prewar.mjs';
+import {adaptNarutoScene} from './naruto-variants.mjs';
 const project=path.resolve(import.meta.dirname,'..');
 const relative='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data';
 // Vercel builds current repository data. There is no browser GitHub token or write endpoint.
@@ -30,9 +31,18 @@ const episodes=read('episodes.yaml').episodes||[],arcs=read('arcs.yaml').arcs||[
 if(new Set(episodes.map(e=>e.id)).size!==episodes.length)throw new Error('Duplicate episode IDs');
 if(new Set(arcs.map(a=>a.id)).size!==arcs.length)throw new Error('Duplicate arc IDs');
 const episodeMap=new Map(episodes.map(e=>[e.id,e])),arcMap=new Map(arcs.map(a=>[a.id,a]));
+const narutoVariantPolicy=read('naruto-optional.yaml');
+const optionalNarutoArcs=new Map(narutoVariantPolicy.arcs.map(item=>[item.arc_id,item]));
+for(const [id,variant] of optionalNarutoArcs){
+ if(!arcMap.has(id)||!variant.substitute_id||!entities.entities.some(e=>e.id===variant.substitute_id))throw Error('Invalid Naruto variant '+id);
+}
 for(const episode of episodes)if(!episode.arc_id||!arcMap.has(episode.arc_id))throw new Error('Unknown arc for episode '+episode.id+': '+episode.arc_id);
 const sourceScenes=fs.readdirSync(path.join(p,'scenes')).filter(f=>f.endsWith('.yaml')).sort().map(file=>({file,scene:read('scenes/'+file)}));
 validateHierarchy({arcs,episodes,scenes:sourceScenes.map(x=>x.scene),periods});
+for(const row of sourceScenes){
+ const arcId=episodeMap.get(row.scene.episode_id)?.arc_id;
+ row.scene=adaptNarutoScene(row.scene,optionalNarutoArcs.get(arcId),narutoVariantPolicy.event_overrides);
+}
 const scenes=[],events=[];
 for(const {file,scene:s} of sourceScenes){
  const a=anchors.get(s.placement?.anchor_id),date=a?.date,episode=s.episode_id?episodeMap.get(s.episode_id):null;
@@ -44,7 +54,7 @@ for(const {file,scene:s} of sourceScenes){
  for(const e of s.events||[]){const physical=(e.involvement||[]).filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id),tracks=(e.involvement||[]).filter(i=>i.role!=='mentioned'&&i.mode!=='remote').map(i=>i.entity_id);events.push({...e,layer:e.layer||s.layer||null,scene_id:s.id,scene_title:s.title,episode_id:s.episode_id||null,arc_id:arcId,day,date_status:dateStatus,continuity:'main',source_continuity:sourceContinuity,scene_state:s.state,review:s.review||{},location_id:s.location_id,physical,tracks,file});}
 }
 const episodeViews=episodes.map(episode=>{const members=scenes.filter(s=>s.episode_id===episode.id&&s.state!=='inactive').sort((a,b)=>a.display_rank!==undefined&&b.display_rank!==undefined&&a.display_rank!==b.display_rank?a.display_rank-b.display_rank:0),dated=members.map(s=>s.day).filter(d=>d!==null);return {...episode,source_continuity_id:episode.continuity_id||'main',continuity_id:'main',scene_ids:members.map(s=>s.id),day_start:dated.length?Math.min(...dated):null,day_end:dated.length?Math.max(...dated):null};});
-const arcViews=arcs.map(arc=>{const members=episodeViews.filter(e=>e.arc_id===arc.id),dated=members.flatMap(e=>[e.day_start,e.day_end]).filter(d=>d!==null);return {...arc,source_continuity_id:arc.continuity_id||'main',continuity_id:'main',episode_ids:members.map(e=>e.id),day_start:dated.length?Math.min(...dated):null,day_end:dated.length?Math.max(...dated):null};});
+const arcViews=arcs.map(arc=>{const members=episodeViews.filter(e=>e.arc_id===arc.id),dated=members.flatMap(e=>[e.day_start,e.day_end]).filter(d=>d!==null);return {...arc,naruto_optional:optionalNarutoArcs.has(arc.id),naruto_default:false,source_continuity_id:arc.continuity_id||'main',continuity_id:'main',episode_ids:members.map(e=>e.id),day_start:dated.length?Math.min(...dated):null,day_end:dated.length?Math.max(...dated):null};});
 if(new Set(events.map(e=>e.id)).size!==events.length)throw new Error('Duplicate event IDs');
 const known=new Set(entities.entities.map(e=>e.id));for(const e of events)for(const id of e.tracks)if(!known.has(id))throw new Error('Unknown entity '+id);
 // Geographic topology is deliberately separate from storyline YAML. Unknown

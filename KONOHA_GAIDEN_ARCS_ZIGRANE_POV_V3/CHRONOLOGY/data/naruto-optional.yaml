@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "default_naruto": false,
+  "arcs": [
+    {
+      "arc_id": "arc-y0-animal-district",
+      "classification": "Б",
+      "substitute_id": "c-kotetsu",
+      "substitute_name": "Котецу",
+      "reason": "Окремі пригоди загону; Котецу лишається в історії"
+    },
+    {
+      "arc_id": "arc-y0-gosunkugi",
+      "classification": "Б",
+      "substitute_id": "c-shino",
+      "substitute_name": "Шіно",
+      "reason": "Садзанамі й Ґосункуґі визначають конфлікт; до групи Кіби й Хінати долучається Шіно"
+    },
+    {
+      "arc_id": "arc-y0-guy-lee-impostors",
+      "classification": "В",
+      "substitute_id": "c-konohamaru",
+      "substitute_name": "Конохамару",
+      "reason": "Шпигунів викривають шинобі Конохи; їхнім довірливим учнем стає Конохамару"
+    },
+    {
+      "arc_id": "arc-y0-kaima-sea",
+      "classification": "Б",
+      "substitute_id": "c-shino",
+      "substitute_name": "Шіно",
+      "reason": "Анко керує місією; вирішальні дії передаються Анко, Іно й Шіно"
+    },
+    {
+      "arc_id": "arc-y0-akamaru-infection",
+      "classification": "Б",
+      "substitute_id": "c-shino",
+      "substitute_name": "Шіно",
+      "reason": "Рішення й антидот лишаються за Кібою та Ханою"
+    },
+    {
+      "arc_id": "arc-y0-land-of-greens",
+      "classification": "Б",
+      "substitute_id": "c-choji",
+      "substitute_name": "Чоджі",
+      "reason": "Харуна вирішує долю країни; супровід очолює Шікамару"
+    },
+    {
+      "arc_id": "arc-y0-fuku-matchmaking",
+      "classification": "В",
+      "substitute_id": "c-sakura",
+      "substitute_name": "Сакура",
+      "reason": "Іно й Фуку лишаються центром історії"
+    },
+    {
+      "arc_id": "arc-y0-lee-dojo",
+      "classification": "В",
+      "substitute_id": "c-tenten",
+      "substitute_name": "Тентен",
+      "reason": "Лі, Ґай і Нанафуші є центральними персонажами"
+    },
+    {
+      "arc_id": "arc-y0-haunted-castle",
+      "classification": "В",
+      "substitute_id": "c-shino",
+      "substitute_name": "Шіно",
+      "reason": "Шіно доповнює Кібу й Хінату у розслідуванні"
+    },
+    {
+      "arc_id": "arc-y0-ryudoin",
+      "classification": "Б",
+      "substitute_id": "c-neji",
+      "substitute_name": "Неджі",
+      "reason": "Помста спрямована проти Ґая, допомагає команда Ґая"
+    },
+    {
+      "arc_id": "arc-y0-yakumo-kurenai",
+      "classification": "Б",
+      "substitute_id": "c-shino",
+      "substitute_name": "Шіно",
+      "reason": "Куренай, Якумо та Команда 8 ведуть конфлікт"
+    },
+    {
+      "arc_id": "arc-y0-shinemon-bowl",
+      "classification": "Б",
+      "substitute_id": "c-shino",
+      "substitute_name": "Шіно",
+      "reason": "Чашу охороняють Кіба й Шіно"
+    },
+    {
+      "arc_id": "arc-y0-gantetsu",
+      "classification": "Б",
+      "substitute_id": "c-lee",
+      "substitute_name": "Лі",
+      "reason": "Залишаються Ґантецу, Тодорокі, Акіо та загін Сакури й Лі"
+    },
+    {
+      "arc_id": "arc-y0-matsuri-rescue",
+      "classification": "Б",
+      "substitute_id": "c-shino",
+      "substitute_name": "Шіно",
+      "reason": "Головний конфлікт Ґаари і Мацурі; Наруто не бере участі в місії"
+    }
+  ],
+  "event_overrides": {
+    "ev-y0-1029-naruto-nine-tails-defeats-amachi": {
+      "title": "Анко й Шіно знешкоджують трансформованого Амачі",
+      "text": "Анко відволікає трансформованого Амачі й утримує його натиск, поки Шіно використовує комах для обмеження його рухів; спільна атака змушує Амачі припинити опір."
+    },
+    "ev-y0-1029-amachi-captured": {
+      "text": "Анко бере Амачі під варту. Він зізнається, що не знає способу повернути Ісарібі нормальне тіло й збирався позбутися її після завершення дослідів. Анко вимагає відомостей про Орочімару."
+    },
+    "ev-y0-1029-naruto-summons-gamabunta": {
+      "title": "Анко організовує оборону від Умібодзу",
+      "text": "Анко збирає Шіно й Іно для спільного удару по водній істоті та наказує вивести людей із зони її нападу.",
+      "remove_entities": [
+        "c-gamabunta"
+      ],
+      "add_entities": [
+        "c-anko"
+      ]
+    },
+    "ev-y0-1029-gamabunta-destroys-umibozu": {
+      "title": "Загін Анко руйнує ядро Умібодзу",
+      "text": "Іно й Шіно відволікають водну істоту, а Анко завдає удару по її вразливому ядру; напад Умібодзу припиняється.",
+      "remove_entities": [
+        "c-gamabunta"
+      ],
+      "add_entities": [
+        "c-anko",
+        "c-ino"
+      ]
+    },
+    "ev-y0-1114-naruto-transforms-fuku": {
+      "title": "Сакура втручається в підміну Фуку",
+      "text": "Сакура, намагаючись допомогти Іно, теж використовує перетворення на Фуку. Дві підміни одночасно руйнують план і привертають увагу Чікари."
+    }
+  }
+}
