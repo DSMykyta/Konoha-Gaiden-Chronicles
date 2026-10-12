@@ -7,7 +7,7 @@ title: Цунаде підвищує учасників за звітами
 description: Після скасування третього етапу трійці стають чюнінами; Неджі отримує звання джоніна.
 location_id: loc-hokage-residence
 placement:
-  anchor_id: ta-s2-64-10-20
+  anchor_id: ta-s2-64-05-20-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete

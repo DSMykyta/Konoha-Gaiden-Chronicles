@@ -8,7 +8,7 @@ description: Сакура слабшає через накопичення ча�
   і витягає отруту з товаришів.
 location_id: loc-demon-desert
 placement:
-  anchor_id: ta-s2-64-10-17
+  anchor_id: ta-s2-64-05-17-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete

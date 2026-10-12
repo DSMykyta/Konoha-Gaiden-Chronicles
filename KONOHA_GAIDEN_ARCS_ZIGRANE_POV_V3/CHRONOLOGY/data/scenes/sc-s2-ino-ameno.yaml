@@ -8,7 +8,7 @@ description: Бій біля оази випробовує медичні нав
   з обома потрібними сувоями.
 location_id: loc-demon-desert-oasis
 placement:
-  anchor_id: ta-s2-64-10-16
+  anchor_id: ta-s2-64-05-16-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete

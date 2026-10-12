@@ -7,7 +7,7 @@ title: Орочімару випробовує Суйґецу й Карін
 description: Карін зупиняє втечу Суйґецу своїми чакровими ланцюгами.
 location_id: loc-orochimaru-southern-hideout
 placement:
-  anchor_id: ta-s2-64-10-17
+  anchor_id: ta-s2-64-05-17-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete

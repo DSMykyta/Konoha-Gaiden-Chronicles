@@ -8,7 +8,7 @@ description: Б’якуґан показує канали витягання ч
   завершення небезпеки.
 location_id: loc-demon-desert
 placement:
-  anchor_id: ta-s2-64-10-18
+  anchor_id: ta-s2-64-05-18-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete

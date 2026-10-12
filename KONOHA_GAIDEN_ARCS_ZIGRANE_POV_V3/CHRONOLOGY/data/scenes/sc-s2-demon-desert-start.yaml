@@ -8,7 +8,7 @@ description: Шіра допомагає іншим командам Суни; �
   спосіб продовжити бій; суперники визнають силу один одного.
 location_id: loc-demon-desert
 placement:
-  anchor_id: ta-s2-64-10-15
+  anchor_id: ta-s2-64-05-15-second-chunin
   day_offset: 0
 state: active
 presence_coverage: complete
