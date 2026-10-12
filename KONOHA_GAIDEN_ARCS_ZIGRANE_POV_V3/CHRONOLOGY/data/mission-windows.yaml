@@ -193,10 +193,10 @@ arcs:
   - sc-y0-1018-ok-temple-showdown
 - arc_id: arc-y0-guy-lee-impostors
   title: Самозванці Ґай і Лі
-  start: 266
-  end: 266
-  occupied_start: 266
-  occupied_end: 267
+  start: 287
+  end: 287
+  occupied_start: 287
+  occupied_end: 288
   return_days: 0
   rest_days: 1
   actors:
@@ -531,10 +531,10 @@ arcs:
   - sc-y0-1116-haunted-castle-chameleon
 - arc_id: arc-y0-ryudoin
   title: Помста братів Рюдоін
-  start: 281
-  end: 283
-  occupied_start: 281
-  occupied_end: 286
+  start: 280
+  end: 282
+  occupied_start: 280
+  occupied_end: 285
   return_days: 1
   rest_days: 2
   actors:
@@ -742,10 +742,10 @@ arcs:
   - sc-y0-1205-menma-sacrifice
 - arc_id: arc-y0-matsuri-rescue
   title: Порятунок Мацурі
-  start: 374
-  end: 377
-  occupied_start: 374
-  occupied_end: 381
+  start: 251
+  end: 254
+  occupied_start: 251
+  occupied_end: 258
   return_days: 2
   rest_days: 2
   actors:
@@ -823,8 +823,8 @@ scene_days:
   sc-y0-1017-gosunkugi-mission-opening: 247
   sc-y0-1017-sazanami-wounded-identity: 247
   sc-y0-1018-ok-temple-showdown: 248
-  sc-y0-1019-mondai-potcha-infiltration: 266
-  sc-y0-1019-real-guy-lee-return: 266
+  sc-y0-1019-mondai-potcha-infiltration: 287
+  sc-y0-1019-real-guy-lee-return: 287
   sc-y0-1020-birds-mission-arrival: 304
   sc-y0-1020-first-cursed-warrior: 304
   sc-y0-1021-komei-cursed-warrior-investigation: 305
@@ -896,8 +896,8 @@ scene_days:
   sc-y0-1114-fuku-matchmaking: 284
   sc-y0-1115-lee-dojo-challenge: 266
   sc-y0-1116-haunted-castle-chameleon: 313
-  sc-y0-1117-ryudoin-yagura-trap: 281
-  sc-y0-1118-ryudoin-finale: 283
+  sc-y0-1117-ryudoin-yagura-trap: 280
+  sc-y0-1118-ryudoin-finale: 282
   sc-y0-1119-genno-blueprints: 346
   sc-y0-1120-genno-investigation: 347
   sc-y0-1121-genno-paper-bombs: 348
@@ -932,13 +932,13 @@ scene_days:
   sc-y0-1203-menma-found: 351
   sc-y0-1204-menma-rice-fields: 353
   sc-y0-1205-menma-sacrifice: 354
-  sc-y0-1207-baki-suna-council-matsuri: 374
+  sc-y0-1207-baki-suna-council-matsuri: 251
   sc-y0-1216-iruka-naruto-last-ramen: 360
   sc-games-kakashi-rest-order: 269
   sc-games-kakashi-forced-rest: 269
   sc-games-kakashi-nobari-gathering: 269
   sc-period-postman-morning-mixup: 322
-  sc-period-ryudoin-foreign-trap: 283
+  sc-period-ryudoin-foreign-trap: 282
   sc-period-genno-morning-alert: 347
   sc-period-moon-care: 451
   sc-period-moon-departure: 465
@@ -964,8 +964,8 @@ constraints:
   - c-might-guy
   - c-guy
   - c-gensho-ryudoin
-  start: 274
-  end: 280
+  start: 273
+  end: 279
   kind: local_preparation
   note: Яґура тиждень тренується з Ґаєм у Конохі. Доджьо — сумісна місцева подія.
 - id: akamaru-aftercare
