@@ -864,10 +864,10 @@
     {
       "arc_id": "arc-y0-matsuri-rescue",
       "title": "Порятунок Мацурі",
-      "start": 273,
-      "end": 276,
-      "occupied_start": 273,
-      "occupied_end": 280,
+      "start": 374,
+      "end": 377,
+      "occupied_start": 374,
+      "occupied_end": 381,
       "return_days": 2,
       "rest_days": 2,
       "actors": [
@@ -1057,7 +1057,7 @@
     "sc-y0-1203-menma-found": 351,
     "sc-y0-1204-menma-rice-fields": 353,
     "sc-y0-1205-menma-sacrifice": 354,
-    "sc-y0-1207-baki-suna-council-matsuri": 273,
+    "sc-y0-1207-baki-suna-council-matsuri": 374,
     "sc-y0-1216-iruka-naruto-last-ramen": 360,
     "sc-games-kakashi-rest-order": 269,
     "sc-games-kakashi-forced-rest": 269,
