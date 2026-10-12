@@ -70,8 +70,14 @@ test('Kusagakure insertion gap remains between the two exams, without fabricated
  const end=built.scenes.find(s=>s.id==='sc-s2-second-exam-promotions');
  const ova=built.scenes.find(s=>s.id==='sc-alt-s2-ova-chunin-field');
  assert(end && ova);
- assert.deepEqual(end.date,{year:64,month:10,day:20});
+ assert.deepEqual(end.date,{year:64,month:5,day:20});
+ const gaara=built.scenes.find(s=>s.id==='sc-s2-gaara-becomes-kazekage');
+ assert.deepEqual(gaara.date,{year:64,month:4,day:20});
+ assert(gaara.day < built.scenes.find(s=>s.id==='sc-s2-exam-cohost-plan').day);
+ assert(built.scenes.filter(s=>s.arc_id==='arc-s2-second-chunin-exams').every(s=>s.date.year===64&&s.date.month===5));
  assert.deepEqual(ova.date,{year:66,month:9,day:2});
  assert(end.day<ova.day);
+ assert(fs.readFileSync(new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/02_MASTER_CHRONOLOGY.md',import.meta.url),'utf8').includes('Рік 3, 11 червня'));
+ assert(fs.readFileSync(new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/01_CHRONOLOGY.md',import.meta.url),'utf8').includes('перед поверненням Команди 9'));
  assert(!built.arcs.some(a=>a.id==='arc-s2-kusagakure-exam-placeholder'));
 });
