@@ -63,7 +63,7 @@ function renderGeographyAudit(){
 }
 function renderCalendar(){
  $('dateInputLabel').textContent=`Перейти до дня · ${yearText()}`;
- $('eraList').innerHTML=[...data.periods].sort((a,b)=>a.order-b.order).map(era=>`<li${era.id===currentEra()?.id?' aria-current="true"':''}><span>${esc(era.label)}</span><small>${esc(eraRange(era))}</small></li>`).join('');
+ $('eraList').innerHTML=[...data.periods].sort((a,b)=>a.order-b.order).map(era=>`<li${era.id===currentEra()?.id?' aria-current="true"':''}><span class="era-list-label"><span class="era-swatch" style="--era-color:${TimelineEraHeading.color(era)}" aria-hidden="true"></span>${esc(era.label)}</span><small>${esc(eraRange(era))}</small></li>`).join('');
 }
 let eraSegments=[],eraHeadingNodes=new Map();
 function renderEraHeading(leftDay,px){
@@ -72,7 +72,7 @@ function renderEraHeading(leftDay,px){
  const current=eraSegments.findLast(p=>p.start<=leftDay);
  if(!current){heading.hidden=true;return;}heading.hidden=false;
  const labelFor=era=>{
-  if(!eraHeadingNodes.has(era.id)){const label=document.createElement('span');label.className='era-heading-label';label.textContent=era.label;label.dataset.era=era.id;track.append(label);eraHeadingNodes.set(era.id,label);}
+  if(!eraHeadingNodes.has(era.id)){const label=document.createElement('span');label.className='era-heading-label';label.textContent=era.label;label.dataset.era=era.id;label.style.setProperty('--era-color',TimelineEraHeading.color(era));track.append(label);eraHeadingNodes.set(era.id,label);}
   return eraHeadingNodes.get(era.id);
  };
  const label=labelFor(current),width=label.getBoundingClientRect().width||current.label.length*8;
