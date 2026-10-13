@@ -63,7 +63,7 @@ test('render uses stable source lanes rather than fictitious screen collisions',
 
 
 test('real bell test and Team 9 field, ravine, catacombs flow without sawtooth bends',()=>{
- const folder=new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/scenes/',import.meta.url);
+ const folder=new URL('../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/scenes/',import.meta.url);
  const filenames=[
   'sc-y0-0123-team7-bell-test.yaml',
   'sc-y0-0123-field8-observation.yaml',
