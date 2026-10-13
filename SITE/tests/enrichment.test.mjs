@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import YAML from 'yaml';
 import {loadEnrichment} from '../scripts/enrichment.mjs';
 
-const relative='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data';
+const relative='00_MAIN_WORK_FOLDER/CHRONOLOGY/data';
 const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jN3sAAAAASUVORK5CYII=','base64');
 function fixture(){
  const source=fs.mkdtempSync(path.join(os.tmpdir(),'konoha-media-test-')),root=path.join(source,relative),project=path.join(source,'SITE');fs.mkdirSync(path.join(root,'scenes'),{recursive:true});fs.mkdirSync(path.join(project,'public'),{recursive:true});
