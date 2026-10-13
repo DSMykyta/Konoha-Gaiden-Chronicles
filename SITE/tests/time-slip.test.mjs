@@ -6,7 +6,7 @@ import YAML from 'yaml';
 
 const data=JSON.parse(fs.readFileSync(new URL('../public/data.json',import.meta.url),'utf8'));
 const originShift=(61-data.calendar.view_start_year)*365;
-const root=path.resolve(import.meta.dirname,'../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data');
+const root=path.resolve(import.meta.dirname,'../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data');
 const load=file=>YAML.parse(fs.readFileSync(path.join(root,file),'utf8'));
 const traveler='c-unnamed-travelling-performer';
 const scenes=data.scenes.filter(s=>s.arc_id==='arc-time-slip-performers');
