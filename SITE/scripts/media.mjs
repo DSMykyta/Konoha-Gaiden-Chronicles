@@ -5,7 +5,7 @@ import {execFileSync} from 'node:child_process';
 import YAML from 'yaml';
 
 // Deterministic helper: no model credentials, inferred timestamps or changes to scene text.
-const project=path.resolve(import.meta.dirname,'..'),root=path.resolve(process.env.CHRONOLOGY_SOURCE_ROOT||path.dirname(project),'KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data');
+const project=path.resolve(import.meta.dirname,'..'),root=path.resolve(process.env.CHRONOLOGY_SOURCE_ROOT||path.dirname(project),'00_MAIN_WORK_FOLDER/CHRONOLOGY/data');
 const args=process.argv.slice(2),command=args.shift(),options={};
 for(let i=0;i<args.length;i++){if(!args[i].startsWith('--'))throw Error('Use --key value');const key=args[i].slice(2);options[key]=args[i+1]&&!args[i+1].startsWith('--')?args[++i]:true;}
 const read=file=>YAML.parse(fs.readFileSync(path.join(root,file),'utf8'));
