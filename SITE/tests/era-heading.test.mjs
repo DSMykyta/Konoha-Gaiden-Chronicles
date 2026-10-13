@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import YAML from 'yaml';
 const heading=vm.runInNewContext(fs.readFileSync(new URL('../public/era-heading.js',import.meta.url),'utf8')+';TimelineEraHeading');
 const periods=[
  {id:'teams',label:'Епоха нових команд',order:1,calendar_era:'after_founding',from_year:61},
@@ -36,4 +37,26 @@ test('reduced motion keeps a single stationary, readable epoch name',()=>{
  assert.equal(rows.length,1);assert.equal(rows[0].x,0);assert.equal(rows[0].id,'teams');
  const next=heading.layout(segments,365,()=>0,200,600,true);
  assert.equal(next[0].id,'fifth');assert.equal(next[0].x,0);
+});
+
+// Identity colors are stored in the chronology registry, never assigned by list position.
+test('all registered epochs have unique fixed markers which survive movement across boundaries',()=>{
+ const source=YAML.parse(fs.readFileSync(new URL('../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/timeline-periods.yaml',import.meta.url),'utf8'));
+ const registered=source.periods;
+ assert.equal(registered.length,21);
+ assert.equal(new Set(registered.map(p=>p.id)).size,registered.length);
+ assert.equal(new Set(registered.map(p=>p.color)).size,registered.length);
+ for(const p of registered)assert.match(p.color,/^#[0-9a-f]{6}$/i);
+ const startYear=1;
+ const colored=heading.segments(registered,{view_start_year:startYear,days_per_year:365});
+ const byId=new Map(registered.map(p=>[p.id,p.color]));
+ for(const p of colored)assert.equal(p.color,byId.get(p.id));
+ assert.equal(heading.color({color:'red'}),'#8797ac');
+ assert.equal(heading.color({color:registered[0].color}),registered[0].color);
+ const first=colored.find(p=>p.id==='part-i'),next=colored.find(p=>p.id==='timeskip');
+ const left=next.start-1;
+ const rows=heading.layout(colored,left,d=>(d-left)*10,200,600);
+ assert.equal(rows[0].color,first.color);
+ assert.equal(rows[1].color,next.color);
+ assert.equal(heading.layout(colored,next.start,d=>(d-next.start)*10,200,600)[0].color,next.color);
 });
