@@ -4,7 +4,7 @@ import YAML from 'yaml';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-const root=new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/',import.meta.url);
+const root=new URL('../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/',import.meta.url);
 const parse=name=>YAML.parse(fs.readFileSync(new URL(name,root),'utf8'));
 const entities=parse('entities.yaml').entities;
 const topology=parse('geography.yaml');
