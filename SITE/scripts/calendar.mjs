@@ -4,6 +4,7 @@ export function validateCalendar(calendar, periods, anchors) {
  const validYear=year=>Number.isInteger(year)&&year>0;
  for(const period of periods){
   if(!period.label||!['before_founding','after_founding'].includes(period.calendar_era))throw Error('Invalid era metadata: '+period.id);
+   if(period.color!==undefined&&(typeof period.color!=='string'||!/^#[0-9a-f]{6}$/i.test(period.color)))throw Error('Invalid era color: '+period.id);
   for(const key of ['from_year','to_year'])if(period[key]!==undefined&&!validYear(period[key]))throw Error('Invalid era year: '+period.id);
   if(period.boundary_date){
    const date=period.boundary_date,lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
