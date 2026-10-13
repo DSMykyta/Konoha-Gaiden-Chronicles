@@ -4,7 +4,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import YAML from 'yaml';
 const data=JSON.parse(fs.readFileSync(new URL('../public/data.json',import.meta.url),'utf8'));
-const root=path.resolve(import.meta.dirname,'../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY');
+const root=path.resolve(import.meta.dirname,'../../00_MAIN_WORK_FOLDER/CHRONOLOGY');
 const plan=JSON.parse(fs.readFileSync(path.join(root,'period-placement.json'),'utf8'));
 const participants=s=>new Set(s.events.flatMap(e=>e.involvement.filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id)));
 const scenes=data.scenes.filter(s=>s.state==='active'&&s.day!==null);
