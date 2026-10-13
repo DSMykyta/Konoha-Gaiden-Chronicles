@@ -35,6 +35,7 @@ calendar:
     url: https://naruto-official.com/en/news/01_1700
 periods:
 - id: warring-states
+  color: '#875044'
   label: Кланові війни
   order: 100
   calendar_status: open_start
@@ -43,6 +44,7 @@ periods:
   calendar_era: before_founding
   to_year: 1
 - id: village-founding
+  color: '#347B61'
   label: Заснування прихованих селищ
   order: 200
   calendar_status: estimated
@@ -53,6 +55,7 @@ periods:
   calendar_era: after_founding
   to_year: 10
 - id: first-shinobi-war
+  color: '#A14F43'
   label: Перша світова війна шинобі
   order: 300
   calendar_status: estimated
@@ -63,6 +66,7 @@ periods:
   calendar_era: after_founding
   to_year: 14
 - id: first-postwar-peace
+  color: '#738A61'
   label: Перше міжвоєння
   order: 400
   calendar_status: estimated
@@ -73,6 +77,7 @@ periods:
   calendar_era: after_founding
   to_year: 34
 - id: second-shinobi-war
+  color: '#A65A37'
   label: Друга світова війна шинобі
   order: 500
   calendar_status: estimated
@@ -83,6 +88,7 @@ periods:
   calendar_era: after_founding
   to_year: 39
 - id: sannin-interwar
+  color: '#43838D'
   label: Друге міжвоєння
   order: 600
   calendar_status: estimated
@@ -93,6 +99,7 @@ periods:
   calendar_era: after_founding
   to_year: 42
 - id: third-shinobi-war
+  color: '#994B70'
   label: Третя світова війна шинобі
   order: 700
   calendar_status: estimated
@@ -103,6 +110,7 @@ periods:
   calendar_era: after_founding
   to_year: 47
 - id: fourth-hokage
+  color: '#B18431'
   label: Правління Четвертого Хокаґе
   order: 800
   calendar_status: estimated
@@ -113,6 +121,7 @@ periods:
   calendar_era: after_founding
   to_year: 49
 - id: nine-tails-crisis
+  color: '#BC4239'
   label: Напад Дев’ятихвостого
   order: 900
   calendar_status: estimated
@@ -123,6 +132,7 @@ periods:
   calendar_era: after_founding
   to_year: 49
 - id: post-nine-tails
+  color: '#4E759C'
   label: Відбудова Конохи
   order: 1000
   calendar_status: estimated
@@ -133,6 +143,7 @@ periods:
   calendar_era: after_founding
   to_year: 53
 - id: uchiha-crisis
+  color: '#714B93'
   label: Криза клану Учіха
   order: 1100
   calendar_status: estimated
@@ -144,6 +155,7 @@ periods:
   calendar_era: after_founding
   to_year: 56
 - id: pre-naruto
+  color: '#578C9A'
   label: Покоління Академії
   order: 1200
   calendar_status: estimated
@@ -154,6 +166,7 @@ periods:
   calendar_era: after_founding
   to_year: 60
 - id: part-i
+  color: '#CF771B'
   label: Епоха нових команд
   legacy_label: Naruto
   order: 1300
@@ -164,6 +177,7 @@ periods:
   calendar_basis: project_reconstruction
   calendar_era: after_founding
 - id: timeskip
+  color: '#34876F'
   label: Доба П’ятої Хокаґе
   order: 1400
   calendar_status: estimated
@@ -175,6 +189,7 @@ periods:
   calendar_era: after_founding
   to_year: 64
 - id: shippuden
+  color: '#B23E60'
   label: Епоха Акацукі
   order: 1500
   calendar_status: estimated
@@ -185,6 +200,7 @@ periods:
   calendar_era: after_founding
   to_year: 66
 - id: fourth-shinobi-war
+  color: '#574C99'
   label: Четверта світова війна шинобі
   order: 1550
   calendar_status: estimated
@@ -194,6 +210,7 @@ periods:
   to_year: 66
   description: Альянс шинобі проти Акацукі, війна з Десятихвостим, Нескінченне Цукуйомі й завершення глобального конфлікту.
 - id: post-fourth-war
+  color: '#63874E'
   label: Післявоєнна відбудова
   order: 1600
   calendar_status: estimated
@@ -204,6 +221,7 @@ periods:
   calendar_era: after_founding
   to_year: 75
 - id: seventh-hokage
+  color: '#C18E2C'
   label: Правління Сьомого Хокаґе
   order: 1700
   calendar_status: estimated
@@ -214,6 +232,7 @@ periods:
   calendar_era: after_founding
   to_year: 78
 - id: boruto
+  color: '#2D89B2'
   label: Епоха ніндзя-технологій
   order: 1800
   calendar_status: estimated
@@ -224,6 +243,7 @@ periods:
   calendar_era: after_founding
   to_year: 81
 - id: altered-history
+  color: '#8D59AE'
   label: Доба підміненої історії
   order: 1850
   calendar_status: estimated
@@ -234,6 +254,7 @@ periods:
   description: Після зміни спогадів силою Ейди світ живе з підміненою історією; Сьомий Хокаґе відсутній, Шікамару очолює Коноху. Три роки до повернення
     вигнанця.
 - id: two-blue-vortex
+  color: '#356BC4'
   label: Криза Божественних дерев
   order: 1900
   calendar_status: open_end
