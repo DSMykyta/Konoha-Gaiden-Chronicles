@@ -4,7 +4,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import YAML from 'yaml';
 import {validateShippudenPrewar} from '../scripts/shippuden-prewar.mjs';
-const root=path.resolve(import.meta.dirname,'../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY');
+const root=path.resolve(import.meta.dirname,'../../00_MAIN_WORK_FOLDER/CHRONOLOGY');
 const read=(file)=>YAML.parse(fs.readFileSync(path.join(root,'data',file),'utf8'));
 const data=JSON.parse(fs.readFileSync(new URL('../public/data.json',import.meta.url),'utf8'));
 const plan=read('shippuden-placement.yaml');
