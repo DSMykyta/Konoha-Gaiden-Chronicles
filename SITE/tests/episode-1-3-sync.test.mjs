@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import YAML from 'yaml';
 
-const base = new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/', import.meta.url);
+const base = new URL('../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/', import.meta.url);
 const read = relative => YAML.parse(fs.readFileSync(new URL(relative, base), 'utf8'));
 const scene = read('scenes/sc-y0-0122-kakashi-checks-naruto-milk.yaml');
 const imported = read('scenes/sc-y0-0122-kakashi-preparation-retro.yaml');
