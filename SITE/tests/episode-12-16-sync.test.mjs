@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import YAML from 'yaml';
 
-const root = new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/', import.meta.url);
+const root = new URL('../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/', import.meta.url);
 const read = filename => YAML.parse(fs.readFileSync(new URL(filename, root), 'utf8'));
 const scene = filename => read('scenes/' + filename + '.yaml');
 const sources = read('sources.yaml');
