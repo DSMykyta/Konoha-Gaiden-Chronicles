@@ -3,7 +3,7 @@ import path from 'node:path';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import YAML from 'yaml';
-const root=path.resolve('../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data');
+const root=path.resolve('../00_MAIN_WORK_FOLDER/CHRONOLOGY/data');
 const load=file=>YAML.parse(fs.readFileSync(path.join(root,file),'utf8'));
 const anchors=new Map(load('time-anchors.yaml').anchors.map(a=>[a.id,a.date]));
 const activeYear=load('timeline-periods.yaml').calendar.current_year;
