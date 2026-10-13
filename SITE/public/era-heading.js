@@ -1,5 +1,9 @@
 'use strict';
 const TimelineEraHeading = {
+  color(period) {
+    const value=period?.color;
+    return typeof value==='string'&&/^#[0-9a-f]{6}$/i.test(value)?value:'#8797ac';
+  },
   segments(periods, calendar) {
     const lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
     const base=calendar.view_start_year??calendar.current_year,days=calendar.days_per_year;
@@ -8,7 +12,7 @@ const TimelineEraHeading = {
       // registry has year precision, so the heading changes at that year's start.
       const boundary=p.boundary_date||{year:p.from_year,month:1,day:1};
       const start=(boundary.year-base)*days+lengths.slice(0,boundary.month-1).reduce((sum,n)=>sum+n,0)+boundary.day-1;
-      return {id:p.id,label:p.label,start,order:p.order};
+      return {id:p.id,label:p.label,color:this.color(p),start,order:p.order};
     }).sort((a,b)=>a.start-b.start||a.order-b.order);
     const distinct=[];
     for(const row of rows){
