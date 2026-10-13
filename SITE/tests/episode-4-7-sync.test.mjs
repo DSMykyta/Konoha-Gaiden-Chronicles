@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import YAML from 'yaml';
 
-const base=new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/',import.meta.url);
+const base=new URL('../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/',import.meta.url);
 const read=path=>YAML.parse(fs.readFileSync(new URL(path,base),'utf8'));
 const scenes=[
  'sc-y0-0122-team7-rooftop.yaml',
@@ -54,7 +54,7 @@ test('unverified Land of Waves transition dates and Tora date are not silently c
  assert.equal(attack.placement.anchor_id,'ta-y0-0318');
  assert.equal(tora.placement,null);
  assert.equal(tora.review.time,'unknown');
- const audit=fs.readFileSync(new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/SERIES_SOURCE_SYNC_PROGRESS_UA.md',import.meta.url),'utf8');
+ const audit=fs.readFileSync(new URL('../../00_MAIN_WORK_FOLDER/CHRONOLOGY/SERIES_SOURCE_SYNC_PROGRESS_UA.md',import.meta.url),'utf8');
  assert(audit.includes('календарна невідповідність'));
  assert(audit.includes('ta-y0-0317'));
  assert(audit.includes('ta-y0-0318'));
