@@ -77,7 +77,7 @@ test('Kusagakure insertion gap remains between the two exams, without fabricated
  assert(built.scenes.filter(s=>s.arc_id==='arc-s2-second-chunin-exams').every(s=>s.date.year===64&&s.date.month===5));
  assert.deepEqual(ova.date,{year:66,month:9,day:2});
  assert(end.day<ova.day);
- assert(fs.readFileSync(new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/02_MASTER_CHRONOLOGY.md',import.meta.url),'utf8').includes('Рік 3, 11 червня'));
- assert(fs.readFileSync(new URL('../../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/01_CHRONOLOGY.md',import.meta.url),'utf8').includes('перед поверненням Команди 9'));
+ assert(fs.readFileSync(new URL('../../00_MAIN_WORK_FOLDER/02_MASTER_CHRONOLOGY.md',import.meta.url),'utf8').includes('Рік 3, 11 червня'));
+ assert(fs.readFileSync(new URL('../../00_MAIN_WORK_FOLDER/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/01_CHRONOLOGY.md',import.meta.url),'utf8').includes('перед поверненням Команди 9'));
  assert(!built.arcs.some(a=>a.id==='arc-s2-kusagakure-exam-placeholder'));
 });
