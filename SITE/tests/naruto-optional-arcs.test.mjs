@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-const project='../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/';
+const project='../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/';
 const source=JSON.parse(fs.readFileSync(project+'naruto-optional.yaml','utf8'));
 const data=JSON.parse(fs.readFileSync('public/data.json','utf8'));
 const NarutoArcToggle=vm.runInNewContext(fs.readFileSync('public/naruto-variant-toggle.js','utf8')+';NarutoArcToggle');
