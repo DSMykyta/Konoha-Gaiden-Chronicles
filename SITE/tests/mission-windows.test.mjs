@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import YAML from 'yaml';
 import {validateMissionWindows,physicalParticipants} from '../scripts/mission-windows.mjs';
-const root='../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/';
+const root='../00_MAIN_WORK_FOLDER/CHRONOLOGY/';
 const plan=JSON.parse(fs.readFileSync(root+'period-placement.json','utf8'));
 const data=JSON.parse(fs.readFileSync('public/data.json','utf8'));
 const get=id=>data.scenes.find(s=>s.id===id);
