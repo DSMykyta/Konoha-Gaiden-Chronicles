@@ -9,7 +9,7 @@ import {validateMissionWindows} from './mission-windows.mjs';
 import {validateShippudenPrewar} from './shippuden-prewar.mjs';
 import {adaptNarutoScene} from './naruto-variants.mjs';
 const project=path.resolve(import.meta.dirname,'..');
-const relative='KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data';
+const relative='00_MAIN_WORK_FOLDER/CHRONOLOGY/data';
 // Vercel builds current repository data. There is no browser GitHub token or write endpoint.
 let source=process.env.CHRONOLOGY_SOURCE_ROOT||path.resolve(project,'..');
 if(!fs.existsSync(path.join(source,relative))){
