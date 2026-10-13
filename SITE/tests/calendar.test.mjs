@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import YAML from 'yaml';
 import {validateCalendar,dayInYear} from '../scripts/calendar.mjs';
-const root='../KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/';
+const root='../00_MAIN_WORK_FOLDER/CHRONOLOGY/data/';
 const load=file=>YAML.parse(fs.readFileSync(root+file,'utf8'));
 const {calendar,periods}=load('timeline-periods.yaml'),anchors=load('time-anchors.yaml').anchors;
 const lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
@@ -35,6 +35,7 @@ test('Kakashi wartime and Nine-Tails phases belong to separate historical eras',
  assert.throws(()=>validateCalendar(calendar,[{...before,from_year:-100}],[]),/Invalid era year/);
  assert.throws(()=>validateCalendar(calendar,periods,[{id:'zero',date:{year:0}}]),/Invalid anchor year/);
  assert.throws(()=>validateCalendar(calendar,[{...get('part-i'),boundary_date:{year:61,month:13,day:1}}],[]),/Invalid era boundary date/);
+ assert.throws(()=>validateCalendar(calendar,[{...get('part-i'),color:'not-a-color'}],[]),/Invalid era color/);
 });
 
 test('invalid dates and years cannot silently fold into the current year',()=>{
