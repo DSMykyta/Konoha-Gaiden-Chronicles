@@ -45,7 +45,7 @@ test('the per-arc switch restores original scenes, names and physical Naruto, wi
  assert(!e.physical.includes('c-naruto'));
  assert.equal(other.text,otherText);
 });
-test('calendar decisions are exact, episodes follow working dates and last ramen is in year 61',()=>{
+test('calendar decisions are exact, episodes follow working dates and last ramen is in year 62',()=>{
  const plan=JSON.parse(fs.readFileSync(project.replace('/data/','/')+'period-placement.json','utf8'));
  const start=data.calendar.view_start_year;
  for(const [id,day] of Object.entries(plan.scene_days)){
@@ -54,7 +54,7 @@ test('calendar decisions are exact, episodes follow working dates and last ramen
   assert.equal(scene.day,(plan.calendar_base_year-start)*365+day,id);
  }
  const ramen=data.scenes.find(s=>s.id==='sc-y0-1216-iruka-naruto-last-ramen');
- assert.equal(ramen.date.year,61);
+ assert.equal(ramen.date.year,63);
  assert.equal(ramen.date.month,12);
  assert.equal(ramen.date.day,27);
 });

@@ -4,7 +4,7 @@ calendar:
   label: Літочислення Конохи
   epoch: Заснування Конохи
   epoch_year: 1
-  current_year: 61
+  current_year: 62
   days_per_year: 365
   year_numbering: positive-era-pair
   eras:
@@ -13,7 +13,7 @@ calendar:
   status: project_reconstruction
   basis: Заснування Конохи приблизно за 60 років до початку першої частини; рік заснування прийнято за 1. Номери років і межі епох — реконструкція
     проєкту, а не канонічне літочислення.
-  legacy_year_zero: 61
+  legacy_year_zero: 62
   references:
   - title: Rin no Sho
     locator: Профіль Першого Хокаґе, с. 116–117
@@ -164,15 +164,15 @@ periods:
   legacy_label: Перед Naruto
   from_year: 56
   calendar_era: after_founding
-  to_year: 60
+  to_year: 61
 - id: part-i
   color: '#CF771B'
   label: Епоха нових команд
   legacy_label: Naruto
   order: 1300
   calendar_status: placed
-  from_year: 61
-  to_year: 62
+  from_year: 62
+  to_year: 63
   description: Випуск Академії, формування нових команд, їхні місії й міжнародні іспити; вторгнення в Коноху й перехід влади до П’ятої Хокаґе.
   calendar_basis: project_reconstruction
   calendar_era: after_founding
@@ -184,10 +184,10 @@ periods:
   description: 'Наступні роки правління Цунаде: перебудова команд, нові ранги, тренування, місії й підготовка Акацукі до активних операцій.'
   calendar_basis: project_reconstruction
   legacy_label: Таймскіп
-  from_year: 61
-  boundary_date: {year: 61, month: 12, day: 28}
+  from_year: 62
+  boundary_date: {year: 62, month: 12, day: 28}
   calendar_era: after_founding
-  to_year: 64
+  to_year: 65
 - id: shippuden
   color: '#B23E60'
   label: Епоха Акацукі
@@ -196,9 +196,9 @@ periods:
   description: Від активного полювання на хвостатих до нападу Пейна, саміту Каґе й оголошення Четвертої війни.
   calendar_basis: project_reconstruction
   legacy_label: Shippūden
-  from_year: 64
+  from_year: 65
   calendar_era: after_founding
-  to_year: 66
+  to_year: 67
 - id: fourth-shinobi-war
   color: '#574C99'
   label: Четверта світова війна шинобі
@@ -206,8 +206,8 @@ periods:
   calendar_status: estimated
   calendar_basis: project_reconstruction
   calendar_era: after_founding
-  from_year: 66
-  to_year: 66
+  from_year: 67
+  to_year: 67
   description: Альянс шинобі проти Акацукі, війна з Десятихвостим, Нескінченне Цукуйомі й завершення глобального конфлікту.
 - id: post-fourth-war
   color: '#63874E'
@@ -217,9 +217,9 @@ periods:
   description: Відновлення після Четвертої війни, Шостий Хокаґе, Hiden-історії, місячна криза й формування нового миру.
   calendar_basis: project_reconstruction
   legacy_label: Після Четвертої війни
-  from_year: 66
+  from_year: 67
   calendar_era: after_founding
-  to_year: 75
+  to_year: 76
 - id: seventh-hokage
   color: '#C18E2C'
   label: Правління Сьомого Хокаґе
@@ -228,9 +228,9 @@ periods:
   description: Подальше зміцнення міжселищного миру, зростання міст і технологій, навчання нового покоління.
   calendar_basis: project_reconstruction
   legacy_label: Епоха Сьомого Хокаґе
-  from_year: 76
+  from_year: 77
   calendar_era: after_founding
-  to_year: 78
+  to_year: 79
 - id: boruto
   color: '#2D89B2'
   label: Епоха ніндзя-технологій
@@ -239,9 +239,9 @@ periods:
   description: Нове покоління команд, наукові ніндзя-інструменти, Кара, Кавакі та нові напади Ооцуцукі.
   calendar_basis: project_reconstruction
   legacy_label: Boruto
-  from_year: 79
+  from_year: 80
   calendar_era: after_founding
-  to_year: 81
+  to_year: 82
 - id: altered-history
   color: '#8D59AE'
   label: Доба підміненої історії
@@ -249,8 +249,8 @@ periods:
   calendar_status: estimated
   calendar_basis: project_reconstruction
   calendar_era: after_founding
-  from_year: 81
-  to_year: 83
+  from_year: 82
+  to_year: 84
   description: Після зміни спогадів силою Ейди світ живе з підміненою історією; Сьомий Хокаґе відсутній, Шікамару очолює Коноху. Три роки до повернення
     вигнанця.
 - id: two-blue-vortex
@@ -261,5 +261,5 @@ periods:
   description: Після трирічного проміжку виникають самосвідомі Божественні дерева; остаточна межа епохи ще відкрита.
   calendar_basis: project_reconstruction
   legacy_label: Two Blue Vortex
-  from_year: 84
+  from_year: 85
   calendar_era: after_founding

@@ -11,9 +11,9 @@ const plan=read('shippuden-placement.yaml');
 const coverage=JSON.parse(fs.readFileSync(path.join(root,'SHIPPUDEN_COVERAGE.json'),'utf8'));
 
 test('prewar travel, recovery and source intervals remain consistent across the expanded calendar',()=>{
- assert.equal(plan.reservations.find(r=>r.id==='naruto-jiraiya-timeskip').start,'61-12-28');
+ assert.equal(plan.reservations.find(r=>r.id==='naruto-jiraiya-timeskip').start,'62-12-28');
  assert.equal(validateShippudenPrewar(plan,data.scenes,data.links).reservations,8);
- const borrowed={...data.scenes.find(s=>s.id==='sc-s2-kiba-kakashi-training'),date:{year:66,month:9,day:29}};
+ const borrowed={...data.scenes.find(s=>s.id==='sc-s2-kiba-kakashi-training'),date:{year:67,month:9,day:29}};
  assert.throws(()=>validateShippudenPrewar(plan,[...data.scenes.filter(s=>s.id!==borrowed.id),borrowed],data.links),/borrows c-kakashi/);
 });
 test('every prewar source episode has an existing scene without claiming a full audit',()=>{

@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import YAML from 'yaml';
 
 const data=JSON.parse(fs.readFileSync(new URL('../public/data.json',import.meta.url),'utf8'));
-const originShift=(61-data.calendar.view_start_year)*365;
+const originShift=(62-data.calendar.view_start_year)*365;
 const root=path.resolve(import.meta.dirname,'../../00_MAIN_WORK_FOLDER/CHRONOLOGY/data');
 const load=file=>YAML.parse(fs.readFileSync(path.join(root,file),'utf8'));
 const traveler='c-unnamed-travelling-performer';
@@ -20,7 +20,7 @@ test('Time Slip publishes only the past and uses the reconstructed founding cale
  assert.deepEqual(arc.episode_ids.map(id=>data.episodes.find(e=>e.id===id).source_episode),[129,130,131,132,133,134,135,136]);
  assert.equal(moments.length,95);
  for(const scene of scenes){
-  assert.equal(scene.date.year,61);assert.equal(scene.date_status,'working');
+  assert.equal(scene.date.year,63);assert.equal(scene.date_status,'working');
   assert(scene.day>=272+originShift&&scene.day<=278+originShift,scene.id);
  }
  assert.equal(arc.day_start,272+originShift);assert.equal(arc.day_end,278+originShift);
@@ -71,7 +71,7 @@ test('conflicting autumn missions move while independent Team 8 scenes stay corr
   ['sc-y0-1005-animal-district-four-warriors',11,13],
   ['sc-y0-1006-tsunade-approves-bikochu',10,12],
   ['sc-y0-1010-kurosuki-mission-assigned',10,19],
- ]){const s=data.scenes.find(s=>s.id===id);assert.deepEqual([s.date.year,s.date.month,s.date.day],[61,month,date],id);}
+ ]){const s=data.scenes.find(s=>s.id===id);assert.deepEqual([s.date.year,s.date.month,s.date.day],[62,month,date],id);}
 });
 
 test('new evidence points to available transcript files and the editorial date decision',()=>{

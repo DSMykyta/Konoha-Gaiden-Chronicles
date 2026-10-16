@@ -27,7 +27,7 @@ test('Shippuden 394–413 has one distinct timeskip exam arc without duplicated 
    assert(scene,id);
    assert.equal(scene.episode_id,episode.id);
    assert.equal(scene.source_continuity_id,'main');
-   assert.equal(scene.date.year,64);
+   assert.equal(scene.date.year,66);
    assert(scene.events.length>0,id);
    assert(scene.events.every(e=>e.origin==='F'),id);
   }
@@ -47,7 +47,7 @@ test('OVA tournament has its own provenance, complete structure and explicit ord
  assert.equal(scenes.flatMap(s=>s.events).length,11);
  for(const scene of scenes){
   assert.equal(scene.source_continuity_id,'alt-ova-chunin-fire');
-  assert.deepEqual(scene.date,{year:66,month:9,day:2});
+  assert.deepEqual(scene.date,{year:67,month:9,day:2});
   assert(scene.events.every(e=>e.origin==='O'));
   assert(scene.events.every(e=>e.evidence_ids.every(id=>built.sources.evidence.some(ev=>ev.id===id))));
   assert(scene.events.every(e=>e.involvement.every(p=>p.mode==='physical')));
@@ -70,12 +70,12 @@ test('Kusagakure insertion gap remains between the two exams, without fabricated
  const end=built.scenes.find(s=>s.id==='sc-s2-second-exam-promotions');
  const ova=built.scenes.find(s=>s.id==='sc-alt-s2-ova-chunin-field');
  assert(end && ova);
- assert.deepEqual(end.date,{year:64,month:5,day:20});
+ assert.deepEqual(end.date,{year:65,month:5,day:20});
  const gaara=built.scenes.find(s=>s.id==='sc-s2-gaara-becomes-kazekage');
- assert.deepEqual(gaara.date,{year:64,month:4,day:20});
+ assert.deepEqual(gaara.date,{year:65,month:4,day:20});
  assert(gaara.day < built.scenes.find(s=>s.id==='sc-s2-exam-cohost-plan').day);
- assert(built.scenes.filter(s=>s.arc_id==='arc-s2-second-chunin-exams').every(s=>s.date.year===64&&s.date.month===5));
- assert.deepEqual(ova.date,{year:66,month:9,day:2});
+ assert(built.scenes.filter(s=>s.arc_id==='arc-s2-second-chunin-exams').every(s=>s.date.year===66&&s.date.month===5));
+ assert.deepEqual(ova.date,{year:67,month:9,day:2});
  assert(end.day<ova.day);
  assert(fs.readFileSync(new URL('../../00_MAIN_WORK_FOLDER/02_MASTER_CHRONOLOGY.md',import.meta.url),'utf8').includes('Рік 3, 11 червня'));
  assert(fs.readFileSync(new URL('../../00_MAIN_WORK_FOLDER/GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/01_CHRONOLOGY.md',import.meta.url),'utf8').includes('перед поверненням Команди 9'));

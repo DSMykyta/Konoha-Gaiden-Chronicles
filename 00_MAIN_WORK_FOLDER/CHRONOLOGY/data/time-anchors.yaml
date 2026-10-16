@@ -1,7 +1,7 @@
 schema_version: 1
 calendar:
   id: "konoha-founding"
-  current_year: 61
+  current_year: 62
   epoch_year: 1
   default_era: "after_founding"
   days_per_year: 365
@@ -18,11 +18,11 @@ calendar:
     - 31
     - 30
     - 31
-  note: "Літочислення від заснування Конохи, рік заснування = 1. Рік 61 відповідає колишньому року 0; номери років реконструйовано для проєкту."
+  note: "Літочислення від заснування Конохи, рік заснування = 1. Рік 62 відповідає колишньому року 0; номери років реконструйовано для проєкту."
 anchors:
   - id: "ta-team-formation"
     date:
-      year: 61
+      year: 62
       month: 1
       day: 22
     precision: "day"
@@ -35,7 +35,7 @@ anchors:
     reason: "Project chronology currently places team formation on 22.01."
   - id: "ta-sasuke-recovery-24"
     date:
-      year: 61
+      year: 62
       month: 9
       day: 24
     precision: "day"
@@ -46,7 +46,7 @@ anchors:
     review: "accepted"
     reason: "Inherited working date from v10; internal order is modeled separately."
   - id: "ta-y0-0118"
-    date: {year: 61, month: 1, day: 18}
+    date: {year: 62, month: 1, day: 18}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -54,7 +54,7 @@ anchors:
     review: "accepted"
     reason: "Inherited working date from flat v10."
   - id: "ta-y0-0119"
-    date: {year: 61, month: 1, day: 19}
+    date: {year: 62, month: 1, day: 19}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -62,7 +62,7 @@ anchors:
     review: "accepted"
     reason: "Inherited working date from flat v10."
   - id: "ta-y0-0120"
-    date: {year: 61, month: 1, day: 20}
+    date: {year: 62, month: 1, day: 20}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -70,7 +70,7 @@ anchors:
     review: "accepted"
     reason: "Inherited working date from flat v10."
   - id: "ta-y0-0121"
-    date: {year: 61, month: 1, day: 21}
+    date: {year: 62, month: 1, day: 21}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -78,7 +78,7 @@ anchors:
     review: "accepted"
     reason: "Inherited working date from flat v10."
   - id: "ta-y0-0123"
-    date: {year: 61, month: 1, day: 23}
+    date: {year: 62, month: 1, day: 23}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -86,7 +86,7 @@ anchors:
     review: "accepted"
     reason: "Working date immediately after team formation in the project chronology."
   - id: "ta-y0-0124"
-    date: {year: 61, month: 1, day: 24}
+    date: {year: 62, month: 1, day: 24}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -94,7 +94,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: inherited."
   - id: "ta-y0-0125"
-    date: {year: 61, month: 1, day: 25}
+    date: {year: 62, month: 1, day: 25}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -102,7 +102,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: derived."
   - id: "ta-y0-0126"
-    date: {year: 61, month: 1, day: 26}
+    date: {year: 62, month: 1, day: 26}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -110,7 +110,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: derived."
   - id: "ta-y0-0127"
-    date: {year: 61, month: 1, day: 27}
+    date: {year: 62, month: 1, day: 27}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -118,7 +118,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: derived."
   - id: "ta-y0-0128"
-    date: {year: 61, month: 1, day: 28}
+    date: {year: 62, month: 1, day: 28}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -126,7 +126,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: derived."
   - id: "ta-y0-0129"
-    date: {year: 61, month: 1, day: 29}
+    date: {year: 62, month: 1, day: 29}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -134,7 +134,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: derived."
   - id: "ta-y0-0201"
-    date: {year: 61, month: 2, day: 1}
+    date: {year: 62, month: 2, day: 1}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -142,7 +142,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: derived."
   - id: "ta-y0-0202"
-    date: {year: 61, month: 2, day: 2}
+    date: {year: 62, month: 2, day: 2}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -150,7 +150,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: inherited."
   - id: "ta-y0-0203"
-    date: {year: 61, month: 2, day: 3}
+    date: {year: 62, month: 2, day: 3}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -158,7 +158,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: inherited."
   - id: "ta-y0-0204"
-    date: {year: 61, month: 2, day: 4}
+    date: {year: 62, month: 2, day: 4}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -166,7 +166,7 @@ anchors:
     review: "accepted"
     reason: "Working date inherited from flat v10; legacy certainty: inherited."
   - id: "ta-y0-0315"
-    date: {year: 61, month: 3, day: 15}
+    date: {year: 62, month: 3, day: 15}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -174,7 +174,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0316"
-    date: {year: 61, month: 3, day: 16}
+    date: {year: 62, month: 3, day: 16}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -182,7 +182,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0317"
-    date: {year: 61, month: 3, day: 17}
+    date: {year: 62, month: 3, day: 17}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -190,7 +190,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0318"
-    date: {year: 61, month: 3, day: 18}
+    date: {year: 62, month: 3, day: 18}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -198,7 +198,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0322"
-    date: {year: 61, month: 3, day: 22}
+    date: {year: 62, month: 3, day: 22}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -206,7 +206,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0328"
-    date: {year: 61, month: 3, day: 28}
+    date: {year: 62, month: 3, day: 28}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -214,7 +214,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0329"
-    date: {year: 61, month: 3, day: 29}
+    date: {year: 62, month: 3, day: 29}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -222,7 +222,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0330"
-    date: {year: 61, month: 3, day: 30}
+    date: {year: 62, month: 3, day: 30}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -230,7 +230,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0413"
-    date: {year: 61, month: 4, day: 13}
+    date: {year: 62, month: 4, day: 13}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -238,7 +238,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from flat v10; not asserted as an official canon calendar date."
   - id: "ta-y0-0414"
-    date: {year: 61, month: 4, day: 14}
+    date: {year: 62, month: 4, day: 14}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -246,7 +246,7 @@ anchors:
     review: "accepted"
     reason: "Reconstructed project placement; source does not establish this exact calendar date."
   - id: "ta-y0-0415"
-    date: {year: 61, month: 4, day: 15}
+    date: {year: 62, month: 4, day: 15}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -254,7 +254,7 @@ anchors:
     review: "accepted"
     reason: "Reconstructed project placement; source does not establish this exact calendar date."
   - id: "ta-y0-0416"
-    date: {year: 61, month: 4, day: 16}
+    date: {year: 62, month: 4, day: 16}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -262,7 +262,7 @@ anchors:
     review: "accepted"
     reason: "Reconstructed project placement; source does not establish this exact calendar date."
   - id: "ta-y0-0624"
-    date: {year: 61, month: 6, day: 24}
+    date: {year: 62, month: 6, day: 24}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -270,7 +270,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10; internal scene order is modeled separately."
   - id: "ta-y0-0701"
-    date: {year: 61, month: 7, day: 1}
+    date: {year: 62, month: 7, day: 1}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -278,7 +278,7 @@ anchors:
     review: "accepted"
     reason: "Exact working project date inherited from v9/v10."
   - id: "ta-y0-0702"
-    date: {year: 61, month: 7, day: 2}
+    date: {year: 62, month: 7, day: 2}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -286,7 +286,7 @@ anchors:
     review: "accepted"
     reason: "Exact working project date inherited from v9/v10."
   - id: "ta-y0-0705"
-    date: {year: 61, month: 7, day: 5}
+    date: {year: 62, month: 7, day: 5}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -294,7 +294,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10."
   - id: "ta-y0-0706"
-    date: {year: 61, month: 7, day: 6}
+    date: {year: 62, month: 7, day: 6}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -302,7 +302,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10."
   - id: "ta-y0-0707"
-    date: {year: 61, month: 7, day: 7}
+    date: {year: 62, month: 7, day: 7}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -310,7 +310,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10."
   - id: "ta-y0-0722"
-    date: {year: 61, month: 7, day: 22}
+    date: {year: 62, month: 7, day: 22}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -318,7 +318,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the fifteenth training day."
   - id: "ta-y0-0727"
-    date: {year: 61, month: 7, day: 27}
+    date: {year: 62, month: 7, day: 27}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -326,7 +326,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for invasion-planning checkpoint; Rasa's death itself is only constrained to before this point."
   - id: "ta-y0-0728"
-    date: {year: 61, month: 7, day: 28}
+    date: {year: 62, month: 7, day: 28}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -334,7 +334,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for Naruto's ravine/Gamabunta training."
   - id: "ta-y0-0731"
-    date: {year: 61, month: 7, day: 31}
+    date: {year: 62, month: 7, day: 31}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -342,7 +342,7 @@ anchors:
     review: "accepted"
     reason: "Working project date immediately before finals; some retrospective material remains approximate within this window."
   - id: "ta-y0-0801"
-    date: {year: 61, month: 8, day: 1}
+    date: {year: 62, month: 8, day: 1}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -350,7 +350,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for Chūnin Finals and Konoha Crush."
   - id: "ta-y0-0802"
-    date: {year: 61, month: 8, day: 2}
+    date: {year: 62, month: 8, day: 2}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -358,7 +358,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the day after the invasion."
   - id: "ta-y0-0803"
-    date: {year: 61, month: 8, day: 3}
+    date: {year: 62, month: 8, day: 3}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -366,7 +366,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for Hiruzen's funeral."
   - id: "ta-y0-0804"
-    date: {year: 61, month: 8, day: 4}
+    date: {year: 62, month: 8, day: 4}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -374,7 +374,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for early Search for Tsunade events and nearby retrospectives."
   - id: "ta-y0-0822"
-    date: {year: 61, month: 8, day: 22}
+    date: {year: 62, month: 8, day: 22}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -382,7 +382,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for early Rasengan training."
   - id: "ta-y0-0824"
-    date: {year: 61, month: 8, day: 24}
+    date: {year: 62, month: 8, day: 24}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -390,7 +390,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for Rasengan power-stage training."
   - id: "ta-y0-0825"
-    date: {year: 61, month: 8, day: 25}
+    date: {year: 62, month: 8, day: 25}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -398,7 +398,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the Tanzaku meetings and wager."
   - id: "ta-y0-0826"
-    date: {year: 61, month: 8, day: 26}
+    date: {year: 62, month: 8, day: 26}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -406,7 +406,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the final Rasengan stage and Shizune explanation."
   - id: "ta-y0-0831"
-    date: {year: 61, month: 8, day: 31}
+    date: {year: 62, month: 8, day: 31}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -414,7 +414,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the final night of Naruto and Tsunade's wager."
   - id: "ta-y0-0901"
-    date: {year: 61, month: 9, day: 1}
+    date: {year: 62, month: 9, day: 1}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -422,7 +422,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the Sannin confrontation and Tsunade's decision."
   - id: "ta-y0-0902"
-    date: {year: 61, month: 9, day: 2}
+    date: {year: 62, month: 9, day: 2}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -430,7 +430,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for return-to-Konoha material and adjacent anime-only incidents."
   - id: "ta-y0-0903"
-    date: {year: 61, month: 9, day: 3}
+    date: {year: 62, month: 9, day: 3}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -438,7 +438,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for episode 101 and adjacent ALT retrospective/movie placements."
   - id: "ta-y0-0904"
-    date: {year: 61, month: 9, day: 4}
+    date: {year: 62, month: 9, day: 4}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -446,7 +446,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
   - id: "ta-y0-0905"
-    date: {year: 61, month: 9, day: 5}
+    date: {year: 62, month: 9, day: 5}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -454,7 +454,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
   - id: "ta-y0-0906"
-    date: {year: 61, month: 9, day: 6}
+    date: {year: 62, month: 9, day: 6}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -462,7 +462,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
   - id: "ta-y0-0907"
-    date: {year: 61, month: 9, day: 7}
+    date: {year: 62, month: 9, day: 7}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -470,7 +470,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for adjacent filler/OVA material."
   - id: "ta-y0-0908"
-    date: {year: 61, month: 9, day: 8}
+    date: {year: 62, month: 9, day: 8}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -478,7 +478,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for main/ALT material."
   - id: "ta-y0-0909"
-    date: {year: 61, month: 9, day: 9}
+    date: {year: 62, month: 9, day: 9}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -486,7 +486,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for main/ALT material."
   - id: "ta-y0-0910"
-    date: {year: 61, month: 9, day: 10}
+    date: {year: 62, month: 9, day: 10}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -494,7 +494,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for main/ALT material."
   - id: "ta-y0-0911"
-    date: {year: 61, month: 9, day: 11}
+    date: {year: 62, month: 9, day: 11}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -502,7 +502,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for main/ALT material."
   - id: "ta-y0-0912"
-    date: {year: 61, month: 9, day: 12}
+    date: {year: 62, month: 9, day: 12}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -510,7 +510,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for main/ALT material."
   - id: "ta-y0-0913"
-    date: {year: 61, month: 9, day: 13}
+    date: {year: 62, month: 9, day: 13}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -518,7 +518,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0914"
-    date: {year: 61, month: 9, day: 14}
+    date: {year: 62, month: 9, day: 14}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -526,7 +526,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0915"
-    date: {year: 61, month: 9, day: 15}
+    date: {year: 62, month: 9, day: 15}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -534,7 +534,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0916"
-    date: {year: 61, month: 9, day: 16}
+    date: {year: 62, month: 9, day: 16}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -542,7 +542,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0917"
-    date: {year: 61, month: 9, day: 17}
+    date: {year: 62, month: 9, day: 17}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -550,7 +550,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0918"
-    date: {year: 61, month: 9, day: 18}
+    date: {year: 62, month: 9, day: 18}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -558,7 +558,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0919"
-    date: {year: 61, month: 9, day: 19}
+    date: {year: 62, month: 9, day: 19}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -566,7 +566,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0920"
-    date: {year: 61, month: 9, day: 20}
+    date: {year: 62, month: 9, day: 20}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -574,7 +574,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0921"
-    date: {year: 61, month: 9, day: 21}
+    date: {year: 62, month: 9, day: 21}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -582,7 +582,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for retrospective placement."
   - id: "ta-y0-0922"
-    date: {year: 61, month: 9, day: 22}
+    date: {year: 62, month: 9, day: 22}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -590,7 +590,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for Sasuke's hospital conflict, Sound Four approach and departure from Konoha."
   - id: "ta-y0-0923"
-    date: {year: 61, month: 9, day: 23}
+    date: {year: 62, month: 9, day: 23}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -598,7 +598,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the Sasuke Retrieval Team departure and first pursuit battles."
   - id: "ta-y0-0924"
-    date: {year: 61, month: 9, day: 24}
+    date: {year: 62, month: 9, day: 24}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -606,7 +606,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the dense middle and climax of the Sasuke Retrieval mission."
   - id: "ta-y0-0925"
-    date: {year: 61, month: 9, day: 25}
+    date: {year: 62, month: 9, day: 25}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -614,7 +614,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for immediate aftermath of the Sasuke Retrieval mission and Sasuke reaching Orochimaru."
   - id: "ta-y0-0926"
-    date: {year: 61, month: 9, day: 26}
+    date: {year: 62, month: 9, day: 26}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -622,7 +622,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Rice Fields investigation."
   - id: "ta-y0-0927"
-    date: {year: 61, month: 9, day: 27}
+    date: {year: 62, month: 9, day: 27}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -630,7 +630,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Rice Fields investigation."
   - id: "ta-y0-0928"
-    date: {year: 61, month: 9, day: 28}
+    date: {year: 62, month: 9, day: 28}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -638,7 +638,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Rice Fields investigation."
   - id: "ta-y0-0930"
-    date: {year: 61, month: 9, day: 30}
+    date: {year: 62, month: 9, day: 30}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -646,7 +646,7 @@ anchors:
     review: "accepted"
     reason: "Episode 236 places the flashback after the failed Sasuke Retrieval mission; the exact 30.09 project date is inherited from v9/v10."
   - id: "ta-y0-1001"
-    date: {year: 61, month: 10, day: 1}
+    date: {year: 62, month: 10, day: 1}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -654,7 +654,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
   - id: "ta-y0-1002"
-    date: {year: 61, month: 10, day: 2}
+    date: {year: 62, month: 10, day: 2}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -662,7 +662,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
   - id: "ta-y0-1003"
-    date: {year: 61, month: 10, day: 3}
+    date: {year: 62, month: 10, day: 3}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -670,7 +670,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
   - id: "ta-y0-1004"
-    date: {year: 61, month: 10, day: 4}
+    date: {year: 62, month: 10, day: 4}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -678,7 +678,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Mizuki Tracking Mission; source establishes sequence but not this exact calendar day."
   - id: "ta-y0-1005"
-    date: {year: 61, month: 10, day: 5}
+    date: {year: 62, month: 10, day: 5}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -686,7 +686,7 @@ anchors:
     review: "accepted"
     reason: "Working project date for the Animal District retrospective and the separate alternative Gelel film placement."
   - id: "ta-y0-1006"
-    date: {year: 61, month: 10, day: 6}
+    date: {year: 62, month: 10, day: 6}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -694,7 +694,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the opening of the Bikōchū Search Mission."
   - id: "ta-y0-1007"
-    date: {year: 61, month: 10, day: 7}
+    date: {year: 62, month: 10, day: 7}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -702,7 +702,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Bikōchū search and Kamizuru encounter."
   - id: "ta-y0-1008"
-    date: {year: 61, month: 10, day: 8}
+    date: {year: 62, month: 10, day: 8}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -710,7 +710,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Bikōchū mission finale."
   - id: "ta-y0-1010-kurosuki"
-    date: {year: 61, month: 10, day: 10}
+    date: {year: 62, month: 10, day: 10}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -718,7 +718,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Kurosuki mission; not made exact by Naruto birthday evidence."
   - id: "ta-y0-1011-kurosuki"
-    date: {year: 61, month: 10, day: 11}
+    date: {year: 62, month: 10, day: 11}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -726,7 +726,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for Kurosuki arc continuation."
   - id: "ta-y0-1012-kurosuki"
-    date: {year: 61, month: 10, day: 12}
+    date: {year: 62, month: 10, day: 12}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -734,7 +734,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for Kurosuki arc continuation."
   - id: "ta-alt-y0-1012-uzumaki-chronicles"
-    date: {year: 61, month: 10, day: 12}
+    date: {year: 62, month: 10, day: 12}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -742,7 +742,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; Uzumaki Chronicles has incompatible regional versions and no canonical calendar placement."
   - id: "ta-y0-1013-kurosuki"
-    date: {year: 61, month: 10, day: 13}
+    date: {year: 62, month: 10, day: 13}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -750,7 +750,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for Kurosuki arc continuation."
   - id: "ta-y0-1014-kurosuki"
-    date: {year: 61, month: 10, day: 14}
+    date: {year: 62, month: 10, day: 14}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -758,7 +758,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for Kurosuki arc finale."
   - id: "ta-y0-1015"
-    date: {year: 61, month: 10, day: 15}
+    date: {year: 62, month: 10, day: 15}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -766,7 +766,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Academy Student Lead Mission."
   - id: "ta-y0-1017"
-    date: {year: 61, month: 10, day: 17}
+    date: {year: 62, month: 10, day: 17}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -774,7 +774,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Gosunkugi Capture Mission opening."
   - id: "ta-y0-1018"
-    date: {year: 61, month: 10, day: 18}
+    date: {year: 62, month: 10, day: 18}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -782,7 +782,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Gosunkugi Capture Mission finale."
   - id: "ta-y0-1019"
-    date: {year: 61, month: 10, day: 19}
+    date: {year: 62, month: 10, day: 19}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -790,7 +790,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Mondai and Potcha infiltration."
   - id: "ta-y0-1020-birds"
-    date: {year: 61, month: 10, day: 20}
+    date: {year: 62, month: 10, day: 20}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -798,7 +798,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Cursed Warrior mission opening."
   - id: "ta-alt-y0-1020-path-ninja-2"
-    date: {year: 61, month: 10, day: 20}
+    date: {year: 62, month: 10, day: 20}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -806,7 +806,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; Path of the Ninja 2 is not part of main continuity."
   - id: "ta-y0-1021-birds"
-    date: {year: 61, month: 10, day: 21}
+    date: {year: 62, month: 10, day: 21}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -814,7 +814,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Cursed Warrior investigation."
   - id: "ta-y0-1022-birds"
-    date: {year: 61, month: 10, day: 22}
+    date: {year: 62, month: 10, day: 22}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -822,7 +822,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Cursed Warrior mission escalation."
   - id: "ta-y0-1023"
-    date: {year: 61, month: 10, day: 23}
+    date: {year: 62, month: 10, day: 23}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -830,7 +830,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Cursed Warrior finale."
   - id: "ta-y0-1024"
-    date: {year: 61, month: 10, day: 24}
+    date: {year: 62, month: 10, day: 24}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -838,7 +838,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the cooking-nin incident."
   - id: "ta-y0-1026"
-    date: {year: 61, month: 10, day: 26}
+    date: {year: 62, month: 10, day: 26}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -846,7 +846,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Kaima Capture Mission opening."
   - id: "ta-y0-1027"
-    date: {year: 61, month: 10, day: 27}
+    date: {year: 62, month: 10, day: 27}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -854,7 +854,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Kaima Capture Mission investigation."
   - id: "ta-y0-1028"
-    date: {year: 61, month: 10, day: 28}
+    date: {year: 62, month: 10, day: 28}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -862,7 +862,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Demon Island infiltration and fleet attack."
   - id: "ta-y0-1029"
-    date: {year: 61, month: 10, day: 29}
+    date: {year: 62, month: 10, day: 29}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -870,7 +870,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Kaima Capture Mission finale."
   - id: "ta-y0-1030"
-    date: {year: 61, month: 10, day: 30}
+    date: {year: 62, month: 10, day: 30}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -878,7 +878,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Kunihisa escort incident."
   - id: "ta-y0-1031"
-    date: {year: 61, month: 10, day: 31}
+    date: {year: 62, month: 10, day: 31}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -886,7 +886,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Buried Gold mission opening."
   - id: "ta-y0-1101"
-    date: {year: 61, month: 11, day: 1}
+    date: {year: 62, month: 11, day: 1}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -894,7 +894,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Buried Gold mission finale."
   - id: "ta-alt-y0-1101-uc2"
-    date: {year: 61, month: 11, day: 1}
+    date: {year: 62, month: 11, day: 1}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -902,7 +902,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; Uzumaki Chronicles 2 remains outside main continuity."
   - id: "ta-y0-1102-courier"
-    date: {year: 61, month: 11, day: 2}
+    date: {year: 62, month: 11, day: 2}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -910,7 +910,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for episode 177."
   - id: "ta-alt-y0-1102-uc2"
-    date: {year: 61, month: 11, day: 2}
+    date: {year: 62, month: 11, day: 2}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -918,7 +918,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; middle Uzumaki Chronicles 2 segment."
   - id: "ta-y0-1103-hoshi"
-    date: {year: 61, month: 11, day: 3}
+    date: {year: 62, month: 11, day: 3}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -926,7 +926,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Star Guard Mission opening."
   - id: "ta-alt-y0-1103-uc2"
-    date: {year: 61, month: 11, day: 3}
+    date: {year: 62, month: 11, day: 3}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -934,7 +934,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; Uzumaki Chronicles 2 finale."
   - id: "ta-y0-1104"
-    date: {year: 61, month: 11, day: 4}
+    date: {year: 62, month: 11, day: 4}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -942,7 +942,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Star Guard investigation and Sumaru bait operation."
   - id: "ta-y0-1105"
-    date: {year: 61, month: 11, day: 5}
+    date: {year: 62, month: 11, day: 5}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -950,7 +950,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Natsuhi/Akahoshi truth and confrontation."
   - id: "ta-y0-1106"
-    date: {year: 61, month: 11, day: 6}
+    date: {year: 62, month: 11, day: 6}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -958,7 +958,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Star Guard Mission finale."
   - id: "ta-y0-1107"
-    date: {year: 61, month: 11, day: 7}
+    date: {year: 62, month: 11, day: 7}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -966,7 +966,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Akamaru Monitoring Mission."
   - id: "ta-y0-1108"
-    date: {year: 61, month: 11, day: 8}
+    date: {year: 62, month: 11, day: 8}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -974,7 +974,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Onbaa incident."
   - id: "ta-y0-1109"
-    date: {year: 61, month: 11, day: 9}
+    date: {year: 62, month: 11, day: 9}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -982,7 +982,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Funeral Proxy Mission."
   - id: "ta-y0-1110-greens"
-    date: {year: 61, month: 11, day: 10}
+    date: {year: 62, month: 11, day: 10}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -990,7 +990,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Land of Greens escort opening."
   - id: "ta-alt-y0-1110-phantom"
-    date: {year: 61, month: 11, day: 10}
+    date: {year: 62, month: 11, day: 10}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -998,7 +998,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; Phantom Fortress has no canonical calendar date."
   - id: "ta-y0-1111-greens"
-    date: {year: 61, month: 11, day: 11}
+    date: {year: 62, month: 11, day: 11}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1006,7 +1006,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Ruiga battle."
   - id: "ta-y0-1112-greens"
-    date: {year: 61, month: 11, day: 12}
+    date: {year: 62, month: 11, day: 12}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1014,7 +1014,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Jiga battle and Haruna development."
   - id: "ta-y0-1113-greens"
-    date: {year: 61, month: 11, day: 13}
+    date: {year: 62, month: 11, day: 13}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1022,7 +1022,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Renga finale."
   - id: "ta-y0-1114-fuku"
-    date: {year: 61, month: 11, day: 14}
+    date: {year: 62, month: 11, day: 14}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1030,7 +1030,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for the Fuku matchmaking mission."
   - id: "ta-y0-1115-dojo"
-    date: {year: 61, month: 11, day: 15}
+    date: {year: 62, month: 11, day: 15}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1038,7 +1038,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 193."
   - id: "ta-y0-1116-haunted-castle"
-    date: {year: 61, month: 11, day: 16}
+    date: {year: 62, month: 11, day: 16}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1046,7 +1046,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 194."
   - id: "ta-y0-1117-ryudoin"
-    date: {year: 61, month: 11, day: 17}
+    date: {year: 62, month: 11, day: 17}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1054,7 +1054,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 195."
   - id: "ta-y0-1118-ryudoin"
-    date: {year: 61, month: 11, day: 18}
+    date: {year: 62, month: 11, day: 18}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1062,7 +1062,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 196."
   - id: "ta-alt-y0-1118-crescent-moon"
-    date: {year: 61, month: 11, day: 18}
+    date: {year: 62, month: 11, day: 18}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1070,7 +1070,7 @@ anchors:
     review: "accepted"
     reason: "Alternative movie placement only; the film has no canonical calendar date."
   - id: "ta-y0-1119-genno"
-    date: {year: 61, month: 11, day: 19}
+    date: {year: 62, month: 11, day: 19}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1078,7 +1078,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 197."
   - id: "ta-y0-1120-genno"
-    date: {year: 61, month: 11, day: 20}
+    date: {year: 62, month: 11, day: 20}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1086,7 +1086,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episodes 198–199."
   - id: "ta-alt-y0-1120-clash2"
-    date: {year: 61, month: 11, day: 20}
+    date: {year: 62, month: 11, day: 20}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1094,7 +1094,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; Clash of Ninja Revolution 2 has no canonical calendar date."
   - id: "ta-y0-1121-genno"
-    date: {year: 61, month: 11, day: 21}
+    date: {year: 62, month: 11, day: 21}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1102,7 +1102,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 200."
   - id: "ta-alt-y0-1121-clash2"
-    date: {year: 61, month: 11, day: 21}
+    date: {year: 62, month: 11, day: 21}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1110,7 +1110,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; middle Clash of Ninja Revolution 2 segment."
   - id: "ta-y0-1122-genno"
-    date: {year: 61, month: 11, day: 22}
+    date: {year: 62, month: 11, day: 22}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1118,7 +1118,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 201."
   - id: "ta-alt-y0-1122-clash2"
-    date: {year: 61, month: 11, day: 22}
+    date: {year: 62, month: 11, day: 22}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1126,7 +1126,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; Clash of Ninja Revolution 2 finale."
   - id: "ta-y0-1123-recap"
-    date: {year: 61, month: 11, day: 23}
+    date: {year: 62, month: 11, day: 23}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1134,7 +1134,7 @@ anchors:
     review: "accepted"
     reason: "Legacy date for episode 202 recap; retained only as a source/meta anchor, not an in-world event."
   - id: "ta-y0-1124-yakumo"
-    date: {year: 61, month: 11, day: 24}
+    date: {year: 62, month: 11, day: 24}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1142,7 +1142,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 203."
   - id: "ta-y0-1125-yakumo"
-    date: {year: 61, month: 11, day: 25}
+    date: {year: 62, month: 11, day: 25}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1150,7 +1150,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episodes 204–205."
   - id: "ta-y0-1126-yakumo"
-    date: {year: 61, month: 11, day: 26}
+    date: {year: 62, month: 11, day: 26}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1158,7 +1158,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 206."
   - id: "ta-y0-1127-yakumo"
-    date: {year: 61, month: 11, day: 27}
+    date: {year: 62, month: 11, day: 27}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1166,7 +1166,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 207."
   - id: "ta-y0-1128-shinemon"
-    date: {year: 61, month: 11, day: 28}
+    date: {year: 62, month: 11, day: 28}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1174,7 +1174,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 208."
   - id: "ta-y0-1129-gantetsu"
-    date: {year: 61, month: 11, day: 29}
+    date: {year: 62, month: 11, day: 29}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1182,7 +1182,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 209."
   - id: "ta-y0-1130-gantetsu"
-    date: {year: 61, month: 11, day: 30}
+    date: {year: 62, month: 11, day: 30}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1190,7 +1190,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 210."
   - id: "ta-y0-1201-gantetsu"
-    date: {year: 61, month: 12, day: 1}
+    date: {year: 62, month: 12, day: 1}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1198,7 +1198,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 211."
   - id: "ta-alt-y0-1201-nd2eu"
-    date: {year: 61, month: 12, day: 1}
+    date: {year: 62, month: 12, day: 1}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1206,7 +1206,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; exact in-world date is not official."
   - id: "ta-y0-1202-gantetsu"
-    date: {year: 61, month: 12, day: 2}
+    date: {year: 62, month: 12, day: 2}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1214,7 +1214,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 212."
   - id: "ta-alt-y0-1202-nd2eu"
-    date: {year: 61, month: 12, day: 2}
+    date: {year: 62, month: 12, day: 2}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1222,7 +1222,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; middle story segment."
   - id: "ta-y0-1203-menma"
-    date: {year: 61, month: 12, day: 3}
+    date: {year: 62, month: 12, day: 3}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1230,7 +1230,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 213."
   - id: "ta-alt-y0-1203-nd2eu"
-    date: {year: 61, month: 12, day: 3}
+    date: {year: 62, month: 12, day: 3}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1238,7 +1238,7 @@ anchors:
     review: "accepted"
     reason: "Alternative game placement only; finale placement is not official."
   - id: "ta-y0-1204-menma"
-    date: {year: 61, month: 12, day: 4}
+    date: {year: 62, month: 12, day: 4}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1246,7 +1246,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 214."
   - id: "ta-y0-1205-menma"
-    date: {year: 61, month: 12, day: 5}
+    date: {year: 62, month: 12, day: 5}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1254,7 +1254,7 @@ anchors:
     review: "accepted"
     reason: "Working project date inherited from v10 for episode 215."
   - id: "ta-y0-1216"
-    date: {year: 61, month: 12, day: 16}
+    date: {year: 62, month: 12, day: 16}
     precision: "day"
     placement_status: "approximate"
     basis: "imported"
@@ -1262,7 +1262,7 @@ anchors:
     review: "accepted"
     reason: "Project placement for the chapter 238 departure day; inherited from v10 and treated as approximate rather than an explicitly stated manga calendar date."
   - id: "ta-y0-1207-suna-support"
-    date: {year: 61, month: 12, day: 7}
+    date: {year: 62, month: 12, day: 7}
     precision: "day"
     placement_status: "working"
     basis: "imported"
@@ -1271,7 +1271,7 @@ anchors:
     reason: "Working project date inherited from v10 for Naruto episode 216."
   - id: ta-iwa-prisoner-mission
     date:
-      year: 61
+      year: 62
       month: 5
       day: 5
     precision: day
@@ -1284,7 +1284,7 @@ anchors:
     reason: Робоча дата 05–06.05 після завершення архівної операції 24.04, допиту 25–26.04 та дипломатичного підтвердження 04.05. Сюжетна передумова — знахідка Команди 9 у секторі 3-Б 12.04 й безперервна службова перевірка, яка починається того ж дня.
   - id: ta-team9-archive-order
     date:
-      year: 61
+      year: 62
       month: 4
       day: 11
     precision: day
@@ -1296,7 +1296,7 @@ anchors:
     reason: Доручення на архів видане окремо від другого складу та місії до Країни Хвиль. Наступного ранку команда починає облікові роботи.
   - id: ta-team9-archive3b
     date:
-      year: 61
+      year: 62
       month: 4
       day: 12
     precision: day
@@ -1308,7 +1308,7 @@ anchors:
     reason: Архівна знахідка відбувається наприкінці відсутності Команди 7 у Країні Хвиль. Перевірка починається того ж дня, після зупинення списання; Какаші ще не бере в ній участі.
   - id: ta-archive-lab
     date:
-      year: 61
+      year: 62
       month: 4
       day: 13
     precision: day
@@ -1320,7 +1320,7 @@ anchors:
     reason: Карантинні фахівці перевіряють вилучене наступного дня після знахідки; висновок про захищену схованку не відомий генінам.
   - id: ta-archive-register-audit
     date:
-      year: 61
+      year: 62
       month: 4
       day: 14
     precision: day
@@ -1332,7 +1332,7 @@ anchors:
     reason: Після лабораторного висновку адміністративну звірку розширюють на журнали руху та доступів усього архівного корпусу.
   - id: ta-archive-leak-confirmed
     date:
-      year: 61
+      year: 62
       month: 4
       day: 16
     precision: day
@@ -1344,7 +1344,7 @@ anchors:
     reason: Два робочі дні звірки відділяють виявлені порушення обліку від підтвердженого витоку цивільних реєстраційних даних.
   - id: ta-archive-operation-briefing
     date:
-      year: 61
+      year: 62
       month: 4
       day: 17
     precision: day
@@ -1356,7 +1356,7 @@ anchors:
     reason: Хірузен підключає Какаші після повернення 13.04 та окремих місій Команди 7 14–15.04. Початкова перевірка архіву тим часом не зупинялася.
   - id: ta-archive-infiltration
     date:
-      year: 61
+      year: 62
       month: 4
       day: 18
     precision: day
@@ -1368,7 +1368,7 @@ anchors:
     reason: Міката починає цивільне прикриття після доручення Хірузена; Какаші виконує зовнішню частину операції.
   - id: ta-archive-transfer-photographed
     date:
-      year: 61
+      year: 62
       month: 4
       day: 22
     precision: day
@@ -1380,7 +1380,7 @@ anchors:
     reason: Кілька робочих змін потрібні для збору списків, графіка зустрічей і фотографій фактичної передачі сувою.
   - id: ta-archive-arrest-warrant
     date:
-      year: 61
+      year: 62
       month: 4
       day: 23
     precision: day
@@ -1392,7 +1392,7 @@ anchors:
     reason: Після фото передачі Міката доповідає Хірузену й отримує санкцію на затримання.
   - id: ta-archive-arrests
     date:
-      year: 61
+      year: 62
       month: 4
       day: 24
     precision: day
@@ -1404,7 +1404,7 @@ anchors:
     reason: 'Операція виконується наступного дня після санкції: периметр, затримання, відокремлення співучасниць, передання полонених і підсумковий звіт.'
   - id: ta-archive-iwa-interrogation
     date:
-      year: 61
+      year: 62
       month: 4
       day: 25
     precision: day
@@ -1416,7 +1416,7 @@ anchors:
     reason: Міката працює з живим шпигуном після затримання; допит проводиться окремо від конвою генінів.
   - id: ta-archive-interrogation-report
     date:
-      year: 61
+      year: 62
       month: 4
       day: 26
     precision: day
@@ -1428,7 +1428,7 @@ anchors:
     reason: Ібікі завершує зведення даних і передає Хірузену результати допиту наступного дня.
   - id: ta-archive-exchange-talks
     date:
-      year: 61
+      year: 62
       month: 4
       day: 27
     precision: day
@@ -1440,7 +1440,7 @@ anchors:
     reason: Після завершення допиту відкривають дипломатичний канал; полонений залишається під вартою до погодження обміну.
   - id: ta-archive-exchange-approved
     date:
-      year: 61
+      year: 62
       month: 5
       day: 4
     precision: day
@@ -1452,7 +1452,7 @@ anchors:
     reason: Фінальне погодження місця та порядку обміну передує вже внесеному дорученню Команді 7 на 05.05.
   - id: ta-games-0-01-23
     date:
-      year: 61
+      year: 62
       month: 1
       day: 23
     precision: day
@@ -1464,7 +1464,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-01-25
     date:
-      year: 61
+      year: 62
       month: 1
       day: 25
     precision: day
@@ -1476,7 +1476,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-02-02
     date:
-      year: 61
+      year: 62
       month: 2
       day: 2
     precision: day
@@ -1488,7 +1488,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-02-05
     date:
-      year: 61
+      year: 62
       month: 2
       day: 5
     precision: day
@@ -1500,7 +1500,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-02-08
     date:
-      year: 61
+      year: 62
       month: 2
       day: 8
     precision: day
@@ -1512,7 +1512,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-02-15
     date:
-      year: 61
+      year: 62
       month: 2
       day: 15
     precision: day
@@ -1524,7 +1524,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-02-20
     date:
-      year: 61
+      year: 62
       month: 2
       day: 20
     precision: day
@@ -1536,7 +1536,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-02-21
     date:
-      year: 61
+      year: 62
       month: 2
       day: 21
     precision: day
@@ -1548,7 +1548,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-02-24
     date:
-      year: 61
+      year: 62
       month: 2
       day: 24
     precision: day
@@ -1560,7 +1560,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-03-03
     date:
-      year: 61
+      year: 62
       month: 3
       day: 3
     precision: day
@@ -1572,7 +1572,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-03-06
     date:
-      year: 61
+      year: 62
       month: 3
       day: 6
     precision: day
@@ -1584,7 +1584,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-03-15
     date:
-      year: 61
+      year: 62
       month: 3
       day: 15
     precision: day
@@ -1596,7 +1596,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-04-13
     date:
-      year: 61
+      year: 62
       month: 4
       day: 13
     precision: day
@@ -1608,7 +1608,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-04-16
     date:
-      year: 61
+      year: 62
       month: 4
       day: 16
     precision: day
@@ -1620,7 +1620,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-04-18
     date:
-      year: 61
+      year: 62
       month: 4
       day: 18
     precision: day
@@ -1632,7 +1632,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-04-25
     date:
-      year: 61
+      year: 62
       month: 4
       day: 25
     precision: day
@@ -1644,7 +1644,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-04-26
     date:
-      year: 61
+      year: 62
       month: 4
       day: 26
     precision: day
@@ -1656,7 +1656,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-04-28
     date:
-      year: 61
+      year: 62
       month: 4
       day: 28
     precision: day
@@ -1668,7 +1668,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-02
     date:
-      year: 61
+      year: 62
       month: 5
       day: 2
     precision: day
@@ -1680,7 +1680,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-03
     date:
-      year: 61
+      year: 62
       month: 5
       day: 3
     precision: day
@@ -1692,7 +1692,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-07
     date:
-      year: 61
+      year: 62
       month: 5
       day: 7
     precision: day
@@ -1704,7 +1704,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-10
     date:
-      year: 61
+      year: 62
       month: 5
       day: 10
     precision: day
@@ -1716,7 +1716,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-12
     date:
-      year: 61
+      year: 62
       month: 5
       day: 12
     precision: day
@@ -1728,7 +1728,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-13
     date:
-      year: 61
+      year: 62
       month: 5
       day: 13
     precision: day
@@ -1740,7 +1740,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-14
     date:
-      year: 61
+      year: 62
       month: 5
       day: 14
     precision: day
@@ -1752,7 +1752,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-15
     date:
-      year: 61
+      year: 62
       month: 5
       day: 15
     precision: day
@@ -1764,7 +1764,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-17
     date:
-      year: 61
+      year: 62
       month: 5
       day: 17
     precision: day
@@ -1776,7 +1776,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-20
     date:
-      year: 61
+      year: 62
       month: 5
       day: 20
     precision: day
@@ -1788,7 +1788,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-21
     date:
-      year: 61
+      year: 62
       month: 5
       day: 21
     precision: day
@@ -1800,7 +1800,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-22
     date:
-      year: 61
+      year: 62
       month: 5
       day: 22
     precision: day
@@ -1812,7 +1812,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-23
     date:
-      year: 61
+      year: 62
       month: 5
       day: 23
     precision: day
@@ -1824,7 +1824,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-24
     date:
-      year: 61
+      year: 62
       month: 5
       day: 24
     precision: day
@@ -1836,7 +1836,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-27
     date:
-      year: 61
+      year: 62
       month: 5
       day: 27
     precision: day
@@ -1848,7 +1848,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-05-29
     date:
-      year: 61
+      year: 62
       month: 5
       day: 29
     precision: day
@@ -1860,7 +1860,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-06-08
     date:
-      year: 61
+      year: 62
       month: 6
       day: 8
     precision: day
@@ -1872,7 +1872,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-06-30
     date:
-      year: 61
+      year: 62
       month: 6
       day: 30
     precision: day
@@ -1884,7 +1884,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-07-01
     date:
-      year: 61
+      year: 62
       month: 7
       day: 1
     precision: day
@@ -1896,7 +1896,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-07-02
     date:
-      year: 61
+      year: 62
       month: 7
       day: 2
     precision: day
@@ -1908,7 +1908,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-07-03
     date:
-      year: 61
+      year: 62
       month: 7
       day: 3
     precision: day
@@ -1920,7 +1920,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-07-05
     date:
-      year: 61
+      year: 62
       month: 7
       day: 5
     precision: day
@@ -1932,7 +1932,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-07-06
     date:
-      year: 61
+      year: 62
       month: 7
       day: 6
     precision: day
@@ -1944,7 +1944,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-05
     date:
-      year: 61
+      year: 62
       month: 8
       day: 5
     precision: day
@@ -1956,7 +1956,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-06
     date:
-      year: 61
+      year: 62
       month: 8
       day: 6
     precision: day
@@ -1968,7 +1968,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-07
     date:
-      year: 61
+      year: 62
       month: 8
       day: 7
     precision: day
@@ -1980,7 +1980,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-08
     date:
-      year: 61
+      year: 62
       month: 8
       day: 8
     precision: day
@@ -1992,7 +1992,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-15
     date:
-      year: 61
+      year: 62
       month: 8
       day: 15
     precision: day
@@ -2004,7 +2004,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-16
     date:
-      year: 61
+      year: 62
       month: 8
       day: 16
     precision: day
@@ -2016,7 +2016,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-17
     date:
-      year: 61
+      year: 62
       month: 8
       day: 17
     precision: day
@@ -2028,7 +2028,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-19
     date:
-      year: 61
+      year: 62
       month: 8
       day: 19
     precision: day
@@ -2040,7 +2040,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-21
     date:
-      year: 61
+      year: 62
       month: 8
       day: 21
     precision: day
@@ -2052,7 +2052,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-22
     date:
-      year: 61
+      year: 62
       month: 8
       day: 22
     precision: day
@@ -2064,7 +2064,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-24
     date:
-      year: 61
+      year: 62
       month: 8
       day: 24
     precision: day
@@ -2076,7 +2076,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-25
     date:
-      year: 61
+      year: 62
       month: 8
       day: 25
     precision: day
@@ -2088,7 +2088,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-26
     date:
-      year: 61
+      year: 62
       month: 8
       day: 26
     precision: day
@@ -2100,7 +2100,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-27
     date:
-      year: 61
+      year: 62
       month: 8
       day: 27
     precision: day
@@ -2112,7 +2112,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-08-29
     date:
-      year: 61
+      year: 62
       month: 8
       day: 29
     precision: day
@@ -2124,7 +2124,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-06
     date:
-      year: 61
+      year: 62
       month: 9
       day: 6
     precision: day
@@ -2136,7 +2136,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-07
     date:
-      year: 61
+      year: 62
       month: 9
       day: 7
     precision: day
@@ -2148,7 +2148,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-10
     date:
-      year: 61
+      year: 62
       month: 9
       day: 10
     precision: day
@@ -2160,7 +2160,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-12
     date:
-      year: 61
+      year: 62
       month: 9
       day: 12
     precision: day
@@ -2172,7 +2172,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-13
     date:
-      year: 61
+      year: 62
       month: 9
       day: 13
     precision: day
@@ -2184,7 +2184,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-16
     date:
-      year: 61
+      year: 62
       month: 9
       day: 16
     precision: day
@@ -2196,7 +2196,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-18
     date:
-      year: 61
+      year: 62
       month: 9
       day: 18
     precision: day
@@ -2208,7 +2208,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-19
     date:
-      year: 61
+      year: 62
       month: 9
       day: 19
     precision: day
@@ -2220,7 +2220,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-22
     date:
-      year: 61
+      year: 62
       month: 9
       day: 22
     precision: day
@@ -2232,7 +2232,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-23
     date:
-      year: 61
+      year: 62
       month: 9
       day: 23
     precision: day
@@ -2244,7 +2244,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-24
     date:
-      year: 61
+      year: 62
       month: 9
       day: 24
     precision: day
@@ -2256,7 +2256,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-26
     date:
-      year: 61
+      year: 62
       month: 9
       day: 26
     precision: day
@@ -2268,7 +2268,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-29
     date:
-      year: 61
+      year: 62
       month: 9
       day: 29
     precision: day
@@ -2280,7 +2280,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-30
     date:
-      year: 61
+      year: 62
       month: 9
       day: 30
     precision: day
@@ -2292,7 +2292,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-10-11
     date:
-      year: 61
+      year: 62
       month: 10
       day: 11
     precision: day
@@ -2304,7 +2304,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-12-15
     date:
-      year: 61
+      year: 62
       month: 12
       day: 15
     precision: day
@@ -2316,7 +2316,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-12-16
     date:
-      year: 61
+      year: 62
       month: 12
       day: 16
     precision: day
@@ -2328,7 +2328,7 @@ anchors:
     reason: Узгоджена робоча дата першої частини; джерело встановлює сюжетний порядок, а не точний календарний день.
   - id: ta-games-0-09-20
     date:
-      year: 61
+      year: 62
       month: 9
       day: 20
     precision: day
@@ -2340,7 +2340,7 @@ anchors:
     reason: Ескорт завершується вранці 22.09, до бою на даху та відходу Саске.
   - id: ta-games-0-09-21
     date:
-      year: 61
+      year: 62
       month: 9
       day: 21
     precision: day
@@ -2352,7 +2352,7 @@ anchors:
     reason: Ескорт завершується вранці 22.09, до бою на даху та відходу Саске.
   - id: ta-games-0-01-28
     date:
-      year: 61
+      year: 62
       month: 1
       day: 28
     precision: day
@@ -2364,7 +2364,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-05-11
     date:
-      year: 61
+      year: 62
       month: 5
       day: 11
     precision: day
@@ -2376,7 +2376,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-08-12
     date:
-      year: 61
+      year: 62
       month: 8
       day: 12
     precision: day
@@ -2388,7 +2388,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-08-13
     date:
-      year: 61
+      year: 62
       month: 8
       day: 13
     precision: day
@@ -2400,7 +2400,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-08-20
     date:
-      year: 61
+      year: 62
       month: 8
       day: 20
     precision: day
@@ -2412,7 +2412,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-08-28
     date:
-      year: 61
+      year: 62
       month: 8
       day: 28
     precision: day
@@ -2424,7 +2424,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-09-14
     date:
-      year: 61
+      year: 62
       month: 9
       day: 14
     precision: day
@@ -2436,7 +2436,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-09-28
     date:
-      year: 61
+      year: 62
       month: 9
       day: 28
     precision: day
@@ -2448,7 +2448,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-04-15
     date:
-      year: 61
+      year: 62
       month: 4
       day: 15
     precision: day
@@ -2460,7 +2460,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-games-0-09-25
     date:
-      year: 61
+      year: 62
       month: 9
       day: 25
     precision: day
@@ -2472,7 +2472,7 @@ anchors:
     reason: Робоча дата першої частини, уточнена після звірки передумов і порядку дій у джерелі.
   - id: ta-time-slip-0930
     date:
-      year: 61
+      year: 62
       month: 9
       day: 30
     precision: day
@@ -2485,7 +2485,7 @@ anchors:
       з раніше датованими аніме-місіями потребують звірки.
   - id: ta-time-slip-1001
     date:
-      year: 61
+      year: 62
       month: 10
       day: 1
     precision: day
@@ -2498,7 +2498,7 @@ anchors:
       з раніше датованими аніме-місіями потребують звірки.
   - id: ta-time-slip-1002
     date:
-      year: 61
+      year: 62
       month: 10
       day: 2
     precision: day
@@ -2511,7 +2511,7 @@ anchors:
       з раніше датованими аніме-місіями потребують звірки.
   - id: ta-time-slip-1003
     date:
-      year: 61
+      year: 62
       month: 10
       day: 3
     precision: day
@@ -2524,7 +2524,7 @@ anchors:
       з раніше датованими аніме-місіями потребують звірки.
   - id: ta-time-slip-1004
     date:
-      year: 61
+      year: 62
       month: 10
       day: 4
     precision: day
@@ -2537,7 +2537,7 @@ anchors:
       з раніше датованими аніме-місіями потребують звірки.
   - id: ta-time-slip-1005
     date:
-      year: 61
+      year: 62
       month: 10
       day: 5
     precision: day
@@ -2550,7 +2550,7 @@ anchors:
       з раніше датованими аніме-місіями потребують звірки.
   - id: ta-time-slip-1006
     date:
-      year: 61
+      year: 62
       month: 10
       day: 6
     precision: day
@@ -2563,7 +2563,7 @@ anchors:
       з раніше датованими аніме-місіями потребують звірки.
   - id: ta-autumn-reconciled-61-1007
     date:
-      year: 61
+      year: 62
       month: 10
       day: 7
     precision: day
@@ -2576,7 +2576,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1008
     date:
-      year: 61
+      year: 62
       month: 10
       day: 8
     precision: day
@@ -2589,7 +2589,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1009
     date:
-      year: 61
+      year: 62
       month: 10
       day: 9
     precision: day
@@ -2602,7 +2602,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1010
     date:
-      year: 61
+      year: 62
       month: 10
       day: 10
     precision: day
@@ -2615,7 +2615,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1011
     date:
-      year: 61
+      year: 62
       month: 10
       day: 11
     precision: day
@@ -2628,7 +2628,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1012
     date:
-      year: 61
+      year: 62
       month: 10
       day: 12
     precision: day
@@ -2641,7 +2641,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1013
     date:
-      year: 61
+      year: 62
       month: 10
       day: 13
     precision: day
@@ -2654,7 +2654,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1014
     date:
-      year: 61
+      year: 62
       month: 10
       day: 14
     precision: day
@@ -2667,7 +2667,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1015
     date:
-      year: 61
+      year: 62
       month: 10
       day: 15
     precision: day
@@ -2680,7 +2680,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1016
     date:
-      year: 61
+      year: 62
       month: 10
       day: 16
     precision: day
@@ -2693,7 +2693,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1017
     date:
-      year: 61
+      year: 62
       month: 10
       day: 17
     precision: day
@@ -2706,7 +2706,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1018
     date:
-      year: 61
+      year: 62
       month: 10
       day: 18
     precision: day
@@ -2719,7 +2719,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1019
     date:
-      year: 61
+      year: 62
       month: 10
       day: 19
     precision: day
@@ -2732,7 +2732,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1020
     date:
-      year: 61
+      year: 62
       month: 10
       day: 20
     precision: day
@@ -2745,7 +2745,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1021
     date:
-      year: 61
+      year: 62
       month: 10
       day: 21
     precision: day
@@ -2758,7 +2758,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1022
     date:
-      year: 61
+      year: 62
       month: 10
       day: 22
     precision: day
@@ -2771,7 +2771,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1023
     date:
-      year: 61
+      year: 62
       month: 10
       day: 23
     precision: day
@@ -2784,7 +2784,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1024
     date:
-      year: 61
+      year: 62
       month: 10
       day: 24
     precision: day
@@ -2797,7 +2797,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1025
     date:
-      year: 61
+      year: 62
       month: 10
       day: 25
     precision: day
@@ -2810,7 +2810,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1026
     date:
-      year: 61
+      year: 62
       month: 10
       day: 26
     precision: day
@@ -2823,7 +2823,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1028
     date:
-      year: 61
+      year: 62
       month: 10
       day: 28
     precision: day
@@ -2836,7 +2836,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1029
     date:
-      year: 61
+      year: 62
       month: 10
       day: 29
     precision: day
@@ -2849,7 +2849,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1030
     date:
-      year: 61
+      year: 62
       month: 10
       day: 30
     precision: day
@@ -2862,7 +2862,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1031
     date:
-      year: 61
+      year: 62
       month: 10
       day: 31
     precision: day
@@ -2875,7 +2875,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1101
     date:
-      year: 61
+      year: 62
       month: 11
       day: 1
     precision: day
@@ -2888,7 +2888,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1102
     date:
-      year: 61
+      year: 62
       month: 11
       day: 2
     precision: day
@@ -2901,7 +2901,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1103
     date:
-      year: 61
+      year: 62
       month: 11
       day: 3
     precision: day
@@ -2914,7 +2914,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1104
     date:
-      year: 61
+      year: 62
       month: 11
       day: 4
     precision: day
@@ -2927,7 +2927,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1105
     date:
-      year: 61
+      year: 62
       month: 11
       day: 5
     precision: day
@@ -2940,7 +2940,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1106
     date:
-      year: 61
+      year: 62
       month: 11
       day: 6
     precision: day
@@ -2953,7 +2953,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1107
     date:
-      year: 61
+      year: 62
       month: 11
       day: 7
     precision: day
@@ -2966,7 +2966,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1109
     date:
-      year: 61
+      year: 62
       month: 11
       day: 9
     precision: day
@@ -2979,7 +2979,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1110
     date:
-      year: 61
+      year: 62
       month: 11
       day: 10
     precision: day
@@ -2992,7 +2992,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1111
     date:
-      year: 61
+      year: 62
       month: 11
       day: 11
     precision: day
@@ -3005,7 +3005,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1112
     date:
-      year: 61
+      year: 62
       month: 11
       day: 12
     precision: day
@@ -3018,7 +3018,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1113
     date:
-      year: 61
+      year: 62
       month: 11
       day: 13
     precision: day
@@ -3031,7 +3031,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1114
     date:
-      year: 61
+      year: 62
       month: 11
       day: 14
     precision: day
@@ -3044,7 +3044,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1115
     date:
-      year: 61
+      year: 62
       month: 11
       day: 15
     precision: day
@@ -3057,7 +3057,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1116
     date:
-      year: 61
+      year: 62
       month: 11
       day: 16
     precision: day
@@ -3070,7 +3070,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1117
     date:
-      year: 61
+      year: 62
       month: 11
       day: 17
     precision: day
@@ -3083,7 +3083,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1118
     date:
-      year: 61
+      year: 62
       month: 11
       day: 18
     precision: day
@@ -3096,7 +3096,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1119
     date:
-      year: 61
+      year: 62
       month: 11
       day: 19
     precision: day
@@ -3109,7 +3109,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1120
     date:
-      year: 61
+      year: 62
       month: 11
       day: 20
     precision: day
@@ -3122,7 +3122,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1121
     date:
-      year: 61
+      year: 62
       month: 11
       day: 21
     precision: day
@@ -3135,7 +3135,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1122
     date:
-      year: 61
+      year: 62
       month: 11
       day: 22
     precision: day
@@ -3148,7 +3148,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1123
     date:
-      year: 61
+      year: 62
       month: 11
       day: 23
     precision: day
@@ -3161,7 +3161,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1124
     date:
-      year: 61
+      year: 62
       month: 11
       day: 24
     precision: day
@@ -3174,7 +3174,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1125
     date:
-      year: 61
+      year: 62
       month: 11
       day: 25
     precision: day
@@ -3187,7 +3187,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1126
     date:
-      year: 61
+      year: 62
       month: 11
       day: 26
     precision: day
@@ -3200,7 +3200,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1127
     date:
-      year: 61
+      year: 62
       month: 11
       day: 27
     precision: day
@@ -3213,7 +3213,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1128
     date:
-      year: 61
+      year: 62
       month: 11
       day: 28
     precision: day
@@ -3226,7 +3226,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1129
     date:
-      year: 61
+      year: 62
       month: 11
       day: 29
     precision: day
@@ -3239,7 +3239,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1130
     date:
-      year: 61
+      year: 62
       month: 11
       day: 30
     precision: day
@@ -3252,7 +3252,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1201
     date:
-      year: 61
+      year: 62
       month: 12
       day: 1
     precision: day
@@ -3265,7 +3265,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1202
     date:
-      year: 61
+      year: 62
       month: 12
       day: 2
     precision: day
@@ -3278,7 +3278,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1203
     date:
-      year: 61
+      year: 62
       month: 12
       day: 3
     precision: day
@@ -3291,7 +3291,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1204
     date:
-      year: 61
+      year: 62
       month: 12
       day: 4
     precision: day
@@ -3304,7 +3304,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1205
     date:
-      year: 61
+      year: 62
       month: 12
       day: 5
     precision: day
@@ -3317,7 +3317,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1206
     date:
-      year: 61
+      year: 62
       month: 12
       day: 6
     precision: day
@@ -3330,7 +3330,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1207
     date:
-      year: 61
+      year: 62
       month: 12
       day: 7
     precision: day
@@ -3343,7 +3343,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1208
     date:
-      year: 61
+      year: 62
       month: 12
       day: 8
     precision: day
@@ -3356,7 +3356,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1209
     date:
-      year: 61
+      year: 62
       month: 12
       day: 9
     precision: day
@@ -3369,7 +3369,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1210
     date:
-      year: 61
+      year: 62
       month: 12
       day: 10
     precision: day
@@ -3382,7 +3382,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1211
     date:
-      year: 61
+      year: 62
       month: 12
       day: 11
     precision: day
@@ -3395,7 +3395,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1212
     date:
-      year: 61
+      year: 62
       month: 12
       day: 12
     precision: day
@@ -3408,7 +3408,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1213
     date:
-      year: 61
+      year: 62
       month: 12
       day: 13
     precision: day
@@ -3421,7 +3421,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1214
     date:
-      year: 61
+      year: 62
       month: 12
       day: 14
     precision: day
@@ -3434,7 +3434,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1215
     date:
-      year: 61
+      year: 62
       month: 12
       day: 15
     precision: day
@@ -3447,7 +3447,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1216
     date:
-      year: 61
+      year: 62
       month: 12
       day: 16
     precision: day
@@ -3460,7 +3460,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1217
     date:
-      year: 61
+      year: 62
       month: 12
       day: 17
     precision: day
@@ -3473,7 +3473,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1218
     date:
-      year: 61
+      year: 62
       month: 12
       day: 18
     precision: day
@@ -3486,7 +3486,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1220
     date:
-      year: 61
+      year: 62
       month: 12
       day: 20
     precision: day
@@ -3499,7 +3499,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1221
     date:
-      year: 61
+      year: 62
       month: 12
       day: 21
     precision: day
@@ -3512,7 +3512,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1222
     date:
-      year: 61
+      year: 62
       month: 12
       day: 22
     precision: day
@@ -3525,7 +3525,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1223
     date:
-      year: 61
+      year: 62
       month: 12
       day: 23
     precision: day
@@ -3538,7 +3538,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1224
     date:
-      year: 61
+      year: 62
       month: 12
       day: 24
     precision: day
@@ -3551,7 +3551,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1225
     date:
-      year: 61
+      year: 62
       month: 12
       day: 25
     precision: day
@@ -3564,7 +3564,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1226
     date:
-      year: 61
+      year: 62
       month: 12
       day: 26
     precision: day
@@ -3577,7 +3577,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1227
     date:
-      year: 61
+      year: 62
       month: 12
       day: 27
     precision: day
@@ -3590,7 +3590,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1228
     date:
-      year: 61
+      year: 62
       month: 12
       day: 28
     precision: day
@@ -3603,7 +3603,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1229
     date:
-      year: 61
+      year: 62
       month: 12
       day: 29
     precision: day
@@ -3616,7 +3616,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1230
     date:
-      year: 61
+      year: 62
       month: 12
       day: 30
     precision: day
@@ -3629,7 +3629,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-61-1231
     date:
-      year: 61
+      year: 62
       month: 12
       day: 31
     precision: day
@@ -3642,7 +3642,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-62-0101
     date:
-      year: 62
+      year: 63
       month: 1
       day: 1
     precision: day
@@ -3655,7 +3655,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-62-0102
     date:
-      year: 62
+      year: 63
       month: 1
       day: 2
     precision: day
@@ -3668,7 +3668,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-62-0103
     date:
-      year: 62
+      year: 63
       month: 1
       day: 3
     precision: day
@@ -3681,7 +3681,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-62-0105
     date:
-      year: 62
+      year: 63
       month: 1
       day: 5
     precision: day
@@ -3694,7 +3694,7 @@ anchors:
       буфери описано в AUTUMN_PLACEMENT_UA.md; дата не є канонічною.'
   - id: ta-autumn-reconciled-62-0114
     date:
-      year: 62
+      year: 63
       month: 1
       day: 14
     precision: day
@@ -3708,7 +3708,7 @@ anchors:
 
   - id: ta-period-reviewed-61-0927
     date:
-      year: 61
+      year: 62
       month: 9
       day: 27
     precision: day
@@ -3721,7 +3721,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1009
     date:
-      year: 61
+      year: 62
       month: 10
       day: 9
     precision: day
@@ -3734,7 +3734,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1011
     date:
-      year: 61
+      year: 62
       month: 10
       day: 11
     precision: day
@@ -3747,7 +3747,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1012
     date:
-      year: 61
+      year: 62
       month: 10
       day: 12
     precision: day
@@ -3760,7 +3760,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1013
     date:
-      year: 61
+      year: 62
       month: 10
       day: 13
     precision: day
@@ -3773,7 +3773,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1014
     date:
-      year: 61
+      year: 62
       month: 10
       day: 14
     precision: day
@@ -3786,7 +3786,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1015
     date:
-      year: 61
+      year: 62
       month: 10
       day: 15
     precision: day
@@ -3799,7 +3799,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1019
     date:
-      year: 61
+      year: 62
       month: 10
       day: 19
     precision: day
@@ -3812,7 +3812,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1021
     date:
-      year: 61
+      year: 62
       month: 10
       day: 21
     precision: day
@@ -3825,7 +3825,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1022
     date:
-      year: 61
+      year: 62
       month: 10
       day: 22
     precision: day
@@ -3838,7 +3838,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1023
     date:
-      year: 61
+      year: 62
       month: 10
       day: 23
     precision: day
@@ -3851,7 +3851,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1024
     date:
-      year: 61
+      year: 62
       month: 10
       day: 24
     precision: day
@@ -3864,7 +3864,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1029
     date:
-      year: 61
+      year: 62
       month: 10
       day: 29
     precision: day
@@ -3877,7 +3877,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1030
     date:
-      year: 61
+      year: 62
       month: 10
       day: 30
     precision: day
@@ -3890,7 +3890,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1031
     date:
-      year: 61
+      year: 62
       month: 10
       day: 31
     precision: day
@@ -3903,7 +3903,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1104
     date:
-      year: 61
+      year: 62
       month: 11
       day: 4
     precision: day
@@ -3916,7 +3916,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1106
     date:
-      year: 61
+      year: 62
       month: 11
       day: 6
     precision: day
@@ -3929,7 +3929,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1109
     date:
-      year: 61
+      year: 62
       month: 11
       day: 9
     precision: day
@@ -3942,7 +3942,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1112
     date:
-      year: 61
+      year: 62
       month: 11
       day: 12
     precision: day
@@ -3955,7 +3955,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1115
     date:
-      year: 61
+      year: 62
       month: 11
       day: 15
     precision: day
@@ -3968,7 +3968,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1118
     date:
-      year: 61
+      year: 62
       month: 11
       day: 18
     precision: day
@@ -3981,7 +3981,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1119
     date:
-      year: 61
+      year: 62
       month: 11
       day: 19
     precision: day
@@ -3994,7 +3994,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1122
     date:
-      year: 61
+      year: 62
       month: 11
       day: 22
     precision: day
@@ -4007,7 +4007,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1126
     date:
-      year: 61
+      year: 62
       month: 11
       day: 26
     precision: day
@@ -4020,7 +4020,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1127
     date:
-      year: 61
+      year: 62
       month: 11
       day: 27
     precision: day
@@ -4033,7 +4033,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1128
     date:
-      year: 61
+      year: 62
       month: 11
       day: 28
     precision: day
@@ -4046,7 +4046,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1129
     date:
-      year: 61
+      year: 62
       month: 11
       day: 29
     precision: day
@@ -4059,7 +4059,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1130
     date:
-      year: 61
+      year: 62
       month: 11
       day: 30
     precision: day
@@ -4072,7 +4072,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1204
     date:
-      year: 61
+      year: 62
       month: 12
       day: 4
     precision: day
@@ -4085,7 +4085,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1205
     date:
-      year: 61
+      year: 62
       month: 12
       day: 5
     precision: day
@@ -4098,7 +4098,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1207
     date:
-      year: 61
+      year: 62
       month: 12
       day: 7
     precision: day
@@ -4111,7 +4111,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1209
     date:
-      year: 61
+      year: 62
       month: 12
       day: 9
     precision: day
@@ -4124,7 +4124,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1210
     date:
-      year: 61
+      year: 62
       month: 12
       day: 10
     precision: day
@@ -4137,7 +4137,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1211
     date:
-      year: 61
+      year: 62
       month: 12
       day: 11
     precision: day
@@ -4150,7 +4150,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1216
     date:
-      year: 61
+      year: 62
       month: 12
       day: 16
     precision: day
@@ -4163,7 +4163,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1218
     date:
-      year: 61
+      year: 62
       month: 12
       day: 18
     precision: day
@@ -4176,7 +4176,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1219
     date:
-      year: 61
+      year: 62
       month: 12
       day: 19
     precision: day
@@ -4189,7 +4189,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1220
     date:
-      year: 61
+      year: 62
       month: 12
       day: 20
     precision: day
@@ -4202,7 +4202,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1222
     date:
-      year: 61
+      year: 62
       month: 12
       day: 22
     precision: day
@@ -4215,7 +4215,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1225
     date:
-      year: 61
+      year: 62
       month: 12
       day: 25
     precision: day
@@ -4228,7 +4228,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-61-1228
     date:
-      year: 61
+      year: 62
       month: 12
       day: 28
     precision: day
@@ -4241,7 +4241,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0102
     date:
-      year: 62
+      year: 63
       month: 1
       day: 2
     precision: day
@@ -4254,7 +4254,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0103
     date:
-      year: 62
+      year: 63
       month: 1
       day: 3
     precision: day
@@ -4267,7 +4267,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0106
     date:
-      year: 62
+      year: 63
       month: 1
       day: 6
     precision: day
@@ -4280,7 +4280,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0108
     date:
-      year: 62
+      year: 63
       month: 1
       day: 8
     precision: day
@@ -4293,7 +4293,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0109
     date:
-      year: 62
+      year: 63
       month: 1
       day: 9
     precision: day
@@ -4306,7 +4306,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0110
     date:
-      year: 62
+      year: 63
       month: 1
       day: 10
     precision: day
@@ -4319,7 +4319,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0111
     date:
-      year: 62
+      year: 63
       month: 1
       day: 11
     precision: day
@@ -4332,7 +4332,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0112
     date:
-      year: 62
+      year: 63
       month: 1
       day: 12
     precision: day
@@ -4345,7 +4345,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0116
     date:
-      year: 62
+      year: 63
       month: 1
       day: 16
     precision: day
@@ -4358,7 +4358,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0117
     date:
-      year: 62
+      year: 63
       month: 1
       day: 17
     precision: day
@@ -4371,7 +4371,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0119
     date:
-      year: 62
+      year: 63
       month: 1
       day: 19
     precision: day
@@ -4384,7 +4384,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0121
     date:
-      year: 62
+      year: 63
       month: 1
       day: 21
     precision: day
@@ -4397,7 +4397,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0122
     date:
-      year: 62
+      year: 63
       month: 1
       day: 22
     precision: day
@@ -4410,7 +4410,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0125
     date:
-      year: 62
+      year: 63
       month: 1
       day: 25
     precision: day
@@ -4423,7 +4423,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0126
     date:
-      year: 62
+      year: 63
       month: 1
       day: 26
     precision: day
@@ -4436,7 +4436,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0129
     date:
-      year: 62
+      year: 63
       month: 1
       day: 29
     precision: day
@@ -4449,7 +4449,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0130
     date:
-      year: 62
+      year: 63
       month: 1
       day: 30
     precision: day
@@ -4462,7 +4462,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0131
     date:
-      year: 62
+      year: 63
       month: 1
       day: 31
     precision: day
@@ -4475,7 +4475,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0205
     date:
-      year: 62
+      year: 63
       month: 2
       day: 5
     precision: day
@@ -4488,7 +4488,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0206
     date:
-      year: 62
+      year: 63
       month: 2
       day: 6
     precision: day
@@ -4501,7 +4501,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0207
     date:
-      year: 62
+      year: 63
       month: 2
       day: 7
     precision: day
@@ -4514,7 +4514,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0208
     date:
-      year: 62
+      year: 63
       month: 2
       day: 8
     precision: day
@@ -4527,7 +4527,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0214
     date:
-      year: 62
+      year: 63
       month: 2
       day: 14
     precision: day
@@ -4540,7 +4540,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0224
     date:
-      year: 62
+      year: 63
       month: 2
       day: 24
     precision: day
@@ -4553,7 +4553,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0227
     date:
-      year: 62
+      year: 63
       month: 2
       day: 27
     precision: day
@@ -4566,7 +4566,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0302
     date:
-      year: 62
+      year: 63
       month: 3
       day: 2
     precision: day
@@ -4579,7 +4579,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0304
     date:
-      year: 62
+      year: 63
       month: 3
       day: 4
     precision: day
@@ -4592,7 +4592,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0308
     date:
-      year: 62
+      year: 63
       month: 3
       day: 8
     precision: day
@@ -4605,7 +4605,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0309
     date:
-      year: 62
+      year: 63
       month: 3
       day: 9
     precision: day
@@ -4618,7 +4618,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0310
     date:
-      year: 62
+      year: 63
       month: 3
       day: 10
     precision: day
@@ -4631,7 +4631,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0313
     date:
-      year: 62
+      year: 63
       month: 3
       day: 13
     precision: day
@@ -4644,7 +4644,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0316
     date:
-      year: 62
+      year: 63
       month: 3
       day: 16
     precision: day
@@ -4657,7 +4657,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0319
     date:
-      year: 62
+      year: 63
       month: 3
       day: 19
     precision: day
@@ -4670,7 +4670,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0323
     date:
-      year: 62
+      year: 63
       month: 3
       day: 23
     precision: day
@@ -4683,7 +4683,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0326
     date:
-      year: 62
+      year: 63
       month: 3
       day: 26
     precision: day
@@ -4696,7 +4696,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0327
     date:
-      year: 62
+      year: 63
       month: 3
       day: 27
     precision: day
@@ -4709,7 +4709,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0328
     date:
-      year: 62
+      year: 63
       month: 3
       day: 28
     precision: day
@@ -4722,7 +4722,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0416
     date:
-      year: 62
+      year: 63
       month: 4
       day: 16
     precision: day
@@ -4735,7 +4735,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0417
     date:
-      year: 62
+      year: 63
       month: 4
       day: 17
     precision: day
@@ -4748,7 +4748,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0418
     date:
-      year: 62
+      year: 63
       month: 4
       day: 18
     precision: day
@@ -4761,7 +4761,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0421
     date:
-      year: 62
+      year: 63
       month: 4
       day: 21
     precision: day
@@ -4774,7 +4774,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0422
     date:
-      year: 62
+      year: 63
       month: 4
       day: 22
     precision: day
@@ -4787,7 +4787,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0426
     date:
-      year: 62
+      year: 63
       month: 4
       day: 26
     precision: day
@@ -4800,7 +4800,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0429
     date:
-      year: 62
+      year: 63
       month: 4
       day: 29
     precision: day
@@ -4813,7 +4813,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0430
     date:
-      year: 62
+      year: 63
       month: 4
       day: 30
     precision: day
@@ -4826,7 +4826,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0504
     date:
-      year: 62
+      year: 63
       month: 5
       day: 4
     precision: day
@@ -4839,7 +4839,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0507
     date:
-      year: 62
+      year: 63
       month: 5
       day: 7
     precision: day
@@ -4852,7 +4852,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0510
     date:
-      year: 62
+      year: 63
       month: 5
       day: 10
     precision: day
@@ -4865,7 +4865,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0512
     date:
-      year: 62
+      year: 63
       month: 5
       day: 12
     precision: day
@@ -4878,7 +4878,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0514
     date:
-      year: 62
+      year: 63
       month: 5
       day: 14
     precision: day
@@ -4891,7 +4891,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0515
     date:
-      year: 62
+      year: 63
       month: 5
       day: 15
     precision: day
@@ -4904,7 +4904,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0521
     date:
-      year: 62
+      year: 63
       month: 5
       day: 21
     precision: day
@@ -4917,7 +4917,7 @@ anchors:
       абсолютна дата умовна.
   - id: ta-period-reviewed-62-0529
     date:
-      year: 62
+      year: 63
       month: 5
       day: 29
     precision: day
@@ -4931,7 +4931,7 @@ anchors:
 
   - id: ta-period-reviewed-62-0101
     date:
-      year: 62
+      year: 63
       month: 1
       day: 1
     precision: day
@@ -4943,7 +4943,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0411
     date:
-      year: 62
+      year: 63
       month: 4
       day: 11
     precision: day
@@ -4955,7 +4955,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0419
     date:
-      year: 62
+      year: 63
       month: 4
       day: 19
     precision: day
@@ -4967,7 +4967,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0423
     date:
-      year: 62
+      year: 63
       month: 4
       day: 23
     precision: day
@@ -4979,7 +4979,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0427
     date:
-      year: 62
+      year: 63
       month: 4
       day: 27
     precision: day
@@ -4991,7 +4991,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0501
     date:
-      year: 62
+      year: 63
       month: 5
       day: 1
     precision: day
@@ -5003,7 +5003,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0505
     date:
-      year: 62
+      year: 63
       month: 5
       day: 5
     precision: day
@@ -5015,7 +5015,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0508
     date:
-      year: 62
+      year: 63
       month: 5
       day: 8
     precision: day
@@ -5027,7 +5027,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0511
     date:
-      year: 62
+      year: 63
       month: 5
       day: 11
     precision: day
@@ -5039,7 +5039,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0513
     date:
-      year: 62
+      year: 63
       month: 5
       day: 13
     precision: day
@@ -5051,7 +5051,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0516
     date:
-      year: 62
+      year: 63
       month: 5
       day: 16
     precision: day
@@ -5063,7 +5063,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0522
     date:
-      year: 62
+      year: 63
       month: 5
       day: 22
     precision: day
@@ -5075,7 +5075,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-period-reviewed-62-0530
     date:
-      year: 62
+      year: 63
       month: 5
       day: 30
     precision: day
@@ -5087,7 +5087,7 @@ anchors:
     reason: POST_SASUKE_SCHEDULE_UA.md; відносні ознаки джерел, абсолютна дата умовна.
   - id: ta-s2-64-11-30
     date:
-      year: 64
+      year: 65
       month: 11
       day: 30
     precision: day
@@ -5100,7 +5100,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-01
     date:
-      year: 64
+      year: 65
       month: 12
       day: 1
     precision: day
@@ -5113,7 +5113,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-03
     date:
-      year: 64
+      year: 65
       month: 12
       day: 3
     precision: day
@@ -5126,7 +5126,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-02
     date:
-      year: 64
+      year: 65
       month: 12
       day: 2
     precision: day
@@ -5139,7 +5139,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-04
     date:
-      year: 64
+      year: 65
       month: 12
       day: 4
     precision: day
@@ -5152,7 +5152,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-05
     date:
-      year: 64
+      year: 65
       month: 12
       day: 5
     precision: day
@@ -5165,7 +5165,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-06
     date:
-      year: 64
+      year: 65
       month: 12
       day: 6
     precision: day
@@ -5178,7 +5178,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-07
     date:
-      year: 64
+      year: 65
       month: 12
       day: 7
     precision: day
@@ -5191,7 +5191,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-09
     date:
-      year: 64
+      year: 65
       month: 12
       day: 9
     precision: day
@@ -5204,7 +5204,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-10
     date:
-      year: 64
+      year: 65
       month: 12
       day: 10
     precision: day
@@ -5217,7 +5217,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-11
     date:
-      year: 64
+      year: 65
       month: 12
       day: 11
     precision: day
@@ -5230,7 +5230,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-15
     date:
-      year: 64
+      year: 65
       month: 12
       day: 15
     precision: day
@@ -5243,7 +5243,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-19
     date:
-      year: 64
+      year: 65
       month: 12
       day: 19
     precision: day
@@ -5256,7 +5256,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-12-20
     date:
-      year: 64
+      year: 65
       month: 12
       day: 20
     precision: day
@@ -5269,7 +5269,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-02
     date:
-      year: 66
+      year: 67
       month: 4
       day: 2
     precision: day
@@ -5282,7 +5282,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-03
     date:
-      year: 66
+      year: 67
       month: 4
       day: 3
     precision: day
@@ -5295,7 +5295,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-05
     date:
-      year: 66
+      year: 67
       month: 4
       day: 5
     precision: day
@@ -5308,7 +5308,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-06
     date:
-      year: 66
+      year: 67
       month: 4
       day: 6
     precision: day
@@ -5321,7 +5321,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-07
     date:
-      year: 66
+      year: 67
       month: 4
       day: 7
     precision: day
@@ -5334,7 +5334,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-08
     date:
-      year: 66
+      year: 67
       month: 4
       day: 8
     precision: day
@@ -5347,7 +5347,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-09
     date:
-      year: 66
+      year: 67
       month: 4
       day: 9
     precision: day
@@ -5360,7 +5360,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-01
     date:
-      year: 66
+      year: 67
       month: 7
       day: 1
     precision: day
@@ -5373,7 +5373,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-02
     date:
-      year: 66
+      year: 67
       month: 7
       day: 2
     precision: day
@@ -5386,7 +5386,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-05
     date:
-      year: 66
+      year: 67
       month: 7
       day: 5
     precision: day
@@ -5399,7 +5399,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-08
     date:
-      year: 66
+      year: 67
       month: 7
       day: 8
     precision: day
@@ -5412,7 +5412,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-11
     date:
-      year: 66
+      year: 67
       month: 7
       day: 11
     precision: day
@@ -5425,7 +5425,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-12
     date:
-      year: 66
+      year: 67
       month: 7
       day: 12
     precision: day
@@ -5438,7 +5438,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-13
     date:
-      year: 66
+      year: 67
       month: 7
       day: 13
     precision: day
@@ -5451,7 +5451,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-14
     date:
-      year: 66
+      year: 67
       month: 7
       day: 14
     precision: day
@@ -5464,7 +5464,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-15
     date:
-      year: 66
+      year: 67
       month: 7
       day: 15
     precision: day
@@ -5477,7 +5477,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-16
     date:
-      year: 66
+      year: 67
       month: 7
       day: 16
     precision: day
@@ -5490,7 +5490,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-18
     date:
-      year: 66
+      year: 67
       month: 7
       day: 18
     precision: day
@@ -5503,7 +5503,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-22
     date:
-      year: 66
+      year: 67
       month: 7
       day: 22
     precision: day
@@ -5516,7 +5516,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-24
     date:
-      year: 66
+      year: 67
       month: 7
       day: 24
     precision: day
@@ -5529,7 +5529,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-25
     date:
-      year: 66
+      year: 67
       month: 7
       day: 25
     precision: day
@@ -5542,7 +5542,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-26
     date:
-      year: 66
+      year: 67
       month: 7
       day: 26
     precision: day
@@ -5555,7 +5555,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-27
     date:
-      year: 66
+      year: 67
       month: 7
       day: 27
     precision: day
@@ -5568,7 +5568,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-31
     date:
-      year: 66
+      year: 67
       month: 7
       day: 31
     precision: day
@@ -5581,7 +5581,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-17
     date:
-      year: 66
+      year: 67
       month: 7
       day: 17
     precision: day
@@ -5594,7 +5594,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-21
     date:
-      year: 66
+      year: 67
       month: 7
       day: 21
     precision: day
@@ -5607,7 +5607,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-28
     date:
-      year: 66
+      year: 67
       month: 7
       day: 28
     precision: day
@@ -5620,7 +5620,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-29
     date:
-      year: 66
+      year: 67
       month: 7
       day: 29
     precision: day
@@ -5633,7 +5633,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-30
     date:
-      year: 66
+      year: 67
       month: 7
       day: 30
     precision: day
@@ -5646,7 +5646,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-02
     date:
-      year: 66
+      year: 67
       month: 8
       day: 2
     precision: day
@@ -5659,7 +5659,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-03
     date:
-      year: 66
+      year: 67
       month: 8
       day: 3
     precision: day
@@ -5672,7 +5672,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-04
     date:
-      year: 66
+      year: 67
       month: 8
       day: 4
     precision: day
@@ -5685,7 +5685,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-10
     date:
-      year: 66
+      year: 67
       month: 8
       day: 10
     precision: day
@@ -5698,7 +5698,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-12
     date:
-      year: 66
+      year: 67
       month: 8
       day: 12
     precision: day
@@ -5711,7 +5711,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-15
     date:
-      year: 66
+      year: 67
       month: 8
       day: 15
     precision: day
@@ -5724,7 +5724,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-14
     date:
-      year: 66
+      year: 67
       month: 8
       day: 14
     precision: day
@@ -5737,7 +5737,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-16
     date:
-      year: 66
+      year: 67
       month: 8
       day: 16
     precision: day
@@ -5750,7 +5750,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-17
     date:
-      year: 66
+      year: 67
       month: 8
       day: 17
     precision: day
@@ -5763,7 +5763,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-18
     date:
-      year: 66
+      year: 67
       month: 8
       day: 18
     precision: day
@@ -5776,7 +5776,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-20
     date:
-      year: 66
+      year: 67
       month: 8
       day: 20
     precision: day
@@ -5789,7 +5789,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-19
     date:
-      year: 66
+      year: 67
       month: 8
       day: 19
     precision: day
@@ -5802,7 +5802,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-24
     date:
-      year: 66
+      year: 67
       month: 8
       day: 24
     precision: day
@@ -5815,7 +5815,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-21
     date:
-      year: 66
+      year: 67
       month: 8
       day: 21
     precision: day
@@ -5828,7 +5828,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-25
     date:
-      year: 66
+      year: 67
       month: 8
       day: 25
     precision: day
@@ -5841,7 +5841,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-26
     date:
-      year: 66
+      year: 67
       month: 8
       day: 26
     precision: day
@@ -5854,7 +5854,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-29
     date:
-      year: 66
+      year: 67
       month: 8
       day: 29
     precision: day
@@ -5867,7 +5867,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-30
     date:
-      year: 66
+      year: 67
       month: 8
       day: 30
     precision: day
@@ -5880,7 +5880,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-31
     date:
-      year: 66
+      year: 67
       month: 8
       day: 31
     precision: day
@@ -5893,7 +5893,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-02
     date:
-      year: 66
+      year: 67
       month: 9
       day: 2
     precision: day
@@ -5906,7 +5906,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-03
     date:
-      year: 66
+      year: 67
       month: 9
       day: 3
     precision: day
@@ -5919,7 +5919,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-04
     date:
-      year: 66
+      year: 67
       month: 9
       day: 4
     precision: day
@@ -5932,7 +5932,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-05
     date:
-      year: 66
+      year: 67
       month: 9
       day: 5
     precision: day
@@ -5945,7 +5945,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-06
     date:
-      year: 66
+      year: 67
       month: 9
       day: 6
     precision: day
@@ -5958,7 +5958,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-07
     date:
-      year: 66
+      year: 67
       month: 9
       day: 7
     precision: day
@@ -5971,7 +5971,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-13
     date:
-      year: 66
+      year: 67
       month: 9
       day: 13
     precision: day
@@ -5984,7 +5984,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-21
     date:
-      year: 66
+      year: 67
       month: 9
       day: 21
     precision: day
@@ -5997,7 +5997,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-22
     date:
-      year: 66
+      year: 67
       month: 9
       day: 22
     precision: day
@@ -6010,7 +6010,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-23
     date:
-      year: 66
+      year: 67
       month: 9
       day: 23
     precision: day
@@ -6023,7 +6023,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-24
     date:
-      year: 66
+      year: 67
       month: 9
       day: 24
     precision: day
@@ -6036,7 +6036,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-25
     date:
-      year: 66
+      year: 67
       month: 9
       day: 25
     precision: day
@@ -6049,7 +6049,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-26
     date:
-      year: 66
+      year: 67
       month: 9
       day: 26
     precision: day
@@ -6062,7 +6062,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-28
     date:
-      year: 66
+      year: 67
       month: 9
       day: 28
     precision: day
@@ -6075,7 +6075,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-29
     date:
-      year: 66
+      year: 67
       month: 9
       day: 29
     precision: day
@@ -6088,7 +6088,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-30
     date:
-      year: 66
+      year: 67
       month: 9
       day: 30
     precision: day
@@ -6101,7 +6101,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-08
     date:
-      year: 66
+      year: 67
       month: 9
       day: 8
     precision: day
@@ -6114,7 +6114,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-09
     date:
-      year: 66
+      year: 67
       month: 9
       day: 9
     precision: day
@@ -6127,7 +6127,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-11
     date:
-      year: 66
+      year: 67
       month: 9
       day: 11
     precision: day
@@ -6140,7 +6140,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-12
     date:
-      year: 66
+      year: 67
       month: 9
       day: 12
     precision: day
@@ -6153,7 +6153,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-14
     date:
-      year: 66
+      year: 67
       month: 9
       day: 14
     precision: day
@@ -6166,7 +6166,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-15
     date:
-      year: 66
+      year: 67
       month: 9
       day: 15
     precision: day
@@ -6179,7 +6179,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-16
     date:
-      year: 66
+      year: 67
       month: 9
       day: 16
     precision: day
@@ -6192,7 +6192,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-10-01
     date:
-      year: 66
+      year: 67
       month: 10
       day: 1
     precision: day
@@ -6205,7 +6205,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-10-02
     date:
-      year: 66
+      year: 67
       month: 10
       day: 2
     precision: day
@@ -6218,7 +6218,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-10-03
     date:
-      year: 66
+      year: 67
       month: 10
       day: 3
     precision: day
@@ -6231,7 +6231,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-10-04
     date:
-      year: 66
+      year: 67
       month: 10
       day: 4
     precision: day
@@ -6244,7 +6244,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-10-05
     date:
-      year: 66
+      year: 67
       month: 10
       day: 5
     precision: day
@@ -6257,7 +6257,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-10-08
     date:
-      year: 66
+      year: 67
       month: 10
       day: 8
     precision: day
@@ -6270,7 +6270,7 @@ anchors:
       календарний день.'
   - id: ta-s2-62-06-03
     date:
-      year: 62
+      year: 63
       month: 6
       day: 3
     precision: day
@@ -6283,7 +6283,7 @@ anchors:
       календарний день.'
   - id: ta-s2-63-06-05
     date:
-      year: 63
+      year: 64
       month: 6
       day: 5
     precision: day
@@ -6296,7 +6296,7 @@ anchors:
       календарний день.'
   - id: ta-s2-63-06-10
     date:
-      year: 63
+      year: 64
       month: 6
       day: 10
     precision: day
@@ -6309,7 +6309,7 @@ anchors:
       календарний день.'
   - id: ta-s2-63-06-11
     date:
-      year: 63
+      year: 64
       month: 6
       day: 11
     precision: day
@@ -6322,7 +6322,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-12
     date:
-      year: 64
+      year: 65
       month: 5
       day: 12
     precision: day
@@ -6335,7 +6335,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-04-20-gaara-kazekage
     date:
-      year: 64
+      year: 65
       month: 4
       day: 20
     precision: day
@@ -6348,7 +6348,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-01-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 1
     precision: day
@@ -6361,7 +6361,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-04-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 4
     precision: day
@@ -6374,7 +6374,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-10-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 10
     precision: day
@@ -6387,7 +6387,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-11-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 11
     precision: day
@@ -6400,7 +6400,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-12-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 12
     precision: day
@@ -6413,7 +6413,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-14-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 14
     precision: day
@@ -6426,7 +6426,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-15-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 15
     precision: day
@@ -6439,7 +6439,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-16-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 16
     precision: day
@@ -6452,7 +6452,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-17-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 17
     precision: day
@@ -6465,7 +6465,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-18-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 18
     precision: day
@@ -6478,7 +6478,7 @@ anchors:
       календарний день.'
   - id: ta-s2-64-05-20-second-chunin
     date:
-      year: 64
+      year: 65
       month: 5
       day: 20
     precision: day
@@ -7219,7 +7219,7 @@ anchors:
       календарний день.'
   - id: ta-s2-63-06-01
     date:
-      year: 63
+      year: 64
       month: 6
       day: 1
     precision: day
@@ -7583,7 +7583,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-05-01
     date:
-      year: 65
+      year: 66
       month: 5
       day: 1
     precision: day
@@ -7596,7 +7596,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-05-02
     date:
-      year: 65
+      year: 66
       month: 5
       day: 2
     precision: day
@@ -7609,7 +7609,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-05-03
     date:
-      year: 65
+      year: 66
       month: 5
       day: 3
     precision: day
@@ -7622,7 +7622,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-05-04
     date:
-      year: 65
+      year: 66
       month: 5
       day: 4
     precision: day
@@ -7635,7 +7635,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-05-05
     date:
-      year: 65
+      year: 66
       month: 5
       day: 5
     precision: day
@@ -7648,7 +7648,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-05-06
     date:
-      year: 65
+      year: 66
       month: 5
       day: 6
     precision: day
@@ -7661,7 +7661,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-05-07
     date:
-      year: 65
+      year: 66
       month: 5
       day: 7
     precision: day
@@ -7687,7 +7687,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-05-01
     date:
-      year: 66
+      year: 67
       month: 5
       day: 1
     precision: day
@@ -7700,7 +7700,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-05-03
     date:
-      year: 66
+      year: 67
       month: 5
       day: 3
     precision: day
@@ -7713,7 +7713,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-05-04
     date:
-      year: 66
+      year: 67
       month: 5
       day: 4
     precision: day
@@ -7726,7 +7726,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-05-06
     date:
-      year: 66
+      year: 67
       month: 5
       day: 6
     precision: day
@@ -7739,7 +7739,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-25
     date:
-      year: 66
+      year: 67
       month: 4
       day: 25
     precision: day
@@ -7752,7 +7752,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-26
     date:
-      year: 66
+      year: 67
       month: 4
       day: 26
     precision: day
@@ -7765,7 +7765,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-27
     date:
-      year: 66
+      year: 67
       month: 4
       day: 27
     precision: day
@@ -7778,7 +7778,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-04-28
     date:
-      year: 66
+      year: 67
       month: 4
       day: 28
     precision: day
@@ -7791,7 +7791,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-09-01
     date:
-      year: 65
+      year: 66
       month: 9
       day: 1
     precision: day
@@ -7843,7 +7843,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-01
     date:
-      year: 66
+      year: 67
       month: 9
       day: 1
     precision: day
@@ -7856,7 +7856,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-10
     date:
-      year: 66
+      year: 67
       month: 9
       day: 10
     precision: day
@@ -7882,7 +7882,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-06-01
     date:
-      year: 66
+      year: 67
       month: 6
       day: 1
     precision: day
@@ -7895,7 +7895,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-06-02
     date:
-      year: 66
+      year: 67
       month: 6
       day: 2
     precision: day
@@ -7908,7 +7908,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-06-03
     date:
-      year: 66
+      year: 67
       month: 6
       day: 3
     precision: day
@@ -8051,7 +8051,7 @@ anchors:
       календарний день.'
   - id: ta-s2-62-06-10
     date:
-      year: 62
+      year: 63
       month: 6
       day: 10
     precision: day
@@ -8064,7 +8064,7 @@ anchors:
       календарний день.'
   - id: ta-s2-62-06-12
     date:
-      year: 62
+      year: 63
       month: 6
       day: 12
     precision: day
@@ -8077,7 +8077,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-05-15
     date:
-      year: 66
+      year: 67
       month: 5
       day: 15
     precision: day
@@ -8090,7 +8090,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-03-01
     date:
-      year: 66
+      year: 67
       month: 3
       day: 1
     precision: day
@@ -8102,7 +8102,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-02
     date:
-      year: 66
+      year: 67
       month: 3
       day: 2
     precision: day
@@ -8114,7 +8114,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-04
     date:
-      year: 66
+      year: 67
       month: 3
       day: 4
     precision: day
@@ -8126,7 +8126,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-05
     date:
-      year: 66
+      year: 67
       month: 3
       day: 5
     precision: day
@@ -8138,7 +8138,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-07
     date:
-      year: 66
+      year: 67
       month: 3
       day: 7
     precision: day
@@ -8150,7 +8150,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-08
     date:
-      year: 66
+      year: 67
       month: 3
       day: 8
     precision: day
@@ -8162,7 +8162,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-09
     date:
-      year: 66
+      year: 67
       month: 3
       day: 9
     precision: day
@@ -8174,7 +8174,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-13
     date:
-      year: 66
+      year: 67
       month: 3
       day: 13
     precision: day
@@ -8186,7 +8186,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-16
     date:
-      year: 66
+      year: 67
       month: 3
       day: 16
     precision: day
@@ -8198,7 +8198,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-15
     date:
-      year: 66
+      year: 67
       month: 3
       day: 15
     precision: day
@@ -8210,7 +8210,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-17
     date:
-      year: 66
+      year: 67
       month: 3
       day: 17
     precision: day
@@ -8222,7 +8222,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-19
     date:
-      year: 66
+      year: 67
       month: 3
       day: 19
     precision: day
@@ -8234,7 +8234,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-21
     date:
-      year: 66
+      year: 67
       month: 3
       day: 21
     precision: day
@@ -8246,7 +8246,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-22
     date:
-      year: 66
+      year: 67
       month: 3
       day: 22
     precision: day
@@ -8258,7 +8258,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-23
     date:
-      year: 66
+      year: 67
       month: 3
       day: 23
     precision: day
@@ -8270,7 +8270,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-03-25
     date:
-      year: 66
+      year: 67
       month: 3
       day: 25
     precision: day
@@ -8294,7 +8294,7 @@ anchors:
     reason: 'Робочий день: порядок пригод, дорога та вагітність Куренай. Точна дата не задана джерелом.'
   - id: ta-s2-66-08-27
     date:
-      year: 66
+      year: 67
       month: 8
       day: 27
     precision: day
@@ -8307,7 +8307,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-08-28
     date:
-      year: 66
+      year: 67
       month: 8
       day: 28
     precision: day
@@ -8346,7 +8346,7 @@ anchors:
       календарний день.'
   - id: ta-s2-65-08-01
     date:
-      year: 65
+      year: 66
       month: 8
       day: 1
     precision: day
@@ -8372,7 +8372,7 @@ anchors:
       календарний день.'
   - id: ta-s2-63-05-01
     date:
-      year: 63
+      year: 64
       month: 5
       day: 1
     precision: day
@@ -8437,7 +8437,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-09-17
     date:
-      year: 66
+      year: 67
       month: 9
       day: 17
     precision: day
@@ -8450,7 +8450,7 @@ anchors:
       для безвітряної ділянки залишено 14 діб.'
   - id: ta-s2-66-09-27
     date:
-      year: 66
+      year: 67
       month: 9
       day: 27
     precision: day
@@ -8462,7 +8462,7 @@ anchors:
     reason: Робочий розклад дороги після арки «Сила».
   - id: ta-s2-66-10-06
     date:
-      year: 66
+      year: 67
       month: 10
       day: 6
     precision: day
@@ -8474,7 +8474,7 @@ anchors:
     reason: Робочий розклад дороги після арки «Сила».
   - id: ta-s2-66-10-07
     date:
-      year: 66
+      year: 67
       month: 10
       day: 7
     precision: day
@@ -8486,7 +8486,7 @@ anchors:
     reason: Робочий розклад дороги після арки «Сила».
   - id: ta-s2-66-05-31
     date:
-      year: 66
+      year: 67
       month: 5
       day: 31
     precision: day
@@ -8538,7 +8538,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-10
     date:
-      year: 66
+      year: 67
       month: 7
       day: 10
     precision: day
@@ -8785,7 +8785,7 @@ anchors:
       календарний день.'
   - id: ta-s2-66-07-20
     date:
-      year: 66
+      year: 67
       month: 7
       day: 20
     precision: day
@@ -8837,7 +8837,7 @@ anchors:
       Точний рік і вік Макі джерело не дає.'
   - id: ta-s2-66-09-02-alt-ova-chunin-fire
     date:
-      year: 66
+      year: 67
       month: 9
       day: 2
     precision: day
@@ -8846,4 +8846,4 @@ anchors:
     evidence_ids:
     - evd-ova-chunin-fire-purpose
     review: partial
-    reason: 'OVA відбувається після створення Альянсу і до початку війни; 02.09.66 є робочим днем альтернативної тяглості, а не підтвердженою датою або доступністю Наруто в main.'
+    reason: 'OVA відбувається після створення Альянсу і до початку війни; 02.09.67 є робочим днем альтернативної тяглості, а не підтвердженою датою або доступністю Наруто в main.'

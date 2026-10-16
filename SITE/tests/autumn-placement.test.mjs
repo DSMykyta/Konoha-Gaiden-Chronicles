@@ -68,12 +68,12 @@ test('every existing before relation involving moved stories still agrees with t
  }
 });
 
-test('the epoch boundary follows the final ramen on December 28 year 61',()=>{
- assert(data.calendar.view_start_year<=61);assert(data.calendar.view_end_year>=62);
+test('the epoch boundary follows the final ramen on December 28 year 62',()=>{
+ assert(data.calendar.view_start_year<=62);assert(data.calendar.view_end_year>=63);
  assert.equal(data.calendar.view_days,(data.calendar.view_end_year-data.calendar.view_start_year+1)*365);
  const last=scene('sc-y0-1216-iruka-naruto-last-ramen');assert.equal(last.day,plan.last_ramen_day+originShift);
- assert.deepEqual([last.date.year,last.date.month,last.date.day],[61,12,27]);
- assert.deepEqual(data.periods.find(p=>p.id==='timeskip').boundary_date,{year:61,month:12,day:28});
+ assert.deepEqual([last.date.year,last.date.month,last.date.day],[62,12,27]);
+ assert.deepEqual(data.periods.find(p=>p.id==='timeskip').boundary_date,{year:62,month:12,day:28});
  const anchors=YAML.parse(fs.readFileSync(path.join(root,'data/time-anchors.yaml'),'utf8')).anchors;
  assert(anchors.filter(a=>a.date).every(a=>Number.isInteger(a.date.year)&&a.date.year>0));
  assert(anchors.filter(a=>a.id.startsWith('ta-autumn-reconciled')).every(a=>a.placement_status==='working'&&a.evidence_ids.includes('evd-autumn-cast-reconciliation')));
