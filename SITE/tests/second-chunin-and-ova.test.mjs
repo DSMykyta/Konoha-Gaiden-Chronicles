@@ -27,7 +27,7 @@ test('Shippuden 394–413 has one distinct timeskip exam arc without duplicated 
    assert(scene,id);
    assert.equal(scene.episode_id,episode.id);
    assert.equal(scene.source_continuity_id,'main');
-   assert.equal(scene.date.year,66);
+   assert.equal(scene.date.year,65);
    assert(scene.events.length>0,id);
    assert(scene.events.every(e=>e.origin==='F'),id);
   }
@@ -74,7 +74,7 @@ test('Kusagakure insertion gap remains between the two exams, without fabricated
  const gaara=built.scenes.find(s=>s.id==='sc-s2-gaara-becomes-kazekage');
  assert.deepEqual(gaara.date,{year:65,month:4,day:20});
  assert(gaara.day < built.scenes.find(s=>s.id==='sc-s2-exam-cohost-plan').day);
- assert(built.scenes.filter(s=>s.arc_id==='arc-s2-second-chunin-exams').every(s=>s.date.year===66&&s.date.month===5));
+ assert(built.scenes.filter(s=>s.arc_id==='arc-s2-second-chunin-exams').every(s=>s.date.year===65&&s.date.month===5));
  assert.deepEqual(ova.date,{year:67,month:9,day:2});
  assert(end.day<ova.day);
  assert(fs.readFileSync(new URL('../../00_MAIN_WORK_FOLDER/02_MASTER_CHRONOLOGY.md',import.meta.url),'utf8').includes('Рік 3, 11 червня'));

@@ -20,7 +20,7 @@ test('Time Slip publishes only the past and uses the reconstructed founding cale
  assert.deepEqual(arc.episode_ids.map(id=>data.episodes.find(e=>e.id===id).source_episode),[129,130,131,132,133,134,135,136]);
  assert.equal(moments.length,95);
  for(const scene of scenes){
-  assert.equal(scene.date.year,63);assert.equal(scene.date_status,'working');
+  assert.equal(scene.date.year,62);assert.equal(scene.date_status,'working');
   assert(scene.day>=272+originShift&&scene.day<=278+originShift,scene.id);
  }
  assert.equal(arc.day_start,272+originShift);assert.equal(arc.day_end,278+originShift);

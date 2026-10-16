@@ -10,13 +10,13 @@ const lengths=[31,28,31,30,31,30,31,31,30,31,30,31];
 
 test('positive founding years preserve the January team formation day and event references',()=>{
  validateCalendar(calendar,periods,anchors);
- assert.equal(calendar.current_year,63);
+ assert.equal(calendar.current_year,62);
  const formation=anchors.find(a=>a.id==='ta-team-formation');
  assert.deepEqual(formation.date,{year:62,month:1,day:22});
  assert.equal(dayInYear(formation.date,0,calendar,lengths),21);
- assert.equal(dayInYear({year:63,month:12,day:31},0,calendar,lengths),364);
- assert(anchors.filter(a=>a.date&&!a.id.startsWith('ta-autumn-reconciled-')&&!a.id.startsWith('ta-period-reviewed-')&&!a.id.startsWith('ta-s2-')&&!a.id.startsWith('ta-alt-s2-')).every(a=>a.date.year===63));
- assert(anchors.some(a=>a.id.startsWith('ta-autumn-reconciled-62-')&&a.date.year===65));
+ assert.equal(dayInYear({year:62,month:12,day:31},0,calendar,lengths),364);
+ assert(anchors.filter(a=>a.date&&!a.id.startsWith('ta-autumn-reconciled-')&&!a.id.startsWith('ta-period-reviewed-')&&!a.id.startsWith('ta-s2-')&&!a.id.startsWith('ta-alt-s2-')).every(a=>a.date.year===62));
+ assert(anchors.some(a=>a.id.startsWith('ta-autumn-reconciled-62-')&&a.date.year===63));
  const built=JSON.parse(fs.readFileSync('public/data.json','utf8'));
  const event=built.events.find(e=>e.id==='ev-y0-0122-team7-announced');
  assert.equal(event.day,(62-built.calendar.view_start_year)*365+21);
@@ -39,14 +39,14 @@ test('Kakashi wartime and Nine-Tails phases belong to separate historical eras',
 });
 
 test('invalid dates and years cannot silently fold into the current year',()=>{
- assert.throws(()=>dayInYear({year:64,month:1,day:22},0,calendar,lengths),/outside active calendar year/);
- assert.throws(()=>dayInYear({year:63,month:2,day:29},0,calendar,lengths),/Invalid calendar date/);
- assert.throws(()=>dayInYear({year:63,month:12,day:31},1,calendar,lengths),/out of bounds/);
+ assert.throws(()=>dayInYear({year:63,month:1,day:22},0,calendar,lengths),/outside active calendar year/);
+ assert.throws(()=>dayInYear({year:62,month:2,day:29},0,calendar,lengths),/Invalid calendar date/);
+ assert.throws(()=>dayInYear({year:62,month:12,day:31},1,calendar,lengths),/out of bounds/);
 });
 
 test('populated additional years expand the canvas without changing existing days',()=>{
- const multi={...calendar,view_start_year:63,view_end_year:64,view_days:730};
- assert.equal(dayInYear({year:63,month:1,day:22},0,multi,lengths),21);
- assert.equal(dayInYear({year:64,month:1,day:1},0,multi,lengths),365);
- assert.equal(dayInYear({year:64,month:12,day:31},0,multi,lengths),729);
+ const multi={...calendar,view_start_year:62,view_end_year:63,view_days:730};
+ assert.equal(dayInYear({year:62,month:1,day:22},0,multi,lengths),21);
+ assert.equal(dayInYear({year:63,month:1,day:1},0,multi,lengths),365);
+ assert.equal(dayInYear({year:63,month:12,day:31},0,multi,lengths),729);
 });

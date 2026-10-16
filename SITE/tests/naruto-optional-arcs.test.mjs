@@ -54,7 +54,7 @@ test('calendar decisions are exact, episodes follow working dates and last ramen
   assert.equal(scene.day,(plan.calendar_base_year-start)*365+day,id);
  }
  const ramen=data.scenes.find(s=>s.id==='sc-y0-1216-iruka-naruto-last-ramen');
- assert.equal(ramen.date.year,63);
+ assert.equal(ramen.date.year,62);
  assert.equal(ramen.date.month,12);
  assert.equal(ramen.date.day,27);
 });
