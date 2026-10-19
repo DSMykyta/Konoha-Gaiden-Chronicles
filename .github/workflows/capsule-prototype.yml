@@ -25,6 +25,19 @@ jobs:
       - name: Inventory remaining unknown scene locations
         run: node SITE/scripts/audit-scene-locations.mjs
       - run: npm --prefix SITE run check
+      - name: Install Chromium for prototype smoke
+        run: npm --prefix SITE exec -- playwright install chromium
+      - name: Build browser preview
+        run: npm --prefix SITE run build
+      - name: Smoke-test all four hierarchy scales in Chromium
+        run: node SITE/scripts/capsule-browser.mjs
+      - name: Save capsule screenshots
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: capsule-preview-22-january
+          path: SITE/tmp/capsule-screenshots/*.png
+          if-no-files-found: warn
       - run: npm --prefix SITE test
       - name: Run independent tests even if integrated tests fail
         if: failure()
