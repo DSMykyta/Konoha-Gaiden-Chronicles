@@ -760,7 +760,7 @@ function render(){
  // x coordinates and calendar text update when the camera pans.
  svg('rect',{id:'stickyDayBacking',class:'sticky-day-backing',x:0,y:12,width:0,height:23,rx:3,style:'display:none'},axis);
  svg('text',{id:'stickyDayLabel',class:'sticky-day-label',x:0,y:28,'text-anchor':'start',style:'display:none'},axis);
- const labelPositions=[],continuityPaths=[],refractedCurves=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
+ const labelPositions=[],continuityPaths=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
@@ -771,7 +771,7 @@ function render(){
   const cacheKey=`${layoutKey}:${id}:${lead}:${pixelsPerDay}`;
   let geometry=strandRouteCache.get(cacheKey);
   if(!geometry){
-   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),sceneId:p.group[0]?.scene_id||null,locationId:p.locationId||null,y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
    const lifetimes=TimelineCore.clusteredLifetimes(anchors);
    const routes=lifetimes.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
    const continuous=anchors.length?TimelineCore.strand(anchors,id,mid,amplitude,lead,pixelsPerDay,axisLength()):[];
@@ -788,20 +788,7 @@ function render(){
    }
   });
   const coordinates=routes.map(projectRoute),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
-  // Refract only the original curve fragments that actually pass through
-  // each droplet. Sampling locally avoids cloning/filtering the entire SVG.
-  for(const route of samples){
-   if(refractedCurves.length>=720)break;
-   for(const node of renderNodes){
-    const r=LiquidNodes.radius(node.kind,numbered);
-    if(node.opacity<.12||node.x<route[0].day-r*1.2||node.x>route.at(-1).day+r*1.2)continue;
-    const nearX=clamp(node.x,route[0].day,route.at(-1).day);
-    if(Math.abs(TimelineCore.curveY(route,nearX)-node.y)>r+8)continue;
-    const d=LiquidNodes.refract(route,{...node,numbered},TimelineCore.curveY.bind(TimelineCore));
-    if(d)refractedCurves.push({node,id,d,color:color(id),opacity:n>24?.5:.9});
-    if(refractedCurves.length>=720)break;
-   }
-  }
+  // Flat prototype: no liquid-lens sampling. Preserve foreign-route masks.
   const foreign=renderNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<LiquidNodes.radius(p.kind,numbered)+8));
   let mask=null;
   if(foreign.length){
