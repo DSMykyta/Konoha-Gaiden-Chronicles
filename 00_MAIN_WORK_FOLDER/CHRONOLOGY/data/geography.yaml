@@ -55,6 +55,9 @@ kinds:
   loc-takigakure: settlement
   loc-tanzaku: settlement
   loc-academy-classroom: room
+  loc-academy-corridor: area
+  loc-academy-empty-room: room
+  loc-academy-restroom: room
   loc-academy-staff-room: room
   loc-team7-rooftop: building
   loc-hokage-residence: building
@@ -441,6 +444,9 @@ parents:
   loc-forest-death: loc-konohagakure
   loc-konoha-outskirts: loc-land-of-fire
   loc-academy-classroom: geo-konoha-academy
+  loc-academy-corridor: geo-konoha-academy
+  loc-academy-empty-room: geo-konoha-academy
+  loc-academy-restroom: geo-konoha-academy
   loc-academy-staff-room: geo-konoha-academy
   loc-academy-front: geo-konoha-academy
   loc-team7-rooftop: geo-konoha-academy
