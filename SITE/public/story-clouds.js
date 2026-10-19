@@ -20,7 +20,7 @@ const StoryClouds = {
  groups(nodes,level,sceneMap,episodeMap,arcMap=new Map()){
   if(level==='arc')return nodes.filter(n=>n.kind==='arc').map(n=>{
    const point={id:n.id,x:n.x,y:n.y};
-   return {key:'arc:'+n.id,kind:'arc',id:n.rawId||n.id,title:n.title,
+   return {key:'arc:'+n.id,kind:'arc',id:n.rawId||n.id,arcId:n.rawId||n.id,title:n.title,
     nodes:[point],parts:[[point]]};
   });
   const buckets=new Map(),rank={arc:-1,episode:0,scene:1,moment:2};
@@ -30,7 +30,7 @@ const StoryClouds = {
    if(!buckets.has(key)){
     const meta=kind==='scene'?sceneMap.get(id):kind==='episode'?episodeMap.get(id):kind==='arc'?arcMap.get(id):null;
     const episodeId=kind==='scene'?(meta?.episode_id||parentId):kind==='episode'?id:parentId;
-    buckets.set(key,{key,kind,id,momentIds:new Set(),sceneIds:new Set(),parentId:kind==='scene'?episodeId:null,title:meta?.title||node.title,parentTitle:episodeMap.get(episodeId)?.title||'',nodes:[]});
+    buckets.set(key,{key,kind,id,arcId:kind==='arc'?id:episodeMap.get(episodeId)?.arc_id||null,momentIds:new Set(),sceneIds:new Set(),parentId:kind==='scene'?episodeId:null,title:meta?.title||node.title,parentTitle:episodeMap.get(episodeId)?.title||'',nodes:[]});
    }
    const bucket=buckets.get(key);bucket.nodes.push({id:node.id,x:node.x,y:node.y});
    (node.group||[]).forEach(event=>bucket.momentIds.add(event.id));(node.sourceSceneIds||[node.scene?.id]).filter(Boolean).forEach(id=>bucket.sceneIds.add(id));
@@ -182,7 +182,7 @@ const StoryClouds = {
     if(group.kind==='arc')continue;
     const radius=group.kind==='arc'?Math.min(50,22+4*Math.log2(Math.max(1,state.zoom||1))):group.kind==='episode'?70:group.kind==='scene'?48:25;
     const margin=radius*3.8;
-    const colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.key),group.kind,group.key),group.kind,group.key);
+    const colors=StoryTitleScale.palette(SelectionFocus.palette(StoryClouds.palette(group.kind,group.arcId||group.key),group.kind,group.key),group.kind,group.key);
     // The group contains ALL its nodes, including those offscreen. Clip only
     // contour computation after grouping, so a fourth offscreen moment cannot
     // suddenly create a new cloud as the viewport crosses it.
