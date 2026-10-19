@@ -4,7 +4,7 @@ episode_id: ep-y0-naruto-summoning-training
 display_rank: 400
 continuity_id: main
 title: Нічна розмова Ебісу та Джираї
-location_id: null
+location_id: loc-konohagakure
 placement:
   anchor_id: ta-y0-0706
   day_offset: 1
@@ -13,7 +13,7 @@ presence_coverage: complete
 review:
   time: partial
   cast: accepted
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:

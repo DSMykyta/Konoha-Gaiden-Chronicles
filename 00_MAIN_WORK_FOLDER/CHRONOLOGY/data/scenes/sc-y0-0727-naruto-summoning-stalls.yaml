@@ -4,7 +4,7 @@ episode_id: ep-y0-naruto-summoning-training
 display_rank: 500
 continuity_id: main
 title: Наруто все ще не може викликати бойову жабу
-location_id: null
+location_id: loc-land-of-fire
 placement:
   anchor_id: ta-y0-0727
   day_offset: 0
@@ -13,7 +13,7 @@ presence_coverage: complete
 review:
   time: partial
   cast: accepted
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:
