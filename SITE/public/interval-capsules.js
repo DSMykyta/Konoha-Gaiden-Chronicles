@@ -33,7 +33,7 @@ const IntervalCapsules={
    estimated:(right-left)<minimum,from:start,to:end};
  },
  build(nodes,level,sceneMap,episodeMap,geography,px,opacity=1){
-  const groups=new Map();
+  let groups=new Map();
   if(level==='moment'){
    for(const n of nodes){
     if(n.kind!=='moment')continue;
@@ -42,13 +42,28 @@ const IntervalCapsules={
     if(!groups.has(id))groups.set(id,[]);
     groups.get(id).push(n);
    }
+   // One narrative scene may physically visit several Academy rooms.
+   // At moment zoom draw separate same-scene location segments rather than
+   // assigning the entire scene a fictitious single location.
+   const split=new Map();
+   for(const [sceneId,members] of groups){
+    const sites=new Set(members.map(n=>n.locationId).filter(Boolean));
+    if(sites.size<=1){split.set(sceneId,members);continue;}
+    for(const n of members){
+     const key=sceneId+'@'+(n.locationId||'unknown');
+     if(!split.has(key))split.set(key,[]);
+     split.get(key).push(n);
+    }
+   }
+   groups=split;
   }else{
    for(const n of nodes)if(n.kind===level)groups.set(n.id,[n]);
   }
   const capsules=[];
   for(const [id,members] of groups){
    if(!members.length)continue;
-   const first=members[0],meta=level==='moment'?sceneMap.get(id):first.scene;
+   const first=members[0],sceneId=level==='moment'?first.sourceSceneIds?.[0]||id:id,
+    meta=level==='moment'?sceneMap.get(sceneId):first.scene;
    const episodeId=level==='moment'?meta?.episode_id:
     level==='scene'?first.scene?.episode_id||first.sourceEpisodeIds?.[0]:
     level==='episode'?first.rawId||first.id.replace(/^episode:/,''):null;
@@ -63,7 +78,7 @@ const IntervalCapsules={
    }:first;
    const kind=level==='moment'?'scene':level;
    const rect=this.rect(base,px,kind);
-   const locationId=level==='moment'?meta?.location_id:
+   const locationId=level==='moment'?meta?.location_id||first.locationId||null:
     level==='scene'?first.locationId:null;
    capsules.push({...rect,id:level==='moment'?id:first.id,kind,arcId,episodeId,
     locationId,colors:this.color(arcId),opacity:(first.opacity??1)*opacity,
