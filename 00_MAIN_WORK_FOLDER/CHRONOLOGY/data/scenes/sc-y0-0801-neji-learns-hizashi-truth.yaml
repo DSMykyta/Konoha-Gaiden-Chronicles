@@ -4,7 +4,7 @@ episode_id: ep-y0-neji-hizashi-truth
 display_rank: 100
 continuity_id: main
 title: Неджі дізнається правду про смерть Хізаші
-location_id: null
+location_id: loc-konohagakure
 placement:
   anchor_id: ta-y0-0801
   day_offset: 0
@@ -13,7 +13,7 @@ presence_coverage: complete
 review:
   time: partial
   cast: accepted
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:

@@ -4,7 +4,7 @@ episode_id: ep-y0-sannin-battle
 display_rank: 100
 continuity_id: "main"
 title: "Битва трьох саннінів"
-location_id: null
+location_id: loc-tanzaku
 placement: {anchor_id: "ta-y0-0901", day_offset: 0}
 state: "active"
 presence_coverage: "partial"
