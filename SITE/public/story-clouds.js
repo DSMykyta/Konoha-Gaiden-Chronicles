@@ -2,6 +2,15 @@
 const StoryClouds = {
  hash(value){let hash=2166136261;for(const char of String(value||'')){hash^=char.charCodeAt(0);hash=Math.imul(hash,16777619);}return hash>>>0;},
  palette(kind,key){
+  // Flat, deterministic arc palette: all descendants inherit their parent arc hue.
+  const flat=this.arcColor(key);
+  return {top:flat.fill,bottom:flat.fill,stroke:flat.stroke,alpha:1};
+ },
+ arcColor(arcId){
+  const hue=this.hash(arcId||'unassigned')%360;
+  return {fill:`hsl(${hue},55%,83%)`,stroke:`hsl(${hue},43%,43%)`,hue};
+ },
+ legacyPalette(kind,key){
   const base=this.hash(key)%360,shift=kind==='episode'?52:kind==='scene'?18:0,hue=(base+shift)%360;
   if(kind==='arc')return {top:`hsla(${hue},34%,91%,.37)`,bottom:`hsla(${hue},32%,94%,.24)`,stroke:`hsla(${hue},25%,69%,.22)`,alpha:.40};
   if(kind==='episode')return {top:`hsla(${hue},55%,92%,.76)`,bottom:`hsla(${hue},50%,94%,.48)`,stroke:`hsla(${hue},28%,68%,.38)`,alpha:.54};
