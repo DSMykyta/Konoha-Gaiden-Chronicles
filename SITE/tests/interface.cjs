@@ -314,7 +314,7 @@ async function check(width,height){
  run("navigateScene('sc-s2-prison-accusation')");assert.match(doc.querySelector('#cardContent .story-version').textContent,/Джерело: фільм.*Blood Prison/);run('closeCard()');
  // Exercise the actual DOM renderer with a second populated year, in both
  // directions. This fixture changes the view metadata, not repository scenes.
- run('closeCard();closePanels();const multi=JSON.parse(JSON.stringify(data));multi.calendar.view_end_year=62;multi.calendar.view_days=(62-multi.calendar.view_start_year+1)*365;ingest(multi);');
+ run('closeCard();closePanels();const multi=JSON.parse(JSON.stringify(data));multi.calendar.view_end_year=63;multi.calendar.view_days=(63-multi.calendar.view_start_year+1)*365;ingest(multi);');
  window.matchMedia=()=>({matches:false});
  const eraBoundary=run('TimelineEraHeading.segments(data.periods,data.calendar).find(p=>p.id==="timeskip").start');
  const beforeEra=eraBoundary-15;
@@ -322,13 +322,13 @@ async function check(width,height){
  assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,2);
  assert.match(doc.querySelector('#eraHeadingTrack [data-era="part-i"]').style.transform,/-/);
  assert(doc.querySelector('#eraHeadingTrack [data-era="timeskip"]'));
- run('const nextYearDay=(62-data.calendar.view_start_year)*365;renderEraHeading(nextYearDay,day=>10*(day-nextYearDay))');
+ run('const nextYearDay=(63-data.calendar.view_start_year)*365;renderEraHeading(nextYearDay,day=>10*(day-nextYearDay))');
  assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
  run(`renderEraHeading(${eraBoundary},day=>10*(day-${eraBoundary}))`);
  assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
  assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,1);
  assert.equal(doc.querySelector('#eraHeadingTrack span').style.transform,'translate3d(0px,0,0)');
- assert.equal(run('date(nextYearDay).year'),62);assert.equal(run('date(nextYearDay).d'),1);
+ assert.equal(run('date(nextYearDay).year'),63);assert.equal(run('date(nextYearDay).d'),1);
  run(`renderEraHeading(${beforeEra},day=>10*(day-${beforeEra}))`);
  assert.equal(doc.getElementById('eraHeading').dataset.era,'part-i');
  window.matchMedia=()=>({matches:true});
