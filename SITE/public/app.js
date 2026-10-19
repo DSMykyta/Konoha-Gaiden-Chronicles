@@ -849,7 +849,7 @@ function render(){
   const g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':'')+(pinnedNodeId===p.id?' is-pinned':''),
    tabindex:p.opacity>=.48?0:-1,role:'button','aria-label':label,'aria-haspopup':'dialog',
    'data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):'',
-   style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'}`});
+   style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'};--arc-moment:${IntervalCapsules.color(IntervalCapsules.arcFor(p,sceneMap,episodeMap)).dot}`});
   const c=capsuleById.get(p.id);
   const arcId=IntervalCapsules.arcFor(p,sceneMap,episodeMap);
   const ink=IntervalCapsules.color(arcId);
