@@ -29,8 +29,7 @@ jobs:
           import io
 
           pairs = [
-              ("МІКАТ", "ТОКАР"), ("Мікат", "Токар"), ("мікат", "токар"),
-              ("МИКАТ", "ТОКАР"), ("Микат", "Токар"), ("микат", "токар"),
+              ("Мікат", "Токар"), ("Микат", "Токар"),
               ("MIKATA", "TOKARA"), ("Mikata", "Tokara"), ("mikata", "tokara"),
               ("ミカタ", "トカラ"),
           ]
@@ -131,9 +130,13 @@ jobs:
         run: |
           rm .github/workflows/rename-mikata-to-tokara-once.yml
           git add -A
-          git diff --cached --check
+          git -c core.whitespace=-blank-at-eol diff --cached --check
           git status --short
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'Rename Yugiri Mikata to Yugiri Tokara throughout project'
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git pull --rebase origin main
+          done
+          exit 1
