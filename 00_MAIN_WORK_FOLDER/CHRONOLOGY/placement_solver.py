@@ -52,11 +52,26 @@ def display(day):
 def norm(actor):
     return ALIAS.get(actor,actor)
 
-def cast(scene):
-    out={norm(p["entity_id"]) for event in scene.get("events") or []
-         for p in event.get("involvement") or []
-         if p.get("entity_id") and p.get("mode") in PHYSICAL and p.get("role")!="mentioned"}
-    out.update(norm(p["entity_id"]) for p in scene.get("presence") or []
+def cast(scene, substitute=None, event_overrides=None):
+    # Mirror SITE/scripts/naruto-variants.mjs for physical involvement.
+    # Source scenes retain the original anime cast, but the published
+    # working continuity uses the explicit non-Naruto editorial variant.
+    event_overrides=event_overrides or {}
+    out=set()
+    for event in scene.get("events") or []:
+        override=event_overrides.get(event["id"],{})
+        present=set()
+        for p in event.get("involvement") or []:
+            actor=p.get("entity_id")
+            if substitute and actor=="c-naruto":
+                actor=substitute
+            if actor and p.get("mode") in PHYSICAL and p.get("role")!="mentioned":
+                present.add(norm(actor))
+        present-=set(map(norm,override.get("remove_entities") or []))
+        present.update(map(norm,override.get("add_entities") or []))
+        out.update(present)
+    out.update(norm(substitute if substitute and p.get("entity_id")=="c-naruto" else p["entity_id"])
+               for p in scene.get("presence") or []
                if p.get("entity_id") and p.get("review")=="accepted")
     return out
 
@@ -83,6 +98,8 @@ def local_konoha(loc,entities):
 def load_project(data):
     names=("time-anchors","episodes","entities","links","mission-windows","geography")
     files={name:read(data/(name+".yaml")) for name in names}
+    optional=read(data/"naruto-optional.yaml") if (data/"naruto-optional.yaml").exists() else {}
+    variants={a["arc_id"]:a["substitute_id"] for a in optional.get("arcs") or []}
     anchors={a["id"]:a for a in files["time-anchors"].get("anchors",[])}
     episodes={e["id"]:e for e in files["episodes"].get("episodes",[])}
     entities={e["id"]:e for e in files["entities"].get("entities",[])}
@@ -101,9 +118,11 @@ def load_project(data):
         if sid in (mission.get("scene_days") or {}):
             day=mission_base+mission["scene_days"][sid]
         episode=episodes.get(scene.get("episode_id"),{})
+        arc_id=episode.get("arc_id")
         scenes[sid]={"id":sid,"day":day,"state":scene.get("state"),
-                     "arc_id":episode.get("arc_id"),
-                     "location":scene.get("location_id"),"cast":cast(scene),
+                     "arc_id":arc_id,
+                     "location":scene.get("location_id"),
+                     "cast":cast(scene,variants.get(arc_id),optional.get("event_overrides") if arc_id in variants else None),
                      "relations":scene.get("relations") or [],
                      "continuity":scene.get("continuity_id"),
                      "path":path.relative_to(data).as_posix()}
