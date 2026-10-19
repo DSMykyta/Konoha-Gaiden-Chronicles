@@ -108,6 +108,19 @@ class PlacementTests(unittest.TestCase):
         self.assertEqual(proposal["count"],2)
         self.assertEqual(solver.display(proposal["suggested"]),"04.01.62")
 
+    def test_source_naruto_is_replaced_in_published_variant(self):
+        self.scene("variant",4,actor="c-naruto",arc="arc-b")
+        save(self.data/"naruto-optional.yaml",{
+            "arcs":[{"arc_id":"arc-b","substitute_id":"c-shino"}]})
+        self.missions=[{"arc_id":"arc-a","start":3,"end":5,
+                        "occupied_start":3,"occupied_end":6,
+                        "actors":["c-naruto"],"route":"away",
+                        "return_days":1,"rest_days":0}]
+        self.assertEqual(self.audit()["issues"],[])
+        # The replacement is a physical participant, not a missing cast.
+        self.missions[0]["actors"]=["c-shino"]
+        self.assertTrue(any(x["kind"]=="mission_conflict" for x in self.audit()["issues"]))
+
     def test_one_sided_bound_does_not_invent_date(self):
         self.scene("past",None)
         self.scene("future",4)
