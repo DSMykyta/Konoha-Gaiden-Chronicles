@@ -1,0 +1,35 @@
+name: Capsule timeline prototype checks
+on:
+  push:
+    branches:
+      - feature/interval-capsule-timeline
+    paths:
+      - 'SITE/**'
+      - '00_MAIN_WORK_FOLDER/CHRONOLOGY/data/**'
+      - '.github/workflows/capsule-prototype.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: SITE/package-lock.json
+      - run: npm --prefix SITE ci
+      - run: npm --prefix SITE run check
+      - run: npm --prefix SITE test
+      - name: Run independent tests even if integrated tests fail
+        if: failure()
+        run: cd SITE && node --test tests/*.test.mjs
+      - name: Validate YAML chronology
+        if: always()
+        run: |
+          python -m pip install 'PyYAML>=6,<7'
+          python 00_MAIN_WORK_FOLDER/CHRONOLOGY/validate_timeline.py
+          python 00_MAIN_WORK_FOLDER/CHRONOLOGY/validate_shippuden.py
