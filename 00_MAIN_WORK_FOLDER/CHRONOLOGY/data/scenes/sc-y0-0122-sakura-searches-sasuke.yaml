@@ -4,12 +4,12 @@ episode_id: ep-y0-team-formation
 display_rank: 220
 continuity_id: "main"
 title: "Сакура шукає Саске під час перерви"
-location_id: null
+location_id: "loc-academy-corridor"
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
 layer: filler
 state: "active"
 presence_coverage: "partial"
-review: {time: "partial", cast: "partial", location: "pending", origin: "accepted", text: "accepted"}
+review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "accepted"}
 events:
   - id: "ev-y0-0122-sakura-searches-sasuke"
     title: "Сакура шукає Саске на обідню перерву"
