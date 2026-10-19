@@ -1,13 +1,13 @@
 # Аудит сюжетної хронології та пошук дат
 
-Технічний звіт за структурованими YAML. Жодну дату або сюжет автоматично не змінено.
+Технічний звіт після перенесення Такіґакуре на 09–11.09.62. Аналізатор не змінює джерельні дати самостійно.
 
 ## Охоплення
 
 - Усього сцен: 1279; активних: 1273.
 - Датованих: 1245; без дати: 28.
 - Прийнятих умов порядку: 696.
-- Днів з незалежними паралельними подіями: 146.
+- Днів з незалежними паралельними подіями: 147.
 - Справді невідомих посилань у прийнятих умовах: 0.
 - Зв'язків із неактивними сценами, пропущених коректно: 11.
 - Рушій: OR-Tools CP-SAT; статус: feasible.
@@ -42,13 +42,8 @@
 
 ## Можливі географічні колізії — не доведені
 
-Випадків: 9. Різні країни за день не доводять неможливість пересування.
+Випадків: 4. Різні країни за день не доводять неможливість пересування.
 
-- 04.09.62 c-naruto: geo-land-waterfalls, loc-land-of-tea; сцени sc-y0-0904-aoi-attacks-idate-naruto, sc-y0-0904-waterfall-escort, sc-y0-0904-waterfall-threat-revealed
-- 05.09.62 c-naruto: geo-land-waterfalls, loc-land-of-tea; сцени sc-y0-0905-team7-rescues-idate, sc-y0-0905-waterfall-villagers-captured
-- 05.09.62 c-sasuke: geo-land-waterfalls, loc-land-of-tea; сцени sc-y0-0905-team7-rescues-idate, sc-y0-0905-waterfall-villagers-captured
-- 06.09.62 c-naruto: geo-land-waterfalls, loc-land-of-tea; сцени sc-y0-0906-sasuke-naruto-vs-aoi, sc-y0-0906-waterfall-defense-wins, sc-y0-0906-waterfall-resists-suien
-- 06.09.62 c-sasuke: geo-land-waterfalls, loc-land-of-tea; сцени sc-y0-0906-sasuke-naruto-vs-aoi, sc-y0-0906-waterfall-defense-wins, sc-y0-0906-waterfall-resists-suien
 - 10.10.62 c-gensho-ryudoin: loc-land-of-fire, loc-land-of-mountain-streams; сцени sc-period-ryudoin-foreign-trap, sc-y0-1118-ryudoin-finale
 - 10.10.62 c-jako-ryudoin: loc-land-of-fire, loc-land-of-mountain-streams; сцени sc-period-ryudoin-foreign-trap, sc-y0-1118-ryudoin-finale
 - 10.10.62 c-might-guy: loc-land-of-fire, loc-land-of-mountain-streams; сцени sc-period-ryudoin-foreign-trap, sc-y0-1118-ryudoin-finale
