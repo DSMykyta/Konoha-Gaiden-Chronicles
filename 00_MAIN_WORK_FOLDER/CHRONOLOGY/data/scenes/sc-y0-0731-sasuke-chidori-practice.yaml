@@ -4,7 +4,7 @@ episode_id: ep-y0-sasuke-chidori-training
 display_rank: 300
 continuity_id: "main"
 title: "Саске самостійно відпрацьовує Чідорі"
-location_id: null
+location_id: loc-land-of-fire
 placement: {anchor_id: "ta-y0-0731", day_offset: 0}
 state: "active"
 presence_coverage: "complete"
