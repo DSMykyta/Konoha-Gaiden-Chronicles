@@ -608,6 +608,7 @@ const TimelineCore = {
       const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
       if(gap<1e-8)continue;
       const pixelGap=gap*Math.max(1,pixelsPerDay);
+      if(a.sceneId&&a.sceneId===b.sceneId)continue; // straight inside one scene
       const wander=smooth(Math.max(0,Math.min(1,(pixelGap-20)/185)));
       if(!wander||!a.node||!b.node)continue;
       const controls=3,primary=channel*Math.min(12,amplitude*.14)*wander;
