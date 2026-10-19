@@ -121,6 +121,24 @@ class PlacementTests(unittest.TestCase):
         self.missions[0]["actors"]=["c-shino"]
         self.assertTrue(any(x["kind"]=="mission_conflict" for x in self.audit()["issues"]))
 
+    def test_links_to_inactive_scenes_are_not_broken_refs(self):
+        self.scene("active",4)
+        dormant=self.scene("dormant",None,arc="arc-b")
+        dormant["state"]="inactive"
+        self.links=[{"id":"dormant-link","a":"active","b":"dormant",
+                     "kind":"before","review":"accepted"}]
+        result=self.audit()
+        self.assertEqual(result["unknown_refs"],[])
+        self.assertEqual(result["inactive_refs"],["dormant-link"])
+
+    def test_different_source_continuities_are_reviewed_separately(self):
+        self.scene("main-story",4)
+        alternate=self.scene("other-story",4,arc="arc-b",location="loc-land-of-snow")
+        alternate["continuity_id"]="movie-prison"
+        result=self.audit()
+        self.assertEqual(result["suspected_travel"],[])
+        self.assertEqual(len(result["cross_continuity"]),1)
+
     def test_one_sided_bound_does_not_invent_date(self):
         self.scene("past",None)
         self.scene("future",4)
