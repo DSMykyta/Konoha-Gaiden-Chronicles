@@ -1,0 +1,46 @@
+name: Audit Tokara descriptions once
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/tokara-text-audit-once.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Find outdated childhood and identity language
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import subprocess, re
+          from pathlib import Path
+          paths=[Path(p.decode()) for p in subprocess.check_output(["git","ls-files","-z"]).split(b'\0') if p]
+          groups={
+            "substitution": r'замі[нщ][а-яіїєґʼ’]*.{0,55}Токар|Токар.{0,55}замі[нщ]|(?:замін|заміщ).{0,50}себе|Tokara.{0,50}replac',
+            "child braid": r'кос[аиюоюі]|плет[еі]|заплет|braid|pigtail',
+            "canonical character labeled OC": r'(?:Токар|Tokara).{0,30}\b[Oo][Cc]\b|(?:Токар|Tokara).{0,55}(?:оригінальн|вигадан[ийі]|авторськ[ийі]\s+персонаж)',
+            "mentor mistaken as child": r'Іноїчі.{0,35}(?:Ібікі|Хаяте).{0,100}(?:діти|дитин|генін|випущен)',
+            "old name": r'Мікат|Микат|Mikata|ミカタ',
+          }
+          counts={k:0 for k in groups}
+          for path in paths:
+              p=str(path)
+              if "SOURCES/subtitles/" in p or path.suffix.lower() in ('.png','.jpg','.jpeg','.webp','.psd','.woff2','.zip','.docx','.xlsx','.pdf','.gif'):continue
+              try:s=path.read_text(encoding='utf-8')
+              except(UnicodeDecodeError, OSError):continue
+              lines=s.splitlines()
+              for i,line in enumerate(lines):
+                  for title,pattern in groups.items():
+                      if not re.search(pattern,line,re.I):continue
+                      if title=="child braid":
+                          context=' '.join(lines[max(0,i-8):min(len(lines),i+9)])
+                          if not (re.search(r'(Токар|Юґірі|Yugiri|Tokara)',context,re.I) and (re.search(r'(12|дит|юност|генін|академ|школ|50|youth|child)',context,re.I) or "INIICHI" in p.upper() or "INIICHI" in p.upper())):continue
+                      counts[title]+=1
+                      if counts[title]<=75:
+                          print(f"{title} | {p}:{i+1} | {line[:260]}")
+          print("AUDIT_TOTALS",counts)
+          PY
