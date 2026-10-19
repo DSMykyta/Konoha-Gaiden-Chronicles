@@ -477,6 +477,14 @@ anchors:
     evidence_ids: ["evd-v10-000098"]
     review: "accepted"
     reason: "Working project date inherited from v9/v10 for main/ALT material."
+  - id: "ta-ova-waterfall-62-0909"
+    date: {year: 62, month: 9, day: 9}
+    precision: "day"
+    placement_status: "working"
+    basis: "project_reconstruction"
+    evidence_ids: ["evd-ova-waterfall"]
+    review: "accepted"
+    reason: "Working start of Takigakure mission, 09–11.09.62; after Chunin finals and Tsunade search, after Team 7 returns from Tea 08.09, before next Team 7 story 13.09. Source does not specify absolute dates; OVA and alternate novel share the placement window."
   - id: "ta-y0-0909"
     date: {year: 62, month: 9, day: 9}
     precision: "day"
