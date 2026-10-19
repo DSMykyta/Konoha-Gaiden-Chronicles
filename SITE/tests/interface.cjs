@@ -141,20 +141,20 @@ async function check(width,height){
   assert.equal(kitaMoment.x,joninMoment.x,'Observed independent branches must have matching X');
   assert.notEqual(kitaMoment.y,joninMoment.y,'Two distinct observed moments must not overlap vertically');
 
- click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('22 січня 61'));run('closeCard()');
+ click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('22 січня '+original.calendar.current_year));run('closeCard()');
 
  run('zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');assert.equal(run('semanticLevel()'),'scene');
- // The classroom remains a scene because it groups multiple moments. The one-moment exterior scene collapses to its moment.
+ // Both classroom and singleton exterior retain scene interval capsules.
  assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,1);
- assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,0);
- assert(canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]').classList.contains('moment-node'));
+ assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,1);
+ assert(canvas.querySelector('[data-event="sc-y0-0122-academy-exterior-jonin"]').classList.contains('scene-node'));
  const classroomCount=snapshot.events.filter(e=>e.scene_id==='sc-y0-0122-academy-announcements').length;const hub=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-announcements")');assert.equal(hub.kind,'scene');assert.equal(hub.childCount,classroomCount);assert(hub.cast.includes('c-iruka'));assert(hub.cast.includes('c-naruto'));
- const exterior=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert.equal(exterior.kind,'moment');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
+ const exterior=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-exterior-jonin")');assert.equal(exterior.kind,'scene');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
  // Every line physically present in a scene meets its common hub exactly.
  for(const id of hub.cast){const paths=[...canvas.querySelectorAll('.thread[data-character="'+id+'"]')];assert(paths.some(path=>path.getAttribute('d').includes(hub.x.toFixed(2)+','+hub.y.toFixed(2))),id+' does not reach scene hub');}
  click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
  // Hovering another node cannot replace a clicked/pinned card.
- if(width>=600){const other=canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
+ if(width>=600){const other=canvas.querySelector('[data-event="sc-y0-0122-academy-exterior-jonin"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
  assert.equal(doc.querySelectorAll('.scene-context,.card-open-scene').length,0);
  assert.equal(doc.getElementById('sceneDialog'),null);assert.equal(doc.getElementById('continuity'),null);
  assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);
