@@ -563,11 +563,36 @@ function render(){
  // Preserve the identity of the different streams even at coarser zooms.
  // Zoom merges semantic marks, not the vertical geography into one tight band.
  const spreadY=.28+.72*clamp(Math.log(Math.max(1,semanticZoom))/Math.log(365),0,1);
- const parentY=(p,kind)=>{
+ const baseParentY=(p,kind)=>{
   const key=`flow-parent:${kind}:${geometryKey}`;
   if(!baseLayoutCache.has(key))baseLayoutCache.set(key,kind==='moment'?originalY:TimelineCore.aggregateLanes(getSemantic(kind).nodes,originalY));
   return mid+((baseLayoutCache.get(key).get(p.id)??mid)-mid)*spreadY;
  };
+ // Independent arc intervals must occupy distinct rows when their displayed
+ // spans collide; never fuse separate stories into a shared endpoint.
+ const arcLanes=new Map();
+ if(flow.fine==='arc'||flow.coarse==='arc'){
+  const arcs=[...getSemantic('arc').nodes].sort((a,b)=>(a.spanStart??a.day)-(b.spanStart??b.day)||a.id.localeCompare(b.id));
+  const placed=[];
+  for(const arc of arcs){
+   const from=px(Number.isFinite(arc.spanStart)?arc.spanStart:arc.day);
+   const to=px(Number.isFinite(arc.spanEnd)?arc.spanEnd:arc.day);
+   const start=Math.min(from,to),end=Math.max(from,to);
+   const cx=(start+end)/2,half=Math.max(8,(end-start)/2);
+   const occupied=placed.filter(row=>row.end>=cx-half-5&&row.start<=cx+half+5);
+   const wanted=baseParentY(arc,'arc');
+   let chosen=wanted;
+   for(let step=0;step<arcs.length*2+4;step++){
+    const jump=Math.ceil(step/2)*42*(step%2===0?1:-1);
+    const trial=wanted+jump;
+    if(trial<flowTop+18)continue;
+    if(occupied.every(row=>Math.abs(row.y-trial)>=40)){chosen=trial;break;}
+   }
+   arcLanes.set(arc.id,chosen);
+   placed.push({start:cx-half,end:cx+half,y:chosen});
+  }
+ }
+ const parentY=(p,kind)=>kind==='arc'&&arcLanes.has(p.id)?arcLanes.get(p.id):baseParentY(p,kind);
  const fine=getSemantic(flow.fine).nodes,coarse=flow.coarse?getSemantic(flow.coarse).nodes:[],t=flow.t;
  const coarseOwner=new Map();
  for(const p of coarse)for(const moment of p.group)coarseOwner.set(moment.id,p);
@@ -587,8 +612,8 @@ function render(){
  const coarseProjected=coarse.map(p=>({...p,x:px(p.day),y:parentY(p,flow.coarse),
   opacity:unchanged.has(p.id)?0:t,_role:'coarse',stretch:0}));
  let globalNodes=[...fineProjected,...coarseProjected].filter(p=>p.opacity>.001);
- // Separate arcs never merge, even when their displayed rectangles overlap.
- const movedArcDay=new Map(),clusterBridges=[];
+ // The arc-layout pass above separates overlapping stories without clustering.
+ const clusterBridges=[];
  const projectedFine=new Map(fineProjected.map(p=>[p.id,p]));
  const projectedCoarse=new Map(coarseProjected.map(p=>[p.id,p]));
  const visualMoment=new Map();
@@ -596,16 +621,8 @@ function render(){
   const id=moment.id,from=fineOwner.get(id),to=coarseOwner.get(id);
   const mark=projectedFine.get(from?.id);
   if(!mark)continue;
-  // The same source moment becomes the parent mark's anchor gradually.
-  const sourceArc=to?.kind==='arc'?projectedCoarse.get(to.id):from?.kind==='arc'?projectedFine.get(from.id):null;
-  const originalArc=to?.kind==='arc'?to:from?.kind==='arc'?from:null;
-  const shift=movedArcDay.get(sourceArc?.id);
-  const shiftFactor=flow.coarse==='arc'?t:0; // Fine arc marks already include their own cluster motion.
-  const shiftDay=shift&&originalArc?(shift.day-originalArc.day)*shiftFactor:0;
-  const shiftX=shift&&originalArc?(sourceArc.x-px(originalArc.day))*shiftFactor:0;
-  const shiftY=shift&&originalArc?(shift.y-parentY(originalArc,originalArc===to?flow.coarse:flow.fine))*shiftFactor:0;
-  visualMoment.set(id,{day:mark.day+shiftDay,x:mark.x+shiftX,y:mark.y+shiftY});
- }
+  // Curves inherit the same ancestor lane during the zoom morph.
+  visualMoment.set(id,{day:mark.day,x:mark.x,y:mark.y}); }
  const layoutKey=`flow:${w}:${viewport}:${zoom.toFixed(6)}`;
  const worldLineNodes=canonical.moments.map(p=>{
   const visual=visualMoment.get(p.id);
