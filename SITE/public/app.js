@@ -554,9 +554,24 @@ function render(){
   // a succession of one team's moments alternated above/below its own route.
   // Actual marks already merge into scenes while zooming out; a geometric
   // collision pass must not rewrite the underlying character trajectories.
-  baseLayoutCache.set(geometryKey,new Map(canonical.moments.map(p=>[
+  const positions=new Map(canonical.moments.map(p=>[
    p.id,clamp(mid+TimelineCore.spreadLanePosition(canonical.lanes.get(p.id)||0)*amplitude,top,bottom)
-  ])));
+  ]));
+  // Keep each scene's moments in one horizontal channel. Transitions belong
+  // between scenes, not between individual marks inside a scene.
+  const groupByScene=new Map();
+  for(const p of canonical.moments){
+   const key=p.scene?.id||p.group?.[0]?.scene_id;
+   if(!key)continue;
+   if(!groupByScene.has(key))groupByScene.set(key,[]);
+   groupByScene.get(key).push(p.id);
+  }
+  for(const ids of groupByScene.values()){
+   if(ids.length<2)continue;
+   const y=ids.reduce((sum,id)=>sum+(positions.get(id)||mid),0)/ids.length;
+   ids.forEach(id=>positions.set(id,y));
+  }
+  baseLayoutCache.set(geometryKey,positions);
  }
  const originalY=baseLayoutCache.get(geometryKey);
  // Preserve the identity of the different streams even at coarser zooms.
@@ -765,7 +780,7 @@ function render(){
   const cacheKey=`${layoutKey}:${id}:${lead}:${pixelsPerDay}`;
   let geometry=strandRouteCache.get(cacheKey);
   if(!geometry){
-   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id,sceneId:p.scene?.id||p.group?.[0]?.scene_id||null};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
    const lifetimes=TimelineCore.clusteredLifetimes(anchors);
    const routes=lifetimes.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
    const continuous=anchors.length?TimelineCore.strand(anchors,id,mid,amplitude,lead,pixelsPerDay,axisLength()):[];
