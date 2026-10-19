@@ -514,3 +514,16 @@ kbd { display: inline-grid; place-items: center; width: 21px; height: 23px; marg
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* Feature branch: flat arc-colored time capsules (no liquid glass). */
+#timeline .semantic-capsule-layer { pointer-events: none; }
+#timeline .semantic-capsule { vector-effect: non-scaling-stroke; }
+#timeline .capsule-sibling-link { pointer-events: none; stroke-linecap: round; }
+#timeline .node .mark.flat-capsule-hit,
+#timeline .node:is(:hover,:focus-visible,.is-open,.is-pinned) .mark.flat-capsule-hit {
+  fill: transparent;
+  stroke: transparent;
+  pointer-events: all;
+}
+#timeline .node .mark.flat-moment-mark { fill: var(--arc-moment, #6b7280); }
+#timeline .node .scene-count { pointer-events: none; }
