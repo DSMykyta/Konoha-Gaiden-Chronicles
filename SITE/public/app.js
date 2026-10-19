@@ -123,7 +123,7 @@ function semanticLevel(){
 function storyNodeCast(group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
 function semanticNodes(level,allScenes){
  const makeMoment=(s,e,day=s.position,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=[...new Set(e.physical||[])];return {id:e.id,kind:'moment',title:e.title,scene,group:[e],day,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:s.id,locationId:e.location_id||scene?.location_id||null,childCount:1,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
- const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
+ const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,spanStart:s.spanStart,spanEnd:s.spanEnd,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
  const collapseScene=(s,episodeId=null)=>makeScene(s,episodeId||sceneMap.get(s.id)?.episode_id||null);
  if(level==='moment'){
   const positions=worldChronology().moments;
@@ -580,7 +580,10 @@ function render(){
   const target=parents.get(p.id),fromY=parentY(p,flow.fine),toY=target===p?fromY:parentY(target,flow.coarse);
   const deltaX=px(target.day)-px(p.day),deltaY=toY-fromY;
   return {...p,x:TimelineFlow.lerp(px(p.day),px(target.day),t),y:TimelineFlow.lerp(fromY,toY,t),
-   day:TimelineFlow.lerp(p.day,target.day,t),opacity:unchanged.has(p.id)?1:flow.coarse?1-t:1,_role:'fine',
+   day:TimelineFlow.lerp(p.day,target.day,t),
+   spanStart:Number.isFinite(p.spanStart)&&Number.isFinite(target?.spanStart)?TimelineFlow.lerp(p.spanStart,target.spanStart,t):p.spanStart,
+   spanEnd:Number.isFinite(p.spanEnd)&&Number.isFinite(target?.spanEnd)?TimelineFlow.lerp(p.spanEnd,target.spanEnd,t):p.spanEnd,
+   opacity:unchanged.has(p.id)?1:flow.coarse?1-t:1,_role:'fine',
    flowAngle:Math.atan2(deltaY,deltaX)*180/Math.PI,stretch:Math.sin(Math.PI*t)};
  });
  const coarseProjected=coarse.map(p=>({...p,x:px(p.day),y:parentY(p,flow.coarse),
