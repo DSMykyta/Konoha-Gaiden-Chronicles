@@ -60,3 +60,25 @@ test('the arc level never creates merged groups, even for overlapping arcs',()=>
  assert.equal(result.links.length,0);
  assert.notEqual(result.capsules[0].colors.fill,result.capsules[1].colors.fill);
 });
+
+test('multi-site scene stays one narrative ID but separates Academy room segments at moment zoom',()=>{
+ const sceneMapMixed=new Map(sceneMap);
+ sceneMapMixed.set('mixed',{id:'mixed',location_id:null,episode_id:'formation'});
+ const moments=[
+  {id:'ambush',kind:'moment',day:11,x:px(11),y:80,locationId:'loc-academy-empty-room',opacity:1,group:[{id:'ambush'}],sourceSceneIds:['mixed']},
+  {id:'search',kind:'moment',day:11.2,x:px(11.2),y:125,locationId:'loc-academy-corridor',opacity:1,group:[{id:'search'}],sourceSceneIds:['mixed']}
+ ];
+ const out=capsule.build(moments,'moment',sceneMapMixed,episodeMap,place,px);
+ assert.equal(out.capsules.length,2);
+ assert(out.capsules.every(row=>row.arcId==='genin'));
+ assert.deepEqual(Array.from(out.capsules.map(row=>row.locationId)).sort(),['loc-academy-corridor','loc-academy-empty-room']);
+});
+test('a child capsule springs toward its parent and keeps the source duration',()=>{
+ const full=scene('class',10,13);
+ const tiny={...full,capsuleScale:.2,x:px(11)};
+ const outer=capsule.build([full],'scene',sceneMap,episodeMap,place,px).capsules[0];
+ const inner=capsule.build([tiny],'scene',sceneMap,episodeMap,place,px).capsules[0];
+ assert(inner.width<outer.width);
+ assert.equal(inner.from,outer.from);
+ assert.equal(inner.to,outer.to);
+});
