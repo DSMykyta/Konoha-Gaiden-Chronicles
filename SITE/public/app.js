@@ -579,15 +579,19 @@ function render(){
    const to=px(Number.isFinite(arc.spanEnd)?arc.spanEnd:arc.day);
    const start=Math.min(from,to),end=Math.max(from,to);
    const cx=(start+end)/2,half=Math.max(8,(end-start)/2);
-   const occupied=placed.filter(row=>row.end>=cx-half-5&&row.start<=cx+half+5);
-   const wanted=baseParentY(arc,'arc');
-   let chosen=wanted;
-   for(let step=0;step<arcs.length*2+4;step++){
-    const jump=Math.ceil(step/2)*42*(step%2===0?1:-1);
-    const trial=wanted+jump;
-    if(trial<flowTop+18)continue;
-    if(occupied.every(row=>Math.abs(row.y-trial)>=40)){chosen=trial;break;}
+   const occupied=placed.filter(row=>row.end>=cx-half-5&&row.start<=cx+half+5)
+    .map(row=>row.y).sort((a,b)=>a-b);
+   const wanted=Math.max(flowTop+18,baseParentY(arc,'arc'));
+   // Find the nearest free interval using two linear sweeps; avoid a
+   // quadratic candidate-by-candidate collision scan on dense year views.
+   let above=wanted;
+   for(const y of occupied){if(y+40<=above)continue;if(y-40<above)above=y+40;else break;}
+   let below=wanted;
+   for(let i=occupied.length-1;i>=0;i--){
+    const y=occupied[i];if(y-40>=below)continue;
+    if(y+40>below)below=y-40;else break;
    }
+   const chosen=below>=flowTop+18&&wanted-below<=above-wanted?below:above;
    arcLanes.set(arc.id,chosen);
    placed.push({start:cx-half,end:cx+half,y:chosen});
   }
