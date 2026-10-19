@@ -26,6 +26,7 @@ jobs:
           from pathlib import Path
           import subprocess
           import zipfile
+          import io
 
           pairs = [
               ("МІКАТ", "ТОКАР"), ("Мікат", "Токар"), ("мікат", "токар"),
@@ -49,9 +50,27 @@ jobs:
               if path.suffix.lower() in {".docx", ".xlsx", ".zip"}:
                   try:
                       with zipfile.ZipFile(path) as z:
-                          found = [n for n in z.namelist() if (n.endswith(".xml") or n.endswith(".rels")) and any(b.encode("utf-8") in z.read(n) for b,_ in pairs)]
-                          if found:
-                              embedded.append((original, found[:5]))
+                          affected = []
+                          output = io.BytesIO()
+                          with zipfile.ZipFile(output, "w") as zout:
+                              for info in z.infolist():
+                                  payload = z.read(info.filename)
+                                  if info.filename.endswith((".xml", ".rels")):
+                                      try:
+                                          s = payload.decode("utf-8")
+                                          t = rename_string(s)
+                                          if s != t:
+                                              payload = t.encode("utf-8")
+                                              affected.append(info.filename)
+                                      except UnicodeDecodeError:
+                                          pass
+                                  zout.writestr(info, payload)
+                          if affected:
+                              if path.suffix.lower() == ".zip":
+                                  embedded.append((original, affected[:5]))
+                              else:
+                                  path.write_bytes(output.getvalue())
+                                  changed.append((original, len(affected)))
                   except (ValueError, zipfile.BadZipFile):
                       pass
                   continue
