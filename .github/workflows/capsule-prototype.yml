@@ -22,6 +22,8 @@ jobs:
           cache: npm
           cache-dependency-path: SITE/package-lock.json
       - run: npm --prefix SITE ci
+      - name: Inventory remaining unknown scene locations
+        run: node SITE/scripts/audit-scene-locations.mjs
       - run: npm --prefix SITE run check
       - run: npm --prefix SITE test
       - name: Run independent tests even if integrated tests fail
