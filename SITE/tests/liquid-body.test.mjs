@@ -39,7 +39,8 @@ test('one liquid body is the only painted droplet silhouette and retains accessi
  const clouds=fs.readFileSync(new URL('../public/story-clouds.js',import.meta.url),'utf8');
  assert(html.indexOf('liquid-body.js?v=')>html.indexOf('liquid-nodes.js?v='));
  assert(html.indexOf('liquid-body.js?v=')<html.indexOf('app.js?v='));
- assert(app.includes('LiquidBody.update(timeline,renderNodes,zoom)'));
+ assert(app.includes('TimelineCapsules.bounds('),'New prototype paints scene and episode intervals');
+ assert(!app.includes('LiquidBody.update(timeline,renderNodes,zoom)'),'Legacy liquid geometry must be inactive');
  assert(app.includes('LiquidBody.visibility()'));
  assert.match(app,/cloudRenderer\.update\(\{groups:\[\],flowBridges:\[\]/);
  assert.match(css,/#timeline\.has-liquid-body \.node \.liquid-depth/);
