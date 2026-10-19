@@ -56,7 +56,7 @@ kinds:
   loc-tanzaku: settlement
   loc-academy-classroom: room
   loc-academy-staff-room: room
-  loc-team7-rooftop: building
+  loc-team7-rooftop: area
   loc-hokage-residence: building
   loc-hokage-office: room
   loc-ichiraku: building
@@ -430,6 +430,72 @@ kinds:
   loc-second-war-camp: area
   loc-senju-clan-home: area
   loc-moon: area
+  # Konoha location kinds
+  loc-academy-courtyard: area
+  loc-academy-main-entrance: area
+  loc-academy-training-yard: area
+  loc-academy-corridor: area
+  loc-academy-stairwell: area
+  loc-hokage-corridor: area
+  loc-hokage-reception: room
+  loc-archive-service-corridor: area
+  loc-archive-service-stairs: area
+  loc-archive-basement: area
+  loc-intelligence-interrogation-room: room
+  loc-hospital-service-entrance: area
+  loc-hospital-patient-rooms: area
+  loc-hospital-second-floor: area
+  loc-training-ground-8-fence: area
+  loc-training-ground-8-woodland: area
+  loc-forest-death-perimeter: area
+  loc-forest-death-gates: area
+  loc-forest-death-interior: area
+  loc-forest-death-tower-entrance: area
+  loc-chunin-finals-fighting-floor: area
+  loc-chunin-finals-stands: area
+  loc-naka-shrine-hall: room
+  loc-naka-shrine-underground-room: room
+  loc-kita-kitchen: room
+  loc-kita-bedroom: room
+  loc-isshin-kitchen: room
+  loc-ren-bedroom: room
+  loc-yamano-estate: building
+  loc-yamano-estate-living-room: room
+  loc-yamano-estate-bathroom: room
+  loc-yumiko-apartment: building
+  loc-yumiko-living-room: room
+  loc-yumiko-kitchen: room
+  loc-yumiko-bedroom: room
+  loc-kakashi-bedroom: room
+  loc-kakashi-bathroom: room
+  loc-konoha-commercial-quarter: area
+  loc-konoha-east-street: area
+  loc-konoha-south-street: area
+  loc-higashi-weapon-shop: building
+  loc-higashi-weapon-workbench: room
+  loc-yamanaka-flower-shop: building
+  loc-yamanaka-flower-counter: room
+  loc-yamano-bank: building
+  loc-yamano-bank-service-hall: room
+  loc-yamano-bank-archive: room
+  loc-ichiraku-counter: room
+  loc-ichiraku-kitchen: room
+  loc-dango-shop-seating: room
+  loc-kakashi-eatery-kitchen: room
+  loc-konoha-festival-grounds: area
+  loc-konoha-festival-pavilion: area
+  loc-yumeko-gallery: building
+  loc-yumeko-gallery-hall: room
+  loc-konoha-south-bridge: area
+  loc-konoha-park-south-bridge: area
+  loc-konoha-park-paths: area
+  loc-hokage-monument-stairs: area
+  loc-hokage-monument-overlook: area
+  loc-konoha-gate-guard-post: room
+  loc-konoha-east-watchtower: building
+  loc-konoha-underground-shelters: area
+  loc-konoha-cemetery-entrance: area
+  loc-konoha-cemetery-graves: area
 parents:
   geo-konoha-academy: loc-konohagakure
   loc-konohagakure: loc-land-of-fire
@@ -442,7 +508,7 @@ parents:
   loc-konoha-outskirts: loc-land-of-fire
   loc-academy-classroom: geo-konoha-academy
   loc-academy-staff-room: geo-konoha-academy
-  loc-academy-front: geo-konoha-academy
+  loc-academy-front: loc-academy-courtyard
   loc-team7-rooftop: geo-konoha-academy
   loc-tazuna-home: loc-land-waves
   loc-wave-forest: loc-land-waves
@@ -464,8 +530,8 @@ parents:
   loc-hokage-tent: loc-konohagakure
   loc-konoha-pain-crater: loc-konohagakure
   loc-uchiha-district: loc-konohagakure
-  loc-uchiha-home: loc-konohagakure
-  loc-naka-shrine: loc-konohagakure
+  loc-uchiha-home: loc-uchiha-district
+  loc-naka-shrine: loc-uchiha-district
   loc-naka-river-cliff: loc-land-of-fire
   loc-konoha-council-room: loc-konohagakure
   loc-konoha-orphanage: loc-land-of-fire
@@ -505,6 +571,89 @@ parents:
   loc-chen-grave: loc-konohagakure
   loc-moon-toneri-castle: loc-moon
   loc-moon-otsutsuki-settlement: loc-moon
+  # Konoha subordinate sites
+  loc-academy-swing: loc-academy-courtyard
+  loc-chunin-exam-room: geo-konoha-academy
+  loc-chunin-written-exam: geo-konoha-academy
+  loc-hokage-rooftop: loc-hokage-residence
+  loc-archive-gate: loc-archive-courtyard
+  loc-yumiko-balcony: loc-yumiko-apartment
+  loc-isshin-forge: loc-isshin-home
+  loc-kakashi-eatery: loc-konoha-commercial-quarter
+  loc-dango-shop: loc-konoha-commercial-quarter
+  loc-hospital-quarantine-lab: loc-konoha-hospital
+  loc-time-slip-hospital-roof: loc-konoha-hospital
+  loc-mikata-office: loc-intelligence-division
+  loc-intelligence-upper-corridor: loc-intelligence-division
+  loc-intelligence-holding-cell: loc-intelligence-division
+  loc-intelligence-lower-interrogation: loc-intelligence-division
+  loc-chunin-prelim-arena: loc-forest-death-tower
+  loc-chunin-tower-side-room: loc-forest-death-tower
+  loc-academy-courtyard: geo-konoha-academy
+  loc-academy-main-entrance: loc-academy-courtyard
+  loc-academy-training-yard: loc-academy-courtyard
+  loc-academy-corridor: geo-konoha-academy
+  loc-academy-stairwell: geo-konoha-academy
+  loc-hokage-corridor: loc-hokage-residence
+  loc-hokage-reception: loc-hokage-residence
+  loc-archive-service-corridor: loc-archive-corps
+  loc-archive-service-stairs: loc-archive-corps
+  loc-archive-basement: loc-archive-corps
+  loc-intelligence-interrogation-room: loc-intelligence-lower-interrogation
+  loc-hospital-service-entrance: loc-konoha-hospital
+  loc-hospital-patient-rooms: loc-konoha-hospital
+  loc-hospital-second-floor: loc-konoha-hospital
+  loc-training-ground-8-fence: loc-training-ground-8
+  loc-training-ground-8-woodland: loc-training-ground-8
+  loc-forest-death-perimeter: loc-forest-death
+  loc-forest-death-gates: loc-forest-death-perimeter
+  loc-forest-death-interior: loc-forest-death
+  loc-forest-death-tower-entrance: loc-forest-death-tower
+  loc-chunin-finals-fighting-floor: loc-chunin-finals-arena
+  loc-chunin-finals-stands: loc-chunin-finals-arena
+  loc-naka-shrine-hall: loc-naka-shrine
+  loc-naka-shrine-underground-room: loc-naka-shrine
+  loc-kita-kitchen: loc-kita-home
+  loc-kita-bedroom: loc-kita-home
+  loc-isshin-kitchen: loc-isshin-home
+  loc-ren-bedroom: loc-isshin-home
+  loc-yamano-estate: loc-konohagakure
+  loc-yamano-estate-living-room: loc-yamano-estate
+  loc-yamano-estate-bathroom: loc-yamano-estate
+  loc-yumiko-apartment: loc-sakura-neighborhood
+  loc-yumiko-living-room: loc-yumiko-apartment
+  loc-yumiko-kitchen: loc-yumiko-apartment
+  loc-yumiko-bedroom: loc-yumiko-apartment
+  loc-kakashi-bedroom: loc-kakashi-home
+  loc-kakashi-bathroom: loc-kakashi-home
+  loc-konoha-commercial-quarter: loc-konohagakure
+  loc-konoha-east-street: loc-konohagakure
+  loc-konoha-south-street: loc-konohagakure
+  loc-higashi-weapon-shop: loc-konoha-east-street
+  loc-higashi-weapon-workbench: loc-higashi-weapon-shop
+  loc-yamanaka-flower-shop: loc-konohagakure
+  loc-yamanaka-flower-counter: loc-yamanaka-flower-shop
+  loc-yamano-bank: loc-konohagakure
+  loc-yamano-bank-service-hall: loc-yamano-bank
+  loc-yamano-bank-archive: loc-yamano-bank
+  loc-ichiraku-counter: loc-ichiraku
+  loc-ichiraku-kitchen: loc-ichiraku
+  loc-dango-shop-seating: loc-dango-shop
+  loc-kakashi-eatery-kitchen: loc-kakashi-eatery
+  loc-konoha-festival-grounds: loc-konohagakure
+  loc-konoha-festival-pavilion: loc-konoha-festival-grounds
+  loc-yumeko-gallery: loc-konohagakure
+  loc-yumeko-gallery-hall: loc-yumeko-gallery
+  loc-konoha-south-bridge: loc-konohagakure
+  loc-konoha-park-south-bridge: loc-konoha-park
+  loc-konoha-park-paths: loc-konoha-park
+  loc-hokage-monument-stairs: loc-hokage-monument
+  loc-hokage-monument-overlook: loc-hokage-monument
+  loc-konoha-gate-guard-post: loc-konoha-gate
+  loc-konoha-east-watchtower: loc-konohagakure
+  loc-konoha-underground-shelters: loc-konohagakure
+  loc-konoha-cemetery-entrance: loc-konoha-cemetery
+  loc-konoha-cemetery-graves: loc-konoha-cemetery
 equivalents:
   loc-valley-of-end: loc-valley-end
 spatial:
