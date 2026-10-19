@@ -11,6 +11,8 @@ on:
       - '00_MAIN_WORK_FOLDER/CHRONOLOGY/placement_solver.py'
       - '00_MAIN_WORK_FOLDER/CHRONOLOGY/placement-windows.yaml'
       - '00_MAIN_WORK_FOLDER/CHRONOLOGY/tests/test_placement_solver.py'
+      - '00_MAIN_WORK_FOLDER/CHRONOLOGY/data/time-anchors.yaml'
+      - '00_MAIN_WORK_FOLDER/CHRONOLOGY/data/scenes/*waterfall*.yaml'
 
 permissions:
   contents: read
@@ -30,6 +32,8 @@ jobs:
           python-version: '3.11'
       - name: Install validation and optimization dependencies
         run: python -m pip install 'PyYAML>=6,<7' 'ortools>=9.12,<10'
+      - name: Validate chronology structure
+        run: python 00_MAIN_WORK_FOLDER/CHRONOLOGY/validate_timeline.py
       - name: Run chronology optimizer regression tests
         run: python -m unittest discover -s 00_MAIN_WORK_FOLDER/CHRONOLOGY/tests -p 'test_placement_solver.py' -v
       - name: Produce chronology report from actual YAML
