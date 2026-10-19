@@ -4,14 +4,14 @@ episode_id: ep-y0-tora-retrieval
 display_rank: 100
 continuity_id: main
 title: Команда 7 ловить Тору
-location_id: null
+location_id: loc-konohagakure
 placement: null
 state: active
 presence_coverage: complete
 review:
   time: unknown
   cast: accepted
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:

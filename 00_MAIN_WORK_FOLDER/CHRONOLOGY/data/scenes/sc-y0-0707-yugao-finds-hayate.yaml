@@ -4,7 +4,7 @@ episode_id: ep-y0-yugao-finds-hayate
 display_rank: 100
 continuity_id: main
 title: Анбу знаходять тіло Хаяте
-location_id: null
+location_id: loc-konohagakure
 placement:
   anchor_id: ta-y0-0707
   day_offset: 0
@@ -14,7 +14,7 @@ presence_coverage: partial
 review:
   time: accepted
   cast: partial
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:

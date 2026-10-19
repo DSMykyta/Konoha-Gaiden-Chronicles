@@ -4,7 +4,7 @@ episode_id: ep-y0-kakashi-iruka-readiness-report
 display_rank: 100
 continuity_id: "main"
 title: "Ірука розпитує Какаші про Команду 7"
-location_id: null
+location_id: loc-konohagakure
 placement: {anchor_id: "ta-y0-0624", day_offset: 0}
 state: "active"
 presence_coverage: "complete"
