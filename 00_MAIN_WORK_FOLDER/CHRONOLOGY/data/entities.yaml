@@ -601,6 +601,19 @@ entities:
     name: "Team Shigure"
     aliases:
       - "Команда Шіґуре"
+  - id: "loc-chunin-exam-corridor"
+    kind: "location"
+    name: "Chunin Exam registration corridor"
+    aliases:
+      - "коридор біля реєстрації на іспит чуніна"
+      - "реєстраційний прохід"
+    parent_id: "loc-konohagakure"
+  - id: "loc-chunin-exam-restroom"
+    kind: "location"
+    name: "Chunin Exam building restroom"
+    aliases:
+      - "туалет біля аудиторії письмового іспиту"
+    parent_id: "loc-konohagakure"
   - id: "loc-chunin-written-exam"
     kind: "location"
     name: "Chūnin Exam written-test room"
