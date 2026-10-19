@@ -1,0 +1,51 @@
+/* Prototype: flat, arc-colored timeline intervals. Visual redesign comes later. */
+#timeline .capsule-node .mark {
+  fill: var(--arc-tint);
+  stroke: var(--arc-color);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+#timeline .capsule-node.arc-node .mark { stroke-width: 3; }
+#timeline .capsule-node.episode-node .mark { stroke-width: 2.5; }
+#timeline .capsule-node .scene-count {
+  fill: var(--arc-color);
+  font: 700 12px Manrope, sans-serif;
+  stroke: none;
+  pointer-events: none;
+}
+#timeline .capsule-node .mark[data-time-precision="point-or-unresolved"] {
+  stroke-dasharray: 5 3;
+}
+#timeline .capsule-moment .mark {
+  fill: var(--arc-color);
+  stroke: #fff;
+  stroke-width: 1.25;
+}
+#timeline .capsule-scene-backdrop {
+  fill: var(--arc-tint);
+  stroke: var(--arc-color);
+  stroke-width: 2;
+  stroke-opacity: .76;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+#timeline .capsule-episode-link {
+  fill: none;
+  stroke: var(--arc-color);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .24;
+  pointer-events: none;
+}
+#timeline .capsule-node.is-open .mark,
+#timeline .capsule-node.is-pinned .mark {
+  stroke-width: 4;
+}
+#timeline .capsule-node:focus-visible .mark { stroke-width: 4; }
+@media (prefers-reduced-motion: reduce) {
+  #timeline .capsule-node, #timeline .capsule-scene-backdrop {
+    animation: none !important;
+    transition: none !important;
+  }
+}
