@@ -207,45 +207,25 @@ entities:
     aliases:
       - "клас Академії"
       - "аудиторія Академії"
-    parent_id: "loc-konohagakure"
-  - id: "loc-academy-corridor"
-    kind: "location"
-    name: "Academy corridor"
-    aliases:
-      - "коридор Академії"
-      - "прохід Академії"
-    parent_id: "loc-konohagakure"
-  - id: "loc-academy-empty-room"
-    kind: "location"
-    name: "Empty Academy classroom"
-    aliases:
-      - "порожній клас Академії"
-      - "порожня кімната Академії"
-    parent_id: "loc-konohagakure"
-  - id: "loc-academy-restroom"
-    kind: "location"
-    name: "Academy restroom"
-    aliases:
-      - "туалет Академії"
-    parent_id: "loc-konohagakure"
+    parent_id: "geo-konoha-academy"
   - id: "loc-academy-front"
     kind: "location"
     name: "In front of the Academy"
     aliases:
       - "перед Академією"
-    parent_id: "loc-konohagakure"
+    parent_id: "loc-academy-courtyard"
   - id: "loc-team7-rooftop"
     kind: "location"
     name: "Academy rooftop"
     aliases:
       - "дах Академії"
-    parent_id: "loc-konohagakure"
+    parent_id: "geo-konoha-academy"
   - id: "loc-dango-shop"
     kind: "location"
     name: "Dango shop"
     aliases:
       - "крамниця данґо"
-    parent_id: "loc-konohagakure"
+    parent_id: "loc-konoha-commercial-quarter"
   - id: "loc-kita-home"
     kind: "location"
     name: "Kita's home"
@@ -612,7 +592,7 @@ entities:
     name: "Chūnin Exam written-test room"
     aliases:
       - "аудиторія письмового етапу"
-    parent_id: "loc-konohagakure"
+    parent_id: "geo-konoha-academy"
   - id: "loc-forest-death"
     kind: "location"
     name: "Forest of Death"
@@ -810,7 +790,7 @@ entities:
     name: "Hokage rooftop"
     aliases:
       - "дах резиденції Хокаґе"
-    parent_id: "loc-konohagakure"
+    parent_id: "loc-hokage-residence"
   - id: "loc-konoha-memorial-stone"
     kind: "location"
     name: "Konoha Memorial Stone"
@@ -2012,7 +1992,7 @@ entities:
     name: Academy swing
     aliases:
     - Гойдалка біля Академії
-    parent_id: loc-konohagakure
+    parent_id: "loc-academy-courtyard"
 
   - id: c-genzo
     kind: person
@@ -2065,6 +2045,7 @@ entities:
   - id: loc-academy-staff-room
     kind: location
     name: Учительська Академії
+    parent_id: "geo-konoha-academy"
     aliases:
     - Academy staff room
 
@@ -2170,19 +2151,19 @@ entities:
     name: Кабінет Мікати
     aliases:
     - Кабінет Мікати
-    parent_id: loc-intelligence-division
+    parent_id: "loc-intelligence-division"
   - id: loc-intelligence-upper-corridor
     kind: location
     name: Коридор біля кабінету Мікати
     aliases:
     - Коридор біля кабінету Мікати
-    parent_id: loc-intelligence-division
+    parent_id: "loc-intelligence-division"
   - id: loc-intelligence-holding-cell
     kind: location
     name: Камера тимчасового утримання
     aliases:
     - Камера тимчасового утримання
-    parent_id: loc-intelligence-division
+    parent_id: "loc-intelligence-division"
   - id: loc-fire-north-forest-route
     kind: location
     name: Лісова дорога до північного кордону
@@ -2212,7 +2193,7 @@ entities:
     name: Нижній рівень Відділу допитів
     aliases:
     - Нижній рівень Відділу допитів
-    parent_id: loc-intelligence-division
+    parent_id: "loc-intelligence-division"
   - id: c-archive-administrator
     kind: person
     name: Адміністраторка архівного корпусу
@@ -2327,7 +2308,7 @@ entities:
     name: Вихід із внутрішнього двору архіву
     aliases:
     - Вихід із внутрішнього двору архіву
-    parent_id: loc-archive-corps
+    parent_id: "loc-archive-courtyard"
   - id: loc-konoha-archive-street
     kind: location
     name: Торгова вулиця біля архівного корпусу
@@ -2351,7 +2332,7 @@ entities:
     name: Карантинна лабораторія шпиталю
     aliases:
     - Карантинна лабораторія шпиталю
-    parent_id: loc-konoha-hospital
+    parent_id: "loc-konoha-hospital"
   - id: loc-archive-civil-registry
     kind: location
     name: Головний архів цивільної реєстрації
@@ -2418,7 +2399,7 @@ entities:
     name: Кузня Іщіна
     aliases:
     - Кузня Іщіна
-    parent_id: loc-konohagakure
+    parent_id: "loc-isshin-home"
   - id: loc-isshin-home
     kind: location
     name: Дім Іщіна
@@ -2436,7 +2417,7 @@ entities:
     name: Аудиторія письмового іспиту
     aliases:
     - Аудиторія письмового іспиту
-    parent_id: loc-academy-front
+    parent_id: "geo-konoha-academy"
   - id: loc-team9-farm-route
     kind: location
     name: Фермерський маршрут Команди 9
@@ -2464,7 +2445,7 @@ entities:
     name: Забігайлівка перших зустрічей Какаші й Юміко
     aliases:
     - Забігайлівка перших зустрічей Какаші й Юміко
-    parent_id: loc-konohagakure
+    parent_id: "loc-konoha-commercial-quarter"
   - id: loc-konoha-izakaya
     kind: location
     name: Ізакая джонінів
@@ -2588,7 +2569,7 @@ entities:
     name: Балкон квартири Юміко
     aliases:
     - Балкон квартири Юміко
-    parent_id: loc-sakura-neighborhood
+    parent_id: "loc-yumiko-apartment"
   - id: c-boruto
     kind: person
     name: Boruto Uzumaki
@@ -2668,7 +2649,7 @@ entities:
     name: Дах лікарні Конохи
     aliases:
     - Дах лікарні Конохи
-    parent_id: loc-konoha-hospital
+    parent_id: "loc-konoha-hospital"
   - id: loc-time-slip-departure-clearing
     kind: location
     name: Лісова галявина поблизу Конохи
@@ -3738,6 +3719,7 @@ entities:
   - id: loc-naka-shrine
     kind: location
     name: Naka Shrine
+    parent_id: "loc-uchiha-district"
     aliases: []
   - id: loc-konoha-forest
     kind: location
@@ -3807,6 +3789,7 @@ entities:
   - id: loc-uchiha-home
     kind: location
     name: Uchiha Home
+    parent_id: "loc-uchiha-district"
     aliases: []
   - id: loc-sakura-childhood-hideout
     kind: location
@@ -4653,6 +4636,344 @@ entities:
     - Транспорт місії Нобарі
     parent_id: loc-t9-medical-road
 
+  - id: "loc-academy-courtyard"
+    kind: "location"
+    name: "Двір Академії"
+    parent_id: "geo-konoha-academy"
+    provenance: "project_transcript"
+  - id: "loc-academy-main-entrance"
+    kind: "location"
+    name: "Головний вхід Академії"
+    parent_id: "loc-academy-courtyard"
+    provenance: "project_transcript"
+  - id: "loc-academy-training-yard"
+    kind: "location"
+    name: "Тренувальна ділянка двору Академії"
+    parent_id: "loc-academy-courtyard"
+    provenance: "project_transcript"
+  - id: "loc-academy-empty-room"
+    kind: "location"
+    name: "Empty Academy classroom"
+    aliases:
+      - "порожній клас Академії"
+      - "порожня кімната Академії"
+    parent_id: "geo-konoha-academy"
+  - id: "loc-academy-restroom"
+    kind: "location"
+    name: "Academy restroom"
+    aliases:
+      - "туалет Академії"
+    parent_id: "geo-konoha-academy"
+  - id: "loc-academy-corridor"
+    kind: "location"
+    name: "Коридори Академії"
+    parent_id: "geo-konoha-academy"
+    provenance: "structural_group"
+  - id: "loc-academy-stairwell"
+    kind: "location"
+    name: "Сходи Академії"
+    parent_id: "geo-konoha-academy"
+    provenance: "project_transcript"
+  - id: "loc-hokage-corridor"
+    kind: "location"
+    name: "Коридор резиденції Хокаге"
+    parent_id: "loc-hokage-residence"
+    provenance: "project_transcript"
+  - id: "loc-hokage-reception"
+    kind: "location"
+    name: "Приймальня кабінету Хокаге"
+    parent_id: "loc-hokage-residence"
+    provenance: "project_transcript"
+  - id: "loc-archive-service-corridor"
+    kind: "location"
+    name: "Службовий коридор архіву"
+    parent_id: "loc-archive-corps"
+    provenance: "project_transcript"
+  - id: "loc-archive-service-stairs"
+    kind: "location"
+    name: "Службові сходи архіву"
+    parent_id: "loc-archive-corps"
+    provenance: "project_transcript"
+  - id: "loc-archive-basement"
+    kind: "location"
+    name: "Підвальне сховище архівного корпусу"
+    parent_id: "loc-archive-corps"
+    provenance: "project_transcript"
+  - id: "loc-intelligence-interrogation-room"
+    kind: "location"
+    name: "Кімната допитів нижнього рівня"
+    parent_id: "loc-intelligence-lower-interrogation"
+    provenance: "project_transcript"
+  - id: "loc-hospital-service-entrance"
+    kind: "location"
+    name: "Службовий вхід шпиталю"
+    parent_id: "loc-konoha-hospital"
+    provenance: "project_transcript"
+  - id: "loc-hospital-patient-rooms"
+    kind: "location"
+    name: "Палати лікарні Конохи"
+    parent_id: "loc-konoha-hospital"
+    provenance: "structural_group"
+  - id: "loc-hospital-second-floor"
+    kind: "location"
+    name: "Другий поверх лікарні Конохи"
+    parent_id: "loc-konoha-hospital"
+    provenance: "project_transcript"
+  - id: "loc-training-ground-8-fence"
+    kind: "location"
+    name: "Огорожа полігону №8"
+    parent_id: "loc-training-ground-8"
+    provenance: "project_transcript"
+  - id: "loc-training-ground-8-woodland"
+    kind: "location"
+    name: "Лісова частина полігону №8"
+    parent_id: "loc-training-ground-8"
+    provenance: "project_transcript"
+  - id: "loc-forest-death-perimeter"
+    kind: "location"
+    name: "Зовнішній периметр Лісу Смерті"
+    parent_id: "loc-forest-death"
+    provenance: "project_transcript"
+  - id: "loc-forest-death-gates"
+    kind: "location"
+    name: "Пронумеровані брами Лісу Смерті"
+    parent_id: "loc-forest-death-perimeter"
+    provenance: "canon"
+  - id: "loc-forest-death-interior"
+    kind: "location"
+    name: "Внутрішня зона Лісу Смерті"
+    parent_id: "loc-forest-death"
+    provenance: "canon"
+  - id: "loc-forest-death-tower-entrance"
+    kind: "location"
+    name: "Вхід до центральної вежі Лісу Смерті"
+    parent_id: "loc-forest-death-tower"
+    provenance: "canon"
+  - id: "loc-chunin-finals-fighting-floor"
+    kind: "location"
+    name: "Бойове поле фінальної арени"
+    parent_id: "loc-chunin-finals-arena"
+    provenance: "canon"
+  - id: "loc-chunin-finals-stands"
+    kind: "location"
+    name: "Трибуни фінальної арени"
+    parent_id: "loc-chunin-finals-arena"
+    provenance: "canon"
+  - id: "loc-naka-shrine-hall"
+    kind: "location"
+    name: "Головний зал святилища Нака"
+    parent_id: "loc-naka-shrine"
+    provenance: "canon"
+  - id: "loc-naka-shrine-underground-room"
+    kind: "location"
+    name: "Підземна зала клану Учіха"
+    parent_id: "loc-naka-shrine"
+    provenance: "canon"
+  - id: "loc-kita-kitchen"
+    kind: "location"
+    name: "Кухня дому Хаяші"
+    parent_id: "loc-kita-home"
+    provenance: "project_transcript"
+  - id: "loc-kita-bedroom"
+    kind: "location"
+    name: "Кімната Кіти"
+    parent_id: "loc-kita-home"
+    provenance: "project_transcript"
+  - id: "loc-isshin-kitchen"
+    kind: "location"
+    name: "Кухня дому Тецу"
+    parent_id: "loc-isshin-home"
+    provenance: "project_transcript"
+  - id: "loc-ren-bedroom"
+    kind: "location"
+    name: "Кімната Рена"
+    parent_id: "loc-isshin-home"
+    provenance: "project_transcript"
+  - id: "loc-yamano-estate"
+    kind: "location"
+    name: "Маєток родини Ямано"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-yamano-estate-living-room"
+    kind: "location"
+    name: "Вітальня маєтку Ямано"
+    parent_id: "loc-yamano-estate"
+    provenance: "project_transcript"
+  - id: "loc-yamano-estate-bathroom"
+    kind: "location"
+    name: "Ванна кімната маєтку Ямано"
+    parent_id: "loc-yamano-estate"
+    provenance: "project_transcript"
+  - id: "loc-yumiko-apartment"
+    kind: "location"
+    name: "Квартира Юміко"
+    parent_id: "loc-sakura-neighborhood"
+    provenance: "project_transcript"
+  - id: "loc-yumiko-living-room"
+    kind: "location"
+    name: "Вітальня Юміко"
+    parent_id: "loc-yumiko-apartment"
+    provenance: "project_transcript"
+  - id: "loc-yumiko-kitchen"
+    kind: "location"
+    name: "Кухня Юміко"
+    parent_id: "loc-yumiko-apartment"
+    provenance: "project_transcript"
+  - id: "loc-yumiko-bedroom"
+    kind: "location"
+    name: "Спальня Юміко"
+    parent_id: "loc-yumiko-apartment"
+    provenance: "project_transcript"
+  - id: "loc-kakashi-bedroom"
+    kind: "location"
+    name: "Спальна зона квартири Какаші"
+    parent_id: "loc-kakashi-home"
+    provenance: "project_transcript"
+  - id: "loc-kakashi-bathroom"
+    kind: "location"
+    name: "Ванна квартири Какаші"
+    parent_id: "loc-kakashi-home"
+    provenance: "project_transcript"
+  - id: "loc-konoha-commercial-quarter"
+    kind: "location"
+    name: "Торговий квартал Конохи"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-konoha-east-street"
+    kind: "location"
+    name: "Східна вулиця Конохи"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-konoha-south-street"
+    kind: "location"
+    name: "Південна вулиця Конохи"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-higashi-weapon-shop"
+    kind: "location"
+    name: "Крамниця зброї Хіґаші"
+    parent_id: "loc-konoha-east-street"
+    provenance: "project_transcript"
+  - id: "loc-higashi-weapon-workbench"
+    kind: "location"
+    name: "Верстак крамниці Хіґаші"
+    parent_id: "loc-higashi-weapon-shop"
+    provenance: "project_transcript"
+  - id: "loc-yamanaka-flower-shop"
+    kind: "location"
+    name: "Квіткова крамниця Яманака"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-yamanaka-flower-counter"
+    kind: "location"
+    name: "Торговий зал квіткової крамниці"
+    parent_id: "loc-yamanaka-flower-shop"
+    provenance: "project_transcript"
+  - id: "loc-yamano-bank"
+    kind: "location"
+    name: "Головне відділення банку Ямано"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-yamano-bank-service-hall"
+    kind: "location"
+    name: "Операційний зал банку Ямано"
+    parent_id: "loc-yamano-bank"
+    provenance: "project_transcript"
+  - id: "loc-yamano-bank-archive"
+    kind: "location"
+    name: "Бухгалтерський архів банку Ямано"
+    parent_id: "loc-yamano-bank"
+    provenance: "project_transcript"
+  - id: "loc-ichiraku-counter"
+    kind: "location"
+    name: "Прилавок раменної Ічіраку"
+    parent_id: "loc-ichiraku"
+    provenance: "project_transcript"
+  - id: "loc-ichiraku-kitchen"
+    kind: "location"
+    name: "Кухонна зона Ічіраку"
+    parent_id: "loc-ichiraku"
+    provenance: "project_transcript"
+  - id: "loc-dango-shop-seating"
+    kind: "location"
+    name: "Місця відвідувачів крамниці данґо"
+    parent_id: "loc-dango-shop"
+    provenance: "project_transcript"
+  - id: "loc-kakashi-eatery-kitchen"
+    kind: "location"
+    name: "Кухня забігайлівки Какаші й Юміко"
+    parent_id: "loc-kakashi-eatery"
+    provenance: "project_transcript"
+  - id: "loc-konoha-festival-grounds"
+    kind: "location"
+    name: "Святковий майданчик Конохи"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-konoha-festival-pavilion"
+    kind: "location"
+    name: "Фестивальний павільйон"
+    parent_id: "loc-konoha-festival-grounds"
+    provenance: "project_transcript"
+  - id: "loc-yumeko-gallery"
+    kind: "location"
+    name: "Галерея Юмеко"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-yumeko-gallery-hall"
+    kind: "location"
+    name: "Виставкова зала галереї Юмеко"
+    parent_id: "loc-yumeko-gallery"
+    provenance: "project_transcript"
+  - id: "loc-konoha-south-bridge"
+    kind: "location"
+    name: "Південний міст Конохи"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-konoha-park-south-bridge"
+    kind: "location"
+    name: "Ділянка парку біля південного мосту"
+    parent_id: "loc-konoha-park"
+    provenance: "project_transcript"
+  - id: "loc-konoha-park-paths"
+    kind: "location"
+    name: "Алеї парку Конохи"
+    parent_id: "loc-konoha-park"
+    provenance: "project_transcript"
+  - id: "loc-hokage-monument-stairs"
+    kind: "location"
+    name: "Сходи до Монумента Хокаге"
+    parent_id: "loc-hokage-monument"
+    provenance: "project_transcript"
+  - id: "loc-hokage-monument-overlook"
+    kind: "location"
+    name: "Оглядовий майданчик Монумента Хокаге"
+    parent_id: "loc-hokage-monument"
+    provenance: "project_transcript"
+  - id: "loc-konoha-gate-guard-post"
+    kind: "location"
+    name: "Вартовий пост головної брами"
+    parent_id: "loc-konoha-gate"
+    provenance: "project_transcript"
+  - id: "loc-konoha-east-watchtower"
+    kind: "location"
+    name: "Східна сторожова вежа Конохи"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-konoha-underground-shelters"
+    kind: "location"
+    name: "Підземні укриття Конохи"
+    parent_id: "loc-konohagakure"
+    provenance: "project_transcript"
+  - id: "loc-konoha-cemetery-entrance"
+    kind: "location"
+    name: "Вхід на цвинтар Конохи"
+    parent_id: "loc-konoha-cemetery"
+    provenance: "structural_group"
+  - id: "loc-konoha-cemetery-graves"
+    kind: "location"
+    name: "Ділянки поховань цвинтаря Конохи"
+    parent_id: "loc-konoha-cemetery"
+    provenance: "structural_group"
 memberships:
   - id: "mem-team7-naruto"
     entity_id: "c-naruto"
