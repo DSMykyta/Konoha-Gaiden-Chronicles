@@ -12,7 +12,7 @@ async function check(width,height){
  const click=q=>{const el=doc.querySelector(q);assert(el,'Missing '+q);el.dispatchEvent(new window.Event('click',{bubbles:true}));};
  const run=s=>vm.runInContext(s,ctx);
  assert(doc.getElementById('error').hidden,doc.getElementById('error').textContent);
- assert(/\b61\b/.test(doc.getElementById('periodLabel').textContent),doc.getElementById('periodLabel').textContent);
+ assert(doc.getElementById('periodLabel').textContent.includes(String(original.calendar.current_year)),doc.getElementById('periodLabel').textContent);
  assert.equal(doc.querySelectorAll('#eraList li').length,original.periods.length);
  assert.equal(doc.querySelector('#eraList [aria-current="true"] span').textContent,'Епоха нових команд');
  assert(!/Naruto|Boruto|Наруто|Боруто/.test(doc.getElementById('eraList').textContent));
