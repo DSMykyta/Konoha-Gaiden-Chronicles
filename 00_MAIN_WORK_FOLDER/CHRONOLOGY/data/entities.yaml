@@ -201,6 +201,20 @@ entities:
     name: "Sound Four"
     aliases:
       - "Четвірка Звуку"
+  - id: "loc-academy-interior"
+    kind: "location"
+    name: "Academy interior"
+    aliases:
+      - "усередині Академії"
+      - "приміщення Академії"
+    parent_id: "loc-konohagakure"
+  - id: "loc-academy-corridor"
+    kind: "location"
+    name: "Academy corridor"
+    aliases:
+      - "коридор Академії"
+      - "сходи Академії"
+    parent_id: "loc-academy-interior"
   - id: "loc-academy-classroom"
     kind: "location"
     name: "Academy classroom"
