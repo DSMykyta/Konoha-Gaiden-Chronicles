@@ -61,7 +61,7 @@ for(const {file,scene:s} of sourceScenes){
  const day=date?dayInYear(date,scenePlacement.day_offset||0,calendar,lengths):null;
  const dateStatus=Number.isInteger(missionDay)?'editorial_reconstruction':a?.placement_status||'unknown',arcId=episode?.arc_id||null,sourceContinuity=s.continuity_id||'main';
  scenes.push({...s,placement:scenePlacement,source_continuity_id:sourceContinuity,continuity_id:'main',arc_id:arcId,day,date,date_status:dateStatus,file});
- for(const e of s.events||[]){const physical=(e.involvement||[]).filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id),tracks=(e.involvement||[]).filter(i=>i.role!=='mentioned'&&i.mode!=='remote').map(i=>i.entity_id);events.push({...e,layer:e.layer||s.layer||null,scene_id:s.id,scene_title:s.title,episode_id:s.episode_id||null,arc_id:arcId,day,date_status:dateStatus,continuity:'main',source_continuity:sourceContinuity,scene_state:s.state,review:s.review||{},location_id:s.location_id,physical,tracks,file});}
+ for(const e of s.events||[]){const physical=(e.involvement||[]).filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id),tracks=(e.involvement||[]).filter(i=>i.role!=='mentioned'&&i.mode!=='remote').map(i=>i.entity_id);events.push({...e,layer:e.layer||s.layer||null,scene_id:s.id,scene_title:s.title,episode_id:s.episode_id||null,arc_id:arcId,day,date_status:dateStatus,continuity:'main',source_continuity:sourceContinuity,scene_state:s.state,review:s.review||{},location_id:e.location_id||s.location_id,physical,tracks,file});}
 }
 const episodeViews=episodes.map(episode=>{
  const variant=optionalNarutoArcs.get(episode.arc_id);
