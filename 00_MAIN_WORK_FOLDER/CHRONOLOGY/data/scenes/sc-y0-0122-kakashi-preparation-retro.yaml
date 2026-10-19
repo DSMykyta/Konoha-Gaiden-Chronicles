@@ -4,12 +4,12 @@ episode_id: ep-y0-kakashi-background-check
 display_rank: 100
 continuity_id: "main"
 title: "Ретроспектива підготовки Какаші до Команди 7"
-location_id: null
+location_id: "loc-konohagakure"
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
 layer: project
 state: "draft"
 presence_coverage: "partial"
-review: {time: "pending", cast: "partial", location: "pending", origin: "accepted", text: "imported"}
+review: {time: "pending", cast: "partial", location: "partial", origin: "accepted", text: "imported"}
 events:
   - id: "ev-y0-0122-hiruzen-assigns-team7-to-kakashi"
     legacy_ids: ["V10-000008"]
