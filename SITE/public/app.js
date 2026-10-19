@@ -606,11 +606,11 @@ function render(){
   const target=parents.get(p.id),fromY=parentY(p,flow.fine),toY=target===p?fromY:parentY(target,flow.coarse);
   const deltaX=px(target.day)-px(p.day),deltaY=toY-fromY;
   return {...p,x:TimelineFlow.lerp(px(p.day),px(target.day),t),y:TimelineFlow.lerp(fromY,toY,t),
-   day:TimelineFlow.lerp(p.day,target.day,t),opacity:unchanged.has(p.id)?1:flow.coarse?1-t:1,_role:'fine',
+   day:TimelineFlow.lerp(p.day,target.day,t),opacity:unchanged.has(p.id)?1:flow.coarse?1-t:1,_role:'fine',capsuleScale:flow.coarse?1-t:1,
    flowAngle:Math.atan2(deltaY,deltaX)*180/Math.PI,stretch:Math.sin(Math.PI*t)};
  });
  const coarseProjected=coarse.map(p=>({...p,x:px(p.day),y:parentY(p,flow.coarse),
-  opacity:unchanged.has(p.id)?0:t,_role:'coarse',stretch:0}));
+  opacity:unchanged.has(p.id)?0:t,_role:'coarse',capsuleScale:t,stretch:0}));
  let globalNodes=[...fineProjected,...coarseProjected].filter(p=>p.opacity>.001);
  // The arc-layout pass above separates overlapping stories without clustering.
  const clusterBridges=[];
