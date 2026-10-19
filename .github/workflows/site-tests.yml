@@ -2,9 +2,10 @@ name: SITE tests
 
 on:
   push:
-    branches: [main]
+    branches: [main, feature/semantic-capsule-layout]
     paths:
       - 'SITE/**'
+      - '00_MAIN_WORK_FOLDER/CHRONOLOGY/data/**'
       - 'KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/data/**'
       - '.github/workflows/site-tests.yml'
   workflow_dispatch:
