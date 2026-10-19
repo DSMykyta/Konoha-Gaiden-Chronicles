@@ -4,7 +4,7 @@ episode_id: ep-y0-sasuke-reaches-orochimaru
 display_rank: 200
 continuity_id: main
 title: Саске прибуває до сховку Орочімару
-location_id: null
+location_id: loc-land-of-rice-fields
 placement:
   anchor_id: ta-y0-0925
   day_offset: 0
@@ -13,7 +13,7 @@ presence_coverage: complete
 review:
   time: partial
   cast: accepted
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:

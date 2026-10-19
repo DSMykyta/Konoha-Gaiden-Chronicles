@@ -4,7 +4,7 @@ episode_id: ep-y0-suna-rasa-discovery
 display_rank: 100
 continuity_id: "main"
 title: "Суна викриває підміну Казекаґе"
-location_id: null
+location_id: loc-suna-desert-route
 placement: {anchor_id: "ta-y0-0802", day_offset: 0}
 state: "active"
 presence_coverage: "partial"

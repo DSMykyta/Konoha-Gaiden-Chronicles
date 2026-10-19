@@ -4,7 +4,7 @@ episode_id: ep-y0-chunin-written-stage
 display_rank: 200
 continuity_id: main
 title: Канкуро отримує відповіді поза екзаменаційною залою
-location_id: null
+location_id: loc-chunin-exam-restroom
 placement:
   anchor_id: ta-y0-0701
   day_offset: 0
