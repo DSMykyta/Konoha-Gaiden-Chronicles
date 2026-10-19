@@ -700,15 +700,17 @@ function render(){
  // Calendar X is unchanged; the extra minimum width only preserves clickability.
  const capsuleById=new Map(),candidateScenes=renderNodes.filter(p=>p.kind==='scene');
  for(const node of candidateScenes)capsuleById.set(node.id,TimelineCapsules.bounds(node,pxAxis,dayToAxis));
- const sceneLinks=TimelineCapsules.sceneConnections(candidateScenes,sceneMap,episodeMap,capsuleById,chronologyRelations());
- for(const link of sceneLinks){
+ const drawCapsuleLink=(link,opacity=1)=>{
   const color=TimelineCapsules.palette(link.arcId).solid;
   const {from,to}=link;
   svg('path',{d:`M${from.x} ${from.y} C${(from.x+to.x)/2} ${from.y} ${(from.x+to.x)/2} ${to.y} ${to.x} ${to.y}`,
-   class:'capsule-episode-link',style:`--arc-color:${color}`,'aria-hidden':'true'});
- }
+   class:'capsule-episode-link',style:`--arc-color:${color};opacity:${opacity}`,'aria-hidden':'true'});
+ };
+ const sceneLinks=TimelineCapsules.sceneConnections(candidateScenes,sceneMap,episodeMap,capsuleById,chronologyRelations());
+ sceneLinks.forEach(link=>drawCapsuleLink(link));
  if(flow.fine==='moment'){
   const projected=new Map(worldLineNodes.map(p=>[p.id,{x:p.projectedX,y:p.y}]));
+  const backdropNodes=[],backdropBounds=new Map();
   for(const scene of allScenes){
    if(scene.day<bufferLoDay-1||scene.day>bufferHiDay+1)continue;
    const b=TimelineCapsules.sceneBackdrop(scene,projected,pxAxis,dayToAxis);
@@ -716,10 +718,14 @@ function render(){
    const meta=sceneMap.get(scene.id);
    const arcId=episodeMap.get(meta?.episode_id)?.arc_id;
    const colors=TimelineCapsules.palette(arcId);
+   backdropNodes.push({id:scene.id,kind:'scene',scene:meta,day:scene.position,locationId:meta?.location_id||null});
+   backdropBounds.set(scene.id,b);
    svg('rect',{class:'capsule-scene-backdrop',x:b.x,y:b.y,width:b.width,height:b.height,rx:b.rx,
      style:`--arc-color:${colors.solid};--arc-tint:${colors.soft};opacity:${Math.max(.04,1-t).toFixed(3)}`,
      'data-scene-capsule':scene.id,'aria-hidden':'true'});
   }
+  TimelineCapsules.sceneConnections(backdropNodes,sceneMap,episodeMap,backdropBounds,chronologyRelations())
+   .forEach(link=>drawCapsuleLink(link,Math.max(.04,1-t)));
  }
  const linked=(p,id)=>p.cast.includes(id);
  // Character curves inherit the positions of the underlying source moments.
