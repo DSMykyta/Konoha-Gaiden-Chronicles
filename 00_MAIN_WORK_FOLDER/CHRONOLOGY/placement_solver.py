@@ -140,6 +140,7 @@ def base_ref(ref):
 def edges_for(scenes,refs,links,config):
     edges=[]
     missing=[]
+    inactive=[]
     relations=list(links.get("links") or [])
     relations.extend(r for s in scenes.values() for r in s["relations"])
     for r in relations:
@@ -150,6 +151,8 @@ def edges_for(scenes,refs,links,config):
             missing.append(r.get("id","unnamed"))
         elif a!=b and a in scenes and b in scenes:
             edges.append((a,b,0,r.get("id","unnamed")))
+        elif a not in scenes or b not in scenes:
+            inactive.append(r.get("id","unnamed"))
     for r in config.get("constraints") or []:
         if r.get("review")!="accepted" or r.get("kind")!="min_gap_days":
             continue
@@ -158,7 +161,7 @@ def edges_for(scenes,refs,links,config):
             missing.append(r.get("id","unnamed"))
         elif a!=b:
             edges.append((a,b,gap,r.get("id","unnamed")))
-    return edges,missing
+    return edges,missing,inactive
 
 def bounds_for(scenes,edges,config):
     requests={}
@@ -256,9 +259,8 @@ def investigate(data,config=None):
     config=config or {"windows":[],"constraints":[]}
     scenes,refs,files,entities,mission_base=load_project(data)
     active={sid:s for sid,s in scenes.items() if s["state"]=="active"}
-    refs={k:v for k,v in refs.items() if v in active}
     mission=files["mission-windows"]
-    edges,missing=edges_for(active,refs,files["links"],config)
+    edges,missing,inactive_refs=edges_for(active,refs,files["links"],config)
     bounds,requests,issues=bounds_for(active,edges,config)
     for sid,s in active.items():
         if s["day"] is None: continue
@@ -283,13 +285,23 @@ def investigate(data,config=None):
         location_country=country(s["location"],files["geography"])
         if location_country:
             for actor in s["cast"]:
-                appearances[(day,actor)].append((sid,location_country))
+                appearances[(day,actor)].append((sid,location_country,s["continuity"]))
     suspected=[]
+    cross_continuities=[]
     for (day,actor),records in appearances.items():
-        countries=sorted({country_id for _,country_id in records})
-        if len(countries)>1:
-            suspected.append({"day":day,"actor":actor,"countries":countries,
-                              "scenes":sorted({sid for sid,_ in records})})
+        by_continuity=defaultdict(list)
+        for sid,country_id,continuity in records:
+            by_continuity[continuity].append((sid,country_id))
+        for continuity,group in by_continuity.items():
+            countries=sorted({country_id for _,country_id in group})
+            if len(countries)>1:
+                suspected.append({"day":day,"actor":actor,"continuity":continuity,
+                                  "countries":countries,"scenes":sorted({sid for sid,_ in group})})
+        all_countries={country_id for _,country_id,_ in records}
+        if len(all_countries)>1 and len(by_continuity)>1:
+            cross_continuities.append({"day":day,"actor":actor,
+                                      "continuities":sorted(map(str,by_continuity)),
+                                      "scenes":sorted({sid for sid,_,_ in records})})
     parallel_days=sum(1 for ids in parallel.values() if len(ids)>1 and
                       any(not(active[a]["cast"] & active[b]["cast"])
                           for i,a in enumerate(ids) for b in ids[i+1:]))
@@ -321,13 +333,15 @@ def investigate(data,config=None):
               "dated_active":sum(s["day"] is not None for s in active.values()),
               "undated_active":sum(s["day"] is None for s in active.values()),
               "accepted_before_edges":len(edges),"parallel_days":parallel_days,
-              "unknown_accepted_references":len(missing)},
+              "unknown_accepted_references":len(missing),
+              "inactive_relation_references":len(inactive_refs)},
             "optimizer":optimizer if optimizer["status"]!="feasible" else {
                 **optimizer,"assignments":{
                   k:v for k,v in optimizer["assignments"].items()
                   if any(p["scene_id"]==k and p.get("suggested") is not None for p in proposals)}},
             "issues":issues,"suspected_travel":sorted(suspected,key=lambda x:(x["day"],x["actor"])),
-            "unknown_refs":missing,"proposals":proposals,
+            "cross_continuity":sorted(cross_continuities,key=lambda x:(x["day"],x["actor"])),
+            "unknown_refs":missing,"inactive_refs":inactive_refs,"proposals":proposals,
             "no_finite_window":sum(s["day"] is None and
                                    (bounds[sid][0] is None or bounds[sid][1] is None)
                                    for sid,s in active.items())}
@@ -341,7 +355,8 @@ def make_report(result):
          f"- Датованих: {stat['dated_active']}; без дати: {stat['undated_active']}.",
          f"- Прийнятих умов порядку: {stat['accepted_before_edges']}.",
          f"- Днів з незалежними паралельними подіями: {stat['parallel_days']}.",
-         f"- Неопізнаних посилань у прийнятих умовах: {stat['unknown_accepted_references']}.",
+         f"- Справді невідомих посилань у прийнятих умовах: {stat['unknown_accepted_references']}.",
+         f"- Зв'язків із неактивними сценами, пропущених коректно: {stat['inactive_relation_references']}.",
          f"- Рушій: {result['optimizer']['engine']}; статус: {result['optimizer']['status']}.","",
          "## Підтверджені структурні або календарні суперечності","",
          f"Знайдено: {len(result['issues'])}. Перед зміною слід перевірити першоджерело.",""]
@@ -355,12 +370,22 @@ def make_report(result):
                 "Не враховані у датуванні до перевірки ID:",""])
     out.extend("- "+str(ref) for ref in result["unknown_refs"][:80])
     if not result["unknown_refs"]: out.append("- Немає.")
+    out.extend(["","## Посилання на неактивні сцени","",
+                "Це відомі ID, але сцени виключені з поточної хронології. Не слід повертати їх до активних лише через зв'язок.",""])
+    out.extend("- "+str(ref) for ref in result["inactive_refs"][:80])
+    if not result["inactive_refs"]: out.append("- Немає.")
     out.extend(["","## Можливі географічні колізії — не доведені","",
                 f"Випадків: {len(result['suspected_travel'])}. Різні країни за день не доводять неможливість пересування.",""])
     for item in result["suspected_travel"][:60]:
         out.append("- "+display(item["day"])+" "+item["actor"]+": "+", ".join(item["countries"])+
                    "; сцени "+", ".join(item["scenes"][:8]))
     if len(result["suspected_travel"])>60: out.append("- Інші випадки у JSON-звіті.")
+    out.extend(["","## Різні тяглості джерел (не пряма колізія)","",
+                f"Випадків: {len(result['cross_continuity'])}. Потребують окремого авторського рішення про сумісність.",""])
+    for item in result["cross_continuity"][:60]:
+        out.append("- "+display(item["day"])+" "+item["actor"]+": "+
+                   ", ".join(item["continuities"])+"; сцени "+", ".join(item["scenes"]))
+    if not result["cross_continuity"]: out.append("- Немає.")
     out.extend(["","## Не датовані та можливі дати","",
                 f"Без підтверджених двосторонніх меж: {result['no_finite_window']}; дати не вигадуються.","",
                 "| Сцена | Допустимий інтервал | Висновок |","|---|---|---|"])
