@@ -22,9 +22,14 @@ const IntervalCapsules={
   const offset=node.x-px(node.day);
   const left=Math.min(px(start),px(end))+offset,right=Math.max(px(start),px(end))+offset;
   const minimum=level==='arc'?12:level==='episode'?18:level==='scene'?16:8;
-  const width=Math.max(minimum,right-left);
+  // Springs change only screen-space geometry. The true source span stays
+  // constant, and endpoints return exactly to calendar time after the morph.
+  const raw=Math.max(0,Math.min(1,node.capsuleScale??1));
+  const spring=Math.max(0,Math.min(1,raw+Math.sin(Math.PI*raw)*Math.sin(4*Math.PI*raw)*.055));
+  const width=Math.max(minimum,(right-left)*spring);
+  const center=(left+right)/2*spring+node.x*(1-spring);
   const height=level==='arc'?35:level==='episode'?29:24;
-  return {x:(left+right)/2-width/2,y:node.y-height/2,width,height,
+  return {x:center-width/2,y:node.y-height/2,width,height,
    estimated:(right-left)<minimum,from:start,to:end};
  },
  build(nodes,level,sceneMap,episodeMap,geography,px,opacity=1){
@@ -53,7 +58,8 @@ const IntervalCapsules={
     x:members.reduce((s,n)=>s+n.x,0)/members.length,
     y:members.reduce((s,n)=>s+n.y,0)/members.length,
     spanStart:Math.min(...members.map(n=>Number.isFinite(n.spanStart)?n.spanStart:n.day)),
-    spanEnd:Math.max(...members.map(n=>Number.isFinite(n.spanEnd)?n.spanEnd:n.day))
+    spanEnd:Math.max(...members.map(n=>Number.isFinite(n.spanEnd)?n.spanEnd:n.day)),
+    capsuleScale:first.capsuleScale
    }:first;
    const kind=level==='moment'?'scene':level;
    const rect=this.rect(base,px,kind);
