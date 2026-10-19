@@ -94,8 +94,8 @@ test('human swaps and the bottle retain their source meanings',()=>{
 });
 
 test('Kakashi does not repeatedly meet colleagues or know Yumiko prematurely',()=>{
- assert(!/вперше|знайомиться/.test(scene('kakashi-first-mikata').title));
- assert(physical(scene('kakashi-first-mikata')).includes('c-ibiki'));
+ assert(!/вперше|знайомиться/.test(scene('kakashi-first-tokara').title));
+ assert(physical(scene('kakashi-first-tokara')).includes('c-ibiki'));
  assert.match(text(scene('kakashi-salmon')),/оплачує/);assert(!/вже оплачен/.test(text(scene('kakashi-salmon'))));assert.equal(scene('kakashi-salmon').day_part,'evening');
  assert.match(text(scene('kakashi-yumiko-sakura')),/імені.*ще не/);
  assert(absoluteDay(scene('kakashi-yumiko-asks-sakura'))<absoluteDay(scene('kakashi-yumiko-name')));

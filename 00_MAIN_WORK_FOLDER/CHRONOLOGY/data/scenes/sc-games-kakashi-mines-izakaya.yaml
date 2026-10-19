@@ -21,14 +21,14 @@ events:
 - id: ev-games-kakashi-mines-izakaya-1
   display_rank: 100
   title: Какаші оплачує спільний вечір після шахт
-  text: Увечері Ґенма запрошує колег до ізакаї за рахунок Какаші. До групи після шахт долучаються Асума, Куренай, Райдо, Нобарі, Анко, Аоба, Ірука, Ґай та Ебісу. Міката вже повернувся після відновлення. Вони жартують про прикриття та операцію, а Какаші ухиляється від запитань про Юміко. Вечір закінчує небезпечний вихід, тоді як ранкова доповідь ще попереду.
+  text: Увечері Ґенма запрошує колег до ізакаї за рахунок Какаші. До групи після шахт долучаються Асума, Куренай, Райдо, Нобарі, Анко, Аоба, Ірука, Ґай та Ебісу. Токара вже повернувся після відновлення. Вони жартують про прикриття та операцію, а Какаші ухиляється від запитань про Юміко. Вечір закінчує небезпечний вихід, тоді як ранкова доповідь ще попереду.
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kakashi
     role: focus
     mode: physical
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   - entity_id: c-genma
@@ -78,8 +78,8 @@ presence:
   - evd-games-kakashi-gaiden-05
   - evd-games-part-i-placement
   review: accepted
-- id: pr-games-kakashi-mines-izakaya-c-mikata
-  entity_id: c-mikata
+- id: pr-games-kakashi-mines-izakaya-c-tokara
+  entity_id: c-tokara
   from: sc-games-kakashi-mines-izakaya.start
   to: sc-games-kakashi-mines-izakaya.end
   basis: source

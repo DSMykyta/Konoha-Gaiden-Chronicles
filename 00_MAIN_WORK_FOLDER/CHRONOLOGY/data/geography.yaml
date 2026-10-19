@@ -158,7 +158,7 @@ kinds:
   loc-academy-swing: area
   loc-kikyo-castle: area
   loc-intelligence-division: area
-  loc-mikata-office: area
+  loc-tokara-office: area
   loc-intelligence-upper-corridor: area
   loc-intelligence-holding-cell: area
   loc-fire-north-forest-route: area
@@ -583,7 +583,7 @@ parents:
   loc-dango-shop: loc-konoha-commercial-quarter
   loc-hospital-quarantine-lab: loc-konoha-hospital
   loc-time-slip-hospital-roof: loc-konoha-hospital
-  loc-mikata-office: loc-intelligence-division
+  loc-tokara-office: loc-intelligence-division
   loc-intelligence-upper-corridor: loc-intelligence-division
   loc-intelligence-holding-cell: loc-intelligence-division
   loc-intelligence-lower-interrogation: loc-intelligence-division

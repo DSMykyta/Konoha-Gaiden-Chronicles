@@ -3,7 +3,7 @@ id: sc-games-kakashi-mines-return
 episode_id: ep-games-kakashi-mines-return
 display_rank: 160500
 continuity_id: main
-title: Ґенма доставляє виснаженого Мікату на відновлення
+title: Ґенма доставляє виснаженого Токару на відновлення
 location_id: loc-intelligence-division
 day_part: morning
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-mines-return-1
   display_rank: 100
-  title: Ґенма доставляє виснаженого Мікату на відновлення
-  text: На відході Міката виснажується після перетворення та перенесення пам’яті. Ґенма несе його до Конохи; Какаші й Тензо супроводжують їх до Відділу розвідки та допитів. Ібікі приймає агента й направляє на відновлення, а Тензо допомагає Ґенмі вийти з відділу після передачі пацієнта. Какаші призначає час здачі звітів і розпускає групу.
+  title: Ґенма доставляє виснаженого Токару на відновлення
+  text: На відході Токара виснажується після перетворення та перенесення пам’яті. Ґенма несе його до Конохи; Какаші й Тензо супроводжують їх до Відділу розвідки та допитів. Ібікі приймає агента й направляє на відновлення, а Тензо допомагає Ґенмі вийти з відділу після передачі пацієнта. Какаші призначає час здачі звітів і розпускає групу.
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-genma
     role: focus
     mode: physical
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   - entity_id: c-ibiki
@@ -59,8 +59,8 @@ presence:
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-audit-games-kakashi-mines-return-c-mikata
-  entity_id: c-mikata
+- id: pr-audit-games-kakashi-mines-return-c-tokara
+  entity_id: c-tokara
   from: sc-games-kakashi-mines-return.start
   to: sc-games-kakashi-mines-return.end
   basis: source

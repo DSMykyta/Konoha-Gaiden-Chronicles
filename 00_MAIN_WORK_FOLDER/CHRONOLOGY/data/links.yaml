@@ -3385,14 +3385,14 @@ links:
 - id: lnk-iwa-mission-1
   kind: before
   a: sc-y0-iwa-escort-order
-  b: sc-y0-iwa-mikata-office
+  b: sc-y0-iwa-tokara-office
   basis: source
   review: accepted
   evidence_ids:
   - evd-iwa-prisoner-mission
 - id: lnk-iwa-mission-2
   kind: before
-  a: sc-y0-iwa-mikata-office
+  a: sc-y0-iwa-tokara-office
   b: sc-y0-iwa-office-corridor
   basis: source
   review: accepted
@@ -3591,7 +3591,7 @@ links:
 - id: lnk-archive-chain-15
   kind: before
   a: sc-y0-archive-hokage-briefing
-  b: sc-y0-archive-mikata-infiltration
+  b: sc-y0-archive-tokara-infiltration
   basis: editorial
   review: accepted
   evidence_ids:
@@ -3599,7 +3599,7 @@ links:
   - evd-archive-audit-bridge
 - id: lnk-archive-chain-16
   kind: before
-  a: sc-y0-archive-mikata-infiltration
+  a: sc-y0-archive-tokara-infiltration
   b: sc-y0-archive-illegal-transfer
   basis: editorial
   review: accepted
@@ -4755,7 +4755,7 @@ links:
 - id: lnk-games-kakashi-yumiko-first-5
   kind: before
   a: sc-games-kakashi-fourth-meeting
-  b: sc-games-kakashi-first-mikata
+  b: sc-games-kakashi-first-tokara
   basis: source
   review: accepted
   evidence_ids:
@@ -4763,7 +4763,7 @@ links:
   - evd-games-part-i-placement
 - id: lnk-games-kakashi-yumiko-first-6
   kind: before
-  a: sc-games-kakashi-first-mikata
+  a: sc-games-kakashi-first-tokara
   b: sc-games-kakashi-yumiko-sakura
   basis: source
   review: accepted

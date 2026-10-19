@@ -3,7 +3,7 @@ id: sc-games-kakashi-shukuba-transfer
 episode_id: ep-games-kakashi-shukuba-contact
 display_rank: 150300
 continuity_id: main
-title: Какаші отримує від Мікати сувій у Шукубі
+title: Какаші отримує від Токари сувій у Шукубі
 location_id: loc-shukuba-contact-room
 day_part: evening
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-shukuba-transfer-1
   display_rank: 100
-  title: Какаші отримує від Мікати сувій у Шукубі
-  text: У закритій точці зустрічі Какаші знаходить Мікату під глибоким цивільним прикриттям. Саске впізнає знайомий відбиток чакри й розуміє, що перед ними службовий контакт. Наставник отримує сувій зі звітом, обмежує втручання учнів і витримує потрібний для прикриття час перед виходом. Зовнішня роль Мікати не змінює мети передачі.
+  title: Какаші отримує від Токари сувій у Шукубі
+  text: У закритій точці зустрічі Какаші знаходить Токару під глибоким цивільним прикриттям. Саске впізнає знайомий відбиток чакри й розуміє, що перед ними службовий контакт. Наставник отримує сувій зі звітом, обмежує втручання учнів і витримує потрібний для прикриття час перед виходом. Зовнішня роль Токари не змінює мети передачі.
   origin: P
   extent: interval
   involvement:
@@ -37,7 +37,7 @@ events:
   - entity_id: c-sakura
     role: focus
     mode: physical
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   evidence_ids: &id001
@@ -73,8 +73,8 @@ presence:
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-shukuba-transfer-c-mikata
-  entity_id: c-mikata
+- id: pr-games-kakashi-shukuba-transfer-c-tokara
+  entity_id: c-tokara
   from: sc-games-kakashi-shukuba-transfer.start
   to: sc-games-kakashi-shukuba-transfer.end
   basis: source

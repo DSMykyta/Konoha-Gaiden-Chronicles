@@ -3,7 +3,7 @@ id: sc-games-kakashi-daiki-cover
 episode_id: ep-games-kakashi-mines-infiltration
 display_rank: 160200
 continuity_id: main
-title: Міката входить у табір у подобі патрульного Дайкі
+title: Токара входить у табір у подобі патрульного Дайкі
 location_id: loc-iwa-mercenary-mines
 day_part: night
 placement:
@@ -20,15 +20,15 @@ review:
 events:
 - id: ev-games-kakashi-daiki-cover-1
   display_rank: 100
-  title: Міката входить у табір у подобі патрульного Дайкі
-  text: Міката відтворює зовнішність і відбиток чакри місцевого патрульного Дайкі. Справжнього найманця знешкоджують і ховають неподалік. Під прикриттям Міката проходить перші сигнальні бар’єри та не вмикає їх знову. Какаші спостерігає зверху, поки Тензо й Ґенма готують підземну частину диверсії.
+  title: Токара входить у табір у подобі патрульного Дайкі
+  text: Токара відтворює зовнішність і відбиток чакри місцевого патрульного Дайкі. Справжнього найманця знешкоджують і ховають неподалік. Під прикриттям Токара проходить перші сигнальні бар’єри та не вмикає їх знову. Какаші спостерігає зверху, поки Тензо й Ґенма готують підземну частину диверсії.
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kakashi
     role: focus
     mode: physical
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   - entity_id: c-tenzo
@@ -52,8 +52,8 @@ presence:
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-daiki-cover-c-mikata
-  entity_id: c-mikata
+- id: pr-games-kakashi-daiki-cover-c-tokara
+  entity_id: c-tokara
   from: sc-games-kakashi-daiki-cover.start
   to: sc-games-kakashi-daiki-cover.end
   basis: source

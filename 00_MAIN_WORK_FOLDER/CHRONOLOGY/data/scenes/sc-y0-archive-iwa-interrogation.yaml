@@ -18,13 +18,13 @@ review:
   origin: accepted
   text: accepted
 events:
-- id: ev-y0-mikata-interrogates-iwa-contact
-  title: Міката допитує зв’язкового Іви
-  text: 'Міката працює зі шпигуном, якого взяли на передачі архівних документів. Його метод зосереджений на психологічному зламі: полонений поступово втрачає впевненість, здатність чинити спротив і опору на власну роль ворожого оперативника. Ібікі контролює отримання та перевірку потрібних Конохі відомостей. Видимих каліцтв для цього не завдають, але наслідки допиту залишаються глибокими: саме в такому покірному й наляканому стані чоловіка згодом побачить Команда 7.'
+- id: ev-y0-tokara-interrogates-iwa-contact
+  title: Токара допитує зв’язкового Іви
+  text: 'Токара працює зі шпигуном, якого взяли на передачі архівних документів. Його метод зосереджений на психологічному зламі: полонений поступово втрачає впевненість, здатність чинити спротив і опору на власну роль ворожого оперативника. Ібікі контролює отримання та перевірку потрібних Конохі відомостей. Видимих каліцтв для цього не завдають, але наслідки допиту залишаються глибокими: саме в такому покірному й наляканому стані чоловіка згодом побачить Команда 7.'
   origin: P
   extent: interval
   involvement:
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   - entity_id: c-iwa-prisoner
@@ -40,8 +40,8 @@ events:
   display_rank: 100
 relations: []
 presence:
-- id: pr-archive-iwa-interrogation-mikata
-  entity_id: c-mikata
+- id: pr-archive-iwa-interrogation-tokara
+  entity_id: c-tokara
   from: sc-y0-archive-iwa-interrogation.start
   to: sc-y0-archive-iwa-interrogation.end
   basis: source

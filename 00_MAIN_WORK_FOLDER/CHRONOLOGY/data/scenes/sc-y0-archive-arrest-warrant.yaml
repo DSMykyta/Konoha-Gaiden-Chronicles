@@ -19,15 +19,15 @@ review:
   text: accepted
 events:
 - id: ev-y0-hiruzen-authorizes-archive-arrests
-  title: Хірузен санкціонує затримання після доповіді Мікати
-  text: 'Міката подає Хірузену зібрану справу: фотографії передачі сувою, перелік виведених матеріалів і графік зустрічей. Какаші ознайомлюється з доказами присутності зв’язкового Іви та участі старшої працівниці архіву. Хірузен підписує ордер і затверджує операцію Відділу розвідки та допитів. Какаші має перекрити зовнішній периметр так, щоб під час затримання ніхто не залишив будівлю; Міката забезпечить роботу всередині.'
+  title: Хірузен санкціонує затримання після доповіді Токари
+  text: 'Токара подає Хірузену зібрану справу: фотографії передачі сувою, перелік виведених матеріалів і графік зустрічей. Какаші ознайомлюється з доказами присутності зв’язкового Іви та участі старшої працівниці архіву. Хірузен підписує ордер і затверджує операцію Відділу розвідки та допитів. Какаші має перекрити зовнішній периметр так, щоб під час затримання ніхто не залишив будівлю; Токара забезпечить роботу всередині.'
   origin: P
   extent: interval
   involvement:
   - entity_id: c-hiruzen
     role: focus
     mode: physical
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   - entity_id: c-kakashi
@@ -48,8 +48,8 @@ presence:
   - evd-archive-case-evidence
   - evd-archive-chain-placement
   review: accepted
-- id: pr-archive-arrest-warrant-mikata
-  entity_id: c-mikata
+- id: pr-archive-arrest-warrant-tokara
+  entity_id: c-tokara
   from: sc-y0-archive-arrest-warrant.start
   to: sc-y0-archive-arrest-warrant.end
   basis: source

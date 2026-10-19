@@ -2114,11 +2114,11 @@ entities:
     name: Kikyō Castle
     aliases: [Замок Кікьо]
     parent_id: loc-konohagakure
-  - id: c-mikata
+  - id: c-tokara
     kind: person
-    name: Міката
+    name: Токара
     aliases:
-    - Міката
+    - Токара
   - id: c-iwa-prisoner
     kind: person
     name: Полонений шпигун Іви
@@ -2146,17 +2146,17 @@ entities:
     aliases:
     - Відділ розвідки та допитів
     parent_id: loc-konohagakure
-  - id: loc-mikata-office
+  - id: loc-tokara-office
     kind: location
-    name: Кабінет Мікати
+    name: Кабінет Токари
     aliases:
-    - Кабінет Мікати
+    - Кабінет Токари
     parent_id: "loc-intelligence-division"
   - id: loc-intelligence-upper-corridor
     kind: location
-    name: Коридор біля кабінету Мікати
+    name: Коридор біля кабінету Токари
     aliases:
-    - Коридор біля кабінету Мікати
+    - Коридор біля кабінету Токари
     parent_id: "loc-intelligence-division"
   - id: loc-intelligence-holding-cell
     kind: location

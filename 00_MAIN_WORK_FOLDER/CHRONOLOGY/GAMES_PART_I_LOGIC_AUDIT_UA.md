@@ -31,7 +31,7 @@
 | `sc-games-kakashi-yumiko-asks-sakura` — Юміко розпитує Сакуру про її наставника | 21.02, рік 0, Ранок | додано пропущену сцену | `evd-games-kakashi-gaiden-01` |
 | `sc-games-kakashi-salmon` — Какаші купує залишені Юміко продукти | 21.02, рік 0, Вечір | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-01` |
 | `sc-games-kakashi-fourth-meeting` — Какаші й Асума змінюють маршрут після нової зустрічі з Юміко | 24.02, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-01` |
-| `sc-games-kakashi-first-mikata` — Какаші забирає звіт про допит кур’єра Іви | 03.03, рік 0, Ранок | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-01` |
+| `sc-games-kakashi-first-tokara` — Какаші забирає звіт про допит кур’єра Іви | 03.03, рік 0, Ранок | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-01` |
 | `sc-games-kakashi-yumiko-sakura` — Сакура розповідає Какаші про працівницю цивільного архіву | 03.03, рік 0, Вечір | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-01` |
 | `sc-games-kakashi-park-refund` — Какаші залишає Юміко гроші за забрані продукти | 06.03, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-01` |
 | `sc-games-t9-second-warehouse` — Команда 9 завершує роботу на східному складі | 15.03, рік 0, Ранок | змінено зміст / участь / час доби | `evd-games-team-9-02-5` |
@@ -50,7 +50,7 @@
 | `sc-games-kakashi-friends-yumiko` — Какаші говорить із друзями про зустрічі з Юміко | 15.04, рік 0, Вечір | перенесено дату; змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-01` |
 | `sc-y0-archive-leak-established` — Висновок про джерело витоку | 16.04, рік 0, Після обіду | звірено; залишено | `evd-archive-case-briefing`, `evd-archive-audit-bridge` |
 | `sc-y0-archive-hokage-briefing` — Доручення Хірузена | 17.04, рік 0, Ранок | звірено; залишено | `evd-archive-case-briefing`, `evd-archive-chain-placement` |
-| `sc-y0-archive-mikata-infiltration` — Початок роботи під прикриттям | 18.04, рік 0, Ранок | звірено; залишено | `evd-archive-case-briefing`, `evd-archive-case-evidence`, `evd-archive-operation-bridge` |
+| `sc-y0-archive-tokara-infiltration` — Початок роботи під прикриттям | 18.04, рік 0, Ранок | звірено; залишено | `evd-archive-case-briefing`, `evd-archive-case-evidence`, `evd-archive-operation-bridge` |
 | `sc-games-t9-kunai-thread` — Кіта показує Райдо керування кунаєм через нитку | 18.04, рік 0, Ранок | уточнено порядок показу | `evd-games-team-9-04` |
 | `sc-y0-archive-illegal-transfer` — Спостереження за передачею документів | 22.04, рік 0, Після обіду | звірено; залишено | `evd-archive-case-evidence`, `evd-archive-iwa-prisoner-identity`, `evd-archive-operation-bridge` |
 | `sc-y0-archive-arrest-warrant` — Санкція на архівну операцію | 23.04, рік 0, Ранок | звірено; залишено | `evd-archive-case-evidence`, `evd-archive-chain-placement` |
@@ -72,15 +72,15 @@
 | `sc-games-t9-asuma-first-fire` — Кіта утримує залишковий вогонь під наглядом Асуми | 03.05, рік 0, Після обіду | додано пропущену сцену | `evd-games-team-9-04` |
 | `sc-y0-archive-exchange-approved` — Погодження прикордонного обміну | 04.05, рік 0, Після обіду | звірено; залишено | `evd-archive-iwa-prisoner-identity`, `evd-archive-operation-bridge`, `evd-archive-chain-placement` |
 | `sc-y0-iwa-escort-order` — Отримання доручення | 05.05, рік 0, Ранок | звірено; залишено | `evd-iwa-prisoner-mission` |
-| `sc-y0-iwa-mikata-office` — Кабінет Мікати | 05.05, рік 0, Ранок | звірено; залишено | `evd-iwa-prisoner-mission` |
-| `sc-y0-iwa-office-corridor` — Коридор біля кабінету Мікати | 05.05, рік 0, Ранок | звірено; залишено | `evd-iwa-prisoner-mission` |
+| `sc-y0-iwa-tokara-office` — Кабінет Токари | 05.05, рік 0, Ранок | звірено; залишено | `evd-iwa-prisoner-mission` |
+| `sc-y0-iwa-office-corridor` — Коридор біля кабінету Токари | 05.05, рік 0, Ранок | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-y0-iwa-holding-cell` — Камера тимчасового утримання | 05.05, рік 0, Ранок | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-y0-iwa-forest-convoy` — Конвой через ліс | 05.05, рік 0, Після обіду | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-y0-iwa-ravine-rest` — Привал у яру | 05.05, рік 0, Після обіду | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-y0-iwa-border-exchange` — Північний кордон | 05.05, рік 0, Ніч | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-y0-iwa-border-camp` — Табір біля кордону | 05.05, рік 0, Ніч | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-y0-iwa-return-konoha` — Повернення до Конохи | 06.05, рік 0, Ранок | звірено; залишено | `evd-iwa-prisoner-mission` |
-| `sc-y0-iwa-office-return` — Кабінет Мікати після повернення | 06.05, рік 0, Після обіду | звірено; залишено | `evd-iwa-prisoner-mission` |
+| `sc-y0-iwa-office-return` — Кабінет Токари після повернення | 06.05, рік 0, Після обіду | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-y0-iwa-ibiki-interrogation` — Нижній рівень Відділу допитів | 06.05, рік 0, Після обіду | звірено; залишено | `evd-iwa-prisoner-mission` |
 | `sc-games-t9-burn-attempt` — Райдо зупиняє небезпечну вогняну спробу Кіти | 07.05, рік 0, Ранок | уточнено порядок показу | `evd-games-team-9-04` |
 | `sc-games-kakashi-garden` — Команда 7 прибирає подвір’я навпроти будинку Сакури | 07.05, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-02` |
@@ -91,22 +91,22 @@
 | `sc-games-kakashi-izakaya-rumor` — Какаші проводить вечір із колегами після обіду з Юміко | 12.05, рік 0, Вечір | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-03` |
 | `sc-games-kakashi-shukuba-briefing` — Хірузен доручає Команді 7 забрати розвіддані в Шукубі | 13.05, рік 0, Ранок | додано пропущену сцену | `evd-games-kakashi-gaiden-03` |
 | `sc-games-kakashi-shukuba-order` — Команда 7 виходить до Шукуби під цивільним прикриттям | 13.05, рік 0, Ранок | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-04` |
-| `sc-games-kakashi-shukuba-transfer` — Какаші отримує від Мікати сувій у Шукубі | 13.05, рік 0, Вечір | уточнено порядок показу | `evd-games-kakashi-gaiden-04` |
+| `sc-games-kakashi-shukuba-transfer` — Какаші отримує від Токари сувій у Шукубі | 13.05, рік 0, Вечір | уточнено порядок показу | `evd-games-kakashi-gaiden-04` |
 | `sc-games-kakashi-shukuba-debrief` — Хірузен приймає звіт Команди 7 після Шукуби | 14.05, рік 0, Полудень | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-04` |
 | `sc-games-kakashi-pakkun-wait` — Какаші чекає Юміко з Паккуном, але вона не приходить | 15.05, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-04` |
 | `sc-games-kakashi-takumi-brother` — Какаші зустрічає молодшого брата загиблого Такумі | 15.05, рік 0, Вечір | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-04` |
 | `sc-games-kakashi-skips-eatery` — Какаші вирішує припинити очікувати Юміко | 15.05, рік 0, Ніч | перенесено дату; змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-04` |
-| `sc-games-kakashi-weapons-archive-lead` — Какаші, Ібікі та Міката знаходять слід прихованого постачання | 17.05, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-04` |
+| `sc-games-kakashi-weapons-archive-lead` — Какаші, Ібікі та Токара знаходять слід прихованого постачання | 17.05, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-04` |
 | `sc-games-t9-raido-absence` — Команда 9 працює без Райдо поруч із Командою 10 | 20.05, рік 0, Ранок | уточнено порядок показу | `evd-games-team-9-04` |
 | `sc-games-t9-naruto-ramen` — Наруто підтримує Кіту в Ічіраку | 20.05, рік 0, Вечір | змінено зміст / участь / час доби | `evd-games-team-9-04` |
 | `sc-games-t9-squirrel-blink` — Кіта лікує білку й уперше блінкає під час вправи | 21.05, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-team-9-04` |
 | `sc-games-kakashi-mines-order` — Хірузен доручає Какаші приховано зруйнувати шахти найманців Іви | 23.05, рік 0, Ранок | уточнено порядок показу | `evd-games-kakashi-gaiden-04` |
 | `sc-games-kakashi-mines-depart` — Група Какаші виходить до шахт Іви | 23.05, рік 0, Вечір | уточнено порядок показу | `evd-games-kakashi-gaiden-05` |
-| `sc-games-kakashi-daiki-cover` — Міката входить у табір у подобі патрульного Дайкі | 23.05, рік 0, Ніч | уточнено порядок показу | `evd-games-kakashi-gaiden-05` |
-| `sc-games-kakashi-daiki-fight` — Міката відволікає варту постановочною бійкою | 24.05, рік 0, Світанок | уточнено порядок показу | `evd-games-kakashi-gaiden-05` |
+| `sc-games-kakashi-daiki-cover` — Токара входить у табір у подобі патрульного Дайкі | 23.05, рік 0, Ніч | уточнено порядок показу | `evd-games-kakashi-gaiden-05` |
+| `sc-games-kakashi-daiki-fight` — Токара відволікає варту постановочною бійкою | 24.05, рік 0, Світанок | уточнено порядок показу | `evd-games-kakashi-gaiden-05` |
 | `sc-games-kakashi-mines-memory` — Група обвалює шахти й приховує підміну Дайкі | 24.05, рік 0, Світанок | уточнено порядок показу | `evd-games-kakashi-gaiden-05` |
 | `sc-games-t9-raido-blink` — Райдо переводить перший блінк у короткі контрольовані спроби | 24.05, рік 0, Ранок | уточнено порядок показу | `evd-games-team-9-04` |
-| `sc-games-kakashi-mines-return` — Ґенма доставляє виснаженого Мікату на відновлення | 24.05, рік 0, Ранок | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-05` |
+| `sc-games-kakashi-mines-return` — Ґенма доставляє виснаженого Токару на відновлення | 24.05, рік 0, Ранок | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-05` |
 | `sc-games-kakashi-mines-report` — Какаші готує звіт про диверсію та призначає ранкову доповідь | 24.05, рік 0, Після обіду | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-05` |
 | `sc-games-kakashi-mines-izakaya` — Какаші оплачує спільний вечір після шахт | 24.05, рік 0, Вечір | змінено зміст / участь / час доби | `evd-games-kakashi-gaiden-05` |
 | `sc-games-t9-ren-sensor` — Рен виявляє сенсорне чуття в грі із зав’язаними очима | 27.05, рік 0, Ранок | змінено зміст / участь / час доби | `evd-games-team-9-05` |

@@ -3,7 +3,7 @@ id: sc-games-kakashi-weapons-archive-lead
 episode_id: ep-games-kakashi-shukuba-leads
 display_rank: 150800
 continuity_id: main
-title: Какаші, Ібікі та Міката знаходять слід прихованого постачання
+title: Какаші, Ібікі та Токара знаходять слід прихованого постачання
 location_id: loc-intelligence-division
 day_part: afternoon
 placement:
@@ -20,8 +20,8 @@ review:
 events:
 - id: ev-games-kakashi-weapons-archive-lead-1
   display_rank: 100
-  title: Какаші, Ібікі та Міката знаходять слід прихованого постачання
-  text: Ібікі показує Какаші розшифровану схему постачання чакропровідної сталі та вибухових печаток. Гроші йдуть через приватні фонди у столиці, а товар повертається до Конохи під виглядом будівельних матеріалів. Міката пояснює, що чисті офіційні закупівлі не виключають підроблених цивільних дозволів, і пропонує перевірку під приводом розбіжностей у D-рангових звітах. Какаші погоджується зайти до архіву; результат цієї перевірки ще невідомий.
+  title: Какаші, Ібікі та Токара знаходять слід прихованого постачання
+  text: Ібікі показує Какаші розшифровану схему постачання чакропровідної сталі та вибухових печаток. Гроші йдуть через приватні фонди у столиці, а товар повертається до Конохи під виглядом будівельних матеріалів. Токара пояснює, що чисті офіційні закупівлі не виключають підроблених цивільних дозволів, і пропонує перевірку під приводом розбіжностей у D-рангових звітах. Какаші погоджується зайти до архіву; результат цієї перевірки ще невідомий.
   origin: P
   extent: interval
   involvement:
@@ -31,7 +31,7 @@ events:
   - entity_id: c-ibiki
     role: focus
     mode: physical
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   evidence_ids:
@@ -57,8 +57,8 @@ presence:
   - evd-games-kakashi-gaiden-04
   - evd-games-part-i-placement
   review: accepted
-- id: pr-games-kakashi-weapons-archive-lead-c-mikata
-  entity_id: c-mikata
+- id: pr-games-kakashi-weapons-archive-lead-c-tokara
+  entity_id: c-tokara
   from: sc-games-kakashi-weapons-archive-lead.start
   to: sc-games-kakashi-weapons-archive-lead.end
   basis: source

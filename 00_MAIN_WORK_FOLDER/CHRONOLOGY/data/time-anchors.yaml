@@ -1373,7 +1373,7 @@ anchors:
     evidence_ids:
     - evd-archive-chain-placement
     review: accepted
-    reason: Міката починає цивільне прикриття після доручення Хірузена; Какаші виконує зовнішню частину операції.
+    reason: Токара починає цивільне прикриття після доручення Хірузена; Какаші виконує зовнішню частину операції.
   - id: ta-archive-transfer-photographed
     date:
       year: 62
@@ -1397,7 +1397,7 @@ anchors:
     evidence_ids:
     - evd-archive-chain-placement
     review: accepted
-    reason: Після фото передачі Міката доповідає Хірузену й отримує санкцію на затримання.
+    reason: Після фото передачі Токара доповідає Хірузену й отримує санкцію на затримання.
   - id: ta-archive-arrests
     date:
       year: 62
@@ -1421,7 +1421,7 @@ anchors:
     evidence_ids:
     - evd-archive-chain-placement
     review: accepted
-    reason: Міката працює з живим шпигуном після затримання; допит проводиться окремо від конвою генінів.
+    reason: Токара працює з живим шпигуном після затримання; допит проводиться окремо від конвою генінів.
   - id: ta-archive-interrogation-report
     date:
       year: 62

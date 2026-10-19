@@ -21,14 +21,14 @@ events:
 - id: ev-games-kakashi-mines-depart-1
   display_rank: 100
   title: Група Какаші виходить до шахт Іви
-  text: 'До Какаші, Мікати й Тензо в останню мить додають Ґенму для страхування та контролю сектору. На воротах командир розподіляє роботу: Міката знімає бар’єри й відволікає дозорних, Тензо готує обвал, Ґенма страхує, а Какаші тримає периметр і відхід. Будь-яке викриття може зруйнувати політичну мету операції.'
+  text: 'До Какаші, Токари й Тензо в останню мить додають Ґенму для страхування та контролю сектору. На воротах командир розподіляє роботу: Токара знімає бар’єри й відволікає дозорних, Тензо готує обвал, Ґенма страхує, а Какаші тримає периметр і відхід. Будь-яке викриття може зруйнувати політичну мету операції.'
   origin: P
   extent: interval
   involvement:
   - entity_id: c-kakashi
     role: focus
     mode: physical
-  - entity_id: c-mikata
+  - entity_id: c-tokara
     role: focus
     mode: physical
   - entity_id: c-tenzo
@@ -52,8 +52,8 @@ presence:
   basis: source
   evidence_ids: *id001
   review: accepted
-- id: pr-games-kakashi-mines-depart-c-mikata
-  entity_id: c-mikata
+- id: pr-games-kakashi-mines-depart-c-tokara
+  entity_id: c-tokara
   from: sc-games-kakashi-mines-depart.start
   to: sc-games-kakashi-mines-depart.end
   basis: source
