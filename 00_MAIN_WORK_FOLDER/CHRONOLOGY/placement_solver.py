@@ -328,9 +328,14 @@ def make_report(result):
          f"Знайдено: {len(result['issues'])}. Перед зміною слід перевірити першоджерело.",""]
     for issue in result["issues"][:80]:
         out.append("- **"+issue["kind"]+"** "+str(issue.get("id","?"))+
-                   " : "+str(issue.get("details",issue.get("with",""))))
+                   " : "+str(issue.get("details",""))+
+                   ("; зайнято аркою "+str(issue["with"]) if issue.get("with") else ""))
     if len(result["issues"])>80: out.append("- Інші випадки у JSON-звіті.")
     if not result["issues"]: out.append("- За реалізованими правилами не виявлено; це не повний сюжетний аудит.")
+    out.extend(["","## Прийняті зв’язки з невідомими посиланнями","",
+                "Не враховані у датуванні до перевірки ID:",""])
+    out.extend("- "+str(ref) for ref in result["unknown_refs"][:80])
+    if not result["unknown_refs"]: out.append("- Немає.")
     out.extend(["","## Можливі географічні колізії — не доведені","",
                 f"Випадків: {len(result['suspected_travel'])}. Різні країни за день не доводять неможливість пересування.",""])
     for item in result["suspected_travel"][:60]:
