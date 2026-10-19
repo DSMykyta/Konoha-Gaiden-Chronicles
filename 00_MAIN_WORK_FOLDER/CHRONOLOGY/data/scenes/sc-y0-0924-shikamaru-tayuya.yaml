@@ -4,7 +4,7 @@ episode_id: ep-y0-shikamaru-tayuya
 display_rank: 100
 continuity_id: "main"
 title: "Шикамару проти Таюї"
-location_id: null
+location_id: loc-land-of-fire
 placement: {anchor_id: "ta-sasuke-recovery-24", day_offset: 0}
 state: "active"
 presence_coverage: "complete"

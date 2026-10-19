@@ -4,7 +4,7 @@ episode_id: ep-y0-naruto-pursues-sasuke
 display_rank: 100
 continuity_id: main
 title: Наруто продовжує погоню за Саске
-location_id: null
+location_id: loc-land-of-fire
 placement:
   anchor_id: ta-y0-0924
   day_offset: 0
@@ -13,7 +13,7 @@ presence_coverage: partial
 review:
   time: partial
   cast: partial
-  location: unknown
+  location: partial
   origin: accepted
   text: accepted
 events:
