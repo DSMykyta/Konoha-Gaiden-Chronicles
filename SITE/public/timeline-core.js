@@ -610,7 +610,10 @@ const TimelineCore = {
       const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
       if(gap<1e-8)continue;
       const pixelGap=gap*Math.max(1,pixelsPerDay);
-      const wander=smooth(Math.max(0,Math.min(1,(pixelGap-20)/185)));
+      // Within the same confirmed physical scene, a character follows a
+      // straight, stable channel through the moment dots.
+      const steady=a.sceneId&&a.sceneId===b.sceneId&&a.locationId&&a.locationId===b.locationId;
+      const wander=steady?0:smooth(Math.max(0,Math.min(1,(pixelGap-20)/185)));
       if(!wander||!a.node||!b.node)continue;
       const controls=3,primary=channel*Math.min(12,amplitude*.14)*wander;
       for(let j=1;j<=controls;j++){
