@@ -12,7 +12,10 @@ const team7=['naruto','sasuke','sakura','kakashi'],team9=['kita','ren','sora','r
 const moments=(cast,prefix,location='loc-academy-classroom')=>
  Array.from({length:18},(_,i)=>({
   id:prefix+'-'+i,kind:'moment',day:22+i*.014,calendarDay:22,
-  layoutGroup:prefix+Math.floor(i/4),locationId:location,layoutCast:cast
+  layoutGroup:prefix+Math.floor(i/4),locationId:location,layoutCast:cast,
+  // The synthetic known-place fixture explicitly represents reviewed geography.
+  // Unresolved locations remain unreviewed and cannot bridge separate groups.
+  scene:{review:{location:location?'accepted':'unresolved'}}
  }));
 const maxHop=(nodes,lanes)=>Math.max(...nodes.slice(1).map((node,i)=>
  Math.abs(lanes.get(node.id)-lanes.get(nodes[i].id))*145
