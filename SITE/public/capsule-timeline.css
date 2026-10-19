@@ -13,7 +13,8 @@
   stroke: none;
   pointer-events: none;
 }
-#timeline .capsule-node .mark[data-time-precision="point-or-unresolved"] {
+#timeline .capsule-node .mark[data-time-precision="point-or-unresolved"],
+#timeline .capsule-node .mark[data-time-precision="visual-minimum"] {
   stroke-dasharray: 5 3;
 }
 #timeline .capsule-moment .mark {

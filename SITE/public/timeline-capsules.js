@@ -20,10 +20,12 @@ const TimelineCapsules = {
   const hasSpan=Number.isFinite(from)&&Number.isFinite(to)&&to>from;
   const rawWidth=hasSpan?Math.max(0,px(dayToAxis(to))-px(dayToAxis(from))):0;
   const minWidth=minWidths[node.kind]||36,width=Math.max(minWidth,rawWidth);
-  const centerX=node.x,half=width/2;
+  const startX=hasSpan?px(dayToAxis(from)):node.x;
+  const endX=hasSpan?px(dayToAxis(to)):node.x;
+  const centerX=hasSpan?(startX+endX)/2:node.x,half=width/2;
   const height=node.kind==='arc'?40:node.kind==='episode'?32:node.kind==='scene'?26:18;
   return {x:centerX-half,y:node.y-height/2,width,height,rx:Math.min(height/2,13),
-   timeStatus:hasSpan?'projected-interval':'point-or-unresolved'};
+   timeStatus:hasSpan?(rawWidth>=minWidth?'projected-interval':'visual-minimum'):'point-or-unresolved'};
  },
  // Day scale keeps every one-moment scene as a capsule behind its moment dot.
  sceneBackdrop(scene,positions,px,dayToAxis){
@@ -56,7 +58,11 @@ const TimelineCapsules = {
     if(!r1||!r2)continue;
     const gap=r2.x-(r1.x+r1.width),maxGap=16;
     if(gap>maxGap||gap< -r1.width*.65)continue;
-    const samePlace=!!a.locationId&&a.locationId===b.locationId;
+    // Broad or unresolved geographic assignments are not proof of physical
+    // adjacency. Require accepted precise scene-level location reviews.
+    const placeA=a.scene||sceneMap.get(a.id),placeB=b.scene||sceneMap.get(b.id);
+    const samePlace=!!a.locationId&&a.locationId===b.locationId&&
+     placeA?.review?.location==='accepted'&&placeB?.review?.location==='accepted';
     const linked=before.has(a.id+'>'+b.id);
     // A shared episode alone is not evidence for a solid join between
     // unrelated subplots; same place or an accepted direct link is required.

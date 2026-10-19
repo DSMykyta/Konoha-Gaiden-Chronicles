@@ -25,7 +25,7 @@ test('interval width reflects elapsed time while a one-moment scene remains a ca
  const px=v=>v*60;
  const b=capsule.bounds({kind:'scene',x:330,y:100,spanStart:4,spanEnd:8},px,x=>x);
  assert.equal(b.width,240);
- assert.equal(b.x,210);
+ assert.equal(b.x,240);
  const one=capsule.bounds({kind:'scene',x:330,y:100,spanStart:4,spanEnd:4},px,x=>x);
  assert.equal(one.width,44);
  assert.equal(one.timeStatus,'point-or-unresolved');
@@ -42,8 +42,8 @@ test('moment zoom draws one-scene capsule even when only one moment exists',()=>
 });
 
 test('connectors cannot join unrelated episodes or unverified different places',()=>{
- const a={id:'a',kind:'scene',scene:{episode_id:'formation'},locationId:'class',day:10};
- const b={id:'b',kind:'scene',scene:{episode_id:'formation'},locationId:'class',day:11};
+ const a={id:'a',kind:'scene',scene:{episode_id:'formation',review:{location:'accepted'}},locationId:'class',day:10};
+ const b={id:'b',kind:'scene',scene:{episode_id:'formation',review:{location:'accepted'}},locationId:'class',day:11};
  const c={id:'c',kind:'scene',scene:{episode_id:'outside'},locationId:'class',day:12};
  const rects=new Map([[a.id,{x:0,y:0,width:50,height:24}],[b.id,{x:54,y:0,width:50,height:24}],[c.id,{x:108,y:0,width:50,height:24}]]);
  const links=capsule.sceneConnections([a,b,c],map,episodes,rects,[]);
@@ -63,4 +63,12 @@ test('different locations join only with accepted direct before; long gaps never
  assert.equal(capsule.sceneConnections([a,b],map,episodes,boxes,[{...accepted[0],review:'pending'}]).length,0);
  boxes.get('b').x=130;
  assert.equal(capsule.sceneConnections([a,b],map,episodes,boxes,accepted).length,0);
+});
+
+
+test('partial geographic region never implies a solid scene connection',()=>{
+ const a={id:'a',kind:'scene',scene:{episode_id:'formation',review:{location:'partial'}},locationId:'land-fire',day:10};
+ const b={id:'b',kind:'scene',scene:{episode_id:'formation',review:{location:'partial'}},locationId:'land-fire',day:11};
+ const rects=new Map([['a',{x:0,y:0,width:50,height:24}],['b',{x:52,y:0,width:50,height:24}]]);
+ assert.equal(capsule.sceneConnections([a,b],map,episodes,rects,[]).length,0);
 });

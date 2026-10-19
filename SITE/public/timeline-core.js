@@ -257,7 +257,8 @@ const TimelineCore = {
     for(const node of nodes){
       if(!Number.isFinite(node.day)||!result.has(node.id)||!(node.layoutCast||[]).length)continue;
       // Unknown locations are only comparable *within the same scene*.
-      const place=node.locationId?'place:'+node.locationId:node.layoutGroup?'scene:'+node.layoutGroup:null;
+      const reviewed=node.scene?.review?.location==='accepted';
+      const place=reviewed&&node.locationId?'place:'+node.locationId:node.layoutGroup?'scene:'+node.layoutGroup:null;
       if(!place)continue;
       const day=Number.isFinite(node.calendarDay)?Math.floor(node.calendarDay):Math.floor(node.day);
       const key=day+'|'+place;
