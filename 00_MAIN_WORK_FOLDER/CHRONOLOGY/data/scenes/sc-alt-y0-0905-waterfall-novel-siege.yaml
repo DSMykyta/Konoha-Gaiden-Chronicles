@@ -5,7 +5,7 @@ display_rank: 100
 continuity_id: "alt-waterfall-novel"
 title: "Сенджі намагається врятувати заручників Суїєна"
 location_id: "loc-takigakure"
-placement: {anchor_id: "ta-y0-0905", day_offset: 0}
+placement: {anchor_id: "ta-ova-waterfall-62-0909", day_offset: 1}
 state: "active"
 presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "accepted", origin: "accepted", text: "partial"}
