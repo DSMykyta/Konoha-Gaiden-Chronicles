@@ -123,13 +123,13 @@ function semanticLevel(){
 function storyNodeCast(group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
 function semanticNodes(level,allScenes){
  const makeMoment=(s,e,day=s.position,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=[...new Set(e.physical||[])];return {id:e.id,kind:'moment',title:e.title,scene,group:[e],day,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:s.id,locationId:e.location_id||scene?.location_id||null,childCount:1,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
- const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
+ const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,spanStart:s.spanStart,spanEnd:s.spanEnd,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
  const collapseScene=(s,episodeId=null)=>s.group.length===1?makeMoment(s,s.group[0],s.position,episodeId||sceneMap.get(s.id)?.episode_id||null):makeScene(s,episodeId||sceneMap.get(s.id)?.episode_id||null);
  if(level==='moment'){
   const positions=worldChronology().moments;
   return allScenes.flatMap(scene=>scene.group.map(event=>makeMoment(scene,event,positions.get(event.id))));
  }
- if(level==='scene')return allScenes.map(s=>collapseScene(s));
+ if(level==='scene')return allScenes.map(s=>makeScene(s));
  const episodeBuckets=new Map();
  for(const s of allScenes){
   const scene=sceneMap.get(s.id),episodeId=scene?.episode_id||'scene:'+s.id;
@@ -156,7 +156,7 @@ function semanticNodes(level,allScenes){
   const meta=arcMap.get(id)||null,group=episodes.flatMap(e=>e.group),layoutCast=storyNodeCast(group),days=episodes.flatMap(e=>[e.spanStart,e.spanEnd]);
   return {id:'arc:'+id,rawId:id,kind:'arc',title:meta?.title||episodes[0].title,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,spanStart:Math.min(...days),spanEnd:Math.max(...days),calendarDay:Math.floor(Math.min(...days)),cast:layoutCast.filter(x=>selected.has(x)),layoutCast,locationId:null,childCount:episodes.length,sourceSceneIds:[...new Set(episodes.flatMap(e=>e.sourceSceneIds))],sourceEpisodeIds:[...new Set(episodes.flatMap(e=>e.sourceEpisodeIds))]};
  });
- return [...arcs,...orphanEpisodes.map(ep=>ep.scenes.length===1?collapseScene(ep.scenes[0],ep.story?ep.rawId:null):ep)];
+ return [...arcs,...orphanEpisodes];
 }
 function semanticOwner(nodes){
  const owner={};
@@ -587,35 +587,8 @@ function render(){
  const coarseProjected=coarse.map(p=>({...p,x:px(p.day),y:parentY(p,flow.coarse),
   opacity:unchanged.has(p.id)?0:t,_role:'coarse',stretch:0}));
  let globalNodes=[...fineProjected,...coarseProjected].filter(p=>p.opacity>.001);
- // Independently overlapping arc histories can share a screen-space hub.
- // They retain all distinct arc IDs for the reader and reverse on zoom-in.
+ // Separate arcs never merge, even when their displayed rectangles overlap.
  const movedArcDay=new Map(),clusterBridges=[];
- if(flow.fine==='arc'||flow.coarse==='arc'){
-  const arcs=globalNodes.filter(p=>p.kind==='arc'&&p.opacity>.001);
-  for(const group of TimelineFlow.clusterArcs(arcs)){
-   const {members,centroid,strength}=group;
-   const groupOpacity=Math.min(...members.map(p=>p.opacity))*strength;
-   if(groupOpacity<.002)continue;
-   const clusterId='arc-cluster:'+members.map(p=>p.rawId||p.id).sort().join('|');
-   const groupEvents=[...new Map(members.flatMap(p=>p.group).map(e=>[e.id,e])).values()];
-   const groupCast=[...new Set(groupEvents.flatMap(e=>e.physical||[]))];
-   for(const p of members){
-    p.x=TimelineFlow.lerp(p.x,centroid.x,strength);
-    p.y=TimelineFlow.lerp(p.y,centroid.y,strength);
-    p.day=TimelineFlow.lerp(p.day,centroid.day,strength);
-    p.opacity*=1-strength;
-    movedArcDay.set(p.id,{day:p.day,y:p.y});
-    clusterBridges.push({x:p.x,y:p.y,toX:centroid.x,toY:centroid.y,strength,key:p.id});
-   }
-   globalNodes.push({id:clusterId,kind:'arc-cluster',title:`${members.length} арки`,
-    childCount:members.length,arcs:members.map(p=>({id:p.rawId||p.id,title:p.title})),
-    group:groupEvents,layoutCast:groupCast,cast:groupCast.filter(id=>selected.has(id)),
-    sourceSceneIds:[...new Set(members.flatMap(p=>p.sourceSceneIds||[]))],
-    sourceEpisodeIds:[...new Set(members.flatMap(p=>p.sourceEpisodeIds||[]))],
-    day:centroid.day,calendarDay:members[0].calendarDay,x:centroid.x,y:centroid.y,
-    opacity:groupOpacity,_role:'cluster',stretch:0});
-  }
- }
  const projectedFine=new Map(fineProjected.map(p=>[p.id,p]));
  const projectedCoarse=new Map(coarseProjected.map(p=>[p.id,p]));
  const visualMoment=new Map();
@@ -650,20 +623,17 @@ function render(){
  const numbered=phoneReader&&level==='moment';
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
  graphNodes.forEach((node,index)=>{node.number=numbered?index+1:null;});
- // Clouds of neighboring hierarchy levels coexist and dissolve gradually.
+ // Keep semantic groups for existing titles, navigation and focus controls.
  const visibleFine=fineProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
  const visibleCoarse=coarseProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
+ const capsuleFine=IntervalCapsules.build(visibleFine,flow.fine,sceneMap,episodeMap,geographyAtlas,px);
+ const capsuleCoarse=flow.coarse?IntervalCapsules.build(visibleCoarse,flow.coarse,sceneMap,episodeMap,geographyAtlas,px):{capsules:[],links:[]};
+ const capsules=[...capsuleFine.capsules,...capsuleCoarse.capsules];
+ const capsuleLinks=[...capsuleFine.links,...capsuleCoarse.links];
+ const capsuleById=new Map(capsules.map(item=>[item.id,item]));
  graphClouds=[
-  ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({
-   ...g,opacity:g.kind==='arc'?(fineProjected.find(n=>n.id===g.nodes[0]?.id)?.opacity??1):(flow.coarse?1-t:1)
-  })),
-  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({
-   ...g,opacity:g.kind==='arc'?(coarseProjected.find(n=>n.id===g.nodes[0]?.id)?.opacity??t):t
-  })):[]),
-  ...globalNodes.filter(p=>p.kind==='arc-cluster'&&p.opacity>.012).map(p=>{
-   const point={id:p.id,x:p.x,y:p.y};
-   return {key:p.id,kind:'arc',id:p.id,title:p.title,opacity:p.opacity,nodes:[point],parts:[[point]]};
-  })
+  ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:flow.coarse?1-t:1})),
+  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:t})):[])
  ];
  const flowBridges=[...clusterBridges,...(flow.coarse?fineProjected.flatMap(p=>{
   const target=parents.get(p.id);
@@ -705,6 +675,21 @@ function render(){
   const x=px(day);
   if(x< -buffered.leftPx-1||x>w+buffered.rightPx+1)continue;
   svg('line',{x1:x,x2:x,y1:0,y2:h,class:'calendar-division calendar-'+kind,'aria-hidden':'true'});
+ }
+ // Render caps below character threads. Locations choose the vertical lane;
+ // original calendar positions determine capsule lengths and endpoints.
+ const capsuleLayer=svg('g',{class:'semantic-capsule-layer','aria-hidden':'true'});
+ for(const link of capsuleLinks){
+  if(Math.min(link.x1,link.x2)>w+buffered.rightPx+80||Math.max(link.x1,link.x2)<-buffered.leftPx-80)continue;
+  const midX=(link.x1+link.x2)/2;
+  svg('path',{d:`M${link.x1.toFixed(2)} ${link.y1.toFixed(2)} C${midX.toFixed(2)} ${link.y1.toFixed(2)} ${midX.toFixed(2)} ${link.y2.toFixed(2)} ${link.x2.toFixed(2)} ${link.y2.toFixed(2)}`,
+   class:'capsule-sibling-link',stroke:link.stroke,'stroke-width':8,opacity:Math.min(.85,link.opacity*.72),fill:'none'},capsuleLayer);
+ }
+ for(const c of capsules){
+  if(c.x+c.width< -buffered.leftPx-80||c.x>w+buffered.rightPx+80)continue;
+  svg('rect',{x:c.x,y:c.y,width:c.width,height:c.height,rx:c.height/2,ry:c.height/2,
+   class:'semantic-capsule '+c.kind+'-capsule','data-arc':c.arcId||'',
+   fill:c.colors.fill,stroke:c.colors.stroke,'stroke-width':1.3,opacity:c.opacity},capsuleLayer);
  }
  const linked=(p,id)=>p.cast.includes(id);
  // Character curves inherit the positions of the underlying source moments.
@@ -848,61 +833,36 @@ function render(){
  }
 
  drawMapTitles(flow,w,headerBottom()+42,h-readerHeight-42,renderNodes,buffered);
- // All semantic levels use one circular liquid-glass material. Only radius
- // and the informational count differ; hit areas remain independent.
- const liquidGrad=svg('radialGradient',{id:'liquid-glass-depth',cx:'31%',cy:'21%',r:'85%'},defs);
- for(const [offset,color,opacity] of [[0,'#ffffff',.78],[.5,'#e9f7ff',.61],[.82,'#c5e5ff',.43],[1,'#88b8d6',.32]])
-  svg('stop',{offset,'stop-color':color,'stop-opacity':opacity},liquidGrad);
- const faceGrad=svg('radialGradient',{id:'liquid-glass-face',cx:'30%',cy:'16%',r:'90%'},defs);
- for(const [offset,color,opacity] of [[0,'#ffffff',.27],[.56,'#ffffff',.035],[.82,'#aeddf8',.08],[1,'#578aad',.20]])
-  svg('stop',{offset,'stop-color':color,'stop-opacity':opacity},faceGrad);
- const warp=svg('filter',{id:'liquid-water-warp',x:'-18%',y:'-32%',width:'136%',height:'164%',colorInterpolationFilters:'sRGB'},defs);
- svg('feTurbulence',{type:'fractalNoise',baseFrequency:'.044 .075',numOctaves:2,seed:7,result:'water-noise'},warp);
- svg('feDisplacementMap',{in:'SourceGraphic',in2:'water-noise',scale:2.5,xChannelSelector:'R',yChannelSelector:'G'},warp);
- const liquidPairs=LiquidNodes.connections(renderNodes,graphClouds,flowBridges);
- const depthLayer=svg('g',{class:'liquid-depth-layer','aria-hidden':'true'});
- for(const pair of liquidPairs){
-  const d=LiquidNodes.neck(pair);
-  if(d)svg('path',{class:'liquid-neck','data-liquid-from':pair.a.id,'data-liquid-to':pair.b.id,
-   d,fill:'url(#liquid-glass-depth)',opacity:Math.min(pair.a.opacity,pair.b.opacity)*(.55+.45*pair.strength)},depthLayer);
- }
- // Optical content lives inside the same semantic node group, so selecting
- // a character or hiding a story level also hides its decorative water lens.
- const lensCurves=new Map();
- for(const curve of refractedCurves){
-  if(!lensCurves.has(curve.node.id))lensCurves.set(curve.node.id,[]);
-  lensCurves.get(curve.node.id).push(curve);
- }
- // Large touch targets stay below the painted mark, with no intercepting
- // decorative glass or refracted fragments.
+ // Flat colored moment dots sit over the existing character paths.
+ // Scene, episode and arc hit targets cover their entire visible capsule.
  const hitLayer=svg('g',{'aria-hidden':'true'});
- renderNodes.filter(p=>p.opacity>=.48).forEach(p=>{
-  svg('circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,
-   r:Math.max(22,LiquidNodes.radius(p.kind,numbered)+7)},hitLayer);
- });
+ for(const p of renderNodes.filter(node=>node.opacity>=.48)){
+  const c=capsuleById.get(p.id);
+  if(c&&p.kind!=='moment')svg('rect',{class:'node-hit','data-node-id':p.id,
+   x:c.x-5,y:c.y-6,width:c.width+10,height:c.height+12,rx:c.height/2+6,
+   fill:'transparent'},hitLayer);
+  else svg('circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,r:22,fill:'transparent'},hitLayer);
+ }
  renderNodes.forEach(p=>{
-  const names={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка','arc-cluster':'Група арок'};
-  const kindLabel=names[p.kind]||'Вузол';
-  const label=`${kindLabel}: ${p.title}${['moment','arc','arc-cluster'].includes(p.kind)?'':` · ${p.childCount}`}`;
+  const kindLabel={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'}[p.kind]||'Подія';
+  const label=`${kindLabel}: ${p.title}`;
   const g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':'')+(pinnedNodeId===p.id?' is-pinned':''),
    tabindex:p.opacity>=.48?0:-1,role:'button','aria-label':label,'aria-haspopup':'dialog',
    'data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):'',
    style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'}`});
-  const radius=LiquidNodes.radius(p.kind,numbered);
-  svg('circle',{class:'liquid-depth',cx:p.x,cy:p.y,r:radius,fill:'url(#liquid-glass-depth)','aria-hidden':'true'},g);
-  const curves=lensCurves.get(p.id)||[];
-  if(curves.length){
-   const clipId='liquid-lens-'+renderNodes.indexOf(p),clip=svg('clipPath',{id:clipId,clipPathUnits:'userSpaceOnUse'},defs);
-   svg('circle',{cx:p.x,cy:p.y,r:radius-.4},clip);
-   const optics=svg('g',{class:'liquid-optics','clip-path':`url(#${clipId})`,'aria-hidden':'true'},g);
-   for(const curve of curves)svg('path',{class:'liquid-refracted-line',d:curve.d,stroke:curve.color,
-    'stroke-width':2.25,opacity:curve.opacity,
-    ...(refractedCurves.length<=90?{filter:'url(#liquid-water-warp)'}:{})},optics);
+  const c=capsuleById.get(p.id);
+  const arcId=IntervalCapsules.arcFor(p,sceneMap,episodeMap);
+  const ink=IntervalCapsules.color(arcId);
+  if(p.kind==='moment'||!c){
+   svg('circle',{class:'mark flat-moment-mark',cx:p.x,cy:p.y,r:p.kind==='moment'?6:9,
+    fill:ink.dot,stroke:ink.stroke,'stroke-width':1.5},g);
+  }else{
+   svg('rect',{class:'mark flat-capsule-hit',x:c.x,y:c.y,width:c.width,height:c.height,
+    rx:c.height/2,fill:'transparent',stroke:'none'},g);
   }
-  svg('circle',{class:'mark liquid-glass-mark',cx:p.x,cy:p.y,r:radius,fill:'url(#liquid-glass-face)'},g);
-  svg('path',{class:'liquid-rim-highlight',d:LiquidNodes.rim(p.x,p.y,radius),'aria-hidden':'true'},g);
-  if(p.kind==='scene'||p.kind==='episode'||p.kind==='arc-cluster'){
-   const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);
+  if(p.kind==='scene'||p.kind==='episode'){
+   const x=c?c.x+c.width/2:p.x;
+   const count=svg('text',{class:'scene-count',x,y:p.y+3,'text-anchor':'middle'},g);
    count.textContent=p.childCount>99?'99+':p.childCount;
   }
   if(numbered&&p.kind==='moment'){
@@ -914,7 +874,7 @@ function render(){
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
  // Render one continuous droplet body; circles are semantic hit targets.
- LiquidBody.update(timeline,renderNodes,zoom);
+ LiquidBody.reset();timeline.classList.remove('has-liquid-body');
  syncStickyDay(lo,0,timeScale,w);
  // Hierarchy groups still drive labels and source-aware connections. Do not
  // paint a second canvas silhouette: the connected balls are the sole material.
