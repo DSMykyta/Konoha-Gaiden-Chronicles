@@ -681,7 +681,7 @@ function render(){
  // Arc-owned interval geometry, drawn before character strands.
  // Calendar X is unchanged; the extra minimum width only preserves clickability.
  const capsuleById=new Map(),candidateScenes=renderNodes.filter(p=>p.kind==='scene');
- for(const node of candidateScenes)capsuleById.set(node.id,TimelineCapsules.bounds(node,px,dayToAxis));
+ for(const node of candidateScenes)capsuleById.set(node.id,TimelineCapsules.bounds(node,pxAxis,dayToAxis));
  const sceneLinks=TimelineCapsules.sceneConnections(candidateScenes,sceneMap,episodeMap,capsuleById,chronologyRelations());
  for(const link of sceneLinks){
   const color=TimelineCapsules.palette(link.arcId).solid;
@@ -693,7 +693,7 @@ function render(){
   const projected=new Map(worldLineNodes.map(p=>[p.id,{x:p.projectedX,y:p.y}]));
   for(const scene of allScenes){
    if(scene.day<bufferLoDay-1||scene.day>bufferHiDay+1)continue;
-   const b=TimelineCapsules.sceneBackdrop(scene,projected,px,dayToAxis);
+   const b=TimelineCapsules.sceneBackdrop(scene,projected,pxAxis,dayToAxis);
    if(!b)continue;
    const meta=sceneMap.get(scene.id);
    const arcId=episodeMap.get(meta?.episode_id)?.arc_id;
@@ -851,7 +851,7 @@ function render(){
  // All shapes share the palette of their parent arc.
  const hitLayer=svg('g',{'aria-hidden':'true'});
  renderNodes.filter(p=>p.opacity>=.48).forEach(p=>{
-  const b=p.kind==='moment'?null:(capsuleById.get(p.id)||TimelineCapsules.bounds(p,px,dayToAxis));
+  const b=p.kind==='moment'?null:(capsuleById.get(p.id)||TimelineCapsules.bounds(p,pxAxis,dayToAxis));
   if(b)svg('rect',{class:'node-hit','data-node-id':p.id,x:b.x-3,y:b.y-8,
     width:b.width+6,height:b.height+16,rx:b.rx+4},hitLayer);
   else svg('circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,r:22},hitLayer);
@@ -868,7 +868,7 @@ function render(){
    'data-scene':p.kind==='scene'?(p.scene?.id||''):'',
    style:`--arc-color:${palette.solid};--arc-tint:${p.kind==='arc'?palette.strong:p.kind==='episode'?palette.middle:palette.soft};opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'}`});
   if(capsule){
-   const b=capsuleById.get(p.id)||TimelineCapsules.bounds(p,px,dayToAxis);
+   const b=capsuleById.get(p.id)||TimelineCapsules.bounds(p,pxAxis,dayToAxis);
    svg('rect',{class:'mark',x:b.x,y:b.y,width:b.width,height:b.height,rx:b.rx,
     'data-time-precision':b.timeStatus},g);
    if(b.width>=40){
