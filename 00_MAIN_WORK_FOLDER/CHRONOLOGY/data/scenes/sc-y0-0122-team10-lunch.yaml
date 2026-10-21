@@ -4,12 +4,12 @@ episode_id: ep-y0-team10-first-lunch
 display_rank: 100
 continuity_id: "main"
 title: "Команда 10 під час обідньої перерви"
-location_id: null
+location_id: loc-academy-corridor
 placement: {anchor_id: "ta-team-formation", day_offset: 0}
 layer: filler
 state: "active"
 presence_coverage: "complete"
-review: {time: "partial", cast: "accepted", location: "pending", origin: "accepted", text: "accepted"}
+review: {time: "partial", cast: "accepted", location: "partial", origin: "accepted", text: "accepted"}
 events:
   - id: "ev-y0-0122-team10-lunch-banter"
     title: "Іно намагається керувати новою Командою 10"

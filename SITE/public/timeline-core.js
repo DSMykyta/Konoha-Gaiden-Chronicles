@@ -401,21 +401,23 @@ const TimelineCore = {
     const byId=new Map(nodes.map(n=>[n.id,n])),edges=new Map(nodes.map(n=>[n.id,new Map()])),baseRef=ref=>typeof ref==='string'?(ref.endsWith('.start')?ref.slice(0,-6):ref.endsWith('.end')?ref.slice(0,-4):ref):ref;
     const sceneOf=ref=>{const id=baseRef(ref);return owner[id]||id;};
     const connect=(a,b,w)=>{if(a===b||!byId.has(a)||!byId.has(b))return;edges.get(a).set(b,(edges.get(a).get(b)||0)+w);edges.get(b).set(a,(edges.get(b).get(a)||0)+w);};
-    // Character continuity is the primary "story gravity": consecutive scenes sharing a
+    // Character continuity connects independent capsules, but narrative
+    // hierarchy and known physical places are the primary placement anchors.
     // physical character want to stay on the same visual stream.
     const byCharacter=new Map();
     for(const n of nodes)for(const id of n.layoutCast||[]){if(!byCharacter.has(id))byCharacter.set(id,[]);byCharacter.get(id).push(n);}
     for(const list of byCharacter.values()){
       list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
-      for(let i=1;i<list.length;i++){const a=list[i-1],b=list[i],distance=Math.max(.05,b.day-a.day),w=2.8/Math.sqrt(1+distance*.18);connect(a.id,b.id,w);}
+      for(let i=1;i<list.length;i++){const a=list[i-1],b=list[i],distance=Math.max(.05,b.day-a.day),w=1.6/Math.sqrt(1+distance*.18);connect(a.id,b.id,w);}
     }
     // The displayed parent adds local grouping without imposing a row or box.
-    // Character strands still determine continuity between different groups.
+    // Different episode branches remain separate even when a character moves
+    // between them; shared presence alone must not fuse their backgrounds.
     const byGroup=new Map();
     for(const node of nodes){if(!node.layoutGroup)continue;if(!byGroup.has(node.layoutGroup))byGroup.set(node.layoutGroup,[]);byGroup.get(node.layoutGroup).push(node);}
     for(const list of byGroup.values()){
       list.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
-      for(let i=1;i<list.length;i++)connect(list[i-1].id,list[i].id,3.6);
+      for(let i=1;i<list.length;i++)connect(list[i-1].id,list[i].id,5.6);
     }
     // Explicit chronology and cross-scene observations add extra gravity without
     // changing X/time. Accepted observations/intersections are strongest.
@@ -608,7 +610,10 @@ const TimelineCore = {
       const a=ends[i],b=ends[i+1],gap=b.day-a.day;points.push(a);
       if(gap<1e-8)continue;
       const pixelGap=gap*Math.max(1,pixelsPerDay);
-      const wander=smooth(Math.max(0,Math.min(1,(pixelGap-20)/185)));
+      // Within the same confirmed physical scene, a character follows a
+      // straight, stable channel through the moment dots.
+      const steady=a.sceneId&&a.sceneId===b.sceneId&&a.locationId&&a.locationId===b.locationId;
+      const wander=steady?0:smooth(Math.max(0,Math.min(1,(pixelGap-20)/185)));
       if(!wander||!a.node||!b.node)continue;
       const controls=3,primary=channel*Math.min(12,amplitude*.14)*wander;
       for(let j=1;j<=controls;j++){

@@ -100,3 +100,7 @@
 
 `kraina-chayu-haigakure-fakty.md` був проміжним зведенням фактів. `kraina-chayu-ta-haigakure-entsyklopediia.md` був попередньою енциклопедичною редакцією без усіх нових персонажів. Їхній актуальний зміст перенесений до `kraina-chayu-ta-haigakure.md`.
 
+
+## Архів попередньої редакції
+
+[Databook від 12.08.2026](archive/databook-20260812/00_INDEX.md) збережено для звірки; він не змінює чинні авторські рішення.

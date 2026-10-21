@@ -123,13 +123,13 @@ function semanticLevel(){
 function storyNodeCast(group){return [...new Set(group.flatMap(e=>e.physical||[]))];}
 function semanticNodes(level,allScenes){
  const makeMoment=(s,e,day=s.position,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=[...new Set(e.physical||[])];return {id:e.id,kind:'moment',title:e.title,scene,group:[e],day,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:s.id,locationId:e.location_id||scene?.location_id||null,childCount:1,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
- const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
+ const makeScene=(s,episodeId=sceneMap.get(s.id)?.episode_id||null)=>{const scene=sceneMap.get(s.id),layoutCast=sceneCast(scene,s.group);return {id:s.id,kind:'scene',title:scene?.title||s.group[0]?.scene_title||s.id,scene,group:s.group,day:s.position,spanStart:s.spanStart,spanEnd:s.spanEnd,calendarDay:s.day,cast:layoutCast.filter(id=>selected.has(id)),layoutCast,layoutGroup:episodeId||s.id,locationId:scene?.location_id||null,childCount:s.group.length,sourceSceneIds:[s.id],sourceEpisodeIds:episodeId?[episodeId]:[]};};
  const collapseScene=(s,episodeId=null)=>s.group.length===1?makeMoment(s,s.group[0],s.position,episodeId||sceneMap.get(s.id)?.episode_id||null):makeScene(s,episodeId||sceneMap.get(s.id)?.episode_id||null);
  if(level==='moment'){
   const positions=worldChronology().moments;
   return allScenes.flatMap(scene=>scene.group.map(event=>makeMoment(scene,event,positions.get(event.id))));
  }
- if(level==='scene')return allScenes.map(s=>collapseScene(s));
+ if(level==='scene')return allScenes.map(s=>makeScene(s));
  const episodeBuckets=new Map();
  for(const s of allScenes){
   const scene=sceneMap.get(s.id),episodeId=scene?.episode_id||'scene:'+s.id;
@@ -140,10 +140,7 @@ function semanticNodes(level,allScenes){
   const meta=episodeMap.get(id)||null,group=scenes.flatMap(s=>s.group),layoutCast=storyNodeCast(group),days=scenes.flatMap(s=>[s.spanStart,s.spanEnd]).filter(Number.isFinite),sourceSceneIds=scenes.map(s=>s.id);
   return {id:'episode:'+id,rawId:id,kind:'episode',title:meta?.title||sceneMap.get(scenes[0].id)?.title||id,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,spanStart:Math.min(...days),spanEnd:Math.max(...days),calendarDay:scenes[0].day,cast:layoutCast.filter(x=>selected.has(x)),layoutCast,layoutGroup:meta?.arc_id||id,locationId:null,childCount:scenes.length,sourceSceneIds,sourceEpisodeIds:meta?[id]:[],scenes};
  });
- if(level==='episode')return episodeAggregates.map(ep=>{
-  if(ep.scenes.length!==1)return ep;
-  return collapseScene(ep.scenes[0],ep.story?ep.rawId:null);
- });
+ if(level==='episode')return episodeAggregates;
  const arcBuckets=new Map();
  for(const ep of episodeAggregates){
   const arcId=ep.story?.arc_id;
@@ -156,7 +153,7 @@ function semanticNodes(level,allScenes){
   const meta=arcMap.get(id)||null,group=episodes.flatMap(e=>e.group),layoutCast=storyNodeCast(group),days=episodes.flatMap(e=>[e.spanStart,e.spanEnd]);
   return {id:'arc:'+id,rawId:id,kind:'arc',title:meta?.title||episodes[0].title,story:meta,group,day:(Math.min(...days)+Math.max(...days))/2,spanStart:Math.min(...days),spanEnd:Math.max(...days),calendarDay:Math.floor(Math.min(...days)),cast:layoutCast.filter(x=>selected.has(x)),layoutCast,locationId:null,childCount:episodes.length,sourceSceneIds:[...new Set(episodes.flatMap(e=>e.sourceSceneIds))],sourceEpisodeIds:[...new Set(episodes.flatMap(e=>e.sourceEpisodeIds))]};
  });
- return [...arcs,...orphanEpisodes.map(ep=>ep.scenes.length===1?collapseScene(ep.scenes[0],ep.story?ep.rawId:null):ep)];
+ return [...arcs,...orphanEpisodes];
 }
 function semanticOwner(nodes){
  const owner={};
@@ -300,6 +297,11 @@ function syncBufferedTabStops(shift=0){
   element.setAttribute('tabindex',active?'0':'-1');
  });
 }
+function nodeIntersectsFrame(node,left,right,shift=0){
+ const bounds=node.capsuleBounds;
+ const start=(bounds?bounds.x:node.x)+shift,end=start+(bounds?bounds.width:0);
+ return end>=left&&start<right;
+}
 function applyBufferedPan(){
  if(!data||!panFrame)return false;
  const canvas=$('canvas'),width=canvas.clientWidth||1000,height=canvas.clientHeight||700,[lo,hi]=range();
@@ -311,10 +313,8 @@ function applyBufferedPan(){
  // Move the SVG camera, never replace its path, gradient or mask nodes.
  $('timeline').setAttribute('viewBox',`${-camera.shift} 0 ${width} ${panFrame.svgHeight}`);
  $('timeAxis').setAttribute('viewBox',`${-camera.shift} 0 ${width} 40`);
- graphNodes=panFrame.nodes.filter(node=>{
-  const axis=dayToAxis(node.day);
-  return axis>=lo&&axis<hi;
- }).map(node=>({...node,x:node.x+camera.shift}));
+ graphNodes=panFrame.nodes.filter(node=>(node.opacity??1)>=.48&&nodeIntersectsFrame(node,0,width,camera.shift))
+  .map(node=>({...node,x:node.x+camera.shift,...(node.capsuleBounds?{capsuleBounds:{...node.capsuleBounds,x:node.capsuleBounds.x+camera.shift}}:{})}));
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
  graphNodes.forEach((node,index)=>{node.number=panFrame.numbered?index+1:null;});
  if(panFrame.numbered){
@@ -563,11 +563,40 @@ function render(){
  // Preserve the identity of the different streams even at coarser zooms.
  // Zoom merges semantic marks, not the vertical geography into one tight band.
  const spreadY=.28+.72*clamp(Math.log(Math.max(1,semanticZoom))/Math.log(365),0,1);
- const parentY=(p,kind)=>{
+ const baseParentY=(p,kind)=>{
   const key=`flow-parent:${kind}:${geometryKey}`;
   if(!baseLayoutCache.has(key))baseLayoutCache.set(key,kind==='moment'?originalY:TimelineCore.aggregateLanes(getSemantic(kind).nodes,originalY));
   return mid+((baseLayoutCache.get(key).get(p.id)??mid)-mid)*spreadY;
  };
+ // Independent arc intervals must occupy distinct rows when their displayed
+ // spans collide; never fuse separate stories into a shared endpoint.
+ const arcLanes=new Map();
+ if(flow.fine==='arc'||flow.coarse==='arc'){
+  const arcs=[...getSemantic('arc').nodes].sort((a,b)=>(a.spanStart??a.day)-(b.spanStart??b.day)||a.id.localeCompare(b.id));
+  const placed=[];
+  for(const arc of arcs){
+   const from=px(Number.isFinite(arc.spanStart)?arc.spanStart:arc.day);
+   const to=px(Number.isFinite(arc.spanEnd)?arc.spanEnd:arc.day);
+   const start=Math.min(from,to),end=Math.max(from,to);
+   const cx=(start+end)/2,half=Math.max(8,(end-start)/2);
+   const occupied=placed.filter(row=>row.end>=cx-half-5&&row.start<=cx+half+5)
+    .map(row=>row.y).sort((a,b)=>a-b);
+   const wanted=Math.max(flowTop+18,baseParentY(arc,'arc'));
+   // Find the nearest free interval using two linear sweeps; avoid a
+   // quadratic candidate-by-candidate collision scan on dense year views.
+   let above=wanted;
+   for(const y of occupied){if(y+40<=above)continue;if(y-40<above)above=y+40;else break;}
+   let below=wanted;
+   for(let i=occupied.length-1;i>=0;i--){
+    const y=occupied[i];if(y-40>=below)continue;
+    if(y+40>below)below=y-40;else break;
+   }
+   const chosen=below>=flowTop+18&&wanted-below<=above-wanted?below:above;
+   arcLanes.set(arc.id,chosen);
+   placed.push({start:cx-half,end:cx+half,y:chosen});
+  }
+ }
+ const parentY=(p,kind)=>kind==='arc'&&arcLanes.has(p.id)?arcLanes.get(p.id):baseParentY(p,kind);
  const fine=getSemantic(flow.fine).nodes,coarse=flow.coarse?getSemantic(flow.coarse).nodes:[],t=flow.t;
  const coarseOwner=new Map();
  for(const p of coarse)for(const moment of p.group)coarseOwner.set(moment.id,p);
@@ -581,41 +610,14 @@ function render(){
   const target=parents.get(p.id),fromY=parentY(p,flow.fine),toY=target===p?fromY:parentY(target,flow.coarse);
   const deltaX=px(target.day)-px(p.day),deltaY=toY-fromY;
   return {...p,x:TimelineFlow.lerp(px(p.day),px(target.day),t),y:TimelineFlow.lerp(fromY,toY,t),
-   day:TimelineFlow.lerp(p.day,target.day,t),opacity:unchanged.has(p.id)?1:flow.coarse?1-t:1,_role:'fine',
+   day:TimelineFlow.lerp(p.day,target.day,t),opacity:unchanged.has(p.id)?1:flow.coarse?1-t:1,_role:'fine',capsuleScale:flow.coarse?1-t:1,
    flowAngle:Math.atan2(deltaY,deltaX)*180/Math.PI,stretch:Math.sin(Math.PI*t)};
  });
  const coarseProjected=coarse.map(p=>({...p,x:px(p.day),y:parentY(p,flow.coarse),
-  opacity:unchanged.has(p.id)?0:t,_role:'coarse',stretch:0}));
+  opacity:unchanged.has(p.id)?0:t,_role:'coarse',capsuleScale:t,stretch:0}));
  let globalNodes=[...fineProjected,...coarseProjected].filter(p=>p.opacity>.001);
- // Independently overlapping arc histories can share a screen-space hub.
- // They retain all distinct arc IDs for the reader and reverse on zoom-in.
- const movedArcDay=new Map(),clusterBridges=[];
- if(flow.fine==='arc'||flow.coarse==='arc'){
-  const arcs=globalNodes.filter(p=>p.kind==='arc'&&p.opacity>.001);
-  for(const group of TimelineFlow.clusterArcs(arcs)){
-   const {members,centroid,strength}=group;
-   const groupOpacity=Math.min(...members.map(p=>p.opacity))*strength;
-   if(groupOpacity<.002)continue;
-   const clusterId='arc-cluster:'+members.map(p=>p.rawId||p.id).sort().join('|');
-   const groupEvents=[...new Map(members.flatMap(p=>p.group).map(e=>[e.id,e])).values()];
-   const groupCast=[...new Set(groupEvents.flatMap(e=>e.physical||[]))];
-   for(const p of members){
-    p.x=TimelineFlow.lerp(p.x,centroid.x,strength);
-    p.y=TimelineFlow.lerp(p.y,centroid.y,strength);
-    p.day=TimelineFlow.lerp(p.day,centroid.day,strength);
-    p.opacity*=1-strength;
-    movedArcDay.set(p.id,{day:p.day,y:p.y});
-    clusterBridges.push({x:p.x,y:p.y,toX:centroid.x,toY:centroid.y,strength,key:p.id});
-   }
-   globalNodes.push({id:clusterId,kind:'arc-cluster',title:`${members.length} арки`,
-    childCount:members.length,arcs:members.map(p=>({id:p.rawId||p.id,title:p.title})),
-    group:groupEvents,layoutCast:groupCast,cast:groupCast.filter(id=>selected.has(id)),
-    sourceSceneIds:[...new Set(members.flatMap(p=>p.sourceSceneIds||[]))],
-    sourceEpisodeIds:[...new Set(members.flatMap(p=>p.sourceEpisodeIds||[]))],
-    day:centroid.day,calendarDay:members[0].calendarDay,x:centroid.x,y:centroid.y,
-    opacity:groupOpacity,_role:'cluster',stretch:0});
-  }
- }
+ // The arc-layout pass above separates overlapping stories without clustering.
+ const clusterBridges=[];
  const projectedFine=new Map(fineProjected.map(p=>[p.id,p]));
  const projectedCoarse=new Map(coarseProjected.map(p=>[p.id,p]));
  const visualMoment=new Map();
@@ -623,47 +625,37 @@ function render(){
   const id=moment.id,from=fineOwner.get(id),to=coarseOwner.get(id);
   const mark=projectedFine.get(from?.id);
   if(!mark)continue;
-  // The same source moment becomes the parent mark's anchor gradually.
-  const sourceArc=to?.kind==='arc'?projectedCoarse.get(to.id):from?.kind==='arc'?projectedFine.get(from.id):null;
-  const originalArc=to?.kind==='arc'?to:from?.kind==='arc'?from:null;
-  const shift=movedArcDay.get(sourceArc?.id);
-  const shiftFactor=flow.coarse==='arc'?t:0; // Fine arc marks already include their own cluster motion.
-  const shiftDay=shift&&originalArc?(shift.day-originalArc.day)*shiftFactor:0;
-  const shiftX=shift&&originalArc?(sourceArc.x-px(originalArc.day))*shiftFactor:0;
-  const shiftY=shift&&originalArc?(shift.y-parentY(originalArc,originalArc===to?flow.coarse:flow.fine))*shiftFactor:0;
-  visualMoment.set(id,{day:mark.day+shiftDay,x:mark.x+shiftX,y:mark.y+shiftY});
- }
+  // Curves inherit the same ancestor lane during the zoom morph.
+  visualMoment.set(id,{day:mark.day,x:mark.x,y:mark.y}); }
  const layoutKey=`flow:${w}:${viewport}:${zoom.toFixed(6)}`;
  const worldLineNodes=canonical.moments.map(p=>{
   const visual=visualMoment.get(p.id);
   return {...p,day:visual?.day??p.day,projectedX:visual?.x??px(p.day),y:visual?.y??mid,
    cast:p.layoutCast.filter(id=>selected.has(id))};
  });
+ // Keep semantic groups for existing titles, navigation and focus controls.
+ const visibleFine=fineProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
+ const visibleCoarse=coarseProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
+ const capsuleFine=IntervalCapsules.build(visibleFine,flow.fine,sceneMap,episodeMap,geographyAtlas,px);
+ const capsuleCoarse=flow.coarse?IntervalCapsules.build(visibleCoarse,flow.coarse,sceneMap,episodeMap,geographyAtlas,px):{capsules:[],links:[]};
+ const capsules=[...capsuleFine.capsules,...capsuleCoarse.capsules];
+ const capsuleLinks=[...capsuleFine.links,...capsuleCoarse.links];
+ const capsuleById=new Map(capsules.map(item=>[item.id,item]));
+ for(const node of globalNodes){const shape=capsuleById.get(node.id);if(shape)node.capsuleBounds={x:shape.x,width:shape.width};}
  // Hit targets switch at the halfway point; the marks themselves do not.
  const visibleGlobal=globalNodes.filter(p=>p.opacity>.012&&p.group.some(relevant));
  graphNodes=visibleGlobal.filter(p=>{
-  const a=axisAtX(p.x);return a>=lo&&a<hi&&p.opacity>=.48;
+  return p.opacity>=.48&&nodeIntersectsFrame(p,0,w);
  });
  const renderNodes=visibleGlobal.filter(p=>{
-  const a=axisAtX(p.x);return a>=buffered.coverLo&&a<buffered.coverHi;
+  return nodeIntersectsFrame(p,-buffered.leftPx,w+buffered.rightPx);
  });
  const numbered=phoneReader&&level==='moment';
  graphNodes.sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
  graphNodes.forEach((node,index)=>{node.number=numbered?index+1:null;});
- // Clouds of neighboring hierarchy levels coexist and dissolve gradually.
- const visibleFine=fineProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
- const visibleCoarse=coarseProjected.filter(p=>p.opacity>.012&&p.group.some(relevant));
  graphClouds=[
-  ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({
-   ...g,opacity:g.kind==='arc'?(fineProjected.find(n=>n.id===g.nodes[0]?.id)?.opacity??1):(flow.coarse?1-t:1)
-  })),
-  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({
-   ...g,opacity:g.kind==='arc'?(coarseProjected.find(n=>n.id===g.nodes[0]?.id)?.opacity??t):t
-  })):[]),
-  ...globalNodes.filter(p=>p.kind==='arc-cluster'&&p.opacity>.012).map(p=>{
-   const point={id:p.id,x:p.x,y:p.y};
-   return {key:p.id,kind:'arc',id:p.id,title:p.title,opacity:p.opacity,nodes:[point],parts:[[point]]};
-  })
+  ...StoryClouds.groups(visibleFine,flow.fine,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:flow.coarse?1-t:1})),
+  ...(flow.coarse?StoryClouds.groups(visibleCoarse,flow.coarse,sceneMap,episodeMap,arcMap).map(g=>({...g,opacity:t})):[])
  ];
  const flowBridges=[...clusterBridges,...(flow.coarse?fineProjected.flatMap(p=>{
   const target=parents.get(p.id);
@@ -705,6 +697,21 @@ function render(){
   const x=px(day);
   if(x< -buffered.leftPx-1||x>w+buffered.rightPx+1)continue;
   svg('line',{x1:x,x2:x,y1:0,y2:h,class:'calendar-division calendar-'+kind,'aria-hidden':'true'});
+ }
+ // Render caps below character threads. Locations choose the vertical lane;
+ // original calendar positions determine capsule lengths and endpoints.
+ const capsuleLayer=svg('g',{class:'semantic-capsule-layer','aria-hidden':'true'});
+ for(const link of capsuleLinks){
+  if(Math.min(link.x1,link.x2)>w+buffered.rightPx+80||Math.max(link.x1,link.x2)<-buffered.leftPx-80)continue;
+  const midX=(link.x1+link.x2)/2;
+  svg('path',{d:`M${link.x1.toFixed(2)} ${link.y1.toFixed(2)} C${midX.toFixed(2)} ${link.y1.toFixed(2)} ${midX.toFixed(2)} ${link.y2.toFixed(2)} ${link.x2.toFixed(2)} ${link.y2.toFixed(2)}`,
+   class:'capsule-sibling-link',stroke:link.stroke,'stroke-width':8,opacity:Math.min(.85,link.opacity*.72),fill:'none'},capsuleLayer);
+ }
+ for(const c of capsules){
+  if(c.x+c.width< -buffered.leftPx-80||c.x>w+buffered.rightPx+80)continue;
+  svg('rect',{x:c.x,y:c.y,width:c.width,height:c.height,rx:c.height/2,ry:c.height/2,
+   class:'semantic-capsule '+c.kind+'-capsule','data-arc':c.arcId||'',
+   fill:c.colors.fill,stroke:c.colors.stroke,'stroke-width':1.3,opacity:c.opacity},capsuleLayer);
  }
  const linked=(p,id)=>p.cast.includes(id);
  // Character curves inherit the positions of the underlying source moments.
@@ -754,7 +761,7 @@ function render(){
  // x coordinates and calendar text update when the camera pans.
  svg('rect',{id:'stickyDayBacking',class:'sticky-day-backing',x:0,y:12,width:0,height:23,rx:3,style:'display:none'},axis);
  svg('text',{id:'stickyDayLabel',class:'sticky-day-label',x:0,y:28,'text-anchor':'start',style:'display:none'},axis);
- const labelPositions=[],continuityPaths=[],refractedCurves=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
+ const labelPositions=[],continuityPaths=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
  if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
@@ -765,7 +772,7 @@ function render(){
   const cacheKey=`${layoutKey}:${id}:${lead}:${pixelsPerDay}`;
   let geometry=strandRouteCache.get(cacheKey);
   if(!geometry){
-   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
+   const anchors=(nodesByCharacter.get(id)||[]).map(p=>{const activity=p.group.filter(e=>e.physical?.includes(id));return {day:dayToAxis(p.day,allEvents),calendarDay:p.calendarDay,activityFrom:Math.min(...(activity.length?activity:p.group).map(e=>e.day)),activityTo:Math.max(...(activity.length?activity:p.group).map(e=>e.day)),sceneId:p.group[0]?.scene_id||null,locationId:p.locationId||null,y:p.y,id:p.id};}).sort((a,b)=>a.day-b.day||a.id.localeCompare(b.id));
    const lifetimes=TimelineCore.clusteredLifetimes(anchors);
    const routes=lifetimes.map(run=>TimelineCore.strand(run,id,mid,amplitude,lead,pixelsPerDay,axisLength()));
    const continuous=anchors.length?TimelineCore.strand(anchors,id,mid,amplitude,lead,pixelsPerDay,axisLength()):[];
@@ -782,20 +789,7 @@ function render(){
    }
   });
   const coordinates=routes.map(projectRoute),samples=coordinates.map(route=>route.map(p=>({...p,day:p.x}))),paths=coordinates.map(smoothPath);
-  // Refract only the original curve fragments that actually pass through
-  // each droplet. Sampling locally avoids cloning/filtering the entire SVG.
-  for(const route of samples){
-   if(refractedCurves.length>=720)break;
-   for(const node of renderNodes){
-    const r=LiquidNodes.radius(node.kind,numbered);
-    if(node.opacity<.12||node.x<route[0].day-r*1.2||node.x>route.at(-1).day+r*1.2)continue;
-    const nearX=clamp(node.x,route[0].day,route.at(-1).day);
-    if(Math.abs(TimelineCore.curveY(route,nearX)-node.y)>r+8)continue;
-    const d=LiquidNodes.refract(route,{...node,numbered},TimelineCore.curveY.bind(TimelineCore));
-    if(d)refractedCurves.push({node,id,d,color:color(id),opacity:n>24?.5:.9});
-    if(refractedCurves.length>=720)break;
-   }
-  }
+  // Flat prototype: no liquid-lens sampling. Preserve foreign-route masks.
   const foreign=renderNodes.filter(p=>!linked(p,id)&&samples.some(route=>p.x>=route[0].day&&p.x<=route.at(-1).day&&Math.abs(TimelineCore.curveY(route,p.x)-p.y)<LiquidNodes.radius(p.kind,numbered)+8));
   let mask=null;
   if(foreign.length){
@@ -848,61 +842,36 @@ function render(){
  }
 
  drawMapTitles(flow,w,headerBottom()+42,h-readerHeight-42,renderNodes,buffered);
- // All semantic levels use one circular liquid-glass material. Only radius
- // and the informational count differ; hit areas remain independent.
- const liquidGrad=svg('radialGradient',{id:'liquid-glass-depth',cx:'31%',cy:'21%',r:'85%'},defs);
- for(const [offset,color,opacity] of [[0,'#ffffff',.78],[.5,'#e9f7ff',.61],[.82,'#c5e5ff',.43],[1,'#88b8d6',.32]])
-  svg('stop',{offset,'stop-color':color,'stop-opacity':opacity},liquidGrad);
- const faceGrad=svg('radialGradient',{id:'liquid-glass-face',cx:'30%',cy:'16%',r:'90%'},defs);
- for(const [offset,color,opacity] of [[0,'#ffffff',.27],[.56,'#ffffff',.035],[.82,'#aeddf8',.08],[1,'#578aad',.20]])
-  svg('stop',{offset,'stop-color':color,'stop-opacity':opacity},faceGrad);
- const warp=svg('filter',{id:'liquid-water-warp',x:'-18%',y:'-32%',width:'136%',height:'164%',colorInterpolationFilters:'sRGB'},defs);
- svg('feTurbulence',{type:'fractalNoise',baseFrequency:'.044 .075',numOctaves:2,seed:7,result:'water-noise'},warp);
- svg('feDisplacementMap',{in:'SourceGraphic',in2:'water-noise',scale:2.5,xChannelSelector:'R',yChannelSelector:'G'},warp);
- const liquidPairs=LiquidNodes.connections(renderNodes,graphClouds,flowBridges);
- const depthLayer=svg('g',{class:'liquid-depth-layer','aria-hidden':'true'});
- for(const pair of liquidPairs){
-  const d=LiquidNodes.neck(pair);
-  if(d)svg('path',{class:'liquid-neck','data-liquid-from':pair.a.id,'data-liquid-to':pair.b.id,
-   d,fill:'url(#liquid-glass-depth)',opacity:Math.min(pair.a.opacity,pair.b.opacity)*(.55+.45*pair.strength)},depthLayer);
- }
- // Optical content lives inside the same semantic node group, so selecting
- // a character or hiding a story level also hides its decorative water lens.
- const lensCurves=new Map();
- for(const curve of refractedCurves){
-  if(!lensCurves.has(curve.node.id))lensCurves.set(curve.node.id,[]);
-  lensCurves.get(curve.node.id).push(curve);
- }
- // Large touch targets stay below the painted mark, with no intercepting
- // decorative glass or refracted fragments.
+ // Flat colored moment dots sit over the existing character paths.
+ // Scene, episode and arc hit targets cover their entire visible capsule.
  const hitLayer=svg('g',{'aria-hidden':'true'});
- renderNodes.filter(p=>p.opacity>=.48).forEach(p=>{
-  svg('circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,
-   r:Math.max(22,LiquidNodes.radius(p.kind,numbered)+7)},hitLayer);
- });
+ for(const p of renderNodes.filter(node=>node.opacity>=.48)){
+  const c=capsuleById.get(p.id);
+  if(c&&p.kind!=='moment')svg('rect',{class:'node-hit','data-node-id':p.id,
+   x:c.x-5,y:c.y-6,width:c.width+10,height:c.height+12,rx:c.height/2+6,
+   fill:'transparent'},hitLayer);
+  else svg('circle',{class:'node-hit','data-node-id':p.id,cx:p.x,cy:p.y,r:22,fill:'transparent'},hitLayer);
+ }
  renderNodes.forEach(p=>{
-  const names={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка','arc-cluster':'Група арок'};
-  const kindLabel=names[p.kind]||'Вузол';
-  const label=`${kindLabel}: ${p.title}${['moment','arc','arc-cluster'].includes(p.kind)?'':` · ${p.childCount}`}`;
+  const kindLabel={moment:'Момент',scene:'Сцена',episode:'Епізод',arc:'Арка'}[p.kind]||'Подія';
+  const label=`${kindLabel}: ${p.title}`;
   const g=svg('g',{class:'node '+p.kind+'-node'+(focusId===p.id?' is-open':'')+(pinnedNodeId===p.id?' is-pinned':''),
    tabindex:p.opacity>=.48?0:-1,role:'button','aria-label':label,'aria-haspopup':'dialog',
    'data-event':p.id,'data-scene':p.kind==='scene'?(p.scene?.id||''):'',
-   style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'}`});
-  const radius=LiquidNodes.radius(p.kind,numbered);
-  svg('circle',{class:'liquid-depth',cx:p.x,cy:p.y,r:radius,fill:'url(#liquid-glass-depth)','aria-hidden':'true'},g);
-  const curves=lensCurves.get(p.id)||[];
-  if(curves.length){
-   const clipId='liquid-lens-'+renderNodes.indexOf(p),clip=svg('clipPath',{id:clipId,clipPathUnits:'userSpaceOnUse'},defs);
-   svg('circle',{cx:p.x,cy:p.y,r:radius-.4},clip);
-   const optics=svg('g',{class:'liquid-optics','clip-path':`url(#${clipId})`,'aria-hidden':'true'},g);
-   for(const curve of curves)svg('path',{class:'liquid-refracted-line',d:curve.d,stroke:curve.color,
-    'stroke-width':2.25,opacity:curve.opacity,
-    ...(refractedCurves.length<=90?{filter:'url(#liquid-water-warp)'}:{})},optics);
+   style:`opacity:${p.opacity.toFixed(3)};pointer-events:${p.opacity>=.48?'auto':'none'};--arc-moment:${IntervalCapsules.color(IntervalCapsules.arcFor(p,sceneMap,episodeMap)).dot}`});
+  const c=capsuleById.get(p.id);
+  const arcId=IntervalCapsules.arcFor(p,sceneMap,episodeMap);
+  const ink=IntervalCapsules.color(arcId);
+  if(p.kind==='moment'||!c){
+   svg('circle',{class:'mark flat-moment-mark',cx:p.x,cy:p.y,r:p.kind==='moment'?6:9,
+    fill:ink.dot,stroke:ink.stroke,'stroke-width':1.5},g);
+  }else{
+   svg('rect',{class:'mark flat-capsule-hit',x:c.x,y:c.y,width:c.width,height:c.height,
+    rx:c.height/2,fill:'transparent',stroke:'none'},g);
   }
-  svg('circle',{class:'mark liquid-glass-mark',cx:p.x,cy:p.y,r:radius,fill:'url(#liquid-glass-face)'},g);
-  svg('path',{class:'liquid-rim-highlight',d:LiquidNodes.rim(p.x,p.y,radius),'aria-hidden':'true'},g);
-  if(p.kind==='scene'||p.kind==='episode'||p.kind==='arc-cluster'){
-   const count=svg('text',{class:'scene-count',x:p.x,y:p.y+3,'text-anchor':'middle'},g);
+  if(p.kind==='scene'||p.kind==='episode'){
+   const x=c?c.x+c.width/2:p.x;
+   const count=svg('text',{class:'scene-count',x,y:p.y+3,'text-anchor':'middle'},g);
    count.textContent=p.childCount>99?'99+':p.childCount;
   }
   if(numbered&&p.kind==='moment'){
@@ -914,7 +883,7 @@ function render(){
  drawingTarget=null;
  timeline.replaceChildren(frame);axisElement.replaceChildren(axis);
  // Render one continuous droplet body; circles are semantic hit targets.
- LiquidBody.update(timeline,renderNodes,zoom);
+ LiquidBody.reset();timeline.classList.remove('has-liquid-body');
  syncStickyDay(lo,0,timeScale,w);
  // Hierarchy groups still drive labels and source-aware connections. Do not
  // paint a second canvas silhouette: the connected balls are the sole material.

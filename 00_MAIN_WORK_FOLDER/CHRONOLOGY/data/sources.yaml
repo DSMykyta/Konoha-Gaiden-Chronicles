@@ -3,17 +3,17 @@ sources:
   - id: src-subtitle-naruto-003
     type: anime_transcript
     title: Naruto (2002) — серія 003, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 003.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 003.srt"
     locator_status: subtitle_timestamps_checked
   - id: "src-v10-import"
     type: "project_import"
     title: "Naruto Timeline Year 0 v10 flat import"
-    path: "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/archive/Naruto_Timeline_Year_0_v10_import.tsv"
+    path: "00_MAIN_WORK_FOLDER/CHRONOLOGY/archive/Naruto_Timeline_Year_0_v10_import.tsv"
     revision: "ceb74af1d3d1a32c5107c79c601dd49844d8a5ae"
   - id: "src-team9-arc01"
     type: "project_roleplay"
     title: "Команда 9 — Арка 01: Розподіл і крамниця данго"
-    path: "KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 01 [Розподіл і крамниця данго].txt"
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 01 [Розподіл і крамниця данго].txt"
     revision: "dc945ccbcb75ea1774621fc52c516e1c1c325da8"
   - id: "src-manga-ch3"
     type: "manga"
@@ -1182,178 +1182,170 @@ sources:
   - id: src-kakashi-gaiden-iwa-prisoner
     type: project_roleplay
     title: Какаші Ґайден — Полонений Іви та дорога до кордону
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 02 [Полонений Іви та дорога до кордону].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/KAKASHI_GAIDEN/ARCS/arc 02 [Полонений Іви та дорога до кордону].txt"
     revision: e14dfd2ce7e9b14ef1bfce4159d3630b5f02580d
   - id: src-team9-archive3b
     type: project_roleplay
     title: Команда 9 — Архів, сектор 3-Б
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 03 [Архів, сектор 3-Б].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 03 [Архів, сектор 3-Б].txt"
     revision: b2575174f168af9f58491f8ea1f68685db586be2
   - id: src-team9-second-warehouse
     type: project_roleplay
     title: Команда 9 — Другий склад і розподільча
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.5 [Другий склад і розподільча].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 02.5 [Другий склад і розподільча].txt"
     revision: b2575174f168af9f58491f8ea1f68685db586be2
   - id: src-kakashi-gaiden-archive-case
     type: project_roleplay
     title: 'Какаші Ґайден — Юміко: перші зустрічі та справа архіву'
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 01 [Юміко — перші зустрічі та справа архіву].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/KAKASHI_GAIDEN/ARCS/arc 01 [Юміко — перші зустрічі та справа архіву].txt"
     revision: b2575174f168af9f58491f8ea1f68685db586be2
   - id: src-archive-chain-placement
     type: project_decision
     title: Узгодження архівного ланцюга до місії Іви
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/ARCHIVE_CHAIN_UA.md
+    path: "00_MAIN_WORK_FOLDER/CHRONOLOGY/ARCHIVE_CHAIN_UA.md"
   - id: src-games-team-9-02-1
     type: project_roleplay
     title: arc 02.1 [Кіба і конспект Нобарі]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.1 [Кіба і конспект Нобарі].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 02.1 [Кіба і конспект Нобарі].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-02-2
     type: project_roleplay
     title: arc 02.2 [Перші тренування і зброя Іщіна]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.2 [Перші тренування і зброя Іщіна].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 02.2 [Перші тренування і зброя Іщіна].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-02-3
     type: project_roleplay
     title: arc 02.3 [Командні ролі і тактика Сори]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.3 [Командні ролі і тактика Сори].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 02.3 [Командні ролі і тактика Сори].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-02-4
     type: project_roleplay
     title: arc 02.4 [Перший D-ранг — склад]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 02.4 [Перший D-ранг — склад].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 02.4 [Перший D-ранг — склад].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-04
     type: project_roleplay
     title: arc 04 [Чакронитка і перший блінк]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 04 [Чакронитка і перший блінк].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 04 [Чакронитка і перший блінк].txt"
     locator_status: current_author_corrected_text
   - id: src-games-team-9-05
     type: project_roleplay
     title: arc 05 [Передіспитові тижні]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 05 [Передіспитові тижні].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 05 [Передіспитові тижні].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-06
     type: project_roleplay
     title: arc 06 [Чунінський іспит]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 06 [Чунінський іспит].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 06 [Чунінський іспит].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-07
     type: project_roleplay
     title: arc 07 [Передача Анко і місія Нобарі]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 07 [Передача Анко і місія Нобарі].txt"
     locator_status: current_author_corrected_text
   - id: src-games-team-9-08
     type: project_roleplay
     title: arc 08 [Огорожа Лісу Смерті]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 08 [Огорожа Лісу Смерті].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 08 [Огорожа Лісу Смерті].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-09
     type: project_roleplay
     title: arc 09 [Тоуно, Асума і перша пляшка]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 09 [Тоуно, Асума і перша пляшка].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-10
     type: project_roleplay
     title: arc 10 [Повернення Анко, змії і сигарета]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 10 [Повернення Анко, змії і сигарета].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-11
     type: project_roleplay
     title: arc 11 [Танігава — перша кров]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 11 [Танігава — перша кров].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-12
     type: project_roleplay
     title: arc 12 [Довга місія — База 2]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 12 [Довга місія — База 2].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 12 [Довга місія — База 2].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-team-9-13
     type: project_roleplay
     title: arc 13 [Довга місія — База 18]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/TEAM_9/ARCS/arc 13 [Довга місія — База 18].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/TEAM_9/ARCS/arc 13 [Довга місія — База 18].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-kakashi-gaiden-03
     type: project_roleplay
     title: arc 03 [Повернення Юміко]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 03 [Повернення Юміко].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/KAKASHI_GAIDEN/ARCS/arc 03 [Повернення Юміко].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-kakashi-gaiden-04
     type: project_roleplay
     title: arc 04 [Шукуба та бордельне прикриття]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 04 [Шукуба та бордельне прикриття].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/KAKASHI_GAIDEN/ARCS/arc 04 [Шукуба та бордельне прикриття].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-kakashi-gaiden-05
     type: project_roleplay
     title: arc 05 [Шахти Іви та обвал]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 05 [Шахти Іви та обвал].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/KAKASHI_GAIDEN/ARCS/arc 05 [Шахти Іви та обвал].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-kakashi-gaiden-06
     type: project_roleplay
     title: arc 06 [Команда 9 — ескорт]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 06 [Команда 9 — ескорт].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/KAKASHI_GAIDEN/ARCS/arc 06 [Команда 9 — ескорт].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-kakashi-gaiden-07
     type: project_roleplay
     title: arc 07 [Саске — погоня і Долина Завершення]
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/GAMES/KAKASHI_GAIDEN/ARCS/arc 07 [Саске — погоня і Долина Завершення].txt
+    path: "00_MAIN_WORK_FOLDER/GAMES/KAKASHI_GAIDEN/ARCS/arc 07 [Саске — погоня і Долина Завершення].txt"
     revision: 99f0d5709622bd39ad96e236607c68f11e2be543
   - id: src-games-part-i-placement
     type: project_note
     title: Ігрові історії першої частини — узгоджений порядок
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/GAMES_PART_I_CHRONOLOGY_UA.md
+    path: "00_MAIN_WORK_FOLDER/CHRONOLOGY/GAMES_PART_I_CHRONOLOGY_UA.md"
   - id: src-boruto-129-vtt
     type: anime_transcript
     title: Boruto — серія 129, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 129.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 129.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-boruto-130-vtt
     type: anime_transcript
     title: Boruto — серія 130, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 130.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 130.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-boruto-131-vtt
     type: anime_transcript
     title: Boruto — серія 131, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 131.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 131.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-boruto-132-vtt
     type: anime_transcript
     title: Boruto — серія 132, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 132.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 132.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-boruto-133-vtt
     type: anime_transcript
     title: Boruto — серія 133, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 133.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 133.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-boruto-134-vtt
     type: anime_transcript
     title: Boruto — серія 134, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 134.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 134.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-boruto-135-vtt
     type: anime_transcript
     title: Boruto — серія 135, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 135.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 135.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-boruto-136-vtt
     type: anime_transcript
     title: Boruto — серія 136, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations
-      - 136.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 136.vtt"
     locator_status: episode_known_scene_timestamps_partial
   - id: src-time-slip-placement
     type: project_decision
     title: Мандрівні артисти — робочі дати й окремі профілі прибульців
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/TIME_SLIP_UA.md
+    path: "00_MAIN_WORK_FOLDER/CHRONOLOGY/TIME_SLIP_UA.md"
     date: '2026-10-03'
   - id: src-boruto-129-official
     type: official_episode_summary
@@ -1368,12 +1360,12 @@ sources:
   - id: src-autumn-cast-reconciliation
     type: project_decision
     title: Узгодження фізичних учасників після Мандрівних артистів
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/AUTUMN_PLACEMENT_UA.md
+    path: "00_MAIN_WORK_FOLDER/CHRONOLOGY/AUTUMN_PLACEMENT_UA.md"
     date: '2026-10-03'
   - id: src-post-sasuke-calendar-review
     type: project_decision
     title: Повний перегляд післясасківського періоду
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/POST_SASUKE_SCHEDULE_UA.md
+    path: "00_MAIN_WORK_FOLDER/CHRONOLOGY/POST_SASUKE_SCHEDULE_UA.md"
     date: "2026-10-03"
   - id: src-narutopedia-ep3-milk
     type: reference
@@ -1384,47 +1376,47 @@ sources:
   - id: src-subtitle-naruto-002
     type: anime_transcript
     title: Naruto (2002) — серія 002, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 002.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 002.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-004
     type: anime_transcript
     title: Naruto (2002) — серія 004, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 004.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 004.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-005
     type: anime_transcript
     title: Naruto (2002) — серія 005, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 005.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 005.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-006
     type: anime_transcript
     title: Naruto (2002) — серія 006, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 006.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 006.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-007
     type: anime_transcript
     title: Naruto (2002) — серія 007, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 007.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 007.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-008
     type: anime_transcript
     title: Naruto (2002) — серія 008, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 008.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 008.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-009
     type: anime_transcript
     title: Naruto (2002) — серія 009, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 009.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 009.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-010
     type: anime_transcript
     title: Naruto (2002) — серія 010, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 010.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 010.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-011
     type: anime_transcript
     title: Naruto (2002) — серія 011, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 011.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 011.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-narutopedia-kaiza-story
     type: reference
@@ -1434,1765 +1426,1762 @@ sources:
   - id: src-subtitle-boruto-026
     type: anime_transcript
     title: 'Boruto: Naruto Next Generations — серія 026, англійські субтитри'
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 026.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-next-generations/Boruto Naruto Next Generations - 026.vtt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-012
     type: anime_transcript
     title: Naruto (2002) — серія 012, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 012.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 012.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-013
     type: anime_transcript
     title: Naruto (2002) — серія 013, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 013.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 013.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-014
     type: anime_transcript
     title: Naruto (2002) — серія 014, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 014.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 014.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-015
     type: anime_transcript
     title: Naruto (2002) — серія 015, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 015.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 015.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-016
     type: anime_transcript
     title: Naruto (2002) — серія 016, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 016.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 016.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-shippuden-265
     type: anime_transcript
     title: Naruto Shippuden — серія 265, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 265.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 265.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-017
     type: anime_transcript
     title: Naruto (2002) — серія 017, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 017.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 017.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-018
     type: anime_transcript
     title: Naruto (2002) — серія 018, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 018.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 018.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-naruto-019
     type: anime_transcript
     title: Naruto (2002) — серія 019, англійські субтитри
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-part-i/Naruto - 019.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-part-i/Naruto - 019.srt"
     locator_status: subtitle_timestamps_checked
   - id: src-subtitle-shippuden-001
     type: anime_transcript
     title: Naruto Shippūden — 001
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 001.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 001.srt"
     locator_status: full_episode_scope
   - id: src-s2-synopses
     type: anime_synopsis
     title: Narutopedia — описи Naruto Shippūden 001–500
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/narutopedia/narutopedia_synopses_COMPLETE.json
+    path: "00_MAIN_WORK_FOLDER/SOURCES/narutopedia/narutopedia_synopses_COMPLETE.json"
     locator_status: episode_indexed
   - id: src-subtitle-shippuden-002
     type: anime_transcript
     title: Naruto Shippūden — 002
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 002.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 002.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-003
     type: anime_transcript
     title: Naruto Shippūden — 003
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 003.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 003.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-004
     type: anime_transcript
     title: Naruto Shippūden — 004
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 004.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 004.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-005
     type: anime_transcript
     title: Naruto Shippūden — 005
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 005.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 005.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-006
     type: anime_transcript
     title: Naruto Shippūden — 006
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 006.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 006.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-007
     type: anime_transcript
     title: Naruto Shippūden — 007
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 007.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 007.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-008
     type: anime_transcript
     title: Naruto Shippūden — 008
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 008.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 008.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-009
     type: anime_transcript
     title: Naruto Shippūden — 009
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 009.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 009.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-010
     type: anime_transcript
     title: Naruto Shippūden — 010
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 010.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 010.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-011
     type: anime_transcript
     title: Naruto Shippūden — 011
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 011.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 011.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-012
     type: anime_transcript
     title: Naruto Shippūden — 012
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 012.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 012.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-013
     type: anime_transcript
     title: Naruto Shippūden — 013
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 013.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 013.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-014
     type: anime_transcript
     title: Naruto Shippūden — 014
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 014.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 014.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-015
     type: anime_transcript
     title: Naruto Shippūden — 015
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 015.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 015.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-016
     type: anime_transcript
     title: Naruto Shippūden — 016
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 016.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 016.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-017
     type: anime_transcript
     title: Naruto Shippūden — 017
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 017.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 017.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-018
     type: anime_transcript
     title: Naruto Shippūden — 018
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 018.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 018.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-019
     type: anime_transcript
     title: Naruto Shippūden — 019
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 019.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 019.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-020
     type: anime_transcript
     title: Naruto Shippūden — 020
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 020.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 020.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-021
     type: anime_transcript
     title: Naruto Shippūden — 021
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 021.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 021.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-022
     type: anime_transcript
     title: Naruto Shippūden — 022
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 022.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 022.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-028
     type: anime_transcript
     title: Naruto Shippūden — 028
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 028.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 028.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-023
     type: anime_transcript
     title: Naruto Shippūden — 023
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 023.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 023.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-024
     type: anime_transcript
     title: Naruto Shippūden — 024
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 024.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 024.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-025
     type: anime_transcript
     title: Naruto Shippūden — 025
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 025.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 025.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-026
     type: anime_transcript
     title: Naruto Shippūden — 026
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 026.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 026.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-027
     type: anime_transcript
     title: Naruto Shippūden — 027
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 027.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 027.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-029
     type: anime_transcript
     title: Naruto Shippūden — 029
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 029.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 029.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-030
     type: anime_transcript
     title: Naruto Shippūden — 030
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 030.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 030.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-031
     type: anime_transcript
     title: Naruto Shippūden — 031
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 031.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 031.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-032
     type: anime_transcript
     title: Naruto Shippūden — 032
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 032.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 032.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-033
     type: anime_transcript
     title: Naruto Shippūden — 033
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 033.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 033.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-034
     type: anime_transcript
     title: Naruto Shippūden — 034
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 034.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 034.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-035
     type: anime_transcript
     title: Naruto Shippūden — 035
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 035.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 035.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-040
     type: anime_transcript
     title: Naruto Shippūden — 040
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 040.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 040.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-036
     type: anime_transcript
     title: Naruto Shippūden — 036
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 036.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 036.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-037
     type: anime_transcript
     title: Naruto Shippūden — 037
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 037.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 037.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-038
     type: anime_transcript
     title: Naruto Shippūden — 038
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 038.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 038.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-039
     type: anime_transcript
     title: Naruto Shippūden — 039
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 039.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 039.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-041
     type: anime_transcript
     title: Naruto Shippūden — 041
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 041.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 041.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-042
     type: anime_transcript
     title: Naruto Shippūden — 042
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 042.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 042.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-043
     type: anime_transcript
     title: Naruto Shippūden — 043
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 043.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 043.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-044
     type: anime_transcript
     title: Naruto Shippūden — 044
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 044.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 044.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-045
     type: anime_transcript
     title: Naruto Shippūden — 045
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 045.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 045.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-046
     type: anime_transcript
     title: Naruto Shippūden — 046
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 046.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 046.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-047
     type: anime_transcript
     title: Naruto Shippūden — 047
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 047.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 047.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-048
     type: anime_transcript
     title: Naruto Shippūden — 048
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 048.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 048.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-049
     type: anime_transcript
     title: Naruto Shippūden — 049
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 049.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 049.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-050
     type: anime_transcript
     title: Naruto Shippūden — 050
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 050.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 050.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-051
     type: anime_transcript
     title: Naruto Shippūden — 051
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 051.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 051.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-052
     type: anime_transcript
     title: Naruto Shippūden — 052
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 052.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 052.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-053
     type: anime_transcript
     title: Naruto Shippūden — 053
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 053.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 053.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-054
     type: anime_transcript
     title: Naruto Shippūden — 054
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 054.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 054.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-055
     type: anime_transcript
     title: Naruto Shippūden — 055
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 055.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 055.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-056
     type: anime_transcript
     title: Naruto Shippūden — 056
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 056.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 056.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-057
     type: anime_transcript
     title: Naruto Shippūden — 057
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 057.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 057.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-058
     type: anime_transcript
     title: Naruto Shippūden — 058
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 058.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 058.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-059
     type: anime_transcript
     title: Naruto Shippūden — 059
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 059.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 059.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-060
     type: anime_transcript
     title: Naruto Shippūden — 060
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 060.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 060.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-061
     type: anime_transcript
     title: Naruto Shippūden — 061
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 061.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 061.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-062
     type: anime_transcript
     title: Naruto Shippūden — 062
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 062.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 062.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-063
     type: anime_transcript
     title: Naruto Shippūden — 063
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 063.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 063.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-064
     type: anime_transcript
     title: Naruto Shippūden — 064
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 064.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 064.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-065
     type: anime_transcript
     title: Naruto Shippūden — 065
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 065.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 065.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-066
     type: anime_transcript
     title: Naruto Shippūden — 066
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 066.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 066.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-067
     type: anime_transcript
     title: Naruto Shippūden — 067
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 067.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 067.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-068
     type: anime_transcript
     title: Naruto Shippūden — 068
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 068.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 068.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-069
     type: anime_transcript
     title: Naruto Shippūden — 069
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 069.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 069.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-070
     type: anime_transcript
     title: Naruto Shippūden — 070
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 070.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 070.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-071
     type: anime_transcript
     title: Naruto Shippūden — 071
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 071.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 071.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-072
     type: anime_transcript
     title: Naruto Shippūden — 072
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 072.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 072.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-073
     type: anime_transcript
     title: Naruto Shippūden — 073
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 073.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 073.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-074
     type: anime_transcript
     title: Naruto Shippūden — 074
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 074.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 074.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-075
     type: anime_transcript
     title: Naruto Shippūden — 075
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 075.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 075.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-081
     type: anime_transcript
     title: Naruto Shippūden — 081
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 081.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 081.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-076
     type: anime_transcript
     title: Naruto Shippūden — 076
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 076.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 076.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-077
     type: anime_transcript
     title: Naruto Shippūden — 077
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 077.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 077.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-078
     type: anime_transcript
     title: Naruto Shippūden — 078
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 078.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 078.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-079
     type: anime_transcript
     title: Naruto Shippūden — 079
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 079.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 079.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-080
     type: anime_transcript
     title: Naruto Shippūden — 080
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 080.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 080.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-082
     type: anime_transcript
     title: Naruto Shippūden — 082
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 082.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 082.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-083
     type: anime_transcript
     title: Naruto Shippūden — 083
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 083.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 083.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-084
     type: anime_transcript
     title: Naruto Shippūden — 084
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 084.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 084.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-085
     type: anime_transcript
     title: Naruto Shippūden — 085
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 085.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 085.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-086
     type: anime_transcript
     title: Naruto Shippūden — 086
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 086.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 086.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-087
     type: anime_transcript
     title: Naruto Shippūden — 087
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 087.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 087.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-088
     type: anime_transcript
     title: Naruto Shippūden — 088
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 088.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 088.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-089
     type: anime_transcript
     title: Naruto Shippūden — 089
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 089.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 089.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-090
     type: anime_transcript
     title: Naruto Shippūden — 090
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 090.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 090.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-091
     type: anime_transcript
     title: Naruto Shippūden — 091
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 091.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 091.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-092
     type: anime_transcript
     title: Naruto Shippūden — 092
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 092.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 092.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-093
     type: anime_transcript
     title: Naruto Shippūden — 093
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 093.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 093.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-094
     type: anime_transcript
     title: Naruto Shippūden — 094
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 094.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 094.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-095
     type: anime_transcript
     title: Naruto Shippūden — 095
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 095.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 095.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-096
     type: anime_transcript
     title: Naruto Shippūden — 096
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 096.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 096.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-097
     type: anime_transcript
     title: Naruto Shippūden — 097
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 097.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 097.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-098
     type: anime_transcript
     title: Naruto Shippūden — 098
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 098.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 098.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-099
     type: anime_transcript
     title: Naruto Shippūden — 099
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 099.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 099.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-100
     type: anime_transcript
     title: Naruto Shippūden — 100
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 100.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 100.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-101
     type: anime_transcript
     title: Naruto Shippūden — 101
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 101.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 101.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-102
     type: anime_transcript
     title: Naruto Shippūden — 102
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 102.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 102.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-103
     type: anime_transcript
     title: Naruto Shippūden — 103
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 103.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 103.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-104
     type: anime_transcript
     title: Naruto Shippūden — 104
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 104.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 104.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-105
     type: anime_transcript
     title: Naruto Shippūden — 105
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 105.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 105.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-106
     type: anime_transcript
     title: Naruto Shippūden — 106
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 106.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 106.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-107
     type: anime_transcript
     title: Naruto Shippūden — 107
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 107.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 107.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-108
     type: anime_transcript
     title: Naruto Shippūden — 108
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 108.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 108.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-109
     type: anime_transcript
     title: Naruto Shippūden — 109
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 109.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 109.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-110
     type: anime_transcript
     title: Naruto Shippūden — 110
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 110.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 110.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-111
     type: anime_transcript
     title: Naruto Shippūden — 111
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 111.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 111.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-112
     type: anime_transcript
     title: Naruto Shippūden — 112
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 112.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 112.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-113
     type: anime_transcript
     title: Naruto Shippūden — 113
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 113.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 113.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-114
     type: anime_transcript
     title: Naruto Shippūden — 114
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 114.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 114.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-115
     type: anime_transcript
     title: Naruto Shippūden — 115
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 115.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 115.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-116
     type: anime_transcript
     title: Naruto Shippūden — 116
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 116.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 116.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-117
     type: anime_transcript
     title: Naruto Shippūden — 117
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 117.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 117.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-118
     type: anime_transcript
     title: Naruto Shippūden — 118
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 118.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 118.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-121
     type: anime_transcript
     title: Naruto Shippūden — 121
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 121.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 121.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-122
     type: anime_transcript
     title: Naruto Shippūden — 122
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 122.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 122.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-123
     type: anime_transcript
     title: Naruto Shippūden — 123
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 123.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 123.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-124
     type: anime_transcript
     title: Naruto Shippūden — 124
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 124.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 124.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-125
     type: anime_transcript
     title: Naruto Shippūden — 125
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 125.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 125.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-126
     type: anime_transcript
     title: Naruto Shippūden — 126
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 126.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 126.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-152
     type: anime_transcript
     title: Naruto Shippūden — 152
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 152.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 152.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-134
     type: anime_transcript
     title: Naruto Shippūden — 134
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 134.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 134.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-139
     type: anime_transcript
     title: Naruto Shippūden — 139
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 139.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 139.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-135
     type: anime_transcript
     title: Naruto Shippūden — 135
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 135.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 135.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-136
     type: anime_transcript
     title: Naruto Shippūden — 136
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 136.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 136.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-137
     type: anime_transcript
     title: Naruto Shippūden — 137
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 137.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 137.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-138
     type: anime_transcript
     title: Naruto Shippūden — 138
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 138.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 138.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-140
     type: anime_transcript
     title: Naruto Shippūden — 140
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 140.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 140.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-141
     type: anime_transcript
     title: Naruto Shippūden — 141
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 141.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 141.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-142
     type: anime_transcript
     title: Naruto Shippūden — 142
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 142.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 142.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-143
     type: anime_transcript
     title: Naruto Shippūden — 143
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 143.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 143.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-129
     type: anime_transcript
     title: Naruto Shippūden — 129
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 129.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 129.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-130
     type: anime_transcript
     title: Naruto Shippūden — 130
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 130.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 130.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-131
     type: anime_transcript
     title: Naruto Shippūden — 131
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 131.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 131.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-132
     type: anime_transcript
     title: Naruto Shippūden — 132
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 132.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 132.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-133
     type: anime_transcript
     title: Naruto Shippūden — 133
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 133.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 133.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-144
     type: anime_transcript
     title: Naruto Shippūden — 144
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 144.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 144.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-145
     type: anime_transcript
     title: Naruto Shippūden — 145
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 145.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 145.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-146
     type: anime_transcript
     title: Naruto Shippūden — 146
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 146.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 146.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-147
     type: anime_transcript
     title: Naruto Shippūden — 147
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 147.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 147.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-148
     type: anime_transcript
     title: Naruto Shippūden — 148
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 148.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 148.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-149
     type: anime_transcript
     title: Naruto Shippūden — 149
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 149.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 149.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-150
     type: anime_transcript
     title: Naruto Shippūden — 150
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 150.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 150.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-151
     type: anime_transcript
     title: Naruto Shippūden — 151
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 151.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 151.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-153
     type: anime_transcript
     title: Naruto Shippūden — 153
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 153.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 153.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-154
     type: anime_transcript
     title: Naruto Shippūden — 154
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 154.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 154.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-160
     type: anime_transcript
     title: Naruto Shippūden — 160
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 160.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 160.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-155
     type: anime_transcript
     title: Naruto Shippūden — 155
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 155.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 155.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-156
     type: anime_transcript
     title: Naruto Shippūden — 156
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 156.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 156.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-161
     type: anime_transcript
     title: Naruto Shippūden — 161
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 161.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 161.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-157
     type: anime_transcript
     title: Naruto Shippūden — 157
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 157.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 157.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-158
     type: anime_transcript
     title: Naruto Shippūden — 158
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 158.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 158.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-162
     type: anime_transcript
     title: Naruto Shippūden — 162
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 162.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 162.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-159
     type: anime_transcript
     title: Naruto Shippūden — 159
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 159.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 159.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-163
     type: anime_transcript
     title: Naruto Shippūden — 163
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 163.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 163.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-164
     type: anime_transcript
     title: Naruto Shippūden — 164
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 164.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 164.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-165
     type: anime_transcript
     title: Naruto Shippūden — 165
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 165.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 165.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-166
     type: anime_transcript
     title: Naruto Shippūden — 166
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 166.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 166.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-167
     type: anime_transcript
     title: Naruto Shippūden — 167
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 167.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 167.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-168
     type: anime_transcript
     title: Naruto Shippūden — 168
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 168.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 168.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-169
     type: anime_transcript
     title: Naruto Shippūden — 169
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 169.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 169.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-172
     type: anime_transcript
     title: Naruto Shippūden — 172
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 172.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 172.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-173
     type: anime_transcript
     title: Naruto Shippūden — 173
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 173.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 173.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-174
     type: anime_transcript
     title: Naruto Shippūden — 174
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 174.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 174.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-175
     type: anime_transcript
     title: Naruto Shippūden — 175
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 175.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 175.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-176
     type: anime_transcript
     title: Naruto Shippūden — 176
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 176.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 176.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-180
     type: anime_transcript
     title: Naruto Shippūden — 180
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 180.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 180.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-181
     type: anime_transcript
     title: Naruto Shippūden — 181
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 181.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 181.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-179
     type: anime_transcript
     title: Naruto Shippūden — 179
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 179.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 179.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-183
     type: anime_transcript
     title: Naruto Shippūden — 183
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 183.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 183.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-186
     type: anime_transcript
     title: Naruto Shippūden — 186
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 186.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 186.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-184
     type: anime_transcript
     title: Naruto Shippūden — 184
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 184.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 184.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-182
     type: anime_transcript
     title: Naruto Shippūden — 182
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 182.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 182.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-192
     type: anime_transcript
     title: Naruto Shippūden — 192
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 192.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 192.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-185
     type: anime_transcript
     title: Naruto Shippūden — 185
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 185.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 185.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-197
     type: anime_transcript
     title: Naruto Shippūden — 197
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 197.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 197.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-198
     type: anime_transcript
     title: Naruto Shippūden — 198
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 198.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 198.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-178
     type: anime_transcript
     title: Naruto Shippūden — 178
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 178.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 178.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-199
     type: anime_transcript
     title: Naruto Shippūden — 199
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 199.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 199.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-200
     type: anime_transcript
     title: Naruto Shippūden — 200
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 200.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 200.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-201
     type: anime_transcript
     title: Naruto Shippūden — 201
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 201.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 201.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-205
     type: anime_transcript
     title: Naruto Shippūden — 205
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 205.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 205.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-206
     type: anime_transcript
     title: Naruto Shippūden — 206
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 206.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 206.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-202
     type: anime_transcript
     title: Naruto Shippūden — 202
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 202.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 202.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-203
     type: anime_transcript
     title: Naruto Shippūden — 203
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 203.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 203.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-204
     type: anime_transcript
     title: Naruto Shippūden — 204
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 204.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 204.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-207
     type: anime_transcript
     title: Naruto Shippūden — 207
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 207.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 207.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-208
     type: anime_transcript
     title: Naruto Shippūden — 208
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 208.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 208.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-209
     type: anime_transcript
     title: Naruto Shippūden — 209
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 209.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 209.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-210
     type: anime_transcript
     title: Naruto Shippūden — 210
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 210.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 210.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-211
     type: anime_transcript
     title: Naruto Shippūden — 211
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 211.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 211.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-212
     type: anime_transcript
     title: Naruto Shippūden — 212
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 212.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 212.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-214
     type: anime_transcript
     title: Naruto Shippūden — 214
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 214.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 214.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-215
     type: anime_transcript
     title: Naruto Shippūden — 215
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 215.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 215.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-216
     type: anime_transcript
     title: Naruto Shippūden — 216
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 216.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 216.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-217
     type: anime_transcript
     title: Naruto Shippūden — 217
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 217.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 217.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-220
     type: anime_transcript
     title: Naruto Shippūden — 220
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 220.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 220.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-218
     type: anime_transcript
     title: Naruto Shippūden — 218
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 218.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 218.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-219
     type: anime_transcript
     title: Naruto Shippūden — 219
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 219.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 219.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-221
     type: anime_transcript
     title: Naruto Shippūden — 221
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 221.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 221.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-222
     type: anime_transcript
     title: Naruto Shippūden — 222
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 222.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 222.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-223
     type: anime_transcript
     title: Naruto Shippūden — 223
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 223.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 223.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-224
     type: anime_transcript
     title: Naruto Shippūden — 224
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 224.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 224.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-225
     type: anime_transcript
     title: Naruto Shippūden — 225
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 225.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 225.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-226
     type: anime_transcript
     title: Naruto Shippūden — 226
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 226.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 226.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-227
     type: anime_transcript
     title: Naruto Shippūden — 227
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 227.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 227.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-228
     type: anime_transcript
     title: Naruto Shippūden — 228
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 228.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 228.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-229
     type: anime_transcript
     title: Naruto Shippūden — 229
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 229.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 229.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-230
     type: anime_transcript
     title: Naruto Shippūden — 230
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 230.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 230.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-231
     type: anime_transcript
     title: Naruto Shippūden — 231
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 231.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 231.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-233
     type: anime_transcript
     title: Naruto Shippūden — 233
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 233.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 233.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-235
     type: anime_transcript
     title: Naruto Shippūden — 235
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 235.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 235.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-241
     type: anime_transcript
     title: Naruto Shippūden — 241
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 241.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 241.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-242
     type: anime_transcript
     title: Naruto Shippūden — 242
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 242.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 242.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-232
     type: anime_transcript
     title: Naruto Shippūden — 232
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 232.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 232.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-234
     type: anime_transcript
     title: Naruto Shippūden — 234
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 234.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 234.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-236
     type: anime_transcript
     title: Naruto Shippūden — 236
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 236.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 236.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-238
     type: anime_transcript
     title: Naruto Shippūden — 238
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 238.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 238.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-239
     type: anime_transcript
     title: Naruto Shippūden — 239
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 239.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 239.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-240
     type: anime_transcript
     title: Naruto Shippūden — 240
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 240.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 240.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-237
     type: anime_transcript
     title: Naruto Shippūden — 237
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 237.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 237.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-243
     type: anime_transcript
     title: Naruto Shippūden — 243
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 243.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 243.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-244
     type: anime_transcript
     title: Naruto Shippūden — 244
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 244.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 244.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-245
     type: anime_transcript
     title: Naruto Shippūden — 245
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 245.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 245.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-246
     type: anime_transcript
     title: Naruto Shippūden — 246
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 246.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 246.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-247
     type: anime_transcript
     title: Naruto Shippūden — 247
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 247.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 247.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-248
     type: anime_transcript
     title: Naruto Shippūden — 248
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 248.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 248.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-249
     type: anime_transcript
     title: Naruto Shippūden — 249
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 249.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 249.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-250
     type: anime_transcript
     title: Naruto Shippūden — 250
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 250.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 250.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-251
     type: anime_transcript
     title: Naruto Shippūden — 251
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 251.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 251.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-252
     type: anime_transcript
     title: Naruto Shippūden — 252
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 252.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 252.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-253
     type: anime_transcript
     title: Naruto Shippūden — 253
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 253.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 253.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-254
     type: anime_transcript
     title: Naruto Shippūden — 254
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 254.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 254.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-255
     type: anime_transcript
     title: Naruto Shippūden — 255
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 255.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 255.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-256
     type: anime_transcript
     title: Naruto Shippūden — 256
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 256.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 256.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-395
     type: anime_transcript
     title: Naruto Shippūden — 395
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 395.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 395.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-406
     type: anime_transcript
     title: Naruto Shippūden — 406
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 406.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 406.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-408
     type: anime_transcript
     title: Naruto Shippūden — 408
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 408.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 408.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-187
     type: anime_transcript
     title: Naruto Shippūden — 187
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 187.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 187.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-188
     type: anime_transcript
     title: Naruto Shippūden — 188
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 188.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 188.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-394
     type: anime_transcript
     title: Naruto Shippūden — 394
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 394.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 394.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-396
     type: anime_transcript
     title: Naruto Shippūden — 396
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 396.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 396.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-397
     type: anime_transcript
     title: Naruto Shippūden — 397
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 397.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 397.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-398
     type: anime_transcript
     title: Naruto Shippūden — 398
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 398.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 398.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-399
     type: anime_transcript
     title: Naruto Shippūden — 399
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 399.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 399.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-400
     type: anime_transcript
     title: Naruto Shippūden — 400
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 400.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 400.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-401
     type: anime_transcript
     title: Naruto Shippūden — 401
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 401.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 401.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-402
     type: anime_transcript
     title: Naruto Shippūden — 402
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 402.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 402.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-403
     type: anime_transcript
     title: Naruto Shippūden — 403
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 403.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 403.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-404
     type: anime_transcript
     title: Naruto Shippūden — 404
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 404.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 404.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-405
     type: anime_transcript
     title: Naruto Shippūden — 405
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 405.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 405.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-407
     type: anime_transcript
     title: Naruto Shippūden — 407
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 407.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 407.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-409
     type: anime_transcript
     title: Naruto Shippūden — 409
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 409.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 409.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-410
     type: anime_transcript
     title: Naruto Shippūden — 410
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 410.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 410.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-411
     type: anime_transcript
     title: Naruto Shippūden — 411
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 411.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 411.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-412
     type: anime_transcript
     title: Naruto Shippūden — 412
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 412.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 412.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-413
     type: anime_transcript
     title: Naruto Shippūden — 413
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 413.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 413.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-127
     type: anime_transcript
     title: Naruto Shippūden — 127
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 127.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 127.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-286
     type: anime_transcript
     title: Naruto Shippūden — 286
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 286.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 286.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-287
     type: anime_transcript
     title: Naruto Shippūden — 287
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 287.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 287.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-128
     type: anime_transcript
     title: Naruto Shippūden — 128
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 128.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 128.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-483
     type: anime_transcript
     title: Naruto Shippūden — 483
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 483.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 483.vtt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-347
     type: anime_transcript
     title: Naruto Shippūden — 347
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 347.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 347.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-119
     type: anime_transcript
     title: Naruto Shippūden — 119
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 119.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 119.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-419
     type: anime_transcript
     title: Naruto Shippūden — 419
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 419.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 419.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-416
     type: anime_transcript
     title: Naruto Shippūden — 416
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 416.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 416.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-417
     type: anime_transcript
     title: Naruto Shippūden — 417
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 417.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 417.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-343
     type: anime_transcript
     title: Naruto Shippūden — 343
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 343.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 343.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-120
     type: anime_transcript
     title: Naruto Shippūden — 120
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 120.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 120.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-344
     type: anime_transcript
     title: Naruto Shippūden — 344
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 344.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 344.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-345
     type: anime_transcript
     title: Naruto Shippūden — 345
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 345.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 345.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-425
     type: anime_transcript
     title: Naruto Shippūden — 425
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 425.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 425.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-346
     type: anime_transcript
     title: Naruto Shippūden — 346
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 346.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 346.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-349
     type: anime_transcript
     title: Naruto Shippūden — 349
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 349.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 349.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-350
     type: anime_transcript
     title: Naruto Shippūden — 350
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 350.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 350.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-351
     type: anime_transcript
     title: Naruto Shippūden — 351
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 351.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 351.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-352
     type: anime_transcript
     title: Naruto Shippūden — 352
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 352.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 352.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-353
     type: anime_transcript
     title: Naruto Shippūden — 353
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 353.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 353.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-354
     type: anime_transcript
     title: Naruto Shippūden — 354
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 354.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 354.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-355
     type: anime_transcript
     title: Naruto Shippūden — 355
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 355.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 355.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-356
     type: anime_transcript
     title: Naruto Shippūden — 356
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 356.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 356.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-357
     type: anime_transcript
     title: Naruto Shippūden — 357
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 357.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 357.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-358
     type: anime_transcript
     title: Naruto Shippūden — 358
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 358.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 358.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-359
     type: anime_transcript
     title: Naruto Shippūden — 359
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 359.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 359.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-360
     type: anime_transcript
     title: Naruto Shippūden — 360
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 360.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 360.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-452
     type: anime_transcript
     title: Naruto Shippūden — 452
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 452.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 452.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-453
     type: anime_transcript
     title: Naruto Shippūden — 453
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 453.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 453.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-451
     type: anime_transcript
     title: Naruto Shippūden — 451
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 451.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 451.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-454
     type: anime_transcript
     title: Naruto Shippūden — 454
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 454.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 454.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-455
     type: anime_transcript
     title: Naruto Shippūden — 455
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 455.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 455.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-339
     type: anime_transcript
     title: Naruto Shippūden — 339
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 339.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 339.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-456
     type: anime_transcript
     title: Naruto Shippūden — 456
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 456.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 456.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-457
     type: anime_transcript
     title: Naruto Shippūden — 457
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 457.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 457.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-297
     type: anime_transcript
     title: Naruto Shippūden — 297
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 297.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 297.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-482
     type: anime_transcript
     title: Naruto Shippūden — 482
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 482.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 482.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-480
     type: anime_transcript
     title: Naruto Shippūden — 480
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 480.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 480.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-257
     type: anime_transcript
     title: Naruto Shippūden — 257
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 257.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 257.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-177
     type: anime_transcript
     title: Naruto Shippūden — 177
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 177.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 177.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-277
     type: anime_transcript
     title: Naruto Shippūden — 277
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 277.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 277.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-478
     type: anime_transcript
     title: Naruto Shippūden — 478
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 478.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 478.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-481
     type: anime_transcript
     title: Naruto Shippūden — 481
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 481.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 481.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-317
     type: anime_transcript
     title: Naruto Shippūden — 317
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 317.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 317.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-313
     type: anime_transcript
     title: Naruto Shippūden — 313
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 313.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 313.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-314
     type: anime_transcript
     title: Naruto Shippūden — 314
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 314.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 314.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-315
     type: anime_transcript
     title: Naruto Shippūden — 315
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 315.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 315.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-348
     type: anime_transcript
     title: Naruto Shippūden — 348
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 348.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 348.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-282
     type: anime_transcript
     title: Naruto Shippūden — 282
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 282.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 282.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-318
     type: anime_transcript
     title: Naruto Shippūden — 318
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 318.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 318.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-272
     type: anime_transcript
     title: Naruto Shippūden — 272
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 272.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 272.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-285
     type: anime_transcript
     title: Naruto Shippūden — 285
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 285.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 285.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-335
     type: anime_transcript
     title: Naruto Shippūden — 335
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 335.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 335.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-336
     type: anime_transcript
     title: Naruto Shippūden — 336
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 336.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 336.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-337
     type: anime_transcript
     title: Naruto Shippūden — 337
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 337.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 337.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-338
     type: anime_transcript
     title: Naruto Shippūden — 338
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 338.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 338.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-366
     type: anime_transcript
     title: Naruto Shippūden — 366
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 366.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 366.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-367
     type: anime_transcript
     title: Naruto Shippūden — 367
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 367.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 367.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-368
     type: anime_transcript
     title: Naruto Shippūden — 368
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 368.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 368.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-369
     type: anime_transcript
     title: Naruto Shippūden — 369
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 369.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 369.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-370
     type: anime_transcript
     title: Naruto Shippūden — 370
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 370.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 370.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-460
     type: anime_transcript
     title: Naruto Shippūden — 460
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 460.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 460.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-461
     type: anime_transcript
     title: Naruto Shippūden — 461
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 461.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 461.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-462
     type: anime_transcript
     title: Naruto Shippūden — 462
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 462.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 462.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-464
     type: anime_transcript
     title: Naruto Shippūden — 464
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 464.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 464.vtt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-465
     type: anime_transcript
     title: Naruto Shippūden — 465
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 465.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 465.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-466
     type: anime_transcript
     title: Naruto Shippūden — 466
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 466.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 466.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-467
     type: anime_transcript
     title: Naruto Shippūden — 467
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 467.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 467.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-468
     type: anime_transcript
     title: Naruto Shippūden — 468
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 468.vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 468.vtt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-191
     type: anime_transcript
     title: Naruto Shippūden — 191
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 191.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 191.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-189
     type: anime_transcript
     title: Naruto Shippūden — 189
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 189.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 189.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-190
     type: anime_transcript
     title: Naruto Shippūden — 190
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 190.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 190.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-195
     type: anime_transcript
     title: Naruto Shippūden — 195
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 195.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 195.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-196
     type: anime_transcript
     title: Naruto Shippūden — 196
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 196.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 196.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-movie-shion
     type: movie_transcript
     title: Naruto Shippuden_ The Movie
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden_ The Movie (English Dubbed).vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/movies/Naruto Shippuden_ The Movie (English Dubbed).vtt"
     locator_status: film_identity_checked
   - id: src-subtitle-movie-fire
     type: movie_transcript
     title: Naruto Shippuden The Movie - The Will of Fire
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden The Movie - The Will of Fire
-      (English Dubbed).vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/movies/Naruto Shippuden The Movie - The Will of Fire (English Dubbed).vtt"
     locator_status: film_identity_checked
   - id: src-subtitle-movie-tower
     type: movie_transcript
     title: Naruto Shippuden the Movie_ The Lost Tower
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden the Movie_ The Lost Tower (English
-      Dubbed).vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/movies/Naruto Shippuden the Movie_ The Lost Tower (English Dubbed).vtt"
     locator_status: film_identity_checked
   - id: src-subtitle-movie-prison
     type: movie_transcript
     title: Naruto Shippuden the Movie_ Blood Prison
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Naruto Shippuden the Movie_ Blood Prison (English
-      Dubbed).vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/movies/Naruto Shippuden the Movie_ Blood Prison (English Dubbed).vtt"
     locator_status: film_identity_checked
   - id: src-subtitle-movie-road
     type: movie_transcript
     title: Road To Ninja - Naruto the Movie
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/Road To Ninja - Naruto the Movie (English Dubbed).vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/movies/Road To Ninja - Naruto the Movie (English Dubbed).vtt"
     locator_status: film_identity_checked
   - id: src-bonds-synopsis-web
     type: movie_synopsis
@@ -3202,67 +3191,67 @@ sources:
   - id: src-subtitle-shippuden-290
     type: anime_transcript
     title: Naruto Shippūden — 290
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 290.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 290.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-291
     type: anime_transcript
     title: Naruto Shippūden — 291
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 291.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 291.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-292
     type: anime_transcript
     title: Naruto Shippūden — 292
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 292.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 292.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-293
     type: anime_transcript
     title: Naruto Shippūden — 293
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 293.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 293.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-294
     type: anime_transcript
     title: Naruto Shippūden — 294
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 294.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 294.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-295
     type: anime_transcript
     title: Naruto Shippūden — 295
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 295.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 295.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-418
     type: anime_transcript
     title: Naruto Shippūden — 418
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 418.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 418.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-421
     type: anime_transcript
     title: Naruto Shippūden — 421
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 421.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 421.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-319
     type: anime_transcript
     title: Naruto Shippūden — 319
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 319.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 319.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-392
     type: anime_transcript
     title: Naruto Shippūden — 392
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 392.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 392.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-263
     type: anime_transcript
     title: Naruto Shippūden — 263
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 263.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 263.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-274
     type: anime_transcript
     title: Naruto Shippūden — 274
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 274.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 274.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-269
     type: anime_transcript
     title: Naruto Shippūden — 269
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 269.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 269.srt"
     locator_status: full_episode_scope
   - id: src-s2-web-koyuki-child-rescued
     type: movie_synopsis
@@ -3277,32 +3266,32 @@ sources:
   - id: src-subtitle-shippuden-311
     type: anime_transcript
     title: Naruto Shippūden — 311
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 311.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 311.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-271
     type: anime_transcript
     title: Naruto Shippūden — 271
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 271.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 271.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-308
     type: anime_transcript
     title: Naruto Shippūden — 308
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 308.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 308.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-312
     type: anime_transcript
     title: Naruto Shippūden — 312
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 312.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 312.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-316
     type: anime_transcript
     title: Naruto Shippūden — 316
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 316.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 316.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-movie-last
     type: movie_transcript
     title: 'The Last: Naruto the Movie'
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/movies/The Last_ Naruto the Movie (English Dubbed).vtt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/movies/The Last_ Naruto the Movie (English Dubbed).vtt"
     locator_status: timestamped
   - id: src-s2-shapeshifting-bodies
     type: reference
@@ -3312,22 +3301,22 @@ sources:
   - id: src-subtitle-shippuden-333
     type: anime_transcript
     title: Naruto Shippūden — 333
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 333.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 333.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-334
     type: anime_transcript
     title: Naruto Shippūden — 334
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 334.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 334.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-385
     type: anime_transcript
     title: Naruto Shippūden — 385
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 385.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 385.srt"
     locator_status: full_episode_scope
   - id: src-subtitle-shippuden-382
     type: anime_transcript
     title: Naruto Shippūden — 382
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 382.srt
+    path: "00_MAIN_WORK_FOLDER/SOURCES/subtitles/naruto-shippuden/Naruto Shippuuden - 382.srt"
     locator_status: full_episode_scope
   - id: src-t9-nobari-recap
     type: project_roleplay
@@ -3372,13 +3361,13 @@ sources:
   - id: src-t9-nobari-logic-audit
     type: project_editorial
     title: Аудит суперечностей місії Нобарі
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md
+    path: "00_MAIN_WORK_FOLDER/AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md"
     revision: 5c57245aa4ebf68436b79de7508d11306b8a5c9c
 
   - id: src-t9-nobari-author-fix-20261012
     type: project_editorial
     title: Авторські уточнення передачі Анко й роботи Кіти з тканинами
-    path: KONOHA_GAIDEN_ARCS_ZIGRANE_POV_V3/CHRONOLOGY/NOBARI_WORLD_LOGIC_FIX_UA.md
+    path: "00_MAIN_WORK_FOLDER/CHRONOLOGY/NOBARI_WORLD_LOGIC_FIX_UA.md"
 
   - id: src-ova-chunin-fire
     type: ova

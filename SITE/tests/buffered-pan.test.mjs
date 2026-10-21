@@ -6,6 +6,18 @@ import assert from 'node:assert/strict';
 const cache=vm.runInNewContext(fs.readFileSync(new URL('../public/timeline-pan-cache.js',import.meta.url),'utf8')+';TimelinePanCache');
 const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
 
+test('a visible capsule edge remains selectable when its midpoint is outside the frame',()=>{
+ const start=app.indexOf('function nodeIntersectsFrame('),end=app.indexOf('\nfunction ',start+1);
+ assert(start>=0,'capsule bounds must be available to both render and pan selection');
+ const intersects=vm.runInNewContext(app.slice(start,end)+';nodeIntersectsFrame');
+ const long={x:-200,opacity:1,capsuleBounds:{x:-500,width:900}};
+ assert(intersects(long,0,1000));
+ assert(intersects(long,0,1000,500));
+ assert(!intersects(long,0,1000,-500));
+ assert(!intersects({x:-20},0,1000));
+ assert(intersects({x:200},0,1000));
+});
+
 test('a small pan retains identical layout and yields only a camera translation',()=>{
  const base=cache.frame({lo:30,hi:50,maxAxis:200,width:1000,height:700,zoom:12,dayPx:46,breaks:[]});
  assert(base.coverLo<30&&base.coverHi>50);

@@ -12,7 +12,7 @@ async function check(width,height){
  const click=q=>{const el=doc.querySelector(q);assert(el,'Missing '+q);el.dispatchEvent(new window.Event('click',{bubbles:true}));};
  const run=s=>vm.runInContext(s,ctx);
  assert(doc.getElementById('error').hidden,doc.getElementById('error').textContent);
- assert(/\b61\b/.test(doc.getElementById('periodLabel').textContent),doc.getElementById('periodLabel').textContent);
+ assert(doc.getElementById('periodLabel').textContent.includes(String(original.calendar.current_year)),doc.getElementById('periodLabel').textContent);
  assert.equal(doc.querySelectorAll('#eraList li').length,original.periods.length);
  assert.equal(doc.querySelector('#eraList [aria-current="true"] span').textContent,'Епоха нових команд');
  assert(!/Naruto|Boruto|Наруто|Боруто/.test(doc.getElementById('eraList').textContent));
@@ -131,8 +131,8 @@ async function check(width,height){
  // Semantic zoom: day -> moments, week -> scenes, month -> episodes, year -> arcs.
  // Singleton containers collapse visually without changing the underlying hierarchy.
  run('selected=new Set(selectable().map(e=>e.id));navigateEvent("ev-y0-0122-team7-announced");closeCard()');
- assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert(canvas.querySelector('.liquid-depth-layer'));assert(canvas.querySelector('.moment-node .liquid-depth'),'Water lens must be attached to its interactive mark');
- assert(!canvas.querySelector('.arc-node ellipse.mark'),'Arcs must be round water droplets');assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
+ assert.equal(run('semanticLevel()'),'moment');const dayMoment=canvas.querySelector('[data-event="ev-y0-0122-team7-announced"]');assert(dayMoment);assert(dayMoment.classList.contains('moment-node'));assert(dayMoment.querySelector('circle.mark'));assert(canvas.querySelector('.semantic-capsule-layer'));assert(canvas.querySelector('.moment-node .flat-moment-mark'),'Moment must use the inherited flat arc color');
+ assert(!canvas.querySelector('.arc-cluster-node'),'Different arcs must never fuse');assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,0);
   // Different Academy scenes remain separate nodes on the exact same world-time X
   // when Kita observes the three jōnin waiting beyond the classroom window.
   const kitaMoment=run('graphNodes.find(p=>p.id==="ev-y0-0122-kita-sees-jonin")');
@@ -141,20 +141,21 @@ async function check(width,height){
   assert.equal(kitaMoment.x,joninMoment.x,'Observed independent branches must have matching X');
   assert.notEqual(kitaMoment.y,joninMoment.y,'Two distinct observed moments must not overlap vertically');
 
- click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('22 січня 61'));run('closeCard()');
+ click('[data-event="ev-y0-0122-team7-announced"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'МОМЕНТ');assert(doc.querySelector('#eventCard .card-meta-line').textContent.includes('22 січня '+original.calendar.current_year));run('closeCard()');
 
  run('zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');assert.equal(run('semanticLevel()'),'scene');
- // The classroom remains a scene because it groups multiple moments. The one-moment exterior scene collapses to its moment.
+ // Every scene stays a capsule, including the exterior scene with one moment.
  assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-announcements"]').length,1);
- assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,0);
- assert(canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]').classList.contains('moment-node'));
+ assert.equal(canvas.querySelectorAll('[data-scene="sc-y0-0122-academy-exterior-jonin"]').length,1);
+ assert(canvas.querySelector('[data-event="sc-y0-0122-academy-exterior-jonin"]').classList.contains('scene-node'));
+ assert(canvas.querySelector('.scene-capsule'),'Scene scale must draw flat time capsules');
  const classroomCount=snapshot.events.filter(e=>e.scene_id==='sc-y0-0122-academy-announcements').length;const hub=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-announcements")');assert.equal(hub.kind,'scene');assert.equal(hub.childCount,classroomCount);assert(hub.cast.includes('c-iruka'));assert(hub.cast.includes('c-naruto'));
- const exterior=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert.equal(exterior.kind,'moment');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
+ const exterior=run('graphNodes.find(p=>p.id==="sc-y0-0122-academy-exterior-jonin")');assert.equal(exterior.kind,'scene');assert.equal(hub.x,exterior.x);assert.notEqual(hub.y,exterior.y);assert(!hub.cast.includes('c-raido'));assert(exterior.cast.includes('c-raido'));assert(!exterior.cast.includes('c-kita'));
  // Every line physically present in a scene meets its common hub exactly.
  for(const id of hub.cast){const paths=[...canvas.querySelectorAll('.thread[data-character="'+id+'"]')];assert(paths.some(path=>path.getAttribute('d').includes(hub.x.toFixed(2)+','+hub.y.toFixed(2))),id+' does not reach scene hub');}
  click('[data-scene="sc-y0-0122-academy-announcements"]');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);assert(doc.querySelector('#cardContent h2').textContent.includes('класі'));
  // Hovering another node cannot replace a clicked/pinned card.
- if(width>=600){const other=canvas.querySelector('[data-event="ev-y0-0122-three-jonin-wait-outside"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
+ if(width>=600){const other=canvas.querySelector('[data-event="sc-y0-0122-academy-exterior-jonin"]'),hoverPinned=new window.Event('pointerover',{bubbles:true});Object.defineProperty(hoverPinned,'pointerType',{value:'mouse'});other.dispatchEvent(hoverPinned);assert.equal(run('focusId'),'sc-y0-0122-academy-announcements');assert.equal(run('pinnedNodeId'),'sc-y0-0122-academy-announcements');}
  assert.equal(doc.querySelectorAll('.scene-context,.card-open-scene').length,0);
  assert.equal(doc.getElementById('sceneDialog'),null);assert.equal(doc.getElementById('continuity'),null);
  assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);
@@ -163,12 +164,13 @@ async function check(width,height){
  assert.equal(doc.querySelector('[data-step-event="-1"]').getAttribute('title'),'Попередній момент');assert.equal(doc.querySelector('[data-step-event="1"]').getAttribute('title'),'Наступний момент');assert.equal(doc.querySelectorAll('.event-navigation').length,0);assert.equal(doc.querySelectorAll('.card-top .card-arrow').length,2);
  click('[data-parent-kind="scene"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'СЦЕНА');assert.equal(doc.querySelectorAll('.scene-actions li').length,classroomCount);
 
- // At month scale the classroom assignment sequence is one episode; the one-scene/one-moment jōnin episode still collapses to its moment.
+ // At month scale the classroom assignment sequence and standalone jōnin scene each have separate episode capsules.
  run('closeCard();zoom=zoomModes.month;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');assert.equal(run('semanticLevel()'),'episode');
- const formationEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-team-formation")');const joninCollapsed=run('graphNodes.find(p=>p.id==="ev-y0-0122-three-jonin-wait-outside")');assert(formationEpisode);assert(joninCollapsed);assert.equal(formationEpisode.kind,'episode');assert(formationEpisode.childCount>=5,'Team formation should keep its original classroom scenes');assert.equal(formationEpisode.childCount,formationEpisode.sourceSceneIds.length);for(const id of ['sc-y0-0122-accidental-kiss','sc-y0-0122-academy-announcements','sc-y0-0122-sakura-searches-sasuke','sc-y0-0122-naruto-impersonates-sasuke','sc-y0-0122-academy-waiting'])assert(formationEpisode.sourceSceneIds.includes(id),'Missing classroom source scene '+id);assert.equal(joninCollapsed.kind,'moment');
- run('center=dayToAxis(22.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('circle.mark'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'ЕПІЗОД');
+ const formationEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-team-formation")');const joninCollapsed=run('graphNodes.find(p=>p.rawId==="ep-y0-jonin-outside-academy")');assert(formationEpisode);assert(joninCollapsed);assert.equal(formationEpisode.kind,'episode');assert(formationEpisode.childCount>=5,'Team formation should keep its original classroom scenes');assert.equal(formationEpisode.childCount,formationEpisode.sourceSceneIds.length);for(const id of ['sc-y0-0122-accidental-kiss','sc-y0-0122-academy-announcements','sc-y0-0122-sakura-searches-sasuke','sc-y0-0122-naruto-impersonates-sasuke','sc-y0-0122-academy-waiting'])assert(formationEpisode.sourceSceneIds.includes(id),'Missing classroom source scene '+id);assert.equal(joninCollapsed.kind,'episode');
+ run('center=dayToAxis(22.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render()');const raidoEpisode=run('graphNodes.find(p=>p.rawId==="ep-y0-raido-evaluation")');assert(raidoEpisode);assert.equal(raidoEpisode.kind,'episode');assert.equal(raidoEpisode.childCount,4);const raidoNode=canvas.querySelector('[data-event="episode:ep-y0-raido-evaluation"]');assert(raidoNode.classList.contains('episode-node'));assert(raidoNode.querySelector('rect.mark.flat-capsule-hit'));
+ assert(canvas.querySelector('.episode-capsule'));click('[data-event="episode:ep-y0-raido-evaluation"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'ЕПІЗОД');
 
- run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');if(arcNode&&Number(arcNode.style.opacity)>0.4){assert(arcNode.classList.contains('arc-node'));assert(arcNode.querySelector('circle.mark.liquid-glass-mark'));click('[data-event="arc:arc-y0-genin-formation"]');}else{const hub=canvas.querySelector('.arc-cluster-node');assert(hub,'Overview must retain a grouped arc');click('[data-event="'+hub.dataset.event+'"]');assert(doc.querySelector('#eventCard [data-cluster-arc="arc-y0-genin-formation"]'),'Original arc must be available from grouped mark');click('#eventCard [data-cluster-arc="arc-y0-genin-formation"]');}assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'АРКА');
+ run('closeCard();zoom=zoomModes.year;render()');assert.equal(run('semanticLevel()'),'arc');const arcNode=canvas.querySelector('[data-event="arc:arc-y0-genin-formation"]');assert(arcNode,'The Genin Formation arc must remain independent');assert(arcNode.querySelector('rect.mark.flat-capsule-hit'));click('[data-event="arc:arc-y0-genin-formation"]');assert.equal(doc.querySelector('#eventCard .card-kind').textContent,'АРКА');
  // Cascades have no redundant parent bar and restore parent content/scroll.
  assert.equal(doc.querySelector('#eventCard .story-parent-button'),null);
  click('#eventCard [data-story-episode="ep-y0-team-formation"]');
@@ -314,7 +316,7 @@ async function check(width,height){
  run("navigateScene('sc-s2-prison-accusation')");assert.match(doc.querySelector('#cardContent .story-version').textContent,/Джерело: фільм.*Blood Prison/);run('closeCard()');
  // Exercise the actual DOM renderer with a second populated year, in both
  // directions. This fixture changes the view metadata, not repository scenes.
- run('closeCard();closePanels();const multi=JSON.parse(JSON.stringify(data));multi.calendar.view_end_year=62;multi.calendar.view_days=(62-multi.calendar.view_start_year+1)*365;ingest(multi);');
+ run('closeCard();closePanels();const multi=JSON.parse(JSON.stringify(data));multi.calendar.view_end_year=multi.calendar.current_year+1;multi.calendar.view_days=(multi.calendar.view_end_year-multi.calendar.view_start_year+1)*365;ingest(multi);');
  window.matchMedia=()=>({matches:false});
  const eraBoundary=run('TimelineEraHeading.segments(data.periods,data.calendar).find(p=>p.id==="timeskip").start');
  const beforeEra=eraBoundary-15;
@@ -322,13 +324,13 @@ async function check(width,height){
  assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,2);
  assert.match(doc.querySelector('#eraHeadingTrack [data-era="part-i"]').style.transform,/-/);
  assert(doc.querySelector('#eraHeadingTrack [data-era="timeskip"]'));
- run('const nextYearDay=(62-data.calendar.view_start_year)*365;renderEraHeading(nextYearDay,day=>10*(day-nextYearDay))');
+ run('const nextYearDay=(data.calendar.current_year+1-data.calendar.view_start_year)*365;renderEraHeading(nextYearDay,day=>10*(day-nextYearDay))');
  assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
  run(`renderEraHeading(${eraBoundary},day=>10*(day-${eraBoundary}))`);
  assert.equal(doc.getElementById('eraHeading').dataset.era,'timeskip');
  assert.equal(doc.querySelectorAll('#eraHeadingTrack span').length,1);
  assert.equal(doc.querySelector('#eraHeadingTrack span').style.transform,'translate3d(0px,0,0)');
- assert.equal(run('date(nextYearDay).year'),62);assert.equal(run('date(nextYearDay).d'),1);
+ assert.equal(run('date(nextYearDay).year'),original.calendar.current_year+1);assert.equal(run('date(nextYearDay).d'),1);
  run(`renderEraHeading(${beforeEra},day=>10*(day-${beforeEra}))`);
  assert.equal(doc.getElementById('eraHeading').dataset.era,'part-i');
  window.matchMedia=()=>({matches:true});

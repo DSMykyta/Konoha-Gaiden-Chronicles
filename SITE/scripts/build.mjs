@@ -60,8 +60,14 @@ for(const {file,scene:s} of sourceScenes){
  if(episode&&(episode.continuity_id||'main')!==(s.continuity_id||'main'))throw new Error('Episode continuity mismatch in '+file);
  const day=date?dayInYear(date,scenePlacement.day_offset||0,calendar,lengths):null;
  const dateStatus=Number.isInteger(missionDay)?'editorial_reconstruction':a?.placement_status||'unknown',arcId=episode?.arc_id||null,sourceContinuity=s.continuity_id||'main';
- scenes.push({...s,placement:scenePlacement,source_continuity_id:sourceContinuity,continuity_id:'main',arc_id:arcId,day,date,date_status:dateStatus,file});
- for(const e of s.events||[]){const physical=(e.involvement||[]).filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id),tracks=(e.involvement||[]).filter(i=>i.role!=='mentioned'&&i.mode!=='remote').map(i=>i.entity_id);events.push({...e,layer:e.layer||s.layer||null,scene_id:s.id,scene_title:s.title,episode_id:s.episode_id||null,arc_id:arcId,day,date_status:dateStatus,continuity:'main',source_continuity:sourceContinuity,scene_state:s.state,review:s.review||{},location_id:s.location_id,physical,tracks,file});}
+ // A source scene with an omitted place is resolvable only when EVERY
+ // moment explicitly records the same location. Mixed/missing places stay
+ // unknown instead of being forced into an arbitrary Academy room.
+ const momentSites=(s.events||[]).map(e=>e.location_id||null);
+ const possibleSites=new Set(momentSites.filter(Boolean));
+ const resolvedSite=s.location_id||(momentSites.length&&momentSites.every(Boolean)&&possibleSites.size===1?[...possibleSites][0]:null);
+ scenes.push({...s,location_id:resolvedSite,placement:scenePlacement,source_continuity_id:sourceContinuity,continuity_id:'main',arc_id:arcId,day,date,date_status:dateStatus,file});
+ for(const e of s.events||[]){const physical=(e.involvement||[]).filter(i=>['physical','physical_hidden'].includes(i.mode)&&i.role!=='mentioned').map(i=>i.entity_id),tracks=(e.involvement||[]).filter(i=>i.role!=='mentioned'&&i.mode!=='remote').map(i=>i.entity_id);events.push({...e,layer:e.layer||s.layer||null,scene_id:s.id,scene_title:s.title,episode_id:s.episode_id||null,arc_id:arcId,day,date_status:dateStatus,continuity:'main',source_continuity:sourceContinuity,scene_state:s.state,review:s.review||{},location_id:e.location_id||resolvedSite,physical,tracks,file});}
 }
 const episodeViews=episodes.map(episode=>{
  const variant=optionalNarutoArcs.get(episode.arc_id);

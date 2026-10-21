@@ -13,6 +13,7 @@ presence_coverage: "partial"
 review: {time: "partial", cast: "partial", location: "pending", origin: "accepted", text: "accepted"}
 events:
   - id: "ev-y0-0122-naruto-restrains-sasuke"
+    location_id: "loc-academy-empty-room"
     title: "Наруто зв’язує Саске"
     text: "Наруто нападає на Саске під час перерви. Після короткої оманливої розв’язки з підміною він використовує тіньових клонів, перемагає Саске, зв’язує йому руки та ноги й затикає рот, щоб видати себе за нього."
     prose: |-
@@ -35,6 +36,7 @@ events:
       - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
     evidence_ids: ["evd-manga-team7-formation"]
   - id: "ev-y0-0122-naruto-impersonates-sasuke"
+    location_id: "loc-academy-corridor"
     title: "Наруто під виглядом Саске говорить із Сакурою"
     text: "Наруто використовує Перетворення, набуває вигляду Саске й знаходить Сакуру, яка все ще шукає справжнього Саске."
     prose: |-
@@ -54,6 +56,7 @@ events:
       - {entity_id: "c-sasuke", role: "portrayed", mode: "remote"}
     evidence_ids: ["evd-manga-team7-formation"]
   - id: "ev-y0-0122-sakura-insults-naruto"
+    location_id: "loc-academy-corridor"
     title: "Сакура говорить про Наруто, думаючи, що перед нею Саске"
     text: "Замаскований Наруто питає Сакуру, що вона думає про Наруто. Сакура називає його надокучливим і говорить, що хоче визнання Саске; вони майже цілуються, але біль у животі змушує Наруто раптово втекти до туалету."
     prose: |-
@@ -91,6 +94,7 @@ events:
       - {entity_id: "c-sasuke", role: "portrayed", mode: "remote"}
     evidence_ids: ["evd-manga-team7-formation"]
   - id: "ev-y0-0122-sasuke-confronts-sakura"
+    location_id: "loc-academy-corridor"
     title: "Саске звільняється й говорить із Сакурою"
     text: "Справжній Саске звільняється, зустрічає Сакуру й питає, де Наруто. Сакура, думаючи про попередню розмову, зневажливо пояснює поведінку Наруто тим, що він росте без батьків. Саске різко каже, що вона не розуміє самотності, і називає її надокучливою; після цього Сакура починає інакше дивитися на власне ставлення до Наруто."
     prose: |-
@@ -126,6 +130,7 @@ events:
     evidence_ids: ["evd-manga-team7-formation"]
 
   - id: "ev-y0-0122-naruto-confronts-sasuke"
+    location_id: "loc-academy-corridor"
     title: "Наруто знову кидається на Саске"
     text: "Після туалету Наруто натрапляє на Саске й знову створює тіньових клонів, але новий напад болю в животі зриває сутичку."
     prose: |-
@@ -146,6 +151,7 @@ events:
       - {entity_id: "c-sasuke", role: "focus", mode: "physical"}
 
   - id: "ev-y0-0122-sakura-kind-to-naruto"
+    location_id: "loc-academy-corridor"
     title: "Сакура намагається бути добрішою до Наруто"
     text: "Сакура знаходить Наруто й доброзичливіше кличе його повертатися до класу. Наруто підозрює, що це Саске перетворився на Сакуру, але черговий напад болю в животі знову перериває його реакцію."
     prose: |-

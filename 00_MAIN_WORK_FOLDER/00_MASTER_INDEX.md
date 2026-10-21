@@ -119,3 +119,7 @@
 | `AUDYTY/02_LOHICHNI_SUPERECHNOSTI.md` | зовнішній аудит логічних суперечностей | 38 729 |
 | `AUDYTY/03_KARTA_HRONOLOHII.md` | зведена карта хронології | 38 605 |
 
+
+## Консолідація гілок
+
+[Аудит і перенесення роботи 20–21.10.2026](AUDYTY/BRANCH_CONSOLIDATION_2026-10-20_UA.md). Додаткові матеріали: [архів Хайґакуре](../Haigakure/archive/databook-20260812/00_INDEX.md), [редакції арок Какаші](GAMES/KAKASHI_GAIDEN/OPTIONAL/README.md).

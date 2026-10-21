@@ -10,15 +10,15 @@ const nodes=Array.from({length:24},(_,i)=>({
  layoutCast:['hero-'+(i%4)],layoutGroup:'arc-'+(i%5)
 })).reverse();
 
-// Baseline coordinates recorded before the distant-pair optimization.
-// These are not visual preferences to retune; they guard against accidental
-// changes in the same story's lanes, chronology or hit-target separation.
+// Lane baseline updated for the imported capsule hierarchy weights (5.6 for
+// parent grouping, 1.6 for character continuity). These fixed coordinates
+// guard deterministic placement; collision separation retains its old baseline.
 const expectedLanes=[
- -85,-16.8096812,76.68241161,50.01632333,-36.41981798,-73.92936046,
- -0.87975162,73.07462645,37.99845789,-33.18282176,-69.92864378,
- -0.49257149,71.82198717,33.88747271,-34.5428844,-70.27552056,
- 1.83989129,74.62158273,34.92808325,-34.07406345,-74.90394958,
- 17.8894013,85,24.56638961
+ -85,22.817760513817518,85,11.470874419860015,-41.646034242792894,-75.76648762339603,
+ 29.426382918197525,78.93624851701536,7.164053384477384,-40.29620188224944,-73.0975848016566,
+ 29.98483808042554,77.63252693777878,3.9608289861828414,-41.22142023122551,-72.84877764906325,
+ 32.804976200701745,78.66310941814058,2.64074030653388,-41.002723750688695,-74.45368294667325,
+ 43.522638308497655,81.75565714302147,-5.277994191936376
 ];
 const expectedSeparated=[
  221.864,138.138,178.337,294.711,248.709,107.261,203.002,157,
@@ -26,7 +26,7 @@ const expectedSeparated=[
  174.245,369.658,319.658,291.719,245.717,100.261,200.01,150
 ];
 
-test('distant-pair pruning preserves every prior lane coordinate',()=>{
+test('capsule hierarchy weights retain deterministic lane coordinates',()=>{
  const lanes=core.sceneLayout(nodes);
  nodes.forEach((node,i)=>assert(Math.abs(lanes.get(node.id)-expectedLanes[i])<1e-7,'changed lane for '+node.id));
 });

@@ -14,6 +14,9 @@ const geography=atlas.create(entities,topology);
 
 test('geographic hierarchy models rooms, village, country and separate countries',()=>{
  assert.equal(geography.relation('loc-academy-classroom','loc-academy-staff-room').scope,'same_building');
+ assert.equal(geography.relation('loc-academy-corridor','loc-academy-classroom').scope,'same_building');
+ assert.equal(geography.relation('loc-academy-empty-room','loc-academy-corridor').scope,'same_building');
+ assert.equal(geography.relation('loc-academy-restroom','loc-academy-front').scope,'same_building');
  assert.equal(geography.relation('loc-ichiraku','loc-hokage-residence').scope,'same_settlement');
  assert.equal(geography.relation('loc-konohagakure','loc-tanzaku').scope,'same_country');
  assert.equal(geography.relation('loc-konohagakure','loc-sunagakure').scope,'different_countries');

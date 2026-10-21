@@ -8,6 +8,7 @@ const require = createRequire(import.meta.url);
 const playwright = process.env.PLAYWRIGHT_MODULE_PATH || (process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES ? path.join(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, 'playwright') : 'playwright');
 const {chromium} = require(playwright);
 const executablePath = process.env.CHROMIUM_EXECUTABLE_PATH;
+const markerGeometry=page=>page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>{const b=element.getBBox();return [element.parentElement.dataset.event,b.x,b.y,b.width,b.height];}));
 const server = createLocalServer();
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const url = `http://127.0.0.1:${server.address().port}`;
@@ -29,14 +30,14 @@ try {
 
     // Overview remains compact; focus preserves the original story geometry.
     await page.evaluate(()=>{zoom=zoomModes.year;render();});
-    assert(await page.evaluate(()=>Math.max(...graphNodes.map(p=>p.y))-Math.min(...graphNodes.map(p=>p.y))<90),'Year overview grew into tall peaks');
+    assert(await page.locator('.semantic-capsule.arc-capsule').evaluateAll(elements=>{const boxes=elements.map(e=>e.getBBox());return boxes.every((a,i)=>boxes.slice(i+1).every(b=>a.x+a.width<=b.x||b.x+b.width<=a.x||a.y+a.height<=b.y||b.y+b.height<=a.y));}),'Independent arc capsules overlap');
     assert.equal(await page.locator('#contentsButton').count(),1);
     assert.equal(await page.locator('#storyTitleScale').count(),0);
-    const overviewCoordinates=await page.locator('.node .mark').evaluateAll(elements=>Object.fromEntries(elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')])));
+    const overviewCoordinates=Object.fromEntries((await markerGeometry(page)).map(([id,...bounds])=>[id,bounds]));
     await page.evaluate(()=>setFocus('c-naruto'));
     assert(await page.locator('.thread').count()>0);
-    const focusedCoordinates=await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')]));
-    for(const [id,y] of focusedCoordinates)assert.equal(y,overviewCoordinates[id],'Focus flattened the story geometry');
+    const focusedCoordinates=await markerGeometry(page);
+    for(const [id,...bounds] of focusedCoordinates)assert.deepEqual(bounds,overviewCoordinates[id],'Focus flattened the story geometry');
     await page.evaluate(()=>{setFocus('c-naruto');navigateEvent("ev-y0-0122-team7-announced");closeCard();});
     await page.locator('#contentsButton').click();
     await page.locator('details[data-contents-key="arc:arc-y0-genin-formation"] > summary').click();
@@ -48,7 +49,7 @@ try {
     assert.equal(await page.evaluate(()=>pinnedNodeId),'ev-y0-0122-team7-announced');
     assert.equal(await page.locator('#eventCard .card-kind').textContent(),'МОМЕНТ');
     await page.keyboard.press('Escape');
-    await page.evaluate(()=>{zoom=zoomModes.month;center=dayToAxis(21.5);render();});
+    await page.evaluate(()=>{zoom=zoomModes.month;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render();});
     // No clearance mask hides an actual shared physical anchor.
     assert(await page.evaluate(()=>[...document.querySelectorAll('.thread[mask]')].every(path=>{
       const id=path.dataset.character,maskId=path.getAttribute('mask').slice(5,-1);
@@ -68,14 +69,14 @@ try {
     await page.mouse.move(1, height / 2);
     assert.equal(await page.locator('#glassTooltip').isVisible(), false);
 
-    await page.evaluate(() => { closeCard(); zoom=zoomModes.week; center=dayToAxis(21.5); render(); });
+    await page.evaluate(() => { closeCard(); zoom=zoomModes.week; center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365); render(); });
     const node = page.locator('[data-event="sc-y0-0122-academy-announcements"] .mark');
     const box = await node.boundingBox();
     if (width > 760 && height >= 520) {
 
       // Move through the 44px hit area onto its visible mark before the delay.
       // Neither the map elements nor unrelated strand visibility may change.
-      const mapGeometry=await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cx'),element.getAttribute('cy')]));
+      const mapGeometry=await markerGeometry(page);
       await page.evaluate(()=>{window.mapMutations=0;window.mapObserver=new MutationObserver(records=>{window.mapMutations+=records.filter(record=>record.target.id==='timeline').length;});window.mapObserver.observe($('timeline'),{childList:true});});
       for(let repeat=0;repeat<3;repeat++){
         await page.mouse.move(1,height/2);
@@ -85,7 +86,7 @@ try {
         await page.mouse.move(box.x+box.width/2,box.y+box.height/2);
         await page.locator('#eventCard').waitFor({state:'visible',timeout:10000});
         assert.equal(await page.locator('.thread.is-scene-muted').count(),0,'Hover made the map disappear');
-        assert.deepEqual(await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cx'),element.getAttribute('cy')])),mapGeometry,'Hover moved the map');
+        assert.deepEqual(await markerGeometry(page),mapGeometry,'Hover moved the map');
       }
       assert.equal(await page.evaluate(()=>window.mapMutations),0,'Hover rebuilt the SVG');
       await page.evaluate(()=>window.mapObserver.disconnect());
@@ -136,7 +137,7 @@ try {
       const rowBox=await row.boundingBox();
       await page.mouse.move(rowBox.x+rowBox.width/2,rowBox.y+rowBox.height/2);
       await page.mouse.move(1, height / 2);
-      await page.locator('.hierarchy-preview').waitFor({state:'hidden',timeout:10000});
+      await page.locator('.hierarchy-preview').first().waitFor({state:'hidden',timeout:10000});
       await page.waitForTimeout(320);
       assert.equal(await page.locator('.hierarchy-preview').count(), 0, 'Leaving a row did not cancel its delay');
       await row.hover();
@@ -148,6 +149,7 @@ try {
         await sceneRow.hover();
         await page.locator('[data-hierarchy-depth="1"]').waitFor({state:'visible',timeout:10000});
         const leafRow=page.locator('[data-hierarchy-depth="1"] [data-scene-preview="ev-y0-0122-team7-announced"]');
+        await leafRow.scrollIntoViewIfNeeded();
         const leafBounds=await leafRow.boundingBox();
         const priorPositions=await page.locator('.story-panel').evaluateAll(elements=>elements.map(element=>element.style.left));
         await leafRow.hover();
@@ -158,14 +160,14 @@ try {
         assert(await page.locator('[data-hierarchy-depth="1"]').isVisible(),'The last hover closed the cascade');
       }
       await page.mouse.move(1, height - 130);
-      await page.locator('.hierarchy-preview').waitFor({state:'hidden',timeout:10000});
+      await page.locator('.hierarchy-preview').first().waitFor({state:'hidden',timeout:10000});
       await page.waitForTimeout(320);
       assert.equal(await page.locator('.hierarchy-preview').count(), 0, 'An unpinned child stuck open');
       assert.equal(await page.locator('#eventCard').isVisible(), true, 'Leaving a child closed its pinned parent');
     }
     await page.locator('#eventCard [data-story-episode="ep-y0-team-formation"]').click();
     await page.locator('[data-hierarchy-depth="0"] [data-story-scene="sc-y0-0122-academy-announcements"]').click();
-    const episodeScroll=await page.locator('[data-hierarchy-depth="0"] .preview-scroll').evaluate(element=>element.scrollTop);
+    let episodeScroll=await page.locator('[data-hierarchy-depth="0"] .preview-scroll').evaluate(element=>element.scrollTop);
     await page.locator('[data-hierarchy-depth="1"] [data-scene-preview="ev-y0-0122-team7-announced"]').click();
     assert.equal(await page.locator('.hierarchy-preview').count(), 3);
     const activeParentRows = await page.locator('.is-preview-active').count();
@@ -200,13 +202,16 @@ try {
       assert(small.x >= 11 && small.x + small.width <= 364 && small.y >= 0 && small.y + small.height <= 375, 'A resized pinned cascade is clipped');
       await page.setViewportSize({width,height});
       await page.waitForTimeout(80);
+      // Resizing may clamp scroll; closing children must preserve the resulting position.
+      episodeScroll=await page.locator('[data-hierarchy-depth="0"] .preview-scroll').evaluate(element=>element.scrollTop);
     }
     if(await detail.locator('[data-back-hierarchy]').isVisible())await detail.locator('[data-back-hierarchy]').click();else await page.keyboard.press('Escape');
     assert.equal(await page.locator('.hierarchy-preview').count(), 2);
     assert.equal(await page.locator('[data-hierarchy-depth="1"]').evaluate(element=>element.inert),false);
     if(await page.locator('[data-hierarchy-depth="1"] [data-back-hierarchy]').isVisible())await page.locator('[data-hierarchy-depth="1"] [data-back-hierarchy]').click();else await page.keyboard.press('Escape');
     assert.equal(await page.locator('.hierarchy-preview').count(), 1);
-    assert.equal(await page.locator('[data-hierarchy-depth="0"] .preview-scroll').evaluate(element=>element.scrollTop),episodeScroll);
+    const episodePosition=await page.locator('[data-hierarchy-depth="0"] .preview-scroll').evaluate(element=>({actual:element.scrollTop,max:element.scrollHeight-element.clientHeight}));
+    assert.equal(episodePosition.actual,Math.min(episodeScroll,episodePosition.max));
     if(await page.locator('[data-hierarchy-depth="0"] [data-back-hierarchy]').isVisible())await page.locator('[data-hierarchy-depth="0"] [data-back-hierarchy]').click();else await page.keyboard.press('Escape');
     assert.equal(await page.locator('.hierarchy-preview').count(), 0);
     assert.equal(await page.locator('#eventCard').isVisible(), true);
@@ -232,11 +237,11 @@ try {
     await page.evaluate(() => closeCard());
 
     // A title is read in place, and the reported episode-to-arc path retains the map.
-    await page.evaluate(()=>{closeCard();zoom=zoomModes.week;center=dayToAxis(21.5);render();});
-    const mapBefore=await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cx'),element.getAttribute('cy')]));
+    await page.evaluate(()=>{closeCard();zoom=zoomModes.week;center=dayToAxis(21.5+(data.calendar.current_year-data.calendar.view_start_year)*365);render();});
+    const mapBefore=await markerGeometry(page);
     await page.locator('.cloud-label').first().click();
     assert.equal(await page.locator('#eventCard').isVisible(),true);
-    assert.deepEqual(await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cx'),element.getAttribute('cy')])),mapBefore,'Reading a map title moved the map');
+    assert.deepEqual(await markerGeometry(page),mapBefore,'Reading a map title moved the map');
     await page.evaluate(()=>closeCard());
     await page.evaluate(()=>navigateStory('episode',[...episodeMap.values()].find(episode=>episode.arc_id==='arc-y0-scroll-of-seals').id));
     await page.locator('#eventCard [data-parent-kind="arc"]').click();
@@ -248,7 +253,7 @@ try {
 
     await page.locator('[data-mode="week"]').click();
     await page.waitForFunction(()=>semanticLevel()==='scene');
-    assert(await page.evaluate(()=>axisToDay(center)<31),'Returning from the January arc jumped to another month');
+    assert(await page.evaluate(()=>axisToDay(center)-(data.calendar.current_year-data.calendar.view_start_year)*365<31),'Returning from the January arc jumped to another month');
 
     // Search and navigation from the Contents popover.
     await page.keyboard.press('/');
@@ -265,10 +270,10 @@ try {
     await page.keyboard.press('Escape');
     await page.waitForTimeout(320);
     assert.equal(await page.evaluate(()=>window.__storyScaleFocus.active),false);
-    const sceneCoordinates=await page.locator('.node .mark').evaluateAll(elements=>Object.fromEntries(elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')])));
+    const sceneCoordinates=Object.fromEntries((await markerGeometry(page)).map(([id,...bounds])=>[id,bounds]));
     const focusCurves=await page.locator('.thread').evaluateAll(elements=>elements.map(element=>element.getAttribute('d')));
     await page.evaluate(() => setFocus('c-naruto'));
-    for(const [id,y] of await page.locator('.node .mark').evaluateAll(elements=>elements.map(element=>[element.parentElement.dataset.event,element.getAttribute('cy')])))assert.equal(y,sceneCoordinates[id],'Focus flattened the chronological groups');
+    for(const [id,...bounds] of await markerGeometry(page))assert.deepEqual(bounds,sceneCoordinates[id],'Focus flattened the chronological groups');
     assert(await page.locator('.thread').count()>0);
     assert.deepEqual(await page.locator('.thread').evaluateAll(elements=>elements.map(element=>element.getAttribute('d'))),focusCurves,'Focus changed strands or gaps');
     assert(await page.locator('.thread.is-line-focus-main').count()>0);

@@ -435,6 +435,8 @@ kinds:
   loc-academy-main-entrance: area
   loc-academy-training-yard: area
   loc-academy-corridor: area
+  loc-academy-empty-room: room
+  loc-academy-restroom: room
   loc-academy-stairwell: area
   loc-hokage-corridor: area
   loc-hokage-reception: room
@@ -593,6 +595,8 @@ parents:
   loc-academy-main-entrance: loc-academy-courtyard
   loc-academy-training-yard: loc-academy-courtyard
   loc-academy-corridor: geo-konoha-academy
+  loc-academy-empty-room: geo-konoha-academy
+  loc-academy-restroom: geo-konoha-academy
   loc-academy-stairwell: geo-konoha-academy
   loc-hokage-corridor: loc-hokage-residence
   loc-hokage-reception: loc-hokage-residence

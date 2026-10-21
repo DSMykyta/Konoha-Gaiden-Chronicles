@@ -32,16 +32,19 @@ test('unrelated neighboring story droplets cannot merge because they are close',
  assert.equal(motion[0].from.radius,7);
  assert.equal(liquid.groups([{events:['one']},{events:['two']}]).length,2);
 });
-test('one liquid body is the only painted droplet silhouette and retains accessible SVG nodes',()=>{
+test('capsule branch replaces liquid paint but retains accessible SVG nodes',()=>{
  const html=fs.readFileSync(new URL('../public/index.html',import.meta.url),'utf8');
  const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
  const css=fs.readFileSync(new URL('../public/style.css',import.meta.url),'utf8');
  const clouds=fs.readFileSync(new URL('../public/story-clouds.js',import.meta.url),'utf8');
  assert(html.indexOf('liquid-body.js?v=')>html.indexOf('liquid-nodes.js?v='));
  assert(html.indexOf('liquid-body.js?v=')<html.indexOf('app.js?v='));
- assert(app.includes('LiquidBody.update(timeline,renderNodes,zoom)'));
+ assert(!app.includes('LiquidBody.update(timeline,renderNodes,zoom)'));
+ assert(app.includes('IntervalCapsules.build('));
+ assert(html.indexOf('interval-capsules.js?v=')<html.indexOf('app.js?v='));
  assert(app.includes('LiquidBody.visibility()'));
  assert.match(app,/cloudRenderer\.update\(\{groups:\[\],flowBridges:\[\]/);
  assert.match(css,/#timeline\.has-liquid-body \.node \.liquid-depth/);
  assert(clouds.includes("if(group.kind==='arc')continue;"));
+ assert(css.includes('.semantic-capsule-layer'));
 });
