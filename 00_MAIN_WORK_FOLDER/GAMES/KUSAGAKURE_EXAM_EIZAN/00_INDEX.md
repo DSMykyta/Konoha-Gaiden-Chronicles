@@ -5,6 +5,7 @@
 - [Ейзан: арки, хронологія й редакторські матеріали](EIZAN/00_INDEX.md).
 - [Усі п’ять арок V4.3 одним файлом](EIZAN/ARCS/KUSAGAKURE_EXAM_EIZAN_ARCS_01-05_STORY_V4-3_FINAL.txt).
 - [Гілка Сейґо: довідковий матеріал](SEIGO/REFERENCE/04_HILKA_SEIGO.md).
+- [Ясуші: окрема сюжетна лінія та художні сцени](YASUSHI/00_INDEX.md).
 - [Довідка про селище та іспит](03_DOVIDNYK.md).
 - [Політичний довідник](05_POLITYCHNYI_DOVIDNYK.md).
 
