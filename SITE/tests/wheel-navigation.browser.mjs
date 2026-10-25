@@ -64,7 +64,16 @@ try{
   assert(dragged.dividers>0,'calendar dividers must be present');
   assert(dragged.rendered>0,'source nodes must remain visible');
 
-  await page.evaluate(()=>{zoom=zoomModes.day;center=dayToAxis(21.5);render();});
+  await page.evaluate(()=>{
+   // The full chronology now starts decades before the main Naruto era.
+   // Use an actual dated appearance instead of a hard-coded empty year-one day.
+   const appearance=datedEvents().find(e=>Number.isFinite(e.day)&&
+    e.tracks.some(id=>selected.has(id)));
+   if(!appearance)throw new Error('No selectable dated appearance for day-view smoke test');
+   zoom=zoomModes.day;
+   center=clampAxisCenter(dayToAxis(appearance.day));
+   render();
+  });
   const moments=await page.evaluate(()=>$('timeline').querySelectorAll('.moment-node').length);
   assert(moments>0,'day view must preserve individual moments');
   await page.evaluate(()=>{zoom=zoomModes.year;center=clampAxisCenter(center);render();});
