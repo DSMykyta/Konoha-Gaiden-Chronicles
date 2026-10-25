@@ -218,6 +218,27 @@ function previewPan(dx){
  const transform=Math.abs(dx)>.01?'translate3d('+dx+'px,0,0)':'';
  for(const id of ['timeline','timeAxis','storyClouds'])$(id).style.transform=transform;
 }
+// During a continuous wheel or pinch gesture, preview the affine camera
+// instead of replacing all SVG paths on every pointer frame. The final
+// semantic layout is committed once the gesture settles.
+function previewZoom(commit=true){
+ if(!panFrame){schedule();return;}
+ if(raf!==null){cancelAnimationFrame(raf);raf=null;}
+ const width=$('canvas').clientWidth||1000,pad=width<600?22:48;
+ const plot=Math.max(1,width-2*pad),total=axisLength();
+ const oldSpan=total/panFrame.zoom,oldLo=clampAxisCenter(paintedCenter,panFrame.zoom)-oldSpan/2;
+ const [lo,hi]=range(),nextPx=plot/Math.max(.001,hi-lo);
+ const factor=nextPx/panFrame.dayPx;
+ const dx=pad*(1-factor)+(oldLo-lo)*nextPx;
+ for(const id of ['timeline','timeAxis','storyClouds']){
+  const element=$(id);
+  element.style.transformOrigin='0 0';
+  element.style.transform=`translate3d(${dx}px,0,0) scaleX(${factor})`;
+ }
+ wheelPreview=true;
+ if(commit)uiTimers.defer('wheel-commit',140,()=>render());
+ else uiTimers.cancel('wheel-commit');
+}
 function updatePanChrome(lo,hi,shift){
  const loDay=axisToDay(lo,'before'),hiDay=axisToDay(hi,'after'),centerDay=axisToDay(center,'after');
  const activeMode=currentZoomMode(),overview=zoom<3,yearLabel=yearText(centerDay);
@@ -441,7 +462,7 @@ function zoomAtScreen(value,screenX,knownPivot=null){
   pivot:anchor,position:pointer,width,pad,total:axisLength(),nextZoom:next
  }),next);
  tooltipController?.hide();
- schedule();
+ previewZoom();
 }
 function setZoom(value,pivot=center){
  if(wheelPreview){wheelPreview=false;uiTimers.cancel('wheel-commit');previewPan(0);}
@@ -1423,8 +1444,9 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
    const interactive=!!e.target.closest('.node,.node-hit,.cloud-label,.thread-hit,.thread-focus-hit,.line-label');
    if(wheelPreview){
     wheelPreview=false;
-    // Never let an upcoming wheel frame rebuild SVG in the middle of a pinch.
-    if(raf!==null){cancelAnimationFrame(raf);raf=null;}
+    uiTimers.cancel('wheel-commit');
+    // Synchronize the provisional zoom before beginning a new gesture.
+    schedule();
    }
    touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
    // Let a stationary click on a node/strand reach its handler. Capture the
@@ -1459,7 +1481,7 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
      pivot:pinch.pivot,position:clamp(midpoint,pad,width-pad),
      width,pad,total:axisLength(),nextZoom:zoom
     }),zoom);
-    schedule();
+    previewZoom(false);
    }else if(drag){
     const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
     if(!drag.activated){
