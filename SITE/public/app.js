@@ -201,28 +201,16 @@ function range(){
  return [c-half,c+half];
 }
 function makeTimeScale(lo,hi,pad,plot,dated){
- const breaks=axisBreaks(dated).filter(b=>b.axis>=lo&&b.axis<=hi),count=breaks.length;
- const span=Math.max(.001,hi-lo),breakPx=count?Math.min(TIME_BREAK_PX,plot/Math.max(3,count*3)):0;
- const dayPx=Math.max(.001,(plot-breakPx*count)/span);
- const axisPx=value=>{
-  let extra=0;
-  for(const b of breaks){if(b.axis<value)extra+=breakPx;else break;}
-  return pad+(value-lo)*dayPx+extra;
- };
- const px=day=>{
-  const value=dayToAxis(day,dated);
-  let extra=0;
-  for(const b of breaks){
-   if(day>=b.to){extra+=breakPx;continue;}
-   if(day>b.from){extra+=breakPx*clamp((day-b.from)/Math.max(.001,b.omitted),0,1);}
-   break;
-  }
-  return pad+(value-lo)*dayPx+extra;
- };
+ // The world axis already compresses omitted days. A viewport-dependent
+ // extra gutter would move every event when a gap enters or leaves view.
+ const breaks=axisBreaks().filter(gap=>gap.axis>=lo&&gap.axis<=hi)
+  .map(gap=>({...gap,viewFrom:gap.from,viewTo:gap.to}));
+ const dayPx=Math.max(.001,plot/Math.max(.001,hi-lo));
+ const axisPx=value=>pad+(value-lo)*dayPx;
+ const px=day=>axisPx(dayToAxis(day));
  return {
-  breaks:breaks.map(b=>({...b,viewFrom:b.from,viewTo:b.to})),
-  breakPx,dayPx,px,axisPx,
-  hidden:day=>chronologyBreaks(dated).some(b=>day>b.from&&day<b.to)
+  breaks,breakPx:0,dayPx,px,axisPx,
+  hidden:day=>chronologyBreaks(dated).some(gap=>day>gap.from&&day<gap.to)
  };
 }
 function svg(tag,attrs,parent=drawingTarget||$('timeline')){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));parent.append(e);return e;}
@@ -530,6 +518,8 @@ function render(){
  const timeScale=makeTimeScale(lo,hi,pad,plot,allEvents),px=timeScale.px,pxAxis=timeScale.axisPx,loDay=axisToDay(lo,'before',allEvents),hiDay=axisToDay(hi,'after',allEvents),allScenes=orderedScenes().filter(s=>s.day!==null);
  const axisAtX=x=>lo+(x-pad)/plot*(hi-lo);
  const buffered=TimelinePanCache.frame({lo,hi,maxAxis:axisLength(),width:w,height:viewport,zoom,dayPx:timeScale.dayPx,breaks:axisBreaks()});
+ // The pan cache must include gap markers outside the visible viewport.
+ const renderedBreaks=axisBreaks().filter(gap=>gap.axis>=buffered.coverLo&&gap.axis<=buffered.coverHi).map(gap=>({...gap,viewFrom:gap.from,viewTo:gap.to}));
  const bufferLoDay=axisToDay(buffered.coverLo,'before',allEvents),bufferHiDay=axisToDay(buffered.coverHi,'after',allEvents);
  // Build the complete narrative hierarchy once. Zoom must never rebuild an
  // independent chronology or choose new geographic lanes.
@@ -770,7 +760,7 @@ function render(){
   if(boundary>=pad-buffered.leftPx&&boundary<w-pad+buffered.rightPx)svg('line',{x1:boundary,x2:boundary,y1:5,y2:11,stroke:'#bfcbdc'},axis);
   const text=svg('text',{x,y:28,'text-anchor':'start','data-date':tick.day},axis);text.textContent=tick.text;
  });
- timeScale.breaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
+ renderedBreaks.forEach(b=>{const x1=px(b.viewFrom),x2=px(b.viewTo),mid=(x1+x2)/2,g=svg('g',{class:'axis-break','aria-hidden':'true'},axis);svg('rect',{x:x1-1,y:0,width:Math.max(2,x2-x1+2),height:40,class:'time-break-axis-mask'},g);svg('path',{d:`M${mid-5} 15 l4 -9 M${mid+1} 15 l4 -9`,class:'time-break-axis-slash'},g);});
  // These SVG elements stay in the axis while its viewBox moves; only their
  // x coordinates and calendar text update when the camera pans.
  svg('rect',{id:'stickyDayBacking',class:'sticky-day-backing',x:0,y:12,width:0,height:23,rx:3,style:'display:none'},axis);
@@ -778,7 +768,7 @@ function render(){
  const labelPositions=[],continuityPaths=[],refractedCurves=[],nodeById=new Map(routeAnchorNodes.map(node=>[node.id,node])),defs=svg('defs',{}),pixelsPerDay=plot/(hi-lo),lead=Math.min(4,72/pixelsPerDay);
  const halo=svg('radialGradient',{id:'strand-node-halo'},defs);
  for(const [offset,value] of [[0,'black'],[.72,'black'],[1,'white']])svg('stop',{offset,'stop-color':value},halo);
- if(timeScale.breaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
+ if(renderedBreaks.length){const pattern=svg('pattern',{id:'time-break-hatch',width:8,height:8,patternUnits:'userSpaceOnUse'},defs);svg('path',{d:'M-2 8 L8 -2 M4 10 L10 4',class:'time-break-hatch-line'},pattern);}
  ids.forEach(id=>{
   // Character routes are history geometry. Calculate them once for this
   // semantic level/zoom/viewport, then reuse the exact curves across pans,
@@ -850,7 +840,7 @@ function render(){
    const text=svg('text',{x:labelX+6,y:labelY,class:'line-label',role:'button',tabindex:0,'data-character':id,'aria-label':`Зосередитися: ${fullName(id)}`,style:`fill:color-mix(in srgb,${color(id)} 60%,#272f2b);font-size:12px`});text.textContent=name(id);text.addEventListener('click',()=>setFocus(id));text.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setFocus(id);}});
   }
  });
- timeScale.breaks.forEach(b=>{
+ renderedBreaks.forEach(b=>{
   const x1=px(b.viewFrom),x2=px(b.viewTo),width=Math.max(1,x2-x1),g=svg('g',{class:'time-break','aria-hidden':'true'});
   const title=svg('title',{},g);title.textContent=`Пропущено ${Math.max(1,Math.round(b.omitted))} дн. між ${dateText(b.previous,true)} і ${dateText(b.next,true)}`;
   svg('rect',{x:x1,y:0,width,height:h,class:'time-break-mask'},g);

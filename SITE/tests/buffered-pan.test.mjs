@@ -18,14 +18,29 @@ test('a small pan retains identical layout and yields only a camera translation'
  assert.equal(cache.reuse(base,{lo:35,hi:55,width:1000,height:720,zoom:12,breaks:[]}),null);
 });
 
-test('crossing a compressed time gap triggers a new geometry layout',()=>{
+test('crossing a compressed gap retains geometry until overscan is exhausted',()=>{
  const breaks=[{axis:49,size:20},{axis:90,size:8}];
- const base=cache.frame({lo:35,hi:55,maxAxis:120,width:1200,height:750,zoom:20,dayPx:42,breaks});
- assert(base.breakKey.includes('49:20'));
- assert(cache.reuse(base,{lo:36,hi:56,width:1200,height:750,zoom:20,breaks}));
- assert.equal(cache.reuse(base,{lo:50,hi:70,width:1200,height:750,zoom:20,breaks}),null,
-   'the gap leaving the viewport changes its pixel allocation');
- assert.equal(cache.reuse(base,{lo:70,hi:90,width:1200,height:750,zoom:20,breaks}),null);
+ const base=cache.frame({lo:35,hi:55,maxAxis:120,width:1200,height:750,zoom:20,dayPx:42,breaks},2);
+ for(const lo of [36,49,50,69,70])
+  assert(cache.reuse(base,{lo,hi:lo+20,width:1200,height:750,zoom:20,breaks}));
+ assert.equal(cache.reuse(base,{lo:76,hi:96,width:1200,height:750,zoom:20,breaks}),null);
+});
+
+test('calendar gaps cannot change positions beyond the camera translation',()=>{
+ const first=app.indexOf('function makeTimeScale('),last=app.indexOf('function svg(',first);
+ assert(first>=0&&last>first);
+ const env={axisBreaks:()=>[{axis:40,size:20,from:40,to:60,omitted:20}],
+  dayToAxis:d=>d<=40?d:d<60?40:d-20,
+  chronologyBreaks:()=>[{from:40,to:60}]};
+ const scale=vm.runInNewContext(app.slice(first,last)+';makeTimeScale',env);
+ const a=scale(19,39,48,904,[]),b=scale(21,41,48,904,[]);
+ assert.equal(a.dayPx,b.dayPx);
+ assert(Math.abs(a.axisPx(30)-b.axisPx(30)-2*a.dayPx)<1e-8);
+ assert(Math.abs((a.axisPx(35)-a.axisPx(30))-(b.axisPx(35)-b.axisPx(30)))<1e-8);
+ assert.equal(b.px(40),b.px(60));
+ assert.equal(b.hidden(50),true);
+ assert.equal(b.hidden(61),false);
+ assert.match(app,/const renderedBreaks=axisBreaks\(\)\.filter\(gap=>gap\.axis>=buffered\.coverLo&&gap\.axis<=buffered\.coverHi\)/);
 });
 
 test('cached camera changes SVG viewBox without touching its children',()=>{
