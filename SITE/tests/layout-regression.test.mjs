@@ -50,3 +50,14 @@ test('chronologically distant scene marks require no displacement',()=>{
   assert.equal(node.x,spaced[i].x);
  });
 });
+
+test('vertical geography is not artificially squeezed at year zoom',()=>{
+ const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
+ const start=app.indexOf('const originalY=baseLayoutCache.get(geometryKey)');
+ const end=app.indexOf('const fine=getSemantic(',start);
+ assert(start>=0&&end>start);
+ const fragment=app.slice(start,end);
+ assert.doesNotMatch(fragment,/spreadY|Math\\.log\\(Math\\.max\\(1,semanticZoom\\)\\)/,
+  'camera zoom must not contract the vertical geography field');
+ assert.match(fragment,/return baseLayoutCache\\.get\\(key\\)\\.get\\(p\\.id\\)\\?\\?mid/);
+});

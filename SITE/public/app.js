@@ -587,11 +587,12 @@ function render(){
  const originalY=baseLayoutCache.get(geometryKey);
  // Preserve the identity of the different streams even at coarser zooms.
  // Zoom merges semantic marks, not the vertical geography into one tight band.
- const spreadY=.28+.72*clamp(Math.log(Math.max(1,semanticZoom))/Math.log(365),0,1);
  const parentY=(p,kind)=>{
   const key=`flow-parent:${kind}:${geometryKey}`;
   if(!baseLayoutCache.has(key))baseLayoutCache.set(key,kind==='moment'?originalY:TimelineCore.aggregateLanes(getSemantic(kind).nodes,originalY));
-  return mid+((baseLayoutCache.get(key).get(p.id)??mid)-mid)*spreadY;
+  // Keep the same full-height geographic lane at every semantic zoom.
+  // Interpolate only genuine parent-child merges, not an unrelated squeeze.
+  return baseLayoutCache.get(key).get(p.id)??mid;
  };
  const fine=getSemantic(flow.fine).nodes,coarse=flow.coarse?getSemantic(flow.coarse).nodes:[],t=flow.t;
  const coarseOwner=new Map();
