@@ -59,5 +59,5 @@ test('vertical geography is not artificially squeezed at year zoom',()=>{
  const fragment=app.slice(start,end);
  assert.doesNotMatch(fragment,/spreadY|Math\\.log\\(Math\\.max\\(1,semanticZoom\\)\\)/,
   'camera zoom must not contract the vertical geography field');
- assert.match(fragment,/return baseLayoutCache\\.get\\(key\\)\\.get\\(p\\.id\\)\\?\\?mid/);
+ assert(fragment.includes('return baseLayoutCache.get(key).get(p.id)??mid;'));
 });

@@ -128,9 +128,10 @@ test('wheel and pinch preview retain fixed world positions without redrawing SVG
  vm.runInNewContext(app.slice(first,last)+';previewZoom(false)',env);
  for(const element of [elements.timeline,elements.timeAxis,elements.storyClouds]){
   assert.equal(element.style.transformOrigin,'0 0');
-  const match=element.style.transform.match(/translate3d\\((-?[\\d.]+)px,0,0\\) scaleX\\(([\\d.]+)\\)/);
-  assert(match);
-  const dx=Number(match[1]),factor=Number(match[2]);
+  const transform=element.style.transform;
+  assert(transform.startsWith('translate3d(')&&transform.includes(') scaleX('));
+  const dx=Number(transform.slice('translate3d('.length).split('px')[0]);
+  const factor=Number(transform.split('scaleX(')[1].split(')')[0]);
   for(const axis of [39,42,45,48,51]){
    const oldX=48+(axis-35)*45.2,expected=48+(axis-40)*90.4;
    assert(Math.abs(dx+factor*oldX-expected)<1e-6);
@@ -138,5 +139,5 @@ test('wheel and pinch preview retain fixed world positions without redrawing SVG
  }
  assert.equal(env.wheelPreview,true);
  assert.equal(timers.length,0);
- assert.match(app,/previewZoom\\(false\\)/);
+ assert(app.includes('previewZoom(false)'));
 });
