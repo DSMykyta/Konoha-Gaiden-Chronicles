@@ -30,6 +30,8 @@ jobs:
         run: npm --prefix SITE run build
       - name: Smoke-test all four hierarchy scales in Chromium
         run: node SITE/scripts/capsule-browser.mjs
+      - name: Validate pan and wheel gesture continuity in Chromium
+        run: node SITE/tests/wheel-navigation.browser.mjs
       - name: Save capsule screenshots
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

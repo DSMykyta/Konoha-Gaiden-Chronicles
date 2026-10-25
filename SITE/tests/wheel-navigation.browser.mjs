@@ -13,6 +13,17 @@ try{
   await page.goto('http://127.0.0.1:'+server.address().port,{waitUntil:'networkidle'});
   await page.evaluate(()=>{zoom=zoomModes.month;center=dayToAxis(50);render();});
   const x=viewport.width<600?155:390,y=viewport.width<600?460:540;
+  // One wheel event must preview the same SVG, not discard its DOM paths.
+  const cameraPreview=await page.evaluate(({x,y})=>{
+   const svg=$('timeline'),original=svg.firstElementChild;
+   const wheel=new WheelEvent('wheel',{bubbles:true,cancelable:true,deltaY:-12,clientX:x,clientY:y});
+   $('canvas').dispatchEvent(wheel);
+   return {samePath:svg.firstElementChild===original,
+    previewVisible:svg.style.transform.includes('scaleX('),previewActive:wheelPreview};
+  },{x,y});
+  assert(cameraPreview.samePath&&cameraPreview.previewVisible&&cameraPreview.previewActive,
+   'a live wheel tick should transform the cached SVG instead of rebuilding it');
+  await page.waitForTimeout(260);
   const axisAtPointer=()=>page.evaluate(x=>{
    const width=$('canvas').clientWidth,pad=width<600?22:48,plot=width-2*pad;
    const [lo,hi]=range(),scale=makeTimeScale(lo,hi,pad,plot,datedEvents());
