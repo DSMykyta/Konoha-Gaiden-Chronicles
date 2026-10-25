@@ -17,8 +17,7 @@ const TimelinePanCache = {
   },
   reuse(frame,{lo,hi,width,height,zoom,breaks}) {
     if(!frame||frame.width!==width||frame.height!==height||frame.zoom!==zoom||
-       lo<frame.coverLo-1e-8||hi>frame.coverHi+1e-8||
-       this.visibleBreaks(breaks,lo,hi)!==frame.breakKey)return null;
+       lo<frame.coverLo-1e-8||hi>frame.coverHi+1e-8)return null;
     return {shift:(frame.lo-lo)*frame.dayPx,lo,hi};
   }
 };

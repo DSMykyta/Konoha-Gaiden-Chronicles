@@ -30,14 +30,29 @@ test('a small pan retains identical layout and yields only a camera translation'
  assert.equal(cache.reuse(base,{lo:35,hi:55,width:1000,height:720,zoom:12,breaks:[]}),null);
 });
 
-test('crossing a compressed time gap triggers a new geometry layout',()=>{
+test('crossing a compressed gap retains geometry until overscan is exhausted',()=>{
  const breaks=[{axis:49,size:20},{axis:90,size:8}];
- const base=cache.frame({lo:35,hi:55,maxAxis:120,width:1200,height:750,zoom:20,dayPx:42,breaks});
- assert(base.breakKey.includes('49:20'));
- assert(cache.reuse(base,{lo:36,hi:56,width:1200,height:750,zoom:20,breaks}));
- assert.equal(cache.reuse(base,{lo:50,hi:70,width:1200,height:750,zoom:20,breaks}),null,
-   'the gap leaving the viewport changes its pixel allocation');
- assert.equal(cache.reuse(base,{lo:70,hi:90,width:1200,height:750,zoom:20,breaks}),null);
+ const base=cache.frame({lo:35,hi:55,maxAxis:120,width:1200,height:750,zoom:20,dayPx:42,breaks},2);
+ for(const lo of [36,49,50,69,70])
+  assert(cache.reuse(base,{lo,hi:lo+20,width:1200,height:750,zoom:20,breaks}));
+ assert.equal(cache.reuse(base,{lo:76,hi:96,width:1200,height:750,zoom:20,breaks}),null);
+});
+
+test('calendar gaps cannot change positions beyond the camera translation',()=>{
+ const first=app.indexOf('function makeTimeScale('),last=app.indexOf('function svg(',first);
+ assert(first>=0&&last>first);
+ const env={axisBreaks:()=>[{axis:40,size:20,from:40,to:60,omitted:20}],
+  dayToAxis:d=>d<=40?d:d<60?40:d-20,
+  chronologyBreaks:()=>[{from:40,to:60}]};
+ const scale=vm.runInNewContext(app.slice(first,last)+';makeTimeScale',env);
+ const a=scale(19,39,48,904,[]),b=scale(21,41,48,904,[]);
+ assert.equal(a.dayPx,b.dayPx);
+ assert(Math.abs(a.axisPx(30)-b.axisPx(30)-2*a.dayPx)<1e-8);
+ assert(Math.abs((a.axisPx(35)-a.axisPx(30))-(b.axisPx(35)-b.axisPx(30)))<1e-8);
+ assert.equal(b.px(40),b.px(60));
+ assert.equal(b.hidden(50),true);
+ assert.equal(b.hidden(61),false);
+ assert.match(app,/const renderedBreaks=axisBreaks\(\)\.filter\(gap=>gap\.axis>=buffered\.coverLo&&gap\.axis<=buffered\.coverHi\)/);
 });
 
 test('cached camera changes SVG viewBox without touching its children',()=>{
@@ -109,4 +124,32 @@ test('prefetched offscreen marks cannot steal keyboard focus',()=>{
  vm.runInNewContext(app.slice(start,end)+';syncBufferedTabStops()',ctx);
  assert.equal(inside.tabindex,'-1');
  assert.equal(prefetched.tabindex,'0');
+});
+
+test('wheel and pinch preview retain fixed world positions without redrawing SVG',()=>{
+ const first=app.indexOf('function previewZoom('),last=app.indexOf('function updatePanChrome(',first);
+ assert(first>=0&&last>first);
+ const elements=Object.fromEntries(['timeline','timeAxis','storyClouds'].map(id=>[id,{style:{}}]));
+ elements.canvas={clientWidth:1000};
+ const timers=[];
+ const env={panFrame:{zoom:12,dayPx:45.2},raf:null,paintedCenter:45,wheelPreview:false,
+  $:id=>elements[id],axisLength:()=>240,clampAxisCenter:value=>value,range:()=>[40,50],
+  uiTimers:{defer:(...args)=>timers.push(args),cancel:()=>{}},
+  schedule:()=>{throw Error('preview must not trigger a full render');},
+  render:()=>{throw Error('preview must not trigger a full render');}};
+ vm.runInNewContext(app.slice(first,last)+';previewZoom(false)',env);
+ for(const element of [elements.timeline,elements.timeAxis,elements.storyClouds]){
+  assert.equal(element.style.transformOrigin,'0 0');
+  const transform=element.style.transform;
+  assert(transform.startsWith('translate3d(')&&transform.includes(') scaleX('));
+  const dx=Number(transform.slice('translate3d('.length).split('px')[0]);
+  const factor=Number(transform.split('scaleX(')[1].split(')')[0]);
+  for(const axis of [39,42,45,48,51]){
+   const oldX=48+(axis-35)*45.2,expected=48+(axis-40)*90.4;
+   assert(Math.abs(dx+factor*oldX-expected)<1e-6);
+  }
+ }
+ assert.equal(env.wheelPreview,true);
+ assert.equal(timers.length,0);
+ assert(app.includes('previewZoom(false)'));
 });

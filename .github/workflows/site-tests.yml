@@ -2,7 +2,7 @@ name: SITE tests
 
 on:
   push:
-    branches: [main, feature/interval-capsule-timeline]
+    branches: [main]
     paths:
       - 'SITE/**'
       - '00_MAIN_WORK_FOLDER/CHRONOLOGY/data/**'
@@ -36,6 +36,12 @@ jobs:
         run: npm --prefix SITE ci
       - name: Check scripts
         run: npm --prefix SITE run check
+      - name: Install Chromium for gesture regression
+        run: npm --prefix SITE exec -- playwright install chromium
+      - name: Build browser preview
+        run: npm --prefix SITE run build
+      - name: Verify live timeline pan and wheel gestures
+        run: node SITE/tests/wheel-navigation.browser.mjs
       - name: Build chronology and run all regression tests
         run: npm --prefix SITE test
       # npm test deliberately runs the long DOM integration first. If that
