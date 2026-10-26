@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root="$(git rev-parse --show-toplevel)"
+cd "$root"
+if [[ ! -d SITE/node_modules ]]; then
+  echo "SITE dependencies missing. Run: npm --prefix SITE ci" >&2
+  exit 1
+fi
+echo "Running SITE pre-push checks; Git push will be blocked on failure."
+npm --prefix SITE run test:ci

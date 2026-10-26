@@ -13,6 +13,44 @@ try{
   await page.goto('http://127.0.0.1:'+server.address().port,{waitUntil:'networkidle'});
   await page.evaluate(()=>{zoom=zoomModes.month;center=dayToAxis(50);render();});
   const x=viewport.width<600?155:390,y=viewport.width<600?460:540;
+  // Regression: small camera pans must preserve existing SVG nodes, on phone and desktop.
+  // Observe the live DOM across animation frames, not only the final screenshot.
+  const stablePan=await page.evaluate(async({x,y})=>{
+   const timeline=$('timeline'),axis=$('timeAxis');
+   const originalTimelineChild=timeline.firstElementChild,originalAxisChild=axis.firstElementChild;
+   let directChildMutations=0;
+   const observers=[timeline,axis].map(element=>{
+    const observer=new MutationObserver(records=>{
+     directChildMutations+=records.filter(record=>record.type==='childList'&&
+      (record.addedNodes.length||record.removedNodes.length)).length;
+    });
+    observer.observe(element,{childList:true});
+    return observer;
+   });
+   const positions=[Number(timeline.getAttribute('viewBox').split(' ')[0])];
+   for(let tick=0;tick<5;tick++){
+    $('canvas').dispatchEvent(new WheelEvent('wheel',{
+     bubbles:true,cancelable:true,shiftKey:true,deltaY:12,clientX:x,clientY:y
+    }));
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    positions.push(Number(timeline.getAttribute('viewBox').split(' ')[0]));
+   }
+   observers.forEach(observer=>observer.disconnect());
+   return {
+    directChildMutations,
+    sameNodes:timeline.firstElementChild===originalTimelineChild&&
+     axis.firstElementChild===originalAxisChild,
+    positions,
+    aligned:Math.abs(Number(timeline.getAttribute('viewBox').split(' ')[0])-
+     Number(axis.getAttribute('viewBox').split(' ')[0]))<1e-5
+   };
+  },{x,y});
+  assert.equal(stablePan.directChildMutations,0,'small pans must not rebuild SVG children');
+  assert(stablePan.sameNodes,'small pans must retain their original SVG paths');
+  assert(stablePan.positions.every((value,index,values)=>index===0||value>values[index-1]),
+   'camera must progress smoothly in the direction of each pan tick');
+  assert(stablePan.aligned,'calendar axis must follow the same camera as the timeline');
+
   // One wheel event must preview the same SVG, not discard its DOM paths.
   const cameraPreview=await page.evaluate(({x,y})=>{
    const svg=$('timeline'),original=svg.firstElementChild;

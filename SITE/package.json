@@ -13,7 +13,8 @@
     "test:browser": "node tests/browser.mjs",
     "test:wheel": "node tests/wheel-navigation.browser.mjs",
     "test:debounce": "node tests/search-debounce.browser.mjs",
-    "test:focus-pan": "node tests/focus-pan.browser.mjs"
+    "test:focus-pan": "node tests/focus-pan.browser.mjs",
+    "test:ci": "npm run check && npm test && npm run test:wheel && npm run test:focus-pan && npm run test:debounce"
   },
   "dependencies": {
     "yaml": "2.8.1"
