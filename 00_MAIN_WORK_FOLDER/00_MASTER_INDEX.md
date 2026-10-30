@@ -81,11 +81,11 @@
 | KKON-01 | `GAMES/KITSUNE_KON/ARCS/arc 01 [Нічна зміна і білі маски].txt` | Кіцуне Кон |
 | KKON-02 | `GAMES/KITSUNE_KON/ARCS/arc 02 [Каґарі — міст без вартового].txt` | Кіцуне Кон |
 | T9G-15 | `GAMES/TEAM_9/ARCS/arc 15 [Сон перед днем народження].txt` | Команда 9 |
-| KUSA-01 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/arc 01 [Кабан і Академія]_STORY_V4-3_FINAL.txt` | Кусаґакуре — Ейзан, V4.3 |
-| KUSA-02 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/arc 02 [Брама сорок сьома]_STORY_V4-3_FINAL.txt` | Кусаґакуре — Ейзан, V4.3 |
-| KUSA-03 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/arc 03 [Сім днів до арени]_STORY_V4-3_FINAL.txt` | Кусаґакуре — Ейзан, V4.3 |
-| KUSA-04 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/arc 04 [Тиждень підготовки]_STORY_V4-3_FINAL.txt` | Кусаґакуре — Ейзан, V4.3 |
-| KUSA-05 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/arc 05 [Фінал екзамену]_STORY_V4-3_FINAL.txt` | Кусаґакуре — Ейзан, V4.3 |
+| KUSA-01 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/ARC_01_KABAN_I_AKADEMIIA_V4_3.md` | Кусаґакуре — Ейзан, V4.3 |
+| KUSA-02 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/ARC_02_BRAMA_SOROK_SOMA_V4_3.md` | Кусаґакуре — Ейзан, V4.3 |
+| KUSA-03 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/ARC_03_SIM_DNIV_DO_ARENY_V4_3.md` | Кусаґакуре — Ейзан, V4.3 |
+| KUSA-04 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/ARC_04_TYZHDEN_PIDHOTOVKY_V4_3.md` | Кусаґакуре — Ейзан, V4.3 |
+| KUSA-05 | `GAMES/KUSAGAKURE_EXAM_EIZAN/EIZAN/ARCS/ARC_05_FINAL_EKZAMENU_V4_3.md` | Кусаґакуре — Ейзан, V4.3 |
 | T9G-16 | `GAMES/TEAM_9/ARCS/arc 16 [Повернення].txt` | Команда 9 |
 | T9G-17 | `GAMES/TEAM_9/ARCS/arc 17 [Кордон Країни Рису].txt` | Команда 9 |
 | T9G-18 | `GAMES/TEAM_9/ARCS/arc 18 [Ліквідація Бази 2].txt` | Команда 9 |
